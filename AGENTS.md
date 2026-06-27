@@ -48,6 +48,8 @@ Avoid loading large `output/*.json` files unless the task explicitly requires th
 - An empty queue is a successful stop condition.
 - Do not use Chrome or Computer Use to look for new instructions.
 - Do not remain idle waiting for messages.
+- Exhaust available independent, reproducible, non-circular validation before requesting broad human review.
+- Treat human review as an escalation mechanism, not as the default next step, unless semantic ground truth cannot be derived from available data and the unresolved distinction materially changes the next project decision.
 
 Use this stop reason for a successful empty or gated queue:
 
@@ -78,6 +80,26 @@ A blocked task may move to `tasks/pending/` only when:
 A backlog item may move to `tasks/pending/` or `tasks/blocked/` only after it has been converted into a fully specified task. Codex must not perform this conversion autonomously when scientific scope, thresholds, methodology, or priorities are still undecided.
 
 Tasks with `Execution mode: human` must never be executed by the autonomous runner. They may remain in `tasks/blocked/` while waiting for human work. After their human gate is completed, a separate Codex task may verify the artifacts, but the queue runner must not fabricate, infer, or complete human labels.
+
+## Evidence escalation
+
+Codex must distinguish:
+
+- internal consistency
+- independent supporting evidence
+- independent contradictory evidence
+- semantic ground truth
+- unresolved interpretation
+
+Autonomous evidence may increase or decrease confidence, but it must not be described as human ground truth. Codex must not request human approval merely because a task was originally designed with a human gate.
+
+Human review should be requested only when:
+
+- semantic ground truth cannot be derived from available data;
+- the unresolved distinction materially changes the next project decision;
+- the sample set has been minimized;
+- each requested review has an explicit question;
+- no deterministic or independent evidence can answer it.
 
 ## Report Rules
 

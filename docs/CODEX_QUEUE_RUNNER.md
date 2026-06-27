@@ -44,6 +44,16 @@ A backlog item may move to `tasks/pending/` or `tasks/blocked/` only after it ha
 
 Tasks with `Execution mode: human` must never be executed by the autonomous runner. They may remain in `tasks/blocked/` while waiting for human work. After their human gate is completed, a separate Codex task may verify the artifacts, but the queue runner must not fabricate, infer, or complete human labels.
 
+## Evidence escalation
+
+Before requesting broad human review, the runner must exhaust available independent, reproducible, non-circular validation. Human review is an escalation mechanism for unresolved semantic questions, not the default next step after infrastructure creation.
+
+Human review should be requested only when semantic ground truth cannot be derived from available data, the unresolved distinction materially changes the next project decision, the sample set has been minimized, each requested review has an explicit question, and no deterministic or independent evidence can answer it.
+
+The runner must distinguish internal consistency, independent supporting evidence, independent contradictory evidence, semantic ground truth, and unresolved interpretation. Autonomous evidence may increase or decrease confidence, but it must not be described as human ground truth.
+
+The runner must not request human approval merely because a task was originally designed with a human gate.
+
 ## Successful stop
 
 Stop successfully with `NO_EXECUTABLE_PENDING_TASK` when `tasks/pending/` is empty, the next stage requires human labels, a blocked gate has not been fulfilled, only backlog items remain, or a methodological decision is required.

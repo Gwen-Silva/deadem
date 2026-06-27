@@ -5,6 +5,8 @@
 
 This document records likely future work without promoting it to the executable queue. Roadmap order is not execution authorization.
 
+Codex must exhaust available independent, reproducible, non-circular validation before requesting broad human review. Human review should be requested only when semantic ground truth cannot be derived from available data, the unresolved distinction materially changes the next project decision, the sample set has been minimized, each requested review has an explicit question, and no deterministic or independent evidence can answer it.
+
 ## 1. Lane occupancy validation
 
 - Proposed ID: 002
@@ -15,15 +17,15 @@ This document records likely future work without promoting it to the executable 
 
 - Proposed ID: 003
 - Title: Label lane occupancy samples
-- Purpose: Human reviewers label point and episode samples.
-- Known dependencies: task 002 outputs.
-- Reason it is not executable yet: human task; Codex must not execute, complete, or simulate labels.
+- Purpose: Human reviewers answer minimized unresolved semantic questions selected by autonomous evidence audit.
+- Known dependencies: autonomous evidence audit identifies unresolved samples whose semantic correctness materially affects the project decision.
+- Reason it is not executable yet: human task; broad sample labeling is no longer the immediate default.
 
 - Proposed ID: 004
 - Title: Score human lane validation
 - Purpose: Score labeled point and episode samples and produce lane validation metrics.
-- Known dependencies: task 003 human label gate.
-- Reason it is not executable yet: labeled files and coverage gate do not exist.
+- Known dependencies: task 003 minimized human review gate.
+- Reason it is not executable yet: minimized human-review labels do not exist and scoring broad labels is not promoted.
 
 - Proposed ID: 005
 - Title: Revise lane occupancy model
@@ -38,10 +40,10 @@ This document records likely future work without promoting it to the executable 
 - Reason it is not executable yet: revised model and holdout protocol do not exist.
 
 - Proposed ID: 008
-- Title: Occupancy decision review
-- Purpose: Decide whether to prioritize second-replay generalization or transition candidates after validation gates.
-- Known dependencies: task 004 or task 006 gate evidence.
-- Reason it is not executable yet: methodological prioritization is not a queue task and requires gate evidence.
+- Title: Autonomous independent lane occupancy audit
+- Purpose: Audit experiment 24 samples using independent evidence, sensitivity, stability, and cross-model agreement before requesting human labels.
+- Known dependencies: task 002 validation infrastructure and existing derived outputs.
+- Reason it is not executable yet: executable only while present in `tasks/pending/`.
 
 ## 2. Generalization
 
@@ -198,3 +200,10 @@ After task 006:
 - `insufficient_holdout_labels` -> human labeling remains required
 
 Codex must not choose between task 007 and task 009 autonomously. That prioritization belongs to the methodological review.
+
+After task 008:
+
+- `autonomous_evidence_supports_limited_use` -> limited downstream use may be considered only for explicitly allowed states and confidence strata
+- `autonomous_evidence_requires_model_revision` -> a model-revision task may be promoted only when demonstrated errors have mechanical causes
+- `minimal_human_review_required` -> task 003 remains blocked for minimized human review only; no broad labeling is requested
+- `insufficient_independent_evidence` -> stop and document missing evidence

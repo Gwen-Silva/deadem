@@ -5,13 +5,15 @@ Execution mode: human
 Project stage: Lane occupancy validation
 Related experiment: 24
 Priority: high
-Depends on: task 002 completed with gate awaiting_human_labels
-Unlocked by: required labeled files exist and meet minimum coverage
+Depends on: autonomous independent lane occupancy audit
+Unlocked by: autonomous evidence audit identifies unresolved samples whose semantic correctness materially affects the project decision
 Blocks: task 004
 
 ## Objective
 
-Human reviewers must populate:
+Human reviewers must answer only minimized unresolved semantic questions selected by the autonomous evidence audit.
+
+When unlocked, reviewers may populate:
 
 - `output/24-point-review-labeled.json`
 - `output/24-episode-review-labeled.json`
@@ -25,33 +27,28 @@ Required labels:
 - reviewer confidence
 - observed evidence
 
-Minimum completion gate:
-
-- at least 60 non-ambiguous point samples
-- at least 30 non-ambiguous episode samples
-- all three lanes represented
-- all 12 players represented
-- early, middle, and late match phases represented
+The eventual sample set must be limited to unresolved or disputed cases where semantic correctness materially affects the project decision.
 
 This task must not be executed, completed, or simulated by Codex.
 
 ## Context to read
 
-Human reviewers should use the review documentation and local review tool produced by task 002.
+Human reviewers should use the minimized review queue produced by the autonomous evidence audit and answer only the explicit question attached to each sample.
 
 ## Work requested
 
-Perform manual review outside the autonomous queue.
+Perform minimized manual review outside the autonomous queue only after autonomous evidence is exhausted.
 
 ## Constraints
 
 - Do not move this task to `tasks/pending/`.
 - Do not allow Codex to fabricate, infer, or complete labels.
+- Do not review every generated sample by default.
+- Do not expand beyond unresolved or disputed cases selected by autonomous audit.
 
 ## Inputs
 
-- `output/24-point-review-unlabeled-template.json`
-- `output/24-episode-review-unlabeled-template.json`
+- `output/24-minimal-human-review-queue.json`
 
 ## Outputs
 
@@ -60,11 +57,11 @@ Perform manual review outside the autonomous queue.
 
 ## Acceptance criteria
 
-The labeled files exist and meet the minimum completion gate.
+The minimized labeled files exist and answer every explicit human question required by the autonomous evidence audit.
 
 ## Required validation
 
-Manual gate evidence must be verified by a separate autonomous task after labels exist.
+Manual gate evidence must be verified by a separate autonomous task after minimized labels exist.
 
 ## Gate result
 
@@ -83,8 +80,8 @@ None for Codex execution.
 
 ## Expected report
 
-Human reviewers may summarize completed coverage separately.
+Human reviewers may summarize minimized answers separately.
 
 ## Stop conditions
 
-Stop while labels are missing or coverage is insufficient.
+Stop while minimized unresolved questions are missing, unanswered, or outside the autonomous audit queue.
