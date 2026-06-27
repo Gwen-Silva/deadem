@@ -1,0 +1,1336 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_geometry_consensus",
+  "replay001Provenance": {
+    "sourceFiles": [
+      "output/13-map-lane-reference.json",
+      "output/16-lane-topology-6592.json",
+      "output/17-spatial-region-model.json"
+    ],
+    "directStructuralGeometry": {
+      "anchorCount": 337,
+      "classCounts": {
+        "CAssignedLaneParticle": 6,
+        "CCitadel_Ability_ShieldedSentry": 1,
+        "CCitadel_Ability_ZipLine": 12,
+        "CCitadel_Ability_ZipLine_Boost": 12,
+        "CCitadelTrooperMinimap": 1,
+        "CCitadelZipLineNode": 136,
+        "CNPC_BarrackBoss": 12,
+        "CNPC_BaseDefenseSentry": 8,
+        "CNPC_Boss_Tier2": 6,
+        "CNPC_Boss_Tier3": 2,
+        "CNPC_MidBoss": 1,
+        "CNPC_ShieldedSentry": 1,
+        "CNPC_Trooper": 133,
+        "CNPC_TrooperBoss": 6
+      },
+      "baseAnchors": [
+        {
+          "className": "CNPC_Boss_Tier3",
+          "team": 3,
+          "position": {
+            "x": 0,
+            "y": 880,
+            "z": 632
+          },
+          "laneFields": [
+            {
+              "field": "m_iLane",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "className": "CNPC_Boss_Tier3",
+          "team": 2,
+          "position": {
+            "x": 0,
+            "y": 158,
+            "z": 632
+          },
+          "laneFields": [
+            {
+              "field": "m_iLane",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "inferredGeometry": [
+      "output/16-lane-topology-6592.json derives lane corridors from experiment 13 anchors plus player samples and local GameTracking schema/UI files.",
+      "output/17-spatial-region-model.json derives straight lane axes from objective summaries, minion/zipline evidence, and experiment 16 lane centers."
+    ],
+    "manuallyNamedGeometry": [
+      "Yellow/Blue/Purple/Green labels are historical/schema/UI aliases and are not reused here as physical topology proof.",
+      "Current task uses neutral structural anchor types and does not assign semantic lane colors."
+    ],
+    "occupancyDependentGeometry": [
+      "No occupancy quality output was used by this task.",
+      "Prior spatial model classification parameters are treated as downstream interpretation, not reusable structural geometry."
+    ],
+    "topologySummary": {
+      "historicalPhysicalLaneCount": 3,
+      "corridors": [
+        {
+          "laneCodeRaw": 1,
+          "objectiveAnchorCount": 30,
+          "objectiveClasses": [
+            "CNPC_Boss_Tier2",
+            "CNPC_BarrackBoss",
+            "CAssignedLaneParticle",
+            "CNPC_TrooperBoss",
+            "CNPC_Trooper"
+          ],
+          "structuresForBothTeams": true,
+          "confidence": "high"
+        },
+        {
+          "laneCodeRaw": 4,
+          "objectiveAnchorCount": 30,
+          "objectiveClasses": [
+            "CNPC_Boss_Tier2",
+            "CNPC_BarrackBoss",
+            "CAssignedLaneParticle",
+            "CNPC_TrooperBoss",
+            "CNPC_Trooper"
+          ],
+          "structuresForBothTeams": true,
+          "confidence": "high"
+        },
+        {
+          "laneCodeRaw": 6,
+          "objectiveAnchorCount": 30,
+          "objectiveClasses": [
+            "CNPC_Boss_Tier2",
+            "CNPC_BarrackBoss",
+            "CAssignedLaneParticle",
+            "CNPC_TrooperBoss",
+            "CNPC_Trooper"
+          ],
+          "structuresForBothTeams": true,
+          "confidence": "high"
+        }
+      ],
+      "regionModelLaneAxes": [
+        {
+          "physicalLaneId": "lane_1",
+          "anchorCount": 57,
+          "anchorMethod": "objectiveSummary + minionPathEvidence + ziplineEvidence + lane center from experiment 16",
+          "center": {
+            "x": 465.7422884926131,
+            "y": 570.7120051361958,
+            "z": 525.3562153739613
+          }
+        },
+        {
+          "physicalLaneId": "lane_2",
+          "anchorCount": 57,
+          "anchorMethod": "objectiveSummary + minionPathEvidence + ziplineEvidence + lane center from experiment 16",
+          "center": {
+            "x": 400.2565515350877,
+            "y": 498.2044887609649,
+            "z": 382.4905633223684
+          }
+        },
+        {
+          "physicalLaneId": "lane_3",
+          "anchorCount": 57,
+          "anchorMethod": "objectiveSummary + minionPathEvidence + ziplineEvidence + lane center from experiment 16",
+          "center": {
+            "x": 501.8438332778148,
+            "y": 537.2266752720409,
+            "z": 521.9568690317566
+          }
+        }
+      ]
+    },
+    "reusableWithoutFurtherValidation": [
+      "direct entity class names",
+      "direct structural anchor coordinates",
+      "team fields and lane-like role fields on map/objective entities when present"
+    ],
+    "notReusableAsProof": [
+      "lane color names",
+      "player movement density",
+      "occupancy classification performance",
+      "transition quality",
+      "thresholds from spatial region classification"
+    ]
+  },
+  "anchorsPresentInAllFour": [
+    {
+      "bucket": "base|CBaseAnimGraph|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CBaseTrigger|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CCitadel_BaseProp_MidStairs|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CCitadelBaseMusicOBB|2|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CCitadelBaseMusicOBB|3|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CNPC_BaseDefenseSentry|2|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CNPC_BaseDefenseSentry|3|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CNPC_Boss_Tier3|2|m_iLane=0",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "base|CNPC_Boss_Tier3|3|m_iLane=0",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_Trooper|2|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_Trooper|2|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_Trooper|2|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_Trooper|3|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_Trooper|3|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_Trooper|3|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "lane_npc_or_spawner|CNPC_TrooperNeutral|4|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "neutral|CCitadelIdolReturnTrigger|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "neutral|CNPC_Neutral_Bug|4|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "neutral|CNPC_Neutral_SinnersSacrifice|4|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_BarrackBoss|2|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_BarrackBoss|2|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_BarrackBoss|2|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_BarrackBoss|3|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_BarrackBoss|3|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_BarrackBoss|3|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_Boss_Tier2|2|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_Boss_Tier2|2|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_Boss_Tier2|2|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_Boss_Tier2|3|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_Boss_Tier2|3|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_Boss_Tier2|3|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_MidBoss|4|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_TrooperBoss|2|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_TrooperBoss|2|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_TrooperBoss|3|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_TrooperBoss|3|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "objective|CNPC_TrooperBoss|3|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CAssignedLaneParticle|2|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CAssignedLaneParticle|2|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CAssignedLaneParticle|2|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CAssignedLaneParticle|3|m_iLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CAssignedLaneParticle|3|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CAssignedLaneParticle|3|m_iLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_BreakableProp|4|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_Destroyable_Building|2|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_Destroyable_Building|3|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_NewYears_Fireworks|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_PunchablePowerup|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelCatapultTrigger|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelMinimapBoundary|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelPassthroughFakeWall|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelPlayerController|1|m_nAssignedLane=0",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelTeleportTrigger|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelTriggerCapturePoint|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelTriggerNoPortals|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelTunnelTrigger|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "shop|CCitadel_ShopProp|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "shop|CTriggerItemShop|2|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "shop|CTriggerItemShop|3|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "shop|CTriggerItemShop|4|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "spawn|CCitadel_HeroTestOrbSpawner|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "spawn|CCitadel_PickupItemSpawner|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadel_Ability_Climb_Rope|2|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadel_Ability_Climb_Rope|3|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadel_Ability_ZipLine|2|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadel_Ability_ZipLine|3|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelClimbRopeTrigger|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|0|m_iPrimaryLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|0|m_iPrimaryLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|0|m_iPrimaryLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|2|m_iPrimaryLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|2|m_iPrimaryLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|2|m_iPrimaryLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|3|m_iPrimaryLane=1",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|3|m_iPrimaryLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CCitadelZipLineNode|3|m_iPrimaryLane=6",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "traversal|CPathParticleRope|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "world|CWorld|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    }
+  ],
+  "anchorsPresentInThreeOfFour": [
+    {
+      "bucket": "objective|CNPC_TrooperBoss|2|m_iLane=4",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_BreakablePropGoldPickup|0|no_role_field",
+      "replayIds": [
+        "replay_001",
+        "replay_003",
+        "replay_004"
+      ]
+    }
+  ],
+  "anchorsPresentInOneOrTwo": [
+    {
+      "bucket": "base|CBaseCombatCharacter|0|no_role_field",
+      "replayIds": [
+        "replay_003"
+      ]
+    },
+    {
+      "bucket": "neutral|CCitadelIdolReturnTrigger|3|no_role_field",
+      "replayIds": [
+        "replay_003"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadel_DoorwayPortal|3|no_role_field",
+      "replayIds": [
+        "replay_002"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelObserverPawn|3|no_role_field",
+      "replayIds": [
+        "replay_003"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelPlayerPawn|2|m_eZipLineLaneColor=0",
+      "replayIds": [
+        "replay_002"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelPlayerPawn|3|m_eZipLineLaneColor=0",
+      "replayIds": [
+        "replay_003"
+      ]
+    },
+    {
+      "bucket": "other_structural|CCitadelViscousBall|3|no_role_field",
+      "replayIds": [
+        "replay_003",
+        "replay_004"
+      ]
+    }
+  ],
+  "structuralClassesPresentInAllFour": [
+    {
+      "bucket": "CAssignedLaneParticle",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CBaseAnimGraph",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CBaseTrigger",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_Ability_Climb_Rope",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_Ability_ZipLine",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_BaseProp_MidStairs",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_BreakableProp",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_Destroyable_Building",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_HeroTestOrbSpawner",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_NewYears_Fireworks",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_PickupItemSpawner",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_PunchablePowerup",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadel_ShopProp",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelBaseMusicOBB",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelCatapultTrigger",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelClimbRopeTrigger",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelIdolReturnTrigger",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelMinimapBoundary",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelPassthroughFakeWall",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelPlayerController",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelTeleportTrigger",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelTriggerCapturePoint",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelTriggerNoPortals",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelTunnelTrigger",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CCitadelZipLineNode",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_BarrackBoss",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_BaseDefenseSentry",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_Boss_Tier2",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_Boss_Tier3",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_MidBoss",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_Neutral_Bug",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_Neutral_SinnersSacrifice",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_Trooper",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_TrooperBoss",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CNPC_TrooperNeutral",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CPathParticleRope",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CTriggerItemShop",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    },
+    {
+      "bucket": "CWorld",
+      "replayIds": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ]
+    }
+  ],
+  "topologyReconstructionFeasibility": {
+    "bases": "structural_evidence_present",
+    "threePhysicalLanes": "unverified_by_task_021",
+    "orderingOfStructuresAlongLanes": "requires_follow_up_structural_lane_axis_task",
+    "centralObjectives": "structural_evidence_present",
+    "neutralRegions": "structural_evidence_present",
+    "traversalLinks": "structural_evidence_present",
+    "note": "Task 021 establishes comparable structural coordinate evidence but does not assign semantic lane names or lane colors."
+  },
+  "coordinateComparability": [
+    {
+      "replayId": "replay_001",
+      "bounds": {
+        "minX": -3943.98,
+        "maxX": 7247.98,
+        "minY": -823.97,
+        "maxY": 1951.97,
+        "minZ": -513.52,
+        "maxZ": 1020.78
+      },
+      "scaleEstimate": 11531.08,
+      "axisOrientationEvidence": "raw parser coordinates; no transform applied"
+    },
+    {
+      "replayId": "replay_002",
+      "bounds": {
+        "minX": -6431.98,
+        "maxX": 7247.98,
+        "minY": -2303.97,
+        "maxY": 2303.97,
+        "minZ": -323.97,
+        "maxZ": 1020.78
+      },
+      "scaleEstimate": 14435.18,
+      "axisOrientationEvidence": "raw parser coordinates; no transform applied"
+    },
+    {
+      "replayId": "replay_003",
+      "bounds": {
+        "minX": -6431.98,
+        "maxX": 7247.98,
+        "minY": -2303.97,
+        "maxY": 3151.97,
+        "minZ": -30.11,
+        "maxZ": 1020.78
+      },
+      "scaleEstimate": 14727.82,
+      "axisOrientationEvidence": "raw parser coordinates; no transform applied"
+    },
+    {
+      "replayId": "replay_004",
+      "bounds": {
+        "minX": -7247.98,
+        "maxX": 6431.98,
+        "minY": -3215.97,
+        "maxY": 3151.97,
+        "minZ": 0,
+        "maxZ": 1020.78
+      },
+      "scaleEstimate": 15089.47,
+      "axisOrientationEvidence": "raw parser coordinates; no transform applied"
+    }
+  ]
+}

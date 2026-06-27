@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_geometry_pairwise_comparison",
+  "pairs": [
+    {
+      "replayA": "replay_001",
+      "replayB": "replay_002",
+      "anchorMatchCount": 1395,
+      "highConfidenceMatches": 1194,
+      "transformType": "identity",
+      "residualDistribution": {
+        "count": 1395,
+        "medianError": 0,
+        "maxError": 2894.92,
+        "meanError": 24.77,
+        "p90Error": 55.6
+      },
+      "topologyAgreement": "geometry_aligns_topology_unverified",
+      "structuralClassAgreement": 0.85,
+      "reuseDecision": {
+        "coordinateSystemComparable": true,
+        "sharedGeometryProfileCandidate": true,
+        "sharedGeometryProfileApproved": false,
+        "reason": "coordinate systems align, but lane-axis and topology interpretation remain unvalidated"
+      },
+      "uncertainty": [
+        "some structural anchors were unmatched",
+        "maximum residual is high even when median residual is low"
+      ]
+    },
+    {
+      "replayA": "replay_001",
+      "replayB": "replay_003",
+      "anchorMatchCount": 1349,
+      "highConfidenceMatches": 958,
+      "transformType": "identity",
+      "residualDistribution": {
+        "count": 1349,
+        "medianError": 0,
+        "maxError": 5499.57,
+        "meanError": 47.32,
+        "p90Error": 80
+      },
+      "topologyAgreement": "geometry_aligns_topology_unverified",
+      "structuralClassAgreement": 0.84,
+      "reuseDecision": {
+        "coordinateSystemComparable": true,
+        "sharedGeometryProfileCandidate": true,
+        "sharedGeometryProfileApproved": false,
+        "reason": "coordinate systems align, but lane-axis and topology interpretation remain unvalidated"
+      },
+      "uncertainty": [
+        "some structural anchors were unmatched",
+        "maximum residual is high even when median residual is low"
+      ]
+    },
+    {
+      "replayA": "replay_001",
+      "replayB": "replay_004",
+      "anchorMatchCount": 1357,
+      "highConfidenceMatches": 1084,
+      "transformType": "identity",
+      "residualDistribution": {
+        "count": 1357,
+        "medianError": 0,
+        "maxError": 15012.45,
+        "meanError": 49.54,
+        "p90Error": 71.51
+      },
+      "topologyAgreement": "geometry_aligns_topology_unverified",
+      "structuralClassAgreement": 0.81,
+      "reuseDecision": {
+        "coordinateSystemComparable": true,
+        "sharedGeometryProfileCandidate": true,
+        "sharedGeometryProfileApproved": false,
+        "reason": "coordinate systems align, but lane-axis and topology interpretation remain unvalidated"
+      },
+      "uncertainty": [
+        "some structural anchors were unmatched",
+        "maximum residual is high even when median residual is low"
+      ]
+    },
+    {
+      "replayA": "replay_002",
+      "replayB": "replay_003",
+      "anchorMatchCount": 1345,
+      "highConfidenceMatches": 935,
+      "transformType": "identity",
+      "residualDistribution": {
+        "count": 1345,
+        "medianError": 0,
+        "maxError": 5255.28,
+        "meanError": 45.22,
+        "p90Error": 90.51
+      },
+      "topologyAgreement": "geometry_aligns_topology_unverified",
+      "structuralClassAgreement": 0.8,
+      "reuseDecision": {
+        "coordinateSystemComparable": true,
+        "sharedGeometryProfileCandidate": true,
+        "sharedGeometryProfileApproved": false,
+        "reason": "coordinate systems align, but lane-axis and topology interpretation remain unvalidated"
+      },
+      "uncertainty": [
+        "some structural anchors were unmatched",
+        "maximum residual is high even when median residual is low"
+      ]
+    },
+    {
+      "replayA": "replay_002",
+      "replayB": "replay_004",
+      "anchorMatchCount": 1376,
+      "highConfidenceMatches": 1067,
+      "transformType": "identity",
+      "residualDistribution": {
+        "count": 1376,
+        "medianError": 0,
+        "maxError": 11128.67,
+        "meanError": 48.52,
+        "p90Error": 68.82
+      },
+      "topologyAgreement": "geometry_aligns_topology_unverified",
+      "structuralClassAgreement": 0.87,
+      "reuseDecision": {
+        "coordinateSystemComparable": true,
+        "sharedGeometryProfileCandidate": true,
+        "sharedGeometryProfileApproved": false,
+        "reason": "coordinate systems align, but lane-axis and topology interpretation remain unvalidated"
+      },
+      "uncertainty": [
+        "some structural anchors were unmatched",
+        "maximum residual is high even when median residual is low"
+      ]
+    },
+    {
+      "replayA": "replay_003",
+      "replayB": "replay_004",
+      "anchorMatchCount": 1313,
+      "highConfidenceMatches": 1082,
+      "transformType": "identity",
+      "residualDistribution": {
+        "count": 1313,
+        "medianError": 0,
+        "maxError": 5255.28,
+        "meanError": 43.22,
+        "p90Error": 96
+      },
+      "topologyAgreement": "geometry_aligns_topology_unverified",
+      "structuralClassAgreement": 0.83,
+      "reuseDecision": {
+        "coordinateSystemComparable": true,
+        "sharedGeometryProfileCandidate": true,
+        "sharedGeometryProfileApproved": false,
+        "reason": "coordinate systems align, but lane-axis and topology interpretation remain unvalidated"
+      },
+      "uncertainty": [
+        "some structural anchors were unmatched",
+        "maximum residual is high even when median residual is low"
+      ]
+    }
+  ],
+  "symmetryChecks": {
+    "passed": true,
+    "note": "Stored pairs are unordered combinations; each comparison is direction-independent by construction."
+  }
+}

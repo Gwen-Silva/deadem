@@ -1,0 +1,762 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_geometry_transform_comparison",
+  "pairs": [
+    {
+      "replayA": "replay_001",
+      "replayB": "replay_002",
+      "anchorCount": 1395,
+      "candidates": [
+        {
+          "transformType": "identity",
+          "residuals": {
+            "count": 1395,
+            "medianError": 0,
+            "maxError": 2894.92,
+            "meanError": 24.77,
+            "p90Error": 55.6
+          }
+        },
+        {
+          "transformType": "translation",
+          "parameters": {
+            "dx": 6.71,
+            "dy": -2.55
+          },
+          "residuals": {
+            "count": 1395,
+            "medianError": 7.17,
+            "maxError": 2901.98,
+            "meanError": 30.52,
+            "p90Error": 50.72
+          }
+        },
+        {
+          "transformType": "uniform_scaling",
+          "parameters": {
+            "scale": 1.01,
+            "centerA": {
+              "x": 472.4184229390679,
+              "y": 500.7029749103942,
+              "z": 471.4431326164872
+            },
+            "centerB": {
+              "x": 479.12388530465944,
+              "y": 498.1541577060932,
+              "z": 469.3836559139783
+            }
+          },
+          "residuals": {
+            "count": 1395,
+            "medianError": 8.99,
+            "maxError": 2851.32,
+            "meanError": 31.35,
+            "p90Error": 52.59
+          }
+        },
+        {
+          "transformType": "translation_reflection_x",
+          "parameters": {
+            "centerA": {
+              "x": 472.4184229390679,
+              "y": 500.7029749103942,
+              "z": 471.4431326164872
+            },
+            "centerB": {
+              "x": 479.12388530465944,
+              "y": 498.1541577060932,
+              "z": 469.3836559139783
+            }
+          },
+          "residuals": {
+            "count": 1395,
+            "medianError": 520.46,
+            "maxError": 11424.11,
+            "meanError": 546.36,
+            "p90Error": 951.55
+          }
+        },
+        {
+          "transformType": "translation_reflection_y",
+          "parameters": {
+            "centerA": {
+              "x": 472.4184229390679,
+              "y": 500.7029749103942,
+              "z": 471.4431326164872
+            },
+            "centerB": {
+              "x": 479.12388530465944,
+              "y": 498.1541577060932,
+              "z": 469.3836559139783
+            }
+          },
+          "residuals": {
+            "count": 1395,
+            "medianError": 534.9,
+            "maxError": 4815.32,
+            "meanError": 529.96,
+            "p90Error": 921.17
+          }
+        },
+        {
+          "transformType": "translation_rotation",
+          "parameters": {
+            "angleRadians": -0.02,
+            "centerA": {
+              "x": 472.4184229390679,
+              "y": 500.7029749103942,
+              "z": 471.4431326164872
+            },
+            "centerB": {
+              "x": 479.12388530465944,
+              "y": 498.1541577060932,
+              "z": 469.3836559139783
+            }
+          },
+          "residuals": {
+            "count": 1395,
+            "medianError": 11.61,
+            "maxError": 2876.52,
+            "meanError": 33.37,
+            "p90Error": 48.65
+          }
+        }
+      ],
+      "selectedTransform": "identity",
+      "selectedConfidence": "high",
+      "notes": [
+        "identity transform has the lowest or equivalent residual and is directly interpretable"
+      ]
+    },
+    {
+      "replayA": "replay_001",
+      "replayB": "replay_003",
+      "anchorCount": 1349,
+      "candidates": [
+        {
+          "transformType": "identity",
+          "residuals": {
+            "count": 1349,
+            "medianError": 0,
+            "maxError": 5499.57,
+            "meanError": 47.32,
+            "p90Error": 80
+          }
+        },
+        {
+          "transformType": "translation",
+          "parameters": {
+            "dx": 20.45,
+            "dy": 2.09
+          },
+          "residuals": {
+            "count": 1349,
+            "medianError": 20.55,
+            "maxError": 5479.81,
+            "meanError": 59.51,
+            "p90Error": 72.45
+          }
+        },
+        {
+          "transformType": "uniform_scaling",
+          "parameters": {
+            "scale": 1.03,
+            "centerA": {
+              "x": 464.4559006671607,
+              "y": 502.16177168272776,
+              "z": 472.48851742031115
+            },
+            "centerB": {
+              "x": 484.9028984432914,
+              "y": 504.2522386953297,
+              "z": 462.0224833209784
+            }
+          },
+          "residuals": {
+            "count": 1349,
+            "medianError": 24.09,
+            "maxError": 5464.21,
+            "meanError": 61.02,
+            "p90Error": 73.21
+          }
+        },
+        {
+          "transformType": "translation_reflection_x",
+          "parameters": {
+            "centerA": {
+              "x": 464.4559006671607,
+              "y": 502.16177168272776,
+              "z": 472.48851742031115
+            },
+            "centerB": {
+              "x": 484.9028984432914,
+              "y": 504.2522386953297,
+              "z": 462.0224833209784
+            }
+          },
+          "residuals": {
+            "count": 1349,
+            "medianError": 522.65,
+            "maxError": 13546.6,
+            "meanError": 555.31,
+            "p90Error": 949.36
+          }
+        },
+        {
+          "transformType": "translation_reflection_y",
+          "parameters": {
+            "centerA": {
+              "x": 464.4559006671607,
+              "y": 502.16177168272776,
+              "z": 472.48851742031115
+            },
+            "centerB": {
+              "x": 484.9028984432914,
+              "y": 504.2522386953297,
+              "z": 462.0224833209784
+            }
+          },
+          "residuals": {
+            "count": 1349,
+            "medianError": 526.81,
+            "maxError": 6033.41,
+            "meanError": 537.17,
+            "p90Error": 918.93
+          }
+        },
+        {
+          "transformType": "translation_rotation",
+          "parameters": {
+            "angleRadians": -0.03,
+            "centerA": {
+              "x": 464.4559006671607,
+              "y": 502.16177168272776,
+              "z": 472.48851742031115
+            },
+            "centerB": {
+              "x": 484.9028984432914,
+              "y": 504.2522386953297,
+              "z": 462.0224833209784
+            }
+          },
+          "residuals": {
+            "count": 1349,
+            "medianError": 25.86,
+            "maxError": 5466.31,
+            "meanError": 61.93,
+            "p90Error": 73.46
+          }
+        }
+      ],
+      "selectedTransform": "identity",
+      "selectedConfidence": "high",
+      "notes": [
+        "identity transform has the lowest or equivalent residual and is directly interpretable"
+      ]
+    },
+    {
+      "replayA": "replay_001",
+      "replayB": "replay_004",
+      "anchorCount": 1357,
+      "candidates": [
+        {
+          "transformType": "identity",
+          "residuals": {
+            "count": 1357,
+            "medianError": 0,
+            "maxError": 15012.45,
+            "meanError": 49.54,
+            "p90Error": 71.51
+          }
+        },
+        {
+          "transformType": "translation",
+          "parameters": {
+            "dx": 12.66,
+            "dy": -2.5
+          },
+          "residuals": {
+            "count": 1357,
+            "medianError": 12.9,
+            "maxError": 15024.02,
+            "meanError": 58.87,
+            "p90Error": 73.28
+          }
+        },
+        {
+          "transformType": "uniform_scaling",
+          "parameters": {
+            "scale": 1.02,
+            "centerA": {
+              "x": 465.92235814296237,
+              "y": 502.99214443625635,
+              "z": 472.7471112748709
+            },
+            "centerB": {
+              "x": 478.5826234340457,
+              "y": 500.4929108327191,
+              "z": 464.3751805453204
+            }
+          },
+          "residuals": {
+            "count": 1357,
+            "medianError": 15.24,
+            "maxError": 15147.02,
+            "meanError": 59.82,
+            "p90Error": 70.16
+          }
+        },
+        {
+          "transformType": "translation_reflection_x",
+          "parameters": {
+            "centerA": {
+              "x": 465.92235814296237,
+              "y": 502.99214443625635,
+              "z": 472.7471112748709
+            },
+            "centerB": {
+              "x": 478.5826234340457,
+              "y": 500.4929108327191,
+              "z": 464.3751805453204
+            }
+          },
+          "residuals": {
+            "count": 1357,
+            "medianError": 527.5,
+            "maxError": 9546.48,
+            "meanError": 540.5,
+            "p90Error": 944.51
+          }
+        },
+        {
+          "transformType": "translation_reflection_y",
+          "parameters": {
+            "centerA": {
+              "x": 465.92235814296237,
+              "y": 502.99214443625635,
+              "z": 472.7471112748709
+            },
+            "centerB": {
+              "x": 478.5826234340457,
+              "y": 500.4929108327191,
+              "z": 464.3751805453204
+            }
+          },
+          "residuals": {
+            "count": 1357,
+            "medianError": 523.64,
+            "maxError": 14543.28,
+            "meanError": 544.2,
+            "p90Error": 916.6
+          }
+        },
+        {
+          "transformType": "translation_rotation",
+          "parameters": {
+            "angleRadians": -0.01,
+            "centerA": {
+              "x": 465.92235814296237,
+              "y": 502.99214443625635,
+              "z": 472.7471112748709
+            },
+            "centerB": {
+              "x": 478.5826234340457,
+              "y": 500.4929108327191,
+              "z": 464.3751805453204
+            }
+          },
+          "residuals": {
+            "count": 1357,
+            "medianError": 13.81,
+            "maxError": 15021.33,
+            "meanError": 59.02,
+            "p90Error": 74.21
+          }
+        }
+      ],
+      "selectedTransform": "identity",
+      "selectedConfidence": "high",
+      "notes": [
+        "identity transform has the lowest or equivalent residual and is directly interpretable"
+      ]
+    },
+    {
+      "replayA": "replay_002",
+      "replayB": "replay_003",
+      "anchorCount": 1345,
+      "candidates": [
+        {
+          "transformType": "identity",
+          "residuals": {
+            "count": 1345,
+            "medianError": 0,
+            "maxError": 5255.28,
+            "meanError": 45.22,
+            "p90Error": 90.51
+          }
+        },
+        {
+          "transformType": "translation",
+          "parameters": {
+            "dx": 17.29,
+            "dy": 4.85
+          },
+          "residuals": {
+            "count": 1345,
+            "medianError": 17.95,
+            "maxError": 5255.16,
+            "meanError": 55.39,
+            "p90Error": 77.11
+          }
+        },
+        {
+          "transformType": "uniform_scaling",
+          "parameters": {
+            "scale": 1.01,
+            "centerA": {
+              "x": 462.3702676579925,
+              "y": 498.2011821561337,
+              "z": 471.0416505576206
+            },
+            "centerB": {
+              "x": 479.65785873605955,
+              "y": 503.04948698884743,
+              "z": 462.71562825278795
+            }
+          },
+          "residuals": {
+            "count": 1345,
+            "medianError": 18.45,
+            "maxError": 5281.46,
+            "meanError": 55.38,
+            "p90Error": 76.75
+          }
+        },
+        {
+          "transformType": "translation_reflection_x",
+          "parameters": {
+            "centerA": {
+              "x": 462.3702676579925,
+              "y": 498.2011821561337,
+              "z": 471.0416505576206
+            },
+            "centerB": {
+              "x": 479.65785873605955,
+              "y": 503.04948698884743,
+              "z": 462.71562825278795
+            }
+          },
+          "residuals": {
+            "count": 1345,
+            "medianError": 526.05,
+            "maxError": 13805.99,
+            "meanError": 552.67,
+            "p90Error": 942.04
+          }
+        },
+        {
+          "transformType": "translation_reflection_y",
+          "parameters": {
+            "centerA": {
+              "x": 462.3702676579925,
+              "y": 498.2011821561337,
+              "z": 471.0416505576206
+            },
+            "centerB": {
+              "x": 479.65785873605955,
+              "y": 503.04948698884743,
+              "z": 462.71562825278795
+            }
+          },
+          "residuals": {
+            "count": 1345,
+            "medianError": 535.03,
+            "maxError": 5609.22,
+            "meanError": 538.3,
+            "p90Error": 924.29
+          }
+        },
+        {
+          "transformType": "translation_rotation",
+          "parameters": {
+            "angleRadians": 0.07,
+            "centerA": {
+              "x": 462.3702676579925,
+              "y": 498.2011821561337,
+              "z": 471.0416505576206
+            },
+            "centerB": {
+              "x": 479.65785873605955,
+              "y": 503.04948698884743,
+              "z": 462.71562825278795
+            }
+          },
+          "residuals": {
+            "count": 1345,
+            "medianError": 34.11,
+            "maxError": 4908.84,
+            "meanError": 66.96,
+            "p90Error": 91.09
+          }
+        }
+      ],
+      "selectedTransform": "identity",
+      "selectedConfidence": "high",
+      "notes": [
+        "identity transform has the lowest or equivalent residual and is directly interpretable"
+      ]
+    },
+    {
+      "replayA": "replay_002",
+      "replayB": "replay_004",
+      "anchorCount": 1376,
+      "candidates": [
+        {
+          "transformType": "identity",
+          "residuals": {
+            "count": 1376,
+            "medianError": 0,
+            "maxError": 11128.67,
+            "meanError": 48.52,
+            "p90Error": 68.82
+          }
+        },
+        {
+          "transformType": "translation",
+          "parameters": {
+            "dx": -1,
+            "dy": -8.13
+          },
+          "residuals": {
+            "count": 1376,
+            "medianError": 8.2,
+            "maxError": 11124.01,
+            "meanError": 55.22,
+            "p90Error": 72.83
+          }
+        },
+        {
+          "transformType": "uniform_scaling",
+          "parameters": {
+            "scale": 1.01,
+            "centerA": {
+              "x": 471.65209302325565,
+              "y": 500.4582630813952,
+              "z": 469.75808866279044
+            },
+            "centerB": {
+              "x": 470.6475436046513,
+              "y": 492.3238372093022,
+              "z": 466.6020857558138
+            }
+          },
+          "residuals": {
+            "count": 1376,
+            "medianError": 11.48,
+            "maxError": 11219.31,
+            "meanError": 56.49,
+            "p90Error": 73.6
+          }
+        },
+        {
+          "transformType": "translation_reflection_x",
+          "parameters": {
+            "centerA": {
+              "x": 471.65209302325565,
+              "y": 500.4582630813952,
+              "z": 469.75808866279044
+            },
+            "centerB": {
+              "x": 470.6475436046513,
+              "y": 492.3238372093022,
+              "z": 466.6020857558138
+            }
+          },
+          "residuals": {
+            "count": 1376,
+            "medianError": 529.76,
+            "maxError": 15226.76,
+            "meanError": 562.41,
+            "p90Error": 942.33
+          }
+        },
+        {
+          "transformType": "translation_reflection_y",
+          "parameters": {
+            "centerA": {
+              "x": 471.65209302325565,
+              "y": 500.4582630813952,
+              "z": 469.75808866279044
+            },
+            "centerB": {
+              "x": 470.6475436046513,
+              "y": 492.3238372093022,
+              "z": 466.6020857558138
+            }
+          },
+          "residuals": {
+            "count": 1376,
+            "medianError": 532.36,
+            "maxError": 10110.05,
+            "meanError": 548.81,
+            "p90Error": 927.81
+          }
+        },
+        {
+          "transformType": "translation_rotation",
+          "parameters": {
+            "angleRadians": 0.04,
+            "centerA": {
+              "x": 471.65209302325565,
+              "y": 500.4582630813952,
+              "z": 469.75808866279044
+            },
+            "centerB": {
+              "x": 470.6475436046513,
+              "y": 492.3238372093022,
+              "z": 466.6020857558138
+            }
+          },
+          "residuals": {
+            "count": 1376,
+            "medianError": 21.97,
+            "maxError": 11202.08,
+            "meanError": 64.26,
+            "p90Error": 76.08
+          }
+        }
+      ],
+      "selectedTransform": "identity",
+      "selectedConfidence": "high",
+      "notes": [
+        "identity transform has the lowest or equivalent residual and is directly interpretable"
+      ]
+    },
+    {
+      "replayA": "replay_003",
+      "replayB": "replay_004",
+      "anchorCount": 1313,
+      "candidates": [
+        {
+          "transformType": "identity",
+          "residuals": {
+            "count": 1313,
+            "medianError": 0,
+            "maxError": 5255.28,
+            "meanError": 43.22,
+            "p90Error": 96
+          }
+        },
+        {
+          "transformType": "translation",
+          "parameters": {
+            "dx": 13.9,
+            "dy": -7.61
+          },
+          "residuals": {
+            "count": 1313,
+            "medianError": 15.84,
+            "maxError": 5244.31,
+            "meanError": 55.6,
+            "p90Error": 88.7
+          }
+        },
+        {
+          "transformType": "uniform_scaling",
+          "parameters": {
+            "scale": 1,
+            "centerA": {
+              "x": 469.4415765422696,
+              "y": 507.2647829398324,
+              "z": 464.53619192688484
+            },
+            "centerB": {
+              "x": 483.33757806549886,
+              "y": 499.6567174409748,
+              "z": 466.81072353389163
+            }
+          },
+          "residuals": {
+            "count": 1313,
+            "medianError": 16.05,
+            "maxError": 5247.23,
+            "meanError": 55.67,
+            "p90Error": 88.86
+          }
+        },
+        {
+          "transformType": "translation_reflection_x",
+          "parameters": {
+            "centerA": {
+              "x": 469.4415765422696,
+              "y": 507.2647829398324,
+              "z": 464.53619192688484
+            },
+            "centerB": {
+              "x": 483.33757806549886,
+              "y": 499.6567174409748,
+              "z": 466.81072353389163
+            }
+          },
+          "residuals": {
+            "count": 1313,
+            "medianError": 519.28,
+            "maxError": 15236.97,
+            "meanError": 563.89,
+            "p90Error": 952.81
+          }
+        },
+        {
+          "transformType": "translation_reflection_y",
+          "parameters": {
+            "centerA": {
+              "x": 469.4415765422696,
+              "y": 507.2647829398324,
+              "z": 464.53619192688484
+            },
+            "centerB": {
+              "x": 483.33757806549886,
+              "y": 499.6567174409748,
+              "z": 466.81072353389163
+            }
+          },
+          "residuals": {
+            "count": 1313,
+            "medianError": 529.26,
+            "maxError": 5614.88,
+            "meanError": 538.67,
+            "p90Error": 925.97
+          }
+        },
+        {
+          "transformType": "translation_rotation",
+          "parameters": {
+            "angleRadians": 0.02,
+            "centerA": {
+              "x": 469.4415765422696,
+              "y": 507.2647829398324,
+              "z": 464.53619192688484
+            },
+            "centerB": {
+              "x": 483.33757806549886,
+              "y": 499.6567174409748,
+              "z": 466.81072353389163
+            }
+          },
+          "residuals": {
+            "count": 1313,
+            "medianError": 18.42,
+            "maxError": 5335.18,
+            "meanError": 56.44,
+            "p90Error": 96.25
+          }
+        }
+      ],
+      "selectedTransform": "identity",
+      "selectedConfidence": "high",
+      "notes": [
+        "identity transform has the lowest or equivalent residual and is directly interpretable"
+      ]
+    }
+  ]
+}

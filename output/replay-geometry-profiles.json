@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_geometry_profiles",
+  "result": "shared_geometry_profile",
+  "profiles": [
+    {
+      "schemaVersion": 1,
+      "profileId": "geometry_profile/schema_653ba0e9_group_a",
+      "memberReplays": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ],
+      "coordinateTransform": {
+        "type": "identity",
+        "pairwiseEvidence": [
+          {
+            "replayA": "replay_001",
+            "replayB": "replay_002",
+            "transformType": "identity",
+            "medianError": 0,
+            "maxError": 2894.92
+          },
+          {
+            "replayA": "replay_001",
+            "replayB": "replay_003",
+            "transformType": "identity",
+            "medianError": 0,
+            "maxError": 5499.57
+          },
+          {
+            "replayA": "replay_001",
+            "replayB": "replay_004",
+            "transformType": "identity",
+            "medianError": 0,
+            "maxError": 15012.45
+          },
+          {
+            "replayA": "replay_002",
+            "replayB": "replay_003",
+            "transformType": "identity",
+            "medianError": 0,
+            "maxError": 5255.28
+          },
+          {
+            "replayA": "replay_002",
+            "replayB": "replay_004",
+            "transformType": "identity",
+            "medianError": 0,
+            "maxError": 11128.67
+          },
+          {
+            "replayA": "replay_003",
+            "replayB": "replay_004",
+            "transformType": "identity",
+            "medianError": 0,
+            "maxError": 5255.28
+          }
+        ]
+      },
+      "worldBounds": {
+        "minX": -7247.98,
+        "maxX": 7247.98,
+        "minY": -3215.97,
+        "maxY": 3151.97,
+        "minZ": -513.52,
+        "maxZ": 1020.78
+      },
+      "anchors": [
+        {
+          "replayId": "replay_001",
+          "stableAnchorCount": 1340,
+          "strongStructuralAnchorCount": 270,
+          "anchorTypes": {
+            "base": 19,
+            "lane_npc_or_spawner": 150,
+            "neutral": 47,
+            "objective": 25,
+            "other_structural": 884,
+            "shop": 17,
+            "spawn": 4,
+            "traversal": 280,
+            "world": 1
+          }
+        },
+        {
+          "replayId": "replay_002",
+          "stableAnchorCount": 1384,
+          "strongStructuralAnchorCount": 273,
+          "anchorTypes": {
+            "base": 19,
+            "lane_npc_or_spawner": 160,
+            "neutral": 51,
+            "objective": 25,
+            "other_structural": 887,
+            "shop": 16,
+            "spawn": 4,
+            "traversal": 285,
+            "world": 1
+          }
+        },
+        {
+          "replayId": "replay_003",
+          "stableAnchorCount": 1339,
+          "strongStructuralAnchorCount": 263,
+          "anchorTypes": {
+            "base": 20,
+            "lane_npc_or_spawner": 151,
+            "neutral": 39,
+            "objective": 25,
+            "other_structural": 871,
+            "shop": 17,
+            "spawn": 4,
+            "traversal": 273,
+            "world": 1
+          }
+        },
+        {
+          "replayId": "replay_004",
+          "stableAnchorCount": 1328,
+          "strongStructuralAnchorCount": 253,
+          "anchorTypes": {
+            "base": 19,
+            "lane_npc_or_spawner": 136,
+            "neutral": 50,
+            "objective": 24,
+            "other_structural": 877,
+            "shop": 16,
+            "spawn": 4,
+            "traversal": 267,
+            "world": 1
+          }
+        }
+      ],
+      "topology": {
+        "bases": "structural evidence present but not ordered into a lane topology",
+        "laneAxes": "not_derived",
+        "physicalLaneIds": [
+          "lane_axis_1",
+          "lane_axis_2",
+          "lane_axis_3"
+        ],
+        "semanticLaneNames": "prohibited_until_follow_up_validation"
+      },
+      "evidence": [
+        "all replays share parser/schema fingerprint from task 019",
+        "replays 002-004 passed pre-geometry pipeline from task 020",
+        "task 021 extracted deterministic structural anchors from replays 001-004",
+        "pairwise coordinate residuals support direct coordinate comparability when transform evidence is strong"
+      ],
+      "confidence": "medium_structural_geometry",
+      "allowedUses": [
+        "raw coordinate comparison",
+        "structural lane-axis derivation follow-up",
+        "non-occupancy topology validation"
+      ],
+      "prohibitedUses": [
+        "occupancy classification",
+        "transition detection",
+        "semantic lane color assignment",
+        "strategy interpretation",
+        "replay 005 model selection"
+      ],
+      "unresolvedQuestions": [
+        "whether three physical lane axes can be derived from direct structures without movement density",
+        "whether historical lane color aliases map consistently across all replays",
+        "whether geometry-dependent stages 13-18 can share one topology profile"
+      ],
+      "structuralFingerprintReferences": [
+        {
+          "replayId": "replay_001",
+          "schemaFingerprint": "653ba0e9ef31d98c349582b834933d7b6a00f5edf7f467f621ef800da9216174",
+          "geometryFingerprint": "e8c0ebb45b69032ad707af97596ff7386b12e30e8466d700009895984709629d"
+        },
+        {
+          "replayId": "replay_002",
+          "schemaFingerprint": "653ba0e9ef31d98c349582b834933d7b6a00f5edf7f467f621ef800da9216174",
+          "geometryFingerprint": "e4bd639fafea9fbfd13658c261db47d820ef87391469d387dbee6fde2aa00b13"
+        },
+        {
+          "replayId": "replay_003",
+          "schemaFingerprint": "653ba0e9ef31d98c349582b834933d7b6a00f5edf7f467f621ef800da9216174",
+          "geometryFingerprint": "a01caf57a09f8b688ba62ca9fd3f130e764eb674c70ca6a579fa65692c7a2459"
+        },
+        {
+          "replayId": "replay_004",
+          "schemaFingerprint": "653ba0e9ef31d98c349582b834933d7b6a00f5edf7f467f621ef800da9216174",
+          "geometryFingerprint": "9c73a888cbad2be5058679ef03139b62fe1451e5d305aec8ba23f87aeb773789"
+        }
+      ]
+    }
+  ],
+  "replay005Protection": {
+    "status": "preserved",
+    "processedForGeometry": false
+  }
+}

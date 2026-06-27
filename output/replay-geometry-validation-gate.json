@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_geometry_validation_gate",
+  "gateResult": "geometry_equivalent_topology_requires_validation",
+  "preGeometryGate": "pre_geometry_pipeline_ready_for_geometry_profile_tasks",
+  "evidenceSummary": {
+    "pairCount": 6,
+    "allCoordinateComparable": true,
+    "sharedGeometryCandidate": true,
+    "topologyValidated": false
+  },
+  "nextAllowedTasks": [
+    "derive structural lane-axis and topology from objective/structure ordering with neutral physical lane IDs"
+  ],
+  "prohibitedContinuation": [
+    "occupancy classification",
+    "transition detection",
+    "replay 005 geometry processing",
+    "human review unless minimized anchor ambiguity blocks profile choice"
+  ],
+  "humanReviewRequired": false,
+  "replay005Protection": {
+    "status": "preserved",
+    "processedForGeometry": false
+  }
+}
