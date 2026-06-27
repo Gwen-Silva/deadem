@@ -4,17 +4,16 @@ Last updated: 2026-06-27
 
 ## Latest Experiment
 
-Latest completed experiment: `23-calibrate-lane-occupancy`
+Latest completed experiment: `24-prototype-uncertainty-aware-lane-episode-segmentation`
 
-Script: `experiments/23-calibrate-lane-occupancy.js`
+Script: `experiments/24-prototype-uncertainty-aware-lane-episode-segmentation.js`
 
 Primary outputs:
 
-- `output/23-calibrated-lane-occupancy.json`
-- `output/23-calibrated-occupancy-episodes.json`
-- `output/23-occupancy-calibration-review.json`
-- `output/23-occupancy-model-comparison.json`
-- `output/23-occupancy-manual-review.json`
+- `output/24-sequential-observation-evidence.json`
+- `output/24-sequential-architecture-comparison.json`
+- `output/24-sequential-architecture-sensitivity.json`
+- `output/24-sequential-architecture-gate.json`
 
 ## Current Objective
 
@@ -41,6 +40,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Experiment 23 improved coverage with calibrated models, but `readyToDetectTransitions` is still `false`.
 - Experiment 24 model revision reduced point contradictions, but holdout validation failed because revised episode contradictions increased.
 - Experiment 24 episode-regression diagnosis found short abstentions terminating episodes as the dominant mechanical failure, and no tested ablation advanced to fresh holdout.
+- Experiment 24 uncertainty-aware episode architecture testing found that hysteresis, windowed accumulation, dynamic programming, and annotated original episodes did not resolve the point-safety versus episode-continuity trade-off on current diagnostic evidence.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
 ## Open Questions
@@ -52,4 +52,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 ## Likely Next Investigation
 
-Stop lane-transition work. A methodological model-revision decision is required before more autonomous lane-episode tuning; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
+Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.

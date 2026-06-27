@@ -99,3 +99,13 @@ Date: 2026-06-27
 Decision: Do not continue autonomous lane-episode tuning from the failed experiment 24 revision without a methodological decision.
 
 Reason: Task 013 identified short abstentions terminating episodes as the dominant regression source, but no controlled ablation preserved point gains while resolving episode contradictions. Continuing to tune against the observed holdout would create leakage.
+
+## DEC-011: Treat Current Lane-Episode Architecture Evidence As Exhausted
+
+Status: provisional
+
+Date: 2026-06-27
+
+Decision: Do not continue autonomous lane-episode architecture tuning on the current single-replay diagnostic evidence.
+
+Reason: Task 014 tested hysteresis, interval evidence accumulation, constrained dynamic programming, and annotated original episodes. The tested architectures preserved point-level gains only by retaining abstention, but did not recover usable episode continuity and coverage. Selecting the next path now requires a methodological decision or new independent evidence, not more tuning against observed diagnostics.
