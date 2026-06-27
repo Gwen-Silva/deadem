@@ -24,6 +24,24 @@ Avoid loading large `output/*.json` files unless the task explicitly requires th
 - Use Node.js scripts and the existing ESLint style unless the repo indicates a better local pattern.
 - Keep Windows compatibility in commands and scripts.
 
+## Autonomous task execution
+
+- The repository is the source of truth.
+- Codex may execute multiple tasks in one session only when each task already exists in `tasks/pending/`.
+- Every task must have a complete objective, explicit context, constraints, validation steps, and acceptance criteria.
+- Select the pending task with the lowest numeric ID.
+- Move it to `tasks/active/` before execution.
+- Read only `AGENTS.md`, `docs/PROJECT_STATE.md`, the active task, and files explicitly listed by that task.
+- Complete implementation, validation, corrections, reporting, documentation updates, commit, and push before selecting another task.
+- Move successful tasks to `tasks/completed/`.
+- Move blocked tasks to `tasks/blocked/`.
+- Continue automatically only when another fully specified task already exists in `tasks/pending/`.
+- Never create a new scientific or methodological task based solely on Codex conclusions.
+- Stop when no pending task exists or the next action requires prioritization, interpretation, or a methodological decision.
+- An empty queue is a successful stop condition.
+- Do not use Chrome or Computer Use to look for new instructions.
+- Do not remain idle waiting for messages.
+
 ## Report Rules
 
 - Every completed task should leave a short report in `reports/`.

@@ -13,6 +13,42 @@
 9. Write a short report in `reports/`.
 10. Update `reports/latest.md`.
 
+## Task Queue Lifecycle
+
+```text
+pending
+   |
+   v
+active
+   |
+   v
+completed
+
+or
+
+active
+   |
+   v
+blocked
+```
+
+- `pending`: fully specified and ready to execute.
+- `active`: currently being executed.
+- `completed`: acceptance criteria satisfied.
+- `blocked`: cannot proceed without missing data, access, or a conceptual decision.
+
+Tasks are processed by ascending numeric ID. File modification time, alphabetical title, or perceived importance must not override the numeric order.
+
+## Successful Stop Conditions
+
+- no pending task
+- next step requires a methodological decision
+- required input is unavailable
+- evidence is contradictory
+- replay reprocessing is required but not explicitly authorized
+- previous outputs would need to be modified
+- task acceptance criteria cannot be tested
+
 ## When Dividir Uma Tarefa
 
 Divide a task when it would require more than one of these at the same time:

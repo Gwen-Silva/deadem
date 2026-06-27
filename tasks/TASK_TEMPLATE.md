@@ -1,41 +1,33 @@
-# Task: <short title>
+# Task XXX: Title
 
 Status: pending
 
 ## Objective
 
-Describe the desired outcome in one or two sentences.
+## Context to read
 
-## Context To Read
+Read only:
 
 - `AGENTS.md`
 - `docs/PROJECT_STATE.md`
+- task-specific files
 
-## Inputs
-
-- List exact scripts, docs, outputs, or samples required by this task.
-
-## Expected Outputs
-
-- List files that should be created or changed.
+## Work requested
 
 ## Constraints
 
-- State files or areas that must not be modified.
-- State whether replay reprocessing is allowed.
-- State size, lint, and JSON validation requirements.
+## Acceptance criteria
 
-## Validation Commands
+## Required validation
 
-```powershell
-# Add exact commands here.
-```
+## Documentation updates
 
-## Stop Conditions
+## Git scope
 
-- Describe when the task is complete.
-- Describe conditions that should stop the task and require user input.
+Identify files or directories that may be committed.
 
-## Report
+## Expected report
 
-- Expected report path under `reports/`.
+## Stop conditions
+
+Identify decisions Codex cannot make autonomously.
