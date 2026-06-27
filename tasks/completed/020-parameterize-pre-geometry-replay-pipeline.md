@@ -1,6 +1,6 @@
 # Task 020: Parameterize Pre-Geometry Replay Pipeline
 
-Status: pending
+Status: completed
 Execution mode: autonomous
 Project stage: Multi-replay datasets
 Related experiment: pre-geometry replay pipeline

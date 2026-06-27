@@ -117,6 +117,9 @@ Commands run:
 
 ```bash
 node scripts\replay-build-map-compatibility.js
+node node_modules\eslint\bin\eslint.js -c eslint.common.config.js scripts\replay-build-map-compatibility.js
+node -e "const fs=require('fs'); const files=['output/replay-build-map-compatibility.json','output/replay-geometry-profile-plan.json','output/replay-structural-fingerprints.json','output/replay-pairwise-compatibility-matrix.json','output/replay-fingerprint-repeatability.json']; for(const f of files){JSON.parse(fs.readFileSync(f,'utf8')); const s=fs.statSync(f).size; if(s>10*1024*1024) throw new Error(f+' too large'); console.log(f,s)}"
+npm.cmd run validate:tasks
 ```
 
-Additional validation commands are recorded in the task completion commit.
+Pairwise matrix symmetry, repeatability, and manifest consistency checks passed.

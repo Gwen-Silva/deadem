@@ -4,17 +4,16 @@ Last updated: 2026-06-27
 
 ## Latest Work
 
-Latest completed task: `019-abstract-replay-build-map-compatibility`
+Latest completed task: `020-parameterize-pre-geometry-replay-pipeline`
 
-Script: `scripts/replay-build-map-compatibility.js`
+Script: `scripts/pre-geometry-replay-pipeline.js`
 
 Primary outputs:
 
-- `output/replay-build-map-compatibility.json`
-- `output/replay-geometry-profile-plan.json`
-- `output/replay-structural-fingerprints.json`
-- `output/replay-pairwise-compatibility-matrix.json`
-- `output/replay-fingerprint-repeatability.json`
+- `output/replays/replay_002/pre-geometry-pipeline.json`
+- `output/replays/replay_003/pre-geometry-pipeline.json`
+- `output/replays/replay_004/pre-geometry-pipeline.json`
+- `output/replays/pre-geometry-pipeline-summary.json`
 
 ## Current Objective
 
@@ -44,6 +43,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Experiment 24 uncertainty-aware episode architecture testing found that hysteresis, windowed accumulation, dynamic programming, and annotated original episodes did not resolve the point-safety versus episode-continuity trade-off on current diagnostic evidence.
 - Replay intake found five local `.dem` files and all loaded through the parser, but build/content-version and map metadata were not exposed by the lightweight intake path; geometry compatibility remains unverified.
 - Replay build/map compatibility found one shared schema fingerprint across all five replays, so pre-geometry stages can be parameterized; geometry fingerprints remain per-replay and topology/region/occupancy stages are still gated.
+- The pre-geometry pipeline passed on replay 002, then replay 003 and replay 004, with 12 players and 12 hero IDs observed in each sampled output.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 

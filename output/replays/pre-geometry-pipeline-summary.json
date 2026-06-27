@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "kind": "pre_geometry_pipeline_summary",
+  "gateResult": "pre_geometry_pipeline_ready_for_geometry_profile_tasks",
+  "compatibilityGate": "build_map_compatibility_ready_for_pipeline_parameterization",
+  "replay002SmokeResult": "pass",
+  "results": [
+    {
+      "replayId": "replay_002",
+      "outputFile": "output\\replays\\replay_002\\pre-geometry-pipeline.json",
+      "gate": "pass",
+      "playerCount": 12,
+      "heroCount": 12,
+      "snapshots": 5,
+      "durationSeconds": 1834.73,
+      "issues": []
+    },
+    {
+      "replayId": "replay_003",
+      "outputFile": "output\\replays\\replay_003\\pre-geometry-pipeline.json",
+      "gate": "pass",
+      "playerCount": 12,
+      "heroCount": 12,
+      "snapshots": 5,
+      "durationSeconds": 2279.88,
+      "issues": []
+    },
+    {
+      "replayId": "replay_004",
+      "outputFile": "output\\replays\\replay_004\\pre-geometry-pipeline.json",
+      "gate": "pass",
+      "playerCount": 12,
+      "heroCount": 12,
+      "snapshots": 5,
+      "durationSeconds": 2012.11,
+      "issues": []
+    }
+  ],
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  },
+  "blockedStages": [
+    "lane_mapping",
+    "topology",
+    "spatial_regions",
+    "movement_region_interpretation",
+    "occupancy",
+    "transitions"
+  ]
+}
