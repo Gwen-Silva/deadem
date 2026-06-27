@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "scope": "experiments 01-18",
+  "classifications": {
+    "multi_replay_ready": [],
+    "parameterizable": [
+      "experiments/11-reconcile-hero-identities.js"
+    ],
+    "requires_refactor": [],
+    "build_specific": [
+      "experiments/08-analyze-data-quality.js",
+      "experiments/13-enrich-heroes-and-map-lanes.js",
+      "experiments/14-discover-items-and-upgrades.js",
+      "experiments/15-decode-upgrade-tokens.js",
+      "experiments/16-reconcile-lane-topology.js",
+      "experiments/17-build-spatial-presence-model.js",
+      "experiments/18-build-movement-segments.js"
+    ],
+    "replay_specific": [
+      "experiments/01-validate-replay.js",
+      "experiments/02-inspect-player-fields.js",
+      "experiments/03-normalize-player-snapshots.js",
+      "experiments/04-analyze-controller-pawn-lifecycle.js",
+      "experiments/05-discover-game-clock.js",
+      "experiments/06-reconcile-tick-domains.js",
+      "experiments/07-player-timeline.js",
+      "experiments/09-build-canonical-player-timeline.js",
+      "experiments/10-map-hero-identities.js",
+      "experiments/12-identify-replay-build.js"
+    ]
+  },
+  "scripts": [
+    {
+      "script": "experiments/01-validate-replay.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/02-inspect-player-fields.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/03-normalize-player-snapshots.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/04-analyze-controller-pawn-lifecycle.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/05-discover-game-clock.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": false,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/06-reconcile-tick-domains.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": false,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/07-player-timeline.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/08-analyze-data-quality.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    },
+    {
+      "script": "experiments/09-build-canonical-player-timeline.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/10-map-hero-identities.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/11-reconcile-hero-identities.js",
+      "classification": "parameterizable",
+      "assumptions": {
+        "hardCodedDemo": false,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/12-identify-replay-build.js",
+      "classification": "replay_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": false,
+        "fixedPlayerIds": false,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "parameterize replay path, replay ID, and output directory"
+    },
+    {
+      "script": "experiments/13-enrich-heroes-and-map-lanes.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": true,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": true,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    },
+    {
+      "script": "experiments/14-discover-items-and-upgrades.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": true,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    },
+    {
+      "script": "experiments/15-decode-upgrade-tokens.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": true,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": false,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    },
+    {
+      "script": "experiments/16-reconcile-lane-topology.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": true,
+        "hardCodedOutputPaths": true,
+        "build6592": true,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": false,
+        "fixedLaneColors": true,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    },
+    {
+      "script": "experiments/17-build-spatial-presence-model.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": false,
+        "hardCodedOutputPaths": true,
+        "build6592": true,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": true,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    },
+    {
+      "script": "experiments/18-build-movement-segments.js",
+      "classification": "build_specific",
+      "assumptions": {
+        "hardCodedDemo": false,
+        "hardCodedOutputPaths": true,
+        "build6592": false,
+        "oneReplayOnly": true,
+        "oneMapOnly": true,
+        "fixedPlayerIds": true,
+        "fixedHeroLists": true,
+        "fixedLaneColors": true,
+        "globalOutputs": true
+      },
+      "recommendedAction": "separate build/map geometry inputs before multi-replay use"
+    }
+  ]
+}

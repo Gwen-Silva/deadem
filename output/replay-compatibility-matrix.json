@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "deadlock-five-replay-study",
+  "baselineReplayId": "replay_001",
+  "compatibilityStatuses": [
+    "compatible_same_build",
+    "compatible_known_geometry",
+    "compatible_geometry_unverified",
+    "different_build_supported",
+    "different_build_requires_geometry",
+    "parser_incompatible",
+    "corrupted_or_incomplete",
+    "insufficient_metadata"
+  ],
+  "replays": [
+    {
+      "replayId": "replay_001",
+      "originalFilename": "partida_001.dem",
+      "role": "development",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "dimensions": {
+        "parserCompatibility": "pass",
+        "tickDomainCompatibility": "pass",
+        "canonicalTimelineCompatibility": "likely_parameterizable",
+        "playerIdentityCompatibility": "pass",
+        "heroIdentityCompatibility": "pass",
+        "mapCompatibility": "unknown",
+        "geometryCompatibility": "unverified",
+        "occupancyModelCompatibility": "blocked_until_geometry_confirmed",
+        "buildMetadataCompatibility": "unknown"
+      },
+      "buildComparisonToReplay001": "unknown",
+      "contentVersionComparisonToReplay001": "unknown",
+      "mapComparisonToReplay001": "unknown",
+      "geometryRisk": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+      "parserWarnings": [
+        "build_not_exposed_by_demo_server_metadata",
+        "map_not_exposed_by_demo_server_metadata"
+      ],
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_002",
+      "originalFilename": "partida_002.dem",
+      "role": "generalization",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "dimensions": {
+        "parserCompatibility": "pass",
+        "tickDomainCompatibility": "pass",
+        "canonicalTimelineCompatibility": "likely_parameterizable",
+        "playerIdentityCompatibility": "pass",
+        "heroIdentityCompatibility": "pass",
+        "mapCompatibility": "unknown",
+        "geometryCompatibility": "unverified",
+        "occupancyModelCompatibility": "blocked_until_geometry_confirmed",
+        "buildMetadataCompatibility": "unknown"
+      },
+      "buildComparisonToReplay001": "unknown",
+      "contentVersionComparisonToReplay001": "unknown",
+      "mapComparisonToReplay001": "unknown",
+      "geometryRisk": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+      "parserWarnings": [
+        "build_not_exposed_by_demo_server_metadata",
+        "map_not_exposed_by_demo_server_metadata"
+      ],
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_003",
+      "originalFilename": "partida_003.dem",
+      "role": "generalization",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "dimensions": {
+        "parserCompatibility": "pass",
+        "tickDomainCompatibility": "pass",
+        "canonicalTimelineCompatibility": "likely_parameterizable",
+        "playerIdentityCompatibility": "pass",
+        "heroIdentityCompatibility": "pass",
+        "mapCompatibility": "unknown",
+        "geometryCompatibility": "unverified",
+        "occupancyModelCompatibility": "blocked_until_geometry_confirmed",
+        "buildMetadataCompatibility": "unknown"
+      },
+      "buildComparisonToReplay001": "unknown",
+      "contentVersionComparisonToReplay001": "unknown",
+      "mapComparisonToReplay001": "unknown",
+      "geometryRisk": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+      "parserWarnings": [
+        "build_not_exposed_by_demo_server_metadata",
+        "map_not_exposed_by_demo_server_metadata"
+      ],
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_004",
+      "originalFilename": "partida_004.dem",
+      "role": "generalization",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "dimensions": {
+        "parserCompatibility": "pass",
+        "tickDomainCompatibility": "pass",
+        "canonicalTimelineCompatibility": "likely_parameterizable",
+        "playerIdentityCompatibility": "pass",
+        "heroIdentityCompatibility": "pass",
+        "mapCompatibility": "unknown",
+        "geometryCompatibility": "unverified",
+        "occupancyModelCompatibility": "blocked_until_geometry_confirmed",
+        "buildMetadataCompatibility": "unknown"
+      },
+      "buildComparisonToReplay001": "unknown",
+      "contentVersionComparisonToReplay001": "unknown",
+      "mapComparisonToReplay001": "unknown",
+      "geometryRisk": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+      "parserWarnings": [
+        "build_not_exposed_by_demo_server_metadata",
+        "map_not_exposed_by_demo_server_metadata"
+      ],
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_005",
+      "originalFilename": "partida_005.dem",
+      "role": "final_holdout",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "dimensions": {
+        "parserCompatibility": "pass",
+        "tickDomainCompatibility": "pass",
+        "canonicalTimelineCompatibility": "likely_parameterizable",
+        "playerIdentityCompatibility": "pass",
+        "heroIdentityCompatibility": "pass",
+        "mapCompatibility": "unknown",
+        "geometryCompatibility": "unverified",
+        "occupancyModelCompatibility": "blocked_until_geometry_confirmed",
+        "buildMetadataCompatibility": "unknown"
+      },
+      "buildComparisonToReplay001": "unknown",
+      "contentVersionComparisonToReplay001": "unknown",
+      "mapComparisonToReplay001": "unknown",
+      "geometryRisk": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+      "parserWarnings": [
+        "build_not_exposed_by_demo_server_metadata",
+        "map_not_exposed_by_demo_server_metadata"
+      ],
+      "parserErrors": []
+    }
+  ],
+  "groups": {
+    "byBuild": {
+      "unknown": 5
+    },
+    "byMap": {
+      "unknown": 5
+    },
+    "byPrimaryStatus": {
+      "insufficient_metadata": 5
+    }
+  },
+  "finalHoldoutProtection": {
+    "replayId": "replay_005",
+    "allowedDuringIntake": [
+      "file hash",
+      "file size",
+      "basic parser metadata",
+      "compatibility dimensions"
+    ],
+    "prohibitedUntilPipelineFrozen": [
+      "threshold selection",
+      "rule design",
+      "geometry calibration",
+      "architecture selection",
+      "debugging based on expected outputs",
+      "best-model selection"
+    ]
+  }
+}

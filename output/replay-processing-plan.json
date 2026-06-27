@@ -1,0 +1,1189 @@
+{
+  "schemaVersion": 1,
+  "outputIsolation": {
+    "futureDirectories": [
+      "output/replays/replay_001/",
+      "output/replays/replay_002/",
+      "output/replays/replay_003/",
+      "output/replays/replay_004/",
+      "output/replays/replay_005/"
+    ],
+    "currentPolicy": "directories contain .gitkeep placeholders only; existing output files are not moved",
+    "replay001MigrationPlan": [
+      {
+        "existingPattern": "output/01-*.json",
+        "futureDirectory": "output/replays/replay_001/01/"
+      },
+      {
+        "existingPattern": "output/02-*.json",
+        "futureDirectory": "output/replays/replay_001/02/"
+      },
+      {
+        "existingPattern": "output/03-*.json through output/18-*.json",
+        "futureDirectory": "output/replays/replay_001/experiments_03_18/"
+      },
+      {
+        "existingPattern": "output/22-*.json through output/24-*.json",
+        "futureDirectory": "output/replays/replay_001/lane_occupancy_diagnostics/"
+      }
+    ],
+    "destructiveMigrationPerformed": false
+  },
+  "replays": [
+    {
+      "replayId": "replay_001",
+      "role": "development",
+      "processingStatus": "intake_only",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "stages": [
+        {
+          "stage": "replay_loading",
+          "status": "planned",
+          "dependencies": [],
+          "expectedInput": "samples/partida_001.dem",
+          "expectedOutput": "output/replays/replay_001/replay_loading.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/01-validate-replay.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_field_discovery",
+          "status": "planned",
+          "dependencies": [
+            "replay_loading"
+          ],
+          "expectedInput": "output/replays/replay_001/replay_loading.json",
+          "expectedOutput": "output/replays/replay_001/player_field_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/02-inspect-player-fields.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "snapshot_normalization",
+          "status": "planned",
+          "dependencies": [
+            "player_field_discovery"
+          ],
+          "expectedInput": "output/replays/replay_001/player_field_discovery.json",
+          "expectedOutput": "output/replays/replay_001/snapshot_normalization.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/03-normalize-player-snapshots.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "controller_pawn_lifecycle",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_001/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_001/controller_pawn_lifecycle.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/04-analyze-controller-pawn-lifecycle.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "clock_discovery",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_001/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_001/clock_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/05-discover-game-clock.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "tick_reconciliation",
+          "status": "planned",
+          "dependencies": [
+            "clock_discovery"
+          ],
+          "expectedInput": "output/replays/replay_001/clock_discovery.json",
+          "expectedOutput": "output/replays/replay_001/tick_reconciliation.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/06-reconcile-tick-domains.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_timeline",
+          "status": "planned",
+          "dependencies": [
+            "tick_reconciliation"
+          ],
+          "expectedInput": "output/replays/replay_001/tick_reconciliation.json",
+          "expectedOutput": "output/replays/replay_001/player_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/07-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "data_quality",
+          "status": "planned",
+          "dependencies": [
+            "player_timeline"
+          ],
+          "expectedInput": "output/replays/replay_001/player_timeline.json",
+          "expectedOutput": "output/replays/replay_001/data_quality.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/08-analyze-data-quality.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "canonical_timeline",
+          "status": "planned",
+          "dependencies": [
+            "data_quality"
+          ],
+          "expectedInput": "output/replays/replay_001/data_quality.json",
+          "expectedOutput": "output/replays/replay_001/canonical_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/09-build-canonical-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "hero_identity",
+          "status": "planned",
+          "dependencies": [
+            "canonical_timeline"
+          ],
+          "expectedInput": "output/replays/replay_001/canonical_timeline.json",
+          "expectedOutput": "output/replays/replay_001/hero_identity.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/10-map-hero-identities.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "build_identification",
+          "status": "planned",
+          "dependencies": [
+            "hero_identity"
+          ],
+          "expectedInput": "output/replays/replay_001/hero_identity.json",
+          "expectedOutput": "output/replays/replay_001/build_identification.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/12-identify-replay-build.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "lane_mapping",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "build_identification"
+          ],
+          "expectedInput": "output/replays/replay_001/build_identification.json",
+          "expectedOutput": "output/replays/replay_001/lane_mapping.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/13-enrich-heroes-and-map-lanes.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "topology",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "lane_mapping"
+          ],
+          "expectedInput": "output/replays/replay_001/lane_mapping.json",
+          "expectedOutput": "output/replays/replay_001/topology.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/16-reconcile-lane-topology.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "spatial_regions",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "topology"
+          ],
+          "expectedInput": "output/replays/replay_001/topology.json",
+          "expectedOutput": "output/replays/replay_001/spatial_regions.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/17-build-spatial-presence-model.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "movement",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "spatial_regions"
+          ],
+          "expectedInput": "output/replays/replay_001/spatial_regions.json",
+          "expectedOutput": "output/replays/replay_001/movement.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/18-build-movement-segments.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "occupancy_optional",
+          "status": "blocked_optional",
+          "dependencies": [
+            "movement",
+            "geometry_compatibility_confirmed"
+          ],
+          "expectedInput": "output/replays/replay_001/geometry_compatibility_confirmed.json",
+          "expectedOutput": "output/replays/replay_001/occupancy_optional.json",
+          "canReuseExistingScript": false,
+          "existingScript": null,
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "occupancy is explicitly excluded until geometry compatibility is confirmed"
+        }
+      ]
+    },
+    {
+      "replayId": "replay_002",
+      "role": "generalization",
+      "processingStatus": "intake_only",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "stages": [
+        {
+          "stage": "replay_loading",
+          "status": "planned",
+          "dependencies": [],
+          "expectedInput": "samples/partida_002.dem",
+          "expectedOutput": "output/replays/replay_002/replay_loading.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/01-validate-replay.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_field_discovery",
+          "status": "planned",
+          "dependencies": [
+            "replay_loading"
+          ],
+          "expectedInput": "output/replays/replay_002/replay_loading.json",
+          "expectedOutput": "output/replays/replay_002/player_field_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/02-inspect-player-fields.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "snapshot_normalization",
+          "status": "planned",
+          "dependencies": [
+            "player_field_discovery"
+          ],
+          "expectedInput": "output/replays/replay_002/player_field_discovery.json",
+          "expectedOutput": "output/replays/replay_002/snapshot_normalization.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/03-normalize-player-snapshots.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "controller_pawn_lifecycle",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_002/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_002/controller_pawn_lifecycle.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/04-analyze-controller-pawn-lifecycle.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "clock_discovery",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_002/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_002/clock_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/05-discover-game-clock.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "tick_reconciliation",
+          "status": "planned",
+          "dependencies": [
+            "clock_discovery"
+          ],
+          "expectedInput": "output/replays/replay_002/clock_discovery.json",
+          "expectedOutput": "output/replays/replay_002/tick_reconciliation.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/06-reconcile-tick-domains.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_timeline",
+          "status": "planned",
+          "dependencies": [
+            "tick_reconciliation"
+          ],
+          "expectedInput": "output/replays/replay_002/tick_reconciliation.json",
+          "expectedOutput": "output/replays/replay_002/player_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/07-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "data_quality",
+          "status": "planned",
+          "dependencies": [
+            "player_timeline"
+          ],
+          "expectedInput": "output/replays/replay_002/player_timeline.json",
+          "expectedOutput": "output/replays/replay_002/data_quality.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/08-analyze-data-quality.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "canonical_timeline",
+          "status": "planned",
+          "dependencies": [
+            "data_quality"
+          ],
+          "expectedInput": "output/replays/replay_002/data_quality.json",
+          "expectedOutput": "output/replays/replay_002/canonical_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/09-build-canonical-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "hero_identity",
+          "status": "planned",
+          "dependencies": [
+            "canonical_timeline"
+          ],
+          "expectedInput": "output/replays/replay_002/canonical_timeline.json",
+          "expectedOutput": "output/replays/replay_002/hero_identity.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/10-map-hero-identities.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "build_identification",
+          "status": "planned",
+          "dependencies": [
+            "hero_identity"
+          ],
+          "expectedInput": "output/replays/replay_002/hero_identity.json",
+          "expectedOutput": "output/replays/replay_002/build_identification.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/12-identify-replay-build.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "lane_mapping",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "build_identification"
+          ],
+          "expectedInput": "output/replays/replay_002/build_identification.json",
+          "expectedOutput": "output/replays/replay_002/lane_mapping.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/13-enrich-heroes-and-map-lanes.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "topology",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "lane_mapping"
+          ],
+          "expectedInput": "output/replays/replay_002/lane_mapping.json",
+          "expectedOutput": "output/replays/replay_002/topology.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/16-reconcile-lane-topology.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "spatial_regions",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "topology"
+          ],
+          "expectedInput": "output/replays/replay_002/topology.json",
+          "expectedOutput": "output/replays/replay_002/spatial_regions.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/17-build-spatial-presence-model.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "movement",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "spatial_regions"
+          ],
+          "expectedInput": "output/replays/replay_002/spatial_regions.json",
+          "expectedOutput": "output/replays/replay_002/movement.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/18-build-movement-segments.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "occupancy_optional",
+          "status": "blocked_optional",
+          "dependencies": [
+            "movement",
+            "geometry_compatibility_confirmed"
+          ],
+          "expectedInput": "output/replays/replay_002/geometry_compatibility_confirmed.json",
+          "expectedOutput": "output/replays/replay_002/occupancy_optional.json",
+          "canReuseExistingScript": false,
+          "existingScript": null,
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "occupancy is explicitly excluded until geometry compatibility is confirmed"
+        }
+      ]
+    },
+    {
+      "replayId": "replay_003",
+      "role": "generalization",
+      "processingStatus": "intake_only",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "stages": [
+        {
+          "stage": "replay_loading",
+          "status": "planned",
+          "dependencies": [],
+          "expectedInput": "samples/partida_003.dem",
+          "expectedOutput": "output/replays/replay_003/replay_loading.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/01-validate-replay.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_field_discovery",
+          "status": "planned",
+          "dependencies": [
+            "replay_loading"
+          ],
+          "expectedInput": "output/replays/replay_003/replay_loading.json",
+          "expectedOutput": "output/replays/replay_003/player_field_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/02-inspect-player-fields.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "snapshot_normalization",
+          "status": "planned",
+          "dependencies": [
+            "player_field_discovery"
+          ],
+          "expectedInput": "output/replays/replay_003/player_field_discovery.json",
+          "expectedOutput": "output/replays/replay_003/snapshot_normalization.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/03-normalize-player-snapshots.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "controller_pawn_lifecycle",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_003/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_003/controller_pawn_lifecycle.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/04-analyze-controller-pawn-lifecycle.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "clock_discovery",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_003/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_003/clock_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/05-discover-game-clock.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "tick_reconciliation",
+          "status": "planned",
+          "dependencies": [
+            "clock_discovery"
+          ],
+          "expectedInput": "output/replays/replay_003/clock_discovery.json",
+          "expectedOutput": "output/replays/replay_003/tick_reconciliation.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/06-reconcile-tick-domains.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_timeline",
+          "status": "planned",
+          "dependencies": [
+            "tick_reconciliation"
+          ],
+          "expectedInput": "output/replays/replay_003/tick_reconciliation.json",
+          "expectedOutput": "output/replays/replay_003/player_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/07-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "data_quality",
+          "status": "planned",
+          "dependencies": [
+            "player_timeline"
+          ],
+          "expectedInput": "output/replays/replay_003/player_timeline.json",
+          "expectedOutput": "output/replays/replay_003/data_quality.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/08-analyze-data-quality.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "canonical_timeline",
+          "status": "planned",
+          "dependencies": [
+            "data_quality"
+          ],
+          "expectedInput": "output/replays/replay_003/data_quality.json",
+          "expectedOutput": "output/replays/replay_003/canonical_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/09-build-canonical-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "hero_identity",
+          "status": "planned",
+          "dependencies": [
+            "canonical_timeline"
+          ],
+          "expectedInput": "output/replays/replay_003/canonical_timeline.json",
+          "expectedOutput": "output/replays/replay_003/hero_identity.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/10-map-hero-identities.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "build_identification",
+          "status": "planned",
+          "dependencies": [
+            "hero_identity"
+          ],
+          "expectedInput": "output/replays/replay_003/hero_identity.json",
+          "expectedOutput": "output/replays/replay_003/build_identification.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/12-identify-replay-build.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "lane_mapping",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "build_identification"
+          ],
+          "expectedInput": "output/replays/replay_003/build_identification.json",
+          "expectedOutput": "output/replays/replay_003/lane_mapping.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/13-enrich-heroes-and-map-lanes.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "topology",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "lane_mapping"
+          ],
+          "expectedInput": "output/replays/replay_003/lane_mapping.json",
+          "expectedOutput": "output/replays/replay_003/topology.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/16-reconcile-lane-topology.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "spatial_regions",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "topology"
+          ],
+          "expectedInput": "output/replays/replay_003/topology.json",
+          "expectedOutput": "output/replays/replay_003/spatial_regions.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/17-build-spatial-presence-model.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "movement",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "spatial_regions"
+          ],
+          "expectedInput": "output/replays/replay_003/spatial_regions.json",
+          "expectedOutput": "output/replays/replay_003/movement.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/18-build-movement-segments.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "occupancy_optional",
+          "status": "blocked_optional",
+          "dependencies": [
+            "movement",
+            "geometry_compatibility_confirmed"
+          ],
+          "expectedInput": "output/replays/replay_003/geometry_compatibility_confirmed.json",
+          "expectedOutput": "output/replays/replay_003/occupancy_optional.json",
+          "canReuseExistingScript": false,
+          "existingScript": null,
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "occupancy is explicitly excluded until geometry compatibility is confirmed"
+        }
+      ]
+    },
+    {
+      "replayId": "replay_004",
+      "role": "generalization",
+      "processingStatus": "intake_only",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "stages": [
+        {
+          "stage": "replay_loading",
+          "status": "planned",
+          "dependencies": [],
+          "expectedInput": "samples/partida_004.dem",
+          "expectedOutput": "output/replays/replay_004/replay_loading.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/01-validate-replay.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_field_discovery",
+          "status": "planned",
+          "dependencies": [
+            "replay_loading"
+          ],
+          "expectedInput": "output/replays/replay_004/replay_loading.json",
+          "expectedOutput": "output/replays/replay_004/player_field_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/02-inspect-player-fields.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "snapshot_normalization",
+          "status": "planned",
+          "dependencies": [
+            "player_field_discovery"
+          ],
+          "expectedInput": "output/replays/replay_004/player_field_discovery.json",
+          "expectedOutput": "output/replays/replay_004/snapshot_normalization.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/03-normalize-player-snapshots.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "controller_pawn_lifecycle",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_004/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_004/controller_pawn_lifecycle.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/04-analyze-controller-pawn-lifecycle.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "clock_discovery",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_004/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_004/clock_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/05-discover-game-clock.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "tick_reconciliation",
+          "status": "planned",
+          "dependencies": [
+            "clock_discovery"
+          ],
+          "expectedInput": "output/replays/replay_004/clock_discovery.json",
+          "expectedOutput": "output/replays/replay_004/tick_reconciliation.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/06-reconcile-tick-domains.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_timeline",
+          "status": "planned",
+          "dependencies": [
+            "tick_reconciliation"
+          ],
+          "expectedInput": "output/replays/replay_004/tick_reconciliation.json",
+          "expectedOutput": "output/replays/replay_004/player_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/07-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "data_quality",
+          "status": "planned",
+          "dependencies": [
+            "player_timeline"
+          ],
+          "expectedInput": "output/replays/replay_004/player_timeline.json",
+          "expectedOutput": "output/replays/replay_004/data_quality.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/08-analyze-data-quality.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "canonical_timeline",
+          "status": "planned",
+          "dependencies": [
+            "data_quality"
+          ],
+          "expectedInput": "output/replays/replay_004/data_quality.json",
+          "expectedOutput": "output/replays/replay_004/canonical_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/09-build-canonical-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "hero_identity",
+          "status": "planned",
+          "dependencies": [
+            "canonical_timeline"
+          ],
+          "expectedInput": "output/replays/replay_004/canonical_timeline.json",
+          "expectedOutput": "output/replays/replay_004/hero_identity.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/10-map-hero-identities.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "build_identification",
+          "status": "planned",
+          "dependencies": [
+            "hero_identity"
+          ],
+          "expectedInput": "output/replays/replay_004/hero_identity.json",
+          "expectedOutput": "output/replays/replay_004/build_identification.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/12-identify-replay-build.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "lane_mapping",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "build_identification"
+          ],
+          "expectedInput": "output/replays/replay_004/build_identification.json",
+          "expectedOutput": "output/replays/replay_004/lane_mapping.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/13-enrich-heroes-and-map-lanes.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "topology",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "lane_mapping"
+          ],
+          "expectedInput": "output/replays/replay_004/lane_mapping.json",
+          "expectedOutput": "output/replays/replay_004/topology.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/16-reconcile-lane-topology.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "spatial_regions",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "topology"
+          ],
+          "expectedInput": "output/replays/replay_004/topology.json",
+          "expectedOutput": "output/replays/replay_004/spatial_regions.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/17-build-spatial-presence-model.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "movement",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "spatial_regions"
+          ],
+          "expectedInput": "output/replays/replay_004/spatial_regions.json",
+          "expectedOutput": "output/replays/replay_004/movement.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/18-build-movement-segments.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "occupancy_optional",
+          "status": "blocked_optional",
+          "dependencies": [
+            "movement",
+            "geometry_compatibility_confirmed"
+          ],
+          "expectedInput": "output/replays/replay_004/geometry_compatibility_confirmed.json",
+          "expectedOutput": "output/replays/replay_004/occupancy_optional.json",
+          "canReuseExistingScript": false,
+          "existingScript": null,
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "occupancy is explicitly excluded until geometry compatibility is confirmed"
+        }
+      ]
+    },
+    {
+      "replayId": "replay_005",
+      "role": "final_holdout",
+      "processingStatus": "intake_only",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "stages": [
+        {
+          "stage": "replay_loading",
+          "status": "planned",
+          "dependencies": [],
+          "expectedInput": "samples/partida_005.dem",
+          "expectedOutput": "output/replays/replay_005/replay_loading.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/01-validate-replay.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_field_discovery",
+          "status": "planned",
+          "dependencies": [
+            "replay_loading"
+          ],
+          "expectedInput": "output/replays/replay_005/replay_loading.json",
+          "expectedOutput": "output/replays/replay_005/player_field_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/02-inspect-player-fields.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "snapshot_normalization",
+          "status": "planned",
+          "dependencies": [
+            "player_field_discovery"
+          ],
+          "expectedInput": "output/replays/replay_005/player_field_discovery.json",
+          "expectedOutput": "output/replays/replay_005/snapshot_normalization.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/03-normalize-player-snapshots.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "controller_pawn_lifecycle",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_005/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_005/controller_pawn_lifecycle.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/04-analyze-controller-pawn-lifecycle.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "clock_discovery",
+          "status": "planned",
+          "dependencies": [
+            "snapshot_normalization"
+          ],
+          "expectedInput": "output/replays/replay_005/snapshot_normalization.json",
+          "expectedOutput": "output/replays/replay_005/clock_discovery.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/05-discover-game-clock.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "tick_reconciliation",
+          "status": "planned",
+          "dependencies": [
+            "clock_discovery"
+          ],
+          "expectedInput": "output/replays/replay_005/clock_discovery.json",
+          "expectedOutput": "output/replays/replay_005/tick_reconciliation.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/06-reconcile-tick-domains.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "player_timeline",
+          "status": "planned",
+          "dependencies": [
+            "tick_reconciliation"
+          ],
+          "expectedInput": "output/replays/replay_005/tick_reconciliation.json",
+          "expectedOutput": "output/replays/replay_005/player_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/07-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "data_quality",
+          "status": "planned",
+          "dependencies": [
+            "player_timeline"
+          ],
+          "expectedInput": "output/replays/replay_005/player_timeline.json",
+          "expectedOutput": "output/replays/replay_005/data_quality.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/08-analyze-data-quality.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "canonical_timeline",
+          "status": "planned",
+          "dependencies": [
+            "data_quality"
+          ],
+          "expectedInput": "output/replays/replay_005/data_quality.json",
+          "expectedOutput": "output/replays/replay_005/canonical_timeline.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/09-build-canonical-player-timeline.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "hero_identity",
+          "status": "planned",
+          "dependencies": [
+            "canonical_timeline"
+          ],
+          "expectedInput": "output/replays/replay_005/canonical_timeline.json",
+          "expectedOutput": "output/replays/replay_005/hero_identity.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/10-map-hero-identities.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "build_identification",
+          "status": "planned",
+          "dependencies": [
+            "hero_identity"
+          ],
+          "expectedInput": "output/replays/replay_005/hero_identity.json",
+          "expectedOutput": "output/replays/replay_005/build_identification.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/12-identify-replay-build.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": true,
+          "blockingReason": null
+        },
+        {
+          "stage": "lane_mapping",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "build_identification"
+          ],
+          "expectedInput": "output/replays/replay_005/build_identification.json",
+          "expectedOutput": "output/replays/replay_005/lane_mapping.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/13-enrich-heroes-and-map-lanes.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "topology",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "lane_mapping"
+          ],
+          "expectedInput": "output/replays/replay_005/lane_mapping.json",
+          "expectedOutput": "output/replays/replay_005/topology.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/16-reconcile-lane-topology.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "spatial_regions",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "topology"
+          ],
+          "expectedInput": "output/replays/replay_005/topology.json",
+          "expectedOutput": "output/replays/replay_005/spatial_regions.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/17-build-spatial-presence-model.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "movement",
+          "status": "blocked_until_geometry_compatibility",
+          "dependencies": [
+            "spatial_regions"
+          ],
+          "expectedInput": "output/replays/replay_005/spatial_regions.json",
+          "expectedOutput": "output/replays/replay_005/movement.json",
+          "canReuseExistingScript": true,
+          "existingScript": "experiments/18-build-movement-segments.js",
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "geometry and map/build compatibility are unverified"
+        },
+        {
+          "stage": "occupancy_optional",
+          "status": "blocked_optional",
+          "dependencies": [
+            "movement",
+            "geometry_compatibility_confirmed"
+          ],
+          "expectedInput": "output/replays/replay_005/geometry_compatibility_confirmed.json",
+          "expectedOutput": "output/replays/replay_005/occupancy_optional.json",
+          "canReuseExistingScript": false,
+          "existingScript": null,
+          "requiresParameterization": true,
+          "requiresReplayReprocessing": false,
+          "blockingReason": "occupancy is explicitly excluded until geometry compatibility is confirmed"
+        }
+      ]
+    }
+  ]
+}

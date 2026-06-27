@@ -2,22 +2,23 @@
 
 Last updated: 2026-06-27
 
-## Latest Experiment
+## Latest Work
 
-Latest completed experiment: `24-prototype-uncertainty-aware-lane-episode-segmentation`
+Latest completed task: `016-define-replay-intake-and-compatibility-protocol`
 
-Script: `experiments/24-prototype-uncertainty-aware-lane-episode-segmentation.js`
+Script: `scripts/replay-intake.js`
 
 Primary outputs:
 
-- `output/24-sequential-observation-evidence.json`
-- `output/24-sequential-architecture-comparison.json`
-- `output/24-sequential-architecture-sensitivity.json`
-- `output/24-sequential-architecture-gate.json`
+- `data/replay-manifest.json`
+- `output/replay-intake-summary.json`
+- `output/replay-compatibility-matrix.json`
+- `output/replay-processing-plan.json`
+- `output/replay-script-parameterization-audit.json`
 
 ## Current Objective
 
-Build reliable derived datasets from `samples/partida_001.dem` for player timelines, hero/lane identity, movement, lane occupancy, and later event analysis.
+Build reliable derived datasets from a five-replay local study while preserving replay-specific output isolation and final-holdout protection.
 
 The current investigation is focused on improving lane occupancy quality before using it to detect rotations, combat context, or macro events.
 
@@ -41,6 +42,8 @@ The current investigation is focused on improving lane occupancy quality before 
 - Experiment 24 model revision reduced point contradictions, but holdout validation failed because revised episode contradictions increased.
 - Experiment 24 episode-regression diagnosis found short abstentions terminating episodes as the dominant mechanical failure, and no tested ablation advanced to fresh holdout.
 - Experiment 24 uncertainty-aware episode architecture testing found that hysteresis, windowed accumulation, dynamic programming, and annotated original episodes did not resolve the point-safety versus episode-continuity trade-off on current diagnostic evidence.
+- Replay intake found five local `.dem` files and all loaded through the parser, but build/content-version and map metadata were not exposed by the lightweight intake path; geometry compatibility remains unverified.
+- `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
 ## Open Questions
@@ -53,3 +56,5 @@ The current investigation is focused on improving lane occupancy quality before 
 ## Likely Next Investigation
 
 Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
+
+For multi-replay work, the next executable task is build/map/fingerprint compatibility abstraction only. Do not run the common pipeline, movement, occupancy, or downstream models until geometry compatibility is resolved.

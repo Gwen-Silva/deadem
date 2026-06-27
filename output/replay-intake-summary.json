@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "deadlock-five-replay-study",
+  "gateResult": "replays_require_build_specific_work",
+  "replayFilesFound": 5,
+  "missingReplayCount": 0,
+  "loadableReplayCount": 5,
+  "loadableAdditionalReplayCount": 4,
+  "replayInventory": [
+    {
+      "replayId": "replay_001",
+      "originalFilename": "partida_001.dem",
+      "sizeBytes": 675628880,
+      "sha256": "e80ac19fb225d1f02cd02364ed42625d8751b7d4d4a4481a48a96a0c7bdd1983",
+      "modifiedTimeUtc": "2026-06-22T20:21:13.415Z",
+      "role": "development",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_002",
+      "originalFilename": "partida_002.dem",
+      "sizeBytes": 396772195,
+      "sha256": "8175e5cdd4b590fb92ba2b7e6ae3709af28ff645fcbeaa2fadd9a8d40d22912c",
+      "modifiedTimeUtc": "2026-06-27T22:31:44.825Z",
+      "role": "generalization",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_003",
+      "originalFilename": "partida_003.dem",
+      "sizeBytes": 501017569,
+      "sha256": "629a57cec6944cc8f898bd9d72d72fc3f402eaae8ba996825be18761a2590b96",
+      "modifiedTimeUtc": "2026-06-27T22:32:06.652Z",
+      "role": "generalization",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_004",
+      "originalFilename": "partida_004.dem",
+      "sizeBytes": 456466546,
+      "sha256": "6c59088fcb9adb043bc230e90d242d259577c53b8c40800d8f86ba2e9be5b7c4",
+      "modifiedTimeUtc": "2026-06-27T22:31:31.969Z",
+      "role": "generalization",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "parserErrors": []
+    },
+    {
+      "replayId": "replay_005",
+      "originalFilename": "partida_005.dem",
+      "sizeBytes": 530808576,
+      "sha256": "0a338c82f73eb7bb4b15e794d3f6a7da17893f95ab6a82c2742358450e93811c",
+      "modifiedTimeUtc": "2026-06-27T22:31:48.972Z",
+      "role": "final_holdout",
+      "primaryCompatibilityStatus": "insufficient_metadata",
+      "parserErrors": []
+    }
+  ],
+  "buildsDetected": {
+    "replay_001": null,
+    "replay_002": null,
+    "replay_003": null,
+    "replay_004": null,
+    "replay_005": null
+  },
+  "mapsDetected": {
+    "replay_001": null,
+    "replay_002": null,
+    "replay_003": null,
+    "replay_004": null,
+    "replay_005": null
+  },
+  "geometryRisks": {
+    "replay_001": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+    "replay_002": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+    "replay_003": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+    "replay_004": "build and map metadata unavailable; build 6592 geometry must not be reused automatically",
+    "replay_005": "build and map metadata unavailable; build 6592 geometry must not be reused automatically"
+  },
+  "reusablePipelineStages": [
+    "replay_loading",
+    "player_field_discovery",
+    "snapshot_normalization",
+    "controller_pawn_lifecycle",
+    "clock_discovery",
+    "tick_reconciliation",
+    "player_timeline",
+    "data_quality",
+    "canonical_timeline",
+    "hero_identity",
+    "build_identification"
+  ],
+  "scriptsReadyWithoutRefactor": [],
+  "scriptsRequiringParameterization": [
+    "experiments/11-reconcile-hero-identities.js",
+    "experiments/01-validate-replay.js",
+    "experiments/02-inspect-player-fields.js",
+    "experiments/03-normalize-player-snapshots.js",
+    "experiments/04-analyze-controller-pawn-lifecycle.js",
+    "experiments/05-discover-game-clock.js",
+    "experiments/06-reconcile-tick-domains.js",
+    "experiments/07-player-timeline.js",
+    "experiments/09-build-canonical-player-timeline.js",
+    "experiments/10-map-hero-identities.js",
+    "experiments/12-identify-replay-build.js",
+    "experiments/08-analyze-data-quality.js",
+    "experiments/13-enrich-heroes-and-map-lanes.js",
+    "experiments/14-discover-items-and-upgrades.js",
+    "experiments/15-decode-upgrade-tokens.js",
+    "experiments/16-reconcile-lane-topology.js",
+    "experiments/17-build-spatial-presence-model.js",
+    "experiments/18-build-movement-segments.js"
+  ],
+  "nextRecommendedTask": "abstract replay build/map metadata and geometry compatibility before common pipeline parameterization",
+  "finalHoldoutProtection": {
+    "replayId": "replay_005",
+    "allowedDuringIntake": [
+      "file hash",
+      "file size",
+      "basic parser metadata",
+      "compatibility dimensions"
+    ],
+    "prohibitedUntilPipelineFrozen": [
+      "threshold selection",
+      "rule design",
+      "geometry calibration",
+      "architecture selection",
+      "debugging based on expected outputs",
+      "best-model selection"
+    ]
+  },
+  "outputIsolation": {
+    "futureDirectories": [
+      "output/replays/replay_001/",
+      "output/replays/replay_002/",
+      "output/replays/replay_003/",
+      "output/replays/replay_004/",
+      "output/replays/replay_005/"
+    ],
+    "currentPolicy": "directories contain .gitkeep placeholders only; existing output files are not moved",
+    "replay001MigrationPlan": [
+      {
+        "existingPattern": "output/01-*.json",
+        "futureDirectory": "output/replays/replay_001/01/"
+      },
+      {
+        "existingPattern": "output/02-*.json",
+        "futureDirectory": "output/replays/replay_001/02/"
+      },
+      {
+        "existingPattern": "output/03-*.json through output/18-*.json",
+        "futureDirectory": "output/replays/replay_001/experiments_03_18/"
+      },
+      {
+        "existingPattern": "output/22-*.json through output/24-*.json",
+        "futureDirectory": "output/replays/replay_001/lane_occupancy_diagnostics/"
+      }
+    ],
+    "destructiveMigrationPerformed": false
+  },
+  "parserFailures": {
+    "replay_001": [],
+    "replay_002": [],
+    "replay_003": [],
+    "replay_004": [],
+    "replay_005": []
+  }
+}

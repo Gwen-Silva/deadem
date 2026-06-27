@@ -155,7 +155,7 @@ Codex must exhaust available independent, reproducible, non-circular validation 
 - Title: Define replay intake protocol
 - Purpose: Specify compatibility, metadata, privacy, and storage rules for additional replays.
 - Known dependencies: project policy decisions.
-- Reason it is not executable yet: intake policy is not specified.
+- Reason it is not executable yet: converted to repository task 016 and completed as intake; follow-up build/map compatibility is tracked separately.
 
 - Proposed ID: 024
 - Title: Standardize multi-replay dataset
