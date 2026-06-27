@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_lane_axis_provenance_audit",
+  "acceptedPrimaryEvidenceTypes": [
+    "direct_entity",
+    "stable_static_coordinate",
+    "cross_replay_consensus"
+  ],
+  "disallowedAsPrimaryEvidenceTypes": [
+    "historical_artifact_only",
+    "movement_derived",
+    "occupancy_derived",
+    "manual_alias"
+  ],
+  "acceptedLaneAnchorCountsByProvenance": {
+    "direct_entity+stable_static_coordinate": 951
+  },
+  "historicalAliases": {
+    "1": [
+      {
+        "alias": "Yellow",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      }
+    ],
+    "4": [
+      {
+        "alias": "Blue",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      }
+    ],
+    "6": [
+      {
+        "alias": "Purple",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      }
+    ]
+  },
+  "nonLaneNodesByClassification": {
+    "base_shared": 8,
+    "central_objective": 4,
+    "lane_adjacent": 92,
+    "neutral_connector": 656
+  },
+  "violations": [],
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  }
+}

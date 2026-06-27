@@ -1,0 +1,4908 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_lane_axis_topology_profile",
+  "profileId": "topology_profile/structural_lane_axes_schema_653ba0e9_group_a",
+  "geometryProfile": "geometry_profile/schema_653ba0e9_group_a",
+  "coordinateTransform": "identity",
+  "neutralOrderingRule": "In the shared identity coordinate system, compute the median centroid for each direct structural role-lane across replays 001-004, then assign lane_axis_1..3 by ascending polar angle around the global structural center. Historical color aliases are not used.",
+  "laneAxes": [
+    {
+      "neutralLaneId": "lane_axis_1",
+      "sourceRoleLane": 4,
+      "historicalAliases": [
+        {
+          "alias": "Blue",
+          "source": "output/16-lane-topology-6592.json",
+          "status": "unverified_alias"
+        }
+      ],
+      "memberReplays": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ],
+      "polyline": [
+        {
+          "x": 0,
+          "y": 4,
+          "z": 810.5
+        },
+        {
+          "x": 32,
+          "y": 128.33,
+          "z": 289.33
+        },
+        {
+          "x": 36.44,
+          "y": 346,
+          "z": 445.39
+        },
+        {
+          "x": 138.29,
+          "y": 453.69,
+          "z": 453.86
+        },
+        {
+          "x": 489.14,
+          "y": 285.97,
+          "z": 91.43
+        },
+        {
+          "x": 587.56,
+          "y": 394.67,
+          "z": 750.22
+        },
+        {
+          "x": 536.89,
+          "y": 737.56,
+          "z": 113.78
+        },
+        {
+          "x": 772.8,
+          "y": 721.33,
+          "z": 370.41
+        },
+        {
+          "x": 816,
+          "y": 844,
+          "z": 64
+        },
+        {
+          "x": 882,
+          "y": 918.33,
+          "z": 144
+        }
+      ],
+      "endpointAnchors": {
+        "start": {
+          "order": 0,
+          "anchorId": "replay_001_anchor_5e43b5bbb811",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        "end": {
+          "order": 85,
+          "anchorId": "replay_001_anchor_0c014afb8503",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 998,
+            "y": 739,
+            "z": 432
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        }
+      },
+      "orderedStructures": [
+        {
+          "order": 0,
+          "anchorId": "replay_001_anchor_5e43b5bbb811",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 1,
+          "anchorId": "replay_001_anchor_a1a106787874",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 2,
+          "anchorId": "replay_001_anchor_f486273a2cb9",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 3,
+          "anchorId": "replay_001_anchor_52e749cb0152",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 16,
+            "z": 554
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 4,
+          "anchorId": "replay_001_anchor_5f8bff1292f2",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 48,
+            "y": 48,
+            "z": 368
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 5,
+          "anchorId": "replay_001_anchor_e19669a17966",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 48,
+            "y": 48,
+            "z": 368
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 6,
+          "anchorId": "replay_001_anchor_02f0592b0563",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 289,
+            "z": 132
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 7,
+          "anchorId": "replay_001_anchor_159942ecb49a",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 168,
+            "y": 48,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 8,
+          "anchorId": "replay_001_anchor_446f3ded8856",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 168,
+            "y": 48,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 9,
+          "anchorId": "replay_001_anchor_431801e8696a",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 314,
+            "z": 602
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 10,
+          "anchorId": "replay_001_anchor_397189121a6f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 336,
+            "z": 915
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 11,
+          "anchorId": "replay_001_anchor_8f50c1c88e30",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 208,
+            "y": 16,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 12,
+          "anchorId": "replay_001_anchor_55b13bfb3ca9",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 96,
+            "y": 192,
+            "z": 416
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 13,
+          "anchorId": "replay_001_anchor_16bcf526c602",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 384,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 14,
+          "anchorId": "replay_001_anchor_20397c089d97",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 384,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 15,
+          "anchorId": "replay_001_anchor_d3de69db2e64",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 384,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 16,
+          "anchorId": "replay_001_anchor_017306a1a8cd",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 384,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 17,
+          "anchorId": "replay_001_anchor_22bfec171d2b",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 384,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 18,
+          "anchorId": "replay_001_anchor_63376c6ee09c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 400,
+            "z": 736
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 19,
+          "anchorId": "replay_001_anchor_3d0f2d869dd5",
+          "className": "CAssignedLaneParticle",
+          "team": 3,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 16,
+            "y": 400,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 20,
+          "anchorId": "replay_001_anchor_1546b1c5c425",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 464,
+            "z": 432
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 21,
+          "anchorId": "replay_001_anchor_8551527294b8",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 480,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 22,
+          "anchorId": "replay_001_anchor_c4c5fb7a2fa5",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 490,
+            "z": 448
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 23,
+          "anchorId": "replay_001_anchor_50bb0d4f63d6",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 544,
+            "z": 500
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 24,
+          "anchorId": "replay_001_anchor_fd626891e661",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 576,
+            "z": 80
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 25,
+          "anchorId": "replay_001_anchor_2b9679933d79",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 192,
+            "y": 285,
+            "z": 136
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 26,
+          "anchorId": "replay_001_anchor_5c5e410a2537",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 192,
+            "y": 285,
+            "z": 136
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 27,
+          "anchorId": "replay_001_anchor_84fabc5b1ad3",
+          "className": "CAssignedLaneParticle",
+          "team": 2,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 624,
+            "z": 728
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 28,
+          "anchorId": "replay_001_anchor_786fb5eab365",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 624,
+            "z": 736
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 29,
+          "anchorId": "replay_001_anchor_2ebe97ebb0b9",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 640,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 30,
+          "anchorId": "replay_001_anchor_ffc5e38557d4",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 640,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 31,
+          "anchorId": "replay_001_anchor_1eacf1da9e9c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 640,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 32,
+          "anchorId": "replay_001_anchor_e7e51340fdf4",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 640,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 33,
+          "anchorId": "replay_001_anchor_a17d6fd73c10",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 640,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 34,
+          "anchorId": "replay_001_anchor_10b38d88b5ea",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 255.75,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 35,
+          "anchorId": "replay_001_anchor_89a5f3bc830c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 255.75,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 36,
+          "anchorId": "replay_001_anchor_71ca4d9a3ccc",
+          "className": "CNPC_TrooperBoss",
+          "team": 2,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 256,
+            "z": 376.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 37,
+          "anchorId": "replay_001_anchor_166b17acccd7",
+          "className": "CNPC_BarrackBoss",
+          "team": 3,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 216,
+            "y": 334,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 38,
+          "anchorId": "replay_001_anchor_1dc34a890c4e",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 688,
+            "z": 875
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 39,
+          "anchorId": "replay_001_anchor_181714bbe737",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 288,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 40,
+          "anchorId": "replay_001_anchor_01d5bf8f79f8",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 288,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 41,
+          "anchorId": "replay_001_anchor_bccc0d8dc610",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 288,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 42,
+          "anchorId": "replay_001_anchor_2e57117e49a9",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 352,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 43,
+          "anchorId": "replay_001_anchor_3556f47147d2",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 352,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 44,
+          "anchorId": "replay_001_anchor_fdc0a2c7d04a",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 352,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 45,
+          "anchorId": "replay_001_anchor_3633aeb9b833",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 0,
+            "y": 800,
+            "z": 528
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 46,
+          "anchorId": "replay_001_anchor_97455c969983",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 448,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 47,
+          "anchorId": "replay_001_anchor_bfb9978ca3e4",
+          "className": "CNPC_BarrackBoss",
+          "team": 2,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 208,
+            "y": 689.81,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 48,
+          "anchorId": "replay_001_anchor_1543af26727d",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 528,
+            "y": 216,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 49,
+          "anchorId": "replay_001_anchor_ebf64be3efcc",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 528,
+            "y": 216,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 50,
+          "anchorId": "replay_001_anchor_fa64b7d5b2eb",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 432,
+            "y": 368,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 51,
+          "anchorId": "replay_001_anchor_2afa46e85ff0",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 640,
+            "y": 128,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 52,
+          "anchorId": "replay_001_anchor_e325ab8ba69b",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 640,
+            "y": 128,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 53,
+          "anchorId": "replay_001_anchor_c9b19d650147",
+          "className": "CNPC_Boss_Tier2",
+          "team": 3,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 648,
+            "y": 128,
+            "z": 384
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 54,
+          "anchorId": "replay_001_anchor_c5ed6b061f34",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 832,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 55,
+          "anchorId": "replay_001_anchor_33aa4f37be17",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 832,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 56,
+          "anchorId": "replay_001_anchor_3e136cbd87b5",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 256,
+            "y": 832,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 57,
+          "anchorId": "replay_001_anchor_1b24df5a3073",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 192,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 58,
+          "anchorId": "replay_001_anchor_5d75a7fa274e",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 192,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 59,
+          "anchorId": "replay_001_anchor_f4ebb5ef9041",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 192,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 60,
+          "anchorId": "replay_001_anchor_ff4c4a098524",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 784,
+            "y": 176,
+            "z": 304
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 61,
+          "anchorId": "replay_001_anchor_a46217036eb3",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 784,
+            "y": 176,
+            "z": 304
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 62,
+          "anchorId": "replay_001_anchor_543c715ba472",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 384,
+            "y": 896,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 63,
+          "anchorId": "replay_001_anchor_5ab50608f25c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 384,
+            "y": 896,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 64,
+          "anchorId": "replay_001_anchor_67c130f595f2",
+          "className": "CNPC_Boss_Tier2",
+          "team": 2,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 384,
+            "y": 896,
+            "z": 384
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 65,
+          "anchorId": "replay_001_anchor_f88994fb268e",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 504,
+            "y": 784,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 66,
+          "anchorId": "replay_001_anchor_3714ddeaf0d8",
+          "className": "CNPC_BarrackBoss",
+          "team": 3,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 808,
+            "y": 334,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 67,
+          "anchorId": "replay_001_anchor_96e5029d46c5",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 608,
+            "y": 648,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 68,
+          "anchorId": "replay_001_anchor_9cab1d07abaf",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 608,
+            "y": 648,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 69,
+          "anchorId": "replay_001_anchor_c4742a904f1f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 576,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 70,
+          "anchorId": "replay_001_anchor_9e24d155c88c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 576,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 71,
+          "anchorId": "replay_001_anchor_50b7cdd589c6",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 672,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 72,
+          "anchorId": "replay_001_anchor_e9f42802fc7a",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 672,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 73,
+          "anchorId": "replay_001_anchor_9ed7bdfe4133",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 672,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 74,
+          "anchorId": "replay_001_anchor_09c13ba5c6ca",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 736,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 75,
+          "anchorId": "replay_001_anchor_15938844498f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 736,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 76,
+          "anchorId": "replay_001_anchor_4c2cdcb34c7a",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 736,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 77,
+          "anchorId": "replay_001_anchor_72947bb00d5f",
+          "className": "CNPC_BarrackBoss",
+          "team": 2,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 816,
+            "y": 685.31,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 78,
+          "anchorId": "replay_001_anchor_9794934bf58f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 79,
+          "anchorId": "replay_001_anchor_143df23492c6",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 80,
+          "anchorId": "replay_001_anchor_7d998596f80d",
+          "className": "CNPC_TrooperBoss",
+          "team": 3,
+          "role": "m_iLane=4",
+          "coordinates": {
+            "x": 768,
+            "y": 768,
+            "z": 376.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 81,
+          "anchorId": "replay_001_anchor_ecd262035ba7",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 832,
+            "y": 736,
+            "z": 128
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 82,
+          "anchorId": "replay_001_anchor_c3c2c60b1877",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 800,
+            "y": 952,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 83,
+          "anchorId": "replay_001_anchor_275a48589e42",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 824,
+            "y": 1008,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 84,
+          "anchorId": "replay_001_anchor_1fc01f9947d0",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 824,
+            "y": 1008,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 85,
+          "anchorId": "replay_001_anchor_0c014afb8503",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=4",
+          "coordinates": {
+            "x": 998,
+            "y": 739,
+            "z": 432
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        }
+      ],
+      "support": {
+        "crossReplayConsensus": "medium",
+        "orderedSequenceAgreement": 0.75,
+        "graphNeighborhoodAgreement": 1,
+        "polylineSimilarity": 0.96,
+        "medianAnchorDisplacement": 0,
+        "maximumAnchorDisplacement": 1011.93
+      },
+      "allowedFutureFeatures": [
+        "distance_to_physical_lane_axis",
+        "nearest_physical_lane",
+        "second_nearest_physical_lane",
+        "separation_margin",
+        "normalized_progress_along_lane",
+        "distance_to_base_endpoints",
+        "lane_axis_projection_quality"
+      ],
+      "prohibitedUses": [
+        "stable occupancy classification",
+        "transition detection",
+        "semantic lane color claims",
+        "strategic quality inference"
+      ]
+    },
+    {
+      "neutralLaneId": "lane_axis_2",
+      "sourceRoleLane": 6,
+      "historicalAliases": [
+        {
+          "alias": "Purple",
+          "source": "output/16-lane-topology-6592.json",
+          "status": "unverified_alias"
+        }
+      ],
+      "memberReplays": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ],
+      "polyline": [
+        {
+          "x": 10.5,
+          "y": 1023.75,
+          "z": 0
+        },
+        {
+          "x": 24,
+          "y": 890.75,
+          "z": 854.88
+        },
+        {
+          "x": 197.71,
+          "y": 891.83,
+          "z": 744
+        },
+        {
+          "x": 290.9,
+          "y": 781.52,
+          "z": 598.56
+        },
+        {
+          "x": 287.13,
+          "y": 580.75,
+          "z": 686.93
+        },
+        {
+          "x": 329.71,
+          "y": 394.06,
+          "z": 733.23
+        },
+        {
+          "x": 566.45,
+          "y": 390.88,
+          "z": 512.84
+        },
+        {
+          "x": 486.75,
+          "y": 167.06,
+          "z": 536.01
+        },
+        {
+          "x": 818.25,
+          "y": 233.33,
+          "z": 554.87
+        },
+        {
+          "x": 896,
+          "y": 64,
+          "z": 256.03
+        }
+      ],
+      "endpointAnchors": {
+        "start": {
+          "order": 0,
+          "anchorId": "replay_003_anchor_1c4d974f127c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 10.5,
+            "y": 1023.75,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        "end": {
+          "order": 85,
+          "anchorId": "replay_003_anchor_55cbe9394908",
+          "className": "CNPC_TrooperBoss",
+          "team": 2,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 896,
+            "y": 64,
+            "z": 256.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        }
+      },
+      "orderedStructures": [
+        {
+          "order": 0,
+          "anchorId": "replay_003_anchor_1c4d974f127c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 10.5,
+            "y": 1023.75,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 1,
+          "anchorId": "replay_003_anchor_0cc9d7c02db0",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 48,
+            "y": 936,
+            "z": 928
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 2,
+          "anchorId": "replay_003_anchor_9f41406c7abe",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 48,
+            "y": 936,
+            "z": 928
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 3,
+          "anchorId": "replay_003_anchor_071f82c0a7ff",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 0,
+            "y": 845.5,
+            "z": 781.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 4,
+          "anchorId": "replay_003_anchor_de6cea2e8509",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 0,
+            "y": 845.5,
+            "z": 781.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 5,
+          "anchorId": "replay_003_anchor_3219c87892a4",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 121.25,
+            "y": 896,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 6,
+          "anchorId": "replay_003_anchor_34d664d8701b",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 121.25,
+            "y": 896,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 7,
+          "anchorId": "replay_003_anchor_c3436cd277c6",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 121.25,
+            "y": 896,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 8,
+          "anchorId": "replay_003_anchor_f1700f39bc8a",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 32,
+            "y": 704,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 9,
+          "anchorId": "replay_003_anchor_f752f50e1e94",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 395.25,
+            "y": 979.5,
+            "z": 832
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 10,
+          "anchorId": "replay_003_anchor_3d7b1a844ef0",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 395.25,
+            "y": 979.5,
+            "z": 832
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 11,
+          "anchorId": "replay_003_anchor_bcbefd50ca99",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 458.75,
+            "y": 1023.75,
+            "z": 733.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 12,
+          "anchorId": "replay_003_anchor_7e2825c5c37e",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 458.75,
+            "y": 1023.75,
+            "z": 733.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 13,
+          "anchorId": "replay_003_anchor_478546e7f77d",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 458.75,
+            "y": 1023.75,
+            "z": 733.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 14,
+          "anchorId": "replay_003_anchor_a46239ea84f7",
+          "className": "CNPC_Boss_Tier2",
+          "team": 3,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 128,
+            "y": 640,
+            "z": 384
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 15,
+          "anchorId": "replay_003_anchor_8ef7c32157bb",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 266.75,
+            "y": 767.75,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 16,
+          "anchorId": "replay_003_anchor_c81a4ebb69ef",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 266.75,
+            "y": 767.75,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 17,
+          "anchorId": "replay_003_anchor_5fa7d353fec4",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 400,
+            "y": 896,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 18,
+          "anchorId": "replay_003_anchor_8d2e9846c241",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 54,
+            "y": 560,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 19,
+          "anchorId": "replay_003_anchor_265a888a36a7",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 29,
+            "y": 512.5,
+            "z": 814
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 20,
+          "anchorId": "replay_003_anchor_0c65a2d98d37",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 29,
+            "y": 512.5,
+            "z": 814
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 21,
+          "anchorId": "replay_003_anchor_a3f6af80b4dc",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 464,
+            "y": 896,
+            "z": 576
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 22,
+          "anchorId": "replay_003_anchor_a7153040c1ba",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 384,
+            "y": 768,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 23,
+          "anchorId": "replay_003_anchor_9a54b9d60271",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 384,
+            "y": 768,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 24,
+          "anchorId": "replay_003_anchor_1e463b35a30d",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 279.75,
+            "y": 636.5,
+            "z": 745.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 25,
+          "anchorId": "replay_003_anchor_d0c8d418c2d8",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 279.75,
+            "y": 636.5,
+            "z": 745.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 26,
+          "anchorId": "replay_003_anchor_77cc68b1fceb",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 279.75,
+            "y": 636.5,
+            "z": 745.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 27,
+          "anchorId": "replay_003_anchor_d19f9158f39d",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 256,
+            "y": 576,
+            "z": 864
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 28,
+          "anchorId": "replay_003_anchor_42e1b6c0a71e",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 256,
+            "y": 576,
+            "z": 864
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 29,
+          "anchorId": "replay_003_anchor_7330c7212296",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 32,
+            "y": 320,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 30,
+          "anchorId": "replay_003_anchor_af675d7dbe6e",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 192,
+            "y": 474,
+            "z": 448
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 31,
+          "anchorId": "replay_003_anchor_a85cc50fc4ab",
+          "className": "CAssignedLaneParticle",
+          "team": 2,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 400,
+            "y": 624,
+            "z": 728
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 32,
+          "anchorId": "replay_003_anchor_5ca8336880a5",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 400,
+            "y": 624,
+            "z": 736
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 33,
+          "anchorId": "replay_003_anchor_8f645ed5dd34",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 496,
+            "y": 704,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 34,
+          "anchorId": "replay_003_anchor_0725ec88d317",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 32,
+            "y": 160,
+            "z": 792
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 35,
+          "anchorId": "replay_003_anchor_8ba6de3d3eaa",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 32,
+            "y": 160,
+            "z": 792
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 36,
+          "anchorId": "replay_003_anchor_4b6902e381ed",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 11,
+            "y": 128.25,
+            "z": 785.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 37,
+          "anchorId": "replay_003_anchor_2c4df083edf1",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 11,
+            "y": 128.25,
+            "z": 785.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 38,
+          "anchorId": "replay_003_anchor_7804f0619ec1",
+          "className": "CAssignedLaneParticle",
+          "team": 3,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 320,
+            "y": 400,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 39,
+          "anchorId": "replay_003_anchor_db516ce0d324",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 320,
+            "y": 400,
+            "z": 736
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 40,
+          "anchorId": "replay_003_anchor_0d183e22542a",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 198,
+            "y": 262,
+            "z": 558
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 41,
+          "anchorId": "replay_003_anchor_a66bef11749f",
+          "className": "CNPC_BarrackBoss",
+          "team": 2,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 736,
+            "y": 772,
+            "z": 641.22
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 42,
+          "anchorId": "replay_003_anchor_e4bc3f53ac15",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 1005.75,
+            "y": 1023.75,
+            "z": 64
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 43,
+          "anchorId": "replay_003_anchor_4099a6b17dac",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 640,
+            "y": 640,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 44,
+          "anchorId": "replay_003_anchor_4fc9767f7566",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 640,
+            "y": 640,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 45,
+          "anchorId": "replay_003_anchor_0ff29186dde1",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 10.75,
+            "y": 14.5,
+            "z": 1020.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 46,
+          "anchorId": "replay_003_anchor_031faf393272",
+          "className": "CNPC_BarrackBoss",
+          "team": 3,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 736,
+            "y": 644,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 47,
+          "anchorId": "replay_003_anchor_da4c93708280",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 618.5,
+            "y": 512,
+            "z": 936.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 48,
+          "anchorId": "replay_003_anchor_a823eb0f7232",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 618.5,
+            "y": 512,
+            "z": 936.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 49,
+          "anchorId": "replay_003_anchor_af760950249b",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 266.5,
+            "y": 172,
+            "z": 254
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 50,
+          "anchorId": "replay_003_anchor_d12d6cb09557",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 266.5,
+            "y": 172,
+            "z": 254
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 51,
+          "anchorId": "replay_003_anchor_4f96ce1e4f78",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 672,
+            "y": 560,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 52,
+          "anchorId": "replay_003_anchor_0be8e205c55b",
+          "className": "CNPC_TrooperBoss",
+          "team": 3,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 960,
+            "y": 832,
+            "z": 248.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 53,
+          "anchorId": "replay_003_anchor_7d9c6c3e699f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 384,
+            "y": 256,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 54,
+          "anchorId": "replay_003_anchor_8efaeb1553d1",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 384,
+            "y": 256,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 55,
+          "anchorId": "replay_003_anchor_b6a53c3236f0",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 336,
+            "y": 192,
+            "z": 984
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 56,
+          "anchorId": "replay_003_anchor_e28039f2756e",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 496,
+            "y": 320,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 57,
+          "anchorId": "replay_003_anchor_50def07ddb0e",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 672,
+            "y": 464,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 58,
+          "anchorId": "replay_003_anchor_3b0db0335277",
+          "className": "CNPC_Boss_Tier2",
+          "team": 2,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 320,
+            "y": 96,
+            "z": 384
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 59,
+          "anchorId": "replay_003_anchor_82c9f84b1a49",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 1023.97,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 60,
+          "anchorId": "replay_003_anchor_8afdbdbd9dc8",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 1023.97,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 61,
+          "anchorId": "replay_003_anchor_bf6f2df5fb28",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 637,
+            "y": 388.5,
+            "z": 737.25
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 62,
+          "anchorId": "replay_003_anchor_f48913c5c09d",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 637,
+            "y": 388.5,
+            "z": 737.25
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 63,
+          "anchorId": "replay_003_anchor_c4f9d2342247",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 637,
+            "y": 388.5,
+            "z": 737.25
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 64,
+          "anchorId": "replay_003_anchor_7bfb8cc3133c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 320,
+            "y": 64,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 65,
+          "anchorId": "replay_003_anchor_4b3f1f0937f0",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 320,
+            "y": 64,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 66,
+          "anchorId": "replay_003_anchor_cdac98091100",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 267,
+            "y": 0.25,
+            "z": 224
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 67,
+          "anchorId": "replay_003_anchor_002ca9a293d1",
+          "className": "CNPC_BarrackBoss",
+          "team": 2,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 736,
+            "y": 412,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 68,
+          "anchorId": "replay_003_anchor_e66d8a74c5b3",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 464,
+            "y": 128,
+            "z": 576
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 69,
+          "anchorId": "replay_003_anchor_d96b9c3cd7f3",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 480,
+            "y": 128,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 70,
+          "anchorId": "replay_003_anchor_32855c4af15d",
+          "className": "CNPC_BarrackBoss",
+          "team": 3,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 736,
+            "y": 252,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 71,
+          "anchorId": "replay_003_anchor_d0c8ff20c786",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 832,
+            "y": 320,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 72,
+          "anchorId": "replay_003_anchor_3dfd6cbc5733",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 832,
+            "y": 320,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 73,
+          "anchorId": "replay_003_anchor_e9e80c9230ef",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 785.25,
+            "y": 256,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 74,
+          "anchorId": "replay_003_anchor_6ba774c7424c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 785.25,
+            "y": 256,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 75,
+          "anchorId": "replay_003_anchor_e204d556eaef",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 785.25,
+            "y": 256,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 76,
+          "anchorId": "replay_003_anchor_1867b4f93757",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 999,
+            "y": 400,
+            "z": 805.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 77,
+          "anchorId": "replay_003_anchor_ed225d803501",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 999,
+            "y": 400,
+            "z": 805.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 78,
+          "anchorId": "replay_003_anchor_a16099eeef85",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 896,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 79,
+          "anchorId": "replay_003_anchor_eae0a7b864a5",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 896,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 80,
+          "anchorId": "replay_003_anchor_7c9b1cca3143",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 768,
+            "y": 128,
+            "z": 908
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 81,
+          "anchorId": "replay_003_anchor_1b6498457337",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 768,
+            "y": 128,
+            "z": 908
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 82,
+          "anchorId": "replay_003_anchor_0ff9c35f93e9",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 768,
+            "y": 128,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 83,
+          "anchorId": "replay_003_anchor_843f1d2a66f0",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 768,
+            "y": 128,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 84,
+          "anchorId": "replay_003_anchor_dd11f339f917",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=6",
+          "coordinates": {
+            "x": 656,
+            "y": 16,
+            "z": 32
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 85,
+          "anchorId": "replay_003_anchor_55cbe9394908",
+          "className": "CNPC_TrooperBoss",
+          "team": 2,
+          "role": "m_iLane=6",
+          "coordinates": {
+            "x": 896,
+            "y": 64,
+            "z": 256.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        }
+      ],
+      "support": {
+        "crossReplayConsensus": "medium",
+        "orderedSequenceAgreement": 0.47,
+        "graphNeighborhoodAgreement": 0.98,
+        "polylineSimilarity": 0.94,
+        "medianAnchorDisplacement": 0,
+        "maximumAnchorDisplacement": 353.2
+      },
+      "allowedFutureFeatures": [
+        "distance_to_physical_lane_axis",
+        "nearest_physical_lane",
+        "second_nearest_physical_lane",
+        "separation_margin",
+        "normalized_progress_along_lane",
+        "distance_to_base_endpoints",
+        "lane_axis_projection_quality"
+      ],
+      "prohibitedUses": [
+        "stable occupancy classification",
+        "transition detection",
+        "semantic lane color claims",
+        "strategic quality inference"
+      ]
+    },
+    {
+      "neutralLaneId": "lane_axis_3",
+      "sourceRoleLane": 1,
+      "historicalAliases": [
+        {
+          "alias": "Yellow",
+          "source": "output/16-lane-topology-6592.json",
+          "status": "unverified_alias"
+        }
+      ],
+      "memberReplays": [
+        "replay_001",
+        "replay_002",
+        "replay_003",
+        "replay_004"
+      ],
+      "polyline": [
+        {
+          "x": 0,
+          "y": 1009.5,
+          "z": 1020.5
+        },
+        {
+          "x": 37.2,
+          "y": 959.99,
+          "z": 389.41
+        },
+        {
+          "x": 208.75,
+          "y": 838.35,
+          "z": 541.1
+        },
+        {
+          "x": 236.86,
+          "y": 747.33,
+          "z": 490.87
+        },
+        {
+          "x": 358.88,
+          "y": 594.67,
+          "z": 457.46
+        },
+        {
+          "x": 468.74,
+          "y": 524,
+          "z": 670.65
+        },
+        {
+          "x": 837.33,
+          "y": 682.67,
+          "z": 693.33
+        },
+        {
+          "x": 741.36,
+          "y": 380.79,
+          "z": 708.66
+        },
+        {
+          "x": 771.38,
+          "y": 217.15,
+          "z": 553.33
+        },
+        {
+          "x": 938.8,
+          "y": 112,
+          "z": 832
+        }
+      ],
+      "endpointAnchors": {
+        "start": {
+          "order": 0,
+          "anchorId": "replay_002_anchor_1e479c4f116c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 1009.5,
+            "z": 1020.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        "end": {
+          "order": 90,
+          "anchorId": "replay_002_anchor_37b754406657",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 976,
+            "y": 88,
+            "z": 928
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        }
+      },
+      "orderedStructures": [
+        {
+          "order": 0,
+          "anchorId": "replay_002_anchor_1e479c4f116c",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 1009.5,
+            "z": 1020.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 1,
+          "anchorId": "replay_002_anchor_b9f878bd70f0",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 1009.5,
+            "z": 1020.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 2,
+          "anchorId": "replay_002_anchor_d5e6080766af",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 29,
+            "y": 1023.97,
+            "z": 64
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 3,
+          "anchorId": "replay_002_anchor_9959466d3e6f",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 29,
+            "y": 1023.97,
+            "z": 64
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 4,
+          "anchorId": "replay_002_anchor_14c73e47e840",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 896,
+            "z": 785.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 5,
+          "anchorId": "replay_002_anchor_7dd9d32f7e12",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 896,
+            "z": 785.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 6,
+          "anchorId": "replay_002_anchor_e57ea84aa383",
+          "className": "CNPC_TrooperBoss",
+          "team": 3,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 128,
+            "y": 960,
+            "z": 248.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 7,
+          "anchorId": "replay_002_anchor_22e2747c53f0",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 128,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 8,
+          "anchorId": "replay_002_anchor_9ed404807c50",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 128,
+            "y": 768,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 9,
+          "anchorId": "replay_002_anchor_bb8f71013b32",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 256,
+            "y": 896,
+            "z": 908
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 10,
+          "anchorId": "replay_002_anchor_48d94f85f792",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 256,
+            "y": 896,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 11,
+          "anchorId": "replay_002_anchor_a55a8197ac04",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 256,
+            "y": 896,
+            "z": 908
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 12,
+          "anchorId": "replay_002_anchor_4343578b1f3e",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 256,
+            "y": 896,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 13,
+          "anchorId": "replay_002_anchor_2ae59b09b7cb",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 368,
+            "y": 1008,
+            "z": 32
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 14,
+          "anchorId": "replay_002_anchor_e31603b50767",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 368,
+            "y": 1008,
+            "z": 32
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 15,
+          "anchorId": "replay_002_anchor_3314416cf7d8",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 35.75,
+            "y": 623.75,
+            "z": 805.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 16,
+          "anchorId": "replay_002_anchor_71c00b626467",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 35.75,
+            "y": 623.75,
+            "z": 805.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 17,
+          "anchorId": "replay_002_anchor_29a2548b1a8a",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 249.72,
+            "y": 768,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 18,
+          "anchorId": "replay_002_anchor_4ef502a203ba",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 249.72,
+            "y": 768,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 19,
+          "anchorId": "replay_002_anchor_fbc6568296b4",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 249.72,
+            "y": 768,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 20,
+          "anchorId": "replay_002_anchor_38ebb2259e0b",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 192,
+            "y": 704,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 21,
+          "anchorId": "replay_002_anchor_d5713493cbb8",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 192,
+            "y": 704,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 22,
+          "anchorId": "replay_002_anchor_837a63e08214",
+          "className": "CNPC_BarrackBoss",
+          "team": 2,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 288,
+            "y": 772,
+            "z": 641.22
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 23,
+          "anchorId": "replay_002_anchor_a44893baddc1",
+          "className": "CNPC_BarrackBoss",
+          "team": 3,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 288,
+            "y": 644,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 24,
+          "anchorId": "replay_002_anchor_40336a55aced",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 560,
+            "y": 896,
+            "z": 576
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 25,
+          "anchorId": "replay_002_anchor_6836f2ef2043",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 26,
+          "anchorId": "replay_002_anchor_f09d8fd0886c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 27,
+          "anchorId": "replay_002_anchor_a077d2653ba8",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 624,
+            "y": 896,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 28,
+          "anchorId": "replay_002_anchor_33bb289e8593",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 397.5,
+            "y": 635.25,
+            "z": 737.25
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 29,
+          "anchorId": "replay_002_anchor_d8f247719119",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 397.5,
+            "y": 635.25,
+            "z": 737.25
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 30,
+          "anchorId": "replay_002_anchor_b703005f2652",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 397.5,
+            "y": 635.25,
+            "z": 737.25
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 31,
+          "anchorId": "replay_002_anchor_48254e4d4719",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 704,
+            "y": 960,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 32,
+          "anchorId": "replay_002_anchor_c5c619b53f34",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 704,
+            "y": 960,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 33,
+          "anchorId": "replay_002_anchor_fe5632ce908b",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 352,
+            "y": 560,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 34,
+          "anchorId": "replay_002_anchor_6890c25da1eb",
+          "className": "CNPC_Boss_Tier2",
+          "team": 3,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 704,
+            "y": 928,
+            "z": 384
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 35,
+          "anchorId": "replay_002_anchor_10ce80fa5bcb",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 10.75,
+            "y": 178.5,
+            "z": 781.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 36,
+          "anchorId": "replay_002_anchor_526862a1c49c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 10.75,
+            "y": 178.5,
+            "z": 781.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 37,
+          "anchorId": "replay_002_anchor_8829df8576eb",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 528,
+            "y": 704,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 38,
+          "anchorId": "replay_002_anchor_6ba1dc2bcb3b",
+          "className": "CNPC_TrooperBoss",
+          "team": 2,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 64,
+            "y": 192,
+            "z": 248.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 39,
+          "anchorId": "replay_002_anchor_c23f4adad8a1",
+          "className": "CNPC_BarrackBoss",
+          "team": 2,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 288,
+            "y": 412,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 40,
+          "anchorId": "replay_002_anchor_3aeb2f8afd7d",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 688,
+            "y": 832,
+            "z": 984
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 41,
+          "anchorId": "replay_002_anchor_189456484f96",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 688,
+            "y": 832,
+            "z": 984
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 42,
+          "anchorId": "replay_002_anchor_f2fe57e9a430",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 352,
+            "y": 464,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 43,
+          "anchorId": "replay_002_anchor_e4ff7643456a",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 640,
+            "y": 768,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 44,
+          "anchorId": "replay_002_anchor_246103d9030d",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 640,
+            "y": 768,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 45,
+          "anchorId": "replay_002_anchor_bc9348b800ba",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 416.25,
+            "y": 512,
+            "z": 936.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 46,
+          "anchorId": "replay_002_anchor_627936a42c43",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 416.25,
+            "y": 512,
+            "z": 936.5
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 47,
+          "anchorId": "replay_002_anchor_15fb40c14409",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 48,
+          "anchorId": "replay_002_anchor_ec1fa88c2614",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 49,
+          "anchorId": "replay_002_anchor_5caf3dd59c69",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 384,
+            "y": 384,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 50,
+          "anchorId": "replay_002_anchor_43d50f4344f7",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 384,
+            "y": 384,
+            "z": 960
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 51,
+          "anchorId": "replay_002_anchor_cdf7d52909b2",
+          "className": "CAssignedLaneParticle",
+          "team": 2,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 624,
+            "y": 624,
+            "z": 728
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 52,
+          "anchorId": "replay_002_anchor_80dfa00aba38",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 624,
+            "y": 624,
+            "z": 736
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 53,
+          "anchorId": "replay_002_anchor_dd9cc672da27",
+          "className": "CNPC_BarrackBoss",
+          "team": 3,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 288,
+            "y": 252,
+            "z": 640.03
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 54,
+          "anchorId": "replay_002_anchor_0695a6af3949",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 770,
+            "z": 240
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 55,
+          "anchorId": "replay_002_anchor_67fdb9f27cd9",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 770,
+            "z": 240
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 56,
+          "anchorId": "replay_002_anchor_9367cb1481f2",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 992,
+            "y": 864,
+            "z": 792
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 57,
+          "anchorId": "replay_002_anchor_bd61be26c87c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 992,
+            "y": 864,
+            "z": 792
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 58,
+          "anchorId": "replay_002_anchor_b35239004dcf",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 528,
+            "y": 320,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 59,
+          "anchorId": "replay_002_anchor_18a5d9b8bf6b",
+          "className": "CAssignedLaneParticle",
+          "team": 3,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 704,
+            "y": 400,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 60,
+          "anchorId": "replay_002_anchor_96d31d2b2a29",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 704,
+            "y": 400,
+            "z": 736
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 61,
+          "anchorId": "replay_002_anchor_feea5f5c5d46",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 448,
+            "z": 864
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 62,
+          "anchorId": "replay_002_anchor_bd35d524f0f4",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 448,
+            "z": 864
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 63,
+          "anchorId": "replay_002_anchor_2051ce44069c",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 992,
+            "y": 688,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 64,
+          "anchorId": "replay_002_anchor_2c222b09d7bf",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 832,
+            "y": 474,
+            "z": 448
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 65,
+          "anchorId": "replay_002_anchor_5cb2edfcf625",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 755,
+            "y": 387,
+            "z": 745.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 66,
+          "anchorId": "replay_002_anchor_11eb091f7306",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 755,
+            "y": 387,
+            "z": 745.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 67,
+          "anchorId": "replay_002_anchor_cb19cb2b5b47",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 755,
+            "y": 387,
+            "z": 745.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 68,
+          "anchorId": "replay_002_anchor_03860b530e00",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 640,
+            "y": 256,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 69,
+          "anchorId": "replay_002_anchor_a819328f6eb9",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 640,
+            "y": 256,
+            "z": 896
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 70,
+          "anchorId": "replay_002_anchor_3ebb6a00c33d",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 544,
+            "y": 128,
+            "z": 704
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 71,
+          "anchorId": "replay_002_anchor_0450313a102b",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 560,
+            "y": 128,
+            "z": 576
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 72,
+          "anchorId": "replay_002_anchor_0695e7a35989",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 962,
+            "y": 544,
+            "z": 500
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 73,
+          "anchorId": "replay_002_anchor_0a37589fa24f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 74,
+          "anchorId": "replay_002_anchor_5bad90ecc57a",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 256,
+            "z": 0
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 75,
+          "anchorId": "replay_002_anchor_e8ccbfd5e112",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 1006,
+            "y": 512,
+            "z": 814
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 76,
+          "anchorId": "replay_002_anchor_cf72b99f39b7",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 1006,
+            "y": 512,
+            "z": 814
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 77,
+          "anchorId": "replay_002_anchor_09382ac535a8",
+          "className": "CNPC_Boss_Tier2",
+          "team": 2,
+          "role": "m_iLane=1",
+          "coordinates": {
+            "x": 896,
+            "y": 384,
+            "z": 384
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 78,
+          "anchorId": "replay_002_anchor_36d8c3805bc9",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 768,
+            "y": 232,
+            "z": 262
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 79,
+          "anchorId": "replay_002_anchor_55d6c33b78de",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 816,
+            "y": 262,
+            "z": 558
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 80,
+          "anchorId": "replay_002_anchor_04ff2d01df94",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 576,
+            "y": 0,
+            "z": 733.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 81,
+          "anchorId": "replay_002_anchor_ea87ba76477f",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 576,
+            "y": 0,
+            "z": 733.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 82,
+          "anchorId": "replay_002_anchor_78ff3325f803",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 576,
+            "y": 0,
+            "z": 733.75
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 83,
+          "anchorId": "replay_002_anchor_dd63a40be863",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 640,
+            "y": 44.5,
+            "z": 832
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 84,
+          "anchorId": "replay_002_anchor_ba4d91e3331f",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 640,
+            "y": 44.5,
+            "z": 832
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 85,
+          "anchorId": "replay_002_anchor_7bb21e4ad1b5",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 992,
+            "y": 320,
+            "z": 496
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 86,
+          "anchorId": "replay_002_anchor_5445ccdfbf27",
+          "className": "CCitadelZipLineNode",
+          "team": 0,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 914,
+            "y": 128,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 87,
+          "anchorId": "replay_002_anchor_b998587a8ea7",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 914,
+            "y": 128,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 88,
+          "anchorId": "replay_002_anchor_5acb3803bc7b",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 914,
+            "y": 128,
+            "z": 768
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 89,
+          "anchorId": "replay_002_anchor_adcf965ef470",
+          "className": "CCitadelZipLineNode",
+          "team": 2,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 976,
+            "y": 88,
+            "z": 928
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        },
+        {
+          "order": 90,
+          "anchorId": "replay_002_anchor_37b754406657",
+          "className": "CCitadelZipLineNode",
+          "team": 3,
+          "role": "m_iPrimaryLane=1",
+          "coordinates": {
+            "x": 976,
+            "y": 88,
+            "z": 928
+          },
+          "provenance": [
+            "direct_entity",
+            "stable_static_coordinate"
+          ],
+          "structuralClassification": "lane_member"
+        }
+      ],
+      "support": {
+        "crossReplayConsensus": "medium",
+        "orderedSequenceAgreement": 0.74,
+        "graphNeighborhoodAgreement": 0.99,
+        "polylineSimilarity": 0.96,
+        "medianAnchorDisplacement": 0,
+        "maximumAnchorDisplacement": 534.64
+      },
+      "allowedFutureFeatures": [
+        "distance_to_physical_lane_axis",
+        "nearest_physical_lane",
+        "second_nearest_physical_lane",
+        "separation_margin",
+        "normalized_progress_along_lane",
+        "distance_to_base_endpoints",
+        "lane_axis_projection_quality"
+      ],
+      "prohibitedUses": [
+        "stable occupancy classification",
+        "transition detection",
+        "semantic lane color claims",
+        "strategic quality inference"
+      ]
+    }
+  ],
+  "topologyGraph": {
+    "teamBases": "CNPC_Boss_Tier3 and base/shared structural anchors retained separately from lane axes",
+    "deploymentRegions": "not derived as lane-side regions in task 022",
+    "laneEndpoints": [
+      {
+        "neutralLaneId": "lane_axis_1",
+        "start": "replay_001_anchor_5e43b5bbb811",
+        "end": "replay_001_anchor_0c014afb8503"
+      },
+      {
+        "neutralLaneId": "lane_axis_2",
+        "start": "replay_003_anchor_1c4d974f127c",
+        "end": "replay_003_anchor_55cbe9394908"
+      },
+      {
+        "neutralLaneId": "lane_axis_3",
+        "start": "replay_002_anchor_1e479c4f116c",
+        "end": "replay_002_anchor_37b754406657"
+      }
+    ],
+    "centralNeutralRegion": "central/neutral nodes excluded from lane membership",
+    "traversalConnectors": "zipline nodes with direct lane role are lane-adjacent support; cross-lane traversal remains connector evidence",
+    "crossLaneConnections": "not inferred",
+    "unresolvedNodes": []
+  },
+  "structuralCorridorDistinction": {
+    "structuralCorridor": "direct-role structural chain candidate",
+    "physicalLaneAxis": "accepted direct-role chain after cross-replay consensus",
+    "laneSideRegion": "not derived in this task",
+    "neutralOrTraversalConnection": "stored outside lane axes unless direct lane-role support exists",
+    "historicalLaneAlias": "stored only as unverified_alias"
+  },
+  "confidence": "high_structural_topology",
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  }
+}

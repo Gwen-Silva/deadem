@@ -4,18 +4,16 @@ Last updated: 2026-06-27
 
 ## Latest Work
 
-Latest completed task: `021-derive-multi-replay-geometry-profiles`
+Latest completed task: `022-derive-structural-lane-axis-topology`
 
-Script: `scripts/derive-multi-replay-geometry-profiles.js`
+Script: `scripts/derive-structural-lane-axis-topology.js`
 
 Primary outputs:
 
-- `output/replays/replay_001/geometry-structural-inventory.json`
-- `output/replays/replay_002/geometry-structural-inventory.json`
-- `output/replays/replay_003/geometry-structural-inventory.json`
-- `output/replays/replay_004/geometry-structural-inventory.json`
-- `output/replay-geometry-profiles.json`
-- `output/replay-geometry-validation-gate.json`
+- `output/replay-structural-lane-axis-candidates.json`
+- `output/replay-structural-topology-comparison.json`
+- `output/replay-lane-axis-topology-profile.json`
+- `output/replay-lane-axis-topology-gate.json`
 
 ## Current Objective
 
@@ -47,6 +45,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Replay build/map compatibility found one shared schema fingerprint across all five replays, so pre-geometry stages can be parameterized; geometry fingerprints remain per-replay and topology/region/occupancy stages are still gated.
 - The pre-geometry pipeline passed on replay 002, then replay 003 and replay 004, with 12 players and 12 hero IDs observed in each sampled output.
 - Multi-replay geometry profiling found that replays 001-004 have directly comparable structural coordinates under identity transforms and can be grouped under `geometry_profile/schema_653ba0e9_group_a` for raw coordinate comparison, but lane-axis and topology interpretation remain unvalidated.
+- Structural lane-axis topology derived three neutral physical lane axes from direct structural role fields, stable coordinates, topology graph adjacency, and cross-replay consensus. The gate is `structural_topology_ready_for_lane_mapping`; this permits lane-distance projection only, not occupancy classification.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -61,4 +60,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
 
-For multi-replay work, the next executable task may derive structural lane-axis topology from direct objective/structure ordering only. Do not run occupancy, transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing.
+For multi-replay work, the next executable task may parameterize lane-distance projection for replays 001-004 using the approved structural topology profile. Do not run occupancy, transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing.

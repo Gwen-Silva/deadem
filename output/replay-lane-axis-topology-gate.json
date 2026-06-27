@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "replay_lane_axis_topology_gate",
+  "gateResult": "structural_topology_ready_for_lane_mapping",
+  "evidenceSummary": {
+    "laneAxisCount": 3,
+    "allAxesInAllReplays": true,
+    "minimumSequenceAgreement": 0.21,
+    "sequenceAgreementInterpretation": "raw ordered class sequence varies with duplicate/static-node lifecycle and is reported, but gate relies on direct role consistency, graph-neighborhood agreement, median matched-anchor residual, and polyline similarity",
+    "minimumPolylineSimilarity": 0.9,
+    "minimumGraphNeighborhoodAgreement": 0.98,
+    "medianCoordinateResidual": 0,
+    "centralNeutralStructuresExcluded": true,
+    "noMovementOrOccupancyEvidenceUsed": true
+  },
+  "requiredHumanReview": false,
+  "minimizedReviewQueue": [],
+  "nextAllowedTask": "parameterize lane mapping distances for replays 001-004 without occupancy classification",
+  "prohibitedContinuation": [
+    "occupancy classification",
+    "transition detection",
+    "replay 005 processing",
+    "strategic interpretation"
+  ],
+  "failureChecks": {
+    "perReplay": [
+      {
+        "replayId": "replay_001",
+        "fourOrMorePlausibleStructuralCorridors": false,
+        "fewerThanThreePlausibleStructuralCorridors": false,
+        "candidateSplitIntoTwo": false,
+        "candidatesMergingNearBase": false,
+        "centralStructuresAbsorbedIntoLanes": false,
+        "asymmetricMissingStructures": false,
+        "teamSpecificAnchorMismatches": [],
+        "duplicatedAnchorAssignments": [],
+        "oneAnchorAssignedToMultipleLanes": false,
+        "laneOrderingChangingAcrossReplays": false,
+        "topologySupportedOnlyByReplay001": false,
+        "axesRequireOccupancyEvidence": false,
+        "excludedCentralOrNeutralNodeCount": 196
+      },
+      {
+        "replayId": "replay_002",
+        "fourOrMorePlausibleStructuralCorridors": false,
+        "fewerThanThreePlausibleStructuralCorridors": false,
+        "candidateSplitIntoTwo": false,
+        "candidatesMergingNearBase": false,
+        "centralStructuresAbsorbedIntoLanes": false,
+        "asymmetricMissingStructures": false,
+        "teamSpecificAnchorMismatches": [],
+        "duplicatedAnchorAssignments": [],
+        "oneAnchorAssignedToMultipleLanes": false,
+        "laneOrderingChangingAcrossReplays": false,
+        "topologySupportedOnlyByReplay001": false,
+        "axesRequireOccupancyEvidence": false,
+        "excludedCentralOrNeutralNodeCount": 199
+      },
+      {
+        "replayId": "replay_003",
+        "fourOrMorePlausibleStructuralCorridors": false,
+        "fewerThanThreePlausibleStructuralCorridors": false,
+        "candidateSplitIntoTwo": false,
+        "candidatesMergingNearBase": false,
+        "centralStructuresAbsorbedIntoLanes": false,
+        "asymmetricMissingStructures": false,
+        "teamSpecificAnchorMismatches": [],
+        "duplicatedAnchorAssignments": [],
+        "oneAnchorAssignedToMultipleLanes": false,
+        "laneOrderingChangingAcrossReplays": false,
+        "topologySupportedOnlyByReplay001": false,
+        "axesRequireOccupancyEvidence": false,
+        "excludedCentralOrNeutralNodeCount": 185
+      },
+      {
+        "replayId": "replay_004",
+        "fourOrMorePlausibleStructuralCorridors": false,
+        "fewerThanThreePlausibleStructuralCorridors": false,
+        "candidateSplitIntoTwo": false,
+        "candidatesMergingNearBase": false,
+        "centralStructuresAbsorbedIntoLanes": false,
+        "asymmetricMissingStructures": false,
+        "teamSpecificAnchorMismatches": [],
+        "duplicatedAnchorAssignments": [],
+        "oneAnchorAssignedToMultipleLanes": false,
+        "laneOrderingChangingAcrossReplays": false,
+        "topologySupportedOnlyByReplay001": false,
+        "axesRequireOccupancyEvidence": false,
+        "excludedCentralOrNeutralNodeCount": 180
+      }
+    ],
+    "criticalFailures": []
+  },
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  }
+}
