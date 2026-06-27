@@ -1,0 +1,45 @@
+{
+  "experiment": 24,
+  "kind": "holdout_comparison",
+  "generatedAt": "2026-06-27T18:09:48.676Z",
+  "revisionCandidate": "candidate_d_combined_conservative_revision",
+  "sampleCounts": {
+    "points": 180,
+    "episodes": 90
+  },
+  "original": {
+    "pointEvidenceCountsByStatus": {
+      "automatically_contradicted": 50,
+      "automatically_supported": 10,
+      "internally_consistent_only": 65,
+      "unstable_under_perturbation": 55
+    },
+    "episodeEvidenceCountsByStatus": {
+      "automatically_contradicted": 12,
+      "internally_consistent_only": 78
+    },
+    "pointContradictions": 50,
+    "pointInstability": 55,
+    "episodeContradictions": 12
+  },
+  "revised": {
+    "pointEvidenceCountsByStatus": {
+      "automatically_supported": 9,
+      "internally_consistent_only": 152,
+      "unstable_under_perturbation": 19
+    },
+    "episodeEvidenceCountsByStatus": {
+      "automatically_contradicted": 75,
+      "internally_consistent_only": 15
+    },
+    "pointContradictions": 0,
+    "pointInstability": 19,
+    "episodeContradictions": 75
+  },
+  "deltas": {
+    "pointContradictions": -50,
+    "pointInstability": -36,
+    "episodeContradictions": 63
+  },
+  "warning": "Holdout evidence is autonomous and non-semantic; it is not human ground truth."
+}

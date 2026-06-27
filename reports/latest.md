@@ -1,3 +1,3 @@
 # Latest Report
 
-Latest report: [24-lane-occupancy-model-revision.md](24-lane-occupancy-model-revision.md)
+Latest report: [24-occupancy-holdout-validation.md](24-occupancy-holdout-validation.md)

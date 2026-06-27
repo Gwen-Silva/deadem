@@ -1,6 +1,6 @@
 # Task 006: Validate occupancy holdout
 
-Status: pending
+Status: completed
 Execution mode: autonomous
 Project stage: Lane occupancy validation
 Related experiment: 24

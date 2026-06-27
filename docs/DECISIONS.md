@@ -72,10 +72,20 @@ Reason: Experiment 24 autonomous audit found mechanical contradictions and high 
 
 ## DEC-008: Prefer Conservative Abstention For Mechanical Lane Occupancy Failures
 
-Status: provisional
+Status: superseded
 
 Date: 2026-06-27
 
 Decision: Mechanical lane occupancy failures should be corrected by conservative abstention, base/deployment precedence, separation ambiguity, transit filtering, and spatial continuity before any transition detection.
 
 Reason: Task 005 reduced autonomous point contradictions from 35 to 0 and point sensitivity from 63.33% to 10%, but lane coverage dropped from 53.39% to 10.19%. This requires holdout audit and does not establish semantic correctness.
+
+## DEC-009: Do Not Use Conservative Revision After Failed Holdout
+
+Status: provisional
+
+Date: 2026-06-27
+
+Decision: The task 005 conservative revision must not be used for downstream lane transitions or semantic lane claims.
+
+Reason: Task 006 holdout validation reduced point contradictions and instability but increased episode contradictions from 12 to 75 on holdout windows.
