@@ -1,0 +1,19 @@
+{
+  "experiment": 24,
+  "kind": "autonomous_validation_gate",
+  "generatedAt": "2026-06-27T17:42:59.514Z",
+  "gateResult": "autonomous_evidence_requires_model_revision",
+  "reason": "Conservative contradiction or instability counts are high enough to demonstrate mechanical model risk without semantic labels.",
+  "humanReviewsRequired": 0,
+  "allowedDownstreamUse": {
+    "allowed": false,
+    "scope": null,
+    "prohibited": [
+      "transition detection",
+      "strategic intent inference",
+      "rotation quality judgment",
+      "semantic ground-truth claims"
+    ]
+  },
+  "warning": "This gate is based on autonomous evidence, not human semantic ground truth."
+}

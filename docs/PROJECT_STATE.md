@@ -43,11 +43,11 @@ The current investigation is focused on improving lane occupancy quality before 
 
 ## Open Questions
 
-- Which lane occupancy model is precise enough for transition detection after manual review?
+- Which lane occupancy model remains precise enough after autonomous evidence-driven revision?
 - How should brief contacts and deployment-area samples be represented in the canonical timeline?
 - Which fields or derived metrics are reliable enough for combat/objective analysis?
-- Which Explorer observations can validate hero, lane, item, and objective mappings?
+- Which Explorer observations can validate only the minimized unresolved semantic questions?
 
 ## Likely Next Investigation
 
-Run a stratified manual validation of experiment 23 lane occupancy states before changing thresholds again or building transition, combat, objective, or macro-event detectors.
+Revise lane occupancy mechanics using the autonomous experiment 24 evidence audit before requesting broad human labels or building transition, combat, objective, or macro-event detectors.

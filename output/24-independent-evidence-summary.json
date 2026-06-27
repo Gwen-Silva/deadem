@@ -1,0 +1,367 @@
+{
+  "experiment": 24,
+  "kind": "independent_evidence_summary",
+  "generatedAt": "2026-06-27T17:42:59.513Z",
+  "epistemicRule": {
+    "internalConsistency": "Agreement with the model or its direct rule outputs is not semantic truth.",
+    "independentSupportingEvidence": "Distinct derived geometry, movement, region, and prior-model evidence can increase confidence.",
+    "independentContradictoryEvidence": "Measured geometry, movement, and continuity conflicts can reject a classification for current downstream use.",
+    "semanticGroundTruth": "Only human or external semantic review can establish semantic correctness.",
+    "unresolvedInterpretation": "Cases not resolved by deterministic evidence remain unresolved."
+  },
+  "derivedSignalNotes": {
+    "internalConsistency": [
+      "Experiment 23 sourceRow.state and sourceRow.physicalLaneId are the prediction under audit.",
+      "Containment in experiment 23 stable or brief episodes is not independent semantic confirmation."
+    ],
+    "independentOrSemiIndependentEvidence": [
+      "Experiment 18 movement metrics provide coordinates, speed, nearest-lane distances, and base distance from a separate movement pipeline.",
+      "Experiment 17 region timeline provides independently encoded spatial region context.",
+      "Experiment 22 provides an earlier parameterization for broad cross-model comparison."
+    ],
+    "notGroundTruth": [
+      "Lane-axis distance is geometry evidence, not semantic ground truth.",
+      "Cross-model agreement may share upstream geometry assumptions and cannot be treated as ground truth.",
+      "Stability under perturbation supports robustness but does not prove correctness."
+    ]
+  },
+  "pointEvidenceCountsByStatus": {
+    "automatically_contradicted": 35,
+    "automatically_supported": 6,
+    "internally_consistent_only": 29,
+    "unstable_under_perturbation": 50
+  },
+  "episodeEvidenceCountsByStatus": {
+    "automatically_contradicted": 7,
+    "internally_consistent_only": 65
+  },
+  "sensitivitySummary": {
+    "point": {
+      "sampleCount": 120,
+      "changedCount": 76,
+      "changedPercent": 63.33,
+      "byLane": {
+        "lane_1": {
+          "samples": 15,
+          "changed": 15,
+          "changedPercent": 100
+        },
+        "lane_2": {
+          "samples": 39,
+          "changed": 36,
+          "changedPercent": 92.31
+        },
+        "lane_3": {
+          "samples": 28,
+          "changed": 21,
+          "changedPercent": 75
+        },
+        "none": {
+          "samples": 38,
+          "changed": 4,
+          "changedPercent": 10.53
+        }
+      },
+      "byPlayer": {
+        "0": {
+          "samples": 15,
+          "changed": 10,
+          "changedPercent": 66.67
+        },
+        "1": {
+          "samples": 10,
+          "changed": 8,
+          "changedPercent": 80
+        },
+        "2": {
+          "samples": 11,
+          "changed": 6,
+          "changedPercent": 54.55
+        },
+        "3": {
+          "samples": 9,
+          "changed": 6,
+          "changedPercent": 66.67
+        },
+        "4": {
+          "samples": 9,
+          "changed": 4,
+          "changedPercent": 44.44
+        },
+        "5": {
+          "samples": 10,
+          "changed": 6,
+          "changedPercent": 60
+        },
+        "6": {
+          "samples": 8,
+          "changed": 4,
+          "changedPercent": 50
+        },
+        "7": {
+          "samples": 10,
+          "changed": 8,
+          "changedPercent": 80
+        },
+        "8": {
+          "samples": 9,
+          "changed": 6,
+          "changedPercent": 66.67
+        },
+        "9": {
+          "samples": 10,
+          "changed": 3,
+          "changedPercent": 30
+        },
+        "10": {
+          "samples": 10,
+          "changed": 8,
+          "changedPercent": 80
+        },
+        "11": {
+          "samples": 9,
+          "changed": 7,
+          "changedPercent": 77.78
+        }
+      },
+      "byMatchPhase": {
+        "early": {
+          "samples": 38,
+          "changed": 25,
+          "changedPercent": 65.79
+        },
+        "late": {
+          "samples": 41,
+          "changed": 29,
+          "changedPercent": 70.73
+        },
+        "middle": {
+          "samples": 41,
+          "changed": 22,
+          "changedPercent": 53.66
+        }
+      }
+    },
+    "episode": {
+      "sampleCount": 72,
+      "changedCount": 0,
+      "changedPercent": 0,
+      "byLane": {
+        "lane_1": {
+          "samples": 20,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "lane_2": {
+          "samples": 30,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "lane_3": {
+          "samples": 22,
+          "changed": 0,
+          "changedPercent": 0
+        }
+      },
+      "byPlayer": {
+        "0": {
+          "samples": 7,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "1": {
+          "samples": 6,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "2": {
+          "samples": 9,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "3": {
+          "samples": 7,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "4": {
+          "samples": 5,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "5": {
+          "samples": 6,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "6": {
+          "samples": 4,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "7": {
+          "samples": 7,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "8": {
+          "samples": 6,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "9": {
+          "samples": 5,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "10": {
+          "samples": 6,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "11": {
+          "samples": 4,
+          "changed": 0,
+          "changedPercent": 0
+        }
+      },
+      "byMatchPhase": {
+        "early": {
+          "samples": 22,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "late": {
+          "samples": 25,
+          "changed": 0,
+          "changedPercent": 0
+        },
+        "middle": {
+          "samples": 25,
+          "changed": 0,
+          "changedPercent": 0
+        }
+      }
+    }
+  },
+  "crossModelSummary": {
+    "point": {
+      "agreement": 76,
+      "majority_unknown": 3,
+      "selected_model_only_classification": 41
+    },
+    "episode": {
+      "agreement": 37,
+      "disagreement": 34,
+      "majority_mixed": 1
+    }
+  },
+  "strongestIndependentContradiction": {
+    "sampleId": "p24_point_070",
+    "reviewKind": "point",
+    "modelPrediction": {
+      "state": "lane_core_medium",
+      "physicalLaneId": "lane_2",
+      "candidateLane": "lane_2",
+      "matchPhase": "middle"
+    },
+    "contradictoryConditions": [
+      "base_geometry_strongly_contradicts_lane_occupancy",
+      "classification_changes_under_small_threshold_perturbations",
+      "high_speed_or_possible_discontinuity_near_sample"
+    ],
+    "evidenceMeasurements": {
+      "gameSecond": 604,
+      "playerIndex": 2,
+      "modelDistanceToAxis": 14.93,
+      "modelSeparationMargin": 66.26,
+      "movementNearestLane": "lane_2",
+      "movementSecondNearestLane": "lane_1",
+      "movementDistanceMargin": 66,
+      "movementSpeed": 1014.79,
+      "movementSpeedSmoothed5s": 302.81,
+      "movementState": "continuous_movement",
+      "coordinates": {
+        "x": 1022.66,
+        "y": 599.66,
+        "z": 1002
+      },
+      "previousCoordinates": {
+        "x": 14,
+        "y": 488.28,
+        "z": 618.5
+      },
+      "nextCoordinates": {
+        "x": 999.38,
+        "y": 947.5,
+        "z": 321.81
+      },
+      "distanceToAlliedBase": 1060.39,
+      "region": "base_team_3",
+      "rawRegion": "between_lanes",
+      "regionConfidence": "medium",
+      "independentRegionCode": 1,
+      "baseline22State": "lane_approach",
+      "baseline22PhysicalLaneId": "lane_2",
+      "containingEpisode": {
+        "type": "brief_contact",
+        "id": "cal_brief_2010",
+        "physicalLaneId": "lane_2",
+        "startSecond": 604,
+        "endSecond": 605,
+        "durationSeconds": 2
+      },
+      "laneGeometry": {
+        "lane_1": {
+          "axisDistanceFromMovementMetrics": 81,
+          "projectionRange": [
+            -504.93942827818745,
+            551.4154593708133
+          ],
+          "axisConfidence": "high"
+        },
+        "lane_2": {
+          "axisDistanceFromMovementMetrics": 15,
+          "projectionRange": [
+            -462.74296411164846,
+            638.9448625231901
+          ],
+          "axisConfidence": "high"
+        },
+        "lane_3": {
+          "axisDistanceFromMovementMetrics": 240,
+          "projectionRange": [
+            -630.2532096383388,
+            534.5364436200355
+          ],
+          "axisConfidence": "high"
+        }
+      },
+      "sensitivity": {
+        "originalState": "lane_core_medium",
+        "changedByPerturbations": 6,
+        "stableAcrossPerturbations": false,
+        "statesByPerturbation": {
+          "narrow_lane_envelope": "lane_core_high",
+          "wide_lane_envelope": "lane_core_high",
+          "stricter_separation_margin": "lane_core_medium",
+          "looser_separation_margin": "lane_core_high",
+          "larger_deployment_exclusion": "lane_core_high",
+          "smaller_deployment_exclusion": "lane_core_high",
+          "higher_confidence_boundary": "lane_core_medium",
+          "lower_confidence_boundary": "lane_core_high"
+        }
+      }
+    }
+  },
+  "allowedDownstreamUse": {
+    "allowed": false,
+    "scope": null,
+    "prohibited": [
+      "transition detection",
+      "strategic intent inference",
+      "rotation quality judgment",
+      "semantic ground-truth claims"
+    ]
+  }
+}

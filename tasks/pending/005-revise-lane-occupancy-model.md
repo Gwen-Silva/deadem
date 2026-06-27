@@ -1,22 +1,22 @@
 # Task 005: Revise lane occupancy model
 
-Status: blocked
+Status: pending
 Execution mode: autonomous
 Project stage: Lane occupancy validation
 Related experiment: 24
 Priority: high
-Depends on: task 004
-Unlocked by: task 004 gate equals requires_model_revision
+Depends on: task 008
+Unlocked by: task 008 gate equals autonomous_evidence_requires_model_revision with mechanical contradictions or instability traceable to measurements
 Blocks: task 006
 
 ## Objective
 
-Correct only lane occupancy errors demonstrated by human validation.
+Correct only lane occupancy errors demonstrated by autonomous independent evidence or later human validation.
 
 Every change must trace:
 
 ```text
-observed human-reviewed error
+observed evidence-reviewed error
 -> technical cause
 -> proposed correction
 -> expected effect
@@ -24,22 +24,21 @@ observed human-reviewed error
 
 ## Context to read
 
-Read only task 004 validation outputs, related reports, and the specific occupancy code under review.
+Read only task 008 autonomous audit outputs, related reports, and the specific occupancy code under review.
 
 ## Work requested
 
-Implement a scoped model correction only when task 004 demonstrates a concrete error.
+Implement a scoped model correction only when task 008 or later human validation demonstrates a concrete error.
 
 ## Constraints
 
-- Do not move this task to `tasks/pending/`.
 - Do not change thresholds only to improve internal metrics.
 - Do not introduce transition detection.
 - Do not process a second replay.
 
 ## Inputs
 
-- task 004 validation outputs
+- task 008 autonomous audit outputs
 
 ## Outputs
 
@@ -48,7 +47,7 @@ Implement a scoped model correction only when task 004 demonstrates a concrete e
 
 ## Acceptance criteria
 
-Each correction is traceable to a human-reviewed error and has a stated expected effect.
+Each correction is traceable to a measured evidence-reviewed error and has a stated expected effect.
 
 ## Required validation
 
@@ -75,4 +74,4 @@ Summarize observed error, cause, correction, expected effect, and validation.
 
 ## Stop conditions
 
-Stop if the requested change is not supported by human-reviewed evidence.
+Stop if the requested change is not supported by autonomous independent evidence or later human-reviewed evidence.

@@ -52,10 +52,20 @@ Reason: Experiment 23 reports `readyToDetectTransitions: false`, despite improve
 
 ## DEC-006: Validate Lane Occupancy Manually Before Experiment 24 Transitions
 
-Status: provisional
+Status: superseded
 
 Date: 2026-06-27
 
 Decision: The next methodological step should be stratified manual validation of experiment 23 lane occupancy states before threshold recalibration or transition detection.
 
 Reason: Experiment 23 selected the `balanced` model using internal consistency metrics, but it did not include completed ground-truth or Explorer validation.
+
+## DEC-007: Exhaust Autonomous Evidence Before Broad Human Lane Labels
+
+Status: provisional
+
+Date: 2026-06-27
+
+Decision: Lane occupancy validation should run autonomous independent-evidence, sensitivity, stability, and cross-model audits before requesting broad human labels.
+
+Reason: Experiment 24 autonomous audit found mechanical contradictions and high point sensitivity that can be addressed before escalating to semantic human review. Human review remains valid ground truth, but should be minimized to unresolved decision-relevant questions.

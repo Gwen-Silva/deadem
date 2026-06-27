@@ -1,0 +1,2463 @@
+{
+  "experiment": 24,
+  "kind": "minimal_human_review_queue",
+  "generatedAt": "2026-06-27T17:42:59.514Z",
+  "selectionPolicy": "Include only unresolved, contradicted, or unstable cases that can affect transition readiness or model-revision decisions.",
+  "broadManualLabelingRequested": false,
+  "reviewCount": 24,
+  "samples": [
+    {
+      "sampleId": "p24_point_001",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 0,
+        "modelDistanceToAxis": 17.58,
+        "modelSeparationMargin": 127.35,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 127,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 189.59,
+          "y": 451.22,
+          "z": 902.16
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 326.53,
+          "y": 833.38,
+          "z": 832.63
+        },
+        "distanceToAlliedBase": 349.17,
+        "region": "base_team_3",
+        "rawRegion": "base_team_3",
+        "regionConfidence": "high",
+        "independentRegionCode": 1,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_1",
+          "physicalLaneId": "lane_2",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 145,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 18,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 190,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_high",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_high",
+            "wide_lane_envelope": "lane_core_high",
+            "stricter_separation_margin": "lane_core_high",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_high",
+            "smaller_deployment_exclusion": "lane_core_high",
+            "higher_confidence_boundary": "lane_core_high",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane",
+        "classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy"
+      ]
+    },
+    {
+      "sampleId": "p24_point_002",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 1,
+        "modelDistanceToAxis": 277.56,
+        "modelSeparationMargin": 10.83,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 10,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 778.19,
+          "y": 830.88,
+          "z": 933.66
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 807.19,
+          "y": 466.03,
+          "z": 810.78
+        },
+        "distanceToAlliedBase": 779.74,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_901",
+          "physicalLaneId": "lane_2",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 288,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 278,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 372,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_approach"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_003",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 2,
+        "modelDistanceToAxis": 26.76,
+        "modelSeparationMargin": 44.25,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 44,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 927.63,
+          "y": 598.41,
+          "z": 775.53
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 678.97,
+          "y": 124.81,
+          "z": 733.34
+        },
+        "distanceToAlliedBase": 969.42,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_1809",
+          "physicalLaneId": "lane_2",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 71,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 27,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 206,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 2,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_occupiable",
+            "wide_lane_envelope": "lane_occupiable",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_occupiable",
+            "smaller_deployment_exclusion": "lane_occupiable",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_006",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_1, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 5,
+        "modelDistanceToAxis": 423.08,
+        "modelSeparationMargin": 3.39,
+        "movementNearestLane": "lane_1",
+        "movementSecondNearestLane": "lane_3",
+        "movementDistanceMargin": 3,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 502.03,
+          "y": 992.25,
+          "z": 859.56
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 665.19,
+          "y": 460.41,
+          "z": 865.63
+        },
+        "distanceToAlliedBase": 514.43,
+        "region": "base_team_3",
+        "rawRegion": "base_team_3",
+        "regionConfidence": "high",
+        "independentRegionCode": 1,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_4732",
+          "physicalLaneId": "lane_1",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 423,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 475,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 426,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_approach"
+          }
+        }
+      },
+      "supportingConditions": [
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_008",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_1, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 7,
+        "modelDistanceToAxis": 445.89,
+        "modelSeparationMargin": 4.47,
+        "movementNearestLane": "lane_1",
+        "movementSecondNearestLane": "lane_3",
+        "movementDistanceMargin": 4,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 511.31,
+          "y": 1014.28,
+          "z": 856.88
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 678.56,
+          "y": 483.78,
+          "z": 862.78
+        },
+        "distanceToAlliedBase": 528.65,
+        "region": "unknown",
+        "rawRegion": "unknown",
+        "regionConfidence": "low",
+        "independentRegionCode": 4,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_6598",
+          "physicalLaneId": "lane_1",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 446,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 496,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 450,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_approach"
+          }
+        }
+      },
+      "supportingConditions": [
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_009",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 8,
+        "modelDistanceToAxis": 27.24,
+        "modelSeparationMargin": 46.62,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 47,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 937.84,
+          "y": 600.31,
+          "z": 739.84
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 686.81,
+          "y": 130.41,
+          "z": 697.5
+        },
+        "distanceToAlliedBase": 978.66,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_7512",
+          "physicalLaneId": "lane_2",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 74,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 27,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 211,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_medium",
+          "changedByPerturbations": 4,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_medium",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_medium",
+            "smaller_deployment_exclusion": "lane_core_medium",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_011",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 10,
+        "modelDistanceToAxis": 242.66,
+        "modelSeparationMargin": 116.07,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 116,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 243.13,
+          "y": 231.41,
+          "z": 882.41
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 179.66,
+          "y": 581.69,
+          "z": 737.84
+        },
+        "distanceToAlliedBase": 253.97,
+        "region": "base_team_2",
+        "rawRegion": "base_team_2",
+        "regionConfidence": "high",
+        "independentRegionCode": 0,
+        "baseline22State": "base_core",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_9504",
+          "physicalLaneId": "lane_2",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 359,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 243,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 377,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_high",
+          "changedByPerturbations": 1,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_high",
+            "stricter_separation_margin": "lane_core_high",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_high",
+            "smaller_deployment_exclusion": "lane_core_high",
+            "higher_confidence_boundary": "lane_core_high",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_012",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 19,
+        "playerIndex": 11,
+        "modelDistanceToAxis": 287.44,
+        "modelSeparationMargin": 14.52,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 15,
+        "movementSpeed": 0,
+        "movementSpeedSmoothed5s": 0,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 793.88,
+          "y": 843.03,
+          "z": 932.19
+        },
+        "previousCoordinates": null,
+        "nextCoordinates": {
+          "x": 805.75,
+          "y": 466.13,
+          "z": 822.78
+        },
+        "distanceToAlliedBase": 794.74,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_10388",
+          "physicalLaneId": "lane_2",
+          "startSecond": 19,
+          "endSecond": 19,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 302,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 287,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 389,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 7,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_occupiable"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_013",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_3, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 20,
+        "playerIndex": 1,
+        "modelDistanceToAxis": 39.85,
+        "modelSeparationMargin": 32.26,
+        "movementNearestLane": "lane_3",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 32,
+        "movementSpeed": 365.99,
+        "movementSpeedSmoothed5s": 183,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 807.19,
+          "y": 466.03,
+          "z": 810.78
+        },
+        "previousCoordinates": {
+          "x": 778.19,
+          "y": 830.88,
+          "z": 933.66
+        },
+        "nextCoordinates": {
+          "x": 879.75,
+          "y": 944.44,
+          "z": 385
+        },
+        "distanceToAlliedBase": 907.15,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_3",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_902",
+          "physicalLaneId": "lane_3",
+          "startSecond": 20,
+          "endSecond": 20,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 72,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 88,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 40,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 3,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_occupiable",
+            "wide_lane_envelope": "lane_occupiable",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_medium",
+            "larger_deployment_exclusion": "lane_occupiable",
+            "smaller_deployment_exclusion": "lane_occupiable",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_core_medium"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_015",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_approach",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_approach, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 107,
+        "playerIndex": 10,
+        "modelDistanceToAxis": 475.21,
+        "modelSeparationMargin": 108.23,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_3",
+        "movementDistanceMargin": 108,
+        "movementSpeed": 783.64,
+        "movementSpeedSmoothed5s": 243.79,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 271.22,
+          "y": 0.53,
+          "z": 376.06
+        },
+        "previousCoordinates": {
+          "x": 376.97,
+          "y": 777,
+          "z": 376.06
+        },
+        "nextCoordinates": {
+          "x": 194.69,
+          "y": 813.63,
+          "z": 376.06
+        },
+        "distanceToAlliedBase": 313.62,
+        "region": "between_lanes",
+        "rawRegion": "base_team_2",
+        "regionConfidence": "high",
+        "independentRegionCode": 2,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": null,
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 586,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 475,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 583,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_approach",
+          "changedByPerturbations": 7,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_occupiable",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_occupiable",
+            "larger_deployment_exclusion": "lane_occupiable",
+            "smaller_deployment_exclusion": "lane_occupiable",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_occupiable"
+          }
+        }
+      },
+      "supportingConditions": [],
+      "contradictoryConditions": [
+        "predicted_lane_not_nearest_with_substantial_separation",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_016",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "unknown",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying unknown, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 116,
+        "playerIndex": 10,
+        "modelDistanceToAxis": 154.08,
+        "modelSeparationMargin": 114.25,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 114,
+        "movementSpeed": 40.42,
+        "movementSpeedSmoothed5s": 293.11,
+        "movementState": "trajectory_interruption",
+        "coordinates": {
+          "x": 249.03,
+          "y": 321.66,
+          "z": 376.03
+        },
+        "previousCoordinates": {
+          "x": 266.53,
+          "y": 358.09,
+          "z": 376.03
+        },
+        "nextCoordinates": {
+          "x": 249.03,
+          "y": 321.66,
+          "z": 376.03
+        },
+        "distanceToAlliedBase": 297.99,
+        "region": "base_team_2",
+        "rawRegion": "base_team_2",
+        "regionConfidence": "high",
+        "independentRegionCode": 0,
+        "baseline22State": "unknown",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": null,
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 268,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 154,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 290,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "unknown",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_high",
+            "wide_lane_envelope": "lane_core_high",
+            "stricter_separation_margin": "lane_core_high",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_high",
+            "smaller_deployment_exclusion": "lane_core_high",
+            "higher_confidence_boundary": "lane_core_high",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "movement_row_marks_player_dead_or_unavailable"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_017",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "middle"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 601,
+        "playerIndex": 0,
+        "modelDistanceToAxis": 194.23,
+        "modelSeparationMargin": 16.3,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_3",
+        "movementDistanceMargin": 17,
+        "movementSpeed": 761,
+        "movementSpeedSmoothed5s": 747.67,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 494.72,
+          "y": 315.22,
+          "z": 880.03
+        },
+        "previousCoordinates": {
+          "x": 910.69,
+          "y": 952.47,
+          "z": 942.66
+        },
+        "nextCoordinates": {
+          "x": 231.09,
+          "y": 152.34,
+          "z": 880.03
+        },
+        "distanceToAlliedBase": 519.1,
+        "region": "base_team_2",
+        "rawRegion": "base_team_2",
+        "regionConfidence": "high",
+        "independentRegionCode": 0,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_159",
+          "physicalLaneId": "lane_2",
+          "startSecond": 600,
+          "endSecond": 601,
+          "durationSeconds": 2
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 252,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 194,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 211,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 6,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_occupiable",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_occupiable"
+          }
+        }
+      },
+      "supportingConditions": [
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_018",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "matchPhase": "late"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_3, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 1201,
+        "playerIndex": 0,
+        "modelDistanceToAxis": 80.61,
+        "modelSeparationMargin": 47.57,
+        "movementNearestLane": "lane_3",
+        "movementSecondNearestLane": "lane_2",
+        "movementDistanceMargin": 47,
+        "movementSpeed": 199.85,
+        "movementSpeedSmoothed5s": 544.55,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 635.47,
+          "y": 401.44,
+          "z": 376
+        },
+        "previousCoordinates": {
+          "x": 751.63,
+          "y": 238.81,
+          "z": 348.38
+        },
+        "nextCoordinates": {
+          "x": 823.22,
+          "y": 425.63,
+          "z": 376
+        },
+        "distanceToAlliedBase": 680.5,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_395",
+          "physicalLaneId": "lane_3",
+          "startSecond": 1200,
+          "endSecond": 1203,
+          "durationSeconds": 4
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 153,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 128,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 81,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_medium",
+          "changedByPerturbations": 4,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_medium",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_medium",
+            "smaller_deployment_exclusion": "lane_core_medium",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_019",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 134,
+        "playerIndex": 0,
+        "modelDistanceToAxis": 251.66,
+        "modelSeparationMargin": 82.78,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_3",
+        "movementDistanceMargin": 82,
+        "movementSpeed": 783.83,
+        "movementSpeedSmoothed5s": 428.59,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 349.5,
+          "y": 237.09,
+          "z": 100.19
+        },
+        "previousCoordinates": {
+          "x": 69.03,
+          "y": 969.03,
+          "z": 316.25
+        },
+        "nextCoordinates": {
+          "x": 727.88,
+          "y": 601.22,
+          "z": 975.56
+        },
+        "distanceToAlliedBase": 358.34,
+        "region": "between_lanes",
+        "rawRegion": "base_team_2",
+        "regionConfidence": "high",
+        "independentRegionCode": 2,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_25",
+          "physicalLaneId": "lane_2",
+          "startSecond": 134,
+          "endSecond": 134,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 343,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 252,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 334,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_high",
+          "changedByPerturbations": 3,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_high",
+            "stricter_separation_margin": "lane_core_medium",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_high",
+            "smaller_deployment_exclusion": "lane_core_high",
+            "higher_confidence_boundary": "lane_core_medium",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_020",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 21,
+        "playerIndex": 1,
+        "modelDistanceToAxis": 376.09,
+        "modelSeparationMargin": 34.92,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 35,
+        "movementSpeed": 483.88,
+        "movementSpeedSmoothed5s": 283.29,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 879.75,
+          "y": 944.44,
+          "z": 385
+        },
+        "previousCoordinates": {
+          "x": 807.19,
+          "y": 466.03,
+          "z": 810.78
+        },
+        "nextCoordinates": {
+          "x": 1005.06,
+          "y": 505.09,
+          "z": 248.03
+        },
+        "distanceToAlliedBase": 882.11,
+        "region": "between_lanes",
+        "rawRegion": "unknown",
+        "regionConfidence": "low",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_903",
+          "physicalLaneId": "lane_2",
+          "startSecond": 21,
+          "endSecond": 21,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 411,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 376,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 514,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 2,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_occupiable",
+            "wide_lane_envelope": "lane_occupiable",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_medium",
+            "larger_deployment_exclusion": "lane_occupiable",
+            "smaller_deployment_exclusion": "lane_occupiable",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_medium"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_021",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 31,
+        "playerIndex": 2,
+        "modelDistanceToAxis": 24.82,
+        "modelSeparationMargin": 3.62,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 3,
+        "movementSpeed": 487.04,
+        "movementSpeedSmoothed5s": 99.66,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 967.59,
+          "y": 551.88,
+          "z": 248.03
+        },
+        "previousCoordinates": {
+          "x": 895.19,
+          "y": 70.25,
+          "z": 171.09
+        },
+        "nextCoordinates": {
+          "x": 971.41,
+          "y": 577.19,
+          "z": 248.03
+        },
+        "distanceToAlliedBase": 1021.72,
+        "region": "between_lanes",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_1812",
+          "physicalLaneId": "lane_2",
+          "startSecond": 31,
+          "endSecond": 34,
+          "durationSeconds": 4
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 28,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 25,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 176,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_approach"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_024",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_1, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 26,
+        "playerIndex": 5,
+        "modelDistanceToAxis": 21.63,
+        "modelSeparationMargin": 8.27,
+        "movementNearestLane": "lane_1",
+        "movementSecondNearestLane": "lane_2",
+        "movementDistanceMargin": 8,
+        "movementSpeed": 307.25,
+        "movementSpeedSmoothed5s": 555.84,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 773.91,
+          "y": 519.88,
+          "z": 120.06
+        },
+        "previousCoordinates": {
+          "x": 860.53,
+          "y": 814.66,
+          "z": 169.63
+        },
+        "nextCoordinates": {
+          "x": 710.44,
+          "y": 440.59,
+          "z": 128.13
+        },
+        "distanceToAlliedBase": 853.59,
+        "region": "base_team_3",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 1,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_1",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_4738",
+          "physicalLaneId": "lane_1",
+          "startSecond": 26,
+          "endSecond": 26,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 22,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 30,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 79,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_approach"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_026",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_1, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 54,
+        "playerIndex": 7,
+        "modelDistanceToAxis": 213.45,
+        "modelSeparationMargin": 34.49,
+        "movementNearestLane": "lane_1",
+        "movementSecondNearestLane": "lane_2",
+        "movementDistanceMargin": 35,
+        "movementSpeed": 316.28,
+        "movementSpeedSmoothed5s": 367.07,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 583.66,
+          "y": 773.97,
+          "z": 128.09
+        },
+        "previousCoordinates": {
+          "x": 868.88,
+          "y": 910.66,
+          "z": 120.09
+        },
+        "nextCoordinates": {
+          "x": 333.16,
+          "y": 89.34,
+          "z": 120.13
+        },
+        "distanceToAlliedBase": 593.21,
+        "region": "base_team_2",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 0,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_6615",
+          "physicalLaneId": "lane_1",
+          "startSecond": 54,
+          "endSecond": 54,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 213,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 248,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 250,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 2,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_occupiable",
+            "wide_lane_envelope": "lane_occupiable",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_medium",
+            "larger_deployment_exclusion": "lane_occupiable",
+            "smaller_deployment_exclusion": "lane_occupiable",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_medium"
+          }
+        }
+      },
+      "supportingConditions": [
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_027",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 42,
+        "playerIndex": 8,
+        "modelDistanceToAxis": 352.35,
+        "modelSeparationMargin": 54.76,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 55,
+        "movementSpeed": 798.1,
+        "movementSpeedSmoothed5s": 455.51,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 965.75,
+          "y": 932.41,
+          "z": 128.06
+        },
+        "previousCoordinates": {
+          "x": 168.22,
+          "y": 902.16,
+          "z": 128.06
+        },
+        "nextCoordinates": {
+          "x": 128.97,
+          "y": 815.63,
+          "z": 128.06
+        },
+        "distanceToAlliedBase": 967.17,
+        "region": "base_team_3",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 1,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_7516",
+          "physicalLaneId": "lane_2",
+          "startSecond": 42,
+          "endSecond": 42,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 407,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 352,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 532,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_medium",
+          "changedByPerturbations": 3,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_occupiable",
+            "wide_lane_envelope": "lane_core_medium",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_medium",
+            "larger_deployment_exclusion": "lane_core_medium",
+            "smaller_deployment_exclusion": "lane_core_medium",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_medium"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_029",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 71,
+        "playerIndex": 10,
+        "modelDistanceToAxis": 334.63,
+        "modelSeparationMargin": 72.72,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_3",
+        "movementDistanceMargin": 72,
+        "movementSpeed": 272.9,
+        "movementSpeedSmoothed5s": 92.47,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 361.16,
+          "y": 154.94,
+          "z": 383.44
+        },
+        "previousCoordinates": {
+          "x": 620.84,
+          "y": 238.81,
+          "z": 405.09
+        },
+        "nextCoordinates": {
+          "x": 121.16,
+          "y": 315.75,
+          "z": 258.22
+        },
+        "distanceToAlliedBase": 361.17,
+        "region": "between_lanes",
+        "rawRegion": "base_team_2",
+        "regionConfidence": "high",
+        "independentRegionCode": 2,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_9515",
+          "physicalLaneId": "lane_2",
+          "startSecond": 71,
+          "endSecond": 71,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 424,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 335,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 407,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_high",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_medium",
+            "stricter_separation_margin": "lane_core_medium",
+            "looser_separation_margin": "lane_core_medium",
+            "larger_deployment_exclusion": "lane_core_medium",
+            "smaller_deployment_exclusion": "lane_core_medium",
+            "higher_confidence_boundary": "lane_core_medium",
+            "lower_confidence_boundary": "lane_core_medium"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_030",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_2, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 21,
+        "playerIndex": 11,
+        "modelDistanceToAxis": 409.3,
+        "modelSeparationMargin": 28.7,
+        "movementNearestLane": "lane_2",
+        "movementSecondNearestLane": "lane_1",
+        "movementDistanceMargin": 29,
+        "movementSpeed": 510.15,
+        "movementSpeedSmoothed5s": 295.75,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 852.25,
+          "y": 974.16,
+          "z": 376.03
+        },
+        "previousCoordinates": {
+          "x": 805.75,
+          "y": 466.13,
+          "z": 822.78
+        },
+        "nextCoordinates": {
+          "x": 604.88,
+          "y": 560.84,
+          "z": 248.09
+        },
+        "distanceToAlliedBase": 857.44,
+        "region": "between_lanes",
+        "rawRegion": "unknown",
+        "regionConfidence": "low",
+        "independentRegionCode": 2,
+        "baseline22State": "lane_approach",
+        "baseline22PhysicalLaneId": "lane_2",
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_10390",
+          "physicalLaneId": "lane_2",
+          "startSecond": 21,
+          "endSecond": 21,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 438,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 409,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 532,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 2,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_occupiable",
+            "wide_lane_envelope": "lane_occupiable",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_occupiable",
+            "larger_deployment_exclusion": "lane_occupiable",
+            "smaller_deployment_exclusion": "lane_occupiable",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_occupiable"
+          }
+        }
+      },
+      "supportingConditions": [
+        "experiment22_broad_lane_agreement",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_032",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_3, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 39,
+        "playerIndex": 1,
+        "modelDistanceToAxis": 38.15,
+        "modelSeparationMargin": 1.26,
+        "movementNearestLane": "lane_3",
+        "movementSecondNearestLane": "lane_2",
+        "movementDistanceMargin": 1,
+        "movementSpeed": 13.4,
+        "movementSpeedSmoothed5s": 107.86,
+        "movementState": "stationary",
+        "coordinates": {
+          "x": 393.16,
+          "y": 537,
+          "z": 248.06
+        },
+        "previousCoordinates": {
+          "x": 386.66,
+          "y": 548.72,
+          "z": 248.06
+        },
+        "nextCoordinates": {
+          "x": 364.44,
+          "y": 530.81,
+          "z": 248.06
+        },
+        "distanceToAlliedBase": 521.75,
+        "region": "base_team_3",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 1,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_909",
+          "physicalLaneId": "lane_3",
+          "startSecond": 39,
+          "endSecond": 39,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 40,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 39,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 38,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_occupiable",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_approach",
+            "wide_lane_envelope": "lane_approach",
+            "stricter_separation_margin": "lane_approach",
+            "looser_separation_margin": "lane_approach",
+            "larger_deployment_exclusion": "lane_approach",
+            "smaller_deployment_exclusion": "lane_approach",
+            "higher_confidence_boundary": "lane_approach",
+            "lower_confidence_boundary": "lane_approach"
+          }
+        }
+      },
+      "supportingConditions": [
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_033",
+      "reviewKind": "point",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "matchPhase": "early"
+      },
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_3, or is the model state better interpreted as base/deployment/unknown? Evidence status: unstable_under_perturbation.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 20,
+        "playerIndex": 2,
+        "modelDistanceToAxis": 324.66,
+        "modelSeparationMargin": 83.5,
+        "movementNearestLane": "lane_3",
+        "movementSecondNearestLane": "lane_2",
+        "movementDistanceMargin": 83,
+        "movementSpeed": 534.9,
+        "movementSpeedSmoothed5s": 267.45,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 678.97,
+          "y": 124.81,
+          "z": 733.34
+        },
+        "previousCoordinates": {
+          "x": 927.63,
+          "y": 598.41,
+          "z": 775.53
+        },
+        "nextCoordinates": {
+          "x": 14.81,
+          "y": 566.47,
+          "z": 713.19
+        },
+        "distanceToAlliedBase": 1015.53,
+        "region": "between_lanes",
+        "rawRegion": "lane_3_team_3_side",
+        "regionConfidence": "medium",
+        "independentRegionCode": 2,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_1810",
+          "physicalLaneId": "lane_3",
+          "startSecond": 20,
+          "endSecond": 20,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 424,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 408,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 325,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_high",
+          "changedByPerturbations": 8,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_medium",
+            "stricter_separation_margin": "lane_core_medium",
+            "looser_separation_margin": "lane_core_medium",
+            "larger_deployment_exclusion": "lane_core_medium",
+            "smaller_deployment_exclusion": "lane_core_medium",
+            "higher_confidence_boundary": "lane_core_medium",
+            "lower_confidence_boundary": "lane_core_medium"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    },
+    {
+      "sampleId": "p24_point_034",
+      "reviewKind": "point",
+      "evidenceStatus": "automatically_contradicted",
+      "modelPrediction": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "matchPhase": "early"
+      },
+      "reason": "At least one conservative contradiction rule fired from measured evidence.",
+      "exactQuestion": "At this point, is the player semantically occupying lane_3, or is the model state better interpreted as base/deployment/unknown? Evidence status: automatically_contradicted.",
+      "materialDecision": "Determine whether the current occupancy model needs mechanical revision or can support limited non-transition downstream use.",
+      "evidenceMeasurements": {
+        "gameSecond": 20,
+        "playerIndex": 5,
+        "modelDistanceToAxis": 14.97,
+        "modelSeparationMargin": 58.88,
+        "movementNearestLane": "lane_3",
+        "movementSecondNearestLane": "lane_2",
+        "movementDistanceMargin": 59,
+        "movementSpeed": 556.31,
+        "movementSpeedSmoothed5s": 278.15,
+        "movementState": "continuous_movement",
+        "coordinates": {
+          "x": 665.19,
+          "y": 460.41,
+          "z": 865.63
+        },
+        "previousCoordinates": {
+          "x": 502.03,
+          "y": 992.25,
+          "z": 859.56
+        },
+        "nextCoordinates": {
+          "x": 178.34,
+          "y": 852.97,
+          "z": 814.66
+        },
+        "distanceToAlliedBase": 786.47,
+        "region": "base_team_3",
+        "rawRegion": "between_lanes",
+        "regionConfidence": "medium",
+        "independentRegionCode": 1,
+        "baseline22State": "deployment_ambiguous",
+        "baseline22PhysicalLaneId": null,
+        "containingEpisode": {
+          "type": "brief_contact",
+          "id": "cal_brief_4733",
+          "physicalLaneId": "lane_3",
+          "startSecond": 20,
+          "endSecond": 20,
+          "durationSeconds": 1
+        },
+        "laneGeometry": {
+          "lane_1": {
+            "axisDistanceFromMovementMetrics": 91,
+            "projectionRange": [
+              -504.93942827818745,
+              551.4154593708133
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_2": {
+            "axisDistanceFromMovementMetrics": 74,
+            "projectionRange": [
+              -462.74296411164846,
+              638.9448625231901
+            ],
+            "axisConfidence": "high"
+          },
+          "lane_3": {
+            "axisDistanceFromMovementMetrics": 15,
+            "projectionRange": [
+              -630.2532096383388,
+              534.5364436200355
+            ],
+            "axisConfidence": "high"
+          }
+        },
+        "sensitivity": {
+          "originalState": "lane_core_medium",
+          "changedByPerturbations": 4,
+          "stableAcrossPerturbations": false,
+          "statesByPerturbation": {
+            "narrow_lane_envelope": "lane_core_medium",
+            "wide_lane_envelope": "lane_core_medium",
+            "stricter_separation_margin": "lane_occupiable",
+            "looser_separation_margin": "lane_core_high",
+            "larger_deployment_exclusion": "lane_core_medium",
+            "smaller_deployment_exclusion": "lane_core_medium",
+            "higher_confidence_boundary": "lane_occupiable",
+            "lower_confidence_boundary": "lane_core_high"
+          }
+        }
+      },
+      "supportingConditions": [
+        "independent_geometry_nearest_lane_supports_prediction",
+        "episode_representation_contains_same_lane"
+      ],
+      "contradictoryConditions": [
+        "base_geometry_strongly_contradicts_lane_occupancy",
+        "classification_changes_under_small_threshold_perturbations"
+      ]
+    }
+  ]
+}

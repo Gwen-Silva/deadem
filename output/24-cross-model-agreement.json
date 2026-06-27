@@ -1,0 +1,2472 @@
+{
+  "experiment": 24,
+  "kind": "cross_model_agreement",
+  "generatedAt": "2026-06-27T17:42:59.513Z",
+  "modelSources": [
+    "experiment_22_lane_occupancy",
+    "experiment_23_balanced_selected_model",
+    "experiment_23_candidate_model_summaries"
+  ],
+  "candidateModelSummaries": [
+    {
+      "model": "conservative",
+      "rows": 35124,
+      "laneCoreCoverage": 4137,
+      "laneCoreCoveragePercent": 11.78,
+      "laneOccupancyCoverage": 10113,
+      "laneOccupancyCoveragePercent": 28.79,
+      "deploymentCoverage": 10250,
+      "deploymentCoveragePercent": 29.18,
+      "briefContacts": 7092,
+      "stableEpisodes": 42,
+      "deducedLaneAgreementPercent": 32.26,
+      "initialAssignedLaneAgreementPercent": 12.82,
+      "potentialLaneChanges": 12,
+      "estimatedBaseFalsePositiveRisk": 29.18,
+      "sanityCriteria": {
+        "initialRecognitionAdequate": false,
+        "baseDeploymentExclusionPreserved": true,
+        "occupancyRecallImproved": true,
+        "briefContactsReduced": false,
+        "physicalLaneNullStillPossible": true
+      }
+    },
+    {
+      "model": "balanced",
+      "rows": 35124,
+      "laneCoreCoverage": 8745,
+      "laneCoreCoveragePercent": 24.9,
+      "laneOccupancyCoverage": 18728,
+      "laneOccupancyCoveragePercent": 53.32,
+      "deploymentCoverage": 6073,
+      "deploymentCoveragePercent": 17.29,
+      "briefContacts": 11415,
+      "stableEpisodes": 359,
+      "deducedLaneAgreementPercent": 40,
+      "initialAssignedLaneAgreementPercent": 22.23,
+      "potentialLaneChanges": 201,
+      "estimatedBaseFalsePositiveRisk": 17.29,
+      "sanityCriteria": {
+        "initialRecognitionAdequate": false,
+        "baseDeploymentExclusionPreserved": true,
+        "occupancyRecallImproved": true,
+        "briefContactsReduced": false,
+        "physicalLaneNullStillPossible": true
+      }
+    },
+    {
+      "model": "high_recall",
+      "rows": 35124,
+      "laneCoreCoverage": 15055,
+      "laneCoreCoveragePercent": 42.86,
+      "laneOccupancyCoverage": 22479,
+      "laneOccupancyCoveragePercent": 64,
+      "deploymentCoverage": 2919,
+      "deploymentCoveragePercent": 8.31,
+      "briefContacts": 11790,
+      "stableEpisodes": 1819,
+      "deducedLaneAgreementPercent": 34.62,
+      "initialAssignedLaneAgreementPercent": 25.83,
+      "potentialLaneChanges": 1136,
+      "estimatedBaseFalsePositiveRisk": 8.31,
+      "sanityCriteria": {
+        "initialRecognitionAdequate": false,
+        "baseDeploymentExclusionPreserved": false,
+        "occupancyRecallImproved": true,
+        "briefContactsReduced": false,
+        "physicalLaneNullStillPossible": true
+      }
+    }
+  ],
+  "epistemicWarning": "Cross-model agreement is not ground truth and may share geometry-derived assumptions.",
+  "pointSummary": {
+    "agreement": 76,
+    "majority_unknown": 3,
+    "selected_model_only_classification": 41
+  },
+  "episodeSummary": {
+    "agreement": 37,
+    "disagreement": 34,
+    "majority_mixed": 1
+  },
+  "pointAgreement": [
+    {
+      "sampleId": "p24_point_001",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_002",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_003",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_004",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_005",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_006",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_007",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_008",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_009",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_010",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "majority_unknown"
+    },
+    {
+      "sampleId": "p24_point_011",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_012",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_013",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_014",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_015",
+      "model23": {
+        "state": "lane_approach",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "majority_unknown"
+    },
+    {
+      "sampleId": "p24_point_016",
+      "model23": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_017",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_018",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_019",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_020",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_021",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_022",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_023",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_024",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_1"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_025",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_026",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_027",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_028",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_029",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_030",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_031",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_032",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_033",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_034",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_035",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_036",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_037",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_038",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_039",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_040",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_041",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_042",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_043",
+      "model23": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_044",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_045",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_046",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_047",
+      "model23": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_048",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_049",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_050",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_051",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_052",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_053",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_054",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_055",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_056",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_057",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_058",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_059",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_060",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_061",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_062",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_063",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_064",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_065",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_066",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_067",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_068",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_069",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_070",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_071",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_072",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_073",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_074",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_075",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_076",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_077",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_078",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_079",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_080",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_081",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_082",
+      "model23": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_083",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_084",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_085",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_086",
+      "model23": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "unknown",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_087",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_1"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_088",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_089",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_090",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_091",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_092",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_093",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_094",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_095",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_096",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_097",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_098",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "majority_unknown"
+    },
+    {
+      "sampleId": "p24_point_099",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_100",
+      "model23": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_101",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_102",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_103",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_104",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_105",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "inter_lane_transit",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_106",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_107",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_1"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_108",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_1"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_109",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_110",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_111",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_112",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_113",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_114",
+      "model23": {
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_115",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_116",
+      "model23": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "model22": {
+        "state": "base_core",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_117",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_118",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_point_119",
+      "model23": {
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3"
+      },
+      "model22": {
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null
+      },
+      "agreementStatus": "selected_model_only_classification"
+    },
+    {
+      "sampleId": "p24_point_120",
+      "model23": {
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2"
+      },
+      "model22": {
+        "state": "lane_approach",
+        "physicalLaneId": "lane_2"
+      },
+      "agreementStatus": "agreement"
+    }
+  ],
+  "episodeAgreement": [
+    {
+      "sampleId": "p24_episode_001",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_002",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_003",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_004",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_005",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_006",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_007",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_008",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_009",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 21,
+        "endSecond": 22
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 2,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_010",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 21,
+        "endSecond": 21
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_011",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 21,
+        "endSecond": 21
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_012",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 23,
+        "endSecond": 24
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 2,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_013",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 20,
+        "endSecond": 20
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_014",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 601,
+        "endSecond": 601
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_015",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1201,
+        "endSecond": 1201
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_016",
+      "model23": {
+        "episodeType": "stable_episode",
+        "physicalLaneId": "lane_3",
+        "startSecond": 23,
+        "endSecond": 30
+      },
+      "model22ComparableRows": 8,
+      "model22LaneAgreementRows": 8,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_017",
+      "model23": {
+        "episodeType": "stable_episode",
+        "physicalLaneId": "lane_3",
+        "startSecond": 27,
+        "endSecond": 32
+      },
+      "model22ComparableRows": 6,
+      "model22LaneAgreementRows": 6,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_018",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 124,
+        "endSecond": 124
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_019",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 57,
+        "endSecond": 58
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 2,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_020",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 21,
+        "endSecond": 21
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_021",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 22,
+        "endSecond": 22
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_022",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 26,
+        "endSecond": 26
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_023",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 54,
+        "endSecond": 54
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_024",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 36,
+        "endSecond": 36
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_025",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 614,
+        "endSecond": 614
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_026",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 601,
+        "endSecond": 601
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_027",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 601,
+        "endSecond": 602
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_028",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 601,
+        "endSecond": 601
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_029",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_030",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 602,
+        "endSecond": 602
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_031",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_032",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_033",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 604
+      },
+      "model22ComparableRows": 3,
+      "model22LaneAgreementRows": 3,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_034",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 604
+      },
+      "model22ComparableRows": 3,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 0.3333333333333333,
+      "agreementStatus": "majority_mixed"
+    },
+    {
+      "sampleId": "p24_episode_035",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 603,
+        "endSecond": 604
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 2,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_036",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 603,
+        "endSecond": 603
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_037",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 603,
+        "endSecond": 604
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_038",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 604,
+        "endSecond": 605
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 2,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_039",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 604,
+        "endSecond": 604
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_040",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 605,
+        "endSecond": 605
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_041",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 605,
+        "endSecond": 605
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_042",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 606,
+        "endSecond": 606
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_043",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 606,
+        "endSecond": 606
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_044",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 606,
+        "endSecond": 606
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_045",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 606,
+        "endSecond": 606
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_046",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 607,
+        "endSecond": 607
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_047",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 608,
+        "endSecond": 609
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_048",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 609,
+        "endSecond": 609
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_049",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1210,
+        "endSecond": 1210
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_050",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1201,
+        "endSecond": 1201
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_051",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1201,
+        "endSecond": 1201
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_052",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1201,
+        "endSecond": 1204
+      },
+      "model22ComparableRows": 4,
+      "model22LaneAgreementRows": 4,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_053",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1202,
+        "endSecond": 1202
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_054",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1202,
+        "endSecond": 1202
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_055",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1203,
+        "endSecond": 1203
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_056",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1203,
+        "endSecond": 1203
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_057",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1203,
+        "endSecond": 1203
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_058",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1203,
+        "endSecond": 1203
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_059",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1203,
+        "endSecond": 1203
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_060",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1204,
+        "endSecond": 1204
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_061",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1204,
+        "endSecond": 1206
+      },
+      "model22ComparableRows": 3,
+      "model22LaneAgreementRows": 3,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_062",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1204,
+        "endSecond": 1205
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 2,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_063",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1204,
+        "endSecond": 1204
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_064",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1204,
+        "endSecond": 1204
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_065",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1205
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_066",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1205,
+        "endSecond": 1205
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_067",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1205,
+        "endSecond": 1205
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_068",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1205
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    },
+    {
+      "sampleId": "p24_episode_069",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1208
+      },
+      "model22ComparableRows": 4,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_070",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1206,
+        "endSecond": 1206
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_071",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1206,
+        "endSecond": 1207
+      },
+      "model22ComparableRows": 2,
+      "model22LaneAgreementRows": 0,
+      "agreementRatio": 0,
+      "agreementStatus": "disagreement"
+    },
+    {
+      "sampleId": "p24_episode_072",
+      "model23": {
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1206,
+        "endSecond": 1206
+      },
+      "model22ComparableRows": 1,
+      "model22LaneAgreementRows": 1,
+      "agreementRatio": 1,
+      "agreementStatus": "agreement"
+    }
+  ]
+}

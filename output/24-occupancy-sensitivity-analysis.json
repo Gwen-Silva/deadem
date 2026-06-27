@@ -1,0 +1,3728 @@
+{
+  "experiment": 24,
+  "kind": "occupancy_sensitivity_analysis",
+  "generatedAt": "2026-06-27T17:42:59.510Z",
+  "perturbations": [
+    {
+      "name": "narrow_lane_envelope",
+      "changes": {
+        "maxCoreDistance": -30,
+        "maxOccupancyDistance": -50
+      }
+    },
+    {
+      "name": "wide_lane_envelope",
+      "changes": {
+        "maxCoreDistance": 30,
+        "maxOccupancyDistance": 50
+      }
+    },
+    {
+      "name": "stricter_separation_margin",
+      "changes": {
+        "minMargin": 15
+      }
+    },
+    {
+      "name": "looser_separation_margin",
+      "changes": {
+        "minMargin": -15
+      }
+    },
+    {
+      "name": "larger_deployment_exclusion",
+      "changes": {
+        "deploymentRadius": 50,
+        "baseCoreRadius": 20
+      }
+    },
+    {
+      "name": "smaller_deployment_exclusion",
+      "changes": {
+        "deploymentRadius": -50,
+        "baseCoreRadius": -20
+      }
+    },
+    {
+      "name": "higher_confidence_boundary",
+      "changes": {
+        "maxCoreDistance": -20,
+        "minMargin": 20
+      }
+    },
+    {
+      "name": "lower_confidence_boundary",
+      "changes": {
+        "maxCoreDistance": 20,
+        "minMargin": -20
+      }
+    }
+  ],
+  "pointSummary": {
+    "sampleCount": 120,
+    "changedCount": 76,
+    "changedPercent": 63.33,
+    "byLane": {
+      "lane_1": {
+        "samples": 15,
+        "changed": 15,
+        "changedPercent": 100
+      },
+      "lane_2": {
+        "samples": 39,
+        "changed": 36,
+        "changedPercent": 92.31
+      },
+      "lane_3": {
+        "samples": 28,
+        "changed": 21,
+        "changedPercent": 75
+      },
+      "none": {
+        "samples": 38,
+        "changed": 4,
+        "changedPercent": 10.53
+      }
+    },
+    "byPlayer": {
+      "0": {
+        "samples": 15,
+        "changed": 10,
+        "changedPercent": 66.67
+      },
+      "1": {
+        "samples": 10,
+        "changed": 8,
+        "changedPercent": 80
+      },
+      "2": {
+        "samples": 11,
+        "changed": 6,
+        "changedPercent": 54.55
+      },
+      "3": {
+        "samples": 9,
+        "changed": 6,
+        "changedPercent": 66.67
+      },
+      "4": {
+        "samples": 9,
+        "changed": 4,
+        "changedPercent": 44.44
+      },
+      "5": {
+        "samples": 10,
+        "changed": 6,
+        "changedPercent": 60
+      },
+      "6": {
+        "samples": 8,
+        "changed": 4,
+        "changedPercent": 50
+      },
+      "7": {
+        "samples": 10,
+        "changed": 8,
+        "changedPercent": 80
+      },
+      "8": {
+        "samples": 9,
+        "changed": 6,
+        "changedPercent": 66.67
+      },
+      "9": {
+        "samples": 10,
+        "changed": 3,
+        "changedPercent": 30
+      },
+      "10": {
+        "samples": 10,
+        "changed": 8,
+        "changedPercent": 80
+      },
+      "11": {
+        "samples": 9,
+        "changed": 7,
+        "changedPercent": 77.78
+      }
+    },
+    "byMatchPhase": {
+      "early": {
+        "samples": 38,
+        "changed": 25,
+        "changedPercent": 65.79
+      },
+      "late": {
+        "samples": 41,
+        "changed": 29,
+        "changedPercent": 70.73
+      },
+      "middle": {
+        "samples": 41,
+        "changed": 22,
+        "changedPercent": 53.66
+      }
+    }
+  },
+  "episodeSummary": {
+    "sampleCount": 72,
+    "changedCount": 0,
+    "changedPercent": 0,
+    "byLane": {
+      "lane_1": {
+        "samples": 20,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "lane_2": {
+        "samples": 30,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "lane_3": {
+        "samples": 22,
+        "changed": 0,
+        "changedPercent": 0
+      }
+    },
+    "byPlayer": {
+      "0": {
+        "samples": 7,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "1": {
+        "samples": 6,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "2": {
+        "samples": 9,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "3": {
+        "samples": 7,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "4": {
+        "samples": 5,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "5": {
+        "samples": 6,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "6": {
+        "samples": 4,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "7": {
+        "samples": 7,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "8": {
+        "samples": 6,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "9": {
+        "samples": 5,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "10": {
+        "samples": 6,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "11": {
+        "samples": 4,
+        "changed": 0,
+        "changedPercent": 0
+      }
+    },
+    "byMatchPhase": {
+      "early": {
+        "samples": 22,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "late": {
+        "samples": 25,
+        "changed": 0,
+        "changedPercent": 0
+      },
+      "middle": {
+        "samples": 25,
+        "changed": 0,
+        "changedPercent": 0
+      }
+    }
+  },
+  "pointChanges": [
+    {
+      "sampleId": "p24_point_001",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_002",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_003",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_004",
+      "playerIndex": 3,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_005",
+      "playerIndex": 4,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_006",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_007",
+      "playerIndex": 6,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_008",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_009",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_010",
+      "playerIndex": 9,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_011",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 1,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_012",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 7,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_013",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_014",
+      "playerIndex": 5,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_015",
+      "playerIndex": 10,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "lane_approach",
+      "changedByPerturbations": 7,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_016",
+      "playerIndex": 10,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "unknown",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_017",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_018",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_019",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_020",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_021",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_022",
+      "playerIndex": 3,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_023",
+      "playerIndex": 4,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_024",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_025",
+      "playerIndex": 6,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_026",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_027",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_028",
+      "playerIndex": 9,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_029",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_030",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_031",
+      "playerIndex": 0,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_032",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_033",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_034",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_035",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_036",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_037",
+      "playerIndex": 10,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_038",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_039",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_040",
+      "playerIndex": 2,
+      "physicalLaneId": null,
+      "matchPhase": "early",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_041",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_042",
+      "playerIndex": 1,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_043",
+      "playerIndex": 2,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "unknown",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "unknown",
+        "wide_lane_envelope": "unknown",
+        "stricter_separation_margin": "unknown",
+        "looser_separation_margin": "unknown",
+        "larger_deployment_exclusion": "unknown",
+        "smaller_deployment_exclusion": "unknown",
+        "higher_confidence_boundary": "unknown",
+        "lower_confidence_boundary": "unknown"
+      }
+    },
+    {
+      "sampleId": "p24_point_044",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_045",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_046",
+      "playerIndex": 5,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_047",
+      "playerIndex": 6,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "unknown",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "unknown",
+        "wide_lane_envelope": "unknown",
+        "stricter_separation_margin": "unknown",
+        "looser_separation_margin": "unknown",
+        "larger_deployment_exclusion": "unknown",
+        "smaller_deployment_exclusion": "unknown",
+        "higher_confidence_boundary": "unknown",
+        "lower_confidence_boundary": "unknown"
+      }
+    },
+    {
+      "sampleId": "p24_point_048",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_049",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_050",
+      "playerIndex": 9,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_051",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_052",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_053",
+      "playerIndex": 0,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_054",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_055",
+      "playerIndex": 2,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_056",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_057",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_058",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_059",
+      "playerIndex": 9,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_060",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_061",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_062",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_063",
+      "playerIndex": 2,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_064",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_065",
+      "playerIndex": 4,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_066",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_067",
+      "playerIndex": 7,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_068",
+      "playerIndex": 0,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_069",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 7,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_070",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_071",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_072",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_073",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_074",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_075",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_076",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_077",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_078",
+      "playerIndex": 5,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_079",
+      "playerIndex": 6,
+      "physicalLaneId": null,
+      "matchPhase": "middle",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_080",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_081",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_082",
+      "playerIndex": 1,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "unknown",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_083",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_084",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_085",
+      "playerIndex": 4,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_086",
+      "playerIndex": 5,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "unknown",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "unknown",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "unknown",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_087",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_088",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_089",
+      "playerIndex": 8,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_090",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_091",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_092",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_093",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_094",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_095",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_core_medium",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_096",
+      "playerIndex": 7,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_097",
+      "playerIndex": 8,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_098",
+      "playerIndex": 9,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_099",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_100",
+      "playerIndex": 11,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "deployment_ambiguous",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "deployment_ambiguous",
+        "wide_lane_envelope": "deployment_ambiguous",
+        "stricter_separation_margin": "deployment_ambiguous",
+        "looser_separation_margin": "deployment_ambiguous",
+        "larger_deployment_exclusion": "deployment_ambiguous",
+        "smaller_deployment_exclusion": "deployment_ambiguous",
+        "higher_confidence_boundary": "deployment_ambiguous",
+        "lower_confidence_boundary": "deployment_ambiguous"
+      }
+    },
+    {
+      "sampleId": "p24_point_101",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_102",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_103",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_104",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_105",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_106",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_107",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 6,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    },
+    {
+      "sampleId": "p24_point_108",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_109",
+      "playerIndex": 9,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_110",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_111",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_112",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_113",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_114",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_high",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_high",
+        "wide_lane_envelope": "lane_core_high",
+        "stricter_separation_margin": "lane_core_high",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_high",
+        "smaller_deployment_exclusion": "lane_core_high",
+        "higher_confidence_boundary": "lane_core_high",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_115",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 3,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_116",
+      "playerIndex": 10,
+      "physicalLaneId": null,
+      "matchPhase": "late",
+      "originalState": "base_core",
+      "changedByPerturbations": 0,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "base_core",
+        "wide_lane_envelope": "base_core",
+        "stricter_separation_margin": "base_core",
+        "looser_separation_margin": "base_core",
+        "larger_deployment_exclusion": "base_core",
+        "smaller_deployment_exclusion": "base_core",
+        "higher_confidence_boundary": "base_core",
+        "lower_confidence_boundary": "base_core"
+      }
+    },
+    {
+      "sampleId": "p24_point_117",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 8,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_approach",
+        "wide_lane_envelope": "lane_approach",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_approach",
+        "larger_deployment_exclusion": "lane_approach",
+        "smaller_deployment_exclusion": "lane_approach",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_approach"
+      }
+    },
+    {
+      "sampleId": "p24_point_118",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 4,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_core_medium",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_occupiable",
+        "looser_separation_margin": "lane_core_high",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_high"
+      }
+    },
+    {
+      "sampleId": "p24_point_119",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalState": "lane_core_medium",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_core_medium",
+        "stricter_separation_margin": "lane_core_medium",
+        "looser_separation_margin": "lane_core_medium",
+        "larger_deployment_exclusion": "lane_core_medium",
+        "smaller_deployment_exclusion": "lane_core_medium",
+        "higher_confidence_boundary": "lane_occupiable",
+        "lower_confidence_boundary": "lane_core_medium"
+      }
+    },
+    {
+      "sampleId": "p24_point_120",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalState": "lane_occupiable",
+      "changedByPerturbations": 2,
+      "statesByPerturbation": {
+        "narrow_lane_envelope": "lane_occupiable",
+        "wide_lane_envelope": "lane_occupiable",
+        "stricter_separation_margin": "lane_approach",
+        "looser_separation_margin": "lane_occupiable",
+        "larger_deployment_exclusion": "lane_occupiable",
+        "smaller_deployment_exclusion": "lane_occupiable",
+        "higher_confidence_boundary": "lane_approach",
+        "lower_confidence_boundary": "lane_occupiable"
+      }
+    }
+  ],
+  "episodeChanges": [
+    {
+      "sampleId": "p24_episode_001",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_002",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_003",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_004",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_005",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_006",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_007",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_008",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_009",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_010",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_011",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_012",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_013",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_014",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_015",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_016",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalType": "stable_episode",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "stable_episode",
+        "wide_lane_envelope": "stable_episode",
+        "stricter_separation_margin": "stable_episode",
+        "looser_separation_margin": "stable_episode",
+        "larger_deployment_exclusion": "stable_episode",
+        "smaller_deployment_exclusion": "stable_episode",
+        "higher_confidence_boundary": "stable_episode",
+        "lower_confidence_boundary": "stable_episode"
+      }
+    },
+    {
+      "sampleId": "p24_episode_017",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalType": "stable_episode",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "stable_episode",
+        "wide_lane_envelope": "stable_episode",
+        "stricter_separation_margin": "stable_episode",
+        "looser_separation_margin": "stable_episode",
+        "larger_deployment_exclusion": "stable_episode",
+        "smaller_deployment_exclusion": "stable_episode",
+        "higher_confidence_boundary": "stable_episode",
+        "lower_confidence_boundary": "stable_episode"
+      }
+    },
+    {
+      "sampleId": "p24_episode_018",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_019",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_020",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_021",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_022",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_023",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_024",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "early",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_025",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_026",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_027",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_028",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_029",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_030",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_031",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_032",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_033",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_034",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_035",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_036",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_037",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_038",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_039",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_040",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_041",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_042",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_043",
+      "playerIndex": 1,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_044",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_045",
+      "playerIndex": 5,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_046",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_047",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_048",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "middle",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_049",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_050",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_051",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_052",
+      "playerIndex": 10,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_053",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_054",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_055",
+      "playerIndex": 2,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_056",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_057",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_058",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_059",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_060",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_061",
+      "playerIndex": 3,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_062",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_063",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_064",
+      "playerIndex": 11,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_065",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_066",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_067",
+      "playerIndex": 6,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_068",
+      "playerIndex": 8,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_069",
+      "playerIndex": 9,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_070",
+      "playerIndex": 0,
+      "physicalLaneId": "lane_1",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_071",
+      "playerIndex": 4,
+      "physicalLaneId": "lane_3",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    },
+    {
+      "sampleId": "p24_episode_072",
+      "playerIndex": 7,
+      "physicalLaneId": "lane_2",
+      "matchPhase": "late",
+      "originalType": "brief_contact",
+      "changedByPerturbations": 0,
+      "episodeTypeByPerturbation": {
+        "narrow_lane_envelope": "brief_contact",
+        "wide_lane_envelope": "brief_contact",
+        "stricter_separation_margin": "brief_contact",
+        "looser_separation_margin": "brief_contact",
+        "larger_deployment_exclusion": "brief_contact",
+        "smaller_deployment_exclusion": "brief_contact",
+        "higher_confidence_boundary": "brief_contact",
+        "lower_confidence_boundary": "brief_contact"
+      }
+    }
+  ]
+}
