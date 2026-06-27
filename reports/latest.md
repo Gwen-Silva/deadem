@@ -1,3 +1,3 @@
 # Latest Report
 
-Latest report: [23-lane-occupancy-decision-packet.md](23-lane-occupancy-decision-packet.md)
+Latest report: [24-lane-occupancy-validation-infrastructure.md](24-lane-occupancy-validation-infrastructure.md)

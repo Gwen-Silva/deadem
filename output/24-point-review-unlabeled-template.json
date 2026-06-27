@@ -1,0 +1,4232 @@
+{
+  "experiment": 24,
+  "sourceExperiment": 23,
+  "generatedAt": "2026-06-27T17:24:03.882Z",
+  "recommendedModel": "balanced",
+  "gateResult": "awaiting_human_labels",
+  "labelStatus": "unlabeled",
+  "allowedLabels": [
+    "correct",
+    "incorrect",
+    "ambiguous"
+  ],
+  "allowedReviewedPhysicalLanes": [
+    "lane_1",
+    "lane_2",
+    "lane_3",
+    "deployment",
+    "base",
+    "unknown"
+  ],
+  "requiredHumanFields": [
+    "label",
+    "reviewedPhysicalLane",
+    "reviewerConfidence",
+    "observedEvidence"
+  ],
+  "note": "These samples are infrastructure for human validation and are not scientific validation results.",
+  "kind": "point_review_unlabeled_template",
+  "sampleCount": 120,
+  "samples": [
+    {
+      "sampleId": "p24_point_001",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 19,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 17.58,
+        "separationMargin": 127.35,
+        "normalizedProgress": 0.22,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": 4,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_002",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 19,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 277.56,
+        "separationMargin": 10.83,
+        "normalizedProgress": 0.8,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": 4,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_003",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 19,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 26.76,
+        "separationMargin": 44.25,
+        "normalizedProgress": 0.91,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": 1,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_004",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 19,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 19.56,
+        "separationMargin": 146.13,
+        "normalizedProgress": 0.15,
+        "envelope": 536.21,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": 6,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_005",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 19,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 219.42,
+        "separationMargin": 45.27,
+        "normalizedProgress": 0.42,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": 1,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_006",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 19,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 423.08,
+        "separationMargin": 3.39,
+        "normalizedProgress": 0.47,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": 6,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_007",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 19,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 287.81,
+        "separationMargin": 36.81,
+        "normalizedProgress": 0.42,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": 1,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_008",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 19,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 445.89,
+        "separationMargin": 4.47,
+        "normalizedProgress": 0.48,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": 6,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_009",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 19,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 27.24,
+        "separationMargin": 46.62,
+        "normalizedProgress": 0.92,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": 1,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_010",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 19,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 33.17,
+        "separationMargin": 151.56,
+        "normalizedProgress": 0.13,
+        "envelope": 557.38,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": 6,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_011",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 19,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 242.66,
+        "separationMargin": 116.07,
+        "normalizedProgress": 0.25,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": 4,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_012",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 19,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 287.44,
+        "separationMargin": 14.52,
+        "normalizedProgress": 0.82,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": 4,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_013",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 20,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 39.85,
+        "separationMargin": 32.26,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_014",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 21,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 182.98,
+        "separationMargin": 71,
+        "normalizedProgress": 0.19,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_015",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_approach",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 107,
+        "state": "lane_approach",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 475.21,
+        "separationMargin": 108.23,
+        "normalizedProgress": 0.24,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_016",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 116,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 154.08,
+        "separationMargin": 114.25,
+        "normalizedProgress": 0.26,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_017",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 601,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 194.23,
+        "separationMargin": 16.3,
+        "normalizedProgress": 0.48,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_018",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 1201,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 80.61,
+        "separationMargin": 47.57,
+        "normalizedProgress": 0.69,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_019",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 134,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 251.66,
+        "separationMargin": 82.78,
+        "normalizedProgress": 0.34,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_020",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 21,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 376.09,
+        "separationMargin": 34.92,
+        "normalizedProgress": 0.91,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_021",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 31,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 24.82,
+        "separationMargin": 3.62,
+        "normalizedProgress": 0.94,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_022",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 20,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 302.92,
+        "separationMargin": 28.8,
+        "normalizedProgress": 0.31,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_023",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 20,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 198.09,
+        "separationMargin": 37.37,
+        "normalizedProgress": 0.3,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_024",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 26,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 21.63,
+        "separationMargin": 8.27,
+        "normalizedProgress": 0.77,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_025",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 20,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 136.96,
+        "separationMargin": 31.24,
+        "normalizedProgress": 0.32,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_026",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 54,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 213.45,
+        "separationMargin": 34.49,
+        "normalizedProgress": 0.57,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_027",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 42,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 352.35,
+        "separationMargin": 54.76,
+        "normalizedProgress": 0.98,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_028",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 20,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 273.82,
+        "separationMargin": 29.85,
+        "normalizedProgress": 0.31,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_029",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 71,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 334.63,
+        "separationMargin": 72.72,
+        "normalizedProgress": 0.34,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_030",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 21,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 409.3,
+        "separationMargin": 28.7,
+        "normalizedProgress": 0.89,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_031",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 20,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 216.34,
+        "separationMargin": 32.07,
+        "normalizedProgress": 0.31,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_032",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 39,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 38.15,
+        "separationMargin": 1.26,
+        "normalizedProgress": 0.45,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_033",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 20,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 324.66,
+        "separationMargin": 83.5,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_034",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 20,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 14.97,
+        "separationMargin": 58.88,
+        "normalizedProgress": 0.7,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_035",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 20,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 11.59,
+        "separationMargin": 40.95,
+        "normalizedProgress": 0.7,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_036",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 20,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 316.68,
+        "separationMargin": 87.02,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_037",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 20,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_1",
+        "distanceToAxis": 15.97,
+        "separationMargin": 54.81,
+        "normalizedProgress": 0.21,
+        "envelope": 468,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_038",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 20,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 39.44,
+        "separationMargin": 32.7,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_039",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 21,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 43.46,
+        "separationMargin": 25.19,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_040",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "early"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 21,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_1",
+        "distanceToAxis": 46.63,
+        "separationMargin": 73.98,
+        "normalizedProgress": 0.05,
+        "envelope": 468,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "early"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_041",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 606,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 336.29,
+        "separationMargin": 42.38,
+        "normalizedProgress": 0.93,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_042",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 601,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 21.18,
+        "separationMargin": 141.46,
+        "normalizedProgress": 0.17,
+        "envelope": 519.29,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_043",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 601,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 265.86,
+        "separationMargin": 107.82,
+        "normalizedProgress": 0.05,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_044",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 601,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 11.64,
+        "separationMargin": 16.69,
+        "normalizedProgress": 0.55,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_045",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 601,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 471.46,
+        "separationMargin": 2.05,
+        "normalizedProgress": 0.69,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_046",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 601,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 18.3,
+        "separationMargin": 79.2,
+        "normalizedProgress": 0.18,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_047",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 601,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 140.64,
+        "separationMargin": 166.43,
+        "normalizedProgress": 0.06,
+        "envelope": 622.3,
+        "baseState": "base_core",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_048",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 601,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 250.74,
+        "separationMargin": 74.05,
+        "normalizedProgress": 0.36,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_049",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 601,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 228.59,
+        "separationMargin": 1.58,
+        "normalizedProgress": 0.76,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_050",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 601,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 77.68,
+        "separationMargin": 149.49,
+        "normalizedProgress": 0.13,
+        "envelope": 554.17,
+        "baseState": "base_core",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_051",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 601,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 59.16,
+        "separationMargin": 17.54,
+        "normalizedProgress": 0.66,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_052",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 601,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 252.17,
+        "separationMargin": 22.4,
+        "normalizedProgress": 0.62,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_053",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 602,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 319.33,
+        "separationMargin": 119.26,
+        "normalizedProgress": 0.22,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_054",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 602,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 316.34,
+        "separationMargin": 66.46,
+        "normalizedProgress": 1.02,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_055",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 602,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 257.07,
+        "separationMargin": 106.29,
+        "normalizedProgress": 0.06,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_056",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 602,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 217.29,
+        "separationMargin": 146.24,
+        "normalizedProgress": 0.95,
+        "envelope": 561.88,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_057",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 602,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 286.61,
+        "separationMargin": 0.81,
+        "normalizedProgress": 0.49,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_058",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 602,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 359.17,
+        "separationMargin": 29.31,
+        "normalizedProgress": 0.88,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_059",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 602,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 70.65,
+        "separationMargin": 37.29,
+        "normalizedProgress": 0.31,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_060",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 602,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 73.29,
+        "separationMargin": 52.43,
+        "normalizedProgress": 0.94,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_061",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 602,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 250.37,
+        "separationMargin": 1.66,
+        "normalizedProgress": 0.76,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_062",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 603,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 41.27,
+        "separationMargin": 49.08,
+        "normalizedProgress": 0.87,
+        "envelope": 476.07,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_063",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 603,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 43.27,
+        "separationMargin": 81.28,
+        "normalizedProgress": 0.07,
+        "envelope": 609.32,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_064",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 603,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 93.52,
+        "separationMargin": 47.04,
+        "normalizedProgress": 0.92,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_065",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 603,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 414.19,
+        "separationMargin": 36.81,
+        "normalizedProgress": 0.39,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_066",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 603,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 217.26,
+        "separationMargin": 104.08,
+        "normalizedProgress": 0.82,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_067",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 603,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 181.59,
+        "separationMargin": 94.15,
+        "normalizedProgress": 0.11,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_068",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 604,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 375.11,
+        "separationMargin": 32.81,
+        "normalizedProgress": 0.41,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_069",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 604,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 274.97,
+        "separationMargin": 123.67,
+        "normalizedProgress": 0.88,
+        "envelope": 486.57,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_070",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 604,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 14.93,
+        "separationMargin": 66.26,
+        "normalizedProgress": 0.99,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_071",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 604,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 147.44,
+        "separationMargin": 111.57,
+        "normalizedProgress": 0.27,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_072",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 604,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 14.78,
+        "separationMargin": 2.72,
+        "normalizedProgress": 0.59,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_073",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 604,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 6.24,
+        "separationMargin": 96.52,
+        "normalizedProgress": 0.76,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_074",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 604,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 270.47,
+        "separationMargin": 61.31,
+        "normalizedProgress": 1,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_075",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 605,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 340.51,
+        "separationMargin": 84.31,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_076",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 605,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 382.6,
+        "separationMargin": 11.4,
+        "normalizedProgress": 0.81,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_077",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 605,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 53.01,
+        "separationMargin": 42.93,
+        "normalizedProgress": 0.93,
+        "envelope": 537.98,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_078",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 605,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 19.48,
+        "separationMargin": 151.76,
+        "normalizedProgress": 0.13,
+        "envelope": 556.79,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_079",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 605,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 140.64,
+        "separationMargin": 166.43,
+        "normalizedProgress": 0.06,
+        "envelope": 622.3,
+        "baseState": "base_core",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_080",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 605,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 172.31,
+        "separationMargin": 33.57,
+        "normalizedProgress": 0.88,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "middle"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_081",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 1203,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 12.88,
+        "separationMargin": 54.19,
+        "normalizedProgress": 0.73,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_082",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 1,
+        "gameSecond": 1201,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 324.87,
+        "separationMargin": 185.86,
+        "normalizedProgress": 1.09,
+        "envelope": 720.21,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_083",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 1201,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 136.01,
+        "separationMargin": 23.58,
+        "normalizedProgress": 0.51,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_084",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 1201,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 269.31,
+        "separationMargin": 31.84,
+        "normalizedProgress": 0.88,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_085",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 1201,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 300.36,
+        "separationMargin": 32.84,
+        "normalizedProgress": 0.43,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_086",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 5,
+        "gameSecond": 1201,
+        "state": "unknown",
+        "physicalLaneId": null,
+        "candidateLane": "lane_1",
+        "distanceToAxis": 181.48,
+        "separationMargin": 28.34,
+        "normalizedProgress": 0.6,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_087",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 1201,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 18.04,
+        "separationMargin": 45.16,
+        "normalizedProgress": 0.92,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_088",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 1201,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 286.56,
+        "separationMargin": 109.49,
+        "normalizedProgress": 0.27,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_089",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 1201,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 376.05,
+        "separationMargin": 36.26,
+        "normalizedProgress": 0.28,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_090",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 1201,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 367.04,
+        "separationMargin": 116.34,
+        "normalizedProgress": 0.23,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_091",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 1201,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 395.01,
+        "separationMargin": 52.04,
+        "normalizedProgress": 0.98,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_092",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 1201,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 370.09,
+        "separationMargin": 21.81,
+        "normalizedProgress": 0.54,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_093",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 1202,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 7.59,
+        "separationMargin": 103.24,
+        "normalizedProgress": 0.83,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_094",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 1202,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 450.85,
+        "separationMargin": 2.34,
+        "normalizedProgress": 0.79,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_095",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 1202,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 315.91,
+        "separationMargin": 112.81,
+        "normalizedProgress": 0.86,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_096",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 1202,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 236.21,
+        "separationMargin": 31.07,
+        "normalizedProgress": 0.44,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_097",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 1202,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 321.68,
+        "separationMargin": 154.29,
+        "normalizedProgress": 0.09,
+        "envelope": 595.64,
+        "baseState": "base_core",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_098",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 1202,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 358.17,
+        "separationMargin": 67.11,
+        "normalizedProgress": 0.18,
+        "envelope": 468,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_099",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 1202,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 264.83,
+        "separationMargin": 48.69,
+        "normalizedProgress": 0.95,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_100",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 1202,
+        "state": "deployment_ambiguous",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 145.8,
+        "separationMargin": 3.02,
+        "normalizedProgress": 0.42,
+        "envelope": 598,
+        "baseState": "deployment_ambiguous",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_101",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 2,
+        "gameSecond": 1203,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 117.31,
+        "separationMargin": 166.45,
+        "normalizedProgress": 1.01,
+        "envelope": 623.25,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_102",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 1203,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 117.09,
+        "separationMargin": 1.97,
+        "normalizedProgress": 0.72,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_103",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 1203,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 409.5,
+        "separationMargin": 12.21,
+        "normalizedProgress": 0.64,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_104",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 1203,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 24.54,
+        "separationMargin": 41.81,
+        "normalizedProgress": 0.74,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_105",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 1203,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 429.68,
+        "separationMargin": 26.27,
+        "normalizedProgress": 0.88,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_106",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 1204,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 14.14,
+        "separationMargin": 7.81,
+        "normalizedProgress": 0.59,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_107",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 1204,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 3.07,
+        "separationMargin": 20.18,
+        "normalizedProgress": 0.82,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_108",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 1204,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 36.62,
+        "separationMargin": 42.84,
+        "normalizedProgress": 0.92,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_109",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 1204,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_2",
+        "distanceToAxis": 419.04,
+        "separationMargin": 166.32,
+        "normalizedProgress": 0.03,
+        "envelope": 649.19,
+        "baseState": "base_core",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_110",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 11,
+        "gameSecond": 1204,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 130.52,
+        "separationMargin": 144.26,
+        "normalizedProgress": 0.93,
+        "envelope": 543.8,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_111",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 1205,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 228.48,
+        "separationMargin": 9.96,
+        "normalizedProgress": 0.65,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_112",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 1205,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 9.76,
+        "separationMargin": 7.12,
+        "normalizedProgress": 0.61,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_113",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 6,
+        "gameSecond": 1205,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 84.53,
+        "separationMargin": 6.77,
+        "normalizedProgress": 0.76,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_114",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 8,
+        "gameSecond": 1205,
+        "state": "lane_core_high",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 212.5,
+        "separationMargin": 124.24,
+        "normalizedProgress": 0.88,
+        "envelope": 480.83,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_115",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 9,
+        "gameSecond": 1205,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 49.58,
+        "separationMargin": 26.24,
+        "normalizedProgress": 0.64,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_116",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 10,
+        "gameSecond": 1205,
+        "state": "base_core",
+        "physicalLaneId": null,
+        "candidateLane": "lane_3",
+        "distanceToAxis": 251.28,
+        "separationMargin": 72.73,
+        "normalizedProgress": 0.17,
+        "envelope": 468,
+        "baseState": "base_core",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_117",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 0,
+        "gameSecond": 1206,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_1",
+        "candidateLane": "lane_1",
+        "distanceToAxis": 419.36,
+        "separationMargin": 8.63,
+        "normalizedProgress": 0.65,
+        "envelope": 598,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 4,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_118",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 3,
+        "gameSecond": 1206,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 208.37,
+        "separationMargin": 58.96,
+        "normalizedProgress": 0.98,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_119",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 4,
+        "gameSecond": 1206,
+        "state": "lane_core_medium",
+        "physicalLaneId": "lane_3",
+        "candidateLane": "lane_3",
+        "distanceToAxis": 378.26,
+        "separationMargin": 65.68,
+        "normalizedProgress": 0.79,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 1,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_point_120",
+      "reviewKind": "point",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late"
+      },
+      "sourceRow": {
+        "playerIndex": 7,
+        "gameSecond": 1206,
+        "state": "lane_occupiable",
+        "physicalLaneId": "lane_2",
+        "candidateLane": "lane_2",
+        "distanceToAxis": 323.5,
+        "separationMargin": 24.49,
+        "normalizedProgress": 0.86,
+        "envelope": 468,
+        "baseState": "outside_base_deployment",
+        "assignedLaneRaw": 6,
+        "deducedLaneRaw": null,
+        "matchPhase": "late"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    }
+  ]
+}

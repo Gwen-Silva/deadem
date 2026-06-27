@@ -1,0 +1,2842 @@
+{
+  "experiment": 24,
+  "sourceExperiment": 23,
+  "generatedAt": "2026-06-27T17:24:03.882Z",
+  "recommendedModel": "balanced",
+  "gateResult": "awaiting_human_labels",
+  "labelStatus": "unlabeled",
+  "allowedLabels": [
+    "correct",
+    "incorrect",
+    "ambiguous"
+  ],
+  "allowedReviewedPhysicalLanes": [
+    "lane_1",
+    "lane_2",
+    "lane_3",
+    "deployment",
+    "base",
+    "unknown"
+  ],
+  "requiredHumanFields": [
+    "label",
+    "reviewedPhysicalLane",
+    "reviewerConfidence",
+    "observedEvidence"
+  ],
+  "note": "These samples are infrastructure for human validation and are not scientific validation results.",
+  "kind": "episode_review_unlabeled_template",
+  "sampleCount": 72,
+  "samples": [
+    {
+      "sampleId": "p24_episode_001",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_1",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 17.58,
+        "averageMargin": 127.35,
+        "previousState": null,
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_1",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_002",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_901",
+        "playerIndex": 1,
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 277.56,
+        "averageMargin": 10.83,
+        "previousState": null,
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_901",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_003",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_1809",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 26.76,
+        "averageMargin": 44.25,
+        "previousState": null,
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_1809",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_004",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4732",
+        "playerIndex": 5,
+        "physicalLaneId": "lane_1",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 423.08,
+        "averageMargin": 3.39,
+        "previousState": null,
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_4732",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_005",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6598",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_1",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 445.89,
+        "averageMargin": 4.47,
+        "previousState": null,
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_6598",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_006",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7512",
+        "playerIndex": 8,
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 27.24,
+        "averageMargin": 46.62,
+        "previousState": null,
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_7512",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_007",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_9504",
+        "playerIndex": 10,
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 242.66,
+        "averageMargin": 116.07,
+        "previousState": null,
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_9504",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_008",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_10388",
+        "playerIndex": 11,
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 287.44,
+        "averageMargin": 14.52,
+        "previousState": null,
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_10388",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_009",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3781",
+        "playerIndex": 4,
+        "physicalLaneId": "lane_3",
+        "startSecond": 21,
+        "endSecond": 22,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 191.52,
+        "averageMargin": 88.27,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_3781",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_010",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_5722",
+        "playerIndex": 6,
+        "physicalLaneId": "lane_3",
+        "startSecond": 21,
+        "endSecond": 21,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 217.91,
+        "averageMargin": 65.41,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_5722",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_011",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_8564",
+        "playerIndex": 9,
+        "physicalLaneId": "lane_1",
+        "startSecond": 21,
+        "endSecond": 21,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 73.83,
+        "averageMargin": 17.14,
+        "previousState": "deployment_ambiguous",
+        "nextState": "base_core",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_8564",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_012",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2937",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_2",
+        "startSecond": 23,
+        "endSecond": 24,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 210.84,
+        "averageMargin": 36.25,
+        "previousState": "base_core",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_2937",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_013",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_902",
+        "playerIndex": 1,
+        "physicalLaneId": "lane_3",
+        "startSecond": 20,
+        "endSecond": 20,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 39.85,
+        "averageMargin": 32.26,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_902",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_014",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3116",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_1",
+        "startSecond": 601,
+        "endSecond": 601,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 11.64,
+        "averageMargin": 16.69,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_3116",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_015",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2248",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1201,
+        "endSecond": 1201,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 136.01,
+        "averageMargin": 23.58,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_2248",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_016",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "stable_episode",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early",
+        "state": "stable_high",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "episodeId": "cal_lane_occ_68",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_3",
+        "startSecond": 23,
+        "endSecond": 30,
+        "durationSeconds": 8,
+        "startProgress": 0.99,
+        "endProgress": 1,
+        "averageDistanceToAxis": 301.74,
+        "averageMargin": 157.57,
+        "confidence": "high",
+        "toleratedInterruptions": 0,
+        "episodeType": "stable_episode",
+        "matchPhase": "early",
+        "sourceId": "cal_lane_occ_68",
+        "state": "stable_high"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_017",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "episodeType": "stable_episode",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early",
+        "state": "stable_medium",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "episodeId": "cal_lane_occ_149",
+        "playerIndex": 5,
+        "physicalLaneId": "lane_3",
+        "startSecond": 27,
+        "endSecond": 32,
+        "durationSeconds": 6,
+        "startProgress": 0.74,
+        "endProgress": 1.01,
+        "averageDistanceToAxis": 23.91,
+        "averageMargin": 105.43,
+        "confidence": "medium",
+        "toleratedInterruptions": 0,
+        "episodeType": "stable_episode",
+        "matchPhase": "early",
+        "sourceId": "cal_lane_occ_149",
+        "state": "stable_medium"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_018",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "early",
+        "state": "death_or_respawn_interrupts",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_9525",
+        "playerIndex": 10,
+        "physicalLaneId": "lane_3",
+        "startSecond": 124,
+        "endSecond": 124,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 86.69,
+        "averageMargin": 179.44,
+        "previousState": "unknown",
+        "nextState": "deployment_ambiguous",
+        "reason": "death_or_respawn_interrupts",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_9525",
+        "state": "death_or_respawn_interrupts"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_019",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_2",
+        "startSecond": 57,
+        "endSecond": 58,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 150.79,
+        "averageMargin": 9.6,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_7",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_020",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_903",
+        "playerIndex": 1,
+        "physicalLaneId": "lane_2",
+        "startSecond": 21,
+        "endSecond": 21,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 376.09,
+        "averageMargin": 34.92,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_903",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_021",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_1811",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_2",
+        "startSecond": 22,
+        "endSecond": 22,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 182.64,
+        "averageMargin": 61.87,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_1811",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_022",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4738",
+        "playerIndex": 5,
+        "physicalLaneId": "lane_1",
+        "startSecond": 26,
+        "endSecond": 26,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 21.63,
+        "averageMargin": 8.27,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_4738",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_023",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6615",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_1",
+        "startSecond": 54,
+        "endSecond": 54,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 213.45,
+        "averageMargin": 34.49,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_6615",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_024",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "early",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7515",
+        "playerIndex": 8,
+        "physicalLaneId": "lane_2",
+        "startSecond": 36,
+        "endSecond": 36,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 189.27,
+        "averageMargin": 110.1,
+        "previousState": "base_core",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "early",
+        "sourceId": "cal_brief_7515",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_025",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3124",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_1",
+        "startSecond": 614,
+        "endSecond": 614,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 101.11,
+        "averageMargin": 18.22,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_3124",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_026",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3976",
+        "playerIndex": 4,
+        "physicalLaneId": "lane_3",
+        "startSecond": 601,
+        "endSecond": 601,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 471.46,
+        "averageMargin": 2.05,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_3976",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_027",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6801",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_2",
+        "startSecond": 601,
+        "endSecond": 602,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 248.27,
+        "averageMargin": 75.77,
+        "previousState": "deployment_ambiguous",
+        "nextState": "base_core",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_6801",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_028",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_9675",
+        "playerIndex": 10,
+        "physicalLaneId": "lane_1",
+        "startSecond": 601,
+        "endSecond": 601,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 59.16,
+        "averageMargin": 17.54,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_9675",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_029",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_1082",
+        "playerIndex": 1,
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 316.34,
+        "averageMargin": 66.46,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_1082",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_030",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3117",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_3",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 217.29,
+        "averageMargin": 146.24,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_3117",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_031",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3977",
+        "playerIndex": 4,
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 286.61,
+        "averageMargin": 0.81,
+        "previousState": "lane_occupiable",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_3977",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_032",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4948",
+        "playerIndex": 5,
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 359.17,
+        "averageMargin": 29.31,
+        "previousState": "base_core",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_4948",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_033",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_9676",
+        "playerIndex": 10,
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 604,
+        "durationSeconds": 3,
+        "averageDistanceToAxis": 238.96,
+        "averageMargin": 58.04,
+        "previousState": "lane_occupiable",
+        "nextState": "base_core",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_9676",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_034",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_10587",
+        "playerIndex": 11,
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 604,
+        "durationSeconds": 3,
+        "averageDistanceToAxis": 257.07,
+        "averageMargin": 21.54,
+        "previousState": "lane_occupiable",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_10587",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_035",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_1083",
+        "playerIndex": 1,
+        "physicalLaneId": "lane_3",
+        "startSecond": 603,
+        "endSecond": 604,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 158.12,
+        "averageMargin": 86.38,
+        "previousState": "lane_core_medium",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_1083",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_036",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3118",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_2",
+        "startSecond": 603,
+        "endSecond": 603,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 93.52,
+        "averageMargin": 47.04,
+        "previousState": "lane_core_high",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_3118",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_037",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4949",
+        "playerIndex": 5,
+        "physicalLaneId": "lane_3",
+        "startSecond": 603,
+        "endSecond": 604,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 116.02,
+        "averageMargin": 53.4,
+        "previousState": "lane_occupiable",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_4949",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_038",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2010",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_2",
+        "startSecond": 604,
+        "endSecond": 605,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 188.8,
+        "averageMargin": 64.45,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_2010",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_039",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_8717",
+        "playerIndex": 9,
+        "physicalLaneId": "lane_3",
+        "startSecond": 604,
+        "endSecond": 604,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 6.24,
+        "averageMargin": 96.52,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_8717",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_040",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_160",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_3",
+        "startSecond": 605,
+        "endSecond": 605,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 340.51,
+        "averageMargin": 84.31,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_160",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_041",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_8718",
+        "playerIndex": 9,
+        "physicalLaneId": "lane_2",
+        "startSecond": 605,
+        "endSecond": 605,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 172.31,
+        "averageMargin": 33.57,
+        "previousState": "lane_core_high",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_8718",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_042",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_161",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_2",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 336.29,
+        "averageMargin": 42.38,
+        "previousState": "lane_core_high",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_161",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_043",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 1,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_1085",
+        "playerIndex": 1,
+        "physicalLaneId": "lane_1",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 169.75,
+        "averageMargin": 5.24,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_1085",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_044",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2011",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_3",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 323.13,
+        "averageMargin": 191.83,
+        "previousState": "lane_core_medium",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_2011",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_045",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 5,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4950",
+        "playerIndex": 5,
+        "physicalLaneId": "lane_1",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 253.29,
+        "averageMargin": 26.07,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_4950",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_046",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6803",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_1",
+        "startSecond": 607,
+        "endSecond": 607,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 317.69,
+        "averageMargin": 17.8,
+        "previousState": "lane_core_high",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_6803",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_047",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7699",
+        "playerIndex": 8,
+        "physicalLaneId": "lane_1",
+        "startSecond": 608,
+        "endSecond": 609,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 228.28,
+        "averageMargin": 11.7,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_7699",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_048",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "middle",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_9677",
+        "playerIndex": 10,
+        "physicalLaneId": "lane_3",
+        "startSecond": 609,
+        "endSecond": 609,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 89.37,
+        "averageMargin": 56.99,
+        "previousState": "base_core",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "middle",
+        "sourceId": "cal_brief_9677",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_049",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2255",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1210,
+        "endSecond": 1210,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 406.95,
+        "averageMargin": 15.88,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_2255",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_050",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6096",
+        "playerIndex": 6,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1201,
+        "endSecond": 1201,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 18.04,
+        "averageMargin": 45.16,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_6096",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_051",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_8965",
+        "playerIndex": 9,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1201,
+        "endSecond": 1201,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 367.04,
+        "averageMargin": 116.34,
+        "previousState": "base_core",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_8965",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_052",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 10,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_9877",
+        "playerIndex": 10,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1201,
+        "endSecond": 1204,
+        "durationSeconds": 4,
+        "averageDistanceToAxis": 196.87,
+        "averageMargin": 46.6,
+        "previousState": "base_core",
+        "nextState": "base_core",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_9877",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_053",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2249",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1202,
+        "endSecond": 1202,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 450.85,
+        "averageMargin": 2.34,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_2249",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_054",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6097",
+        "playerIndex": 6,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1202,
+        "endSecond": 1202,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 315.91,
+        "averageMargin": 112.81,
+        "previousState": "lane_core_medium",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_6097",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_055",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 2,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_2250",
+        "playerIndex": 2,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 117.31,
+        "averageMargin": 166.45,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_2250",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_056",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3322",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 117.09,
+        "averageMargin": 1.97,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_3322",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_057",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6999",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 24.54,
+        "averageMargin": 41.81,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_6999",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_058",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7915",
+        "playerIndex": 8,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 429.68,
+        "averageMargin": 26.27,
+        "previousState": "base_core",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_7915",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_059",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_10827",
+        "playerIndex": 11,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 422.71,
+        "averageMargin": 21.94,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_10827",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_060",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_396",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1204,
+        "endSecond": 1204,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 14.14,
+        "averageMargin": 7.81,
+        "previousState": "lane_core_medium",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_396",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_061",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 3,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_3323",
+        "playerIndex": 3,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1204,
+        "endSecond": 1206,
+        "durationSeconds": 3,
+        "averageDistanceToAxis": 200.57,
+        "averageMargin": 31.92,
+        "previousState": "lane_occupiable",
+        "nextState": "base_core",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_3323",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_062",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7000",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1204,
+        "endSecond": 1205,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 17.32,
+        "averageMargin": 12.54,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_7000",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_063",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7916",
+        "playerIndex": 8,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1204,
+        "endSecond": 1204,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 36.62,
+        "averageMargin": 42.84,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_7916",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_064",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 11,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_10828",
+        "playerIndex": 11,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1204,
+        "endSecond": 1204,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 130.52,
+        "averageMargin": 144.26,
+        "previousState": "lane_occupiable",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_10828",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_065",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_397",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 228.48,
+        "averageMargin": 9.96,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_397",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_066",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4213",
+        "playerIndex": 4,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 9.76,
+        "averageMargin": 7.12,
+        "previousState": "deployment_ambiguous",
+        "nextState": "lane_core_medium",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_4213",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_067",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 6,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_6099",
+        "playerIndex": 6,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 84.53,
+        "averageMargin": 6.77,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_6099",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_068",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 8,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7917",
+        "playerIndex": 8,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 212.5,
+        "averageMargin": 124.24,
+        "previousState": "lane_occupiable",
+        "nextState": "deployment_ambiguous",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_7917",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_069",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 9,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "medium"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_8966",
+        "playerIndex": 9,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1208,
+        "durationSeconds": 4,
+        "averageDistanceToAxis": 293.34,
+        "averageMargin": 61.38,
+        "previousState": "base_core",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_8966",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_070",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 0,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_1",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_398",
+        "playerIndex": 0,
+        "physicalLaneId": "lane_1",
+        "startSecond": 1206,
+        "endSecond": 1206,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 419.36,
+        "averageMargin": 8.63,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_398",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_071",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 4,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_3",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_4214",
+        "playerIndex": 4,
+        "physicalLaneId": "lane_3",
+        "startSecond": 1206,
+        "endSecond": 1207,
+        "durationSeconds": 2,
+        "averageDistanceToAxis": 380.41,
+        "averageMargin": 64.7,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_occupiable",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_4214",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "sampleId": "p24_episode_072",
+      "reviewKind": "episode",
+      "sourceExperiment": 23,
+      "stratum": {
+        "playerIndex": 7,
+        "episodeType": "brief_contact",
+        "physicalLaneId": "lane_2",
+        "matchPhase": "late",
+        "state": "below_stable_duration",
+        "durationBucket": "short"
+      },
+      "sourceEpisode": {
+        "contactId": "cal_brief_7001",
+        "playerIndex": 7,
+        "physicalLaneId": "lane_2",
+        "startSecond": 1206,
+        "endSecond": 1206,
+        "durationSeconds": 1,
+        "averageDistanceToAxis": 323.5,
+        "averageMargin": 24.49,
+        "previousState": "lane_occupiable",
+        "nextState": "lane_core_high",
+        "reason": "below_stable_duration",
+        "episodeType": "brief_contact",
+        "matchPhase": "late",
+        "sourceId": "cal_brief_7001",
+        "state": "below_stable_duration"
+      },
+      "review": {
+        "label": null,
+        "reviewedPhysicalLane": null,
+        "reviewerConfidence": null,
+        "observedEvidence": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    }
+  ]
+}

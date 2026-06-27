@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lane Occupancy Review</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header,
+    .toolbar,
+    .sample,
+    .review {
+      border: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .toolbar,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 4px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+      min-height: 36px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    pre {
+      overflow: auto;
+      max-height: 520px;
+      padding: 12px;
+      background: color-mix(in srgb, CanvasText 8%, Canvas);
+      border-radius: 4px;
+    }
+
+    .muted {
+      color: color-mix(in srgb, CanvasText 70%, Canvas);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Lane Occupancy Review</h1>
+      <p class="muted">Load one unlabeled template, review samples locally, then export the filled JSON for the human-label gate.</p>
+    </header>
+
+    <section class="toolbar">
+      <label>
+        Template JSON
+        <input id="file-input" type="file" accept="application/json">
+      </label>
+      <label>
+        Sample
+        <select id="sample-select"></select>
+      </label>
+      <button id="previous-button" type="button">Previous</button>
+      <button id="next-button" type="button">Next</button>
+      <button id="download-button" type="button">Download JSON</button>
+    </section>
+
+    <section class="sample">
+      <h2>Sample</h2>
+      <pre id="sample-view">No file loaded.</pre>
+    </section>
+
+    <section class="review">
+      <h2>Review</h2>
+      <div class="review-grid">
+        <label>
+          Label
+          <select id="label-input">
+            <option value="">unlabeled</option>
+            <option value="correct">correct</option>
+            <option value="incorrect">incorrect</option>
+            <option value="ambiguous">ambiguous</option>
+          </select>
+        </label>
+        <label>
+          Reviewed physical lane
+          <select id="lane-input">
+            <option value="">unlabeled</option>
+            <option value="lane_1">lane_1</option>
+            <option value="lane_2">lane_2</option>
+            <option value="lane_3">lane_3</option>
+            <option value="deployment">deployment</option>
+            <option value="base">base</option>
+            <option value="unknown">unknown</option>
+          </select>
+        </label>
+        <label>
+          Reviewer confidence
+          <select id="confidence-input">
+            <option value="">unlabeled</option>
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+          </select>
+        </label>
+        <label>
+          Reviewer
+          <input id="reviewer-input" type="text">
+        </label>
+      </div>
+      <label>
+        Observed evidence
+        <textarea id="evidence-input"></textarea>
+      </label>
+      <label>
+        Notes
+        <textarea id="notes-input"></textarea>
+      </label>
+    </section>
+  </main>
+
+  <script>
+    const state = {
+      document: null,
+      index: 0,
+    };
+
+    const elements = {
+      fileInput: document.querySelector('#file-input'),
+      sampleSelect: document.querySelector('#sample-select'),
+      previousButton: document.querySelector('#previous-button'),
+      nextButton: document.querySelector('#next-button'),
+      downloadButton: document.querySelector('#download-button'),
+      sampleView: document.querySelector('#sample-view'),
+      labelInput: document.querySelector('#label-input'),
+      laneInput: document.querySelector('#lane-input'),
+      confidenceInput: document.querySelector('#confidence-input'),
+      reviewerInput: document.querySelector('#reviewer-input'),
+      evidenceInput: document.querySelector('#evidence-input'),
+      notesInput: document.querySelector('#notes-input'),
+    };
+
+    elements.fileInput.addEventListener('change', loadFile);
+    elements.sampleSelect.addEventListener('change', () => selectSample(Number(elements.sampleSelect.value)));
+    elements.previousButton.addEventListener('click', () => selectSample(Math.max(0, state.index - 1)));
+    elements.nextButton.addEventListener('click', () => selectSample(Math.min(state.document.samples.length - 1, state.index + 1)));
+    elements.downloadButton.addEventListener('click', downloadJson);
+
+    for (const input of [
+      elements.labelInput,
+      elements.laneInput,
+      elements.confidenceInput,
+      elements.reviewerInput,
+      elements.evidenceInput,
+      elements.notesInput,
+    ]) {
+      input.addEventListener('input', saveReview);
+    }
+
+    async function loadFile() {
+      const file = elements.fileInput.files[0];
+      if (!file) {
+        return;
+      }
+
+      state.document = JSON.parse(await file.text());
+      state.index = 0;
+      elements.sampleSelect.replaceChildren(...state.document.samples.map((sample, index) => {
+        const option = document.createElement('option');
+        option.value = String(index);
+        option.textContent = `${index + 1}. ${sample.sampleId}`;
+        return option;
+      }));
+      render();
+    }
+
+    function selectSample(index) {
+      saveReview();
+      state.index = index;
+      render();
+    }
+
+    function render() {
+      if (!state.document) {
+        return;
+      }
+
+      const sample = state.document.samples[state.index];
+      const review = sample.review ?? {};
+      elements.sampleSelect.value = String(state.index);
+      elements.sampleView.textContent = JSON.stringify({
+        sampleId: sample.sampleId,
+        reviewKind: sample.reviewKind,
+        stratum: sample.stratum,
+        sourceRow: sample.sourceRow,
+        sourceEpisode: sample.sourceEpisode,
+      }, null, 2);
+      elements.labelInput.value = review.label ?? '';
+      elements.laneInput.value = review.reviewedPhysicalLane ?? '';
+      elements.confidenceInput.value = review.reviewerConfidence ?? '';
+      elements.reviewerInput.value = review.reviewer ?? '';
+      elements.evidenceInput.value = review.observedEvidence ?? '';
+      elements.notesInput.value = review.notes ?? '';
+    }
+
+    function saveReview() {
+      if (!state.document) {
+        return;
+      }
+
+      const sample = state.document.samples[state.index];
+      sample.review = {
+        label: elements.labelInput.value || null,
+        reviewedPhysicalLane: elements.laneInput.value || null,
+        reviewerConfidence: elements.confidenceInput.value || null,
+        observedEvidence: elements.evidenceInput.value || null,
+        reviewer: elements.reviewerInput.value || null,
+        reviewedAt: new Date().toISOString(),
+        notes: elements.notesInput.value || null,
+      };
+    }
+
+    function downloadJson() {
+      if (!state.document) {
+        return;
+      }
+
+      saveReview();
+      const blob = new Blob([`${JSON.stringify(state.document, null, 2)}\n`], { type: 'application/json' });
+      const link = document.createElement('a');
+      const suffix = state.document.kind?.includes('episode') ? 'episode' : 'point';
+      link.href = URL.createObjectURL(blob);
+      link.download = `24-${suffix}-review-labeled.json`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+  </script>
+</body>
+</html>

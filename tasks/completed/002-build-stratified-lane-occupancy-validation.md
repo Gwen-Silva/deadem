@@ -1,6 +1,6 @@
 # Task 002: Build stratified lane occupancy validation
 
-Status: pending
+Status: completed
 Execution mode: autonomous
 Project stage: Lane occupancy validation
 Related experiment: 24
@@ -103,7 +103,7 @@ The task is complete when:
 Run:
 
 ```bash
-npm.cmd run lint -- experiments/24-build-stratified-lane-occupancy-validation.js experiments/24-score-lane-occupancy-validation.js
+node node_modules\eslint\bin\eslint.js -c eslint.common.config.js experiments\24-build-stratified-lane-occupancy-validation.js experiments\24-score-lane-occupancy-validation.js
 node experiments/24-build-stratified-lane-occupancy-validation.js
 node experiments/24-score-lane-occupancy-validation.js --template-check
 node -e "for (const f of ['output/24-point-review-samples.json','output/24-episode-review-samples.json','output/24-point-review-unlabeled-template.json','output/24-episode-review-unlabeled-template.json','output/24-human-review-gate.json']) JSON.parse(require('node:fs').readFileSync(f, 'utf8'));"

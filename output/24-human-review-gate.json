@@ -1,0 +1,44 @@
+{
+  "experiment": 24,
+  "generatedAt": "2026-06-27T17:24:03.882Z",
+  "gateResult": "awaiting_human_labels",
+  "completionMeaning": "Validation infrastructure is ready for human labeling only.",
+  "notValidatedYet": true,
+  "humanInputsRequired": [
+    "output/24-point-review-labeled.json",
+    "output/24-episode-review-labeled.json"
+  ],
+  "minimumCompletionGate": {
+    "nonAmbiguousPointSamples": 60,
+    "nonAmbiguousEpisodeSamples": 30,
+    "physicalLanes": [
+      "lane_1",
+      "lane_2",
+      "lane_3"
+    ],
+    "players": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "matchPhases": [
+      "early",
+      "middle",
+      "late"
+    ]
+  },
+  "sourceEvidence": {
+    "readyToDetectTransitions": false,
+    "recommendedModel": "balanced",
+    "modelComparisonRecommendedModel": "balanced"
+  }
+}
