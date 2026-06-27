@@ -50,4 +50,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 ## Likely Next Investigation
 
-Review and improve lane occupancy calibration, especially initial lane agreement, brief-contact fragmentation, and deployment classification, before building higher-level rotation or macro-event detectors.
+Run a stratified manual validation of experiment 23 lane occupancy states before changing thresholds again or building transition, combat, objective, or macro-event detectors.

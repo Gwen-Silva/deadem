@@ -49,3 +49,13 @@ Date: 2026-06-27
 Decision: Lane occupancy is not ready for reliable transition, combat, objective, or macro-event detection.
 
 Reason: Experiment 23 reports `readyToDetectTransitions: false`, despite improved coverage from calibrated models.
+
+## DEC-006: Validate Lane Occupancy Manually Before Experiment 24 Transitions
+
+Status: provisional
+
+Date: 2026-06-27
+
+Decision: The next methodological step should be stratified manual validation of experiment 23 lane occupancy states before threshold recalibration or transition detection.
+
+Reason: Experiment 23 selected the `balanced` model using internal consistency metrics, but it did not include completed ground-truth or Explorer validation.
