@@ -1,3 +1,3 @@
 # Latest Report
 
-Latest report: [replay-intake-and-compatibility.md](replay-intake-and-compatibility.md)
+Latest report: [replay-build-map-compatibility.md](replay-build-map-compatibility.md)

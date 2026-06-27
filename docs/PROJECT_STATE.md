@@ -4,17 +4,17 @@ Last updated: 2026-06-27
 
 ## Latest Work
 
-Latest completed task: `016-define-replay-intake-and-compatibility-protocol`
+Latest completed task: `019-abstract-replay-build-map-compatibility`
 
-Script: `scripts/replay-intake.js`
+Script: `scripts/replay-build-map-compatibility.js`
 
 Primary outputs:
 
-- `data/replay-manifest.json`
-- `output/replay-intake-summary.json`
-- `output/replay-compatibility-matrix.json`
-- `output/replay-processing-plan.json`
-- `output/replay-script-parameterization-audit.json`
+- `output/replay-build-map-compatibility.json`
+- `output/replay-geometry-profile-plan.json`
+- `output/replay-structural-fingerprints.json`
+- `output/replay-pairwise-compatibility-matrix.json`
+- `output/replay-fingerprint-repeatability.json`
 
 ## Current Objective
 
@@ -43,6 +43,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Experiment 24 episode-regression diagnosis found short abstentions terminating episodes as the dominant mechanical failure, and no tested ablation advanced to fresh holdout.
 - Experiment 24 uncertainty-aware episode architecture testing found that hysteresis, windowed accumulation, dynamic programming, and annotated original episodes did not resolve the point-safety versus episode-continuity trade-off on current diagnostic evidence.
 - Replay intake found five local `.dem` files and all loaded through the parser, but build/content-version and map metadata were not exposed by the lightweight intake path; geometry compatibility remains unverified.
+- Replay build/map compatibility found one shared schema fingerprint across all five replays, so pre-geometry stages can be parameterized; geometry fingerprints remain per-replay and topology/region/occupancy stages are still gated.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -57,4 +58,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
 
-For multi-replay work, the next executable task is build/map/fingerprint compatibility abstraction only. Do not run the common pipeline, movement, occupancy, or downstream models until geometry compatibility is resolved.
+For multi-replay work, the next executable task may parameterize pre-geometry stages only. Do not run lane mapping, topology, spatial regions, movement region interpretation, occupancy, or downstream models until geometry profiles are validated.
