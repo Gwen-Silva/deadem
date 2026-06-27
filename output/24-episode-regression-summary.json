@@ -1,0 +1,40 @@
+{
+  "experiment": 24,
+  "kind": "episode_regression_summary",
+  "generatedAt": "2026-06-27T18:20:01.851Z",
+  "whyEarlierRevisionAppearedSuccessful": "Task 005 evaluated sampled point and episode cases where conservative abstention removed point contradictions and sampled episode contradictions.",
+  "whyItFailedOnHoldout": "Task 006 holdout showed episode construction over-reacted to abstentions and continuity gaps, increasing revised episode contradictions.",
+  "contradictionCategoryDistribution": {
+    "base_deployment_precedence_absorbing_lane_interval": 8,
+    "episode_removed_despite_stable_spatial_interval": 5,
+    "episode_truncated_at_beginning": 7,
+    "episode_truncated_at_end": 5,
+    "short_abstention_incorrectly_terminating_episode": 50
+  },
+  "strongestCausalSource": {
+    "category": "short_abstention_incorrectly_terminating_episode",
+    "count": 50
+  },
+  "ablationBestCandidate": null,
+  "pointVersusEpisodeTradeoff": {
+    "originalPointContradictions": 50,
+    "failedRevisionPointContradictions": 0,
+    "originalEpisodeContradictions": 12,
+    "failedRevisionEpisodeContradictions": 75
+  },
+  "coverageVersusAbstentionTradeoff": {
+    "failedRevisionCoverage": {
+      "baselineLaneRows": 18754,
+      "revisedLaneRows": 3579,
+      "deltaRows": -15175,
+      "baselineCoveragePercent": 53.39,
+      "revisedCoveragePercent": 10.19
+    },
+    "selectedDiagnosticCandidate": null
+  },
+  "remainingUncertainty": [
+    "Diagnostic data includes the observed task 006 holdout and cannot validate a final candidate.",
+    "No semantic correctness is established.",
+    "Fresh holdout construction must be separate if the candidate advances."
+  ]
+}

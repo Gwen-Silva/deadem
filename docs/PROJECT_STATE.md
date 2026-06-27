@@ -40,6 +40,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Experiment 22 showed low stable lane occupancy coverage and many brief contacts.
 - Experiment 23 improved coverage with calibrated models, but `readyToDetectTransitions` is still `false`.
 - Experiment 24 model revision reduced point contradictions, but holdout validation failed because revised episode contradictions increased.
+- Experiment 24 episode-regression diagnosis found short abstentions terminating episodes as the dominant mechanical failure, and no tested ablation advanced to fresh holdout.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
 ## Open Questions
@@ -51,4 +52,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 ## Likely Next Investigation
 
-Make a new model-revision decision for experiment 24. Do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
+Stop lane-transition work. A methodological model-revision decision is required before more autonomous lane-episode tuning; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.

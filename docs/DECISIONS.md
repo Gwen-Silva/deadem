@@ -89,3 +89,13 @@ Date: 2026-06-27
 Decision: The task 005 conservative revision must not be used for downstream lane transitions or semantic lane claims.
 
 Reason: Task 006 holdout validation reduced point contradictions and instability but increased episode contradictions from 12 to 75 on holdout windows.
+
+## DEC-010: Do Not Continue Automatic Episode Tuning After Failed Ablations
+
+Status: provisional
+
+Date: 2026-06-27
+
+Decision: Do not continue autonomous lane-episode tuning from the failed experiment 24 revision without a methodological decision.
+
+Reason: Task 013 identified short abstentions terminating episodes as the dominant regression source, but no controlled ablation preserved point gains while resolving episode contradictions. Continuing to tune against the observed holdout would create leakage.

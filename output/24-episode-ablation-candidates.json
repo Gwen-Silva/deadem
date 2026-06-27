@@ -1,0 +1,508 @@
+{
+  "experiment": 24,
+  "kind": "episode_ablation_candidates",
+  "generatedAt": "2026-06-27T18:20:01.854Z",
+  "candidates": [
+    {
+      "id": "original_model",
+      "causalQuestion": "Baseline behavior before point corrections.",
+      "corrections": [],
+      "pointContradictions": 77,
+      "pointInstability": 116,
+      "pointCoverage": 29596,
+      "pointAbstention": 5528,
+      "episodeContradictions": 79,
+      "episodeCount": 359,
+      "episodeCoverage": 2540,
+      "fragmentation": 11415,
+      "episodeDurationDistribution": {
+        "count": 359,
+        "min": 5,
+        "median": 6,
+        "p90": 10,
+        "max": 33
+      },
+      "truncatedStartCount": 0,
+      "truncatedEndCount": 0,
+      "splitCount": 0,
+      "removedStableIntervalCount": 0,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 27
+      },
+      "byPlayer": {
+        "0": 9,
+        "1": 13,
+        "2": 11,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 12,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 29,
+        "late": 28,
+        "middle": 22
+      },
+      "preservesPointGain": false,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "point_corrections_only_original_episode_builder",
+      "causalQuestion": "Do point corrections fail only when paired with revised episode filtering?",
+      "corrections": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "high_speed_abstention"
+      ],
+      "pointContradictions": 0,
+      "pointInstability": 3,
+      "pointCoverage": 3579,
+      "pointAbstention": 31545,
+      "episodeContradictions": 85,
+      "episodeCount": 71,
+      "episodeCoverage": 602,
+      "fragmentation": 2193,
+      "episodeDurationDistribution": {
+        "count": 71,
+        "min": 5,
+        "median": 7,
+        "p90": 14,
+        "max": 33
+      },
+      "truncatedStartCount": 4,
+      "truncatedEndCount": 1,
+      "splitCount": 0,
+      "removedStableIntervalCount": 80,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 33
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 15,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 31,
+        "middle": 24
+      },
+      "preservesPointGain": true,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "base_deployment_precedence_only",
+      "causalQuestion": "Does base/deployment precedence cause episode loss?",
+      "corrections": [
+        "base_deployment_precedence"
+      ],
+      "pointContradictions": 8,
+      "pointInstability": 64,
+      "pointCoverage": 13136,
+      "pointAbstention": 21988,
+      "episodeContradictions": 82,
+      "episodeCount": 192,
+      "episodeCoverage": 1366,
+      "fragmentation": 5476,
+      "episodeDurationDistribution": {
+        "count": 192,
+        "min": 5,
+        "median": 6,
+        "p90": 10,
+        "max": 34
+      },
+      "truncatedStartCount": 11,
+      "truncatedEndCount": 0,
+      "splitCount": 0,
+      "removedStableIntervalCount": 56,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 30
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 12,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 29,
+        "middle": 23
+      },
+      "preservesPointGain": false,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "separation_ambiguity_only",
+      "causalQuestion": "Does low-separation abstention create bridgeable gaps?",
+      "corrections": [
+        "separation_ambiguity"
+      ],
+      "pointContradictions": 32,
+      "pointInstability": 10,
+      "pointCoverage": 10821,
+      "pointAbstention": 24303,
+      "episodeContradictions": 84,
+      "episodeCount": 174,
+      "episodeCoverage": 1428,
+      "fragmentation": 6856,
+      "episodeDurationDistribution": {
+        "count": 174,
+        "min": 5,
+        "median": 7,
+        "p90": 12,
+        "max": 45
+      },
+      "truncatedStartCount": 3,
+      "truncatedEndCount": 1,
+      "splitCount": 0,
+      "removedStableIntervalCount": 75,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 32
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 14,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 30,
+        "middle": 24
+      },
+      "preservesPointGain": true,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "high_speed_abstention_only",
+      "causalQuestion": "Does high-speed abstention break otherwise stable intervals?",
+      "corrections": [
+        "high_speed_abstention"
+      ],
+      "pointContradictions": 60,
+      "pointInstability": 105,
+      "pointCoverage": 27194,
+      "pointAbstention": 7930,
+      "episodeContradictions": 82,
+      "episodeCount": 415,
+      "episodeCoverage": 3066,
+      "fragmentation": 12046,
+      "episodeDurationDistribution": {
+        "count": 415,
+        "min": 5,
+        "median": 6,
+        "p90": 11,
+        "max": 48
+      },
+      "truncatedStartCount": 14,
+      "truncatedEndCount": 1,
+      "splitCount": 0,
+      "removedStableIntervalCount": 47,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 30
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 11,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 13,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 30,
+        "middle": 22
+      },
+      "preservesPointGain": false,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "continuity_filtering_only",
+      "causalQuestion": "Does continuity filtering alone cause episode rejection?",
+      "corrections": [
+        "continuity_filtering"
+      ],
+      "pointContradictions": 77,
+      "pointInstability": 116,
+      "pointCoverage": 29596,
+      "pointAbstention": 5528,
+      "episodeContradictions": 83,
+      "episodeCount": 361,
+      "episodeCoverage": 2623,
+      "fragmentation": 12617,
+      "episodeDurationDistribution": {
+        "count": 361,
+        "min": 5,
+        "median": 6,
+        "p90": 10,
+        "max": 48
+      },
+      "truncatedStartCount": 11,
+      "truncatedEndCount": 1,
+      "splitCount": 0,
+      "removedStableIntervalCount": 52,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 31
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 11,
+        "3": 10,
+        "4": 11,
+        "5": 11,
+        "6": 13,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 31,
+        "middle": 22
+      },
+      "preservesPointGain": false,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "point_corrections_without_continuity_filtering",
+      "causalQuestion": "Can point gains survive without continuity filtering?",
+      "corrections": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "high_speed_abstention"
+      ],
+      "pointContradictions": 0,
+      "pointInstability": 3,
+      "pointCoverage": 3579,
+      "pointAbstention": 31545,
+      "episodeContradictions": 85,
+      "episodeCount": 71,
+      "episodeCoverage": 602,
+      "fragmentation": 2193,
+      "episodeDurationDistribution": {
+        "count": 71,
+        "min": 5,
+        "median": 7,
+        "p90": 14,
+        "max": 33
+      },
+      "truncatedStartCount": 4,
+      "truncatedEndCount": 1,
+      "splitCount": 0,
+      "removedStableIntervalCount": 80,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 33
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 15,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 31,
+        "middle": 24
+      },
+      "preservesPointGain": true,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "point_corrections_with_short_gap_bridging",
+      "causalQuestion": "Do bounded bridgeable gaps repair episode fragmentation?",
+      "corrections": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "high_speed_abstention",
+        "short_gap_bridging"
+      ],
+      "pointContradictions": 0,
+      "pointInstability": 3,
+      "pointCoverage": 3579,
+      "pointAbstention": 31545,
+      "episodeContradictions": 83,
+      "episodeCount": 522,
+      "episodeCoverage": 5381,
+      "fragmentation": 1236,
+      "episodeDurationDistribution": {
+        "count": 522,
+        "min": 5,
+        "median": 8,
+        "p90": 18,
+        "max": 144
+      },
+      "truncatedStartCount": 10,
+      "truncatedEndCount": 0,
+      "splitCount": 0,
+      "removedStableIntervalCount": 61,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 31
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 13,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 30,
+        "middle": 23
+      },
+      "preservesPointGain": true,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "point_corrections_with_state_aware_interruption_tolerance",
+      "causalQuestion": "Do state-aware gaps preserve hard base/deployment termination while bridging ambiguity?",
+      "corrections": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "high_speed_abstention",
+        "state_aware_gaps"
+      ],
+      "pointContradictions": 0,
+      "pointInstability": 3,
+      "pointCoverage": 3579,
+      "pointAbstention": 31545,
+      "episodeContradictions": 83,
+      "episodeCount": 522,
+      "episodeCoverage": 5381,
+      "fragmentation": 1236,
+      "episodeDurationDistribution": {
+        "count": 522,
+        "min": 5,
+        "median": 8,
+        "p90": 18,
+        "max": 144
+      },
+      "truncatedStartCount": 10,
+      "truncatedEndCount": 0,
+      "splitCount": 0,
+      "removedStableIntervalCount": 61,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 31
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 13,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 30,
+        "middle": 23
+      },
+      "preservesPointGain": true,
+      "doesNotCollapseCoverage": true
+    },
+    {
+      "id": "current_combined_revision",
+      "causalQuestion": "Observed failed combined revision.",
+      "corrections": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "high_speed_abstention",
+        "continuity_filtering"
+      ],
+      "pointContradictions": 0,
+      "pointInstability": 3,
+      "pointCoverage": 3579,
+      "pointAbstention": 31545,
+      "episodeContradictions": 85,
+      "episodeCount": 71,
+      "episodeCoverage": 602,
+      "fragmentation": 2193,
+      "episodeDurationDistribution": {
+        "count": 71,
+        "min": 5,
+        "median": 7,
+        "p90": 14,
+        "max": 33
+      },
+      "truncatedStartCount": 4,
+      "truncatedEndCount": 1,
+      "splitCount": 0,
+      "removedStableIntervalCount": 80,
+      "bridgeableGapCount": 0,
+      "byLane": {
+        "lane_1": 21,
+        "lane_2": 31,
+        "lane_3": 33
+      },
+      "byPlayer": {
+        "0": 10,
+        "1": 14,
+        "2": 12,
+        "3": 10,
+        "4": 10,
+        "5": 11,
+        "6": 15,
+        "7": 3
+      },
+      "byMatchPhase": {
+        "early": 30,
+        "late": 31,
+        "middle": 24
+      },
+      "preservesPointGain": true,
+      "doesNotCollapseCoverage": true
+    }
+  ]
+}
