@@ -25,7 +25,7 @@ Status: completed
 - Validacao do experimento 23: passed with `npm.cmd run validate:experiment -- 23`
 - Tamanhos: passed for experiment 23 with `npm.cmd run check:outputs -- 23`; all 10 experiment 23 JSON outputs are below 10 MiB
 - Outputs preservados: aggregate `output/*` hash stayed `1bac112a8e75669b288510ecb7570522455e774029cce6f014f1dd16696f5130`
-- Verificacao de segredos: no publish-scope matches for credentials, absolute local paths, or `external/chat`
+- Verificacao de segredos: no publish-scope matches for credentials, absolute local paths, or private chat-history markers
 - Verificacao de arquivos grandes: no tracked files above 10 MiB; untracked/ignored large files are `samples/partida_001.dem`, `output/04-controller-pawn-lifecycle.json`, and `external/GameTracking-Deadlock/game/citadel/pak01_dir.txt`
 
 ## Alteracoes deixadas de fora
