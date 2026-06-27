@@ -30,24 +30,67 @@ active
    |
    v
 blocked
+
+backlog
 ```
 
 - `pending`: fully specified and ready to execute.
 - `active`: currently being executed.
 - `completed`: acceptance criteria satisfied.
 - `blocked`: cannot proceed without missing data, access, or a conceptual decision.
+- `backlog`: future work that is not sufficiently specified or should not be scheduled yet.
 
 Tasks are processed by ascending numeric ID. File modification time, alphabetical title, or perceived importance must not override the numeric order.
+
+Task IDs and experiment IDs are separate namespaces. A task may implement a different experiment number, and queue order still follows the task ID in the filename.
+
+## Queue Visibility
+
+The autonomous runner may:
+
+- list `tasks/pending/`
+- select the lowest numeric pending task
+- move that task to `tasks/active/`
+- complete or block that task
+- inspect `tasks/pending/` again
+
+The autonomous runner must not:
+
+- execute files in `tasks/blocked/`
+- execute files in `tasks/backlog/`
+- automatically promote blocked tasks
+- automatically promote backlog tasks
+- create future scientific tasks from a roadmap
+- treat roadmap order as execution authorization
+- continue to a human task
+- remain idle waiting for a human gate
+
+## Promotion Rules
+
+A blocked task may move to `tasks/pending/` only when all declared dependencies are completed, gate evidence exists, the task objective and acceptance criteria are complete, the execution mode permits autonomous execution, and promotion is explicitly authorized by a user instruction or by a deterministic promotion rule already written in the task.
+
+A backlog item may move to `tasks/pending/` or `tasks/blocked/` only after it has been converted into a fully specified task. Codex must not perform this conversion autonomously when scientific scope, thresholds, methodology, or priorities are still undecided.
+
+Tasks with `Execution mode: human` must never be executed by the autonomous runner. They may remain in `tasks/blocked/` while waiting for human work. After the human gate is completed, a separate Codex task may verify the artifacts, but the queue runner must not fabricate, infer, or complete human labels.
 
 ## Successful Stop Conditions
 
 - no pending task
 - next step requires a methodological decision
+- next stage requires human labels
+- a blocked gate has not been fulfilled
+- only backlog items remain
 - required input is unavailable
 - evidence is contradictory
 - replay reprocessing is required but not explicitly authorized
 - previous outputs would need to be modified
 - task acceptance criteria cannot be tested
+
+Use:
+
+```text
+Stop reason: NO_EXECUTABLE_PENDING_TASK
+```
 
 ## When Dividir Uma Tarefa
 

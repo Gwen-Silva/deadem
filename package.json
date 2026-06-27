@@ -16,7 +16,8 @@
     "start": "npm run start --workspace=@deademx/ui",
     "summarize:experiment": "node scripts/summarize-experiment.js",
     "test": "npm run test --workspaces --if-present",
-    "validate:experiment": "node scripts/validate-experiment.js"
+    "validate:experiment": "node scripts/validate-experiment.js",
+    "validate:tasks": "node scripts/validate-task-queue.js"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
