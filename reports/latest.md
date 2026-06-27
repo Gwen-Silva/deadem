@@ -1,3 +1,3 @@
 # Latest Report
 
-Latest report: [24-autonomous-lane-occupancy-evidence-audit.md](24-autonomous-lane-occupancy-evidence-audit.md)
+Latest report: [24-lane-occupancy-model-revision.md](24-lane-occupancy-model-revision.md)

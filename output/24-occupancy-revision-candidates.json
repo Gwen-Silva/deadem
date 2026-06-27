@@ -1,0 +1,4673 @@
+{
+  "experiment": 24,
+  "kind": "occupancy_revision_candidates",
+  "generatedAt": "2026-06-27T18:04:28.455Z",
+  "baselineReference": "output\\24-occupancy-revision-baseline.json",
+  "failureDecomposition": [
+    {
+      "category": "base_or_deployment_samples_admitted_as_lane_occupancy",
+      "affectedSampleIds": [
+        "p24_point_001",
+        "p24_point_006",
+        "p24_point_011",
+        "p24_point_017",
+        "p24_point_024",
+        "p24_point_026",
+        "p24_point_027",
+        "p24_point_032",
+        "p24_point_034",
+        "p24_point_039",
+        "p24_point_041",
+        "p24_point_044",
+        "p24_point_048",
+        "p24_point_056",
+        "p24_point_064",
+        "p24_point_070",
+        "p24_point_071",
+        "p24_point_075",
+        "p24_point_077",
+        "p24_point_088",
+        "p24_point_090",
+        "p24_point_092",
+        "p24_point_105",
+        "p24_point_108",
+        "p24_point_110",
+        "p24_point_112",
+        "p24_point_114",
+        "p24_point_115",
+        "p24_point_119"
+      ],
+      "affectedCount": 29,
+      "measurements": [
+        {
+          "sampleId": "p24_point_001",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_high",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 127,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 349.17,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy"
+          ]
+        },
+        {
+          "sampleId": "p24_point_006",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 514.43,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_011",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_high",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 116,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 253.97,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 1
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_017",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 601,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 17,
+            "movementSpeed": 761,
+            "distanceToAlliedBase": 519.1,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_024",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 26,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 8,
+            "movementSpeed": 307.25,
+            "distanceToAlliedBase": 853.59,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_026",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 54,
+            "playerIndex": 7,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 35,
+            "movementSpeed": 316.28,
+            "distanceToAlliedBase": 593.21,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_027",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 42,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 55,
+            "movementSpeed": 798.1,
+            "distanceToAlliedBase": 967.17,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_032",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 39,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 1,
+            "movementSpeed": 13.4,
+            "distanceToAlliedBase": 521.75,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_034",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 59,
+            "movementSpeed": 556.31,
+            "distanceToAlliedBase": 786.47,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_039",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 21,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 26,
+            "movementSpeed": 604,
+            "distanceToAlliedBase": 866.42,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_041",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 606,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 43,
+            "movementSpeed": 834.35,
+            "distanceToAlliedBase": 1181.9,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_044",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 601,
+            "playerIndex": 3,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 16,
+            "movementSpeed": 578.53,
+            "distanceToAlliedBase": 671.81,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        }
+      ],
+      "currentDecisionRule": "Experiment 23 can classify lane occupancy when baseState is outside_base_deployment even if independent movement region is base_*.",
+      "suspectedTechnicalCause": "Base/deployment precedence relies on model-local baseState and does not honor independent region evidence.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "weak_nearest_lane_separation",
+      "affectedSampleIds": [
+        "p24_point_002",
+        "p24_point_003",
+        "p24_point_006",
+        "p24_point_008",
+        "p24_point_009",
+        "p24_point_012",
+        "p24_point_013",
+        "p24_point_017",
+        "p24_point_018",
+        "p24_point_020",
+        "p24_point_021",
+        "p24_point_024",
+        "p24_point_026",
+        "p24_point_027",
+        "p24_point_029",
+        "p24_point_030",
+        "p24_point_032",
+        "p24_point_034",
+        "p24_point_035",
+        "p24_point_038",
+        "p24_point_039",
+        "p24_point_041",
+        "p24_point_044",
+        "p24_point_045",
+        "p24_point_048",
+        "p24_point_049",
+        "p24_point_051",
+        "p24_point_052",
+        "p24_point_054",
+        "p24_point_057",
+        "p24_point_058",
+        "p24_point_060",
+        "p24_point_061",
+        "p24_point_062",
+        "p24_point_064",
+        "p24_point_070",
+        "p24_point_072",
+        "p24_point_074",
+        "p24_point_076",
+        "p24_point_077",
+        "p24_point_080",
+        "p24_point_081",
+        "p24_point_083",
+        "p24_point_084",
+        "p24_point_087",
+        "p24_point_091",
+        "p24_point_092",
+        "p24_point_094",
+        "p24_point_099",
+        "p24_point_102",
+        "p24_point_103",
+        "p24_point_104",
+        "p24_point_105",
+        "p24_point_106",
+        "p24_point_107",
+        "p24_point_108",
+        "p24_point_111",
+        "p24_point_112",
+        "p24_point_113",
+        "p24_point_115",
+        "p24_point_117",
+        "p24_point_118",
+        "p24_point_119",
+        "p24_point_120"
+      ],
+      "affectedCount": 64,
+      "measurements": [
+        {
+          "sampleId": "p24_point_002",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 10,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 779.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_003",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 44,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 969.42,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_006",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 514.43,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_008",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 7,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 4,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 528.65,
+            "region": "unknown",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_009",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 978.66,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_012",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 11,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 15,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 794.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 7
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_013",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 32,
+            "movementSpeed": 365.99,
+            "distanceToAlliedBase": 907.15,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_017",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 601,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 17,
+            "movementSpeed": 761,
+            "distanceToAlliedBase": 519.1,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_018",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1201,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 199.85,
+            "distanceToAlliedBase": 680.5,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_020",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 21,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 35,
+            "movementSpeed": 483.88,
+            "distanceToAlliedBase": 882.11,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_021",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 31,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 487.04,
+            "distanceToAlliedBase": 1021.72,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_024",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 26,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 8,
+            "movementSpeed": 307.25,
+            "distanceToAlliedBase": 853.59,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        }
+      ],
+      "currentDecisionRule": "Balanced model permits medium lane core at separation margin >= 45.",
+      "suspectedTechnicalCause": "Low separation margin creates brittle lane assignment near boundaries.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "envelope_width_sensitivity",
+      "affectedSampleIds": [
+        "p24_point_002",
+        "p24_point_003",
+        "p24_point_006",
+        "p24_point_008",
+        "p24_point_009",
+        "p24_point_012",
+        "p24_point_013",
+        "p24_point_015",
+        "p24_point_017",
+        "p24_point_018",
+        "p24_point_020",
+        "p24_point_021",
+        "p24_point_024",
+        "p24_point_026",
+        "p24_point_027",
+        "p24_point_030",
+        "p24_point_032",
+        "p24_point_034",
+        "p24_point_035",
+        "p24_point_038",
+        "p24_point_039",
+        "p24_point_041",
+        "p24_point_044",
+        "p24_point_045",
+        "p24_point_049",
+        "p24_point_051",
+        "p24_point_052",
+        "p24_point_057",
+        "p24_point_058",
+        "p24_point_060",
+        "p24_point_061",
+        "p24_point_062",
+        "p24_point_064",
+        "p24_point_072",
+        "p24_point_074",
+        "p24_point_076",
+        "p24_point_077",
+        "p24_point_080",
+        "p24_point_081",
+        "p24_point_083",
+        "p24_point_084",
+        "p24_point_086",
+        "p24_point_087",
+        "p24_point_090",
+        "p24_point_091",
+        "p24_point_092",
+        "p24_point_094",
+        "p24_point_099",
+        "p24_point_102",
+        "p24_point_103",
+        "p24_point_104",
+        "p24_point_105",
+        "p24_point_106",
+        "p24_point_107",
+        "p24_point_108",
+        "p24_point_111",
+        "p24_point_112",
+        "p24_point_113",
+        "p24_point_115",
+        "p24_point_117",
+        "p24_point_118",
+        "p24_point_119",
+        "p24_point_120"
+      ],
+      "affectedCount": 63,
+      "measurements": [
+        {
+          "sampleId": "p24_point_002",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 10,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 779.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_003",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 44,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 969.42,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_006",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 514.43,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_008",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 7,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 4,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 528.65,
+            "region": "unknown",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_009",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 978.66,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_012",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 11,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 15,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 794.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 7
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_013",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 32,
+            "movementSpeed": 365.99,
+            "distanceToAlliedBase": 907.15,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_015",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_approach",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 107,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 108,
+            "movementSpeed": 783.64,
+            "distanceToAlliedBase": 313.62,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 7
+          },
+          "contradictoryConditions": [
+            "predicted_lane_not_nearest_with_substantial_separation",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_017",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 601,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 17,
+            "movementSpeed": 761,
+            "distanceToAlliedBase": 519.1,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_018",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1201,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 199.85,
+            "distanceToAlliedBase": 680.5,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_020",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 21,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 35,
+            "movementSpeed": 483.88,
+            "distanceToAlliedBase": 882.11,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_021",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 31,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 487.04,
+            "distanceToAlliedBase": 1021.72,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        }
+      ],
+      "currentDecisionRule": "Lane occupiable uses an expanded envelope with multiplier 1.25.",
+      "suspectedTechnicalCause": "Envelope width near threshold changes point state under small perturbations.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "confidence_boundary_sensitivity",
+      "affectedSampleIds": [
+        "p24_point_002",
+        "p24_point_003",
+        "p24_point_006",
+        "p24_point_008",
+        "p24_point_009",
+        "p24_point_011",
+        "p24_point_012",
+        "p24_point_013",
+        "p24_point_015",
+        "p24_point_016",
+        "p24_point_017",
+        "p24_point_018",
+        "p24_point_019",
+        "p24_point_020",
+        "p24_point_021",
+        "p24_point_024",
+        "p24_point_026",
+        "p24_point_027",
+        "p24_point_029",
+        "p24_point_030",
+        "p24_point_032",
+        "p24_point_033",
+        "p24_point_034",
+        "p24_point_035",
+        "p24_point_036",
+        "p24_point_038",
+        "p24_point_039",
+        "p24_point_041",
+        "p24_point_044",
+        "p24_point_045",
+        "p24_point_048",
+        "p24_point_049",
+        "p24_point_051",
+        "p24_point_052",
+        "p24_point_057",
+        "p24_point_058",
+        "p24_point_060",
+        "p24_point_061",
+        "p24_point_062",
+        "p24_point_064",
+        "p24_point_069",
+        "p24_point_070",
+        "p24_point_072",
+        "p24_point_074",
+        "p24_point_075",
+        "p24_point_076",
+        "p24_point_077",
+        "p24_point_080",
+        "p24_point_081",
+        "p24_point_082",
+        "p24_point_083",
+        "p24_point_084",
+        "p24_point_086",
+        "p24_point_087",
+        "p24_point_088",
+        "p24_point_090",
+        "p24_point_091",
+        "p24_point_092",
+        "p24_point_094",
+        "p24_point_095",
+        "p24_point_099",
+        "p24_point_102",
+        "p24_point_103",
+        "p24_point_104",
+        "p24_point_105",
+        "p24_point_106",
+        "p24_point_107",
+        "p24_point_108",
+        "p24_point_111",
+        "p24_point_112",
+        "p24_point_113",
+        "p24_point_115",
+        "p24_point_117",
+        "p24_point_118",
+        "p24_point_119",
+        "p24_point_120"
+      ],
+      "affectedCount": 76,
+      "measurements": [
+        {
+          "sampleId": "p24_point_002",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 10,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 779.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_003",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 44,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 969.42,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_006",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 514.43,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_008",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 7,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 4,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 528.65,
+            "region": "unknown",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_009",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 978.66,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_011",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_high",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 116,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 253.97,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 1
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_012",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 11,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 15,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 794.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 7
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_013",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 32,
+            "movementSpeed": 365.99,
+            "distanceToAlliedBase": 907.15,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_015",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_approach",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 107,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 108,
+            "movementSpeed": 783.64,
+            "distanceToAlliedBase": 313.62,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 7
+          },
+          "contradictoryConditions": [
+            "predicted_lane_not_nearest_with_substantial_separation",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_016",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "unknown",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 116,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 114,
+            "movementSpeed": 40.42,
+            "distanceToAlliedBase": 297.99,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_017",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 601,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 17,
+            "movementSpeed": 761,
+            "distanceToAlliedBase": 519.1,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_018",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1201,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 199.85,
+            "distanceToAlliedBase": 680.5,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        }
+      ],
+      "currentDecisionRule": "High/medium confidence is assigned by hard distance and margin boundaries.",
+      "suspectedTechnicalCause": "Hard confidence boundaries turn minor perturbations into state changes.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "high_speed_transit_classified_as_occupancy",
+      "affectedSampleIds": [
+        "p24_point_054",
+        "p24_point_070",
+        "p24_point_091",
+        "p24_point_097",
+        "p24_point_098",
+        "p24_point_105",
+        "p24_point_109",
+        "p24_episode_012",
+        "p24_episode_021",
+        "p24_episode_029",
+        "p24_episode_038",
+        "p24_episode_044",
+        "p24_episode_052",
+        "p24_episode_058"
+      ],
+      "affectedCount": 14,
+      "measurements": [
+        {
+          "sampleId": "p24_point_054",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 602,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 67,
+            "movementSpeed": 1001.92,
+            "distanceToAlliedBase": 1017.17,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_point_070",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 604,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 66,
+            "movementSpeed": 1014.79,
+            "distanceToAlliedBase": 1060.39,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations",
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_point_091",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1201,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 52,
+            "movementSpeed": 1188.56,
+            "distanceToAlliedBase": 1254.48,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations",
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_point_097",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "base_core",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1202,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 154,
+            "movementSpeed": 907.22,
+            "distanceToAlliedBase": 755.25,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_point_098",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1202,
+            "playerIndex": 9,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 67,
+            "movementSpeed": 914,
+            "distanceToAlliedBase": 892.62,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_point_105",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1203,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 26,
+            "movementSpeed": 1151.54,
+            "distanceToAlliedBase": 848.93,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations",
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_point_109",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "base_core",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1204,
+            "playerIndex": 9,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 166,
+            "movementSpeed": 1004.57,
+            "distanceToAlliedBase": 137.6,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "high_speed_or_possible_discontinuity_near_sample"
+          ]
+        },
+        {
+          "sampleId": "p24_episode_012",
+          "reviewKind": "episode",
+          "modelPrediction": {
+            "episodeType": "brief_contact",
+            "physicalLaneId": "lane_2",
+            "startSecond": 23,
+            "endSecond": 24,
+            "durationSeconds": 2,
+            "state": "below_stable_duration",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": null,
+            "playerIndex": 3,
+            "movementNearestLane": null,
+            "movementDistanceMargin": null,
+            "movementSpeed": 1137.28,
+            "distanceToAlliedBase": null,
+            "region": null,
+            "outsidePredictedLaneSeconds": 0,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "episode_contains_possible_spatial_discontinuity"
+          ]
+        },
+        {
+          "sampleId": "p24_episode_021",
+          "reviewKind": "episode",
+          "modelPrediction": {
+            "episodeType": "brief_contact",
+            "physicalLaneId": "lane_2",
+            "startSecond": 22,
+            "endSecond": 22,
+            "durationSeconds": 1,
+            "state": "below_stable_duration",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": null,
+            "playerIndex": 2,
+            "movementNearestLane": null,
+            "movementDistanceMargin": null,
+            "movementSpeed": 1005.25,
+            "distanceToAlliedBase": null,
+            "region": null,
+            "outsidePredictedLaneSeconds": 0,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "episode_contains_possible_spatial_discontinuity"
+          ]
+        },
+        {
+          "sampleId": "p24_episode_029",
+          "reviewKind": "episode",
+          "modelPrediction": {
+            "episodeType": "brief_contact",
+            "physicalLaneId": "lane_2",
+            "startSecond": 602,
+            "endSecond": 602,
+            "durationSeconds": 1,
+            "state": "below_stable_duration",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": null,
+            "playerIndex": 1,
+            "movementNearestLane": null,
+            "movementDistanceMargin": null,
+            "movementSpeed": 1001.92,
+            "distanceToAlliedBase": null,
+            "region": null,
+            "outsidePredictedLaneSeconds": 0,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "episode_contains_possible_spatial_discontinuity"
+          ]
+        },
+        {
+          "sampleId": "p24_episode_038",
+          "reviewKind": "episode",
+          "modelPrediction": {
+            "episodeType": "brief_contact",
+            "physicalLaneId": "lane_2",
+            "startSecond": 604,
+            "endSecond": 605,
+            "durationSeconds": 2,
+            "state": "below_stable_duration",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": null,
+            "playerIndex": 2,
+            "movementNearestLane": null,
+            "movementDistanceMargin": null,
+            "movementSpeed": 1014.79,
+            "distanceToAlliedBase": null,
+            "region": null,
+            "outsidePredictedLaneSeconds": 0,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "episode_contains_possible_spatial_discontinuity"
+          ]
+        },
+        {
+          "sampleId": "p24_episode_044",
+          "reviewKind": "episode",
+          "modelPrediction": {
+            "episodeType": "brief_contact",
+            "physicalLaneId": "lane_3",
+            "startSecond": 606,
+            "endSecond": 606,
+            "durationSeconds": 1,
+            "state": "below_stable_duration",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": null,
+            "playerIndex": 2,
+            "movementNearestLane": null,
+            "movementDistanceMargin": null,
+            "movementSpeed": 945.92,
+            "distanceToAlliedBase": null,
+            "region": null,
+            "outsidePredictedLaneSeconds": 0,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": [
+            "episode_contains_possible_spatial_discontinuity"
+          ]
+        }
+      ],
+      "currentDecisionRule": "Point occupancy does not explicitly separate high-speed transit or discontinuity from occupancy.",
+      "suspectedTechnicalCause": "Fast movement samples can be admitted as lane presence if geometry is near a lane axis.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "brief_contact_classified_as_stable_presence",
+      "affectedSampleIds": [],
+      "affectedCount": 0,
+      "measurements": [],
+      "currentDecisionRule": "Episode stability primarily depends on consecutive lane state and duration.",
+      "suspectedTechnicalCause": "Spatial continuity within the episode is not strict enough.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "point_and_containing_episode_disagreement",
+      "affectedSampleIds": [],
+      "affectedCount": 0,
+      "measurements": [],
+      "currentDecisionRule": "Point and episode outputs are derived separately after segmentation.",
+      "suspectedTechnicalCause": "Segmentation can place nearby point evidence into a different lane context.",
+      "canCorrectWithoutSemanticHumanJudgment": false
+    },
+    {
+      "category": "fragmented_episodes_without_meaningful_spatial_departure",
+      "affectedSampleIds": [],
+      "affectedCount": 0,
+      "measurements": [],
+      "currentDecisionRule": "Brief contacts are retained when interval duration is below minStableSeconds.",
+      "suspectedTechnicalCause": "Interruption handling does not merge stable same-lane fragments.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "lane_assignment_near_geometric_boundaries",
+      "affectedSampleIds": [
+        "p24_point_002",
+        "p24_point_003",
+        "p24_point_006",
+        "p24_point_008",
+        "p24_point_009",
+        "p24_point_012",
+        "p24_point_013",
+        "p24_point_017",
+        "p24_point_018",
+        "p24_point_019",
+        "p24_point_020",
+        "p24_point_021",
+        "p24_point_024",
+        "p24_point_026",
+        "p24_point_027",
+        "p24_point_029",
+        "p24_point_030",
+        "p24_point_032",
+        "p24_point_033",
+        "p24_point_034",
+        "p24_point_035",
+        "p24_point_036",
+        "p24_point_038",
+        "p24_point_039",
+        "p24_point_041",
+        "p24_point_044",
+        "p24_point_045",
+        "p24_point_048",
+        "p24_point_049",
+        "p24_point_051",
+        "p24_point_052",
+        "p24_point_054",
+        "p24_point_057",
+        "p24_point_058",
+        "p24_point_060",
+        "p24_point_061",
+        "p24_point_062",
+        "p24_point_064",
+        "p24_point_070",
+        "p24_point_072",
+        "p24_point_074",
+        "p24_point_075",
+        "p24_point_076",
+        "p24_point_077",
+        "p24_point_080",
+        "p24_point_081",
+        "p24_point_083",
+        "p24_point_084",
+        "p24_point_087",
+        "p24_point_091",
+        "p24_point_092",
+        "p24_point_094",
+        "p24_point_099",
+        "p24_point_102",
+        "p24_point_103",
+        "p24_point_104",
+        "p24_point_105",
+        "p24_point_106",
+        "p24_point_107",
+        "p24_point_108",
+        "p24_point_111",
+        "p24_point_112",
+        "p24_point_113",
+        "p24_point_115",
+        "p24_point_117",
+        "p24_point_118",
+        "p24_point_119",
+        "p24_point_120"
+      ],
+      "affectedCount": 68,
+      "measurements": [
+        {
+          "sampleId": "p24_point_002",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 10,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 779.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_003",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 44,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 969.42,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_006",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 514.43,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_008",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_1",
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 7,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 4,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 528.65,
+            "region": "unknown",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_009",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 8,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 978.66,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_012",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 11,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 15,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 794.74,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 7
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_013",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 32,
+            "movementSpeed": 365.99,
+            "distanceToAlliedBase": 907.15,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_017",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "middle"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 601,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 17,
+            "movementSpeed": 761,
+            "distanceToAlliedBase": 519.1,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 6
+          },
+          "contradictoryConditions": [
+            "base_geometry_strongly_contradicts_lane_occupancy",
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_018",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_medium",
+            "physicalLaneId": "lane_3",
+            "candidateLane": "lane_3",
+            "matchPhase": "late"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 1201,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 47,
+            "movementSpeed": 199.85,
+            "distanceToAlliedBase": 680.5,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 4
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_019",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_core_high",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 134,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 82,
+            "movementSpeed": 783.83,
+            "distanceToAlliedBase": 358.34,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 3
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_020",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 21,
+            "playerIndex": 1,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 35,
+            "movementSpeed": 483.88,
+            "distanceToAlliedBase": 882.11,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 2
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        },
+        {
+          "sampleId": "p24_point_021",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "lane_occupiable",
+            "physicalLaneId": "lane_2",
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 31,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 3,
+            "movementSpeed": 487.04,
+            "distanceToAlliedBase": 1021.72,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 8
+          },
+          "contradictoryConditions": [
+            "classification_changes_under_small_threshold_perturbations"
+          ]
+        }
+      ],
+      "currentDecisionRule": "Nearest lane wins when margin clears a low threshold.",
+      "suspectedTechnicalCause": "Boundary-adjacent samples should abstain instead of assigning lane occupancy.",
+      "canCorrectWithoutSemanticHumanJudgment": true
+    },
+    {
+      "category": "classifications_supported_only_by_selected_model_itself",
+      "affectedSampleIds": [
+        "p24_point_004",
+        "p24_point_005",
+        "p24_point_007",
+        "p24_point_010",
+        "p24_point_014",
+        "p24_point_022",
+        "p24_point_023",
+        "p24_point_025",
+        "p24_point_028",
+        "p24_point_031",
+        "p24_point_037",
+        "p24_point_040",
+        "p24_point_042",
+        "p24_point_046",
+        "p24_point_050",
+        "p24_point_053",
+        "p24_point_055",
+        "p24_point_059",
+        "p24_point_063",
+        "p24_point_065",
+        "p24_point_067",
+        "p24_point_068",
+        "p24_point_078",
+        "p24_point_079",
+        "p24_point_085",
+        "p24_point_089",
+        "p24_point_096",
+        "p24_point_100",
+        "p24_point_116",
+        "p24_episode_001",
+        "p24_episode_002",
+        "p24_episode_003",
+        "p24_episode_004",
+        "p24_episode_005",
+        "p24_episode_006",
+        "p24_episode_007",
+        "p24_episode_008",
+        "p24_episode_009",
+        "p24_episode_010",
+        "p24_episode_011",
+        "p24_episode_013",
+        "p24_episode_014",
+        "p24_episode_015",
+        "p24_episode_016",
+        "p24_episode_017",
+        "p24_episode_018",
+        "p24_episode_019",
+        "p24_episode_020",
+        "p24_episode_022",
+        "p24_episode_023",
+        "p24_episode_024",
+        "p24_episode_025",
+        "p24_episode_026",
+        "p24_episode_027",
+        "p24_episode_028",
+        "p24_episode_030",
+        "p24_episode_031",
+        "p24_episode_032",
+        "p24_episode_033",
+        "p24_episode_034",
+        "p24_episode_035",
+        "p24_episode_036",
+        "p24_episode_037",
+        "p24_episode_039",
+        "p24_episode_040",
+        "p24_episode_041",
+        "p24_episode_042",
+        "p24_episode_043",
+        "p24_episode_045",
+        "p24_episode_046",
+        "p24_episode_047",
+        "p24_episode_048",
+        "p24_episode_049",
+        "p24_episode_050",
+        "p24_episode_051",
+        "p24_episode_053",
+        "p24_episode_054",
+        "p24_episode_055",
+        "p24_episode_056",
+        "p24_episode_057",
+        "p24_episode_059",
+        "p24_episode_060",
+        "p24_episode_061",
+        "p24_episode_062",
+        "p24_episode_063",
+        "p24_episode_064",
+        "p24_episode_065",
+        "p24_episode_066",
+        "p24_episode_067",
+        "p24_episode_068",
+        "p24_episode_069",
+        "p24_episode_070",
+        "p24_episode_071",
+        "p24_episode_072"
+      ],
+      "affectedCount": 94,
+      "measurements": [
+        {
+          "sampleId": "p24_point_004",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 3,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 146,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 300.38,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_005",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 4,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 46,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 448.6,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_007",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 6,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 37,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 444.83,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_010",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_2",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 19,
+            "playerIndex": 9,
+            "movementNearestLane": "lane_2",
+            "movementDistanceMargin": 152,
+            "movementSpeed": 0,
+            "distanceToAlliedBase": 276.67,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_014",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "base_core",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 21,
+            "playerIndex": 5,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 71,
+            "movementSpeed": 625.4,
+            "distanceToAlliedBase": 180.38,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_022",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 3,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 29,
+            "movementSpeed": 537.33,
+            "distanceToAlliedBase": 836.51,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_023",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 4,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 37,
+            "movementSpeed": 556.51,
+            "distanceToAlliedBase": 730.49,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_025",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 6,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 31,
+            "movementSpeed": 556.22,
+            "distanceToAlliedBase": 672.75,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_028",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 9,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 30,
+            "movementSpeed": 534.37,
+            "distanceToAlliedBase": 807.5,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_031",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_3",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 0,
+            "movementNearestLane": "lane_3",
+            "movementDistanceMargin": 32,
+            "movementSpeed": 405.95,
+            "distanceToAlliedBase": 750.17,
+            "region": "base_team_3",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_037",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 20,
+            "playerIndex": 10,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 55,
+            "movementSpeed": 355.98,
+            "distanceToAlliedBase": 460.2,
+            "region": "base_team_2",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        },
+        {
+          "sampleId": "p24_point_040",
+          "reviewKind": "point",
+          "modelPrediction": {
+            "state": "deployment_ambiguous",
+            "physicalLaneId": null,
+            "candidateLane": "lane_1",
+            "matchPhase": "early"
+          },
+          "evidenceMeasurements": {
+            "gameSecond": 21,
+            "playerIndex": 2,
+            "movementNearestLane": "lane_1",
+            "movementDistanceMargin": 74,
+            "movementSpeed": 797.6,
+            "distanceToAlliedBase": 313.88,
+            "region": "between_lanes",
+            "outsidePredictedLaneSeconds": null,
+            "sensitivityChanges": 0
+          },
+          "contradictoryConditions": []
+        }
+      ],
+      "currentDecisionRule": "Selected model emits occupancy states even when independent support is weak.",
+      "suspectedTechnicalCause": "Internal consistency is being used where abstention is safer.",
+      "canCorrectWithoutSemanticHumanJudgment": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate_a_base_deployment_precedence",
+      "description": "Reject lane occupancy when independent movement or region evidence strongly indicates base/deployment.",
+      "changesFromBaseline": [
+        "base_deployment_precedence"
+      ],
+      "rulesAffected": [
+        "base_deployment_precedence"
+      ],
+      "expectedEffect": "Reduce base/deployment samples admitted as lane occupancy.",
+      "causalTrace": [
+        {
+          "change": "base_deployment_precedence",
+          "observedEvidenceReviewedError": "base_or_deployment_samples_admitted_as_lane_occupancy",
+          "affectedSampleIds": [
+            "p24_point_001",
+            "p24_point_006",
+            "p24_point_011",
+            "p24_point_017",
+            "p24_point_024",
+            "p24_point_026",
+            "p24_point_027",
+            "p24_point_032",
+            "p24_point_034",
+            "p24_point_039",
+            "p24_point_041",
+            "p24_point_044",
+            "p24_point_048",
+            "p24_point_056",
+            "p24_point_064",
+            "p24_point_070",
+            "p24_point_071",
+            "p24_point_075",
+            "p24_point_077",
+            "p24_point_088",
+            "p24_point_090",
+            "p24_point_092",
+            "p24_point_105",
+            "p24_point_108",
+            "p24_point_110",
+            "p24_point_112",
+            "p24_point_114",
+            "p24_point_115",
+            "p24_point_119"
+          ],
+          "technicalCause": "Base/deployment precedence relies on model-local baseState and does not honor independent region evidence.",
+          "proposedCorrection": "base_deployment_precedence",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        }
+      ],
+      "metrics": {
+        "pointContradictionCount": 1,
+        "pointInstabilityRate": 34.17,
+        "episodeContradictionCount": 0,
+        "pointEvidenceCountsByStatus": {
+          "automatically_contradicted": 1,
+          "automatically_supported": 4,
+          "internally_consistent_only": 75,
+          "unstable_under_perturbation": 40
+        },
+        "episodeEvidenceCountsByStatus": {
+          "internally_consistent_only": 72
+        },
+        "coverageChange": {
+          "baselineLaneRows": 18754,
+          "revisedLaneRows": 12162,
+          "deltaRows": -6592,
+          "baselineCoveragePercent": 53.39,
+          "revisedCoveragePercent": 34.63
+        },
+        "unknownAmbiguousIncrease": {
+          "baselineRows": 16370,
+          "revisedRows": 22962,
+          "deltaRows": 6592,
+          "revisedBreakdown": {
+            "unknown": 5528,
+            "laneAmbiguous": 974,
+            "interLaneTransit": 0,
+            "deploymentAmbiguous": 1635,
+            "baseCore": 14825
+          }
+        },
+        "fragmentationChange": {
+          "baselineStableEpisodes": 359,
+          "revisedStableEpisodes": 162,
+          "stableDelta": -197,
+          "baselineBriefContacts": 11415,
+          "revisedBriefContacts": 5062,
+          "briefDelta": -6353
+        },
+        "regressions": {
+          "majorRegression": false,
+          "notes": [
+            "No semantic regression claim is made without labels.",
+            "Abstention increase is reported explicitly instead of hidden."
+          ],
+          "byLanePlayerPhase": {
+            "pointSensitivityByLane": {
+              "lane_1": {
+                "samples": 15,
+                "changed": 7,
+                "changedPercent": 46.67
+              },
+              "lane_2": {
+                "samples": 39,
+                "changed": 16,
+                "changedPercent": 41.03
+              },
+              "lane_3": {
+                "samples": 28,
+                "changed": 12,
+                "changedPercent": 42.86
+              },
+              "none": {
+                "samples": 38,
+                "changed": 6,
+                "changedPercent": 15.79
+              }
+            },
+            "pointSensitivityByPlayer": {
+              "0": {
+                "samples": 15,
+                "changed": 3,
+                "changedPercent": 20
+              },
+              "1": {
+                "samples": 10,
+                "changed": 5,
+                "changedPercent": 50
+              },
+              "2": {
+                "samples": 11,
+                "changed": 3,
+                "changedPercent": 27.27
+              },
+              "3": {
+                "samples": 9,
+                "changed": 2,
+                "changedPercent": 22.22
+              },
+              "4": {
+                "samples": 9,
+                "changed": 3,
+                "changedPercent": 33.33
+              },
+              "5": {
+                "samples": 10,
+                "changed": 2,
+                "changedPercent": 20
+              },
+              "6": {
+                "samples": 8,
+                "changed": 2,
+                "changedPercent": 25
+              },
+              "7": {
+                "samples": 10,
+                "changed": 5,
+                "changedPercent": 50
+              },
+              "8": {
+                "samples": 9,
+                "changed": 2,
+                "changedPercent": 22.22
+              },
+              "9": {
+                "samples": 10,
+                "changed": 4,
+                "changedPercent": 40
+              },
+              "10": {
+                "samples": 10,
+                "changed": 5,
+                "changedPercent": 50
+              },
+              "11": {
+                "samples": 9,
+                "changed": 5,
+                "changedPercent": 55.56
+              }
+            },
+            "pointSensitivityByMatchPhase": {
+              "early": {
+                "samples": 38,
+                "changed": 11,
+                "changedPercent": 28.95
+              },
+              "late": {
+                "samples": 41,
+                "changed": 15,
+                "changedPercent": 36.59
+              },
+              "middle": {
+                "samples": 41,
+                "changed": 15,
+                "changedPercent": 36.59
+              }
+            },
+            "pointStatusByLane": {
+              "lane_2": {
+                "automatically_contradicted": 1,
+                "internally_consistent_only": 23,
+                "unstable_under_perturbation": 15
+              },
+              "none": {
+                "internally_consistent_only": 32,
+                "unstable_under_perturbation": 6
+              },
+              "lane_1": {
+                "internally_consistent_only": 8,
+                "unstable_under_perturbation": 7
+              },
+              "lane_3": {
+                "automatically_supported": 4,
+                "internally_consistent_only": 12,
+                "unstable_under_perturbation": 12
+              }
+            }
+          },
+          "episodeStabilityMateriallyDegraded": false
+        },
+        "byLanePlayerPhaseRegressions": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 7,
+              "changedPercent": 46.67
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 16,
+              "changedPercent": 41.03
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 12,
+              "changedPercent": 42.86
+            },
+            "none": {
+              "samples": 38,
+              "changed": 6,
+              "changedPercent": 15.79
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 3,
+              "changedPercent": 20
+            },
+            "1": {
+              "samples": 10,
+              "changed": 5,
+              "changedPercent": 50
+            },
+            "2": {
+              "samples": 11,
+              "changed": 3,
+              "changedPercent": 27.27
+            },
+            "3": {
+              "samples": 9,
+              "changed": 2,
+              "changedPercent": 22.22
+            },
+            "4": {
+              "samples": 9,
+              "changed": 3,
+              "changedPercent": 33.33
+            },
+            "5": {
+              "samples": 10,
+              "changed": 2,
+              "changedPercent": 20
+            },
+            "6": {
+              "samples": 8,
+              "changed": 2,
+              "changedPercent": 25
+            },
+            "7": {
+              "samples": 10,
+              "changed": 5,
+              "changedPercent": 50
+            },
+            "8": {
+              "samples": 9,
+              "changed": 2,
+              "changedPercent": 22.22
+            },
+            "9": {
+              "samples": 10,
+              "changed": 4,
+              "changedPercent": 40
+            },
+            "10": {
+              "samples": 10,
+              "changed": 5,
+              "changedPercent": 50
+            },
+            "11": {
+              "samples": 9,
+              "changed": 5,
+              "changedPercent": 55.56
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 11,
+              "changedPercent": 28.95
+            },
+            "late": {
+              "samples": 41,
+              "changed": 15,
+              "changedPercent": 36.59
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 15,
+              "changedPercent": 36.59
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "automatically_contradicted": 1,
+              "internally_consistent_only": 23,
+              "unstable_under_perturbation": 15
+            },
+            "none": {
+              "internally_consistent_only": 32,
+              "unstable_under_perturbation": 6
+            },
+            "lane_1": {
+              "internally_consistent_only": 8,
+              "unstable_under_perturbation": 7
+            },
+            "lane_3": {
+              "automatically_supported": 4,
+              "internally_consistent_only": 12,
+              "unstable_under_perturbation": 12
+            }
+          }
+        },
+        "internalAgreementSecondary": {
+          "crossModelPointAgreement": {
+            "agreement": 76,
+            "majority_unknown": 3,
+            "selected_model_only_classification": 41
+          },
+          "crossModelEpisodeAgreement": {
+            "agreement": 37,
+            "disagreement": 34,
+            "majority_mixed": 1
+          }
+        }
+      },
+      "regressions": {
+        "majorRegression": false,
+        "notes": [
+          "No semantic regression claim is made without labels.",
+          "Abstention increase is reported explicitly instead of hidden."
+        ],
+        "byLanePlayerPhase": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 7,
+              "changedPercent": 46.67
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 16,
+              "changedPercent": 41.03
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 12,
+              "changedPercent": 42.86
+            },
+            "none": {
+              "samples": 38,
+              "changed": 6,
+              "changedPercent": 15.79
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 3,
+              "changedPercent": 20
+            },
+            "1": {
+              "samples": 10,
+              "changed": 5,
+              "changedPercent": 50
+            },
+            "2": {
+              "samples": 11,
+              "changed": 3,
+              "changedPercent": 27.27
+            },
+            "3": {
+              "samples": 9,
+              "changed": 2,
+              "changedPercent": 22.22
+            },
+            "4": {
+              "samples": 9,
+              "changed": 3,
+              "changedPercent": 33.33
+            },
+            "5": {
+              "samples": 10,
+              "changed": 2,
+              "changedPercent": 20
+            },
+            "6": {
+              "samples": 8,
+              "changed": 2,
+              "changedPercent": 25
+            },
+            "7": {
+              "samples": 10,
+              "changed": 5,
+              "changedPercent": 50
+            },
+            "8": {
+              "samples": 9,
+              "changed": 2,
+              "changedPercent": 22.22
+            },
+            "9": {
+              "samples": 10,
+              "changed": 4,
+              "changedPercent": 40
+            },
+            "10": {
+              "samples": 10,
+              "changed": 5,
+              "changedPercent": 50
+            },
+            "11": {
+              "samples": 9,
+              "changed": 5,
+              "changedPercent": 55.56
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 11,
+              "changedPercent": 28.95
+            },
+            "late": {
+              "samples": 41,
+              "changed": 15,
+              "changedPercent": 36.59
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 15,
+              "changedPercent": 36.59
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "automatically_contradicted": 1,
+              "internally_consistent_only": 23,
+              "unstable_under_perturbation": 15
+            },
+            "none": {
+              "internally_consistent_only": 32,
+              "unstable_under_perturbation": 6
+            },
+            "lane_1": {
+              "internally_consistent_only": 8,
+              "unstable_under_perturbation": 7
+            },
+            "lane_3": {
+              "automatically_supported": 4,
+              "internally_consistent_only": 12,
+              "unstable_under_perturbation": 12
+            }
+          }
+        },
+        "episodeStabilityMateriallyDegraded": false
+      },
+      "selected": false
+    },
+    {
+      "id": "candidate_b_separation_ambiguity",
+      "description": "Abstain to lane_ambiguous when nearest-vs-second-nearest separation is weak.",
+      "changesFromBaseline": [
+        "separation_ambiguity"
+      ],
+      "rulesAffected": [
+        "separation_ambiguity"
+      ],
+      "expectedEffect": "Reduce weak nearest-lane separation and confidence-boundary sensitivity.",
+      "causalTrace": [
+        {
+          "change": "separation_ambiguity",
+          "observedEvidenceReviewedError": "weak_nearest_lane_separation",
+          "affectedSampleIds": [
+            "p24_point_002",
+            "p24_point_003",
+            "p24_point_006",
+            "p24_point_008",
+            "p24_point_009",
+            "p24_point_012",
+            "p24_point_013",
+            "p24_point_017",
+            "p24_point_018",
+            "p24_point_020",
+            "p24_point_021",
+            "p24_point_024",
+            "p24_point_026",
+            "p24_point_027",
+            "p24_point_029",
+            "p24_point_030",
+            "p24_point_032",
+            "p24_point_034",
+            "p24_point_035",
+            "p24_point_038",
+            "p24_point_039",
+            "p24_point_041",
+            "p24_point_044",
+            "p24_point_045",
+            "p24_point_048",
+            "p24_point_049",
+            "p24_point_051",
+            "p24_point_052",
+            "p24_point_054",
+            "p24_point_057",
+            "p24_point_058",
+            "p24_point_060",
+            "p24_point_061",
+            "p24_point_062",
+            "p24_point_064",
+            "p24_point_070",
+            "p24_point_072",
+            "p24_point_074",
+            "p24_point_076",
+            "p24_point_077",
+            "p24_point_080",
+            "p24_point_081",
+            "p24_point_083",
+            "p24_point_084",
+            "p24_point_087",
+            "p24_point_091",
+            "p24_point_092",
+            "p24_point_094",
+            "p24_point_099",
+            "p24_point_102",
+            "p24_point_103",
+            "p24_point_104",
+            "p24_point_105",
+            "p24_point_106",
+            "p24_point_107",
+            "p24_point_108",
+            "p24_point_111",
+            "p24_point_112",
+            "p24_point_113",
+            "p24_point_115",
+            "p24_point_117",
+            "p24_point_118",
+            "p24_point_119",
+            "p24_point_120"
+          ],
+          "technicalCause": "Low separation margin creates brittle lane assignment near boundaries.",
+          "proposedCorrection": "separation_ambiguity",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        }
+      ],
+      "metrics": {
+        "pointContradictionCount": 19,
+        "pointInstabilityRate": 10,
+        "episodeContradictionCount": 0,
+        "pointEvidenceCountsByStatus": {
+          "automatically_contradicted": 19,
+          "automatically_supported": 6,
+          "internally_consistent_only": 88,
+          "unstable_under_perturbation": 7
+        },
+        "episodeEvidenceCountsByStatus": {
+          "internally_consistent_only": 71,
+          "unstable_under_perturbation": 1
+        },
+        "coverageChange": {
+          "baselineLaneRows": 18754,
+          "revisedLaneRows": 10821,
+          "deltaRows": -7933,
+          "baselineCoveragePercent": 53.39,
+          "revisedCoveragePercent": 30.81
+        },
+        "unknownAmbiguousIncrease": {
+          "baselineRows": 16370,
+          "revisedRows": 24303,
+          "deltaRows": 7933,
+          "revisedBreakdown": {
+            "unknown": 5528,
+            "laneAmbiguous": 18775,
+            "interLaneTransit": 0,
+            "deploymentAmbiguous": 0,
+            "baseCore": 0
+          }
+        },
+        "fragmentationChange": {
+          "baselineStableEpisodes": 359,
+          "revisedStableEpisodes": 174,
+          "stableDelta": -185,
+          "baselineBriefContacts": 11415,
+          "revisedBriefContacts": 6856,
+          "briefDelta": -4559
+        },
+        "regressions": {
+          "majorRegression": false,
+          "notes": [
+            "No semantic regression claim is made without labels.",
+            "Abstention increase is reported explicitly instead of hidden."
+          ],
+          "byLanePlayerPhase": {
+            "pointSensitivityByLane": {
+              "lane_1": {
+                "samples": 15,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "lane_2": {
+                "samples": 39,
+                "changed": 2,
+                "changedPercent": 5.13
+              },
+              "lane_3": {
+                "samples": 28,
+                "changed": 6,
+                "changedPercent": 21.43
+              },
+              "none": {
+                "samples": 38,
+                "changed": 4,
+                "changedPercent": 10.53
+              }
+            },
+            "pointSensitivityByPlayer": {
+              "0": {
+                "samples": 15,
+                "changed": 3,
+                "changedPercent": 20
+              },
+              "1": {
+                "samples": 10,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "2": {
+                "samples": 11,
+                "changed": 2,
+                "changedPercent": 18.18
+              },
+              "3": {
+                "samples": 9,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "4": {
+                "samples": 9,
+                "changed": 1,
+                "changedPercent": 11.11
+              },
+              "5": {
+                "samples": 10,
+                "changed": 1,
+                "changedPercent": 10
+              },
+              "6": {
+                "samples": 8,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "7": {
+                "samples": 10,
+                "changed": 1,
+                "changedPercent": 10
+              },
+              "8": {
+                "samples": 9,
+                "changed": 1,
+                "changedPercent": 11.11
+              },
+              "9": {
+                "samples": 10,
+                "changed": 2,
+                "changedPercent": 20
+              },
+              "10": {
+                "samples": 10,
+                "changed": 1,
+                "changedPercent": 10
+              },
+              "11": {
+                "samples": 9,
+                "changed": 0,
+                "changedPercent": 0
+              }
+            },
+            "pointSensitivityByMatchPhase": {
+              "early": {
+                "samples": 38,
+                "changed": 4,
+                "changedPercent": 10.53
+              },
+              "late": {
+                "samples": 41,
+                "changed": 2,
+                "changedPercent": 4.88
+              },
+              "middle": {
+                "samples": 41,
+                "changed": 6,
+                "changedPercent": 14.63
+              }
+            },
+            "pointStatusByLane": {
+              "lane_2": {
+                "automatically_contradicted": 5,
+                "internally_consistent_only": 33,
+                "unstable_under_perturbation": 1
+              },
+              "none": {
+                "automatically_contradicted": 10,
+                "automatically_supported": 2,
+                "internally_consistent_only": 25,
+                "unstable_under_perturbation": 1
+              },
+              "lane_1": {
+                "internally_consistent_only": 15
+              },
+              "lane_3": {
+                "automatically_contradicted": 4,
+                "automatically_supported": 4,
+                "internally_consistent_only": 15,
+                "unstable_under_perturbation": 5
+              }
+            }
+          },
+          "episodeStabilityMateriallyDegraded": false
+        },
+        "byLanePlayerPhaseRegressions": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 2,
+              "changedPercent": 5.13
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 6,
+              "changedPercent": 21.43
+            },
+            "none": {
+              "samples": 38,
+              "changed": 4,
+              "changedPercent": 10.53
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 3,
+              "changedPercent": 20
+            },
+            "1": {
+              "samples": 10,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "2": {
+              "samples": 11,
+              "changed": 2,
+              "changedPercent": 18.18
+            },
+            "3": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "4": {
+              "samples": 9,
+              "changed": 1,
+              "changedPercent": 11.11
+            },
+            "5": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "6": {
+              "samples": 8,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "7": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "8": {
+              "samples": 9,
+              "changed": 1,
+              "changedPercent": 11.11
+            },
+            "9": {
+              "samples": 10,
+              "changed": 2,
+              "changedPercent": 20
+            },
+            "10": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "11": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 4,
+              "changedPercent": 10.53
+            },
+            "late": {
+              "samples": 41,
+              "changed": 2,
+              "changedPercent": 4.88
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 6,
+              "changedPercent": 14.63
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "automatically_contradicted": 5,
+              "internally_consistent_only": 33,
+              "unstable_under_perturbation": 1
+            },
+            "none": {
+              "automatically_contradicted": 10,
+              "automatically_supported": 2,
+              "internally_consistent_only": 25,
+              "unstable_under_perturbation": 1
+            },
+            "lane_1": {
+              "internally_consistent_only": 15
+            },
+            "lane_3": {
+              "automatically_contradicted": 4,
+              "automatically_supported": 4,
+              "internally_consistent_only": 15,
+              "unstable_under_perturbation": 5
+            }
+          }
+        },
+        "internalAgreementSecondary": {
+          "crossModelPointAgreement": {
+            "agreement": 76,
+            "majority_unknown": 3,
+            "selected_model_only_classification": 41
+          },
+          "crossModelEpisodeAgreement": {
+            "agreement": 37,
+            "disagreement": 34,
+            "majority_mixed": 1
+          }
+        }
+      },
+      "regressions": {
+        "majorRegression": false,
+        "notes": [
+          "No semantic regression claim is made without labels.",
+          "Abstention increase is reported explicitly instead of hidden."
+        ],
+        "byLanePlayerPhase": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 2,
+              "changedPercent": 5.13
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 6,
+              "changedPercent": 21.43
+            },
+            "none": {
+              "samples": 38,
+              "changed": 4,
+              "changedPercent": 10.53
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 3,
+              "changedPercent": 20
+            },
+            "1": {
+              "samples": 10,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "2": {
+              "samples": 11,
+              "changed": 2,
+              "changedPercent": 18.18
+            },
+            "3": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "4": {
+              "samples": 9,
+              "changed": 1,
+              "changedPercent": 11.11
+            },
+            "5": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "6": {
+              "samples": 8,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "7": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "8": {
+              "samples": 9,
+              "changed": 1,
+              "changedPercent": 11.11
+            },
+            "9": {
+              "samples": 10,
+              "changed": 2,
+              "changedPercent": 20
+            },
+            "10": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "11": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 4,
+              "changedPercent": 10.53
+            },
+            "late": {
+              "samples": 41,
+              "changed": 2,
+              "changedPercent": 4.88
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 6,
+              "changedPercent": 14.63
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "automatically_contradicted": 5,
+              "internally_consistent_only": 33,
+              "unstable_under_perturbation": 1
+            },
+            "none": {
+              "automatically_contradicted": 10,
+              "automatically_supported": 2,
+              "internally_consistent_only": 25,
+              "unstable_under_perturbation": 1
+            },
+            "lane_1": {
+              "internally_consistent_only": 15
+            },
+            "lane_3": {
+              "automatically_contradicted": 4,
+              "automatically_supported": 4,
+              "internally_consistent_only": 15,
+              "unstable_under_perturbation": 5
+            }
+          }
+        },
+        "episodeStabilityMateriallyDegraded": false
+      },
+      "selected": false
+    },
+    {
+      "id": "candidate_c_transit_temporal_stability",
+      "description": "Separate high-speed transit from occupancy and require spatial continuity for stable episodes.",
+      "changesFromBaseline": [
+        "transit_filter",
+        "spatial_continuity_episodes"
+      ],
+      "rulesAffected": [
+        "transit_filter",
+        "spatial_continuity_episodes"
+      ],
+      "expectedEffect": "Reduce high-speed occupancy and stable episodes with extended outside-lane positions.",
+      "causalTrace": [
+        {
+          "change": "transit_filter",
+          "observedEvidenceReviewedError": "high_speed_transit_classified_as_occupancy",
+          "affectedSampleIds": [
+            "p24_point_054",
+            "p24_point_070",
+            "p24_point_091",
+            "p24_point_097",
+            "p24_point_098",
+            "p24_point_105",
+            "p24_point_109",
+            "p24_episode_012",
+            "p24_episode_021",
+            "p24_episode_029",
+            "p24_episode_038",
+            "p24_episode_044",
+            "p24_episode_052",
+            "p24_episode_058"
+          ],
+          "technicalCause": "Fast movement samples can be admitted as lane presence if geometry is near a lane axis.",
+          "proposedCorrection": "transit_filter",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        },
+        {
+          "change": "spatial_continuity_episodes",
+          "observedEvidenceReviewedError": "brief_contact_classified_as_stable_presence",
+          "affectedSampleIds": [],
+          "technicalCause": "Spatial continuity within the episode is not strict enough.",
+          "proposedCorrection": "spatial_continuity_episodes",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        }
+      ],
+      "metrics": {
+        "pointContradictionCount": 49,
+        "pointInstabilityRate": 57.5,
+        "episodeContradictionCount": 0,
+        "pointEvidenceCountsByStatus": {
+          "automatically_contradicted": 49,
+          "automatically_supported": 6,
+          "internally_consistent_only": 27,
+          "unstable_under_perturbation": 38
+        },
+        "episodeEvidenceCountsByStatus": {
+          "internally_consistent_only": 72
+        },
+        "coverageChange": {
+          "baselineLaneRows": 18754,
+          "revisedLaneRows": 25258,
+          "deltaRows": 6504,
+          "baselineCoveragePercent": 53.39,
+          "revisedCoveragePercent": 71.91
+        },
+        "unknownAmbiguousIncrease": {
+          "baselineRows": 16370,
+          "revisedRows": 9866,
+          "deltaRows": -6504,
+          "revisedBreakdown": {
+            "unknown": 5528,
+            "laneAmbiguous": 1936,
+            "interLaneTransit": 2402,
+            "deploymentAmbiguous": 0,
+            "baseCore": 0
+          }
+        },
+        "fragmentationChange": {
+          "baselineStableEpisodes": 359,
+          "revisedStableEpisodes": 195,
+          "stableDelta": -164,
+          "baselineBriefContacts": 11415,
+          "revisedBriefContacts": 11481,
+          "briefDelta": 66
+        },
+        "regressions": {
+          "majorRegression": false,
+          "notes": [
+            "No semantic regression claim is made without labels.",
+            "Abstention increase is reported explicitly instead of hidden."
+          ],
+          "byLanePlayerPhase": {
+            "pointSensitivityByLane": {
+              "lane_1": {
+                "samples": 15,
+                "changed": 10,
+                "changedPercent": 66.67
+              },
+              "lane_2": {
+                "samples": 39,
+                "changed": 21,
+                "changedPercent": 53.85
+              },
+              "lane_3": {
+                "samples": 28,
+                "changed": 18,
+                "changedPercent": 64.29
+              },
+              "none": {
+                "samples": 38,
+                "changed": 20,
+                "changedPercent": 52.63
+              }
+            },
+            "pointSensitivityByPlayer": {
+              "0": {
+                "samples": 15,
+                "changed": 10,
+                "changedPercent": 66.67
+              },
+              "1": {
+                "samples": 10,
+                "changed": 3,
+                "changedPercent": 30
+              },
+              "2": {
+                "samples": 11,
+                "changed": 5,
+                "changedPercent": 45.45
+              },
+              "3": {
+                "samples": 9,
+                "changed": 6,
+                "changedPercent": 66.67
+              },
+              "4": {
+                "samples": 9,
+                "changed": 5,
+                "changedPercent": 55.56
+              },
+              "5": {
+                "samples": 10,
+                "changed": 4,
+                "changedPercent": 40
+              },
+              "6": {
+                "samples": 8,
+                "changed": 4,
+                "changedPercent": 50
+              },
+              "7": {
+                "samples": 10,
+                "changed": 8,
+                "changedPercent": 80
+              },
+              "8": {
+                "samples": 9,
+                "changed": 5,
+                "changedPercent": 55.56
+              },
+              "9": {
+                "samples": 10,
+                "changed": 6,
+                "changedPercent": 60
+              },
+              "10": {
+                "samples": 10,
+                "changed": 7,
+                "changedPercent": 70
+              },
+              "11": {
+                "samples": 9,
+                "changed": 6,
+                "changedPercent": 66.67
+              }
+            },
+            "pointSensitivityByMatchPhase": {
+              "early": {
+                "samples": 38,
+                "changed": 27,
+                "changedPercent": 71.05
+              },
+              "late": {
+                "samples": 41,
+                "changed": 21,
+                "changedPercent": 51.22
+              },
+              "middle": {
+                "samples": 41,
+                "changed": 21,
+                "changedPercent": 51.22
+              }
+            },
+            "pointStatusByLane": {
+              "lane_2": {
+                "automatically_contradicted": 11,
+                "internally_consistent_only": 13,
+                "unstable_under_perturbation": 15
+              },
+              "none": {
+                "automatically_contradicted": 22,
+                "automatically_supported": 2,
+                "internally_consistent_only": 9,
+                "unstable_under_perturbation": 5
+              },
+              "lane_1": {
+                "automatically_contradicted": 6,
+                "internally_consistent_only": 3,
+                "unstable_under_perturbation": 6
+              },
+              "lane_3": {
+                "automatically_contradicted": 10,
+                "automatically_supported": 4,
+                "internally_consistent_only": 2,
+                "unstable_under_perturbation": 12
+              }
+            }
+          },
+          "episodeStabilityMateriallyDegraded": false
+        },
+        "byLanePlayerPhaseRegressions": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 10,
+              "changedPercent": 66.67
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 21,
+              "changedPercent": 53.85
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 18,
+              "changedPercent": 64.29
+            },
+            "none": {
+              "samples": 38,
+              "changed": 20,
+              "changedPercent": 52.63
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 10,
+              "changedPercent": 66.67
+            },
+            "1": {
+              "samples": 10,
+              "changed": 3,
+              "changedPercent": 30
+            },
+            "2": {
+              "samples": 11,
+              "changed": 5,
+              "changedPercent": 45.45
+            },
+            "3": {
+              "samples": 9,
+              "changed": 6,
+              "changedPercent": 66.67
+            },
+            "4": {
+              "samples": 9,
+              "changed": 5,
+              "changedPercent": 55.56
+            },
+            "5": {
+              "samples": 10,
+              "changed": 4,
+              "changedPercent": 40
+            },
+            "6": {
+              "samples": 8,
+              "changed": 4,
+              "changedPercent": 50
+            },
+            "7": {
+              "samples": 10,
+              "changed": 8,
+              "changedPercent": 80
+            },
+            "8": {
+              "samples": 9,
+              "changed": 5,
+              "changedPercent": 55.56
+            },
+            "9": {
+              "samples": 10,
+              "changed": 6,
+              "changedPercent": 60
+            },
+            "10": {
+              "samples": 10,
+              "changed": 7,
+              "changedPercent": 70
+            },
+            "11": {
+              "samples": 9,
+              "changed": 6,
+              "changedPercent": 66.67
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 27,
+              "changedPercent": 71.05
+            },
+            "late": {
+              "samples": 41,
+              "changed": 21,
+              "changedPercent": 51.22
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 21,
+              "changedPercent": 51.22
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "automatically_contradicted": 11,
+              "internally_consistent_only": 13,
+              "unstable_under_perturbation": 15
+            },
+            "none": {
+              "automatically_contradicted": 22,
+              "automatically_supported": 2,
+              "internally_consistent_only": 9,
+              "unstable_under_perturbation": 5
+            },
+            "lane_1": {
+              "automatically_contradicted": 6,
+              "internally_consistent_only": 3,
+              "unstable_under_perturbation": 6
+            },
+            "lane_3": {
+              "automatically_contradicted": 10,
+              "automatically_supported": 4,
+              "internally_consistent_only": 2,
+              "unstable_under_perturbation": 12
+            }
+          }
+        },
+        "internalAgreementSecondary": {
+          "crossModelPointAgreement": {
+            "agreement": 76,
+            "majority_unknown": 3,
+            "selected_model_only_classification": 41
+          },
+          "crossModelEpisodeAgreement": {
+            "agreement": 37,
+            "disagreement": 34,
+            "majority_mixed": 1
+          }
+        }
+      },
+      "regressions": {
+        "majorRegression": false,
+        "notes": [
+          "No semantic regression claim is made without labels.",
+          "Abstention increase is reported explicitly instead of hidden."
+        ],
+        "byLanePlayerPhase": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 10,
+              "changedPercent": 66.67
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 21,
+              "changedPercent": 53.85
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 18,
+              "changedPercent": 64.29
+            },
+            "none": {
+              "samples": 38,
+              "changed": 20,
+              "changedPercent": 52.63
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 10,
+              "changedPercent": 66.67
+            },
+            "1": {
+              "samples": 10,
+              "changed": 3,
+              "changedPercent": 30
+            },
+            "2": {
+              "samples": 11,
+              "changed": 5,
+              "changedPercent": 45.45
+            },
+            "3": {
+              "samples": 9,
+              "changed": 6,
+              "changedPercent": 66.67
+            },
+            "4": {
+              "samples": 9,
+              "changed": 5,
+              "changedPercent": 55.56
+            },
+            "5": {
+              "samples": 10,
+              "changed": 4,
+              "changedPercent": 40
+            },
+            "6": {
+              "samples": 8,
+              "changed": 4,
+              "changedPercent": 50
+            },
+            "7": {
+              "samples": 10,
+              "changed": 8,
+              "changedPercent": 80
+            },
+            "8": {
+              "samples": 9,
+              "changed": 5,
+              "changedPercent": 55.56
+            },
+            "9": {
+              "samples": 10,
+              "changed": 6,
+              "changedPercent": 60
+            },
+            "10": {
+              "samples": 10,
+              "changed": 7,
+              "changedPercent": 70
+            },
+            "11": {
+              "samples": 9,
+              "changed": 6,
+              "changedPercent": 66.67
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 27,
+              "changedPercent": 71.05
+            },
+            "late": {
+              "samples": 41,
+              "changed": 21,
+              "changedPercent": 51.22
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 21,
+              "changedPercent": 51.22
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "automatically_contradicted": 11,
+              "internally_consistent_only": 13,
+              "unstable_under_perturbation": 15
+            },
+            "none": {
+              "automatically_contradicted": 22,
+              "automatically_supported": 2,
+              "internally_consistent_only": 9,
+              "unstable_under_perturbation": 5
+            },
+            "lane_1": {
+              "automatically_contradicted": 6,
+              "internally_consistent_only": 3,
+              "unstable_under_perturbation": 6
+            },
+            "lane_3": {
+              "automatically_contradicted": 10,
+              "automatically_supported": 4,
+              "internally_consistent_only": 2,
+              "unstable_under_perturbation": 12
+            }
+          }
+        },
+        "episodeStabilityMateriallyDegraded": false
+      },
+      "selected": false
+    },
+    {
+      "id": "candidate_d_combined_conservative_revision",
+      "description": "Combine base/deployment precedence, separation ambiguity, transit filtering, and spatial continuity.",
+      "changesFromBaseline": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "transit_filter",
+        "spatial_continuity_episodes"
+      ],
+      "rulesAffected": [
+        "base_deployment_precedence",
+        "separation_ambiguity",
+        "transit_filter",
+        "spatial_continuity_episodes"
+      ],
+      "expectedEffect": "Reduce demonstrated contradictions and instability while preserving explicit abstentions.",
+      "causalTrace": [
+        {
+          "change": "base_deployment_precedence",
+          "observedEvidenceReviewedError": "base_or_deployment_samples_admitted_as_lane_occupancy",
+          "affectedSampleIds": [
+            "p24_point_001",
+            "p24_point_006",
+            "p24_point_011",
+            "p24_point_017",
+            "p24_point_024",
+            "p24_point_026",
+            "p24_point_027",
+            "p24_point_032",
+            "p24_point_034",
+            "p24_point_039",
+            "p24_point_041",
+            "p24_point_044",
+            "p24_point_048",
+            "p24_point_056",
+            "p24_point_064",
+            "p24_point_070",
+            "p24_point_071",
+            "p24_point_075",
+            "p24_point_077",
+            "p24_point_088",
+            "p24_point_090",
+            "p24_point_092",
+            "p24_point_105",
+            "p24_point_108",
+            "p24_point_110",
+            "p24_point_112",
+            "p24_point_114",
+            "p24_point_115",
+            "p24_point_119"
+          ],
+          "technicalCause": "Base/deployment precedence relies on model-local baseState and does not honor independent region evidence.",
+          "proposedCorrection": "base_deployment_precedence",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        },
+        {
+          "change": "separation_ambiguity",
+          "observedEvidenceReviewedError": "weak_nearest_lane_separation",
+          "affectedSampleIds": [
+            "p24_point_002",
+            "p24_point_003",
+            "p24_point_006",
+            "p24_point_008",
+            "p24_point_009",
+            "p24_point_012",
+            "p24_point_013",
+            "p24_point_017",
+            "p24_point_018",
+            "p24_point_020",
+            "p24_point_021",
+            "p24_point_024",
+            "p24_point_026",
+            "p24_point_027",
+            "p24_point_029",
+            "p24_point_030",
+            "p24_point_032",
+            "p24_point_034",
+            "p24_point_035",
+            "p24_point_038",
+            "p24_point_039",
+            "p24_point_041",
+            "p24_point_044",
+            "p24_point_045",
+            "p24_point_048",
+            "p24_point_049",
+            "p24_point_051",
+            "p24_point_052",
+            "p24_point_054",
+            "p24_point_057",
+            "p24_point_058",
+            "p24_point_060",
+            "p24_point_061",
+            "p24_point_062",
+            "p24_point_064",
+            "p24_point_070",
+            "p24_point_072",
+            "p24_point_074",
+            "p24_point_076",
+            "p24_point_077",
+            "p24_point_080",
+            "p24_point_081",
+            "p24_point_083",
+            "p24_point_084",
+            "p24_point_087",
+            "p24_point_091",
+            "p24_point_092",
+            "p24_point_094",
+            "p24_point_099",
+            "p24_point_102",
+            "p24_point_103",
+            "p24_point_104",
+            "p24_point_105",
+            "p24_point_106",
+            "p24_point_107",
+            "p24_point_108",
+            "p24_point_111",
+            "p24_point_112",
+            "p24_point_113",
+            "p24_point_115",
+            "p24_point_117",
+            "p24_point_118",
+            "p24_point_119",
+            "p24_point_120"
+          ],
+          "technicalCause": "Low separation margin creates brittle lane assignment near boundaries.",
+          "proposedCorrection": "separation_ambiguity",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        },
+        {
+          "change": "transit_filter",
+          "observedEvidenceReviewedError": "high_speed_transit_classified_as_occupancy",
+          "affectedSampleIds": [
+            "p24_point_054",
+            "p24_point_070",
+            "p24_point_091",
+            "p24_point_097",
+            "p24_point_098",
+            "p24_point_105",
+            "p24_point_109",
+            "p24_episode_012",
+            "p24_episode_021",
+            "p24_episode_029",
+            "p24_episode_038",
+            "p24_episode_044",
+            "p24_episode_052",
+            "p24_episode_058"
+          ],
+          "technicalCause": "Fast movement samples can be admitted as lane presence if geometry is near a lane axis.",
+          "proposedCorrection": "transit_filter",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        },
+        {
+          "change": "spatial_continuity_episodes",
+          "observedEvidenceReviewedError": "brief_contact_classified_as_stable_presence",
+          "affectedSampleIds": [],
+          "technicalCause": "Spatial continuity within the episode is not strict enough.",
+          "proposedCorrection": "spatial_continuity_episodes",
+          "expectedEffect": "Not corrected because semantic judgment would be required."
+        }
+      ],
+      "metrics": {
+        "pointContradictionCount": 0,
+        "pointInstabilityRate": 10,
+        "episodeContradictionCount": 0,
+        "pointEvidenceCountsByStatus": {
+          "automatically_supported": 4,
+          "internally_consistent_only": 104,
+          "unstable_under_perturbation": 12
+        },
+        "episodeEvidenceCountsByStatus": {
+          "internally_consistent_only": 71,
+          "unstable_under_perturbation": 1
+        },
+        "coverageChange": {
+          "baselineLaneRows": 18754,
+          "revisedLaneRows": 3579,
+          "deltaRows": -15175,
+          "baselineCoveragePercent": 53.39,
+          "revisedCoveragePercent": 10.19
+        },
+        "unknownAmbiguousIncrease": {
+          "baselineRows": 16370,
+          "revisedRows": 31545,
+          "deltaRows": 15175,
+          "revisedBreakdown": {
+            "unknown": 5528,
+            "laneAmbiguous": 8614,
+            "interLaneTransit": 943,
+            "deploymentAmbiguous": 1635,
+            "baseCore": 14825
+          }
+        },
+        "fragmentationChange": {
+          "baselineStableEpisodes": 359,
+          "revisedStableEpisodes": 71,
+          "stableDelta": -288,
+          "baselineBriefContacts": 11415,
+          "revisedBriefContacts": 2193,
+          "briefDelta": -9222
+        },
+        "regressions": {
+          "majorRegression": false,
+          "notes": [
+            "No semantic regression claim is made without labels.",
+            "Abstention increase is reported explicitly instead of hidden."
+          ],
+          "byLanePlayerPhase": {
+            "pointSensitivityByLane": {
+              "lane_1": {
+                "samples": 15,
+                "changed": 2,
+                "changedPercent": 13.33
+              },
+              "lane_2": {
+                "samples": 39,
+                "changed": 1,
+                "changedPercent": 2.56
+              },
+              "lane_3": {
+                "samples": 28,
+                "changed": 5,
+                "changedPercent": 17.86
+              },
+              "none": {
+                "samples": 38,
+                "changed": 4,
+                "changedPercent": 10.53
+              }
+            },
+            "pointSensitivityByPlayer": {
+              "0": {
+                "samples": 15,
+                "changed": 1,
+                "changedPercent": 6.67
+              },
+              "1": {
+                "samples": 10,
+                "changed": 1,
+                "changedPercent": 10
+              },
+              "2": {
+                "samples": 11,
+                "changed": 2,
+                "changedPercent": 18.18
+              },
+              "3": {
+                "samples": 9,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "4": {
+                "samples": 9,
+                "changed": 3,
+                "changedPercent": 33.33
+              },
+              "5": {
+                "samples": 10,
+                "changed": 1,
+                "changedPercent": 10
+              },
+              "6": {
+                "samples": 8,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "7": {
+                "samples": 10,
+                "changed": 1,
+                "changedPercent": 10
+              },
+              "8": {
+                "samples": 9,
+                "changed": 1,
+                "changedPercent": 11.11
+              },
+              "9": {
+                "samples": 10,
+                "changed": 2,
+                "changedPercent": 20
+              },
+              "10": {
+                "samples": 10,
+                "changed": 0,
+                "changedPercent": 0
+              },
+              "11": {
+                "samples": 9,
+                "changed": 0,
+                "changedPercent": 0
+              }
+            },
+            "pointSensitivityByMatchPhase": {
+              "early": {
+                "samples": 38,
+                "changed": 3,
+                "changedPercent": 7.89
+              },
+              "late": {
+                "samples": 41,
+                "changed": 3,
+                "changedPercent": 7.32
+              },
+              "middle": {
+                "samples": 41,
+                "changed": 6,
+                "changedPercent": 14.63
+              }
+            },
+            "pointStatusByLane": {
+              "lane_2": {
+                "internally_consistent_only": 38,
+                "unstable_under_perturbation": 1
+              },
+              "none": {
+                "internally_consistent_only": 34,
+                "unstable_under_perturbation": 4
+              },
+              "lane_1": {
+                "internally_consistent_only": 13,
+                "unstable_under_perturbation": 2
+              },
+              "lane_3": {
+                "automatically_supported": 4,
+                "internally_consistent_only": 19,
+                "unstable_under_perturbation": 5
+              }
+            }
+          },
+          "episodeStabilityMateriallyDegraded": false
+        },
+        "byLanePlayerPhaseRegressions": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 2,
+              "changedPercent": 13.33
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 1,
+              "changedPercent": 2.56
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 5,
+              "changedPercent": 17.86
+            },
+            "none": {
+              "samples": 38,
+              "changed": 4,
+              "changedPercent": 10.53
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 1,
+              "changedPercent": 6.67
+            },
+            "1": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "2": {
+              "samples": 11,
+              "changed": 2,
+              "changedPercent": 18.18
+            },
+            "3": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "4": {
+              "samples": 9,
+              "changed": 3,
+              "changedPercent": 33.33
+            },
+            "5": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "6": {
+              "samples": 8,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "7": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "8": {
+              "samples": 9,
+              "changed": 1,
+              "changedPercent": 11.11
+            },
+            "9": {
+              "samples": 10,
+              "changed": 2,
+              "changedPercent": 20
+            },
+            "10": {
+              "samples": 10,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "11": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 3,
+              "changedPercent": 7.89
+            },
+            "late": {
+              "samples": 41,
+              "changed": 3,
+              "changedPercent": 7.32
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 6,
+              "changedPercent": 14.63
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "internally_consistent_only": 38,
+              "unstable_under_perturbation": 1
+            },
+            "none": {
+              "internally_consistent_only": 34,
+              "unstable_under_perturbation": 4
+            },
+            "lane_1": {
+              "internally_consistent_only": 13,
+              "unstable_under_perturbation": 2
+            },
+            "lane_3": {
+              "automatically_supported": 4,
+              "internally_consistent_only": 19,
+              "unstable_under_perturbation": 5
+            }
+          }
+        },
+        "internalAgreementSecondary": {
+          "crossModelPointAgreement": {
+            "agreement": 76,
+            "majority_unknown": 3,
+            "selected_model_only_classification": 41
+          },
+          "crossModelEpisodeAgreement": {
+            "agreement": 37,
+            "disagreement": 34,
+            "majority_mixed": 1
+          }
+        }
+      },
+      "regressions": {
+        "majorRegression": false,
+        "notes": [
+          "No semantic regression claim is made without labels.",
+          "Abstention increase is reported explicitly instead of hidden."
+        ],
+        "byLanePlayerPhase": {
+          "pointSensitivityByLane": {
+            "lane_1": {
+              "samples": 15,
+              "changed": 2,
+              "changedPercent": 13.33
+            },
+            "lane_2": {
+              "samples": 39,
+              "changed": 1,
+              "changedPercent": 2.56
+            },
+            "lane_3": {
+              "samples": 28,
+              "changed": 5,
+              "changedPercent": 17.86
+            },
+            "none": {
+              "samples": 38,
+              "changed": 4,
+              "changedPercent": 10.53
+            }
+          },
+          "pointSensitivityByPlayer": {
+            "0": {
+              "samples": 15,
+              "changed": 1,
+              "changedPercent": 6.67
+            },
+            "1": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "2": {
+              "samples": 11,
+              "changed": 2,
+              "changedPercent": 18.18
+            },
+            "3": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "4": {
+              "samples": 9,
+              "changed": 3,
+              "changedPercent": 33.33
+            },
+            "5": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "6": {
+              "samples": 8,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "7": {
+              "samples": 10,
+              "changed": 1,
+              "changedPercent": 10
+            },
+            "8": {
+              "samples": 9,
+              "changed": 1,
+              "changedPercent": 11.11
+            },
+            "9": {
+              "samples": 10,
+              "changed": 2,
+              "changedPercent": 20
+            },
+            "10": {
+              "samples": 10,
+              "changed": 0,
+              "changedPercent": 0
+            },
+            "11": {
+              "samples": 9,
+              "changed": 0,
+              "changedPercent": 0
+            }
+          },
+          "pointSensitivityByMatchPhase": {
+            "early": {
+              "samples": 38,
+              "changed": 3,
+              "changedPercent": 7.89
+            },
+            "late": {
+              "samples": 41,
+              "changed": 3,
+              "changedPercent": 7.32
+            },
+            "middle": {
+              "samples": 41,
+              "changed": 6,
+              "changedPercent": 14.63
+            }
+          },
+          "pointStatusByLane": {
+            "lane_2": {
+              "internally_consistent_only": 38,
+              "unstable_under_perturbation": 1
+            },
+            "none": {
+              "internally_consistent_only": 34,
+              "unstable_under_perturbation": 4
+            },
+            "lane_1": {
+              "internally_consistent_only": 13,
+              "unstable_under_perturbation": 2
+            },
+            "lane_3": {
+              "automatically_supported": 4,
+              "internally_consistent_only": 19,
+              "unstable_under_perturbation": 5
+            }
+          }
+        },
+        "episodeStabilityMateriallyDegraded": false
+      },
+      "selected": true
+    }
+  ]
+}

@@ -1,0 +1,4070 @@
+{
+  "experiment": 24,
+  "kind": "revised_autonomous_episode_evidence_audit",
+  "candidateId": "candidate_d_combined_conservative_revision",
+  "generatedAt": "2026-06-27T18:04:28.453Z",
+  "statusDefinitions": {
+    "supported": "automatically_supported",
+    "contradicted": "automatically_contradicted",
+    "internal": "internally_consistent_only",
+    "unstable": "unstable_under_perturbation",
+    "unresolved": "unresolved",
+    "notVerifiable": "not_independently_verifiable"
+  },
+  "audits": [
+    {
+      "sampleId": "p24_episode_001",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 127,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_002",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 1,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 10,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_003",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 44,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_004",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 5,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 3,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_005",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 4,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_006",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 8,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 47,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_007",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 10,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 116,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_008",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 19,
+        "endSecond": 19,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 11,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 15,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_009",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 21,
+        "endSecond": 22,
+        "durationSeconds": 2,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 4,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "base_core": 2
+        },
+        "maxSpeed": 800.19,
+        "minSeparationMargin": 42,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_010",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 21,
+        "endSecond": 21,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 6,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 612.19,
+        "minSeparationMargin": 65,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_011",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 21,
+        "endSecond": 21,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 9,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 795.92,
+        "minSeparationMargin": 17,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_012",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 23,
+        "endSecond": 24,
+        "durationSeconds": 2,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "inter_lane_transit": 1,
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 1137.28,
+        "minSeparationMargin": 11,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_013",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 20,
+        "endSecond": 20,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 1,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 365.99,
+        "minSeparationMargin": 32,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_014",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 601,
+        "endSecond": 601,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 578.53,
+        "minSeparationMargin": 16,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_015",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1201,
+        "endSecond": 1201,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 218.2,
+        "minSeparationMargin": 24,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_016",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 23,
+        "endSecond": 30,
+        "durationSeconds": 8,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "stable_episode",
+        "revisedEpisode": {
+          "episodeId": "rev_lane_occ_10",
+          "playerIndex": 2,
+          "physicalLaneId": "lane_3",
+          "startSecond": 23,
+          "endSecond": 30,
+          "durationSeconds": 8,
+          "averageDistanceToAxis": 301.5,
+          "averageMargin": 157.75,
+          "confidence": "high",
+          "continuity": {
+            "outsideSeconds": 0,
+            "outsideRatio": 0,
+            "minMargin": 156,
+            "maxSpeed": 647.62
+          }
+        },
+        "rowCount": 8,
+        "modelStateCounts": {
+          "lane_core_high": 8
+        },
+        "maxSpeed": 647.62,
+        "minSeparationMargin": 156,
+        "outsidePredictedLaneSeconds": 0,
+        "stableInsidePredictedLaneSeconds": 8,
+        "sensitivity": {
+          "originalType": "stable_episode",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "stable_episode",
+            "wide_lane_envelope": "stable_episode",
+            "stricter_separation_margin": "stable_episode",
+            "looser_separation_margin": "stable_episode",
+            "larger_deployment_exclusion": "stable_episode",
+            "smaller_deployment_exclusion": "stable_episode",
+            "higher_confidence_boundary": "stable_episode",
+            "lower_confidence_boundary": "stable_episode"
+          }
+        }
+      },
+      "supportingConditions": [
+        "episode_positions_mostly_inside_predicted_lane",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_017",
+      "reviewKind": "episode",
+      "evidenceStatus": "unstable_under_perturbation",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 27,
+        "endSecond": 32,
+        "durationSeconds": 6,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 5,
+        "originalEpisodeType": "stable_episode",
+        "revisedEpisode": null,
+        "rowCount": 6,
+        "modelStateCounts": {
+          "lane_ambiguous": 1,
+          "lane_core_high": 5
+        },
+        "maxSpeed": 161.27,
+        "minSeparationMargin": 55,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 5,
+        "sensitivity": {
+          "originalType": "stable_episode",
+          "changedByPerturbations": 2,
+          "stableAcrossPerturbations": false,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "stable_episode",
+            "wide_lane_envelope": "stable_episode",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "stable_episode",
+            "larger_deployment_exclusion": "stable_episode",
+            "smaller_deployment_exclusion": "stable_episode",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "stable_episode"
+          }
+        }
+      },
+      "supportingConditions": [
+        "unstable_original_episode_abstained_after_revision"
+      ],
+      "contradictoryConditions": [
+        "episode_membership_changes_under_small_threshold_perturbations"
+      ],
+      "confidence": "medium",
+      "reason": "Classification changes under bounded parameter perturbation.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_018",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 124,
+        "endSecond": 124,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 10,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_core_high": 1
+        },
+        "maxSpeed": 0,
+        "minSeparationMargin": 179,
+        "outsidePredictedLaneSeconds": 0,
+        "stableInsidePredictedLaneSeconds": 1,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_019",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 57,
+        "endSecond": 58,
+        "durationSeconds": 2,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "lane_ambiguous": 2
+        },
+        "maxSpeed": 87.71,
+        "minSeparationMargin": 6,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_020",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 21,
+        "endSecond": 21,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 1,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 483.88,
+        "minSeparationMargin": 35,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_021",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 22,
+        "endSecond": 22,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "inter_lane_transit": 1
+        },
+        "maxSpeed": 1005.25,
+        "minSeparationMargin": 62,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_022",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 26,
+        "endSecond": 26,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 5,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 307.25,
+        "minSeparationMargin": 8,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_023",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 54,
+        "endSecond": 54,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 316.28,
+        "minSeparationMargin": 35,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_024",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 36,
+        "endSecond": 36,
+        "durationSeconds": 1,
+        "matchPhase": "early"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 8,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 209.05,
+        "minSeparationMargin": 110,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_025",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 614,
+        "endSecond": 614,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 223.93,
+        "minSeparationMargin": 18,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_026",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 601,
+        "endSecond": 601,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 4,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 728.13,
+        "minSeparationMargin": 3,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_027",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 601,
+        "endSecond": 602,
+        "durationSeconds": 2,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "base_core": 2
+        },
+        "maxSpeed": 66.64,
+        "minSeparationMargin": 74,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_028",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 601,
+        "endSecond": 601,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 10,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 234.34,
+        "minSeparationMargin": 18,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_029",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 1,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "inter_lane_transit": 1
+        },
+        "maxSpeed": 1001.92,
+        "minSeparationMargin": 67,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_030",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 505.82,
+        "minSeparationMargin": 147,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_031",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 4,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 191.37,
+        "minSeparationMargin": 0,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_032",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 602,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 5,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 776.74,
+        "minSeparationMargin": 29,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_033",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 604,
+        "durationSeconds": 3,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 10,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 3,
+        "modelStateCounts": {
+          "lane_ambiguous": 3
+        },
+        "maxSpeed": 303.84,
+        "minSeparationMargin": 53,
+        "outsidePredictedLaneSeconds": 3,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_034",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 602,
+        "endSecond": 604,
+        "durationSeconds": 3,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 11,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 3,
+        "modelStateCounts": {
+          "lane_ambiguous": 3
+        },
+        "maxSpeed": 262.42,
+        "minSeparationMargin": 2,
+        "outsidePredictedLaneSeconds": 3,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_035",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 603,
+        "endSecond": 604,
+        "durationSeconds": 2,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 1,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "lane_ambiguous": 1,
+          "lane_core_high": 1
+        },
+        "maxSpeed": 482.46,
+        "minSeparationMargin": 49,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 1,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_036",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 603,
+        "endSecond": 603,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 504.41,
+        "minSeparationMargin": 47,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_037",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 603,
+        "endSecond": 604,
+        "durationSeconds": 2,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 5,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "lane_ambiguous": 1,
+          "lane_core_high": 1
+        },
+        "maxSpeed": 715.16,
+        "minSeparationMargin": 3,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 1,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_038",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 604,
+        "endSecond": 605,
+        "durationSeconds": 2,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "base_core": 2
+        },
+        "maxSpeed": 1014.79,
+        "minSeparationMargin": 62,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_039",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 604,
+        "endSecond": 604,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 9,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_core_high": 1
+        },
+        "maxSpeed": 501.18,
+        "minSeparationMargin": 97,
+        "outsidePredictedLaneSeconds": 0,
+        "stableInsidePredictedLaneSeconds": 1,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_040",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 605,
+        "endSecond": 605,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 239.48,
+        "minSeparationMargin": 84,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_041",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 605,
+        "endSecond": 605,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 9,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 327.29,
+        "minSeparationMargin": 34,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_042",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 834.35,
+        "minSeparationMargin": 43,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_043",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 1,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 228.96,
+        "minSeparationMargin": 5,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_044",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 945.92,
+        "minSeparationMargin": 192,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_045",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 606,
+        "endSecond": 606,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 5,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 653.65,
+        "minSeparationMargin": 26,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_046",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 607,
+        "endSecond": 607,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 602.74,
+        "minSeparationMargin": 17,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_047",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 608,
+        "endSecond": 609,
+        "durationSeconds": 2,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 8,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "lane_ambiguous": 2
+        },
+        "maxSpeed": 198.98,
+        "minSeparationMargin": 0,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_048",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 609,
+        "endSecond": 609,
+        "durationSeconds": 1,
+        "matchPhase": "middle"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 10,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 521.56,
+        "minSeparationMargin": 57,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_049",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1210,
+        "endSecond": 1210,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 476.41,
+        "minSeparationMargin": 16,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_050",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1201,
+        "endSecond": 1201,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 6,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 51.01,
+        "minSeparationMargin": 45,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_051",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1201,
+        "endSecond": 1201,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 9,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 101.56,
+        "minSeparationMargin": 116,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_052",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1201,
+        "endSecond": 1204,
+        "durationSeconds": 4,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 10,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 4,
+        "modelStateCounts": {
+          "inter_lane_transit": 1,
+          "lane_ambiguous": 3
+        },
+        "maxSpeed": 1188.56,
+        "minSeparationMargin": 21,
+        "outsidePredictedLaneSeconds": 4,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_053",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1202,
+        "endSecond": 1202,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 371.81,
+        "minSeparationMargin": 2,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_054",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1202,
+        "endSecond": 1202,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 6,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_core_high": 1
+        },
+        "maxSpeed": 441.88,
+        "minSeparationMargin": 113,
+        "outsidePredictedLaneSeconds": 0,
+        "stableInsidePredictedLaneSeconds": 1,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_055",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 2,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_core_high": 1
+        },
+        "maxSpeed": 796.22,
+        "minSeparationMargin": 167,
+        "outsidePredictedLaneSeconds": 0,
+        "stableInsidePredictedLaneSeconds": 1,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_056",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 90.82,
+        "minSeparationMargin": 2,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_057",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 344.65,
+        "minSeparationMargin": 41,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_058",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 8,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 1151.54,
+        "minSeparationMargin": 26,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_059",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1203,
+        "endSecond": 1203,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 11,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 334.98,
+        "minSeparationMargin": 22,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_060",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1204,
+        "endSecond": 1204,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 143.23,
+        "minSeparationMargin": 8,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_061",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1204,
+        "endSecond": 1206,
+        "durationSeconds": 3,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 3,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 3,
+        "modelStateCounts": {
+          "lane_ambiguous": 3
+        },
+        "maxSpeed": 170.23,
+        "minSeparationMargin": 17,
+        "outsidePredictedLaneSeconds": 3,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_062",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1204,
+        "endSecond": 1205,
+        "durationSeconds": 2,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "lane_ambiguous": 2
+        },
+        "maxSpeed": 118.23,
+        "minSeparationMargin": 4,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_063",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1204,
+        "endSecond": 1204,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 8,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 509.29,
+        "minSeparationMargin": 42,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_064",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1204,
+        "endSecond": 1204,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 11,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 767.03,
+        "minSeparationMargin": 144,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_065",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 262.85,
+        "minSeparationMargin": 10,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_066",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 4,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 428.25,
+        "minSeparationMargin": 7,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_067",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 6,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 232.66,
+        "minSeparationMargin": 6,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_068",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1205,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 8,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "base_core": 1
+        },
+        "maxSpeed": 316.8,
+        "minSeparationMargin": 124,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_069",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1205,
+        "endSecond": 1208,
+        "durationSeconds": 4,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 9,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 4,
+        "modelStateCounts": {
+          "base_core": 4
+        },
+        "maxSpeed": 708.06,
+        "minSeparationMargin": 26,
+        "outsidePredictedLaneSeconds": 4,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_070",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_1",
+        "startSecond": 1206,
+        "endSecond": 1206,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 0,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 708.47,
+        "minSeparationMargin": 9,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_071",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_3",
+        "startSecond": 1206,
+        "endSecond": 1207,
+        "durationSeconds": 2,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 4,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 2,
+        "modelStateCounts": {
+          "base_core": 2
+        },
+        "maxSpeed": 435.04,
+        "minSeparationMargin": 63,
+        "outsidePredictedLaneSeconds": 2,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    },
+    {
+      "sampleId": "p24_episode_072",
+      "reviewKind": "episode",
+      "evidenceStatus": "internally_consistent_only",
+      "modelPrediction": {
+        "episodeType": "not_stable_after_revision",
+        "physicalLaneId": "lane_2",
+        "startSecond": 1206,
+        "endSecond": 1206,
+        "durationSeconds": 1,
+        "matchPhase": "late"
+      },
+      "evidenceSourcesUsed": [
+        "output/18-player-movement-metrics.json",
+        "output/17-player-region-timeline.json",
+        "output/22-player-lane-occupancy-timeline.json"
+      ],
+      "evidenceMeasurements": {
+        "playerIndex": 7,
+        "originalEpisodeType": "brief_contact",
+        "revisedEpisode": null,
+        "rowCount": 1,
+        "modelStateCounts": {
+          "lane_ambiguous": 1
+        },
+        "maxSpeed": 329.2,
+        "minSeparationMargin": 24,
+        "outsidePredictedLaneSeconds": 1,
+        "stableInsidePredictedLaneSeconds": 0,
+        "sensitivity": {
+          "originalType": "brief_contact",
+          "changedByPerturbations": 0,
+          "stableAcrossPerturbations": true,
+          "episodeTypeByPerturbation": {
+            "narrow_lane_envelope": "brief_contact",
+            "wide_lane_envelope": "brief_contact",
+            "stricter_separation_margin": "brief_contact",
+            "looser_separation_margin": "brief_contact",
+            "larger_deployment_exclusion": "brief_contact",
+            "smaller_deployment_exclusion": "brief_contact",
+            "higher_confidence_boundary": "brief_contact",
+            "lower_confidence_boundary": "brief_contact"
+          }
+        }
+      },
+      "supportingConditions": [
+        "brief_contact_not_promoted_to_stable_without_duration_and_continuity",
+        "episode_classification_stable_under_bounded_perturbations"
+      ],
+      "contradictoryConditions": [],
+      "confidence": "low",
+      "reason": "Evidence is consistent but not independent enough to establish semantic truth.",
+      "humanReviewRequired": false,
+      "humanQuestion": null,
+      "epistemicNote": "Autonomous evidence classification only; not semantic ground truth."
+    }
+  ]
+}

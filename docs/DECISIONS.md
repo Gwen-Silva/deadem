@@ -69,3 +69,13 @@ Date: 2026-06-27
 Decision: Lane occupancy validation should run autonomous independent-evidence, sensitivity, stability, and cross-model audits before requesting broad human labels.
 
 Reason: Experiment 24 autonomous audit found mechanical contradictions and high point sensitivity that can be addressed before escalating to semantic human review. Human review remains valid ground truth, but should be minimized to unresolved decision-relevant questions.
+
+## DEC-008: Prefer Conservative Abstention For Mechanical Lane Occupancy Failures
+
+Status: provisional
+
+Date: 2026-06-27
+
+Decision: Mechanical lane occupancy failures should be corrected by conservative abstention, base/deployment precedence, separation ambiguity, transit filtering, and spatial continuity before any transition detection.
+
+Reason: Task 005 reduced autonomous point contradictions from 35 to 0 and point sensitivity from 63.33% to 10%, but lane coverage dropped from 53.39% to 10.19%. This requires holdout audit and does not establish semantic correctness.

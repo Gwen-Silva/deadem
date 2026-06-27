@@ -39,6 +39,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Experiment 21 showed that rotation candidates from earlier movement heuristics were not ready for combat or objective inference.
 - Experiment 22 showed low stable lane occupancy coverage and many brief contacts.
 - Experiment 23 improved coverage with calibrated models, but `readyToDetectTransitions` is still `false`.
+- Experiment 24 model revision reduced autonomous contradictions by conservative abstention; revised lane coverage is much lower and requires holdout audit before downstream use.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
 ## Open Questions
@@ -50,4 +51,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 ## Likely Next Investigation
 
-Revise lane occupancy mechanics using the autonomous experiment 24 evidence audit before requesting broad human labels or building transition, combat, objective, or macro-event detectors.
+Run a non-circular holdout audit of the revised experiment 24 lane occupancy model before requesting human labels or building transition, combat, objective, or macro-event detectors.
