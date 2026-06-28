@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "kind": "spatial_data_quality",
+  "replayId": "replay_003",
+  "sourceReplay": "samples/partida_003.dem",
+  "temporalResolution": "one row per player per 5 canonical game seconds",
+  "requestedResolution": "one row per player per canonical game second",
+  "resolutionLimitation": "Per-second seek extraction did not complete within the autonomous execution budget; 5-second sampling is used and must constrain later model tests.",
+  "tickDomain": {
+    "effectiveFirstTick": 0,
+    "lastTick": 145912,
+    "tickRate": 64,
+    "durationSeconds": 2279
+  },
+  "playerReconciliation": {
+    "playerCount": 12,
+    "stablePlayerIdentities": true,
+    "players": [
+      {
+        "playerId": "76561199245906909",
+        "name": "CreativityExist",
+        "heroId": 32,
+        "team": 2,
+        "controllerHandle": 7831564,
+        "observations": 10
+      },
+      {
+        "playerId": "76561199212278850",
+        "name": "davidedsf09",
+        "heroId": 6,
+        "team": 2,
+        "controllerHandle": 8650757,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198969534832",
+        "name": "GALO DA MADRUGADA",
+        "heroId": -1,
+        "team": 2,
+        "controllerHandle": 14680070,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198168889366",
+        "name": "Luug",
+        "heroId": 33,
+        "team": 2,
+        "controllerHandle": 14041092,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198150190084",
+        "name": "SaltySweet",
+        "heroId": -34,
+        "team": 2,
+        "controllerHandle": 7110658,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198278394291",
+        "name": "Styyl",
+        "heroId": -4,
+        "team": 2,
+        "controllerHandle": 1409034,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198277999856",
+        "name": "Aresius",
+        "heroId": -13,
+        "team": 3,
+        "controllerHandle": 15613955,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198147057707",
+        "name": "ESutil",
+        "heroId": 1,
+        "team": 3,
+        "controllerHandle": 7585801,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198217889796",
+        "name": "Pepsi Man",
+        "heroId": 40,
+        "team": 3,
+        "controllerHandle": 11042829,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198881608772",
+        "name": "snowdays",
+        "heroId": 25,
+        "team": 3,
+        "controllerHandle": 12419083,
+        "observations": 10
+      },
+      {
+        "playerId": "76561199011179930",
+        "name": "snowfall",
+        "heroId": -41,
+        "team": 3,
+        "controllerHandle": 11665415,
+        "observations": 10
+      },
+      {
+        "playerId": "76561199279672742",
+        "name": "zYule",
+        "heroId": -18,
+        "team": 3,
+        "controllerHandle": 11517960,
+        "observations": 10
+      }
+    ]
+  },
+  "aggregate": {
+    "expectedRows": 5472,
+    "directRows": 5460,
+    "carriedRows": 0,
+    "interpolatedRows": 0,
+    "missingRows": 12,
+    "directPercent": 99.78,
+    "carriedPercent": 0,
+    "missingPercent": 0.22,
+    "maxCoordinateAge": 0,
+    "medianCoordinateAge": 0,
+    "impossibleJumpCount": 0,
+    "pawnReplacementCount": 0,
+    "coordinateBounds": {
+      "minX": 0,
+      "maxX": 1023.97,
+      "minY": 0.28,
+      "maxY": 1023.81,
+      "minZ": 0.03,
+      "maxZ": 1023.97
+    },
+    "projectionCoveragePercent": 99.78,
+    "speed": {
+      "count": 5448,
+      "min": 0,
+      "median": 85.96,
+      "p90": 178.72,
+      "max": 267.77
+    },
+    "nearestLaneDistance": {
+      "count": 5460,
+      "min": 2.43,
+      "median": 154.07,
+      "p90": 269.45,
+      "max": 478.6
+    },
+    "separationMargin": {
+      "count": 5460,
+      "min": 0.2,
+      "median": 146.68,
+      "p90": 387.89,
+      "max": 604.94
+    },
+    "structuralRegionRows": {
+      "nearTeamBase": 2069,
+      "nearEnemyBase": 1893,
+      "nearDeployment": 2069,
+      "nearCentralObjective": 0,
+      "nearNeutralStructure": 0,
+      "outsideKnownStructuralEnvelope": 0
+    }
+  },
+  "players": [
+    {
+      "playerId": "76561199245906909",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 1.69,
+        "maxX": 1023.84,
+        "minY": 1.69,
+        "maxY": 1022.06,
+        "minZ": 29.47,
+        "maxZ": 1012.06
+      },
+      "firstValidPosition": {
+        "x": 1.6875,
+        "y": 908.125,
+        "z": 143.84375,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 1000,
+        "y": 304,
+        "z": 192.03125,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561199212278850",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0.34,
+        "maxX": 1021.59,
+        "minY": 1.28,
+        "maxY": 1022.38,
+        "minZ": 45.63,
+        "maxZ": 1023.88
+      },
+      "firstValidPosition": {
+        "x": 479.90625,
+        "y": 530.0625,
+        "z": 397.8125,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 792.8125,
+        "y": 632.375,
+        "z": 380.6875,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198969534832",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0.28,
+        "maxX": 1023.69,
+        "minY": 0.34,
+        "maxY": 1020.56,
+        "minZ": 18.72,
+        "maxZ": 1023.97
+      },
+      "firstValidPosition": {
+        "x": 689.6875,
+        "y": 119.65625,
+        "z": 191.8125,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 467.03125,
+        "y": 840.71875,
+        "z": 609.625,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198168889366",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0.03,
+        "maxX": 1023.97,
+        "minY": 1.78,
+        "maxY": 1023.75,
+        "minZ": 64.13,
+        "maxZ": 1023.97
+      },
+      "firstValidPosition": {
+        "x": 473.40625,
+        "y": 515.0625,
+        "z": 431.65625,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 302.21875,
+        "y": 858.46875,
+        "z": 322,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198150190084",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 6.28,
+        "maxX": 1015.72,
+        "minY": 1.5,
+        "maxY": 1023.22,
+        "minZ": 33.97,
+        "maxZ": 1000.16
+      },
+      "firstValidPosition": {
+        "x": 573.34375,
+        "y": 590.21875,
+        "z": 412.09375,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 320.6875,
+        "y": 435.8125,
+        "z": 384.03125,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198278394291",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0,
+        "maxX": 1023.5,
+        "minY": 1.03,
+        "maxY": 1021.19,
+        "minZ": 3.25,
+        "maxZ": 970.56
+      },
+      "firstValidPosition": {
+        "x": 0,
+        "y": 809.25,
+        "z": 219.34375,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 953.375,
+        "y": 604.75,
+        "z": 512.03125,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198277999856",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0.06,
+        "maxX": 1023.66,
+        "minY": 2.38,
+        "maxY": 1016.56,
+        "minZ": 16.06,
+        "maxZ": 1017.41
+      },
+      "firstValidPosition": {
+        "x": 1000.65625,
+        "y": 53.84375,
+        "z": 280.6875,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 992,
+        "y": 8,
+        "z": 191.84375,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198147057707",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0.38,
+        "maxX": 1021.94,
+        "minY": 0.28,
+        "maxY": 1020.09,
+        "minZ": 24.28,
+        "maxZ": 1019.22
+      },
+      "firstValidPosition": {
+        "x": 538.09375,
+        "y": 655.40625,
+        "z": 376.40625,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 64,
+        "y": 984,
+        "z": 191.84375,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198217889796",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0,
+        "maxX": 1023.63,
+        "minY": 4.94,
+        "maxY": 1023.81,
+        "minZ": 0.09,
+        "maxZ": 974.66
+      },
+      "firstValidPosition": {
+        "x": 536.59375,
+        "y": 647.65625,
+        "z": 377.71875,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 0,
+        "y": 984,
+        "z": 192.03125,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561198881608772",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0,
+        "maxX": 1023.38,
+        "minY": 2.97,
+        "maxY": 1021.72,
+        "minZ": 0.03,
+        "maxZ": 1023.97
+      },
+      "firstValidPosition": {
+        "x": 497.71875,
+        "y": 752.71875,
+        "z": 384.375,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 0,
+        "y": 45.4375,
+        "z": 192.1875,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561199011179930",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 1.91,
+        "maxX": 1021.16,
+        "minY": 0.69,
+        "maxY": 1022.94,
+        "minZ": 1.13,
+        "maxZ": 1023.97
+      },
+      "firstValidPosition": {
+        "x": 1003.5,
+        "y": 54.6875,
+        "z": 298.15625,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 32,
+        "y": 8,
+        "z": 192.03125,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    },
+    {
+      "playerId": "76561199279672742",
+      "expectedTimelineRows": 456,
+      "rowsWithDirectCoordinates": 455,
+      "rowsCarriedForward": 0,
+      "rowsInterpolated": 0,
+      "rowsMissing": 1,
+      "maximumCoordinateAge": 0,
+      "medianCoordinateAge": 0,
+      "longestMissingInterval": 1,
+      "impossibleJumpCount": 0,
+      "pawnReplacementCount": 0,
+      "coordinateBounds": {
+        "minX": 0.38,
+        "maxX": 1023,
+        "minY": 0.88,
+        "maxY": 1019.16,
+        "minZ": 14.53,
+        "maxZ": 950.59
+      },
+      "firstValidPosition": {
+        "x": 490.78125,
+        "y": 732.84375,
+        "z": 425.25,
+        "sourceTick": 320,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 64,
+        "y": 45.4375,
+        "z": 192.1875,
+        "sourceTick": 145600,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "laneProjectionCoverage": 99.78
+    }
+  ],
+  "validation": {
+    "uniquePlayerTimeKeys": true,
+    "chronologicalOrdering": true,
+    "finiteProjectionForValidCoordinates": true,
+    "noReplay005Processing": true,
+    "occupancyNotGenerated": true,
+    "transitionsNotGenerated": true
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "kind": "multi_replay_spatial_comparison",
+  "schema": [
+    "replayId",
+    "durationSeconds",
+    "rowCount",
+    "playerCount",
+    "directPercent",
+    "carriedPercent",
+    "missingPercent",
+    "maxCoordinateAge",
+    "projectionCoveragePercent",
+    "impossibleJumpCount",
+    "pawnReplacementCount"
+  ],
+  "rows": [
+    [
+      "replay_002",
+      1834,
+      4404,
+      12,
+      99.73,
+      0,
+      0.27,
+      0,
+      99.73,
+      0,
+      0
+    ],
+    [
+      "replay_003",
+      2279,
+      5472,
+      12,
+      99.78,
+      0,
+      0.22,
+      0,
+      99.78,
+      0,
+      0
+    ],
+    [
+      "replay_004",
+      2012,
+      4836,
+      12,
+      99.75,
+      0,
+      0.25,
+      0,
+      99.75,
+      0,
+      0
+    ]
+  ],
+  "replaySummaries": [
+    {
+      "replayId": "replay_002",
+      "durationSeconds": 1834,
+      "rowCount": 4404,
+      "coordinateCoverage": {
+        "directPercent": 99.73,
+        "carriedPercent": 0,
+        "missingPercent": 0.27,
+        "maxCoordinateAge": 0
+      },
+      "movementSpeedDistribution": {
+        "count": 4380,
+        "min": 0,
+        "median": 92.47,
+        "p90": 176.5,
+        "max": 258.59
+      },
+      "spatialBounds": {
+        "minX": 0,
+        "maxX": 1023.97,
+        "minY": 0.16,
+        "maxY": 1023.84,
+        "minZ": 0,
+        "maxZ": 1023.97
+      },
+      "nearestLaneDistanceDistribution": {
+        "count": 4392,
+        "min": 5.56,
+        "median": 174.31,
+        "p90": 275.72,
+        "max": 489.09
+      },
+      "separationMarginDistribution": {
+        "count": 4392,
+        "min": 0.14,
+        "median": 146.95,
+        "p90": 335.12,
+        "max": 595.48
+      },
+      "structuralRegionRows": {
+        "nearTeamBase": 1551,
+        "nearEnemyBase": 1419,
+        "nearDeployment": 1551,
+        "nearCentralObjective": 0,
+        "nearNeutralStructure": 0,
+        "outsideKnownStructuralEnvelope": 0
+      }
+    },
+    {
+      "replayId": "replay_003",
+      "durationSeconds": 2279,
+      "rowCount": 5472,
+      "coordinateCoverage": {
+        "directPercent": 99.78,
+        "carriedPercent": 0,
+        "missingPercent": 0.22,
+        "maxCoordinateAge": 0
+      },
+      "movementSpeedDistribution": {
+        "count": 5448,
+        "min": 0,
+        "median": 85.96,
+        "p90": 178.72,
+        "max": 267.77
+      },
+      "spatialBounds": {
+        "minX": 0,
+        "maxX": 1023.97,
+        "minY": 0.28,
+        "maxY": 1023.81,
+        "minZ": 0.03,
+        "maxZ": 1023.97
+      },
+      "nearestLaneDistanceDistribution": {
+        "count": 5460,
+        "min": 2.43,
+        "median": 154.07,
+        "p90": 269.45,
+        "max": 478.6
+      },
+      "separationMarginDistribution": {
+        "count": 5460,
+        "min": 0.2,
+        "median": 146.68,
+        "p90": 387.89,
+        "max": 604.94
+      },
+      "structuralRegionRows": {
+        "nearTeamBase": 2069,
+        "nearEnemyBase": 1893,
+        "nearDeployment": 2069,
+        "nearCentralObjective": 0,
+        "nearNeutralStructure": 0,
+        "outsideKnownStructuralEnvelope": 0
+      }
+    },
+    {
+      "replayId": "replay_004",
+      "durationSeconds": 2012,
+      "rowCount": 4836,
+      "coordinateCoverage": {
+        "directPercent": 99.75,
+        "carriedPercent": 0,
+        "missingPercent": 0.25,
+        "maxCoordinateAge": 0
+      },
+      "movementSpeedDistribution": {
+        "count": 4812,
+        "min": 0,
+        "median": 93.11,
+        "p90": 177.28,
+        "max": 264.95
+      },
+      "spatialBounds": {
+        "minX": 0,
+        "maxX": 1023.97,
+        "minY": 0.22,
+        "maxY": 1023.72,
+        "minZ": 0.03,
+        "maxZ": 1023.97
+      },
+      "nearestLaneDistanceDistribution": {
+        "count": 4824,
+        "min": 1.43,
+        "median": 163.06,
+        "p90": 277.28,
+        "max": 465.33
+      },
+      "separationMarginDistribution": {
+        "count": 4824,
+        "min": 0.04,
+        "median": 149.26,
+        "p90": 380.27,
+        "max": 632.62
+      },
+      "structuralRegionRows": {
+        "nearTeamBase": 1784,
+        "nearEnemyBase": 1717,
+        "nearDeployment": 1784,
+        "nearCentralObjective": 0,
+        "nearNeutralStructure": 0,
+        "outsideKnownStructuralEnvelope": 0
+      }
+    }
+  ],
+  "schemaEquality": true,
+  "comparability": {
+    "status": "comparable_with_observed_limitations",
+    "directPercentRange": [
+      99.73,
+      99.78
+    ],
+    "projectionCoverageRange": [
+      99.73,
+      99.78
+    ],
+    "note": "Distribution similarity is an extraction anomaly check only, not semantic correctness."
+  },
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  }
+}

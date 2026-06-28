@@ -4,16 +4,22 @@ Last updated: 2026-06-27
 
 ## Latest Work
 
-Latest completed task: `023-parameterize-structural-lane-distance-mapping`
+Latest completed task: `025-build-full-multi-replay-spatial-timeline`
 
-Script: `scripts/parameterize-structural-lane-distance-mapping.js`
+Script: `scripts/build-full-multi-replay-spatial-timeline.js`
 
 Primary outputs:
 
-- `output/replays/replay_002/lane-axis-distance-mapping.json`
-- `output/replays/replay_003/lane-axis-distance-mapping.json`
-- `output/replays/replay_004/lane-axis-distance-mapping.json`
-- `output/replays/lane-axis-distance-mapping-summary.json`
+- `output/replays/replay_002/full-spatial-timeline.json`
+- `output/replays/replay_002/full-spatial-timeline.rows.jsonl`
+- `output/replays/replay_002/spatial-data-quality.json`
+- `output/replays/replay_003/full-spatial-timeline.json`
+- `output/replays/replay_003/full-spatial-timeline.rows.jsonl`
+- `output/replays/replay_003/spatial-data-quality.json`
+- `output/replays/replay_004/full-spatial-timeline.json`
+- `output/replays/replay_004/full-spatial-timeline.rows.jsonl`
+- `output/replays/replay_004/spatial-data-quality.json`
+- `output/replays/full-spatial-timeline-gate.json`
 
 ## Current Objective
 
@@ -47,6 +53,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Multi-replay geometry profiling found that replays 001-004 have directly comparable structural coordinates under identity transforms and can be grouped under `geometry_profile/schema_653ba0e9_group_a` for raw coordinate comparison, but lane-axis and topology interpretation remain unvalidated.
 - Structural lane-axis topology derived three neutral physical lane axes from direct structural role fields, stable coordinates, topology graph adjacency, and cross-replay consensus. The gate is `structural_topology_ready_for_lane_mapping`; this permits lane-distance projection only, not occupancy classification.
 - Lane-axis distance mapping projected replay 002 first, then replay 003 and replay 004, onto approved structural lane polylines. The gate is `lane_distance_mapping_ready`; these outputs are geometric features only and do not classify stable occupancy.
+- Full multi-replay spatial timelines were built for replay 002, replay 003, and replay 004 at 5-second resolution using the approved structural lane axes. The gate is `full_spatial_timeline_ready_with_limitations`: later frozen-model tests may use these timelines, but must not evaluate sub-5-second continuity or brief-contact behavior.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -61,4 +68,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
 
-For multi-replay work, no further geometry-dependent task is currently pending. Do not run occupancy, transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing without a new fully specified pending task.
+For multi-replay work, the next allowed task may apply frozen occupancy candidates to replays 002-004 without recalibration, using the 5-second spatial timelines and their documented limitations. Do not run transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing without a new fully specified pending task.

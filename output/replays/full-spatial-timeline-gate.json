@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "full_spatial_timeline_gate",
+  "gateResult": "full_spatial_timeline_ready_with_limitations",
+  "evidence": {
+    "allHave12Players": true,
+    "allFiniteProjection": true,
+    "allUniquePlayerTimeKeys": true,
+    "noMajorMissing": true,
+    "noMajorStale": true,
+    "crossReplayComparability": {
+      "status": "comparable_with_observed_limitations",
+      "directPercentRange": [
+        99.73,
+        99.78
+      ],
+      "projectionCoverageRange": [
+        99.73,
+        99.78
+      ],
+      "note": "Distribution similarity is an extraction anomaly check only, not semantic correctness."
+    }
+  },
+  "limitations": [
+    "temporal_resolution_5s_not_1s",
+    "later frozen-model tests must not evaluate sub-5-second continuity or brief-contact behavior from this dataset"
+  ],
+  "allowedDownstreamUse": [
+    "frozen-model generalization tests without recalibration",
+    "coordinate coverage and projection quality analysis",
+    "movement-feature audit without semantic transition claims"
+  ],
+  "prohibitedConclusions": [
+    "semantic lane correctness",
+    "stable lane occupancy",
+    "transition readiness",
+    "strategic lane assignment",
+    "optimality"
+  ],
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "full_spatial_timeline_manifest",
+  "replayId": "replay_004",
+  "sourceReplay": "samples/partida_004.dem",
+  "storageStrategy": "rows stored in adjacent JSONL file to preserve complete player-second data under per-output JSON size limits",
+  "rowsFile": "output\\replays\\replay_004\\full-spatial-timeline.rows.jsonl",
+  "rowFormat": "jsonl",
+  "temporalResolution": "one row per player per 5 canonical game seconds",
+  "requestedResolution": "one row per player per canonical game second",
+  "resolutionLimitation": "Per-second seek extraction did not complete within the autonomous execution budget; 5-second sampling is the finest reliable common resolution produced by this task.",
+  "rowCount": 4836,
+  "playerCount": 12,
+  "firstGameTimeSeconds": 0,
+  "lastGameTimeSeconds": 2012,
+  "topologyProfile": "topology_profile/structural_lane_axes_schema_653ba0e9_group_a",
+  "coordinateTransform": "identity",
+  "generatedFeatures": [
+    "position_quality",
+    "lane_projection",
+    "structural_regions",
+    "movement"
+  ],
+  "prohibitedNotGenerated": [
+    "stable_lane_occupancy",
+    "transition_candidates",
+    "strategic_lane_assignment",
+    "replay_005_processing"
+  ],
+  "contentHash": "5e355ce10039f201bda7bf555d12cf626b48c70faf9abfbb23417b0d81394ca6",
+  "qualityFile": "output\\replays\\replay_004\\spatial-data-quality.json"
+}
