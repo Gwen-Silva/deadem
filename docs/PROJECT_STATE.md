@@ -4,20 +4,15 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `027-optimize-one-second-multi-replay-spatial-extraction`
+Latest completed task: `028-compare-frozen-occupancy-on-one-second-timelines`
 
-Script: `scripts/build-one-second-spatial-extraction.js`
+Script: `scripts/compare-frozen-occupancy-one-second.js`
 
 Primary outputs:
 
-- `output/replays/replay_001/one-second-spatial/manifest.json`
-- `output/replays/replay_002/one-second-spatial/manifest.json`
-- `output/replays/replay_003/one-second-spatial/manifest.json`
-- `output/replays/replay_004/one-second-spatial/manifest.json`
-- `output/replays/one-second-spatial-profile.json`
-- `output/replays/one-second-spatial-comparison.json`
-- `output/replays/one-second-spatial-gate.json`
-- `output/replays/descriptive-spatial-evidence-schema.json`
+- `output/replays/frozen-occupancy-one-second-results.json`
+- `output/replays/frozen-occupancy-one-second-resolution-comparison.json`
+- `output/replays/frozen-occupancy-one-second-gate.json`
 
 ## Current Objective
 
@@ -54,6 +49,7 @@ The current investigation is focused on improving lane occupancy quality before 
 - Full multi-replay spatial timelines were built for replay 002, replay 003, and replay 004 at 5-second resolution using the approved structural lane axes. The gate is `full_spatial_timeline_ready_with_limitations`: later frozen-model tests may use these timelines, but must not evaluate sub-5-second continuity or brief-contact behavior.
 - One-second replay-isolated spatial timelines were built for replays 001-004 using sequential `nextTick()` extraction, per-player JSONL shards, and cached lane-axis geometry. The gate is `one_second_spatial_ready_with_limitations`: all four replays completed with 12-player reconciliation, direct coordinate rows, deterministic replay 002 repeatability, and finite projections, but existing five-second artifacts do not align exactly for all comparable fields. Use the one-second outputs for resolution-controlled frozen-candidate comparison before making any final-holdout decision.
 - The descriptive spatial-evidence layer is now formalized as non-semantic point evidence only: high-confidence lane proximity, ambiguous lane proximity, base/deployment, neutral/unclassified, and missing/invalid. These classes must not be interpreted as semantic occupancy, rotations, or strategic lane assignments.
+- Frozen candidates applied to one-second timelines remain resolution-sensitive for episode behavior. The task 028 gate is `one_second_frozen_comparison_resolution_sensitive`: point coverage changes are small, but episode counts and fragmentation change enough that reliable occupancy episodes, transitions, and replay 005 final-holdout processing remain prohibited.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -68,4 +64,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
 
-For multi-replay work, the next allowed task may compare the already frozen occupancy candidates on one-second spatial timelines against the prior five-second behavior for replays 001-004. Do not recalibrate, run transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing without a new fully specified pending task and pre-registered final-holdout criteria.
+For multi-replay work, do not continue lane-episode or transition development from these candidates. The supported spatial product is descriptive point-level proximity and exclusion evidence. A methodological decision is required before choosing between a new non-episode descriptive layer, minimized semantic review, or another independent event branch. Do not process replay 005 without a frozen hypothesis and pass/fail criteria.

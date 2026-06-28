@@ -1,1 +1,1 @@
-reports/one-second-multi-replay-spatial-extraction.md
+reports/frozen-occupancy-one-second-resolution-comparison.md

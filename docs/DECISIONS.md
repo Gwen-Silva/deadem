@@ -119,3 +119,13 @@ Date: 2026-06-28
 Decision: The supported spatial layer is limited to physical lane-axis proximity, separation, and base/deployment exclusion at individual timestamps.
 
 Reason: Task 026 showed cross-replay consistency for point-level proximity evidence, while semantic occupancy, reliable episodes, and transitions remain unsupported. Task 027 removed the five-second temporal confound for replays 001-004 with one-second spatial extraction, but did not validate semantic lane occupancy.
+
+## DEC-013: Do Not Use Frozen Occupancy Candidates For Episodes After One-Second Comparison
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: The frozen occupancy candidates may support descriptive point-level proximity evidence, but must not be used for reliable occupancy episodes, lane transitions, rotations, or replay 005 final-holdout claims.
+
+Reason: Task 028 found small point-coverage deltas but material episode-count and fragmentation deltas when moving from five-second to one-second timelines. The comparison remains useful for resolution sensitivity, not semantic validation.

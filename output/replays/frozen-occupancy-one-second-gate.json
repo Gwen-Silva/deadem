@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_occupancy_one_second_gate",
+  "gateResult": "one_second_frozen_comparison_resolution_sensitive",
+  "evidence": {
+    "resolutionSensitivityByCandidate": {
+      "original_experiment_23_balanced": "strongly_resolution_sensitive",
+      "conservative_point_revision_combined": "strongly_resolution_sensitive",
+      "hysteresis_state_machine": "moderately_resolution_sensitive",
+      "windowed_evidence_accumulation": "strongly_resolution_sensitive",
+      "constrained_dynamic_programming": "moderately_resolution_sensitive"
+    },
+    "robustCandidates": [],
+    "stronglySensitiveCandidates": [
+      "original_experiment_23_balanced",
+      "conservative_point_revision_combined",
+      "windowed_evidence_accumulation"
+    ]
+  },
+  "allowedLimitedUse": [
+    "point-level physical lane proximity evidence",
+    "base/deployment exclusion evidence",
+    "resolution sensitivity assessment"
+  ],
+  "prohibitedUses": [
+    "semantic occupancy correctness",
+    "reliable occupancy episodes",
+    "transition detection",
+    "strategic interpretation",
+    "replay 005 conclusions"
+  ],
+  "replay005Readiness": {
+    "status": "not_ready_resolution_confounded",
+    "reason": "One-second comparison shows candidate-specific resolution sensitivity; no final holdout hypothesis and pass/fail criteria are frozen."
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

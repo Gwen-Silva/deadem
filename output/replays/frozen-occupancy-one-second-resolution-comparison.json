@@ -1,0 +1,905 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_occupancy_one_second_resolution_comparison",
+  "byReplay": {
+    "replay_001": {
+      "original_experiment_23_balanced": {
+        "oneSecond": {
+          "coveragePercent": 90.1,
+          "contradictionEvidenceRows": 20899,
+          "instabilityPercent": 32.82,
+          "episodeCount": 1299,
+          "fragmentationEpisodesPerPlayerHour": 130.29,
+          "totalEpisodeDuration": 15361,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 1122
+        },
+        "fiveSecond": {
+          "coveragePercent": 90.62,
+          "contradictionEvidenceRows": 4077,
+          "instabilityPercent": 34.06,
+          "episodeCount": 3158,
+          "fragmentationEpisodesPerPlayerHour": 316.86,
+          "totalEpisodeDuration": 32515,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 2570
+        },
+        "delta": {
+          "pointCoverageDelta": -0.52,
+          "contradictionDelta": 16822,
+          "instabilityDelta": -1.24,
+          "episodeCountDelta": -1859,
+          "fragmentationDelta": -186.57,
+          "durationDelta": -17154,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "conservative_point_revision_combined": {
+        "oneSecond": {
+          "coveragePercent": 28.57,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.11,
+          "episodeCount": 243,
+          "fragmentationEpisodesPerPlayerHour": 24.37,
+          "totalEpisodeDuration": 3740,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 197
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.96,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.94,
+          "episodeCount": 1438,
+          "fragmentationEpisodesPerPlayerHour": 144.28,
+          "totalEpisodeDuration": 10750,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1354
+        },
+        "delta": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": -1195,
+          "fragmentationDelta": -119.91,
+          "durationDelta": -7010,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "hysteresis_state_machine": {
+        "oneSecond": {
+          "coveragePercent": 28.57,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.11,
+          "episodeCount": 221,
+          "fragmentationEpisodesPerPlayerHour": 22.17,
+          "totalEpisodeDuration": 4073,
+          "medianDuration": 10,
+          "shortEpisodesUnderFifteenSeconds": 166
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.96,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.94,
+          "episodeCount": 40,
+          "fragmentationEpisodesPerPlayerHour": 4.01,
+          "totalEpisodeDuration": 2575,
+          "medianDuration": 72.5,
+          "shortEpisodesUnderFifteenSeconds": 0
+        },
+        "delta": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": 181,
+          "fragmentationDelta": 18.16,
+          "durationDelta": 1498,
+          "briefContactRecovery": 166,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        }
+      },
+      "windowed_evidence_accumulation": {
+        "oneSecond": {
+          "coveragePercent": 28.57,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.11,
+          "episodeCount": 525,
+          "fragmentationEpisodesPerPlayerHour": 52.66,
+          "totalEpisodeDuration": 5884,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 434
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.96,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.94,
+          "episodeCount": 1625,
+          "fragmentationEpisodesPerPlayerHour": 163.04,
+          "totalEpisodeDuration": 13015,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1487
+        },
+        "delta": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": -1100,
+          "fragmentationDelta": -110.38,
+          "durationDelta": -7131,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "constrained_dynamic_programming": {
+        "oneSecond": {
+          "coveragePercent": 28.57,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.11,
+          "episodeCount": 510,
+          "fragmentationEpisodesPerPlayerHour": 51.15,
+          "totalEpisodeDuration": 5980,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 443
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.96,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.94,
+          "episodeCount": 1041,
+          "fragmentationEpisodesPerPlayerHour": 104.45,
+          "totalEpisodeDuration": 11500,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 838
+        },
+        "delta": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": -531,
+          "fragmentationDelta": -53.3,
+          "durationDelta": -5520,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      }
+    },
+    "replay_002": {
+      "original_experiment_23_balanced": {
+        "oneSecond": {
+          "coveragePercent": 90.22,
+          "contradictionEvidenceRows": 12229,
+          "instabilityPercent": 34.49,
+          "episodeCount": 834,
+          "fragmentationEpisodesPerPlayerHour": 136.42,
+          "totalEpisodeDuration": 9130,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 745
+        },
+        "fiveSecond": {
+          "coveragePercent": 90.87,
+          "contradictionEvidenceRows": 2342,
+          "instabilityPercent": 34.9,
+          "episodeCount": 1894,
+          "fragmentationEpisodesPerPlayerHour": 310.49,
+          "totalEpisodeDuration": 19955,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1508
+        },
+        "delta": {
+          "pointCoverageDelta": -0.65,
+          "contradictionDelta": 9887,
+          "instabilityDelta": -0.41,
+          "episodeCountDelta": -1060,
+          "fragmentationDelta": -174.07,
+          "durationDelta": -10825,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "conservative_point_revision_combined": {
+        "oneSecond": {
+          "coveragePercent": 31.44,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.87,
+          "episodeCount": 150,
+          "fragmentationEpisodesPerPlayerHour": 24.54,
+          "totalEpisodeDuration": 2816,
+          "medianDuration": 6,
+          "shortEpisodesUnderFifteenSeconds": 129
+        },
+        "fiveSecond": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 910,
+          "fragmentationEpisodesPerPlayerHour": 149.18,
+          "totalEpisodeDuration": 7405,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 855
+        },
+        "delta": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": -760,
+          "fragmentationDelta": -124.64,
+          "durationDelta": -4589,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "hysteresis_state_machine": {
+        "oneSecond": {
+          "coveragePercent": 31.44,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.87,
+          "episodeCount": 125,
+          "fragmentationEpisodesPerPlayerHour": 20.45,
+          "totalEpisodeDuration": 2980,
+          "medianDuration": 10,
+          "shortEpisodesUnderFifteenSeconds": 96
+        },
+        "fiveSecond": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 10,
+          "fragmentationEpisodesPerPlayerHour": 1.64,
+          "totalEpisodeDuration": 1770,
+          "medianDuration": 50,
+          "shortEpisodesUnderFifteenSeconds": 0
+        },
+        "delta": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": 115,
+          "fragmentationDelta": 18.81,
+          "durationDelta": 1210,
+          "briefContactRecovery": 96,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        }
+      },
+      "windowed_evidence_accumulation": {
+        "oneSecond": {
+          "coveragePercent": 31.44,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.87,
+          "episodeCount": 337,
+          "fragmentationEpisodesPerPlayerHour": 55.13,
+          "totalEpisodeDuration": 4145,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 291
+        },
+        "fiveSecond": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 1020,
+          "fragmentationEpisodesPerPlayerHour": 167.21,
+          "totalEpisodeDuration": 8715,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 936
+        },
+        "delta": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": -683,
+          "fragmentationDelta": -112.08,
+          "durationDelta": -4570,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "constrained_dynamic_programming": {
+        "oneSecond": {
+          "coveragePercent": 31.44,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.87,
+          "episodeCount": 337,
+          "fragmentationEpisodesPerPlayerHour": 55.13,
+          "totalEpisodeDuration": 4265,
+          "medianDuration": 6,
+          "shortEpisodesUnderFifteenSeconds": 308
+        },
+        "fiveSecond": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 643,
+          "fragmentationEpisodesPerPlayerHour": 105.41,
+          "totalEpisodeDuration": 7690,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 510
+        },
+        "delta": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": -306,
+          "fragmentationDelta": -50.28,
+          "durationDelta": -3425,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      }
+    },
+    "replay_003": {
+      "original_experiment_23_balanced": {
+        "oneSecond": {
+          "coveragePercent": 89.99,
+          "contradictionEvidenceRows": 16523,
+          "instabilityPercent": 34.42,
+          "episodeCount": 943,
+          "fragmentationEpisodesPerPlayerHour": 124.13,
+          "totalEpisodeDuration": 11798,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 794
+        },
+        "fiveSecond": {
+          "coveragePercent": 90.27,
+          "contradictionEvidenceRows": 3138,
+          "instabilityPercent": 34.63,
+          "episodeCount": 2319,
+          "fragmentationEpisodesPerPlayerHour": 305.8,
+          "totalEpisodeDuration": 24645,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1854
+        },
+        "delta": {
+          "pointCoverageDelta": -0.28,
+          "contradictionDelta": 13385,
+          "instabilityDelta": -0.21,
+          "episodeCountDelta": -1376,
+          "fragmentationDelta": -181.67,
+          "durationDelta": -12847,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "conservative_point_revision_combined": {
+        "oneSecond": {
+          "coveragePercent": 26.41,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.95,
+          "episodeCount": 186,
+          "fragmentationEpisodesPerPlayerHour": 24.48,
+          "totalEpisodeDuration": 2775,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 147
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 1024,
+          "fragmentationEpisodesPerPlayerHour": 135.03,
+          "totalEpisodeDuration": 7935,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 944
+        },
+        "delta": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": -838,
+          "fragmentationDelta": -110.55,
+          "durationDelta": -5160,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "hysteresis_state_machine": {
+        "oneSecond": {
+          "coveragePercent": 26.41,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.95,
+          "episodeCount": 185,
+          "fragmentationEpisodesPerPlayerHour": 24.35,
+          "totalEpisodeDuration": 3122,
+          "medianDuration": 9,
+          "shortEpisodesUnderFifteenSeconds": 139
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 29,
+          "fragmentationEpisodesPerPlayerHour": 3.82,
+          "totalEpisodeDuration": 1775,
+          "medianDuration": 60,
+          "shortEpisodesUnderFifteenSeconds": 0
+        },
+        "delta": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": 156,
+          "fragmentationDelta": 20.53,
+          "durationDelta": 1347,
+          "briefContactRecovery": 139,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        }
+      },
+      "windowed_evidence_accumulation": {
+        "oneSecond": {
+          "coveragePercent": 26.41,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.95,
+          "episodeCount": 415,
+          "fragmentationEpisodesPerPlayerHour": 54.63,
+          "totalEpisodeDuration": 4305,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 350
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 1180,
+          "fragmentationEpisodesPerPlayerHour": 155.6,
+          "totalEpisodeDuration": 9460,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1070
+        },
+        "delta": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": -765,
+          "fragmentationDelta": -100.97,
+          "durationDelta": -5155,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "constrained_dynamic_programming": {
+        "oneSecond": {
+          "coveragePercent": 26.41,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 2.95,
+          "episodeCount": 423,
+          "fragmentationEpisodesPerPlayerHour": 55.68,
+          "totalEpisodeDuration": 4564,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 372
+        },
+        "fiveSecond": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 759,
+          "fragmentationEpisodesPerPlayerHour": 100.09,
+          "totalEpisodeDuration": 8525,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 591
+        },
+        "delta": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": -336,
+          "fragmentationDelta": -44.41,
+          "durationDelta": -3961,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      }
+    },
+    "replay_004": {
+      "original_experiment_23_balanced": {
+        "oneSecond": {
+          "coveragePercent": 90.28,
+          "contradictionEvidenceRows": 14356,
+          "instabilityPercent": 33.56,
+          "episodeCount": 992,
+          "fragmentationEpisodesPerPlayerHour": 147.91,
+          "totalEpisodeDuration": 10134,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 874
+        },
+        "fiveSecond": {
+          "coveragePercent": 90.61,
+          "contradictionEvidenceRows": 2755,
+          "instabilityPercent": 32.9,
+          "episodeCount": 2083,
+          "fragmentationEpisodesPerPlayerHour": 310.9,
+          "totalEpisodeDuration": 21855,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1656
+        },
+        "delta": {
+          "pointCoverageDelta": -0.33,
+          "contradictionDelta": 11601,
+          "instabilityDelta": 0.66,
+          "episodeCountDelta": -1091,
+          "fragmentationDelta": -162.99,
+          "durationDelta": -11721,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "conservative_point_revision_combined": {
+        "oneSecond": {
+          "coveragePercent": 27.8,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.08,
+          "episodeCount": 178,
+          "fragmentationEpisodesPerPlayerHour": 26.54,
+          "totalEpisodeDuration": 1961,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 156
+        },
+        "fiveSecond": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 1057,
+          "fragmentationEpisodesPerPlayerHour": 157.76,
+          "totalEpisodeDuration": 7275,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 994
+        },
+        "delta": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": -879,
+          "fragmentationDelta": -131.22,
+          "durationDelta": -5314,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "hysteresis_state_machine": {
+        "oneSecond": {
+          "coveragePercent": 27.8,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.08,
+          "episodeCount": 154,
+          "fragmentationEpisodesPerPlayerHour": 22.96,
+          "totalEpisodeDuration": 2119,
+          "medianDuration": 9,
+          "shortEpisodesUnderFifteenSeconds": 125
+        },
+        "fiveSecond": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 19,
+          "fragmentationEpisodesPerPlayerHour": 2.84,
+          "totalEpisodeDuration": 990,
+          "medianDuration": 45,
+          "shortEpisodesUnderFifteenSeconds": 0
+        },
+        "delta": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": 135,
+          "fragmentationDelta": 20.12,
+          "durationDelta": 1129,
+          "briefContactRecovery": 125,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        }
+      },
+      "windowed_evidence_accumulation": {
+        "oneSecond": {
+          "coveragePercent": 27.8,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.08,
+          "episodeCount": 380,
+          "fragmentationEpisodesPerPlayerHour": 56.66,
+          "totalEpisodeDuration": 3360,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 330
+        },
+        "fiveSecond": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 1155,
+          "fragmentationEpisodesPerPlayerHour": 172.39,
+          "totalEpisodeDuration": 8530,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 1065
+        },
+        "delta": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": -775,
+          "fragmentationDelta": -115.73,
+          "durationDelta": -5170,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "constrained_dynamic_programming": {
+        "oneSecond": {
+          "coveragePercent": 27.8,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.08,
+          "episodeCount": 388,
+          "fragmentationEpisodesPerPlayerHour": 57.85,
+          "totalEpisodeDuration": 3585,
+          "medianDuration": 7,
+          "shortEpisodesUnderFifteenSeconds": 354
+        },
+        "fiveSecond": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 725,
+          "fragmentationEpisodesPerPlayerHour": 108.21,
+          "totalEpisodeDuration": 7270,
+          "medianDuration": 5,
+          "shortEpisodesUnderFifteenSeconds": 576
+        },
+        "delta": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": -337,
+          "fragmentationDelta": -50.36,
+          "durationDelta": -3685,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      }
+    }
+  },
+  "byCandidate": [
+    {
+      "candidateId": "original_experiment_23_balanced",
+      "classification": "strongly_resolution_sensitive",
+      "deltas": {
+        "replay_001": {
+          "pointCoverageDelta": -0.52,
+          "contradictionDelta": 16822,
+          "instabilityDelta": -1.24,
+          "episodeCountDelta": -1859,
+          "fragmentationDelta": -186.57,
+          "durationDelta": -17154,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_002": {
+          "pointCoverageDelta": -0.65,
+          "contradictionDelta": 9887,
+          "instabilityDelta": -0.41,
+          "episodeCountDelta": -1060,
+          "fragmentationDelta": -174.07,
+          "durationDelta": -10825,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_003": {
+          "pointCoverageDelta": -0.28,
+          "contradictionDelta": 13385,
+          "instabilityDelta": -0.21,
+          "episodeCountDelta": -1376,
+          "fragmentationDelta": -181.67,
+          "durationDelta": -12847,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_004": {
+          "pointCoverageDelta": -0.33,
+          "contradictionDelta": 11601,
+          "instabilityDelta": 0.66,
+          "episodeCountDelta": -1091,
+          "fragmentationDelta": -162.99,
+          "durationDelta": -11721,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "maxAbsCoverageDelta": 0.65,
+      "maxAbsEpisodeCountDelta": 1376,
+      "maxAbsFragmentationDelta": 181.67
+    },
+    {
+      "candidateId": "conservative_point_revision_combined",
+      "classification": "strongly_resolution_sensitive",
+      "deltas": {
+        "replay_001": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": -1195,
+          "fragmentationDelta": -119.91,
+          "durationDelta": -7010,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_002": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": -760,
+          "fragmentationDelta": -124.64,
+          "durationDelta": -4589,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_003": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": -838,
+          "fragmentationDelta": -110.55,
+          "durationDelta": -5160,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_004": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": -879,
+          "fragmentationDelta": -131.22,
+          "durationDelta": -5314,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "maxAbsCoverageDelta": 2.66,
+      "maxAbsEpisodeCountDelta": 879,
+      "maxAbsFragmentationDelta": 131.22
+    },
+    {
+      "candidateId": "hysteresis_state_machine",
+      "classification": "moderately_resolution_sensitive",
+      "deltas": {
+        "replay_001": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": 181,
+          "fragmentationDelta": 18.16,
+          "durationDelta": 1498,
+          "briefContactRecovery": 166,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        },
+        "replay_002": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": 115,
+          "fragmentationDelta": 18.81,
+          "durationDelta": 1210,
+          "briefContactRecovery": 96,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        },
+        "replay_003": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": 156,
+          "fragmentationDelta": 20.53,
+          "durationDelta": 1347,
+          "briefContactRecovery": 139,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        },
+        "replay_004": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": 135,
+          "fragmentationDelta": 20.12,
+          "durationDelta": 1129,
+          "briefContactRecovery": 125,
+          "gapSplittingOrMerging": "more_splitting_at_one_second"
+        }
+      },
+      "maxAbsCoverageDelta": 2.66,
+      "maxAbsEpisodeCountDelta": 156,
+      "maxAbsFragmentationDelta": 20.53
+    },
+    {
+      "candidateId": "windowed_evidence_accumulation",
+      "classification": "strongly_resolution_sensitive",
+      "deltas": {
+        "replay_001": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": -1100,
+          "fragmentationDelta": -110.38,
+          "durationDelta": -7131,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_002": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": -683,
+          "fragmentationDelta": -112.08,
+          "durationDelta": -4570,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_003": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": -765,
+          "fragmentationDelta": -100.97,
+          "durationDelta": -5155,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_004": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": -775,
+          "fragmentationDelta": -115.73,
+          "durationDelta": -5170,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "maxAbsCoverageDelta": 2.66,
+      "maxAbsEpisodeCountDelta": 775,
+      "maxAbsFragmentationDelta": 115.73
+    },
+    {
+      "candidateId": "constrained_dynamic_programming",
+      "classification": "moderately_resolution_sensitive",
+      "deltas": {
+        "replay_001": {
+          "pointCoverageDelta": -1.39,
+          "contradictionDelta": 0,
+          "instabilityDelta": 0.17,
+          "episodeCountDelta": -531,
+          "fragmentationDelta": -53.3,
+          "durationDelta": -5520,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_002": {
+          "pointCoverageDelta": -2.28,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.43,
+          "episodeCountDelta": -306,
+          "fragmentationDelta": -50.28,
+          "durationDelta": -3425,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_003": {
+          "pointCoverageDelta": -2.66,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.29,
+          "episodeCountDelta": -336,
+          "fragmentationDelta": -44.41,
+          "durationDelta": -3961,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        },
+        "replay_004": {
+          "pointCoverageDelta": -2.36,
+          "contradictionDelta": 0,
+          "instabilityDelta": -0.32,
+          "episodeCountDelta": -337,
+          "fragmentationDelta": -50.36,
+          "durationDelta": -3685,
+          "briefContactRecovery": 0,
+          "gapSplittingOrMerging": "more_merging_or_filtering_at_one_second"
+        }
+      },
+      "maxAbsCoverageDelta": 2.66,
+      "maxAbsEpisodeCountDelta": 337,
+      "maxAbsFragmentationDelta": 50.36
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

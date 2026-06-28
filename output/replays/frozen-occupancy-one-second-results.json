@@ -1,0 +1,1870 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_occupancy_one_second_results",
+  "temporalResolutionSeconds": 1,
+  "candidates": [
+    "original_experiment_23_balanced",
+    "conservative_point_revision_combined",
+    "hysteresis_state_machine",
+    "windowed_evidence_accumulation",
+    "constrained_dynamic_programming"
+  ],
+  "replays": [
+    {
+      "replayId": "replay_001",
+      "temporalResolutionSeconds": 1,
+      "rowCount": 35904,
+      "candidates": [
+        {
+          "candidateId": "original_experiment_23_balanced",
+          "pointMetrics": {
+            "totalRows": 35904,
+            "totalValidRows": 35904,
+            "laneClassifiedRows": 32348,
+            "abstainedRows": 3556,
+            "coveragePercent": 90.1,
+            "contradictionEvidenceRows": 20899,
+            "contradictionFlags": {
+              "base_or_deployment_conflict": 19110,
+              "ambiguous_separation_classified_as_lane": 3014,
+              "high_speed_classified_as_lane": 2105
+            },
+            "instabilityRows": 11782,
+            "instabilityPercent": 32.82,
+            "stateDistribution": {
+              "lane_core_high": 25870,
+              "lane_approach": 3349,
+              "lane_occupiable": 3014,
+              "lane_core_medium": 3464,
+              "lane_ambiguous": 207
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 1299,
+            "totalEpisodeDuration": 15361,
+            "coverageDurationPercentOfPlayerTimeline": 42.78,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 1299,
+              "min": 5,
+              "median": 7,
+              "p90": 18,
+              "max": 96
+            },
+            "fragmentationEpisodesPerPlayerHour": 130.29,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 1122,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "approach_distance_or_margin": 309,
+              "state_change": 971,
+              "occupiable_boundary_abstention": 9,
+              "end_of_timeline": 10
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "conservative_point_revision_combined",
+          "pointMetrics": {
+            "totalRows": 35904,
+            "totalValidRows": 35904,
+            "laneClassifiedRows": 10259,
+            "abstainedRows": 25645,
+            "coveragePercent": 28.57,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 1117,
+            "instabilityPercent": 3.11,
+            "stateDistribution": {
+              "lane_core_high": 10259,
+              "base_core": 21587,
+              "lane_ambiguous": 3052,
+              "inter_lane_transit": 1006
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 243,
+            "totalEpisodeDuration": 3740,
+            "coverageDurationPercentOfPlayerTimeline": 10.42,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 243,
+              "min": 5,
+              "median": 7,
+              "p90": 45,
+              "max": 96
+            },
+            "fragmentationEpisodesPerPlayerHour": 24.37,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 197,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "independent_base_precedence": 133,
+              "state_change": 51,
+              "weak_lane_separation_abstention": 49,
+              "high_speed_transit_abstention": 6,
+              "end_of_timeline": 4
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "hysteresis_state_machine",
+          "pointMetrics": {
+            "totalRows": 35904,
+            "totalValidRows": 35904,
+            "laneClassifiedRows": 10259,
+            "abstainedRows": 25645,
+            "coveragePercent": 28.57,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 1117,
+            "instabilityPercent": 3.11,
+            "stateDistribution": {
+              "lane_core_high": 10259,
+              "base_core": 21587,
+              "lane_ambiguous": 3052,
+              "inter_lane_transit": 1006
+            },
+            "frozenParameters": {
+              "id": "hysteresis_state_machine",
+              "enterSeconds": 4,
+              "uncertainTolerance": 5,
+              "rejoinGap": 4,
+              "minDuration": 5,
+              "minSupportRatio": 0.45,
+              "maxContradictionRatio": 0.28
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 221,
+            "totalEpisodeDuration": 4073,
+            "coverageDurationPercentOfPlayerTimeline": 11.34,
+            "medianDuration": 10,
+            "durationDistribution": {
+              "count": 221,
+              "min": 7,
+              "median": 10,
+              "p90": 60,
+              "max": 98
+            },
+            "fragmentationEpisodesPerPlayerHour": 22.17,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 166,
+            "uncertainGapDuration": 37,
+            "terminationReasons": {
+              "strong_exit_evidence": 211,
+              "end_of_timeline": 7,
+              "uncertainty_tolerance_exceeded": 3
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "hysteresis_state_machine",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "enterSeconds": {
+              "value": 4,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "uncertainTolerance": {
+              "value": 5,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "rejoinGap": {
+              "value": 4,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.45,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.28,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "windowed_evidence_accumulation",
+          "pointMetrics": {
+            "totalRows": 35904,
+            "totalValidRows": 35904,
+            "laneClassifiedRows": 10259,
+            "abstainedRows": 25645,
+            "coveragePercent": 28.57,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 1117,
+            "instabilityPercent": 3.11,
+            "stateDistribution": {
+              "lane_core_high": 10259,
+              "base_core": 21587,
+              "lane_ambiguous": 3052,
+              "inter_lane_transit": 1006
+            },
+            "frozenParameters": {
+              "id": "windowed_evidence_accumulation",
+              "windowSeconds": 5,
+              "supportMargin": 2,
+              "minDuration": 5,
+              "minSupportRatio": 0.42,
+              "maxContradictionRatio": 0.3
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 525,
+            "totalEpisodeDuration": 5884,
+            "coverageDurationPercentOfPlayerTimeline": 16.39,
+            "medianDuration": 5,
+            "durationDistribution": {
+              "count": 525,
+              "min": 5,
+              "median": 5,
+              "p90": 20,
+              "max": 95
+            },
+            "fragmentationEpisodesPerPlayerHour": 52.66,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 434,
+            "uncertainGapDuration": 255,
+            "terminationReasons": {
+              "base_or_deployment_window": 456,
+              "window_state_change": 62,
+              "end_of_timeline": 7
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "windowed_evidence_accumulation",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "windowSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "supportMargin": {
+              "value": 2,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.42,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.3,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "constrained_dynamic_programming",
+          "pointMetrics": {
+            "totalRows": 35904,
+            "totalValidRows": 35904,
+            "laneClassifiedRows": 10259,
+            "abstainedRows": 25645,
+            "coveragePercent": 28.57,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 1117,
+            "instabilityPercent": 3.11,
+            "stateDistribution": {
+              "lane_core_high": 10259,
+              "base_core": 21587,
+              "lane_ambiguous": 3052,
+              "inter_lane_transit": 1006
+            },
+            "frozenParameters": {
+              "id": "constrained_dynamic_programming",
+              "switchPenalty": 2.2,
+              "impossibleLaneSwitchPenalty": 4,
+              "unknownPenalty": 0.35,
+              "minDuration": 5,
+              "minSupportRatio": 0.4,
+              "maxContradictionRatio": 0.32
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 510,
+            "totalEpisodeDuration": 5980,
+            "coverageDurationPercentOfPlayerTimeline": 16.66,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 510,
+              "min": 5,
+              "median": 7,
+              "p90": 19,
+              "max": 97
+            },
+            "fragmentationEpisodesPerPlayerHour": 51.15,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 443,
+            "uncertainGapDuration": 331,
+            "terminationReasons": {
+              "base": 392,
+              "dp_state_change": 69,
+              "neutral_or_transit": 15,
+              "unknown": 27,
+              "end_of_timeline": 7
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "constrained_dynamic_programming",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "switchPenalty": {
+              "value": 2.2,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "impossibleLaneSwitchPenalty": {
+              "value": 4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "unknownPenalty": {
+              "value": 0.35,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.32,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "replayId": "replay_002",
+      "temporalResolutionSeconds": 1,
+      "rowCount": 22020,
+      "candidates": [
+        {
+          "candidateId": "original_experiment_23_balanced",
+          "pointMetrics": {
+            "totalRows": 22020,
+            "totalValidRows": 22020,
+            "laneClassifiedRows": 19867,
+            "abstainedRows": 2153,
+            "coveragePercent": 90.22,
+            "contradictionEvidenceRows": 12229,
+            "contradictionFlags": {
+              "base_or_deployment_conflict": 11104,
+              "ambiguous_separation_classified_as_lane": 1927,
+              "high_speed_classified_as_lane": 1433
+            },
+            "instabilityRows": 7594,
+            "instabilityPercent": 34.49,
+            "stateDistribution": {
+              "lane_ambiguous": 174,
+              "lane_core_high": 15587,
+              "lane_occupiable": 1927,
+              "lane_approach": 1979,
+              "lane_core_medium": 2353
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 834,
+            "totalEpisodeDuration": 9130,
+            "coverageDurationPercentOfPlayerTimeline": 41.46,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 834,
+              "min": 5,
+              "median": 7,
+              "p90": 15,
+              "max": 717
+            },
+            "fragmentationEpisodesPerPlayerHour": 136.42,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 745,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "state_change": 619,
+              "approach_distance_or_margin": 198,
+              "end_of_timeline": 11,
+              "occupiable_boundary_abstention": 6
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "conservative_point_revision_combined",
+          "pointMetrics": {
+            "totalRows": 22020,
+            "totalValidRows": 22020,
+            "laneClassifiedRows": 6922,
+            "abstainedRows": 15098,
+            "coveragePercent": 31.44,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 632,
+            "instabilityPercent": 2.87,
+            "stateDistribution": {
+              "lane_ambiguous": 1754,
+              "base_core": 12661,
+              "lane_core_high": 6922,
+              "inter_lane_transit": 683
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 150,
+            "totalEpisodeDuration": 2816,
+            "coverageDurationPercentOfPlayerTimeline": 12.79,
+            "medianDuration": 6,
+            "durationDistribution": {
+              "count": 150,
+              "min": 5,
+              "median": 6,
+              "p90": 19,
+              "max": 717
+            },
+            "fragmentationEpisodesPerPlayerHour": 24.54,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 129,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "weak_lane_separation_abstention": 21,
+              "independent_base_precedence": 91,
+              "high_speed_transit_abstention": 5,
+              "state_change": 27,
+              "end_of_timeline": 4,
+              "occupiable_boundary_abstention": 2
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "hysteresis_state_machine",
+          "pointMetrics": {
+            "totalRows": 22020,
+            "totalValidRows": 22020,
+            "laneClassifiedRows": 6922,
+            "abstainedRows": 15098,
+            "coveragePercent": 31.44,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 632,
+            "instabilityPercent": 2.87,
+            "stateDistribution": {
+              "lane_ambiguous": 1754,
+              "base_core": 12661,
+              "lane_core_high": 6922,
+              "inter_lane_transit": 683
+            },
+            "frozenParameters": {
+              "id": "hysteresis_state_machine",
+              "enterSeconds": 4,
+              "uncertainTolerance": 5,
+              "rejoinGap": 4,
+              "minDuration": 5,
+              "minSupportRatio": 0.45,
+              "maxContradictionRatio": 0.28
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 125,
+            "totalEpisodeDuration": 2980,
+            "coverageDurationPercentOfPlayerTimeline": 13.53,
+            "medianDuration": 10,
+            "durationDistribution": {
+              "count": 125,
+              "min": 7,
+              "median": 10,
+              "p90": 23,
+              "max": 717
+            },
+            "fragmentationEpisodesPerPlayerHour": 20.45,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 96,
+            "uncertainGapDuration": 29,
+            "terminationReasons": {
+              "strong_exit_evidence": 118,
+              "end_of_timeline": 7
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "hysteresis_state_machine",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "enterSeconds": {
+              "value": 4,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "uncertainTolerance": {
+              "value": 5,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "rejoinGap": {
+              "value": 4,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.45,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.28,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "windowed_evidence_accumulation",
+          "pointMetrics": {
+            "totalRows": 22020,
+            "totalValidRows": 22020,
+            "laneClassifiedRows": 6922,
+            "abstainedRows": 15098,
+            "coveragePercent": 31.44,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 632,
+            "instabilityPercent": 2.87,
+            "stateDistribution": {
+              "lane_ambiguous": 1754,
+              "base_core": 12661,
+              "lane_core_high": 6922,
+              "inter_lane_transit": 683
+            },
+            "frozenParameters": {
+              "id": "windowed_evidence_accumulation",
+              "windowSeconds": 5,
+              "supportMargin": 2,
+              "minDuration": 5,
+              "minSupportRatio": 0.42,
+              "maxContradictionRatio": 0.3
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 337,
+            "totalEpisodeDuration": 4145,
+            "coverageDurationPercentOfPlayerTimeline": 18.82,
+            "medianDuration": 5,
+            "durationDistribution": {
+              "count": 337,
+              "min": 5,
+              "median": 5,
+              "p90": 15,
+              "max": 715
+            },
+            "fragmentationEpisodesPerPlayerHour": 55.13,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 291,
+            "uncertainGapDuration": 162,
+            "terminationReasons": {
+              "base_or_deployment_window": 291,
+              "window_state_change": 38,
+              "end_of_timeline": 8
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "windowed_evidence_accumulation",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "windowSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "supportMargin": {
+              "value": 2,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.42,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.3,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "constrained_dynamic_programming",
+          "pointMetrics": {
+            "totalRows": 22020,
+            "totalValidRows": 22020,
+            "laneClassifiedRows": 6922,
+            "abstainedRows": 15098,
+            "coveragePercent": 31.44,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 632,
+            "instabilityPercent": 2.87,
+            "stateDistribution": {
+              "lane_ambiguous": 1754,
+              "base_core": 12661,
+              "lane_core_high": 6922,
+              "inter_lane_transit": 683
+            },
+            "frozenParameters": {
+              "id": "constrained_dynamic_programming",
+              "switchPenalty": 2.2,
+              "impossibleLaneSwitchPenalty": 4,
+              "unknownPenalty": 0.35,
+              "minDuration": 5,
+              "minSupportRatio": 0.4,
+              "maxContradictionRatio": 0.32
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 337,
+            "totalEpisodeDuration": 4265,
+            "coverageDurationPercentOfPlayerTimeline": 19.37,
+            "medianDuration": 6,
+            "durationDistribution": {
+              "count": 337,
+              "min": 5,
+              "median": 6,
+              "p90": 13,
+              "max": 717
+            },
+            "fragmentationEpisodesPerPlayerHour": 55.13,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 308,
+            "uncertainGapDuration": 222,
+            "terminationReasons": {
+              "neutral_or_transit": 21,
+              "base": 257,
+              "dp_state_change": 41,
+              "unknown": 11,
+              "end_of_timeline": 7
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "constrained_dynamic_programming",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "switchPenalty": {
+              "value": 2.2,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "impossibleLaneSwitchPenalty": {
+              "value": 4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "unknownPenalty": {
+              "value": 0.35,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.32,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "replayId": "replay_003",
+      "temporalResolutionSeconds": 1,
+      "rowCount": 27360,
+      "candidates": [
+        {
+          "candidateId": "original_experiment_23_balanced",
+          "pointMetrics": {
+            "totalRows": 27360,
+            "totalValidRows": 27360,
+            "laneClassifiedRows": 24620,
+            "abstainedRows": 2740,
+            "coveragePercent": 89.99,
+            "contradictionEvidenceRows": 16523,
+            "contradictionFlags": {
+              "base_or_deployment_conflict": 15074,
+              "ambiguous_separation_classified_as_lane": 2568,
+              "high_speed_classified_as_lane": 1758
+            },
+            "instabilityRows": 9417,
+            "instabilityPercent": 34.42,
+            "stateDistribution": {
+              "lane_core_high": 19213,
+              "lane_occupiable": 2568,
+              "lane_core_medium": 2839,
+              "lane_approach": 2622,
+              "lane_ambiguous": 118
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 943,
+            "totalEpisodeDuration": 11798,
+            "coverageDurationPercentOfPlayerTimeline": 43.12,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 943,
+              "min": 5,
+              "median": 7,
+              "p90": 22,
+              "max": 110
+            },
+            "fragmentationEpisodesPerPlayerHour": 124.13,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 794,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "state_change": 704,
+              "approach_distance_or_margin": 226,
+              "occupiable_boundary_abstention": 5,
+              "end_of_timeline": 8
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "conservative_point_revision_combined",
+          "pointMetrics": {
+            "totalRows": 27360,
+            "totalValidRows": 27360,
+            "laneClassifiedRows": 7226,
+            "abstainedRows": 20134,
+            "coveragePercent": 26.41,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 807,
+            "instabilityPercent": 2.95,
+            "stateDistribution": {
+              "base_core": 17013,
+              "lane_core_high": 7226,
+              "lane_ambiguous": 2274,
+              "inter_lane_transit": 847
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 186,
+            "totalEpisodeDuration": 2775,
+            "coverageDurationPercentOfPlayerTimeline": 10.14,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 186,
+              "min": 5,
+              "median": 7,
+              "p90": 45,
+              "max": 103
+            },
+            "fragmentationEpisodesPerPlayerHour": 24.48,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 147,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "independent_base_precedence": 103,
+              "state_change": 39,
+              "weak_lane_separation_abstention": 33,
+              "high_speed_transit_abstention": 9,
+              "end_of_timeline": 2
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "hysteresis_state_machine",
+          "pointMetrics": {
+            "totalRows": 27360,
+            "totalValidRows": 27360,
+            "laneClassifiedRows": 7226,
+            "abstainedRows": 20134,
+            "coveragePercent": 26.41,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 807,
+            "instabilityPercent": 2.95,
+            "stateDistribution": {
+              "base_core": 17013,
+              "lane_core_high": 7226,
+              "lane_ambiguous": 2274,
+              "inter_lane_transit": 847
+            },
+            "frozenParameters": {
+              "id": "hysteresis_state_machine",
+              "enterSeconds": 4,
+              "uncertainTolerance": 5,
+              "rejoinGap": 4,
+              "minDuration": 5,
+              "minSupportRatio": 0.45,
+              "maxContradictionRatio": 0.28
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 185,
+            "totalEpisodeDuration": 3122,
+            "coverageDurationPercentOfPlayerTimeline": 11.41,
+            "medianDuration": 9,
+            "durationDistribution": {
+              "count": 185,
+              "min": 7,
+              "median": 9,
+              "p90": 47,
+              "max": 104
+            },
+            "fragmentationEpisodesPerPlayerHour": 24.35,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 139,
+            "uncertainGapDuration": 36,
+            "terminationReasons": {
+              "strong_exit_evidence": 182,
+              "end_of_timeline": 2,
+              "uncertainty_tolerance_exceeded": 1
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "hysteresis_state_machine",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "enterSeconds": {
+              "value": 4,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "uncertainTolerance": {
+              "value": 5,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "rejoinGap": {
+              "value": 4,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.45,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.28,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "windowed_evidence_accumulation",
+          "pointMetrics": {
+            "totalRows": 27360,
+            "totalValidRows": 27360,
+            "laneClassifiedRows": 7226,
+            "abstainedRows": 20134,
+            "coveragePercent": 26.41,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 807,
+            "instabilityPercent": 2.95,
+            "stateDistribution": {
+              "base_core": 17013,
+              "lane_core_high": 7226,
+              "lane_ambiguous": 2274,
+              "inter_lane_transit": 847
+            },
+            "frozenParameters": {
+              "id": "windowed_evidence_accumulation",
+              "windowSeconds": 5,
+              "supportMargin": 2,
+              "minDuration": 5,
+              "minSupportRatio": 0.42,
+              "maxContradictionRatio": 0.3
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 415,
+            "totalEpisodeDuration": 4305,
+            "coverageDurationPercentOfPlayerTimeline": 15.73,
+            "medianDuration": 5,
+            "durationDistribution": {
+              "count": 415,
+              "min": 5,
+              "median": 5,
+              "p90": 15,
+              "max": 100
+            },
+            "fragmentationEpisodesPerPlayerHour": 54.63,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 350,
+            "uncertainGapDuration": 174,
+            "terminationReasons": {
+              "base_or_deployment_window": 369,
+              "window_state_change": 44,
+              "end_of_timeline": 2
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "windowed_evidence_accumulation",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "windowSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "supportMargin": {
+              "value": 2,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.42,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.3,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "constrained_dynamic_programming",
+          "pointMetrics": {
+            "totalRows": 27360,
+            "totalValidRows": 27360,
+            "laneClassifiedRows": 7226,
+            "abstainedRows": 20134,
+            "coveragePercent": 26.41,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 807,
+            "instabilityPercent": 2.95,
+            "stateDistribution": {
+              "base_core": 17013,
+              "lane_core_high": 7226,
+              "lane_ambiguous": 2274,
+              "inter_lane_transit": 847
+            },
+            "frozenParameters": {
+              "id": "constrained_dynamic_programming",
+              "switchPenalty": 2.2,
+              "impossibleLaneSwitchPenalty": 4,
+              "unknownPenalty": 0.35,
+              "minDuration": 5,
+              "minSupportRatio": 0.4,
+              "maxContradictionRatio": 0.32
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 423,
+            "totalEpisodeDuration": 4564,
+            "coverageDurationPercentOfPlayerTimeline": 16.68,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 423,
+              "min": 5,
+              "median": 7,
+              "p90": 16,
+              "max": 103
+            },
+            "fragmentationEpisodesPerPlayerHour": 55.68,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 372,
+            "uncertainGapDuration": 237,
+            "terminationReasons": {
+              "base": 324,
+              "neutral_or_transit": 25,
+              "dp_state_change": 58,
+              "unknown": 14,
+              "end_of_timeline": 2
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "constrained_dynamic_programming",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "switchPenalty": {
+              "value": 2.2,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "impossibleLaneSwitchPenalty": {
+              "value": 4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "unknownPenalty": {
+              "value": 0.35,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.32,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "replayId": "replay_004",
+      "temporalResolutionSeconds": 1,
+      "rowCount": 24156,
+      "candidates": [
+        {
+          "candidateId": "original_experiment_23_balanced",
+          "pointMetrics": {
+            "totalRows": 24156,
+            "totalValidRows": 24156,
+            "laneClassifiedRows": 21807,
+            "abstainedRows": 2349,
+            "coveragePercent": 90.28,
+            "contradictionEvidenceRows": 14356,
+            "contradictionFlags": {
+              "ambiguous_separation_classified_as_lane": 2140,
+              "base_or_deployment_conflict": 13107,
+              "high_speed_classified_as_lane": 1531
+            },
+            "instabilityRows": 8106,
+            "instabilityPercent": 33.56,
+            "stateDistribution": {
+              "lane_approach": 2214,
+              "lane_occupiable": 2140,
+              "lane_core_medium": 2327,
+              "lane_core_high": 17340,
+              "lane_ambiguous": 135
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 992,
+            "totalEpisodeDuration": 10134,
+            "coverageDurationPercentOfPlayerTimeline": 41.95,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 992,
+              "min": 5,
+              "median": 7,
+              "p90": 16,
+              "max": 108
+            },
+            "fragmentationEpisodesPerPlayerHour": 147.91,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 874,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "state_change": 721,
+              "approach_distance_or_margin": 255,
+              "occupiable_boundary_abstention": 5,
+              "end_of_timeline": 11
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "conservative_point_revision_combined",
+          "pointMetrics": {
+            "totalRows": 24156,
+            "totalValidRows": 24156,
+            "laneClassifiedRows": 6716,
+            "abstainedRows": 17440,
+            "coveragePercent": 27.8,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 743,
+            "instabilityPercent": 3.08,
+            "stateDistribution": {
+              "lane_ambiguous": 1896,
+              "base_core": 14792,
+              "lane_core_high": 6716,
+              "inter_lane_transit": 752
+            },
+            "frozenParameters": {
+              "maxCoreDistance": 380,
+              "maxOccupancyDistance": 520,
+              "minMargin": 45,
+              "deploymentRadius": 500,
+              "baseCoreRadius": 240,
+              "minStableSeconds": 5,
+              "interruptionTolerance": 3,
+              "envelopeMultiplier": 1.25
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 178,
+            "totalEpisodeDuration": 1961,
+            "coverageDurationPercentOfPlayerTimeline": 8.12,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 178,
+              "min": 5,
+              "median": 7,
+              "p90": 20,
+              "max": 87
+            },
+            "fragmentationEpisodesPerPlayerHour": 26.54,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 156,
+            "uncertainGapDuration": 0,
+            "terminationReasons": {
+              "weak_lane_separation_abstention": 28,
+              "state_change": 45,
+              "independent_base_precedence": 95,
+              "high_speed_transit_abstention": 7,
+              "end_of_timeline": 3
+            }
+          },
+          "resolutionNotes": {
+            "maxCoreDistance": {
+              "value": 380,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "maxOccupancyDistance": {
+              "value": 520,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minMargin": {
+              "value": 45,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "deploymentRadius": {
+              "value": 500,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "baseCoreRadius": {
+              "value": 240,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minStableSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "interruptionTolerance": {
+              "value": 3,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "envelopeMultiplier": {
+              "value": 1.25,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "hysteresis_state_machine",
+          "pointMetrics": {
+            "totalRows": 24156,
+            "totalValidRows": 24156,
+            "laneClassifiedRows": 6716,
+            "abstainedRows": 17440,
+            "coveragePercent": 27.8,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 743,
+            "instabilityPercent": 3.08,
+            "stateDistribution": {
+              "lane_ambiguous": 1896,
+              "base_core": 14792,
+              "lane_core_high": 6716,
+              "inter_lane_transit": 752
+            },
+            "frozenParameters": {
+              "id": "hysteresis_state_machine",
+              "enterSeconds": 4,
+              "uncertainTolerance": 5,
+              "rejoinGap": 4,
+              "minDuration": 5,
+              "minSupportRatio": 0.45,
+              "maxContradictionRatio": 0.28
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 154,
+            "totalEpisodeDuration": 2119,
+            "coverageDurationPercentOfPlayerTimeline": 8.77,
+            "medianDuration": 9,
+            "durationDistribution": {
+              "count": 154,
+              "min": 5,
+              "median": 9,
+              "p90": 28,
+              "max": 89
+            },
+            "fragmentationEpisodesPerPlayerHour": 22.96,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 125,
+            "uncertainGapDuration": 36,
+            "terminationReasons": {
+              "strong_exit_evidence": 147,
+              "end_of_timeline": 5,
+              "uncertainty_tolerance_exceeded": 2
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "hysteresis_state_machine",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "enterSeconds": {
+              "value": 4,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "uncertainTolerance": {
+              "value": 5,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "rejoinGap": {
+              "value": 4,
+              "parameterType": "sample_count_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.45,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.28,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "windowed_evidence_accumulation",
+          "pointMetrics": {
+            "totalRows": 24156,
+            "totalValidRows": 24156,
+            "laneClassifiedRows": 6716,
+            "abstainedRows": 17440,
+            "coveragePercent": 27.8,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 743,
+            "instabilityPercent": 3.08,
+            "stateDistribution": {
+              "lane_ambiguous": 1896,
+              "base_core": 14792,
+              "lane_core_high": 6716,
+              "inter_lane_transit": 752
+            },
+            "frozenParameters": {
+              "id": "windowed_evidence_accumulation",
+              "windowSeconds": 5,
+              "supportMargin": 2,
+              "minDuration": 5,
+              "minSupportRatio": 0.42,
+              "maxContradictionRatio": 0.3
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 380,
+            "totalEpisodeDuration": 3360,
+            "coverageDurationPercentOfPlayerTimeline": 13.91,
+            "medianDuration": 5,
+            "durationDistribution": {
+              "count": 380,
+              "min": 5,
+              "median": 5,
+              "p90": 15,
+              "max": 85
+            },
+            "fragmentationEpisodesPerPlayerHour": 56.66,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 330,
+            "uncertainGapDuration": 179,
+            "terminationReasons": {
+              "base_or_deployment_window": 330,
+              "window_state_change": 45,
+              "end_of_timeline": 5
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "windowed_evidence_accumulation",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "windowSeconds": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "supportMargin": {
+              "value": 2,
+              "parameterType": "distance_parameter",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.42,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.3,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        },
+        {
+          "candidateId": "constrained_dynamic_programming",
+          "pointMetrics": {
+            "totalRows": 24156,
+            "totalValidRows": 24156,
+            "laneClassifiedRows": 6716,
+            "abstainedRows": 17440,
+            "coveragePercent": 27.8,
+            "contradictionEvidenceRows": 0,
+            "contradictionFlags": {},
+            "instabilityRows": 743,
+            "instabilityPercent": 3.08,
+            "stateDistribution": {
+              "lane_ambiguous": 1896,
+              "base_core": 14792,
+              "lane_core_high": 6716,
+              "inter_lane_transit": 752
+            },
+            "frozenParameters": {
+              "id": "constrained_dynamic_programming",
+              "switchPenalty": 2.2,
+              "impossibleLaneSwitchPenalty": 4,
+              "unknownPenalty": 0.35,
+              "minDuration": 5,
+              "minSupportRatio": 0.4,
+              "maxContradictionRatio": 0.32
+            }
+          },
+          "episodeMetrics": {
+            "episodeCount": 388,
+            "totalEpisodeDuration": 3585,
+            "coverageDurationPercentOfPlayerTimeline": 14.84,
+            "medianDuration": 7,
+            "durationDistribution": {
+              "count": 388,
+              "min": 5,
+              "median": 7,
+              "p90": 13,
+              "max": 87
+            },
+            "fragmentationEpisodesPerPlayerHour": 57.85,
+            "shortEpisodesUnderFiveSeconds": 0,
+            "shortEpisodesUnderFifteenSeconds": 354,
+            "uncertainGapDuration": 231,
+            "terminationReasons": {
+              "base": 294,
+              "dp_state_change": 58,
+              "neutral_or_transit": 19,
+              "unknown": 11,
+              "end_of_timeline": 6
+            }
+          },
+          "resolutionNotes": {
+            "id": {
+              "value": "constrained_dynamic_programming",
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "switchPenalty": {
+              "value": 2.2,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "impossibleLaneSwitchPenalty": {
+              "value": 4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "unknownPenalty": {
+              "value": 0.35,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "minDuration": {
+              "value": 5,
+              "parameterType": "physical_time_parameter",
+              "changed": false
+            },
+            "minSupportRatio": {
+              "value": 0.4,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            },
+            "maxContradictionRatio": {
+              "value": 0.32,
+              "parameterType": "categorical_or_weight",
+              "changed": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}
