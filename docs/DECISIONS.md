@@ -169,3 +169,13 @@ Date: 2026-06-28
 Decision: The unified match-state timeline may combine validated player position, alive/dead, economy, damage/healing delta, and objective-state layers for factual per-second state queries across replays 001-004. It must not be used to define fights, evaluate decisions, infer strategic intent, claim semantic lane occupancy, detect rotations, or process replay 005.
 
 Reason: Task 032 successfully joined the validated descriptive layers with deterministic replay-isolated shards and a `match_state_timeline_ready` gate. The layer is intentionally descriptive; it preserves the limitations of each source layer rather than upgrading them into strategic or semantic conclusions.
+
+## DEC-018: Keep Match 91119257 As Manual Landmark Evidence Until Identity Is Resolved
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: The match 91119257 packet may be preserved and used as manual landmark annotation evidence, but it must not be used for demo-video alignment, tracked-player telemetry, world-to-minimap calibration, macro-event validation, or strategic conclusions until the demo/video identity conflict is resolved.
+
+Reason: Task 033 parsed and preserved the packet, but the local candidate demo `samples/partida_006.dem` was not validated as the supplied match: duration did not match the post-game scoreboard duration and roster extraction failed. The final E088 timestamp correction remains a low-confidence unverified resolution until checked against video frames.

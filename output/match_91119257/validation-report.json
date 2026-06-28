@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_validation_report",
+  "matchId": "91119257",
+  "gateResult": "match_91119257_identity_blocked",
+  "confirmed": [
+    "Preserved 6 local packet files with matching SHA-256 checksums.",
+    "Parsed 88 CSV events with required schema.",
+    "Generated 147 landmark observations and 110 canonical landmark groups.",
+    "Candidate demo samples/partida_006.dem opens as a file, but identity is not validated."
+  ],
+  "partiallyConfirmed": [],
+  "contradicted": [
+    "Demo duration 1863s vs scoreboard 30:22.",
+    "Roster extraction failed: Unable to find an entity with index [ 5594 ]"
+  ],
+  "unresolved": [
+    "Video file was not available locally, so manual windows were not verified against frames.",
+    "No defensible video-to-demo transform was established because shared anchors were unavailable.",
+    "Direct match ID and map name were not exposed by the parser path.",
+    "World-to-minimap calibration remains unresolved for manual landmarks without stable demo entity or frame-coordinate correspondence.",
+    "The E088 correction remains unverified against video frames."
+  ],
+  "userAssertedOnly": [
+    "Mid Boss stored at normalized minimap center (0.5, 0.5), vertical_level underground.",
+    "Tunnels and stairs remain unmapped."
+  ],
+  "metrics": {
+    "eventCoverageCount": 88,
+    "eventsSuccessfullyAlignedToDemo": 0,
+    "ambiguousWindows": 1,
+    "correctedTimestamps": [
+      {
+        "eventId": "E088",
+        "original": "23:50-23:55",
+        "resolved": "24:50-24:55",
+        "method": "metadata_likely_correction_preserved_original_unverified_against_video",
+        "confidence": "low_unverified"
+      }
+    ],
+    "canonicalLandmarkCount": 110,
+    "videoOnlyLandmarkCount": 109,
+    "demoResolvedLandmarkCount": 0
+  },
+  "demoValidation": {
+    "candidatePath": "samples/partida_006.dem",
+    "fileExists": true,
+    "opensSuccessfully": true,
+    "parserMetadata": {
+      "firstTickRaw": -1,
+      "effectiveFirstTick": 0,
+      "lastTick": 59600,
+      "tickRate": 32,
+      "durationSeconds": 1863,
+      "expectedScoreboardDurationSeconds": 1822,
+      "matchIdExposed": null,
+      "mapExposed": null
+    },
+    "identityChecks": [
+      {
+        "id": "demo_opens",
+        "status": "pass",
+        "note": "Candidate demo opens through Player."
+      },
+      {
+        "id": "duration_close_to_scoreboard",
+        "status": "fail",
+        "note": "Demo duration 1863s vs scoreboard 30:22."
+      },
+      {
+        "id": "roster_extraction",
+        "status": "fail",
+        "note": "Roster extraction failed: Unable to find an entity with index [ 5594 ]"
+      }
+    ],
+    "roster": [],
+    "trackedPlayer": null,
+    "limitations": [
+      "Roster extraction failed after demo opened: Unable to find an entity with index [ 5594 ]",
+      "Direct match ID and map name were not exposed by this parser path.",
+      "Hero names are not mapped from raw hero IDs in this task."
+    ],
+    "replay005Protection": {
+      "processed": false,
+      "status": "preserved"
+    }
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

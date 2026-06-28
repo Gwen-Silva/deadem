@@ -4,18 +4,18 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `032-build-unified-descriptive-match-state-timeline`
+Latest completed task: `033-process-match-91119257-landmark-packet`
 
-Script: `scripts/build-unified-match-state-timeline.js`
+Script: `scripts/process-match-91119257-landmark-packet.js`
 
 Primary outputs:
 
-- `output/replays/replay_001/match-state-timeline.jsonl`
-- `output/replays/replay_002/match-state-timeline.jsonl`
-- `output/replays/replay_003/match-state-timeline.jsonl`
-- `output/replays/replay_004/match-state-timeline.jsonl`
-- `output/replays/multi-replay-match-state-comparison.json`
-- `output/replays/match-state-timeline-gate.json`
+- `data/evidence/match_91119257/raw/`
+- `output/match_91119257/input-file-manifest.json`
+- `output/match_91119257/event-alignment.json`
+- `output/match_91119257/landmark-observations.json`
+- `output/match_91119257/canonical-landmarks.json`
+- `output/match_91119257/validation-report.json`
 
 ## Current Objective
 
@@ -60,6 +60,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - The damage/healing field discovery gate is `damage_healing_fields_ready_with_limitations`: `m_iHeroDamage`, `m_iObjectiveDamage`, `m_iHeroHealing`, and `m_iSelfHealing` provide reproducible cumulative counter deltas across replays 001-004. Source-target damage logs were not exposed by this task path, so these fields support descriptive deltas and feasibility only, not fight grouping or combat-quality claims.
 - The objective lifecycle gate is `objective_lifecycle_ready_with_limitations`: replays 001-004 each expose 47 stable objective or objective-adjacent entities with consistent structural roles, health/state timelines, lifecycle events, and lane-axis relationships. Guardian, walker, base-structure, Patron, Mid Boss, and urn-related coverage is present, but exact objective-damage attribution and optional phase/protection semantics remain limited.
 - The unified descriptive match-state timeline gate is `match_state_timeline_ready`: replays 001-004 now have per-second, replay-isolated timelines combining player positions, alive/dead intervals, death/respawn events, net worth, damage/healing deltas, and objective states. This layer answers factual state questions only and does not define fights, evaluate decisions, infer strategy, use semantic lane occupancy, or process replay 005.
+- Match 91119257 manual landmark packet was preserved and parsed, but its gate is `match_91119257_identity_blocked`: the local candidate demo `samples/partida_006.dem` opens, yet duration differs from the supplied scoreboard duration and roster extraction failed. The packet currently provides manual landmark evidence only; it does not establish video-demo alignment, world-to-minimap calibration, or tracked-player telemetry.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -70,4 +71,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, and objective lifecycle are now available with limitations. A unified descriptive match-state timeline may combine these validated layers for factual state questions, but must not group fights, judge decisions, infer strategic intent, or process replay 005.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 requires a verified demo/video source before alignment, telemetry, or coordinate calibration can proceed.
