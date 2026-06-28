@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_manual_review_package_manifest",
+  "createdAt": "2026-06-28T23:07:36.618325+00:00",
+  "gate": "manual_visual_review_package_ready",
+  "reviewCount": 24,
+  "csvQuestionRows": 144,
+  "outputs": [
+    "output/match_91119257/manual-review-form.json",
+    "output/match_91119257/manual-review-form.csv",
+    "output/match_91119257/manual-review-instructions.md",
+    "output/match_91119257/manual-review-package-manifest.json",
+    "reports/match-91119257-minimized-human-review-preparation.md"
+  ],
+  "localAssets": {
+    "minimizedReviewSheet": "output-local/match_91119257/annotation-visibility-review/minimized_visibility_review.jpg",
+    "framePathsAreLocal": true,
+    "imagesCommitted": false
+  },
+  "aliasFeasibilitySummary": {
+    "schemaVersion": 1,
+    "kind": "match_91119257_visual_alias_feasibility",
+    "createdAt": "2026-06-28T22:44:35.928016+00:00",
+    "aliases": [
+      {
+        "alias": "Archmother = blue side",
+        "status": "partially_supported",
+        "evidence": [
+          "Blue-themed base/side visuals appear in several frames, but full side identity requires manual confirmation."
+        ],
+        "limitations": [
+          "Do not replace neutral structural IDs."
+        ]
+      },
+      {
+        "alias": "Hidden King = yellow side",
+        "status": "partially_supported",
+        "evidence": [
+          "Yellow-themed side/lane visuals are visible, but canonical side naming requires manual confirmation."
+        ],
+        "limitations": [
+          "Do not replace neutral structural IDs."
+        ]
+      },
+      {
+        "alias": "Green lane continuous across map",
+        "status": "partially_supported",
+        "evidence": [
+          "Green environmental and minimap lane cues are visible in multiple groups."
+        ],
+        "limitations": [
+          "Continuity across the full map is not proven by this visibility audit alone."
+        ]
+      },
+      {
+        "alias": "Blue lane continuous across map",
+        "status": "partially_supported",
+        "evidence": [
+          "Blue lane/side cues are visible in multiple groups."
+        ],
+        "limitations": [
+          "Continuity across the full map is not proven by this visibility audit alone."
+        ]
+      },
+      {
+        "alias": "Yellow lane continuous across map",
+        "status": "partially_supported",
+        "evidence": [
+          "Yellow lane/side cues are visible in multiple groups."
+        ],
+        "limitations": [
+          "Continuity across the full map is not proven by this visibility audit alone."
+        ]
+      },
+      {
+        "alias": "enemy minimap display = red",
+        "status": "directly_supported",
+        "evidence": [
+          "Enemy markers appear red on the minimap/HUD across reviewed frames."
+        ],
+        "limitations": [
+          "This is display color evidence only, not a canonical side or lane identity."
+        ]
+      }
+    ]
+  },
+  "e088Summary": {
+    "schemaVersion": 1,
+    "kind": "match_91119257_e088_visual_review",
+    "createdAt": "2026-06-28T22:44:35.928016+00:00",
+    "sourceAnnotation": {
+      "sourceOrder": 87,
+      "annotationId": "E088",
+      "sourceLabel": "Teleporter do Metrô Inimigo (Leva ao teleporter acima) (No subsolo, entre a Azul e a Verde)",
+      "objectType": "teleporter",
+      "eventGroup": "map_traversal",
+      "elementTeam": "enemy",
+      "laneColor": "blue+green",
+      "mapSide": null,
+      "originalStart": "23:50",
+      "originalEnd": "23:55",
+      "validationStatus": "needs_confirmation",
+      "validationNote": "Timestamp duplicates event 85 and is out of chronological order after 24:40. Likely intended value: 24:50-24:55, but preserve original until verified against video."
+    },
+    "originalCandidate": {
+      "window": "23:50-23:55",
+      "status": "visually_plausible_but_duplicates_E085",
+      "observations": [
+        "Original window shares the same timestamp as E085.",
+        "Frames show surface-level teleporter/nearby context rather than resolving the underground enemy teleporter label."
+      ]
+    },
+    "correctedCandidate": {
+      "window": "24:50-24:55",
+      "status": "visually_supported",
+      "observations": [
+        "Corrected candidate follows E087 in source order and shows a teleporter-sign/indoor context.",
+        "The frame group is visually distinct from the original duplicated E085 window."
+      ]
+    },
+    "neighboringEvidence": {
+      "E087": "E087 shows enemy secret-shop teleporter context immediately before the corrected candidate window.",
+      "E085": "E085 shares the original E088 timestamp and therefore remains a duplicate-timestamp conflict."
+    },
+    "result": "corrected_visually_supported",
+    "sourceRowPreserved": true,
+    "limitations": [
+      "This resolves visual support for the candidate window only; it does not rewrite the CSV or validate demo alignment."
+    ]
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}
