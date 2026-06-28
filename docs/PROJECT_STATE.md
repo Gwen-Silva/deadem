@@ -1,25 +1,23 @@
 # Project State
 
-Last updated: 2026-06-27
+Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `025-build-full-multi-replay-spatial-timeline`
+Latest completed task: `027-optimize-one-second-multi-replay-spatial-extraction`
 
-Script: `scripts/build-full-multi-replay-spatial-timeline.js`
+Script: `scripts/build-one-second-spatial-extraction.js`
 
 Primary outputs:
 
-- `output/replays/replay_002/full-spatial-timeline.json`
-- `output/replays/replay_002/full-spatial-timeline.rows.jsonl`
-- `output/replays/replay_002/spatial-data-quality.json`
-- `output/replays/replay_003/full-spatial-timeline.json`
-- `output/replays/replay_003/full-spatial-timeline.rows.jsonl`
-- `output/replays/replay_003/spatial-data-quality.json`
-- `output/replays/replay_004/full-spatial-timeline.json`
-- `output/replays/replay_004/full-spatial-timeline.rows.jsonl`
-- `output/replays/replay_004/spatial-data-quality.json`
-- `output/replays/full-spatial-timeline-gate.json`
+- `output/replays/replay_001/one-second-spatial/manifest.json`
+- `output/replays/replay_002/one-second-spatial/manifest.json`
+- `output/replays/replay_003/one-second-spatial/manifest.json`
+- `output/replays/replay_004/one-second-spatial/manifest.json`
+- `output/replays/one-second-spatial-profile.json`
+- `output/replays/one-second-spatial-comparison.json`
+- `output/replays/one-second-spatial-gate.json`
+- `output/replays/descriptive-spatial-evidence-schema.json`
 
 ## Current Objective
 
@@ -54,6 +52,8 @@ The current investigation is focused on improving lane occupancy quality before 
 - Structural lane-axis topology derived three neutral physical lane axes from direct structural role fields, stable coordinates, topology graph adjacency, and cross-replay consensus. The gate is `structural_topology_ready_for_lane_mapping`; this permits lane-distance projection only, not occupancy classification.
 - Lane-axis distance mapping projected replay 002 first, then replay 003 and replay 004, onto approved structural lane polylines. The gate is `lane_distance_mapping_ready`; these outputs are geometric features only and do not classify stable occupancy.
 - Full multi-replay spatial timelines were built for replay 002, replay 003, and replay 004 at 5-second resolution using the approved structural lane axes. The gate is `full_spatial_timeline_ready_with_limitations`: later frozen-model tests may use these timelines, but must not evaluate sub-5-second continuity or brief-contact behavior.
+- One-second replay-isolated spatial timelines were built for replays 001-004 using sequential `nextTick()` extraction, per-player JSONL shards, and cached lane-axis geometry. The gate is `one_second_spatial_ready_with_limitations`: all four replays completed with 12-player reconciliation, direct coordinate rows, deterministic replay 002 repeatability, and finite projections, but existing five-second artifacts do not align exactly for all comparable fields. Use the one-second outputs for resolution-controlled frozen-candidate comparison before making any final-holdout decision.
+- The descriptive spatial-evidence layer is now formalized as non-semantic point evidence only: high-confidence lane proximity, ambiguous lane proximity, base/deployment, neutral/unclassified, and missing/invalid. These classes must not be interpreted as semantic occupancy, rotations, or strategic lane assignments.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -68,4 +68,4 @@ The current investigation is focused on improving lane occupancy quality before 
 
 Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
 
-For multi-replay work, the next allowed task may apply frozen occupancy candidates to replays 002-004 without recalibration, using the 5-second spatial timelines and their documented limitations. Do not run transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing without a new fully specified pending task.
+For multi-replay work, the next allowed task may compare the already frozen occupancy candidates on one-second spatial timelines against the prior five-second behavior for replays 001-004. Do not recalibrate, run transition detection, combat, objective-lifecycle, economy, macro analysis, or replay 005 processing without a new fully specified pending task and pre-registered final-holdout criteria.

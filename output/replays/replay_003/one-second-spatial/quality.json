@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "kind": "one_second_spatial_quality",
+  "replayId": "replay_003",
+  "sourceReplay": "samples/partida_003.dem",
+  "temporalResolutionSeconds": 1,
+  "tickDomain": {
+    "effectiveFirstTick": 0,
+    "lastTick": 145912,
+    "tickRate": 64,
+    "durationSeconds": 2279
+  },
+  "playerReconciliation": {
+    "playerCount": 12,
+    "stablePlayerIdentities": true,
+    "players": [
+      {
+        "playerId": "76561199245906909",
+        "name": "CreativityExist",
+        "heroId": 32,
+        "team": 2,
+        "controllerHandle": 7831564,
+        "observations": 10
+      },
+      {
+        "playerId": "76561199212278850",
+        "name": "davidedsf09",
+        "heroId": 6,
+        "team": 2,
+        "controllerHandle": 8650757,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198969534832",
+        "name": "GALO DA MADRUGADA",
+        "heroId": -1,
+        "team": 2,
+        "controllerHandle": 14680070,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198168889366",
+        "name": "Luug",
+        "heroId": 33,
+        "team": 2,
+        "controllerHandle": 14041092,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198150190084",
+        "name": "SaltySweet",
+        "heroId": -34,
+        "team": 2,
+        "controllerHandle": 7110658,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198278394291",
+        "name": "Styyl",
+        "heroId": -4,
+        "team": 2,
+        "controllerHandle": 1409034,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198277999856",
+        "name": "Aresius",
+        "heroId": -13,
+        "team": 3,
+        "controllerHandle": 15613955,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198147057707",
+        "name": "ESutil",
+        "heroId": 1,
+        "team": 3,
+        "controllerHandle": 7585801,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198217889796",
+        "name": "Pepsi Man",
+        "heroId": 40,
+        "team": 3,
+        "controllerHandle": 11042829,
+        "observations": 10
+      },
+      {
+        "playerId": "76561198881608772",
+        "name": "snowdays",
+        "heroId": 25,
+        "team": 3,
+        "controllerHandle": 12419083,
+        "observations": 10
+      },
+      {
+        "playerId": "76561199011179930",
+        "name": "snowfall",
+        "heroId": -41,
+        "team": 3,
+        "controllerHandle": 11665415,
+        "observations": 10
+      },
+      {
+        "playerId": "76561199279672742",
+        "name": "zYule",
+        "heroId": -18,
+        "team": 3,
+        "controllerHandle": 11517960,
+        "observations": 10
+      }
+    ]
+  },
+  "aggregate": {
+    "expectedRows": 27360,
+    "directRows": 27360,
+    "carriedRows": 0,
+    "interpolatedRows": 0,
+    "missingRows": 0,
+    "directPercent": 100,
+    "missingPercent": 0,
+    "projectionCoveragePercent": 100,
+    "impossibleJumpCount": 0,
+    "speed": {
+      "count": 27348,
+      "min": 0,
+      "median": 227.61,
+      "p90": 859.07,
+      "max": 1373.8
+    },
+    "nearestLaneDistance": {
+      "count": 27360,
+      "min": 1.18,
+      "median": 154.75,
+      "p90": 270.43,
+      "max": 488.58
+    },
+    "separationMargin": {
+      "count": 27360,
+      "min": 0.02,
+      "median": 146.67,
+      "p90": 385.08,
+      "max": 640.93
+    },
+    "evidenceClassCounts": {
+      "base_or_deployment": 17013,
+      "high_confidence_lane_proximity": 7503,
+      "neutral_or_unclassified": 1432,
+      "ambiguous_lane_proximity": 1412
+    }
+  },
+  "players": [
+    {
+      "playerId": "76561199245906909",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 1.6875,
+        "y": 908.125,
+        "z": 143.84375,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 1000,
+        "y": 304,
+        "z": 192.03125,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561199212278850",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 479.90625,
+        "y": 530.0625,
+        "z": 397.8125,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 942.78125,
+        "y": 35.6875,
+        "z": 376.03125,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198969534832",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 689.6875,
+        "y": 119.65625,
+        "z": 191.8125,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 467.03125,
+        "y": 840.71875,
+        "z": 609.625,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198168889366",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 473.40625,
+        "y": 515.0625,
+        "z": 431.65625,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 349.09375,
+        "y": 461.46875,
+        "z": 248,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198150190084",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 573.34375,
+        "y": 590.21875,
+        "z": 412.09375,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 559.1875,
+        "y": 501.53125,
+        "z": 651.46875,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198278394291",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 0,
+        "y": 809.25,
+        "z": 219.34375,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 132.75,
+        "y": 732.25,
+        "z": 720.03125,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198277999856",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 1000.65625,
+        "y": 53.84375,
+        "z": 280.6875,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 992,
+        "y": 8,
+        "z": 191.84375,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198147057707",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 538.09375,
+        "y": 655.40625,
+        "z": 376.40625,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 64,
+        "y": 984,
+        "z": 191.84375,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198217889796",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 536.59375,
+        "y": 647.65625,
+        "z": 377.71875,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 0,
+        "y": 984,
+        "z": 192.03125,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561198881608772",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 497.71875,
+        "y": 752.71875,
+        "z": 384.375,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 0,
+        "y": 45.4375,
+        "z": 192.1875,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561199011179930",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 1003.5,
+        "y": 54.6875,
+        "z": 298.15625,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 32,
+        "y": 8,
+        "z": 192.03125,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    },
+    {
+      "playerId": "76561199279672742",
+      "expectedTimelineRows": 2280,
+      "rowsWithDirectCoordinates": 2280,
+      "rowsMissing": 0,
+      "impossibleJumpCount": 0,
+      "firstValidPosition": {
+        "x": 490.78125,
+        "y": 732.84375,
+        "z": 425.25,
+        "sourceTick": 1,
+        "ageSeconds": 0,
+        "quality": "direct"
+      },
+      "lastValidPosition": {
+        "x": 64,
+        "y": 45.4375,
+        "z": 192.1875,
+        "sourceTick": 145856,
+        "ageSeconds": 0,
+        "quality": "direct"
+      }
+    }
+  ],
+  "validation": {
+    "uniquePlayerTimeKeys": true,
+    "chronologicalOrdering": true,
+    "stablePlayerIdentities": true,
+    "finiteProjectionForDirectCoordinates": true,
+    "noReplay005Processing": true,
+    "noInterpolation": true,
+    "noCarryForward": true
+  }
+}

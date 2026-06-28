@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "kind": "one_second_spatial_gate",
+  "gateResult": "one_second_spatial_ready_with_limitations",
+  "evidence": {
+    "allSucceeded": true,
+    "allExactlyAligned": false,
+    "allComparable": true,
+    "boundedMissing": true,
+    "repeatable": true,
+    "profileLargestContributors": [
+      {
+        "name": "playerReconciliationMs",
+        "ms": 4317.46
+      },
+      {
+        "name": "entityUpdateMs",
+        "ms": 838.15
+      },
+      {
+        "name": "replayParsingMs",
+        "ms": 743.07
+      },
+      {
+        "name": "timelineMaterializationMs",
+        "ms": 19.33
+      },
+      {
+        "name": "serializationMs",
+        "ms": 11.96
+      },
+      {
+        "name": "laneProjectionMs",
+        "ms": 7.03
+      }
+    ]
+  },
+  "allowedDownstreamUse": [
+    "resolution-controlled frozen occupancy candidate comparison",
+    "descriptive point-level spatial evidence",
+    "coordinate and projection quality analysis"
+  ],
+  "prohibitedConclusions": [
+    "semantic lane occupancy",
+    "reliable occupancy episodes",
+    "transitions or rotations",
+    "strategic interpretation",
+    "replay 005 conclusions"
+  ],
+  "replay005Readiness": {
+    "status": "not_ready_no_candidate",
+    "reason": "One-second extraction alone does not freeze a final holdout hypothesis or pass/fail criteria."
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

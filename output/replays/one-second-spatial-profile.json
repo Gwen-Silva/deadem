@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "kind": "one_second_spatial_profile",
+  "replayId": "replay_002",
+  "profiledSeconds": 121,
+  "rowCount": 1452,
+  "phases": {
+    "replayParsingMs": 743.07,
+    "playerReconciliationMs": 4317.46,
+    "entityUpdateMs": 838.15,
+    "timelineMaterializationMs": 19.33,
+    "laneProjectionMs": 7.03,
+    "serializationMs": 11.96,
+    "totalMs": 5946.49
+  },
+  "peakMemoryRssBytes": 662298624,
+  "estimatedFullReplayMs": 19124.58,
+  "largestContributors": [
+    {
+      "name": "playerReconciliationMs",
+      "ms": 4317.46
+    },
+    {
+      "name": "entityUpdateMs",
+      "ms": 838.15
+    },
+    {
+      "name": "replayParsingMs",
+      "ms": 743.07
+    },
+    {
+      "name": "timelineMaterializationMs",
+      "ms": 19.33
+    },
+    {
+      "name": "serializationMs",
+      "ms": 11.96
+    },
+    {
+      "name": "laneProjectionMs",
+      "ms": 7.03
+    }
+  ],
+  "optimizationFindings": [
+    "Sequential nextTick processing parses each replay once and avoids one ParserSession per sampled second.",
+    "Rows are streamed to per-player shards instead of retained as one expanded replay object.",
+    "Lane polyline segment lengths are precomputed once per run.",
+    "Serialization is batched per sampled second and written to open shard handles."
+  ],
+  "measuredPotentialIssues": {
+    "repeatedParsing": 1,
+    "repeatedGeometryCalculations": "lane segment setup cached; projection still computed per direct coordinate",
+    "synchronousFileWrites": "optimized pipeline uses async append streams",
+    "largeInMemoryObjectDuplication": "optimized pipeline retains summaries and current player state only"
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

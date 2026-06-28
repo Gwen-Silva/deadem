@@ -109,3 +109,13 @@ Date: 2026-06-27
 Decision: Do not continue autonomous lane-episode architecture tuning on the current single-replay diagnostic evidence.
 
 Reason: Task 014 tested hysteresis, interval evidence accumulation, constrained dynamic programming, and annotated original episodes. The tested architectures preserved point-level gains only by retaining abstention, but did not recover usable episode continuity and coverage. Selecting the next path now requires a methodological decision or new independent evidence, not more tuning against observed diagnostics.
+
+## DEC-012: Treat Descriptive Spatial Evidence As Non-Semantic Point Evidence
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: The supported spatial layer is limited to physical lane-axis proximity, separation, and base/deployment exclusion at individual timestamps.
+
+Reason: Task 026 showed cross-replay consistency for point-level proximity evidence, while semantic occupancy, reliable episodes, and transitions remain unsupported. Task 027 removed the five-second temporal confound for replays 001-004 with one-second spatial extraction, but did not validate semantic lane occupancy.

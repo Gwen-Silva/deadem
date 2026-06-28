@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "kind": "one_second_spatial_manifest",
+  "replayId": "replay_001",
+  "sourceReplay": "samples/partida_001.dem",
+  "temporalResolutionSeconds": 1,
+  "alignmentRule": "canonical game second s maps to round(effectiveFirstTick + s * tickRate); sequential nextTick advances until current tick is at or after target tick",
+  "missingRowPolicy": "one row is emitted for each stable player and canonical second; missing coordinates are explicit rows with position.quality = missing",
+  "carriedForwardPolicy": "primary one-second comparison dataset does not carry forward or interpolate coordinates",
+  "shards": [
+    {
+      "playerId": "76561198986058008",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198986058008.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4969215,
+      "sha256": "eec2d10a412d13c566929150d1580db064619de8053a502a4f29d3343eadccf9"
+    },
+    {
+      "playerId": "76561198083279289",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198083279289.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4968204,
+      "sha256": "599353040f7f4631603379a9042c1fa3b38f2633ba9cb86d6d03ade6dbc15c9a"
+    },
+    {
+      "playerId": "76561199506813146",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561199506813146.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4970627,
+      "sha256": "dfeb7fbd80d2ce672b18ba97f0c669a144cd50d5064782e162c2a23541333192"
+    },
+    {
+      "playerId": "76561198412703766",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198412703766.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4960896,
+      "sha256": "7f9c86eae1ce68ad1500279ab3fa598c7ef6dde3ece247324d04f502b7c36ffb"
+    },
+    {
+      "playerId": "76561198050549690",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198050549690.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4963090,
+      "sha256": "fd80c081657d598ab73788676aa11ced98c80f1bf723bf499e55368188cb6b44"
+    },
+    {
+      "playerId": "76561198400571299",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198400571299.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4968959,
+      "sha256": "3c4aa4d5b691e64fcaf3fe6ba274420f6aed2a804e2bd8c0264d3f521187947d"
+    },
+    {
+      "playerId": "76561198015233346",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198015233346.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4959790,
+      "sha256": "b8c942010ca74c5f2add46740c8f0849e6331aa8f88af4091c62dd3d79d83fbd"
+    },
+    {
+      "playerId": "76561198845300704",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198845300704.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4963611,
+      "sha256": "a0960f4cca86c9b70a1cb99f73098706eec74e0b8e8c016b926372099f8058ab"
+    },
+    {
+      "playerId": "76561198016710478",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198016710478.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4967639,
+      "sha256": "0846e3839d4afea11749b910cf97ef95988f4ed4ad63154f9bfd01125d165dbf"
+    },
+    {
+      "playerId": "76561198005956706",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198005956706.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4967266,
+      "sha256": "0c9fe2e26e9ce932d34fa5358e9e4eda6f73b6d14ea0e41ef17634acfe3f459b"
+    },
+    {
+      "playerId": "76561198038807242",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198038807242.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4973772,
+      "sha256": "d80ca631d368b22529bc87dc6a1e7c9c692142ba79807c3e28d1d3b76338c7d2"
+    },
+    {
+      "playerId": "76561198016921636",
+      "file": "output/replays/replay_001/one-second-spatial/player_76561198016921636.rows.jsonl",
+      "rowCount": 2992,
+      "sizeBytes": 4969475,
+      "sha256": "124447e416db9264f566d3183e3e5f863c8d9c5bf98477e24d3c297a3bea1a07"
+    }
+  ],
+  "rowCount": 35904,
+  "shardSetSha256": "805e8d530239fa4700103108d20cbfc34994e489e693272852bce50e45d34c0f",
+  "extractionCode": "scripts/build-one-second-spatial-extraction.js",
+  "geometryProfile": "topology_profile/structural_lane_axes_schema_653ba0e9_group_a",
+  "startGameTimeSeconds": 0,
+  "endGameTimeSeconds": 2991,
+  "tickDomain": {
+    "firstTickRaw": -1,
+    "effectiveFirstTick": 0,
+    "lastTick": 191431,
+    "tickRate": 64,
+    "durationSeconds": 2991
+  },
+  "qualityFile": "output/replays/replay_001/one-second-spatial/quality.json",
+  "validation": {
+    "uniquePlayerTimeKeys": true,
+    "chronologicalOrdering": true,
+    "stablePlayerIdentities": true,
+    "finiteProjectionForDirectCoordinates": true,
+    "noReplay005Processing": true,
+    "noInterpolation": true,
+    "noCarryForward": true
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "runtime": {
+    "loadMs": 1002.36,
+    "entityUpdateMs": 24240.56,
+    "timelineMaterializationMs": 236.17,
+    "laneProjectionMs": 110.76,
+    "serializationMs": 489.77,
+    "totalSeconds": 30.36,
+    "peakMemoryRssBytes": 1081098240
+  }
+}

@@ -1,1 +1,1 @@
-reports/frozen-occupancy-generalization.md
+reports/one-second-multi-replay-spatial-extraction.md

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "kind": "descriptive_spatial_evidence_schema",
+  "rowShape": {
+    "replayId": "string",
+    "playerId": "string",
+    "gameTimeSeconds": "number",
+    "nearestPhysicalLane": "lane_axis_1|lane_axis_2|lane_axis_3|null",
+    "nearestDistance": "number|null",
+    "secondNearestDistance": "number|null",
+    "separationMargin": "number|null",
+    "baseExcluded": "boolean",
+    "deploymentExcluded": "boolean",
+    "evidenceClass": "high_confidence_lane_proximity|ambiguous_lane_proximity|base_or_deployment|neutral_or_unclassified|missing_or_invalid",
+    "allowedInterpretation": "physical proximity evidence",
+    "prohibitedInterpretations": [
+      "semantic occupancy",
+      "rotation",
+      "strategic assignment"
+    ]
+  },
+  "classes": [
+    {
+      "evidenceClass": "high_confidence_lane_proximity",
+      "rule": "direct coordinate, not base/deployment, nearestDistance <= 380, separationMargin >= 90",
+      "allowedInterpretation": "The player coordinate is physically close to a structural lane axis with strong separation from alternatives.",
+      "prohibitedInterpretations": [
+        "semantic occupancy",
+        "rotation",
+        "strategic assignment"
+      ]
+    },
+    {
+      "evidenceClass": "ambiguous_lane_proximity",
+      "rule": "direct coordinate, not base/deployment, nearestDistance <= 520, separationMargin >= 45, but not high confidence",
+      "allowedInterpretation": "The player coordinate is near a lane axis but geometric separation is not strong enough for high-confidence proximity.",
+      "prohibitedInterpretations": [
+        "semantic occupancy",
+        "rotation",
+        "strategic assignment"
+      ]
+    },
+    {
+      "evidenceClass": "base_or_deployment",
+      "rule": "direct coordinate near team base, enemy base, or deployment evidence",
+      "allowedInterpretation": "Base/deployment geometry excludes high-confidence lane proximity.",
+      "prohibitedInterpretations": [
+        "lane occupancy",
+        "rotation",
+        "strategic assignment"
+      ]
+    },
+    {
+      "evidenceClass": "neutral_or_unclassified",
+      "rule": "direct coordinate without enough lane-axis proximity or separation evidence",
+      "allowedInterpretation": "No conservative lane-proximity evidence is available for this point.",
+      "prohibitedInterpretations": [
+        "semantic occupancy",
+        "rotation",
+        "strategic assignment"
+      ]
+    },
+    {
+      "evidenceClass": "missing_or_invalid",
+      "rule": "missing or invalid coordinate",
+      "allowedInterpretation": "No spatial evidence is available.",
+      "prohibitedInterpretations": [
+        "semantic occupancy",
+        "rotation",
+        "strategic assignment"
+      ]
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}
