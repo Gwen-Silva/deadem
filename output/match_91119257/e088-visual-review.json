@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_e088_visual_review",
+  "createdAt": "2026-06-28T22:44:35.928016+00:00",
+  "sourceAnnotation": {
+    "sourceOrder": 87,
+    "annotationId": "E088",
+    "sourceLabel": "Teleporter do Metrô Inimigo (Leva ao teleporter acima) (No subsolo, entre a Azul e a Verde)",
+    "objectType": "teleporter",
+    "eventGroup": "map_traversal",
+    "elementTeam": "enemy",
+    "laneColor": "blue+green",
+    "mapSide": null,
+    "originalStart": "23:50",
+    "originalEnd": "23:55",
+    "validationStatus": "needs_confirmation",
+    "validationNote": "Timestamp duplicates event 85 and is out of chronological order after 24:40. Likely intended value: 24:50-24:55, but preserve original until verified against video."
+  },
+  "originalCandidate": {
+    "window": "23:50-23:55",
+    "status": "visually_plausible_but_duplicates_E085",
+    "observations": [
+      "Original window shares the same timestamp as E085.",
+      "Frames show surface-level teleporter/nearby context rather than resolving the underground enemy teleporter label."
+    ]
+  },
+  "correctedCandidate": {
+    "window": "24:50-24:55",
+    "status": "visually_supported",
+    "observations": [
+      "Corrected candidate follows E087 in source order and shows a teleporter-sign/indoor context.",
+      "The frame group is visually distinct from the original duplicated E085 window."
+    ]
+  },
+  "neighboringEvidence": {
+    "E087": "E087 shows enemy secret-shop teleporter context immediately before the corrected candidate window.",
+    "E085": "E085 shares the original E088 timestamp and therefore remains a duplicate-timestamp conflict."
+  },
+  "result": "corrected_visually_supported",
+  "sourceRowPreserved": true,
+  "limitations": [
+    "This resolves visual support for the candidate window only; it does not rewrite the CSV or validate demo alignment."
+  ]
+}

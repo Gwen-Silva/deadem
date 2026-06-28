@@ -4,21 +4,21 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `037-extract-complete-match-91119257-annotation-frame-set`
+Latest completed task: `038-validate-match-91119257-annotation-frame-visibility`
 
-Script/package: `scripts/extract-match-91119257-annotation-frame-set.py`
+Script/package: `scripts/validate-match-91119257-annotation-visibility.py`
 
 Primary outputs:
 
-- `output/match_91119257/annotation-frame-requests.json`
-- `output/match_91119257/annotation-frame-manifest.jsonl`
-- `output/match_91119257/annotation-frame-summary.json`
-- `output/match_91119257/video-seek-audit.json`
-- `output/match_91119257/wpf-opencv-frame-comparison.json`
-- `output/match_91119257/contact-sheet-manifest.json`
-- `output/match_91119257/annotation-frame-quality.json`
-- `output/match_91119257/annotation-frame-extraction-gate.json`
-- `reports/match-91119257-complete-annotation-frame-extraction.md`
+- `output/match_91119257/annotation-visibility-audit.json`
+- `output/match_91119257/annotation-visibility-summary.json`
+- `output/match_91119257/ocr-feasibility.json`
+- `output/match_91119257/video-roi-proposals.json`
+- `output/match_91119257/e088-visual-review.json`
+- `output/match_91119257/visual-alias-feasibility.json`
+- `output/match_91119257/minimized-manual-review.json`
+- `output/match_91119257/annotation-visibility-gate.json`
+- `reports/match-91119257-annotation-frame-visibility.md`
 
 ## Current Objective
 
@@ -68,6 +68,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Video pipeline MVP gate is `video_pipeline_dependency_blocked`: an isolated Python package was created under `python/deadem/video_pipeline/` with schemas, OpenCV-based metadata/frame extraction, annotation loaders, ROI profiles, optional lazy detector/OCR/VLM adapters, IoU fallback tracking, CLI, and tests. The current machine does not expose a usable Python runtime for validation: the PATH `python.exe` alias is inaccessible, and the only discovered executable Python is Unity's embedded Python 3.7.4 without required packages. Install Python >=3.10 plus the base extras before running the MVP.
 - Video pipeline runtime gate is `video_pipeline_runtime_ready`: CPython 3.12.10 x64 was installed after reboot, `.venv-video` was created, base/dev dependencies were installed without heavy optional packages, 12 video-pipeline tests passed, synthetic regular/timestamp extraction succeeded, and the match 91119257 MP4 opened through OpenCV with 8 deduplicated WPF-comparable sample frames extracted under `output-local/`.
 - Match 91119257 complete annotation frame extraction gate is `annotation_frame_set_ready`: the preserved CSV hash matches the input packet, exactly 88 unique annotations were loaded, 446 OpenCV frame requests were generated, 446 frame rows decoded with zero failed or out-of-tolerance requests, a representative deterministic rerun matched, and local contact sheets were generated under `output-local/`. These frames are review-ready evidence only; they do not validate E088, lane colors, side aliases, landmarks, video-demo alignment, OCR text, or semantic gameplay claims.
+- Match 91119257 annotation visibility gate is `annotation_visibility_requires_manual_review`: all 88 annotation frame groups are usable, the game clock and minimap are visible and manually legible/usable in the recording layout, and controlled OCR planning is feasible for the game-clock ROI only. The audit found 37 directly visible annotations, 46 visually probable annotations, 5 ambiguous annotations, and no contradictions. E088's corrected 24:50-24:55 candidate is visually supported relative to the duplicated original 23:50-23:55 window, but the source row was not rewritten. Enemy minimap red display is directly supported as display-color evidence; Archmother/Hidden King and Green/Blue/Yellow lane aliases remain only partially supported and require the minimized 24-item review packet before alias promotion.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -78,4 +79,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set ready for visual visibility review, but video-demo alignment, world-to-minimap calibration, E088 verification, annotation-to-entity matching, and canonical side/lane aliases remain blocked by parser telemetry instability after entity 5594 and by the lack of a completed visual review. The Python video pipeline base runtime is validated; do not install OCR/YOLO/VLM unless a later task proves they are needed.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set and a visibility audit, but side/lane aliases still require minimized manual review, broad OCR is not justified, video-demo alignment remains blocked by parser telemetry instability after entity 5594, and no semantic gameplay conclusions are authorized. A future OCR task should be limited to controlled game-clock ROI validation unless manual review expands the need.

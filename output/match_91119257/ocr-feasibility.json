@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_ocr_feasibility",
+  "createdAt": "2026-06-28T22:44:35.928016+00:00",
+  "ocrInstalled": false,
+  "recommendations": [
+    {
+      "regionId": "game_clock",
+      "recommended": true,
+      "visibilityCoverage": "88/88 groups show a visible, manually legible top-center clock at full resolution.",
+      "approximateRegion": "top center HUD",
+      "textSize": "medium",
+      "contrast": "good",
+      "backgroundVariability": "low",
+      "expectedDifficulty": "low_to_medium",
+      "preprocessingMayHelp": [
+        "crop",
+        "upscale_2x",
+        "contrast"
+      ],
+      "manualReadingAlreadySuffices": true,
+      "materialBenefit": "Can support video/demo synchronization if parser telemetry is later recovered."
+    },
+    {
+      "regionId": "player_or_structure_names",
+      "recommended": false,
+      "visibilityCoverage": "Intermittent and small; labels appear only in some objective or target views.",
+      "approximateRegion": "variable near target or top/right HUD",
+      "textSize": "small",
+      "contrast": "mixed",
+      "backgroundVariability": "high",
+      "expectedDifficulty": "high",
+      "preprocessingMayHelp": [
+        "crop",
+        "upscale_4x",
+        "contrast"
+      ],
+      "manualReadingAlreadySuffices": false,
+      "materialBenefit": "Not recommended before manual ROI triage."
+    },
+    {
+      "regionId": "structure_health_values",
+      "recommended": false,
+      "visibilityCoverage": "Health bars are visible for several objectives, but numeric health values are not consistently visible.",
+      "approximateRegion": "near target or top HUD depending on camera",
+      "textSize": "small",
+      "contrast": "mixed",
+      "backgroundVariability": "high",
+      "expectedDifficulty": "high",
+      "preprocessingMayHelp": [
+        "crop",
+        "upscale_4x"
+      ],
+      "manualReadingAlreadySuffices": false,
+      "materialBenefit": "Limited without entity telemetry recovery."
+    },
+    {
+      "regionId": "other_hud_labels",
+      "recommended": false,
+      "visibilityCoverage": "Visible but task-specific; includes spectator text, death recap, and shop/objective labels.",
+      "approximateRegion": "right side and target-dependent regions",
+      "textSize": "small_to_medium",
+      "contrast": "mixed",
+      "backgroundVariability": "high",
+      "expectedDifficulty": "medium_to_high",
+      "preprocessingMayHelp": [
+        "crop",
+        "contrast"
+      ],
+      "manualReadingAlreadySuffices": false,
+      "materialBenefit": "Should wait for a concrete OCR question."
+    }
+  ],
+  "overallDecision": "OCR is justified only for controlled game-clock ROI validation, not broad HUD interpretation."
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_video_roi_proposals",
+  "createdAt": "2026-06-28T22:44:35.928016+00:00",
+  "resolutionProfile": {
+    "width": 2048,
+    "height": 980
+  },
+  "coordinateSpace": "normalized",
+  "rois": [
+    {
+      "regionId": "game_clock",
+      "bbox": {
+        "x1": 0.486,
+        "y1": 0.015,
+        "x2": 0.516,
+        "y2": 0.045
+      },
+      "evidenceFrameCount": 88,
+      "confidence": "high",
+      "limitations": [
+        "Valid for this recording layout only.",
+        "Clock is video HUD time, not demo canonical time."
+      ]
+    },
+    {
+      "regionId": "minimap",
+      "bbox": {
+        "x1": 0.66,
+        "y1": 0.45,
+        "x2": 0.88,
+        "y2": 0.9
+      },
+      "evidenceFrameCount": 88,
+      "confidence": "high",
+      "limitations": [
+        "Large minimap is consistently visible, but map-marker semantics are not interpreted."
+      ]
+    },
+    {
+      "regionId": "team_status",
+      "bbox": {
+        "x1": 0.25,
+        "y1": 0.0,
+        "x2": 0.75,
+        "y2": 0.13
+      },
+      "evidenceFrameCount": 88,
+      "confidence": "medium",
+      "limitations": [
+        "Top HUD is visible, but hero icons, souls, and death state are not OCR-validated."
+      ]
+    },
+    {
+      "regionId": "target_health_bar",
+      "bbox": {
+        "x1": 0.18,
+        "y1": 0.1,
+        "x2": 0.56,
+        "y2": 0.25
+      },
+      "evidenceFrameCount": 40,
+      "confidence": "low",
+      "limitations": [
+        "Target bars are camera-dependent and not fixed enough for universal extraction."
+      ]
+    },
+    {
+      "regionId": "target_name",
+      "bbox": {
+        "x1": 0.18,
+        "y1": 0.1,
+        "x2": 0.56,
+        "y2": 0.25
+      },
+      "evidenceFrameCount": 30,
+      "confidence": "low",
+      "limitations": [
+        "Target labels are variable and small; use only after manual ROI triage."
+      ]
+    }
+  ],
+  "universalScopeWarning": "These ROIs apply only to this 2048x980 recording configuration and should not be generalized."
+}
