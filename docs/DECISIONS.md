@@ -129,3 +129,13 @@ Date: 2026-06-28
 Decision: The frozen occupancy candidates may support descriptive point-level proximity evidence, but must not be used for reliable occupancy episodes, lane transitions, rotations, or replay 005 final-holdout claims.
 
 Reason: Task 028 found small point-coverage deltas but material episode-count and fragmentation deltas when moving from five-second to one-second timelines. The comparison remains useful for resolution sensitivity, not semantic validation.
+
+## DEC-014: Freeze Semantic Lane-Occupancy Episodes And Pivot To Independent Event Layers
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: Autonomous work on semantic lane-occupancy episodes, transition detection, rotation detection, and further occupancy architecture search is frozen. The approved spatial output is a factual point-level evidence layer: direct coordinates, physical lane-axis projections, nearest-lane distance, separation evidence, base/deployment exclusion, movement measurements, and resolution-sensitivity analysis. The project should pivot to independent event layers that do not require occupancy semantics.
+
+Reason: One-second extraction removed the main technical resolution confound, but task 028 showed episode count and fragmentation remain materially architecture- and resolution-sensitive. Independent event layers such as death, assist, respawn, damage, and healing can be investigated without claiming semantic lane occupancy or using replay 005.

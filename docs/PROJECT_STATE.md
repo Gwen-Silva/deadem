@@ -4,21 +4,24 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `028-compare-frozen-occupancy-on-one-second-timelines`
+Latest completed task: `029-extract-multi-replay-death-assist-respawn-events`
 
-Script: `scripts/compare-frozen-occupancy-one-second.js`
+Script: `scripts/extract-multi-replay-death-events.js`
 
 Primary outputs:
 
-- `output/replays/frozen-occupancy-one-second-results.json`
-- `output/replays/frozen-occupancy-one-second-resolution-comparison.json`
-- `output/replays/frozen-occupancy-one-second-gate.json`
+- `output/replays/replay_001/canonical-death-events.json`
+- `output/replays/replay_002/canonical-death-events.json`
+- `output/replays/replay_003/canonical-death-events.json`
+- `output/replays/replay_004/canonical-death-events.json`
+- `output/replays/multi-replay-death-event-comparison.json`
+- `output/replays/death-event-gate.json`
 
 ## Current Objective
 
 Build reliable derived datasets from a five-replay local study while preserving replay-specific output isolation and final-holdout protection.
 
-The current investigation is focused on improving lane occupancy quality before using it to detect rotations, combat context, or macro events.
+The current investigation has frozen semantic lane-occupancy episodes and is pivoting to independent descriptive event layers that do not require occupancy semantics.
 
 ## Trusted Outputs
 
@@ -50,18 +53,17 @@ The current investigation is focused on improving lane occupancy quality before 
 - One-second replay-isolated spatial timelines were built for replays 001-004 using sequential `nextTick()` extraction, per-player JSONL shards, and cached lane-axis geometry. The gate is `one_second_spatial_ready_with_limitations`: all four replays completed with 12-player reconciliation, direct coordinate rows, deterministic replay 002 repeatability, and finite projections, but existing five-second artifacts do not align exactly for all comparable fields. Use the one-second outputs for resolution-controlled frozen-candidate comparison before making any final-holdout decision.
 - The descriptive spatial-evidence layer is now formalized as non-semantic point evidence only: high-confidence lane proximity, ambiguous lane proximity, base/deployment, neutral/unclassified, and missing/invalid. These classes must not be interpreted as semantic occupancy, rotations, or strategic lane assignments.
 - Frozen candidates applied to one-second timelines remain resolution-sensitive for episode behavior. The task 028 gate is `one_second_frozen_comparison_resolution_sensitive`: point coverage changes are small, but episode counts and fragmentation change enough that reliable occupancy episodes, transitions, and replay 005 final-holdout processing remain prohibited.
+- Semantic lane-occupancy episodes are frozen for autonomous development. One-second extraction removed the main technical resolution confound, but episode count and fragmentation remain materially architecture- and resolution-sensitive. No further autonomous occupancy architecture search, threshold retuning, or episode-merging work is authorized without a new methodological decision.
+- Point-level spatial evidence is approved for limited descriptive use: direct coordinates, physical lane-axis projections, nearest-lane distance, lane-separation evidence, base/deployment exclusion, descriptive spatial-evidence classes, movement measurements, and resolution-sensitivity analysis. It is a factual spatial evidence layer, not a semantic occupancy layer.
+- The multi-replay death/assist/respawn layer is the active independent event branch. It may use player identity reconciliation and descriptive spatial context, but it must not infer rotations, strategic lane assignment, fight quality, or semantic occupancy.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
 ## Open Questions
 
-- Which lane occupancy model remains precise enough after autonomous evidence-driven revision?
-- How should brief contacts and deployment-area samples be represented in the canonical timeline?
 - Which fields or derived metrics are reliable enough for combat/objective analysis?
 - Which Explorer observations can validate only the minimized unresolved semantic questions?
 
 ## Likely Next Investigation
 
-Stop lane-transition work. The current single-replay diagnostic evidence is exhausted for tested lane-episode architectures. A methodological decision is required before acquiring a compatible second replay, designing minimized semantic review, or redefining the lane-episode target; do not request broad human labels or build transition, combat, objective, or macro-event detectors from the failed holdout revision.
-
-For multi-replay work, do not continue lane-episode or transition development from these candidates. The supported spatial product is descriptive point-level proximity and exclusion evidence. A methodological decision is required before choosing between a new non-episode descriptive layer, minimized semantic review, or another independent event branch. Do not process replay 005 without a frozen hypothesis and pass/fail criteria.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics, beginning with death/assist/respawn events and then damage/healing field discovery when gate evidence permits it. Do not process replay 005 without a frozen hypothesis and pass/fail criteria.

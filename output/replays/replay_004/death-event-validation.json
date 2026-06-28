@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "kind": "death_event_validation",
+  "replayId": "replay_004",
+  "checks": {
+    "everyDeathHasOneVictim": true,
+    "noDoubleDeathWithoutRespawn": true,
+    "nonNegativeDeadDurations": true,
+    "orderedTimes": true,
+    "ordinaryDeathsFollowedByRespawnUnlessReplayEnds": 5,
+    "noKillerEqualsVictimUnlessSuicide": true,
+    "assistIdentitiesUnique": true,
+    "counterReconciliationAvailable": true,
+    "deathCounterMismatches": 2,
+    "spatialCoveragePercent": 100
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198277999856",
+      "counter": 8,
+      "canonical": 10
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561199212278850",
+      "counter": 11,
+      "canonical": 12
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

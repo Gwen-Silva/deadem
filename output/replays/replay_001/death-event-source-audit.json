@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "kind": "death_event_source_audit",
+  "replayId": "replay_001",
+  "sources": {
+    "m_iDeaths": {
+      "entityClass": "CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "direct_counter",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "observedChanges": 0,
+      "reliability": "high_for_counter_changes",
+      "limitations": [],
+      "directOrDerived": "direct_field"
+    },
+    "m_iPlayerKills": {
+      "entityClass": "CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "direct_counter",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "observedChanges": 0,
+      "reliability": "high_for_counter_changes",
+      "limitations": [
+        "Counter increments identify a killer only when exactly one enemy kill counter changes near the victim death."
+      ],
+      "directOrDerived": "direct_field"
+    },
+    "m_iPlayerAssists": {
+      "entityClass": "CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "direct_counter",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "observedChanges": 0,
+      "reliability": "high_for_counter_changes",
+      "limitations": [
+        "Assist increments are associated by same-second counter changes, not explicit victim linkage."
+      ],
+      "directOrDerived": "direct_field"
+    },
+    "m_bAlive": {
+      "entityClass": "CCitadelPlayerController/CCitadelPlayerPawn",
+      "valueType": "boolean",
+      "evidenceType": "direct_state",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        true,
+        false
+      ],
+      "observedChanges": 0,
+      "reliability": "medium_supporting_signal",
+      "limitations": [],
+      "directOrDerived": "direct_field"
+    },
+    "m_iHealth": {
+      "entityClass": "CCitadelPlayerPawn/CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "direct_state",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        780,
+        690,
+        730,
+        880,
+        830
+      ],
+      "observedChanges": 0,
+      "reliability": "medium_supporting_signal",
+      "limitations": [],
+      "directOrDerived": "direct_field"
+    },
+    "m_flRespawnTime": {
+      "entityClass": "CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "direct_timer",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        0,
+        143.609375,
+        148.203125,
+        152.578125,
+        204.9375
+      ],
+      "observedChanges": 0,
+      "reliability": "medium_supporting_signal",
+      "limitations": [
+        "Timer value is support evidence; interpretation of exact countdown semantics is not assumed."
+      ],
+      "directOrDerived": "direct_field"
+    },
+    "m_hHeroPawn/m_hPawn": {
+      "entityClass": "CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "linkage",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        4636764,
+        14237786,
+        9371727,
+        327762,
+        1228880
+      ],
+      "observedChanges": 0,
+      "reliability": "medium_linkage_signal",
+      "limitations": [],
+      "directOrDerived": "derived_linkage"
+    },
+    "m_iGoldNetWorth": {
+      "entityClass": "CCitadelPlayerController",
+      "valueType": "number",
+      "evidenceType": "economy_counter",
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "examples": [
+        600,
+        623,
+        638,
+        661,
+        686
+      ],
+      "observedChanges": 0,
+      "reliability": "medium_for_net_worth_context_not_soul_semantics",
+      "limitations": [
+        "Net worth is recorded as context; current Deadlock soul mechanics are not assumed."
+      ],
+      "directOrDerived": "direct_field"
+    }
+  },
+  "absentOrNotUsed": [
+    {
+      "source": "explicit_death_game_events",
+      "status": "not_exposed_by_current_task_path",
+      "limitation": "No explicit game-event callback was used; canonical events derive from replicated counters and states."
+    },
+    {
+      "source": "combat_log_messages",
+      "status": "not_found",
+      "limitation": "No combat log message source was identified in this task."
+    }
+  ]
+}

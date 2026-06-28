@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "death_event_gate",
+  "gateResult": "death_event_layer_ready_with_limitations",
+  "evidence": {
+    "totalDeaths": 363,
+    "validationErrors": 0,
+    "validationWarnings": 17,
+    "averageKillerResolutionRate": 90.4,
+    "averageDeathPositionCoverage": 100,
+    "sourceAvailability": "death, kill, assist, alive, health, respawn timer, pawn linkage, and net worth fields observed"
+  },
+  "limitations": [
+    "Killer and assist linkage is counter-based by same-second changes, not explicit victim-linked combat log evidence.",
+    "Economy context uses net worth fields only; soul mechanics are not inferred.",
+    "No semantic fight grouping or strategic interpretation is produced."
+  ],
+  "nextAllowedTask": "damage_healing_field_discovery",
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "humanReviewRequired": false
+}

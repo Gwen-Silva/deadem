@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "kind": "death_event_validation",
+  "replayId": "replay_001",
+  "checks": {
+    "everyDeathHasOneVictim": true,
+    "noDoubleDeathWithoutRespawn": true,
+    "nonNegativeDeadDurations": true,
+    "orderedTimes": true,
+    "ordinaryDeathsFollowedByRespawnUnlessReplayEnds": 6,
+    "noKillerEqualsVictimUnlessSuicide": true,
+    "assistIdentitiesUnique": true,
+    "counterReconciliationAvailable": true,
+    "deathCounterMismatches": 9,
+    "spatialCoveragePercent": 100
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198083279289",
+      "counter": 11,
+      "canonical": 12
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561199506813146",
+      "counter": 15,
+      "canonical": 17
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198412703766",
+      "counter": 10,
+      "canonical": 11
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198050549690",
+      "counter": 10,
+      "canonical": 11
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198400571299",
+      "counter": 12,
+      "canonical": 15
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198015233346",
+      "counter": 10,
+      "canonical": 13
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198845300704",
+      "counter": 9,
+      "canonical": 10
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198005956706",
+      "counter": 9,
+      "canonical": 10
+    },
+    {
+      "type": "death_counter_mismatch",
+      "playerId": "76561198016921636",
+      "counter": 6,
+      "canonical": 7
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

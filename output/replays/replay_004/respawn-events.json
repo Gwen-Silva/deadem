@@ -1,0 +1,4054 @@
+{
+  "schemaVersion": 1,
+  "kind": "respawn_events",
+  "replayId": "replay_004",
+  "events": [
+    {
+      "eventId": "replay_004_respawn_0001",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198860059002",
+        "heroId": 3,
+        "team": 2,
+        "controllerId": 12648457,
+        "pawnId": 10240083
+      },
+      "respawn": {
+        "tick": 8320,
+        "gameTimeSeconds": 130,
+        "deadDurationSeconds": 8
+      },
+      "respawnPosition": {
+        "x": 56,
+        "y": 250.8125,
+        "z": 191.84375,
+        "observedAtSeconds": 130,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 152.39,
+        "separationMargin": 377.26,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 203.859375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 929
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 56,
+            "y": 250.8125,
+            "z": 191.84375,
+            "observedAtSeconds": 130,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 152.39,
+            "separationMargin": 377.26,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0002",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199865254887",
+        "heroId": -35,
+        "team": 2,
+        "controllerId": 14401548,
+        "pawnId": 13320279
+      },
+      "respawn": {
+        "tick": 9920,
+        "gameTimeSeconds": 155,
+        "deadDurationSeconds": 8
+      },
+      "respawnPosition": {
+        "x": 1000,
+        "y": 304,
+        "z": 191.84375,
+        "observedAtSeconds": 155,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 266.63,
+        "separationMargin": 169.81,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 228.875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 873
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 1000,
+            "y": 304,
+            "z": 191.84375,
+            "observedAtSeconds": 155,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 266.63,
+            "separationMargin": 169.81,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0003",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198843844950",
+        "heroId": -7,
+        "team": 3,
+        "controllerId": 14483459,
+        "pawnId": 14712908
+      },
+      "respawn": {
+        "tick": 10112,
+        "gameTimeSeconds": 158,
+        "deadDurationSeconds": 8
+      },
+      "respawnPosition": {
+        "x": 0,
+        "y": 47.40625,
+        "z": 197.03125,
+        "observedAtSeconds": 158,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 126.85,
+        "separationMargin": 478.25,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 231.9375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 800
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 0,
+            "y": 47.40625,
+            "z": 197.03125,
+            "observedAtSeconds": 158,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 126.85,
+            "separationMargin": 478.25,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0004",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 12160,
+        "gameTimeSeconds": 190,
+        "deadDurationSeconds": 8
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 190,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 263.234375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 928
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 190,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0005",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198860059002",
+        "heroId": 3,
+        "team": 2,
+        "controllerId": 12648457,
+        "pawnId": 10240083
+      },
+      "respawn": {
+        "tick": 17152,
+        "gameTimeSeconds": 268,
+        "deadDurationSeconds": 8
+      },
+      "respawnPosition": {
+        "x": 56,
+        "y": 250.8125,
+        "z": 191.84375,
+        "observedAtSeconds": 268,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 152.39,
+        "separationMargin": 377.26,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 341.453125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1099
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 56,
+            "y": 250.8125,
+            "z": 191.84375,
+            "observedAtSeconds": 268,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 152.39,
+            "separationMargin": 377.26,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0006",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 27392,
+        "gameTimeSeconds": 428,
+        "deadDurationSeconds": 11
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 428,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 501.5002136230469,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1002
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 428,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0007",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198843844950",
+        "heroId": -7,
+        "team": 3,
+        "controllerId": 14483459,
+        "pawnId": 14712908
+      },
+      "respawn": {
+        "tick": 30208,
+        "gameTimeSeconds": 472,
+        "deadDurationSeconds": 12
+      },
+      "respawnPosition": {
+        "x": 0,
+        "y": 45.4375,
+        "z": 192.1875,
+        "observedAtSeconds": 472,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 131.65,
+        "separationMargin": 476.57,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 545.7386474609375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 940
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 0,
+            "y": 45.4375,
+            "z": 192.1875,
+            "observedAtSeconds": 472,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 131.65,
+            "separationMargin": 476.57,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0008",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 33600,
+        "gameTimeSeconds": 524,
+        "deadDurationSeconds": 0
+      },
+      "respawnPosition": {
+        "x": 275.3125,
+        "y": 972.96875,
+        "z": 337.75,
+        "observedAtSeconds": 524,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_3",
+        "laneDistance": 211.75,
+        "separationMargin": 47.71,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "recovery_required_before_next_death_counter_increment",
+          "source": "m_iDeaths",
+          "observed": true,
+          "measurements": {
+            "nextDeathSecond": 525,
+            "priorDeathSecond": 524
+          }
+        }
+      ],
+      "validationFlags": [
+        "respawn_inferred_not_directly_observed"
+      ]
+    },
+    {
+      "eventId": "replay_004_respawn_0009",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 34432,
+        "gameTimeSeconds": 538,
+        "deadDurationSeconds": 13
+      },
+      "respawnPosition": {
+        "x": 966.46875,
+        "y": 261,
+        "z": 192,
+        "observedAtSeconds": 538,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 217.39,
+        "separationMargin": 195.58,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 611.9439697265625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1652
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 966.46875,
+            "y": 261,
+            "z": 192,
+            "observedAtSeconds": 538,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 217.39,
+            "separationMargin": 195.58,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0010",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198169321178",
+        "heroId": -18,
+        "team": 3,
+        "controllerId": 409605,
+        "pawnId": 3768402
+      },
+      "respawn": {
+        "tick": 34816,
+        "gameTimeSeconds": 544,
+        "deadDurationSeconds": 14
+      },
+      "respawnPosition": {
+        "x": 0,
+        "y": 984,
+        "z": 191.84375,
+        "observedAtSeconds": 544,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 16.72,
+        "separationMargin": 185.75,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 617.4918212890625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1109
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 0,
+            "y": 984,
+            "z": 191.84375,
+            "observedAtSeconds": 544,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 16.72,
+            "separationMargin": 185.75,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0011",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 35392,
+        "gameTimeSeconds": 553,
+        "deadDurationSeconds": 14
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 553,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 626.8076782226562,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1076
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 553,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0012",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198099604439",
+        "heroId": -33,
+        "team": 3,
+        "controllerId": 9895949,
+        "pawnId": 14663776
+      },
+      "respawn": {
+        "tick": 38080,
+        "gameTimeSeconds": 595,
+        "deadDurationSeconds": 16
+      },
+      "respawnPosition": {
+        "x": 63.96875,
+        "y": 44.375,
+        "z": 192.09375,
+        "observedAtSeconds": 595,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 132.38,
+        "separationMargin": 426.26,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 668.2561645507812,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1581
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 63.96875,
+            "y": 44.375,
+            "z": 192.09375,
+            "observedAtSeconds": 595,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 132.38,
+            "separationMargin": 426.26,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0013",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199865254887",
+        "heroId": -35,
+        "team": 2,
+        "controllerId": 14401548,
+        "pawnId": 13320279
+      },
+      "respawn": {
+        "tick": 39616,
+        "gameTimeSeconds": 619,
+        "deadDurationSeconds": 16
+      },
+      "respawnPosition": {
+        "x": 1000,
+        "y": 304,
+        "z": 191.84375,
+        "observedAtSeconds": 619,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 266.63,
+        "separationMargin": 169.81,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 692.7404174804688,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1093
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 1000,
+            "y": 304,
+            "z": 191.84375,
+            "observedAtSeconds": 619,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 266.63,
+            "separationMargin": 169.81,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0014",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 45312,
+        "gameTimeSeconds": 708,
+        "deadDurationSeconds": 19
+      },
+      "respawnPosition": {
+        "x": 39.4375,
+        "y": 476,
+        "z": 271.21875,
+        "observedAtSeconds": 708,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 199.44,
+        "separationMargin": 181.82,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 781.12109375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1926
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 39.4375,
+            "y": 476,
+            "z": 271.21875,
+            "observedAtSeconds": 708,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 199.44,
+            "separationMargin": 181.82,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0015",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198169321178",
+        "heroId": -18,
+        "team": 3,
+        "controllerId": 409605,
+        "pawnId": 3768402
+      },
+      "respawn": {
+        "tick": 47936,
+        "gameTimeSeconds": 749,
+        "deadDurationSeconds": 19
+      },
+      "respawnPosition": {
+        "x": 926.21875,
+        "y": 859.0625,
+        "z": 192,
+        "observedAtSeconds": 749,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 88.16,
+        "separationMargin": 450.68,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 822.3771362304688,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1315
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 926.21875,
+            "y": 859.0625,
+            "z": 192,
+            "observedAtSeconds": 749,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 88.16,
+            "separationMargin": 450.68,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0016",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198099604439",
+        "heroId": -33,
+        "team": 3,
+        "controllerId": 9895949,
+        "pawnId": 14663776
+      },
+      "respawn": {
+        "tick": 51072,
+        "gameTimeSeconds": 798,
+        "deadDurationSeconds": 21
+      },
+      "respawnPosition": {
+        "x": 76.6875,
+        "y": 818.03125,
+        "z": 265.46875,
+        "observedAtSeconds": 798,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 173.75,
+        "separationMargin": 17.73,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 871.041015625,
+            "current": 0
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 76.6875,
+            "y": 818.03125,
+            "z": 265.46875,
+            "observedAtSeconds": 798,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 173.75,
+            "separationMargin": 17.73,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0017",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198860059002",
+        "heroId": 3,
+        "team": 2,
+        "controllerId": 12648457,
+        "pawnId": 10240083
+      },
+      "respawn": {
+        "tick": 51456,
+        "gameTimeSeconds": 804,
+        "deadDurationSeconds": 21
+      },
+      "respawnPosition": {
+        "x": 56,
+        "y": 250.8125,
+        "z": 191.84375,
+        "observedAtSeconds": 804,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 152.39,
+        "separationMargin": 377.26,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 876.98974609375,
+            "current": 0
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 56,
+            "y": 250.8125,
+            "z": 191.84375,
+            "observedAtSeconds": 804,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 152.39,
+            "separationMargin": 377.26,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0018",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 52416,
+        "gameTimeSeconds": 818,
+        "deadDurationSeconds": 0
+      },
+      "respawnPosition": {
+        "x": 230.28125,
+        "y": 446.4375,
+        "z": 248.0625,
+        "observedAtSeconds": 818,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 97.63,
+        "separationMargin": 189.35,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "recovery_required_before_next_death_counter_increment",
+          "source": "m_iDeaths",
+          "observed": true,
+          "measurements": {
+            "nextDeathSecond": 819,
+            "priorDeathSecond": 818
+          }
+        }
+      ],
+      "validationFlags": [
+        "respawn_inferred_not_directly_observed"
+      ]
+    },
+    {
+      "eventId": "replay_004_respawn_0019",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 53760,
+        "gameTimeSeconds": 840,
+        "deadDurationSeconds": 21
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 840,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 913.6439819335938,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1334
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 840,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0020",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 54336,
+        "gameTimeSeconds": 849,
+        "deadDurationSeconds": 21
+      },
+      "respawnPosition": {
+        "x": 970.90625,
+        "y": 261.3125,
+        "z": 192,
+        "observedAtSeconds": 849,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 219.24,
+        "separationMargin": 195.87,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 922.895751953125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2249
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 970.90625,
+            "y": 261.3125,
+            "z": 192,
+            "observedAtSeconds": 849,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 219.24,
+            "separationMargin": 195.87,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0021",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198168889366",
+        "heroId": 33,
+        "team": 3,
+        "controllerId": 9240582,
+        "pawnId": 14418005
+      },
+      "respawn": {
+        "tick": 59840,
+        "gameTimeSeconds": 935,
+        "deadDurationSeconds": 34
+      },
+      "respawnPosition": {
+        "x": 992,
+        "y": 8,
+        "z": 191.84375,
+        "observedAtSeconds": 935,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 128.34,
+        "separationMargin": 343.98,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1008.5509033203125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1631
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 992,
+            "y": 8,
+            "z": 191.84375,
+            "observedAtSeconds": 935,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 128.34,
+            "separationMargin": 343.98,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0022",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 65920,
+        "gameTimeSeconds": 1030,
+        "deadDurationSeconds": 27
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 1030,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1103.08837890625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1415
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 1030,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0023",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199865254887",
+        "heroId": -35,
+        "team": 2,
+        "controllerId": 14401548,
+        "pawnId": 13320279
+      },
+      "respawn": {
+        "tick": 67712,
+        "gameTimeSeconds": 1058,
+        "deadDurationSeconds": 27
+      },
+      "respawnPosition": {
+        "x": 1001,
+        "y": 306.75,
+        "z": 192,
+        "observedAtSeconds": 1058,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 269.29,
+        "separationMargin": 168.1,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1131.8858642578125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1626
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 1001,
+            "y": 306.75,
+            "z": 192,
+            "observedAtSeconds": 1058,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 269.29,
+            "separationMargin": 168.1,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0024",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198843844950",
+        "heroId": -7,
+        "team": 3,
+        "controllerId": 14483459,
+        "pawnId": 14712908
+      },
+      "respawn": {
+        "tick": 69056,
+        "gameTimeSeconds": 1079,
+        "deadDurationSeconds": 28
+      },
+      "respawnPosition": {
+        "x": 0,
+        "y": 45.4375,
+        "z": 192.1875,
+        "observedAtSeconds": 1079,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 131.65,
+        "separationMargin": 476.57,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1152.3134765625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1799
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 0,
+            "y": 45.4375,
+            "z": 192.1875,
+            "observedAtSeconds": 1079,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 131.65,
+            "separationMargin": 476.57,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0025",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198083906683",
+        "heroId": -9,
+        "team": 2,
+        "controllerId": 12713994,
+        "pawnId": 16564318
+      },
+      "respawn": {
+        "tick": 72704,
+        "gameTimeSeconds": 1136,
+        "deadDurationSeconds": 29
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 304,
+        "z": 191.84375,
+        "observedAtSeconds": 1136,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 181.83,
+        "separationMargin": 335.07,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1209.7159423828125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1650
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 304,
+            "z": 191.84375,
+            "observedAtSeconds": 1136,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 181.83,
+            "separationMargin": 335.07,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0026",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198169321178",
+        "heroId": -18,
+        "team": 3,
+        "controllerId": 409605,
+        "pawnId": 3768402
+      },
+      "respawn": {
+        "tick": 73408,
+        "gameTimeSeconds": 1147,
+        "deadDurationSeconds": 30
+      },
+      "respawnPosition": {
+        "x": 0,
+        "y": 984,
+        "z": 191.84375,
+        "observedAtSeconds": 1147,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 16.72,
+        "separationMargin": 185.75,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1220.378662109375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1906
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 0,
+            "y": 984,
+            "z": 191.84375,
+            "observedAtSeconds": 1147,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 16.72,
+            "separationMargin": 185.75,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0027",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 75200,
+        "gameTimeSeconds": 1175,
+        "deadDurationSeconds": 30
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 1175,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1248.5506591796875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1495
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 1175,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0028",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 76800,
+        "gameTimeSeconds": 1200,
+        "deadDurationSeconds": 32
+      },
+      "respawnPosition": {
+        "x": 968.09375,
+        "y": 305.8125,
+        "z": 192,
+        "observedAtSeconds": 1200,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 256.23,
+        "separationMargin": 164.62,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1273.6903076171875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 3338
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 968.09375,
+            "y": 305.8125,
+            "z": 192,
+            "observedAtSeconds": 1200,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 256.23,
+            "separationMargin": 164.62,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0029",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198169321178",
+        "heroId": -18,
+        "team": 3,
+        "controllerId": 409605,
+        "pawnId": 3768402
+      },
+      "respawn": {
+        "tick": 78656,
+        "gameTimeSeconds": 1229,
+        "deadDurationSeconds": 34
+      },
+      "respawnPosition": {
+        "x": 1016.21875,
+        "y": 940.0625,
+        "z": 192,
+        "observedAtSeconds": 1229,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 144.19,
+        "separationMargin": 447.07,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1301.9786376953125,
+            "current": 0
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 1016.21875,
+            "y": 940.0625,
+            "z": 192,
+            "observedAtSeconds": 1229,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 144.19,
+            "separationMargin": 447.07,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0030",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 82368,
+        "gameTimeSeconds": 1287,
+        "deadDurationSeconds": 37
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 1287,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1360.4114990234375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1596
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 1287,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0031",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198860059002",
+        "heroId": 3,
+        "team": 2,
+        "controllerId": 12648457,
+        "pawnId": 10240083
+      },
+      "respawn": {
+        "tick": 84032,
+        "gameTimeSeconds": 1313,
+        "deadDurationSeconds": 38
+      },
+      "respawnPosition": {
+        "x": 56,
+        "y": 250.8125,
+        "z": 191.84375,
+        "observedAtSeconds": 1313,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 152.39,
+        "separationMargin": 377.26,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1386.8271484375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2296
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 56,
+            "y": 250.8125,
+            "z": 191.84375,
+            "observedAtSeconds": 1313,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 152.39,
+            "separationMargin": 377.26,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0032",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198083906683",
+        "heroId": -9,
+        "team": 2,
+        "controllerId": 12713994,
+        "pawnId": 16564318
+      },
+      "respawn": {
+        "tick": 84800,
+        "gameTimeSeconds": 1325,
+        "deadDurationSeconds": 39
+      },
+      "respawnPosition": {
+        "x": 22.375,
+        "y": 559.15625,
+        "z": 291.96875,
+        "observedAtSeconds": 1325,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 224.98,
+        "separationMargin": 119.73,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1398.0960693359375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2190
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 22.375,
+            "y": 559.15625,
+            "z": 291.96875,
+            "observedAtSeconds": 1325,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 224.98,
+            "separationMargin": 119.73,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0033",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198168889366",
+        "heroId": 33,
+        "team": 3,
+        "controllerId": 9240582,
+        "pawnId": 14418005
+      },
+      "respawn": {
+        "tick": 86464,
+        "gameTimeSeconds": 1351,
+        "deadDurationSeconds": 40
+      },
+      "respawnPosition": {
+        "x": 992,
+        "y": 8,
+        "z": 191.84375,
+        "observedAtSeconds": 1351,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 128.34,
+        "separationMargin": 343.98,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1424.6278076171875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2412
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 992,
+            "y": 8,
+            "z": 191.84375,
+            "observedAtSeconds": 1351,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 128.34,
+            "separationMargin": 343.98,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0034",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199865254887",
+        "heroId": -35,
+        "team": 2,
+        "controllerId": 14401548,
+        "pawnId": 13320279
+      },
+      "respawn": {
+        "tick": 91776,
+        "gameTimeSeconds": 1434,
+        "deadDurationSeconds": 45
+      },
+      "respawnPosition": {
+        "x": 1000,
+        "y": 304,
+        "z": 191.84375,
+        "observedAtSeconds": 1434,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 266.63,
+        "separationMargin": 169.81,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1507.736328125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1862
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 1000,
+            "y": 304,
+            "z": 191.84375,
+            "observedAtSeconds": 1434,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 266.63,
+            "separationMargin": 169.81,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0035",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198083906683",
+        "heroId": -9,
+        "team": 2,
+        "controllerId": 12713994,
+        "pawnId": 16564318
+      },
+      "respawn": {
+        "tick": 92672,
+        "gameTimeSeconds": 1448,
+        "deadDurationSeconds": 46
+      },
+      "respawnPosition": {
+        "x": 22.40625,
+        "y": 323.78125,
+        "z": 192,
+        "observedAtSeconds": 1448,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 193.31,
+        "separationMargin": 313.71,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1521.1927490234375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2270
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 22.40625,
+            "y": 323.78125,
+            "z": 192,
+            "observedAtSeconds": 1448,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 193.31,
+            "separationMargin": 313.71,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0036",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198843844950",
+        "heroId": -7,
+        "team": 3,
+        "controllerId": 14483459,
+        "pawnId": 14712908
+      },
+      "respawn": {
+        "tick": 92672,
+        "gameTimeSeconds": 1448,
+        "deadDurationSeconds": 59
+      },
+      "respawnPosition": {
+        "x": 0,
+        "y": 45.4375,
+        "z": 192.1875,
+        "observedAtSeconds": 1448,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 131.65,
+        "separationMargin": 476.57,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1521.146484375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2100
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 0,
+            "y": 45.4375,
+            "z": 192.1875,
+            "observedAtSeconds": 1448,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 131.65,
+            "separationMargin": 476.57,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0037",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198860059002",
+        "heroId": 3,
+        "team": 2,
+        "controllerId": 12648457,
+        "pawnId": 10240083
+      },
+      "respawn": {
+        "tick": 92928,
+        "gameTimeSeconds": 1452,
+        "deadDurationSeconds": 46
+      },
+      "respawnPosition": {
+        "x": 52.1875,
+        "y": 344.875,
+        "z": 192,
+        "observedAtSeconds": 1452,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 206.08,
+        "separationMargin": 270.29,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1525.617431640625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2742
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 52.1875,
+            "y": 344.875,
+            "z": 192,
+            "observedAtSeconds": 1452,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 206.08,
+            "separationMargin": 270.29,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0038",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 93440,
+        "gameTimeSeconds": 1460,
+        "deadDurationSeconds": 46
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 1460,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1533.803955078125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1717
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 1460,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0039",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 94528,
+        "gameTimeSeconds": 1476,
+        "deadDurationSeconds": 0
+      },
+      "respawnPosition": {
+        "x": 299.625,
+        "y": 976,
+        "z": 280.03125,
+        "observedAtSeconds": 1476,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_3",
+        "laneDistance": 265.82,
+        "separationMargin": 18.87,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "recovery_required_before_next_death_counter_increment",
+          "source": "m_iDeaths",
+          "observed": true,
+          "measurements": {
+            "nextDeathSecond": 1477,
+            "priorDeathSecond": 1476
+          }
+        }
+      ],
+      "validationFlags": [
+        "respawn_inferred_not_directly_observed"
+      ]
+    },
+    {
+      "eventId": "replay_004_respawn_0040",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 97728,
+        "gameTimeSeconds": 1527,
+        "deadDurationSeconds": 50
+      },
+      "respawnPosition": {
+        "x": 967.59375,
+        "y": 420.875,
+        "z": 189.84375,
+        "observedAtSeconds": 1527,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 356.29,
+        "separationMargin": 36.52,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1600.37353515625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 3891
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 967.59375,
+            "y": 420.875,
+            "z": 189.84375,
+            "observedAtSeconds": 1527,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 356.29,
+            "separationMargin": 36.52,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0041",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198168889366",
+        "heroId": 33,
+        "team": 3,
+        "controllerId": 9240582,
+        "pawnId": 14418005
+      },
+      "respawn": {
+        "tick": 97856,
+        "gameTimeSeconds": 1529,
+        "deadDurationSeconds": 51
+      },
+      "respawnPosition": {
+        "x": 992,
+        "y": 8,
+        "z": 191.84375,
+        "observedAtSeconds": 1529,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 128.34,
+        "separationMargin": 343.98,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1601.9644775390625,
+            "current": 0
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 992,
+            "y": 8,
+            "z": 191.84375,
+            "observedAtSeconds": 1529,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 128.34,
+            "separationMargin": 343.98,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0042",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198094292236",
+        "heroId": 38,
+        "team": 3,
+        "controllerId": 2146312,
+        "pawnId": 6488139
+      },
+      "respawn": {
+        "tick": 103168,
+        "gameTimeSeconds": 1612,
+        "deadDurationSeconds": 55
+      },
+      "respawnPosition": {
+        "x": 64,
+        "y": 984,
+        "z": 191.84375,
+        "observedAtSeconds": 1612,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 51.38,
+        "separationMargin": 149.44,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1685.4541015625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2225
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 64,
+            "y": 984,
+            "z": 191.84375,
+            "observedAtSeconds": 1612,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 51.38,
+            "separationMargin": 149.44,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0043",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 103424,
+        "gameTimeSeconds": 1616,
+        "deadDurationSeconds": 55
+      },
+      "respawnPosition": {
+        "x": 961.53125,
+        "y": 297.21875,
+        "z": 192,
+        "observedAtSeconds": 1616,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 246.79,
+        "separationMargin": 169.3,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1689.7628173828125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 3985
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 961.53125,
+            "y": 297.21875,
+            "z": 192,
+            "observedAtSeconds": 1616,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 246.79,
+            "separationMargin": 169.3,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0044",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198843844950",
+        "heroId": -7,
+        "team": 3,
+        "controllerId": 14483459,
+        "pawnId": 14712908
+      },
+      "respawn": {
+        "tick": 105344,
+        "gameTimeSeconds": 1646,
+        "deadDurationSeconds": 57
+      },
+      "respawnPosition": {
+        "x": 1022.125,
+        "y": 1014.625,
+        "z": 200.84375,
+        "observedAtSeconds": 1646,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 179.27,
+        "separationMargin": 442.73,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1719.3271484375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2707
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 1022.125,
+            "y": 1014.625,
+            "z": 200.84375,
+            "observedAtSeconds": 1646,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 179.27,
+            "separationMargin": 442.73,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0045",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198099604439",
+        "heroId": -33,
+        "team": 3,
+        "controllerId": 9895949,
+        "pawnId": 14663776
+      },
+      "respawn": {
+        "tick": 105920,
+        "gameTimeSeconds": 1655,
+        "deadDurationSeconds": 73
+      },
+      "respawnPosition": {
+        "x": 71.09375,
+        "y": 16.75,
+        "z": 192.0625,
+        "observedAtSeconds": 1655,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 153.1,
+        "separationMargin": 406.96,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1728.7672119140625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2704
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 71.09375,
+            "y": 16.75,
+            "z": 192.0625,
+            "observedAtSeconds": 1655,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 153.1,
+            "separationMargin": 406.96,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0046",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 105984,
+        "gameTimeSeconds": 1656,
+        "deadDurationSeconds": 58
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 1656,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1729.071533203125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 1962
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 1656,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0047",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199097471570",
+        "heroId": -8,
+        "team": 3,
+        "controllerId": 3571723,
+        "pawnId": 2343001
+      },
+      "respawn": {
+        "tick": 107328,
+        "gameTimeSeconds": 1677,
+        "deadDurationSeconds": 80
+      },
+      "respawnPosition": {
+        "x": 31.46875,
+        "y": 1013.625,
+        "z": 192,
+        "observedAtSeconds": 1677,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 26.53,
+        "separationMargin": 178.12,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1750.4251708984375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 4603
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 31.46875,
+            "y": 1013.625,
+            "z": 192,
+            "observedAtSeconds": 1677,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 26.53,
+            "separationMargin": 178.12,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0048",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198094292236",
+        "heroId": 38,
+        "team": 3,
+        "controllerId": 2146312,
+        "pawnId": 6488139
+      },
+      "respawn": {
+        "tick": 115008,
+        "gameTimeSeconds": 1797,
+        "deadDurationSeconds": 66
+      },
+      "respawnPosition": {
+        "x": 64,
+        "y": 984,
+        "z": 191.84375,
+        "observedAtSeconds": 1797,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 51.38,
+        "separationMargin": 149.44,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1870.447021484375,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2265
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 64,
+            "y": 984,
+            "z": 191.84375,
+            "observedAtSeconds": 1797,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 51.38,
+            "separationMargin": 149.44,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0049",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198168889366",
+        "heroId": 33,
+        "team": 3,
+        "controllerId": 9240582,
+        "pawnId": 14418005
+      },
+      "respawn": {
+        "tick": 116544,
+        "gameTimeSeconds": 1821,
+        "deadDurationSeconds": 81
+      },
+      "respawnPosition": {
+        "x": 992,
+        "y": 8,
+        "z": 191.84375,
+        "observedAtSeconds": 1821,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 128.34,
+        "separationMargin": 343.98,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1894.3004150390625,
+            "current": 0
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 992,
+            "y": 8,
+            "z": 191.84375,
+            "observedAtSeconds": 1821,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 128.34,
+            "separationMargin": 343.98,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0050",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199865254887",
+        "heroId": -35,
+        "team": 2,
+        "controllerId": 14401548,
+        "pawnId": 13320279
+      },
+      "respawn": {
+        "tick": 117312,
+        "gameTimeSeconds": 1833,
+        "deadDurationSeconds": 68
+      },
+      "respawnPosition": {
+        "x": 976.125,
+        "y": 429.34375,
+        "z": 179.09375,
+        "observedAtSeconds": 1833,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 370.44,
+        "separationMargin": 22.24,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1906.209228515625,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2496
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 976.125,
+            "y": 429.34375,
+            "z": 179.09375,
+            "observedAtSeconds": 1833,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 370.44,
+            "separationMargin": 22.24,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0051",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198083906683",
+        "heroId": -9,
+        "team": 2,
+        "controllerId": 12713994,
+        "pawnId": 16564318
+      },
+      "respawn": {
+        "tick": 118080,
+        "gameTimeSeconds": 1845,
+        "deadDurationSeconds": 69
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 304,
+        "z": 191.84375,
+        "observedAtSeconds": 1845,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 181.83,
+        "separationMargin": 335.07,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1918.4559326171875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2621
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 304,
+            "z": 191.84375,
+            "observedAtSeconds": 1845,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 181.83,
+            "separationMargin": 335.07,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0052",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561199212278850",
+        "heroId": 29,
+        "team": 2,
+        "controllerId": 2850823,
+        "pawnId": 7405647
+      },
+      "respawn": {
+        "tick": 119488,
+        "gameTimeSeconds": 1867,
+        "deadDurationSeconds": 69
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 208,
+        "z": 191.84375,
+        "observedAtSeconds": 1867,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 125.91,
+        "separationMargin": 450.47,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1940.977294921875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2033
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 208,
+            "z": 191.84375,
+            "observedAtSeconds": 1867,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 125.91,
+            "separationMargin": 450.47,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0053",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 120064,
+        "gameTimeSeconds": 1876,
+        "deadDurationSeconds": 70
+      },
+      "respawnPosition": {
+        "x": 979.59375,
+        "y": 268.78125,
+        "z": 192,
+        "observedAtSeconds": 1876,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 228.83,
+        "separationMargin": 191.38,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 1949.826904296875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 4700
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 979.59375,
+            "y": 268.78125,
+            "z": 192,
+            "observedAtSeconds": 1876,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 228.83,
+            "separationMargin": 191.38,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0054",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198083906683",
+        "heroId": -9,
+        "team": 2,
+        "controllerId": 12713994,
+        "pawnId": 16564318
+      },
+      "respawn": {
+        "tick": 124608,
+        "gameTimeSeconds": 1947,
+        "deadDurationSeconds": 57
+      },
+      "respawnPosition": {
+        "x": 24,
+        "y": 304,
+        "z": 191.84375,
+        "observedAtSeconds": 1947,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 181.83,
+        "separationMargin": 335.07,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 2020.703125,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 2677
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 24,
+            "y": 304,
+            "z": 191.84375,
+            "observedAtSeconds": 1947,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 181.83,
+            "separationMargin": 335.07,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0055",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198860059002",
+        "heroId": 3,
+        "team": 2,
+        "controllerId": 12648457,
+        "pawnId": 10240083
+      },
+      "respawn": {
+        "tick": 125952,
+        "gameTimeSeconds": 1968,
+        "deadDurationSeconds": 53
+      },
+      "respawnPosition": {
+        "x": 56,
+        "y": 250.8125,
+        "z": 191.84375,
+        "observedAtSeconds": 1968,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_1",
+        "laneDistance": 152.39,
+        "separationMargin": 377.26,
+        "structuralRegion": "base",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 2041.535888671875,
+            "current": 0
+          }
+        },
+        {
+          "name": "health_restoration",
+          "source": "m_iHealth",
+          "observed": true,
+          "measurements": {
+            "previous": 0,
+            "current": 3481
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 56,
+            "y": 250.8125,
+            "z": 191.84375,
+            "observedAtSeconds": 1968,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_1",
+            "laneDistance": 152.39,
+            "separationMargin": 377.26,
+            "structuralRegion": "base",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    },
+    {
+      "eventId": "replay_004_respawn_0056",
+      "replayId": "replay_004",
+      "victim": {
+        "playerId": "76561198277999856",
+        "heroId": -13,
+        "team": 2,
+        "controllerId": 13582338,
+        "pawnId": 10076241
+      },
+      "respawn": {
+        "tick": 126400,
+        "gameTimeSeconds": 1975,
+        "deadDurationSeconds": 54
+      },
+      "respawnPosition": {
+        "x": 968,
+        "y": 250.8125,
+        "z": 191.84375,
+        "observedAtSeconds": 1975,
+        "ageSeconds": 0,
+        "nearestPhysicalLane": "lane_axis_2",
+        "laneDistance": 209.34,
+        "separationMargin": 203.53,
+        "structuralRegion": "open_structural_space",
+        "source": "first_direct_coordinate_at_or_after_respawn"
+      },
+      "evidence": [
+        {
+          "name": "dead_to_alive_transition",
+          "source": "m_bAlive",
+          "observed": true,
+          "measurements": {
+            "previous": false,
+            "current": true
+          }
+        },
+        {
+          "name": "respawn_timer_completion",
+          "source": "m_flRespawnTime",
+          "observed": true,
+          "measurements": {
+            "previous": 2047.97412109375,
+            "current": 0
+          }
+        },
+        {
+          "name": "position_after_respawn",
+          "source": "one_second_spatial_timeline",
+          "observed": true,
+          "measurements": {
+            "x": 968,
+            "y": 250.8125,
+            "z": 191.84375,
+            "observedAtSeconds": 1975,
+            "ageSeconds": 0,
+            "nearestPhysicalLane": "lane_axis_2",
+            "laneDistance": 209.34,
+            "separationMargin": 203.53,
+            "structuralRegion": "open_structural_space",
+            "source": "first_direct_coordinate_at_or_after_respawn"
+          }
+        }
+      ],
+      "validationFlags": []
+    }
+  ]
+}
