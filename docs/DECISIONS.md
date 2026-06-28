@@ -149,3 +149,13 @@ Date: 2026-06-28
 Decision: Damage and healing fields may be used as reproducible per-player cumulative counter deltas across replays 001-004, but they must not be used to define fights, judge combat quality, infer intent, or attribute source-target combat without additional direct evidence.
 
 Reason: Task 030 found stable changing counters for hero damage, objective damage, hero healing, and self healing, but did not expose victim-linked damage logs or source-target event streams. The outputs support temporal feasibility analysis with limitations, not semantic fight construction.
+
+## DEC-016: Treat Objective Lifecycle As Descriptive Map-State Evidence
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: Objective entities and lifecycle events may be used as factual map-state evidence across replays 001-004, with structural lane-axis relationships and replay-observed health/state changes. They must not be used to judge objective decisions, infer intent, define fights, or attribute player source-target damage without direct evidence.
+
+Reason: Task 031 found stable objective identities and lifecycle events across replays 001-004, but objective-damage counter timing does not exactly reconcile with visible health loss and optional phase/protection semantics remain limited. The layer is ready for descriptive match state with limitations, not strategic evaluation.

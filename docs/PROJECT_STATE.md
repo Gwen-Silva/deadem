@@ -4,18 +4,18 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `030-discover-multi-replay-damage-healing-fields`
+Latest completed task: `031-map-multi-replay-objective-entities-and-lifecycle`
 
-Script: `scripts/discover-multi-replay-damage-healing-fields.js`
+Script: `scripts/map-multi-replay-objective-lifecycle.js`
 
 Primary outputs:
 
-- `output/replays/replay_001/damage-healing-field-audit.json`
-- `output/replays/replay_002/damage-healing-field-audit.json`
-- `output/replays/replay_003/damage-healing-field-audit.json`
-- `output/replays/replay_004/damage-healing-field-audit.json`
-- `output/replays/multi-replay-damage-healing-comparison.json`
-- `output/replays/damage-healing-feasibility-gate.json`
+- `output/replays/replay_001/objective-entity-inventory.json`
+- `output/replays/replay_002/objective-entity-inventory.json`
+- `output/replays/replay_003/objective-entity-inventory.json`
+- `output/replays/replay_004/objective-entity-inventory.json`
+- `output/replays/multi-replay-objective-identity-map.json`
+- `output/replays/objective-lifecycle-gate.json`
 
 ## Current Objective
 
@@ -58,6 +58,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - The multi-replay death/assist/respawn layer is the active independent event branch. It may use player identity reconciliation and descriptive spatial context, but it must not infer rotations, strategic lane assignment, fight quality, or semantic occupancy.
 - The multi-replay death/assist/respawn layer gate is `death_event_layer_ready_with_limitations`: death and respawn timing reconcile without validation errors across replays 001-004, with killer/assist linkage derived from same-second counters and some respawn recovery inferred where direct signals are incomplete.
 - The damage/healing field discovery gate is `damage_healing_fields_ready_with_limitations`: `m_iHeroDamage`, `m_iObjectiveDamage`, `m_iHeroHealing`, and `m_iSelfHealing` provide reproducible cumulative counter deltas across replays 001-004. Source-target damage logs were not exposed by this task path, so these fields support descriptive deltas and feasibility only, not fight grouping or combat-quality claims.
+- The objective lifecycle gate is `objective_lifecycle_ready_with_limitations`: replays 001-004 each expose 47 stable objective or objective-adjacent entities with consistent structural roles, health/state timelines, lifecycle events, and lane-axis relationships. Guardian, walker, base-structure, Patron, Mid Boss, and urn-related coverage is present, but exact objective-damage attribution and optional phase/protection semantics remain limited.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -68,4 +69,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn and damage/healing counters are now available with limitations; any future combat segment task must first define a non-semantic feasibility gate and must not group fights or judge combat quality without additional direct evidence. Do not process replay 005 without a frozen hypothesis and pass/fail criteria.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, and objective lifecycle are now available with limitations. A unified descriptive match-state timeline may combine these validated layers for factual state questions, but must not group fights, judge decisions, infer strategic intent, or process replay 005.

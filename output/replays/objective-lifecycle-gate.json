@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "kind": "objective_lifecycle_gate",
+  "gateResult": "objective_lifecycle_ready_with_limitations",
+  "evidence": {
+    "validationErrors": 0,
+    "stableObjectiveCountRange": {
+      "min": 47,
+      "max": 47
+    },
+    "laneStructuresPresent": true,
+    "destructionEventsObserved": true,
+    "damageReconciliation": [
+      {
+        "replayId": "replay_001",
+        "timingCorrelation": 14.124
+      },
+      {
+        "replayId": "replay_002",
+        "timingCorrelation": 20.567
+      },
+      {
+        "replayId": "replay_003",
+        "timingCorrelation": 24.764
+      },
+      {
+        "replayId": "replay_004",
+        "timingCorrelation": 19.894
+      }
+    ]
+  },
+  "limitations": [
+    "Objective classes are replay-observed and mapped to neutral objective types by structural role, not current-game assumptions.",
+    "Objective damage counters are aggregate player counters and are not source-target objective attribution.",
+    "Optional states such as protection, phase, urn, and Mid Boss lifecycle may be incomplete."
+  ],
+  "nextAllowedTask": "unified_descriptive_match_state_timeline",
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "humanReviewRequired": false
+}
