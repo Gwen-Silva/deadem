@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_updated_validation_report",
+  "matchId": "91119257",
+  "gateResult": "match_91119257_override_ready_with_limitations",
+  "confirmed": [
+    "Local video exists and reports duration 30:43.",
+    "User override accepts samples/partida_006.dem as the target bot replay.",
+    "Demo opens through Player with duration 1863s.",
+    "Tracked-player telemetry extracted: 119 one-second rows (partial_extraction_parser_stopped)."
+  ],
+  "partiallyConfirmed": [
+    "Roster probe finds the user-named player in the demo, but parser match ID and map are still unavailable."
+  ],
+  "contradicted": [],
+  "unresolved": [
+    "No frame-level inspection was performed because ffmpeg/ffprobe are unavailable in PATH.",
+    "No anchor-based video-to-demo transform was selected.",
+    "Manual landmark world/minimap calibration remains unresolved.",
+    "E088 remains a likely timestamp correction, not video-confirmed."
+  ],
+  "userAssertedOnly": [
+    "Demo identity relies on the current user override.",
+    "Mid Boss center/underground assertion remains inherited from task 033."
+  ],
+  "metrics": {
+    "videoDurationSeconds": 1843,
+    "demoDurationSeconds": 1863,
+    "telemetryRows": 119,
+    "alignmentEvents": 88,
+    "frameSamplesPlanned": 6
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

@@ -179,3 +179,13 @@ Date: 2026-06-28
 Decision: The match 91119257 packet may be preserved and used as manual landmark annotation evidence, but it must not be used for demo-video alignment, tracked-player telemetry, world-to-minimap calibration, macro-event validation, or strategic conclusions until the demo/video identity conflict is resolved.
 
 Reason: Task 033 parsed and preserved the packet, but the local candidate demo `samples/partida_006.dem` was not validated as the supplied match: duration did not match the post-game scoreboard duration and roster extraction failed. The final E088 timestamp correction remains a low-confidence unverified resolution until checked against video frames.
+
+## DEC-019: Treat Match 91119257 Demo Identity As User-Overridden, Not Parser-Proven
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: `samples/partida_006.dem` may be used for limited continuation of the match 91119257 local packet only under explicit user override. The override is valid provenance for continuing analysis, but it is not parser proof of match ID or map identity.
+
+Reason: Task 034 found the supplied local video, confirmed a 30:43 video duration, opened `partida_006.dem` through `Player`, found the user-named player in the demo, and extracted partial tracked-player telemetry. Parser match ID and map metadata remain unavailable, frame-level validation could not run without ffmpeg/ffprobe, and telemetry extraction stops early on a parser entity-linkage error. The outputs may support limited alignment and telemetry investigation, but not macro events, rotations, fights, strategic claims, world-to-minimap calibration, or E088 video confirmation.
