@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_occupancy_generalization_gate",
+  "gateResult": "frozen_occupancy_generalization_ready_for_review",
+  "selectedLimitedUseCandidate": "original_experiment_23_balanced",
+  "decisionPacket": {
+    "candidatesEvaluated": [
+      "original_experiment_23_balanced",
+      "conservative_point_revision_combined",
+      "hysteresis_state_machine",
+      "windowed_evidence_accumulation",
+      "constrained_dynamic_programming"
+    ],
+    "candidatesExcluded": [
+      {
+        "id": "annotated_original_episodes",
+        "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+        "sourceOutput": "output/24-annotated-original-occupancy-episodes.json",
+        "classification": "resolution_incompatible",
+        "reason": "The candidate preserves replay 001 experiment 23 episode boundaries. Those boundaries are replay-specific outputs, not a frozen cross-replay construction rule for five-second timelines."
+      }
+    ],
+    "replay001ResolutionControlResult": [
+      {
+        "candidateId": "original_experiment_23_balanced",
+        "classification": "not_comparable"
+      },
+      {
+        "candidateId": "conservative_point_revision_combined",
+        "classification": "not_comparable"
+      },
+      {
+        "candidateId": "hysteresis_state_machine",
+        "classification": "not_comparable"
+      },
+      {
+        "candidateId": "windowed_evidence_accumulation",
+        "classification": "not_comparable"
+      },
+      {
+        "candidateId": "constrained_dynamic_programming",
+        "classification": "not_comparable"
+      }
+    ],
+    "strongestConsistentSuccess": {
+      "candidateId": "original_experiment_23_balanced",
+      "description": "Reproducible point-level lane-core/proximity evidence can be computed across replays without recalibration, but semantic correctness is not established.",
+      "allowedLimitedUse": "high-confidence point proximity evidence and base/deployment exclusion only"
+    },
+    "strongestConsistentFailure": {
+      "candidateId": "original_experiment_23_balanced",
+      "classification": "consistent_limited_behavior",
+      "maxContradictions": 3138,
+      "minCoverage": 90.27
+    },
+    "allowedLimitedUses": [
+      "high-confidence point proximity evidence under strong lane-axis separation",
+      "base/deployment exclusion evidence",
+      "per-replay frozen-candidate behavior comparison"
+    ],
+    "prohibitedUses": [
+      "semantic lane occupancy correctness",
+      "transition detection",
+      "strategic lane assignment",
+      "model recalibration",
+      "replay 005 quality-based candidate selection"
+    ],
+    "remainingSemanticUncertainty": "No candidate output is human-ground-truth validation.",
+    "replay005Readiness": {
+      "status": "not_ready_resolution_confounded",
+      "reason": "A complete fine-resolution control is unavailable and episode behavior remains sensitive to five-second sampling; no final holdout hypothesis is frozen.",
+      "exactHypothesisForReplay005": null
+    }
+  },
+  "replay005Readiness": {
+    "status": "not_ready_resolution_confounded",
+    "reason": "A complete fine-resolution control is unavailable and episode behavior remains sensitive to five-second sampling; no final holdout hypothesis is frozen.",
+    "exactHypothesisForReplay005": null
+  },
+  "humanReviewRequired": false,
+  "transitionDetectionPromoted": false,
+  "stopReason": "NO_EXECUTABLE_PENDING_TASK",
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

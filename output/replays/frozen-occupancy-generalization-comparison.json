@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_occupancy_generalization_comparison",
+  "provenanceFile": "output/replays/frozen-candidate-provenance.json",
+  "candidatesEvaluated": [
+    "original_experiment_23_balanced",
+    "conservative_point_revision_combined",
+    "hysteresis_state_machine",
+    "windowed_evidence_accumulation",
+    "constrained_dynamic_programming"
+  ],
+  "candidatesExcluded": [
+    {
+      "id": "annotated_original_episodes",
+      "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+      "sourceOutput": "output/24-annotated-original-occupancy-episodes.json",
+      "classification": "resolution_incompatible",
+      "reason": "The candidate preserves replay 001 experiment 23 episode boundaries. Those boundaries are replay-specific outputs, not a frozen cross-replay construction rule for five-second timelines."
+    }
+  ],
+  "neutralLaneMapping": {
+    "source": "output/replay-lane-axis-topology-profile.json sourceRoleLane fields",
+    "method": "structural topology and coordinate correspondence only; occupancy output and model performance not used",
+    "historicalToNeutral": {
+      "lane_1": "lane_axis_3",
+      "lane_2": "lane_axis_1",
+      "lane_3": "lane_axis_2"
+    },
+    "aliases": [
+      {
+        "neutralLaneId": "lane_axis_1",
+        "alias": "Blue",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      },
+      {
+        "neutralLaneId": "lane_axis_2",
+        "alias": "Purple",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      },
+      {
+        "neutralLaneId": "lane_axis_3",
+        "alias": "Yellow",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      }
+    ]
+  },
+  "replay001ResolutionControl": {
+    "schemaVersion": 1,
+    "kind": "frozen_occupancy_resolution_effect",
+    "control": "replay_001_five_second_control compared to replay_001_fine_original where exact fine rows are available",
+    "warning": "Fine original application uses existing artifact adapters, not a complete fine full-spatial timeline.",
+    "candidates": [
+      {
+        "candidateId": "original_experiment_23_balanced",
+        "classification": "not_comparable",
+        "reason": "Fine-resolution full-spatial rows are unavailable for exact replay 001 candidate application.",
+        "fineApplicationAvailability": "partial_or_unavailable"
+      },
+      {
+        "candidateId": "conservative_point_revision_combined",
+        "classification": "not_comparable",
+        "reason": "Fine-resolution full-spatial rows are unavailable for exact replay 001 candidate application.",
+        "fineApplicationAvailability": "partial_or_unavailable"
+      },
+      {
+        "candidateId": "hysteresis_state_machine",
+        "classification": "not_comparable",
+        "reason": "Fine-resolution full-spatial rows are unavailable for exact replay 001 candidate application.",
+        "fineApplicationAvailability": "partial_or_unavailable"
+      },
+      {
+        "candidateId": "windowed_evidence_accumulation",
+        "classification": "not_comparable",
+        "reason": "Fine-resolution full-spatial rows are unavailable for exact replay 001 candidate application.",
+        "fineApplicationAvailability": "partial_or_unavailable"
+      },
+      {
+        "candidateId": "constrained_dynamic_programming",
+        "classification": "not_comparable",
+        "reason": "Fine-resolution full-spatial rows are unavailable for exact replay 001 candidate application.",
+        "fineApplicationAvailability": "partial_or_unavailable"
+      }
+    ],
+    "replay005Protection": {
+      "processed": false,
+      "status": "preserved"
+    }
+  },
+  "byCandidate": [
+    {
+      "candidateId": "original_experiment_23_balanced",
+      "replayMetrics": {
+        "replay_002": {
+          "coveragePercent": 90.87,
+          "contradictionEvidenceRows": 2342,
+          "instabilityPercent": 34.9,
+          "episodeCount": 1894,
+          "totalEpisodeDuration": 19955,
+          "fragmentationEpisodesPerPlayerHour": 310.49,
+          "strongestContradictionFlags": [
+            [
+              "base_or_deployment_conflict",
+              2241
+            ],
+            [
+              "ambiguous_separation_classified_as_lane",
+              400
+            ]
+          ]
+        },
+        "replay_003": {
+          "coveragePercent": 90.27,
+          "contradictionEvidenceRows": 3138,
+          "instabilityPercent": 34.63,
+          "episodeCount": 2319,
+          "totalEpisodeDuration": 24645,
+          "fragmentationEpisodesPerPlayerHour": 305.8,
+          "strongestContradictionFlags": [
+            [
+              "base_or_deployment_conflict",
+              3005
+            ],
+            [
+              "ambiguous_separation_classified_as_lane",
+              510
+            ]
+          ]
+        },
+        "replay_004": {
+          "coveragePercent": 90.61,
+          "contradictionEvidenceRows": 2755,
+          "instabilityPercent": 32.9,
+          "episodeCount": 2083,
+          "totalEpisodeDuration": 21855,
+          "fragmentationEpisodesPerPlayerHour": 310.9,
+          "strongestContradictionFlags": [
+            [
+              "base_or_deployment_conflict",
+              2652
+            ],
+            [
+              "ambiguous_separation_classified_as_lane",
+              412
+            ]
+          ]
+        }
+      },
+      "metricRanges": {
+        "coveragePercent": [
+          90.27,
+          90.87
+        ],
+        "contradictionEvidenceRows": [
+          2342,
+          3138
+        ],
+        "instabilityPercent": [
+          32.9,
+          34.9
+        ],
+        "episodeCount": [
+          1894,
+          2319
+        ],
+        "fragmentationEpisodesPerPlayerHour": [
+          305.8,
+          310.9
+        ]
+      },
+      "coefficientOfVariation": {
+        "coverage": 0,
+        "contradictions": 0.12,
+        "instability": 0.03
+      },
+      "worstReplay": "replay_003",
+      "commonContradictionCategories": [
+        "base_or_deployment_conflict",
+        "ambiguous_separation_classified_as_lane"
+      ],
+      "classification": "consistent_limited_behavior"
+    },
+    {
+      "candidateId": "conservative_point_revision_combined",
+      "replayMetrics": {
+        "replay_002": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 910,
+          "totalEpisodeDuration": 7405,
+          "fragmentationEpisodesPerPlayerHour": 149.18,
+          "strongestContradictionFlags": []
+        },
+        "replay_003": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 1024,
+          "totalEpisodeDuration": 7935,
+          "fragmentationEpisodesPerPlayerHour": 135.03,
+          "strongestContradictionFlags": []
+        },
+        "replay_004": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 1057,
+          "totalEpisodeDuration": 7275,
+          "fragmentationEpisodesPerPlayerHour": 157.76,
+          "strongestContradictionFlags": []
+        }
+      },
+      "metricRanges": {
+        "coveragePercent": [
+          29.07,
+          33.72
+        ],
+        "contradictionEvidenceRows": [
+          0,
+          0
+        ],
+        "instabilityPercent": [
+          3.24,
+          3.4
+        ],
+        "episodeCount": [
+          910,
+          1057
+        ],
+        "fragmentationEpisodesPerPlayerHour": [
+          135.03,
+          157.76
+        ]
+      },
+      "coefficientOfVariation": {
+        "coverage": 0.06,
+        "contradictions": null,
+        "instability": 0.02
+      },
+      "worstReplay": "replay_002",
+      "commonContradictionCategories": [],
+      "classification": "consistent_limited_behavior"
+    },
+    {
+      "candidateId": "hysteresis_state_machine",
+      "replayMetrics": {
+        "replay_002": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 10,
+          "totalEpisodeDuration": 1770,
+          "fragmentationEpisodesPerPlayerHour": 1.64,
+          "strongestContradictionFlags": []
+        },
+        "replay_003": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 29,
+          "totalEpisodeDuration": 1775,
+          "fragmentationEpisodesPerPlayerHour": 3.82,
+          "strongestContradictionFlags": []
+        },
+        "replay_004": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 19,
+          "totalEpisodeDuration": 990,
+          "fragmentationEpisodesPerPlayerHour": 2.84,
+          "strongestContradictionFlags": []
+        }
+      },
+      "metricRanges": {
+        "coveragePercent": [
+          29.07,
+          33.72
+        ],
+        "contradictionEvidenceRows": [
+          0,
+          0
+        ],
+        "instabilityPercent": [
+          3.24,
+          3.4
+        ],
+        "episodeCount": [
+          10,
+          29
+        ],
+        "fragmentationEpisodesPerPlayerHour": [
+          1.64,
+          3.82
+        ]
+      },
+      "coefficientOfVariation": {
+        "coverage": 0.06,
+        "contradictions": null,
+        "instability": 0.02
+      },
+      "worstReplay": "replay_002",
+      "commonContradictionCategories": [],
+      "classification": "consistent_limited_behavior"
+    },
+    {
+      "candidateId": "windowed_evidence_accumulation",
+      "replayMetrics": {
+        "replay_002": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 1020,
+          "totalEpisodeDuration": 8715,
+          "fragmentationEpisodesPerPlayerHour": 167.21,
+          "strongestContradictionFlags": []
+        },
+        "replay_003": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 1180,
+          "totalEpisodeDuration": 9460,
+          "fragmentationEpisodesPerPlayerHour": 155.6,
+          "strongestContradictionFlags": []
+        },
+        "replay_004": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 1155,
+          "totalEpisodeDuration": 8530,
+          "fragmentationEpisodesPerPlayerHour": 172.39,
+          "strongestContradictionFlags": []
+        }
+      },
+      "metricRanges": {
+        "coveragePercent": [
+          29.07,
+          33.72
+        ],
+        "contradictionEvidenceRows": [
+          0,
+          0
+        ],
+        "instabilityPercent": [
+          3.24,
+          3.4
+        ],
+        "episodeCount": [
+          1020,
+          1180
+        ],
+        "fragmentationEpisodesPerPlayerHour": [
+          155.6,
+          172.39
+        ]
+      },
+      "coefficientOfVariation": {
+        "coverage": 0.06,
+        "contradictions": null,
+        "instability": 0.02
+      },
+      "worstReplay": "replay_002",
+      "commonContradictionCategories": [],
+      "classification": "consistent_limited_behavior"
+    },
+    {
+      "candidateId": "constrained_dynamic_programming",
+      "replayMetrics": {
+        "replay_002": {
+          "coveragePercent": 33.72,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.3,
+          "episodeCount": 643,
+          "totalEpisodeDuration": 7690,
+          "fragmentationEpisodesPerPlayerHour": 105.41,
+          "strongestContradictionFlags": []
+        },
+        "replay_003": {
+          "coveragePercent": 29.07,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.24,
+          "episodeCount": 759,
+          "totalEpisodeDuration": 8525,
+          "fragmentationEpisodesPerPlayerHour": 100.09,
+          "strongestContradictionFlags": []
+        },
+        "replay_004": {
+          "coveragePercent": 30.16,
+          "contradictionEvidenceRows": 0,
+          "instabilityPercent": 3.4,
+          "episodeCount": 725,
+          "totalEpisodeDuration": 7270,
+          "fragmentationEpisodesPerPlayerHour": 108.21,
+          "strongestContradictionFlags": []
+        }
+      },
+      "metricRanges": {
+        "coveragePercent": [
+          29.07,
+          33.72
+        ],
+        "contradictionEvidenceRows": [
+          0,
+          0
+        ],
+        "instabilityPercent": [
+          3.24,
+          3.4
+        ],
+        "episodeCount": [
+          643,
+          759
+        ],
+        "fragmentationEpisodesPerPlayerHour": [
+          100.09,
+          108.21
+        ]
+      },
+      "coefficientOfVariation": {
+        "coverage": 0.06,
+        "contradictions": null,
+        "instability": 0.02
+      },
+      "worstReplay": "replay_002",
+      "commonContradictionCategories": [],
+      "classification": "consistent_limited_behavior"
+    }
+  ],
+  "strongestConsistentSuccess": {
+    "candidateId": "original_experiment_23_balanced",
+    "description": "Reproducible point-level lane-core/proximity evidence can be computed across replays without recalibration, but semantic correctness is not established.",
+    "allowedLimitedUse": "high-confidence point proximity evidence and base/deployment exclusion only"
+  },
+  "strongestConsistentFailure": {
+    "candidateId": "original_experiment_23_balanced",
+    "classification": "consistent_limited_behavior",
+    "maxContradictions": 3138,
+    "minCoverage": 90.27
+  },
+  "replay001Representativeness": "replay 001 is useful for schema and resolution control, but exact fine-versus-five-second comparison remains partially artifact-adapted.",
+  "allowedLimitedUses": [
+    "high-confidence point proximity evidence under strong lane-axis separation",
+    "base/deployment exclusion evidence",
+    "per-replay frozen-candidate behavior comparison"
+  ],
+  "prohibitedUses": [
+    "semantic lane occupancy correctness",
+    "transition detection",
+    "strategic lane assignment",
+    "model recalibration",
+    "replay 005 quality-based candidate selection"
+  ],
+  "remainingSemanticUncertainty": "No candidate output is human-ground-truth validation.",
+  "replay005Readiness": {
+    "status": "not_ready_resolution_confounded",
+    "reason": "A complete fine-resolution control is unavailable and episode behavior remains sensitive to five-second sampling; no final holdout hypothesis is frozen.",
+    "exactHypothesisForReplay005": null
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

@@ -1,0 +1,1990 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_occupancy_candidate_results",
+  "datasetId": "replay_002_five_second",
+  "replayId": "replay_002",
+  "temporalResolution": "five_second",
+  "rowCount": 4404,
+  "limitations": [
+    "contacts shorter than five seconds are unobservable"
+  ],
+  "candidates": [
+    {
+      "candidateId": "original_experiment_23_balanced",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "datasetId": "replay_002_five_second",
+      "appliedAs": "point_model",
+      "schemaAdaptation": "full-spatial row fields mapped to frozen distance, margin, speed, and structural-region inputs; no threshold changes",
+      "fineResolutionApplication": "not_fine_resolution",
+      "pointMetrics": {
+        "totalRows": 4404,
+        "totalValidRows": 4392,
+        "laneClassifiedRows": 3991,
+        "abstainedRows": 413,
+        "coveragePercent": 90.87,
+        "abstentionPercent": 9.38,
+        "stateDistribution": {
+          "unknown": 12,
+          "lane_approach": 369,
+          "lane_core_high": 3109,
+          "lane_occupiable": 400,
+          "lane_ambiguous": 32,
+          "lane_core_medium": 482
+        },
+        "contradictionEvidenceRows": 2342,
+        "contradictionFlags": {
+          "base_or_deployment_conflict": 2241,
+          "ambiguous_separation_classified_as_lane": 400
+        },
+        "instabilityRows": 1533,
+        "instabilityPercent": 34.9,
+        "baseDeploymentConflicts": 2241,
+        "nearestLaneConflicts": 0,
+        "highSpeedClassifications": 0,
+        "ambiguousSeparationClassifications": 400,
+        "sensitivityPerturbations": [
+          {
+            "name": "narrow_lane_envelope",
+            "changedRows": 32
+          },
+          {
+            "name": "wide_lane_envelope",
+            "changedRows": 20
+          },
+          {
+            "name": "stricter_separation_margin",
+            "changedRows": 775
+          },
+          {
+            "name": "looser_separation_margin",
+            "changedRows": 806
+          },
+          {
+            "name": "larger_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "smaller_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "higher_confidence_boundary",
+            "changedRows": 1005
+          },
+          {
+            "name": "lower_confidence_boundary",
+            "changedRows": 1014
+          }
+        ],
+        "preservesFrozenParameters": {
+          "maxCoreDistance": 380,
+          "maxOccupancyDistance": 520,
+          "minMargin": 45,
+          "deploymentRadius": 500,
+          "baseCoreRadius": 240,
+          "minStableSeconds": 5,
+          "interruptionTolerance": 3,
+          "envelopeMultiplier": 1.25
+        }
+      },
+      "episodeMetrics": {
+        "episodeCount": 1894,
+        "totalEpisodeDuration": 19955,
+        "coverageDurationPercentOfPlayerTimeline": 90.62,
+        "medianDuration": 5,
+        "durationDistribution": {
+          "count": 1894,
+          "min": 5,
+          "median": 5,
+          "p90": 20,
+          "max": 715
+        },
+        "fragmentationEpisodesPerPlayerHour": 310.49,
+        "episodesPerPlayer": {
+          "76561198277999856": 162,
+          "76561198141839984": 89,
+          "76561198110941637": 176,
+          "76561199766207026": 91,
+          "76561198305874157": 171,
+          "76561198404370682": 148,
+          "76561199006512996": 187,
+          "76561198086065951": 181,
+          "76561199117525543": 176,
+          "76561198387584891": 184,
+          "76561198958797538": 172,
+          "76561198197551365": 157
+        },
+        "episodesPerLane": {
+          "lane_axis_1": 861,
+          "lane_axis_3": 393,
+          "lane_axis_2": 640
+        },
+        "shortEpisodes": 1508,
+        "uncertainGapDuration": 0,
+        "terminationReasons": {
+          "state_change": 1534,
+          "approach_distance_or_margin": 325,
+          "end_of_timeline": 12,
+          "occupiable_boundary_abstention": 23
+        },
+        "contradictionEvidenceDuration": 11710,
+        "baseDeploymentContinuation": 0,
+        "competingLaneContinuation": 0
+      },
+      "distribution": {
+        "classifiedRowsByPlayer": {
+          "76561198277999856": 367,
+          "76561198141839984": 367,
+          "76561198110941637": 367,
+          "76561199766207026": 367,
+          "76561198305874157": 367,
+          "76561198404370682": 367,
+          "76561199006512996": 367,
+          "76561198086065951": 367,
+          "76561199117525543": 367,
+          "76561198387584891": 367,
+          "76561198958797538": 367,
+          "76561198197551365": 367
+        },
+        "laneRowsByLane": {
+          "lane_axis_1": 2179,
+          "lane_axis_2": 1281,
+          "lane_axis_3": 531
+        },
+        "rowsByTeam": {
+          "2": 2202,
+          "3": 2202
+        },
+        "rowsByPhase": {
+          "early": 1452,
+          "middle": 1440,
+          "late": 1512
+        },
+        "laneRowsByPhase": {
+          "early": 1315,
+          "middle": 1303,
+          "late": 1373
+        },
+        "laneRowsByDistanceBand": {
+          "0_300": 3820,
+          "301_520": 171
+        },
+        "laneRowsBySeparationBand": {
+          "gte_180": 1792,
+          "90_179": 1058,
+          "lt_45": 400,
+          "45_89": 741
+        },
+        "laneRowsBySpeedBand": {
+          "missing": 8,
+          "0_300": 3983
+        },
+        "laneRowsByStructuralContext": {
+          "base": 2241,
+          "open_structural_space": 1750
+        },
+        "episodesByPhase": {
+          "early": 638,
+          "middle": 660,
+          "late": 596
+        }
+      },
+      "resolutionParameterInterpretation": {
+        "maxCoreDistance": {
+          "value": 380,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "maxOccupancyDistance": {
+          "value": 520,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "minMargin": {
+          "value": 45,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "deploymentRadius": {
+          "value": 500,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "baseCoreRadius": {
+          "value": 240,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "minStableSeconds": {
+          "value": 5,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "interruptionTolerance": {
+          "value": 3,
+          "type": "sample_count_parameter",
+          "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+        },
+        "envelopeMultiplier": {
+          "value": 1.25,
+          "type": "categorical_rule",
+          "resolutionNote": null
+        }
+      },
+      "sampleRows": [
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198277999856",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198141839984",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198110941637",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "candidateId": "conservative_point_revision_combined",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "datasetId": "replay_002_five_second",
+      "appliedAs": "point_model",
+      "schemaAdaptation": "full-spatial row fields mapped to frozen distance, margin, speed, and structural-region inputs; no threshold changes",
+      "fineResolutionApplication": "not_fine_resolution",
+      "pointMetrics": {
+        "totalRows": 4404,
+        "totalValidRows": 4392,
+        "laneClassifiedRows": 1481,
+        "abstainedRows": 2923,
+        "coveragePercent": 33.72,
+        "abstentionPercent": 66.37,
+        "stateDistribution": {
+          "unknown": 12,
+          "base_core": 2525,
+          "lane_ambiguous": 386,
+          "lane_core_high": 1481
+        },
+        "contradictionEvidenceRows": 0,
+        "contradictionFlags": {},
+        "instabilityRows": 145,
+        "instabilityPercent": 3.3,
+        "baseDeploymentConflicts": 0,
+        "nearestLaneConflicts": 0,
+        "highSpeedClassifications": 0,
+        "ambiguousSeparationClassifications": 0,
+        "sensitivityPerturbations": [
+          {
+            "name": "narrow_lane_envelope",
+            "changedRows": 8
+          },
+          {
+            "name": "wide_lane_envelope",
+            "changedRows": 11
+          },
+          {
+            "name": "stricter_separation_margin",
+            "changedRows": 84
+          },
+          {
+            "name": "looser_separation_margin",
+            "changedRows": 0
+          },
+          {
+            "name": "larger_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "smaller_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "higher_confidence_boundary",
+            "changedRows": 130
+          },
+          {
+            "name": "lower_confidence_boundary",
+            "changedRows": 9
+          }
+        ],
+        "preservesFrozenParameters": {
+          "maxCoreDistance": 380,
+          "maxOccupancyDistance": 520,
+          "minMargin": 45,
+          "deploymentRadius": 500,
+          "baseCoreRadius": 240,
+          "minStableSeconds": 5,
+          "interruptionTolerance": 3,
+          "envelopeMultiplier": 1.25
+        }
+      },
+      "episodeMetrics": {
+        "episodeCount": 910,
+        "totalEpisodeDuration": 7405,
+        "coverageDurationPercentOfPlayerTimeline": 33.63,
+        "medianDuration": 5,
+        "durationDistribution": {
+          "count": 910,
+          "min": 5,
+          "median": 5,
+          "p90": 10,
+          "max": 715
+        },
+        "fragmentationEpisodesPerPlayerHour": 149.18,
+        "episodesPerPlayer": {
+          "76561198277999856": 74,
+          "76561198141839984": 59,
+          "76561198110941637": 71,
+          "76561199766207026": 50,
+          "76561198305874157": 86,
+          "76561198404370682": 69,
+          "76561199006512996": 82,
+          "76561198086065951": 87,
+          "76561199117525543": 80,
+          "76561198387584891": 100,
+          "76561198958797538": 70,
+          "76561198197551365": 82
+        },
+        "episodesPerLane": {
+          "lane_axis_1": 503,
+          "lane_axis_2": 272,
+          "lane_axis_3": 135
+        },
+        "shortEpisodes": 855,
+        "uncertainGapDuration": 0,
+        "terminationReasons": {
+          "independent_base_precedence": 636,
+          "weak_lane_separation_abstention": 114,
+          "state_change": 155,
+          "end_of_timeline": 4,
+          "occupiable_boundary_abstention": 1
+        },
+        "contradictionEvidenceDuration": 0,
+        "baseDeploymentContinuation": 0,
+        "competingLaneContinuation": 0
+      },
+      "distribution": {
+        "classifiedRowsByPlayer": {
+          "76561198277999856": 367,
+          "76561198141839984": 367,
+          "76561198110941637": 367,
+          "76561199766207026": 367,
+          "76561198305874157": 367,
+          "76561198404370682": 367,
+          "76561199006512996": 367,
+          "76561198086065951": 367,
+          "76561199117525543": 367,
+          "76561198387584891": 367,
+          "76561198958797538": 367,
+          "76561198197551365": 367
+        },
+        "laneRowsByLane": {
+          "lane_axis_1": 663,
+          "lane_axis_3": 164,
+          "lane_axis_2": 654
+        },
+        "rowsByTeam": {
+          "2": 2202,
+          "3": 2202
+        },
+        "rowsByPhase": {
+          "early": 1452,
+          "middle": 1440,
+          "late": 1512
+        },
+        "laneRowsByPhase": {
+          "early": 469,
+          "middle": 428,
+          "late": 584
+        },
+        "laneRowsByDistanceBand": {
+          "0_300": 1445,
+          "301_520": 36
+        },
+        "laneRowsBySeparationBand": {
+          "gte_180": 996,
+          "45_89": 61,
+          "90_179": 424
+        },
+        "laneRowsBySpeedBand": {
+          "missing": 2,
+          "0_300": 1479
+        },
+        "laneRowsByStructuralContext": {
+          "open_structural_space": 1481
+        },
+        "episodesByPhase": {
+          "early": 351,
+          "middle": 314,
+          "late": 245
+        }
+      },
+      "resolutionParameterInterpretation": {
+        "maxCoreDistance": {
+          "value": 380,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "maxOccupancyDistance": {
+          "value": 520,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "minMargin": {
+          "value": 45,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "deploymentRadius": {
+          "value": 500,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "baseCoreRadius": {
+          "value": 240,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "minStableSeconds": {
+          "value": 5,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "interruptionTolerance": {
+          "value": 3,
+          "type": "sample_count_parameter",
+          "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+        },
+        "envelopeMultiplier": {
+          "value": 1.25,
+          "type": "categorical_rule",
+          "resolutionNote": null
+        }
+      },
+      "sampleRows": [
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198277999856",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198141839984",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198110941637",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "candidateId": "hysteresis_state_machine",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "datasetId": "replay_002_five_second",
+      "appliedAs": "sequential_episode_model",
+      "schemaAdaptation": "full-spatial row fields mapped to frozen distance, margin, speed, and structural-region inputs; no threshold changes",
+      "fineResolutionApplication": "not_fine_resolution",
+      "pointMetrics": {
+        "totalRows": 4404,
+        "totalValidRows": 4392,
+        "laneClassifiedRows": 1481,
+        "abstainedRows": 2923,
+        "coveragePercent": 33.72,
+        "abstentionPercent": 66.37,
+        "stateDistribution": {
+          "unknown": 12,
+          "base_core": 2525,
+          "lane_ambiguous": 386,
+          "lane_core_high": 1481
+        },
+        "contradictionEvidenceRows": 0,
+        "contradictionFlags": {},
+        "instabilityRows": 145,
+        "instabilityPercent": 3.3,
+        "baseDeploymentConflicts": 0,
+        "nearestLaneConflicts": 0,
+        "highSpeedClassifications": 0,
+        "ambiguousSeparationClassifications": 0,
+        "sensitivityPerturbations": [
+          {
+            "name": "narrow_lane_envelope",
+            "changedRows": 8
+          },
+          {
+            "name": "wide_lane_envelope",
+            "changedRows": 11
+          },
+          {
+            "name": "stricter_separation_margin",
+            "changedRows": 84
+          },
+          {
+            "name": "looser_separation_margin",
+            "changedRows": 0
+          },
+          {
+            "name": "larger_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "smaller_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "higher_confidence_boundary",
+            "changedRows": 130
+          },
+          {
+            "name": "lower_confidence_boundary",
+            "changedRows": 9
+          }
+        ],
+        "preservesFrozenParameters": {
+          "id": "hysteresis_state_machine",
+          "enterSeconds": 4,
+          "uncertainTolerance": 5,
+          "rejoinGap": 4,
+          "minDuration": 5,
+          "minSupportRatio": 0.45,
+          "maxContradictionRatio": 0.28
+        }
+      },
+      "episodeMetrics": {
+        "episodeCount": 10,
+        "totalEpisodeDuration": 1770,
+        "coverageDurationPercentOfPlayerTimeline": 8.04,
+        "medianDuration": 50,
+        "durationDistribution": {
+          "count": 10,
+          "min": 20,
+          "median": 50,
+          "p90": 715,
+          "max": 715
+        },
+        "fragmentationEpisodesPerPlayerHour": 1.64,
+        "episodesPerPlayer": {
+          "76561198277999856": 3,
+          "76561198141839984": 3,
+          "76561199766207026": 2,
+          "76561198086065951": 1,
+          "76561199117525543": 1
+        },
+        "episodesPerLane": {
+          "lane_axis_2": 9,
+          "lane_axis_1": 1
+        },
+        "shortEpisodes": 0,
+        "uncertainGapDuration": 0,
+        "terminationReasons": {
+          "strong_exit_evidence": 7,
+          "end_of_timeline": 3
+        },
+        "contradictionEvidenceDuration": 35,
+        "baseDeploymentContinuation": 0,
+        "competingLaneContinuation": 7
+      },
+      "distribution": {
+        "classifiedRowsByPlayer": {
+          "76561198277999856": 367,
+          "76561198141839984": 367,
+          "76561198110941637": 367,
+          "76561199766207026": 367,
+          "76561198305874157": 367,
+          "76561198404370682": 367,
+          "76561199006512996": 367,
+          "76561198086065951": 367,
+          "76561199117525543": 367,
+          "76561198387584891": 367,
+          "76561198958797538": 367,
+          "76561198197551365": 367
+        },
+        "laneRowsByLane": {
+          "lane_axis_1": 663,
+          "lane_axis_3": 164,
+          "lane_axis_2": 654
+        },
+        "rowsByTeam": {
+          "2": 2202,
+          "3": 2202
+        },
+        "rowsByPhase": {
+          "early": 1452,
+          "middle": 1440,
+          "late": 1512
+        },
+        "laneRowsByPhase": {
+          "early": 469,
+          "middle": 428,
+          "late": 584
+        },
+        "laneRowsByDistanceBand": {
+          "0_300": 1445,
+          "301_520": 36
+        },
+        "laneRowsBySeparationBand": {
+          "gte_180": 996,
+          "45_89": 61,
+          "90_179": 424
+        },
+        "laneRowsBySpeedBand": {
+          "missing": 2,
+          "0_300": 1479
+        },
+        "laneRowsByStructuralContext": {
+          "open_structural_space": 1481
+        },
+        "episodesByPhase": {
+          "late": 4,
+          "middle": 5,
+          "early": 1
+        }
+      },
+      "resolutionParameterInterpretation": {
+        "id": {
+          "value": "hysteresis_state_machine",
+          "type": "categorical_rule",
+          "resolutionNote": null
+        },
+        "enterSeconds": {
+          "value": 4,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "uncertainTolerance": {
+          "value": 5,
+          "type": "sample_count_parameter",
+          "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+        },
+        "rejoinGap": {
+          "value": 4,
+          "type": "sample_count_parameter",
+          "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+        },
+        "minDuration": {
+          "value": 5,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "minSupportRatio": {
+          "value": 0.45,
+          "type": "ratio_parameter",
+          "resolutionNote": null
+        },
+        "maxContradictionRatio": {
+          "value": 0.28,
+          "type": "ratio_parameter",
+          "resolutionNote": null
+        }
+      },
+      "sampleRows": [
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198277999856",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198141839984",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198110941637",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "candidateId": "windowed_evidence_accumulation",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "datasetId": "replay_002_five_second",
+      "appliedAs": "sequential_episode_model",
+      "schemaAdaptation": "full-spatial row fields mapped to frozen distance, margin, speed, and structural-region inputs; no threshold changes",
+      "fineResolutionApplication": "not_fine_resolution",
+      "pointMetrics": {
+        "totalRows": 4404,
+        "totalValidRows": 4392,
+        "laneClassifiedRows": 1481,
+        "abstainedRows": 2923,
+        "coveragePercent": 33.72,
+        "abstentionPercent": 66.37,
+        "stateDistribution": {
+          "unknown": 12,
+          "base_core": 2525,
+          "lane_ambiguous": 386,
+          "lane_core_high": 1481
+        },
+        "contradictionEvidenceRows": 0,
+        "contradictionFlags": {},
+        "instabilityRows": 145,
+        "instabilityPercent": 3.3,
+        "baseDeploymentConflicts": 0,
+        "nearestLaneConflicts": 0,
+        "highSpeedClassifications": 0,
+        "ambiguousSeparationClassifications": 0,
+        "sensitivityPerturbations": [
+          {
+            "name": "narrow_lane_envelope",
+            "changedRows": 8
+          },
+          {
+            "name": "wide_lane_envelope",
+            "changedRows": 11
+          },
+          {
+            "name": "stricter_separation_margin",
+            "changedRows": 84
+          },
+          {
+            "name": "looser_separation_margin",
+            "changedRows": 0
+          },
+          {
+            "name": "larger_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "smaller_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "higher_confidence_boundary",
+            "changedRows": 130
+          },
+          {
+            "name": "lower_confidence_boundary",
+            "changedRows": 9
+          }
+        ],
+        "preservesFrozenParameters": {
+          "id": "windowed_evidence_accumulation",
+          "windowSeconds": 5,
+          "supportMargin": 2,
+          "minDuration": 5,
+          "minSupportRatio": 0.42,
+          "maxContradictionRatio": 0.3
+        }
+      },
+      "episodeMetrics": {
+        "episodeCount": 1020,
+        "totalEpisodeDuration": 8715,
+        "coverageDurationPercentOfPlayerTimeline": 39.58,
+        "medianDuration": 5,
+        "durationDistribution": {
+          "count": 1020,
+          "min": 5,
+          "median": 5,
+          "p90": 10,
+          "max": 715
+        },
+        "fragmentationEpisodesPerPlayerHour": 167.21,
+        "episodesPerPlayer": {
+          "76561198277999856": 81,
+          "76561198141839984": 65,
+          "76561198110941637": 83,
+          "76561199766207026": 53,
+          "76561198305874157": 101,
+          "76561198404370682": 77,
+          "76561199006512996": 92,
+          "76561198086065951": 98,
+          "76561199117525543": 92,
+          "76561198387584891": 113,
+          "76561198958797538": 77,
+          "76561198197551365": 88
+        },
+        "episodesPerLane": {
+          "lane_axis_1": 534,
+          "lane_axis_2": 322,
+          "lane_axis_3": 164
+        },
+        "shortEpisodes": 936,
+        "uncertainGapDuration": 180,
+        "terminationReasons": {
+          "base_or_deployment_window": 786,
+          "window_state_change": 227,
+          "end_of_timeline": 7
+        },
+        "contradictionEvidenceDuration": 0,
+        "baseDeploymentContinuation": 786,
+        "competingLaneContinuation": 0
+      },
+      "distribution": {
+        "classifiedRowsByPlayer": {
+          "76561198277999856": 367,
+          "76561198141839984": 367,
+          "76561198110941637": 367,
+          "76561199766207026": 367,
+          "76561198305874157": 367,
+          "76561198404370682": 367,
+          "76561199006512996": 367,
+          "76561198086065951": 367,
+          "76561199117525543": 367,
+          "76561198387584891": 367,
+          "76561198958797538": 367,
+          "76561198197551365": 367
+        },
+        "laneRowsByLane": {
+          "lane_axis_1": 663,
+          "lane_axis_3": 164,
+          "lane_axis_2": 654
+        },
+        "rowsByTeam": {
+          "2": 2202,
+          "3": 2202
+        },
+        "rowsByPhase": {
+          "early": 1452,
+          "middle": 1440,
+          "late": 1512
+        },
+        "laneRowsByPhase": {
+          "early": 469,
+          "middle": 428,
+          "late": 584
+        },
+        "laneRowsByDistanceBand": {
+          "0_300": 1445,
+          "301_520": 36
+        },
+        "laneRowsBySeparationBand": {
+          "gte_180": 996,
+          "45_89": 61,
+          "90_179": 424
+        },
+        "laneRowsBySpeedBand": {
+          "missing": 2,
+          "0_300": 1479
+        },
+        "laneRowsByStructuralContext": {
+          "open_structural_space": 1481
+        },
+        "episodesByPhase": {
+          "early": 382,
+          "middle": 353,
+          "late": 285
+        }
+      },
+      "resolutionParameterInterpretation": {
+        "id": {
+          "value": "windowed_evidence_accumulation",
+          "type": "categorical_rule",
+          "resolutionNote": null
+        },
+        "windowSeconds": {
+          "value": 5,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "supportMargin": {
+          "value": 2,
+          "type": "distance_parameter",
+          "resolutionNote": null
+        },
+        "minDuration": {
+          "value": 5,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "minSupportRatio": {
+          "value": 0.42,
+          "type": "ratio_parameter",
+          "resolutionNote": null
+        },
+        "maxContradictionRatio": {
+          "value": 0.3,
+          "type": "ratio_parameter",
+          "resolutionNote": null
+        }
+      },
+      "sampleRows": [
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198277999856",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198141839984",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198110941637",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "candidateId": "constrained_dynamic_programming",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "datasetId": "replay_002_five_second",
+      "appliedAs": "sequential_episode_model",
+      "schemaAdaptation": "full-spatial row fields mapped to frozen distance, margin, speed, and structural-region inputs; no threshold changes",
+      "fineResolutionApplication": "not_fine_resolution",
+      "pointMetrics": {
+        "totalRows": 4404,
+        "totalValidRows": 4392,
+        "laneClassifiedRows": 1481,
+        "abstainedRows": 2923,
+        "coveragePercent": 33.72,
+        "abstentionPercent": 66.37,
+        "stateDistribution": {
+          "unknown": 12,
+          "base_core": 2525,
+          "lane_ambiguous": 386,
+          "lane_core_high": 1481
+        },
+        "contradictionEvidenceRows": 0,
+        "contradictionFlags": {},
+        "instabilityRows": 145,
+        "instabilityPercent": 3.3,
+        "baseDeploymentConflicts": 0,
+        "nearestLaneConflicts": 0,
+        "highSpeedClassifications": 0,
+        "ambiguousSeparationClassifications": 0,
+        "sensitivityPerturbations": [
+          {
+            "name": "narrow_lane_envelope",
+            "changedRows": 8
+          },
+          {
+            "name": "wide_lane_envelope",
+            "changedRows": 11
+          },
+          {
+            "name": "stricter_separation_margin",
+            "changedRows": 84
+          },
+          {
+            "name": "looser_separation_margin",
+            "changedRows": 0
+          },
+          {
+            "name": "larger_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "smaller_deployment_exclusion",
+            "changedRows": 0
+          },
+          {
+            "name": "higher_confidence_boundary",
+            "changedRows": 130
+          },
+          {
+            "name": "lower_confidence_boundary",
+            "changedRows": 9
+          }
+        ],
+        "preservesFrozenParameters": {
+          "id": "constrained_dynamic_programming",
+          "switchPenalty": 2.2,
+          "impossibleLaneSwitchPenalty": 4,
+          "unknownPenalty": 0.35,
+          "minDuration": 5,
+          "minSupportRatio": 0.4,
+          "maxContradictionRatio": 0.32
+        }
+      },
+      "episodeMetrics": {
+        "episodeCount": 643,
+        "totalEpisodeDuration": 7690,
+        "coverageDurationPercentOfPlayerTimeline": 34.92,
+        "medianDuration": 5,
+        "durationDistribution": {
+          "count": 643,
+          "min": 5,
+          "median": 5,
+          "p90": 20,
+          "max": 715
+        },
+        "fragmentationEpisodesPerPlayerHour": 105.41,
+        "episodesPerPlayer": {
+          "76561198277999856": 63,
+          "76561198141839984": 32,
+          "76561198110941637": 51,
+          "76561199766207026": 39,
+          "76561198305874157": 59,
+          "76561198404370682": 49,
+          "76561199006512996": 62,
+          "76561198086065951": 56,
+          "76561199117525543": 53,
+          "76561198387584891": 71,
+          "76561198958797538": 52,
+          "76561198197551365": 56
+        },
+        "episodesPerLane": {
+          "lane_axis_1": 355,
+          "lane_axis_2": 183,
+          "lane_axis_3": 105
+        },
+        "shortEpisodes": 510,
+        "uncertainGapDuration": 605,
+        "terminationReasons": {
+          "base": 622,
+          "unknown": 13,
+          "dp_state_change": 2,
+          "end_of_timeline": 5,
+          "neutral_or_transit": 1
+        },
+        "contradictionEvidenceDuration": 230,
+        "baseDeploymentContinuation": 0,
+        "competingLaneContinuation": 0
+      },
+      "distribution": {
+        "classifiedRowsByPlayer": {
+          "76561198277999856": 367,
+          "76561198141839984": 367,
+          "76561198110941637": 367,
+          "76561199766207026": 367,
+          "76561198305874157": 367,
+          "76561198404370682": 367,
+          "76561199006512996": 367,
+          "76561198086065951": 367,
+          "76561199117525543": 367,
+          "76561198387584891": 367,
+          "76561198958797538": 367,
+          "76561198197551365": 367
+        },
+        "laneRowsByLane": {
+          "lane_axis_1": 663,
+          "lane_axis_3": 164,
+          "lane_axis_2": 654
+        },
+        "rowsByTeam": {
+          "2": 2202,
+          "3": 2202
+        },
+        "rowsByPhase": {
+          "early": 1452,
+          "middle": 1440,
+          "late": 1512
+        },
+        "laneRowsByPhase": {
+          "early": 469,
+          "middle": 428,
+          "late": 584
+        },
+        "laneRowsByDistanceBand": {
+          "0_300": 1445,
+          "301_520": 36
+        },
+        "laneRowsBySeparationBand": {
+          "gte_180": 996,
+          "45_89": 61,
+          "90_179": 424
+        },
+        "laneRowsBySpeedBand": {
+          "missing": 2,
+          "0_300": 1479
+        },
+        "laneRowsByStructuralContext": {
+          "open_structural_space": 1481
+        },
+        "episodesByPhase": {
+          "early": 239,
+          "middle": 216,
+          "late": 188
+        }
+      },
+      "resolutionParameterInterpretation": {
+        "id": {
+          "value": "constrained_dynamic_programming",
+          "type": "categorical_rule",
+          "resolutionNote": null
+        },
+        "switchPenalty": {
+          "value": 2.2,
+          "type": "categorical_rule",
+          "resolutionNote": null
+        },
+        "impossibleLaneSwitchPenalty": {
+          "value": 4,
+          "type": "categorical_rule",
+          "resolutionNote": null
+        },
+        "unknownPenalty": {
+          "value": 0.35,
+          "type": "categorical_rule",
+          "resolutionNote": null
+        },
+        "minDuration": {
+          "value": 5,
+          "type": "physical_time_parameter",
+          "resolutionNote": null
+        },
+        "minSupportRatio": {
+          "value": 0.4,
+          "type": "ratio_parameter",
+          "resolutionNote": null
+        },
+        "maxContradictionRatio": {
+          "value": 0.32,
+          "type": "ratio_parameter",
+          "resolutionNote": null
+        }
+      },
+      "sampleRows": [
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198277999856",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198141839984",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        },
+        {
+          "replayId": "replay_002",
+          "playerId": "76561198110941637",
+          "team": 2,
+          "gameTimeSeconds": 0,
+          "state": "unknown",
+          "physicalLaneId": null,
+          "candidateLane": null,
+          "secondLane": null,
+          "nearestDistance": null,
+          "secondDistance": null,
+          "separationMargin": null,
+          "speed": null,
+          "positionQuality": "missing",
+          "structuralRegions": {
+            "nearTeamBase": false,
+            "nearEnemyBase": false,
+            "nearDeployment": false,
+            "nearCentralObjective": false,
+            "nearNeutralStructure": false,
+            "outsideKnownStructuralEnvelope": false
+          },
+          "lossReason": "invalid_or_missing_position",
+          "contradictionFlags": [],
+          "perturbationChanged": false,
+          "perturbationStates": [
+            {
+              "name": "narrow_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "wide_lane_envelope",
+              "state": "unknown"
+            },
+            {
+              "name": "stricter_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "looser_separation_margin",
+              "state": "unknown"
+            },
+            {
+              "name": "larger_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "smaller_deployment_exclusion",
+              "state": "unknown"
+            },
+            {
+              "name": "higher_confidence_boundary",
+              "state": "unknown"
+            },
+            {
+              "name": "lower_confidence_boundary",
+              "state": "unknown"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "id": "annotated_original_episodes",
+      "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+      "sourceOutput": "output/24-annotated-original-occupancy-episodes.json",
+      "classification": "resolution_incompatible",
+      "reason": "The candidate preserves replay 001 experiment 23 episode boundaries. Those boundaries are replay-specific outputs, not a frozen cross-replay construction rule for five-second timelines."
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

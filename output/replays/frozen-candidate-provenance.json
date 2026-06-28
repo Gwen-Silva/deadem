@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen_candidate_provenance",
+  "candidates": [
+    {
+      "candidateId": "original_experiment_23_balanced",
+      "originatingExperimentOrTask": "experiment 23",
+      "sourceScript": "experiments/23-calibrate-lane-occupancy.js",
+      "sourceOutput": "output/23-calibrated-lane-occupancy.json",
+      "exactParameters": {
+        "maxCoreDistance": 380,
+        "maxOccupancyDistance": 520,
+        "minMargin": 45,
+        "deploymentRadius": 500,
+        "baseCoreRadius": 240,
+        "minStableSeconds": 5,
+        "interruptionTolerance": 3,
+        "envelopeMultiplier": 1.25
+      },
+      "expectedTemporalResolution": "fine replay 001 movement rows; adapted to five-second rows without threshold changes",
+      "expectedInputSchema": "player-time rows with coordinates, nearest/second-nearest lane distances, separation margin, speed, and structural-region flags",
+      "episodeBuildingAssumptions": "contiguous lane_core_high/lane_core_medium/lane_occupiable rows with minStableSeconds and interruptionTolerance from experiment 23",
+      "speedAssumptions": "speed uses actual elapsed seconds; high-speed threshold remains 900 coordinate units per second",
+      "interruptionAssumptions": "sample-count parameters remain frozen and are flagged as resolution-sensitive",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "compatibilityWithFiveSecondData": "schema_adapter_resolution_sensitive",
+      "adaptationRequiredSolelyForInputSchema": "historical lane IDs mapped to neutral lane axes; field names mapped from full-spatial timeline schema",
+      "noThresholdChanges": true
+    },
+    {
+      "candidateId": "conservative_point_revision_combined",
+      "originatingExperimentOrTask": "task 005 / experiment 24",
+      "sourceScript": "experiments/24-revise-lane-occupancy-model.js",
+      "sourceOutput": "output/24-revised-lane-occupancy.json",
+      "exactParameters": {
+        "maxCoreDistance": 380,
+        "maxOccupancyDistance": 520,
+        "minMargin": 45,
+        "deploymentRadius": 500,
+        "baseCoreRadius": 240,
+        "minStableSeconds": 5,
+        "interruptionTolerance": 3,
+        "envelopeMultiplier": 1.25
+      },
+      "expectedTemporalResolution": "fine replay 001 movement rows; adapted to five-second rows without threshold changes",
+      "expectedInputSchema": "player-time rows with coordinates, nearest/second-nearest lane distances, separation margin, speed, and structural-region flags",
+      "episodeBuildingAssumptions": "task 005 point revision converted to episodes with spatial continuity filter",
+      "speedAssumptions": "speed uses actual elapsed seconds; high-speed threshold remains 900 coordinate units per second",
+      "interruptionAssumptions": "sample-count parameters remain frozen and are flagged as resolution-sensitive",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "compatibilityWithFiveSecondData": "schema_adapter_resolution_sensitive",
+      "adaptationRequiredSolelyForInputSchema": "historical lane IDs mapped to neutral lane axes; field names mapped from full-spatial timeline schema",
+      "noThresholdChanges": true
+    },
+    {
+      "candidateId": "hysteresis_state_machine",
+      "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+      "sourceScript": "experiments/24-prototype-uncertainty-aware-lane-episode-segmentation.js",
+      "sourceOutput": "output/24-hysteresis-occupancy-episodes.json",
+      "exactParameters": {
+        "id": "hysteresis_state_machine",
+        "enterSeconds": 4,
+        "uncertainTolerance": 5,
+        "rejoinGap": 4,
+        "minDuration": 5,
+        "minSupportRatio": 0.45,
+        "maxContradictionRatio": 0.28
+      },
+      "expectedTemporalResolution": "diagnostic replay 001 observation rows; adapted to five-second rows without threshold changes",
+      "expectedInputSchema": "player-time rows with coordinates, nearest/second-nearest lane distances, separation margin, speed, and structural-region flags",
+      "episodeBuildingAssumptions": "lane state entered after sustained support and retained through bounded uncertainty",
+      "speedAssumptions": "speed uses actual elapsed seconds; high-speed threshold remains 900 coordinate units per second",
+      "interruptionAssumptions": "sample-count parameters remain frozen and are flagged as resolution-sensitive",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "compatibilityWithFiveSecondData": "schema_adapter_resolution_sensitive",
+      "adaptationRequiredSolelyForInputSchema": "historical lane IDs mapped to neutral lane axes; field names mapped from full-spatial timeline schema",
+      "noThresholdChanges": true
+    },
+    {
+      "candidateId": "windowed_evidence_accumulation",
+      "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+      "sourceScript": "experiments/24-prototype-uncertainty-aware-lane-episode-segmentation.js",
+      "sourceOutput": "output/24-windowed-evidence-occupancy-episodes.json",
+      "exactParameters": {
+        "id": "windowed_evidence_accumulation",
+        "windowSeconds": 5,
+        "supportMargin": 2,
+        "minDuration": 5,
+        "minSupportRatio": 0.42,
+        "maxContradictionRatio": 0.3
+      },
+      "expectedTemporalResolution": "five-second windows are explicitly parameterized",
+      "expectedInputSchema": "player-time rows with coordinates, nearest/second-nearest lane distances, separation margin, speed, and structural-region flags",
+      "episodeBuildingAssumptions": "adjacent windows with the same inferred lane are merged unless base/deployment terminates them",
+      "speedAssumptions": "speed uses actual elapsed seconds; high-speed threshold remains 900 coordinate units per second",
+      "interruptionAssumptions": "sample-count parameters remain frozen and are flagged as resolution-sensitive",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "compatibilityWithFiveSecondData": "native_5s_window",
+      "adaptationRequiredSolelyForInputSchema": "historical lane IDs mapped to neutral lane axes; field names mapped from full-spatial timeline schema",
+      "noThresholdChanges": true
+    },
+    {
+      "candidateId": "constrained_dynamic_programming",
+      "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+      "sourceScript": "experiments/24-prototype-uncertainty-aware-lane-episode-segmentation.js",
+      "sourceOutput": "output/24-dynamic-programming-occupancy-episodes.json",
+      "exactParameters": {
+        "id": "constrained_dynamic_programming",
+        "switchPenalty": 2.2,
+        "impossibleLaneSwitchPenalty": 4,
+        "unknownPenalty": 0.35,
+        "minDuration": 5,
+        "minSupportRatio": 0.4,
+        "maxContradictionRatio": 0.32
+      },
+      "expectedTemporalResolution": "diagnostic replay 001 observation rows; adapted to five-second rows without threshold changes",
+      "expectedInputSchema": "player-time rows with coordinates, nearest/second-nearest lane distances, separation margin, speed, and structural-region flags",
+      "episodeBuildingAssumptions": "interpretable dynamic programming over observation support, contradiction, unknown, and state-change costs",
+      "speedAssumptions": "speed uses actual elapsed seconds; high-speed threshold remains 900 coordinate units per second",
+      "interruptionAssumptions": "sample-count parameters remain frozen and are flagged as resolution-sensitive",
+      "reproducibilityStatus": "reproducible_with_schema_adapter",
+      "compatibilityWithFiveSecondData": "schema_adapter_resolution_sensitive",
+      "adaptationRequiredSolelyForInputSchema": "historical lane IDs mapped to neutral lane axes; field names mapped from full-spatial timeline schema",
+      "noThresholdChanges": true
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "id": "annotated_original_episodes",
+      "originatingExperimentOrTask": "task 015 / experiment 24 architecture prototype",
+      "sourceOutput": "output/24-annotated-original-occupancy-episodes.json",
+      "classification": "resolution_incompatible",
+      "reason": "The candidate preserves replay 001 experiment 23 episode boundaries. Those boundaries are replay-specific outputs, not a frozen cross-replay construction rule for five-second timelines."
+    }
+  ],
+  "neutralLaneMapping": {
+    "source": "output/replay-lane-axis-topology-profile.json sourceRoleLane fields",
+    "method": "structural topology and coordinate correspondence only; occupancy output and model performance not used",
+    "historicalToNeutral": {
+      "lane_1": "lane_axis_3",
+      "lane_2": "lane_axis_1",
+      "lane_3": "lane_axis_2"
+    },
+    "aliases": [
+      {
+        "neutralLaneId": "lane_axis_1",
+        "alias": "Blue",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      },
+      {
+        "neutralLaneId": "lane_axis_2",
+        "alias": "Purple",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      },
+      {
+        "neutralLaneId": "lane_axis_3",
+        "alias": "Yellow",
+        "source": "output/16-lane-topology-6592.json",
+        "status": "unverified_alias"
+      }
+    ]
+  },
+  "parameterInterpretation": {
+    "original_experiment_23_balanced": {
+      "maxCoreDistance": {
+        "value": 380,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "maxOccupancyDistance": {
+        "value": 520,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "minMargin": {
+        "value": 45,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "deploymentRadius": {
+        "value": 500,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "baseCoreRadius": {
+        "value": 240,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "minStableSeconds": {
+        "value": 5,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "interruptionTolerance": {
+        "value": 3,
+        "type": "sample_count_parameter",
+        "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+      },
+      "envelopeMultiplier": {
+        "value": 1.25,
+        "type": "categorical_rule",
+        "resolutionNote": null
+      }
+    },
+    "conservative_point_revision_combined": {
+      "maxCoreDistance": {
+        "value": 380,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "maxOccupancyDistance": {
+        "value": 520,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "minMargin": {
+        "value": 45,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "deploymentRadius": {
+        "value": 500,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "baseCoreRadius": {
+        "value": 240,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "minStableSeconds": {
+        "value": 5,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "interruptionTolerance": {
+        "value": 3,
+        "type": "sample_count_parameter",
+        "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+      },
+      "envelopeMultiplier": {
+        "value": 1.25,
+        "type": "categorical_rule",
+        "resolutionNote": null
+      }
+    },
+    "hysteresis_state_machine": {
+      "id": {
+        "value": "hysteresis_state_machine",
+        "type": "categorical_rule",
+        "resolutionNote": null
+      },
+      "enterSeconds": {
+        "value": 4,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "uncertainTolerance": {
+        "value": 5,
+        "type": "sample_count_parameter",
+        "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+      },
+      "rejoinGap": {
+        "value": 4,
+        "type": "sample_count_parameter",
+        "resolutionNote": "frozen sample count; resolution-sensitive at 5s"
+      },
+      "minDuration": {
+        "value": 5,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "minSupportRatio": {
+        "value": 0.45,
+        "type": "ratio_parameter",
+        "resolutionNote": null
+      },
+      "maxContradictionRatio": {
+        "value": 0.28,
+        "type": "ratio_parameter",
+        "resolutionNote": null
+      }
+    },
+    "windowed_evidence_accumulation": {
+      "id": {
+        "value": "windowed_evidence_accumulation",
+        "type": "categorical_rule",
+        "resolutionNote": null
+      },
+      "windowSeconds": {
+        "value": 5,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "supportMargin": {
+        "value": 2,
+        "type": "distance_parameter",
+        "resolutionNote": null
+      },
+      "minDuration": {
+        "value": 5,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "minSupportRatio": {
+        "value": 0.42,
+        "type": "ratio_parameter",
+        "resolutionNote": null
+      },
+      "maxContradictionRatio": {
+        "value": 0.3,
+        "type": "ratio_parameter",
+        "resolutionNote": null
+      }
+    },
+    "constrained_dynamic_programming": {
+      "id": {
+        "value": "constrained_dynamic_programming",
+        "type": "categorical_rule",
+        "resolutionNote": null
+      },
+      "switchPenalty": {
+        "value": 2.2,
+        "type": "categorical_rule",
+        "resolutionNote": null
+      },
+      "impossibleLaneSwitchPenalty": {
+        "value": 4,
+        "type": "categorical_rule",
+        "resolutionNote": null
+      },
+      "unknownPenalty": {
+        "value": 0.35,
+        "type": "categorical_rule",
+        "resolutionNote": null
+      },
+      "minDuration": {
+        "value": 5,
+        "type": "physical_time_parameter",
+        "resolutionNote": null
+      },
+      "minSupportRatio": {
+        "value": 0.4,
+        "type": "ratio_parameter",
+        "resolutionNote": null
+      },
+      "maxContradictionRatio": {
+        "value": 0.32,
+        "type": "ratio_parameter",
+        "resolutionNote": null
+      }
+    }
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}
