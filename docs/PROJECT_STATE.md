@@ -4,17 +4,21 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `039-prepare-match-91119257-minimized-human-visual-review`
+Latest completed task: `040-validate-match-91119257-game-clock-ocr`
 
-Script/package: `scripts/prepare-match-91119257-manual-review.py`
+Script/package: `scripts/validate-match-91119257-game-clock-ocr.py`
 
 Primary outputs:
 
-- `output/match_91119257/manual-review-form.json`
-- `output/match_91119257/manual-review-form.csv`
-- `output/match_91119257/manual-review-instructions.md`
-- `output/match_91119257/manual-review-package-manifest.json`
-- `reports/match-91119257-minimized-human-review-preparation.md`
+- `output/match_91119257/game-clock-ocr-environment.json`
+- `output/match_91119257/game-clock-manual-ground-truth.json`
+- `output/match_91119257/game-clock-ocr-candidates.jsonl`
+- `output/match_91119257/game-clock-ocr-evaluation.json`
+- `output/match_91119257/game-clock-ocr-results.jsonl`
+- `output/match_91119257/video-game-clock-alignment.json`
+- `output/match_91119257/e088-clock-ocr-review.json`
+- `output/match_91119257/game-clock-ocr-gate.json`
+- `reports/match-91119257-controlled-game-clock-ocr.md`
 
 ## Current Objective
 
@@ -66,6 +70,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Match 91119257 complete annotation frame extraction gate is `annotation_frame_set_ready`: the preserved CSV hash matches the input packet, exactly 88 unique annotations were loaded, 446 OpenCV frame requests were generated, 446 frame rows decoded with zero failed or out-of-tolerance requests, a representative deterministic rerun matched, and local contact sheets were generated under `output-local/`. These frames are review-ready evidence only; they do not validate E088, lane colors, side aliases, landmarks, video-demo alignment, OCR text, or semantic gameplay claims.
 - Match 91119257 annotation visibility gate is `annotation_visibility_requires_manual_review`: all 88 annotation frame groups are usable, the game clock and minimap are visible and manually legible/usable in the recording layout, and controlled OCR planning is feasible for the game-clock ROI only. The audit found 37 directly visible annotations, 46 visually probable annotations, 5 ambiguous annotations, and no contradictions. E088's corrected 24:50-24:55 candidate is visually supported relative to the duplicated original 23:50-23:55 window, but the source row was not rewritten. Enemy minimap red display is directly supported as display-color evidence; Archmother/Hidden King and Green/Blue/Yellow lane aliases remain only partially supported and require the minimized 24-item review packet before alias promotion.
 - Match 91119257 minimized human review package gate is `manual_visual_review_package_ready`: 24 selected visual-review cases were converted into a human-facing JSON form, CSV form with 144 targeted question rows, instructions, and a package manifest. Answers remain empty; no human responses have been ingested, no aliases were promoted, and E088 was not rewritten.
+- Match 91119257 controlled game-clock OCR gate is `game_clock_ocr_not_reliable`: PaddleOCR/PaddlePaddle were inspected but not installed because the dry-run showed an invasive dependency stack for a single fixed ROI. A lightweight OpenCV template OCR backend was tested against 30 manually transcribed clock frames and failed validation: the selected threshold profile reached only 63.16% exact and +/-1 second accuracy on the validation split, despite high apparent confidence. Full-frame OCR was therefore not applied; manual clock transcriptions remain the reliable visual timing anchors.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -76,4 +81,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set and a visibility audit, but side/lane aliases still require minimized manual review, broad OCR is not justified, video-demo alignment remains blocked by parser telemetry instability after entity 5594, and no semantic gameplay conclusions are authorized. A future OCR task should be limited to controlled game-clock ROI validation unless manual review expands the need.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set, a visibility audit, and a prepared 24-case manual review package. Lightweight game-clock OCR is not reliable enough for temporal anchors, so use the manually transcribed clock rows instead. Side/lane aliases still require minimized manual review, broad OCR is not justified, video-demo alignment remains blocked by parser telemetry instability after entity 5594, and no semantic gameplay conclusions are authorized.

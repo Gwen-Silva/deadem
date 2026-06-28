@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_game_clock_ocr_environment",
+  "createdAt": "2026-06-28T23:20:45.078542+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "C:\\Users\\gwenm\\Documents\\deadem\\.venv-video\\Scripts\\python.exe",
+  "platform": "win32",
+  "packageInfo": {
+    "numpy": {
+      "Name": "numpy",
+      "Version": "2.5.0",
+      "Summary": "Fundamental package for array computing in Python",
+      "Home-page": "https://numpy.org",
+      "Author": "Travis E. Oliphant et al.",
+      "Author-email": "",
+      "License-Expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "Location": "C:\\Users\\gwenm\\Documents\\deadem\\.venv-video\\Lib\\site-packages",
+      "Requires": "",
+      "Required-by": "deadem-video-pipeline, opencv-python-headless"
+    },
+    "opencv-python-headless": {
+      "Name": "opencv-python-headless",
+      "Version": "4.13.0.92",
+      "Summary": "Wrapper package for OpenCV python bindings.",
+      "Home-page": "https://github.com/opencv/opencv-python",
+      "Author": "",
+      "Author-email": "",
+      "License": "Apache 2.0",
+      "Location": "C:\\Users\\gwenm\\Documents\\deadem\\.venv-video\\Lib\\site-packages",
+      "Requires": "numpy",
+      "Required-by": "deadem-video-pipeline"
+    },
+    "paddleocr": null,
+    "paddlepaddle": null
+  },
+  "paddleOcrDryRun": {
+    "status": "compatible_but_excessively_invasive_for_this_task",
+    "observedPackages": [
+      "paddleocr",
+      "paddlepaddle",
+      "paddlex",
+      "opencv-contrib-python",
+      "huggingface_hub",
+      "modelscope",
+      "pandas",
+      "pillow",
+      "aiohttp"
+    ],
+    "decision": "not_installed",
+    "reason": "The task only needs a fixed game-clock ROI; installing the full PaddleOCR stack would alter the base environment substantially and may trigger model downloads."
+  },
+  "selectedBackend": "opencv_template_clock_ocr",
+  "packagesInstalledByThisTask": [],
+  "modelFilesDownloaded": [],
+  "modelSource": null,
+  "cachePaths": [],
+  "cpuGpuBackend": "CPU/OpenCV",
+  "installationSizeBytes": 0
+}
