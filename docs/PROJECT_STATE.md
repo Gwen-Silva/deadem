@@ -4,17 +4,21 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `036-build-video-pipeline-mvp`
+Latest completed task: `037-extract-complete-match-91119257-annotation-frame-set`
 
-Script/package: `python/deadem/video_pipeline/`
+Script/package: `scripts/extract-match-91119257-annotation-frame-set.py`
 
 Primary outputs:
 
-- `python/pyproject.toml`
-- `python/deadem/video_pipeline/`
-- `tests/video_pipeline/`
-- `output/video-pipeline-mvp-gate.json`
-- `reports/video-pipeline-mvp.md`
+- `output/match_91119257/annotation-frame-requests.json`
+- `output/match_91119257/annotation-frame-manifest.jsonl`
+- `output/match_91119257/annotation-frame-summary.json`
+- `output/match_91119257/video-seek-audit.json`
+- `output/match_91119257/wpf-opencv-frame-comparison.json`
+- `output/match_91119257/contact-sheet-manifest.json`
+- `output/match_91119257/annotation-frame-quality.json`
+- `output/match_91119257/annotation-frame-extraction-gate.json`
+- `reports/match-91119257-complete-annotation-frame-extraction.md`
 
 ## Current Objective
 
@@ -63,6 +67,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Match 91119257 visual/demo calibration gate is `visual_demo_calibration_parser_blocked`: local WPF MediaPlayer decoding produced 281/281 requested frames and removed the immediate video-decoder blocker, but parser telemetry still fails at tick 3808 / 119s with `Unable to find an entity with index [ 5594 ]`. A script-local packet-skip recovery reaches 151 telemetry rows but cascades to 1001 missing-entity warnings, so it is not trustworthy for full-match alignment. E088 remains `both_ambiguous`; no annotation-to-entity matches, side aliases, or lane color aliases were validated.
 - Video pipeline MVP gate is `video_pipeline_dependency_blocked`: an isolated Python package was created under `python/deadem/video_pipeline/` with schemas, OpenCV-based metadata/frame extraction, annotation loaders, ROI profiles, optional lazy detector/OCR/VLM adapters, IoU fallback tracking, CLI, and tests. The current machine does not expose a usable Python runtime for validation: the PATH `python.exe` alias is inaccessible, and the only discovered executable Python is Unity's embedded Python 3.7.4 without required packages. Install Python >=3.10 plus the base extras before running the MVP.
 - Video pipeline runtime gate is `video_pipeline_runtime_ready`: CPython 3.12.10 x64 was installed after reboot, `.venv-video` was created, base/dev dependencies were installed without heavy optional packages, 12 video-pipeline tests passed, synthetic regular/timestamp extraction succeeded, and the match 91119257 MP4 opened through OpenCV with 8 deduplicated WPF-comparable sample frames extracted under `output-local/`.
+- Match 91119257 complete annotation frame extraction gate is `annotation_frame_set_ready`: the preserved CSV hash matches the input packet, exactly 88 unique annotations were loaded, 446 OpenCV frame requests were generated, 446 frame rows decoded with zero failed or out-of-tolerance requests, a representative deterministic rerun matched, and local contact sheets were generated under `output-local/`. These frames are review-ready evidence only; they do not validate E088, lane colors, side aliases, landmarks, video-demo alignment, OCR text, or semantic gameplay claims.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -73,4 +78,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has decoded frame evidence, but video-demo alignment, world-to-minimap calibration, E088 verification, annotation-to-entity matching, and canonical side/lane aliases remain blocked by parser telemetry instability after entity 5594. The Python video pipeline base runtime is now validated and ready for a separate 91119257 packet-processing task without OCR/YOLO/VLM by default.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set ready for visual visibility review, but video-demo alignment, world-to-minimap calibration, E088 verification, annotation-to-entity matching, and canonical side/lane aliases remain blocked by parser telemetry instability after entity 5594 and by the lack of a completed visual review. The Python video pipeline base runtime is validated; do not install OCR/YOLO/VLM unless a later task proves they are needed.

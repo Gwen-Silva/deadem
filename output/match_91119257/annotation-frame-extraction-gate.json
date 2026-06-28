@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_annotation_frame_extraction_gate",
+  "createdAt": "2026-06-28T22:30:25.368395+00:00",
+  "gate": "annotation_frame_set_ready",
+  "annotationCountOk": true,
+  "allAnnotationsRepresented": true,
+  "requiredRequests": 264,
+  "requiredRequestsSuccessful": true,
+  "failedRequests": 0,
+  "outOfToleranceRequests": 0,
+  "determinism": {
+    "mode": "representative_subset",
+    "subsetRequestCount": 30,
+    "requestCountMatches": true,
+    "decodedTimestampsMatch": true,
+    "frameIdsMatch": true,
+    "hashesMatch": true,
+    "orderingMatches": true,
+    "failuresMatch": true,
+    "deterministic": true,
+    "limitations": [
+      "Determinism was checked on the first 30 chronologically sorted requests to avoid duplicating the full local frame set."
+    ]
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "prohibitedInterpretations": [
+    "semantic occupancy",
+    "lane transitions",
+    "rotations",
+    "fight detection",
+    "decision evaluation",
+    "video-demo alignment"
+  ]
+}

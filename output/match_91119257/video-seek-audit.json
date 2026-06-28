@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_video_seek_audit",
+  "createdAt": "2026-06-28T22:29:42.294732+00:00",
+  "video": {
+    "video_path": "C:\\Users\\gwenm\\Documents\\deadem\\samples\\videos\\Partida_006_Replay.mp4",
+    "file_size_bytes": 1461209052,
+    "sha256": "63496ad877991373ecced03b001a9765bb9b58bc42098ed378ada64122415770",
+    "decoder_backend": "opencv",
+    "decoder_version": "4.13.0",
+    "container_duration_ms": 1843966,
+    "decoded_duration_ms": 1843966,
+    "fps_reported": 30.0,
+    "fps_mode": "reported_unverified",
+    "frame_count_reported": 55319,
+    "width": 2580,
+    "height": 1080,
+    "codec": null,
+    "time_base": "milliseconds via OpenCV CAP_PROP_POS_MSEC",
+    "has_audio": null,
+    "variable_frame_rate_status": "unverified",
+    "metadata_warnings": [
+      "ffmpeg not found on PATH",
+      "ffprobe not found on PATH",
+      "FPS is container/backend reported; constant frame rate is not proven."
+    ]
+  },
+  "decodedFirstFrameTimestampMs": 14000,
+  "decodedFinalAvailableTimestampMs": 1495000,
+  "requestCount": 446,
+  "decodedRequestCount": 446,
+  "seekErrorMs": {
+    "min": 0.0,
+    "median": 0.0,
+    "p90": 0.0,
+    "max": 0.0
+  },
+  "errorsByRequestedRegion": {
+    "beginning": {
+      "count": 155,
+      "median": 0.0,
+      "max": 0.0
+    },
+    "middle": {
+      "count": 213,
+      "median": 0.0,
+      "max": 0.0
+    },
+    "end": {
+      "count": 78,
+      "median": 0.0,
+      "max": 0.0
+    }
+  },
+  "seekErrorGrowth": "stable",
+  "limitations": [
+    "OpenCV reports decoded timestamps through CAP_PROP_POS_MSEC; exact frame-accurate seeking is not guaranteed."
+  ]
+}
