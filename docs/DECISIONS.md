@@ -139,3 +139,13 @@ Date: 2026-06-28
 Decision: Autonomous work on semantic lane-occupancy episodes, transition detection, rotation detection, and further occupancy architecture search is frozen. The approved spatial output is a factual point-level evidence layer: direct coordinates, physical lane-axis projections, nearest-lane distance, separation evidence, base/deployment exclusion, movement measurements, and resolution-sensitivity analysis. The project should pivot to independent event layers that do not require occupancy semantics.
 
 Reason: One-second extraction removed the main technical resolution confound, but task 028 showed episode count and fragmentation remain materially architecture- and resolution-sensitive. Independent event layers such as death, assist, respawn, damage, and healing can be investigated without claiming semantic lane occupancy or using replay 005.
+
+## DEC-015: Treat Damage And Healing As Descriptive Counter Deltas
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: Damage and healing fields may be used as reproducible per-player cumulative counter deltas across replays 001-004, but they must not be used to define fights, judge combat quality, infer intent, or attribute source-target combat without additional direct evidence.
+
+Reason: Task 030 found stable changing counters for hero damage, objective damage, hero healing, and self healing, but did not expose victim-linked damage logs or source-target event streams. The outputs support temporal feasibility analysis with limitations, not semantic fight construction.

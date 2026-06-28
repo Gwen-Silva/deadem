@@ -4,18 +4,18 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `029-extract-multi-replay-death-assist-respawn-events`
+Latest completed task: `030-discover-multi-replay-damage-healing-fields`
 
-Script: `scripts/extract-multi-replay-death-events.js`
+Script: `scripts/discover-multi-replay-damage-healing-fields.js`
 
 Primary outputs:
 
-- `output/replays/replay_001/canonical-death-events.json`
-- `output/replays/replay_002/canonical-death-events.json`
-- `output/replays/replay_003/canonical-death-events.json`
-- `output/replays/replay_004/canonical-death-events.json`
-- `output/replays/multi-replay-death-event-comparison.json`
-- `output/replays/death-event-gate.json`
+- `output/replays/replay_001/damage-healing-field-audit.json`
+- `output/replays/replay_002/damage-healing-field-audit.json`
+- `output/replays/replay_003/damage-healing-field-audit.json`
+- `output/replays/replay_004/damage-healing-field-audit.json`
+- `output/replays/multi-replay-damage-healing-comparison.json`
+- `output/replays/damage-healing-feasibility-gate.json`
 
 ## Current Objective
 
@@ -56,6 +56,8 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Semantic lane-occupancy episodes are frozen for autonomous development. One-second extraction removed the main technical resolution confound, but episode count and fragmentation remain materially architecture- and resolution-sensitive. No further autonomous occupancy architecture search, threshold retuning, or episode-merging work is authorized without a new methodological decision.
 - Point-level spatial evidence is approved for limited descriptive use: direct coordinates, physical lane-axis projections, nearest-lane distance, lane-separation evidence, base/deployment exclusion, descriptive spatial-evidence classes, movement measurements, and resolution-sensitivity analysis. It is a factual spatial evidence layer, not a semantic occupancy layer.
 - The multi-replay death/assist/respawn layer is the active independent event branch. It may use player identity reconciliation and descriptive spatial context, but it must not infer rotations, strategic lane assignment, fight quality, or semantic occupancy.
+- The multi-replay death/assist/respawn layer gate is `death_event_layer_ready_with_limitations`: death and respawn timing reconcile without validation errors across replays 001-004, with killer/assist linkage derived from same-second counters and some respawn recovery inferred where direct signals are incomplete.
+- The damage/healing field discovery gate is `damage_healing_fields_ready_with_limitations`: `m_iHeroDamage`, `m_iObjectiveDamage`, `m_iHeroHealing`, and `m_iSelfHealing` provide reproducible cumulative counter deltas across replays 001-004. Source-target damage logs were not exposed by this task path, so these fields support descriptive deltas and feasibility only, not fight grouping or combat-quality claims.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -66,4 +68,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics, beginning with death/assist/respawn events and then damage/healing field discovery when gate evidence permits it. Do not process replay 005 without a frozen hypothesis and pass/fail criteria.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn and damage/healing counters are now available with limitations; any future combat segment task must first define a non-semantic feasibility gate and must not group fights or judge combat quality without additional direct evidence. Do not process replay 005 without a frozen hypothesis and pass/fail criteria.

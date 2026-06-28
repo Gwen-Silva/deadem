@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "kind": "damage_healing_delta_summary",
+  "replayId": "replay_004",
+  "fields": {
+    "m_iHeroDamage": {
+      "totalPositiveDelta": 298101,
+      "positiveDeltaRows": 2378,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 21766,
+      "maximumPositiveDelta": 2557,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 12,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iObjectiveDamage": {
+      "totalPositiveDelta": 53257,
+      "positiveDeltaRows": 335,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 23809,
+      "maximumPositiveDelta": 1080,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 12,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iHeroHealing": {
+      "totalPositiveDelta": 85318,
+      "positiveDeltaRows": 2751,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 21393,
+      "maximumPositiveDelta": 1163,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 10,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iSelfHealing": {
+      "totalPositiveDelta": 84839,
+      "positiveDeltaRows": 2747,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 21397,
+      "maximumPositiveDelta": 1163,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 10,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iGuidedBotMatchDamageTaken": {
+      "totalPositiveDelta": 0,
+      "positiveDeltaRows": 0,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 24144,
+      "maximumPositiveDelta": 0,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 0,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iGuidedBotMatchDamageToPlayers": {
+      "totalPositiveDelta": 0,
+      "positiveDeltaRows": 0,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 24144,
+      "maximumPositiveDelta": 0,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 0,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iGuidedBotMatchDamageToGuardians": {
+      "totalPositiveDelta": 0,
+      "positiveDeltaRows": 0,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 24144,
+      "maximumPositiveDelta": 0,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 0,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    },
+    "m_iGoldNetWorth": {
+      "totalPositiveDelta": 409769,
+      "positiveDeltaRows": 9442,
+      "negativeDeltaRows": 16,
+      "zeroDeltaRows": 14686,
+      "maximumPositiveDelta": 2318,
+      "minimumNegativeDelta": -934,
+      "playersWithPositiveDelta": 12,
+      "resetLikeDeltasPreserved": [
+        -222,
+        -36,
+        -91,
+        -215,
+        -411,
+        -213,
+        -185,
+        -212,
+        -258,
+        -108
+      ],
+      "monotonicNonDecreasing": false
+    },
+    "m_iAPNetWorth": {
+      "totalPositiveDelta": 324,
+      "positiveDeltaRows": 321,
+      "negativeDeltaRows": 0,
+      "zeroDeltaRows": 23823,
+      "maximumPositiveDelta": 2,
+      "minimumNegativeDelta": 0,
+      "playersWithPositiveDelta": 12,
+      "resetLikeDeltasPreserved": [],
+      "monotonicNonDecreasing": true
+    }
+  },
+  "fieldsWithPositiveDeltas": [
+    "m_iHeroDamage",
+    "m_iObjectiveDamage",
+    "m_iHeroHealing",
+    "m_iSelfHealing",
+    "m_iGoldNetWorth",
+    "m_iAPNetWorth"
+  ],
+  "segmentFeasibility": {
+    "status": "counter_delta_segments_feasible_with_limitations",
+    "allowedUse": "temporal counter deltas by player and replay",
+    "prohibitedUses": [
+      "fight grouping",
+      "combat quality judgment",
+      "source-target attribution without direct evidence"
+    ]
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

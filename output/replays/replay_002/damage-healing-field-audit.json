@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "kind": "damage_healing_field_audit",
+  "replayId": "replay_002",
+  "fields": {
+    "m_iHeroDamage": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        6,
+        16,
+        2,
+        34
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "high_for_cumulative_counter_presence",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iObjectiveDamage": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        26,
+        112,
+        155,
+        207
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "high_for_cumulative_counter_presence",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iHeroHealing": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        15,
+        20,
+        25,
+        30
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "high_for_cumulative_counter_presence",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iSelfHealing": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        15,
+        20,
+        25,
+        30
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "high_for_cumulative_counter_presence",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iGuidedBotMatchDamageTaken": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_field_name_indicates_match_counter_but_semantics_require_caution",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iGuidedBotMatchDamageToPlayers": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_field_name_indicates_match_counter_but_semantics_require_caution",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iGuidedBotMatchDamageToGuardians": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_field_name_indicates_match_counter_but_semantics_require_caution",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iGoldNetWorth": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        600,
+        607,
+        614,
+        638,
+        630
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_context_counter",
+      "limitations": [
+        "Economy context only; no soul-loss mechanics are inferred."
+      ]
+    },
+    "m_iAPNetWorth": {
+      "entityClass": "CCitadelPlayerController",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_context_counter",
+      "limitations": [
+        "Economy context only; no soul-loss mechanics are inferred."
+      ]
+    },
+    "m_flCurrentHealingAmount": {
+      "entityClass": "CCitadelPlayerPawn",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        0.64,
+        0.84,
+        0.32,
+        1.151
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_state_or_instantaneous_support",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_flLastDamageTime": {
+      "entityClass": "CCitadelPlayerPawn",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        0,
+        38.156,
+        38.781,
+        40.375,
+        39.984
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_context_counter",
+      "limitations": [
+        "Counter does not identify source-target pairs in this task.",
+        "Counter deltas are descriptive and do not define fights."
+      ]
+    },
+    "m_iHealth": {
+      "entityClass": "CCitadelPlayerPawn",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        805,
+        830,
+        730,
+        690,
+        780
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_state_or_instantaneous_support",
+      "limitations": [
+        "Field semantics are replay-observed and should not be replaced with current-game assumptions."
+      ]
+    },
+    "m_iHealthMax": {
+      "entityClass": "CCitadelPlayerPawn",
+      "valueTypes": [],
+      "observedRows": 0,
+      "missingRows": 22020,
+      "examples": [],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_state_or_instantaneous_support",
+      "limitations": [
+        "Field semantics are replay-observed and should not be replaced with current-game assumptions."
+      ]
+    },
+    "m_iMaxHealth": {
+      "entityClass": "CCitadelPlayerPawn",
+      "valueTypes": [
+        "number"
+      ],
+      "observedRows": 22020,
+      "missingRows": 0,
+      "examples": [
+        805,
+        830,
+        730,
+        690,
+        780
+      ],
+      "updateFrequency": "sampled_once_per_canonical_second",
+      "playerLinkage": "controller m_steamID with controller/pawn handle linkage",
+      "directOrDerived": "direct_field",
+      "reliability": "medium_state_or_instantaneous_support",
+      "limitations": [
+        "Field semantics are replay-observed and should not be replaced with current-game assumptions."
+      ]
+    }
+  },
+  "absentOrNotUsed": [
+    {
+      "source": "source_target_damage_events",
+      "status": "not_exposed_by_current_task_path",
+      "limitation": "Only cumulative and state fields were sampled; no victim-linked damage log is claimed."
+    },
+    {
+      "source": "fight_segments",
+      "status": "intentionally_not_constructed",
+      "limitation": "This task discovers counters only and does not define fights."
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

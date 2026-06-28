@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "damage_healing_feasibility_gate",
+  "gateResult": "damage_healing_fields_ready_with_limitations",
+  "evidence": {
+    "processedReplays": [
+      "replay_001",
+      "replay_002",
+      "replay_003",
+      "replay_004"
+    ],
+    "changingDamageHealingFields": [
+      "m_iHeroDamage",
+      "m_iHeroHealing",
+      "m_iObjectiveDamage",
+      "m_iSelfHealing"
+    ],
+    "validationErrors": 0,
+    "limitationSummary": "Cumulative counters are available, but source-target linked damage events were not exposed by this task path."
+  },
+  "allowedUse": "descriptive per-player counter deltas and temporal segment feasibility checks",
+  "prohibitedUses": [
+    "fight grouping",
+    "combat quality judgment",
+    "intent inference",
+    "occupancy-episode use",
+    "replay 005 processing"
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "humanReviewRequired": false
+}

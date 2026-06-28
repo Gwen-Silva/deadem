@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "damage_healing_validation",
+  "replayId": "replay_002",
+  "checks": {
+    "twelvePlayersReconciled": true,
+    "rowsChronologicalByPlayer": true,
+    "controllerFieldCoverage": {
+      "m_iHeroDamage": 100,
+      "m_iObjectiveDamage": 100,
+      "m_iHeroHealing": 100,
+      "m_iSelfHealing": 100,
+      "m_iGuidedBotMatchDamageTaken": 100,
+      "m_iGuidedBotMatchDamageToPlayers": 100,
+      "m_iGuidedBotMatchDamageToGuardians": 100,
+      "m_iGoldNetWorth": 100,
+      "m_iAPNetWorth": 100
+    },
+    "pawnFieldCoverage": {
+      "m_flCurrentHealingAmount": 100,
+      "m_flLastDamageTime": 100,
+      "m_iHealth": 100,
+      "m_iHealthMax": 0,
+      "m_iMaxHealth": 100
+    },
+    "monotonicity": {
+      "m_iHeroDamage": true,
+      "m_iObjectiveDamage": true,
+      "m_iHeroHealing": true,
+      "m_iSelfHealing": true,
+      "m_iGuidedBotMatchDamageTaken": true,
+      "m_iGuidedBotMatchDamageToPlayers": true,
+      "m_iGuidedBotMatchDamageToGuardians": true,
+      "m_iGoldNetWorth": false,
+      "m_iAPNetWorth": true
+    },
+    "replay005Protection": {
+      "processed": false,
+      "status": "preserved"
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "type": "negative_or_reset_like_delta",
+      "field": "m_iGoldNetWorth",
+      "count": 13
+    }
+  ]
+}
