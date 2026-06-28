@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_state_timeline_gate",
+  "gateResult": "match_state_timeline_ready",
+  "evidence": {
+    "allChronological": true,
+    "allHaveTwelvePlayers": true,
+    "allHaveObjectiveStates": true,
+    "replayRows": [
+      {
+        "replayId": "replay_001",
+        "rows": 2992
+      },
+      {
+        "replayId": "replay_002",
+        "rows": 1835
+      },
+      {
+        "replayId": "replay_003",
+        "rows": 2280
+      },
+      {
+        "replayId": "replay_004",
+        "rows": 2013
+      }
+    ]
+  },
+  "limitations": [
+    "Factual match-state rows only; no fight grouping, intent, strategic judgment, semantic lane occupancy, transitions, or rotations.",
+    "Replay 005 remains unprocessed."
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "humanReviewRequired": false
+}

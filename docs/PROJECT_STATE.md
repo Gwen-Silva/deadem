@@ -4,18 +4,18 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `031-map-multi-replay-objective-entities-and-lifecycle`
+Latest completed task: `032-build-unified-descriptive-match-state-timeline`
 
-Script: `scripts/map-multi-replay-objective-lifecycle.js`
+Script: `scripts/build-unified-match-state-timeline.js`
 
 Primary outputs:
 
-- `output/replays/replay_001/objective-entity-inventory.json`
-- `output/replays/replay_002/objective-entity-inventory.json`
-- `output/replays/replay_003/objective-entity-inventory.json`
-- `output/replays/replay_004/objective-entity-inventory.json`
-- `output/replays/multi-replay-objective-identity-map.json`
-- `output/replays/objective-lifecycle-gate.json`
+- `output/replays/replay_001/match-state-timeline.jsonl`
+- `output/replays/replay_002/match-state-timeline.jsonl`
+- `output/replays/replay_003/match-state-timeline.jsonl`
+- `output/replays/replay_004/match-state-timeline.jsonl`
+- `output/replays/multi-replay-match-state-comparison.json`
+- `output/replays/match-state-timeline-gate.json`
 
 ## Current Objective
 
@@ -59,6 +59,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - The multi-replay death/assist/respawn layer gate is `death_event_layer_ready_with_limitations`: death and respawn timing reconcile without validation errors across replays 001-004, with killer/assist linkage derived from same-second counters and some respawn recovery inferred where direct signals are incomplete.
 - The damage/healing field discovery gate is `damage_healing_fields_ready_with_limitations`: `m_iHeroDamage`, `m_iObjectiveDamage`, `m_iHeroHealing`, and `m_iSelfHealing` provide reproducible cumulative counter deltas across replays 001-004. Source-target damage logs were not exposed by this task path, so these fields support descriptive deltas and feasibility only, not fight grouping or combat-quality claims.
 - The objective lifecycle gate is `objective_lifecycle_ready_with_limitations`: replays 001-004 each expose 47 stable objective or objective-adjacent entities with consistent structural roles, health/state timelines, lifecycle events, and lane-axis relationships. Guardian, walker, base-structure, Patron, Mid Boss, and urn-related coverage is present, but exact objective-damage attribution and optional phase/protection semantics remain limited.
+- The unified descriptive match-state timeline gate is `match_state_timeline_ready`: replays 001-004 now have per-second, replay-isolated timelines combining player positions, alive/dead intervals, death/respawn events, net worth, damage/healing deltas, and objective states. This layer answers factual state questions only and does not define fights, evaluate decisions, infer strategy, use semantic lane occupancy, or process replay 005.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 

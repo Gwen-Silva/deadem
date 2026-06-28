@@ -159,3 +159,13 @@ Date: 2026-06-28
 Decision: Objective entities and lifecycle events may be used as factual map-state evidence across replays 001-004, with structural lane-axis relationships and replay-observed health/state changes. They must not be used to judge objective decisions, infer intent, define fights, or attribute player source-target damage without direct evidence.
 
 Reason: Task 031 found stable objective identities and lifecycle events across replays 001-004, but objective-damage counter timing does not exactly reconcile with visible health loss and optional phase/protection semantics remain limited. The layer is ready for descriptive match state with limitations, not strategic evaluation.
+
+## DEC-017: Use Unified Match State For Factual Queries Only
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: The unified match-state timeline may combine validated player position, alive/dead, economy, damage/healing delta, and objective-state layers for factual per-second state queries across replays 001-004. It must not be used to define fights, evaluate decisions, infer strategic intent, claim semantic lane occupancy, detect rotations, or process replay 005.
+
+Reason: Task 032 successfully joined the validated descriptive layers with deterministic replay-isolated shards and a `match_state_timeline_ready` gate. The layer is intentionally descriptive; it preserves the limitations of each source layer rather than upgrading them into strategic or semantic conclusions.
