@@ -199,3 +199,13 @@ Date: 2026-06-28
 Decision: Match 91119257 visual calibration may use the decoded local frame evidence as a preserved review source, but it must not claim a video-to-demo transform, annotation-to-entity matches, canonical side aliases, lane color aliases, or E088 confirmation until parser telemetry can be recovered or an equivalent independent synchronization source is available.
 
 Reason: Task 035 found a deterministic local decoder path through Windows WPF MediaPlayer and decoded 281 requested frames, including annotation start/mid/end frames and E088 candidate windows. The parser failure at tick 3808 / 119s is reproduced as an entity-registry update error for entity 5594; script-local packet skipping cascades into 1001 missing-entity warnings and only extends tracked-player telemetry to 151 seconds at low confidence. This removes the immediate video blocker but leaves calibration blocked by unreliable demo telemetry.
+
+## DEC-021: Keep Video Processing As An Isolated Optional Python Subproject
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: Reusable video processing should live under `python/deadem/video_pipeline/` as an isolated Python subproject. Node.js package workflows must remain unchanged, and heavy video/ML dependencies must be optional and lazy-loaded.
+
+Reason: Task 036 added a modular video pipeline MVP for local MP4 metadata, frame extraction, annotations, ROIs, OCR/detection/tracking/VLM interfaces, and manifests. The current environment lacks a suitable Python runtime, so the MVP is dependency-blocked for execution, but keeping it isolated prevents optional YOLO, PaddleOCR, FFmpeg wrappers, VLM, model weights, and caches from becoming required for the existing Deadem parser workflow.

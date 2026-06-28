@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "video_pipeline_mvp_gate",
+  "gateResult": "video_pipeline_dependency_blocked",
+  "pythonRuntime": {
+    "pathStatus": "windowsapps_python_alias_inaccessible",
+    "usableRuntimeFound": false,
+    "unityEmbeddedPython": {
+      "path": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.4.7f1\\Editor\\Data\\PlaybackEngines\\WebGLSupport\\BuildTools\\Emscripten\\python\\python.exe",
+      "version": "3.7.4",
+      "usableForProject": false,
+      "reason": "Project requires Python >=3.10 and dependencies pydantic, opencv-python-headless, and pytest."
+    }
+  },
+  "createdLayout": [
+    "python/pyproject.toml",
+    "python/deadem/video_pipeline/",
+    "tests/video_pipeline/"
+  ],
+  "baseDependencies": [
+    "numpy",
+    "pydantic>=2",
+    "opencv-python-headless"
+  ],
+  "optionalExtras": [
+    "video-detection",
+    "video-ocr",
+    "video-ffmpeg",
+    "video-all"
+  ],
+  "implementedCapabilities": [
+    "schemas",
+    "opencv metadata probing",
+    "regular frame requests",
+    "timestamp frame requests",
+    "annotation frame requests",
+    "roi profiles",
+    "lazy yolo adapter",
+    "lazy paddleocr adapter",
+    "iou fallback tracker",
+    "unconfigured vlm adapter",
+    "json/jsonl serialization",
+    "cli"
+  ],
+  "testsStatus": "not_executed_python_runtime_unavailable",
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

@@ -4,24 +4,17 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `035-recover-match-91119257-video-frame-and-demo-telemetry-alignment`
+Latest completed task: `036-build-video-pipeline-mvp`
 
-Script: `scripts/recover-match-91119257-visual-demo-calibration.js`
+Script/package: `python/deadem/video_pipeline/`
 
 Primary outputs:
 
-- `output/match_91119257/video-decoder-audit.json`
-- `output/match_91119257/video-frame-index.json`
-- `output/match_91119257/visual-annotation-validation.json`
-- `output/match_91119257/e088-resolution.json`
-- `output/match_91119257/parser-entity-5594-diagnostic.json`
-- `output/match_91119257/parser-recovery-log.json`
-- `output/match_91119257/full-tracked-player-telemetry.jsonl`
-- `output/match_91119257/structural-entity-telemetry.json`
-- `output/match_91119257/video-demo-time-alignment.json`
-- `output/match_91119257/annotation-entity-matches.json`
-- `output/match_91119257/canonical-map-aliases.json`
-- `output/match_91119257/visual-demo-calibration-gate.json`
+- `python/pyproject.toml`
+- `python/deadem/video_pipeline/`
+- `tests/video_pipeline/`
+- `output/video-pipeline-mvp-gate.json`
+- `reports/video-pipeline-mvp.md`
 
 ## Current Objective
 
@@ -68,6 +61,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - The unified descriptive match-state timeline gate is `match_state_timeline_ready`: replays 001-004 now have per-second, replay-isolated timelines combining player positions, alive/dead intervals, death/respawn events, net worth, damage/healing deltas, and objective states. This layer answers factual state questions only and does not define fights, evaluate decisions, infer strategy, use semantic lane occupancy, or process replay 005.
 - Match 91119257 local override gate is `match_91119257_override_ready_with_limitations`: the user explicitly identified `samples/partida_006.dem` as the target bot match and supplied `samples/videos/Partida_006_Replay.mp4`. The local video reports duration 30:43; the demo opens through `Player` with duration 1863 seconds; roster probing finds the user-named player; and 119 one-second tracked-player telemetry rows were extracted before a parser entity-linkage error stopped the scan. The identity remains user-overridden rather than parser-proven because match ID and map metadata are unavailable, and no frame-level video inspection was possible without ffmpeg/ffprobe.
 - Match 91119257 visual/demo calibration gate is `visual_demo_calibration_parser_blocked`: local WPF MediaPlayer decoding produced 281/281 requested frames and removed the immediate video-decoder blocker, but parser telemetry still fails at tick 3808 / 119s with `Unable to find an entity with index [ 5594 ]`. A script-local packet-skip recovery reaches 151 telemetry rows but cascades to 1001 missing-entity warnings, so it is not trustworthy for full-match alignment. E088 remains `both_ambiguous`; no annotation-to-entity matches, side aliases, or lane color aliases were validated.
+- Video pipeline MVP gate is `video_pipeline_dependency_blocked`: an isolated Python package was created under `python/deadem/video_pipeline/` with schemas, OpenCV-based metadata/frame extraction, annotation loaders, ROI profiles, optional lazy detector/OCR/VLM adapters, IoU fallback tracking, CLI, and tests. The current machine does not expose a usable Python runtime for validation: the PATH `python.exe` alias is inaccessible, and the only discovered executable Python is Unity's embedded Python 3.7.4 without required packages. Install Python >=3.10 plus the base extras before running the MVP.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -78,4 +72,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has decoded frame evidence, but video-demo alignment, world-to-minimap calibration, E088 verification, annotation-to-entity matching, and canonical side/lane aliases remain blocked by parser telemetry instability after entity 5594.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has decoded frame evidence, but video-demo alignment, world-to-minimap calibration, E088 verification, annotation-to-entity matching, and canonical side/lane aliases remain blocked by parser telemetry instability after entity 5594. The new Python video pipeline is ready for dependency installation and validation before it can process the 91119257 packet.
