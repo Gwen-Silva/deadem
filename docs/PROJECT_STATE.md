@@ -4,18 +4,24 @@ Last updated: 2026-06-28
 
 ## Latest Work
 
-Latest completed task: `034-continue-match-91119257-with-local-video-and-demo-override`
+Latest completed task: `035-recover-match-91119257-video-frame-and-demo-telemetry-alignment`
 
-Script: `scripts/continue-match-91119257-local-video-demo.js`
+Script: `scripts/recover-match-91119257-visual-demo-calibration.js`
 
 Primary outputs:
 
-- `output/match_91119257/local-media-manifest.json`
-- `output/match_91119257/demo-override-validation.json`
-- `output/match_91119257/video-frame-samples.json`
-- `output/match_91119257/updated-event-alignment.json`
-- `output/match_91119257/updated-tracked-player-telemetry.json`
-- `output/match_91119257/updated-validation-report.json`
+- `output/match_91119257/video-decoder-audit.json`
+- `output/match_91119257/video-frame-index.json`
+- `output/match_91119257/visual-annotation-validation.json`
+- `output/match_91119257/e088-resolution.json`
+- `output/match_91119257/parser-entity-5594-diagnostic.json`
+- `output/match_91119257/parser-recovery-log.json`
+- `output/match_91119257/full-tracked-player-telemetry.jsonl`
+- `output/match_91119257/structural-entity-telemetry.json`
+- `output/match_91119257/video-demo-time-alignment.json`
+- `output/match_91119257/annotation-entity-matches.json`
+- `output/match_91119257/canonical-map-aliases.json`
+- `output/match_91119257/visual-demo-calibration-gate.json`
 
 ## Current Objective
 
@@ -61,6 +67,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - The objective lifecycle gate is `objective_lifecycle_ready_with_limitations`: replays 001-004 each expose 47 stable objective or objective-adjacent entities with consistent structural roles, health/state timelines, lifecycle events, and lane-axis relationships. Guardian, walker, base-structure, Patron, Mid Boss, and urn-related coverage is present, but exact objective-damage attribution and optional phase/protection semantics remain limited.
 - The unified descriptive match-state timeline gate is `match_state_timeline_ready`: replays 001-004 now have per-second, replay-isolated timelines combining player positions, alive/dead intervals, death/respawn events, net worth, damage/healing deltas, and objective states. This layer answers factual state questions only and does not define fights, evaluate decisions, infer strategy, use semantic lane occupancy, or process replay 005.
 - Match 91119257 local override gate is `match_91119257_override_ready_with_limitations`: the user explicitly identified `samples/partida_006.dem` as the target bot match and supplied `samples/videos/Partida_006_Replay.mp4`. The local video reports duration 30:43; the demo opens through `Player` with duration 1863 seconds; roster probing finds the user-named player; and 119 one-second tracked-player telemetry rows were extracted before a parser entity-linkage error stopped the scan. The identity remains user-overridden rather than parser-proven because match ID and map metadata are unavailable, and no frame-level video inspection was possible without ffmpeg/ffprobe.
+- Match 91119257 visual/demo calibration gate is `visual_demo_calibration_parser_blocked`: local WPF MediaPlayer decoding produced 281/281 requested frames and removed the immediate video-decoder blocker, but parser telemetry still fails at tick 3808 / 119s with `Unable to find an entity with index [ 5594 ]`. A script-local packet-skip recovery reaches 151 telemetry rows but cascades to 1001 missing-entity warnings, so it is not trustworthy for full-match alignment. E088 remains `both_ambiguous`; no annotation-to-entity matches, side aliases, or lane color aliases were validated.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -71,4 +78,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 can now proceed only as a user-overridden local demo/video investigation with limitations: video-demo alignment, frame confirmation, world-to-minimap calibration, E088 verification, and complete telemetry still require additional media tooling or parser stability.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has decoded frame evidence, but video-demo alignment, world-to-minimap calibration, E088 verification, annotation-to-entity matching, and canonical side/lane aliases remain blocked by parser telemetry instability after entity 5594.

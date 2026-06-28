@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_visual_demo_calibration_gate",
+  "matchId": "91119257",
+  "gateResult": "visual_demo_calibration_parser_blocked",
+  "videoFramesInspected": true,
+  "defensibleVideoDemoTransformExists": false,
+  "trackedPlayerTelemetryCoverage": {
+    "rows": 151,
+    "firstSecond": 0,
+    "lastSecond": 150,
+    "reachesMatchEnd": false
+  },
+  "annotationEntityResolutionCount": 0,
+  "sideAliasesValidated": 0,
+  "laneColorAliasesValidated": 0,
+  "reasons": [
+    "Video frame extraction succeeded via local WPF decoder.",
+    "Parser entity-registry errors cascade after entity 5594, preventing trustworthy full-demo telemetry.",
+    "No sufficient independent anchors exist for a defensible video-to-demo transform.",
+    "Annotation-to-entity matches and canonical aliases remain unresolved."
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

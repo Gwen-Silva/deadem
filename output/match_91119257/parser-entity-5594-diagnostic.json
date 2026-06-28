@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_parser_entity_5594_diagnostic",
+  "matchId": "91119257",
+  "demoPath": "samples/partida_006.dem",
+  "targetEntityIndex": 5594,
+  "reproduced": true,
+  "currentTickBeforeFailure": 3807,
+  "targetTick": 3808,
+  "canonicalGameTimeBeforeFailure": 119,
+  "errorMessage": "Unable to find an entity with index [ 5594 ]",
+  "stack": [
+    "Error: Unable to find an entity with index [ 5594 ]",
+    "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:128:31)",
+    "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+    "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+    "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+    "    at Transform._write (node:internal/streams/transform:171:8)",
+    "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+    "    at _write (node:internal/streams/writable:501:10)",
+    "    at Writable.write (node:internal/streams/writable:510:10)",
+    "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)"
+  ],
+  "entity5594PresentBeforeFailure": false,
+  "likelyOrigin": "parser_library_entity_registry_update_path",
+  "recoveryAssessment": "Exception is thrown inside DemoMessageHandler.handleSvcPacketEntities before script-level field access; safe recovery requires skipping entire affected packet and causes cascading missing-entity warnings.",
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

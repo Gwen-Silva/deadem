@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_video_decoder_audit",
+  "matchId": "91119257",
+  "videoPath": "samples/videos/Partida_006_Replay.mp4",
+  "durationDomains": {
+    "scoreboardDurationSeconds": 1822,
+    "videoDurationSeconds": 1843,
+    "demoContainerPlayerDurationSeconds": 1863,
+    "interpretation": [
+      "Duration differences are recorded as separate domains, not mismatch proof.",
+      "Possible causes include pre-match time, post-match time, replay startup, scoreboard clock offset, recording offset, demo canonical-clock offset, pause/freeze, or media metadata inaccuracy."
+    ]
+  },
+  "candidates": [
+    {
+      "candidate": "ffmpeg",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "ffprobe",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "node_modules\\.bin\\ffmpeg.cmd",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "node_modules\\.bin\\ffprobe.cmd",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "C:\\ffmpeg\\bin\\ffmpeg.exe",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "C:\\Program Files (x86)\\ffmpeg\\bin\\ffmpeg.exe",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "C:\\Users\\gwenm\\AppData\\Local\\Programs\\ffmpeg\\bin\\ffmpeg.exe",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "candidate": "python_media_modules",
+      "available": false,
+      "path": null,
+      "version": null,
+      "error": "spawnSync python.exe EACCES"
+    },
+    {
+      "candidate": "windows_wpf_mediaplayer",
+      "available": true,
+      "path": "PresentationCore MediaPlayer via powershell.exe -STA",
+      "version": "Windows WPF MediaPlayer",
+      "probeFrame": "output\\match_91119257\\local-frame-evidence\\task035-frames\\decoder_probe_25s.jpg",
+      "probeFrameSizeBytes": 161748,
+      "warnings": []
+    }
+  ],
+  "selectedDecoder": "windows_wpf_mediaplayer",
+  "selectedDecoderVersion": "Windows WPF MediaPlayer",
+  "frameRate": "30.00 from Windows Shell metadata",
+  "timeBase": "seconds via MediaPlayer.Position",
+  "frameCount": null,
+  "variableFrameRateBehavior": "not_reported_by_wpf_shell_path",
+  "decodeWarnings": [],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

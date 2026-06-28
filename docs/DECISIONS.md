@@ -189,3 +189,13 @@ Date: 2026-06-28
 Decision: `samples/partida_006.dem` may be used for limited continuation of the match 91119257 local packet only under explicit user override. The override is valid provenance for continuing analysis, but it is not parser proof of match ID or map identity.
 
 Reason: Task 034 found the supplied local video, confirmed a 30:43 video duration, opened `partida_006.dem` through `Player`, found the user-named player in the demo, and extracted partial tracked-player telemetry. Parser match ID and map metadata remain unavailable, frame-level validation could not run without ffmpeg/ffprobe, and telemetry extraction stops early on a parser entity-linkage error. The outputs may support limited alignment and telemetry investigation, but not macro events, rotations, fights, strategic claims, world-to-minimap calibration, or E088 video confirmation.
+
+## DEC-020: Treat Match 91119257 Calibration As Parser-Blocked After Frame Recovery
+
+Status: accepted
+
+Date: 2026-06-28
+
+Decision: Match 91119257 visual calibration may use the decoded local frame evidence as a preserved review source, but it must not claim a video-to-demo transform, annotation-to-entity matches, canonical side aliases, lane color aliases, or E088 confirmation until parser telemetry can be recovered or an equivalent independent synchronization source is available.
+
+Reason: Task 035 found a deterministic local decoder path through Windows WPF MediaPlayer and decoded 281 requested frames, including annotation start/mid/end frames and E088 candidate windows. The parser failure at tick 3808 / 119s is reproduced as an entity-registry update error for entity 5594; script-local packet skipping cascades into 1001 missing-entity warnings and only extends tracked-player telemetry to 151 seconds at low confidence. This removes the immediate video blocker but leaves calibration blocked by unreliable demo telemetry.
