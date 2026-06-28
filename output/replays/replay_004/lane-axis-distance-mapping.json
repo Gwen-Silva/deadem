@@ -1,0 +1,2224 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_004",
+  "source": "output/replays/replay_004/pre-geometry-pipeline.json",
+  "topologyProfile": "topology_profile/structural_lane_axes_schema_653ba0e9_group_a",
+  "stagesRun": [
+    "lane_axis_distance_projection"
+  ],
+  "stagesNotRun": [
+    "stable_occupancy_classification",
+    "transition_detection",
+    "combat_analysis",
+    "objective_lifecycle",
+    "economy",
+    "macro_analysis"
+  ],
+  "featureSchema": [
+    "distanceToLaneAxes",
+    "nearestPhysicalLane",
+    "secondNearestPhysicalLane",
+    "separationMargin",
+    "normalizedProgressAlongLane",
+    "distanceToLaneEndpoints",
+    "laneAxisProjectionQuality"
+  ],
+  "snapshots": [
+    {
+      "requestedTick": 0,
+      "actualTick": -1,
+      "rows": []
+    },
+    {
+      "requestedTick": 19200,
+      "actualTick": 19200,
+      "rows": [
+        {
+          "pawnHandle": 6488139,
+          "controllerHandle": 2146312,
+          "position": {
+            "x": 399.84375,
+            "y": 252.84375,
+            "z": 128.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 70.83,
+              "normalizedProgressAlongLane": 0.38,
+              "distanceToStartEndpoint": 901.99,
+              "distanceToEndEndpoint": 828.57,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 416.02,
+              "normalizedProgressAlongLane": 0.73,
+              "distanceToStartEndpoint": 873.08,
+              "distanceToEndEndpoint": 546.09,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 476.49,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1236.49,
+              "distanceToEndEndpoint": 999.54,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 345.19,
+          "normalizedProgressAlongLane": 0.38,
+          "distanceToLaneEndpoints": {
+            "start": 901.99,
+            "end": 828.57
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14712908,
+          "controllerHandle": 14483459,
+          "position": {
+            "x": 761.21875,
+            "y": 794.4375,
+            "z": 256.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 38.37,
+              "normalizedProgressAlongLane": 0.91,
+              "distanceToStartEndpoint": 1272.83,
+              "distanceToEndEndpoint": 300.15,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 454.92,
+              "normalizedProgressAlongLane": 0.66,
+              "distanceToStartEndpoint": 1100.03,
+              "distanceToEndEndpoint": 998.34,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 516.46,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 825.67,
+              "distanceToEndEndpoint": 742.77,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 416.55,
+          "normalizedProgressAlongLane": 0.91,
+          "distanceToLaneEndpoints": {
+            "start": 1272.83,
+            "end": 300.15
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 7405647,
+          "controllerHandle": 2850823,
+          "position": {
+            "x": 551.0625,
+            "y": 606.34375,
+            "z": 248.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 51.85,
+              "normalizedProgressAlongLane": 0.73,
+              "distanceToStartEndpoint": 1044.58,
+              "distanceToEndEndpoint": 501.18,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 284.46,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1030.95,
+              "distanceToEndEndpoint": 954.76,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 341.71,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 726.62,
+              "distanceToEndEndpoint": 642.79,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 232.61,
+          "normalizedProgressAlongLane": 0.73,
+          "distanceToLaneEndpoints": {
+            "start": 1044.58,
+            "end": 501.18
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10076241,
+          "controllerHandle": 13582338,
+          "position": {
+            "x": 716.21875,
+            "y": 791.9375,
+            "z": 256.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 74.04,
+              "normalizedProgressAlongLane": 0.84,
+              "distanceToStartEndpoint": 1244.87,
+              "distanceToEndEndpoint": 336.4,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 455.17,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1069.91,
+              "distanceToEndEndpoint": 1007.25,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 499.23,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 785.7,
+              "distanceToEndEndpoint": 749.81,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 381.13,
+          "normalizedProgressAlongLane": 0.84,
+          "distanceToLaneEndpoints": {
+            "start": 1244.87,
+            "end": 336.4
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3768402,
+          "controllerHandle": 409605,
+          "position": {
+            "x": 595.875,
+            "y": 452.03125,
+            "z": 128.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 184.98,
+              "normalizedProgressAlongLane": 0.42,
+              "distanceToStartEndpoint": 1072,
+              "distanceToEndEndpoint": 580.05,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 390.75,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 828.2,
+              "distanceToEndEndpoint": 506.98,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 430.16,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1209.27,
+              "distanceToEndEndpoint": 957.58,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 205.77,
+          "normalizedProgressAlongLane": 0.42,
+          "distanceToLaneEndpoints": {
+            "start": 1072,
+            "end": 580.05
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10240083,
+          "controllerHandle": 12648457,
+          "position": {
+            "x": 63.90625,
+            "y": 5.4375,
+            "z": 376.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 106.64,
+              "normalizedProgressAlongLane": 0.12,
+              "distanceToStartEndpoint": 523.88,
+              "distanceToEndEndpoint": 1189.02,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 480.11,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 1086.85,
+              "distanceToEndEndpoint": 842.74,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 663.95,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1194.79,
+              "distanceToEndEndpoint": 1069.28,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 373.47,
+          "normalizedProgressAlongLane": 0.12,
+          "distanceToLaneEndpoints": {
+            "start": 523.88,
+            "end": 1189.02
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3670100,
+          "controllerHandle": 540676,
+          "position": {
+            "x": 58.625,
+            "y": 225.34375,
+            "z": 165.90625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 159.06,
+              "normalizedProgressAlongLane": 0.15,
+              "distanceToStartEndpoint": 766.32,
+              "distanceToEndEndpoint": 1103.21,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 558.17,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1161.32,
+              "distanceToEndEndpoint": 1200.51,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 568.92,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 816.88,
+              "distanceToEndEndpoint": 857.53,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 399.11,
+          "normalizedProgressAlongLane": 0.15,
+          "distanceToLaneEndpoints": {
+            "start": 766.32,
+            "end": 1103.21
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14418005,
+          "controllerHandle": 9240582,
+          "position": {
+            "x": 934.78125,
+            "y": 200.5625,
+            "z": 957.6875
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 153.81,
+              "normalizedProgressAlongLane": 1,
+              "distanceToStartEndpoint": 1237.8,
+              "distanceToEndEndpoint": 123.49,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 420.61,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1564.96,
+              "distanceToEndEndpoint": 715.87,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 448.65,
+              "normalizedProgressAlongLane": 0.58,
+              "distanceToStartEndpoint": 958.04,
+              "distanceToEndEndpoint": 755.15,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_3",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 266.8,
+          "normalizedProgressAlongLane": 1,
+          "distanceToLaneEndpoints": {
+            "start": 1237.8,
+            "end": 123.49
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 13320279,
+          "controllerHandle": 14401548,
+          "position": {
+            "x": 769.15625,
+            "y": 1018.78125,
+            "z": 376.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 276.88,
+              "normalizedProgressAlongLane": 1,
+              "distanceToStartEndpoint": 1378.36,
+              "distanceToEndEndpoint": 365.76,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 467.22,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 1003.51,
+              "distanceToEndEndpoint": 1101.73,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 578.4,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 846.75,
+              "distanceToEndEndpoint": 970.62,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 190.34,
+          "normalizedProgressAlongLane": 1,
+          "distanceToLaneEndpoints": {
+            "start": 1378.36,
+            "end": 365.76
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 2343001,
+          "controllerHandle": 3571723,
+          "position": {
+            "x": 436.59375,
+            "y": 968.125,
+            "z": 384.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 304.78,
+              "normalizedProgressAlongLane": 0.33,
+              "distanceToStartEndpoint": 772.93,
+              "distanceToEndEndpoint": 1166.83,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 319.49,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 576.31,
+              "distanceToEndEndpoint": 1022.19,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 348.65,
+              "normalizedProgressAlongLane": 0.75,
+              "distanceToStartEndpoint": 1178.98,
+              "distanceToEndEndpoint": 608.26,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_3",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 14.71,
+          "normalizedProgressAlongLane": 0.33,
+          "distanceToLaneEndpoints": {
+            "start": 772.93,
+            "end": 1166.83
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 16564318,
+          "controllerHandle": 12713994,
+          "position": {
+            "x": 61.84375,
+            "y": 919.84375,
+            "z": 248.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 79.99,
+              "normalizedProgressAlongLane": 0.09,
+              "distanceToStartEndpoint": 273.8,
+              "distanceToEndEndpoint": 1195.14,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 148.99,
+              "normalizedProgressAlongLane": 0.23,
+              "distanceToStartEndpoint": 780.08,
+              "distanceToEndEndpoint": 1410.66,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 515.26,
+              "normalizedProgressAlongLane": 0.26,
+              "distanceToStartEndpoint": 1126.84,
+              "distanceToEndEndpoint": 971.04,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 69,
+          "normalizedProgressAlongLane": 0.09,
+          "distanceToLaneEndpoints": {
+            "start": 273.8,
+            "end": 1195.14
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14663776,
+          "controllerHandle": 9895949,
+          "position": {
+            "x": 36.53125,
+            "y": 462.46875,
+            "z": 248.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 217.13,
+              "normalizedProgressAlongLane": 0.24,
+              "distanceToStartEndpoint": 796.92,
+              "distanceToEndEndpoint": 1017.22,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 401.86,
+              "normalizedProgressAlongLane": 0.42,
+              "distanceToStartEndpoint": 947.25,
+              "distanceToEndEndpoint": 1218.68,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 515.07,
+              "normalizedProgressAlongLane": 0.49,
+              "distanceToStartEndpoint": 614.19,
+              "distanceToEndEndpoint": 947.38,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 184.73,
+          "normalizedProgressAlongLane": 0.24,
+          "distanceToLaneEndpoints": {
+            "start": 796.92,
+            "end": 1017.22
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        }
+      ]
+    },
+    {
+      "requestedTick": 38400,
+      "actualTick": 38400,
+      "rows": [
+        {
+          "pawnHandle": 6488139,
+          "controllerHandle": 2146312,
+          "position": {
+            "x": 305.375,
+            "y": 339.21875,
+            "z": 248.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 34.26,
+              "normalizedProgressAlongLane": 0.34,
+              "distanceToStartEndpoint": 792.56,
+              "distanceToEndEndpoint": 820.6,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 334.61,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1067.33,
+              "distanceToEndEndpoint": 987.5,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 358.97,
+              "normalizedProgressAlongLane": 0.72,
+              "distanceToStartEndpoint": 785.54,
+              "distanceToEndEndpoint": 651.65,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 300.35,
+          "normalizedProgressAlongLane": 0.34,
+          "distanceToLaneEndpoints": {
+            "start": 792.56,
+            "end": 820.6
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14712908,
+          "controllerHandle": 14483459,
+          "position": {
+            "x": 699,
+            "y": 563.78125,
+            "z": 591.125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 107.12,
+              "normalizedProgressAlongLane": 0.61,
+              "distanceToStartEndpoint": 933.61,
+              "distanceToEndEndpoint": 645.43,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 146.32,
+              "normalizedProgressAlongLane": 0.64,
+              "distanceToStartEndpoint": 948.37,
+              "distanceToEndEndpoint": 381.34,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 231.5,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 1017.37,
+              "distanceToEndEndpoint": 633.15,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_3",
+          "secondNearestPhysicalLane": "lane_axis_1",
+          "separationMargin": 39.2,
+          "normalizedProgressAlongLane": 0.61,
+          "distanceToLaneEndpoints": {
+            "start": 933.61,
+            "end": 645.43
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 7405647,
+          "controllerHandle": 2850823,
+          "position": {
+            "x": 713.6875,
+            "y": 590.96875,
+            "z": 120.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 188.77,
+              "normalizedProgressAlongLane": 0.82,
+              "distanceToStartEndpoint": 1208.58,
+              "distanceToEndEndpoint": 447.27,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 464.75,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 834.38,
+              "distanceToEndEndpoint": 573.95,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 489.63,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1222.83,
+              "distanceToEndEndpoint": 987.19,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 275.98,
+          "normalizedProgressAlongLane": 0.82,
+          "distanceToLaneEndpoints": {
+            "start": 1208.58,
+            "end": 447.27
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10076241,
+          "controllerHandle": 13582338,
+          "position": {
+            "x": 339,
+            "y": 145,
+            "z": 248
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 202.21,
+              "normalizedProgressAlongLane": 0.36,
+              "distanceToStartEndpoint": 745.55,
+              "distanceToEndEndpoint": 906.08,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 324.45,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 970.37,
+              "distanceToEndEndpoint": 562.92,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 496.46,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1207.91,
+              "distanceToEndEndpoint": 933.5,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 122.24,
+          "normalizedProgressAlongLane": 0.36,
+          "distanceToLaneEndpoints": {
+            "start": 745.55,
+            "end": 906.08
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3768402,
+          "controllerHandle": 409605,
+          "position": {
+            "x": 692.65625,
+            "y": 883.4375,
+            "z": 256.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 147.91,
+              "normalizedProgressAlongLane": 0.92,
+              "distanceToStartEndpoint": 1292.19,
+              "distanceToEndEndpoint": 380.86,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 485.13,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1039.24,
+              "distanceToEndEndpoint": 1079.12,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 537.68,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 742.02,
+              "distanceToEndEndpoint": 844.29,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 337.22,
+          "normalizedProgressAlongLane": 0.92,
+          "distanceToLaneEndpoints": {
+            "start": 1292.19,
+            "end": 380.86
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10240083,
+          "controllerHandle": 12648457,
+          "position": {
+            "x": 518.75,
+            "y": 400.09375,
+            "z": 376
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 67.81,
+              "normalizedProgressAlongLane": 0.48,
+              "distanceToStartEndpoint": 836.41,
+              "distanceToEndEndpoint": 589.64,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 145.21,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 888.05,
+              "distanceToEndEndpoint": 519.3,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 258.73,
+              "normalizedProgressAlongLane": 0.46,
+              "distanceToStartEndpoint": 1027.55,
+              "distanceToEndEndpoint": 781.78,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 77.4,
+          "normalizedProgressAlongLane": 0.48,
+          "distanceToLaneEndpoints": {
+            "start": 836.41,
+            "end": 589.64
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3670100,
+          "controllerHandle": 540676,
+          "position": {
+            "x": 547.1875,
+            "y": 1005.90625,
+            "z": 248.875
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 285.59,
+              "normalizedProgressAlongLane": 0.81,
+              "distanceToStartEndpoint": 1315.31,
+              "distanceToEndEndpoint": 554.98,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 469.74,
+              "normalizedProgressAlongLane": 0.38,
+              "distanceToStartEndpoint": 945.96,
+              "distanceToEndEndpoint": 1219.69,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 488.17,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 591.85,
+              "distanceToEndEndpoint": 1004.44,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 184.15,
+          "normalizedProgressAlongLane": 0.81,
+          "distanceToLaneEndpoints": {
+            "start": 1315.31,
+            "end": 554.98
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14418005,
+          "controllerHandle": 9240582,
+          "position": {
+            "x": 940.59375,
+            "y": 435.90625,
+            "z": 384.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 282.19,
+              "normalizedProgressAlongLane": 0.91,
+              "distanceToStartEndpoint": 1165.38,
+              "distanceToEndEndpoint": 395.84,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 323.69,
+              "normalizedProgressAlongLane": 0.87,
+              "distanceToStartEndpoint": 1272.33,
+              "distanceToEndEndpoint": 646.68,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 331.37,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1156.22,
+              "distanceToEndEndpoint": 312.19,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 41.5,
+          "normalizedProgressAlongLane": 0.91,
+          "distanceToLaneEndpoints": {
+            "start": 1165.38,
+            "end": 395.84
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 13320279,
+          "controllerHandle": 14401548,
+          "position": {
+            "x": 631.53125,
+            "y": 403.125,
+            "z": 396.75
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 114.92,
+              "normalizedProgressAlongLane": 0.49,
+              "distanceToStartEndpoint": 900.33,
+              "distanceToEndEndpoint": 498.35,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 133.65,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 963.47,
+              "distanceToEndEndpoint": 452.49,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 276.79,
+              "normalizedProgressAlongLane": 0.86,
+              "distanceToStartEndpoint": 1074.98,
+              "distanceToEndEndpoint": 707.24,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 18.73,
+          "normalizedProgressAlongLane": 0.49,
+          "distanceToLaneEndpoints": {
+            "start": 900.33,
+            "end": 498.35
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 2343001,
+          "controllerHandle": 3571723,
+          "position": {
+            "x": 540.625,
+            "y": 249.71875,
+            "z": 384
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 83.96,
+              "normalizedProgressAlongLane": 0.48,
+              "distanceToStartEndpoint": 785.35,
+              "distanceToEndEndpoint": 671.48,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 143.83,
+              "normalizedProgressAlongLane": 0.73,
+              "distanceToStartEndpoint": 1013.71,
+              "distanceToEndEndpoint": 420.9,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 288.06,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1129.02,
+              "distanceToEndEndpoint": 715.29,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 59.87,
+          "normalizedProgressAlongLane": 0.48,
+          "distanceToLaneEndpoints": {
+            "start": 785.35,
+            "end": 671.48
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 16564318,
+          "controllerHandle": 12713994,
+          "position": {
+            "x": 453.3125,
+            "y": 848.53125,
+            "z": 248.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 183.78,
+              "normalizedProgressAlongLane": 0.76,
+              "distanceToStartEndpoint": 1159.9,
+              "distanceToEndEndpoint": 585.26,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 326.81,
+              "normalizedProgressAlongLane": 0.4,
+              "distanceToStartEndpoint": 910.01,
+              "distanceToEndEndpoint": 1146.28,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 392.1,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 536.94,
+              "distanceToEndEndpoint": 900.85,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 143.03,
+          "normalizedProgressAlongLane": 0.76,
+          "distanceToLaneEndpoints": {
+            "start": 1159.9,
+            "end": 585.26
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14663776,
+          "controllerHandle": 9895949,
+          "position": {
+            "x": 556.28125,
+            "y": 135.4375,
+            "z": 385.65625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 159.93,
+              "normalizedProgressAlongLane": 0.78,
+              "distanceToStartEndpoint": 1111.62,
+              "distanceToEndEndpoint": 370.56,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 198.36,
+              "normalizedProgressAlongLane": 0.48,
+              "distanceToStartEndpoint": 766.97,
+              "distanceToEndEndpoint": 749.37,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 284.71,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1215.1,
+              "distanceToEndEndpoint": 687.42,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_1",
+          "separationMargin": 38.43,
+          "normalizedProgressAlongLane": 0.78,
+          "distanceToLaneEndpoints": {
+            "start": 1111.62,
+            "end": 370.56
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        }
+      ]
+    },
+    {
+      "requestedTick": 76800,
+      "actualTick": 76800,
+      "rows": [
+        {
+          "pawnHandle": 6488139,
+          "controllerHandle": 2146312,
+          "position": {
+            "x": 5.09375,
+            "y": 487.59375,
+            "z": 564.53125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 165.78,
+              "normalizedProgressAlongLane": 0.24,
+              "distanceToStartEndpoint": 589.61,
+              "distanceToEndEndpoint": 1032.78,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 321.25,
+              "normalizedProgressAlongLane": 0.51,
+              "distanceToStartEndpoint": 778.58,
+              "distanceToEndEndpoint": 1033.6,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 352.97,
+              "normalizedProgressAlongLane": 0.38,
+              "distanceToStartEndpoint": 693.05,
+              "distanceToEndEndpoint": 1111.06,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 155.47,
+          "normalizedProgressAlongLane": 0.24,
+          "distanceToLaneEndpoints": {
+            "start": 589.61,
+            "end": 1032.78
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14712908,
+          "controllerHandle": 14483459,
+          "position": {
+            "x": 210.46875,
+            "y": 430.59375,
+            "z": 376.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 11.79,
+              "normalizedProgressAlongLane": 0.29,
+              "distanceToStartEndpoint": 707.16,
+              "distanceToEndEndpoint": 847.62,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 235.75,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 891.5,
+              "distanceToEndEndpoint": 1004.03,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 344.8,
+              "normalizedProgressAlongLane": 0.63,
+              "distanceToStartEndpoint": 730.22,
+              "distanceToEndEndpoint": 786.6,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 223.96,
+          "normalizedProgressAlongLane": 0.29,
+          "distanceToLaneEndpoints": {
+            "start": 707.16,
+            "end": 847.62
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 7405647,
+          "controllerHandle": 2850823,
+          "position": {
+            "x": 505.46875,
+            "y": 898.1875,
+            "z": 472.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 275.06,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 695.39,
+              "distanceToEndEndpoint": 946.07,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 304.18,
+              "normalizedProgressAlongLane": 0.38,
+              "distanceToStartEndpoint": 754.13,
+              "distanceToEndEndpoint": 1041.97,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 315.02,
+              "normalizedProgressAlongLane": 0.72,
+              "distanceToStartEndpoint": 1114.45,
+              "distanceToEndEndpoint": 519.16,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 29.12,
+          "normalizedProgressAlongLane": 0.43,
+          "distanceToLaneEndpoints": {
+            "start": 695.39,
+            "end": 946.07
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10076241,
+          "controllerHandle": 13582338,
+          "position": {
+            "x": 968.09375,
+            "y": 305.8125,
+            "z": 192
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 256.23,
+              "normalizedProgressAlongLane": 0.98,
+              "distanceToStartEndpoint": 1212.14,
+              "distanceToEndEndpoint": 260.33,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 420.85,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1455.61,
+              "distanceToEndEndpoint": 767.59,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 458.9,
+              "normalizedProgressAlongLane": 0.45,
+              "distanceToStartEndpoint": 1235.45,
+              "distanceToEndEndpoint": 496.13,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 164.62,
+          "normalizedProgressAlongLane": 0.98,
+          "distanceToLaneEndpoints": {
+            "start": 1212.14,
+            "end": 260.33
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3768402,
+          "controllerHandle": 409605,
+          "position": {
+            "x": 724.0625,
+            "y": 707.96875,
+            "z": 437.34375
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 83.87,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1111.69,
+              "distanceToEndEndpoint": 275.74,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 259.35,
+              "normalizedProgressAlongLane": 0.64,
+              "distanceToStartEndpoint": 977.37,
+              "distanceToEndEndpoint": 829.81,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 362.06,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 894.52,
+              "distanceToEndEndpoint": 690.75,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 175.48,
+          "normalizedProgressAlongLane": 0.88,
+          "distanceToLaneEndpoints": {
+            "start": 1111.69,
+            "end": 275.74
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10240083,
+          "controllerHandle": 12648457,
+          "position": {
+            "x": 594.125,
+            "y": 166.21875,
+            "z": 194.90625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 163.26,
+              "normalizedProgressAlongLane": 0.43,
+              "distanceToStartEndpoint": 933.89,
+              "distanceToEndEndpoint": 739.87,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 318.16,
+              "normalizedProgressAlongLane": 0.98,
+              "distanceToStartEndpoint": 1055.45,
+              "distanceToEndEndpoint": 324.52,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 403.09,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1321.25,
+              "distanceToEndEndpoint": 830.28,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 154.9,
+          "normalizedProgressAlongLane": 0.43,
+          "distanceToLaneEndpoints": {
+            "start": 933.89,
+            "end": 739.87
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3670100,
+          "controllerHandle": 540676,
+          "position": {
+            "x": 300.09375,
+            "y": 19.46875,
+            "z": 129.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 322.14,
+              "normalizedProgressAlongLane": 0.38,
+              "distanceToStartEndpoint": 823.82,
+              "distanceToEndEndpoint": 1047.18,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 471.44,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 1053.14,
+              "distanceToEndEndpoint": 610.91,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 664.24,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1365.63,
+              "distanceToEndEndpoint": 1048.76,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 149.3,
+          "normalizedProgressAlongLane": 0.38,
+          "distanceToLaneEndpoints": {
+            "start": 823.82,
+            "end": 1047.18
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14418005,
+          "controllerHandle": 9240582,
+          "position": {
+            "x": 838.75,
+            "y": 141.9375,
+            "z": 248.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 86.83,
+              "normalizedProgressAlongLane": 0.99,
+              "distanceToStartEndpoint": 1234.95,
+              "distanceToEndEndpoint": 97.04,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 321.56,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1432.79,
+              "distanceToEndEndpoint": 695.78,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 367.24,
+              "normalizedProgressAlongLane": 0.45,
+              "distanceToStartEndpoint": 1069.35,
+              "distanceToEndEndpoint": 644.74,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 234.73,
+          "normalizedProgressAlongLane": 0.99,
+          "distanceToLaneEndpoints": {
+            "start": 1234.95,
+            "end": 97.04
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 13320279,
+          "controllerHandle": 14401548,
+          "position": {
+            "x": 236.125,
+            "y": 619.8125,
+            "z": 248.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 236.66,
+              "normalizedProgressAlongLane": 0.42,
+              "distanceToStartEndpoint": 896.84,
+              "distanceToEndEndpoint": 1136.92,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 237.23,
+              "normalizedProgressAlongLane": 0.3,
+              "distanceToStartEndpoint": 927.25,
+              "distanceToEndEndpoint": 792.78,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 389.82,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 524.97,
+              "distanceToEndEndpoint": 862.8,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_3",
+          "secondNearestPhysicalLane": "lane_axis_1",
+          "separationMargin": 0.57,
+          "normalizedProgressAlongLane": 0.42,
+          "distanceToLaneEndpoints": {
+            "start": 896.84,
+            "end": 1136.92
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 2343001,
+          "controllerHandle": 3571723,
+          "position": {
+            "x": 770.09375,
+            "y": 535.71875,
+            "z": 463.90625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 204.72,
+              "normalizedProgressAlongLane": 0.67,
+              "distanceToStartEndpoint": 1032.83,
+              "distanceToEndEndpoint": 307.05,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 237.72,
+              "normalizedProgressAlongLane": 0.73,
+              "distanceToStartEndpoint": 1061.75,
+              "distanceToEndEndpoint": 676.93,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 254.64,
+              "normalizedProgressAlongLane": 0.68,
+              "distanceToStartEndpoint": 1015.07,
+              "distanceToEndEndpoint": 530.64,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 33,
+          "normalizedProgressAlongLane": 0.67,
+          "distanceToLaneEndpoints": {
+            "start": 1032.83,
+            "end": 307.05
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 16564318,
+          "controllerHandle": 12713994,
+          "position": {
+            "x": 879.71875,
+            "y": 515.125,
+            "z": 128.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 294.58,
+              "normalizedProgressAlongLane": 0.92,
+              "distanceToStartEndpoint": 1276.34,
+              "distanceToEndEndpoint": 395.61,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 455.68,
+              "normalizedProgressAlongLane": 0.96,
+              "distanceToStartEndpoint": 1015.2,
+              "distanceToEndEndpoint": 469.21,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 530.48,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1347.15,
+              "distanceToEndEndpoint": 911.95,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 161.1,
+          "normalizedProgressAlongLane": 0.92,
+          "distanceToLaneEndpoints": {
+            "start": 1276.34,
+            "end": 395.61
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14663776,
+          "controllerHandle": 9895949,
+          "position": {
+            "x": 183.96875,
+            "y": 44.40625,
+            "z": 921.625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 218.69,
+              "normalizedProgressAlongLane": 0,
+              "distanceToStartEndpoint": 190.98,
+              "distanceToEndEndpoint": 1176.79,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 423.07,
+              "normalizedProgressAlongLane": 0.57,
+              "distanceToStartEndpoint": 1355.95,
+              "distanceToEndEndpoint": 974.88,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 611.63,
+              "normalizedProgressAlongLane": 0.53,
+              "distanceToStartEndpoint": 987.43,
+              "distanceToEndEndpoint": 793.26,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 204.38,
+          "normalizedProgressAlongLane": 0,
+          "distanceToLaneEndpoints": {
+            "start": 190.98,
+            "end": 1176.79
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        }
+      ]
+    },
+    {
+      "requestedTick": 128775,
+      "actualTick": 128775,
+      "rows": [
+        {
+          "pawnHandle": 6488139,
+          "controllerHandle": 2146312,
+          "position": {
+            "x": 770.625,
+            "y": 242.53125,
+            "z": 384.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 120.96,
+              "normalizedProgressAlongLane": 0.92,
+              "distanceToStartEndpoint": 1155.67,
+              "distanceToEndEndpoint": 252.94,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 171.19,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1259.84,
+              "distanceToEndEndpoint": 601.63,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 254.07,
+              "normalizedProgressAlongLane": 0.49,
+              "distanceToStartEndpoint": 956.45,
+              "distanceToEndEndpoint": 548.16,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 50.23,
+          "normalizedProgressAlongLane": 0.92,
+          "distanceToLaneEndpoints": {
+            "start": 1155.67,
+            "end": 252.94
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14712908,
+          "controllerHandle": 14483459,
+          "position": {
+            "x": 0,
+            "y": 45.4375,
+            "z": 192.1875
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 131.65,
+              "normalizedProgressAlongLane": 0.15,
+              "distanceToStartEndpoint": 705.28,
+              "distanceToEndEndpoint": 1238.77,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 608.22,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 997.07,
+              "distanceToEndEndpoint": 898.46,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 707.69,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1271.03,
+              "distanceToEndEndpoint": 1223.03,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 476.57,
+          "normalizedProgressAlongLane": 0.15,
+          "distanceToLaneEndpoints": {
+            "start": 705.28,
+            "end": 1238.77
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 7405647,
+          "controllerHandle": 16777215,
+          "position": {
+            "x": 24,
+            "y": 208,
+            "z": 192.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 125.76,
+              "normalizedProgressAlongLane": 0.15,
+              "distanceToStartEndpoint": 734.45,
+              "distanceToEndEndpoint": 1135,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 576.29,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1152.97,
+              "distanceToEndEndpoint": 1209.28,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 578.04,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 838.16,
+              "distanceToEndEndpoint": 886.12,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 450.53,
+          "normalizedProgressAlongLane": 0.15,
+          "distanceToLaneEndpoints": {
+            "start": 734.45,
+            "end": 1135
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10076241,
+          "controllerHandle": 13582338,
+          "position": {
+            "x": 968,
+            "y": 250.8125,
+            "z": 191.84375
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 209.34,
+              "normalizedProgressAlongLane": 0.99,
+              "distanceToStartEndpoint": 1245.41,
+              "distanceToEndEndpoint": 210.24,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 412.87,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1483,
+              "distanceToEndEndpoint": 753.99,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 462.95,
+              "normalizedProgressAlongLane": 0.45,
+              "distanceToStartEndpoint": 1223.02,
+              "distanceToEndEndpoint": 544.89,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 203.53,
+          "normalizedProgressAlongLane": 0.99,
+          "distanceToLaneEndpoints": {
+            "start": 1245.41,
+            "end": 210.24
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3768402,
+          "controllerHandle": 409605,
+          "position": {
+            "x": 19.78125,
+            "y": 309.75,
+            "z": 384.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 32.67,
+              "normalizedProgressAlongLane": 0.2,
+              "distanceToStartEndpoint": 598.68,
+              "distanceToEndEndpoint": 1069.33,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 448.95,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 946.09,
+              "distanceToEndEndpoint": 1122.23,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 469.36,
+              "normalizedProgressAlongLane": 0.55,
+              "distanceToStartEndpoint": 810.79,
+              "distanceToEndEndpoint": 918.99,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 416.28,
+          "normalizedProgressAlongLane": 0.2,
+          "distanceToLaneEndpoints": {
+            "start": 598.68,
+            "end": 1069.33
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 10240083,
+          "controllerHandle": 12648457,
+          "position": {
+            "x": 56,
+            "y": 250.8125,
+            "z": 191.84375
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 152.39,
+              "normalizedProgressAlongLane": 0.16,
+              "distanceToStartEndpoint": 749.59,
+              "distanceToEndEndpoint": 1087.83,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 529.65,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1124.91,
+              "distanceToEndEndpoint": 1189.47,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 557.68,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 797.69,
+              "distanceToEndEndpoint": 862.91,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 377.26,
+          "normalizedProgressAlongLane": 0.16,
+          "distanceToLaneEndpoints": {
+            "start": 749.59,
+            "end": 1087.83
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 3670100,
+          "controllerHandle": 16777215,
+          "position": {
+            "x": 1022.46875,
+            "y": 250.8125,
+            "z": 192.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 234.37,
+              "normalizedProgressAlongLane": 1,
+              "distanceToStartEndpoint": 1287.78,
+              "distanceToEndEndpoint": 234.5,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 441.27,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1519.02,
+              "distanceToEndEndpoint": 755.19,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 516.52,
+              "normalizedProgressAlongLane": 0.45,
+              "distanceToStartEndpoint": 1266.46,
+              "distanceToEndEndpoint": 544.53,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 206.9,
+          "normalizedProgressAlongLane": 1,
+          "distanceToLaneEndpoints": {
+            "start": 1287.78,
+            "end": 234.5
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14418005,
+          "controllerHandle": 9240582,
+          "position": {
+            "x": 770.34375,
+            "y": 242.53125,
+            "z": 383.875
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 121.21,
+              "normalizedProgressAlongLane": 0.92,
+              "distanceToStartEndpoint": 1155.43,
+              "distanceToEndEndpoint": 253,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 171.35,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1259.75,
+              "distanceToEndEndpoint": 601.87,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 253.82,
+              "normalizedProgressAlongLane": 0.49,
+              "distanceToStartEndpoint": 956.31,
+              "distanceToEndEndpoint": 548.29,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 50.14,
+          "normalizedProgressAlongLane": 0.92,
+          "distanceToLaneEndpoints": {
+            "start": 1155.43,
+            "end": 253
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 13320279,
+          "controllerHandle": 16777215,
+          "position": {
+            "x": 1000,
+            "y": 304,
+            "z": 192.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 266.57,
+              "normalizedProgressAlongLane": 0.99,
+              "distanceToStartEndpoint": 1238.56,
+              "distanceToEndEndpoint": 269.28,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 436.29,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1477.87,
+              "distanceToEndEndpoint": 767.39,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 490.5,
+              "normalizedProgressAlongLane": 0.45,
+              "distanceToStartEndpoint": 1260.15,
+              "distanceToEndEndpoint": 496.8,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 169.72,
+          "normalizedProgressAlongLane": 0.99,
+          "distanceToLaneEndpoints": {
+            "start": 1238.56,
+            "end": 269.28
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 2343001,
+          "controllerHandle": 3571723,
+          "position": {
+            "x": 32,
+            "y": 8,
+            "z": 191.84375
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 154.86,
+              "normalizedProgressAlongLane": 0.15,
+              "distanceToStartEndpoint": 704.93,
+              "distanceToEndEndpoint": 1234.99,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 592.07,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 1033.93,
+              "distanceToEndEndpoint": 868.19,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 722.21,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1300.27,
+              "distanceToEndEndpoint": 1199.78,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 437.21,
+          "normalizedProgressAlongLane": 0.15,
+          "distanceToLaneEndpoints": {
+            "start": 704.93,
+            "end": 1234.99
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 16564318,
+          "controllerHandle": 12713994,
+          "position": {
+            "x": 56.8125,
+            "y": 165.90625,
+            "z": 192.0625
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 107.18,
+              "normalizedProgressAlongLane": 0.15,
+              "distanceToStartEndpoint": 725.45,
+              "distanceToEndEndpoint": 1127.76,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 550.59,
+              "normalizedProgressAlongLane": 0.77,
+              "distanceToStartEndpoint": 880.3,
+              "distanceToEndEndpoint": 847.77,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 587.81,
+              "normalizedProgressAlongLane": 0.44,
+              "distanceToStartEndpoint": 1183.72,
+              "distanceToEndEndpoint": 1180.08,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_1",
+          "secondNearestPhysicalLane": "lane_axis_2",
+          "separationMargin": 443.41,
+          "normalizedProgressAlongLane": 0.15,
+          "distanceToLaneEndpoints": {
+            "start": 725.45,
+            "end": 1127.76
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        },
+        {
+          "pawnHandle": 14663776,
+          "controllerHandle": 9895949,
+          "position": {
+            "x": 770.3125,
+            "y": 242.53125,
+            "z": 384.03125
+          },
+          "alive": null,
+          "distanceToLaneAxes": [
+            {
+              "neutralLaneId": "lane_axis_2",
+              "distance": 121.16,
+              "normalizedProgressAlongLane": 0.92,
+              "distanceToStartEndpoint": 1155.46,
+              "distanceToEndEndpoint": 253.09,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_3",
+              "distance": 171.19,
+              "normalizedProgressAlongLane": 0.88,
+              "distanceToStartEndpoint": 1259.65,
+              "distanceToEndEndpoint": 601.74,
+              "projectionQuality": "projected_to_polyline"
+            },
+            {
+              "neutralLaneId": "lane_axis_1",
+              "distance": 253.78,
+              "normalizedProgressAlongLane": 0.49,
+              "distanceToStartEndpoint": 956.2,
+              "distanceToEndEndpoint": 548.29,
+              "projectionQuality": "projected_to_polyline"
+            }
+          ],
+          "nearestPhysicalLane": "lane_axis_2",
+          "secondNearestPhysicalLane": "lane_axis_3",
+          "separationMargin": 50.03,
+          "normalizedProgressAlongLane": 0.92,
+          "distanceToLaneEndpoints": {
+            "start": 1155.46,
+            "end": 253.09
+          },
+          "laneAxisProjectionQuality": "projected_to_polyline"
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "snapshotCount": 5,
+    "rowCount": 48,
+    "rowsWithFiniteNearestLane": 48,
+    "gate": "pass"
+  },
+  "replay005Touched": false
+}

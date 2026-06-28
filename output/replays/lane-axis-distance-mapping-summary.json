@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "kind": "lane_axis_distance_mapping_summary",
+  "topologyProfile": "topology_profile/structural_lane_axes_schema_653ba0e9_group_a",
+  "replay002SmokeResult": "pass",
+  "results": [
+    {
+      "replayId": "replay_002",
+      "outputFile": "output/replays/replay_002/lane-axis-distance-mapping.json",
+      "gate": "pass",
+      "snapshotCount": 5,
+      "rowCount": 48,
+      "rowsWithFiniteNearestLane": 48
+    },
+    {
+      "replayId": "replay_003",
+      "outputFile": "output/replays/replay_003/lane-axis-distance-mapping.json",
+      "gate": "pass",
+      "snapshotCount": 5,
+      "rowCount": 48,
+      "rowsWithFiniteNearestLane": 48
+    },
+    {
+      "replayId": "replay_004",
+      "outputFile": "output/replays/replay_004/lane-axis-distance-mapping.json",
+      "gate": "pass",
+      "snapshotCount": 5,
+      "rowCount": 48,
+      "rowsWithFiniteNearestLane": 48
+    }
+  ],
+  "gateResult": "lane_distance_mapping_ready",
+  "prohibitedNotRun": [
+    "stable_occupancy_classification",
+    "transition_detection",
+    "replay_005_processing",
+    "semantic_lane_color_claims"
+  ],
+  "replay005Protection": {
+    "status": "preserved",
+    "processed": false
+  }
+}
