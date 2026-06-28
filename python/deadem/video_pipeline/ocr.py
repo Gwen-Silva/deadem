@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Iterable, Protocol
+from collections.abc import Iterable
+from typing import Protocol
 
 from .errors import OptionalDependencyUnavailable
 from .roi import RegionOfInterest
@@ -72,4 +73,3 @@ def unavailable_ocr_error() -> dict:
         "message": "OCR requires optional paddleocr and a compatible Paddle runtime. paddlepaddle is platform-specific and not installed by the universal extra.",
         "recoverable": True,
     }
-

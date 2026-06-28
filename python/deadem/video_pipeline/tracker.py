@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections.abc import Protocol
+from typing import Protocol
 
 from .schemas import Detection, FrameData, TrackerBackend, TrackedObject
 
@@ -94,4 +94,3 @@ class UltralyticsByteTrackAdapter:
 
     def reset(self) -> None:
         pass
-

@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from collections.abc import Iterable, Protocol
+from collections.abc import Iterable
 from pathlib import Path
+from typing import Protocol
 
 from .errors import OptionalDependencyUnavailable
 from .schemas import Detection, DetectionBackend, FrameData, Provenance, ConfidenceLevel
@@ -85,4 +86,3 @@ def unavailable_detector_error() -> dict:
         "message": "Detection requires optional ultralytics and a local model path; generic YOLO is architectural only for Deadlock.",
         "recoverable": True,
     }
-

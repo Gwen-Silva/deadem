@@ -176,6 +176,7 @@ def process_video(config: VideoProcessingConfig) -> VideoPipelineResult:
     write_jsonl(Path(output_files["errors"]), errors)
 
     status = ProcessingStatus.COMPLETE if not errors and frames else ProcessingStatus.COMPLETE_WITH_WARNINGS if frames else ProcessingStatus.FAILED_RECOVERABLE
+    output_files["result"] = str(config.output_dir / "result.json")
     result = VideoPipelineResult(
         status=status,
         video_metadata=metadata,
@@ -198,7 +199,5 @@ def process_video(config: VideoProcessingConfig) -> VideoPipelineResult:
         stage_metrics=metrics,
         output_files=output_files,
     )
-    output_files["result"] = str(config.output_dir / "result.json")
     write_json(Path(output_files["result"]), result)
     return result
-

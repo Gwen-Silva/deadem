@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "kind": "video_pipeline_runtime_validation_gate",
+  "gateResult": "video_pipeline_runtime_ready",
+  "python": {
+    "installationMethod": "winget Python.Python.3.12 after Windows reboot",
+    "executable": ".venv-video/Scripts/python.exe",
+    "version": "3.12.10",
+    "architecture": "64bit WindowsPE",
+    "venv": ".venv-video"
+  },
+  "installedBasePackages": {
+    "numpy": "2.5.0",
+    "pydantic": "2.13.4",
+    "opencv-python-headless": "4.13.0.92",
+    "pytest": "9.1.1"
+  },
+  "heavyOptionalPackagesInstalled": {
+    "ultralytics": false,
+    "paddleocr": false,
+    "paddlepaddle": false,
+    "torch": false,
+    "transformers": false,
+    "flash_attn": false
+  },
+  "tests": {
+    "command": ".venv-video/Scripts/python.exe -m pytest tests/video_pipeline -v",
+    "result": "passed",
+    "passed": 12,
+    "failed": 0
+  },
+  "syntheticVideo": {
+    "path": "output-local/video-pipeline-smoke/synthetic.mp4",
+    "committed": false,
+    "regularFrames": 3,
+    "timestampFrames": 4,
+    "seekErrorsMs": [0, 0, 0, 0]
+  },
+  "match91119257Mp4": {
+    "videoPath": "samples/videos/Partida_006_Replay.mp4",
+    "committed": false,
+    "outputDir": "output-local/match_91119257/video-opencv-base/",
+    "framesExtracted": 8,
+    "maxFramesRequested": 10,
+    "ocrEnabled": false,
+    "detectionEnabled": false,
+    "trackingEnabled": false,
+    "vlmEnabled": false,
+    "wpfManifestComparison": "same requested timestamps; hashes differ as expected because decoder/resolution/format differ"
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

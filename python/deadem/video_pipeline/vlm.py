@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections.abc import Protocol
+from typing import Protocol
 
 from .schemas import ProcessingStatus, VLMNote
 
@@ -31,4 +31,3 @@ class UnconfiguredVideoLLaMA3Adapter:
                 "VLM responses must never be stored as confirmed ground truth.",
             ],
         )
-
