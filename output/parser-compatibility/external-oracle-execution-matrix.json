@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "currentKnown": {
+    "parser": "current_fork_reference",
+    "controls": [
+      {
+        "replay": "partida_001.dem",
+        "status": "complete",
+        "source": "parser compatibility matrix"
+      },
+      {
+        "replay": "partida_002.dem",
+        "status": "complete",
+        "source": "parser compatibility matrix"
+      }
+    ],
+    "replay006": {
+      "status": "error",
+      "firstError": "Unable to find an entity with index [ 5594 ]",
+      "failingTick": 3808,
+      "commandSequence": 3880,
+      "messageSequenceInCommand": 14,
+      "packetEntityLoop": 29,
+      "decodedIndex": 5594,
+      "operation": "UPDATE"
+    }
+  },
+  "upstreamRun": {
+    "parser": "upstream_deadem",
+    "command": "node --input-type=module upstream Parser over samples/partida_001.dem, partida_002.dem, partida_006.dem",
+    "controls": [
+      {
+        "replay": "partida_001.dem",
+        "status": "complete",
+        "elapsedMs": 77112,
+        "finalTickReached": null,
+        "completionToEof": true
+      },
+      {
+        "replay": "partida_002.dem",
+        "status": "complete",
+        "elapsedMs": 41826,
+        "finalTickReached": null,
+        "completionToEof": true
+      }
+    ],
+    "replay006": {
+      "status": "error",
+      "elapsedMs": 1223,
+      "passesTick3808": false,
+      "firstError": "Unable to find an entity with index [ 5594 ]",
+      "stackTop": [
+        "DemoMessageHandler.handleSvcPacketEntities packages/engine/src/handlers/DemoMessageHandler.js:128:31",
+        "DemoStreamPacketAnalyzer._handleMessagePackets packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73"
+      ]
+    }
+  },
+  "executionMatrix": [
+    {
+      "parser": "upstream_deadem",
+      "replay": "partida_001.dem",
+      "parserStartsSuccessfully": true,
+      "headerParsed": true,
+      "completionToEof": true,
+      "firstError": null,
+      "entityStateSupport": true,
+      "tick3808Reached": true,
+      "replay006PassesTick3808": null,
+      "notes": "Control parsed completely."
+    },
+    {
+      "parser": "upstream_deadem",
+      "replay": "partida_002.dem",
+      "parserStartsSuccessfully": true,
+      "headerParsed": true,
+      "completionToEof": true,
+      "firstError": null,
+      "entityStateSupport": true,
+      "tick3808Reached": true,
+      "replay006PassesTick3808": null,
+      "notes": "Control parsed completely."
+    },
+    {
+      "parser": "upstream_deadem",
+      "replay": "partida_006.dem",
+      "parserStartsSuccessfully": true,
+      "headerParsed": true,
+      "completionToEof": false,
+      "firstError": "Unable to find an entity with index [ 5594 ]",
+      "entityStateSupport": true,
+      "tick3808Reached": true,
+      "replay006PassesTick3808": false,
+      "notes": "Fails in same upstream packet-entity update path."
+    },
+    {
+      "parser": "demofile_net",
+      "replay": "partida_006.dem",
+      "parserStartsSuccessfully": false,
+      "headerParsed": false,
+      "completionToEof": false,
+      "firstError": "Nerdbank.GitVersioning shallow clone lacks objects required to calculate version height",
+      "entityStateSupport": true,
+      "tick3808Reached": null,
+      "replay006PassesTick3808": null,
+      "notes": "Execution blocked by oracle clone/build setup, not replay evidence."
+    },
+    {
+      "parser": "source2_demo",
+      "replay": "partida_006.dem",
+      "parserStartsSuccessfully": false,
+      "headerParsed": false,
+      "completionToEof": false,
+      "firstError": "cargo unavailable",
+      "entityStateSupport": true,
+      "tick3808Reached": null,
+      "replay006PassesTick3808": null,
+      "notes": "Source-level candidate only in this environment."
+    },
+    {
+      "parser": "demlocksharp",
+      "replay": "partida_006.dem",
+      "parserStartsSuccessfully": false,
+      "headerParsed": false,
+      "completionToEof": false,
+      "firstError": "controlled CLI not available without local instrumentation",
+      "entityStateSupport": true,
+      "tick3808Reached": null,
+      "replay006PassesTick3808": null,
+      "notes": "WIP parser; source comparison only."
+    }
+  ]
+}

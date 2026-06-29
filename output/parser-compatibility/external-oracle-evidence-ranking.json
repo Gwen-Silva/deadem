@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "ranking": [
+    {
+      "parser": "upstream_deadem",
+      "rank": "B",
+      "evidence": "Executes controls and replay 006; fails same missing-entity path. Lifecycle detail requires source inspection."
+    },
+    {
+      "parser": "demofile_net",
+      "rank": "C",
+      "evidence": "Credible independent implementation with Deadlock support and source-level full-packet/entity support, but execution blocked by shallow-clone build versioning."
+    },
+    {
+      "parser": "source2_demo",
+      "rank": "C",
+      "evidence": "Credible Source 2 parser with Deadlock feature, but cargo unavailable."
+    },
+    {
+      "parser": "demlocksharp",
+      "rank": "C",
+      "evidence": "Deadlock-specific WIP source, but controlled execution/instrumentation not available."
+    }
+  ]
+}

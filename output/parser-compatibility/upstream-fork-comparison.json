@@ -1,0 +1,77 @@
+{
+  "upstreamRepository": "Igor-Losev/deadem",
+  "upstreamCommit": "207fe497e8bf909a1208ac6b9a62f43b640a781a",
+  "currentRepository": "Gwen-Silva/deadem",
+  "currentHead": "not_resolved_by_script",
+  "forkPoint": "not_established",
+  "relevantFiles": [
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "currentHash": "1e96e74477b3597de4ead3f3dc6d65b46de151730eb64e60b324192de53e72cf",
+      "upstreamHash": "128115fe7a7a65560f5312b711ac1e3b87061a1ca0fa9346e76960d5fcabb425",
+      "comparison": "fork_modified",
+      "currentBytes": 17159,
+      "upstreamBytes": 11779
+    },
+    {
+      "path": "packages/engine/src/data/enums/EntityOperation.js",
+      "currentHash": "d1f52f462163d7c771a0aa95cdae24d669e9c259cb0e80d5c9515ed7914b72c9",
+      "upstreamHash": "d1f52f462163d7c771a0aa95cdae24d669e9c259cb0e80d5c9515ed7914b72c9",
+      "comparison": "identical",
+      "currentBytes": 1844,
+      "upstreamBytes": 1844
+    },
+    {
+      "path": "packages/engine/src/core/BitBuffer.js",
+      "currentHash": "cc4077a61c8a9655bc326d91ac73c56b3f568fbd50171d06e88d465e62a7c8ad",
+      "upstreamHash": "cc4077a61c8a9655bc326d91ac73c56b3f568fbd50171d06e88d465e62a7c8ad",
+      "comparison": "identical",
+      "currentBytes": 20162,
+      "upstreamBytes": 20162
+    },
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "currentHash": "1fa7f37294e9e9fa677d901368b83f31d961ad4ed2db00fd249fcb1394b1afb1",
+      "upstreamHash": "1fa7f37294e9e9fa677d901368b83f31d961ad4ed2db00fd249fcb1394b1afb1",
+      "comparison": "identical",
+      "currentBytes": 974,
+      "upstreamBytes": 974
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoEntityHandler.js",
+      "currentHash": "98fc900c188d27adeeecfccf1df1ce35b5e9a44a2858e66ad8308e9d4e3f39a8",
+      "upstreamHash": "98fc900c188d27adeeecfccf1df1ce35b5e9a44a2858e66ad8308e9d4e3f39a8",
+      "comparison": "identical",
+      "currentBytes": 1594,
+      "upstreamBytes": 1594
+    }
+  ],
+  "focusedFindings": [
+    {
+      "area": "packet entity loop",
+      "classification": "fork_modified",
+      "finding": "The fork adds diagnostic/recovery parameters and trace objects, but the core UPDATE lookup requirement and missing entity throw are inherited from upstream."
+    },
+    {
+      "area": "entity operation enum",
+      "classification": "identical",
+      "finding": "UPDATE/LEAVE/CREATE/DELETE ids match upstream."
+    },
+    {
+      "area": "index delta decoding",
+      "classification": "identical",
+      "finding": "Both implementations use index += readUVarInt() + 1 in the packet-entity loop."
+    },
+    {
+      "area": "missing update behavior",
+      "classification": "identical",
+      "finding": "Both implementations throw when UPDATE cannot resolve an existing entity."
+    },
+    {
+      "area": "structural inspector",
+      "classification": "fork_added",
+      "finding": "The current fork has StructuralReplayInspector from Task 047; upstream clone does not export it."
+    }
+  ],
+  "conclusion": "No upstream fix for replay 006 missing UPDATE behavior was found in the cloned upstream head."
+}

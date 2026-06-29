@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "provenance": [
+    {
+      "parser": "current_fork_reference",
+      "entityIndex": 5594,
+      "result": "not_observed_before_tick_3808",
+      "details": "Task 051 found no prior create/register/enter/delete/leave/reset and no alternate serial/generation."
+    },
+    {
+      "parser": "upstream_deadem",
+      "entityIndex": 5594,
+      "result": "same_failure",
+      "details": "Upstream fails at missing entity 5594 before exposing lifecycle state; source has same update lookup assumption."
+    },
+    {
+      "parser": "demofile_net",
+      "entityIndex": 5594,
+      "result": "not_observable",
+      "details": "Build blocked before replay execution."
+    },
+    {
+      "parser": "source2_demo",
+      "entityIndex": 5594,
+      "result": "not_observable",
+      "details": "Rust runtime unavailable."
+    },
+    {
+      "parser": "demlocksharp",
+      "entityIndex": 5594,
+      "result": "not_observable",
+      "details": "No controlled execution path used in this task."
+    }
+  ]
+}

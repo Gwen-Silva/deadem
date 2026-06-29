@@ -44,3 +44,6 @@ This is a compact navigation index. The task files remain the source records.
 | 048 | Task 048: Audit Repository Hygiene and Cleanup | repository_cleanup_audit_ready_with_unknowns |  | `reports/INDEX.md` |  |
 
 | 049 | Apply Approved Repository Cleanup Plan | repository_cleanup_applied_with_deferred_items | b811b4b | `reports/repository-cleanup-execution.md` | |
+| 050 | Isolate Replay 006 State Reconstruction Divergence Before Tick 3808 | replay_006_divergence_narrowed_not_confirmed |  | `reports/replay-006-state-reconstruction-divergence.md` | Task 051 |
+| 051 | Investigate Replay 006 Entity Lifecycle Or State Refresh Gap | replay_006_entity_lifecycle_narrowed_not_confirmed | a8dbda9 | `reports/replay-006-entity-lifecycle-state-refresh-gap.md` | Task 052 |
+| 052 | External Parser Oracle And Upstream Comparison For Replay 006 | external_oracle_comparison_ready_without_resolution | pending commit | `reports/replay-006-external-parser-oracle-comparison.md` | Task 053 blocked |

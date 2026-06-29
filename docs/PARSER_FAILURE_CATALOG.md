@@ -110,3 +110,13 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Gate: `replay_006_entity_lifecycle_narrowed_not_confirmed`
 - Failing operation: loop 29, update, index 5594
 - Production fix: none included.
+
+## Replay 006 External Parser Oracle Comparison
+
+- Gate: `external_oracle_comparison_ready_without_resolution`
+- Upstream `Igor-Losev/deadem` commit: `207fe497e8bf909a1208ac6b9a62f43b640a781a`
+- Upstream controls: `partida_001.dem` and `partida_002.dem` parsed completely.
+- Upstream replay 006 result: fails with `Unable to find an entity with index [ 5594 ]` in the same `handleSvcPacketEntities` UPDATE path.
+- Best-supported model: `upstream_inherited_defect`
+- Production fix: none included.
+- Independent oracle gap: `demofile-net`, `source2-demo`, and `DemLockSharp` require additional isolated runtime/build/instrumentation work before they can resolve protocol behavior.

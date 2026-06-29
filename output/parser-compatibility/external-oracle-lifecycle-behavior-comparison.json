@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "comparisons": [
+    {
+      "parser": "current_fork_reference",
+      "indexDeltaAlgorithm": "index += readUVarInt() + 1",
+      "operationDecoder": "two-bit entity command: UPDATE=0, LEAVE=1, CREATE=2, DELETE=3",
+      "identityKey": "entity index only in current registry access",
+      "missingUpdateBehavior": "throw",
+      "enterPvsBehavior": "not separately represented from CREATE in observed parser path",
+      "leavePvsBehavior": "requires existing entity then emits LEAVE",
+      "fullUpdateBehavior": "does not infer entities from UPDATE in delta packet",
+      "deltaUpdateBehavior": "UPDATE requires existing entity",
+      "atomicityBehavior": "message parse aborts on missing entity",
+      "notes": [
+        "Task 051 independent index decoder matches production for failing loop."
+      ]
+    },
+    {
+      "parser": "upstream_deadem",
+      "indexDeltaAlgorithm": "index += readUVarInt() + 1",
+      "operationDecoder": "two-bit entity command: UPDATE=0, LEAVE=1, CREATE=2, DELETE=3",
+      "identityKey": "entity index only in source path",
+      "missingUpdateBehavior": "throw",
+      "enterPvsBehavior": "not separately represented from CREATE in source path",
+      "leavePvsBehavior": "requires existing entity then emits LEAVE",
+      "fullUpdateBehavior": "does not infer entities from UPDATE in delta packet",
+      "deltaUpdateBehavior": "UPDATE requires existing entity",
+      "atomicityBehavior": "message parse aborts on missing entity",
+      "notes": [
+        "Upstream source line 128 throws the same missing-entity exception."
+      ]
+    },
+    {
+      "parser": "demofile_net",
+      "indexDeltaAlgorithm": "source contains entity index/serial abstractions but not executed here",
+      "operationDecoder": "not observed",
+      "identityKey": "entity index plus serial is present in public test JSON representation",
+      "missingUpdateBehavior": "not observed",
+      "enterPvsBehavior": "not observed",
+      "leavePvsBehavior": "not observed",
+      "fullUpdateBehavior": "source includes full-packet support",
+      "deltaUpdateBehavior": "not observed",
+      "atomicityBehavior": "not observed",
+      "notes": [
+        "Promising independent oracle, but build requires non-shallow clone or versioning override."
+      ]
+    },
+    {
+      "parser": "source2_demo",
+      "indexDeltaAlgorithm": "not executed",
+      "operationDecoder": "not observed",
+      "identityKey": "source exposes entity indices and handles",
+      "missingUpdateBehavior": "not observed",
+      "enterPvsBehavior": "not observed",
+      "leavePvsBehavior": "not observed",
+      "fullUpdateBehavior": "source has packet_state writer/read support",
+      "deltaUpdateBehavior": "not observed",
+      "atomicityBehavior": "not observed",
+      "notes": [
+        "Requires Rust toolchain and Deadlock feature build."
+      ]
+    }
+  ]
+}

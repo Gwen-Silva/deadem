@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "bestSupportedDecisionModel": "upstream_inherited_defect",
+  "alternatives": [
+    {
+      "model": "fork_regression",
+      "support": "not_supported",
+      "reason": "Upstream fails in same packet-entity missing-update path."
+    },
+    {
+      "model": "external_parser_confirms_missing_create",
+      "support": "partially_supported",
+      "reason": "Current fork confirms no prior create; upstream same-fails before exposing provenance."
+    },
+    {
+      "model": "external_parser_finds_implicit_lifecycle_event",
+      "support": "not_supported",
+      "reason": "No executed independent parser exposed such an event."
+    },
+    {
+      "model": "missing_update_is_protocol_tolerated",
+      "support": "not_supported",
+      "reason": "No oracle demonstrated valid tolerance semantics."
+    },
+    {
+      "model": "no_suitable_independent_oracle",
+      "support": "not_supported",
+      "reason": "At least upstream deadem was executable, but it is not independent enough to resolve protocol behavior."
+    },
+    {
+      "model": "insufficient_evidence",
+      "support": "partially_supported",
+      "reason": "Independent non-deadem oracles remain unexecuted due environment/build blockers."
+    }
+  ],
+  "productionFixIncluded": false,
+  "reasonNoProductionFix": "No independent lifecycle evidence or generic protocol behavior was demonstrated."
+}

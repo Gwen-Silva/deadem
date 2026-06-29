@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "items": [
+    {
+      "area": "packet entity loop",
+      "classification": "fork_modified",
+      "finding": "The fork adds diagnostic/recovery parameters and trace objects, but the core UPDATE lookup requirement and missing entity throw are inherited from upstream."
+    },
+    {
+      "area": "entity operation enum",
+      "classification": "identical",
+      "finding": "UPDATE/LEAVE/CREATE/DELETE ids match upstream."
+    },
+    {
+      "area": "index delta decoding",
+      "classification": "identical",
+      "finding": "Both implementations use index += readUVarInt() + 1 in the packet-entity loop."
+    },
+    {
+      "area": "missing update behavior",
+      "classification": "identical",
+      "finding": "Both implementations throw when UPDATE cannot resolve an existing entity."
+    },
+    {
+      "area": "structural inspector",
+      "classification": "fork_added",
+      "finding": "The current fork has StructuralReplayInspector from Task 047; upstream clone does not export it."
+    }
+  ],
+  "productionFixCandidate": null,
+  "reasonNoFix": "The only executable external parser in this task was upstream deadem, and it fails identically; no independent implementation exposed a valid prior lifecycle event or protocol-tolerated missing UPDATE."
+}

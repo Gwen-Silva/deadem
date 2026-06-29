@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "comparisons": [
+    {
+      "parser": "current_fork_reference",
+      "tick": 3808,
+      "packetEntityLoop": 29,
+      "decodedIndex": 5594,
+      "operation": "UPDATE",
+      "serial": null,
+      "classId": null,
+      "registryFoundBefore": false,
+      "behavior": "throws missing entity during state reconstruction",
+      "continuesAfterOperation": false,
+      "evidenceType": "trace",
+      "confidence": "high"
+    },
+    {
+      "parser": "upstream_deadem",
+      "tick": 3808,
+      "packetEntityLoop": null,
+      "decodedIndex": 5594,
+      "operation": "UPDATE",
+      "serial": null,
+      "classId": null,
+      "registryFoundBefore": false,
+      "behavior": "same missing-entity exception in same handleSvcPacketEntities UPDATE path",
+      "continuesAfterOperation": false,
+      "evidenceType": "output-log+source-analysis",
+      "confidence": "medium_high"
+    },
+    {
+      "parser": "demofile_net",
+      "tick": 3808,
+      "packetEntityLoop": null,
+      "decodedIndex": null,
+      "operation": null,
+      "serial": null,
+      "classId": null,
+      "registryFoundBefore": null,
+      "behavior": "not executed; build blocked by shallow-clone versioning after NuGet restore",
+      "continuesAfterOperation": null,
+      "evidenceType": "output-log",
+      "confidence": "low"
+    },
+    {
+      "parser": "source2_demo",
+      "tick": 3808,
+      "packetEntityLoop": null,
+      "decodedIndex": null,
+      "operation": null,
+      "serial": null,
+      "classId": null,
+      "registryFoundBefore": null,
+      "behavior": "not executed; cargo unavailable",
+      "continuesAfterOperation": null,
+      "evidenceType": "source-analysis",
+      "confidence": "low"
+    },
+    {
+      "parser": "demlocksharp",
+      "tick": 3808,
+      "packetEntityLoop": null,
+      "decodedIndex": null,
+      "operation": null,
+      "serial": null,
+      "classId": null,
+      "registryFoundBefore": null,
+      "behavior": "not executed; requires controlled CLI/instrumentation rather than hard-coded sample path",
+      "continuesAfterOperation": null,
+      "evidenceType": "source-analysis",
+      "confidence": "low"
+    }
+  ]
+}

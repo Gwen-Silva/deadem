@@ -34,3 +34,7 @@
 
 ## Replay 006 State Divergence Diagnostics
 ## Replay 006 Entity Lifecycle Diagnostics
+
+## Replay 006 External Parser Oracle Diagnostics
+
+`output/parser-compatibility/external-oracle-*.json`, `output/parser-compatibility/upstream-*.json`, and `output/parser-compatibility/external-oracle-execution-matrix.csv` summarize Task 052. These files compare the current parser against local-only external parser clones without committing third-party repositories or replay files. They are oracle/comparison evidence only; they do not authorize missing-entity skips, placeholder entities, or semantic telemetry from replay 006.

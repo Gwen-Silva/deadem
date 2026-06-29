@@ -129,3 +129,12 @@ Superseded files are preserved in `output/archive/match_91119257/`; they are not
 
 ## Parser State Divergence
 ## Entity Lifecycle Gap
+
+## External Parser Oracle Status
+
+- Current gate: `external_oracle_comparison_ready_without_resolution`
+- Canonical report: `reports/replay-006-external-parser-oracle-comparison.md`
+- Canonical decision output: `output/parser-compatibility/external-oracle-decision.json`
+- Result: upstream `Igor-Losev/deadem` parses controls 001/002 and fails replay 006 at the same missing entity 5594 UPDATE path. This supports an upstream-inherited parser limitation rather than a simple fork-only regression.
+- Limit: no independent non-deadem oracle produced loop-level lifecycle evidence in Task 052.
+- Replay 005: not processed.

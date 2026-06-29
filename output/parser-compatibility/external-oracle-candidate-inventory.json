@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T00:00:00.000Z",
+  "candidates": [
+    {
+      "id": "upstream_deadem",
+      "repository": "Igor-Losev/deadem",
+      "localPath": "output-local\\external-parser-oracles\\upstream-deadem",
+      "commitSha": "207fe497e8bf909a1208ac6b9a62f43b640a781a",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js",
+      "activeOrArchived": "active",
+      "deadlockSupportClaimed": true,
+      "packetEntitiesImplemented": true,
+      "candidateStatus": "accepted",
+      "reason": "Closest upstream/reference implementation; Deadlock package and packet-entity state reconstruction are present."
+    },
+    {
+      "id": "demlocksharp",
+      "repository": "OpenSource-Deadlock-Tools/DemLockSharp",
+      "localPath": "output-local\\external-parser-oracles\\DemLockSharp",
+      "commitSha": "70c9b5072b192b21a47957de3587223f03c4c140",
+      "license": "not_found_in_root",
+      "language": "C#",
+      "runtime": ".NET",
+      "activeOrArchived": "active_or_wip",
+      "deadlockSupportClaimed": true,
+      "packetEntitiesImplemented": true,
+      "candidateStatus": "blocked",
+      "reason": "Deadlock-specific but sample executable has a hard-coded demo path and requires local instrumentation before controlled replay execution."
+    },
+    {
+      "id": "source2_demo",
+      "repository": "Rupas1k/source2-demo",
+      "localPath": "output-local\\external-parser-oracles\\source2-demo",
+      "commitSha": "9909e369e6f308291ea15ef9e9dfd1206f86956c",
+      "license": "Apache-2.0 OR MIT",
+      "language": "Rust",
+      "runtime": "cargo",
+      "activeOrArchived": "active",
+      "deadlockSupportClaimed": true,
+      "packetEntitiesImplemented": true,
+      "candidateStatus": "blocked",
+      "reason": "Deadlock feature exists, but cargo is unavailable in this environment; source comparison only."
+    },
+    {
+      "id": "demofile_net",
+      "repository": "saul/demofile-net",
+      "localPath": "output-local\\external-parser-oracles\\demofile-net",
+      "commitSha": "fd59701a998cf30a46adc4942e063d90de73c07a",
+      "license": "MIT",
+      "language": "C#",
+      "runtime": ".NET",
+      "activeOrArchived": "active",
+      "deadlockSupportClaimed": true,
+      "packetEntitiesImplemented": true,
+      "candidateStatus": "blocked",
+      "reason": "Deadlock parser exists; NuGet restore succeeded after escalation but build is blocked by shallow-clone version-height requirements."
+    }
+  ]
+}
