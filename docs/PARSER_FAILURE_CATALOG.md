@@ -53,3 +53,14 @@ These are sequentially exposed blockers at the same parser boundary, not three i
 ## Current Gate
 
 `parser_compatibility_matrix_ready_with_insufficient_diversity`
+
+
+## Structural Replay Stream Pass
+
+Task 047 adds a structural pass that reads replay headers, command envelopes, packet/message boundaries, offsets, sizes, monotonicity, malformed boundaries, and unknown IDs without invoking entity registries, baselines, classes, serializers, positions, or gameplay events.
+
+- Gate: `structural_replay_pass_ready`
+- Selected interpretation: `replay_006_state_reconstruction_failure`
+- Replay 006 tick 3808 framing valid: true
+- Replay 006 later ticks structurally reachable: true
+- Completion count: 5/5

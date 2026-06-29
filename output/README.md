@@ -27,3 +27,7 @@
 ## Archive
 
 `output/archive/` contains approved historical material moved for navigation. Do not treat archived evidence as deleted or invalidated; indexes should point to canonical files and archive locations.
+
+## Parser Compatibility Structural Pass
+
+`output/parser-compatibility/structural-pass-*.json` files summarize replay container and message-envelope traversal. They are compact diagnostics, not gameplay telemetry.

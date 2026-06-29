@@ -80,6 +80,8 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
+- Structural replay stream pass gate is `structural_replay_pass_ready`: replay 006 is structurally traversed independently of entity, baseline, class, serializer, and gameplay-state materialization. Tick 3808 command framing is valid, later ticks are structurally reachable, and the selected interpretation is `replay_006_state_reconstruction_failure`. Structural parsing and gameplay-state reconstruction are now separate capabilities.
+
 ## Open Questions
 
 - Which fields or derived metrics are reliable enough for combat/objective analysis?

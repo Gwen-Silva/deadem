@@ -6,6 +6,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 
 - `reports/latest.md`
 - `reports/parser-compatibility-matrix.md`
+- `reports/structural-replay-stream-pass.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`
 
 ## Visual Calibration

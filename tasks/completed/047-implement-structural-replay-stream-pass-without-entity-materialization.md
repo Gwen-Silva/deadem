@@ -1,6 +1,6 @@
 # Task 047: Implement Structural Replay Stream Pass Without Entity Materialization
 
-Status: blocked
+Status: completed
 Execution mode: autonomous
 Project stage: parser compatibility
 Related experiment: parser compatibility matrix
@@ -58,7 +58,7 @@ Create a bounded structural parser pass suitable for metadata-only compatibility
 
 ## Gate result
 
-Blocked until explicitly authorized.
+structural_replay_pass_ready
 
 ## Documentation updates
 

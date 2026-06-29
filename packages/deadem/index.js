@@ -6,6 +6,8 @@ import {
 
 import Bootstrap from '#bootstrap/Bootstrap.js';
 
+import { inspectReplayStructure } from '#src/inspectReplayStructure.js';
+
 import ProtoProvider from '#providers/ProtoProvider.instance.js';
 
 function createRegistry() {
@@ -56,4 +58,4 @@ export {
 export { default as MessagePacketType } from './src/data/enums/MessagePacketType.js';
 export { default as StringTableType } from './src/data/enums/StringTableType.js';
 
-export { Parser, Player };
+export { Parser, Player, inspectReplayStructure };

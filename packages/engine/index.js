@@ -19,3 +19,4 @@ export { default as ProtoProvider } from './src/providers/ProtoProvider.js';
 export { default as Protocol } from './src/data/enums/Protocol.js';
 export { default as SchemaRegistry } from './src/SchemaRegistry.js';
 export { default as StringTableType } from './src/data/enums/StringTableType.js';
+export { default as StructuralReplayInspector } from './src/StructuralReplayInspector.js';

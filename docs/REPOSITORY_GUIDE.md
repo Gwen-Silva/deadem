@@ -63,3 +63,7 @@ Audit metrics: 1204 tracked files, 612 tracked output files, 44 reports.
 ## Cleanup Navigation
 
 The conservative cleanup cycle keeps canonical match 91119257 files visible and moves approved historical predecessors to `output/archive/match_91119257/`. Start at `output/match_91119257/README.md` for match-specific navigation.
+
+## Structural Replay Parsing
+
+Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metadata/envelope inspection that does not materialize gameplay state. Structural parser outputs live under `output/parser-compatibility/` and do not approve semantic telemetry.

@@ -40,6 +40,7 @@ This is a compact navigation index. The task files remain the source records.
 | 044 | Task 044: Investigate Match 91119257 Entity 5594 Parser Recovery | entity_5594_root_cause_confirmed |  | `reports/match-91119257-visual-demo-calibration.md` |  |
 | 045 | Task 045: Investigate Match 91119257 Baseline 709 Parser Continuation | baseline_709_protocol_support_blocked |  | `reports/match-91119257-entity-5594-parser-recovery.md` |  |
 | 046 | Task 046: Run Parser Compatibility Matrix | parser_compatibility_matrix_ready_with_insufficient_diversity |  | `reports/match-91119257-baseline-709-parser-continuation.md` |  |
+| 047 | Task 047: Implement Structural Replay Stream Pass Without Entity Materialization | structural_replay_pass_ready | pending commit | `reports/structural-replay-stream-pass.md` | Task 050 blocked |
 | 048 | Task 048: Audit Repository Hygiene and Cleanup | repository_cleanup_audit_ready_with_unknowns |  | `reports/INDEX.md` |  |
 
-| 049 | Apply Approved Repository Cleanup Plan | repository_cleanup_applied_with_deferred_items | pending commit | `reports/repository-cleanup-execution.md` | |
+| 049 | Apply Approved Repository Cleanup Plan | repository_cleanup_applied_with_deferred_items | b811b4b | `reports/repository-cleanup-execution.md` | |
