@@ -104,3 +104,9 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Command/message: 3880 / 14
 - Affected state table: entity_registry
 - Policy: no entity-, baseline-, or class-specific skip was added.
+
+## Replay 006 Entity Lifecycle Gap
+
+- Gate: `replay_006_entity_lifecycle_narrowed_not_confirmed`
+- Failing operation: loop 29, update, index 5594
+- Production fix: none included.

@@ -1,1 +1,1 @@
-reports/replay-006-state-reconstruction-divergence.md
+reports/replay-006-entity-lifecycle-state-refresh-gap.md

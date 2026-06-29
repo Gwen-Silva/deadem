@@ -71,3 +71,4 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/repository-cleanup-execution.md`
 
 - `reports/replay-006-state-reconstruction-divergence.md`
+- `reports/replay-006-entity-lifecycle-state-refresh-gap.md`

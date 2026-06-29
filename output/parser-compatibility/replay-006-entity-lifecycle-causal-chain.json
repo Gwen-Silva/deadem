@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "exactRootCauseConfirmed": false,
+  "confidence": "medium",
+  "rootCause": "No prior parser-observable CREATE/register/enter lifecycle for entity 5594 was found before a valid UPDATE operation references index 5594.",
+  "chain": [
+    {
+      "step": 1,
+      "statement": "Instrumentation now observes nonzero parser registries in successful controls.",
+      "evidence": "valid"
+    },
+    {
+      "step": 2,
+      "statement": "The tick 3808 packet decodes entity 5594 as UPDATE at a concrete loop/bit range.",
+      "evidence": {
+        "loopIndex": 29,
+        "entityIndexDelta": 2942,
+        "decodedEntityIndex": 5594,
+        "serial": null,
+        "generation": null,
+        "packedHandle": null,
+        "operation": "update",
+        "classId": null,
+        "baselineId": null,
+        "updateBaseline": false,
+        "hasPvsVisBits": null,
+        "fieldPathCount": null,
+        "payloadBitStart": 7841,
+        "payloadBitEnd": 7841,
+        "deltaBitStart": 7825,
+        "commandBitStart": 7839,
+        "commandId": 0,
+        "registryKey": "5594",
+        "registryFoundBefore": false,
+        "result": "update_missing_registry_entity",
+        "warnings": []
+      }
+    },
+    {
+      "step": 3,
+      "statement": "No prior entity 5594 CREATE/register lifecycle was observed before the failing update.",
+      "evidence": "no_prior_create_enter_delete_leave_or_register_for_entity_5594_observed_before_failing_update"
+    },
+    {
+      "step": 4,
+      "statement": "No registry reset/delete lifecycle explains removal of entity 5594 before failure.",
+      "evidence": "entity_5594_was_never_registered_before_failure"
+    },
+    {
+      "step": 5,
+      "statement": "Tick 3808 is not proven to be a full refresh or enter-PVS mode that should implicitly create the entity.",
+      "evidence": "delta_update"
+    }
+  ],
+  "missingEvidenceForConfirmedGate": [
+    "Independent protocol evidence that this UPDATE should have been preceded by a CREATE in the same replay stream.",
+    "Or evidence of a generic state-refresh/enter-PVS semantic that the parser fails to implement.",
+    "Or a production-safe generic fix that advances replay 006 and leaves replays 001-004 unchanged."
+  ]
+}

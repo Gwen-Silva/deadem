@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "replay006": {
+    "completed": false,
+    "finalError": {
+      "name": "Error",
+      "message": "Unable to find an entity with index [ 5594 ]",
+      "currentKey": {
+        "commandSequence": 3880,
+        "messageSequenceInCommand": 14,
+        "tick": 3808,
+        "messageTypeId": 55,
+        "messageTypeName": "svc_PacketEntities"
+      }
+    },
+    "updatePreconditions": {
+      "missing": 1,
+      "found": 222038
+    },
+    "maxStats": {
+      "classes": 825,
+      "serializers": 870,
+      "baselines": 129,
+      "entities": 1526
+    }
+  },
+  "controls": [
+    {
+      "replayId": "replay_001",
+      "completed": true,
+      "finalError": null,
+      "updatePreconditions": {
+        "missing": 0,
+        "found": 133667
+      },
+      "maxStats": {
+        "classes": 825,
+        "serializers": 870,
+        "baselines": 133,
+        "entities": 1508
+      },
+      "invariant": "all_updates_resolved_before_stop_tick"
+    },
+    {
+      "replayId": "replay_002",
+      "completed": true,
+      "finalError": null,
+      "updatePreconditions": {
+        "missing": 0,
+        "found": 149748
+      },
+      "maxStats": {
+        "classes": 825,
+        "serializers": 870,
+        "baselines": 135,
+        "entities": 1508
+      },
+      "invariant": "all_updates_resolved_before_stop_tick"
+    }
+  ],
+  "interpretation": "Controls validate implementation observability and the current parser invariant: UPDATE expects an existing entity registry entry."
+}

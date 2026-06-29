@@ -1,6 +1,6 @@
 # Task 051: Investigate Replay 006 Entity Lifecycle Or State Refresh Gap
 
-Status: blocked
+Status: completed
 Execution mode: autonomous
 Project stage: parser compatibility
 Related experiment: replay 006 state reconstruction divergence
@@ -32,7 +32,7 @@ A generic lifecycle, state-refresh, schema-version, or ordering defect is demons
 
 ## Gate result
 
-Blocked until explicitly authorized.
+replay_006_entity_lifecycle_narrowed_not_confirmed
 
 ## Prior gate
 

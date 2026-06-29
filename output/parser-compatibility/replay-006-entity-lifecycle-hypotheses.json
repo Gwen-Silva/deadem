@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "hypotheses": [
+    {
+      "id": 1,
+      "hypothesis": "entity 5594 was never created in the stream",
+      "result": "supported",
+      "evidence": "no_prior_create_enter_delete_leave_or_register_for_entity_5594_observed_before_failing_update"
+    },
+    {
+      "id": 2,
+      "hypothesis": "entity 5594 was created under another serial/generation",
+      "result": "not_supported",
+      "evidence": "No prior CREATE/register for index 5594 was observed; UPDATE carries only index in this parser model."
+    },
+    {
+      "id": 3,
+      "hypothesis": "entity 5594 was created and incorrectly removed",
+      "result": "not_supported",
+      "evidence": "entity_5594_was_never_registered_before_failure"
+    },
+    {
+      "id": 4,
+      "hypothesis": "the failing decoded index is wrong due to delta accumulation",
+      "result": "not_supported",
+      "evidence": "matches_production_error_index_and_operation"
+    },
+    {
+      "id": 5,
+      "hypothesis": "the failing operation is misclassified as UPDATE",
+      "result": "not_supported",
+      "evidence": "operation=update"
+    },
+    {
+      "id": 6,
+      "hypothesis": "a full refresh is incorrectly treated as delta",
+      "result": "not_supported",
+      "evidence": "delta_update"
+    },
+    {
+      "id": 7,
+      "hypothesis": "an enter-PVS operation is incorrectly treated as update-only",
+      "result": "not_testable",
+      "evidence": "The parser operation enum exposes UPDATE/LEAVE/CREATE/DELETE only; no independent enter-PVS marker was found in the envelope."
+    },
+    {
+      "id": 8,
+      "hypothesis": "a registry reset is applied without corresponding repopulation",
+      "result": "not_supported",
+      "evidence": "entity_5594_was_never_registered_before_failure"
+    },
+    {
+      "id": 9,
+      "hypothesis": "parser keys by index when protocol requires index plus serial",
+      "result": "not_supported",
+      "evidence": "CREATE includes serial; UPDATE uses index only and successful controls satisfy that invariant."
+    },
+    {
+      "id": 10,
+      "hypothesis": "parser keys by packed handle when update provides index only",
+      "result": "not_supported",
+      "evidence": "Demo.getEntity uses index; getEntityByHandle is not used in PacketEntities UPDATE."
+    },
+    {
+      "id": 11,
+      "hypothesis": "state instrumentation in task 050 observed the wrong registry",
+      "result": "supported",
+      "evidence": "Task 050 final/control snapshots reported zero registry counts; this diagnostic validates registry visibility using stream-time demo.getStats() samples and register/delete hooks."
+    },
+    {
+      "id": 12,
+      "hypothesis": "replay 006 uses a lifecycle path not covered by current tests",
+      "result": "partially_supported",
+      "evidence": "Replay 006 is the only failing eligible replay; no prior CREATE for the UPDATE was observed by current operation decoder."
+    },
+    {
+      "id": 13,
+      "hypothesis": "the stream legitimately references a missing entity and requires generic stale-reference tolerance",
+      "result": "not_supported",
+      "evidence": "Controls did not show missing UPDATE preconditions; no protocol evidence yet permits treating this as harmless stale reference."
+    }
+  ]
+}

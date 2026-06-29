@@ -128,3 +128,4 @@ Superseded files are preserved in `output/archive/match_91119257/`; they are not
 - `output/match_91119257/wpf-opencv-frame-comparison.json`
 
 ## Parser State Divergence
+## Entity Lifecycle Gap

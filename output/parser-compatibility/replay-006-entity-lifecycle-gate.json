@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "gate": "replay_006_entity_lifecycle_narrowed_not_confirmed",
+  "reason": "The failing loop and index lifecycle gap were decoded, but a generic root-cause defect or safe production fix was not demonstrated.",
+  "rootCause": "No prior parser-observable CREATE/register/enter lifecycle for entity 5594 was found before a valid UPDATE operation references index 5594."
+}

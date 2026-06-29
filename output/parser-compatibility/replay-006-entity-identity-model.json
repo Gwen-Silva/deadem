@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "parserEntityIdentity": {
+    "registryIdentity": "entity index",
+    "handleIdentity": "serial_plus_index",
+    "decodedPacketEntityValue": "index_component",
+    "indexBits": 14,
+    "indexMask": "0x3fff",
+    "serialBits": 17,
+    "handleConstruction": "(serial << 14) | index",
+    "handleLookupMask": "handle & 0x3FFF",
+    "createUpdateDeleteKeyConstruction": "packet entity stream delta-decodes an entity index; CREATE additionally reads a 17-bit serial",
+    "invalidIndexValues": "index must be >= 0 and < 16384",
+    "generationIncrementRules": "not inferred by parser; serial is read from CREATE and stored on Entity",
+    "indexReuseBehavior": "registerEntity replaces existing byIndex slot and updates class index"
+  },
+  "evidence": [
+    "Demo.registerEntity stores entities in _entities.byIndex[entity.index].",
+    "Demo.getEntity(index) resolves by index only.",
+    "Entity.handle stores (serial << 14) | index.",
+    "Demo.getEntityByHandle masks handle & 0x3FFF, ignoring serial for lookup.",
+    "Packet CREATE reads classId then a 17-bit serial; UPDATE/LEAVE/DELETE only delta-decode an index."
+  ]
+}

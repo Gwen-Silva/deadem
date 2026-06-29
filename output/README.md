@@ -33,3 +33,4 @@
 `output/parser-compatibility/structural-pass-*.json` files summarize replay container and message-envelope traversal. They are compact diagnostics, not gameplay telemetry.
 
 ## Replay 006 State Divergence Diagnostics
+## Replay 006 Entity Lifecycle Diagnostics

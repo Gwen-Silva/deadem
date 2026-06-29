@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "valid",
+  "task050Issue": "Task 050 final/control snapshots reported zero registry counts; this diagnostic validates registry visibility using stream-time demo.getStats() samples and register/delete hooks.",
+  "observedObjectInstances": "parser.getDemo(), engine.demo, and handler._demo are the same parser-owned Demo instance during this diagnostic",
+  "assertions": [
+    {
+      "replayId": "replay_001",
+      "nonzeroClassOrSerializerAfterSignon": true,
+      "nonzeroEntityDuringGameplay": true,
+      "changingRegistryAcrossPacketEntities": true,
+      "maxStats": {
+        "classes": 825,
+        "serializers": 870,
+        "baselines": 133,
+        "entities": 1508
+      }
+    },
+    {
+      "replayId": "replay_002",
+      "nonzeroClassOrSerializerAfterSignon": true,
+      "nonzeroEntityDuringGameplay": true,
+      "changingRegistryAcrossPacketEntities": true,
+      "maxStats": {
+        "classes": 825,
+        "serializers": 870,
+        "baselines": 135,
+        "entities": 1508
+      }
+    }
+  ]
+}
