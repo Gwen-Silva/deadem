@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_manual_review_package_v2_manifest",
+  "createdAt": "2026-06-29T00:15:18.465770+00:00",
+  "gate": "dense_manual_review_package_ready",
+  "reviewAnnotationCount": 24,
+  "denseRequestCount": 897,
+  "framesExtracted": 897,
+  "escalationCount": 3,
+  "representativeCandidateAnnotations": 24,
+  "unresolvedAnnotations": [],
+  "outputs": [
+    "output/match_91119257/dense-review-frame-manifest.jsonl",
+    "output/match_91119257/dense-review-annotation-summary.json",
+    "output/match_91119257/dense-review-candidate-shortlist.json",
+    "output/match_91119257/dense-review-escalations.json",
+    "output/match_91119257/provisional-human-review-observations.json",
+    "output/match_91119257/manual-review-form-v2.json",
+    "output/match_91119257/manual-review-form-v2.csv"
+  ],
+  "localAssets": {
+    "frameDirectory": "output-local/match_91119257/dense-manual-review/frames",
+    "contactSheetDirectory": "output-local/match_91119257/dense-manual-review/contact-sheets",
+    "committed": false
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "deterministicSubset": {
+    "mode": "first_20_requests",
+    "subsetCount": 20,
+    "deterministic": true
+  }
+}

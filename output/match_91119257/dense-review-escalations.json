@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_dense_review_escalations",
+  "createdAt": "2026-06-29T00:15:21.574473+00:00",
+  "escalations": [
+    {
+      "annotationId": "E009",
+      "reason": "forced_by_user_observation",
+      "fromWindow": "start-5s_to_end+5s",
+      "toWindow": "start-10s_to_end+10s",
+      "status": "executed"
+    },
+    {
+      "annotationId": "E088",
+      "reason": "corrected_timestamp_case_requires_wider_context",
+      "fromWindow": "start-5s_to_end+5s",
+      "toWindow": "start-10s_to_end+10s",
+      "status": "executed"
+    },
+    {
+      "annotationId": "E088",
+      "reason": "include_task038_corrected_24m50_24m55_window",
+      "fromWindow": "source_original_timestamp",
+      "toWindow": "corrected_window_pm10s",
+      "status": "executed"
+    }
+  ]
+}
