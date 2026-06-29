@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_entity_5594_recovery_experiments",
+  "createdAt": "2026-06-29T03:29:24.673Z",
+  "experiments": [
+    {
+      "name": "skip_invalid_entity_update_payload",
+      "status": "completed_with_later_error",
+      "experimental": true,
+      "description": "Opt-in parser recovery skips only the invalid missing-entity UPDATE payload when serializedEntities exposes its bit length.",
+      "unresolvedEntityReferences": [
+        {
+          "sequence": 1,
+          "tick": 3807,
+          "gameTimeSeconds": 118,
+          "entityIndex": 5594,
+          "operation": "UPDATE",
+          "loop": 29,
+          "payloadBits": 141,
+          "recoveryAction": "skipped_invalid_update_payload",
+          "recoverable": true,
+          "reason": null,
+          "registryStateBefore": "missing",
+          "registryStateAfter": "unchanged_missing_entity"
+        },
+        {
+          "sequence": 2,
+          "tick": 3807,
+          "gameTimeSeconds": 118,
+          "entityIndex": 5605,
+          "operation": "UPDATE",
+          "loop": 30,
+          "payloadBits": 141,
+          "recoveryAction": "skipped_invalid_update_payload",
+          "recoverable": true,
+          "reason": null,
+          "registryStateBefore": "missing",
+          "registryStateAfter": "unchanged_missing_entity"
+        },
+        {
+          "sequence": 3,
+          "tick": 3807,
+          "gameTimeSeconds": 118,
+          "entityIndex": 5606,
+          "operation": "UPDATE",
+          "loop": 31,
+          "payloadBits": 22,
+          "recoveryAction": "skipped_invalid_update_payload",
+          "recoverable": true,
+          "reason": null,
+          "registryStateBefore": "missing",
+          "registryStateAfter": "unchanged_missing_entity"
+        },
+        {
+          "sequence": 4,
+          "tick": 3807,
+          "gameTimeSeconds": 118,
+          "entityIndex": 5610,
+          "operation": "UPDATE",
+          "loop": 32,
+          "payloadBits": 165,
+          "recoveryAction": "skipped_invalid_update_payload",
+          "recoverable": true,
+          "reason": null,
+          "registryStateBefore": "missing",
+          "registryStateAfter": "unchanged_missing_entity"
+        }
+      ],
+      "finalError": {
+        "message": "Baseline not found [ 709 ]",
+        "stack": [
+          "Error: Baseline not found [ 709 ]",
+          "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:221:35)",
+          "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/investigate-match-91119257-entity-5594-parser-recovery.js:199:25)",
+          "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+          "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+          "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+          "    at Transform._write (node:internal/streams/transform:171:8)",
+          "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+          "    at _write (node:internal/streams/writable:501:10)",
+          "    at Writable.write (node:internal/streams/writable:510:10)",
+          "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)"
+        ]
+      },
+      "acceptanceChecks": {
+        "avoidsCascadingPacketLoss": false,
+        "preservesSubsequentUnrelatedEntities": false,
+        "inventsEntityProperties": false,
+        "recordsUnresolvedReference": true,
+        "deterministicOutput": true,
+        "silentlyCorruptsState": false
+      }
+    },
+    {
+      "name": "skip_entire_packet",
+      "status": "previous_task_035_rejected",
+      "experimental": true,
+      "description": "Task 035 monkey patch skipped whole affected packets and cascaded to 1001 warnings.",
+      "acceptanceChecks": {
+        "avoidsCascadingPacketLoss": false,
+        "preservesSubsequentUnrelatedEntities": false,
+        "inventsEntityProperties": false,
+        "recordsUnresolvedReference": true,
+        "deterministicOutput": true,
+        "silentlyCorruptsState": "risk_high_due_packet_loss"
+      }
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_parser_recovery_validation",
+  "createdAt": "2026-06-29T03:29:24.675Z",
+  "checks": {
+    "telemetryExtendsBeyond150Seconds": false,
+    "laterTimestampsNearKnownVisualLandmarksExist": {
+      "nearE083_1395s": false,
+      "nearE088Corrected_1490s": false
+    },
+    "playerIdentityConsistentEnoughForContinuityCount": false,
+    "noImpossibleTimeReversal": true,
+    "catastrophicCoordinateDiscontinuityCount": 0,
+    "noVideoDemoAlignmentPerformed": true,
+    "noParserDataFabricated": true,
+    "replay005Protection": {
+      "processed": false,
+      "status": "preserved"
+    }
+  },
+  "limitations": [
+    "Continuity checks are broad parser-continuation checks only.",
+    "This does not validate full replay semantics or video-demo alignment.",
+    "Unresolved entity references are preserved as warnings and not materialized as entity state."
+  ]
+}

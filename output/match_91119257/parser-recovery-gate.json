@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_parser_recovery_gate",
+  "createdAt": "2026-06-29T03:29:24.675Z",
+  "gate": "entity_5594_root_cause_confirmed",
+  "rootCause": "packet_entity_update_references_missing_entity_5594_before_any_observed_create_in_registry",
+  "firstFailingTick": 3808,
+  "firstFailingGameTimeSeconds": 119,
+  "recommendedFix": "combine missing-entity update recovery with a separate baseline-709 capability investigation before full telemetry extraction",
+  "sourceCodeChanged": true,
+  "testsAdded": [
+    "packages/engine/tests/DemoMessageHandlerRecovery.test.js"
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "limitations": [
+    "Fix is parser-level and preserves unresolved references; it does not validate semantic downstream layers.",
+    "Entity 5594 itself remains unresolved because no properties are fabricated.",
+    "Complete match telemetry must be re-extracted and audited in a separate blocked task before downstream use.",
+    "The entity 5594 failure is isolated, but parser continuation is still blocked by Baseline not found [ 709 ]."
+  ]
+}

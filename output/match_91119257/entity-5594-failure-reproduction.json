@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_entity_5594_failure_reproduction",
+  "createdAt": "2026-06-29T03:29:23.755Z",
+  "strategy": "bounded_normal_parser_run_with_packet_entity_scan",
+  "targetEntityIndex": 5594,
+  "reproduced": true,
+  "lastValidPacket": {
+    "tick": null,
+    "updatedEntries": 67,
+    "messagePacketType": "svc_PacketEntities"
+  },
+  "firstFailingPacket": {
+    "tick": null,
+    "messagePacketType": "svc_PacketEntities",
+    "updatedEntries": 59,
+    "entityDataBytes": 1559,
+    "serializedEntitiesBytes": 101,
+    "targetOccurrences": 0,
+    "missingReferences": 0
+  },
+  "firstEntity5594Reference": null,
+  "exceptionOrigin": {
+    "message": "Unable to find an entity with index [ 5594 ]",
+    "stack": [
+      "Error: Unable to find an entity with index [ 5594 ]",
+      "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:141:31)",
+      "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+      "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+      "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+      "    at Transform._write (node:internal/streams/transform:171:8)",
+      "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+      "    at _write (node:internal/streams/writable:501:10)",
+      "    at Writable.write (node:internal/streams/writable:510:10)",
+      "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)",
+      "    at DemoStreamPacketPrioritizer.emit (node:events:519:28)"
+    ],
+    "tickBeforeFailure": 3807,
+    "gameTimeSecondsBeforeFailure": 118
+  },
+  "registryContentsImmediatelyBeforeFailure": {
+    "tick": 3807,
+    "gameTimeSeconds": 118,
+    "reason": "baseline_exception_catch",
+    "occurrence": null,
+    "target": null,
+    "demoStats": {
+      "classBaselines": 129,
+      "classes": 825,
+      "entities": 1526,
+      "serializers": 870
+    },
+    "nearby": [
+      {
+        "index": 5591,
+        "state": "missing"
+      },
+      {
+        "index": 5592,
+        "state": "missing"
+      },
+      {
+        "index": 5593,
+        "state": "missing"
+      },
+      {
+        "index": 5594,
+        "state": "missing"
+      },
+      {
+        "index": 5595,
+        "state": "missing"
+      },
+      {
+        "index": 5596,
+        "state": "missing"
+      },
+      {
+        "index": 5597,
+        "state": "missing"
+      }
+    ]
+  },
+  "canContinueAfterIsolatingFailingUpdate": null,
+  "elapsedMs": 1121,
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

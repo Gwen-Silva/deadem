@@ -93,7 +93,7 @@ class DemoMessageHandler {
      * @param {boolean} [direct=false]
      * @returns {Array<EntityMutationEvent>|null}
      */
-    handleSvcPacketEntities(messagePacket, startPointer = 0, startLoop = 0, startIndex = -1, direct = false) {
+    handleSvcPacketEntities(messagePacket, startPointer = 0, startLoop = 0, startIndex = -1, direct = false, recovery = null) {
         const message = messagePacket.data;
 
         if (message.updateBaseline) {
@@ -109,7 +109,8 @@ class DemoMessageHandler {
         bitBuffer.move(startPointer);
 
         const hasFilter = this._entityClassFilter !== null;
-        const payloadSizes = hasFilter ? createPayloadIterator(message, startLoop) : null;
+        const hasRecovery = recovery !== null;
+        const payloadSizes = hasFilter || hasRecovery ? createPayloadIterator(message, startLoop) : null;
         const events = direct ? null : [];
         const extractor = new EntityMutationExtractor(bitBuffer);
 
@@ -123,15 +124,26 @@ class DemoMessageHandler {
             switch (command) {
                 case EntityOperation.UPDATE.id: {
                     const entity = this._demo.getEntity(index);
+                    const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
 
                     if (entity === null) {
+                        if (recoverMissingEntityReference(recovery, {
+                            operation: EntityOperation.UPDATE,
+                            index,
+                            bitBuffer,
+                            payloadBits,
+                            loop: i,
+                            registryState: 'missing'
+                        })) {
+                            break;
+                        }
+
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
                     extractor.serializer = entity.class.serializer;
 
                     const allowed = !hasFilter || this._entityClassFilter(entity.class.name);
-                    const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
 
                     if (allowed) {
                         if (events === null) {
@@ -155,6 +167,17 @@ class DemoMessageHandler {
                     const entity = this._demo.getEntity(index);
 
                     if (entity === null) {
+                        if (recoverMissingEntityReference(recovery, {
+                            operation: EntityOperation.LEAVE,
+                            index,
+                            bitBuffer,
+                            payloadBits: 0,
+                            loop: i,
+                            registryState: 'missing'
+                        })) {
+                            break;
+                        }
+
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -171,6 +194,7 @@ class DemoMessageHandler {
                     break;
                 }
                 case EntityOperation.CREATE.id: {
+                    const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
                     const classIdSizeBits = this._demo.server.classIdSizeBits;
 
                     const classId = bitBuffer.readBitsAsUInt(classIdSizeBits);
@@ -187,7 +211,6 @@ class DemoMessageHandler {
                     const entity = new Entity(index, serial, clazz);
 
                     const allowed = !hasFilter || this._entityClassFilter(clazz.name);
-                    const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
 
                     extractor.serializer = entity.class.serializer;
 
@@ -231,6 +254,17 @@ class DemoMessageHandler {
                     const entity = this._demo.getEntity(index);
 
                     if (entity === null) {
+                        if (recoverMissingEntityReference(recovery, {
+                            operation: EntityOperation.DELETE,
+                            index,
+                            bitBuffer,
+                            payloadBits: 0,
+                            loop: i,
+                            registryState: 'missing'
+                        })) {
+                            break;
+                        }
+
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -327,4 +361,74 @@ function createPayloadIterator(message, startLoop = 0) {
     return iterator;
 }
 
+/**
+ * Experimental opt-in recovery for a packet-local reference to an entity that is
+ * absent from the registry. It never creates an entity or materializes fields;
+ * it only advances over the current entry when the packet exposes that entry's
+ * payload size.
+ *
+ * @param {object|null} recovery
+ * @param {object} context
+ * @returns {boolean}
+ */
+function recoverMissingEntityReference(recovery, context) {
+    if (recovery === null || recovery.allowUnresolvedEntityReference !== true) {
+        return false;
+    }
+
+    const {
+        operation,
+        index,
+        bitBuffer,
+        payloadBits,
+        loop,
+        registryState
+    } = context;
+
+    const warning = {
+        operation: operation.code,
+        entityIndex: index,
+        loop,
+        payloadBits: payloadBits ?? null,
+        registryStateBefore: registryState,
+        recoveryAction: null,
+        recoverable: false,
+        reason: null
+    };
+
+    if (operation === EntityOperation.UPDATE) {
+        if (!Number.isInteger(payloadBits)) {
+            warning.recoveryAction = 'none';
+            warning.reason = 'missing_payload_size';
+            recovery.recordUnresolvedEntityReference?.(warning);
+
+            return false;
+        }
+
+        bitBuffer.move(payloadBits);
+        warning.recoveryAction = 'skipped_invalid_update_payload';
+        warning.recoverable = true;
+        warning.registryStateAfter = 'unchanged_missing_entity';
+        recovery.recordUnresolvedEntityReference?.(warning);
+
+        return true;
+    }
+
+    if (operation === EntityOperation.LEAVE || operation === EntityOperation.DELETE) {
+        warning.recoveryAction = 'ignored_missing_entity_state_transition';
+        warning.recoverable = true;
+        warning.registryStateAfter = 'unchanged_missing_entity';
+        recovery.recordUnresolvedEntityReference?.(warning);
+
+        return true;
+    }
+
+    warning.recoveryAction = 'none';
+    warning.reason = 'unsupported_operation';
+    recovery.recordUnresolvedEntityReference?.(warning);
+
+    return false;
+}
+
 export default DemoMessageHandler;
+export { recoverMissingEntityReference };

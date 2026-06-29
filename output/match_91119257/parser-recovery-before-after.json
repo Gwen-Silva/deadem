@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_parser_recovery_before_after",
+  "createdAt": "2026-06-29T03:29:24.675Z",
+  "baseline": {
+    "strategy": "default_parser",
+    "finalParsedTick": 3807,
+    "finalParsedGameTimeSeconds": 118,
+    "packetsProcessed": "bounded_until_exception",
+    "packetsSkipped": 0,
+    "entityUpdatesProcessed": null,
+    "unresolvedEntityReferences": 0,
+    "warnings": 0,
+    "playerTelemetryRows": 119,
+    "positionCoverage": "early_window_until_parser_exception",
+    "deathRespawnCoverage": "not_evaluated",
+    "objectiveLifecycleCoverage": "not_evaluated",
+    "damageHealingCoverage": "not_evaluated"
+  },
+  "previousTask035PacketSkipRecovery": {
+    "strategy": "script_local_monkey_patch_packet_skip_for_known_entity_registry_errors",
+    "finalStatus": "stopped_recovery_warning_limit_or_unhandled_parser_error",
+    "finalError": "recovery_warning_limit_exceeded",
+    "warnings": 1001,
+    "playerTelemetryRows": 151
+  },
+  "recovered": {
+    "strategy": "skip_invalid_missing_entity_update_payload",
+    "finalParsedTick": 3807,
+    "finalParsedGameTimeSeconds": 118,
+    "packetsProcessed": 3824,
+    "messagePacketsProcessed": 56654,
+    "entityPacketsProcessed": 3810,
+    "packetsSkipped": 0,
+    "unresolvedEntityReferences": 4,
+    "entity5594References": 1,
+    "warnings": 4,
+    "playerTelemetryRows": 118,
+    "positionCoverage": {
+      "firstTelemetrySecond": 1,
+      "lastTelemetrySecond": 118
+    },
+    "deathRespawnCoverage": "not_evaluated",
+    "objectiveLifecycleCoverage": "not_evaluated",
+    "damageHealingCoverage": "not_evaluated",
+    "finalError": {
+      "message": "Baseline not found [ 709 ]",
+      "stack": [
+        "Error: Baseline not found [ 709 ]",
+        "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:221:35)",
+        "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/investigate-match-91119257-entity-5594-parser-recovery.js:199:25)",
+        "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+        "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+        "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+        "    at Transform._write (node:internal/streams/transform:171:8)",
+        "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+        "    at _write (node:internal/streams/writable:501:10)",
+        "    at Writable.write (node:internal/streams/writable:510:10)",
+        "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)"
+      ]
+    }
+  }
+}

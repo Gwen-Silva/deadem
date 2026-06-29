@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_entity_5594_hypothesis_evaluation",
+  "createdAt": "2026-06-29T03:29:24.673Z",
+  "rootCause": "packet_entity_update_references_missing_entity_5594_before_any_observed_create_in_registry",
+  "hypotheses": [
+    {
+      "id": 1,
+      "hypothesis": "entity update arrives before creation",
+      "result": true,
+      "evidence": {
+        "sequence": 1,
+        "tick": 3807,
+        "gameTimeSeconds": 118,
+        "entityIndex": 5594,
+        "operation": "UPDATE",
+        "loop": 29,
+        "payloadBits": 141,
+        "recoveryAction": "skipped_invalid_update_payload",
+        "recoverable": true,
+        "reason": null,
+        "registryStateBefore": "missing",
+        "registryStateAfter": "unchanged_missing_entity"
+      }
+    },
+    {
+      "id": 2,
+      "hypothesis": "entity was deleted but later referenced",
+      "result": "not_confirmed",
+      "evidence": "No observed prior create/delete lifecycle for 5594 in bounded trace."
+    },
+    {
+      "id": 3,
+      "hypothesis": "entity index was reused with a new serial",
+      "result": "not_confirmed",
+      "evidence": "No observed registered entity at index 5594 before failure, so serial reuse is not demonstrated."
+    },
+    {
+      "id": 4,
+      "hypothesis": "registry key ignores serial/generation",
+      "result": "not_supported",
+      "evidence": "Failure is lookup by absent index, not a wrong-serial hit."
+    },
+    {
+      "id": 5,
+      "hypothesis": "packet-local entity state is skipped after recoverable error",
+      "result": true,
+      "evidence": "Task 035 whole-packet skip caused cascading warnings; update-payload skip preserves the invalid update but later baseline failure still blocks continuation."
+    },
+    {
+      "id": 6,
+      "hypothesis": "parser incorrectly aborts an entire packet after one invalid entity",
+      "result": true,
+      "evidence": "Default handler throws on missing update reference; opt-in skip isolates the invalid update before the next blocker."
+    },
+    {
+      "id": 7,
+      "hypothesis": "serializer/class metadata is missing",
+      "result": "not_supported",
+      "evidence": "Failure occurs before serializer lookup because entity registry lookup returns null."
+    },
+    {
+      "id": 8,
+      "hypothesis": "baseline data is unavailable",
+      "result": "not_supported",
+      "evidence": "Failure is UPDATE, not CREATE baseline lookup."
+    },
+    {
+      "id": 9,
+      "hypothesis": "entity index decoding is incorrect",
+      "result": "unknown",
+      "evidence": "Decoded index is reproducible and has payload size; no independent bitstream proof of wrong decoding."
+    },
+    {
+      "id": 10,
+      "hypothesis": "replay packet corruption or unsupported protocol data",
+      "result": "possible",
+      "evidence": "A missing update reference may indicate unsupported protocol semantics or malformed packet ordering; further protocol-level evidence would be needed."
+    }
+  ],
+  "firstMissingEntity5594Reference": {
+    "sequence": 1,
+    "tick": 3807,
+    "gameTimeSeconds": 118,
+    "entityIndex": 5594,
+    "operation": "UPDATE",
+    "loop": 29,
+    "payloadBits": 141,
+    "recoveryAction": "skipped_invalid_update_payload",
+    "recoverable": true,
+    "reason": null,
+    "registryStateBefore": "missing",
+    "registryStateAfter": "unchanged_missing_entity"
+  },
+  "recovered5594References": [
+    {
+      "sequence": 1,
+      "tick": 3807,
+      "gameTimeSeconds": 118,
+      "entityIndex": 5594,
+      "operation": "UPDATE",
+      "loop": 29,
+      "payloadBits": 141,
+      "recoveryAction": "skipped_invalid_update_payload",
+      "recoverable": true,
+      "reason": null,
+      "registryStateBefore": "missing",
+      "registryStateAfter": "unchanged_missing_entity"
+    }
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}
