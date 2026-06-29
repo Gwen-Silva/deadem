@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_006",
+  "divergence": {
+    "type": "first_parser_exception_without_confirmed_inner_operation",
+    "tick": 3808,
+    "commandSequence": 3880,
+    "messageSequenceInCommand": 14,
+    "sourceOffsetStart": 2083,
+    "sourceOffsetEnd": 3787,
+    "sourceOffsetBasis": "decoded_packet_data",
+    "commandSourceOffsetStart": 9724946,
+    "commandSourceOffsetEnd": 9728382,
+    "messageTypeId": 55,
+    "messageTypeName": "svc_PacketEntities",
+    "packetEntityLoop": null,
+    "operation": null,
+    "affectedStateTable": "entity_registry",
+    "entityIndex": 5594,
+    "precondition": "parser_exception",
+    "details": {
+      "error": {
+        "name": "Error",
+        "message": "Unable to find an entity with index [ 5594 ]",
+        "currentKey": {
+          "commandSequence": 3880,
+          "messageSequenceInCommand": 14,
+          "tick": 3808,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities"
+        }
+      }
+    },
+    "structuralEnvelopeValid": true
+  },
+  "preStateValidity": "not_confirmed_by_precondition_scanner",
+  "note": "This identifies the first observed invalid state precondition, not a proven earlier root cause."
+}

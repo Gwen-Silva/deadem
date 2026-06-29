@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "hypotheses": [
+    {
+      "id": 1,
+      "hypothesis": "an earlier packet/message exception silently skips state mutations",
+      "result": "not_supported",
+      "evidence": "No earlier exception was recorded before the first invalid packet-entity precondition."
+    },
+    {
+      "id": 2,
+      "hypothesis": "a class-info message is parsed but not registered",
+      "result": "partially_supported",
+      "evidence": "class709 firstSeen={\"commandSequence\":62,\"messageSequenceInCommand\":0,\"tick\":-1,\"messageTypeId\":7,\"messageTypeName\":\"net_SignonState\"}, class891 firstSeen=null"
+    },
+    {
+      "id": 3,
+      "hypothesis": "an instancebaseline message is structurally present but ignored",
+      "result": "partially_supported",
+      "evidence": "Baseline 709 was absent when looked up; this task did not prove a prior baseline carrier for key 709 was ignored."
+    },
+    {
+      "id": 4,
+      "hypothesis": "an instancebaseline key is decoded incorrectly",
+      "result": "not_testable",
+      "evidence": "No independent expected key mapping for baseline 709 was available without full semantic baseline decoding."
+    },
+    {
+      "id": 5,
+      "hypothesis": "a table clear/reset removes valid baseline or class state",
+      "result": "partially_supported",
+      "evidence": "baseline clears tracked=1"
+    },
+    {
+      "id": 6,
+      "hypothesis": "entity registry uses the wrong index/generation key",
+      "result": "partially_supported",
+      "evidence": "Entity 5594 is referenced by UPDATE without observed prior create. No alternate generation key was proven."
+    },
+    {
+      "id": 7,
+      "hypothesis": "entity delete/reuse handling removes the wrong entity",
+      "result": "not_supported",
+      "evidence": "entity5594 deletes=0"
+    },
+    {
+      "id": 8,
+      "hypothesis": "a full packet is treated as delta or vice versa",
+      "result": "not_supported",
+      "evidence": "Structural command sequence and parser command types agree through the candidate boundary."
+    },
+    {
+      "id": 9,
+      "hypothesis": "packet-entity operation ordering is decoded incorrectly",
+      "result": "not_testable",
+      "evidence": "Operation order is internally consistent enough to reach the invalid UPDATE; no alternate decoder is established."
+    },
+    {
+      "id": 10,
+      "hypothesis": "a serializer/class table version transition is unsupported",
+      "result": "partially_supported",
+      "evidence": "Class 891 is absent later under diagnostic recovery, but the earliest invalid precondition is entity 5594."
+    },
+    {
+      "id": 11,
+      "hypothesis": "parser state is initialized too late",
+      "result": "not_supported",
+      "evidence": "Server, serializers, classes, baselines, and entities are already populated before tick 3808."
+    },
+    {
+      "id": 12,
+      "hypothesis": "replay 006 contains an initialization/state-refresh path not exercised by replays 001-004",
+      "result": "partially_supported",
+      "evidence": "Successful controls do not show the same invalid precondition before tick 3808."
+    },
+    {
+      "id": 13,
+      "hypothesis": "a prior recovery or warning path changes default state before tick 3808",
+      "result": "not_supported",
+      "evidence": "Default parser run used no recovery and recorded no accepted recovery before the failure."
+    },
+    {
+      "id": 14,
+      "hypothesis": "message body decoding uses a schema that is structurally valid but semantically mismatched",
+      "result": "partially_supported",
+      "evidence": "Structural envelope is valid but state-level preconditions fail; exact schema mismatch is not proven."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "candidateMessageType": 55,
+  "replay006": {
+    "replayId": "replay_006",
+    "completed": false,
+    "finalError": {
+      "name": "Error",
+      "message": "Unable to find an entity with index [ 5594 ]",
+      "currentKey": {
+        "commandSequence": 3880,
+        "messageSequenceInCommand": 14,
+        "tick": 3808,
+        "messageTypeId": 55,
+        "messageTypeName": "svc_PacketEntities"
+      }
+    },
+    "finalSnapshot": {
+      "commandSequence": 3880,
+      "messageSequenceInCommand": 14,
+      "tick": 3808,
+      "sourceOffset": null,
+      "messageTypeId": 55,
+      "classCount": 0,
+      "serializerCount": 0,
+      "baselineCount": 0,
+      "entityCount": 0,
+      "dormantEntityCount": 0,
+      "classKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "serializerKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "baselineKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "entityKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stateDigest": "401e558c0b835c538ea1b714bff3e2e32bab7dbf8f26865dedb79c10f3d04b13",
+      "warningsSincePreviousCheckpoint": []
+    },
+    "packetEntityMessages": 3810,
+    "firstInvalidPrecondition": null,
+    "stateHash": "2e295e8a9e77a660e221f21c168a361e65cdb0f90665555473f0945ef2ffacf3"
+  },
+  "controls": [
+    {
+      "replayId": "replay_001",
+      "completed": true,
+      "finalError": null,
+      "finalSnapshot": {
+        "commandSequence": 3879,
+        "messageSequenceInCommand": 19,
+        "tick": 3808,
+        "sourceOffset": null,
+        "messageTypeId": 55,
+        "classCount": 0,
+        "serializerCount": 0,
+        "baselineCount": 0,
+        "entityCount": 0,
+        "dormantEntityCount": 0,
+        "classKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "serializerKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "baselineKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "entityKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "stateDigest": "401e558c0b835c538ea1b714bff3e2e32bab7dbf8f26865dedb79c10f3d04b13",
+        "warningsSincePreviousCheckpoint": []
+      },
+      "packetEntityMessages": 3809,
+      "firstInvalidPrecondition": null,
+      "stateHash": "8599263011c21e86be770a30b1f1545315ad5f82ef97d79bf038cd86c673fd54"
+    },
+    {
+      "replayId": "replay_002",
+      "completed": true,
+      "finalError": null,
+      "finalSnapshot": {
+        "commandSequence": 3879,
+        "messageSequenceInCommand": 19,
+        "tick": 3808,
+        "sourceOffset": null,
+        "messageTypeId": 55,
+        "classCount": 0,
+        "serializerCount": 0,
+        "baselineCount": 0,
+        "entityCount": 0,
+        "dormantEntityCount": 0,
+        "classKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "serializerKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "baselineKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "entityKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "stateDigest": "401e558c0b835c538ea1b714bff3e2e32bab7dbf8f26865dedb79c10f3d04b13",
+        "warningsSincePreviousCheckpoint": []
+      },
+      "packetEntityMessages": 3809,
+      "firstInvalidPrecondition": null,
+      "stateHash": "54adae13619f2582855e524d3e2af50fa680f92f0ec8d79d2ecb8bd63a7c0986"
+    }
+  ],
+  "interpretation": "Controls show the same state-reconstruction implementation handles packet-entity messages through tick 3808 without invalid preconditions in the sampled successful replays; they are implementation controls, not semantic ground truth."
+}

@@ -1,6 +1,6 @@
 # Task 050: Isolate Replay 006 State Reconstruction Divergence Before Tick 3808
 
-Status: blocked
+Status: completed
 Execution mode: autonomous
 Project stage: parser compatibility
 Related experiment: structural replay stream pass
@@ -54,7 +54,7 @@ Identify where state reconstruction diverges from valid structural envelopes wit
 
 ## Gate result
 
-Blocked until explicitly authorized.
+replay_006_divergence_narrowed_not_confirmed
 
 ## Documentation updates
 

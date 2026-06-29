@@ -69,3 +69,5 @@ Final/current reports are listed first. Historical reports are grouped by domain
 ## Cleanup Reports
 
 - `reports/repository-cleanup-execution.md`
+
+- `reports/replay-006-state-reconstruction-divergence.md`

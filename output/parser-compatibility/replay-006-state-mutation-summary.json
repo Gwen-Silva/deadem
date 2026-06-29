@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_006",
+  "completed": false,
+  "finalError": {
+    "name": "Error",
+    "message": "Unable to find an entity with index [ 5594 ]",
+    "currentKey": {
+      "commandSequence": 3880,
+      "messageSequenceInCommand": 14,
+      "tick": 3808,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities"
+    }
+  },
+  "finalSnapshot": {
+    "commandSequence": 3880,
+    "messageSequenceInCommand": 14,
+    "tick": 3808,
+    "sourceOffset": null,
+    "messageTypeId": 55,
+    "classCount": 0,
+    "serializerCount": 0,
+    "baselineCount": 0,
+    "entityCount": 0,
+    "dormantEntityCount": 0,
+    "classKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "serializerKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "baselineKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "entityKeyHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "stateDigest": "401e558c0b835c538ea1b714bff3e2e32bab7dbf8f26865dedb79c10f3d04b13",
+    "warningsSincePreviousCheckpoint": []
+  },
+  "tracked": {
+    "entities": {
+      "5594": {
+        "creates": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "updates": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "deletes": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "leaves": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "lookups": {
+          "count": 1,
+          "first": {
+            "commandSequence": 3880,
+            "messageSequenceInCommand": 14,
+            "tick": 3808,
+            "messageTypeId": 55,
+            "messageTypeName": "svc_PacketEntities",
+            "found": false
+          },
+          "last": {
+            "commandSequence": 3880,
+            "messageSequenceInCommand": 14,
+            "tick": 3808,
+            "messageTypeId": 55,
+            "messageTypeName": "svc_PacketEntities",
+            "found": false
+          },
+          "sample": [
+            {
+              "commandSequence": 3880,
+              "messageSequenceInCommand": 14,
+              "tick": 3808,
+              "messageTypeId": 55,
+              "messageTypeName": "svc_PacketEntities",
+              "found": false
+            }
+          ]
+        }
+      },
+      "5863": {
+        "creates": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "updates": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "deletes": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "leaves": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        },
+        "lookups": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        }
+      }
+    },
+    "baselines": {
+      "709": {
+        "firstSeen": null,
+        "lookups": {
+          "count": 58742,
+          "first": {
+            "commandSequence": 1,
+            "messageSequenceInCommand": 0,
+            "tick": -1,
+            "messageTypeId": 4,
+            "messageTypeName": "net_Tick",
+            "found": false
+          },
+          "last": {
+            "commandSequence": 3880,
+            "messageSequenceInCommand": 13,
+            "tick": 3808,
+            "messageTypeId": 208,
+            "messageTypeName": "GE_SosStartSoundEvent",
+            "found": false
+          },
+          "sample": [
+            {
+              "commandSequence": 1,
+              "messageSequenceInCommand": 0,
+              "tick": -1,
+              "messageTypeId": 4,
+              "messageTypeName": "net_Tick",
+              "found": false
+            },
+            {
+              "commandSequence": 2,
+              "messageSequenceInCommand": 0,
+              "tick": -1,
+              "messageTypeId": 51,
+              "messageTypeName": "svc_ClearAllStringTables",
+              "found": false
+            },
+            {
+              "commandSequence": 3,
+              "messageSequenceInCommand": 0,
+              "tick": -1,
+              "messageTypeId": 44,
+              "messageTypeName": "svc_CreateStringTable",
+              "found": false
+            },
+            {
+              "commandSequence": 3880,
+              "messageSequenceInCommand": 11,
+              "tick": 3808,
+              "messageTypeId": 145,
+              "messageTypeName": "UM_ParticleManager",
+              "found": false
+            },
+            {
+              "commandSequence": 3880,
+              "messageSequenceInCommand": 12,
+              "tick": 3808,
+              "messageTypeId": 340,
+              "messageTypeName": "k_EUserMsg_ParticipantStartSoundEvent",
+              "found": false
+            },
+            {
+              "commandSequence": 3880,
+              "messageSequenceInCommand": 13,
+              "tick": 3808,
+              "messageTypeId": 208,
+              "messageTypeName": "GE_SosStartSoundEvent",
+              "found": false
+            }
+          ]
+        },
+        "clears": {
+          "count": 1,
+          "first": {
+            "commandSequence": 2,
+            "messageSequenceInCommand": 0,
+            "tick": -1,
+            "messageTypeId": 51,
+            "messageTypeName": "svc_ClearAllStringTables"
+          },
+          "last": {
+            "commandSequence": 2,
+            "messageSequenceInCommand": 0,
+            "tick": -1,
+            "messageTypeId": 51,
+            "messageTypeName": "svc_ClearAllStringTables"
+          },
+          "sample": [
+            {
+              "commandSequence": 2,
+              "messageSequenceInCommand": 0,
+              "tick": -1,
+              "messageTypeId": 51,
+              "messageTypeName": "svc_ClearAllStringTables"
+            }
+          ]
+        }
+      }
+    },
+    "classes": {
+      "709": {
+        "firstSeen": {
+          "commandSequence": 62,
+          "messageSequenceInCommand": 0,
+          "tick": -1,
+          "messageTypeId": 7,
+          "messageTypeName": "net_SignonState"
+        },
+        "lookups": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        }
+      },
+      "891": {
+        "firstSeen": null,
+        "lookups": {
+          "count": 0,
+          "first": null,
+          "last": null,
+          "sample": []
+        }
+      }
+    },
+    "serializers": {
+      "CModelPointEntity|0": {
+        "firstSeen": {
+          "commandSequence": 62,
+          "messageSequenceInCommand": 0,
+          "tick": -1,
+          "messageTypeId": 7,
+          "messageTypeName": "net_SignonState"
+        },
+        "lookups": {
+          "count": 2,
+          "first": {
+            "commandSequence": 62,
+            "messageSequenceInCommand": 0,
+            "tick": -1,
+            "messageTypeId": 7,
+            "messageTypeName": "net_SignonState",
+            "found": true
+          },
+          "last": {
+            "commandSequence": 62,
+            "messageSequenceInCommand": 0,
+            "tick": -1,
+            "messageTypeId": 7,
+            "messageTypeName": "net_SignonState",
+            "found": true
+          },
+          "sample": [
+            {
+              "commandSequence": 62,
+              "messageSequenceInCommand": 0,
+              "tick": -1,
+              "messageTypeId": 7,
+              "messageTypeName": "net_SignonState",
+              "found": true
+            },
+            {
+              "commandSequence": 62,
+              "messageSequenceInCommand": 0,
+              "tick": -1,
+              "messageTypeId": 7,
+              "messageTypeName": "net_SignonState",
+              "found": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "mutationCounts": {
+    "handleSvcClearAllStringTables_complete": 1,
+    "handleSvcCreateStringTable_complete": 14,
+    "serializer_register": 870,
+    "handleDemSendTables_complete": 1,
+    "class_register": 825,
+    "handleDemClassInfo_complete": 1,
+    "handleDemStringTables_complete": 1,
+    "handleSvcUpdateStringTable_complete": 2086,
+    "entity_register": 4505,
+    "handleSvcPacketEntities_complete": 3809,
+    "handleDemFullPacketTables_complete": 2,
+    "entity_delete": 13
+  },
+  "firstInvalidPrecondition": null,
+  "nearbyPacketEntityAudits": [
+    {
+      "commandSequence": 3861,
+      "messageSequenceInCommand": 6,
+      "tick": 3789,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 66,
+      "operationCountInspected": 66,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3862,
+      "messageSequenceInCommand": 12,
+      "tick": 3790,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 61,
+      "operationCountInspected": 61,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3863,
+      "messageSequenceInCommand": 14,
+      "tick": 3791,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 65,
+      "operationCountInspected": 65,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3864,
+      "messageSequenceInCommand": 10,
+      "tick": 3792,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 64,
+      "operationCountInspected": 64,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3865,
+      "messageSequenceInCommand": 16,
+      "tick": 3793,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 64,
+      "operationCountInspected": 64,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3866,
+      "messageSequenceInCommand": 9,
+      "tick": 3794,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 61,
+      "operationCountInspected": 61,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3867,
+      "messageSequenceInCommand": 15,
+      "tick": 3795,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 66,
+      "operationCountInspected": 66,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3868,
+      "messageSequenceInCommand": 6,
+      "tick": 3796,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 59,
+      "operationCountInspected": 59,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3869,
+      "messageSequenceInCommand": 20,
+      "tick": 3797,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 64,
+      "operationCountInspected": 64,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3870,
+      "messageSequenceInCommand": 9,
+      "tick": 3798,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 62,
+      "operationCountInspected": 62,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3871,
+      "messageSequenceInCommand": 8,
+      "tick": 3799,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 64,
+      "operationCountInspected": 64,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3872,
+      "messageSequenceInCommand": 9,
+      "tick": 3800,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 60,
+      "operationCountInspected": 60,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3873,
+      "messageSequenceInCommand": 7,
+      "tick": 3801,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 68,
+      "operationCountInspected": 68,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3874,
+      "messageSequenceInCommand": 12,
+      "tick": 3802,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 61,
+      "operationCountInspected": 61,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3875,
+      "messageSequenceInCommand": 10,
+      "tick": 3803,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 67,
+      "operationCountInspected": 67,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3876,
+      "messageSequenceInCommand": 10,
+      "tick": 3804,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 62,
+      "operationCountInspected": 62,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3877,
+      "messageSequenceInCommand": 11,
+      "tick": 3805,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 63,
+      "operationCountInspected": 63,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3878,
+      "messageSequenceInCommand": 7,
+      "tick": 3806,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 60,
+      "operationCountInspected": 60,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3879,
+      "messageSequenceInCommand": 8,
+      "tick": 3807,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 67,
+      "operationCountInspected": 67,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    },
+    {
+      "commandSequence": 3880,
+      "messageSequenceInCommand": 14,
+      "tick": 3808,
+      "messageTypeId": 55,
+      "messageTypeName": "svc_PacketEntities",
+      "updatedEntries": 59,
+      "operationCountInspected": 59,
+      "firstInvalidPrecondition": null,
+      "operations": []
+    }
+  ]
+}

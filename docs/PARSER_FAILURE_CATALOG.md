@@ -64,3 +64,43 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Replay 006 tick 3808 framing valid: true
 - Replay 006 later ticks structurally reachable: true
 - Completion count: 5/5
+
+
+## Replay 006 State Reconstruction Divergence
+
+- Gate: `replay_006_divergence_narrowed_not_confirmed`
+- First localized invalid precondition: missing_entity_for_update
+- Tick: 1163
+- Command/message: 1234 / 55
+- Affected state table: entity_registry
+- Policy: no entity-, baseline-, or class-specific skip was added.
+
+
+## Replay 006 State Reconstruction Divergence
+
+- Gate: `replay_006_divergence_narrowed_not_confirmed`
+- First localized invalid precondition: parser_exception
+- Tick: 3808
+- Command/message: 3880 / 14
+- Affected state table: entity_registry
+- Policy: no entity-, baseline-, or class-specific skip was added.
+
+
+## Replay 006 State Reconstruction Divergence
+
+- Gate: `replay_006_divergence_narrowed_not_confirmed`
+- First localized invalid precondition: parser_exception
+- Tick: 3808
+- Command/message: 3880 / 14
+- Affected state table: entity_registry
+- Policy: no entity-, baseline-, or class-specific skip was added.
+
+
+## Replay 006 State Reconstruction Divergence
+
+- Gate: `replay_006_divergence_narrowed_not_confirmed`
+- First localized invalid precondition: parser_exception
+- Tick: 3808
+- Command/message: 3880 / 14
+- Affected state table: entity_registry
+- Policy: no entity-, baseline-, or class-specific skip was added.

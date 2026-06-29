@@ -82,6 +82,14 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 - Structural replay stream pass gate is `structural_replay_pass_ready`: replay 006 is structurally traversed independently of entity, baseline, class, serializer, and gameplay-state materialization. Tick 3808 command framing is valid, later ticks are structurally reachable, and the selected interpretation is `replay_006_state_reconstruction_failure`. Structural parsing and gameplay-state reconstruction are now separate capabilities.
 
+- Replay 006 state-reconstruction divergence gate is `replay_006_divergence_narrowed_not_confirmed`: the first localized invalid state precondition is a structurally valid `SVC_PacketEntities` message at tick 1163 / command 1234 / message 55 that decodes an UPDATE for missing entity 5594. This narrows the state failure but does not prove the earlier root cause that should have created or retained that entity. Baseline 709 and class 891 remain later sequential blockers exposed by diagnostic continuation, not separately fixed issues.
+
+- Replay 006 state-reconstruction divergence gate is `replay_006_divergence_narrowed_not_confirmed`: the first localized invalid state precondition is a structurally valid `SVC_PacketEntities` message at tick 3808 / command 3880 / message 14 that decodes an UPDATE for missing entity 5594. This narrows the state failure but does not prove the earlier root cause that should have created or retained that entity. Baseline 709 and class 891 remain later sequential blockers exposed by diagnostic continuation, not separately fixed issues.
+
+- Replay 006 state-reconstruction divergence gate is `replay_006_divergence_narrowed_not_confirmed`: the first localized invalid state precondition is a structurally valid `SVC_PacketEntities` message at tick 3808 / command 3880 / message 14 that decodes an UPDATE for missing entity 5594. This narrows the state failure but does not prove the earlier root cause that should have created or retained that entity. Baseline 709 and class 891 remain later sequential blockers exposed by diagnostic continuation, not separately fixed issues.
+
+- Replay 006 state-reconstruction divergence gate is `replay_006_divergence_narrowed_not_confirmed`: the first localized invalid state precondition is a structurally valid `SVC_PacketEntities` message at tick 3808 / command 3880 / message 14 that decodes an UPDATE for missing entity 5594. This narrows the state failure but does not prove the earlier root cause that should have created or retained that entity. Baseline 709 and class 891 remain later sequential blockers exposed by diagnostic continuation, not separately fixed issues.
+
 ## Open Questions
 
 - Which fields or derived metrics are reliable enough for combat/objective analysis?
