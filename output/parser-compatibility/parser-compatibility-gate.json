@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T04:09:06.025Z",
+  "gate": "parser_compatibility_matrix_ready_with_insufficient_diversity",
+  "replay005Protection": {
+    "processed": false,
+    "excluded": true
+  },
+  "defaultParserCompletionCount": 4,
+  "diagnosticRecoveryCompletionCount": 4,
+  "structuralPassFeasibility": "blocked_follow_up_required",
+  "corpusDiversity": {
+    "eligibleReplayCount": 5,
+    "directBuildValuesFound": [],
+    "directDemoProtocolValuesFound": [],
+    "sufficientToDistinguishReplaySpecific": true,
+    "sufficientToDistinguishBuildSpecific": false,
+    "result": "insufficient_direct_build_protocol_diversity"
+  },
+  "controlledReplayRecommendation": {
+    "needed": true,
+    "reason": "Direct build/protocol metadata is unavailable or not diverse enough to distinguish build-specific from replay-specific behavior.",
+    "scenario": [
+      "remain at spawn",
+      "move through at least two lanes",
+      "use a zipline",
+      "damage an NPC or structure",
+      "die once",
+      "respawn",
+      "interact with one neutral objective",
+      "end or leave after approximately 5-10 minutes"
+    ],
+    "note": "This is documentation only; the user is not required to record it during this task."
+  }
+}

@@ -4,21 +4,21 @@ Last updated: 2026-06-29
 
 ## Latest Work
 
-Latest completed task: `044-investigate-match-91119257-entity-5594-parser-recovery`
+Latest completed task: `046-run-parser-compatibility-matrix`
 
-Script/package: `scripts/investigate-match-91119257-entity-5594-parser-recovery.js`
+Script/package: `scripts/run-parser-compatibility-matrix.js`
 
 Primary outputs:
 
-- `output/match_91119257/entity-5594-trace.jsonl`
-- `output/match_91119257/entity-5594-registry-snapshots.json`
-- `output/match_91119257/entity-5594-failure-reproduction.json`
-- `output/match_91119257/entity-5594-hypothesis-evaluation.json`
-- `output/match_91119257/entity-5594-recovery-experiments.json`
-- `output/match_91119257/parser-recovery-before-after.json`
-- `output/match_91119257/parser-recovery-validation.json`
-- `output/match_91119257/parser-recovery-gate.json`
-- `reports/match-91119257-entity-5594-parser-recovery.md`
+- `output/parser-compatibility/replay-inventory.json`
+- `output/parser-compatibility/parser-compatibility-matrix.json`
+- `output/parser-compatibility/parser-compatibility-matrix.csv`
+- `output/parser-compatibility/failure-clusters.json`
+- `output/parser-compatibility/protocol-build-summary.json`
+- `output/parser-compatibility/structural-pass-feasibility.json`
+- `output/parser-compatibility/parser-compatibility-gate.json`
+- `docs/PARSER_FAILURE_CATALOG.md`
+- `reports/parser-compatibility-matrix.md`
 
 ## Current Objective
 
@@ -76,6 +76,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Match 91119257 E088 source-row mapping gate is `e088_mapping_resolved_with_source_correction`: E088 remains Teleporter-confirmed and maps to a corrected `24:50-24:55` video window as an overlay, while the original CSV row remains unmodified and preserved as historical evidence. E088 duplicates E085's `23:50-23:55` timestamp exactly but has a distinct enemy underground Teleporter label and appears after E087 in source order; the `1437.5s` frame belongs to both E085 and E088's original duplicated-window provenance, so it is assigned to E085 for canonical E088 mapping. No video-demo alignment was performed.
 - Match 91119257 entity 5594 parser recovery gate is `entity_5594_root_cause_confirmed`: the first isolated 5594 failure is a packet entity UPDATE that references missing entity index 5594 before any observed create in the parser registry. A new opt-in parser recovery path can skip only the invalid missing-entity UPDATE payload when `serializedEntities` provides its bit length, recording the unresolved reference without fabricating entity properties. However, parser continuation is still blocked immediately afterward by `Baseline not found [ 709 ]`, so complete match telemetry is not approved. Blocked task 045 tracks the baseline/protocol continuation investigation.
 - Match 91119257 baseline 709 parser continuation gate is `baseline_709_protocol_support_blocked`: baseline 709 is referenced by a CREATE after the entity-5594 recovery, but no instancebaseline create/update for key 709 is observed before use. The narrow skip of the baseline-dependent CREATE records one unresolved baseline reference without fabricating state, but it does not produce safe continuation: the same packet boundary remains at tick 3807 / 118s and then reaches `Class not found [ 891 ]`. Complete match telemetry, video-demo alignment, annotation-to-entity matching, and side/lane alias propagation remain blocked until this parser/protocol support issue is resolved.
+- Parser compatibility matrix gate is `parser_compatibility_matrix_ready_with_insufficient_diversity`: local `.dem` discovery found partida_001 through partida_006, with partida_005 explicitly excluded as replay 005/final holdout. Replays 001-004 completed under both default parser and existing diagnostic recovery modes. Replay 006 alone failed at the 3807/3808 tick boundary: default mode fails with missing entity 5594, while diagnostic recovery exposes class 891 after the known baseline 709 blocker. This supports a replay-specific failure pattern in the available corpus, but direct build/protocol metadata remains unavailable, so build-specific behavior cannot be ruled out. No class-891-specific recovery is authorized. A blocked structural-pass task exists for metadata/envelope-only parser assessment without entity materialization.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -86,4 +87,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set, a visibility audit, a dense v2 manual-review package, structured human visual-review responses for the 24 minimized cases, an E088 corrected-window overlay, and confirmed parser blockers for entity 5594 and baseline 709. Lightweight game-clock OCR is not reliable enough for temporal anchors, so use the manually transcribed clock rows instead. Side/lane aliases are human-supported for this visual packet only and must not automatically replace neutral IDs elsewhere. Video-demo alignment and complete 91119257 demo telemetry remain blocked by unresolved parser/protocol support at the 3807/3808 tick boundary, and no semantic gameplay conclusions are authorized.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set, a visibility audit, a dense v2 manual-review package, structured human visual-review responses for the 24 minimized cases, an E088 corrected-window overlay, and confirmed parser blockers for entity 5594, baseline 709, and class 891 at the same replay-006 parser boundary. Lightweight game-clock OCR is not reliable enough for temporal anchors, so use the manually transcribed clock rows instead. Side/lane aliases are human-supported for this visual packet only and must not automatically replace neutral IDs elsewhere. Video-demo alignment and complete 91119257 demo telemetry remain blocked by unresolved parser/protocol support at the 3807/3808 tick boundary. The next parser work should be structural metadata/envelope assessment, not another symptom-specific skip.

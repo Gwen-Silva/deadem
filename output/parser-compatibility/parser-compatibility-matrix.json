@@ -1,0 +1,1073 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T04:09:06.027Z",
+  "deterministicRerun": {
+    "replayId": "replay_001",
+    "localPath": "samples/partida_001.dem",
+    "passed": true,
+    "fieldsCompared": [
+      "completed",
+      "firstErrorCategory",
+      "firstErrorTick",
+      "finalParsedTick",
+      "telemetryRows",
+      "packetsProcessed"
+    ],
+    "mismatches": [],
+    "baseline": {
+      "completed": true,
+      "firstErrorCategory": "none",
+      "firstErrorTick": null,
+      "finalParsedTick": 191431,
+      "telemetryRows": 71760,
+      "packetsProcessed": 191480
+    },
+    "rerun": {
+      "completed": true,
+      "firstErrorCategory": "none",
+      "firstErrorTick": null,
+      "finalParsedTick": 191431,
+      "telemetryRows": 71760,
+      "packetsProcessed": 191480
+    }
+  },
+  "rows": [
+    {
+      "replayId": "replay_001",
+      "localPath": "samples/partida_001.dem",
+      "role": "development",
+      "fileSizeBytes": 675628880,
+      "durationSeconds": 5982,
+      "metadata": {
+        "demoProtocol": null,
+        "networkProtocol": null,
+        "gameBuild": null,
+        "mapName": null,
+        "matchId": null,
+        "lastTick": 191431,
+        "durationSeconds": 5982,
+        "classCount": 825,
+        "entityCount": 0,
+        "stringTableCount": null,
+        "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+      },
+      "modes": {
+        "default_parser": {
+          "modeName": "default_parser",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": false,
+            "allowMissingClassBaseline": false,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 191431
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 191431,
+          "finalParsedGameTimeSeconds": 5982,
+          "lastTick": 191431,
+          "durationSeconds": 5982,
+          "percentParsed": 100,
+          "packetsProcessed": 191480,
+          "messagePacketsProcessed": 4152408,
+          "entityPacketsProcessed": 191463,
+          "telemetryRows": 71760,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 191431,
+            "durationSeconds": 5982,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 191,
+            "classes": 825,
+            "entities": 2805,
+            "serializers": 870
+          }
+        },
+        "diagnostic_recovery": {
+          "modeName": "diagnostic_recovery",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": true,
+            "allowMissingClassBaseline": true,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 191431
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 191431,
+          "finalParsedGameTimeSeconds": 5982,
+          "lastTick": 191431,
+          "durationSeconds": 5982,
+          "percentParsed": 100,
+          "packetsProcessed": 191480,
+          "messagePacketsProcessed": 4152408,
+          "entityPacketsProcessed": 191463,
+          "telemetryRows": 71760,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 191431,
+            "durationSeconds": 5982,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 191,
+            "classes": 825,
+            "entities": 2805,
+            "serializers": 870
+          }
+        },
+        "metadata_only": {
+          "modeName": "metadata_only",
+          "replayId": "replay_001",
+          "implemented": false,
+          "status": "not_available_without_entity_materialization",
+          "reason": "Current Player/DemoStream analyzer paths feed message packets into handlers that materialize entity, class, baseline, and string-table state. No existing public structural pass exposes only headers, tick envelopes, message type IDs, payload sizes, offsets, and malformed-boundary metadata.",
+          "minimalBoundaryRequired": "A stream-level packet/envelope scanner before DemoMessageHandler.handleSvcPacketEntities, with bounded message metadata and no Demo entity registry mutation.",
+          "followUpTask": "047-implement-structural-replay-stream-pass-without-entity-materialization"
+        }
+      }
+    },
+    {
+      "replayId": "replay_002",
+      "localPath": "samples/partida_002.dem",
+      "role": "generalization_or_diagnostic",
+      "fileSizeBytes": 396772195,
+      "durationSeconds": 3669,
+      "metadata": {
+        "demoProtocol": null,
+        "networkProtocol": null,
+        "gameBuild": null,
+        "mapName": null,
+        "matchId": null,
+        "lastTick": 117423,
+        "durationSeconds": 3669,
+        "classCount": 825,
+        "entityCount": 0,
+        "stringTableCount": null,
+        "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+      },
+      "modes": {
+        "default_parser": {
+          "modeName": "default_parser",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": false,
+            "allowMissingClassBaseline": false,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 117423
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 117423,
+          "finalParsedGameTimeSeconds": 3669,
+          "lastTick": 117423,
+          "durationSeconds": 3669,
+          "percentParsed": 100,
+          "packetsProcessed": 117459,
+          "messagePacketsProcessed": 2422602,
+          "entityPacketsProcessed": 117442,
+          "telemetryRows": 44028,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 117423,
+            "durationSeconds": 3669,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 179,
+            "classes": 825,
+            "entities": 2656,
+            "serializers": 870
+          }
+        },
+        "diagnostic_recovery": {
+          "modeName": "diagnostic_recovery",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": true,
+            "allowMissingClassBaseline": true,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 117423
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 117423,
+          "finalParsedGameTimeSeconds": 3669,
+          "lastTick": 117423,
+          "durationSeconds": 3669,
+          "percentParsed": 100,
+          "packetsProcessed": 117459,
+          "messagePacketsProcessed": 2422602,
+          "entityPacketsProcessed": 117442,
+          "telemetryRows": 44028,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 117423,
+            "durationSeconds": 3669,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 179,
+            "classes": 825,
+            "entities": 2656,
+            "serializers": 870
+          }
+        },
+        "metadata_only": {
+          "modeName": "metadata_only",
+          "replayId": "replay_002",
+          "implemented": false,
+          "status": "not_available_without_entity_materialization",
+          "reason": "Current Player/DemoStream analyzer paths feed message packets into handlers that materialize entity, class, baseline, and string-table state. No existing public structural pass exposes only headers, tick envelopes, message type IDs, payload sizes, offsets, and malformed-boundary metadata.",
+          "minimalBoundaryRequired": "A stream-level packet/envelope scanner before DemoMessageHandler.handleSvcPacketEntities, with bounded message metadata and no Demo entity registry mutation.",
+          "followUpTask": "047-implement-structural-replay-stream-pass-without-entity-materialization"
+        }
+      }
+    },
+    {
+      "replayId": "replay_003",
+      "localPath": "samples/partida_003.dem",
+      "role": "generalization_or_diagnostic",
+      "fileSizeBytes": 501017569,
+      "durationSeconds": 4559,
+      "metadata": {
+        "demoProtocol": null,
+        "networkProtocol": null,
+        "gameBuild": null,
+        "mapName": null,
+        "matchId": null,
+        "lastTick": 145912,
+        "durationSeconds": 4559,
+        "classCount": 825,
+        "entityCount": 0,
+        "stringTableCount": null,
+        "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+      },
+      "modes": {
+        "default_parser": {
+          "modeName": "default_parser",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": false,
+            "allowMissingClassBaseline": false,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 145912
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 145912,
+          "finalParsedGameTimeSeconds": 4559,
+          "lastTick": 145912,
+          "durationSeconds": 4559,
+          "percentParsed": 100,
+          "packetsProcessed": 145953,
+          "messagePacketsProcessed": 3130096,
+          "entityPacketsProcessed": 145936,
+          "telemetryRows": 54684,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 145912,
+            "durationSeconds": 4559,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 181,
+            "classes": 825,
+            "entities": 2687,
+            "serializers": 870
+          }
+        },
+        "diagnostic_recovery": {
+          "modeName": "diagnostic_recovery",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": true,
+            "allowMissingClassBaseline": true,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 145912
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 145912,
+          "finalParsedGameTimeSeconds": 4559,
+          "lastTick": 145912,
+          "durationSeconds": 4559,
+          "percentParsed": 100,
+          "packetsProcessed": 145953,
+          "messagePacketsProcessed": 3130096,
+          "entityPacketsProcessed": 145936,
+          "telemetryRows": 54684,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 145912,
+            "durationSeconds": 4559,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 181,
+            "classes": 825,
+            "entities": 2687,
+            "serializers": 870
+          }
+        },
+        "metadata_only": {
+          "modeName": "metadata_only",
+          "replayId": "replay_003",
+          "implemented": false,
+          "status": "not_available_without_entity_materialization",
+          "reason": "Current Player/DemoStream analyzer paths feed message packets into handlers that materialize entity, class, baseline, and string-table state. No existing public structural pass exposes only headers, tick envelopes, message type IDs, payload sizes, offsets, and malformed-boundary metadata.",
+          "minimalBoundaryRequired": "A stream-level packet/envelope scanner before DemoMessageHandler.handleSvcPacketEntities, with bounded message metadata and no Demo entity registry mutation.",
+          "followUpTask": "047-implement-structural-replay-stream-pass-without-entity-materialization"
+        }
+      }
+    },
+    {
+      "replayId": "replay_004",
+      "localPath": "samples/partida_004.dem",
+      "role": "generalization_or_diagnostic",
+      "fileSizeBytes": 456466546,
+      "durationSeconds": 4024,
+      "metadata": {
+        "demoProtocol": null,
+        "networkProtocol": null,
+        "gameBuild": null,
+        "mapName": null,
+        "matchId": null,
+        "lastTick": 128775,
+        "durationSeconds": 4024,
+        "classCount": 825,
+        "entityCount": 0,
+        "stringTableCount": null,
+        "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+      },
+      "modes": {
+        "default_parser": {
+          "modeName": "default_parser",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": false,
+            "allowMissingClassBaseline": false,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 128775
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 128775,
+          "finalParsedGameTimeSeconds": 4024,
+          "lastTick": 128775,
+          "durationSeconds": 4024,
+          "percentParsed": 100,
+          "packetsProcessed": 128812,
+          "messagePacketsProcessed": 2961797,
+          "entityPacketsProcessed": 128795,
+          "telemetryRows": 48288,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 128775,
+            "durationSeconds": 4024,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 189,
+            "classes": 825,
+            "entities": 2677,
+            "serializers": 870
+          }
+        },
+        "diagnostic_recovery": {
+          "modeName": "diagnostic_recovery",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": true,
+            "allowMissingClassBaseline": true,
+            "addedRecoveryBehavior": false
+          },
+          "completed": true,
+          "firstError": {
+            "category": "none",
+            "rawError": null,
+            "tick": null,
+            "gameTimeSeconds": null,
+            "finalParsedTick": 128775
+          },
+          "firstErrorCategory": "none",
+          "firstErrorTick": null,
+          "firstErrorGameTimeSeconds": null,
+          "finalParsedTick": 128775,
+          "finalParsedGameTimeSeconds": 4024,
+          "lastTick": 128775,
+          "durationSeconds": 4024,
+          "percentParsed": 100,
+          "packetsProcessed": 128812,
+          "messagePacketsProcessed": 2961797,
+          "entityPacketsProcessed": 128795,
+          "telemetryRows": 48288,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": true,
+          "identitiesRemainStable": true,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 128775,
+            "durationSeconds": 4024,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 189,
+            "classes": 825,
+            "entities": 2677,
+            "serializers": 870
+          }
+        },
+        "metadata_only": {
+          "modeName": "metadata_only",
+          "replayId": "replay_004",
+          "implemented": false,
+          "status": "not_available_without_entity_materialization",
+          "reason": "Current Player/DemoStream analyzer paths feed message packets into handlers that materialize entity, class, baseline, and string-table state. No existing public structural pass exposes only headers, tick envelopes, message type IDs, payload sizes, offsets, and malformed-boundary metadata.",
+          "minimalBoundaryRequired": "A stream-level packet/envelope scanner before DemoMessageHandler.handleSvcPacketEntities, with bounded message metadata and no Demo entity registry mutation.",
+          "followUpTask": "047-implement-structural-replay-stream-pass-without-entity-materialization"
+        }
+      }
+    },
+    {
+      "replayId": "replay_006",
+      "localPath": "samples/partida_006.dem",
+      "role": "match_91119257_user_override",
+      "fileSizeBytes": 175729130,
+      "durationSeconds": 1862,
+      "metadata": {
+        "demoProtocol": null,
+        "networkProtocol": null,
+        "gameBuild": null,
+        "mapName": null,
+        "matchId": null,
+        "lastTick": 59600,
+        "durationSeconds": 1862,
+        "classCount": 825,
+        "entityCount": 0,
+        "stringTableCount": null,
+        "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+      },
+      "modes": {
+        "default_parser": {
+          "modeName": "default_parser",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": false,
+            "allowMissingClassBaseline": false,
+            "addedRecoveryBehavior": false
+          },
+          "completed": false,
+          "firstError": {
+            "category": "entity_not_found",
+            "rawError": "Unable to find an entity with index [ 5594 ]",
+            "tick": 3808,
+            "gameTimeSeconds": 119,
+            "exceptionType": "Error",
+            "stack": [
+              "Error: Unable to find an entity with index [ 5594 ]",
+              "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:141:31)",
+              "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/run-parser-compatibility-matrix.js:152:32)",
+              "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+              "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+              "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+              "    at Transform._write (node:internal/streams/transform:171:8)",
+              "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+              "    at _write (node:internal/streams/writable:501:10)",
+              "    at Writable.write (node:internal/streams/writable:510:10)"
+            ]
+          },
+          "firstErrorCategory": "entity_not_found",
+          "firstErrorTick": 3808,
+          "firstErrorGameTimeSeconds": 119,
+          "finalParsedTick": 3807,
+          "finalParsedGameTimeSeconds": 118,
+          "lastTick": 59600,
+          "durationSeconds": 1862,
+          "percentParsed": 6.3876,
+          "packetsProcessed": 3824,
+          "messagePacketsProcessed": 56654,
+          "entityPacketsProcessed": 3810,
+          "telemetryRows": 118,
+          "warnings": [],
+          "warningCount": 0,
+          "missingEntityReferences": [],
+          "missingBaselineReferences": [],
+          "missingClassReferences": [],
+          "outputRemainsSynchronized": false,
+          "identitiesRemainStable": false,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 59600,
+            "durationSeconds": 1862,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 129,
+            "classes": 825,
+            "entities": 1526,
+            "serializers": 870
+          }
+        },
+        "diagnostic_recovery": {
+          "modeName": "diagnostic_recovery",
+          "parserConfiguration": {
+            "allowUnresolvedEntityReference": true,
+            "allowMissingClassBaseline": true,
+            "addedRecoveryBehavior": false
+          },
+          "completed": false,
+          "firstError": {
+            "category": "class_not_found",
+            "rawError": "Class not found [ 891 ]",
+            "tick": 3808,
+            "gameTimeSeconds": 119,
+            "exceptionType": "Error",
+            "stack": [
+              "Error: Class not found [ 891 ]",
+              "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:208:31)",
+              "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/run-parser-compatibility-matrix.js:152:32)",
+              "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+              "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+              "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+              "    at Transform._write (node:internal/streams/transform:171:8)",
+              "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+              "    at _write (node:internal/streams/writable:501:10)",
+              "    at Writable.write (node:internal/streams/writable:510:10)"
+            ]
+          },
+          "firstErrorCategory": "class_not_found",
+          "firstErrorTick": 3808,
+          "firstErrorGameTimeSeconds": 119,
+          "finalParsedTick": 3807,
+          "finalParsedGameTimeSeconds": 118,
+          "lastTick": 59600,
+          "durationSeconds": 1862,
+          "percentParsed": 6.3876,
+          "packetsProcessed": 3824,
+          "messagePacketsProcessed": 56654,
+          "entityPacketsProcessed": 3810,
+          "telemetryRows": 118,
+          "warnings": [
+            {
+              "type": "missing_entity_reference",
+              "id": 5594,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 5605,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 5606,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 5610,
+              "tick": 3808
+            },
+            {
+              "type": "missing_baseline_reference",
+              "id": 709,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 5866,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 5868,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 6659,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 6755,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 6764,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 6778,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 6921,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 7041,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 2688809664,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 2688809665,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 2703428447,
+              "tick": 3808
+            },
+            {
+              "type": "missing_entity_reference",
+              "id": 3713652679,
+              "tick": 3808
+            }
+          ],
+          "warningCount": 17,
+          "missingEntityReferences": [
+            {
+              "operation": "UPDATE",
+              "entityIndex": 5594,
+              "loop": 29,
+              "payloadBits": 141,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 5605,
+              "loop": 30,
+              "payloadBits": 141,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 5606,
+              "loop": 31,
+              "payloadBits": 22,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 5610,
+              "loop": 32,
+              "payloadBits": 165,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "LEAVE",
+              "entityIndex": 5866,
+              "loop": 34,
+              "payloadBits": 0,
+              "registryStateBefore": "missing",
+              "recoveryAction": "ignored_missing_entity_state_transition",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "LEAVE",
+              "entityIndex": 5868,
+              "loop": 35,
+              "payloadBits": 0,
+              "registryStateBefore": "missing",
+              "recoveryAction": "ignored_missing_entity_state_transition",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "DELETE",
+              "entityIndex": 6659,
+              "loop": 36,
+              "payloadBits": 0,
+              "registryStateBefore": "missing",
+              "recoveryAction": "ignored_missing_entity_state_transition",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "LEAVE",
+              "entityIndex": 6755,
+              "loop": 37,
+              "payloadBits": 0,
+              "registryStateBefore": "missing",
+              "recoveryAction": "ignored_missing_entity_state_transition",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 6764,
+              "loop": 38,
+              "payloadBits": 133,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 6778,
+              "loop": 39,
+              "payloadBits": 117,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 6921,
+              "loop": 40,
+              "payloadBits": 133,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 7041,
+              "loop": 41,
+              "payloadBits": 126,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "DELETE",
+              "entityIndex": 2688809664,
+              "loop": 42,
+              "payloadBits": 0,
+              "registryStateBefore": "missing",
+              "recoveryAction": "ignored_missing_entity_state_transition",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 2688809665,
+              "loop": 43,
+              "payloadBits": 141,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 2703428447,
+              "loop": 44,
+              "payloadBits": 141,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            },
+            {
+              "operation": "UPDATE",
+              "entityIndex": 3713652679,
+              "loop": 45,
+              "payloadBits": 295,
+              "registryStateBefore": "missing",
+              "recoveryAction": "skipped_invalid_update_payload",
+              "recoverable": true,
+              "reason": null,
+              "registryStateAfter": "unchanged_missing_entity",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            }
+          ],
+          "missingBaselineReferences": [
+            {
+              "operation": "CREATE",
+              "entityIndex": 5863,
+              "entitySerial": 3267,
+              "classId": 709,
+              "className": "CModelPointEntity",
+              "loop": 33,
+              "payloadBits": 142,
+              "baselineStateBefore": "missing",
+              "recoveryAction": "skipped_create_payload_missing_baseline",
+              "recoverable": true,
+              "reason": null,
+              "baselineStateAfter": "unchanged_missing_baseline",
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            }
+          ],
+          "missingClassReferences": [
+            {
+              "classId": 891,
+              "tick": 3808,
+              "gameTimeSeconds": 119
+            }
+          ],
+          "outputRemainsSynchronized": false,
+          "identitiesRemainStable": false,
+          "metadata": {
+            "demoProtocol": null,
+            "networkProtocol": null,
+            "gameBuild": null,
+            "mapName": null,
+            "matchId": null,
+            "lastTick": 59600,
+            "durationSeconds": 1862,
+            "classCount": 825,
+            "entityCount": 0,
+            "stringTableCount": null,
+            "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+          },
+          "stats": {
+            "classBaselines": 129,
+            "classes": 825,
+            "entities": 1526,
+            "serializers": 870
+          }
+        },
+        "metadata_only": {
+          "modeName": "metadata_only",
+          "replayId": "replay_006",
+          "implemented": false,
+          "status": "not_available_without_entity_materialization",
+          "reason": "Current Player/DemoStream analyzer paths feed message packets into handlers that materialize entity, class, baseline, and string-table state. No existing public structural pass exposes only headers, tick envelopes, message type IDs, payload sizes, offsets, and malformed-boundary metadata.",
+          "minimalBoundaryRequired": "A stream-level packet/envelope scanner before DemoMessageHandler.handleSvcPacketEntities, with bounded message metadata and no Demo entity registry mutation.",
+          "followUpTask": "047-implement-structural-replay-stream-pass-without-entity-materialization"
+        }
+      }
+    }
+  ]
+}

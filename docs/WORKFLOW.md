@@ -89,6 +89,20 @@ Codex must distinguish internal consistency, independent supporting evidence, in
 
 Codex must not request human approval merely because a task was originally designed with a human gate.
 
+## Parser Investigation Policy
+
+After two sequential parser blockers at the same boundary, stop serial symptom repair and run an assessment experiment.
+
+Parser investigations must not:
+
+- fabricate entities
+- create empty fabricated baselines
+- substitute neighboring classes
+- silently suppress warnings
+- derive downstream semantic analysis from unstable continuation
+
+Sequentially exposed parser errors at one boundary must be cataloged as related blockers until an assessment experiment distinguishes replay-specific data, build/protocol compatibility, parser state reconstruction, and packet-framing behavior. Do not add another local skip merely because a previous skip exposed the next symptom.
+
 ## Successful Stop Conditions
 
 - no pending task

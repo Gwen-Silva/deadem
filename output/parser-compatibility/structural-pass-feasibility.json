@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T04:09:06.025Z",
+  "currentModeCAvailable": false,
+  "assessment": "blocked_follow_up_required",
+  "eligibleReplayCount": 5,
+  "replay005Excluded": true,
+  "minimalCodeBoundary": {
+    "allowed": [
+      "replay headers",
+      "command and tick envelopes",
+      "packet boundaries",
+      "message type IDs",
+      "payload sizes",
+      "source offsets",
+      "monotonicity",
+      "malformed boundaries"
+    ],
+    "prohibited": [
+      "entities",
+      "baselines",
+      "class state",
+      "positions",
+      "gameplay events"
+    ]
+  },
+  "blockedTask": "047-implement-structural-replay-stream-pass-without-entity-materialization"
+}

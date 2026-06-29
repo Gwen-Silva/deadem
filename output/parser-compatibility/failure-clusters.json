@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T04:09:06.024Z",
+  "categories": {
+    "none": [
+      {
+        "replayId": "replay_001",
+        "modeName": "default_parser",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_001",
+        "modeName": "diagnostic_recovery",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_002",
+        "modeName": "default_parser",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_002",
+        "modeName": "diagnostic_recovery",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_003",
+        "modeName": "default_parser",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_003",
+        "modeName": "diagnostic_recovery",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_004",
+        "modeName": "default_parser",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      },
+      {
+        "replayId": "replay_004",
+        "modeName": "diagnostic_recovery",
+        "tick": null,
+        "gameTimeSeconds": null,
+        "rawError": null
+      }
+    ],
+    "entity_not_found": [
+      {
+        "replayId": "replay_006",
+        "modeName": "default_parser",
+        "tick": 3808,
+        "gameTimeSeconds": 119,
+        "rawError": "Unable to find an entity with index [ 5594 ]"
+      }
+    ],
+    "class_not_found": [
+      {
+        "replayId": "replay_006",
+        "modeName": "diagnostic_recovery",
+        "tick": 3808,
+        "gameTimeSeconds": 119,
+        "rawError": "Class not found [ 891 ]"
+      }
+    ]
+  },
+  "missingEntityIds": {
+    "5594": 1,
+    "5605": 1,
+    "5606": 1,
+    "5610": 1,
+    "5866": 1,
+    "5868": 1,
+    "6659": 1,
+    "6755": 1,
+    "6764": 1,
+    "6778": 1,
+    "6921": 1,
+    "7041": 1,
+    "2688809664": 1,
+    "2688809665": 1,
+    "2703428447": 1,
+    "3713652679": 1
+  },
+  "missingBaselineIds": {
+    "709": 1
+  },
+  "missingClassIds": {
+    "891": 1
+  },
+  "defaultCompletionCount": 4,
+  "diagnosticCompletionCount": 4,
+  "failingReplayCount": 1,
+  "replay006Comparison": {
+    "replayId": "replay_006",
+    "defaultCategory": "entity_not_found",
+    "diagnosticCategory": "class_not_found",
+    "defaultFinalTick": 3807,
+    "diagnosticFinalTick": 3807,
+    "sequentialFailures": [
+      "entity_not_found: 5594 missing UPDATE",
+      "baseline_not_found: 709 missing before CREATE",
+      "class_not_found: 891 after limited recovery"
+    ],
+    "interpretation": "sequentially_exposed_blockers_at_same_parser_boundary"
+  },
+  "bestSupportedCompatibilityModel": "single_replay_corruption",
+  "corpusDiversity": {
+    "eligibleReplayCount": 5,
+    "directBuildValuesFound": [],
+    "directDemoProtocolValuesFound": [],
+    "sufficientToDistinguishReplaySpecific": true,
+    "sufficientToDistinguishBuildSpecific": false,
+    "result": "insufficient_direct_build_protocol_diversity"
+  }
+}
