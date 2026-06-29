@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_baseline_709_validation",
+  "createdAt": "2026-06-29T03:46:23.602Z",
+  "checks": {
+    "packetBoundariesRemainSynchronized": false,
+    "laterUnrelatedMessagesDecode": false,
+    "timeRemainsMonotonic": true,
+    "existingPlayerIdentitiesRemainStable": false,
+    "noImpossibleEntityCountExplosion": true,
+    "unresolvedBaselineDependentEntitiesFlagged": true,
+    "deterministicOutput": true,
+    "noSemanticPropertiesInvented": true,
+    "replay005Protection": {
+      "processed": false,
+      "status": "preserved"
+    }
+  },
+  "limitations": [
+    "Skipped baseline-dependent entities are unresolved and must not be used for downstream conclusions.",
+    "The tested baseline-dependent CREATE skip does not validate parser continuation because the same packet sequence next reaches Class not found [ 891 ].",
+    "This task validates the baseline-709 blocker diagnosis only, not semantic replay correctness."
+  ]
+}

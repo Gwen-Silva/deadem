@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_baseline_709_gate",
+  "createdAt": "2026-06-29T03:46:23.602Z",
+  "gate": "baseline_709_protocol_support_blocked",
+  "rootCause": "baseline_709_referenced_by_create_but_not_registered_in_instancebaseline_store_before_use",
+  "baseline709EverRegistered": false,
+  "firstBaselineFailureTick": 3808,
+  "firstBaselineFailureGameTimeSeconds": 119,
+  "recoveryStrategy": "record unresolved baseline dependency and skip only dependent CREATE payload",
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "nextBlockedTask": null
+}

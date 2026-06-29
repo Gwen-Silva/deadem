@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_baseline_709_hypothesis_evaluation",
+  "createdAt": "2026-06-29T03:46:23.601Z",
+  "rootCause": "baseline_709_is_referenced_by_entity_create_but_never_registered_in_instancebaseline_store_before_use",
+  "hypotheses": [
+    {
+      "id": 1,
+      "hypothesis": "baseline 709 was never registered",
+      "result": "supported",
+      "evidence": [
+        {
+          "tick": 3808,
+          "gameTimeSeconds": 119,
+          "packetType": "DEM_PACKET",
+          "messageType": "string_table_removed",
+          "operation": "clear",
+          "baselineId": 709,
+          "classId": 709,
+          "serializerName": null,
+          "entityIndex": null,
+          "sourceOffset": null,
+          "bitOffset": null,
+          "storeKeysBefore": [],
+          "storeKeysAfter": [],
+          "storeSizeBefore": 0,
+          "storeSizeAfter": 0,
+          "result": "instancebaseline_table_removed",
+          "warnings": []
+        },
+        {
+          "tick": 3808,
+          "gameTimeSeconds": 119,
+          "packetType": "DEM_PACKET",
+          "messageType": "string_table_removed",
+          "operation": "clear",
+          "baselineId": 709,
+          "classId": 709,
+          "serializerName": null,
+          "entityIndex": null,
+          "sourceOffset": null,
+          "bitOffset": null,
+          "storeKeysBefore": [],
+          "storeKeysAfter": [],
+          "storeSizeBefore": 0,
+          "storeSizeAfter": 0,
+          "result": "instancebaseline_table_removed",
+          "warnings": []
+        },
+        {
+          "tick": 3808,
+          "gameTimeSeconds": 119,
+          "packetType": "DEM_PACKET",
+          "messageType": "svc_PacketEntities",
+          "operation": "reference",
+          "baselineId": 709,
+          "classId": 709,
+          "serializerName": "CModelPointEntity",
+          "entityIndex": 5863,
+          "sourceOffset": null,
+          "bitOffset": 33,
+          "storeKeysBefore": [
+            704,
+            708,
+            711,
+            712,
+            713,
+            714
+          ],
+          "storeKeysAfter": [
+            704,
+            708,
+            711,
+            712,
+            713,
+            714
+          ],
+          "storeSizeBefore": 129,
+          "storeSizeAfter": 129,
+          "result": "skipped_create_payload_missing_baseline",
+          "warnings": []
+        },
+        {
+          "tick": 3808,
+          "gameTimeSeconds": 119,
+          "packetType": "DEM_PACKET",
+          "messageType": "string_table_removed",
+          "operation": "clear",
+          "baselineId": 709,
+          "classId": 709,
+          "serializerName": null,
+          "entityIndex": null,
+          "sourceOffset": null,
+          "bitOffset": null,
+          "storeKeysBefore": [],
+          "storeKeysAfter": [],
+          "storeSizeBefore": 0,
+          "storeSizeAfter": 0,
+          "result": "instancebaseline_table_removed",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "hypothesis": "baseline 709 was registered and later removed",
+      "result": "not_supported",
+      "evidence": "No create/update or clear row for 709 was observed before reference."
+    },
+    {
+      "id": 3,
+      "hypothesis": "parser uses class ID where baseline ID is expected",
+      "result": "not_supported",
+      "evidence": "Existing parser design stores instancebaseline entries by class ID and looks them up by class ID."
+    },
+    {
+      "id": 4,
+      "hypothesis": "parser uses baseline ID where class ID is expected",
+      "result": "not_supported",
+      "evidence": "The CREATE packet decoded classId 709 and the corresponding class metadata exists."
+    },
+    {
+      "id": 5,
+      "hypothesis": "signed/unsigned or varint decoding changes the key",
+      "result": "not_testable",
+      "evidence": "No alternative raw baseline carrier for 709 was observed; classId 709 is reproducible in packet scan."
+    },
+    {
+      "id": 6,
+      "hypothesis": "baseline table is reset at an incorrect lifecycle boundary",
+      "result": "not_supported",
+      "evidence": "No instancebaseline clear was observed before the reference in traced lifecycle rows."
+    },
+    {
+      "id": 7,
+      "hypothesis": "a packet carrying baseline 709 was skipped earlier",
+      "result": "not_supported",
+      "evidence": "Entity-local 5594 recovery occurs in the same packet immediately before baseline 709 reference; no prior whole-packet skip is used in this mode."
+    },
+    {
+      "id": 8,
+      "hypothesis": "baseline payload uses unsupported serializer metadata",
+      "result": "not_supported",
+      "evidence": "No baseline payload for 709 was found to decode; the failure is absence from store."
+    },
+    {
+      "id": 9,
+      "hypothesis": "baseline 709 is referenced before definition",
+      "result": "supported",
+      "evidence": {
+        "tick": 3808,
+        "gameTimeSeconds": 119,
+        "packetType": "DEM_PACKET",
+        "messageType": "svc_PacketEntities",
+        "operation": "reference",
+        "baselineId": 709,
+        "classId": 709,
+        "serializerName": "CModelPointEntity",
+        "entityIndex": 5863,
+        "sourceOffset": null,
+        "bitOffset": 33,
+        "storeKeysBefore": [
+          704,
+          708,
+          711,
+          712,
+          713,
+          714
+        ],
+        "storeKeysAfter": [
+          704,
+          708,
+          711,
+          712,
+          713,
+          714
+        ],
+        "storeSizeBefore": 129,
+        "storeSizeAfter": 129,
+        "result": "skipped_create_payload_missing_baseline",
+        "warnings": []
+      }
+    },
+    {
+      "id": 10,
+      "hypothesis": "malformed or corrupt replay data",
+      "result": "partially_supported",
+      "evidence": "The replay references missing baseline 709 under current protocol support, but no byte-level corruption proof was established."
+    }
+  ],
+  "relationshipToEntity5594Recovery": {
+    "baseline709PresentBefore5594Packet": false,
+    "lostBecauseOfEntityLocalSkip": false,
+    "lostBecauseOfPreviousWholePacketSkips": false,
+    "independentlyAbsent": true,
+    "evidence": "The entity-local skip records missing entities in the same packet; the subsequent CREATE requests class baseline 709, which is absent from the store and was not observed in baseline table traces."
+  },
+  "fullRecoveryModeFinalError": {
+    "message": "Class not found [ 891 ]",
+    "stack": [
+      "Error: Class not found [ 891 ]",
+      "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:208:31)",
+      "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/investigate-match-91119257-baseline-709-continuation.js:185:32)",
+      "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+      "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+      "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+      "    at Transform._write (node:internal/streams/transform:171:8)",
+      "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+      "    at _write (node:internal/streams/writable:501:10)",
+      "    at Writable.write (node:internal/streams/writable:510:10)",
+      "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)"
+    ]
+  }
+}

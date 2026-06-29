@@ -218,6 +218,18 @@ class DemoMessageHandler {
                         const baseline = this._demo.getClassBaselineById(classId);
 
                         if (baseline === null) {
+                            if (recoverMissingClassBaseline(recovery, {
+                                index,
+                                serial,
+                                classId,
+                                className: clazz.name,
+                                bitBuffer,
+                                payloadBits,
+                                loop: i
+                            })) {
+                                break;
+                            }
+
                             throw new Error(`Baseline not found [ ${classId} ]`);
                         }
 
@@ -430,5 +442,60 @@ function recoverMissingEntityReference(recovery, context) {
     return false;
 }
 
+/**
+ * Experimental opt-in recovery for a CREATE operation whose class baseline is
+ * absent. It does not register the entity, apply defaults, or invent state; it
+ * only skips the packet payload when the entry is bounded.
+ *
+ * @param {object|null} recovery
+ * @param {object} context
+ * @returns {boolean}
+ */
+function recoverMissingClassBaseline(recovery, context) {
+    if (recovery === null || recovery.allowMissingClassBaseline !== true) {
+        return false;
+    }
+
+    const {
+        index,
+        serial,
+        classId,
+        className,
+        bitBuffer,
+        payloadBits,
+        loop
+    } = context;
+
+    const warning = {
+        operation: EntityOperation.CREATE.code,
+        entityIndex: index,
+        entitySerial: serial,
+        classId,
+        className,
+        loop,
+        payloadBits: payloadBits ?? null,
+        baselineStateBefore: 'missing',
+        recoveryAction: null,
+        recoverable: false,
+        reason: null
+    };
+
+    if (!Number.isInteger(payloadBits)) {
+        warning.recoveryAction = 'none';
+        warning.reason = 'missing_payload_size';
+        recovery.recordMissingClassBaseline?.(warning);
+
+        return false;
+    }
+
+    bitBuffer.move(payloadBits);
+    warning.recoveryAction = 'skipped_create_payload_missing_baseline';
+    warning.recoverable = true;
+    warning.baselineStateAfter = 'unchanged_missing_baseline';
+    recovery.recordMissingClassBaseline?.(warning);
+
+    return true;
+}
+
 export default DemoMessageHandler;
-export { recoverMissingEntityReference };
+export { recoverMissingClassBaseline, recoverMissingEntityReference };

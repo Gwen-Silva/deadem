@@ -1,6 +1,6 @@
 # Task 045: Investigate Match 91119257 Baseline 709 Parser Continuation
 
-Status: blocked
+Status: completed
 Execution mode: autonomous
 Project stage: parser recovery
 Related experiment: match 91119257 visual/demo calibration
@@ -58,6 +58,10 @@ Determine why parser continuation after the entity 5594 missing-update recovery 
 - Run task queue validation.
 
 ## Gate result
+
+baseline_709_protocol_support_blocked
+
+## Previous gate result
 
 Blocked until explicitly authorized.
 

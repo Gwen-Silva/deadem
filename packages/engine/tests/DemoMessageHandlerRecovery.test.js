@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
 import EntityOperation from '#data/enums/EntityOperation.js';
-import { recoverMissingEntityReference } from '#handlers/DemoMessageHandler.js';
+import { recoverMissingClassBaseline, recoverMissingEntityReference } from '#handlers/DemoMessageHandler.js';
 
 function createRecovery(warnings) {
     return {
@@ -103,6 +103,94 @@ describe('DemoMessageHandler unresolved entity recovery', () => {
             payloadBits: 37,
             loop: 4,
             registryState: 'missing'
+        });
+
+        expect(recovered).toBe(false);
+    });
+});
+
+describe('DemoMessageHandler missing baseline recovery', () => {
+    test('It skips a baseline-dependent create only when payload size is known', () => {
+        const warnings = [];
+        const bitBuffer = {
+            moved: 0,
+            move(bits) {
+                this.moved += bits;
+            }
+        };
+
+        const recovered = recoverMissingClassBaseline({
+            allowMissingClassBaseline: true,
+            recordMissingClassBaseline: warning => warnings.push(warning)
+        }, {
+            index: 8122,
+            serial: 3,
+            classId: 709,
+            className: 'C_BaselineOnlyEntity',
+            bitBuffer,
+            payloadBits: 44,
+            loop: 35
+        });
+
+        expect(recovered).toBe(true);
+        expect(bitBuffer.moved).toBe(44);
+        expect(warnings).toEqual([
+            {
+                operation: 'CREATE',
+                entityIndex: 8122,
+                entitySerial: 3,
+                classId: 709,
+                className: 'C_BaselineOnlyEntity',
+                loop: 35,
+                payloadBits: 44,
+                baselineStateBefore: 'missing',
+                recoveryAction: 'skipped_create_payload_missing_baseline',
+                recoverable: true,
+                reason: null,
+                baselineStateAfter: 'unchanged_missing_baseline'
+            }
+        ]);
+    });
+
+    test('It refuses missing baseline recovery without a bounded payload', () => {
+        const warnings = [];
+        const recovered = recoverMissingClassBaseline({
+            allowMissingClassBaseline: true,
+            recordMissingClassBaseline: warning => warnings.push(warning)
+        }, {
+            index: 8122,
+            serial: 3,
+            classId: 709,
+            className: 'C_BaselineOnlyEntity',
+            bitBuffer: {
+                move() {
+                    throw new Error('must not move');
+                }
+            },
+            payloadBits: null,
+            loop: 35
+        });
+
+        expect(recovered).toBe(false);
+        expect(warnings[0]).toMatchObject({
+            operation: 'CREATE',
+            entityIndex: 8122,
+            classId: 709,
+            recoveryAction: 'none',
+            recoverable: false,
+            reason: 'missing_payload_size'
+        });
+    });
+
+    test('It remains disabled unless explicitly enabled', () => {
+        const recovered = recoverMissingClassBaseline(null, {
+            index: 8122,
+            serial: 3,
+            classId: 709,
+            className: 'C_BaselineOnlyEntity',
+            bitBuffer: { move() {} },
+            payloadBits: 44,
+            loop: 35
         });
 
         expect(recovered).toBe(false);

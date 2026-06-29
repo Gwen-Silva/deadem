@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_baseline_709_recovery_experiments",
+  "createdAt": "2026-06-29T03:46:23.601Z",
+  "modes": [
+    {
+      "mode": "default_parser",
+      "label": "default parser",
+      "finalParsedTick": 3807,
+      "finalParsedGameTimeSeconds": 118,
+      "finalError": "Unable to find an entity with index [ 5594 ]",
+      "missingEntityReferences": 0,
+      "missingBaselineReferences": 0,
+      "telemetryRows": 118,
+      "accepted": false,
+      "integrity": {
+        "packetBoundariesRemainSynchronized": false,
+        "laterUnrelatedMessagesDecode": false,
+        "timeMonotonic": true,
+        "existingPlayerIdentitiesStable": false,
+        "impossibleEntityCountExplosion": false,
+        "unresolvedBaselineDependentEntitiesFlagged": false,
+        "deterministicOutput": true,
+        "semanticPropertiesInvented": false
+      }
+    },
+    {
+      "mode": "skip_entity_5594_update_only",
+      "label": "skip invalid entity-5594 update only",
+      "finalParsedTick": 3807,
+      "finalParsedGameTimeSeconds": 118,
+      "finalError": "Baseline not found [ 709 ]",
+      "missingEntityReferences": 4,
+      "missingBaselineReferences": 0,
+      "telemetryRows": 118,
+      "accepted": false,
+      "integrity": {
+        "packetBoundariesRemainSynchronized": false,
+        "laterUnrelatedMessagesDecode": false,
+        "timeMonotonic": true,
+        "existingPlayerIdentitiesStable": false,
+        "impossibleEntityCountExplosion": false,
+        "unresolvedBaselineDependentEntitiesFlagged": false,
+        "deterministicOutput": true,
+        "semanticPropertiesInvented": false
+      }
+    },
+    {
+      "mode": "skip entire packet containing 5594",
+      "source": "task_035",
+      "finalStatus": "stopped_recovery_warning_limit_or_unhandled_parser_error",
+      "warningCount": 1001,
+      "accepted": false,
+      "reason": "Whole-packet skip cascaded missing-entity warnings and lost unrelated operations."
+    },
+    {
+      "mode": "diagnostic baseline messages without materializing entities",
+      "status": "implemented_as_instancebaseline_table_trace",
+      "accepted": true,
+      "reason": "Baseline table trace is independent of materializing entity 709-dependent state."
+    },
+    {
+      "mode": "baseline tracing without applying entity state",
+      "status": "implemented_as_pre-handler_packet_scan",
+      "accepted": true,
+      "reason": "Packet scan records CREATE classId/baseline lookups before handler materialization."
+    },
+    {
+      "mode": "skip_entity_and_missing_baseline_dependent_create",
+      "label": "record unresolved baseline dependency and skip dependent create",
+      "finalParsedTick": 3807,
+      "finalParsedGameTimeSeconds": 118,
+      "finalError": "Class not found [ 891 ]",
+      "missingEntityReferences": 16,
+      "missingBaselineReferences": 1,
+      "telemetryRows": 118,
+      "accepted": false,
+      "integrity": {
+        "packetBoundariesRemainSynchronized": false,
+        "laterUnrelatedMessagesDecode": false,
+        "timeMonotonic": true,
+        "existingPlayerIdentitiesStable": false,
+        "impossibleEntityCountExplosion": false,
+        "unresolvedBaselineDependentEntitiesFlagged": true,
+        "deterministicOutput": true,
+        "semanticPropertiesInvented": false
+      }
+    }
+  ],
+  "forbiddenRecoveriesNotUsed": [
+    "empty baseline creation",
+    "neighboring baseline copy",
+    "class defaults treated as replay state",
+    "unrecorded error suppression"
+  ],
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_baseline_709_failure_reproduction",
+  "createdAt": "2026-06-29T03:46:23.601Z",
+  "reproduced": true,
+  "tick": 3808,
+  "gameTimeSeconds": 119,
+  "parserFinalParsedTickAfterException": 3807,
+  "parserFinalParsedGameTimeSecondsAfterException": 118,
+  "packetType": "DEM_PACKET",
+  "messageType": "SVC_PACKET_ENTITIES",
+  "sourceByteOffset": null,
+  "bitOffset": 33,
+  "baselineIdRequested": 709,
+  "associatedClassId": 709,
+  "serializerName": "CModelPointEntity",
+  "entityIndex": 5863,
+  "operationType": "CREATE",
+  "registryState": "baseline_missing",
+  "baselineStoreKeys": [
+    704,
+    708,
+    711,
+    712,
+    713,
+    714
+  ],
+  "baselineStoreSize": 129,
+  "previousBaselineMutation": null,
+  "exceptionOrigin": {
+    "message": "Baseline not found [ 709 ]",
+    "stack": [
+      "Error: Baseline not found [ 709 ]",
+      "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:233:35)",
+      "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/investigate-match-91119257-baseline-709-continuation.js:185:32)",
+      "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+      "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+      "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+      "    at Transform._write (node:internal/streams/transform:171:8)",
+      "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+      "    at _write (node:internal/streams/writable:501:10)",
+      "    at Writable.write (node:internal/streams/writable:510:10)",
+      "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)"
+    ]
+  },
+  "relationshipToEntity5594": {
+    "samePacketAsEntity5594": true,
+    "afterEntity5594PayloadSkip": true,
+    "byAnotherEntityInSamePacket": true,
+    "laterPacket": false
+  },
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  }
+}

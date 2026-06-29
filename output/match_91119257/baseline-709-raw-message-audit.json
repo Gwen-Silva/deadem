@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "kind": "match_91119257_baseline_709_raw_message_audit",
+  "createdAt": "2026-06-29T03:46:23.601Z",
+  "messageContainingBaseline709Exists": false,
+  "baseline709DecodedUnderCurrentParser": false,
+  "firstReference": {
+    "tick": 3808,
+    "gameTimeSeconds": 119,
+    "packetType": "DEM_PACKET",
+    "messageType": "svc_PacketEntities",
+    "operation": "reference",
+    "baselineId": 709,
+    "classId": 709,
+    "serializerName": "CModelPointEntity",
+    "entityIndex": 5863,
+    "sourceOffset": null,
+    "bitOffset": 33,
+    "storeKeysBefore": [
+      704,
+      708,
+      711,
+      712,
+      713,
+      714
+    ],
+    "storeKeysAfter": [
+      704,
+      708,
+      711,
+      712,
+      713,
+      714
+    ],
+    "storeSizeBefore": 129,
+    "storeSizeAfter": 129,
+    "result": "skipped_create_payload_missing_baseline",
+    "warnings": []
+  },
+  "possibleIdentifierConfusion": {
+    "classIdEqualsRequestedBaselineId": true,
+    "evidence": "The missing baseline is requested through getClassBaselineById(classId) during CREATE; classId is 709."
+  },
+  "compressionDeltaVarintAlignmentAssessment": "No raw baseline-709 carrier was found under current string-table decoding; bounded packet scan decodes classId 709 reproducibly from SVC_PACKET_ENTITIES.",
+  "boundedRawExcerptPolicy": "No raw packet payload excerpt committed because the bounded structural fields were sufficient and raw payload is not needed for this gate.",
+  "entityOnlyFinalError": {
+    "message": "Baseline not found [ 709 ]",
+    "stack": [
+      "Error: Baseline not found [ 709 ]",
+      "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:233:35)",
+      "    at DemoMessageHandler.patched (file:///C:/Users/gwenm/Documents/deadem/scripts/investigate-match-91119257-baseline-709-continuation.js:185:32)",
+      "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+      "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+      "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+      "    at Transform._write (node:internal/streams/transform:171:8)",
+      "    at writeOrBuffer (node:internal/streams/writable:572:12)",
+      "    at _write (node:internal/streams/writable:501:10)",
+      "    at Writable.write (node:internal/streams/writable:510:10)",
+      "    at DemoStreamPacketPrioritizer.ondata (node:internal/streams/readable:1009:22)"
+    ]
+  }
+}
