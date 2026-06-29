@@ -1,0 +1,143 @@
+{
+  "confirmedRecords": 22,
+  "conflictRecords": 1,
+  "createdAt": "2026-06-29T03:03:53.836272+00:00",
+  "e005": {
+    "annotationId": "E005",
+    "humanReviewStatus": "not_required_in_current_24_case_ingestion",
+    "reviewStatus": "not_selected_for_task038_minimized_review",
+    "sourceStatus": "exists_in_source_csv"
+  },
+  "gate": "human_visual_review_ready_with_unresolved_timing",
+  "kind": "match_91119257_human_review_final_gate",
+  "limitations": [
+    "E032 exact respawn instant remains unresolved.",
+    "E084 specific green buff effect remains unresolved.",
+    "E088 element identity is confirmed but timestamp/source-record mapping remains unresolved.",
+    "Human review does not resolve video-demo alignment or parser telemetry instability."
+  ],
+  "partiallyConfirmedRecords": 1,
+  "replay005Protection": {
+    "processed": false,
+    "status": "preserved"
+  },
+  "reviewRecordCount": 24,
+  "schemaVersion": 1,
+  "timingAnalysis": {
+    "annotationsRequiringMoreThanPlus10Seconds": [
+      "E009"
+    ],
+    "annotationsRequiringMoreThanPlus5Seconds": [
+      "E001",
+      "E002",
+      "E003",
+      "E004",
+      "E006",
+      "E009",
+      "E013",
+      "E014",
+      "E021",
+      "E028",
+      "E029",
+      "E030",
+      "E031",
+      "E032",
+      "E050",
+      "E060",
+      "E077",
+      "E081",
+      "E083",
+      "E084",
+      "E085",
+      "E086",
+      "E087",
+      "E088"
+    ],
+    "annotationsWithNegativeOffsetUsefulFrames": [
+      "E030"
+    ],
+    "offsetMaximumMs": 13500,
+    "offsetMedianMs": 7500.0,
+    "offsetP90Ms": 10000,
+    "offsetsMs": [
+      7500,
+      9000,
+      9500,
+      10000,
+      7500,
+      7500,
+      7500,
+      9000,
+      13500,
+      7500,
+      8500,
+      10000,
+      2500,
+      7500,
+      5000,
+      7500,
+      5000,
+      6500,
+      -2500,
+      -2000,
+      0,
+      7500,
+      9500,
+      10000,
+      2500,
+      7500,
+      8500,
+      10000,
+      7500,
+      7000,
+      7500,
+      9500,
+      10000,
+      7500,
+      7500,
+      7500,
+      7500,
+      7500
+    ],
+    "reviewedAnnotationCount": 24,
+    "systematicDelayAssessment": "positive offsets are common in this annotation workflow; do not generalize beyond this recording",
+    "withRepresentativeTimestampsOrIntervals": 24
+  },
+  "unresolvedSummary": [
+    {
+      "annotationId": "E032",
+      "conflicts": [],
+      "resolution": {},
+      "unresolved": [
+        "exact_respawn_frame"
+      ]
+    },
+    {
+      "annotationId": "E084",
+      "conflicts": [],
+      "resolution": {},
+      "unresolved": [
+        "specific_green_buff_effect"
+      ]
+    },
+    {
+      "annotationId": "E088",
+      "conflicts": [
+        {
+          "details": [
+            "The user identifies 1437.5s as the best E088 frame.",
+            "The same timestamp was also used for E085.",
+            "Previous task 038 evidence associated E088 with a corrected 24:50-24:55 candidate window.",
+            "Do not silently overwrite either source."
+          ],
+          "type": "timestamp_or_record_mapping_conflict"
+        }
+      ],
+      "resolution": {
+        "elementIdentity": "confirmed",
+        "sourceRecordTimestampMapping": "unresolved"
+      },
+      "unresolved": []
+    }
+  ]
+}

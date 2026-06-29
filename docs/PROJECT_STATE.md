@@ -4,21 +4,22 @@ Last updated: 2026-06-29
 
 ## Latest Work
 
-Latest completed task: `041-rebuild-match-91119257-dense-manual-review-package`
+Latest completed task: `042-ingest-match-91119257-human-visual-review`
 
-Script/package: `scripts/rebuild-match-91119257-dense-review.py`
+Script/package: `scripts/ingest-match-91119257-human-review.py`
 
 Primary outputs:
 
-- `output/match_91119257/dense-review-frame-manifest.jsonl`
-- `output/match_91119257/dense-review-annotation-summary.json`
-- `output/match_91119257/dense-review-candidate-shortlist.json`
-- `output/match_91119257/dense-review-escalations.json`
-- `output/match_91119257/provisional-human-review-observations.json`
-- `output/match_91119257/manual-review-form-v2.json`
-- `output/match_91119257/manual-review-form-v2.csv`
-- `output/match_91119257/manual-review-package-v2-manifest.json`
-- `reports/match-91119257-dense-manual-review-rebuild.md`
+- `output/match_91119257/manual-review-human-responses.json`
+- `output/match_91119257/manual-review-human-responses.csv`
+- `output/match_91119257/manual-review-form-v2-completed.json`
+- `output/match_91119257/manual-review-form-v2-completed.csv`
+- `output/match_91119257/human-validated-visual-landmarks.json`
+- `output/match_91119257/human-review-unresolved-items.json`
+- `output/match_91119257/representative-visual-intervals.json`
+- `output/match_91119257/human-review-alias-evidence.json`
+- `output/match_91119257/human-review-final-gate.json`
+- `reports/match-91119257-human-visual-review-final.md`
 
 ## Current Objective
 
@@ -72,6 +73,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Match 91119257 minimized human review package gate is `manual_visual_review_package_ready`: 24 selected visual-review cases were converted into a human-facing JSON form, CSV form with 144 targeted question rows, instructions, and a package manifest. Answers remain empty; no human responses have been ingested, no aliases were promoted, and E088 was not rewritten.
 - Match 91119257 controlled game-clock OCR gate is `game_clock_ocr_not_reliable`: PaddleOCR/PaddlePaddle were inspected but not installed because the dry-run showed an invasive dependency stack for a single fixed ROI. A lightweight OpenCV template OCR backend was tested against 30 manually transcribed clock frames and failed validation: the selected threshold profile reached only 63.16% exact and +/-1 second accuracy on the validation split, despite high apparent confidence. Full-frame OCR was therefore not applied; manual clock transcriptions remain the reliable visual timing anchors.
 - Match 91119257 dense manual-review rebuild gate is `dense_manual_review_package_ready`: the previous 24-case manual-review package is suspended as non-representative for several cases, and natural-language answers from that package are preserved only as provisional observations. The dense v2 package processed exactly 24 minimized review annotations, generated 897 decoded frame requests at 500 ms cadence, forced wider context for E009, preserved provisional notes for E001/E002/E003/E004/E005/E006/E009, and diagnosed E005 as present in the source CSV but absent from the minimized review set. Local dense frames and contact sheets remain under `output-local/` and are not tracked. Human visual review should use `manual-review-form-v2.*`.
+- Match 91119257 human visual review final gate is `human_visual_review_ready_with_unresolved_timing`: all 24 dense manual-review records were ingested as structured human responses. There are 22 confirmed records, one partially confirmed record (E032 exact respawn instant unresolved), and one timestamp-conflict record (E088 Teleporter identity confirmed, source-record timestamp mapping unresolved). E084's Green bridge buff crystal identity is confirmed but the specific green buff effect remains unresolved. E005 is preserved separately as present in the source CSV but not selected for the 24-case task 038 minimized review set. Alias evidence now human-confirms Hidden King allied base, Archmother enemy base, Yellow left-of-Hidden-King lane context, Green right-of-Hidden-King lane context, and Archmother Green/Yellow Shrine positions for this visual packet only; neutral map-side IDs in unrelated datasets must not be replaced automatically. A blocked follow-up task 043 exists only for E088 timestamp/source-record mapping.
 - `replay_005` is reserved final holdout and must not influence thresholds, rule design, geometry calibration, architecture selection, debugging based on expected outputs, or best-model selection.
 - Hero, item, lane, and event labels remain derived or partially validated unless a report marks them as confirmed.
 
@@ -82,4 +84,4 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 
 ## Likely Next Investigation
 
-Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set, a visibility audit, and a dense v2 manual-review package for the 24 minimized cases. Lightweight game-clock OCR is not reliable enough for temporal anchors, so use the manually transcribed clock rows instead. Side/lane aliases still require minimized manual review using the dense v2 package, broad OCR is not justified, video-demo alignment remains blocked by parser telemetry instability after entity 5594, and no semantic gameplay conclusions are authorized.
+Stop lane-transition and semantic occupancy-episode work. Continue only independent descriptive event layers that do not depend on occupancy semantics. Death/assist/respawn, damage/healing counters, objective lifecycle, and unified descriptive match state are available with limitations. Match 91119257 now has a complete OpenCV annotation frame set, a visibility audit, a dense v2 manual-review package, and structured human visual-review responses for the 24 minimized cases. Lightweight game-clock OCR is not reliable enough for temporal anchors, so use the manually transcribed clock rows instead. Side/lane aliases are human-supported for this visual packet only and must not automatically replace neutral IDs elsewhere. E088 timestamp/source-record mapping remains blocked for a dedicated follow-up, video-demo alignment remains blocked by parser telemetry instability after entity 5594, and no semantic gameplay conclusions are authorized.

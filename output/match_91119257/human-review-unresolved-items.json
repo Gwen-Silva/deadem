@@ -1,0 +1,48 @@
+{
+  "createdAt": "2026-06-29T03:03:53.836272+00:00",
+  "e005": {
+    "annotationId": "E005",
+    "humanReviewStatus": "not_required_in_current_24_case_ingestion",
+    "reviewStatus": "not_selected_for_task038_minimized_review",
+    "sourceStatus": "exists_in_source_csv"
+  },
+  "items": [
+    {
+      "annotationId": "E032",
+      "conflicts": [],
+      "resolution": {},
+      "unresolved": [
+        "exact_respawn_frame"
+      ]
+    },
+    {
+      "annotationId": "E084",
+      "conflicts": [],
+      "resolution": {},
+      "unresolved": [
+        "specific_green_buff_effect"
+      ]
+    },
+    {
+      "annotationId": "E088",
+      "conflicts": [
+        {
+          "details": [
+            "The user identifies 1437.5s as the best E088 frame.",
+            "The same timestamp was also used for E085.",
+            "Previous task 038 evidence associated E088 with a corrected 24:50-24:55 candidate window.",
+            "Do not silently overwrite either source."
+          ],
+          "type": "timestamp_or_record_mapping_conflict"
+        }
+      ],
+      "resolution": {
+        "elementIdentity": "confirmed",
+        "sourceRecordTimestampMapping": "unresolved"
+      },
+      "unresolved": []
+    }
+  ],
+  "kind": "match_91119257_human_review_unresolved_items",
+  "schemaVersion": 1
+}

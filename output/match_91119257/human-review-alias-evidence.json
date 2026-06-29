@@ -1,0 +1,206 @@
+{
+  "aliases": [
+    {
+      "alias": "Hidden King allied base",
+      "evidence": [
+        [
+          "Allied Hidden King base.",
+          "Three ziplines converge toward the player's position.",
+          "Hidden King is visible in the background.",
+          "A shop is behind the player.",
+          "The player is in the southern-central base region."
+        ],
+        [
+          "Speaker-like tower with health bar.",
+          "Emits circular waves.",
+          "Located on the left side of the Hidden King base.",
+          "Associated with Yellow lane.",
+          "Player position is visible on the minimap."
+        ],
+        [
+          "Same speaker-like Shrine type.",
+          "Emits circular waves.",
+          "Located on the right side of the Hidden King base.",
+          "Associated with Green lane."
+        ],
+        [
+          "Two tall structures side by side.",
+          "Viewed from behind.",
+          "Health bars visible.",
+          "Protect an entrance or exit crossed by Yellow lane."
+        ],
+        [
+          "Two tall structures side by side.",
+          "Health bars visible.",
+          "Protect an entrance or exit crossed by Green lane."
+        ],
+        [
+          "Stall-like structure.",
+          "Green arrow pointing toward it.",
+          "Sign reads Curiosity Shop.",
+          "Round yellow lamps surround the sign.",
+          "Tank or barrel on the right.",
+          "Appears mounted on wheels.",
+          "Small front staircase."
+        ]
+      ],
+      "limitations": [
+        "Observer-relative ally status is not automatically a structural team identity in other datasets."
+      ],
+      "status": "human_visually_confirmed",
+      "supportingAnnotations": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E006",
+        "E009"
+      ]
+    },
+    {
+      "alias": "Archmother enemy base",
+      "evidence": [
+        [
+          "Blue pillar with an open blue book.",
+          "Book projects light and an inverted light-blue triangle hologram.",
+          "Red health bar visible.",
+          "Inside the enemy base."
+        ],
+        [
+          "Same Archmother Shrine as E028.",
+          "Viewed from behind and from the side.",
+          "Located inside the enemy base."
+        ],
+        [
+          "Central Archmother statue.",
+          "Spiritual translucent Archmother form surrounds it.",
+          "Spiritual form extends toward the ceiling with arms open.",
+          "Light-blue magical circles and symbols on the ground.",
+          "Low walls and blue obelisks with light-blue symbols."
+        ]
+      ],
+      "limitations": [
+        "Enemy status is observer-relative in this review packet."
+      ],
+      "status": "human_visually_confirmed",
+      "supportingAnnotations": [
+        "E028",
+        "E029",
+        "E030"
+      ]
+    },
+    {
+      "alias": "Yellow lane left side of Hidden King base",
+      "evidence": [
+        [
+          "Speaker-like tower with health bar.",
+          "Emits circular waves.",
+          "Located on the left side of the Hidden King base.",
+          "Associated with Yellow lane.",
+          "Player position is visible on the minimap."
+        ],
+        [
+          "Two tall structures side by side.",
+          "Viewed from behind.",
+          "Health bars visible.",
+          "Protect an entrance or exit crossed by Yellow lane."
+        ],
+        [
+          "Stall-like structure.",
+          "Green arrow pointing toward it.",
+          "Sign reads Curiosity Shop.",
+          "Round yellow lamps surround the sign.",
+          "Tank or barrel on the right.",
+          "Appears mounted on wheels.",
+          "Small front staircase."
+        ]
+      ],
+      "limitations": [
+        "Do not replace neutral lane-axis IDs automatically."
+      ],
+      "status": "human_visually_confirmed",
+      "supportingAnnotations": [
+        "E002",
+        "E004",
+        "E009"
+      ]
+    },
+    {
+      "alias": "Green lane right side of Hidden King base",
+      "evidence": [
+        [
+          "Same speaker-like Shrine type.",
+          "Emits circular waves.",
+          "Located on the right side of the Hidden King base.",
+          "Associated with Green lane."
+        ],
+        [
+          "Two tall structures side by side.",
+          "Health bars visible.",
+          "Protect an entrance or exit crossed by Green lane."
+        ]
+      ],
+      "limitations": [
+        "Do not replace neutral lane-axis IDs automatically."
+      ],
+      "status": "human_visually_confirmed",
+      "supportingAnnotations": [
+        "E003",
+        "E006"
+      ]
+    },
+    {
+      "alias": "Archmother Green-lane Shrine position",
+      "evidence": [
+        "Blue pillar with an open blue book.",
+        "Book projects light and an inverted light-blue triangle hologram.",
+        "Red health bar visible.",
+        "Inside the enemy base."
+      ],
+      "limitations": [
+        "Lane color is validated for this reviewed visual context only."
+      ],
+      "status": "human_visually_confirmed",
+      "supportingAnnotations": [
+        "E028"
+      ]
+    },
+    {
+      "alias": "Archmother Yellow-lane Shrine position",
+      "evidence": [
+        "Same Archmother Shrine as E028.",
+        "Viewed from behind and from the side.",
+        "Located inside the enemy base."
+      ],
+      "limitations": [
+        "Lane color is validated for this reviewed visual context only."
+      ],
+      "status": "human_visually_confirmed",
+      "supportingAnnotations": [
+        "E029"
+      ]
+    },
+    {
+      "alias": "enemy minimap display red",
+      "evidence": [
+        "Task 038 recorded enemy minimap red display as directly supported display-color evidence."
+      ],
+      "limitations": [
+        "This task did not add a new direct review decision for the red minimap display color."
+      ],
+      "status": "previous_task_only",
+      "supportingAnnotations": []
+    }
+  ],
+  "allowedStatuses": [
+    "human_visually_confirmed",
+    "human_context_confirmed",
+    "partially_supported",
+    "previous_task_only",
+    "unresolved",
+    "contradicted"
+  ],
+  "createdAt": "2026-06-29T03:03:53.834272+00:00",
+  "kind": "match_91119257_human_review_alias_evidence",
+  "schemaVersion": 1
+}

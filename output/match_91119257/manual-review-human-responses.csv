@@ -1,0 +1,25 @@
+annotationId,responseStatus,sourceStartMs,sourceEndMs,representativeEvidenceType,representativeTimestampsOrInterval,elementType,mapSide,laneColor,elementTeam,confidence,unresolved,conflicts,evidenceFrameCount
+E001,confirmed,15000,20000,timestamps,"{""timestampsMs"": [22500], ""type"": ""timestamps""}",spawn,hidden_king,,ally,high,,[],1
+E002,confirmed,25000,30000,timestamps,"{""timestampsMs"": [34000, 34500, 35000], ""type"": ""timestamps""}",shrine,hidden_king,yellow,ally,high,,[],3
+E003,confirmed,45000,50000,timestamps,"{""timestampsMs"": [52500], ""type"": ""timestamps""}",shrine,hidden_king,green,ally,high,,[],1
+E004,confirmed,60000,65000,timestamps,"{""timestampsMs"": [67500], ""type"": ""timestamps""}",base_guardian_pair,hidden_king,yellow,ally,high,,[],1
+E006,confirmed,80000,85000,timestamps,"{""timestampsMs"": [87500], ""type"": ""timestamps""}",base_guardian_pair,hidden_king,green,ally,high,,[],1
+E009,confirmed,135000,140000,interval,"{""end"": 148500, ""start"": 144000, ""type"": ""interval""}",curiosity_shop,hidden_king,yellow,ally,high,,[],3
+E013,confirmed,205000,210000,timestamps,"{""timestampsMs"": [212500], ""type"": ""timestamps""}",walker,,green,,high,,[],2
+E014,confirmed,215000,220000,interval,"{""end"": 225000, ""start"": 223500, ""type"": ""interval""}",guardian,,,,medium_high,,[],3
+E021,confirmed,365000,370000,interval,"{""end"": 372500, ""start"": 367500, ""type"": ""interval""}",guardian,,,enemy,high,,[],3
+E028,confirmed,565000,570000,timestamps,"{""timestampsMs"": [570000, 572500], ""type"": ""timestamps""}",shrine,archmother,green,enemy,high,,[],2
+E029,confirmed,580000,585000,interval,"{""end"": 586500, ""start"": 585000, ""type"": ""interval""}",shrine,archmother,yellow,enemy,high,,[],2
+E030,confirmed,600000,605000,timestamps,"{""timestampsMs"": [597500, 598000, 600000, 607500], ""type"": ""timestamps""}",patron,archmother,,enemy,high,,[],4
+E031,confirmed,605000,610000,interval,"{""end"": 615000, ""start"": 614500, ""type"": ""interval""}",player_death,,,,high,,[],2
+E032,partially_confirmed,620000,625000,interval,"{""end"": 627500, ""start"": 622500, ""type"": ""interval""}",dead_player_spirit_at_spawn,,,,high_for_dead_state_low_for_respawn_instant,exact_respawn_frame,[],2
+E050,confirmed,865000,870000,interval,"{""end"": 875000, ""start"": 873500, ""type"": ""interval""}",medium_denizen_and_sinners_sacrifice_camp,,,,high,,[],3
+E060,confirmed,1005000,1010000,timestamps,"{""timestampsMs"": [1012500], ""type"": ""timestamps""}",medium_denizen_and_sinners_sacrifice_camp,,,,high,,[],1
+E077,confirmed,1275000,1280000,timestamps,"{""timestampsMs"": [1282000, 1282500], ""type"": ""timestamps""}",medium_denizen_and_sinners_sacrifice_camp,,,,high,,[],2
+E081,confirmed,1355000,1360000,timestamps,"{""timestampsMs"": [1364500], ""type"": ""timestamps""}",medium_denizen_and_sinners_sacrifice_camp,,,,high,,[],1
+E083,confirmed,1385000,1390000,timestamps,"{""timestampsMs"": [1395000], ""type"": ""timestamps""}",bridge_buff_crystal,,,,high_for_visual_identity,,[],2
+E084,confirmed,1415000,1420000,timestamps,"{""timestampsMs"": [1422500], ""type"": ""timestamps""}",bridge_buff_crystal,,green,,high,specific_green_buff_effect,[],1
+E085,confirmed,1430000,1435000,timestamps,"{""timestampsMs"": [1437500], ""type"": ""timestamps""}",teleporter,,,,high,,[],1
+E086,confirmed,1445000,1450000,timestamps,"{""timestampsMs"": [1452500], ""type"": ""timestamps""}",teleporter,,,,high,,[],1
+E087,confirmed,1480000,1485000,timestamps,"{""timestampsMs"": [1487500], ""type"": ""timestamps""}",teleporter,,,,high,,[],1
+E088,confirmed_with_timestamp_conflict,1430000,1435000,timestamps,"{""timestampsMs"": [1437500], ""type"": ""timestamps""}",teleporter,,,,high_for_element_identity,,"[{""details"": [""The user identifies 1437.5s as the best E088 frame."", ""The same timestamp was also used for E085."", ""Previous task 038 evidence associated E088 with a corrected 24:50-24:55 candidate window."", ""Do not silently overwrite either source.""], ""type"": ""timestamp_or_record_mapping_conflict""}]",2
