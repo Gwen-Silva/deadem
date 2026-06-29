@@ -22,27 +22,40 @@
       "unresolved": [
         "specific_green_buff_effect"
       ]
-    },
-    {
-      "annotationId": "E088",
-      "conflicts": [
-        {
-          "details": [
-            "The user identifies 1437.5s as the best E088 frame.",
-            "The same timestamp was also used for E085.",
-            "Previous task 038 evidence associated E088 with a corrected 24:50-24:55 candidate window.",
-            "Do not silently overwrite either source."
-          ],
-          "type": "timestamp_or_record_mapping_conflict"
-        }
-      ],
-      "resolution": {
-        "elementIdentity": "confirmed",
-        "sourceRecordTimestampMapping": "unresolved"
-      },
-      "unresolved": []
     }
   ],
   "kind": "match_91119257_human_review_unresolved_items",
-  "schemaVersion": 1
+  "resolvedItems": [
+    {
+      "annotationId": "E088",
+      "decisionPacket": "output/match_91119257/e088-mapping-decision.json",
+      "elementIdentity": "confirmed_teleporter",
+      "historicalConflict": {
+        "annotationId": "E088",
+        "conflicts": [
+          {
+            "details": [
+              "The user identifies 1437.5s as the best E088 frame.",
+              "The same timestamp was also used for E085.",
+              "Previous task 038 evidence associated E088 with a corrected 24:50-24:55 candidate window.",
+              "Do not silently overwrite either source."
+            ],
+            "type": "timestamp_or_record_mapping_conflict"
+          }
+        ],
+        "resolution": {
+          "elementIdentity": "confirmed",
+          "sourceRecordTimestampMapping": "unresolved"
+        },
+        "unresolved": []
+      },
+      "primaryResult": "e088_maps_to_corrected_2450_window",
+      "resolutionStatus": "resolved_with_source_correction_overlay",
+      "resolvedBy": "task_043",
+      "sourceCsvModified": false,
+      "sourceRecordTimestampMapping": "corrected_overlay_24m50_24m55"
+    }
+  ],
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-29T03:14:26.050587+00:00"
 }

@@ -1,0 +1,40 @@
+{
+  "contradictoryOrLimitingEvidence": [
+    "The user-confirmed E088 image label is 1437.5s, the same timestamp used by E085.",
+    "No video-demo alignment was performed, so this is a source/video annotation correction, not a demo-alignment result."
+  ],
+  "createdAt": "2026-06-29T03:13:43.947806+00:00",
+  "decision": {
+    "canonicalVideoWindowMs": {
+      "end": 1495000,
+      "start": 1490000
+    },
+    "correctedWindowIsOverlayOnly": true,
+    "e085Relationship": "distinct_source_row; duplicated timestamp caused frame/provenance overlap with E085",
+    "originalCsvWindowMs": {
+      "end": 1435000,
+      "start": 1430000
+    },
+    "originalCsvWindowPreservedAsHistoricalEvidence": true,
+    "sourceAnnotationRow": "E088",
+    "timestamp1437500BelongsTo": "both_E085_and_E088_original_duplicate_window_but_decision_assigns_it_to_E085_for_canonical_E088_mapping"
+  },
+  "elementIdentity": "confirmed_teleporter",
+  "inputs": {
+    "candidateComparison": "output/match_91119257/e088-candidate-comparison.json",
+    "frameProvenance": "output/match_91119257/e088-frame-provenance.json",
+    "sourceAudit": "output/match_91119257/e088-source-row-audit.json"
+  },
+  "kind": "match_91119257_e088_mapping_decision",
+  "primaryResult": "e088_maps_to_corrected_2450_window",
+  "schemaVersion": 1,
+  "secondaryClassification": "e088_source_row_is_transcription_error",
+  "sourceCsvModified": false,
+  "supportingEvidence": [
+    "E088 duplicates E085's 23:50-23:55 timestamp exactly but has a different enemy underground Teleporter label.",
+    "E088 is source-ordered after E087 (24:40-24:45) but its original timestamp jumps backward to 23:50-23:55.",
+    "The source row validation note explicitly identifies the duplicate timestamp and likely 24:50-24:55 correction.",
+    "Task 038 recorded the corrected 24:50-24:55 candidate as visually supported while preserving the source row.",
+    "The 1437.5s user image label can be explained by the shared duplicated timestamp/frame provenance and is not decisive for row mapping."
+  ]
+}

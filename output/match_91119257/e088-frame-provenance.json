@@ -1,0 +1,75 @@
+{
+  "createdAt": "2026-06-29T03:13:41.266198+00:00",
+  "kind": "match_91119257_e088_frame_provenance",
+  "labelOriginAssessment": {
+    "copiedOrIncorrectHeadingPossible": true,
+    "e085DenseContactSheetCompatible": true,
+    "e088DenseContactSheetCompatible": true,
+    "likelyGeneratedFrom": "duplicated original timestamp window shared by E085 and E088",
+    "reason": "The same video frame hash is available under both E085 and E088 at the duplicated source timestamp."
+  },
+  "schemaVersion": 1,
+  "timestamp1437500": {
+    "belongsToE085DenseEvidence": true,
+    "belongsToE088DenseEvidence": true,
+    "hashesByAnnotation": {
+      "E085": [
+        "adbb57be13fcc94f122d9fdc45287e9ae8c35b2803928f568c67cb3b2bedf77a"
+      ],
+      "E088": [
+        "adbb57be13fcc94f122d9fdc45287e9ae8c35b2803928f568c67cb3b2bedf77a",
+        "adbb57be13fcc94f122d9fdc45287e9ae8c35b2803928f568c67cb3b2bedf77a"
+      ]
+    },
+    "matchingFrames": [
+      {
+        "annotationId": "E085",
+        "candidateWindow": null,
+        "decodeStatus": "decoded",
+        "decodedTimestampMs": 1437500,
+        "denseWindowKind": "initial_pm5s",
+        "frameId": "dense_frame_000696",
+        "framePath": "output-local/match_91119257/dense-manual-review/frames/E085/E085_initial_pm5s_1437500.jpg",
+        "frameSha256": "adbb57be13fcc94f122d9fdc45287e9ae8c35b2803928f568c67cb3b2bedf77a",
+        "requestId": "E085_initial_pm5s_1437500",
+        "requestRole": null,
+        "requestedTimestampMs": 1437500
+      },
+      {
+        "annotationId": "E088",
+        "candidateWindow": null,
+        "decodeStatus": "decoded",
+        "decodedTimestampMs": 1437500,
+        "denseWindowKind": "escalated_pm10s",
+        "frameId": "dense_frame_000824",
+        "framePath": "output-local/match_91119257/dense-manual-review/frames/E088/E088_escalated_pm10s_1437500.jpg",
+        "frameSha256": "adbb57be13fcc94f122d9fdc45287e9ae8c35b2803928f568c67cb3b2bedf77a",
+        "requestId": "E088_escalated_pm10s_1437500",
+        "requestRole": null,
+        "requestedTimestampMs": 1437500
+      },
+      {
+        "annotationId": "E088",
+        "candidateWindow": null,
+        "decodeStatus": "decoded",
+        "decodedTimestampMs": 1437500,
+        "denseWindowKind": "initial_pm5s",
+        "frameId": "dense_frame_000825",
+        "framePath": "output-local/match_91119257/dense-manual-review/frames/E088/E088_initial_pm5s_1437500.jpg",
+        "frameSha256": "adbb57be13fcc94f122d9fdc45287e9ae8c35b2803928f568c67cb3b2bedf77a",
+        "requestId": "E088_initial_pm5s_1437500",
+        "requestRole": null,
+        "requestedTimestampMs": 1437500
+      }
+    ],
+    "provenanceConclusion": "1437.5s is both E085's confirmed representative timestamp and an E088 original-duplicate-window timestamp; it is not sufficient to prove the E088 source row maps to the original interval.",
+    "sameFrameHashSharedByE085AndE088": true
+  },
+  "uploadedImageClaim": {
+    "displayedElement": "teleporter",
+    "label": "1437.5s off +7.5s",
+    "treatedAsAuthoritativeForAnnotationId": false,
+    "treatedAsAuthoritativeForVisualContent": true
+  },
+  "wpfVideoIndexAt1437s": []
+}

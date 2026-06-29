@@ -1,6 +1,6 @@
 # Task 043: Resolve Match 91119257 E088 Timestamp and Record Mapping
 
-Status: blocked
+Status: completed
 Execution mode: autonomous
 Project stage: visual evidence review
 Related experiment: match 91119257 video packet
@@ -69,7 +69,7 @@ Resolve, if possible, whether E088 should remain tied to the original source CSV
 
 ## Gate result
 
-Blocked until explicitly authorized.
+e088_mapping_resolved_with_source_correction
 
 ## Documentation updates
 
