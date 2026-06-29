@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T04:26:03.378Z",
+  "chains": [
+    {
+      "chainId": "manual_review_json",
+      "canonicalPath": "output/match_91119257/manual-review-form-v2-completed.json",
+      "canonicalExists": true,
+      "files": [
+        {
+          "path": "output/match_91119257/manual-review-form.json",
+          "role": "superseded",
+          "neededForReproducibility": true,
+          "recommendation": "move_to_archive_after_approval"
+        },
+        {
+          "path": "output/match_91119257/manual-review-form-v2.json",
+          "role": "superseded",
+          "neededForReproducibility": true,
+          "recommendation": "move_to_archive_after_approval"
+        },
+        {
+          "path": "output/match_91119257/manual-review-form-v2-completed.json",
+          "role": "canonical",
+          "neededForReproducibility": true,
+          "recommendation": "keep_in_place"
+        }
+      ],
+      "notes": "Keep chain together until user approves archival; predecessor files explain provenance."
+    },
+    {
+      "chainId": "manual_review_csv",
+      "canonicalPath": "output/match_91119257/manual-review-form-v2-completed.csv",
+      "canonicalExists": true,
+      "files": [
+        {
+          "path": "output/match_91119257/manual-review-form.csv",
+          "role": "superseded",
+          "neededForReproducibility": true,
+          "recommendation": "move_to_archive_after_approval"
+        },
+        {
+          "path": "output/match_91119257/manual-review-form-v2.csv",
+          "role": "superseded",
+          "neededForReproducibility": true,
+          "recommendation": "move_to_archive_after_approval"
+        },
+        {
+          "path": "output/match_91119257/manual-review-form-v2-completed.csv",
+          "role": "canonical",
+          "neededForReproducibility": true,
+          "recommendation": "keep_in_place"
+        }
+      ],
+      "notes": "Keep chain together until user approves archival; predecessor files explain provenance."
+    },
+    {
+      "chainId": "human_observations",
+      "canonicalPath": "output/match_91119257/human-visual-review-evidence.json",
+      "canonicalExists": false,
+      "files": [],
+      "notes": "Keep chain together until user approves archival; predecessor files explain provenance."
+    },
+    {
+      "chainId": "e088_mapping",
+      "canonicalPath": "output/match_91119257/e088-canonical-mapping.json",
+      "canonicalExists": false,
+      "files": [
+        {
+          "path": "output/match_91119257/e088-resolution.json",
+          "role": "superseded",
+          "neededForReproducibility": true,
+          "recommendation": "move_to_archive_after_approval"
+        }
+      ],
+      "notes": "Keep chain together until user approves archival; predecessor files explain provenance."
+    }
+  ]
+}

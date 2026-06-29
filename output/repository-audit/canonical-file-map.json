@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T04:26:03.378Z",
+  "topics": [
+    {
+      "topic": "project_state",
+      "canonicalPath": "docs/PROJECT_STATE.md",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Current project-state narrative.",
+      "exists": true
+    },
+    {
+      "topic": "latest_report_pointer",
+      "canonicalPath": "reports/latest.md",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Pointer to latest report.",
+      "exists": true
+    },
+    {
+      "topic": "replay_manifest",
+      "canonicalPath": "data/replay-manifest.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Replay inventory manifest when present.",
+      "exists": true
+    },
+    {
+      "topic": "match_91119257_visual_annotation_source",
+      "canonicalPath": "output/match_91119257/landmark-source-events.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Structured source annotation packet if present.",
+      "exists": false
+    },
+    {
+      "topic": "match_91119257_dense_frame_manifest",
+      "canonicalPath": "output/match_91119257/dense-frame-manifest-v2.json",
+      "supersededPaths": [
+        "output/match_91119257/video-frame-index.json"
+      ],
+      "historicalDependencies": [],
+      "notes": "Dense v2 frame manifest supersedes initial sparse frame index for manual-review context.",
+      "exists": false
+    },
+    {
+      "topic": "completed_human_review",
+      "canonicalPath": "output/match_91119257/manual-review-form-v2-completed.json",
+      "supersededPaths": [
+        "output/match_91119257/manual-review-form.json",
+        "output/match_91119257/manual-review-form.csv",
+        "output/match_91119257/manual-review-form-v2.json",
+        "output/match_91119257/manual-review-form-v2.csv"
+      ],
+      "historicalDependencies": [],
+      "notes": "Completed dense v2 JSON is canonical; CSV remains useful human-readable export.",
+      "exists": true
+    },
+    {
+      "topic": "visual_landmark_evidence",
+      "canonicalPath": "output/match_91119257/human-visual-review-evidence.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Canonical structured human visual evidence if present.",
+      "exists": false
+    },
+    {
+      "topic": "alias_evidence",
+      "canonicalPath": "output/match_91119257/canonical-map-aliases.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Alias evidence remains packet-scoped and must preserve provenance.",
+      "exists": true
+    },
+    {
+      "topic": "representative_visual_intervals",
+      "canonicalPath": "output/match_91119257/annotation-visibility-audit.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Visibility audit identifies representative and ambiguous intervals.",
+      "exists": true
+    },
+    {
+      "topic": "e088_corrected_overlay",
+      "canonicalPath": "output/match_91119257/e088-canonical-mapping.json",
+      "supersededPaths": [
+        "output/match_91119257/e088-resolution.json"
+      ],
+      "historicalDependencies": [],
+      "notes": "E088 corrected-window overlay preserves original source row.",
+      "exists": false
+    },
+    {
+      "topic": "parser_failure_state",
+      "canonicalPath": "output/parser-compatibility/parser-compatibility-gate.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Current parser compatibility gate.",
+      "exists": true
+    },
+    {
+      "topic": "entity_5594_investigation",
+      "canonicalPath": "output/match_91119257/parser-recovery-gate.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Entity 5594 root-cause gate.",
+      "exists": true
+    },
+    {
+      "topic": "baseline_709_investigation",
+      "canonicalPath": "output/match_91119257/baseline-709-gate.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Baseline 709 protocol-support gate.",
+      "exists": true
+    },
+    {
+      "topic": "current_parser_gate",
+      "canonicalPath": "output/parser-compatibility/parser-compatibility-gate.json",
+      "supersededPaths": [],
+      "historicalDependencies": [],
+      "notes": "Current parser gate after matrix assessment.",
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+# Repository Guide
+
+This repository keeps source code, task history, compact evidence, reports, and generated structured outputs together. Use this guide to distinguish current canonical files from historical evidence.
+
+## Source Code
+
+- Node parser and engine code: `packages/engine/`
+- Deadlock package code: `packages/deadem/`
+- Video pipeline Python package: `python/deadem/video_pipeline/`
+- Utility and experiment scripts: `scripts/` and `experiments/`
+- Tests: `packages/*/tests/` and `tests/video_pipeline/`
+
+## Project State
+
+- Current narrative state: `docs/PROJECT_STATE.md`
+- Queue rules: `AGENTS.md`, `docs/WORKFLOW.md`, `docs/CODEX_QUEUE_RUNNER.md`
+- Parser failure catalog: `docs/PARSER_FAILURE_CATALOG.md`
+
+## Evidence And Outputs
+
+Tracked compact evidence lives under `output/`. Files there may be canonical, diagnostic, historical, or regenerable. See `output/README.md` and `output/repository-audit/canonical-file-map.json`.
+
+Current canonical topics include:
+
+- project_state: `docs/PROJECT_STATE.md`
+- latest_report_pointer: `reports/latest.md`
+- replay_manifest: `data/replay-manifest.json`
+- completed_human_review: `output/match_91119257/manual-review-form-v2-completed.json`
+- alias_evidence: `output/match_91119257/canonical-map-aliases.json`
+- representative_visual_intervals: `output/match_91119257/annotation-visibility-audit.json`
+- parser_failure_state: `output/parser-compatibility/parser-compatibility-gate.json`
+- entity_5594_investigation: `output/match_91119257/parser-recovery-gate.json`
+- baseline_709_investigation: `output/match_91119257/baseline-709-gate.json`
+- current_parser_gate: `output/parser-compatibility/parser-compatibility-gate.json`
+
+## Reports
+
+- Current report pointer: `reports/latest.md`
+- Human report index: `reports/INDEX.md`
+- Reports are historical records unless a task states otherwise.
+
+## Task History
+
+- Completed task index: `tasks/completed/INDEX.md`
+- Executable queue: `tasks/pending/`
+- Blocked work: `tasks/blocked/`
+- Future ideas: `tasks/backlog/`
+
+## Local-Only Directories
+
+`output-local/`, virtual environments, frame dumps, contact sheets, caches, model weights, MP4 files, and DEM files should remain local unless a future task explicitly permits a compact manifest.
+
+## Match 91119257
+
+Start with `docs/PROJECT_STATE.md`, then read current reports under `reports/INDEX.md` in the visual calibration, human review, and parser recovery groups. Use neutral IDs unless a canonical alias file explicitly records packet-scoped provenance.
+
+## Canonical Versus Historical
+
+Canonical files are current inputs or decisions. Historical files preserve provenance and should not be deleted merely because a newer file exists. Superseded files may be archived only after the cleanup proposal is explicitly approved.
+
+Audit metrics: 1204 tracked files, 612 tracked output files, 44 reports.
