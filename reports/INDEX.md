@@ -65,3 +65,6 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/structural-lane-axis-topology.md`
 - `reports/unified-descriptive-match-state-timeline.md`
 
+## Cleanup Reports
+
+- `reports/repository-cleanup-execution.md`

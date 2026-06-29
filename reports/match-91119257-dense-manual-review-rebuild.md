@@ -31,9 +31,9 @@ E009 was force-escalated because the previous selected frames did not show the a
 - `output/match_91119257/dense-review-annotation-summary.json`
 - `output/match_91119257/dense-review-candidate-shortlist.json`
 - `output/match_91119257/dense-review-escalations.json`
-- `output/match_91119257/provisional-human-review-observations.json`
-- `output/match_91119257/manual-review-form-v2.json`
-- `output/match_91119257/manual-review-form-v2.csv`
+- `output/archive/match_91119257/manual-review/provisional/provisional-human-review-observations.json`
+- `output/archive/match_91119257/manual-review/manual-review-form-v2.json`
+- `output/archive/match_91119257/manual-review/manual-review-form-v2.csv`
 - `output/match_91119257/manual-review-package-v2-manifest.json`
 
 Local dense frames and contact sheets are stored under `output-local/` and are intentionally untracked.

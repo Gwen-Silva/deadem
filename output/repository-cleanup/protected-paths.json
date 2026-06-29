@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T09:56:40.320Z",
+  "directoryPrefixes": [
+    "packages/",
+    "src/",
+    "tests/",
+    "data/evidence/",
+    "samples/",
+    "output/repository-audit/"
+  ],
+  "packageStructuralPatterns": [
+    "packages/**/LICENSE",
+    "packages/**/index.js",
+    "packages/**/eslint.config.js",
+    "packages/**/jsconfig.json",
+    "packages/**/proto/**",
+    "packages/**/src/**"
+  ],
+  "canonicalPaths": [
+    "docs/PROJECT_STATE.md",
+    "reports/latest.md",
+    "data/replay-manifest.json",
+    "output/match_91119257/manual-review-form-v2-completed.json",
+    "output/match_91119257/canonical-map-aliases.json",
+    "output/match_91119257/annotation-visibility-audit.json",
+    "output/parser-compatibility/parser-compatibility-gate.json",
+    "output/match_91119257/parser-recovery-gate.json",
+    "output/match_91119257/baseline-709-gate.json",
+    "output/parser-compatibility/parser-compatibility-gate.json"
+  ],
+  "replay005": [
+    "samples/partida_005.dem",
+    "output/replays/replay_005/"
+  ],
+  "notes": "Exact duplicate status is not deletion evidence for protected package-local structural files."
+}

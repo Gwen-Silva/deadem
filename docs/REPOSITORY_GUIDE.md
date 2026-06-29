@@ -59,3 +59,7 @@ Start with `docs/PROJECT_STATE.md`, then read current reports under `reports/IND
 Canonical files are current inputs or decisions. Historical files preserve provenance and should not be deleted merely because a newer file exists. Superseded files may be archived only after the cleanup proposal is explicitly approved.
 
 Audit metrics: 1204 tracked files, 612 tracked output files, 44 reports.
+
+## Cleanup Navigation
+
+The conservative cleanup cycle keeps canonical match 91119257 files visible and moves approved historical predecessors to `output/archive/match_91119257/`. Start at `output/match_91119257/README.md` for match-specific navigation.

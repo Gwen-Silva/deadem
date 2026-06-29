@@ -47,8 +47,8 @@ Prepare a compact human-facing review package for the 24 minimized match 9111925
 
 ## Outputs
 
-- `output/match_91119257/manual-review-form.json`
-- `output/match_91119257/manual-review-form.csv`
+- `output/archive/match_91119257/manual-review/manual-review-form.json`
+- `output/archive/match_91119257/manual-review/manual-review-form.csv`
 - `output/match_91119257/manual-review-instructions.md`
 - `output/match_91119257/manual-review-package-manifest.json`
 - `reports/match-91119257-minimized-human-review-preparation.md`

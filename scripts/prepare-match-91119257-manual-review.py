@@ -223,7 +223,7 @@ This package contains {form['reviewCount']} selected review cases from the 88 an
 
 ## What To Review
 
-Use `output/match_91119257/manual-review-form.csv` if you prefer a spreadsheet, or `output/match_91119257/manual-review-form.json` if you prefer structured JSON.
+Use `output/archive/match_91119257/manual-review/manual-review-form.csv` if you prefer a spreadsheet, or `output/archive/match_91119257/manual-review/manual-review-form.json` if you prefer structured JSON.
 
 For each question, choose one response:
 
@@ -281,8 +281,8 @@ Task 039 prepared a human-facing review package for the minimized visual cases s
 
 ## Outputs
 
-- `output/match_91119257/manual-review-form.json`
-- `output/match_91119257/manual-review-form.csv`
+- `output/archive/match_91119257/manual-review/manual-review-form.json`
+- `output/archive/match_91119257/manual-review/manual-review-form.csv`
 - `output/match_91119257/manual-review-instructions.md`
 - `output/match_91119257/manual-review-package-manifest.json`
 

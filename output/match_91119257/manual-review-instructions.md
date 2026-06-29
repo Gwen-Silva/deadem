@@ -4,7 +4,7 @@ This package contains 24 selected review cases from the 88 annotation groups. It
 
 ## What To Review
 
-Use `output/match_91119257/manual-review-form.csv` if you prefer a spreadsheet, or `output/match_91119257/manual-review-form.json` if you prefer structured JSON.
+Use `output/archive/match_91119257/manual-review/manual-review-form.csv` if you prefer a spreadsheet, or `output/archive/match_91119257/manual-review/manual-review-form.json` if you prefer structured JSON.
 
 For each question, choose one response:
 

@@ -1,12 +1,12 @@
 # Task 049: Apply Approved Repository Cleanup Plan
 
-Status: blocked
+Status: completed
 Execution mode: autonomous
 Project stage: repository hygiene
 Related experiment: repository maintenance
 Priority: medium
 Depends on: task 048 completed
-Unlocked by: explicit user approval of cleanup proposal with allowlisted files
+Unlocked by: explicit user authorization for conservative navigation-first cleanup with approved allowlists
 Blocks: repository cleanup execution
 
 ## Objective
@@ -57,7 +57,7 @@ Delete, move, archive, or consolidate only files explicitly allowlisted by the u
 
 ## Gate result
 
-Blocked until user approval.
+repository_cleanup_applied_with_deferred_items
 
 ## Documentation updates
 

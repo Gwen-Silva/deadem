@@ -209,16 +209,16 @@ function buildCanonicalMap(trackedFiles) {
             'output/match_91119257/video-frame-index.json'
         ], [], 'Dense v2 frame manifest supersedes initial sparse frame index for manual-review context.'),
         topic('completed_human_review', 'output/match_91119257/manual-review-form-v2-completed.json', [
-            'output/match_91119257/manual-review-form.json',
-            'output/match_91119257/manual-review-form.csv',
-            'output/match_91119257/manual-review-form-v2.json',
-            'output/match_91119257/manual-review-form-v2.csv'
+            'output/archive/match_91119257/manual-review/manual-review-form.json',
+            'output/archive/match_91119257/manual-review/manual-review-form.csv',
+            'output/archive/match_91119257/manual-review/manual-review-form-v2.json',
+            'output/archive/match_91119257/manual-review/manual-review-form-v2.csv'
         ], [], 'Completed dense v2 JSON is canonical; CSV remains useful human-readable export.'),
         topic('visual_landmark_evidence', 'output/match_91119257/human-visual-review-evidence.json', [], [], 'Canonical structured human visual evidence if present.'),
         topic('alias_evidence', 'output/match_91119257/canonical-map-aliases.json', [], [], 'Alias evidence remains packet-scoped and must preserve provenance.'),
         topic('representative_visual_intervals', 'output/match_91119257/annotation-visibility-audit.json', [], [], 'Visibility audit identifies representative and ambiguous intervals.'),
         topic('e088_corrected_overlay', 'output/match_91119257/e088-canonical-mapping.json', [
-            'output/match_91119257/e088-resolution.json'
+            'output/archive/match_91119257/e088/e088-resolution.json'
         ], [], 'E088 corrected-window overlay preserves original source row.'),
         topic('parser_failure_state', 'output/parser-compatibility/parser-compatibility-gate.json', [], [], 'Current parser compatibility gate.'),
         topic('entity_5594_investigation', 'output/match_91119257/parser-recovery-gate.json', [], [], 'Entity 5594 root-cause gate.'),
@@ -246,8 +246,8 @@ function buildVersionChainAudit(trackedFiles) {
         {
             chainId: 'manual_review_json',
             files: [
-                'output/match_91119257/manual-review-form.json',
-                'output/match_91119257/manual-review-form-v2.json',
+                'output/archive/match_91119257/manual-review/manual-review-form.json',
+                'output/archive/match_91119257/manual-review/manual-review-form-v2.json',
                 'output/match_91119257/manual-review-form-v2-completed.json'
             ],
             canonicalPath: 'output/match_91119257/manual-review-form-v2-completed.json'
@@ -255,8 +255,8 @@ function buildVersionChainAudit(trackedFiles) {
         {
             chainId: 'manual_review_csv',
             files: [
-                'output/match_91119257/manual-review-form.csv',
-                'output/match_91119257/manual-review-form-v2.csv',
+                'output/archive/match_91119257/manual-review/manual-review-form.csv',
+                'output/archive/match_91119257/manual-review/manual-review-form-v2.csv',
                 'output/match_91119257/manual-review-form-v2-completed.csv'
             ],
             canonicalPath: 'output/match_91119257/manual-review-form-v2-completed.csv'
@@ -273,7 +273,7 @@ function buildVersionChainAudit(trackedFiles) {
         {
             chainId: 'e088_mapping',
             files: [
-                'output/match_91119257/e088-resolution.json',
+                'output/archive/match_91119257/e088/e088-resolution.json',
                 'output/match_91119257/e088-review-packet.json',
                 'output/match_91119257/e088-canonical-mapping.json'
             ],

@@ -71,7 +71,7 @@ Task 033 and task 034 outputs, `samples/partida_006.dem`, and `samples/videos/Pa
 - `output/match_91119257/video-decoder-audit.json`
 - `output/match_91119257/video-frame-index.json`
 - `output/match_91119257/visual-annotation-validation.json`
-- `output/match_91119257/e088-resolution.json`
+- `output/archive/match_91119257/e088/e088-resolution.json`
 - `output/match_91119257/parser-entity-5594-diagnostic.json`
 - `output/match_91119257/parser-recovery-log.json`
 - `output/match_91119257/full-tracked-player-telemetry.jsonl`

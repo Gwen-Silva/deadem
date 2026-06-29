@@ -23,3 +23,7 @@
 - Regenerable output files: 0
 - Unknown files requiring investigation: 59
 - Cleanup proposal: `output/repository-audit/cleanup-proposal.json`
+
+## Archive
+
+`output/archive/` contains approved historical material moved for navigation. Do not treat archived evidence as deleted or invalidated; indexes should point to canonical files and archive locations.

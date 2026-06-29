@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-29T09:57:33.404Z",
+  "moves": [
+    {
+      "source": "output/match_91119257/manual-review-form.json",
+      "destination": "output/archive/match_91119257/manual-review/manual-review-form.json",
+      "operation": "move",
+      "risk": "low",
+      "reason": "manual_review_predecessor",
+      "reversible": true,
+      "currentHash": null,
+      "validationRequired": [
+        "source exists",
+        "destination absent",
+        "source not protected",
+        "canonical keeper exists",
+        "references updated"
+      ],
+      "executed": true
+    },
+    {
+      "source": "output/match_91119257/manual-review-form.csv",
+      "destination": "output/archive/match_91119257/manual-review/manual-review-form.csv",
+      "operation": "move",
+      "risk": "low",
+      "reason": "manual_review_predecessor",
+      "reversible": true,
+      "currentHash": null,
+      "validationRequired": [
+        "source exists",
+        "destination absent",
+        "source not protected",
+        "canonical keeper exists",
+        "references updated"
+      ],
+      "executed": true
+    },
+    {
+      "source": "output/match_91119257/manual-review-form-v2.json",
+      "destination": "output/archive/match_91119257/manual-review/manual-review-form-v2.json",
+      "operation": "move",
+      "risk": "low",
+      "reason": "manual_review_predecessor",
+      "reversible": true,
+      "currentHash": null,
+      "validationRequired": [
+        "source exists",
+        "destination absent",
+        "source not protected",
+        "canonical keeper exists",
+        "references updated"
+      ],
+      "executed": true
+    },
+    {
+      "source": "output/match_91119257/manual-review-form-v2.csv",
+      "destination": "output/archive/match_91119257/manual-review/manual-review-form-v2.csv",
+      "operation": "move",
+      "risk": "low",
+      "reason": "manual_review_predecessor",
+      "reversible": true,
+      "currentHash": null,
+      "validationRequired": [
+        "source exists",
+        "destination absent",
+        "source not protected",
+        "canonical keeper exists",
+        "references updated"
+      ],
+      "executed": true
+    },
+    {
+      "source": "output/match_91119257/provisional-human-review-observations.json",
+      "destination": "output/archive/match_91119257/manual-review/provisional/provisional-human-review-observations.json",
+      "operation": "move",
+      "risk": "low",
+      "reason": "provisional_human_review_input",
+      "reversible": true,
+      "currentHash": null,
+      "validationRequired": [
+        "source exists",
+        "destination absent",
+        "source not protected",
+        "canonical keeper exists",
+        "references updated"
+      ],
+      "executed": true
+    },
+    {
+      "source": "output/match_91119257/e088-resolution.json",
+      "destination": "output/archive/match_91119257/e088/e088-resolution.json",
+      "operation": "move",
+      "risk": "low",
+      "reason": "e088_superseded_decision_file",
+      "reversible": true,
+      "currentHash": null,
+      "validationRequired": [
+        "source exists",
+        "destination absent",
+        "source not protected",
+        "canonical keeper exists",
+        "references updated"
+      ],
+      "executed": true
+    }
+  ],
+  "deletions": [],
+  "deferred": [
+    "package-local exact duplicates were explicitly protected",
+    "reports archival deferred because report reasoning may be unique",
+    "parser diagnostic packets left in place because reference impact is extensive",
+    "unknown files untouched"
+  ]
+}

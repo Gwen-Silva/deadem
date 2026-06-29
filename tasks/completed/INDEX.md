@@ -41,3 +41,5 @@ This is a compact navigation index. The task files remain the source records.
 | 045 | Task 045: Investigate Match 91119257 Baseline 709 Parser Continuation | baseline_709_protocol_support_blocked |  | `reports/match-91119257-entity-5594-parser-recovery.md` |  |
 | 046 | Task 046: Run Parser Compatibility Matrix | parser_compatibility_matrix_ready_with_insufficient_diversity |  | `reports/match-91119257-baseline-709-parser-continuation.md` |  |
 | 048 | Task 048: Audit Repository Hygiene and Cleanup | repository_cleanup_audit_ready_with_unknowns |  | `reports/INDEX.md` |  |
+
+| 049 | Apply Approved Repository Cleanup Plan | repository_cleanup_applied_with_deferred_items | pending commit | `reports/repository-cleanup-execution.md` | |

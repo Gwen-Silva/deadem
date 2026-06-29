@@ -18,7 +18,7 @@ Generate dense temporal review windows for all 24 minimized manual-review annota
 - `AGENTS.md`
 - `docs/PROJECT_STATE.md`
 - `output/match_91119257/minimized-manual-review.json`
-- `output/match_91119257/manual-review-form.json`
+- `output/archive/match_91119257/manual-review/manual-review-form.json`
 - `output/match_91119257/annotation-frame-manifest.jsonl`
 - `data/evidence/match_91119257/raw/match_91119257_events.csv`
 - `samples/videos/Partida_006_Replay.mp4`
@@ -42,7 +42,7 @@ Generate dense temporal review windows for all 24 minimized manual-review annota
 ## Inputs
 
 - `output/match_91119257/minimized-manual-review.json`
-- `output/match_91119257/manual-review-form.json`
+- `output/archive/match_91119257/manual-review/manual-review-form.json`
 - `output/match_91119257/annotation-frame-manifest.jsonl`
 - `data/evidence/match_91119257/raw/match_91119257_events.csv`
 - `samples/videos/Partida_006_Replay.mp4`
@@ -53,9 +53,9 @@ Generate dense temporal review windows for all 24 minimized manual-review annota
 - `output/match_91119257/dense-review-annotation-summary.json`
 - `output/match_91119257/dense-review-candidate-shortlist.json`
 - `output/match_91119257/dense-review-escalations.json`
-- `output/match_91119257/provisional-human-review-observations.json`
-- `output/match_91119257/manual-review-form-v2.json`
-- `output/match_91119257/manual-review-form-v2.csv`
+- `output/archive/match_91119257/manual-review/provisional/provisional-human-review-observations.json`
+- `output/archive/match_91119257/manual-review/manual-review-form-v2.json`
+- `output/archive/match_91119257/manual-review/manual-review-form-v2.csv`
 - `output/match_91119257/manual-review-package-v2-manifest.json`
 - `reports/match-91119257-dense-manual-review-rebuild.md`
 

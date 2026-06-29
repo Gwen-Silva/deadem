@@ -17,12 +17,12 @@ Ingest the completed human review of the 24 dense manual-review annotations into
 
 - `AGENTS.md`
 - `docs/PROJECT_STATE.md`
-- `output/match_91119257/manual-review-form-v2.json`
-- `output/match_91119257/manual-review-form-v2.csv`
+- `output/archive/match_91119257/manual-review/manual-review-form-v2.json`
+- `output/archive/match_91119257/manual-review/manual-review-form-v2.csv`
 - `output/match_91119257/dense-review-frame-manifest.jsonl`
 - `output/match_91119257/dense-review-annotation-summary.json`
 - `output/match_91119257/dense-review-candidate-shortlist.json`
-- `output/match_91119257/provisional-human-review-observations.json`
+- `output/archive/match_91119257/manual-review/provisional/provisional-human-review-observations.json`
 - `output/match_91119257/e088-visual-review.json`
 
 ## Work requested

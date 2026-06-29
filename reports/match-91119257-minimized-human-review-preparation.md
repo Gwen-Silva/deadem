@@ -15,8 +15,8 @@ Task 039 prepared a human-facing review package for the minimized visual cases s
 
 ## Outputs
 
-- `output/match_91119257/manual-review-form.json`
-- `output/match_91119257/manual-review-form.csv`
+- `output/archive/match_91119257/manual-review/manual-review-form.json`
+- `output/archive/match_91119257/manual-review/manual-review-form.csv`
 - `output/match_91119257/manual-review-instructions.md`
 - `output/match_91119257/manual-review-package-manifest.json`
 
