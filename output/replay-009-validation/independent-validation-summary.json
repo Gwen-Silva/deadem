@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "064",
+  "replayId": "replay_009",
+  "preflightDecision": "independent_source_missing",
+  "independentSourceType": null,
+  "sourceIndependenceResult": "no_accepted_independent_source_found",
+  "sourceCoverage": "none",
+  "synchronizationResult": "not_attempted_source_missing",
+  "sampleSize": 0,
+  "healthZeroDiscrepancyResult": "candidate_zero_values_are_not_supported_objective_health_zero_observations",
+  "comparisonPerformed": false,
+  "semanticConclusionsStillBlocked": [
+    "killed",
+    "destroyed",
+    "secured",
+    "claimed",
+    "deposited",
+    "mechanic effects",
+    "spatial contest",
+    "macro interpretation"
+  ],
+  "gate": "replay_009_objective_structure_events_validation_blocked",
+  "task064Status": "blocked",
+  "requiredSource": {
+    "preferred": "synchronized replay 009 video or recorded spectator video",
+    "acceptableAlternatives": [
+      "controlled manual replay review with timestamps",
+      "game-client event log independent of the production parser",
+      "independent parser output for replay 009 objective/structure lifecycle",
+      "manually annotated replay 009 objective/structure timeline"
+    ],
+    "minimumCoverage": [
+      "at least one independently synchronized anchor",
+      "visual or logged evidence for a subset of Mid Boss, Guardian, Walker, Patron/base, Urn, or Rejuvenator observations"
+    ]
+  },
+  "replay005Protection": "not_processed_or_inspected",
+  "botFixtureExclusion": "not_processed_or_inspected"
+}

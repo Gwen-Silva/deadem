@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "taskId": "064",
+  "replayId": "replay_009",
+  "decision": "independent_source_missing",
+  "candidates": [
+    {
+      "sourceId": "samples_replay_009_normal_dem",
+      "sourceType": "raw_replay_file",
+      "pathOrReference": "samples/replay_009_normal.dem",
+      "available": true,
+      "independentFromProductionParser": false,
+      "timeBasis": "demo tick when parsed; raw bytes alone are not an independent validation source",
+      "synchronizationAvailable": false,
+      "coverageStart": null,
+      "coverageEnd": null,
+      "quality": "not_independent",
+      "limitations": [
+        "This is the source replay used by the production parser outputs.",
+        "It cannot independently validate parser-derived objective/structure events without another decoder or review source."
+      ]
+    },
+    {
+      "sourceId": "samples_partida_006_video",
+      "sourceType": "recorded_video_wrong_match",
+      "pathOrReference": "samples/videos/Partida_006_Replay.mp4",
+      "available": true,
+      "independentFromProductionParser": true,
+      "timeBasis": "video seconds",
+      "synchronizationAvailable": false,
+      "coverageStart": null,
+      "coverageEnd": null,
+      "quality": "not_applicable",
+      "limitations": [
+        "This video is associated with match 91119257 / replay 006 context, not replay 009 / match 91381179.",
+        "It must not be used to validate replay 009 events."
+      ]
+    },
+    {
+      "sourceId": "task_062_observability_outputs",
+      "sourceType": "parser_derived_output",
+      "pathOrReference": "output/replay-009-states/objective-structure-*.json",
+      "available": true,
+      "independentFromProductionParser": false,
+      "timeBasis": "demoTick/parserSeconds",
+      "synchronizationAvailable": false,
+      "coverageStart": null,
+      "coverageEnd": null,
+      "quality": "not_independent",
+      "limitations": [
+        "Task 062 is the direct parser-derived evidence source for Task 063.",
+        "It is explicitly excluded as an independent source."
+      ]
+    },
+    {
+      "sourceId": "task_063_factual_event_outputs",
+      "sourceType": "parser_derived_output",
+      "pathOrReference": "output/replay-009-states/objective-structure-factual-events.jsonl",
+      "available": true,
+      "independentFromProductionParser": false,
+      "timeBasis": "demoTick/parserSeconds",
+      "synchronizationAvailable": false,
+      "coverageStart": null,
+      "coverageEnd": null,
+      "quality": "not_independent",
+      "limitations": [
+        "Task 063 is a deterministic transformation of Task 062 parser-derived evidence.",
+        "It cannot independently validate itself."
+      ]
+    },
+    {
+      "sourceId": "external_parser_oracle_replay_009",
+      "sourceType": "independent_parser_output",
+      "pathOrReference": "not found",
+      "available": false,
+      "independentFromProductionParser": true,
+      "timeBasis": "",
+      "synchronizationAvailable": false,
+      "coverageStart": null,
+      "coverageEnd": null,
+      "quality": "missing",
+      "limitations": [
+        "Existing external parser oracle work targeted replay 006 and did not produce replay 009 objective/structure event output."
+      ]
+    },
+    {
+      "sourceId": "manual_replay_009_timeline",
+      "sourceType": "manually_annotated_replay_timeline",
+      "pathOrReference": "not found",
+      "available": false,
+      "independentFromProductionParser": true,
+      "timeBasis": "",
+      "synchronizationAvailable": false,
+      "coverageStart": null,
+      "coverageEnd": null,
+      "quality": "missing",
+      "limitations": [
+        "No manually annotated replay 009 objective/structure timeline was found in repository or local output directories."
+      ]
+    }
+  ],
+  "requiredSource": {
+    "preferred": "synchronized replay 009 video or recorded spectator video",
+    "acceptableAlternatives": [
+      "controlled manual replay review with timestamps",
+      "game-client event log independent of the production parser",
+      "independent parser output for replay 009 objective/structure lifecycle",
+      "manually annotated replay 009 objective/structure timeline"
+    ],
+    "minimumCoverage": [
+      "at least one independently synchronized anchor",
+      "visual or logged evidence for a subset of Mid Boss, Guardian, Walker, Patron/base, Urn, or Rejuvenator observations"
+    ]
+  },
+  "replay005Protection": "not_processed_or_inspected",
+  "botFixtureExclusion": "not_processed_or_inspected"
+}

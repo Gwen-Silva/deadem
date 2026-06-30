@@ -2,9 +2,21 @@
 
 Status: blocked
 
-Unlocked by: independent replay video, controlled game observation, or equivalent source selected by the user
+Unlocked by: synchronized replay 009 video, controlled manual replay review, replay-009 game-client event log, replay-009 independent parser output, or replay-009 manual objective/structure timeline with enough timing anchors for comparison
 
-Blocked by: requires independent replay video, controlled game observation, or equivalent source selected by the user
+Blocked by: independent-source preflight found no accepted independent source associated with replay 009
+
+## Preflight Result
+
+- Preflight decision: `independent_source_missing`
+- Source inventory: `output/replay-009-validation/independent-source-inventory.json`
+- Required source: synchronized replay 009 video is preferred. A controlled
+  manual replay review, game-client event log independent of the production
+  parser, independent parser output, or manually annotated replay-009 timeline
+  is also acceptable when it includes timing anchors.
+- Non-independent sources rejected: Task 062 outputs, Task 063 outputs, raw
+  replay bytes without independent decoding/review, mechanics knowledge, wiki
+  descriptions, and expected game behavior.
 
 ## Objective
 
@@ -25,6 +37,7 @@ independent source without applying mechanic effects or macro interpretation.
 - Independent-source availability check;
 - bounded sample selection;
 - event-to-source comparison;
+- Spirit Urn candidate health-zero audit;
 - replay 005 exclusion verification;
 - bot fixture exclusion verification;
 - task queue validation.

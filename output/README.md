@@ -83,3 +83,9 @@ candidates, and Rejuvenator candidates. These files convert only Task 062 direct
 class/property/lifecycle evidence. Health zero is not a kill/destruction
 conclusion, entity deletion is not objective completion, and mechanic effects
 remain unapplied.
+
+Task 064 preflight adds `independent-source-inventory.json`,
+`spirit-urn-health-zero-audit.json`, `independent-validation-summary.json`, and
+`independent-validation-gate.json` under `output/replay-009-validation/`. No
+accepted independent replay-009 source was found, so Task 064 remains blocked
+and no event-source comparison was performed.
