@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "matchId": "91381179",
+  "buildId": "23916427",
+  "parserDurationSeconds": 2170.703,
+  "canonicalGate": "replay_009_canonical_factual_state_ready_with_constraints",
+  "inspectorGate": "replay_009_factual_state_inspector_ready_with_constraints",
+  "playerCount": 12,
+  "entityCount": 80,
+  "canonicalRecordCount": 787,
+  "timelineEventCount": 423,
+  "metadataRecordCount": 364,
+  "snapshotCount": 187,
+  "validationOverlayCount": 37,
+  "unmatchedValidationCount": 0,
+  "spatialStatus": "unavailable",
+  "mechanicVersionStatus": "unresolved",
+  "mechanicEffectsApplied": 0,
+  "caveats": [
+    "Canonical does not mean independently validated.",
+    "Visual validation applies only to sampled events.",
+    "Parser time is not pause-adjusted game time.",
+    "Camera absence is not entity absence.",
+    "Entity deletion is not destruction or objective completion."
+  ],
+  "capabilities": [
+    {
+      "capability": "player identity",
+      "status": "ready_with_constraints",
+      "evidence": "12 players, 6v6, parser-derived continuity"
+    },
+    {
+      "capability": "player life/death",
+      "status": "ready_with_constraints",
+      "evidence": "84 matched deaths"
+    },
+    {
+      "capability": "respawn observation",
+      "status": "ready_with_constraints",
+      "evidence": "82 observed returns and 2 unresolved before replay end"
+    },
+    {
+      "capability": "player net worth",
+      "status": "ready_with_constraints",
+      "evidence": "m_iGoldNetWorth endpoints only"
+    },
+    {
+      "capability": "team net worth",
+      "status": "ready_with_constraints",
+      "evidence": "team endpoint totals from m_iGoldNetWorth"
+    },
+    {
+      "capability": "Mid Boss raw state",
+      "status": "ready_with_constraints",
+      "evidence": "partially visually validated at event level"
+    },
+    {
+      "capability": "Guardian raw state",
+      "status": "ready_with_constraints",
+      "evidence": "not visually observable in Task 064 sample"
+    },
+    {
+      "capability": "Walker raw state",
+      "status": "ready_with_constraints",
+      "evidence": "partially visually validated at event level"
+    },
+    {
+      "capability": "Barrack/BossTier3/TrooperBoss raw state",
+      "status": "partial",
+      "evidence": "identity ambiguous at class level"
+    },
+    {
+      "capability": "Spirit Urn candidate observability",
+      "status": "partial",
+      "evidence": "candidate identity unresolved"
+    },
+    {
+      "capability": "Rejuvenator observability",
+      "status": "unavailable",
+      "evidence": "no canonical Rejuvenator events"
+    },
+    {
+      "capability": "spatial regions",
+      "status": "unavailable",
+      "evidence": "Task 061 did not validate map transform or regions"
+    },
+    {
+      "capability": "mechanic activation",
+      "status": "blocked",
+      "evidence": "build 23916427 mapping unresolved"
+    },
+    {
+      "capability": "macro interpretation",
+      "status": "blocked",
+      "evidence": "not implemented and not authorized"
+    }
+  ]
+}

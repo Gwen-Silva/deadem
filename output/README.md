@@ -104,3 +104,13 @@ matched event-level overlays. Spatial fields remain unavailable, visual
 synchronization has bounded uncertainty, camera absence is not entity absence,
 entity deletion is not destruction/completion, and mechanic effects remain
 unapplied.
+
+## Replay 009 Factual State Inspector
+
+`output/replay-009-inspection/` contains the Task 066 static inspector generated
+from canonical replay-009 outputs. It includes self-contained HTML, CSS,
+JavaScript, and compact data JSON for overview, capabilities, timeline events,
+non-timeline metadata, players, entities, snapshots, and validation overlays.
+The inspector is a local review surface only. It preserves provenance and
+semantic limits, keeps parser time unadjusted, and applies zero mechanic
+effects.

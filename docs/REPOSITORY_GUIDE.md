@@ -113,3 +113,12 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   event-level only, category validation is not propagated to every event, camera
   absence is not entity absence, and visual timing keeps bounded uncertainty.
   Use `tools/query-replay-state.mjs` for deterministic inspection.
+- Replay 009 inspection interface outputs live in
+  `output/replay-009-inspection/`. Regenerate them with
+  `node tools/generate-replay-inspection-report.mjs --replay replay_009` and
+  serve locally with
+  `node tools/serve-replay-inspector.mjs --dir output/replay-009-inspection`.
+  Export bounded factual Markdown reports with
+  `tools/export-replay-factual-report.mjs`. The inspector shows factual and
+  candidate observations, provenance, validation labels, and semantic limits;
+  it does not perform strategic or macro analysis.

@@ -65,6 +65,11 @@ rules apply to historical replays.
     into one provenance-preserving layer;
   - canonical does not mean independently validated, and category-level visual
     validation does not validate every event.
+- Local factual-state inspector from Task 066:
+  - static HTML/CSS/JavaScript over `output/replay-009-inspection/`;
+  - filterable timeline, snapshots, player/entity inspectors, validation
+    overlays, non-timeline metadata, and provenance panels;
+  - exportable factual Markdown reports with semantic limits preserved.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -183,7 +188,21 @@ node --test tests/knowledge/query-mechanics.test.mjs
 node --test tests/replay-009-factual-state-detection.test.mjs
 node --test tests/replay-009-spatial-validation.test.mjs
 node --test tests/canonical-replay-state/*.test.mjs
+node --test tests/replay-009-inspector.test.mjs
 node -e "const fs=require('fs'); for (const f of fs.readdirSync('output/replay-009-states')) { const p='output/replay-009-states/'+f; const t=fs.readFileSync(p,'utf8').trim(); if (f.endsWith('.json')) JSON.parse(t); if (f.endsWith('.jsonl') && t) for (const line of t.split(/\r?\n/)) JSON.parse(line); }"
+```
+
+Generate and serve the replay-009 inspector:
+
+```bash
+node tools/generate-replay-inspection-report.mjs --replay replay_009
+node tools/serve-replay-inspector.mjs --dir output/replay-009-inspection
+```
+
+Export a factual report:
+
+```bash
+node tools/export-replay-factual-report.mjs --replay replay_009 --mechanic mid_boss --output reports/generated/replay-009-mid-boss-factual-report.md
 ```
 
 Video-pipeline tests use the isolated Python environment when available:
