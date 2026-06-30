@@ -76,3 +76,10 @@ operations, and message-name candidates for objective/structure mechanics. Mid
 Boss and core structures are observable with constraints; Spirit Urn and
 Rejuvenator remain partial/uncertain. These outputs are not mechanic activation
 or spatial state events.
+
+Task 063 adds `objective-structure-factual-events.jsonl` plus mechanic-specific
+event shards for Mid Boss, Guardian, Walker, Patron/base structures, Urn
+candidates, and Rejuvenator candidates. These files convert only Task 062 direct
+class/property/lifecycle evidence. Health zero is not a kill/destruction
+conclusion, entity deletion is not objective completion, and mechanic effects
+remain unapplied.

@@ -99,5 +99,22 @@
     "gate": "replay_009_objective_structure_observability_ready_with_gaps",
     "safeNewFactualStates": 23,
     "mechanicEffectsApplied": 0
+  },
+  "task063Extension": {
+    "gate": "replay_009_objective_structure_factual_events_ready_with_gaps",
+    "objectiveStructureFactualEvents": {
+      "entityGenerationsNormalized": 56,
+      "factualEventsEmitted": 583,
+      "midBossEntities": 2,
+      "coreStructureEntities": 34,
+      "spiritUrnCandidateEntities": 20,
+      "rejuvenatorCandidateEntities": 0,
+      "lifecycleViolations": 0
+    },
+    "mechanicEffectsApplied": 0,
+    "limitations": [
+      "Health zero is observable only if raw sampled health reaches zero; Task 063 did not infer kills or destruction.",
+      "Entity deletion is observable but not interpreted as objective completion, claim, deposit, kill, or destruction."
+    ]
   }
 }

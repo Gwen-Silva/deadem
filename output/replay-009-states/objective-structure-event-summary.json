@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "taskId": "063",
+  "replayId": "replay_009",
+  "entityGenerationsNormalized": 56,
+  "factualEventsEmitted": 583,
+  "supportedFactualEventsEmitted": 405,
+  "duplicateEventsRemoved": 0,
+  "lifecycleViolations": 0,
+  "byMechanic": {
+    "mid_boss": {
+      "entityCount": 2,
+      "eventCount": 28,
+      "eventTypes": {
+        "entity_created": 2,
+        "entity_deleted": 2,
+        "entity_present": 2,
+        "health_changed": 8,
+        "health_observed": 2,
+        "raw_state_changed": 8,
+        "team_observed": 4
+      },
+      "terminalSequences": {
+        "deleted_without_observed_zero": 2
+      }
+    },
+    "guardian": {
+      "entityCount": 8,
+      "eventCount": 48,
+      "eventTypes": {
+        "entity_created": 8,
+        "entity_present": 8,
+        "health_observed": 8,
+        "raw_state_changed": 8,
+        "team_observed": 16
+      },
+      "terminalSequences": {
+        "present_until_replay_end": 8
+      }
+    },
+    "walker": {
+      "entityCount": 6,
+      "eventCount": 82,
+      "eventTypes": {
+        "entity_created": 6,
+        "entity_deleted": 4,
+        "entity_present": 6,
+        "health_changed": 24,
+        "health_observed": 6,
+        "raw_state_changed": 24,
+        "team_observed": 12
+      },
+      "terminalSequences": {
+        "deleted_without_observed_zero": 4,
+        "present_until_replay_end": 2
+      }
+    },
+    "patron_base": {
+      "entityCount": 20,
+      "eventCount": 247,
+      "eventTypes": {
+        "entity_created": 20,
+        "entity_deleted": 12,
+        "entity_present": 20,
+        "health_changed": 60,
+        "health_observed": 20,
+        "raw_state_changed": 75,
+        "team_observed": 40
+      },
+      "terminalSequences": {
+        "deleted_without_observed_zero": 12,
+        "present_until_replay_end": 8
+      }
+    },
+    "spirit_urn": {
+      "entityCount": 20,
+      "eventCount": 178,
+      "eventTypes": {
+        "candidate_entity_created": 20,
+        "candidate_entity_deleted": 14,
+        "candidate_entity_present": 20,
+        "candidate_raw_property_changed": 124
+      },
+      "terminalSequences": {
+        "deleted_without_observed_zero": 9,
+        "health_zero_then_deleted": 5,
+        "present_until_replay_end": 6
+      }
+    },
+    "rejuvenator": {
+      "entityCount": 0,
+      "eventCount": 0,
+      "eventTypes": {},
+      "terminalSequences": {}
+    }
+  },
+  "directTeamObservations": 72,
+  "healthZeroObservations": 0,
+  "deletionObservations": 32,
+  "knowledge": {
+    "buildId": "23916427",
+    "applicableRules": [],
+    "effectApplication": "not_applied",
+    "missingBuildMapping": true
+  },
+  "safeNewFactualOutputs": [
+    "mid_boss raw entity lifecycle and sampled health events",
+    "guardian raw entity lifecycle, team, state, and sampled health events",
+    "walker raw entity lifecycle, team, state, and sampled health events",
+    "patron/base raw entity lifecycle, team, state, and sampled health events",
+    "Spirit Urn candidate lifecycle/property events only"
+  ],
+  "stillProhibitedConclusions": [
+    "health zero proves killed or destroyed",
+    "entity deletion proves destroyed, secured, claimed, or deposited",
+    "objective completion",
+    "mechanic activation",
+    "mechanic effects",
+    "spatial contest/proximity",
+    "macro interpretation"
+  ],
+  "gate": "replay_009_objective_structure_factual_events_ready_with_gaps",
+  "blockedValidationFollowUp": "tasks/blocked/064-validate-replay-009-objective-structure-factual-events-against-independent-source.md",
+  "replay005Protection": "not_processed_or_inspected",
+  "botFixtureExclusion": "not_processed_or_inspected"
+}

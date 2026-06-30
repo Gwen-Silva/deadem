@@ -33,11 +33,15 @@
     },
     {
       "mechanicId": "mid_boss",
-      "stateDetectionStatus": "not_available",
+      "stateDetectionStatus": "ready_with_constraints",
       "mechanicVersionStatus": "unresolved",
       "activationStatus": "blocked",
       "effectApplicationStatus": "blocked",
-      "safeOutputs": [],
+      "safeOutputs": [
+        "mid boss entity present",
+        "mid boss sampled raw health",
+        "mid boss entity deleted"
+      ],
       "prohibitedOutputs": [
         "comeback Urn buff active",
         "Rejuvenator effect active",
@@ -45,11 +49,13 @@
         "objective decision correctness",
         "structure pressure",
         "lane occupancy",
-        "objective-player proximity"
+        "objective-player proximity",
+        "mid boss killed"
       ],
       "missingTelemetry": [
-        "boss_presence",
-        "boss_health_state"
+        "independent kill confirmation",
+        "mechanic effect applicability",
+        "spatial contest/proximity"
       ],
       "limitations": [
         "Mid Boss absence cannot be inferred from missing compact entity data.",
@@ -142,11 +148,16 @@
     },
     {
       "mechanicId": "core_structures",
-      "stateDetectionStatus": "not_available",
+      "stateDetectionStatus": "ready_with_constraints",
       "mechanicVersionStatus": "unresolved",
       "activationStatus": "blocked",
       "effectApplicationStatus": "blocked",
-      "safeOutputs": [],
+      "safeOutputs": [
+        "structure entity present",
+        "structure sampled raw health",
+        "structure team raw value",
+        "structure entity deleted"
+      ],
       "prohibitedOutputs": [
         "comeback Urn buff active",
         "Rejuvenator effect active",
@@ -154,11 +165,13 @@
         "objective decision correctness",
         "structure pressure",
         "lane occupancy",
-        "objective-player proximity"
+        "objective-player proximity",
+        "structure destroyed"
       ],
       "missingTelemetry": [
-        "structure_presence",
-        "structure_destroyed"
+        "independent destruction confirmation",
+        "region association",
+        "mechanic effect applicability"
       ],
       "limitations": [
         "No structure position, region, destruction, or pressure inference allowed.",

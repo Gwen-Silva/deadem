@@ -47,6 +47,11 @@ rules apply to historical replays.
     constraints;
   - Spirit Urn and Rejuvenator remain partial/uncertain;
   - no objective completion, claim, deposit, kill, or effect is inferred.
+- Objective/structure factual events from Task 063:
+  - Mid Boss, Guardian, Walker, and Patron/base entity lifecycle plus sampled
+    raw health/team/state events are emitted with semantic limits;
+  - health zero and entity deletion remain observations, not kill/destruction or
+    objective-completion conclusions.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -59,8 +64,8 @@ rules apply to historical replays.
 - Map transform and map-version compatibility are unresolved for replay 009.
 - Generic regions, lane projection, objective proximity, and spatial semantic
   states are unavailable.
-- Direct objective/structure observability does not yet emit canonical factual
-  state events; conversion is blocked in Task 063.
+- Objective/structure factual events still require independent validation before
+  destruction, kill, claim, deposit, or secure conclusions.
 - Mechanic activation and mechanic effects are not applied.
 - Net worth does not expose secured, unsecured, spendable, or reward-source
   economy semantics.
@@ -140,6 +145,7 @@ Major current reports:
 - [`reports/build-23916427-mechanics-mapping.md`](./reports/build-23916427-mechanics-mapping.md)
 - [`reports/replay-009-factual-state-detection.md`](./reports/replay-009-factual-state-detection.md)
 - [`reports/replay-009-objective-structure-entity-observability.md`](./reports/replay-009-objective-structure-entity-observability.md)
+- [`reports/replay-009-objective-structure-factual-state-events.md`](./reports/replay-009-objective-structure-factual-state-events.md)
 
 ## Running Validation
 

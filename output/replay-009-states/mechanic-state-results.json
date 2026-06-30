@@ -23,18 +23,25 @@
     },
     {
       "mechanicId": "mid_boss",
-      "factualStateDetection": "not_available",
-      "detectedEntityCount": 0,
-      "detectedStateTypes": [],
+      "factualStateDetection": "ready_with_constraints",
+      "detectedEntityCount": 2,
+      "detectedStateTypes": [
+        "entity_present",
+        "health_observed",
+        "health_changed",
+        "entity_deleted"
+      ],
       "unavailableStateTypes": [
-        "boss_presence",
-        "boss_health_state"
+        "killed",
+        "secured",
+        "mechanic_effect"
       ],
       "evidence": [
-        "No compact replay-009 Mid Boss entity/property inventory."
+        "Task 063 converted Task 062 CNPC_MidBoss lifecycle and sampled health evidence."
       ],
       "limitations": [
-        "Mid Boss absence cannot be inferred from missing compact entity data."
+        "Health zero was not observed in compact Task 062 evidence.",
+        "Deletion is not interpreted as killed."
       ],
       "knowledgeMissingBuildMapping": true
     },
@@ -100,18 +107,27 @@
     },
     {
       "mechanicId": "core_structures",
-      "factualStateDetection": "not_available",
-      "detectedEntityCount": 0,
-      "detectedStateTypes": [],
+      "factualStateDetection": "ready_with_constraints",
+      "detectedEntityCount": 34,
+      "detectedStateTypes": [
+        "entity_present",
+        "team_observed",
+        "health_observed",
+        "health_changed",
+        "raw_state_changed",
+        "entity_deleted"
+      ],
       "unavailableStateTypes": [
-        "structure_presence",
-        "structure_destroyed"
+        "destroyed",
+        "strategic_pressure",
+        "region_association"
       ],
       "evidence": [
-        "No compact replay-009 structure entity/property inventory."
+        "Task 063 converted Task 062 Guardian, Walker, and Patron/base lifecycle and sampled property evidence."
       ],
       "limitations": [
-        "No structure position, region, destruction, or pressure inference allowed."
+        "Deletion is not interpreted as destroyed.",
+        "No spatial or structure-region association is available."
       ],
       "knowledgeMissingBuildMapping": true
     }
