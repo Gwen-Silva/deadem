@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Canonical Replay Event",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "replayId",
+    "matchId",
+    "buildId",
+    "eventCategory",
+    "eventType",
+    "subject",
+    "time",
+    "value",
+    "spatial",
+    "provenance",
+    "epistemicStatus",
+    "independentValidation"
+  ],
+  "additionalProperties": true
+}

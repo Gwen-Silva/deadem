@@ -59,6 +59,12 @@ rules apply to historical replays.
     visible in the sample, and Urn/Rejuvenator remain unresolved;
   - mechanic effects, kills, destruction, claims, deposits, and strategic
     interpretations remain unapplied.
+- Canonical replay-009 factual state from Task 065:
+  - player, life/death/respawn, net-worth, objective/structure raw events,
+    entity registry, snapshots, and Task 064 validation overlays are normalized
+    into one provenance-preserving layer;
+  - canonical does not mean independently validated, and category-level visual
+    validation does not validate every event.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -100,6 +106,7 @@ Replay bytes
   -> gameplay telemetry                     [available with constraints]
   -> player identity/lifecycle              [available with constraints]
   -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
+  -> canonical factual state schema         [replay_009_canonical_factual_state_ready_with_constraints]
   -> spatial map projection                 [not available]
   -> mechanic version resolution            [unresolved for build 23916427]
   -> mechanic activation                    [blocked]
@@ -155,6 +162,7 @@ Major current reports:
 - [`reports/replay-009-objective-structure-entity-observability.md`](./reports/replay-009-objective-structure-entity-observability.md)
 - [`reports/replay-009-objective-structure-factual-state-events.md`](./reports/replay-009-objective-structure-factual-state-events.md)
 - [`reports/replay-009-objective-structure-independent-validation.md`](./reports/replay-009-objective-structure-independent-validation.md)
+- [`reports/replay-009-canonical-factual-state-schema.md`](./reports/replay-009-canonical-factual-state-schema.md)
 
 ## Running Validation
 
@@ -174,6 +182,7 @@ npm run check:outputs
 node --test tests/knowledge/query-mechanics.test.mjs
 node --test tests/replay-009-factual-state-detection.test.mjs
 node --test tests/replay-009-spatial-validation.test.mjs
+node --test tests/canonical-replay-state/*.test.mjs
 node -e "const fs=require('fs'); for (const f of fs.readdirSync('output/replay-009-states')) { const p='output/replay-009-states/'+f; const t=fs.readFileSync(p,'utf8').trim(); if (f.endsWith('.json')) JSON.parse(t); if (f.endsWith('.jsonl') && t) for (const line of t.split(/\r?\n/)) JSON.parse(line); }"
 ```
 

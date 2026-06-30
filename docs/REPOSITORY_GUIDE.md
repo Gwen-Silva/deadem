@@ -105,3 +105,11 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   visible in the sample, and Urn/Rejuvenator unresolved. It still does not
   approve destruction, kill, claim, deposit, secure, mechanic effect, or macro
   conclusions.
+- Replay 009 canonical factual state outputs live in
+  `output/replay-009-canonical/`. Task 065 normalizes player, life/death,
+  respawn, net-worth, objective/structure raw events, entity generations,
+  snapshots, and Task 064 validation overlays into one queryable layer.
+  Canonical does not mean independently validated: visual validation is
+  event-level only, category validation is not propagated to every event, camera
+  absence is not entity absence, and visual timing keeps bounded uncertainty.
+  Use `tools/query-replay-state.mjs` for deterministic inspection.

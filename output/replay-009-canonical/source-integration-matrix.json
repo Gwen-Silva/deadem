@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "sources": [
+    {
+      "sourceTaskId": "060",
+      "sourcePath": "output/replay-009-states/player-identity-foundation.json",
+      "sourceRecordType": "player registry",
+      "canonicalCategory": "player_identity",
+      "included": true,
+      "inclusionReason": "Task 060 validated replay-009 player identities and teams with constraints.",
+      "confidenceMapping": {
+        "supported": "supported"
+      },
+      "validationMapping": {
+        "default": "internally_consistent"
+      },
+      "semanticLimits": [
+        "player identity is parser-derived and not visual identity proof"
+      ],
+      "deduplicationKey": [
+        "playerKey",
+        "controllerEntityIndex"
+      ]
+    },
+    {
+      "sourceTaskId": "060",
+      "sourcePath": "output/replay-009-states/player-life-state-events.jsonl",
+      "sourceRecordType": "player life event",
+      "canonicalCategory": "player_alive/player_dead/player_respawned",
+      "included": true,
+      "inclusionReason": "Task 060 reconciled death counters and lifecycle events.",
+      "confidenceMapping": {
+        "confirmed": "confirmed",
+        "supported": "supported"
+      },
+      "validationMapping": {
+        "default": "internally_consistent"
+      },
+      "semanticLimits": [
+        "respawn duration is parser-time observation, not mechanic timer validation"
+      ],
+      "deduplicationKey": [
+        "stateId"
+      ]
+    },
+    {
+      "sourceTaskId": "060",
+      "sourcePath": "output/replay-009-states/player-net-worth-series.jsonl",
+      "sourceRecordType": "player net-worth endpoint",
+      "canonicalCategory": "player_net_worth",
+      "included": true,
+      "inclusionReason": "Task 060 exposes m_iGoldNetWorth endpoints.",
+      "confidenceMapping": {
+        "supported": "supported"
+      },
+      "validationMapping": {
+        "default": "internally_consistent"
+      },
+      "semanticLimits": [
+        "net worth is not spendable, secured, unsecured, or effective combat power"
+      ],
+      "deduplicationKey": [
+        "stateId"
+      ]
+    },
+    {
+      "sourceTaskId": "063",
+      "sourcePath": "output/replay-009-states/objective-structure-factual-events.jsonl",
+      "sourceRecordType": "objective/structure factual event",
+      "canonicalCategory": "entity/candidate event",
+      "included": true,
+      "inclusionReason": "Task 063 normalized direct class/property/lifecycle evidence.",
+      "confidenceMapping": {
+        "confirmed": "confirmed",
+        "supported": "supported",
+        "uncertain": "uncertain"
+      },
+      "validationMapping": {
+        "default": "not_independently_validated",
+        "overlay": "Task 064 comparison-specific only"
+      },
+      "semanticLimits": [
+        "entity deletion is not destruction or completion",
+        "health zero is not kill/destruction"
+      ],
+      "deduplicationKey": [
+        "eventId"
+      ]
+    },
+    {
+      "sourceTaskId": "064",
+      "sourcePath": "output/replay-009-validation/event-source-comparison.jsonl",
+      "sourceRecordType": "independent visual comparison",
+      "canonicalCategory": "validation overlay",
+      "included": true,
+      "inclusionReason": "Task 064 overlays comparison-specific visual validation without duplicating gameplay events.",
+      "confidenceMapping": {
+        "supported": "supported",
+        "confirmed": "confirmed",
+        "uncertain": "uncertain"
+      },
+      "validationMapping": {
+        "visually_confirmed": "visually_confirmed",
+        "source_supported": "visually_supported",
+        "not_visible": "not_observable",
+        "identity_ambiguous": "partially_supported"
+      },
+      "semanticLimits": [
+        "visual synchronization is bounded, not exact",
+        "camera absence is not entity absence"
+      ],
+      "deduplicationKey": [
+        "parserEventId",
+        "comparisonId"
+      ]
+    }
+  ]
+}

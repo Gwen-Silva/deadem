@@ -92,3 +92,15 @@ constraints, Patron/base identity remains ambiguous, Guardian sample coverage is
 not visible, and Spirit Urn/Rejuvenator remain unresolved. No mechanic effects,
 objective completion, kill, destruction, claim, deposit, secure, or macro
 conclusions are applied.
+
+## Replay 009 Canonical Factual State
+
+`output/replay-009-canonical/` contains Task 065 canonical replay-state outputs:
+schemas, source integration matrix, player/entity registries, factual timeline,
+non-timeline metadata, validation overlays, snapshots, capability matrix, and
+gate. Canonical means normalized and provenance-preserving; it does not mean all
+events are independently validated. Task 064 visual support is attached only to
+matched event-level overlays. Spatial fields remain unavailable, visual
+synchronization has bounded uncertainty, camera absence is not entity absence,
+entity deletion is not destruction/completion, and mechanic effects remain
+unapplied.

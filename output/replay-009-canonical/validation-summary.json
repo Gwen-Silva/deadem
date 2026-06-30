@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "taskId": "065",
+  "replayId": "replay_009",
+  "gate": "replay_009_canonical_factual_state_ready_with_constraints",
+  "sourceTasksIntegrated": [
+    "056",
+    "057",
+    "059",
+    "060",
+    "061",
+    "062",
+    "063",
+    "064"
+  ],
+  "playerRegistryCount": 12,
+  "entityRegistryCount": 80,
+  "canonicalEventCount": 787,
+  "timelineEventCount": 423,
+  "nonTimelineEventCount": 364,
+  "validationOverlayCount": 37,
+  "unmatchedValidationCount": 0,
+  "snapshotCount": 187,
+  "duplicatesRemoved": 0,
+  "mechanicEffectsApplied": 0,
+  "spatialStatus": "unavailable",
+  "synchronizationUncertainty": {
+    "status": "usable_with_constraints",
+    "timingWindowSeconds": {
+      "before": 22.782,
+      "after": 22.782
+    },
+    "medianResidualSeconds": 13.058,
+    "maximumResidualSeconds": 22.782
+  },
+  "categoryValidation": [
+    {
+      "category": "mid_boss",
+      "sampledEvents": 4,
+      "visibleEvents": 4,
+      "confirmedEvents": 2,
+      "supportedEvents": 2,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 0,
+      "timingAmbiguousEvents": 0,
+      "identityStatus": "visual_identity_supported",
+      "timingStatus": "validated_with_constraints",
+      "overallStatus": "validated_with_constraints",
+      "limitations": [
+        "Deletion is not promoted to kill or reward."
+      ]
+    },
+    {
+      "category": "guardian",
+      "sampledEvents": 4,
+      "visibleEvents": 0,
+      "confirmedEvents": 0,
+      "supportedEvents": 0,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 4,
+      "timingAmbiguousEvents": 0,
+      "identityStatus": "not_visible",
+      "timingStatus": "not_observable",
+      "overallStatus": "not_observable",
+      "limitations": [
+        "Camera did not clearly cover sampled Guardian entities."
+      ]
+    },
+    {
+      "category": "walker",
+      "sampledEvents": 10,
+      "visibleEvents": 6,
+      "confirmedEvents": 0,
+      "supportedEvents": 6,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 4,
+      "timingAmbiguousEvents": 0,
+      "identityStatus": "visual_identity_supported",
+      "timingStatus": "partially_supported",
+      "overallStatus": "validated_with_constraints",
+      "limitations": [
+        "Class identity is visually plausible for Walker-type objects, but deletion timing is mostly not visible."
+      ]
+    },
+    {
+      "category": "barrack_boss",
+      "sampledEvents": 7,
+      "visibleEvents": 7,
+      "confirmedEvents": 0,
+      "supportedEvents": 0,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 0,
+      "timingAmbiguousEvents": 7,
+      "identityStatus": "visual_identity_ambiguous",
+      "timingStatus": "identity_ambiguous",
+      "overallStatus": "partially_supported",
+      "limitations": [
+        "Base-area objects are visible, but CNPC_BarrackBoss mapping is not independently separated."
+      ]
+    },
+    {
+      "category": "boss_tier3",
+      "sampledEvents": 1,
+      "visibleEvents": 1,
+      "confirmedEvents": 0,
+      "supportedEvents": 0,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 0,
+      "timingAmbiguousEvents": 1,
+      "identityStatus": "visual_identity_ambiguous",
+      "timingStatus": "identity_ambiguous",
+      "overallStatus": "partially_supported",
+      "limitations": [
+        "Patron/base phase visibility exists, but class-level identity remains ambiguous."
+      ]
+    },
+    {
+      "category": "trooper_boss",
+      "sampledEvents": 6,
+      "visibleEvents": 6,
+      "confirmedEvents": 0,
+      "supportedEvents": 0,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 0,
+      "timingAmbiguousEvents": 6,
+      "identityStatus": "visual_identity_ambiguous",
+      "timingStatus": "identity_ambiguous",
+      "overallStatus": "partially_supported",
+      "limitations": [
+        "TrooperBoss may be auxiliary; visual mapping unresolved."
+      ]
+    },
+    {
+      "category": "spirit_urn_candidates",
+      "sampledEvents": 5,
+      "visibleEvents": 0,
+      "confirmedEvents": 0,
+      "supportedEvents": 0,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 0,
+      "timingAmbiguousEvents": 5,
+      "identityStatus": "identity_ambiguous",
+      "timingStatus": "identity_ambiguous",
+      "overallStatus": "partially_supported",
+      "limitations": [
+        "Candidate classes are not proven canonical Urn object."
+      ]
+    },
+    {
+      "category": "rejuvenator_candidate",
+      "sampledEvents": 0,
+      "visibleEvents": 0,
+      "confirmedEvents": 0,
+      "supportedEvents": 0,
+      "contradictedEvents": 0,
+      "notVisibleEvents": 0,
+      "timingAmbiguousEvents": 0,
+      "identityStatus": "not_tested",
+      "timingStatus": "not_tested",
+      "overallStatus": "not_tested",
+      "limitations": [
+        "No Rejuvenator candidate events were emitted by Task 063."
+      ]
+    }
+  ],
+  "replay005Protection": "not_processed_or_inspected",
+  "botFixtureExclusion": "not_processed_or_inspected"
+}
