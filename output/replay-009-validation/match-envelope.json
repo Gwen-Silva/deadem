@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "ticks": {
+    "firstParsedTick": -1,
+    "effectiveFirstTick": 0,
+    "lastParsedTick": 138925,
+    "structuralFinalTick": 138925,
+    "tickRate": 64,
+    "tickMonotonicity": "confirmed"
+  },
+  "duration": {
+    "parserDerivedSeconds": 2170.703,
+    "userReportedSeconds": 2131,
+    "deltaSeconds": 39.703,
+    "interpretation": "supported_pause_or_replay_padding_difference"
+  },
+  "timeline": [
+    {
+      "event": "replay_start",
+      "tick": -1,
+      "gameTimeSeconds": null,
+      "status": "confirmed",
+      "source": "parser"
+    },
+    {
+      "event": "sign_on_complete",
+      "tick": 0,
+      "gameTimeSeconds": 0,
+      "status": "inferred",
+      "source": "parser_effective_first_tick"
+    },
+    {
+      "event": "gameplay_start",
+      "tick": 0,
+      "gameTimeSeconds": 0,
+      "status": "inferred",
+      "source": "first_sample"
+    },
+    {
+      "event": "pause_start_end",
+      "tick": null,
+      "gameTimeSeconds": null,
+      "status": "unknown",
+      "source": "not_exposed_by_current_parser_path"
+    },
+    {
+      "event": "match_end",
+      "tick": 138925,
+      "gameTimeSeconds": 2170.703,
+      "status": "supported",
+      "source": "parser_last_tick"
+    },
+    {
+      "event": "replay_end",
+      "tick": 138925,
+      "gameTimeSeconds": 2170.703,
+      "status": "confirmed",
+      "source": "structural_pass"
+    }
+  ],
+  "pauseIntervals": [],
+  "gameTimeMonotonicity": "supported_by_sampling_grid",
+  "limitations": [
+    "game clock fields and explicit pause events were not exposed by this validation path"
+  ]
+}

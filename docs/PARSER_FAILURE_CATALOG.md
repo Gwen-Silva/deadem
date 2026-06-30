@@ -145,3 +145,13 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Replay 009: same user-provided build 23916427 normal 12-human replay completes.
 - Interpretation: replay 007 and replay 008 are distinct observable failures. The previous broad `solo_bot_mode_lifecycle_defect_supported` model is narrowed; no single shared bot lifecycle root cause is confirmed.
 - Production fix: none included.
+
+## Replay 009 Telemetry Validation
+
+- Gate: `replay_009_telemetry_usable_with_known_gaps`
+- Parser state: default gameplay-state parser completes.
+- Structural state: structural pass completes to EOF.
+- Roster: 12 Steam-ID-backed human identities, 6 players on team 2 and 6 players on team 3.
+- Position telemetry: one-second sampled player rows have full coordinate coverage in Task 056.
+- Known parser/telemetry gaps: explicit pause interval and direct game-clock behavior are not exposed by the validation path; killer/assist attribution and source-target damage are incomplete.
+- Corpus classification: compatible normal fixtures are 001-004 and 009; unsupported solo-bot fixtures are 006-008; replay 005 remains protected.

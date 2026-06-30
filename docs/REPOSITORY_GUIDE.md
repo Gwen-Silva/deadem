@@ -67,3 +67,10 @@ The conservative cleanup cycle keeps canonical match 91119257 files visible and 
 ## Structural Replay Parsing
 
 Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metadata/envelope inspection that does not materialize gameplay state. Structural parser outputs live under `output/parser-compatibility/` and do not approve semantic telemetry.
+
+## Replay Corpus Status
+
+- Compatible normal fixtures for parser work: replay 001, replay 002, replay 003, replay 004, and replay 009.
+- Unsupported solo-bot fixtures: replay 006, replay 007, and replay 008. Preserve these as parser-incompatibility fixtures unless a task explicitly targets them.
+- Protected final holdout: replay 005. Do not process it outside an explicitly authorized final-holdout task.
+- Replay 009 telemetry validation outputs live in `output/replay-009-validation/`.

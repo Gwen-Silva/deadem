@@ -46,3 +46,7 @@
 ## Generic Bot/Solo Lifecycle Diagnostics
 
 `output/parser-compatibility/bot-solo-*.json`, `output/parser-compatibility/replay-007-failing-packet-operations.jsonl`, and `output/parser-compatibility/replay-008-failing-packet-operations.jsonl` summarize Task 055. They distinguish replay 007's out-of-range packet-entity lookup value from replay 008's bounded missing LEAVE. These outputs are diagnostics only and do not authorize bot-mode skips, placeholder entities, or parser recovery.
+
+## Replay 009 Telemetry Validation
+
+`output/replay-009-validation/` contains Task 056 compact quality outputs for the build-23916427 normal human replay. The directory records source inventory, match envelope, roster, controller/pawn lifecycle, position quality, economy quality, death-counter events, pause/disconnect audits, cross-source consistency, downstream readiness, and the validation gate. It does not contain raw replay traces, video frames, or replay files.

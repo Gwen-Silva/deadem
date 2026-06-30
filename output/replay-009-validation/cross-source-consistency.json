@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "comparisons": [
+    {
+      "comparison": "player roster vs expected metadata",
+      "sourceA": "parser_roster",
+      "sourceB": "user_metadata",
+      "comparableRecords": 12,
+      "matches": 12,
+      "mismatches": 0,
+      "unknown": 0,
+      "result": "consistent",
+      "examples": []
+    },
+    {
+      "comparison": "team distribution vs expected 6v6 shape",
+      "sourceA": "parser_roster",
+      "sourceB": "team_counts",
+      "comparableRecords": 2,
+      "matches": 2,
+      "mismatches": 0,
+      "unknown": 0,
+      "result": "consistent",
+      "examples": []
+    },
+    {
+      "comparison": "death events vs lifecycle deaths",
+      "sourceA": "death_counters",
+      "sourceB": "lifecycle_events",
+      "comparableRecords": 84,
+      "matches": 84,
+      "mismatches": 0,
+      "unknown": 0,
+      "result": "consistent",
+      "examples": []
+    },
+    {
+      "comparison": "position rows vs roster",
+      "sourceA": "position_samples",
+      "sourceB": "player_roster",
+      "comparableRecords": 26052,
+      "matches": 26052,
+      "mismatches": 0,
+      "unknown": 0,
+      "result": "consistent",
+      "examples": []
+    },
+    {
+      "comparison": "economy availability vs roster",
+      "sourceA": "economy_fields",
+      "sourceB": "player_roster",
+      "comparableRecords": 12,
+      "matches": 12,
+      "mismatches": 0,
+      "unknown": 0,
+      "result": "consistent",
+      "examples": []
+    },
+    {
+      "comparison": "pause metadata vs parser pause events",
+      "sourceA": "user_metadata",
+      "sourceB": "parser_events",
+      "comparableRecords": 1,
+      "matches": 0,
+      "mismatches": 0,
+      "unknown": 1,
+      "result": "not_comparable",
+      "examples": []
+    },
+    {
+      "comparison": "duration metadata vs parser envelope",
+      "sourceA": "user_metadata",
+      "sourceB": "parser_ticks",
+      "comparableRecords": 1,
+      "matches": 1,
+      "mismatches": 0,
+      "unknown": 0,
+      "result": "consistent",
+      "examples": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "sources": [
+    {
+      "source": "user_metadata",
+      "path": "inline_task_metadata",
+      "available": true,
+      "schema": "task_metadata",
+      "rowCount": 1,
+      "timeBasis": "reported_match_duration",
+      "identityBasis": "user_asserted",
+      "authorityScope": "match envelope",
+      "limitations": []
+    },
+    {
+      "source": "default_parser_snapshots",
+      "path": "samples/replay_009_normal.dem",
+      "available": true,
+      "schema": "one_second_parser_snapshots",
+      "rowCount": 26052,
+      "timeBasis": "parser_tick_to_seconds",
+      "identityBasis": "steam_id/controller/pawn",
+      "authorityScope": "identity, position, economy, combat counters",
+      "limitations": []
+    },
+    {
+      "source": "structural_pass",
+      "path": "output/parser-compatibility/new-replay-structural-results.json",
+      "available": true,
+      "schema": "structural_summary",
+      "rowCount": 139010,
+      "timeBasis": "command_ticks",
+      "identityBasis": "none",
+      "authorityScope": "container/framing only",
+      "limitations": []
+    },
+    {
+      "source": "video",
+      "path": null,
+      "available": false,
+      "schema": "not_available",
+      "rowCount": 0,
+      "timeBasis": "not_available",
+      "identityBasis": "not_available",
+      "authorityScope": "none",
+      "limitations": [
+        "no replay_009 video supplied"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "categories": [
+    {
+      "category": "match envelope",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "parser and structural final ticks available"
+      ],
+      "limitations": [
+        "game clock fields and explicit pause events were not exposed by this validation path"
+      ],
+      "knownFailureModes": [
+        "explicit pause localization unavailable"
+      ],
+      "suitabilityForDownstreamAnalysis": "trajectory timing with parser seconds is usable; game-clock pause claims need constraints"
+    },
+    {
+      "category": "players",
+      "status": "validated",
+      "evidence": [
+        "12 players detected"
+      ],
+      "limitations": [],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "roster-level analysis"
+    },
+    {
+      "category": "teams",
+      "status": "validated",
+      "evidence": [
+        "{\"2\":6,\"3\":6}"
+      ],
+      "limitations": [],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "team grouping"
+    },
+    {
+      "category": "heroes",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "hero ids/classes sampled from controller/pawn"
+      ],
+      "limitations": [
+        "hero display names not independently validated"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "identity grouping with ids/classes"
+    },
+    {
+      "category": "controller-pawn mapping",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "no simultaneous duplicate controller assignments detected"
+      ],
+      "limitations": [
+        "lifecycle is sampled once per second, so sub-second pawn transitions may be coalesced"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "player trajectory and lifecycle sampling"
+    },
+    {
+      "category": "positions",
+      "status": "validated",
+      "evidence": [
+        "26052 sampled player rows"
+      ],
+      "limitations": [],
+      "knownFailureModes": [
+        "teleports/zipline-like movements are not semantically classified"
+      ],
+      "suitabilityForDownstreamAnalysis": "trajectory analysis with discontinuity flags"
+    },
+    {
+      "category": "economy",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "netWorth"
+      ],
+      "limitations": [
+        "spendable_souls",
+        "unsecured_souls",
+        "item_purchase_breakdown"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "net-worth progression only"
+    },
+    {
+      "category": "kills/deaths",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "84 death counter events"
+      ],
+      "limitations": [
+        "killer and assist attribution are not exposed by this focused replay-009 validation path"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "death review without killer/assist certainty"
+    },
+    {
+      "category": "pause handling",
+      "status": "present_not_validated",
+      "evidence": [
+        "reported_pause_or_replay_padding_plausible_but_unlocalized"
+      ],
+      "limitations": [
+        "explicit pause interval unavailable"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "do not treat long timing gaps as missing telemetry without pause review"
+    },
+    {
+      "category": "disconnects",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "none_observed"
+      ],
+      "limitations": [
+        "no explicit disconnect/reconnect event source exposed by this validation path"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "identity continuity checks"
+    },
+    {
+      "category": "entity lifecycle",
+      "status": "usable_with_known_gaps",
+      "evidence": [
+        "364 sampled lifecycle events"
+      ],
+      "limitations": [
+        "lifecycle is sampled once per second, so sub-second pawn transitions may be coalesced"
+      ],
+      "knownFailureModes": [],
+      "suitabilityForDownstreamAnalysis": "sampled lifecycle validation"
+    }
+  ]
+}

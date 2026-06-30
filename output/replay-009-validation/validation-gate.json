@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "gate": "replay_009_telemetry_usable_with_known_gaps",
+  "highestImpactGap": "explicit_pause_interval_not_exposed",
+  "blockedFollowUpTask": "tasks/blocked/057-investigate-replay-009-pause-and-clock-observability.md",
+  "readyCapabilities": [
+    "player trajectory analysis",
+    "death review",
+    "economy progression"
+  ],
+  "blockedCapabilities": [
+    "lane occupancy",
+    "rotation detection",
+    "fight participation",
+    "teamfight reconstruction",
+    "macro decision analysis"
+  ],
+  "replay005Excluded": true,
+  "unsupportedBotFixturesExcluded": [
+    "replay_006",
+    "replay_007",
+    "replay_008"
+  ]
+}

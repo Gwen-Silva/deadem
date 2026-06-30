@@ -1,1 +1,1 @@
-reports/generic-bot-solo-lifecycle-comparison.md
+reports/replay-009-end-to-end-telemetry-validation.md

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "capabilities": [
+    {
+      "capability": "player trajectory analysis",
+      "status": "ready_with_constraints",
+      "rationale": "positions are sampled at one second with discontinuity flags"
+    },
+    {
+      "capability": "lane occupancy",
+      "status": "not_ready",
+      "rationale": "semantic occupancy branch remains frozen; replay 009 lacks structural lane projection validation in this task"
+    },
+    {
+      "capability": "rotation detection",
+      "status": "not_ready",
+      "rationale": "rotation detection remains methodologically blocked"
+    },
+    {
+      "capability": "fight participation",
+      "status": "not_ready",
+      "rationale": "killer/assist/source-target damage are incomplete for this replay validation"
+    },
+    {
+      "capability": "death review",
+      "status": "ready_with_constraints",
+      "rationale": "death counter events are available, killer/assist attribution is incomplete"
+    },
+    {
+      "capability": "economy progression",
+      "status": "ready_with_constraints",
+      "rationale": "net worth is available; spend/unsecured semantics are unknown"
+    },
+    {
+      "capability": "objective participation",
+      "status": "not_tested",
+      "rationale": "objective lifecycle for replay 009 was not built in this task"
+    },
+    {
+      "capability": "teamfight reconstruction",
+      "status": "not_ready",
+      "rationale": "fight grouping is not supported"
+    },
+    {
+      "capability": "macro decision analysis",
+      "status": "not_ready",
+      "rationale": "strategic interpretation is explicitly out of scope"
+    }
+  ]
+}
