@@ -12,6 +12,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/generic-bot-solo-lifecycle-comparison.md`
 - `reports/replay-009-end-to-end-telemetry-validation.md`
 - `reports/replay-009-pause-clock-observability.md`
+- `reports/replay-009-spatial-geometric-projection-validation.md`
 - `reports/versioned-mechanics-knowledge-foundation.md`
 - `reports/build-23916427-mechanics-mapping.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`

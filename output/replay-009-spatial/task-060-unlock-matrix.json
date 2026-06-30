@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "task060Status": "partially_unlockable_when_separately_authorized",
+  "categories": [
+    {
+      "category": "player life state",
+      "unlockStatus": "unlocked_with_constraints",
+      "requiredEvidence": [
+        "validated player identity",
+        "validated death/lifecycle events"
+      ],
+      "availableEvidence": [
+        "Task 056 player/controller/pawn lifecycle and death-counter consistency"
+      ],
+      "missingEvidence": [
+        "direct respawn timer mechanics"
+      ],
+      "limitations": [
+        "Not spatial; parserSeconds remains the time basis."
+      ]
+    },
+    {
+      "category": "team net worth",
+      "unlockStatus": "unlocked_with_constraints",
+      "requiredEvidence": [
+        "m_iGoldNetWorth series",
+        "team assignment"
+      ],
+      "availableEvidence": [
+        "Task 056 economy-quality summary and 6v6 roster"
+      ],
+      "missingEvidence": [
+        "spendable/unsecured/reward-source semantics"
+      ],
+      "limitations": [
+        "Net worth only; no mechanic effect application."
+      ]
+    },
+    {
+      "category": "entity presence",
+      "unlockStatus": "unlocked_with_constraints",
+      "requiredEvidence": [
+        "parser entity/class evidence"
+      ],
+      "availableEvidence": [
+        "normal parser completion and replay 009 telemetry inventory"
+      ],
+      "missingEvidence": [
+        "dedicated objective/entity classification extraction"
+      ],
+      "limitations": [
+        "May detect raw class/entity presence only; no spatial interpretation."
+      ]
+    },
+    {
+      "category": "raw entity position",
+      "unlockStatus": "blocked",
+      "requiredEvidence": [
+        "objective/structure entity positions"
+      ],
+      "availableEvidence": [],
+      "missingEvidence": [
+        "replay-009 objective/structure position extraction"
+      ],
+      "limitations": [
+        "Player positions do not prove objective or structure positions."
+      ]
+    },
+    {
+      "category": "generic region membership",
+      "unlockStatus": "blocked",
+      "requiredEvidence": [
+        "validated replay-009 region geometry"
+      ],
+      "availableEvidence": [],
+      "missingEvidence": [
+        "generic map-region projection"
+      ],
+      "limitations": [
+        "No nearest-region fallback allowed."
+      ]
+    },
+    {
+      "category": "lane/region membership",
+      "unlockStatus": "blocked",
+      "requiredEvidence": [
+        "validated replay-009 lane geometry"
+      ],
+      "availableEvidence": [],
+      "missingEvidence": [
+        "build/map-compatible lane geometry"
+      ],
+      "limitations": [
+        "Lane occupancy remains prohibited."
+      ]
+    },
+    {
+      "category": "objective-player proximity",
+      "unlockStatus": "blocked",
+      "requiredEvidence": [
+        "player positions",
+        "objective/structure geometry"
+      ],
+      "availableEvidence": [
+        "player positions"
+      ],
+      "missingEvidence": [
+        "objective/structure geometry"
+      ],
+      "limitations": [
+        "No proximity or aura-like claims."
+      ]
+    },
+    {
+      "category": "near-deposit-location",
+      "unlockStatus": "blocked",
+      "requiredEvidence": [
+        "deposit geometry",
+        "player positions"
+      ],
+      "availableEvidence": [
+        "player positions"
+      ],
+      "missingEvidence": [
+        "Urn deposit geometry for replay 009"
+      ],
+      "limitations": [
+        "No Urn deposit candidate output."
+      ]
+    },
+    {
+      "category": "structure-region association",
+      "unlockStatus": "blocked",
+      "requiredEvidence": [
+        "structure positions",
+        "region geometry"
+      ],
+      "availableEvidence": [],
+      "missingEvidence": [
+        "structure positions and region geometry"
+      ],
+      "limitations": [
+        "No pressure or objective priority inference."
+      ]
+    }
+  ]
+}

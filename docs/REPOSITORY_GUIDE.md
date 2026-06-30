@@ -86,3 +86,6 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
 - Unsupported solo-bot fixtures: replay 006, replay 007, and replay 008. Preserve these as parser-incompatibility fixtures unless a task explicitly targets them.
 - Protected final holdout: replay 005. Do not process it outside an explicitly authorized final-holdout task.
 - Replay 009 telemetry validation outputs live in `output/replay-009-validation/`.
+- Replay 009 spatial/geometric validation outputs live in `output/replay-009-spatial/`.
+  This layer currently validates player coordinates only with constraints; it
+  does not validate region, lane, objective, structure, or proximity projection.

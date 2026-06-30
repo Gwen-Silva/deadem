@@ -17,6 +17,16 @@ This task must remain blocked until all of the following are true:
 Do not execute this task concurrently with any task modifying replay-009 spatial,
 region, geometry, or objective-position outputs.
 
+Task 061 dependency update:
+
+- Spatial gate: `replay_009_spatial_geometric_projection_ready_with_limitations`
+- Report: `reports/replay-009-spatial-geometric-projection-validation.md`
+- Coordinate source: usable with constraints
+- Generic region, lane, objective proximity, and structure proximity: blocked
+- If separately promoted, this task may execute only non-spatial factual
+  categories: player life state, team net worth, and raw entity
+  presence/classification without spatial interpretation.
+
 ## Current Knowledge State
 
 Task 058 created the versioned mechanics knowledge foundation.
@@ -184,6 +194,15 @@ events merely to satisfy the schema.
     ambiguous rules and do not select `official_2026_06_11_minor` automatically.
 11. Activation-readiness matrix separating state detection readiness from
     blocked mechanic rule application.
+
+When executing under the Task 061 limitation gate, skip or mark unavailable:
+
+- generic region membership;
+- lane/region membership;
+- objective-player proximity;
+- near-deposit-location;
+- structure-region association;
+- objective/structure spatial activation candidates.
 
 ## Required Outputs
 

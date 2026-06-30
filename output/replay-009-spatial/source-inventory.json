@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "sources": [
+    {
+      "source": "Task 056 position quality summary",
+      "path": "output/replay-009-validation/position-quality-summary.json",
+      "available": true,
+      "coordinateSystem": "parser world coordinates",
+      "units": "source-engine-style world units; exact physical unit not independently confirmed",
+      "axisConvention": "x/y/z parser fields; orientation not independently anchored to map image",
+      "timeBasis": "parserSeconds and demoTick",
+      "buildOrMapVersion": 23916427,
+      "authorityScope": "player coordinate presence and continuity",
+      "limitations": [
+        "No raw coordinate bounds in compact output."
+      ]
+    },
+    {
+      "source": "Task 056 player roster",
+      "path": "output/replay-009-validation/player-roster.json",
+      "available": true,
+      "coordinateSystem": "not spatial",
+      "units": "not applicable",
+      "axisConvention": "not applicable",
+      "timeBasis": "demoTick",
+      "buildOrMapVersion": 23916427,
+      "authorityScope": "player/team/controller/pawn identity",
+      "limitations": [
+        "Human classification is supported, not external ground truth."
+      ]
+    },
+    {
+      "source": "Existing replays 001-004 spatial/lane geometry",
+      "path": "output/replays/*/one-second-spatial/",
+      "available": true,
+      "coordinateSystem": "parser world coordinates for replays 001-004",
+      "units": "world units",
+      "axisConvention": "validated only for replays 001-004",
+      "timeBasis": "one-second parser timeline",
+      "buildOrMapVersion": null,
+      "authorityScope": "historical spatial geometry reference",
+      "limitations": [
+        "Not validated for replay 009/build 23916427."
+      ]
+    }
+  ]
+}

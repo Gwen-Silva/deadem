@@ -53,3 +53,4 @@ This is a compact navigation index. The task files remain the source records.
 | 057 | Investigate Replay 009 Pause And Clock Observability | replay_009_pause_clock_not_exposed | pending commit | `reports/replay-009-pause-clock-observability.md` | No parser follow-up |
 | 058 | Establish Versioned Deadlock Mechanics Knowledge Base | versioned_mechanics_knowledge_foundation_ready_with_unresolved_build_mapping | pending commit | `reports/versioned-mechanics-knowledge-foundation.md` | Tasks 059 and 060 blocked |
 | 059 | Map Build 23916427 To Applicable Mechanic Versions | build_23916427_mechanics_mapping_unresolved | pending commit | `reports/build-23916427-mechanics-mapping.md` | Task 060 remains blocked |
+| 061 | Validate Replay 009 Spatial Geometric Projection | replay_009_spatial_geometric_projection_ready_with_limitations | pending commit | `reports/replay-009-spatial-geometric-projection-validation.md` | Task 060 remains blocked until separately authorized |

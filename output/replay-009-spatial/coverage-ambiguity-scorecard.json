@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "metrics": [
+    {
+      "category": "raw_coordinate_validity",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 26052,
+      "uniqueSamples": 26052,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 0,
+      "coverageRate": 1,
+      "ambiguityRate": 0,
+      "status": "usable_with_constraints",
+      "limitations": [
+        "100% coordinate presence and continuity are validated by Task 056.",
+        "Raw coordinate min/max bounds are unavailable from compact outputs."
+      ]
+    },
+    {
+      "category": "world_bounds",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "present_not_validated",
+      "limitations": [
+        "No independently supported replay-009 world bounds were found."
+      ]
+    },
+    {
+      "category": "coordinate_transform",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "present_not_validated",
+      "limitations": [
+        "Identity transform is plausible for parser coordinates but lacks independent replay-009 anchors."
+      ]
+    },
+    {
+      "category": "generic_regions",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "unavailable",
+      "limitations": [
+        "No replay-009 map-region geometry source was validated."
+      ]
+    },
+    {
+      "category": "lane_geometry",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "unavailable",
+      "limitations": [
+        "Existing lane axes were validated for replays 001-004, not replay 009/build 23916427."
+      ]
+    },
+    {
+      "category": "base_spawn_regions",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "present_not_validated",
+      "limitations": [
+        "Team assignment and position coverage exist, but base/spawn geometry is not validated for replay 009."
+      ]
+    },
+    {
+      "category": "objective_static_geometry",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "unavailable",
+      "limitations": [
+        "No replay-009 objective static geometry or map-version-compatible objective references were validated."
+      ]
+    },
+    {
+      "category": "structure_static_geometry",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "unavailable",
+      "limitations": [
+        "No replay-009 structure geometry was validated."
+      ]
+    },
+    {
+      "category": "proximity_calculations",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 0,
+      "uniqueSamples": 0,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 26052,
+      "coverageRate": 0,
+      "ambiguityRate": null,
+      "status": "unavailable",
+      "limitations": [
+        "Objective/structure geometry is unavailable, so proximity is blocked."
+      ]
+    },
+    {
+      "category": "temporal_stability",
+      "eligibleSamples": 26052,
+      "classifiedSamples": 26052,
+      "uniqueSamples": 26052,
+      "ambiguousSamples": 0,
+      "boundarySamples": 0,
+      "outsideSamples": 0,
+      "rejectedSamples": 0,
+      "coverageRate": 1,
+      "ambiguityRate": 0,
+      "status": "usable_with_constraints",
+      "limitations": [
+        "One-second position continuity has 0-second largest sampled gap; pause intervals are not localized."
+      ]
+    }
+  ]
+}

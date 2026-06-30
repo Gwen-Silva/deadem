@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "gate": "replay_009_spatial_geometric_projection_ready_with_limitations",
+  "task": "061-validate-replay-009-spatial-geometric-projection",
+  "task060": {
+    "keepBlockedUntilSeparatelyAuthorized": true,
+    "allowedIfPromoted": [
+      "player life state",
+      "team net worth",
+      "entity presence"
+    ],
+    "blocked": [
+      "raw entity position",
+      "generic region membership",
+      "lane/region membership",
+      "objective-player proximity",
+      "near-deposit-location",
+      "structure-region association"
+    ]
+  },
+  "replay005Protection": "not_processed",
+  "botFixtureExclusion": "not_processed"
+}
