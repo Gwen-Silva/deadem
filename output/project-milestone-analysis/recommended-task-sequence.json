@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "selectedPrimaryMilestone": "spatial foundation first",
+  "optionalPreparatoryMilestone": "cross-replay canonical generalization if map assets are not available",
+  "tasks": [
+    {
+      "proposedTaskId": null,
+      "title": "Acquire Replay 009 Map Geometry And Calibration Inputs",
+      "purpose": "Collect authoritative or calibratable map geometry for build 23916427 without applying it.",
+      "dependencies": [],
+      "inputs": [
+        "versioned map image/geometry asset",
+        "known coordinate anchors or calibration screenshots/video frames",
+        "source/license/provenance"
+      ],
+      "outputs": [
+        "map input inventory",
+        "asset provenance",
+        "calibration feasibility report"
+      ],
+      "acceptanceGate": "replay_009_map_geometry_inputs_ready",
+      "stopConditions": [
+        "no suitable geometry source",
+        "license/provenance unclear",
+        "build/map-version conflict unresolved"
+      ],
+      "replayScope": [
+        "none; no replay parsing"
+      ],
+      "replay005Allowed": false,
+      "epistemicBoundary": [
+        "acquisition only; no projection or gameplay interpretation"
+      ]
+    },
+    {
+      "proposedTaskId": null,
+      "title": "Validate Coordinate Transform Against Independent Anchors",
+      "purpose": "Test candidate world-to-map transforms using independent anchors.",
+      "dependencies": [
+        "map geometry inputs ready"
+      ],
+      "inputs": [
+        "raw replay-009 coordinates",
+        "map geometry inputs",
+        "anchors"
+      ],
+      "outputs": [
+        "transform candidates",
+        "accepted/rejected transform audit"
+      ],
+      "acceptanceGate": "replay_009_map_transform_validated",
+      "stopConditions": [
+        "no independently supported transform",
+        "ambiguous mirror/scale/rotation unresolved"
+      ],
+      "replayScope": [
+        "replay_009 only; no replay 005"
+      ],
+      "replay005Allowed": false,
+      "epistemicBoundary": [
+        "coordinate validation only; no lane occupancy"
+      ]
+    },
+    {
+      "proposedTaskId": null,
+      "title": "Build Generic Map Bounds And Region Projection",
+      "purpose": "Project positions into validated generic regions without semantic lane claims.",
+      "dependencies": [
+        "map transform validated"
+      ],
+      "inputs": [
+        "accepted transform",
+        "map bounds/regions"
+      ],
+      "outputs": [
+        "generic region projection",
+        "coverage and ambiguity scorecard"
+      ],
+      "acceptanceGate": "replay_009_generic_regions_ready",
+      "stopConditions": [
+        "coverage insufficient",
+        "ambiguity too high"
+      ],
+      "replayScope": [
+        "replay_009 only; optional 001-004 controls if authorized"
+      ],
+      "replay005Allowed": false,
+      "epistemicBoundary": [
+        "regions are geometry facts, not macro interpretation"
+      ]
+    },
+    {
+      "proposedTaskId": null,
+      "title": "Validate Objective And Structure Static Geometry",
+      "purpose": "Attach validated static objective/structure reference locations to factual events.",
+      "dependencies": [
+        "map transform validated"
+      ],
+      "inputs": [
+        "static objective/structure geometry",
+        "Task 063/065 entity events"
+      ],
+      "outputs": [
+        "objective/structure geometry audit",
+        "distance capability summary"
+      ],
+      "acceptanceGate": "replay_009_objective_structure_geometry_ready",
+      "stopConditions": [
+        "source geometry unsupported",
+        "object identity mismatch"
+      ],
+      "replayScope": [
+        "replay_009 only"
+      ],
+      "replay005Allowed": false,
+      "epistemicBoundary": [
+        "distance/proximity only; no objective completion/effects"
+      ]
+    },
+    {
+      "proposedTaskId": null,
+      "title": "Integrate Spatial Facts Into Canonical Inspector",
+      "purpose": "Expose validated geometry facts in canonical outputs and inspector with semantic limits.",
+      "dependencies": [
+        "generic regions ready",
+        "objective/structure geometry ready"
+      ],
+      "inputs": [
+        "spatial projections",
+        "canonical factual schema"
+      ],
+      "outputs": [
+        "updated canonical spatial fields",
+        "inspector spatial view"
+      ],
+      "acceptanceGate": "replay_009_spatial_facts_integrated_with_limits",
+      "stopConditions": [
+        "semantic limits not visible",
+        "mechanic effects accidentally applied"
+      ],
+      "replayScope": [
+        "replay_009 only"
+      ],
+      "replay005Allowed": false,
+      "epistemicBoundary": [
+        "spatial facts only; no rotations/pressure/macro"
+      ]
+    }
+  ]
+}

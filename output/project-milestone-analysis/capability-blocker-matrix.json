@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "capabilities": [
+    {
+      "capability": "lane presence",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "map_geometry",
+        "coordinates"
+      ],
+      "minimumUnlockConditions": [
+        "validated world-to-map transform or direct structural lane geometry for replay 009"
+      ],
+      "optionalEnhancements": [
+        "map-version evidence"
+      ],
+      "unsafeShortcuts": [
+        "using nearest lane as lane presence"
+      ]
+    },
+    {
+      "capability": "lane occupancy",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "map_geometry",
+        "lane_occupancy"
+      ],
+      "minimumUnlockConditions": [
+        "validated lane geometry plus occupancy methodology decision"
+      ],
+      "optionalEnhancements": [
+        "human review of ambiguous intervals"
+      ],
+      "unsafeShortcuts": [
+        "using nearest lane as lane occupancy"
+      ]
+    },
+    {
+      "capability": "movement path",
+      "currentStatus": "partial",
+      "blockingLayers": [
+        "map_geometry"
+      ],
+      "minimumUnlockConditions": [
+        "coordinates can be reviewed raw; projected paths require transform"
+      ],
+      "optionalEnhancements": [
+        "active-game-time mapping"
+      ],
+      "unsafeShortcuts": [
+        "using current map geometry without version validation"
+      ]
+    },
+    {
+      "capability": "rotation candidate",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "map_geometry",
+        "lane_occupancy",
+        "time"
+      ],
+      "minimumUnlockConditions": [
+        "validated paths, lane/region context, and timing basis"
+      ],
+      "optionalEnhancements": [
+        "combat/objective context"
+      ],
+      "unsafeShortcuts": [
+        "inferring intent from movement"
+      ]
+    },
+    {
+      "capability": "objective proximity",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "map_geometry",
+        "objective_geometry"
+      ],
+      "minimumUnlockConditions": [
+        "validated objective/structure positions and player transform"
+      ],
+      "optionalEnhancements": [
+        "objective entity positions"
+      ],
+      "unsafeShortcuts": [
+        "using current map geometry without version validation"
+      ]
+    },
+    {
+      "capability": "objective completion",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "entity_observability",
+        "mechanic_activation",
+        "independent_validation"
+      ],
+      "minimumUnlockConditions": [
+        "direct event/property semantics or independent validation of completion"
+      ],
+      "optionalEnhancements": [
+        "video/control observation"
+      ],
+      "unsafeShortcuts": [
+        "using deletion as objective completion"
+      ]
+    },
+    {
+      "capability": "fight candidate",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "combat",
+        "map_geometry",
+        "time"
+      ],
+      "minimumUnlockConditions": [
+        "combat attribution or bounded proximity/context layer"
+      ],
+      "optionalEnhancements": [
+        "source-target damage"
+      ],
+      "unsafeShortcuts": [
+        "using deaths alone as fights"
+      ]
+    },
+    {
+      "capability": "teamfight candidate",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "fight candidate",
+        "map_geometry"
+      ],
+      "minimumUnlockConditions": [
+        "validated fight candidates and participant grouping rules"
+      ],
+      "optionalEnhancements": [
+        "video validation"
+      ],
+      "unsafeShortcuts": [
+        "grouping by time only"
+      ]
+    },
+    {
+      "capability": "map pressure",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "map_geometry",
+        "objectives"
+      ],
+      "minimumUnlockConditions": [
+        "validated structure locations/regions and raw structure state"
+      ],
+      "optionalEnhancements": [
+        "objective completion validation"
+      ],
+      "unsafeShortcuts": [
+        "visual absence as entity absence"
+      ]
+    },
+    {
+      "capability": "resource allocation",
+      "currentStatus": "partial",
+      "blockingLayers": [
+        "economy_semantics"
+      ],
+      "minimumUnlockConditions": [
+        "m_iGoldNetWorth can support net-worth snapshots only"
+      ],
+      "optionalEnhancements": [
+        "spendable/secured/unsecured semantics"
+      ],
+      "unsafeShortcuts": [
+        "using net worth as available souls"
+      ]
+    },
+    {
+      "capability": "macro interpretation",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "map_pressure",
+        "rotations",
+        "mechanic_activation"
+      ],
+      "minimumUnlockConditions": [
+        "validated state context plus bounded interpretation model"
+      ],
+      "optionalEnhancements": [
+        "human/problem framing"
+      ],
+      "unsafeShortcuts": [
+        "using outcome as decision quality"
+      ]
+    },
+    {
+      "capability": "decision-quality analysis",
+      "currentStatus": "blocked",
+      "blockingLayers": [
+        "macro_interpretation",
+        "semantic_ground_truth"
+      ],
+      "minimumUnlockConditions": [
+        "explicit methodology and validation source"
+      ],
+      "optionalEnhancements": [
+        "human review or controlled labels"
+      ],
+      "unsafeShortcuts": [
+        "using outcome as decision quality"
+      ]
+    }
+  ]
+}

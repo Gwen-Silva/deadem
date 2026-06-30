@@ -125,6 +125,17 @@ Replay bytes
   -> analytical interpretation              [blocked]
 ```
 
+## Current Direction
+
+The next defined milestone is the **spatial foundation**: acquire or validate
+map geometry, coordinate anchors, map bounds, regions, lanes, and
+objective/structure positions before attempting objective proximity, movement
+paths, rotations, map pressure, or macro context.
+
+This milestone is defined with open dependencies because it requires
+authoritative or calibratable map geometry and independent coordinate anchors.
+See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
+
 ## Knowledge Layer
 
 Versioned mechanics records live in [`knowledge/`](./knowledge). Current pilot
@@ -158,6 +169,7 @@ does not prove that a patch-sensitive mechanic effect was active.
 
 - Current project state: [`docs/PROJECT_STATE.md`](./docs/PROJECT_STATE.md)
 - Repository guide: [`docs/REPOSITORY_GUIDE.md`](./docs/REPOSITORY_GUIDE.md)
+- Next milestone: [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md)
 - Report index: [`reports/INDEX.md`](./reports/INDEX.md)
 - Mechanics knowledge: [`knowledge/README.md`](./knowledge/README.md)
 - Output conventions: [`output/README.md`](./output/README.md)
@@ -177,6 +189,7 @@ Major current reports:
 - [`reports/replay-009-canonical-factual-state-schema.md`](./reports/replay-009-canonical-factual-state-schema.md)
 - [`reports/replay-009-factual-state-inspection-interface.md`](./reports/replay-009-factual-state-inspection-interface.md)
 - [`reports/replay-009-inspector-workflow-evaluation.md`](./reports/replay-009-inspector-workflow-evaluation.md)
+- [`reports/deadem-next-milestone-decision.md`](./reports/deadem-next-milestone-decision.md)
 
 ## Running Validation
 

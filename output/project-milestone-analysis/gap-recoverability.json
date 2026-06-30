@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "gaps": [
+    {
+      "gapId": "map_asset_and_transform",
+      "description": "Replay 009 lacks accepted map transform, bounds, regions, lane geometry, objective geometry, and proximity.",
+      "classification": [
+        "requires_external_game_assets",
+        "requires_manual_annotation"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "high",
+      "expectedDownstreamImpact": "high",
+      "relativeComplexity": "large",
+      "requiredInputs": [
+        "versioned map image/coordinates or geometry asset",
+        "calibration anchors"
+      ],
+      "availableInputs": [
+        "raw replay coordinates",
+        "player identity",
+        "visual pipeline runtime"
+      ],
+      "missingInputs": [
+        "authoritative or calibratable map geometry for build 23916427"
+      ]
+    },
+    {
+      "gapId": "build_23916427_mapping",
+      "description": "Build identifier cannot be mapped to exact patch/mechanic versions.",
+      "classification": [
+        "requires_official_or_versioned_source"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "high",
+      "expectedDownstreamImpact": "high",
+      "relativeComplexity": "research",
+      "requiredInputs": [
+        "official build/patch metadata or game files tied to build"
+      ],
+      "availableInputs": [
+        "date-only candidate after 2026-06-11"
+      ],
+      "missingInputs": [
+        "direct build-to-patch evidence"
+      ]
+    },
+    {
+      "gapId": "active_game_time",
+      "description": "Pause intervals and official game clock are not exposed by parser outputs.",
+      "classification": [
+        "recoverable_from_existing_video",
+        "requires_manual_annotation"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "medium",
+      "expectedDownstreamImpact": "medium",
+      "relativeComplexity": "moderate",
+      "requiredInputs": [
+        "synchronized video/time anchors or external clock source"
+      ],
+      "availableInputs": [
+        "parserSeconds",
+        "reported duration delta"
+      ],
+      "missingInputs": [
+        "direct clock/pause source"
+      ]
+    },
+    {
+      "gapId": "spirit_urn_identity",
+      "description": "Spirit Urn remains candidate-only.",
+      "classification": [
+        "recoverable_from_existing_replays",
+        "requires_independent_validation"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "medium",
+      "expectedDownstreamImpact": "medium",
+      "relativeComplexity": "moderate",
+      "requiredInputs": [
+        "additional property/class evidence or visual/control observation"
+      ],
+      "availableInputs": [
+        "candidate class/lifecycle events"
+      ],
+      "missingInputs": [
+        "canonical identity evidence"
+      ]
+    },
+    {
+      "gapId": "rejuvenator_observability",
+      "description": "No canonical Rejuvenator events exist in replay-009 canonical layer.",
+      "classification": [
+        "recoverable_from_existing_replays",
+        "requires_new_controlled_replay"
+      ],
+      "estimatedTechnicalRisk": "unknown",
+      "estimatedEpistemicRisk": "medium",
+      "expectedDownstreamImpact": "medium",
+      "relativeComplexity": "research",
+      "requiredInputs": [
+        "stronger class/property search or controlled replay containing Rejuvenator"
+      ],
+      "availableInputs": [
+        "no canonical events"
+      ],
+      "missingInputs": [
+        "observed Rejuvenator event/source"
+      ]
+    },
+    {
+      "gapId": "patron_base_identity",
+      "description": "Patron/base grouped classes remain ambiguous.",
+      "classification": [
+        "recoverable_from_existing_video",
+        "requires_manual_annotation"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "medium",
+      "expectedDownstreamImpact": "medium",
+      "relativeComplexity": "moderate",
+      "requiredInputs": [
+        "visual or controlled class mapping"
+      ],
+      "availableInputs": [
+        "CNPC_BarrackBoss/CNPC_Boss_Tier3/CNPC_TrooperBoss records"
+      ],
+      "missingInputs": [
+        "class-to-gameplay identity confirmation"
+      ]
+    },
+    {
+      "gapId": "combat_attribution",
+      "description": "Deaths are factual but killer/assist/source-target combat attribution remains incomplete.",
+      "classification": [
+        "recoverable_from_existing_replays"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "medium",
+      "expectedDownstreamImpact": "medium",
+      "relativeComplexity": "moderate",
+      "requiredInputs": [
+        "event/counter reconciliation across canonical events"
+      ],
+      "availableInputs": [
+        "death/life state events"
+      ],
+      "missingInputs": [
+        "bounded attribution model"
+      ]
+    },
+    {
+      "gapId": "cross_replay_canonical_generalization",
+      "description": "Replay-009 canonical schema has not been run across normal controls 001-004.",
+      "classification": [
+        "recoverable_from_existing_replays"
+      ],
+      "estimatedTechnicalRisk": "medium",
+      "estimatedEpistemicRisk": "medium",
+      "expectedDownstreamImpact": "high",
+      "relativeComplexity": "large",
+      "requiredInputs": [
+        "existing 001-004 parser outputs/replays"
+      ],
+      "availableInputs": [
+        "compatible normal controls"
+      ],
+      "missingInputs": [
+        "canonical integration for controls"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/define-next-milestone.mjs",
+  "nodes": [
+    {
+      "nodeId": "parser_correctness",
+      "currentStatus": "ready_with_constraints",
+      "evidence": [
+        "001-004 and 009 normal replay parsing complete; bot fixtures unsupported"
+      ],
+      "dependsOn": [],
+      "unlocks": [
+        "telemetry"
+      ],
+      "knownGaps": [
+        "bot fixtures 006-008 unsupported"
+      ],
+      "epistemicRisks": [
+        "normal-corpus evidence is stronger than bot evidence"
+      ]
+    },
+    {
+      "nodeId": "telemetry",
+      "currentStatus": "ready_with_constraints",
+      "evidence": [
+        "replay_009_telemetry_usable_with_known_gaps"
+      ],
+      "dependsOn": [
+        "parser_correctness"
+      ],
+      "unlocks": [
+        "identity",
+        "time",
+        "coordinates",
+        "factual_states"
+      ],
+      "knownGaps": [
+        "pause/game clock unavailable"
+      ],
+      "epistemicRisks": [
+        "parser completion does not prove every telemetry field correct"
+      ]
+    },
+    {
+      "nodeId": "identity",
+      "currentStatus": "ready_with_constraints",
+      "evidence": [
+        "12 replay-009 players, 6v6, controller/pawn continuity"
+      ],
+      "dependsOn": [
+        "telemetry"
+      ],
+      "unlocks": [
+        "factual_states",
+        "combat"
+      ],
+      "knownGaps": [
+        "one-second sampling limitations"
+      ],
+      "epistemicRisks": [
+        "respawn transitions can be observed without official timer semantics"
+      ]
+    },
+    {
+      "nodeId": "time",
+      "currentStatus": "partial",
+      "evidence": [
+        "parserSeconds available; active-game-time unavailable"
+      ],
+      "dependsOn": [
+        "telemetry"
+      ],
+      "unlocks": [
+        "factual_states",
+        "combat",
+        "objectives"
+      ],
+      "knownGaps": [
+        "pause intervals and game clock not exposed"
+      ],
+      "epistemicRisks": [
+        "parser time includes unlocalized pause"
+      ]
+    },
+    {
+      "nodeId": "coordinates",
+      "currentStatus": "ready_with_constraints",
+      "evidence": [
+        "26,052 replay-009 player-second rows, 100% coordinate presence"
+      ],
+      "dependsOn": [
+        "telemetry",
+        "identity"
+      ],
+      "unlocks": [
+        "map_geometry"
+      ],
+      "knownGaps": [
+        "no accepted transform or bounds"
+      ],
+      "epistemicRisks": [
+        "raw coordinates are not map projection"
+      ]
+    },
+    {
+      "nodeId": "map_geometry",
+      "currentStatus": "unavailable",
+      "evidence": [
+        "Task 061: no accepted map transform, regions, lanes, objective geometry, or proximity"
+      ],
+      "dependsOn": [
+        "coordinates"
+      ],
+      "unlocks": [
+        "lane_occupancy",
+        "rotations",
+        "objectives",
+        "map_pressure"
+      ],
+      "knownGaps": [
+        "requires map assets/calibration/version compatibility"
+      ],
+      "epistemicRisks": [
+        "current-map geometry cannot be silently applied to build 23916427"
+      ]
+    },
+    {
+      "nodeId": "entity_observability",
+      "currentStatus": "ready_with_constraints",
+      "evidence": [
+        "Task 062/063: Mid Boss, Guardian, Walker, Patron/base raw events; Urn partial; Rejuvenator unavailable"
+      ],
+      "dependsOn": [
+        "telemetry"
+      ],
+      "unlocks": [
+        "factual_states",
+        "objectives"
+      ],
+      "knownGaps": [
+        "Spirit Urn and Rejuvenator unresolved"
+      ],
+      "epistemicRisks": [
+        "class names and raw lifecycle do not imply mechanic completion"
+      ]
+    },
+    {
+      "nodeId": "factual_states",
+      "currentStatus": "ready_with_constraints",
+      "evidence": [
+        "Task 065 canonical factual layer; Task 066/067 review tooling"
+      ],
+      "dependsOn": [
+        "identity",
+        "time",
+        "entity_observability"
+      ],
+      "unlocks": [
+        "objectives",
+        "combat"
+      ],
+      "knownGaps": [
+        "spatial fields unavailable; mechanic effects zero"
+      ],
+      "epistemicRisks": [
+        "canonical means normalized, not universally independently validated"
+      ]
+    },
+    {
+      "nodeId": "mechanic_version",
+      "currentStatus": "blocked",
+      "evidence": [
+        "Task 059: build 23916427 mapping unresolved"
+      ],
+      "dependsOn": [],
+      "unlocks": [
+        "mechanic_activation"
+      ],
+      "knownGaps": [
+        "requires official/versioned source"
+      ],
+      "epistemicRisks": [
+        "date-only candidate cannot select rules"
+      ]
+    },
+    {
+      "nodeId": "mechanic_activation",
+      "currentStatus": "blocked",
+      "evidence": [
+        "0 applicable rules, 7 ambiguous rules"
+      ],
+      "dependsOn": [
+        "mechanic_version",
+        "factual_states"
+      ],
+      "unlocks": [
+        "objectives",
+        "macro_interpretation"
+      ],
+      "knownGaps": [
+        "requires versioned rule applicability plus detected activation conditions"
+      ],
+      "epistemicRisks": [
+        "observed state does not prove effect active"
+      ]
+    },
+    {
+      "nodeId": "combat",
+      "currentStatus": "partial",
+      "evidence": [
+        "death/life factual layer available; killer/assist and source-target damage incomplete"
+      ],
+      "dependsOn": [
+        "identity",
+        "time",
+        "factual_states"
+      ],
+      "unlocks": [
+        "fights",
+        "decision_analysis"
+      ],
+      "knownGaps": [
+        "combat attribution incomplete"
+      ],
+      "epistemicRisks": [
+        "fight grouping can overreach without damage/source/position context"
+      ]
+    },
+    {
+      "nodeId": "lane_occupancy",
+      "currentStatus": "blocked",
+      "evidence": [
+        "replay-009 lane geometry unavailable; previous lane occupancy frozen"
+      ],
+      "dependsOn": [
+        "map_geometry",
+        "coordinates"
+      ],
+      "unlocks": [
+        "rotations",
+        "map_pressure",
+        "macro_interpretation"
+      ],
+      "knownGaps": [
+        "no lane projection for replay 009"
+      ],
+      "epistemicRisks": [
+        "nearest lane is not lane occupancy"
+      ]
+    },
+    {
+      "nodeId": "rotations",
+      "currentStatus": "blocked",
+      "evidence": [
+        "spatial and lane layers unavailable"
+      ],
+      "dependsOn": [
+        "map_geometry",
+        "lane_occupancy",
+        "time"
+      ],
+      "unlocks": [
+        "macro_interpretation"
+      ],
+      "knownGaps": [
+        "requires map/time context"
+      ],
+      "epistemicRisks": [
+        "movement path does not imply intent"
+      ]
+    },
+    {
+      "nodeId": "objectives",
+      "currentStatus": "partial",
+      "evidence": [
+        "raw objective/structure events ready with gaps"
+      ],
+      "dependsOn": [
+        "entity_observability",
+        "map_geometry",
+        "mechanic_activation"
+      ],
+      "unlocks": [
+        "map_pressure",
+        "macro_interpretation"
+      ],
+      "knownGaps": [
+        "objective completion/proximity/effects unavailable"
+      ],
+      "epistemicRisks": [
+        "deletion is not completion"
+      ]
+    },
+    {
+      "nodeId": "fights",
+      "currentStatus": "blocked",
+      "evidence": [
+        "combat factual layer incomplete; spatial unavailable"
+      ],
+      "dependsOn": [
+        "combat",
+        "time",
+        "map_geometry"
+      ],
+      "unlocks": [
+        "decision_analysis"
+      ],
+      "knownGaps": [
+        "no fight candidate layer"
+      ],
+      "epistemicRisks": [
+        "outcome is not decision quality"
+      ]
+    },
+    {
+      "nodeId": "map_pressure",
+      "currentStatus": "blocked",
+      "evidence": [
+        "structure raw state exists; spatial and objective semantics unavailable"
+      ],
+      "dependsOn": [
+        "map_geometry",
+        "objectives"
+      ],
+      "unlocks": [
+        "macro_interpretation"
+      ],
+      "knownGaps": [
+        "no validated regions or structure projection"
+      ],
+      "epistemicRisks": [
+        "structure state does not by itself prove pressure"
+      ]
+    },
+    {
+      "nodeId": "macro_interpretation",
+      "currentStatus": "blocked",
+      "evidence": [
+        "not implemented and not authorized"
+      ],
+      "dependsOn": [
+        "mechanic_activation",
+        "map_pressure",
+        "rotations",
+        "fights"
+      ],
+      "unlocks": [
+        "decision_analysis"
+      ],
+      "knownGaps": [
+        "multiple prerequisite layers blocked"
+      ],
+      "epistemicRisks": [
+        "bounded facts do not imply strategy"
+      ]
+    },
+    {
+      "nodeId": "decision_analysis",
+      "currentStatus": "blocked",
+      "evidence": [
+        "not implemented and not authorized"
+      ],
+      "dependsOn": [
+        "macro_interpretation",
+        "fights"
+      ],
+      "unlocks": [],
+      "knownGaps": [
+        "semantic ground truth absent"
+      ],
+      "epistemicRisks": [
+        "favorable result does not prove decision quality"
+      ]
+    }
+  ]
+}

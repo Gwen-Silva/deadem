@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "tracks": [
+    {
+      "trackId": "A",
+      "title": "Spatial and map geometry foundation",
+      "conclusion": "recommended_primary_with_open_inputs",
+      "ratings": {
+        "downstreamCapabilityImpact": "very_high",
+        "dependencyCentrality": "very_high",
+        "useOfExistingData": "medium",
+        "needForNewData": "high",
+        "generalizationValue": "high",
+        "riskOfOverfitting": "medium",
+        "epistemicReliability": "high_if_assets_validated",
+        "implementationComplexity": "large",
+        "validationFeasibility": "medium",
+        "relevanceToFinalProjectGoal": "very_high"
+      },
+      "rationale": "Spatial grounding blocks lane presence, objective proximity, movement paths, rotations, map pressure, and macro prerequisites. It cannot be faked from current replay-009 coordinates.",
+      "prerequisites": [
+        "versioned or calibratable map geometry"
+      ],
+      "deferredReasons": [
+        "Cannot begin implementation without geometry input."
+      ]
+    },
+    {
+      "trackId": "B",
+      "title": "Cross-replay generalization",
+      "conclusion": "recommended_after_or_parallel_if_no_new_assets",
+      "ratings": {
+        "downstreamCapabilityImpact": "high",
+        "dependencyCentrality": "high",
+        "useOfExistingData": "very_high",
+        "needForNewData": "low",
+        "generalizationValue": "very_high",
+        "riskOfOverfitting": "low",
+        "epistemicReliability": "high",
+        "implementationComplexity": "large",
+        "validationFeasibility": "high",
+        "relevanceToFinalProjectGoal": "high"
+      },
+      "rationale": "This reduces replay-009 overfitting and improves holdout readiness, but it does not unlock spatial/objective proximity by itself.",
+      "prerequisites": [
+        "existing compatible controls 001-004"
+      ],
+      "deferredReasons": [
+        "Defers the largest spatial blocker."
+      ]
+    },
+    {
+      "trackId": "C",
+      "title": "Objective semantic observability",
+      "conclusion": "deferred_until_spatial_or_control_evidence",
+      "ratings": {
+        "downstreamCapabilityImpact": "high",
+        "dependencyCentrality": "medium",
+        "useOfExistingData": "medium",
+        "needForNewData": "medium",
+        "generalizationValue": "medium",
+        "riskOfOverfitting": "high",
+        "epistemicReliability": "medium",
+        "implementationComplexity": "moderate",
+        "validationFeasibility": "medium",
+        "relevanceToFinalProjectGoal": "high"
+      },
+      "rationale": "Objective raw events exist, but canonical Urn/Rejuvenator/completion semantics remain unresolved.",
+      "prerequisites": [
+        "direct property semantics or independent validation"
+      ],
+      "deferredReasons": [
+        "Could overfit class semantics before spatial/build context."
+      ]
+    },
+    {
+      "trackId": "D",
+      "title": "Build and mechanics resolution",
+      "conclusion": "deferred_as_research_dependency",
+      "ratings": {
+        "downstreamCapabilityImpact": "high",
+        "dependencyCentrality": "high",
+        "useOfExistingData": "low",
+        "needForNewData": "high",
+        "generalizationValue": "medium",
+        "riskOfOverfitting": "low",
+        "epistemicReliability": "high_if_official_source_found",
+        "implementationComplexity": "research",
+        "validationFeasibility": "low",
+        "relevanceToFinalProjectGoal": "high"
+      },
+      "rationale": "Required for mechanic effects, but current evidence found only date-only candidates.",
+      "prerequisites": [
+        "official/versioned build source"
+      ],
+      "deferredReasons": [
+        "No known direct source in repo."
+      ]
+    },
+    {
+      "trackId": "E",
+      "title": "Time-basis recovery",
+      "conclusion": "deferred_bounded_need",
+      "ratings": {
+        "downstreamCapabilityImpact": "medium",
+        "dependencyCentrality": "medium",
+        "useOfExistingData": "medium",
+        "needForNewData": "medium",
+        "generalizationValue": "medium",
+        "riskOfOverfitting": "medium",
+        "epistemicReliability": "medium",
+        "implementationComplexity": "moderate",
+        "validationFeasibility": "medium",
+        "relevanceToFinalProjectGoal": "medium"
+      },
+      "rationale": "Useful for durations and timing comparisons, but parserSeconds is sufficient for factual review workflows.",
+      "prerequisites": [
+        "video/clock anchors"
+      ],
+      "deferredReasons": [
+        "Does not unlock map/objective proximity."
+      ]
+    },
+    {
+      "trackId": "F",
+      "title": "Combat factual layer",
+      "conclusion": "deferred_until_spatial_or_generalization",
+      "ratings": {
+        "downstreamCapabilityImpact": "medium",
+        "dependencyCentrality": "medium",
+        "useOfExistingData": "medium",
+        "needForNewData": "medium",
+        "generalizationValue": "medium",
+        "riskOfOverfitting": "high",
+        "epistemicReliability": "medium",
+        "implementationComplexity": "moderate",
+        "validationFeasibility": "medium",
+        "relevanceToFinalProjectGoal": "high"
+      },
+      "rationale": "Deaths are validated, but fight candidates need attribution, spatial context, or both.",
+      "prerequisites": [
+        "damage/source-target fields and spatial context"
+      ],
+      "deferredReasons": [
+        "Strategically interesting but not foundational yet."
+      ]
+    }
+  ]
+}

@@ -123,3 +123,13 @@ CLI/interface/export parity checks, usability scorecard rows,
 misinterpretation-risk audit rows, issues, and the evaluation gate. The
 evaluation is automated plus single-reviewer technical inspection; it is not
 broad user research and it does not add gameplay facts or mechanic effects.
+
+## Project Milestone Analysis
+
+`output/project-milestone-analysis/` contains the Task 068 planning outputs:
+dependency graph, capability-blocker matrix, gap recoverability, replay-005
+release criteria, milestone comparison, recommended task sequence, milestone
+decision, and gate. The selected primary milestone is spatial foundation first,
+with open dependencies on map geometry and coordinate anchors. These outputs are
+planning artifacts only and do not implement spatial projection or macro
+analysis.

@@ -129,3 +129,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   `node tools/evaluate-replay-inspector-workflows.mjs`. The evaluation is
   automated plus single-reviewer technical inspection, not broad usability
   research.
+- The next milestone decision lives in `docs/NEXT_MILESTONE.md` and
+  `output/project-milestone-analysis/`. Task 068 selects spatial foundation
+  first, but execution is blocked on authoritative or calibratable map geometry
+  and independent coordinate anchors. Do not begin objective proximity, lane
+  projection, rotations, map pressure, or macro work from current coordinates
+  alone.

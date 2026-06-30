@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "selectedPrimaryMilestone": "spatial foundation first",
+  "optionalPreparatoryMilestone": "cross-replay canonical generalization if map assets are unavailable or delayed",
+  "decisionModel": "spatial foundation first",
+  "gate": "deadem_next_milestone_defined_with_open_dependencies",
+  "keyReason": "Map geometry is the highest-impact missing layer: it blocks lane presence, movement paths, objective proximity, map pressure prerequisites, rotations, and most future macro context.",
+  "highestImpactBlocker": "validated map geometry and coordinate transform for replay 009/build 23916427",
+  "inputsAlreadyAvailable": [
+    "replay-009 canonical factual state",
+    "player coordinates with complete presence",
+    "player identity/lifecycle",
+    "raw objective/structure events",
+    "static inspector and query/export tooling",
+    "video pipeline runtime"
+  ],
+  "newInputsRequired": [
+    "authoritative or calibratable map geometry for the replay-009 map/build",
+    "independent coordinate anchors with provenance"
+  ],
+  "milestoneTechnicalComplexity": "large",
+  "milestoneEpistemicRisk": "high until map/version provenance is established; medium after validated anchors",
+  "deferredTracks": [
+    "build/mechanics resolution: still needs direct official/versioned evidence",
+    "combat factual layer: useful but depends on attribution and spatial context",
+    "objective semantic observability: avoid overfitting raw class semantics before spatial/build context",
+    "time-basis recovery: useful but not the largest blocker for factual state review",
+    "macro/decision analysis: remains blocked by prerequisite layers"
+  ],
+  "replay005ReleaseDecision": "replay_005_release_not_ready",
+  "releaseCriteriaSummary": {
+    "met": 3,
+    "partiallyMet": 4,
+    "notMet": 3,
+    "unknown": 0
+  },
+  "protections": {
+    "replay005Read": false,
+    "replay005Processed": false,
+    "botFixturesProcessed": false,
+    "sourceVideoProcessed": false,
+    "macroAnalysisCreated": false,
+    "mechanicEffectsApplied": false
+  }
+}

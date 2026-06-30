@@ -61,3 +61,4 @@ This is a compact navigation index. The task files remain the source records.
 | 065 | Build Canonical Replay 009 Factual State Schema | replay_009_canonical_factual_state_ready_with_constraints | pending commit | `reports/replay-009-canonical-factual-state-schema.md` | Task 066 blocked |
 | 066 | Build Replay 009 Factual State Inspection Interface | replay_009_factual_state_inspector_ready_with_constraints | pending commit | `reports/replay-009-factual-state-inspection-interface.md` | Task 067 blocked |
 | 067 | Evaluate Replay 009 Factual State Inspector Review Workflows | replay_009_inspector_workflows_validated_with_gaps | pending commit | `reports/replay-009-inspector-workflow-evaluation.md` | Task 068 blocked |
+| 068 | Define Next Deadem Project Milestone | deadem_next_milestone_defined_with_open_dependencies | pending commit | `reports/deadem-next-milestone-decision.md` | Task 069 blocked |

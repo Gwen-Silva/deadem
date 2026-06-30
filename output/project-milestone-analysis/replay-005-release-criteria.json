@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "releaseDecision": "replay_005_release_not_ready",
+  "criteria": [
+    {
+      "criterionId": "parser_non_holdout_normals",
+      "description": "Parser succeeds on all eligible non-holdout normal replays.",
+      "required": true,
+      "currentStatus": "met",
+      "evidence": [
+        "001-004 and 009 compatible normal fixtures"
+      ],
+      "missingEvidence": []
+    },
+    {
+      "criterionId": "canonical_more_than_one_human_replay",
+      "description": "Canonical pipeline runs on more than one human replay.",
+      "required": true,
+      "currentStatus": "not_met",
+      "evidence": [
+        "canonical replay-009 exists"
+      ],
+      "missingEvidence": [
+        "canonical outputs for 001-004 or another normal replay"
+      ]
+    },
+    {
+      "criterionId": "schema_stability",
+      "description": "Canonical schema stability is demonstrated beyond replay 009.",
+      "required": true,
+      "currentStatus": "not_met",
+      "evidence": [
+        "Task 065 schema exists"
+      ],
+      "missingEvidence": [
+        "cross-replay schema comparison"
+      ]
+    },
+    {
+      "criterionId": "no_replay_specific_class_assumptions",
+      "description": "No replay-specific class-ID assumptions drive downstream logic.",
+      "required": true,
+      "currentStatus": "partially_met",
+      "evidence": [
+        "Task 063 preserves class names and semantic limits"
+      ],
+      "missingEvidence": [
+        "cross-replay class compatibility"
+      ]
+    },
+    {
+      "criterionId": "no_entity_specific_recovery",
+      "description": "No entity-specific recovery exceptions are required for selected pipeline.",
+      "required": true,
+      "currentStatus": "partially_met",
+      "evidence": [
+        "replay 009 normal path no bot recovery"
+      ],
+      "missingEvidence": [
+        "formal confirmation across canonical controls"
+      ]
+    },
+    {
+      "criterionId": "deterministic_outputs",
+      "description": "Deterministic outputs exist for selected pipeline.",
+      "required": true,
+      "currentStatus": "partially_met",
+      "evidence": [
+        "Task 066/067 deterministic generation"
+      ],
+      "missingEvidence": [
+        "deterministic cross-replay canonical generation"
+      ]
+    },
+    {
+      "criterionId": "task_queue_clean",
+      "description": "Task queue validates with no active/pending accidental work.",
+      "required": true,
+      "currentStatus": "met",
+      "evidence": [
+        "Task queue validation in Task 067"
+      ],
+      "missingEvidence": []
+    },
+    {
+      "criterionId": "independent_validation_methodology",
+      "description": "Independent validation methodology is established for key claims.",
+      "required": true,
+      "currentStatus": "partially_met",
+      "evidence": [
+        "Task 064/067 bounded visual validation"
+      ],
+      "missingEvidence": [
+        "broader sample or source strategy for chosen milestone"
+      ]
+    },
+    {
+      "criterionId": "major_blockers_documented",
+      "description": "Major blockers are documented before holdout release.",
+      "required": true,
+      "currentStatus": "met",
+      "evidence": [
+        "docs/PROJECT_STATE.md and Task 068 outputs"
+      ],
+      "missingEvidence": []
+    },
+    {
+      "criterionId": "spatial_or_scope_decision",
+      "description": "Spatial dependency is either resolved or explicitly excluded from holdout objective.",
+      "required": true,
+      "currentStatus": "not_met",
+      "evidence": [
+        "Task 061 unresolved spatial projection"
+      ],
+      "missingEvidence": [
+        "milestone-level spatial decision"
+      ]
+    }
+  ]
+}
