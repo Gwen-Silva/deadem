@@ -120,3 +120,19 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Best-supported model: `upstream_inherited_defect`
 - Production fix: none included.
 - Independent oracle gap: `demofile-net`, `source2-demo`, and `DemLockSharp` require additional isolated runtime/build/instrumentation work before they can resolve protocol behavior.
+
+## Build 23916427 Bot And Normal Replay Comparison
+
+- Gate: `new_replay_corpus_comparison_ready`
+- New replay files found:
+  - `replay_007`: `samples/replay_007_bots01.dem`, user metadata build 23916427, bots, one human, normal ending.
+  - `replay_008`: `samples/replay_008_bots02_short.dem`, user metadata build 23916427, bots, one human, player quit.
+  - `replay_009`: `samples/replay_009_normal.dem`, user metadata build 23916427, normal 12-human match, normal ending with pause.
+- Default parser result:
+  - `replay_007`: fails at tick 18 with missing entity `269035851` in `svc_PacketEntities`.
+  - `replay_008`: fails at tick 3480 with missing entity `4436` in `svc_PacketEntities`.
+  - `replay_009`: completes.
+- Structural pass result: all three structurally traverse to EOF with no malformed command/message boundaries.
+- Replay-006 exact signature search: entity 5594 loop-29 UPDATE pattern is absent/not reached in 007-009.
+- Best-supported model: `solo_bot_mode_lifecycle_defect_supported`.
+- Production fix: none included.

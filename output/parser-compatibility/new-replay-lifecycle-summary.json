@@ -1,0 +1,1488 @@
+{
+  "createdAt": "2026-06-29T00:00:00.000Z",
+  "rows": [
+    {
+      "baselineCount": 127,
+      "build": 23916427,
+      "classCount": 825,
+      "completed": false,
+      "creates": 2730,
+      "deletes": 0,
+      "entityCount": 1370,
+      "entityIndexMax": 2765,
+      "entityIndexMin": 0,
+      "firstMissingEntityPrecondition": {
+        "commandSequence": 32,
+        "decodedOperationAvailable": false,
+        "deltaFrom": 346,
+        "entityIndex": 269035851,
+        "messageSequenceInCommand": 25,
+        "messageTypeId": 55,
+        "messageTypeName": "svc_PacketEntities",
+        "operation": null,
+        "packetClassification": "delta_update",
+        "packetLoop": null,
+        "priorLifecycleExists": false,
+        "result": "production_handler_missing_entity_not_reproduced_by_envelope_scan",
+        "tick": 18,
+        "updateBaseline": false
+      },
+      "humanPlayers": 1,
+      "leaves": 0,
+      "maxRegistrySize": 1370,
+      "missingEntityUpdatesBeforeAbort": 0,
+      "mode": "bots",
+      "packetEntityDeltaMessages": 19,
+      "packetEntityFullMessages": 0,
+      "packetSummaries": [
+        {
+          "commandSequence": 14,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 0,
+            "entityDataBytes": 101164,
+            "isDelta": null,
+            "maxEntries": 2731,
+            "serializedEntitiesBytes": 2660,
+            "updateBaseline": false,
+            "updatedEntries": 1357
+          },
+          "messageSequenceInCommand": 38,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1357,
+          "packetClassification": "delta_update",
+          "tick": 1
+        },
+        {
+          "commandSequence": 15,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 0,
+            "entityDataBytes": 101164,
+            "isDelta": null,
+            "maxEntries": 2731,
+            "serializedEntitiesBytes": 2660,
+            "updateBaseline": false,
+            "updatedEntries": 1357
+          },
+          "messageSequenceInCommand": 1,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1357,
+          "packetClassification": "delta_update",
+          "tick": 1
+        },
+        {
+          "commandSequence": 16,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 330,
+            "entityDataBytes": 3088,
+            "isDelta": null,
+            "maxEntries": 2733,
+            "serializedEntitiesBytes": 140,
+            "updateBaseline": false,
+            "updatedEntries": 112
+          },
+          "messageSequenceInCommand": 70,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 112,
+          "packetClassification": "delta_update",
+          "tick": 2
+        },
+        {
+          "commandSequence": 17,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 331,
+            "entityDataBytes": 2314,
+            "isDelta": null,
+            "maxEntries": 2735,
+            "serializedEntitiesBytes": 110,
+            "updateBaseline": false,
+            "updatedEntries": 92
+          },
+          "messageSequenceInCommand": 50,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 92,
+          "packetClassification": "delta_update",
+          "tick": 3
+        },
+        {
+          "commandSequence": 18,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 332,
+            "entityDataBytes": 1300,
+            "isDelta": null,
+            "maxEntries": 2739,
+            "serializedEntitiesBytes": 101,
+            "updateBaseline": false,
+            "updatedEntries": 85
+          },
+          "messageSequenceInCommand": 21,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 85,
+          "packetClassification": "delta_update",
+          "tick": 4
+        },
+        {
+          "commandSequence": 19,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 333,
+            "entityDataBytes": 961,
+            "isDelta": null,
+            "maxEntries": 2739,
+            "serializedEntitiesBytes": 98,
+            "updateBaseline": false,
+            "updatedEntries": 82
+          },
+          "messageSequenceInCommand": 16,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 82,
+          "packetClassification": "delta_update",
+          "tick": 5
+        },
+        {
+          "commandSequence": 20,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 334,
+            "entityDataBytes": 966,
+            "isDelta": null,
+            "maxEntries": 2741,
+            "serializedEntitiesBytes": 90,
+            "updateBaseline": false,
+            "updatedEntries": 81
+          },
+          "messageSequenceInCommand": 19,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 81,
+          "packetClassification": "delta_update",
+          "tick": 6
+        },
+        {
+          "commandSequence": 21,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 335,
+            "entityDataBytes": 820,
+            "isDelta": null,
+            "maxEntries": 2745,
+            "serializedEntitiesBytes": 83,
+            "updateBaseline": false,
+            "updatedEntries": 77
+          },
+          "messageSequenceInCommand": 19,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 77,
+          "packetClassification": "delta_update",
+          "tick": 7
+        },
+        {
+          "commandSequence": 22,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 336,
+            "entityDataBytes": 751,
+            "isDelta": null,
+            "maxEntries": 2745,
+            "serializedEntitiesBytes": 79,
+            "updateBaseline": false,
+            "updatedEntries": 75
+          },
+          "messageSequenceInCommand": 16,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 75,
+          "packetClassification": "delta_update",
+          "tick": 8
+        },
+        {
+          "commandSequence": 23,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 337,
+            "entityDataBytes": 777,
+            "isDelta": null,
+            "maxEntries": 2747,
+            "serializedEntitiesBytes": 81,
+            "updateBaseline": false,
+            "updatedEntries": 76
+          },
+          "messageSequenceInCommand": 18,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 76,
+          "packetClassification": "delta_update",
+          "tick": 9
+        },
+        {
+          "commandSequence": 24,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 338,
+            "entityDataBytes": 771,
+            "isDelta": null,
+            "maxEntries": 2751,
+            "serializedEntitiesBytes": 80,
+            "updateBaseline": false,
+            "updatedEntries": 75
+          },
+          "messageSequenceInCommand": 19,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 75,
+          "packetClassification": "delta_update",
+          "tick": 10
+        },
+        {
+          "commandSequence": 25,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 339,
+            "entityDataBytes": 759,
+            "isDelta": null,
+            "maxEntries": 2751,
+            "serializedEntitiesBytes": 78,
+            "updateBaseline": false,
+            "updatedEntries": 75
+          },
+          "messageSequenceInCommand": 15,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 75,
+          "packetClassification": "delta_update",
+          "tick": 11
+        },
+        {
+          "commandSequence": 26,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 340,
+            "entityDataBytes": 746,
+            "isDelta": null,
+            "maxEntries": 2753,
+            "serializedEntitiesBytes": 77,
+            "updateBaseline": false,
+            "updatedEntries": 74
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 74,
+          "packetClassification": "delta_update",
+          "tick": 12
+        },
+        {
+          "commandSequence": 27,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 341,
+            "entityDataBytes": 977,
+            "isDelta": null,
+            "maxEntries": 2757,
+            "serializedEntitiesBytes": 80,
+            "updateBaseline": false,
+            "updatedEntries": 73
+          },
+          "messageSequenceInCommand": 21,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 73,
+          "packetClassification": "delta_update",
+          "tick": 13
+        },
+        {
+          "commandSequence": 28,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 342,
+            "entityDataBytes": 699,
+            "isDelta": null,
+            "maxEntries": 2757,
+            "serializedEntitiesBytes": 74,
+            "updateBaseline": false,
+            "updatedEntries": 70
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 70,
+          "packetClassification": "delta_update",
+          "tick": 14
+        },
+        {
+          "commandSequence": 29,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 343,
+            "entityDataBytes": 705,
+            "isDelta": null,
+            "maxEntries": 2759,
+            "serializedEntitiesBytes": 74,
+            "updateBaseline": false,
+            "updatedEntries": 69
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 69,
+          "packetClassification": "delta_update",
+          "tick": 15
+        },
+        {
+          "commandSequence": 30,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 344,
+            "entityDataBytes": 1060,
+            "isDelta": null,
+            "maxEntries": 2763,
+            "serializedEntitiesBytes": 79,
+            "updateBaseline": false,
+            "updatedEntries": 72
+          },
+          "messageSequenceInCommand": 21,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 72,
+          "packetClassification": "delta_update",
+          "tick": 16
+        },
+        {
+          "commandSequence": 31,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 345,
+            "entityDataBytes": 658,
+            "isDelta": null,
+            "maxEntries": 2763,
+            "serializedEntitiesBytes": 69,
+            "updateBaseline": false,
+            "updatedEntries": 68
+          },
+          "messageSequenceInCommand": 15,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 68,
+          "packetClassification": "delta_update",
+          "tick": 17
+        },
+        {
+          "commandSequence": 32,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 346,
+            "entityDataBytes": 911,
+            "isDelta": null,
+            "maxEntries": 2766,
+            "serializedEntitiesBytes": 75,
+            "updateBaseline": false,
+            "updatedEntries": 69
+          },
+          "messageSequenceInCommand": 25,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 69,
+          "packetClassification": "delta_update",
+          "tick": 18
+        }
+      ],
+      "replayId": "replay_007",
+      "serializerCount": 870,
+      "updates": 1309
+    },
+    {
+      "baselineCount": 132,
+      "build": 23916427,
+      "classCount": 825,
+      "completed": false,
+      "creates": 4489,
+      "deletes": 18,
+      "entityCount": 1529,
+      "entityIndexMax": 2967,
+      "entityIndexMin": 0,
+      "firstMissingEntityPrecondition": {
+        "commandSequence": 3495,
+        "decodedOperationAvailable": false,
+        "deltaFrom": 3778,
+        "entityIndex": 4436,
+        "messageSequenceInCommand": 16,
+        "messageTypeId": 55,
+        "messageTypeName": "svc_PacketEntities",
+        "operation": null,
+        "packetClassification": "delta_update",
+        "packetLoop": null,
+        "priorLifecycleExists": false,
+        "result": "production_handler_missing_entity_not_reproduced_by_envelope_scan",
+        "tick": 3480,
+        "updateBaseline": false
+      },
+      "humanPlayers": 1,
+      "leaves": 149,
+      "maxRegistrySize": 1529,
+      "missingEntityUpdatesBeforeAbort": 0,
+      "mode": "bots",
+      "packetEntityDeltaMessages": 3482,
+      "packetEntityFullMessages": 0,
+      "packetSummaries": [
+        {
+          "commandSequence": 14,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 0,
+            "entityDataBytes": 100911,
+            "isDelta": null,
+            "maxEntries": 2724,
+            "serializedEntitiesBytes": 2647,
+            "updateBaseline": false,
+            "updatedEntries": 1350
+          },
+          "messageSequenceInCommand": 65,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1350,
+          "packetClassification": "delta_update",
+          "tick": 1
+        },
+        {
+          "commandSequence": 15,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 0,
+            "entityDataBytes": 100911,
+            "isDelta": null,
+            "maxEntries": 2724,
+            "serializedEntitiesBytes": 2647,
+            "updateBaseline": false,
+            "updatedEntries": 1350
+          },
+          "messageSequenceInCommand": 1,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1350,
+          "packetClassification": "delta_update",
+          "tick": 1
+        },
+        {
+          "commandSequence": 16,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 300,
+            "entityDataBytes": 3599,
+            "isDelta": null,
+            "maxEntries": 2730,
+            "serializedEntitiesBytes": 161,
+            "updateBaseline": false,
+            "updatedEntries": 128
+          },
+          "messageSequenceInCommand": 77,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 128,
+          "packetClassification": "delta_update",
+          "tick": 2
+        },
+        {
+          "commandSequence": 17,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 301,
+            "entityDataBytes": 2223,
+            "isDelta": null,
+            "maxEntries": 2730,
+            "serializedEntitiesBytes": 115,
+            "updateBaseline": false,
+            "updatedEntries": 100
+          },
+          "messageSequenceInCommand": 18,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 100,
+          "packetClassification": "delta_update",
+          "tick": 3
+        },
+        {
+          "commandSequence": 18,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 302,
+            "entityDataBytes": 1324,
+            "isDelta": null,
+            "maxEntries": 2732,
+            "serializedEntitiesBytes": 111,
+            "updateBaseline": false,
+            "updatedEntries": 95
+          },
+          "messageSequenceInCommand": 52,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 95,
+          "packetClassification": "delta_update",
+          "tick": 4
+        },
+        {
+          "commandSequence": 19,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 303,
+            "entityDataBytes": 1217,
+            "isDelta": null,
+            "maxEntries": 2736,
+            "serializedEntitiesBytes": 109,
+            "updateBaseline": false,
+            "updatedEntries": 93
+          },
+          "messageSequenceInCommand": 21,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 93,
+          "packetClassification": "delta_update",
+          "tick": 5
+        },
+        {
+          "commandSequence": 20,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 304,
+            "entityDataBytes": 855,
+            "isDelta": null,
+            "maxEntries": 2736,
+            "serializedEntitiesBytes": 91,
+            "updateBaseline": false,
+            "updatedEntries": 84
+          },
+          "messageSequenceInCommand": 16,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 84,
+          "packetClassification": "delta_update",
+          "tick": 6
+        },
+        {
+          "commandSequence": 21,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 305,
+            "entityDataBytes": 1051,
+            "isDelta": null,
+            "maxEntries": 2738,
+            "serializedEntitiesBytes": 96,
+            "updateBaseline": false,
+            "updatedEntries": 88
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 88,
+          "packetClassification": "delta_update",
+          "tick": 7
+        },
+        {
+          "commandSequence": 22,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 306,
+            "entityDataBytes": 866,
+            "isDelta": null,
+            "maxEntries": 2742,
+            "serializedEntitiesBytes": 90,
+            "updateBaseline": false,
+            "updatedEntries": 84
+          },
+          "messageSequenceInCommand": 20,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 84,
+          "packetClassification": "delta_update",
+          "tick": 8
+        },
+        {
+          "commandSequence": 23,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 307,
+            "entityDataBytes": 835,
+            "isDelta": null,
+            "maxEntries": 2742,
+            "serializedEntitiesBytes": 88,
+            "updateBaseline": false,
+            "updatedEntries": 82
+          },
+          "messageSequenceInCommand": 16,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 82,
+          "packetClassification": "delta_update",
+          "tick": 9
+        },
+        {
+          "commandSequence": 24,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 308,
+            "entityDataBytes": 820,
+            "isDelta": null,
+            "maxEntries": 2744,
+            "serializedEntitiesBytes": 89,
+            "updateBaseline": false,
+            "updatedEntries": 81
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 81,
+          "packetClassification": "delta_update",
+          "tick": 10
+        },
+        {
+          "commandSequence": 25,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 309,
+            "entityDataBytes": 830,
+            "isDelta": null,
+            "maxEntries": 2748,
+            "serializedEntitiesBytes": 83,
+            "updateBaseline": false,
+            "updatedEntries": 79
+          },
+          "messageSequenceInCommand": 19,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 79,
+          "packetClassification": "delta_update",
+          "tick": 11
+        },
+        {
+          "commandSequence": 26,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 310,
+            "entityDataBytes": 784,
+            "isDelta": null,
+            "maxEntries": 2748,
+            "serializedEntitiesBytes": 81,
+            "updateBaseline": false,
+            "updatedEntries": 78
+          },
+          "messageSequenceInCommand": 15,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 78,
+          "packetClassification": "delta_update",
+          "tick": 12
+        },
+        {
+          "commandSequence": 27,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 311,
+            "entityDataBytes": 803,
+            "isDelta": null,
+            "maxEntries": 2750,
+            "serializedEntitiesBytes": 86,
+            "updateBaseline": false,
+            "updatedEntries": 79
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 79,
+          "packetClassification": "delta_update",
+          "tick": 13
+        },
+        {
+          "commandSequence": 28,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 312,
+            "entityDataBytes": 1028,
+            "isDelta": null,
+            "maxEntries": 2754,
+            "serializedEntitiesBytes": 84,
+            "updateBaseline": false,
+            "updatedEntries": 80
+          },
+          "messageSequenceInCommand": 21,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 80,
+          "packetClassification": "delta_update",
+          "tick": 14
+        },
+        {
+          "commandSequence": 29,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 313,
+            "entityDataBytes": 770,
+            "isDelta": null,
+            "maxEntries": 2754,
+            "serializedEntitiesBytes": 81,
+            "updateBaseline": false,
+            "updatedEntries": 76
+          },
+          "messageSequenceInCommand": 15,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 76,
+          "packetClassification": "delta_update",
+          "tick": 15
+        },
+        {
+          "commandSequence": 30,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 314,
+            "entityDataBytes": 754,
+            "isDelta": null,
+            "maxEntries": 2756,
+            "serializedEntitiesBytes": 80,
+            "updateBaseline": false,
+            "updatedEntries": 75
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 75,
+          "packetClassification": "delta_update",
+          "tick": 16
+        },
+        {
+          "commandSequence": 31,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 315,
+            "entityDataBytes": 1127,
+            "isDelta": null,
+            "maxEntries": 2760,
+            "serializedEntitiesBytes": 86,
+            "updateBaseline": false,
+            "updatedEntries": 78
+          },
+          "messageSequenceInCommand": 19,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 78,
+          "packetClassification": "delta_update",
+          "tick": 17
+        },
+        {
+          "commandSequence": 32,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 316,
+            "entityDataBytes": 679,
+            "isDelta": null,
+            "maxEntries": 2760,
+            "serializedEntitiesBytes": 76,
+            "updateBaseline": false,
+            "updatedEntries": 71
+          },
+          "messageSequenceInCommand": 15,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 71,
+          "packetClassification": "delta_update",
+          "tick": 18
+        },
+        {
+          "commandSequence": 33,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 317,
+            "entityDataBytes": 965,
+            "isDelta": null,
+            "maxEntries": 2762,
+            "serializedEntitiesBytes": 83,
+            "updateBaseline": false,
+            "updatedEntries": 77
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 77,
+          "packetClassification": "delta_update",
+          "tick": 19
+        },
+        {
+          "commandSequence": 34,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 318,
+            "entityDataBytes": 971,
+            "isDelta": null,
+            "maxEntries": 2766,
+            "serializedEntitiesBytes": 81,
+            "updateBaseline": false,
+            "updatedEntries": 71
+          },
+          "messageSequenceInCommand": 19,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 71,
+          "packetClassification": "delta_update",
+          "tick": 20
+        },
+        {
+          "commandSequence": 35,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 319,
+            "entityDataBytes": 615,
+            "isDelta": null,
+            "maxEntries": 2766,
+            "serializedEntitiesBytes": 69,
+            "updateBaseline": false,
+            "updatedEntries": 62
+          },
+          "messageSequenceInCommand": 15,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 62,
+          "packetClassification": "delta_update",
+          "tick": 21
+        },
+        {
+          "commandSequence": 36,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 320,
+            "entityDataBytes": 749,
+            "isDelta": null,
+            "maxEntries": 2768,
+            "serializedEntitiesBytes": 71,
+            "updateBaseline": false,
+            "updatedEntries": 63
+          },
+          "messageSequenceInCommand": 17,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 63,
+          "packetClassification": "delta_update",
+          "tick": 22
+        },
+        {
+          "commandSequence": 37,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 321,
+            "entityDataBytes": 918,
+            "isDelta": null,
+            "maxEntries": 2772,
+            "serializedEntitiesBytes": 74,
+            "updateBaseline": false,
+            "updatedEntries": 63
+          },
+          "messageSequenceInCommand": 49,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 63,
+          "packetClassification": "delta_update",
+          "tick": 23
+        },
+        {
+          "commandSequence": 38,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 322,
+            "entityDataBytes": 527,
+            "isDelta": null,
+            "maxEntries": 2772,
+            "serializedEntitiesBytes": 61,
+            "updateBaseline": false,
+            "updatedEntries": 54
+          },
+          "messageSequenceInCommand": 45,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 54,
+          "packetClassification": "delta_update",
+          "tick": 24
+        }
+      ],
+      "replayId": "replay_008",
+      "serializerCount": 870,
+      "updates": 198921
+    },
+    {
+      "baselineCount": 179,
+      "build": 23916427,
+      "classCount": 825,
+      "completed": true,
+      "creates": 95145,
+      "deletes": 4504,
+      "entityCount": 2674,
+      "entityIndexMax": 3583,
+      "entityIndexMin": 0,
+      "firstMissingEntityPrecondition": null,
+      "humanPlayers": 12,
+      "leaves": 9282,
+      "maxRegistrySize": 2747,
+      "missingEntityUpdatesBeforeAbort": 0,
+      "mode": "normal_human_match",
+      "packetEntityDeltaMessages": 138936,
+      "packetEntityFullMessages": 0,
+      "packetSummaries": [
+        {
+          "commandSequence": 14,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 0,
+            "entityDataBytes": 113030,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 2849,
+            "updateBaseline": false,
+            "updatedEntries": 1453
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1453,
+          "packetClassification": "delta_update",
+          "tick": 1
+        },
+        {
+          "commandSequence": 15,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 0,
+            "entityDataBytes": 113030,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 2849,
+            "updateBaseline": false,
+            "updatedEntries": 1453
+          },
+          "messageSequenceInCommand": 1,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1453,
+          "packetClassification": "delta_update",
+          "tick": 1
+        },
+        {
+          "commandSequence": 16,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3345,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 2
+        },
+        {
+          "commandSequence": 17,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3346,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 3
+        },
+        {
+          "commandSequence": 18,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3347,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 4
+        },
+        {
+          "commandSequence": 19,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3348,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 5
+        },
+        {
+          "commandSequence": 20,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3349,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 6
+        },
+        {
+          "commandSequence": 21,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3350,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 7
+        },
+        {
+          "commandSequence": 22,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3351,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 8
+        },
+        {
+          "commandSequence": 23,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3352,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 9
+        },
+        {
+          "commandSequence": 24,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3353,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 10
+        },
+        {
+          "commandSequence": 25,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3354,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 11
+        },
+        {
+          "commandSequence": 26,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3355,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 12
+        },
+        {
+          "commandSequence": 27,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3356,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 13
+        },
+        {
+          "commandSequence": 28,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3357,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 14
+        },
+        {
+          "commandSequence": 29,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3358,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 15
+        },
+        {
+          "commandSequence": 30,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3359,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 16
+        },
+        {
+          "commandSequence": 31,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3360,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 17
+        },
+        {
+          "commandSequence": 32,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3361,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 18
+        },
+        {
+          "commandSequence": 33,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3362,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 19
+        },
+        {
+          "commandSequence": 34,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3363,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 20
+        },
+        {
+          "commandSequence": 35,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3364,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 21
+        },
+        {
+          "commandSequence": 36,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3365,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 22
+        },
+        {
+          "commandSequence": 37,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3366,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 23
+        },
+        {
+          "commandSequence": 38,
+          "fields": {
+            "baseline": 0,
+            "deltaFrom": 3367,
+            "entityDataBytes": 4,
+            "isDelta": null,
+            "maxEntries": 2903,
+            "serializedEntitiesBytes": 1,
+            "updateBaseline": false,
+            "updatedEntries": 1
+          },
+          "messageSequenceInCommand": 13,
+          "messageTypeId": 55,
+          "messageTypeName": "svc_PacketEntities",
+          "missingUpdateCount": 0,
+          "operationCount": 1,
+          "packetClassification": "delta_update",
+          "tick": 24
+        }
+      ],
+      "replayId": "replay_009",
+      "serializerCount": 870,
+      "updates": 9028541
+    }
+  ],
+  "schemaVersion": 1
+}

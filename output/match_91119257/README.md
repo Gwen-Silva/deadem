@@ -138,3 +138,10 @@ Superseded files are preserved in `output/archive/match_91119257/`; they are not
 - Result: upstream `Igor-Losev/deadem` parses controls 001/002 and fails replay 006 at the same missing entity 5594 UPDATE path. This supports an upstream-inherited parser limitation rather than a simple fork-only regression.
 - Limit: no independent non-deadem oracle produced loop-level lifecycle evidence in Task 052.
 - Replay 005: not processed.
+
+## Build 23916427 Corpus Context
+
+- Current gate: `new_replay_corpus_comparison_ready`
+- Canonical report: `reports/build-23916427-bot-normal-replay-comparison.md`
+- Result: the exact replay-006 entity-5594 loop-29 UPDATE signature did not recur in replays 007-009, but both new solo bot replays fail in `svc_PacketEntities` missing-entity paths while the same-build 12-human normal replay completes.
+- Interpretation: replay 006 is no longer the only bot-context parser failure, but its exact state-precondition signature remains unreproduced.

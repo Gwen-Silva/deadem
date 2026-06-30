@@ -38,3 +38,7 @@
 ## Replay 006 External Parser Oracle Diagnostics
 
 `output/parser-compatibility/external-oracle-*.json`, `output/parser-compatibility/upstream-*.json`, and `output/parser-compatibility/external-oracle-execution-matrix.csv` summarize Task 052. These files compare the current parser against local-only external parser clones without committing third-party repositories or replay files. They are oracle/comparison evidence only; they do not authorize missing-entity skips, placeholder entities, or semantic telemetry from replay 006.
+
+## Build 23916427 Parser Corpus Diagnostics
+
+`output/parser-compatibility/new-replay-*.json`, `output/parser-compatibility/build-23916427-execution-matrix.*`, `output/parser-compatibility/bot-vs-normal-comparison.json`, and `output/parser-compatibility/new-corpus-*.json` summarize Task 054. These files compare user-supplied replays 007-009 against existing parser failure evidence. They are compact compatibility diagnostics only; full traces remain local/untracked and replay 005 remains excluded.

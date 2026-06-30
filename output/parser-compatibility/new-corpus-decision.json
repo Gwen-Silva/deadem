@@ -1,0 +1,23 @@
+{
+  "bestSupportedDecisionModel": "solo_bot_mode_lifecycle_defect_supported",
+  "blockedFollowUpTask": "tasks/blocked/055-investigate-generic-bot-solo-lifecycle-comparison.md",
+  "createdAt": "2026-06-29T00:00:00.000Z",
+  "failureSignatures": {
+    "replay_007": "unknown",
+    "replay_008": "unknown",
+    "replay_009": "none"
+  },
+  "rationale": "A bot replay reproduced a parser failure while the normal replay succeeded.",
+  "replay006SignatureSearch": {
+    "replay_007": "not_reached",
+    "replay_008": "not_reached",
+    "replay_009": "absent"
+  },
+  "replayCompletions": {
+    "replay_007": false,
+    "replay_008": false,
+    "replay_009": true
+  },
+  "schemaVersion": 1,
+  "task053Decision": "task_053_reframed_for_bot_mode"
+}
