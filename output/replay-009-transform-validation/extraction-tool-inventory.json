@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/validate-replay-009-transform-candidate.mjs",
+  "tools": [
+    {
+      "toolId": "task070_vpk_directory_parser",
+      "version": "1.0.0",
+      "source": "tools/validate-replay-009-transform-candidate.mjs",
+      "inputTypes": [
+        "Source 2 VPK directory tree"
+      ],
+      "outputTypes": [
+        "bounded resource inventory"
+      ],
+      "used": true,
+      "validationEvidence": [
+        "Parsed VPK signature, version, and tree size without extracting payloads."
+      ],
+      "limitations": [
+        "Does not decode compiled VMAP, entity lumps, binary KV3, or texture payloads."
+      ]
+    },
+    {
+      "toolId": "task070_gametracking_index_filter",
+      "version": "1.0.0",
+      "source": "tools/validate-replay-009-transform-candidate.mjs",
+      "inputTypes": [
+        "GameTracking pak01_dir.txt package index"
+      ],
+      "outputTypes": [
+        "bounded spatial resource inventory"
+      ],
+      "used": true,
+      "validationEvidence": [
+        "Filtered local package-index rows for map, minimap, navigation, boss, walker, sentry, entity, and related terms."
+      ],
+      "limitations": [
+        "Index rows expose names, CRCs, and sizes only; they do not expose coordinates."
+      ]
+    },
+    {
+      "toolId": "valveresourceformat",
+      "version": null,
+      "source": "not installed in repository or PATH during Task 070",
+      "inputTypes": [
+        "compiled Source 2 resources"
+      ],
+      "outputTypes": [
+        "resource-specific decoded metadata"
+      ],
+      "used": false,
+      "validationEvidence": [],
+      "limitations": [
+        "Unavailable locally; no external clone or binary was committed."
+      ]
+    }
+  ]
+}

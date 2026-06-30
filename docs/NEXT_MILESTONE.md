@@ -46,6 +46,10 @@ map package is useful as a local-only candidate, but build compatibility,
 extractable geometry, and independent map-coordinate anchors are still
 unresolved.
 
+Task 070 inspected the local-only preferred VPK candidate and the local package
+index. It found bounded spatial resource metadata but no coordinate-bearing map
+landmarks, so the gate is `replay_009_candidate_transform_not_ready`.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

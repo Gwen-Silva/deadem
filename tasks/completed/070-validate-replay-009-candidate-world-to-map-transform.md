@@ -1,6 +1,6 @@
 # Task 070: Validate Replay 009 Candidate World-To-Map Transform
 
-Status: blocked
+Status: completed
 
 Unlocked by: explicit user authorization after Task 069 gate `replay_009_map_geometry_inputs_ready_with_limitations`
 

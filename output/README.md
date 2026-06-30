@@ -145,3 +145,13 @@ and provenance/licensing constraints. The gate is
 experimentation can be scoped, but build compatibility, accepted independent map
 coordinates, regions, lanes, objective proximity, and macro interpretation are
 not available.
+
+## Replay 009 Candidate Transform Validation
+
+`output/replay-009-transform-validation/` contains the Task 070 transform
+prerequisite audit. It verifies local-only access to the preferred installed
+map package, inventories bounded spatial resources through VPK/package-index
+metadata, preregisters candidate model families, and records why fitting is not
+allowed. The gate is `replay_009_candidate_transform_not_ready`: no independent
+coordinate-bearing map landmarks, fit anchors, held-out validation anchors,
+fitted transform, region, lane, proximity, or mechanic-effect output exists.

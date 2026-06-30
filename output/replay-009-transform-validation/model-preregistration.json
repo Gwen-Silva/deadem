@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/validate-replay-009-transform-candidate.mjs",
+  "registeredBeforeFitting": true,
+  "models": [
+    {
+      "modelId": "translation_2d",
+      "modelType": "translation",
+      "parameterCount": 2,
+      "minimumFitAnchors": 1,
+      "assumptions": [
+        "2D map-side coordinates and replay-side world coordinates must be independently established before fitting."
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "No independent map-side landmark coordinates were extracted.",
+        "No accepted replay/map coordinate correspondences exist.",
+        "No held-out validation anchor can be reserved."
+      ]
+    },
+    {
+      "modelId": "rigid_2d",
+      "modelType": "rigid 2D",
+      "parameterCount": 3,
+      "minimumFitAnchors": 2,
+      "assumptions": [
+        "2D map-side coordinates and replay-side world coordinates must be independently established before fitting."
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "No independent map-side landmark coordinates were extracted.",
+        "No accepted replay/map coordinate correspondences exist.",
+        "No held-out validation anchor can be reserved."
+      ]
+    },
+    {
+      "modelId": "similarity_2d",
+      "modelType": "similarity 2D",
+      "parameterCount": 4,
+      "minimumFitAnchors": 2,
+      "assumptions": [
+        "2D map-side coordinates and replay-side world coordinates must be independently established before fitting."
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "No independent map-side landmark coordinates were extracted.",
+        "No accepted replay/map coordinate correspondences exist.",
+        "No held-out validation anchor can be reserved."
+      ]
+    },
+    {
+      "modelId": "axis_reflected_similarity_2d",
+      "modelType": "axis-reflected similarity 2D",
+      "parameterCount": 4,
+      "minimumFitAnchors": 2,
+      "assumptions": [
+        "2D map-side coordinates and replay-side world coordinates must be independently established before fitting."
+      ],
+      "allowedAxisReflections": [
+        "x",
+        "y",
+        "both"
+      ],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "No independent map-side landmark coordinates were extracted.",
+        "No accepted replay/map coordinate correspondences exist.",
+        "No held-out validation anchor can be reserved."
+      ]
+    },
+    {
+      "modelId": "affine_2d",
+      "modelType": "affine 2D",
+      "parameterCount": 6,
+      "minimumFitAnchors": 3,
+      "assumptions": [
+        "2D map-side coordinates and replay-side world coordinates must be independently established before fitting."
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "No independent map-side landmark coordinates were extracted.",
+        "No accepted replay/map coordinate correspondences exist.",
+        "No held-out validation anchor can be reserved."
+      ]
+    }
+  ]
+}

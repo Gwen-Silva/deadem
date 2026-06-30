@@ -137,6 +137,9 @@ metadata, external/reference metadata, and replay-derived landmark candidates.
 It did not validate build compatibility, extract an authoritative map, fit a
 transform, or enable regions/lanes/proximity. This milestone therefore remains
 open until independent map coordinates and compatibility evidence are validated.
+Task 070 inspected the local-only preferred package candidate and indexed
+spatially relevant resources, but it still found zero coordinate-bearing
+landmarks and fitted no transform.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -194,6 +197,7 @@ Major current reports:
 - [`reports/replay-009-inspector-workflow-evaluation.md`](./reports/replay-009-inspector-workflow-evaluation.md)
 - [`reports/deadem-next-milestone-decision.md`](./reports/deadem-next-milestone-decision.md)
 - [`reports/replay-009-map-geometry-input-acquisition.md`](./reports/replay-009-map-geometry-input-acquisition.md)
+- [`reports/replay-009-candidate-world-to-map-transform-validation.md`](./reports/replay-009-candidate-world-to-map-transform-validation.md)
 
 ## Running Validation
 

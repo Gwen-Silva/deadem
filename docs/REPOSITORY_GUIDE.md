@@ -141,3 +141,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   anchors, licensing constraints, and transform-feasibility limits. These
   outputs do not fit a transform and do not validate regions, lanes, objective
   proximity, or map compatibility for build `23916427`.
+- Replay 009 candidate transform validation outputs live in
+  `output/replay-009-transform-validation/`. Task 070 records local asset access,
+  bounded VPK/package-index resource metadata, extraction-tool inventory,
+  landmark-candidate rejection, model preregistration, and the transform gate.
+  No transform is fitted because independent map-side landmark coordinates and
+  held-out validation anchors are missing.
