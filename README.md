@@ -52,6 +52,13 @@ rules apply to historical replays.
     raw health/team/state events are emitted with semantic limits;
   - health zero and entity deletion remain observations, not kill/destruction or
     objective-completion conclusions.
+- Independent visual validation from Task 064:
+  - replay-009 video provides independent rendering-path support with gaps;
+  - Mid Boss events receive the strongest support, Walker events are supported
+    with constraints, Patron/base identity remains ambiguous, Guardian was not
+    visible in the sample, and Urn/Rejuvenator remain unresolved;
+  - mechanic effects, kills, destruction, claims, deposits, and strategic
+    interpretations remain unapplied.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -64,8 +71,9 @@ rules apply to historical replays.
 - Map transform and map-version compatibility are unresolved for replay 009.
 - Generic regions, lane projection, objective proximity, and spatial semantic
   states are unavailable.
-- Objective/structure factual events still require independent validation before
-  destruction, kill, claim, deposit, or secure conclusions.
+- Objective/structure factual events have only partial independent visual
+  support; destruction, kill, claim, deposit, or secure conclusions remain
+  prohibited.
 - Mechanic activation and mechanic effects are not applied.
 - Net worth does not expose secured, unsecured, spendable, or reward-source
   economy semantics.
@@ -146,6 +154,7 @@ Major current reports:
 - [`reports/replay-009-factual-state-detection.md`](./reports/replay-009-factual-state-detection.md)
 - [`reports/replay-009-objective-structure-entity-observability.md`](./reports/replay-009-objective-structure-entity-observability.md)
 - [`reports/replay-009-objective-structure-factual-state-events.md`](./reports/replay-009-objective-structure-factual-state-events.md)
+- [`reports/replay-009-objective-structure-independent-validation.md`](./reports/replay-009-objective-structure-independent-validation.md)
 
 ## Running Validation
 

@@ -1,12 +1,15 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "taskId": "064",
-  "gate": "replay_009_objective_structure_events_validation_blocked",
-  "preflightDecision": "independent_source_missing",
-  "reason": "No accepted independent source associated with replay 009 is locally available.",
-  "comparisonPerformed": false,
-  "taskPromoted": false,
-  "taskExecuted": false,
-  "replay005Protection": "not_processed_or_inspected",
-  "botFixtureExclusion": "not_processed_or_inspected"
+  "gate": "replay_009_objective_structure_events_independently_validated_with_gaps",
+  "videoIdentity": "supported",
+  "synchronizationStatus": "usable_with_constraints",
+  "comparisonPerformed": true,
+  "mechanicEffectsApplied": 0,
+  "limitations": [
+    "Validation is partial because camera coverage is limited.",
+    "Mid Boss received the strongest independent visual support.",
+    "Structure class mappings remain constrained or ambiguous for some classes.",
+    "No kill, destruction, claim, deposit, secure, mechanic effect, spatial contest, or macro conclusion was produced."
+  ]
 }

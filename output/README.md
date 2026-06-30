@@ -84,8 +84,11 @@ class/property/lifecycle evidence. Health zero is not a kill/destruction
 conclusion, entity deletion is not objective completion, and mechanic effects
 remain unapplied.
 
-Task 064 preflight adds `independent-source-inventory.json`,
-`spirit-urn-health-zero-audit.json`, `independent-validation-summary.json`, and
-`independent-validation-gate.json` under `output/replay-009-validation/`. No
-accepted independent replay-009 source was found, so Task 064 remains blocked
-and no event-source comparison was performed.
+Task 064 adds video-backed independent validation outputs under
+`output/replay-009-validation/`. The accepted source is a replay-009 video with
+an independent visual rendering path but the same match-data origin. Mid Boss
+events receive the strongest visual support, Walker events are supported with
+constraints, Patron/base identity remains ambiguous, Guardian sample coverage is
+not visible, and Spirit Urn/Rejuvenator remain unresolved. No mechanic effects,
+objective completion, kill, destruction, claim, deposit, secure, or macro
+conclusions are applied.

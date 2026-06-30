@@ -1,30 +1,33 @@
-# Replay 009 Objective/Structure Independent Validation Preflight
+# Replay 009 Objective/Structure Independent Validation
 
-Task 064 was not promoted or executed because no accepted independent source associated with replay 009 is locally available.
+Task 064 validates Task 063 bounded factual events against the user-supplied replay-009 video.
 
-## Decision
+## Result
 
-- Preflight decision: `independent_source_missing`
-- Gate: `replay_009_objective_structure_events_validation_blocked`
-- Comparison performed: no
-- Task 064 status: blocked
+- Gate: `replay_009_objective_structure_events_independently_validated_with_gaps`
+- Video: `replay_009_independent_validation.mp4.mp4`
+- Video identity: supported
+- Independent source scope: independent visual rendering path, not independent match data origin
+- Synchronization: usable with constraints, 4 anchors, linear mapping
+- Median residual: 13.058s
+- Maximum residual: 22.782s
+- Sampled events: 37
 
-## Source Search Result
+## Category Results
 
-The repository contains the raw replay file `samples/replay_009_normal.dem` and parser-derived Task 062/063 outputs. Those are not independent validation sources. The local video `samples/videos/Partida_006_Replay.mp4` is associated with the replay 006 / match 91119257 context, not replay 009.
+| Category | Status | Confirmed | Supported | Not visible | Ambiguous/other |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| mid_boss | validated_with_constraints | 2 | 2 | 0 | 0 |
+| guardian | not_observable | 0 | 0 | 4 | 0 |
+| walker | validated_with_constraints | 0 | 6 | 4 | 0 |
+| barrack_boss | partially_supported | 0 | 0 | 0 | 7 |
+| boss_tier3 | partially_supported | 0 | 0 | 0 | 1 |
+| trooper_boss | partially_supported | 0 | 0 | 0 | 6 |
+| spirit_urn_candidates | partially_supported | 0 | 0 | 0 | 5 |
+| rejuvenator_candidate | not_tested | 0 | 0 | 0 | 0 |
 
-No synchronized replay-009 video, spectator recording, independent parser output, game-client event log, or manual replay-009 objective/structure timeline was found.
+## Interpretation
 
-## Required Source
+Mid Boss receives the strongest visual support: the arena and boss model are visible around both parser deletion windows. Walker and Patron/base categories have partial visual support, but several deletion timings are not visible or class-specific mapping remains ambiguous. Guardian sampled entities are not clearly visible. Spirit Urn candidate classes remain unresolved, and Rejuvenator is not validated.
 
-Preferred: synchronized replay 009 video or recorded spectator video.
-
-Acceptable alternatives: controlled manual replay review, game-client event log independent of the production parser, independent parser output for replay 009, or manually annotated replay-009 objective/structure timeline with timing anchors.
-
-## Spirit Urn Health-Zero Audit
-
-Task 063 reported zero supported health-zero observations. Five Spirit Urn candidate sequences contain raw zero values, but all remain uncertain candidate entities from Task 062. They are not counted as supported objective health-zero observations and do not imply Urn destruction, deposit, secure, or completion.
-
-## Protection
-
-Replay 005 and bot fixtures 006-008 were not processed or inspected.
+No mechanic effects were applied. Health zero remains a raw observation only, and entity deletion is not interpreted as kill, destruction, secure, claim, deposit, or objective completion.

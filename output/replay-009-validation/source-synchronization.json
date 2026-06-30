@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "synchronizationStatus": "usable_with_constraints",
+  "anchorCount": 4,
+  "anchors": [
+    {
+      "anchorId": "gameplay_visible_start",
+      "anchorType": "match_start_visible",
+      "parserDemoTick": 0,
+      "parserSeconds": 0,
+      "videoSeconds": 10,
+      "visualEvidence": "First non-black gameplay frame with replay UI visible.",
+      "confidence": "supported",
+      "limitations": [
+        "Video appears to include a short black lead-in."
+      ],
+      "residualSeconds": -3.334
+    },
+    {
+      "anchorId": "midboss_first_disappearance",
+      "anchorType": "objective_disappearance_visible",
+      "parserDemoTick": 97066,
+      "parserSeconds": 1516.656,
+      "videoSeconds": 1520,
+      "visualEvidence": "Mid Boss visible in arena before this window and absent/transitioned after.",
+      "confidence": "supported",
+      "limitations": [
+        "Uses objective event as synchronization support and validation sample; not independent of sample selection."
+      ],
+      "residualSeconds": 4.861
+    },
+    {
+      "anchorId": "midboss_second_disappearance",
+      "anchorType": "objective_disappearance_visible",
+      "parserDemoTick": 126707,
+      "parserSeconds": 1979.797,
+      "videoSeconds": 1995,
+      "visualEvidence": "Second Mid Boss arena sequence visible around parser deletion interval.",
+      "confidence": "supported",
+      "limitations": [
+        "Timing is approximate from bounded frame review."
+      ],
+      "residualSeconds": 21.255
+    },
+    {
+      "anchorId": "victory_screen",
+      "anchorType": "match_end_visible",
+      "parserDemoTick": 138925,
+      "parserSeconds": 2170.703,
+      "videoSeconds": 2140,
+      "visualEvidence": "Victory screen visible near the end of the recording.",
+      "confidence": "supported",
+      "limitations": [
+        "End-state screen may occur before parser final tick or after UI delay."
+      ],
+      "residualSeconds": -22.782
+    }
+  ],
+  "selectedMapping": {
+    "type": "linear",
+    "offset": 13.333907,
+    "scale": 0.990208205,
+    "medianResidualSeconds": 13.058,
+    "maximumResidualSeconds": 22.782,
+    "residuals": [
+      {
+        "anchorId": "gameplay_visible_start",
+        "residualSeconds": -3.334
+      },
+      {
+        "anchorId": "midboss_first_disappearance",
+        "residualSeconds": 4.861
+      },
+      {
+        "anchorId": "midboss_second_disappearance",
+        "residualSeconds": 21.255
+      },
+      {
+        "anchorId": "victory_screen",
+        "residualSeconds": -22.782
+      }
+    ]
+  },
+  "testedMappings": [
+    {
+      "type": "offset_only",
+      "result": "rejected_for_large_end_residual"
+    },
+    {
+      "type": "linear",
+      "result": "selected"
+    },
+    {
+      "type": "piecewise_linear",
+      "result": "not_required_for_bounded_validation"
+    }
+  ],
+  "coverageInterval": {
+    "parserStartSeconds": 0,
+    "parserEndSeconds": 2170.703,
+    "videoStartSeconds": 10,
+    "videoEndSeconds": 2140
+  },
+  "cutsOrSpeedChanges": "not_detected_by_bounded_review",
+  "limitations": [
+    "Residuals are coarse because anchors are visual and no OCR/game-clock mapping was established.",
+    "Predicted windows use +/-30 seconds for sampled event review."
+  ]
+}

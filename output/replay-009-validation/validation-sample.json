@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "selectionRule": [
+    "all Mid Boss entity_present/entity_deleted events",
+    "all Walker entity_present/entity_deleted events",
+    "all supported Mid Boss, Walker, and Patron/base deletion events",
+    "Guardian subset: first two and last two entities by entityKey plus any deleted entities",
+    "all five Spirit Urn candidate zero-sequence deletion events"
+  ],
+  "sampledEventCount": 37,
+  "sampledEvents": [
+    {
+      "eventId": "replay_009:2714:253:4147866:718:-1:entity_present:present:766",
+      "mechanicId": "mid_boss",
+      "className": "CNPC_MidBoss",
+      "eventType": "entity_present",
+      "parserSeconds": 11.969,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:302:761:12468526:714:-1:entity_present:present:766",
+      "mechanicId": "patron_base",
+      "className": "CNPC_Boss_Tier3",
+      "eventType": "entity_present",
+      "parserSeconds": 11.969,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:310:1003:16433462:713:-1:entity_present:present:766",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_present",
+      "parserSeconds": 11.969,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:311:565:9257271:713:-1:entity_present:present:767",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_present",
+      "parserSeconds": 11.984,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:307:381:6242611:713:-1:entity_present:present:768",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_present",
+      "parserSeconds": 12,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:354:185:3031394:711:-1:entity_present:present:768",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_present",
+      "parserSeconds": 12,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:308:523:8569140:713:-1:entity_present:present:769",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_present",
+      "parserSeconds": 12.016,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:312:533:8732984:713:-1:entity_present:present:769",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_present",
+      "parserSeconds": 12.016,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:309:685:11223349:713:-1:entity_present:present:770",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_present",
+      "parserSeconds": 12.031,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:2520:242:3967448:735:-1:entity_deleted:delete:28942",
+      "mechanicId": "patron_base",
+      "className": "CNPC_TrooperBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 452.219,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2524:866:14191068:735:-1:entity_deleted:delete:41449",
+      "mechanicId": "patron_base",
+      "className": "CNPC_TrooperBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 647.641,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2519:801:13126103:735:-1:entity_deleted:delete:43122",
+      "mechanicId": "patron_base",
+      "className": "CNPC_TrooperBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 673.781,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2522:764:12519898:735:-1:entity_deleted:delete:45640",
+      "mechanicId": "patron_base",
+      "className": "CNPC_TrooperBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 713.125,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2523:122:2001371:735:-1:entity_deleted:delete:50014",
+      "mechanicId": "patron_base",
+      "className": "CNPC_TrooperBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 781.469,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2521:565:9259481:735:-1:entity_deleted:delete:50287",
+      "mechanicId": "patron_base",
+      "className": "CNPC_TrooperBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 785.734,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2972:515:8440732:147:61246:candidate_entity_deleted:candidate-delete:62942",
+      "mechanicId": "spirit_urn",
+      "className": "CCitadel_Ability_GoldenIdol",
+      "eventType": "candidate_entity_deleted",
+      "parserSeconds": 983.469,
+      "semanticLimit": "candidate_entity_deleted != destroyed, secured, claimed, or deposited"
+    },
+    {
+      "eventId": "replay_009:3167:23:379999:147:70438:candidate_entity_deleted:candidate-delete:71912",
+      "mechanicId": "spirit_urn",
+      "className": "CCitadel_Ability_GoldenIdol",
+      "eventType": "candidate_entity_deleted",
+      "parserSeconds": 1123.625,
+      "semanticLimit": "candidate_entity_deleted != destroyed, secured, claimed, or deposited"
+    },
+    {
+      "eventId": "replay_009:3160:624:10226776:147:71997:candidate_entity_deleted:candidate-delete:72149",
+      "mechanicId": "spirit_urn",
+      "className": "CCitadel_Ability_GoldenIdol",
+      "eventType": "candidate_entity_deleted",
+      "parserSeconds": 1127.328,
+      "semanticLimit": "candidate_entity_deleted != destroyed, secured, claimed, or deposited"
+    },
+    {
+      "eventId": "replay_009:309:685:11223349:713:-1:entity_deleted:delete:86132",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1345.813,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:311:565:9257271:713:-1:entity_deleted:delete:95814",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1497.094,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:2714:253:4147866:718:-1:entity_deleted:delete:97066",
+      "mechanicId": "mid_boss",
+      "className": "CNPC_MidBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1516.656,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:3095:188:3083287:147:99528:candidate_entity_deleted:candidate-delete:101210",
+      "mechanicId": "spirit_urn",
+      "className": "CCitadel_Ability_GoldenIdol",
+      "eventType": "candidate_entity_deleted",
+      "parserSeconds": 1581.406,
+      "semanticLimit": "candidate_entity_deleted != destroyed, secured, claimed, or deposited"
+    },
+    {
+      "eventId": "replay_009:351:568:9306463:711:-1:entity_deleted:delete:104526",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1633.219,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:307:381:6242611:713:-1:entity_deleted:delete:104528",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1633.25,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:350:567:9290078:711:-1:entity_deleted:delete:104679",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1635.609,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:353:150:2457953:711:-1:entity_deleted:delete:108270",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1691.719,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:352:39:639328:711:-1:entity_deleted:delete:108438",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1694.344,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:310:1003:16433462:713:-1:entity_deleted:delete:113143",
+      "mechanicId": "walker",
+      "className": "CNPC_Boss_Tier2",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1767.859,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:3499:659:10800555:147:119603:candidate_entity_deleted:candidate-delete:120903",
+      "mechanicId": "spirit_urn",
+      "className": "CCitadel_Ability_GoldenIdol",
+      "eventType": "candidate_entity_deleted",
+      "parserSeconds": 1889.109,
+      "semanticLimit": "candidate_entity_deleted != destroyed, secured, claimed, or deposited"
+    },
+    {
+      "eventId": "replay_009:3289:380:6229209:718:123857:entity_present:present:123858",
+      "mechanicId": "mid_boss",
+      "className": "CNPC_MidBoss",
+      "eventType": "entity_present",
+      "parserSeconds": 1935.281,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:3289:380:6229209:718:123857:entity_deleted:delete:126707",
+      "mechanicId": "mid_boss",
+      "className": "CNPC_MidBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 1979.797,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:349:122:1999197:711:-1:entity_deleted:delete:131666",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 2057.281,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:348:356:5833052:711:-1:entity_deleted:delete:132093",
+      "mechanicId": "patron_base",
+      "className": "CNPC_BarrackBoss",
+      "eventType": "entity_deleted",
+      "parserSeconds": 2063.953,
+      "semanticLimit": "entity_deleted != destroyed, entity_deleted != secured, entity_deleted != claimed, and entity_deleted != deposited"
+    },
+    {
+      "eventId": "replay_009:419:614:10060195:712:-1:entity_present:present:135401",
+      "mechanicId": "guardian",
+      "className": "CNPC_BaseDefenseSentry",
+      "eventType": "entity_present",
+      "parserSeconds": 2115.641,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:479:66:1081823:712:-1:entity_present:present:135455",
+      "mechanicId": "guardian",
+      "className": "CNPC_BaseDefenseSentry",
+      "eventType": "entity_present",
+      "parserSeconds": 2116.484,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:480:915:14991840:712:-1:entity_present:present:135455",
+      "mechanicId": "guardian",
+      "className": "CNPC_BaseDefenseSentry",
+      "eventType": "entity_present",
+      "parserSeconds": 2116.484,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    },
+    {
+      "eventId": "replay_009:426:151:2474410:712:-1:entity_present:present:-1",
+      "mechanicId": "guardian",
+      "className": "CNPC_BaseDefenseSentry",
+      "eventType": "entity_present",
+      "parserSeconds": null,
+      "semanticLimit": "entity_present is first reliable observed presence only"
+    }
+  ]
+}

@@ -98,3 +98,10 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   009. Mid Boss and core structure classes/properties are usable with
   constraints; Spirit Urn and Rejuvenator remain partial/uncertain. These
   outputs still do not apply mechanic effects or spatial interpretation.
+  Task 064 compares a bounded Task 063 event sample against
+  `samples/videos/replay_009_independent_validation.mp4.mp4`. The video supports
+  some objective/structure events through an independent rendering path, with
+  Mid Boss strongest, Walker constrained, Patron/base ambiguous, Guardian not
+  visible in the sample, and Urn/Rejuvenator unresolved. It still does not
+  approve destruction, kill, claim, deposit, secure, mechanic effect, or macro
+  conclusions.

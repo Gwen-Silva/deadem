@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "classes": [
+    {
+      "className": "CNPC_MidBoss",
+      "validationStatus": "visual_identity_supported",
+      "limitations": [
+        "Mid Boss visual model and arena sequence match parser class timing with constraints."
+      ]
+    },
+    {
+      "className": "CNPC_BaseDefenseSentry",
+      "validationStatus": "not_visible",
+      "limitations": [
+        "Sampled Guardian entities not clearly visible."
+      ]
+    },
+    {
+      "className": "CNPC_Boss_Tier2",
+      "validationStatus": "visual_identity_supported",
+      "limitations": [
+        "Walker-type identity is visually plausible; entity-specific deletion timing mostly not visible."
+      ]
+    },
+    {
+      "className": "CNPC_BarrackBoss",
+      "validationStatus": "visual_identity_ambiguous",
+      "limitations": [
+        "Base-object mapping not independently separated."
+      ]
+    },
+    {
+      "className": "CNPC_Boss_Tier3",
+      "validationStatus": "visual_identity_ambiguous",
+      "limitations": [
+        "Patron/base phase visible but class-specific identity unresolved."
+      ]
+    },
+    {
+      "className": "CNPC_TrooperBoss",
+      "validationStatus": "visual_identity_ambiguous",
+      "limitations": [
+        "Could be auxiliary or base-related; unresolved."
+      ]
+    },
+    {
+      "className": "Spirit Urn candidate classes",
+      "validationStatus": "unresolved",
+      "limitations": [
+        "Candidate classes not proven canonical Urn object."
+      ]
+    },
+    {
+      "className": "CCitadel_ArmorUpgrade_PersonalRejuvenator",
+      "validationStatus": "not_tested",
+      "limitations": [
+        "No Task 063 candidate events and no clear video validation."
+      ]
+    }
+  ]
+}

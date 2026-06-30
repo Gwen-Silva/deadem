@@ -1,25 +1,7 @@
 {
-  "schemaVersion": 2,
-  "taskId": "064",
+  "schemaVersion": 1,
   "replayId": "replay_009",
-  "selectedVideoFilename": "replay_009_independent_validation.mp4.mp4",
-  "videoIdentityResult": "supported",
-  "durationSeconds": 2147.967,
-  "resolution": {
-    "width": 2580,
-    "height": 1080
-  },
-  "independentRenderingStatus": "independent visual rendering path; not independent match data origin",
-  "coverageSummary": "Mid Boss has useful visual coverage; Walker and Patron/base have partial coverage; Guardian, Spirit Urn candidates, and Rejuvenator remain limited or unresolved.",
-  "synchronization": {
-    "anchorCount": 4,
-    "model": "linear",
-    "medianResidualSeconds": 13.058,
-    "maximumResidualSeconds": 22.782,
-    "status": "usable_with_constraints"
-  },
-  "sampledEventCount": 37,
-  "categorySummary": [
+  "categories": [
     {
       "category": "mid_boss",
       "sampledEvents": 4,
@@ -148,16 +130,5 @@
         "No Rejuvenator candidate events were emitted by Task 063."
       ]
     }
-  ],
-  "confirmedEvents": 2,
-  "supportedEvents": 8,
-  "contradictedEvents": 0,
-  "notVisibleEvents": 8,
-  "timingAmbiguousEvents": 19,
-  "healthZeroAuditResult": "candidate_zero_sequences_not_visually_validated_as_canonical_urn_health",
-  "mechanicEffectsApplied": 0,
-  "gate": "replay_009_objective_structure_events_independently_validated_with_gaps",
-  "blockedFollowUpTask": "tasks/blocked/065-integrate-independently-validated-objective-structure-events.md",
-  "replay005Protection": "not_processed_or_inspected",
-  "botFixtureExclusion": "not_processed_or_inspected"
+  ]
 }
