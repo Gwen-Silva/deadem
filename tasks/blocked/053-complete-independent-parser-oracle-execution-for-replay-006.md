@@ -16,6 +16,14 @@ Objective:
 
 Execute one or more independent parser oracles for replay 006 and compare behavior at tick 3808, packet loop 29, entity index 5594.
 
+Task 055 reframing:
+
+- Keep replay 006 tick 3808 / loop 29 / entity 5594 as the primary oracle target.
+- If the selected external oracle can also process the build-23916427 bot samples without extra scope risk, answer these bounded secondary questions:
+  - Does it classify replay 007 raw value `269035851` as an entity index, packed handle, bit-decoder desynchronization, or another identifier?
+  - Does it classify replay 008 tick 3480 entity `4436` as a missing LEAVE, an alternate lifecycle event, a tolerated stale reference, or a different decode?
+- Do not execute Task 053 until the existing independent runtime blocker is resolved.
+
 Allowed candidates:
 
 - `saul/demofile-net`, preferably from a non-shallow or full-history checkout so Nerdbank.GitVersioning can calculate version height.
@@ -36,6 +44,7 @@ Required outputs:
 - Tick-3808 loop-level comparison when observable.
 - Entity-5594 provenance comparison when observable.
 - Missing-update behavior comparison.
+- Optional Task 055 addendum: replay 007 raw-value classification and replay 008 missing-LEAVE behavior when the same oracle can inspect them safely.
 - Decision update identifying whether independent evidence supports a generic parser fix.
 
 Gate:

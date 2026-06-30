@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "replayId": "replay_007",
+      "completed": false,
+      "failureSignature": "invalid_entity_index",
+      "rawReportedValue": 269035851,
+      "boundedEntityIndex": 10571,
+      "independentDecoderAgreement": "production_failure_not_reproduced_by_envelope_scan",
+      "exactPacketLoopAvailable": false,
+      "diagnosticWarnings": [
+        "packet-loop and bit offsets are unavailable because the independent envelope scan did not reproduce the production lookup value before serializer-dependent payload decoding"
+      ]
+    },
+    {
+      "replayId": "replay_008",
+      "completed": false,
+      "failureSignature": "missing_entity_leave",
+      "rawReportedValue": 4436,
+      "boundedEntityIndex": 4436,
+      "independentDecoderAgreement": "production_failure_not_reproduced_by_envelope_scan",
+      "exactPacketLoopAvailable": false,
+      "diagnosticWarnings": [
+        "packet-loop and bit offsets are unavailable because the independent envelope scan did not reproduce the production lookup value before serializer-dependent payload decoding"
+      ]
+    },
+    {
+      "replayId": "replay_009",
+      "completed": true,
+      "failureSignature": "none",
+      "rawReportedValue": null,
+      "boundedEntityIndex": null,
+      "independentDecoderAgreement": "not_applicable_completed",
+      "exactPacketLoopAvailable": false,
+      "diagnosticWarnings": []
+    }
+  ]
+}

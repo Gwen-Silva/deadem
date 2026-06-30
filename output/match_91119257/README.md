@@ -145,3 +145,10 @@ Superseded files are preserved in `output/archive/match_91119257/`; they are not
 - Canonical report: `reports/build-23916427-bot-normal-replay-comparison.md`
 - Result: the exact replay-006 entity-5594 loop-29 UPDATE signature did not recur in replays 007-009, but both new solo bot replays fail in `svc_PacketEntities` missing-entity paths while the same-build 12-human normal replay completes.
 - Interpretation: replay 006 is no longer the only bot-context parser failure, but its exact state-precondition signature remains unreproduced.
+
+## Generic Bot/Solo Lifecycle Context
+
+- Current gate: `bot_solo_failures_are_distinct`
+- Canonical report: `reports/generic-bot-solo-lifecycle-comparison.md`
+- Result: replay 007 is an out-of-range UPDATE lookup value (`269035851`, bounded component `10571`) and replay 008 is a bounded missing LEAVE (`4436`). These are distinct from replay 006's bounded missing UPDATE for entity `5594`.
+- Parser status for match 91119257/replay 006 remains unchanged: complete video-demo telemetry and annotation-to-entity matching are still blocked by unresolved gameplay-state reconstruction, not by replay container framing.

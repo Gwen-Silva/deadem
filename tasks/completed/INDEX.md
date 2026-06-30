@@ -48,3 +48,4 @@ This is a compact navigation index. The task files remain the source records.
 | 051 | Investigate Replay 006 Entity Lifecycle Or State Refresh Gap | replay_006_entity_lifecycle_narrowed_not_confirmed | a8dbda9 | `reports/replay-006-entity-lifecycle-state-refresh-gap.md` | Task 052 |
 | 052 | External Parser Oracle And Upstream Comparison For Replay 006 | external_oracle_comparison_ready_without_resolution | pending commit | `reports/replay-006-external-parser-oracle-comparison.md` | Task 053 blocked |
 | 054 | Expand Parser Compatibility Matrix With Build-23916427 Bot And Normal Replays | new_replay_corpus_comparison_ready | pending commit | `reports/build-23916427-bot-normal-replay-comparison.md` | Task 055 blocked |
+| 055 | Investigate Generic Bot/Solo Lifecycle Comparison | bot_solo_failures_are_distinct | pending commit | `reports/generic-bot-solo-lifecycle-comparison.md` | Task 053 remains blocked |

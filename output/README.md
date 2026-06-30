@@ -42,3 +42,7 @@
 ## Build 23916427 Parser Corpus Diagnostics
 
 `output/parser-compatibility/new-replay-*.json`, `output/parser-compatibility/build-23916427-execution-matrix.*`, `output/parser-compatibility/bot-vs-normal-comparison.json`, and `output/parser-compatibility/new-corpus-*.json` summarize Task 054. These files compare user-supplied replays 007-009 against existing parser failure evidence. They are compact compatibility diagnostics only; full traces remain local/untracked and replay 005 remains excluded.
+
+## Generic Bot/Solo Lifecycle Diagnostics
+
+`output/parser-compatibility/bot-solo-*.json`, `output/parser-compatibility/replay-007-failing-packet-operations.jsonl`, and `output/parser-compatibility/replay-008-failing-packet-operations.jsonl` summarize Task 055. They distinguish replay 007's out-of-range packet-entity lookup value from replay 008's bounded missing LEAVE. These outputs are diagnostics only and do not authorize bot-mode skips, placeholder entities, or parser recovery.

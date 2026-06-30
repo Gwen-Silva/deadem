@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "conclusion": "distinct_observable_failures_no_single_causal_chain_confirmed",
+  "replay007": {
+    "chain": [
+      "production parser reports entity lookup value above 14-bit entity-index range",
+      "independent envelope scan does not reproduce the production lookup value before serializer-dependent payload decoding",
+      "classification remains invalid_entity_index rather than missing lifecycle"
+    ],
+    "confidence": "medium"
+  },
+  "replay008": {
+    "chain": [
+      "production parser reaches svc_PacketEntities delta update",
+      "operation stack location maps to UPDATE",
+      "reported entity index 4436 is within 14-bit range",
+      "registry lookup is missing",
+      "limited prior lifecycle scan did not find a create"
+    ],
+    "confidence": "medium"
+  },
+  "hypothesisSupportSummary": [
+    {
+      "id": 1,
+      "status": "partially_supported"
+    },
+    {
+      "id": 2,
+      "status": "partially_supported"
+    },
+    {
+      "id": 3,
+      "status": "partially_supported"
+    },
+    {
+      "id": 6,
+      "status": "partially_supported"
+    },
+    {
+      "id": 7,
+      "status": "partially_supported"
+    },
+    {
+      "id": 10,
+      "status": "supported"
+    },
+    {
+      "id": 11,
+      "status": "supported"
+    },
+    {
+      "id": 12,
+      "status": "supported"
+    }
+  ]
+}

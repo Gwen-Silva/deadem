@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "hypotheses": [
+    {
+      "id": 1,
+      "statement": "replay 007 raw value is a packed handle misused as index",
+      "status": "partially_supported",
+      "evidence": "reported value 269035851 exceeds 14-bit entity index; bounded component is 10571; independent packet scan did not prove handle semantics"
+    },
+    {
+      "id": 2,
+      "statement": "replay 007 packet-entity bit cursor is desynchronized",
+      "status": "partially_supported",
+      "evidence": "production reported a value outside entity-index bounds, but the exact first bit disagreement remains unresolved"
+    },
+    {
+      "id": 3,
+      "statement": "replay 007 error instrumentation reports the wrong field",
+      "status": "partially_supported",
+      "evidence": "independent envelope scan did not reproduce the production lookup value before serializer-dependent decoding"
+    },
+    {
+      "id": 4,
+      "statement": "replay 007 and 008 share missing prior entity creation",
+      "status": "not_supported",
+      "evidence": "normalized signatures: replay_007=invalid_entity_index, replay_008=missing_entity_leave"
+    },
+    {
+      "id": 5,
+      "statement": "replay 007 and 008 depend on an unprocessed initial snapshot",
+      "status": "not_testable",
+      "evidence": "delta base semantics and exact initial snapshot ownership are not exposed by current diagnostics"
+    },
+    {
+      "id": 6,
+      "statement": "solo-bot demos begin from a delta state without full registry population",
+      "status": "partially_supported",
+      "evidence": "both solo-bot controls fail while same-build normal replay completes; precise shared mechanism is not confirmed"
+    },
+    {
+      "id": 7,
+      "statement": "parser mishandles bot-mode sign-on or state refresh",
+      "status": "partially_supported",
+      "evidence": "mode association is supported, but replay 007 and 008 failure signatures differ"
+    },
+    {
+      "id": 8,
+      "statement": "bot-controller entities use a lifecycle path absent in normal matches",
+      "status": "not_testable",
+      "evidence": "class/serializer semantic identity was not available before both failures"
+    },
+    {
+      "id": 9,
+      "statement": "replay 008 is equivalent to replay 006",
+      "status": "not_supported",
+      "evidence": "replay_008=missing_entity_leave; replay_006 was missing_entity_update, so equivalence is not supported by normalized signature"
+    },
+    {
+      "id": 10,
+      "statement": "replay 007 and replay 008 are unrelated failures",
+      "status": "supported",
+      "evidence": "replay_007=invalid_entity_index; replay_008=missing_entity_leave"
+    },
+    {
+      "id": 11,
+      "statement": "replay 009 proves build 23916427 is generally supported",
+      "status": "supported",
+      "evidence": "same-build normal human replay completed with default parser"
+    },
+    {
+      "id": 12,
+      "statement": "quit termination is irrelevant because replay 008 fails before termination",
+      "status": "supported",
+      "evidence": "replay_008 first failure tick 3480; match termination occurs later by user metadata"
+    }
+  ]
+}

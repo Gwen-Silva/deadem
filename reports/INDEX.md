@@ -9,6 +9,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/structural-replay-stream-pass.md`
 - `reports/replay-006-external-parser-oracle-comparison.md`
 - `reports/build-23916427-bot-normal-replay-comparison.md`
+- `reports/generic-bot-solo-lifecycle-comparison.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`
 
 ## Visual Calibration

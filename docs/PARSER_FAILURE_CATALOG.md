@@ -136,3 +136,12 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Replay-006 exact signature search: entity 5594 loop-29 UPDATE pattern is absent/not reached in 007-009.
 - Best-supported model: `solo_bot_mode_lifecycle_defect_supported`.
 - Production fix: none included.
+
+## Generic Bot/Solo Lifecycle Comparison
+
+- Gate: `bot_solo_failures_are_distinct`
+- Replay 007: tick 18 `svc_PacketEntities` UPDATE reports raw lookup value `269035851`, which exceeds the 14-bit entity-index range. Bounded component is `10571`, but the current evidence does not prove this is a protocol handle rather than a bit-decoder or diagnostic normalization issue.
+- Replay 008: tick 3480 `svc_PacketEntities` LEAVE reports bounded entity index `4436` with missing registry entry.
+- Replay 009: same user-provided build 23916427 normal 12-human replay completes.
+- Interpretation: replay 007 and replay 008 are distinct observable failures. The previous broad `solo_bot_mode_lifecycle_defect_supported` model is narrowed; no single shared bot lifecycle root cause is confirmed.
+- Production fix: none included.
