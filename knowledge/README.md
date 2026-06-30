@@ -7,16 +7,16 @@ The intended analysis model is:
 
 ```text
 replay telemetry
-+
-versioned mechanics knowledge
-+
-context detector
-=
-bounded analytical interpretation
+-> factual state detection
+-> mechanic version query
+-> activation eligibility
+-> bounded interpretation
 ```
 
-The context detector does not exist yet. Current records must not be used to
-classify macro decisions, rotations, fight quality, or player intent.
+Task 060 implements only a partial non-spatial factual state layer for replay
+009. Mechanic activation and effect application remain blocked while build
+`23916427` is unresolved. Current records must not be used to classify macro
+decisions, rotations, fight quality, or player intent.
 
 ## Layout
 

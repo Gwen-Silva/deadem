@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "taskId": "060",
+  "replayId": "replay_009",
+  "executionMode": "partial_non_spatial",
+  "authorizationBasis": {
+    "task061Commit": "598b81c",
+    "spatialGate": "replay_009_spatial_geometric_projection_ready_with_limitations",
+    "allowedCategories": [
+      "player life state",
+      "team net worth",
+      "entity presence"
+    ],
+    "blockedCategories": [
+      "raw entity position",
+      "generic region membership",
+      "lane/region membership",
+      "objective-player proximity",
+      "near-deposit-location",
+      "structure-region association"
+    ]
+  },
+  "playerIdentities": {
+    "detectedPlayers": 12,
+    "teamDistribution": {
+      "2": 6,
+      "3": 6
+    },
+    "identityStatus": "supported",
+    "controllerContinuity": "supported_by_task_056_lifecycle_validation",
+    "pawnReplacementContinuity": "supported_with_one_second_sampling_constraints"
+  },
+  "lifeState": {
+    "events": 166,
+    "deathEvents": 84,
+    "respawnEvents": 82,
+    "result": "ready_with_constraints"
+  },
+  "deathConsistency": {
+    "deathCounterEvents": 84,
+    "lifecycleDeathEvents": 84,
+    "matchedEvents": 84,
+    "unmatchedCounterEvents": 0,
+    "unmatchedLifecycleEvents": 0,
+    "result": "consistent"
+  },
+  "respawn": {
+    "transitions": 84,
+    "unresolved": 2,
+    "result": "partially_supported"
+  },
+  "netWorth": {
+    "sourceField": "m_iGoldNetWorth",
+    "playerEndpointRows": 24,
+    "teamEndpointRows": 2,
+    "fullSeriesAvailable": false,
+    "result": "ready_with_constraints"
+  },
+  "rawEntityClassification": {
+    "confirmed": 0,
+    "supported": 0,
+    "uncertain": 4,
+    "rejected": 0,
+    "highestImpactGap": "objective_and_structure_entity_property_observability"
+  },
+  "spatialOutputsStatus": "unavailable_by_task_061_limitations",
+  "knowledgeQuery": {
+    "applicableRuleCount": 0,
+    "ambiguousRuleCount": 7,
+    "ambiguousRuleCountByMechanic": {
+      "spirit_urn": 2,
+      "mid_boss": 1,
+      "rejuvenator": 1,
+      "souls_economy": 1,
+      "death_respawn": 1,
+      "core_structures": 1
+    },
+    "mechanicEffectsApplied": 0
+  },
+  "mechanicEffectsApplied": 0,
+  "safeDownstreamOutputs": [
+    "player life/death/respawn parser-time events",
+    "m_iGoldNetWorth player endpoint summaries",
+    "m_iGoldNetWorth team endpoint summaries",
+    "mechanic ambiguity query results"
+  ],
+  "blockedDownstreamInterpretations": [
+    "mechanic activation",
+    "mechanic effects",
+    "objective proximity",
+    "lane or region membership",
+    "objective/fight/macro interpretation"
+  ],
+  "highestImpactGap": "objective_and_structure_entity_property_observability",
+  "gate": "replay_009_factual_state_detection_ready_with_gaps",
+  "replay005Protection": "not_processed_or_inspected",
+  "botFixtureExclusion": "not_processed_or_inspected"
+}

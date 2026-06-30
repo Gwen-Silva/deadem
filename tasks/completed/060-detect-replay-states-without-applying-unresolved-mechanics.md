@@ -1,6 +1,6 @@
 # Task 060: Detect Replay States Without Applying Unresolved Mechanics
 
-Status: blocked
+Status: completed
 
 Execution mode: autonomous after explicit promotion
 

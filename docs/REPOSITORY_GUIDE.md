@@ -89,3 +89,8 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
 - Replay 009 spatial/geometric validation outputs live in `output/replay-009-spatial/`.
   This layer currently validates player coordinates only with constraints; it
   does not validate region, lane, objective, structure, or proximity projection.
+- Replay 009 factual state outputs live in `output/replay-009-states/`. Task
+  060 currently contains only partial non-spatial observed states: player
+  life/death/respawn events, `m_iGoldNetWorth` endpoint summaries, and
+  mechanics ambiguity queries. It applies zero mechanic effects and emits no
+  region, lane, objective proximity, or structure-region results.

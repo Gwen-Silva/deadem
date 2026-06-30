@@ -60,3 +60,12 @@ capability remain unavailable for replay 009. These outputs do not approve lane
 occupancy, objective effects, rotations, pressure, or macro interpretation.
 
 Task 057 adds pause/clock observability outputs in the same directory. The gate is `replay_009_pause_clock_not_exposed`: no reliable direct pause signal or authoritative game-clock source was found, so parser seconds remain the canonical available time basis.
+
+## Replay 009 Factual State Detection
+
+`output/replay-009-states/` contains Task 060 compact observed-state outputs in
+partial non-spatial mode. It includes player identity, life/death/respawn
+parser-time events, death consistency, net-worth endpoint summaries, and
+knowledge-layer ambiguity results. Spatially dependent files contain explicit
+unavailable metadata only. Mechanic activation, mechanic effects, objective
+proximity, lane/region membership, and macro interpretation remain blocked.

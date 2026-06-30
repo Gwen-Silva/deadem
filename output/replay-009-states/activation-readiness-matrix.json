@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "buildId": "23916427",
+  "executionMode": "partial_non_spatial",
+  "mechanics": [
+    {
+      "mechanicId": "spirit_urn",
+      "stateDetectionStatus": "not_available",
+      "mechanicVersionStatus": "unresolved",
+      "activationStatus": "blocked",
+      "effectApplicationStatus": "blocked",
+      "safeOutputs": [],
+      "prohibitedOutputs": [
+        "comeback Urn buff active",
+        "Rejuvenator effect active",
+        "team effective combat advantage",
+        "objective decision correctness",
+        "structure pressure",
+        "lane occupancy",
+        "objective-player proximity"
+      ],
+      "missingTelemetry": [
+        "objective_presence",
+        "objective_carrier",
+        "objective_ground_state",
+        "objective_deposit_candidate"
+      ],
+      "limitations": [
+        "No spatial or mechanic-effect inference allowed.",
+        "Build 23916427 has no exact or supported mechanic-version mapping."
+      ]
+    },
+    {
+      "mechanicId": "mid_boss",
+      "stateDetectionStatus": "not_available",
+      "mechanicVersionStatus": "unresolved",
+      "activationStatus": "blocked",
+      "effectApplicationStatus": "blocked",
+      "safeOutputs": [],
+      "prohibitedOutputs": [
+        "comeback Urn buff active",
+        "Rejuvenator effect active",
+        "team effective combat advantage",
+        "objective decision correctness",
+        "structure pressure",
+        "lane occupancy",
+        "objective-player proximity"
+      ],
+      "missingTelemetry": [
+        "boss_presence",
+        "boss_health_state"
+      ],
+      "limitations": [
+        "Mid Boss absence cannot be inferred from missing compact entity data.",
+        "Build 23916427 has no exact or supported mechanic-version mapping."
+      ]
+    },
+    {
+      "mechanicId": "rejuvenator",
+      "stateDetectionStatus": "not_available",
+      "mechanicVersionStatus": "unresolved",
+      "activationStatus": "blocked",
+      "effectApplicationStatus": "blocked",
+      "safeOutputs": [],
+      "prohibitedOutputs": [
+        "comeback Urn buff active",
+        "Rejuvenator effect active",
+        "team effective combat advantage",
+        "objective decision correctness",
+        "structure pressure",
+        "lane occupancy",
+        "objective-player proximity"
+      ],
+      "missingTelemetry": [
+        "rejuvenator_presence"
+      ],
+      "limitations": [
+        "No claim/effect inference allowed.",
+        "Build 23916427 has no exact or supported mechanic-version mapping."
+      ]
+    },
+    {
+      "mechanicId": "souls_economy",
+      "stateDetectionStatus": "ready_with_constraints",
+      "mechanicVersionStatus": "unresolved",
+      "activationStatus": "blocked",
+      "effectApplicationStatus": "blocked",
+      "safeOutputs": [
+        "player_net_worth_state",
+        "team_net_worth_state"
+      ],
+      "prohibitedOutputs": [
+        "comeback Urn buff active",
+        "Rejuvenator effect active",
+        "team effective combat advantage",
+        "objective decision correctness",
+        "structure pressure",
+        "lane occupancy",
+        "objective-player proximity"
+      ],
+      "missingTelemetry": [
+        "spendable_souls",
+        "secured_souls",
+        "unsecured_souls",
+        "income_source",
+        "reward_source"
+      ],
+      "limitations": [
+        "No economy mechanic effects or reward-source semantics applied.",
+        "Build 23916427 has no exact or supported mechanic-version mapping."
+      ]
+    },
+    {
+      "mechanicId": "death_respawn",
+      "stateDetectionStatus": "ready_with_constraints",
+      "mechanicVersionStatus": "unresolved",
+      "activationStatus": "blocked",
+      "effectApplicationStatus": "blocked",
+      "safeOutputs": [
+        "player_alive_state",
+        "player_death_state",
+        "player_respawn_state"
+      ],
+      "prohibitedOutputs": [
+        "comeback Urn buff active",
+        "Rejuvenator effect active",
+        "team effective combat advantage",
+        "objective decision correctness",
+        "structure pressure",
+        "lane occupancy",
+        "objective-player proximity"
+      ],
+      "missingTelemetry": [
+        "official_respawn_timer",
+        "death_soul_consequence"
+      ],
+      "limitations": [
+        "Observed respawn durations are parser-time observations only.",
+        "Build 23916427 has no exact or supported mechanic-version mapping."
+      ]
+    },
+    {
+      "mechanicId": "core_structures",
+      "stateDetectionStatus": "not_available",
+      "mechanicVersionStatus": "unresolved",
+      "activationStatus": "blocked",
+      "effectApplicationStatus": "blocked",
+      "safeOutputs": [],
+      "prohibitedOutputs": [
+        "comeback Urn buff active",
+        "Rejuvenator effect active",
+        "team effective combat advantage",
+        "objective decision correctness",
+        "structure pressure",
+        "lane occupancy",
+        "objective-player proximity"
+      ],
+      "missingTelemetry": [
+        "structure_presence",
+        "structure_destroyed"
+      ],
+      "limitations": [
+        "No structure position, region, destruction, or pressure inference allowed.",
+        "Build 23916427 has no exact or supported mechanic-version mapping."
+      ]
+    }
+  ],
+  "summary": {
+    "mechanicEffectsApplied": 0,
+    "activationBlockedForAllMechanics": true
+  }
+}

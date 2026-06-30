@@ -1,5 +1,5 @@
 # Latest Report
 
-Latest report: `reports/build-23916427-mechanics-mapping.md`
+Latest report: `reports/replay-009-factual-state-detection.md`
 
-Latest gate: `build_23916427_mechanics_mapping_unresolved`
+Latest gate: `replay_009_factual_state_detection_ready_with_gaps`

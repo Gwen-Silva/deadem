@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "mechanics": [
+    {
+      "mechanicId": "spirit_urn",
+      "factualStateDetection": "not_available",
+      "detectedEntityCount": 0,
+      "detectedStateTypes": [],
+      "unavailableStateTypes": [
+        "objective_presence",
+        "objective_carrier",
+        "objective_ground_state",
+        "objective_deposit_candidate"
+      ],
+      "evidence": [
+        "No compact replay-009 Urn entity/property inventory."
+      ],
+      "limitations": [
+        "No spatial or mechanic-effect inference allowed."
+      ],
+      "knowledgeMissingBuildMapping": true
+    },
+    {
+      "mechanicId": "mid_boss",
+      "factualStateDetection": "not_available",
+      "detectedEntityCount": 0,
+      "detectedStateTypes": [],
+      "unavailableStateTypes": [
+        "boss_presence",
+        "boss_health_state"
+      ],
+      "evidence": [
+        "No compact replay-009 Mid Boss entity/property inventory."
+      ],
+      "limitations": [
+        "Mid Boss absence cannot be inferred from missing compact entity data."
+      ],
+      "knowledgeMissingBuildMapping": true
+    },
+    {
+      "mechanicId": "rejuvenator",
+      "factualStateDetection": "not_available",
+      "detectedEntityCount": 0,
+      "detectedStateTypes": [],
+      "unavailableStateTypes": [
+        "rejuvenator_presence"
+      ],
+      "evidence": [
+        "No compact replay-009 Rejuvenator entity/property inventory."
+      ],
+      "limitations": [
+        "No claim/effect inference allowed."
+      ],
+      "knowledgeMissingBuildMapping": true
+    },
+    {
+      "mechanicId": "souls_economy",
+      "factualStateDetection": "ready_with_constraints",
+      "detectedEntityCount": 0,
+      "detectedStateTypes": [
+        "player_net_worth_state",
+        "team_net_worth_state"
+      ],
+      "unavailableStateTypes": [
+        "spendable_souls",
+        "secured_souls",
+        "unsecured_souls",
+        "income_source",
+        "reward_source"
+      ],
+      "evidence": [
+        "m_iGoldNetWorth endpoint and summary statistics available for 12 players."
+      ],
+      "limitations": [
+        "No economy mechanic effects or reward-source semantics applied."
+      ],
+      "knowledgeMissingBuildMapping": true
+    },
+    {
+      "mechanicId": "death_respawn",
+      "factualStateDetection": "ready_with_constraints",
+      "detectedEntityCount": 12,
+      "detectedStateTypes": [
+        "player_alive_state",
+        "player_death_state",
+        "player_respawn_state"
+      ],
+      "unavailableStateTypes": [
+        "official_respawn_timer",
+        "death_soul_consequence"
+      ],
+      "evidence": [
+        "controller-pawn lifecycle and death-counter events match."
+      ],
+      "limitations": [
+        "Observed respawn durations are parser-time observations only."
+      ],
+      "knowledgeMissingBuildMapping": true
+    },
+    {
+      "mechanicId": "core_structures",
+      "factualStateDetection": "not_available",
+      "detectedEntityCount": 0,
+      "detectedStateTypes": [],
+      "unavailableStateTypes": [
+        "structure_presence",
+        "structure_destroyed"
+      ],
+      "evidence": [
+        "No compact replay-009 structure entity/property inventory."
+      ],
+      "limitations": [
+        "No structure position, region, destruction, or pressure inference allowed."
+      ],
+      "knowledgeMissingBuildMapping": true
+    }
+  ]
+}

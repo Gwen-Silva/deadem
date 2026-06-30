@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "executionMode": "partial_non_spatial",
+  "sources": [
+    {
+      "sourceName": "output/replay-009-validation/player-roster.json",
+      "entityClass": "CCitadelPlayerController / CCitadelPlayerPawn",
+      "propertyName": "playerKey, steamId, team, controllerEntityIndex, initialPawnEntityIndex",
+      "firstSeenTick": 320,
+      "lastSeenTick": 138925,
+      "sampleValues": [
+        "12 Steam-ID-backed players",
+        "6 team 2",
+        "6 team 3"
+      ],
+      "candidateMeaning": "player identity foundation",
+      "confidence": "supported",
+      "limitations": [
+        "Player slot/account IDs are not exposed in this compact output."
+      ]
+    },
+    {
+      "sourceName": "output/replay-009-validation/controller-pawn-lifecycle.jsonl",
+      "entityClass": "CCitadelPlayerPawn",
+      "propertyName": "event",
+      "firstSeenTick": 1,
+      "lastSeenTick": 138925,
+      "sampleValues": [
+        "controller_create",
+        "pawn_create",
+        "possess",
+        "death",
+        "respawn",
+        "final"
+      ],
+      "candidateMeaning": "player life and respawn transitions",
+      "confidence": "supported",
+      "limitations": [
+        "One-second validation path; sub-second transitions are not represented."
+      ]
+    },
+    {
+      "sourceName": "output/replay-009-validation/combat-event-quality-summary.json",
+      "entityClass": "CCitadelPlayerPawn",
+      "propertyName": "m_iDeaths_counter",
+      "firstSeenTick": 8384,
+      "lastSeenTick": 135488,
+      "sampleValues": [
+        "death_counter_increment"
+      ],
+      "candidateMeaning": "death counter event source",
+      "confidence": "supported",
+      "limitations": [
+        "Killer and assist attribution are not exposed by this task path."
+      ]
+    },
+    {
+      "sourceName": "output/replay-009-validation/economy-quality-summary.json",
+      "entityClass": "player economy summary",
+      "propertyName": "m_iGoldNetWorth",
+      "firstSeenTick": 0,
+      "lastSeenTick": 138925,
+      "sampleValues": [
+        "firstValue",
+        "lastValue",
+        "decreases",
+        "sampleCount"
+      ],
+      "candidateMeaning": "player and team net-worth endpoints",
+      "confidence": "supported",
+      "limitations": [
+        "Full per-second net-worth rows are not present in the compact validation artifact."
+      ]
+    },
+    {
+      "sourceName": "replay-009 compact validation artifacts",
+      "entityClass": "",
+      "propertyName": "objective/structure entity classes and properties",
+      "firstSeenTick": null,
+      "lastSeenTick": null,
+      "sampleValues": [],
+      "candidateMeaning": "pilot mechanic entity presence",
+      "confidence": "unknown",
+      "limitations": [
+        "No dedicated objective/structure entity-class inventory is available in compact replay-009 outputs."
+      ]
+    }
+  ]
+}
