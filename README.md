@@ -1,178 +1,185 @@
 # Deadem Replay Analysis
 
-This repository is an independent research project built on top of the open-source [`deadem`](https://github.com/Igor-Losev/deadem) replay parsing project created and maintained by [Igor Losev](https://github.com/Igor-Losev).
+This repository is an independent Deadlock replay-analysis and knowledge
+pipeline built on top of the open-source
+[`deadem`](https://github.com/Igor-Losev/deadem) Source 2 replay parser.
 
-The original `deadem` project provides the Source 2 replay parsing infrastructure used by this repository. I did not create the parser, its published packages, or the Deadem Explorer website.
-
-This repository uses that infrastructure to study Deadlock replay data and develop reproducible datasets, validation methods, and higher-level gameplay analysis.
-
-## Project purpose
-
-The goal of this project is to extract structured information from Deadlock replays without assuming in advance how the game should be played.
-
-The current work focuses on building and validating the lower-level data needed for later gameplay analysis, including:
-
-* player identity and hero reconciliation;
-* game clock and tick-domain reconstruction;
-* canonical player timelines;
-* map coordinates and lane topology;
-* spatial presence;
-* movement segments;
-* lane occupancy;
-* candidate rotations and journeys;
-* data quality and uncertainty.
-
-The project is currently focused on data extraction and model validation. It does not yet claim to reliably identify strategic intent, player roles, macro decisions, combat decisions, or optimal gameplay.
-
-## Relationship to the upstream project
-
-This repository was created from:
-
-* **Upstream repository:** [`Igor-Losev/deadem`](https://github.com/Igor-Losev/deadem)
-* **Original project website:** [deadem.com](https://deadem.com)
-* **Original author and maintainer:** [Igor Losev](https://github.com/Igor-Losev)
-
-The upstream project is a collection of JavaScript packages for parsing and playing back Valve Source 2 demo and replay data.
-
-Its parsing stack and game-specific packages remain the work of their original authors and contributors.
-
-The independent work in this repository is mainly located in:
-
-* [`experiments/`](./experiments) — sequential replay-analysis experiments;
-* [`scripts/`](./scripts) — validation and project utilities;
-* [`docs/`](./docs) — architecture, data definitions, decisions, and project state;
-* [`reports/`](./reports) — experiment and methodology reports;
-* [`tasks/`](./tasks) — structured tasks used during development.
-
-Unless explicitly stated otherwise, files inherited from the upstream repository should not be interpreted as original work from this repository.
-
-## Research approach
-
-The experiments are intentionally incremental.
-
-Each experiment should:
-
-1. start from an identified limitation or uncertainty;
-2. use existing derived data whenever possible;
-3. produce inspectable outputs;
-4. preserve ambiguous or unknown states;
-5. avoid treating heuristics as ground truth;
-6. validate lower-level data before introducing higher-level interpretation;
-7. document inputs, outputs, assumptions, and limitations.
-
-The experiment sequence is documented in [`docs/EXPERIMENT_INDEX.md`](./docs/EXPERIMENT_INDEX.md).
-
-The current state of the project is documented in [`docs/PROJECT_STATE.md`](./docs/PROJECT_STATE.md).
-
-## Current status
-
-The repository currently contains 23 numbered experiments.
-
-The latest stage is the calibration of lane occupancy. The current model is being evaluated before it is used as a basis for rotation, combat, objective, or broader macro analysis.
-
-The results currently represent exploratory analysis of a limited replay dataset. They should not be treated as general conclusions about Deadlock gameplay.
-
-## Repository structure
+The project separates:
 
 ```text
-experiments/   Sequential replay-analysis experiments
-scripts/       Validation and project maintenance tools
-docs/          Project state, architecture, decisions, and data definitions
-reports/       Methodology and execution reports
-tasks/         Structured pending and completed tasks
-output/        Locally generated derived data, not committed
-samples/       Local replay files, not committed
-external/      Local external reference data, not committed
+raw replay parsing
+-> telemetry validation
+-> spatial/state reconstruction
+-> versioned mechanics knowledge
+-> bounded analytical interpretation
 ```
 
-Replay files and generated outputs are intentionally excluded from Git because they may be large, derived, or unsuitable for redistribution.
+Strategic, macro, fight-quality, rotation, and decision-quality interpretation
+is not implemented yet.
 
-## Requirements
+## Project Purpose
 
-* Node.js
-* npm
-* A compatible Deadlock `.dem` replay
-* The dependencies and packages provided by the upstream project
+The current goal is to produce reproducible, evidence-bounded datasets from
+Deadlock replays while keeping low-level observations separate from
+patch-sensitive game mechanics and later interpretation.
 
-Install the dependencies with:
+The repository currently supports structural replay inspection, constrained
+gameplay telemetry validation, non-spatial factual state detection, and a
+versioned mechanics knowledge layer. It does not assume that the current game
+rules apply to historical replays.
+
+## Current Validated Capabilities
+
+- Normal human replay parsing for fixtures 001-004 and 009.
+- Structural replay completion checks independent of gameplay-state
+  materialization.
+- Player and team discovery for replay 009: 12 players, 6v6.
+- Controller-to-pawn continuity with one-second sampling limitations.
+- One-second player trajectory telemetry for replay 009 with complete coordinate
+  presence.
+- Death-counter and lifecycle consistency for replay 009: 84 matched deaths.
+- `m_iGoldNetWorth` player/team endpoint summaries from replay 009.
+- Non-spatial factual-state detection from Task 060:
+  - player life/death/respawn parser-time events;
+  - 84 deaths, 82 observed respawn returns, 2 deaths unresolved before replay end;
+  - objective, Urn, Mid Boss, Rejuvenator, and structure states unavailable from
+    compact entity/property observability.
+- Versioned mechanic schemas and conservative query behavior for ambiguous
+  builds.
+
+## Current Limitations
+
+- Replay 005 remains protected as the final holdout.
+- Solo-bot fixtures 006-008 are unsupported by gameplay-state reconstruction.
+- Build `23916427` has no confirmed patch mapping.
+- Active-game-time and explicit pause intervals are unavailable.
+- Map transform and map-version compatibility are unresolved for replay 009.
+- Generic regions, lane projection, objective proximity, and spatial semantic
+  states are unavailable.
+- Mechanic activation and mechanic effects are not applied.
+- Net worth does not expose secured, unsecured, spendable, or reward-source
+  economy semantics.
+- Macro decision analysis is not ready.
+
+## Corpus Status
+
+| Fixture | Status |
+| --- | --- |
+| 001-004 | Compatible normal replay controls. |
+| 005 | Protected final holdout. Do not process without explicit final-holdout authorization. |
+| 006-008 | Unsupported solo-bot fixtures with distinct state-reconstruction failures. |
+| 009 | Primary validated normal replay for telemetry and non-spatial factual states. |
+
+Replays 001-004 are parser-compatible controls. They should not be described as
+fully telemetry-validated unless a specific report establishes that stronger
+claim.
+
+## Pipeline Status
+
+```text
+Replay bytes
+  -> structural parsing                     [available]
+  -> gameplay telemetry                     [available with constraints]
+  -> player identity/lifecycle              [available with constraints]
+  -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
+  -> spatial map projection                 [not available]
+  -> mechanic version resolution            [unresolved for build 23916427]
+  -> mechanic activation                    [blocked]
+  -> analytical interpretation              [blocked]
+```
+
+## Knowledge Layer
+
+Versioned mechanics records live in [`knowledge/`](./knowledge). Current pilot
+mechanics are:
+
+- Spirit/Soul Urn
+- Mid Boss
+- Rejuvenator
+- Souls/economy
+- Death/respawn
+- Core structures
+
+The Deadlock Wiki is treated as a maintained secondary source, not as automatic
+ground truth for historical builds. Current rules are not silently applied to
+unmapped builds. When build mapping is ambiguous, queries return ambiguity and
+apply no effects.
+
+Telemetry state and mechanic interpretation remain separate. Observing a state
+does not prove that a patch-sensitive mechanic effect was active.
+
+## Important Epistemic Rules
+
+- Parser completion does not prove telemetry correctness.
+- Valid coordinates do not prove valid map projection.
+- Entity disappearance does not prove objective completion.
+- Net worth does not expose secured, unsecured, or spendable souls.
+- Observed state does not prove a mechanic effect was active.
+- A favorable result does not prove a decision was correct.
+
+## Repository Navigation
+
+- Current project state: [`docs/PROJECT_STATE.md`](./docs/PROJECT_STATE.md)
+- Repository guide: [`docs/REPOSITORY_GUIDE.md`](./docs/REPOSITORY_GUIDE.md)
+- Report index: [`reports/INDEX.md`](./reports/INDEX.md)
+- Mechanics knowledge: [`knowledge/README.md`](./knowledge/README.md)
+- Output conventions: [`output/README.md`](./output/README.md)
+- Task queue and history: [`tasks/`](./tasks)
+
+Major current reports:
+
+- [`reports/replay-009-end-to-end-telemetry-validation.md`](./reports/replay-009-end-to-end-telemetry-validation.md)
+- [`reports/replay-009-pause-clock-observability.md`](./reports/replay-009-pause-clock-observability.md)
+- [`reports/replay-009-spatial-geometric-projection-validation.md`](./reports/replay-009-spatial-geometric-projection-validation.md)
+- [`reports/versioned-mechanics-knowledge-foundation.md`](./reports/versioned-mechanics-knowledge-foundation.md)
+- [`reports/build-23916427-mechanics-mapping.md`](./reports/build-23916427-mechanics-mapping.md)
+- [`reports/replay-009-factual-state-detection.md`](./reports/replay-009-factual-state-detection.md)
+
+## Running Validation
+
+Install workspace dependencies with:
 
 ```bash
 npm install
 ```
 
-## Running the research experiments
-
-The scripts under [`experiments/`](./experiments) represent a sequential investigation. Later experiments may depend on outputs produced by earlier ones.
-
-Before running an experiment, inspect:
-
-* [`docs/PROJECT_STATE.md`](./docs/PROJECT_STATE.md)
-* [`docs/EXPERIMENT_INDEX.md`](./docs/EXPERIMENT_INDEX.md)
-* the experiment source file;
-* the expected local input and output paths.
-
-Generated data is written to `output/` and is not committed to this repository.
-
-## Validation utilities
-
-The repository includes utilities for validating existing experiment files without reprocessing the replay:
+Supported validation commands:
 
 ```bash
-npm run validate:experiment -- 23
-npm run check:outputs -- 23
-npm run summarize:experiment -- 23
+npm test
+npm run lint
+npm run validate:tasks
+npm run check:outputs
+node --test tests/knowledge/query-mechanics.test.mjs
+node --test tests/replay-009-factual-state-detection.test.mjs
+node --test tests/replay-009-spatial-validation.test.mjs
+node -e "const fs=require('fs'); for (const f of fs.readdirSync('output/replay-009-states')) { const p='output/replay-009-states/'+f; const t=fs.readFileSync(p,'utf8').trim(); if (f.endsWith('.json')) JSON.parse(t); if (f.endsWith('.jsonl') && t) for (const line of t.split(/\r?\n/)) JSON.parse(line); }"
 ```
 
-These commands validate the implementation and generated files associated with an experiment. They do not establish that the resulting gameplay interpretation is correct.
+Video-pipeline tests use the isolated Python environment when available:
 
-## Upstream packages
+```powershell
+.\.venv-video\Scripts\python.exe -m pytest tests\video_pipeline -q
+```
 
-The original `deadem` project includes the following packages:
+`npm run check:outputs` may continue to report the pre-existing oversized
+`output/04-controller-pawn-lifecycle.json`; that warning is unrelated to the
+current replay-009 state layer.
 
-| Package                                | Upstream description                                               |
-| -------------------------------------- | ------------------------------------------------------------------ |
-| [`@deademx/engine`](./packages/engine) | Shared, game-agnostic replay parsing and playback engine.          |
-| [`deadem`](./packages/deadem)          | Deadlock implementation built on top of `@deademx/engine`.         |
-| [`@deademx/cs2`](./packages/cs2)       | Counter-Strike 2 implementation built on top of `@deademx/engine`. |
-| [`@deademx/dota2`](./packages/dota2)   | Dota 2 implementation built on top of `@deademx/engine`.           |
+## Upstream Attribution
 
-These packages are inherited from the upstream project. This repository does not claim authorship or maintainership of them.
+This repository depends on and retains attribution to the upstream
+[`Igor-Losev/deadem`](https://github.com/Igor-Losev/deadem) project and its
+Source 2 replay parsing packages:
 
-For documentation about the parser and its packages, refer to the upstream repository and its package documentation:
+- [`@deademx/engine`](./packages/engine)
+- [`deadem`](./packages/deadem)
+- [`@deademx/cs2`](./packages/cs2)
+- [`@deademx/dota2`](./packages/dota2)
 
-* [`@deademx/engine`](./packages/engine/README.md)
-* [`deadem`](./packages/deadem/README.md)
-* [`@deademx/cs2`](./packages/cs2/README.md)
-* [`@deademx/dota2`](./packages/dota2/README.md)
-
-## Limitations
-
-This is an early research project based on incomplete and evolving knowledge of Deadlock replay data.
-
-Current limitations include:
-
-* analysis based on a limited number of replays;
-* build-specific game data;
-* fields and labels that still require validation;
-* heuristic spatial and temporal classifications;
-* incomplete ground-truth validation;
-* risk of overfitting models to a specific replay or map state;
-* no reliable inference of strategic intent yet.
-
-A successful script execution does not mean that its model is strategically correct.
-
-## Attribution
-
-This project depends on and was made possible by the work in:
-
-* [`Igor-Losev/deadem`](https://github.com/Igor-Losev/deadem) — Source 2 replay parsing infrastructure used as the foundation of this repository;
-* [`dotabuff/manta`](https://github.com/dotabuff/manta) — Dota 2 replay parser in Go;
-* [`saul/demofile-net`](https://github.com/saul/demofile-net) — Counter-Strike 2 and Deadlock replay parser in C#.
-
-All credit for inherited code remains with the original authors and contributors.
+Inherited parser/package code remains the work of the original authors and
+contributors.
 
 ## License
 
 This repository retains the [MIT License](./LICENSE) from the upstream project.
-
-See the repository history and the upstream project for original authorship and contribution records.
