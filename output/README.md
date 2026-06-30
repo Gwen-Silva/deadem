@@ -133,3 +133,15 @@ decision, and gate. The selected primary milestone is spatial foundation first,
 with open dependencies on map geometry and coordinate anchors. These outputs are
 planning artifacts only and do not implement spatial projection or macro
 analysis.
+
+## Replay 009 Spatial Input Acquisition
+
+`output/replay-009-spatial-inputs/` contains the Task 069 acquisition package
+for the spatial-foundation milestone. It records local installed map-package
+metadata, external/reference source metadata, map-change chronology entries,
+geometry candidates, replay-derived candidate anchors, calibration feasibility,
+and provenance/licensing constraints. The gate is
+`replay_009_map_geometry_inputs_ready_with_limitations`: transform
+experimentation can be scoped, but build compatibility, accepted independent map
+coordinates, regions, lanes, objective proximity, and macro interpretation are
+not available.

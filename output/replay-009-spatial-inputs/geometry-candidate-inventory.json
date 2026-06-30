@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/acquire-replay-009-spatial-inputs.mjs",
+  "candidates": [
+    {
+      "geometryId": "geom_installed_dl_midtown_vpk",
+      "sourceId": "local_installed_dl_midtown_vpk",
+      "representationType": "world_map_package",
+      "dimensions": {},
+      "coordinateSystemKnown": false,
+      "orientationKnown": false,
+      "scaleKnown": false,
+      "originKnown": false,
+      "boundsKnown": false,
+      "versionStatus": "installed_newer_or_unknown_relative_to_replay_build",
+      "usableForAffineCalibration": false,
+      "usableForNonlinearCalibration": false,
+      "usableForRegionAuthoring": false,
+      "limitations": [
+        "Likely map package candidate, but extraction and build compatibility remain unresolved."
+      ]
+    },
+    {
+      "geometryId": "geom_gametracking_minimap_material_index",
+      "sourceId": "local_gametracking_pak01_index",
+      "representationType": "minimap_material_index",
+      "dimensions": {},
+      "coordinateSystemKnown": false,
+      "orientationKnown": false,
+      "scaleKnown": false,
+      "originKnown": false,
+      "boundsKnown": false,
+      "versionStatus": "local_checkout_possible_candidate",
+      "usableForAffineCalibration": false,
+      "usableForNonlinearCalibration": false,
+      "usableForRegionAuthoring": false,
+      "limitations": [
+        "Provides material names, not a raster/vector geometry artifact."
+      ]
+    },
+    {
+      "geometryId": "geom_match_91119257_map_reference",
+      "sourceId": "local_match_91119257_map_reference",
+      "representationType": "raster_minimap_reference",
+      "dimensions": {},
+      "coordinateSystemKnown": false,
+      "orientationKnown": false,
+      "scaleKnown": false,
+      "originKnown": false,
+      "boundsKnown": false,
+      "versionStatus": "not_tied_to_replay_009",
+      "usableForAffineCalibration": false,
+      "usableForNonlinearCalibration": false,
+      "usableForRegionAuthoring": false,
+      "limitations": [
+        "Reference-only artifact from another match context."
+      ]
+    }
+  ]
+}

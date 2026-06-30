@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/acquire-replay-009-spatial-inputs.mjs",
+  "replayId": "replay_009",
+  "buildId": "23916427",
+  "sources": [
+    {
+      "sourceId": "local_steam_appmanifest_deadlock_1422450",
+      "sourceType": "steam_app_manifest",
+      "path": "steam:steamapps/appmanifest_1422450.acf",
+      "exists": true,
+      "sizeBytes": 1012,
+      "sha256": "b9359f4c18e6292bcec934d23b1fdb520b5f3067522e92171abd252762d97619",
+      "format": "acf",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "unknown",
+      "provenance": "Local Steam app manifest discovered through Steam metadata.",
+      "licenseOrUsageNotes": [
+        "Metadata only; no game assets are committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": true,
+      "limitations": [
+        "Steam build ID is not proven to be the same identifier type as replay build 23916427."
+      ]
+    },
+    {
+      "sourceId": "local_gametracking_steam_inf",
+      "sourceType": "versioned_game_metadata",
+      "path": "external:GameTracking-Deadlock/game/citadel/steam.inf",
+      "exists": true,
+      "sizeBytes": 176,
+      "sha256": "cfe84aaecd77cf55c4f9aa330afbc44e950989d622e175d21744178e99ff09fc",
+      "format": "steam.inf",
+      "believedMapVersion": "GameTracking local checkout reports SourceRevision and Jun 19 2026 version timestamp.",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local versioned GameTracking-Deadlock checkout metadata.",
+      "licenseOrUsageNotes": [
+        "Derived metadata only; source checkout is not vendored by this task."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": true,
+      "limitations": [
+        "Does not directly identify replay build 23916427."
+      ]
+    },
+    {
+      "sourceId": "local_gametracking_pak01_index",
+      "sourceType": "package_index",
+      "path": "external:GameTracking-Deadlock/game/citadel/pak01_dir.txt",
+      "exists": true,
+      "sizeBytes": 11107446,
+      "sha256": "9584c4ceb5ebdd6c79a94fd30c0ede7c0105b401c852418e44d4bfbb25fb2c1e",
+      "format": "package index text",
+      "believedMapVersion": "Local GameTracking package index, version tied to its checkout.",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local versioned GameTracking-Deadlock package index.",
+      "licenseOrUsageNotes": [
+        "Commit only metadata derived from this source."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": true,
+      "limitations": [
+        "Index references minimap/map materials but is not itself a usable map image or geometry."
+      ]
+    },
+    {
+      "sourceId": "local_match_91119257_map_reference",
+      "sourceType": "legacy_map_reference_image",
+      "path": "repo:data/evidence/match_91119257/raw/map_reference.png",
+      "exists": true,
+      "sizeBytes": 241605,
+      "sha256": "cdf6abe4729fadfbffca8b6954ed9fc3170bde766da56fcfd4e91a03670270eb",
+      "format": "png",
+      "believedMapVersion": "Unknown; belongs to match_91119257 context, not replay_009.",
+      "buildCompatibilityStatus": "unknown",
+      "provenance": "Existing repository evidence for another match context.",
+      "licenseOrUsageNotes": [
+        "Do not reuse as replay_009 authoritative map geometry without provenance."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Not tied to replay_009 or build 23916427."
+      ]
+    },
+    {
+      "sourceId": "local_installed_dl_midtown_vpk",
+      "sourceType": "installed_game_map_package",
+      "path": "steam:steamapps/common/Deadlock/game/citadel/maps/dl_midtown.vpk",
+      "exists": true,
+      "sizeBytes": 1055625013,
+      "sha256": "",
+      "format": "vpk",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local Deadlock installation discovered through Steam app manifest.",
+      "licenseOrUsageNotes": [
+        "Valve game package; local inspection only.",
+        "Do not commit or redistribute the package.",
+        "Only compact metadata and hashes may be committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_dl_streets_vpk",
+      "sourceType": "installed_game_map_package",
+      "path": "steam:steamapps/common/Deadlock/game/citadel/maps/dl_streets.vpk",
+      "exists": true,
+      "sizeBytes": 935103941,
+      "sha256": "",
+      "format": "vpk",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local Deadlock installation discovered through Steam app manifest.",
+      "licenseOrUsageNotes": [
+        "Valve game package; local inspection only.",
+        "Do not commit or redistribute the package.",
+        "Only compact metadata and hashes may be committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_street_test_vpk",
+      "sourceType": "installed_game_map_package",
+      "path": "steam:steamapps/common/Deadlock/game/citadel/maps/street_test.vpk",
+      "exists": true,
+      "sizeBytes": 1705343130,
+      "sha256": "",
+      "format": "vpk",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local Deadlock installation discovered through Steam app manifest.",
+      "licenseOrUsageNotes": [
+        "Valve game package; local inspection only.",
+        "Do not commit or redistribute the package.",
+        "Only compact metadata and hashes may be committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_1v1_test_vpk",
+      "sourceType": "installed_game_map_package",
+      "path": "steam:steamapps/common/Deadlock/game/citadel/maps/1v1_test.vpk",
+      "exists": true,
+      "sizeBytes": 207828635,
+      "sha256": "c256f330a31c18a5aa3e5e0e24a22cca8c6989f4cb1ced2928907610df9af420",
+      "format": "vpk",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local Deadlock installation discovered through Steam app manifest.",
+      "licenseOrUsageNotes": [
+        "Valve game package; local inspection only.",
+        "Do not commit or redistribute the package.",
+        "Only compact metadata and hashes may be committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation."
+      ]
+    },
+    {
+      "sourceId": "local_installed_dl_hideout_vpk",
+      "sourceType": "installed_game_map_package",
+      "path": "steam:steamapps/common/Deadlock/game/citadel/maps/dl_hideout.vpk",
+      "exists": true,
+      "sizeBytes": 387036486,
+      "sha256": "",
+      "format": "vpk",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local Deadlock installation discovered through Steam app manifest.",
+      "licenseOrUsageNotes": [
+        "Valve game package; local inspection only.",
+        "Do not commit or redistribute the package.",
+        "Only compact metadata and hashes may be committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_minimap_effects_vpk",
+      "sourceType": "installed_game_map_package",
+      "path": "steam:steamapps/common/Deadlock/game/citadel/maps/scenes/minimap_effects.vpk",
+      "exists": true,
+      "sizeBytes": 10319,
+      "sha256": "f7cf1afd59355a2c77e17f6e00c9f54538b9f7a7a4f8f2b49b4536b6688522a0",
+      "format": "vpk",
+      "believedMapVersion": "installed Steam build 23989856; target build 23990779",
+      "buildCompatibilityStatus": "possible",
+      "provenance": "Local Deadlock installation discovered through Steam app manifest.",
+      "licenseOrUsageNotes": [
+        "Valve game package; local inspection only.",
+        "Do not commit or redistribute the package.",
+        "Only compact metadata and hashes may be committed."
+      ],
+      "inspectionAllowed": true,
+      "commitAllowed": false,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation."
+      ]
+    }
+  ]
+}

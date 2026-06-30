@@ -1,0 +1,198 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/acquire-replay-009-spatial-inputs.mjs",
+  "sources": [
+    {
+      "sourceId": "local_steam_appmanifest_deadlock_1422450",
+      "origin": "Local Steam app manifest discovered through Steam metadata.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": true,
+      "redistributionAllowed": true,
+      "committedContent": "compact metadata and hash only",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": false,
+      "limitations": [
+        "Steam build ID is not proven to be the same identifier type as replay build 23916427."
+      ]
+    },
+    {
+      "sourceId": "local_gametracking_steam_inf",
+      "origin": "Local versioned GameTracking-Deadlock checkout metadata.",
+      "officialOrDerived": "derived_or_local_reference",
+      "versionKnown": false,
+      "redistributionAllowed": true,
+      "committedContent": "compact metadata and hash only",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": false,
+      "limitations": [
+        "Does not directly identify replay build 23916427."
+      ]
+    },
+    {
+      "sourceId": "local_gametracking_pak01_index",
+      "origin": "Local versioned GameTracking-Deadlock package index.",
+      "officialOrDerived": "derived_or_local_reference",
+      "versionKnown": false,
+      "redistributionAllowed": true,
+      "committedContent": "compact metadata and hash only",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": false,
+      "limitations": [
+        "Index references minimap/map materials but is not itself a usable map image or geometry."
+      ]
+    },
+    {
+      "sourceId": "local_match_91119257_map_reference",
+      "origin": "Existing repository evidence for another match context.",
+      "officialOrDerived": "derived_or_local_reference",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "unknown",
+      "localUseOnly": true,
+      "limitations": [
+        "Not tied to replay_009 or build 23916427."
+      ]
+    },
+    {
+      "sourceId": "local_installed_dl_midtown_vpk",
+      "origin": "Local Deadlock installation discovered through Steam app manifest.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": true,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_dl_streets_vpk",
+      "origin": "Local Deadlock installation discovered through Steam app manifest.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": true,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_street_test_vpk",
+      "origin": "Local Deadlock installation discovered through Steam app manifest.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": true,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_1v1_test_vpk",
+      "origin": "Local Deadlock installation discovered through Steam app manifest.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": true,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation."
+      ]
+    },
+    {
+      "sourceId": "local_installed_dl_hideout_vpk",
+      "origin": "Local Deadlock installation discovered through Steam app manifest.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": true,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation.",
+        "sha256 not committed for large proprietary package; size and timestamp are recorded instead."
+      ]
+    },
+    {
+      "sourceId": "local_installed_minimap_effects_vpk",
+      "origin": "Local Deadlock installation discovered through Steam app manifest.",
+      "officialOrDerived": "official_local_install_metadata_or_asset",
+      "versionKnown": false,
+      "redistributionAllowed": false,
+      "committedContent": "metadata only; source artifact not committed",
+      "attributionRequired": "not_applicable_for_local_metadata",
+      "localUseOnly": true,
+      "limitations": [
+        "Installed package is not directly mapped to replay build 23916427.",
+        "Raw VPK is not a bounded derived geometry representation."
+      ]
+    },
+    {
+      "sourceId": "external_gametracking_deadlock_checkout",
+      "origin": "external/GameTracking-Deadlock",
+      "officialOrDerived": "derived_primary",
+      "versionKnown": true,
+      "redistributionAllowed": false,
+      "committedContent": "compact source reference and claim summary only",
+      "attributionRequired": "cite source when claims are used",
+      "localUseOnly": true,
+      "limitations": [
+        "No direct build-23916427 mapping."
+      ]
+    },
+    {
+      "sourceId": "external_deadlock_metadata_patchdates",
+      "origin": "external/deadlock-metadata/patchdates.json",
+      "officialOrDerived": "community",
+      "versionKnown": true,
+      "redistributionAllowed": false,
+      "committedContent": "compact source reference and claim summary only",
+      "attributionRequired": "cite source when claims are used",
+      "localUseOnly": true,
+      "limitations": [
+        "Not official and not a map geometry source."
+      ]
+    },
+    {
+      "sourceId": "external_pcgamer_2026_05_urn_map_change",
+      "origin": "https://www.pcgamer.com/games/moba/deadlock-new-midlane-objective-turned-games-into-such-a-mid-only-fiasco-that-it-only-lasted-one-weekend-though-valves-still-experimenting/",
+      "officialOrDerived": "secondary",
+      "versionKnown": true,
+      "redistributionAllowed": false,
+      "committedContent": "compact source reference and claim summary only",
+      "attributionRequired": "cite source when claims are used",
+      "localUseOnly": false,
+      "limitations": [
+        "Not official, not geometry, and not a build mapping for 23916427."
+      ]
+    },
+    {
+      "sourceId": "external_deadlock_wiki_map_reference",
+      "origin": "https://deadlock.wiki/",
+      "officialOrDerived": "secondary",
+      "versionKnown": true,
+      "redistributionAllowed": false,
+      "committedContent": "compact source reference and claim summary only",
+      "attributionRequired": "cite source when claims are used",
+      "localUseOnly": false,
+      "limitations": [
+        "No versioned geometry or build-specific map image acquired."
+      ]
+    }
+  ]
+}

@@ -135,3 +135,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   and independent coordinate anchors. Do not begin objective proximity, lane
   projection, rotations, map pressure, or macro work from current coordinates
   alone.
+- Replay 009 spatial input acquisition outputs live in
+  `output/replay-009-spatial-inputs/`. Task 069 records local installed map
+  package metadata, external/reference metadata, geometry candidates, candidate
+  anchors, licensing constraints, and transform-feasibility limits. These
+  outputs do not fit a transform and do not validate regions, lanes, objective
+  proximity, or map compatibility for build `23916427`.

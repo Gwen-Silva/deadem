@@ -38,6 +38,14 @@ The milestone is selected because spatial grounding is the largest shared blocke
 
 Current map geometry must not be silently assumed valid for build `23916427`.
 
+Task 069 acquired limited candidate inputs: local installed Deadlock map-package
+metadata, GameTracking/deadlock-metadata references, and replay-derived landmark
+candidates. The gate is
+`replay_009_map_geometry_inputs_ready_with_limitations`. The current installed
+map package is useful as a local-only candidate, but build compatibility,
+extractable geometry, and independent map-coordinate anchors are still
+unresolved.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

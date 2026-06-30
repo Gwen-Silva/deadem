@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/acquire-replay-009-spatial-inputs.mjs",
+  "replayId": "replay_009",
+  "buildId": "23916427",
+  "selectedGeometryCandidate": {
+    "geometryId": "geom_installed_dl_midtown_vpk",
+    "designation": "preferred_candidate",
+    "reason": "Local installed map package is the most complete available geometry-bearing candidate, but it is not committed and not proven build-compatible."
+  },
+  "alternateCandidates": [
+    {
+      "geometryId": "geom_gametracking_minimap_material_index",
+      "designation": "alternate_candidate"
+    },
+    {
+      "geometryId": "geom_match_91119257_map_reference",
+      "designation": "reference_only"
+    }
+  ],
+  "candidateAnchors": [
+    "anchor_2972_515_8440732_147_61246",
+    "anchor_3095_188_3083287_147_99528",
+    "anchor_3160_624_10226776_147_71997",
+    "anchor_3167_23_379999_147_70438",
+    "anchor_3499_659_10800555_147_119603",
+    "anchor_420_507_8307108_447_-1",
+    "anchor_428_85_1393068_447_-1",
+    "anchor_3244_161_2641068_453_101210",
+    "anchor_3246_868_14224558_453_72149",
+    "anchor_3483_403_6606235_453_62942",
+    "anchor_3544_719_11783640_453_120903",
+    "anchor_403_21_344467_513_-1",
+    "anchor_404_612_10027412_513_-1",
+    "anchor_495_284_4653551_608_-1",
+    "anchor_496_594_9732592_608_-1",
+    "anchor_3111_893_14634023_610_46080",
+    "anchor_3138_805_13192258_610_92160",
+    "anchor_3163_739_12110939_610_69120",
+    "anchor_3264_119_1952960_610_115200",
+    "anchor_3463_49_806279_610_71912",
+    "anchor_348_356_5833052_711_-1",
+    "anchor_349_122_1999197_711_-1",
+    "anchor_350_567_9290078_711_-1",
+    "anchor_351_568_9306463_711_-1",
+    "anchor_352_39_639328_711_-1",
+    "anchor_353_150_2457953_711_-1",
+    "anchor_354_185_3031394_711_-1",
+    "anchor_355_262_4292963_711_-1",
+    "anchor_356_30_491876_711_-1",
+    "anchor_357_476_7799141_711_-1",
+    "anchor_424_1022_16744872_711_-1",
+    "anchor_425_627_10273193_711_-1",
+    "anchor_419_614_10060195_712_-1",
+    "anchor_426_151_2474410_712_-1",
+    "anchor_427_910_14909867_712_-1",
+    "anchor_436_747_12239284_712_-1",
+    "anchor_477_820_13435357_712_-1",
+    "anchor_478_943_15450590_712_-1",
+    "anchor_479_66_1081823_712_-1",
+    "anchor_480_915_14991840_712_-1",
+    "anchor_307_381_6242611_713_-1",
+    "anchor_308_523_8569140_713_-1",
+    "anchor_309_685_11223349_713_-1",
+    "anchor_310_1003_16433462_713_-1",
+    "anchor_311_565_9257271_713_-1",
+    "anchor_312_533_8732984_713_-1",
+    "anchor_302_761_12468526_714_-1",
+    "anchor_303_242_3965231_714_-1",
+    "anchor_2714_253_4147866_718_-1",
+    "anchor_3289_380_6229209_718_123857",
+    "anchor_2519_801_13126103_735_-1",
+    "anchor_2520_242_3967448_735_-1",
+    "anchor_2521_565_9259481_735_-1",
+    "anchor_2522_764_12519898_735_-1",
+    "anchor_2523_122_2001371_735_-1",
+    "anchor_2524_866_14191068_735_-1"
+  ],
+  "supportedAnchors": [
+    "anchor_307_381_6242611_713_-1",
+    "anchor_308_523_8569140_713_-1",
+    "anchor_309_685_11223349_713_-1",
+    "anchor_310_1003_16433462_713_-1",
+    "anchor_311_565_9257271_713_-1",
+    "anchor_312_533_8732984_713_-1",
+    "anchor_2714_253_4147866_718_-1",
+    "anchor_3289_380_6229209_718_123857"
+  ],
+  "rejectedAnchors": [
+    "anchor_rejected_spawn_clusters_from_player_trajectories",
+    "anchor_rejected_lane_centers_from_path_density",
+    "anchor_rejected_entity_deletion_locations",
+    "anchor_rejected_symmetry_only_orientation"
+  ],
+  "reservedValidationAnchors": [],
+  "versionEvidence": [
+    "local_steam_appmanifest_deadlock_1422450",
+    "local_gametracking_steam_inf",
+    "external_deadlock_metadata_patchdates"
+  ],
+  "licensingConstraints": [
+    "Installed Valve map packages are local-only and not committed.",
+    "No uncleared raster map image is committed.",
+    "Only compact metadata and derived inventories are committed."
+  ],
+  "localOnlyArtifacts": [
+    "repo:data/evidence/match_91119257/raw/map_reference.png",
+    "steam:steamapps/common/Deadlock/game/citadel/maps/dl_midtown.vpk",
+    "steam:steamapps/common/Deadlock/game/citadel/maps/dl_streets.vpk",
+    "steam:steamapps/common/Deadlock/game/citadel/maps/street_test.vpk",
+    "steam:steamapps/common/Deadlock/game/citadel/maps/1v1_test.vpk",
+    "steam:steamapps/common/Deadlock/game/citadel/maps/dl_hideout.vpk",
+    "steam:steamapps/common/Deadlock/game/citadel/maps/scenes/minimap_effects.vpk"
+  ],
+  "committedDerivedArtifacts": [
+    "output/replay-009-spatial-inputs/local-source-inventory.json",
+    "output/replay-009-spatial-inputs/external-source-inventory.json",
+    "output/replay-009-spatial-inputs/map-version-chronology.json",
+    "output/replay-009-spatial-inputs/geometry-candidate-inventory.json",
+    "output/replay-009-spatial-inputs/calibration-anchor-inventory.json",
+    "output/replay-009-spatial-inputs/calibration-feasibility.json"
+  ],
+  "missingInputs": [
+    "authoritative map geometry or image known to match build 23916427",
+    "independent map coordinates for Mid Boss, Walker, Guardian, or structure landmarks",
+    "accepted validation anchor outside any future fitting set",
+    "license-clear derived geometry representation suitable for committing or reproducible local extraction instructions"
+  ]
+}

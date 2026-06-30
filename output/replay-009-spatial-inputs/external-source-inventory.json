@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/acquire-replay-009-spatial-inputs.mjs",
+  "sources": [
+    {
+      "sourceId": "external_gametracking_deadlock_checkout",
+      "title": "GameTracking-Deadlock local checkout",
+      "sourceType": "versioned_public_repository_local_checkout",
+      "sourceReference": "external/GameTracking-Deadlock",
+      "publisherOrMaintainer": "local external checkout",
+      "retrievedAt": "2026-06-30T00:00:00.000Z",
+      "versionOrDate": "local checkout; git commit unavailable due local ownership restrictions",
+      "claimedBuild": "",
+      "provenanceChain": [
+        "Local checkout includes game/citadel/steam.inf and pak01_dir.txt metadata."
+      ],
+      "licenseOrUsageNotes": [
+        "Use for metadata provenance; do not commit assets derived from packages without separate license review."
+      ],
+      "locallyStored": true,
+      "localDerivedArtifact": null,
+      "buildCompatibilityStatus": "possible",
+      "trustLevel": "derived_primary",
+      "limitations": [
+        "No direct build-23916427 mapping."
+      ]
+    },
+    {
+      "sourceId": "external_deadlock_metadata_patchdates",
+      "title": "deadlock-metadata patchdates.json local checkout",
+      "sourceType": "community_metadata_local_checkout",
+      "sourceReference": "external/deadlock-metadata/patchdates.json",
+      "publisherOrMaintainer": "local external checkout",
+      "retrievedAt": "2026-06-30T00:00:00.000Z",
+      "versionOrDate": "local checkout",
+      "claimedBuild": "",
+      "provenanceChain": [
+        "Patch metadata includes map-tagged historical entries."
+      ],
+      "licenseOrUsageNotes": [
+        "Commit compact derived chronology only."
+      ],
+      "locallyStored": true,
+      "localDerivedArtifact": null,
+      "buildCompatibilityStatus": "unknown",
+      "trustLevel": "community",
+      "limitations": [
+        "Not official and not a map geometry source."
+      ]
+    },
+    {
+      "sourceId": "external_pcgamer_2026_05_urn_map_change",
+      "title": "Deadlock urn midlane experiment news report",
+      "sourceType": "community_news",
+      "sourceReference": "https://www.pcgamer.com/games/moba/deadlock-new-midlane-objective-turned-games-into-such-a-mid-only-fiasco-that-it-only-lasted-one-weekend-though-valves-still-experimenting/",
+      "publisherOrMaintainer": "PC Gamer",
+      "retrievedAt": "2026-06-30T00:00:00.000Z",
+      "versionOrDate": "2026-05-26",
+      "claimedBuild": "",
+      "provenanceChain": [
+        "Public news report describes a temporary urn placement/map-objective experiment and rollback."
+      ],
+      "licenseOrUsageNotes": [
+        "Use only as secondary chronology context; no copied article content."
+      ],
+      "locallyStored": false,
+      "localDerivedArtifact": null,
+      "buildCompatibilityStatus": "unknown",
+      "trustLevel": "secondary",
+      "limitations": [
+        "Not official, not geometry, and not a build mapping for 23916427."
+      ]
+    },
+    {
+      "sourceId": "external_deadlock_wiki_map_reference",
+      "title": "Deadlock Wiki current map reference",
+      "sourceType": "deadlock_wiki_reference",
+      "sourceReference": "https://deadlock.wiki/",
+      "publisherOrMaintainer": "Deadlock Wiki contributors",
+      "retrievedAt": "2026-06-30T00:00:00.000Z",
+      "versionOrDate": "current page state not captured",
+      "claimedBuild": "",
+      "provenanceChain": [
+        "Authorized source for future reference, but no versioned geometry artifact was acquired in Task 069."
+      ],
+      "licenseOrUsageNotes": [
+        "Do not copy full wiki pages; cite compact claims only."
+      ],
+      "locallyStored": false,
+      "localDerivedArtifact": null,
+      "buildCompatibilityStatus": "unknown",
+      "trustLevel": "secondary",
+      "limitations": [
+        "No versioned geometry or build-specific map image acquired."
+      ]
+    }
+  ]
+}

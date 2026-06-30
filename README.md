@@ -132,8 +132,11 @@ map geometry, coordinate anchors, map bounds, regions, lanes, and
 objective/structure positions before attempting objective proximity, movement
 paths, rotations, map pressure, or macro context.
 
-This milestone is defined with open dependencies because it requires
-authoritative or calibratable map geometry and independent coordinate anchors.
+Task 069 acquired limited spatial-foundation inputs: local installed map-package
+metadata, external/reference metadata, and replay-derived landmark candidates.
+It did not validate build compatibility, extract an authoritative map, fit a
+transform, or enable regions/lanes/proximity. This milestone therefore remains
+open until independent map coordinates and compatibility evidence are validated.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -190,6 +193,7 @@ Major current reports:
 - [`reports/replay-009-factual-state-inspection-interface.md`](./reports/replay-009-factual-state-inspection-interface.md)
 - [`reports/replay-009-inspector-workflow-evaluation.md`](./reports/replay-009-inspector-workflow-evaluation.md)
 - [`reports/deadem-next-milestone-decision.md`](./reports/deadem-next-milestone-decision.md)
+- [`reports/replay-009-map-geometry-input-acquisition.md`](./reports/replay-009-map-geometry-input-acquisition.md)
 
 ## Running Validation
 

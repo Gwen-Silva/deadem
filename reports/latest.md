@@ -1,5 +1,5 @@
 # Latest Report
 
-Latest report: `reports/deadem-next-milestone-decision.md`
+Latest report: `reports/replay-009-map-geometry-input-acquisition.md`
 
-Latest gate: `deadem_next_milestone_defined_with_open_dependencies`
+Latest gate: `replay_009_map_geometry_inputs_ready_with_limitations`

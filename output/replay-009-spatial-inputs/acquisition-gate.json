@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/acquire-replay-009-spatial-inputs.mjs",
+  "gate": "replay_009_map_geometry_inputs_ready_with_limitations",
+  "reason": "Local map/package candidates and replay entity landmark candidates exist, but build compatibility, extracted geometry, and independent map-coordinate anchors remain limited.",
+  "allowedNextStep": "blocked_transform_validation_task",
+  "protections": {
+    "replay005Read": false,
+    "replay005Processed": false,
+    "botFixturesProcessed": false,
+    "transformFitted": false,
+    "laneLabelsEmitted": false,
+    "spatialSemanticEventsEmitted": false
+  }
+}
