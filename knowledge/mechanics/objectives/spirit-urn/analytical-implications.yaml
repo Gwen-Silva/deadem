@@ -1,0 +1,21 @@
+schema_version: "1.0.0"
+implications:
+  - implication_id: spirit_urn.local_combat_power_differs_from_raw_economy
+    mechanic_id: spirit_urn
+    premises:
+      - trailing_team_condition_confirmed
+      - urn_modifier_active
+      - affected_players_inside_valid_scope
+    conclusion:
+      type: conditional_adjustment
+      statement: >
+        Raw team soul difference alone is insufficient to estimate local combat
+        advantage during a build-confirmed Urn modifier interval.
+    confidence:
+      when_all_premises_observed: supported
+      otherwise: unavailable
+    prohibited_inferences:
+      - taking_the_fight_was_correct
+      - the_buff_fully_overcame_the_economic_gap
+      - fight_result_proves_decision_quality
+    evidence_refs: []

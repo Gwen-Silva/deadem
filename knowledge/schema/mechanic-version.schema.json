@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schema/mechanic-version.schema.json",
+  "title": "Deadem versioned mechanic rule",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rule_id",
+    "mechanic_id",
+    "name",
+    "category",
+    "description",
+    "claim_type",
+    "validity",
+    "activation",
+    "effects",
+    "telemetry_requirements",
+    "analytical_implications",
+    "evidence_refs",
+    "status",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "rule_id": { "type": "string", "pattern": "^[a-z0-9_.-]+$" },
+    "mechanic_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "claim_type": {
+      "enum": [
+        "documented_rule",
+        "observed_behavior",
+        "analytical_implication",
+        "hypothesis",
+        "unknown"
+      ]
+    },
+    "validity": {
+      "type": "object",
+      "required": [
+        "patch_from",
+        "patch_until",
+        "build_min",
+        "build_max",
+        "effective_date_from",
+        "effective_date_until",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "patch_from": { "type": ["string", "null"] },
+        "patch_until": { "type": ["string", "null"] },
+        "build_min": { "type": ["integer", "null"] },
+        "build_max": { "type": ["integer", "null"] },
+        "effective_date_from": { "type": ["string", "null"], "format": "date" },
+        "effective_date_until": { "type": ["string", "null"], "format": "date" },
+        "confidence": {
+          "enum": [
+            "current_confirmed",
+            "historical_confirmed",
+            "date_bounded",
+            "build_bounded",
+            "patch_bounded",
+            "unknown_validity",
+            "superseded"
+          ]
+        }
+      }
+    },
+    "activation": {
+      "type": "object",
+      "required": ["all_of", "any_of", "none_of"],
+      "additionalProperties": false,
+      "properties": {
+        "all_of": { "type": "array", "items": { "type": "string" } },
+        "any_of": { "type": "array", "items": { "type": "string" } },
+        "none_of": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "effects": {
+      "type": "object",
+      "required": ["modifiers", "state_changes", "rewards", "penalties"],
+      "additionalProperties": false,
+      "properties": {
+        "modifiers": { "type": "array", "items": { "type": "string" } },
+        "state_changes": { "type": "array", "items": { "type": "string" } },
+        "rewards": { "type": "array", "items": { "type": "string" } },
+        "penalties": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "telemetry_requirements": {
+      "type": "object",
+      "required": ["required", "optional", "unavailable_blocks"],
+      "additionalProperties": false,
+      "properties": {
+        "required": { "type": "array", "items": { "type": "string" } },
+        "optional": { "type": "array", "items": { "type": "string" } },
+        "unavailable_blocks": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "analytical_implications": {
+      "type": "object",
+      "required": ["direct", "conditional", "prohibited_inferences"],
+      "additionalProperties": false,
+      "properties": {
+        "direct": { "type": "array", "items": { "type": "string" } },
+        "conditional": { "type": "array", "items": { "type": "string" } },
+        "prohibited_inferences": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "enum": [
+        "active",
+        "needs_validation",
+        "superseded",
+        "conflict_unresolved",
+        "unknown"
+      ]
+    },
+    "supersedes": { "type": ["string", "null"] },
+    "conflicts_with": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

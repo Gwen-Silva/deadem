@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "rejuvenator.current_documented_identity",
+  "mechanic_id": "rejuvenator",
+  "name": "Current documented Rejuvenator identity",
+  "category": "objective",
+  "description": "Current secondary-source documentation describes Rejuvenator as a Mid Boss-related objective reward with team effects that require direct claim/effect evidence.",
+  "claim_type": "documented_rule",
+  "validity": {
+    "patch_from": null,
+    "patch_until": null,
+    "build_min": null,
+    "build_max": null,
+    "effective_date_from": null,
+    "effective_date_until": null,
+    "confidence": "unknown_validity"
+  },
+  "activation": {
+    "all_of": ["rejuvenator_spawn_or_claim_observed"],
+    "any_of": ["rejuvenator_unclaimed", "rejuvenator_claimed", "rejuvenator_effect_active"],
+    "none_of": []
+  },
+  "effects": {
+    "modifiers": ["team_effect_requires_build_confirmed_rule"],
+    "state_changes": ["rejuvenator_claim_state_changes"],
+    "rewards": [],
+    "penalties": []
+  },
+  "telemetry_requirements": {
+    "required": ["rejuvenator_state", "claiming_team", "effect_start_time"],
+    "optional": ["effect_end_time", "death_respawn_interaction"],
+    "unavailable_blocks": ["rejuvenator_active_effect_claim"]
+  },
+  "analytical_implications": {
+    "direct": ["Rejuvenator benefit cannot be inferred from Mid Boss death alone."],
+    "conditional": ["If effect timing and recipients are observed, downstream state can include a factual modifier interval."],
+    "prohibited_inferences": ["objective_decision_quality"]
+  },
+  "evidence_refs": ["deadlock-wiki-rejuvenator-2026-06-30"],
+  "status": "needs_validation",
+  "supersedes": null,
+  "conflicts_with": [],
+  "notes": []
+}

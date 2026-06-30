@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+implications:
+  - implication_id: death_respawn.lifecycle_not_decision_quality
+    mechanic_id: death_respawn
+    premises:
+      - death_event_observed
+      - respawn_observed
+    conclusion:
+      type: factual_state
+      statement: Death and respawn can define alive/dead intervals without evaluating why the death happened.
+    confidence:
+      when_all_premises_observed: supported
+      otherwise: unavailable
+    prohibited_inferences:
+      - player_made_bad_decision
+      - fight_was_correct
+    evidence_refs:
+      - project-replay-009-validation-2026-06-30

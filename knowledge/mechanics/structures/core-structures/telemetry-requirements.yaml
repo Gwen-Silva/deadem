@@ -1,0 +1,27 @@
+schema_version: "1.0.0"
+mechanic_id: core_structures
+requirements:
+  - requirement_id: core_structures.identity
+    name: Stable structure identity
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Replay 009 objective lifecycle has not been built.
+  - requirement_id: core_structures.alive_dead_state
+    name: Alive/dead or health state
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Requires objective/entity lifecycle extraction for replay 009.
+  - requirement_id: core_structures.attacker_team
+    name: Attacker team
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Objective damage attribution is not validated.
+  - requirement_id: core_structures.map_pressure_implication
+    name: Map pressure implication
+    status: unknown
+    current_project_evidence: []
+    limitations:
+      - Requires a future context detector; this task does not create one.

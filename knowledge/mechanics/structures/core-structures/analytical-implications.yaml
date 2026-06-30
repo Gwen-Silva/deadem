@@ -1,0 +1,20 @@
+schema_version: "1.0.0"
+implications:
+  - implication_id: core_structures.state_not_pressure_quality
+    mechanic_id: core_structures
+    premises:
+      - structure_destroyed_observed
+      - timestamp_observed
+    conclusion:
+      type: factual_state
+      statement: Structure destruction can support factual map-state context without judging pressure quality.
+    confidence:
+      when_all_premises_observed: supported
+      otherwise: unavailable
+    prohibited_inferences:
+      - team_made_correct_objective_call
+      - lane_pressure_was_good
+    evidence_refs:
+      - deadlock-wiki-guardian-2026-06-30
+      - deadlock-wiki-walker-2026-06-30
+      - deadlock-wiki-patron-2026-06-30

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schema/analytical-implication.schema.json",
+  "title": "Deadem mechanics analytical implication",
+  "type": "object",
+  "required": [
+    "implication_id",
+    "mechanic_id",
+    "premises",
+    "conclusion",
+    "confidence",
+    "prohibited_inferences",
+    "evidence_refs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "implication_id": { "type": "string", "pattern": "^[a-z0-9_.-]+$" },
+    "mechanic_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "premises": { "type": "array", "items": { "type": "string" } },
+    "conclusion": {
+      "type": "object",
+      "required": ["type", "statement"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string" },
+        "statement": { "type": "string" }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["when_all_premises_observed", "otherwise"],
+      "additionalProperties": false,
+      "properties": {
+        "when_all_premises_observed": { "type": "string" },
+        "otherwise": { "type": "string" }
+      }
+    },
+    "prohibited_inferences": { "type": "array", "items": { "type": "string" } },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } }
+  }
+}

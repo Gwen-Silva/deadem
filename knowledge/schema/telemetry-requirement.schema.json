@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schema/telemetry-requirement.schema.json",
+  "title": "Deadem mechanic telemetry requirement",
+  "type": "object",
+  "required": [
+    "requirement_id",
+    "mechanic_id",
+    "name",
+    "status",
+    "current_project_evidence",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "requirement_id": { "type": "string", "pattern": "^[a-z0-9_.-]+$" },
+    "mechanic_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "status": {
+      "enum": [
+        "available",
+        "available_with_constraints",
+        "not_implemented",
+        "not_observable",
+        "unknown"
+      ]
+    },
+    "current_project_evidence": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  }
+}

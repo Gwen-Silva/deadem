@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "spirit_urn.comeback_modifier.placeholder",
+  "mechanic_id": "spirit_urn",
+  "name": "Spirit Urn comeback modifier placeholder",
+  "category": "objective",
+  "description": "Potential comeback-sensitive Urn modifiers must be modeled as conditional mechanics that require source, patch, build, activation, and recipient telemetry before use.",
+  "claim_type": "unknown",
+  "validity": {
+    "patch_from": null,
+    "patch_until": null,
+    "build_min": null,
+    "build_max": null,
+    "effective_date_from": null,
+    "effective_date_until": null,
+    "confidence": "unknown_validity"
+  },
+  "activation": {
+    "all_of": ["trailing_team_condition_confirmed", "urn_modifier_rule_confirmed_for_build"],
+    "any_of": [],
+    "none_of": []
+  },
+  "effects": {
+    "modifiers": ["unverified_modifier_requires_source"],
+    "state_changes": [],
+    "rewards": [],
+    "penalties": []
+  },
+  "telemetry_requirements": {
+    "required": ["team_economy_difference", "urn_state", "modifier_recipient_scope", "patch_build_mapping"],
+    "optional": ["local_player_positions", "fight_interval"],
+    "unavailable_blocks": ["combat_power_adjustment_claim"]
+  },
+  "analytical_implications": {
+    "direct": [],
+    "conditional": ["Raw economy alone is insufficient if a build-confirmed comeback modifier is active."],
+    "prohibited_inferences": ["the_buff_overcame_economic_gap", "decision_quality_from_outcome"]
+  },
+  "evidence_refs": [],
+  "status": "needs_validation",
+  "supersedes": null,
+  "conflicts_with": [],
+  "notes": ["This is an architecture placeholder, not a factual rule claim."]
+}

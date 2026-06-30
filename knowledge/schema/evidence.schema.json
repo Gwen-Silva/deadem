@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schema/evidence.schema.json",
+  "title": "Deadem mechanics evidence record",
+  "type": "object",
+  "required": [
+    "evidenceId",
+    "sourceType",
+    "title",
+    "url",
+    "retrievedAt",
+    "publishedAt",
+    "appliesFrom",
+    "appliesUntil",
+    "claimSummary",
+    "directQuote",
+    "confidence",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "evidenceId": { "type": "string", "pattern": "^[a-z0-9_.-]+$" },
+    "sourceType": {
+      "enum": [
+        "official_patch_notes",
+        "deadlock_wiki",
+        "game_data",
+        "controlled_observation",
+        "community_source",
+        "project_hypothesis"
+      ]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "url": { "type": ["string", "null"] },
+    "retrievedAt": { "type": "string", "format": "date-time" },
+    "publishedAt": { "type": ["string", "null"] },
+    "appliesFrom": { "type": ["string", "null"] },
+    "appliesUntil": { "type": ["string", "null"] },
+    "claimSummary": { "type": "string", "minLength": 1 },
+    "directQuote": { "type": ["string", "null"] },
+    "confidence": { "enum": ["confirmed", "supported", "uncertain", "unverified"] },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  }
+}

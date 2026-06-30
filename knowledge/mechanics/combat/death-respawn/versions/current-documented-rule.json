@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "death_respawn.current_documented_identity",
+  "mechanic_id": "death_respawn",
+  "name": "Current documented death and respawn identity",
+  "category": "combat",
+  "description": "Current secondary-source documentation describes death and respawn as mechanics with consequences that must be separated from entity lifecycle observations.",
+  "claim_type": "documented_rule",
+  "validity": {
+    "patch_from": null,
+    "patch_until": null,
+    "build_min": null,
+    "build_max": null,
+    "effective_date_from": null,
+    "effective_date_until": null,
+    "confidence": "unknown_validity"
+  },
+  "activation": {
+    "all_of": ["player_death_event_or_counter_observed"],
+    "any_of": ["death", "respawn_timer", "respawn_completion"],
+    "none_of": []
+  },
+  "effects": {
+    "modifiers": ["temporary_death_related_modifiers_require_versioned_rule"],
+    "state_changes": ["alive_state_changes", "pawn_lifecycle_changes"],
+    "rewards": [],
+    "penalties": ["soul_or_timer_consequences_require_field_semantics"]
+  },
+  "telemetry_requirements": {
+    "required": ["victim_identity", "death_time", "respawn_time_or_alive_transition"],
+    "optional": ["death_timer", "soul_consequence", "rejuvenator_interaction"],
+    "unavailable_blocks": ["death_consequence_interpretation"]
+  },
+  "analytical_implications": {
+    "direct": ["Death events and pawn lifecycle must be reconciled but not conflated."],
+    "conditional": ["If death timer and consequence fields are validated, temporary state can be represented explicitly."],
+    "prohibited_inferences": ["death_was_bad_decision", "respawn_consequence_without_field"]
+  },
+  "evidence_refs": ["deadlock-wiki-death-2026-06-30", "project-replay-009-validation-2026-06-30"],
+  "status": "needs_validation",
+  "supersedes": null,
+  "conflicts_with": [],
+  "notes": []
+}

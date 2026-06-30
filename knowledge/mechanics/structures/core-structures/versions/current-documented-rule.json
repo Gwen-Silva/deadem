@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "core_structures.current_documented_identity",
+  "mechanic_id": "core_structures",
+  "name": "Current documented core structure identities",
+  "category": "structures",
+  "description": "Current secondary-source documentation identifies Guardians, Walkers, and Patron as structure/objective identities with state and destruction mechanics that require direct telemetry.",
+  "claim_type": "documented_rule",
+  "validity": {
+    "patch_from": null,
+    "patch_until": null,
+    "build_min": null,
+    "build_max": null,
+    "effective_date_from": null,
+    "effective_date_until": null,
+    "confidence": "unknown_validity"
+  },
+  "activation": {
+    "all_of": ["structure_identity_observed"],
+    "any_of": ["guardian", "walker", "base_structure", "patron"],
+    "none_of": []
+  },
+  "effects": {
+    "modifiers": [],
+    "state_changes": ["structure_alive_destroyed_or_phase_state"],
+    "rewards": ["destruction_reward_requires_versioned_rule"],
+    "penalties": []
+  },
+  "telemetry_requirements": {
+    "required": ["structure_identity", "team", "position", "alive_or_health_state"],
+    "optional": ["attacker_team", "destruction_reward", "patron_phase"],
+    "unavailable_blocks": ["map_pressure_interpretation", "objective_reward_interpretation"]
+  },
+  "analytical_implications": {
+    "direct": ["Structure state can be factual only when entity identity and lifecycle are observed."],
+    "conditional": ["If destruction timing and reward fields exist, objective progression can be represented descriptively."],
+    "prohibited_inferences": ["pressure_quality", "correct_objective_decision"]
+  },
+  "evidence_refs": [
+    "deadlock-wiki-guardian-2026-06-30",
+    "deadlock-wiki-walker-2026-06-30",
+    "deadlock-wiki-patron-2026-06-30"
+  ],
+  "status": "needs_validation",
+  "supersedes": null,
+  "conflicts_with": [],
+  "notes": []
+}

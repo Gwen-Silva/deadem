@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+mechanic_id: death_respawn
+requirements:
+  - requirement_id: death_respawn.death_events
+    name: Death events
+    status: available_with_constraints
+    current_project_evidence:
+      - replay_009 has 84 death-counter events consistent with lifecycle deaths
+    limitations:
+      - Killer/assist attribution remains incomplete.
+  - requirement_id: death_respawn.respawn_events
+    name: Respawn or alive transition
+    status: available_with_constraints
+    current_project_evidence:
+      - replay_009 lifecycle validation
+    limitations:
+      - Direct death timer field is not validated.
+  - requirement_id: death_respawn.soul_consequence
+    name: Soul-related death consequence
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Net worth alone does not identify death-specific soul consequences.

@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+implications:
+  - implication_id: mid_boss.kill_not_equal_rejuvenator_claim
+    mechanic_id: mid_boss
+    premises:
+      - mid_boss_defeat_observed
+      - rejuvenator_claim_not_observed
+    conclusion:
+      type: prohibited_equivalence
+      statement: Mid Boss defeat alone is insufficient to assert team-wide Rejuvenator effects.
+    confidence:
+      when_all_premises_observed: supported
+      otherwise: unavailable
+    prohibited_inferences:
+      - team_secured_mid_boss_reward
+    evidence_refs:
+      - deadlock-wiki-mid-boss-2026-06-30
+      - deadlock-wiki-rejuvenator-2026-06-30

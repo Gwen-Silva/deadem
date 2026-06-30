@@ -1,0 +1,29 @@
+schema_version: "1.0.0"
+mechanic_id: spirit_urn
+requirements:
+  - requirement_id: spirit_urn.urn_existence
+    name: Urn existence or objective event
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Replay 009 objective layer has not been built.
+  - requirement_id: spirit_urn.team_economy_difference
+    name: Team economy difference
+    status: available_with_constraints
+    current_project_evidence:
+      - replay_009 exposes m_iGoldNetWorth
+    limitations:
+      - Net worth does not validate spendable, unsecured, or reward-source semantics.
+  - requirement_id: spirit_urn.carrier_identity
+    name: Carrier identity
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - No Urn carrier telemetry has been validated.
+  - requirement_id: spirit_urn.patch_build_mapping
+    name: Patch/build mapping
+    status: unknown
+    current_project_evidence:
+      - build 23916427 from user metadata
+    limitations:
+      - No independent patch mapping.

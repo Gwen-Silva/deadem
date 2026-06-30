@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schema/mechanic.schema.json",
+  "title": "Deadem mechanic identity",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mechanic_id",
+    "name",
+    "category",
+    "status",
+    "description"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "mechanic_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["active", "superseded", "unknown"] },
+    "description": { "type": "string", "minLength": 1 },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

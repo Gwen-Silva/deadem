@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "souls_economy.current_terminology",
+  "mechanic_id": "souls_economy",
+  "name": "Current documented Souls terminology",
+  "category": "economy",
+  "description": "Current secondary-source documentation supports Souls as the economy resource, but project telemetry currently validates only net-worth availability for replay 009.",
+  "claim_type": "documented_rule",
+  "validity": {
+    "patch_from": null,
+    "patch_until": null,
+    "build_min": null,
+    "build_max": null,
+    "effective_date_from": null,
+    "effective_date_until": null,
+    "confidence": "unknown_validity"
+  },
+  "activation": {
+    "all_of": ["economy_field_observed"],
+    "any_of": ["net_worth", "total_souls", "secured_souls", "unsecured_souls", "spendable_souls"],
+    "none_of": []
+  },
+  "effects": {
+    "modifiers": [],
+    "state_changes": ["economy_value_changes"],
+    "rewards": ["objective_or_kill_rewards_require_source_attribution"],
+    "penalties": ["death_or_purchase_decreases_require_field_semantics"]
+  },
+  "telemetry_requirements": {
+    "required": ["player_identity", "economy_field_name", "field_semantics"],
+    "optional": ["income_source", "spend_source", "unsecured_state", "reward_source"],
+    "unavailable_blocks": ["income_source_attribution", "spendable_soul_claim", "unsecured_soul_claim"]
+  },
+  "analytical_implications": {
+    "direct": ["m_iGoldNetWorth supports net-worth context only under current validation."],
+    "conditional": ["If source-specific economy fields are validated, reward and spend events can be represented separately."],
+    "prohibited_inferences": ["net_worth_decrease_means_unsecured_loss", "net_worth_delta_identifies_objective_reward"]
+  },
+  "evidence_refs": ["deadlock-wiki-souls-2026-06-30", "project-replay-009-validation-2026-06-30"],
+  "status": "needs_validation",
+  "supersedes": null,
+  "conflicts_with": [],
+  "notes": []
+}

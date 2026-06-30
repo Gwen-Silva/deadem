@@ -1,0 +1,17 @@
+schema_version: "1.0.0"
+implications:
+  - implication_id: rejuvenator.effect_requires_claim_evidence
+    mechanic_id: rejuvenator
+    premises:
+      - rejuvenator_claim_observed
+      - build_confirmed_effect_rule
+    conclusion:
+      type: conditional_modifier
+      statement: Rejuvenator effects may be represented only for observed claim/effect intervals.
+    confidence:
+      when_all_premises_observed: supported
+      otherwise: unavailable
+    prohibited_inferences:
+      - team_had_buff_without_claim_evidence
+    evidence_refs:
+      - deadlock-wiki-rejuvenator-2026-06-30

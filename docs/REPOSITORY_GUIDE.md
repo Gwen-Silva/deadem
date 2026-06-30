@@ -33,6 +33,17 @@ Current canonical topics include:
 - baseline_709_investigation: `output/match_91119257/baseline-709-gate.json`
 - current_parser_gate: `output/parser-compatibility/parser-compatibility-gate.json`
 
+## Mechanics Knowledge
+
+Versioned mechanics records live under `knowledge/`. Start with
+`knowledge/README.md`, then inspect pilot packages under `knowledge/mechanics/`.
+Mechanics knowledge is separate from replay telemetry and must not be used to
+infer macro decisions or current-rule applicability for historical builds.
+
+Use `tools/query-mechanics.mjs` to query build/patch applicability. Build
+`23916427` is currently recorded as unresolved in
+`knowledge/patches/build-patch-mapping.json`.
+
 ## Reports
 
 - Current report pointer: `reports/latest.md`

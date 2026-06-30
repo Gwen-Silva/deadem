@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "rule_id": "mid_boss.current_documented_identity",
+  "mechanic_id": "mid_boss",
+  "name": "Current documented Mid Boss identity",
+  "category": "objective",
+  "description": "Current secondary-source documentation identifies Mid Boss as a central neutral objective with a lifecycle distinct from the Rejuvenator reward.",
+  "claim_type": "documented_rule",
+  "validity": {
+    "patch_from": null,
+    "patch_until": null,
+    "build_min": null,
+    "build_max": null,
+    "effective_date_from": null,
+    "effective_date_until": null,
+    "confidence": "unknown_validity"
+  },
+  "activation": {
+    "all_of": ["mid_boss_entity_or_event_observed"],
+    "any_of": ["mid_boss_alive", "mid_boss_damaged", "mid_boss_defeated"],
+    "none_of": []
+  },
+  "effects": {
+    "modifiers": [],
+    "state_changes": ["mid_boss_lifecycle_state_changes"],
+    "rewards": ["rejuvenator_spawn_or_claim_requires_separate_observation"],
+    "penalties": []
+  },
+  "telemetry_requirements": {
+    "required": ["mid_boss_identity", "mid_boss_health_or_state", "objective_timestamp"],
+    "optional": ["damage_counter_context", "rejuvenator_spawn_state"],
+    "unavailable_blocks": ["mid_boss_secured_claim"]
+  },
+  "analytical_implications": {
+    "direct": ["Mid Boss damage and Rejuvenator benefit must be separated."],
+    "conditional": ["If objective state and Rejuvenator state are both observed, reward timing can be bounded."],
+    "prohibited_inferences": ["team_received_rejuvenator_because_mid_boss_died"]
+  },
+  "evidence_refs": ["deadlock-wiki-mid-boss-2026-06-30"],
+  "status": "needs_validation",
+  "supersedes": null,
+  "conflicts_with": [],
+  "notes": []
+}

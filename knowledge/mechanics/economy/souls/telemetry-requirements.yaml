@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+mechanic_id: souls_economy
+requirements:
+  - requirement_id: souls_economy.net_worth
+    name: Net worth
+    status: available
+    current_project_evidence:
+      - replay_009 exposes m_iGoldNetWorth
+    limitations:
+      - Field supports net-worth context, not source attribution.
+  - requirement_id: souls_economy.unsecured_souls
+    name: Unsecured souls
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Current telemetry validation did not establish this field.
+  - requirement_id: souls_economy.reward_source
+    name: Reward source attribution
+    status: not_implemented
+    current_project_evidence: []
+    limitations:
+      - Objective and kill reward source attribution is unavailable.

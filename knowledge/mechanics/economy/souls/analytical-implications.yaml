@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+implications:
+  - implication_id: souls_economy.net_worth_not_income_source
+    mechanic_id: souls_economy
+    premises:
+      - m_iGoldNetWorth_observed
+      - source_specific_fields_unvalidated
+    conclusion:
+      type: evidence_limit
+      statement: Net worth can provide economic context but cannot identify income source, spend source, unsecured state, or reward cause by itself.
+    confidence:
+      when_all_premises_observed: supported
+      otherwise: unavailable
+    prohibited_inferences:
+      - objective_reward_from_net_worth_delta_alone
+      - unsecured_soul_loss_from_net_worth_delta_alone
+    evidence_refs:
+      - project-replay-009-validation-2026-06-30
