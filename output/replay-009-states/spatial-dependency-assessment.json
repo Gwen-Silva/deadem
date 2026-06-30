@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "created_at": "2026-06-30T00:00:00Z",
+  "spatialTaskId": null,
+  "spatialTaskCommit": null,
+  "spatialGate": null,
+  "taskSearch": {
+    "searchedTaskDirectories": [
+      "tasks/pending",
+      "tasks/active",
+      "tasks/blocked",
+      "tasks/completed",
+      "tasks/backlog"
+    ],
+    "searchedReports": true,
+    "searchedOutputGates": true,
+    "searchedProjectState": true,
+    "matchedCompletedReplay009SpatialTask": false,
+    "matchedActiveReplay009SpatialTask": false,
+    "matchedGate": false
+  },
+  "spatialTaskStatus": "absent",
+  "currentlyActive": false,
+  "coordinateProjectionStatus": "missing",
+  "genericRegionStatus": "missing",
+  "laneProjectionStatus": "missing",
+  "objectiveProximityStatus": "missing",
+  "coverage": null,
+  "ambiguityRate": null,
+  "task060Decision": "spatial_result_missing",
+  "task060Executed": false,
+  "executionMode": "not_executed",
+  "allowedStateCategories": [],
+  "blockedStateCategories": [
+    "objective_presence",
+    "objective_carrier",
+    "objective_ground_state",
+    "objective_deposit_candidate",
+    "boss_presence",
+    "boss_health_state",
+    "rejuvenator_presence",
+    "structure_presence",
+    "structure_destroyed",
+    "player_alive_state",
+    "player_death_state",
+    "player_respawn_state",
+    "team_net_worth_state",
+    "player_proximity_to_objective"
+  ],
+  "limitations": [
+    "No completed replay-009 spatial/geometric validation task was found.",
+    "No gate named replay_009_spatial_geometric_projection_ready was found.",
+    "Task 056 validated position coverage but explicitly did not build objective lifecycle or lane projection for replay 009.",
+    "Task 057 preserved parserSeconds and did not expose active-game-time or pause intervals.",
+    "Task 060 remains blocked until a dedicated replay-009 spatial/geometric projection gate validates map/region projection reliability."
+  ],
+  "replay005Protection": "not_processed_or_inspected",
+  "botFixtureExclusion": "replays_006_007_008_not_processed"
+}
