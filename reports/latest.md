@@ -1,1 +1,1 @@
-reports/replay-009-end-to-end-telemetry-validation.md
+reports/replay-009-pause-clock-observability.md

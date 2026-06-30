@@ -51,6 +51,8 @@ Detected 12 player identities. Team distribution: {"2":6,"3":6}.
 
 explicit_pause_interval_not_exposed
 
+Task 057 follow-up result: `replay_009_pause_clock_not_exposed`. Parser-visible replay data did not expose a reliable direct pause signal or authoritative game-clock source, so parser seconds remain the canonical available time basis.
+
 ## Corpus Classification
 
 - Compatible normal replay fixtures: 001, 002, 003, 004, 009.

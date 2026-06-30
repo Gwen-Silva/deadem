@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "gate": "replay_009_telemetry_usable_with_known_gaps",
-  "highestImpactGap": "explicit_pause_interval_not_exposed",
-  "blockedFollowUpTask": "tasks/blocked/057-investigate-replay-009-pause-and-clock-observability.md",
+  "highestImpactGap": "explicit_pause_interval_not_exposed_direct_pause_clock_not_available",
+  "blockedFollowUpTask": null,
   "readyCapabilities": [
     "player trajectory analysis",
     "death review",
@@ -16,6 +16,8 @@
     "macro decision analysis"
   ],
   "replay005Excluded": true,
+  "pauseClockFollowUpResult": "replay_009_pause_clock_not_exposed",
+  "canonicalTimeBasis": "parser_seconds",
   "unsupportedBotFixturesExcluded": [
     "replay_006",
     "replay_007",

@@ -155,3 +155,12 @@ Task 047 adds a structural pass that reads replay headers, command envelopes, pa
 - Position telemetry: one-second sampled player rows have full coordinate coverage in Task 056.
 - Known parser/telemetry gaps: explicit pause interval and direct game-clock behavior are not exposed by the validation path; killer/assist attribution and source-target damage are incomplete.
 - Corpus classification: compatible normal fixtures are 001-004 and 009; unsupported solo-bot fixtures are 006-008; replay 005 remains protected.
+
+## Replay 009 Pause Clock Observability
+
+- Gate: `replay_009_pause_clock_not_exposed`
+- Direct pause signal: not found.
+- Reliable game-clock or match-clock source: not found.
+- Duration reconciliation: parser duration 2170.703s, reported duration 2131s, unclassified difference 39.703s.
+- Active-game-time mapping: unavailable.
+- Policy: preserve parser seconds as the canonical available time basis; do not assign the duration delta to pause without video or another independent source.

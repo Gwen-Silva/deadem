@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "sources": [
+    {
+      "sourceType": "message",
+      "sourceName": "GE_SosStartSoundEvent",
+      "fieldName": "startTime",
+      "messageTypeId": 208,
+      "entityClass": null,
+      "firstSeenTick": 1403,
+      "lastSeenTick": 136960,
+      "sampleValues": [
+        49.125,
+        49.19850158691406,
+        49.272003173828125,
+        49.34550476074219,
+        49.41900634765625,
+        49.78650665283203,
+        49.860008239746094,
+        49.933509826660156
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "k_EUserMsg_BossKilled",
+      "fieldName": "gametime",
+      "messageTypeId": 347,
+      "entityClass": null,
+      "firstSeenTick": 28304,
+      "lastSeenTick": 134884,
+      "sampleValues": [
+        469.453125,
+        664.875,
+        691.015625,
+        730.359375,
+        798.703125,
+        802.96875,
+        1366.046875,
+        1517.328125
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "k_EUserMsg_PostProcessingAnim",
+      "fieldName": "fadeInTime",
+      "messageTypeId": 332,
+      "entityClass": null,
+      "firstSeenTick": 8339,
+      "lastSeenTick": 135436,
+      "sampleValues": [
+        0,
+        0.10000000149011612
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "k_EUserMsg_PostProcessingAnim",
+      "fieldName": "holdTime",
+      "messageTypeId": 332,
+      "entityClass": null,
+      "firstSeenTick": 8339,
+      "lastSeenTick": 135436,
+      "sampleValues": [
+        3,
+        0.20000000298023224
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "k_EUserMsg_PostProcessingAnim",
+      "fieldName": "fadeOutTime",
+      "messageTypeId": 332,
+      "entityClass": null,
+      "firstSeenTick": 8339,
+      "lastSeenTick": 135436,
+      "sampleValues": [
+        0.4000000059604645,
+        0.10000000149011612
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "net_Tick",
+      "fieldName": "hostComputationtime",
+      "messageTypeId": 4,
+      "entityClass": null,
+      "firstSeenTick": 1,
+      "lastSeenTick": 138925,
+      "sampleValues": [
+        6034,
+        10200,
+        6176,
+        5761,
+        8396,
+        6485,
+        6146,
+        5848
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "net_Tick",
+      "fieldName": "hostComputationtimeStdDeviation",
+      "messageTypeId": 4,
+      "entityClass": null,
+      "firstSeenTick": 1,
+      "lastSeenTick": 138925,
+      "sampleValues": [
+        695,
+        895,
+        1059,
+        1058,
+        1121,
+        1153,
+        1154,
+        1156
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    },
+    {
+      "sourceType": "message",
+      "sourceName": "net_Tick",
+      "fieldName": "hostUnfilteredFrametime",
+      "messageTypeId": 4,
+      "entityClass": null,
+      "firstSeenTick": 1,
+      "lastSeenTick": 138925,
+      "sampleValues": [
+        15624,
+        15627,
+        15623,
+        15632,
+        15617,
+        15634,
+        15614,
+        15629
+      ],
+      "changesOverTime": true,
+      "candidateMeaning": "clock_or_elapsed_time_candidate",
+      "confidence": "low",
+      "limitations": [
+        "message field observed but semantic authority not independently validated"
+      ]
+    }
+  ],
+  "summary": {
+    "candidateCount": 8,
+    "changingCandidates": 8,
+    "bestGameClockSource": null,
+    "directPauseCandidateCount": 0
+  }
+}

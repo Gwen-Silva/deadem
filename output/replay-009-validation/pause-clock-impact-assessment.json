@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "directPauseSignalFound": false,
+  "activeGameTimeMappingStatus": "unavailable_no_reliable_clock_source",
+  "capabilities": [
+    {
+      "capability": "player trajectory analysis",
+      "status": "ready_with_constraints",
+      "rationale": "parser-time trajectory remains usable; pause-aware active time unavailable"
+    },
+    {
+      "capability": "death review",
+      "status": "ready_with_constraints",
+      "rationale": "death ordering remains usable; active-game-time normalization unavailable"
+    },
+    {
+      "capability": "economy progression",
+      "status": "ready_with_constraints",
+      "rationale": "parser-time economy series remains usable; pause-normalized rates unavailable"
+    },
+    {
+      "capability": "lane occupancy",
+      "status": "not_ready",
+      "rationale": "semantic occupancy remains frozen and clock observability does not change that"
+    },
+    {
+      "capability": "rotation detection",
+      "status": "not_ready",
+      "rationale": "rotation detection remains blocked"
+    },
+    {
+      "capability": "fight participation",
+      "status": "not_ready",
+      "rationale": "combat attribution/source-target damage remains incomplete"
+    },
+    {
+      "capability": "objective timing",
+      "status": "not_tested",
+      "rationale": "objective layer for replay 009 was not built in this task"
+    },
+    {
+      "capability": "teamfight reconstruction",
+      "status": "not_ready",
+      "rationale": "fight grouping remains unsupported"
+    },
+    {
+      "capability": "macro decision analysis",
+      "status": "not_ready",
+      "rationale": "strategic interpretation remains out of scope"
+    }
+  ]
+}

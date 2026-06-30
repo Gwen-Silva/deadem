@@ -50,3 +50,5 @@
 ## Replay 009 Telemetry Validation
 
 `output/replay-009-validation/` contains Task 056 compact quality outputs for the build-23916427 normal human replay. The directory records source inventory, match envelope, roster, controller/pawn lifecycle, position quality, economy quality, death-counter events, pause/disconnect audits, cross-source consistency, downstream readiness, and the validation gate. It does not contain raw replay traces, video frames, or replay files.
+
+Task 057 adds pause/clock observability outputs in the same directory. The gate is `replay_009_pause_clock_not_exposed`: no reliable direct pause signal or authoritative game-clock source was found, so parser seconds remain the canonical available time basis.

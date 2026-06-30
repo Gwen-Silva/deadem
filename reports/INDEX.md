@@ -11,6 +11,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/build-23916427-bot-normal-replay-comparison.md`
 - `reports/generic-bot-solo-lifecycle-comparison.md`
 - `reports/replay-009-end-to-end-telemetry-validation.md`
+- `reports/replay-009-pause-clock-observability.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`
 
 ## Visual Calibration
