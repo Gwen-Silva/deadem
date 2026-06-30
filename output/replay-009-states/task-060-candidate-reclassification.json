@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "candidates": [
+    {
+      "task060CandidateId": "task060_candidate_01",
+      "mechanicId": "spirit_urn",
+      "task060Classification": "uncertain",
+      "task062Classification": "uncertain",
+      "reason": "Task 062 found 7 candidate class(es) and 63 direct candidate propert(ies).",
+      "evidence": [
+        "CCitadel_Ability_GoldenIdol",
+        "CCitadel_Ability_Tengu_Urn",
+        "CCitadel_HeroTestOrbSpawner",
+        "CCitadel_IdolCashIn",
+        "CCitadel_PickupItemSpawner",
+        "CCitadelIdolReturnTrigger",
+        "CCitadelItemPickupIdol",
+        "CBodyComponent.m_hierarchyAttachName",
+        "CBodyComponent.m_hParent",
+        "CBodyComponent.m_name",
+        "m_bIsActivelyStolen",
+        "m_bToggleState"
+      ],
+      "limitations": [
+        "This is raw entity/class/property observability only.",
+        "No mechanic activation, mechanic effect, spatial linkage, or strategic interpretation is applied."
+      ]
+    },
+    {
+      "task060CandidateId": "task060_candidate_02",
+      "mechanicId": "mid_boss",
+      "task060Classification": "uncertain",
+      "task062Classification": "supported",
+      "reason": "Task 062 found 1 candidate class(es) and 57 direct candidate propert(ies).",
+      "evidence": [
+        "CNPC_MidBoss",
+        "CBodyComponent.m_bUseParentRenderBounds",
+        "CBodyComponent.m_hierarchyAttachName",
+        "CBodyComponent.m_hModel",
+        "CBodyComponent.m_hParent",
+        "CBodyComponent.m_hSequence"
+      ],
+      "limitations": [
+        "This is raw entity/class/property observability only.",
+        "No mechanic activation, mechanic effect, spatial linkage, or strategic interpretation is applied."
+      ]
+    },
+    {
+      "task060CandidateId": "task060_candidate_03",
+      "mechanicId": "rejuvenator",
+      "task060Classification": "uncertain",
+      "task062Classification": "uncertain",
+      "reason": "Task 062 found 1 candidate class(es) and 0 direct candidate propert(ies).",
+      "evidence": [
+        "CCitadel_ArmorUpgrade_PersonalRejuvenator"
+      ],
+      "limitations": [
+        "This is raw entity/class/property observability only.",
+        "No mechanic activation, mechanic effect, spatial linkage, or strategic interpretation is applied."
+      ]
+    },
+    {
+      "task060CandidateId": "task060_candidate_04",
+      "mechanicId": "core_structures",
+      "task060Classification": "uncertain",
+      "task062Classification": "supported",
+      "reason": "Task 062 found 5 candidate class(es) and 171 direct candidate propert(ies).",
+      "evidence": [
+        "CNPC_BaseDefenseSentry",
+        "CNPC_Boss_Tier2",
+        "CNPC_BarrackBoss",
+        "CNPC_Boss_Tier3",
+        "CNPC_TrooperBoss",
+        "CBodyComponent.m_bUseParentRenderBounds",
+        "CBodyComponent.m_hierarchyAttachName",
+        "CBodyComponent.m_hModel",
+        "CBodyComponent.m_hParent",
+        "CBodyComponent.m_hSequence"
+      ],
+      "limitations": [
+        "This is raw entity/class/property observability only.",
+        "No mechanic activation, mechanic effect, spatial linkage, or strategic interpretation is applied.",
+        "This is raw entity/class/property observability only.",
+        "No mechanic activation, mechanic effect, spatial linkage, or strategic interpretation is applied."
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 4,
+    "upgraded": 2,
+    "rejected": 0,
+    "uncertain": 2
+  }
+}

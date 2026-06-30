@@ -94,3 +94,7 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   life/death/respawn events, `m_iGoldNetWorth` endpoint summaries, and
   mechanics ambiguity queries. It applies zero mechanic effects and emits no
   region, lane, objective proximity, or structure-region results.
+  Task 062 adds direct non-spatial objective/structure observability for replay
+  009. Mid Boss and core structure classes/properties are usable with
+  constraints; Spirit Urn and Rejuvenator remain partial/uncertain. These
+  outputs still do not apply mechanic effects or spatial interpretation.

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "checks": [
+    {
+      "check": "replay_scope",
+      "status": "passed",
+      "detail": "samples/replay_009_normal.dem"
+    },
+    {
+      "check": "class_inventory_nonempty",
+      "status": "passed"
+    },
+    {
+      "check": "candidate_lifecycle_nonempty",
+      "status": "passed"
+    },
+    {
+      "check": "mechanic_effects_not_applied",
+      "status": "passed"
+    },
+    {
+      "check": "replay_005_excluded",
+      "status": "passed"
+    },
+    {
+      "check": "bot_fixtures_excluded",
+      "status": "passed"
+    }
+  ],
+  "deterministicHashes": {
+    "classInventory": "5c908f97083e8b4a0bd6faf5555dd2637a4f345919ef28c4fa1cef21317c1390",
+    "propertyInventory": "270583522e3e2556f99402b268dbeedd8430eb67962a941450c87981750a1d3f",
+    "entityLifecycle": "95c77587c53dc4c0677183958b53acc75804f5362545a99e8c15895e4895a40f",
+    "observability": "5c9cd8d484c5150c971bc95d7580d77c72cae74adc923488a39d3f8733e5b1fc",
+    "readiness": "793b818b99b801f54c6f1111a76061c72c7bf65372dbb3c75cd58070e0d51ba1"
+  }
+}

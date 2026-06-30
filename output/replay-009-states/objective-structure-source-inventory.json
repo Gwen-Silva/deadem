@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_009",
+  "sources": [
+    {
+      "sourceType": "entity_mutation_batch",
+      "sourceName": "svc_PacketEntities",
+      "available": true,
+      "recordCount": 9137472,
+      "firstTick": -1,
+      "lastTick": 138924,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_FireBullets",
+      "available": true,
+      "recordCount": 44479,
+      "firstTick": 1402,
+      "lastTick": 137173,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_RemoveBullet",
+      "available": true,
+      "recordCount": 24,
+      "firstTick": 8109,
+      "lastTick": 130973,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_SosSetSoundEventParams",
+      "available": true,
+      "recordCount": 108245,
+      "firstTick": 1886,
+      "lastTick": 138924,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_SosStartSoundEvent",
+      "available": true,
+      "recordCount": 158646,
+      "firstTick": 78,
+      "lastTick": 138670,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_SosStopSoundEvent",
+      "available": true,
+      "recordCount": 3066,
+      "firstTick": 78,
+      "lastTick": 137338,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_SosStopSoundEventHash",
+      "available": true,
+      "recordCount": 505,
+      "firstTick": 1822,
+      "lastTick": 136205,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_Source1LegacyGameEvent",
+      "available": true,
+      "recordCount": 439,
+      "firstTick": 1,
+      "lastTick": 136365,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "GE_Source1LegacyGameEventList",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EEntityMsg_BreakablePropSpawnDebris",
+      "available": true,
+      "recordCount": 3054,
+      "firstTick": 2216,
+      "lastTick": 137188,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_AbilitiesChanged",
+      "available": true,
+      "recordCount": 281,
+      "firstTick": 4065,
+      "lastTick": 132232,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_AbilityNotify",
+      "available": true,
+      "recordCount": 632,
+      "firstTick": 2450,
+      "lastTick": 135568,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_BossDamaged",
+      "available": true,
+      "recordCount": 181,
+      "firstTick": 5706,
+      "lastTick": 136081,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_BossKilled",
+      "available": true,
+      "recordCount": 18,
+      "firstTick": 28303,
+      "lastTick": 134883,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ChatEvent",
+      "available": true,
+      "recordCount": 4,
+      "firstTick": 574,
+      "lastTick": 765,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ChatMsg",
+      "available": true,
+      "recordCount": 2,
+      "firstTick": 112460,
+      "lastTick": 136510,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ChatWheel",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": 85399,
+      "lastTick": 85399,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_Damage",
+      "available": true,
+      "recordCount": 56501,
+      "firstTick": 1408,
+      "lastTick": 137680,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_FlexSlotUnlocked",
+      "available": true,
+      "recordCount": 4,
+      "firstTick": 85685,
+      "lastTick": 112696,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_GameOver",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": 136365,
+      "lastTick": 136365,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_HeroKilled",
+      "available": true,
+      "recordCount": 84,
+      "firstTick": 8338,
+      "lastTick": 135435,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ImportantAbilityUsed",
+      "available": true,
+      "recordCount": 1576,
+      "firstTick": 1539,
+      "lastTick": 136334,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ItemPurchaseNotification",
+      "available": true,
+      "recordCount": 208,
+      "firstTick": 4065,
+      "lastTick": 132232,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_KillStreak",
+      "available": true,
+      "recordCount": 116,
+      "firstTick": 8338,
+      "lastTick": 135435,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_MapPing",
+      "available": true,
+      "recordCount": 46,
+      "firstTick": 18366,
+      "lastTick": 134883,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_MidBossSpawned",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": 123857,
+      "lastTick": 123857,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ParticipantStartSoundEvent",
+      "available": true,
+      "recordCount": 52984,
+      "firstTick": 774,
+      "lastTick": 137655,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_ParticipantStopSoundEvent",
+      "available": true,
+      "recordCount": 110,
+      "firstTick": 7263,
+      "lastTick": 136355,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_PlayerRespawned",
+      "available": true,
+      "recordCount": 85,
+      "firstTick": 8854,
+      "lastTick": 137222,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_PostMatchDetails",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": 136442,
+      "lastTick": 136442,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_PostProcessingAnim",
+      "available": true,
+      "recordCount": 102,
+      "firstTick": 8338,
+      "lastTick": 135435,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_RejuvStatus",
+      "available": true,
+      "recordCount": 10,
+      "firstTick": 97392,
+      "lastTick": 127179,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_TeamMsg",
+      "available": true,
+      "recordCount": 8,
+      "firstTick": 61246,
+      "lastTick": 122055,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "k_EUserMsg_TriggerDamageFlash",
+      "available": true,
+      "recordCount": 60920,
+      "firstTick": 1408,
+      "lastTick": 137680,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "net_SetConVar",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "net_SignonState",
+      "available": true,
+      "recordCount": 3,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "net_Tick",
+      "available": true,
+      "recordCount": 138937,
+      "firstTick": -1,
+      "lastTick": 138924,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_ClassInfo",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_ClearAllStringTables",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_CreateStringTable",
+      "available": true,
+      "recordCount": 14,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_HLTVStatus",
+      "available": true,
+      "recordCount": 267,
+      "firstTick": 420,
+      "lastTick": 136723,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_PacketEntities",
+      "available": true,
+      "recordCount": 138936,
+      "firstTick": -1,
+      "lastTick": 138924,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_ServerInfo",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_UpdateStringTable",
+      "available": true,
+      "recordCount": 110303,
+      "firstTick": 78,
+      "lastTick": 138916,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_UserCmds",
+      "available": true,
+      "recordCount": 1643062,
+      "firstTick": -1,
+      "lastTick": 137021,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "svc_VoiceInit",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "TE_EffectDispatch",
+      "available": true,
+      "recordCount": 280,
+      "firstTick": 1704,
+      "lastTick": 137223,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "UM_ParticleManager",
+      "available": true,
+      "recordCount": 694512,
+      "firstTick": 78,
+      "lastTick": 138860,
+      "limitations": []
+    },
+    {
+      "sourceType": "network_message",
+      "sourceName": "UM_PlayResponseConditional",
+      "available": true,
+      "recordCount": 918,
+      "firstTick": 2895,
+      "lastTick": 136510,
+      "limitations": []
+    },
+    {
+      "sourceType": "send_tables",
+      "sourceName": "demo.getClasses",
+      "available": true,
+      "recordCount": 825,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "serializers",
+      "sourceName": "class.serializer",
+      "available": true,
+      "recordCount": 825,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": []
+    },
+    {
+      "sourceType": "string_tables",
+      "sourceName": "demo.stringTableContainer",
+      "available": true,
+      "recordCount": 1,
+      "firstTick": -1,
+      "lastTick": -1,
+      "limitations": [
+        "String table values are not fully expanded in this compact task."
+      ]
+    }
+  ]
+}

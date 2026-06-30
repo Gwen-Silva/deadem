@@ -14,6 +14,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/replay-009-pause-clock-observability.md`
 - `reports/replay-009-spatial-geometric-projection-validation.md`
 - `reports/replay-009-factual-state-detection.md`
+- `reports/replay-009-objective-structure-entity-observability.md`
 - `reports/versioned-mechanics-knowledge-foundation.md`
 - `reports/build-23916427-mechanics-mapping.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`

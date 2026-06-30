@@ -58,10 +58,10 @@
   },
   "rawEntityClassification": {
     "confirmed": 0,
-    "supported": 0,
-    "uncertain": 4,
+    "supported": 4,
+    "uncertain": 2,
     "rejected": 0,
-    "highestImpactGap": "objective_and_structure_entity_property_observability"
+    "highestImpactGap": "convert_direct_observability_to_bounded_factual_state_events"
   },
   "spatialOutputsStatus": "unavailable_by_task_061_limitations",
   "knowledgeQuery": {
@@ -91,8 +91,13 @@
     "lane or region membership",
     "objective/fight/macro interpretation"
   ],
-  "highestImpactGap": "objective_and_structure_entity_property_observability",
+  "highestImpactGap": "convert_direct_observability_to_bounded_factual_state_events",
   "gate": "replay_009_factual_state_detection_ready_with_gaps",
   "replay005Protection": "not_processed_or_inspected",
-  "botFixtureExclusion": "not_processed_or_inspected"
+  "botFixtureExclusion": "not_processed_or_inspected",
+  "task062Observability": {
+    "gate": "replay_009_objective_structure_observability_ready_with_gaps",
+    "safeNewFactualStates": 23,
+    "mechanicEffectsApplied": 0
+  }
 }

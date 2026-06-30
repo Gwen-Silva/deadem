@@ -42,8 +42,11 @@ rules apply to historical replays.
 - Non-spatial factual-state detection from Task 060:
   - player life/death/respawn parser-time events;
   - 84 deaths, 82 observed respawn returns, 2 deaths unresolved before replay end;
-  - objective, Urn, Mid Boss, Rejuvenator, and structure states unavailable from
-    compact entity/property observability.
+- Objective/structure observability from Task 062:
+  - Mid Boss and core structure classes/properties are directly observable with
+    constraints;
+  - Spirit Urn and Rejuvenator remain partial/uncertain;
+  - no objective completion, claim, deposit, kill, or effect is inferred.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -56,6 +59,8 @@ rules apply to historical replays.
 - Map transform and map-version compatibility are unresolved for replay 009.
 - Generic regions, lane projection, objective proximity, and spatial semantic
   states are unavailable.
+- Direct objective/structure observability does not yet emit canonical factual
+  state events; conversion is blocked in Task 063.
 - Mechanic activation and mechanic effects are not applied.
 - Net worth does not expose secured, unsecured, spendable, or reward-source
   economy semantics.
@@ -134,6 +139,7 @@ Major current reports:
 - [`reports/versioned-mechanics-knowledge-foundation.md`](./reports/versioned-mechanics-knowledge-foundation.md)
 - [`reports/build-23916427-mechanics-mapping.md`](./reports/build-23916427-mechanics-mapping.md)
 - [`reports/replay-009-factual-state-detection.md`](./reports/replay-009-factual-state-detection.md)
+- [`reports/replay-009-objective-structure-entity-observability.md`](./reports/replay-009-objective-structure-entity-observability.md)
 
 ## Running Validation
 

@@ -69,3 +69,10 @@ parser-time events, death consistency, net-worth endpoint summaries, and
 knowledge-layer ambiguity results. Spatially dependent files contain explicit
 unavailable metadata only. Mechanic activation, mechanic effects, objective
 proximity, lane/region membership, and macro interpretation remain blocked.
+
+Task 062 adds `objective-structure-*.json` and `.jsonl` observability outputs.
+They inventory replay-009 classes, serializers, candidate properties, lifecycle
+operations, and message-name candidates for objective/structure mechanics. Mid
+Boss and core structures are observable with constraints; Spirit Urn and
+Rejuvenator remain partial/uncertain. These outputs are not mechanic activation
+or spatial state events.
