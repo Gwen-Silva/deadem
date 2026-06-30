@@ -16,29 +16,70 @@
     "confidence": "unknown_validity"
   },
   "activation": {
-    "all_of": ["urn_objective_exists", "urn_state_observed"],
-    "any_of": ["urn_available", "urn_carried", "urn_dropped", "urn_deposited"],
+    "all_of": [
+      "urn_objective_exists",
+      "urn_state_observed"
+    ],
+    "any_of": [
+      "urn_available",
+      "urn_carried",
+      "urn_dropped",
+      "urn_deposited"
+    ],
     "none_of": []
   },
   "effects": {
     "modifiers": [],
-    "state_changes": ["urn_state_changes"],
-    "rewards": ["team_or_player_reward_requires_versioned_rule"],
+    "state_changes": [
+      "urn_state_changes"
+    ],
+    "rewards": [
+      "team_or_player_reward_requires_versioned_rule"
+    ],
     "penalties": []
   },
   "telemetry_requirements": {
-    "required": ["urn_entity_or_event", "urn_state", "urn_position", "team_identity"],
-    "optional": ["carrier_identity", "deposit_location", "reward_delta", "team_economy_difference"],
-    "unavailable_blocks": ["claiming_urn_state_active", "applying_urn_reward_interpretation"]
+    "required": [
+      "urn_entity_or_event",
+      "urn_state",
+      "urn_position",
+      "team_identity"
+    ],
+    "optional": [
+      "carrier_identity",
+      "deposit_location",
+      "reward_delta",
+      "team_economy_difference"
+    ],
+    "unavailable_blocks": [
+      "claiming_urn_state_active",
+      "applying_urn_reward_interpretation"
+    ]
   },
   "analytical_implications": {
-    "direct": ["Urn state must be represented as objective state, not inferred from player movement."],
-    "conditional": ["If carrier and deposit telemetry exist, Urn intervals can be bounded as factual objective states."],
-    "prohibited_inferences": ["taking_urn_fight_was_correct", "urn_modifier_was_active_without_telemetry"]
+    "direct": [
+      "Urn state must be represented as objective state, not inferred from player movement."
+    ],
+    "conditional": [
+      "If carrier and deposit telemetry exist, Urn intervals can be bounded as factual objective states."
+    ],
+    "prohibited_inferences": [
+      "taking_urn_fight_was_correct",
+      "urn_modifier_was_active_without_telemetry"
+    ]
   },
-  "evidence_refs": ["deadlock-wiki-soul-urn-2026-06-30"],
+  "evidence_refs": [
+    "deadlock-wiki-soul-urn-2026-06-30",
+    "official-deadlock-update-2026-05-25-urn",
+    "official-deadlock-update-2026-05-28-urn",
+    "official-deadlock-update-2026-06-04-urn",
+    "official-deadlock-update-2026-06-11"
+  ],
   "status": "needs_validation",
   "supersedes": null,
   "conflicts_with": [],
-  "notes": ["No numerical values are imported into this pilot rule."]
+  "notes": [
+    "No numerical values are imported into this pilot rule.",
+    "Task 059 added date-supported evidence but did not confirm build 23916427 applicability."
+  ]
 }

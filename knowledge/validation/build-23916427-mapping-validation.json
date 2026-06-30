@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "buildId": "23916427",
+  "status": "valid_with_unresolved_mapping",
+  "decisionModel": "build_23916427_date_only_candidate_identified",
+  "gate": "build_23916427_mechanics_mapping_unresolved",
+  "checks": [
+    {
+      "name": "build_identifier_classification",
+      "status": "passed",
+      "result": "unknown_build_identifier"
+    },
+    {
+      "name": "exact_mapping",
+      "status": "passed",
+      "result": "not_found"
+    },
+    {
+      "name": "date_supported_candidate",
+      "status": "passed",
+      "result": "official_2026_06_11_minor"
+    },
+    {
+      "name": "applicable_rules",
+      "status": "passed",
+      "result": 0
+    },
+    {
+      "name": "ambiguous_rules",
+      "status": "passed",
+      "result": 7
+    },
+    {
+      "name": "task_060_unlock",
+      "status": "passed",
+      "result": "remain_blocked"
+    },
+    {
+      "name": "replay_processing",
+      "status": "passed",
+      "result": "none"
+    },
+    {
+      "name": "replay_005_protection",
+      "status": "passed",
+      "result": "not_inspected"
+    }
+  ],
+  "limitations": [
+    "No official source or Steam metadata directly references build 23916427.",
+    "Date-supported candidate patch state is not sufficient to unlock Task 060."
+  ]
+}

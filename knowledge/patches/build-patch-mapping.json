@@ -4,15 +4,29 @@
   "builds": [
     {
       "build": 23916427,
+      "buildId": "23916427",
+      "buildIdType": "unknown_build_identifier",
       "source": "user_metadata",
       "known_replays": ["replay_007", "replay_008", "replay_009"],
       "patch_id": null,
+      "mappedPatchId": null,
       "mapping_status": "unresolved_build_mapping",
-      "confidence": "unknown",
-      "evidence_refs": ["project-replay-009-validation-2026-06-30"],
+      "mappingType": "date_supported",
+      "validFrom": "2026-06-11",
+      "validUntil": "2026-06-29",
+      "confidence": "uncertain",
+      "evidence_refs": [
+        "project-replay-009-validation-2026-06-30",
+        "official-deadlock-changelog-index-2026-06-30",
+        "official-deadlock-update-2026-06-11",
+        "steamdb-deadlock-history-no-23916427-match-2026-06-30"
+      ],
+      "candidatePatchIds": ["official_2026_06_11_minor"],
       "notes": [
         "Build is known from user metadata for 2026-06-29 replays.",
-        "Patch applicability is intentionally unresolved until independently verified."
+        "Identifier type is not independently established.",
+        "No official source found that directly references build 23916427.",
+        "A date-supported candidate patch state exists after the June 11, 2026 official update and before replay acquisition on June 29, 2026, but this is not an exact mapping."
       ]
     }
   ]

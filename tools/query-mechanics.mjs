@@ -183,6 +183,9 @@ export function queryMechanics({ mechanic, build = null, patch = null, atDate = 
         ambiguousRules: [],
         supersededRules: [],
         missingBuildMapping,
+        mappingConfidence: buildEntry?.confidence ?? null,
+        mappingType: buildEntry?.mappingType ?? buildEntry?.mapping_status ?? null,
+        candidatePatchIds: buildEntry?.candidatePatchIds ?? [],
         warnings: []
     };
 

@@ -41,8 +41,9 @@ Mechanics knowledge is separate from replay telemetry and must not be used to
 infer macro decisions or current-rule applicability for historical builds.
 
 Use `tools/query-mechanics.mjs` to query build/patch applicability. Build
-`23916427` is currently recorded as unresolved in
-`knowledge/patches/build-patch-mapping.json`.
+`23916427` is currently recorded as unresolved with a date-supported candidate
+patch state in `knowledge/patches/build-patch-mapping.json`. The detailed
+mapping audit is `reports/build-23916427-mechanics-mapping.md`.
 
 ## Reports
 

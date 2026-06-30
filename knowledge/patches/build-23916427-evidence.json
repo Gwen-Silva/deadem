@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "buildId": "23916427",
+  "buildIdType": "unknown_build_identifier",
+  "decisionModel": "build_23916427_date_only_candidate_identified",
+  "exactMappingFound": false,
+  "boundedBuildIntervalFound": false,
+  "dateSupportedCandidate": {
+    "candidatePatchId": "official_2026_06_11_minor",
+    "candidateFrom": "2026-06-11",
+    "candidateUntil": "2026-06-29",
+    "confidence": "uncertain",
+    "evidenceRefs": [
+      "official-deadlock-changelog-index-2026-06-30",
+      "official-deadlock-update-2026-06-11",
+      "project-replay-009-validation-2026-06-30"
+    ],
+    "limitations": [
+      "Replay acquisition date is not a patch/build mapping.",
+      "No official source was found that directly references build 23916427.",
+      "Steam build IDs, game-internal builds, server builds, and depot manifest IDs are not interchangeable."
+    ]
+  },
+  "research": {
+    "officialPatchSources": {
+      "status": "date_supported_candidate_only",
+      "evidenceRefs": [
+        "official-deadlock-update-2026-05-22",
+        "official-deadlock-update-2026-05-25-urn",
+        "official-deadlock-update-2026-05-28-urn",
+        "official-deadlock-update-2026-06-04-urn",
+        "official-deadlock-update-2026-06-11"
+      ],
+      "result": "Official patch posts around the replay acquisition window were found, but none exposes build 23916427."
+    },
+    "steamMetadata": {
+      "status": "no_direct_public_match_found",
+      "evidenceRefs": ["steamdb-deadlock-history-no-23916427-match-2026-06-30"],
+      "result": "No direct public web-search/static-page match established 23916427 as a Steam build ID or manifest ID."
+    },
+    "repositoryLocalMetadata": {
+      "status": "user_metadata_only",
+      "evidenceRefs": ["project-replay-009-validation-2026-06-30"],
+      "result": "Repository records build 23916427 as user-provided metadata for replays 007, 008, and 009. Parser-extracted protocol/build metadata remains unavailable."
+    },
+    "wikiHistory": {
+      "status": "secondary_current_pages_only",
+      "evidenceRefs": [
+        "deadlock-wiki-soul-urn-2026-06-30",
+        "deadlock-wiki-mid-boss-2026-06-30",
+        "deadlock-wiki-rejuvenator-2026-06-30",
+        "deadlock-wiki-souls-2026-06-30",
+        "deadlock-wiki-death-2026-06-30",
+        "deadlock-wiki-guardian-2026-06-30",
+        "deadlock-wiki-walker-2026-06-30",
+        "deadlock-wiki-patron-2026-06-30"
+      ],
+      "result": "Wiki pages are useful secondary references, but no wiki revision establishes direct applicability to build 23916427."
+    }
+  },
+  "limitations": [
+    "Date-only inference cannot produce exact mapping.",
+    "No mechanic is confirmed_for_build or supported_for_build.",
+    "Query behavior must remain conservative."
+  ]
+}

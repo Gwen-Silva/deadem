@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "buildId": "23916427",
+  "buildIdType": "unknown_build_identifier",
+  "globalMapping": "date_supported_candidate_only",
+  "mechanics": [
+    {
+      "mechanicId": "spirit_urn",
+      "buildId": "23916427",
+      "applicability": "bounded_candidate",
+      "applicableRuleIds": [],
+      "ambiguousRuleIds": [
+        "spirit_urn.current_documented_lifecycle",
+        "spirit_urn.comeback_modifier.placeholder"
+      ],
+      "excludedRuleIds": [],
+      "evidenceRefs": [
+        "official-deadlock-update-2026-05-25-urn",
+        "official-deadlock-update-2026-05-28-urn",
+        "official-deadlock-update-2026-06-04-urn",
+        "official-deadlock-update-2026-06-11",
+        "deadlock-wiki-soul-urn-2026-06-30"
+      ],
+      "reasoningSummary": "Official posts before the replay acquisition date document multiple Urn changes, including a June 4 rework and June 11 follow-up. No source binds those posts to build 23916427, so applicability remains a date-supported candidate.",
+      "limitations": [
+        "No exact build mapping.",
+        "No replay telemetry proves Urn state was active.",
+        "Comeback/aura/reward details remain rule-specific and cannot be merged synthetically."
+      ],
+      "priorityAudit": {
+        "spawnTiming": "bounded_candidate",
+        "pickupConditions": "bounded_candidate",
+        "carrierState": "bounded_candidate",
+        "dropBehavior": "bounded_candidate",
+        "depositBehavior": "bounded_candidate",
+        "reward": "bounded_candidate",
+        "comebackConditions": "bounded_candidate",
+        "trailingTeamModifiers": "bounded_candidate",
+        "leadingTeamPenalties": "unresolved",
+        "auraScope": "bounded_candidate",
+        "resistanceModifiers": "bounded_candidate",
+        "movementModifiers": "bounded_candidate",
+        "depositTiming": "bounded_candidate",
+        "mapSideBehavior": "unresolved"
+      }
+    },
+    {
+      "mechanicId": "mid_boss",
+      "buildId": "23916427",
+      "applicability": "unresolved_build_mapping",
+      "applicableRuleIds": [],
+      "ambiguousRuleIds": ["mid_boss.current_documented_identity"],
+      "excludedRuleIds": [],
+      "evidenceRefs": ["deadlock-wiki-mid-boss-2026-06-30"],
+      "reasoningSummary": "Current secondary documentation identifies Mid Boss, but no direct build or official candidate rule for build 23916427 was established in this task.",
+      "limitations": [
+        "No build mapping.",
+        "No Mid Boss replay telemetry for replay 009.",
+        "Mid Boss defeat remains distinct from Rejuvenator claim."
+      ]
+    },
+    {
+      "mechanicId": "rejuvenator",
+      "buildId": "23916427",
+      "applicability": "unresolved_build_mapping",
+      "applicableRuleIds": [],
+      "ambiguousRuleIds": ["rejuvenator.current_documented_identity"],
+      "excludedRuleIds": [],
+      "evidenceRefs": ["deadlock-wiki-rejuvenator-2026-06-30"],
+      "reasoningSummary": "Current secondary documentation identifies Rejuvenator, but build 23916427 applicability and exact effect rules remain unresolved.",
+      "limitations": [
+        "No direct build mapping.",
+        "No Rejuvenator claim/effect telemetry.",
+        "Mid Boss death must not be treated as Rejuvenator benefit."
+      ]
+    },
+    {
+      "mechanicId": "souls_economy",
+      "buildId": "23916427",
+      "applicability": "bounded_candidate",
+      "applicableRuleIds": [],
+      "ambiguousRuleIds": ["souls_economy.current_terminology"],
+      "excludedRuleIds": [],
+      "evidenceRefs": [
+        "official-deadlock-update-2026-06-11",
+        "deadlock-wiki-souls-2026-06-30",
+        "project-replay-009-validation-2026-06-30"
+      ],
+      "reasoningSummary": "Official June 11 notes include bounty/economy-related changes before the replay acquisition date, but exact field semantics for build 23916427 remain unresolved. Replay 009 exposes m_iGoldNetWorth only.",
+      "limitations": [
+        "Net worth does not validate secured, unsecured, spendable, or reward-source semantics.",
+        "No exact build mapping."
+      ]
+    },
+    {
+      "mechanicId": "death_respawn",
+      "buildId": "23916427",
+      "applicability": "bounded_candidate",
+      "applicableRuleIds": [],
+      "ambiguousRuleIds": ["death_respawn.current_documented_identity"],
+      "excludedRuleIds": [],
+      "evidenceRefs": [
+        "official-deadlock-update-2026-06-11",
+        "deadlock-wiki-death-2026-06-30",
+        "project-replay-009-validation-2026-06-30"
+      ],
+      "reasoningSummary": "Replay 009 validates death lifecycle consistency and official June 11 notes include kill comeback bounty changes, but death timers, soul loss, and Rejuvenator interactions are not mapped for build 23916427.",
+      "limitations": [
+        "No exact build mapping.",
+        "No direct death timer or soul-consequence validation."
+      ]
+    },
+    {
+      "mechanicId": "core_structures",
+      "buildId": "23916427",
+      "applicability": "bounded_candidate",
+      "applicableRuleIds": [],
+      "ambiguousRuleIds": ["core_structures.current_documented_identity"],
+      "excludedRuleIds": [],
+      "evidenceRefs": [
+        "official-deadlock-update-2026-05-22",
+        "deadlock-wiki-guardian-2026-06-30",
+        "deadlock-wiki-walker-2026-06-30",
+        "deadlock-wiki-patron-2026-06-30"
+      ],
+      "reasoningSummary": "Official May 22 notes include Guardian-related structure mechanics before the replay acquisition date, but structure state detection for replay 009 is not implemented and exact build mapping remains unresolved.",
+      "limitations": [
+        "No objective/structure lifecycle extraction for replay 009.",
+        "No exact build mapping."
+      ]
+    }
+  ],
+  "summary": {
+    "confirmed_for_build": 0,
+    "supported_for_build": 0,
+    "bounded_candidate": 4,
+    "unresolved_build_mapping": 2,
+    "not_applicable": 0,
+    "applicableRuleCount": 0,
+    "ambiguousRuleCount": 7
+  }
+}

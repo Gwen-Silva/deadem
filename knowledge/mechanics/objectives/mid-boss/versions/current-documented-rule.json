@@ -16,29 +16,59 @@
     "confidence": "unknown_validity"
   },
   "activation": {
-    "all_of": ["mid_boss_entity_or_event_observed"],
-    "any_of": ["mid_boss_alive", "mid_boss_damaged", "mid_boss_defeated"],
+    "all_of": [
+      "mid_boss_entity_or_event_observed"
+    ],
+    "any_of": [
+      "mid_boss_alive",
+      "mid_boss_damaged",
+      "mid_boss_defeated"
+    ],
     "none_of": []
   },
   "effects": {
     "modifiers": [],
-    "state_changes": ["mid_boss_lifecycle_state_changes"],
-    "rewards": ["rejuvenator_spawn_or_claim_requires_separate_observation"],
+    "state_changes": [
+      "mid_boss_lifecycle_state_changes"
+    ],
+    "rewards": [
+      "rejuvenator_spawn_or_claim_requires_separate_observation"
+    ],
     "penalties": []
   },
   "telemetry_requirements": {
-    "required": ["mid_boss_identity", "mid_boss_health_or_state", "objective_timestamp"],
-    "optional": ["damage_counter_context", "rejuvenator_spawn_state"],
-    "unavailable_blocks": ["mid_boss_secured_claim"]
+    "required": [
+      "mid_boss_identity",
+      "mid_boss_health_or_state",
+      "objective_timestamp"
+    ],
+    "optional": [
+      "damage_counter_context",
+      "rejuvenator_spawn_state"
+    ],
+    "unavailable_blocks": [
+      "mid_boss_secured_claim"
+    ]
   },
   "analytical_implications": {
-    "direct": ["Mid Boss damage and Rejuvenator benefit must be separated."],
-    "conditional": ["If objective state and Rejuvenator state are both observed, reward timing can be bounded."],
-    "prohibited_inferences": ["team_received_rejuvenator_because_mid_boss_died"]
+    "direct": [
+      "Mid Boss damage and Rejuvenator benefit must be separated."
+    ],
+    "conditional": [
+      "If objective state and Rejuvenator state are both observed, reward timing can be bounded."
+    ],
+    "prohibited_inferences": [
+      "team_received_rejuvenator_because_mid_boss_died"
+    ]
   },
-  "evidence_refs": ["deadlock-wiki-mid-boss-2026-06-30"],
+  "evidence_refs": [
+    "deadlock-wiki-mid-boss-2026-06-30",
+    "official-deadlock-update-2026-05-22"
+  ],
   "status": "needs_validation",
   "supersedes": null,
   "conflicts_with": [],
-  "notes": []
+  "notes": [
+    "Task 059 added date-supported evidence but did not confirm build 23916427 applicability."
+  ]
 }

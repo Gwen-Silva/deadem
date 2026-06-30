@@ -96,12 +96,13 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Replay 009 end-to-end telemetry validation gate is `replay_009_telemetry_usable_with_known_gaps`: `samples/replay_009_normal.dem` completed under default parser and structural pass, produced 12 Steam-ID-backed human identities with 6v6 team distribution, stable controller identity, one-second position coverage without gaps, `m_iGoldNetWorth` economy series, and death-counter events. Known gaps: explicit pause intervals and direct game-clock behavior are not exposed by the validation path; killer/assist attribution and source-target damage are incomplete; objective lifecycle and lane projection were not built for replay 009 in this task. Compatible normal fixtures are 001, 002, 003, 004, and 009. Unsupported solo-bot fixtures are 006, 007, and 008. Replay 005 remains protected.
 - Replay 009 pause/clock observability gate is `replay_009_pause_clock_not_exposed`: parser-visible message, serializer, and entity candidates did not expose a reliable direct pause signal or authoritative game-clock/match-clock source. The 39.703s difference between parser duration and user-reported duration remains unclassified rather than assigned to pause. Parser seconds remain the canonical available time basis for replay 009; pause-aware active-game-time normalization requires video or another independent source if needed.
 - Versioned mechanics knowledge foundation gate is `versioned_mechanics_knowledge_foundation_ready_with_unresolved_build_mapping`: `knowledge/` now defines schemas, source evidence, patch/build mapping, pilot mechanic packages, and a deterministic query utility for Spirit Urn / Soul Urn, Mid Boss, Rejuvenator, Souls/economy, Death/respawn, and core structures. Build `23916427` remains unresolved and current mechanics are not automatically applied to replay 009. Future bounded interpretation must combine replay telemetry plus versioned mechanics knowledge plus a context detector; the context detector does not exist yet.
+- Build 23916427 mechanics mapping gate is `build_23916427_mechanics_mapping_unresolved`: official patch sources around the replay acquisition date support only a date-only candidate state after the June 11, 2026 update and before the June 29, 2026 replay acquisition date. No source directly maps identifier `23916427` to a patch, Steam build, manifest, server build, client build, or game-internal build. No mechanic is confirmed or supported for the build; Task 060 remains blocked.
 
 ## Open Questions
 
 - Which fields or derived metrics are reliable enough for combat/objective analysis?
 - Which Explorer observations can validate only the minimized unresolved semantic questions?
-- Which patch or mechanics version applies to build `23916427`?
+- Which direct build or game-data source can map `23916427` to a patch/mechanic version?
 
 ## Likely Next Investigation
 

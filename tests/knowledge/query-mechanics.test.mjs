@@ -23,6 +23,8 @@ test('build 23916427 remains ambiguous rather than applying current Urn rules', 
     });
     assert.equal(result.missingBuildMapping, true);
     assert.equal(result.applicableRules.length, 0);
+    assert.equal(result.mappingType, 'date_supported');
+    assert.deepEqual(result.candidatePatchIds, [ 'official_2026_06_11_minor' ]);
     assert.ok(result.ambiguousRules.some((rule) => rule.ruleId === 'spirit_urn.current_documented_lifecycle'));
 });
 

@@ -1,5 +1,5 @@
 # Latest Report
 
-Latest report: `reports/versioned-mechanics-knowledge-foundation.md`
+Latest report: `reports/build-23916427-mechanics-mapping.md`
 
-Latest gate: `versioned_mechanics_knowledge_foundation_ready_with_unresolved_build_mapping`
+Latest gate: `build_23916427_mechanics_mapping_unresolved`

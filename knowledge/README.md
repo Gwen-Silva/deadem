@@ -44,7 +44,17 @@ Every rule carries:
 - evidence references.
 
 Build `23916427` is currently known only from user metadata and is not mapped to
-a patch. Query tools must not silently apply current mechanics to that build.
+a patch. Task 059 found only a date-supported candidate patch state after the
+June 11, 2026 official update and before the 2026-06-29 replay acquisition
+date. Query tools must not silently apply current mechanics to that build.
+
+Mapping categories used by this repository:
+
+- exact build mapping: an official or direct metadata source names the build and patch.
+- bounded build mapping: strong source data bounds a build interval.
+- mechanic-specific bounded applicability: a mechanic rule is directly bounded even if the global build is not.
+- date-only candidate: a patch date precedes the replay acquisition date, without build proof.
+- unresolved applicability: no defensible mapping exists.
 
 ## Query Example
 

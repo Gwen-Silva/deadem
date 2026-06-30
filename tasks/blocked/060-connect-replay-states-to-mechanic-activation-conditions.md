@@ -12,6 +12,10 @@ Requires the versioned mechanics foundation from Task 058 and either confirmed
 build mapping or a task-specific decision to produce only unavailable/ambiguous
 activation results.
 
+Task 059 status: remains blocked. Build `23916427` has only a date-supported
+candidate patch state and no mechanic has `confirmed_for_build` or
+`supported_for_build` applicability.
+
 ## Objective
 
 Create a factual bridge between validated replay telemetry fields and mechanic

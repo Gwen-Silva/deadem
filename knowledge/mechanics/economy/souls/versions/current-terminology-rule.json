@@ -16,29 +16,70 @@
     "confidence": "unknown_validity"
   },
   "activation": {
-    "all_of": ["economy_field_observed"],
-    "any_of": ["net_worth", "total_souls", "secured_souls", "unsecured_souls", "spendable_souls"],
+    "all_of": [
+      "economy_field_observed"
+    ],
+    "any_of": [
+      "net_worth",
+      "total_souls",
+      "secured_souls",
+      "unsecured_souls",
+      "spendable_souls"
+    ],
     "none_of": []
   },
   "effects": {
     "modifiers": [],
-    "state_changes": ["economy_value_changes"],
-    "rewards": ["objective_or_kill_rewards_require_source_attribution"],
-    "penalties": ["death_or_purchase_decreases_require_field_semantics"]
+    "state_changes": [
+      "economy_value_changes"
+    ],
+    "rewards": [
+      "objective_or_kill_rewards_require_source_attribution"
+    ],
+    "penalties": [
+      "death_or_purchase_decreases_require_field_semantics"
+    ]
   },
   "telemetry_requirements": {
-    "required": ["player_identity", "economy_field_name", "field_semantics"],
-    "optional": ["income_source", "spend_source", "unsecured_state", "reward_source"],
-    "unavailable_blocks": ["income_source_attribution", "spendable_soul_claim", "unsecured_soul_claim"]
+    "required": [
+      "player_identity",
+      "economy_field_name",
+      "field_semantics"
+    ],
+    "optional": [
+      "income_source",
+      "spend_source",
+      "unsecured_state",
+      "reward_source"
+    ],
+    "unavailable_blocks": [
+      "income_source_attribution",
+      "spendable_soul_claim",
+      "unsecured_soul_claim"
+    ]
   },
   "analytical_implications": {
-    "direct": ["m_iGoldNetWorth supports net-worth context only under current validation."],
-    "conditional": ["If source-specific economy fields are validated, reward and spend events can be represented separately."],
-    "prohibited_inferences": ["net_worth_decrease_means_unsecured_loss", "net_worth_delta_identifies_objective_reward"]
+    "direct": [
+      "m_iGoldNetWorth supports net-worth context only under current validation."
+    ],
+    "conditional": [
+      "If source-specific economy fields are validated, reward and spend events can be represented separately."
+    ],
+    "prohibited_inferences": [
+      "net_worth_decrease_means_unsecured_loss",
+      "net_worth_delta_identifies_objective_reward"
+    ]
   },
-  "evidence_refs": ["deadlock-wiki-souls-2026-06-30", "project-replay-009-validation-2026-06-30"],
+  "evidence_refs": [
+    "deadlock-wiki-souls-2026-06-30",
+    "project-replay-009-validation-2026-06-30",
+    "official-deadlock-update-2026-05-22",
+    "official-deadlock-update-2026-06-11"
+  ],
   "status": "needs_validation",
   "supersedes": null,
   "conflicts_with": [],
-  "notes": []
+  "notes": [
+    "Task 059 added date-supported evidence but did not confirm build 23916427 applicability."
+  ]
 }
