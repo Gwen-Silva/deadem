@@ -70,6 +70,13 @@ rules apply to historical replays.
   - filterable timeline, snapshots, player/entity inspectors, validation
     overlays, non-timeline metadata, and provenance panels;
   - exportable factual Markdown reports with semantic limits preserved.
+- Inspector workflow evaluation from Task 067:
+  - 12 scripted review workflows evaluated;
+  - CLI/interface/export parity validated with timeline-only filters;
+  - evaluation is automated plus single-reviewer technical inspection, not
+    broad user research;
+  - remaining medium limitations are single-reviewer scope and careful
+    Patron/base class reading.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -168,6 +175,8 @@ Major current reports:
 - [`reports/replay-009-objective-structure-factual-state-events.md`](./reports/replay-009-objective-structure-factual-state-events.md)
 - [`reports/replay-009-objective-structure-independent-validation.md`](./reports/replay-009-objective-structure-independent-validation.md)
 - [`reports/replay-009-canonical-factual-state-schema.md`](./reports/replay-009-canonical-factual-state-schema.md)
+- [`reports/replay-009-factual-state-inspection-interface.md`](./reports/replay-009-factual-state-inspection-interface.md)
+- [`reports/replay-009-inspector-workflow-evaluation.md`](./reports/replay-009-inspector-workflow-evaluation.md)
 
 ## Running Validation
 
@@ -189,6 +198,7 @@ node --test tests/replay-009-factual-state-detection.test.mjs
 node --test tests/replay-009-spatial-validation.test.mjs
 node --test tests/canonical-replay-state/*.test.mjs
 node --test tests/replay-009-inspector.test.mjs
+node --test tests/replay-009-inspection-evaluation.test.mjs
 node -e "const fs=require('fs'); for (const f of fs.readdirSync('output/replay-009-states')) { const p='output/replay-009-states/'+f; const t=fs.readFileSync(p,'utf8').trim(); if (f.endsWith('.json')) JSON.parse(t); if (f.endsWith('.jsonl') && t) for (const line of t.split(/\r?\n/)) JSON.parse(line); }"
 ```
 
@@ -197,6 +207,7 @@ Generate and serve the replay-009 inspector:
 ```bash
 node tools/generate-replay-inspection-report.mjs --replay replay_009
 node tools/serve-replay-inspector.mjs --dir output/replay-009-inspection
+node tools/evaluate-replay-inspector-workflows.mjs
 ```
 
 Export a factual report:

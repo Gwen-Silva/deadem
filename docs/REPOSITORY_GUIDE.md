@@ -119,6 +119,13 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   serve locally with
   `node tools/serve-replay-inspector.mjs --dir output/replay-009-inspection`.
   Export bounded factual Markdown reports with
-  `tools/export-replay-factual-report.mjs`. The inspector shows factual and
+  `tools/export-replay-factual-report.mjs`. Use `--timeline-only` when matching
+  CLI/export counts to the inspector timeline, because non-timeline metadata is
+  intentionally separate. The inspector shows factual and
   candidate observations, provenance, validation labels, and semantic limits;
   it does not perform strategic or macro analysis.
+- Replay 009 inspector workflow-evaluation outputs live in
+  `output/replay-009-inspection-evaluation/`. Reproduce them with
+  `node tools/evaluate-replay-inspector-workflows.mjs`. The evaluation is
+  automated plus single-reviewer technical inspection, not broad usability
+  research.

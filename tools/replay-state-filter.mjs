@@ -4,7 +4,13 @@ export function parseArgs(argv) {
         const arg = argv[index];
         if (!arg.startsWith('--')) continue;
         const key = arg.slice(2);
-        if (['independently-validated', 'candidate-only', 'include-warnings', 'warnings-present'].includes(key)) {
+        if ([
+            'independently-validated',
+            'candidate-only',
+            'include-warnings',
+            'warnings-present',
+            'timeline-only'
+        ].includes(key)) {
             args[key] = true;
         } else {
             args[key] = argv[index + 1];

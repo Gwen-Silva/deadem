@@ -1,0 +1,86 @@
+[
+  {
+    "riskId": "deleted_equals_destroyed",
+    "incorrectInference": "entity deleted = destroyed",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "semanticLimit text",
+      "description says deletion is not destruction/objective completion"
+    ],
+    "residualRisk": "low",
+    "recommendedChange": ""
+  },
+  {
+    "riskId": "health_zero_equals_killed",
+    "incorrectInference": "health zero = killed",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "semanticLimit text says raw health does not prove kill/destruction"
+    ],
+    "residualRisk": "low",
+    "recommendedChange": ""
+  },
+  {
+    "riskId": "visual_support_exact_time",
+    "incorrectInference": "visually supported = exact timestamp confirmation",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "+/-22.782s timing window displayed",
+      "usable_with_constraints synchronization status"
+    ],
+    "residualRisk": "low",
+    "recommendedChange": ""
+  },
+  {
+    "riskId": "not_observable_contradiction",
+    "incorrectInference": "not observable = contradicted",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "comparison status remains not_visible/not_observable, not contradiction"
+    ],
+    "residualRisk": "medium",
+    "recommendedChange": "Add a short legend in a future UX pass if non-technical reviewers use the tool."
+  },
+  {
+    "riskId": "candidate_urn_canonical",
+    "incorrectInference": "candidate Urn = canonical Urn",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "candidate-only label",
+      "candidate semantic limits"
+    ],
+    "residualRisk": "low",
+    "recommendedChange": ""
+  },
+  {
+    "riskId": "patron_base_confirmed_patron",
+    "incorrectInference": "Patron/base candidate = confirmed Patron",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "exact class names remain visible",
+      "candidate class labels preserved"
+    ],
+    "residualRisk": "medium",
+    "recommendedChange": "Future UI can split Patron/base grouped view into class-specific tabs."
+  },
+  {
+    "riskId": "net_worth_spendable_souls",
+    "incorrectInference": "net worth = spendable souls",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "m_iGoldNetWorth semantic limit"
+    ],
+    "residualRisk": "low",
+    "recommendedChange": ""
+  },
+  {
+    "riskId": "parser_seconds_match_clock",
+    "incorrectInference": "parser seconds = official match clock",
+    "interfacePreventionPresent": true,
+    "preventionMechanism": [
+      "overview caveat says parser time is not pause-adjusted game time"
+    ],
+    "residualRisk": "low",
+    "recommendedChange": ""
+  }
+]

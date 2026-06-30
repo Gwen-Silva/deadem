@@ -114,3 +114,12 @@ non-timeline metadata, players, entities, snapshots, and validation overlays.
 The inspector is a local review surface only. It preserves provenance and
 semantic limits, keeps parser time unadjusted, and applies zero mechanic
 effects.
+
+## Replay 009 Inspector Workflow Evaluation
+
+`output/replay-009-inspection-evaluation/` contains the Task 067 workflow
+evaluation for the static inspector. It records 12 scripted review workflows,
+CLI/interface/export parity checks, usability scorecard rows,
+misinterpretation-risk audit rows, issues, and the evaluation gate. The
+evaluation is automated plus single-reviewer technical inspection; it is not
+broad user research and it does not add gameplay facts or mechanic effects.

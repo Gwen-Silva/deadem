@@ -22,10 +22,9 @@ async function main() {
     const args = parseArgs(process.argv.slice(2));
     if ((args.replay ?? 'replay_009') !== 'replay_009') throw new Error('Only replay_009 is supported.');
     const output = args.output ?? 'reports/generated/replay-009-factual-report.md';
-    const events = [
-        ...await readJsonl('output/replay-009-canonical/factual-events.jsonl'),
-        ...(await readJson('output/replay-009-canonical/non-timeline-metadata.json')).eventsWithoutParserTimeline
-    ];
+    const timelineEvents = await readJsonl('output/replay-009-canonical/factual-events.jsonl');
+    const metadataEvents = (await readJson('output/replay-009-canonical/non-timeline-metadata.json')).eventsWithoutParserTimeline;
+    const events = args['timeline-only'] ? timelineEvents : [...timelineEvents, ...metadataEvents];
     const summary = await readJson('output/replay-009-canonical/validation-summary.json');
     const filtered = events.filter(event => eventMatches(event, args));
     const markdown = `# Replay 009 Factual Report
@@ -37,6 +36,8 @@ ${JSON.stringify(args, null, 2)}
 \`\`\`
 
 Records matched: ${filtered.length}
+
+Included record set: ${args['timeline-only'] ? 'timeline events only; non-timeline metadata excluded' : 'timeline events plus non-timeline metadata'}.
 
 Known unavailable layers: spatial regions, lane classification, objective proximity, active-game time, mechanic activation, mechanic effects, macro interpretation.
 

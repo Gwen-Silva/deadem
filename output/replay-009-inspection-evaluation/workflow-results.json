@@ -1,0 +1,240 @@
+[
+  {
+    "workflowId": "workflow_01",
+    "title": "Find a player death",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Player death event discoverable with parser time, demo tick, provenance, confidence, and no killer attribution.",
+    "actualResult": "Selected player 76561198835717166; found 11 timeline death events.",
+    "recordsFound": 11,
+    "cliCount": 84,
+    "interfaceCount": 84,
+    "exportCount": 84,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:a2c88940ed27fe83",
+      "output/replay-009-states/player-life-state-events.jsonl",
+      "death event is factual; killer/assist and strategic meaning are not inferred"
+    ]
+  },
+  {
+    "workflowId": "workflow_02",
+    "title": "Review a respawn sequence",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Death and next return can be associated by player without claiming official respawn timer.",
+    "actualResult": "Death at 131s and return at 139s for 76561198835717166.",
+    "recordsFound": 2,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:a2c88940ed27fe83",
+      "canon:17ae347e0a95905f"
+    ]
+  },
+  {
+    "workflowId": "workflow_03",
+    "title": "Compare team net worth",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "m_iGoldNetWorth field visible with team totals/difference and no spendable/effective-power interpretation.",
+    "actualResult": "Found 2 team net-worth timeline events and 26 total net-worth records.",
+    "recordsFound": 2,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:38c9e82c785daef5",
+      "canon:3546f3014e25c1b1",
+      "sourceField:m_iGoldNetWorth"
+    ]
+  },
+  {
+    "workflowId": "workflow_04",
+    "title": "Inspect a Mid Boss event",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Parser event and validation overlay are distinct; +/-22.782s uncertainty and non-kill semantic limits visible.",
+    "actualResult": "Found Mid Boss validated event canon:3f9098509969dd2e with status visually_supported.",
+    "recordsFound": 15,
+    "cliCount": 15,
+    "interfaceCount": 15,
+    "exportCount": 15,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:3f9098509969dd2e",
+      "comparison_001",
+      "{\"before\":22.782,\"after\":22.782}"
+    ]
+  },
+  {
+    "workflowId": "workflow_05",
+    "title": "Inspect a Walker",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Visually supported sampled Walker events and non-validated Walker events remain distinguishable.",
+    "actualResult": "Found 6 visually supported Walker timeline events and 30 not-independently-validated Walker timeline events.",
+    "recordsFound": 36,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:39b33aa3578d94fd",
+      "canon:8b2e2c42eb8b29a0"
+    ]
+  },
+  {
+    "workflowId": "workflow_06",
+    "title": "Inspect Guardian limitations",
+    "evaluationType": "manual_single_reviewer",
+    "steps": [],
+    "expectedResult": "Not-observable Guardian evidence is not displayed as contradiction.",
+    "actualResult": "Guardian event canon:10c4d50895975c4f is labeled not_observable; comparison status not_visible.",
+    "recordsFound": 1,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed_with_constraints",
+    "issues": [],
+    "semanticRisks": [
+      "Camera absence remains easy to overread outside the status legend."
+    ],
+    "evidence": [
+      "canon:10c4d50895975c4f",
+      "comparison_034"
+    ]
+  },
+  {
+    "workflowId": "workflow_07",
+    "title": "Inspect Patron/base ambiguity",
+    "evaluationType": "manual_single_reviewer",
+    "steps": [],
+    "expectedResult": "CNPC_BarrackBoss, CNPC_Boss_Tier3, and CNPC_TrooperBoss remain separate and not confirmed Patron.",
+    "actualResult": "Found 112 timeline events across 3 separate candidate classes.",
+    "recordsFound": 112,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed_with_constraints",
+    "issues": [],
+    "semanticRisks": [
+      "Patron/base label is still a compact grouping; class rows preserve exact class names."
+    ],
+    "evidence": [
+      "CNPC_Boss_Tier3",
+      "CNPC_BarrackBoss",
+      "CNPC_TrooperBoss"
+    ]
+  },
+  {
+    "workflowId": "workflow_08",
+    "title": "Inspect Spirit Urn candidates",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Candidate label is visible; no pickup/deposit/secure/completion or canonical Urn identity inferred.",
+    "actualResult": "Found 46 candidate-only Spirit Urn timeline events.",
+    "recordsFound": 46,
+    "cliCount": 46,
+    "interfaceCount": 46,
+    "exportCount": 46,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:ad00fe125734739f",
+      "canon:c06efd50e2eb5a3e",
+      "canon:4bc9a5b17073eb0c"
+    ]
+  },
+  {
+    "workflowId": "workflow_09",
+    "title": "Check Rejuvenator availability",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "No canonical team Rejuvenator events are shown; empty state preserves limitation.",
+    "actualResult": "Found 0 timeline events matching Rejuvenator fields.",
+    "recordsFound": 0,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": []
+  },
+  {
+    "workflowId": "workflow_10",
+    "title": "Inspect non-timeline metadata",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "All 364 metadata records remain outside timeline and carry no synthetic timestamps.",
+    "actualResult": "364 metadata records have null parserSeconds and demoTick.",
+    "recordsFound": 364,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "canon:00c3a8916cfa10eb",
+      "no demo tick / no parser time; kept outside chronological timeline"
+    ]
+  },
+  {
+    "workflowId": "workflow_11",
+    "title": "Export factual reports",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Mid Boss, player, and Spirit Urn candidate reports include filters, provenance, validation status, semantic limits, and unavailable layers.",
+    "actualResult": "Generated reports with counts: Mid Boss 15, player 24, Spirit Urn candidates 46.",
+    "recordsFound": 85,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": 85,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "reports/generated/replay-009-mid-boss-workflow-report.md",
+      "reports/generated/replay-009-player-76561198835717166-life-state-report.md",
+      "reports/generated/replay-009-spirit-urn-candidate-workflow-report.md"
+    ]
+  },
+  {
+    "workflowId": "workflow_12",
+    "title": "CLI/interface/export parity",
+    "evaluationType": "automated",
+    "steps": [],
+    "expectedResult": "Timeline-only CLI, inspector, and exported reports return matching counts for required filters.",
+    "actualResult": "All required parity filters matched.",
+    "recordsFound": 5,
+    "cliCount": null,
+    "interfaceCount": null,
+    "exportCount": null,
+    "status": "passed",
+    "issues": [],
+    "semanticRisks": [],
+    "evidence": [
+      "event_type_player_dead:84/84/84",
+      "mechanic_mid_boss:15/15/15",
+      "validation_status_visually_supported:8/8/8",
+      "candidate_only:46/46/46",
+      "selected_player:24/24/24"
+    ]
+  }
+]

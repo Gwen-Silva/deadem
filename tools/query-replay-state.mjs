@@ -44,10 +44,9 @@ async function main() {
         process.exit(2);
     }
 
-    const events = [
-        ...await readJsonl('output/replay-009-canonical/factual-events.jsonl'),
-        ...(await readJson('output/replay-009-canonical/non-timeline-metadata.json')).eventsWithoutParserTimeline
-    ];
+    const timelineEvents = await readJsonl('output/replay-009-canonical/factual-events.jsonl');
+    const metadataEvents = (await readJson('output/replay-009-canonical/non-timeline-metadata.json')).eventsWithoutParserTimeline;
+    const events = args['timeline-only'] ? timelineEvents : [...timelineEvents, ...metadataEvents];
     const categorySummary = await readJson('output/replay-009-validation/category-validation-summary.json');
     const validationSummary = await readJson('output/replay-009-canonical/validation-summary.json');
     const categoriesByName = new Map(categorySummary.categories.map(category => [category.category, category]));

@@ -19,6 +19,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/replay-009-objective-structure-independent-validation.md`
 - `reports/replay-009-canonical-factual-state-schema.md`
 - `reports/replay-009-factual-state-inspection-interface.md`
+- `reports/replay-009-inspector-workflow-evaluation.md`
 - `reports/versioned-mechanics-knowledge-foundation.md`
 - `reports/build-23916427-mechanics-mapping.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`
