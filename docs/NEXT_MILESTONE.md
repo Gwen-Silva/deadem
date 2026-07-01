@@ -55,6 +55,14 @@ evidence. The text packet supports search and identity constraints, but the five
 referenced map/minimap images were not locally accessible, so the gate is
 `replay_009_independent_landmark_coordinates_missing`.
 
+Task 072 measured the subsequently supplied local map/minimap images as
+human-supplied visual evidence. It inventories image roles and hashes, records
+standard/minimap registration limits, measures Mid Boss, Walker, Guardian, and
+base-symbol pixel coordinates, and preregisters fit/validation anchors. The gate
+is `replay_009_independent_landmark_coordinates_ready_with_limitations`: a
+bounded transform-validation retry can be attempted, but no transform, lane,
+region, proximity, or mechanic effect has been produced.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

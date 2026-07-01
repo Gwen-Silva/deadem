@@ -141,8 +141,12 @@ Task 070 inspected the local-only preferred package candidate and indexed
 spatially relevant resources, but it still found zero coordinate-bearing
 landmarks and fitted no transform.
 Task 071 ingested a participant annotation packet for replay 009, but the five
-referenced map/minimap images are not present locally, so no independent pixel
-landmark coordinates have been measured yet.
+referenced map/minimap images were not present locally at that time. Task 072
+then measured the newly supplied local images as human-supplied visual evidence:
+the standard replay minimap, modded/reference maps, and Urn diagram are
+inventoried with hashes and bounded pixel landmark coordinates. This creates
+inputs for a future transform-validation retry, but no transform, region, lane,
+proximity, or mechanic effect is validated yet.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer

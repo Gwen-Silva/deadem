@@ -168,3 +168,11 @@ coordinates.
 acquisition result. The five referenced map/minimap images were not found
 locally, so no pixel landmarks, accepted map coordinates, reserved validation
 anchor, transform, lane, region, proximity, or mechanic-effect output exists.
+
+`output/replay-009-landmark-measurement/` contains the Task 072 follow-up after
+the user supplied the local map/minimap images. It records local-only image
+hashes and dimensions, role classification, advisory orientation annotations,
+bounded pixel coordinates for Mid Boss, Walkers, Guardians, and base-symbol
+landmarks, qualitative cross-image registration, correspondence candidates, and
+a preregistered future fit/validation split. It still emits no transform,
+region, lane, objective proximity, or mechanic effect.

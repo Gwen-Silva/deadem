@@ -151,4 +151,11 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   `output/replay-009-human-annotations/`, and independent landmark acquisition
   outputs live in `output/replay-009-independent-landmarks/`. Task 071 records
   the participant packet as advisory evidence. The referenced map/minimap images
-  were not locally accessible, so no coordinate-bearing landmark set exists yet.
+  were not locally accessible during Task 071, so that task produced no
+  coordinate-bearing landmark set.
+- Replay 009 user-map landmark measurements live in
+  `output/replay-009-landmark-measurement/`. Task 072 measures the later
+  supplied local images as human-supplied visual evidence and preregisters a
+  future transform fit/validation anchor split. These outputs are not a fitted
+  transform and do not authorize regions, lanes, objective proximity, or
+  mechanic effects.

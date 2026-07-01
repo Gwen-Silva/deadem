@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "072",
+  "generatedBy": "tools/measure-replay-009-user-map-landmarks.mjs",
+  "candidates": [
+    {
+      "candidateId": "corr_mid_boss_center",
+      "landmarkType": "mid_boss_center",
+      "mapLandmarkIds": [
+        "standard_mid_boss_center",
+        "derived_mid_boss_center"
+      ],
+      "replayEntityKeys": [
+        "2714:253:4147866:718:-1",
+        "3289:380:6229209:718:123857"
+      ],
+      "identityEvidence": [
+        "CNPC_MidBoss class confirmed in replay outputs",
+        "human annotation places Mid Boss at exact visual center"
+      ],
+      "identityConfidence": "supported",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "role": "fit_candidate",
+      "limitations": [
+        "Two Mid Boss generations share the same fixed map landmark; future task must select entity generation/time window before fitting."
+      ]
+    },
+    {
+      "candidateId": "corr_six_walkers_unordered",
+      "landmarkType": "walker",
+      "mapLandmarkIds": [
+        "standard_sapphire_yellow_walker",
+        "standard_sapphire_blue_walker",
+        "standard_sapphire_green_walker",
+        "standard_amber_yellow_walker",
+        "standard_amber_blue_walker",
+        "standard_amber_green_walker"
+      ],
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityConfidence": "candidate",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "role": "fit_or_validation_candidate",
+      "limitations": [
+        "This task does not solve which replay Walker entity corresponds to which map-side Walker symbol.",
+        "Future transform task must ground pair identities before residual inspection and must not try permutations to minimize error."
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "candidateId": "rejected_spirit_urn_spawn_points",
+      "reason": "Urn spawn diagram is mechanic/spawn-location evidence and is prohibited as a transform anchor in this task."
+    },
+    {
+      "candidateId": "rejected_player_icons",
+      "reason": "Player and temporary unit icons are not fixed landmarks."
+    },
+    {
+      "candidateId": "rejected_boxes_statues_overlay_dots",
+      "reason": "Boxes, golden statues, and overlay dots are not accepted fixed calibration anchors."
+    }
+  ]
+}

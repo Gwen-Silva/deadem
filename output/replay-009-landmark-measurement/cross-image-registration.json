@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "072",
+  "generatedBy": "tools/measure-replay-009-user-map-landmarks.mjs",
+  "result": "same_underlying_geometry_with_crop_scale_limitations",
+  "minimapLikeImagesCompared": [
+    "img_standard_replay_minimap",
+    "img_derived_landmark_map",
+    "img_modded_reduced_overlay",
+    "img_modded_full_overlay_01",
+    "img_modded_full_overlay_02",
+    "img_modded_full_overlay_03",
+    "img_modded_full_overlay_04"
+  ],
+  "sharedProperties": {
+    "orientation": "supported_same_top_bottom_orientation",
+    "underlyingFixedLandmarkLayout": "supported_by_mid_boss_walkers_base_symbols",
+    "aspectRatio": "not_identical",
+    "crop": "not_identical",
+    "scale": "not_identical",
+    "center": "supported_within_visual_uncertainty",
+    "projection": "not_metric_or_world_transform"
+  },
+  "stableVisualLandmarksUsed": [
+    "Mid Boss center golden angel",
+    "six Walker diamonds",
+    "top and bottom base/Patron symbols",
+    "major lane-line geometry"
+  ],
+  "projectedAnnotationsBetweenImages": false,
+  "limitations": [
+    "Registration is visual and qualitative. It supports identity consistency, not a pixel-perfect image transform.",
+    "The derived/modded maps remain non-authoritative visual aids.",
+    "No replay world coordinate was projected into any image."
+  ]
+}

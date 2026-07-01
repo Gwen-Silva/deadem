@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "072",
+  "generatedBy": "tools/measure-replay-009-user-map-landmarks.mjs",
+  "transformFitted": false,
+  "residualsComputed": false,
+  "anchorPlanStatus": "pre_registered_for_future_task_with_limitations",
+  "candidateFitAnchors": [
+    "standard_mid_boss_center",
+    "standard_sapphire_yellow_walker",
+    "standard_sapphire_green_walker",
+    "standard_amber_yellow_walker",
+    "standard_amber_blue_walker"
+  ],
+  "reservedValidationAnchors": [
+    "standard_sapphire_blue_walker",
+    "standard_amber_green_walker"
+  ],
+  "distribution": {
+    "central": 1,
+    "upper": 3,
+    "lower": 3,
+    "lateral": 4,
+    "status": "distributed_with_visual_measurement_limitations"
+  },
+  "prerequisitesForNextTask": [
+    "Resolve or preregister exact replay Walker entity to map Walker landmark pairings before residual inspection.",
+    "Reserve validation anchors before fitting.",
+    "Retain build and image-source limitations.",
+    "Do not use Spirit Urn candidates, player positions, symmetry-generated points, or deletion locations."
+  ],
+  "limitations": [
+    "Anchor plan identifies map-side landmarks, not final replay-world correspondences.",
+    "No transform can be called validated until held-out validation residuals are computed in a future task."
+  ]
+}

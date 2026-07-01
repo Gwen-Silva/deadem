@@ -1,0 +1,894 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "072",
+  "generatedBy": "tools/measure-replay-009-user-map-landmarks.mjs",
+  "coordinateConvention": {
+    "origin": "top_left",
+    "xDirection": "rightward",
+    "yDirection": "downward",
+    "normalizedCoordinate": "raw pixel divided by source image dimensions",
+    "pointMeasured": "visual symbol center"
+  },
+  "landmarks": [
+    {
+      "landmarkId": "standard_mid_boss_center",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "mid_boss_center",
+      "team": "neutral",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 190,
+        "y": 191
+      },
+      "normalizedCoordinate": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "uncertaintyRadiusPixels": 6,
+      "identificationEvidence": [
+        "golden angel symbol at map center",
+        "participant reports Mid Boss at exact visual center"
+      ],
+      "identityStatus": "confirmed_by_participant",
+      "directness": "replay_observed",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_sapphire_yellow_walker",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "walker",
+      "team": "sapphire",
+      "lane": "yellow",
+      "pixelCoordinate": {
+        "x": 86,
+        "y": 87
+      },
+      "normalizedCoordinate": {
+        "x": 0.226316,
+        "y": 0.227749
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on upper-left lane",
+        "participant reports one Walker per lane per team"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_sapphire_blue_walker",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "walker",
+      "team": "sapphire",
+      "lane": "blue",
+      "pixelCoordinate": {
+        "x": 219,
+        "y": 131
+      },
+      "normalizedCoordinate": {
+        "x": 0.576316,
+        "y": 0.342932
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on upper-center lane",
+        "participant reports one Walker per lane per team"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": false,
+      "usableForValidation": true,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_sapphire_green_walker",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "walker",
+      "team": "sapphire",
+      "lane": "green",
+      "pixelCoordinate": {
+        "x": 302,
+        "y": 88
+      },
+      "normalizedCoordinate": {
+        "x": 0.794737,
+        "y": 0.230366
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on upper-right lane",
+        "participant reports one Walker per lane per team"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_amber_yellow_walker",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "walker",
+      "team": "amber",
+      "lane": "yellow",
+      "pixelCoordinate": {
+        "x": 81,
+        "y": 283
+      },
+      "normalizedCoordinate": {
+        "x": 0.213158,
+        "y": 0.740838
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on lower-left lane",
+        "participant reports one Walker per lane per team"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_amber_blue_walker",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "walker",
+      "team": "amber",
+      "lane": "blue",
+      "pixelCoordinate": {
+        "x": 160,
+        "y": 247
+      },
+      "normalizedCoordinate": {
+        "x": 0.421053,
+        "y": 0.646597
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on lower-center lane",
+        "participant reports one Walker per lane per team"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_amber_green_walker",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "walker",
+      "team": "amber",
+      "lane": "green",
+      "pixelCoordinate": {
+        "x": 303,
+        "y": 283
+      },
+      "normalizedCoordinate": {
+        "x": 0.797368,
+        "y": 0.740838
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on lower-right lane",
+        "participant reports one Walker per lane per team"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": false,
+      "usableForValidation": true,
+      "limitations": []
+    },
+    {
+      "landmarkId": "standard_sapphire_patron",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "patron_or_base_center",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 190,
+        "y": 24
+      },
+      "normalizedCoordinate": {
+        "x": 0.5,
+        "y": 0.062827
+      },
+      "uncertaintyRadiusPixels": 9,
+      "identificationEvidence": [
+        "top base semicircle/diamond symbol",
+        "participant reports Archmother/Sapphire at top"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Patron/base internal class identity remains unresolved."
+      ]
+    },
+    {
+      "landmarkId": "standard_amber_patron",
+      "imageId": "img_standard_replay_minimap",
+      "landmarkType": "patron_or_base_center",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 190,
+        "y": 359
+      },
+      "normalizedCoordinate": {
+        "x": 0.5,
+        "y": 0.939791
+      },
+      "uncertaintyRadiusPixels": 9,
+      "identificationEvidence": [
+        "bottom base semicircle/diamond symbol",
+        "participant reports Hidden King/Amber at bottom"
+      ],
+      "identityStatus": "supported",
+      "directness": "replay_observed",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Patron/base internal class identity remains unresolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_mid_boss_center",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "mid_boss_center",
+      "team": "neutral",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 561,
+        "y": 443
+      },
+      "normalizedCoordinate": {
+        "x": 0.471825,
+        "y": 0.501699
+      },
+      "uncertaintyRadiusPixels": 5,
+      "identificationEvidence": [
+        "golden angel symbol at visual center on clean landmark map",
+        "matches standard replay minimap center"
+      ],
+      "identityStatus": "confirmed_by_participant",
+      "directness": "modded_derived",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_sapphire_yellow_walker",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "walker",
+      "team": "sapphire",
+      "lane": "yellow",
+      "pixelCoordinate": {
+        "x": 326,
+        "y": 240
+      },
+      "normalizedCoordinate": {
+        "x": 0.27418,
+        "y": 0.271801
+      },
+      "uncertaintyRadiusPixels": 7,
+      "identificationEvidence": [
+        "large fixed diamond on upper-left lane",
+        "same relative position as standard minimap"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_sapphire_blue_walker",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "walker",
+      "team": "sapphire",
+      "lane": "blue",
+      "pixelCoordinate": {
+        "x": 624,
+        "y": 309
+      },
+      "normalizedCoordinate": {
+        "x": 0.524811,
+        "y": 0.349943
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on upper-center lane",
+        "same relative position as standard minimap"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": true,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_sapphire_green_walker",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "walker",
+      "team": "sapphire",
+      "lane": "green",
+      "pixelCoordinate": {
+        "x": 824,
+        "y": 242
+      },
+      "normalizedCoordinate": {
+        "x": 0.693019,
+        "y": 0.274066
+      },
+      "uncertaintyRadiusPixels": 7,
+      "identificationEvidence": [
+        "large fixed diamond on upper-right lane",
+        "same relative position as standard minimap"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_amber_yellow_walker",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "walker",
+      "team": "amber",
+      "lane": "yellow",
+      "pixelCoordinate": {
+        "x": 287,
+        "y": 609
+      },
+      "normalizedCoordinate": {
+        "x": 0.241379,
+        "y": 0.689694
+      },
+      "uncertaintyRadiusPixels": 7,
+      "identificationEvidence": [
+        "large fixed diamond on lower-left lane",
+        "same relative position as standard minimap"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_amber_blue_walker",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "walker",
+      "team": "amber",
+      "lane": "blue",
+      "pixelCoordinate": {
+        "x": 494,
+        "y": 576
+      },
+      "normalizedCoordinate": {
+        "x": 0.415475,
+        "y": 0.652322
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "large fixed diamond on lower-center lane",
+        "same relative position as standard minimap"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": true,
+      "usableForValidation": false,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_amber_green_walker",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "walker",
+      "team": "amber",
+      "lane": "green",
+      "pixelCoordinate": {
+        "x": 797,
+        "y": 660
+      },
+      "normalizedCoordinate": {
+        "x": 0.670311,
+        "y": 0.747452
+      },
+      "uncertaintyRadiusPixels": 7,
+      "identificationEvidence": [
+        "large fixed diamond on lower-right lane",
+        "same relative position as standard minimap"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": true,
+      "limitations": []
+    },
+    {
+      "landmarkId": "derived_sapphire_yellow_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "guardian",
+      "team": "sapphire",
+      "lane": "yellow",
+      "pixelCoordinate": {
+        "x": 255,
+        "y": 358
+      },
+      "normalizedCoordinate": {
+        "x": 0.214466,
+        "y": 0.405436
+      },
+      "uncertaintyRadiusPixels": 10,
+      "identificationEvidence": [
+        "small fixed diamond near upper-left midline",
+        "participant reports one Guardian per lane per team"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Guardian pairing to replay-side entities is not preregistered for transform fitting."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_blue_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "guardian",
+      "team": "sapphire",
+      "lane": "blue",
+      "pixelCoordinate": {
+        "x": 551,
+        "y": 399
+      },
+      "normalizedCoordinate": {
+        "x": 0.463415,
+        "y": 0.451869
+      },
+      "uncertaintyRadiusPixels": 14,
+      "identificationEvidence": [
+        "small fixed diamond on central lane path",
+        "participant reports one Guardian per lane per team"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Coordinate is less visually distinct than Walker landmarks."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_green_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "guardian",
+      "team": "sapphire",
+      "lane": "green",
+      "pixelCoordinate": {
+        "x": 908,
+        "y": 363
+      },
+      "normalizedCoordinate": {
+        "x": 0.763667,
+        "y": 0.411099
+      },
+      "uncertaintyRadiusPixels": 10,
+      "identificationEvidence": [
+        "small fixed diamond near upper-right midline",
+        "participant reports one Guardian per lane per team"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Guardian pairing to replay-side entities is not preregistered for transform fitting."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_yellow_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "guardian",
+      "team": "amber",
+      "lane": "yellow",
+      "pixelCoordinate": {
+        "x": 221,
+        "y": 496
+      },
+      "normalizedCoordinate": {
+        "x": 0.18587,
+        "y": 0.561721
+      },
+      "uncertaintyRadiusPixels": 10,
+      "identificationEvidence": [
+        "small fixed diamond near lower-left midline",
+        "participant reports one Guardian per lane per team"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Guardian pairing to replay-side entities is not preregistered for transform fitting."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_blue_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "guardian",
+      "team": "amber",
+      "lane": "blue",
+      "pixelCoordinate": {
+        "x": 565,
+        "y": 690
+      },
+      "normalizedCoordinate": {
+        "x": 0.475189,
+        "y": 0.781427
+      },
+      "uncertaintyRadiusPixels": 12,
+      "identificationEvidence": [
+        "small fixed diamond on lower central lane path",
+        "participant reports one Guardian per lane per team"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Coordinate is less visually distinct than Walker landmarks."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_green_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "guardian",
+      "team": "amber",
+      "lane": "green",
+      "pixelCoordinate": {
+        "x": 854,
+        "y": 512
+      },
+      "normalizedCoordinate": {
+        "x": 0.718251,
+        "y": 0.579841
+      },
+      "uncertaintyRadiusPixels": 10,
+      "identificationEvidence": [
+        "small fixed diamond near lower-right midline",
+        "participant reports one Guardian per lane per team"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Guardian pairing to replay-side entities is not preregistered for transform fitting."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_patron",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "patron_or_base_center",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 561,
+        "y": 112
+      },
+      "normalizedCoordinate": {
+        "x": 0.471825,
+        "y": 0.12684
+      },
+      "uncertaintyRadiusPixels": 10,
+      "identificationEvidence": [
+        "top base diamond under semicircle",
+        "participant reports Archmother/Sapphire at top"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Patron/base internal class identity remains unresolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_patron",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "patron_or_base_center",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 561,
+        "y": 765
+      },
+      "normalizedCoordinate": {
+        "x": 0.471825,
+        "y": 0.866365
+      },
+      "uncertaintyRadiusPixels": 10,
+      "identificationEvidence": [
+        "bottom base diamond under semicircle",
+        "participant reports Hidden King/Amber at bottom"
+      ],
+      "identityStatus": "supported",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Patron/base internal class identity remains unresolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_left_shrine",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "shrine",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 490,
+        "y": 114
+      },
+      "normalizedCoordinate": {
+        "x": 0.412111,
+        "y": 0.129105
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small hollow diamond near top patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Shrine identity is human-annotated and not replay-side paired."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_right_shrine",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "shrine",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 635,
+        "y": 113
+      },
+      "normalizedCoordinate": {
+        "x": 0.534062,
+        "y": 0.127973
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small hollow diamond near top patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Shrine identity is human-annotated and not replay-side paired."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_left_shrine",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "shrine",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 489,
+        "y": 761
+      },
+      "normalizedCoordinate": {
+        "x": 0.41127,
+        "y": 0.861835
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small hollow diamond near bottom patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Shrine identity is human-annotated and not replay-side paired."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_right_shrine",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "shrine",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 634,
+        "y": 761
+      },
+      "normalizedCoordinate": {
+        "x": 0.533221,
+        "y": 0.861835
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small hollow diamond near bottom patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Shrine identity is human-annotated and not replay-side paired."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_left_base_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "base_guardian",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 486,
+        "y": 169
+      },
+      "normalizedCoordinate": {
+        "x": 0.408747,
+        "y": 0.191393
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small base diamond near top patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Base Guardian class mapping is not resolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_center_base_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "base_guardian",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 561,
+        "y": 188
+      },
+      "normalizedCoordinate": {
+        "x": 0.471825,
+        "y": 0.212911
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small base diamond near top patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Base Guardian class mapping is not resolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_sapphire_right_base_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "base_guardian",
+      "team": "sapphire",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 633,
+        "y": 169
+      },
+      "normalizedCoordinate": {
+        "x": 0.53238,
+        "y": 0.191393
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small base diamond near top patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Base Guardian class mapping is not resolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_left_base_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "base_guardian",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 487,
+        "y": 709
+      },
+      "normalizedCoordinate": {
+        "x": 0.409588,
+        "y": 0.802945
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small base diamond near bottom patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Base Guardian class mapping is not resolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_center_base_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "base_guardian",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 561,
+        "y": 691
+      },
+      "normalizedCoordinate": {
+        "x": 0.471825,
+        "y": 0.782559
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small base diamond near bottom patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Base Guardian class mapping is not resolved."
+      ]
+    },
+    {
+      "landmarkId": "derived_amber_right_base_guardian",
+      "imageId": "img_derived_landmark_map",
+      "landmarkType": "base_guardian",
+      "team": "amber",
+      "lane": null,
+      "pixelCoordinate": {
+        "x": 634,
+        "y": 709
+      },
+      "normalizedCoordinate": {
+        "x": 0.533221,
+        "y": 0.802945
+      },
+      "uncertaintyRadiusPixels": 8,
+      "identificationEvidence": [
+        "small base diamond near bottom patron"
+      ],
+      "identityStatus": "candidate",
+      "directness": "modded_derived",
+      "usableForFit": false,
+      "usableForValidation": false,
+      "limitations": [
+        "Base Guardian class mapping is not resolved."
+      ]
+    }
+  ]
+}
