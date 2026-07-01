@@ -153,6 +153,11 @@ Task 075 narrowed that gap: a bounded parser diagnosis recovers
 `CBodyComponent.m_vecX/Y/Z` and `m_cellX/Y/Z` coordinate-like fields for
 Walker-class target entities, so the missing layer is compact-filter omission
 with unresolved target coverage and identity.
+Task 076 then built a bounded fixed-entity coordinate layer: it preserves all
+eight target generations, resolves vector-only replay coordinates for two late
+Walker generations, preserves raw team IDs for all six Walkers, and keeps named
+teams, lanes, fit correspondences, regions, proximity, and transform fitting
+blocked.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -217,6 +222,7 @@ Major current reports:
 - [`reports/replay-009-transform-validation-retry.md`](./reports/replay-009-transform-validation-retry.md)
 - [`reports/replay-009-walker-identity-fixed-coordinate-resolution.md`](./reports/replay-009-walker-identity-fixed-coordinate-resolution.md)
 - [`reports/replay-009-fixed-entity-spatial-property-diagnosis.md`](./reports/replay-009-fixed-entity-spatial-property-diagnosis.md)
+- [`reports/replay-009-fixed-entity-coordinate-resolution.md`](./reports/replay-009-fixed-entity-coordinate-resolution.md)
 
 ## Running Validation
 

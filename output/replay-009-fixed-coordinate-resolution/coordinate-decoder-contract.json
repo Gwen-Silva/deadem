@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "076",
+  "decoderPath": "Entity.getField(\"CBodyComponent.m_vecX/Y/Z\") via Class serializer field path decode and Entity state storage",
+  "vectorMeaning": "world",
+  "cellMeaning": "metadata",
+  "cellSize": null,
+  "reconstructionFormula": "worldCoordinate = CBodyComponent.m_vecX/Y/Z",
+  "formulaEvidence": [
+    "Task 056/075 player position controls use CBodyComponent.m_vecX/Y/Z directly.",
+    "Player-control reconstruction accepted formula: vector_only.",
+    "Cell-plus-vector hypothesis is rejected against accepted player coordinates and was not tuned on fixed entities."
+  ],
+  "playerControlAgreement": "vector_only reproduces accepted player position controls exactly",
+  "targetClassAgreement": "Target classes use the same exposed CBodyComponent.m_vecX/Y/Z field paths when complete triplets are present.",
+  "confidence": "supported",
+  "limitations": [
+    "This establishes the project replay-coordinate basis only; it is not a world-to-map transform.",
+    "Cell fields remain preserved as metadata/raw basis and are not applied to target coordinates.",
+    "Build 23916427 map compatibility remains unresolved."
+  ]
+}

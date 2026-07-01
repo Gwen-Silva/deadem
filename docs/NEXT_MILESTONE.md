@@ -88,6 +88,14 @@ decoder failure. The next missing layer is bounded coordinate extraction across
 target generations and non-circular Walker identity resolution; transform
 fitting, lane/region output, proximity, and mechanic effects remain blocked.
 
+Task 076 completed the bounded coordinate extraction layer with gaps. The gate
+is `replay_009_fixed_entity_coordinates_ready_with_gaps`: two late Walker
+generations have supported vector-only replay coordinates and all six Walkers
+have raw team values, but only two of eight target generations have coordinates,
+Mid Boss has no coordinate anchor, named Walker teams and lanes remain
+unresolved, and no correspondence is fit-eligible. The next missing layer is
+identity-only Walker resolution before any transform retry.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

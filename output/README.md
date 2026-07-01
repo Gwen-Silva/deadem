@@ -201,3 +201,11 @@ evidence exposes `CBodyComponent.m_vecX/Y/Z` and `CBodyComponent.m_cellX/Y/Z`
 coordinate-like fields for `CNPC_Boss_Tier2`, including CREATE payloads, while
 prior compact objective/structure filters omitted them. No transform, lane,
 region, proximity, production spatial field, or mechanic effect was emitted.
+
+`output/replay-009-fixed-coordinate-resolution/` contains the Task 076 bounded
+coordinate layer for the same target classes. The gate is
+`replay_009_fixed_entity_coordinates_ready_with_gaps`: all eight target
+generations are retained, two late Walker generations have supported
+vector-only replay coordinates, all six Walkers have raw team values, but named
+teams, lanes, fit/validation correspondences, transform fitting, regions,
+proximity, canonical spatial fields, and mechanic effects remain blocked.

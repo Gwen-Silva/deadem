@@ -178,3 +178,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   the compact objective/structure filters omitted them. These are still not a
   validated transform, lane assignment, region projection, objective proximity,
   or mechanic effect.
+- Replay 009 fixed coordinate-resolution outputs live in
+  `output/replay-009-fixed-coordinate-resolution/`. Task 076 resolves
+  vector-only replay coordinates for two late Walker generations and preserves
+  raw team values for all six Walkers. Named teams, Walker lane identity,
+  fit-eligible correspondences, transform fitting, regions, proximity,
+  canonical spatial fields, and mechanic effects remain blocked.

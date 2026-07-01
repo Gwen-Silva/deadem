@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "076",
+  "controlSnapshots": [
+    {
+      "entityKey": "77:889:14565453:620",
+      "className": "CCitadelPlayerPawn",
+      "demoTick": 138925,
+      "parserSeconds": 2170.703,
+      "vector": {
+        "x": 770.375,
+        "y": 242.53125,
+        "z": 383.875
+      },
+      "cell": {
+        "x": 30,
+        "y": 28,
+        "z": 32
+      },
+      "acceptedPlayerWorldPosition": {
+        "x": 770.375,
+        "y": 242.53125,
+        "z": 383.875
+      },
+      "source": "player pawn CBodyComponent.m_vecX/Y/Z path used by Task 056/075 controls"
+    },
+    {
+      "entityKey": "78:627:10272846:620",
+      "className": "CCitadelPlayerPawn",
+      "demoTick": 138925,
+      "parserSeconds": 2170.703,
+      "vector": {
+        "x": 1022.46875,
+        "y": 250.8125,
+        "z": 191.84375
+      },
+      "cell": {
+        "x": 30,
+        "y": 12,
+        "z": 34
+      },
+      "acceptedPlayerWorldPosition": {
+        "x": 1022.46875,
+        "y": 250.8125,
+        "z": 191.84375
+      },
+      "source": "player pawn CBodyComponent.m_vecX/Y/Z path used by Task 056/075 controls"
+    }
+  ],
+  "formulas": [
+    {
+      "formulaId": "vector_only",
+      "formula": "worldCoordinate = CBodyComponent.m_vecX/Y/Z",
+      "controlSamples": 2,
+      "matchingSamples": 2,
+      "medianError": 0,
+      "maximumError": 0,
+      "status": "supported",
+      "limitations": [
+        "Supported only as the existing project replay-coordinate basis, not as a map projection."
+      ]
+    },
+    {
+      "formulaId": "cell_plus_vector_1024_hypothesis",
+      "formula": "worldCoordinate = cell * 1024 + vector",
+      "controlSamples": 2,
+      "matchingSamples": 0,
+      "medianError": 50658.613721,
+      "maximumError": 53287.370061,
+      "status": "rejected",
+      "limitations": [
+        "Rejected or inconclusive by player controls; included only to test the common cell-plus-offset hypothesis without map fitting."
+      ]
+    }
+  ],
+  "acceptedFormulaId": "vector_only"
+}
