@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "073",
+  "decision": "insufficient_grounded_correspondences",
+  "gate": "replay_009_candidate_transform_not_ready",
+  "selectedModelId": null,
+  "fitResidual": null,
+  "validationResidual": null,
+  "normalizedValidationError": null,
+  "productionTransformEmitted": false,
+  "reasons": [
+    "No grounded replay-world coordinates are available for the fixed Mid Boss or Walker entity candidates.",
+    "The six replay Walker entities remain an unordered set relative to the six measured map Walker landmarks.",
+    "Task 073 prohibits resolving Walker identities by permutation or residual minimization.",
+    "No held-out validation anchor can be used without first grounding a replay/map correspondence."
+  ],
+  "summary": {
+    "schemaVersion": "1.0.0",
+    "taskId": "073",
+    "replayId": "replay_009",
+    "predecessorTasks": [
+      "070",
+      "071",
+      "072"
+    ],
+    "inputIntegrity": "valid",
+    "coordinateBasisStatus": "map_pixels_available_replay_fixed_world_coordinates_unavailable",
+    "groundedCorrespondences": 0,
+    "unresolvedCorrespondences": 6,
+    "walkerIdentitiesResolved": false,
+    "permutationSearchPerformed": false,
+    "fitAnchors": 0,
+    "heldOutValidationAnchors": 0,
+    "eligibleModels": 0,
+    "fittedModels": 0,
+    "selectedModel": null,
+    "fitResidual": null,
+    "validationResidual": null,
+    "normalizedValidationError": null,
+    "topologyResult": "not_evaluable",
+    "sensitivityResult": "not_run_insufficient_grounded_anchors",
+    "buildSourceLimitations": [
+      "Task 072 minimap coordinates are useful as an independent image target but are not an authoritative historical build map.",
+      "Build 23916427 remains unmapped to a confirmed patch or map version.",
+      "The replay-observed minimap likely reflects the replay playback environment, but exact build compatibility is still not proven."
+    ],
+    "productionTransformEmitted": false,
+    "lanesRegionsProximityEmitted": false,
+    "mechanicEffectsApplied": 0,
+    "protections": {
+      "replay005Read": false,
+      "replay005Processed": false,
+      "botFixturesProcessed": false,
+      "mapAssetCommitted": false
+    },
+    "decision": "insufficient_grounded_correspondences",
+    "gate": "replay_009_candidate_transform_not_ready"
+  }
+}

@@ -26,6 +26,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/replay-009-human-annotation-packet.md`
 - `reports/replay-009-independent-landmark-coordinate-acquisition.md`
 - `reports/replay-009-user-map-landmark-measurement.md`
+- `reports/replay-009-transform-validation-retry.md`
 - `reports/versioned-mechanics-knowledge-foundation.md`
 - `reports/build-23916427-mechanics-mapping.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "073",
+  "predecessorTask": "072",
+  "predecessorGate": "replay_009_independent_landmark_coordinates_ready_with_limitations",
+  "requiredFiles": [
+    {
+      "path": "output/replay-009-landmark-measurement/measurement-summary.json",
+      "exists": true,
+      "sha256": "da97a92df9534f4cad518a32679bbfafae465a800835f1c40f68ca308bd34427"
+    },
+    {
+      "path": "output/replay-009-landmark-measurement/measured-landmarks.json",
+      "exists": true,
+      "sha256": "1f05a82ff95f25b69e51b09d9b92856478bf8353a0ba475559ffa28a9157a1f4"
+    },
+    {
+      "path": "output/replay-009-landmark-measurement/image-inventory.json",
+      "exists": true,
+      "sha256": "383b0fe30fc578a74b74ef42af1fe282cb34f15da6c7bdc5ceddba5ad8a44cf8"
+    },
+    {
+      "path": "output/replay-009-landmark-measurement/fit-validation-anchor-plan.json",
+      "exists": true,
+      "sha256": "db4c05275acbd2cde684567e1acf91dc1eee6c89a4d22c5f018e0ea9866df47c"
+    },
+    {
+      "path": "output/replay-009-landmark-measurement/replay-landmark-correspondence-candidates.json",
+      "exists": true,
+      "sha256": "683b935b9051a0ff9e9dc48a364c9f2ceabcc8834e2eadfd9ed113ddf11e2f18"
+    },
+    {
+      "path": "output/replay-009-canonical/factual-events.jsonl",
+      "exists": true,
+      "sha256": "1e76a8c996fd6538c5b7d0fdc8ae0bd148c8a2682d504dd50a06be390665ac4e"
+    },
+    {
+      "path": "output/replay-009-canonical/entity-registry.json",
+      "exists": true,
+      "sha256": "e2a5f1ead671ee0042d50e4f00653faf448c15c7590047f3eebabe59678e79f6"
+    },
+    {
+      "path": "output/replay-009-states/objective-structure-entity-keys.json",
+      "exists": true,
+      "sha256": "6c265f5c4eccdbd324b88695abffc48ce75326998b3386d09c4e7ff8477c3059"
+    }
+  ],
+  "localSourceImagesTrackedByGit": [],
+  "sourceImagesCommitted": false,
+  "localImageEntries": 0,
+  "landmarkCount": 34,
+  "summaryCountsMatch": true,
+  "plannedFitAnchorCount": 5,
+  "plannedValidationAnchorCount": 2,
+  "plannedFitValidationDisjoint": true,
+  "prohibitedPlannedAnchors": [],
+  "inputIntegrityStatus": "valid",
+  "limitations": [
+    "Task 072 anchor planning is map-side only and does not establish replay-world correspondences.",
+    "Local source images remain untracked local-only artifacts."
+  ]
+}

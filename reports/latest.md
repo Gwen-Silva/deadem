@@ -1,5 +1,5 @@
 # Latest Report
 
-Latest report: `reports/replay-009-user-map-landmark-measurement.md`
+Latest report: `reports/replay-009-transform-validation-retry.md`
 
-Latest gate: `replay_009_independent_landmark_coordinates_ready_with_limitations`
+Latest gate: `replay_009_candidate_transform_not_ready`

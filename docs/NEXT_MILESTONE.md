@@ -63,6 +63,14 @@ is `replay_009_independent_landmark_coordinates_ready_with_limitations`: a
 bounded transform-validation retry can be attempted, but no transform, lane,
 region, proximity, or mechanic effect has been produced.
 
+Task 073 attempted that bounded retry and stopped before fitting. The gate is
+`replay_009_candidate_transform_not_ready`: map-image coordinates are available,
+but replay-side fixed Mid Boss/Walker world coordinates are not exposed in the
+compact canonical evidence, and the six replay Walker entities cannot yet be
+paired with six map Walker symbols by pre-residual evidence. The next missing
+layer is non-circular replay-side fixed-entity coordinates and Walker
+team/lane identity evidence, not a broader map-geometry search.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

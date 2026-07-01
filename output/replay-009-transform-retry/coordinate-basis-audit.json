@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "073",
+  "targetCoordinateBasis": {
+    "source": "Task 072 replay-observed standard minimap pixel coordinates",
+    "origin": "top_left",
+    "xDirection": "rightward",
+    "yDirection": "downward",
+    "normalizedCoordinate": "raw pixel divided by source image dimensions",
+    "metricScaleKnown": false,
+    "limitations": [
+      "Minimap pixel coordinates are not metric world distances.",
+      "The source map is replay-observed/user-supplied imagery, not a confirmed build-23916427 authoritative map asset."
+    ]
+  },
+  "replayCoordinateBasis": {
+    "source": "Task 063/065 canonical fixed entity records",
+    "fixedEntityWorldCoordinatesAvailable": false,
+    "checkedEntityCount": 8,
+    "entitySpatialStatus": [
+      {
+        "entityKey": "2714:253:4147866:718:-1",
+        "eventCount": 7,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "3289:380:6229209:718:123857",
+        "eventCount": 8,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "307:381:6242611:713:-1",
+        "eventCount": 7,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "308:523:8569140:713:-1",
+        "eventCount": 6,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "309:685:11223349:713:-1",
+        "eventCount": 7,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "310:1003:16433462:713:-1",
+        "eventCount": 7,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "311:565:9257271:713:-1",
+        "eventCount": 7,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      },
+      {
+        "entityKey": "312:533:8732984:713:-1",
+        "eventCount": 6,
+        "worldPositionRecords": 0,
+        "spatialStatuses": [
+          "unavailable"
+        ]
+      }
+    ],
+    "limitations": [
+      "Canonical fixed objective/structure records preserve lifecycle, health, team, validation, and class evidence, but not world coordinates.",
+      "Player world coordinates exist from Task 056, but player trajectories are prohibited as transform anchors in Task 073."
+    ]
+  },
+  "landmarkPixelCoordinateCount": 34,
+  "standardReplayMinimapLandmarkCount": 9,
+  "coordinateBasisStatus": "map_pixels_available_replay_fixed_world_coordinates_unavailable"
+}

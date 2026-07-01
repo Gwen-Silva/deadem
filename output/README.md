@@ -176,3 +176,11 @@ bounded pixel coordinates for Mid Boss, Walkers, Guardians, and base-symbol
 landmarks, qualitative cross-image registration, correspondence candidates, and
 a preregistered future fit/validation split. It still emits no transform,
 region, lane, objective proximity, or mechanic effect.
+
+`output/replay-009-transform-retry/` contains the Task 073 retry using those
+measured landmarks. The gate is `replay_009_candidate_transform_not_ready`:
+map-image coordinates exist, but compact replay-009 fixed objective/structure
+records still do not expose replay-world coordinates, and Walker entity-to-map
+landmark identities remain unresolved before residual inspection. No transform,
+held-out residual, topology check, lane, region, proximity, production spatial
+field, or mechanic effect was emitted.

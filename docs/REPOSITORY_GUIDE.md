@@ -159,3 +159,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   future transform fit/validation anchor split. These outputs are not a fitted
   transform and do not authorize regions, lanes, objective proximity, or
   mechanic effects.
+- Replay 009 transform retry outputs live in
+  `output/replay-009-transform-retry/`. Task 073 uses the measured map-image
+  landmarks but stops before fitting because replay fixed-entity world
+  coordinates and pre-residual Walker pairings remain unavailable. Do not use
+  permutation search, nearest projected points, or training residuals to fill
+  this gap.

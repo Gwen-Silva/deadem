@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "073",
+  "preregistrationFrozenBeforeFitting": true,
+  "eligibleFitAnchorCount": 0,
+  "eligibleValidationAnchorCount": 0,
+  "models": [
+    {
+      "modelId": "translation_2d",
+      "modelType": "translation",
+      "parameterCount": 2,
+      "minimumFitAnchors": 1,
+      "assumptions": [
+        "map target is a 2D minimap pixel coordinate space",
+        "z is not fitted unless later evidence requires vertical handling",
+        "correspondences must be identity-grounded before residual inspection"
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "no_grounded_fit_correspondences_with_replay_world_coordinates",
+        "no_grounded_held_out_validation_correspondence",
+        "walker_pairing_unresolved_without_permutation_search"
+      ]
+    },
+    {
+      "modelId": "rigid_2d",
+      "modelType": "rigid_2d",
+      "parameterCount": 3,
+      "minimumFitAnchors": 2,
+      "assumptions": [
+        "map target is a 2D minimap pixel coordinate space",
+        "z is not fitted unless later evidence requires vertical handling",
+        "correspondences must be identity-grounded before residual inspection"
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "no_grounded_fit_correspondences_with_replay_world_coordinates",
+        "no_grounded_held_out_validation_correspondence",
+        "walker_pairing_unresolved_without_permutation_search"
+      ]
+    },
+    {
+      "modelId": "similarity_2d",
+      "modelType": "similarity_2d",
+      "parameterCount": 4,
+      "minimumFitAnchors": 2,
+      "assumptions": [
+        "map target is a 2D minimap pixel coordinate space",
+        "z is not fitted unless later evidence requires vertical handling",
+        "correspondences must be identity-grounded before residual inspection"
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "no_grounded_fit_correspondences_with_replay_world_coordinates",
+        "no_grounded_held_out_validation_correspondence",
+        "walker_pairing_unresolved_without_permutation_search"
+      ]
+    },
+    {
+      "modelId": "axis_reflected_similarity_2d",
+      "modelType": "axis_reflected_similarity_2d",
+      "parameterCount": 4,
+      "minimumFitAnchors": 2,
+      "assumptions": [
+        "map target is a 2D minimap pixel coordinate space",
+        "z is not fitted unless later evidence requires vertical handling",
+        "correspondences must be identity-grounded before residual inspection"
+      ],
+      "allowedAxisReflections": [
+        "x",
+        "y",
+        "x_and_y"
+      ],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "no_grounded_fit_correspondences_with_replay_world_coordinates",
+        "no_grounded_held_out_validation_correspondence",
+        "walker_pairing_unresolved_without_permutation_search"
+      ]
+    },
+    {
+      "modelId": "affine_2d",
+      "modelType": "affine_2d",
+      "parameterCount": 6,
+      "minimumFitAnchors": 3,
+      "assumptions": [
+        "map target is a 2D minimap pixel coordinate space",
+        "z is not fitted unless later evidence requires vertical handling",
+        "correspondences must be identity-grounded before residual inspection"
+      ],
+      "allowedAxisReflections": [],
+      "fitAnchorIds": [],
+      "validationAnchorIds": [],
+      "eligible": false,
+      "ineligibilityReasons": [
+        "no_grounded_fit_correspondences_with_replay_world_coordinates",
+        "no_grounded_held_out_validation_correspondence",
+        "walker_pairing_unresolved_without_permutation_search"
+      ]
+    }
+  ]
+}

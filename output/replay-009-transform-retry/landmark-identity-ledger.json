@@ -1,0 +1,548 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "073",
+  "frozenBeforeResidualInspection": true,
+  "permutationSearchPerformed": false,
+  "residualsInspectedBeforePairing": false,
+  "frozenLedgerHash": "49e9f99c10ea111991f56b068675d3ec7cb5f0936b07eb7c57ac9990e51db2c5",
+  "rows": [
+    {
+      "ledgerId": "ledger_mid_boss_center",
+      "landmarkType": "mid_boss_center",
+      "mapLandmarkId": "standard_mid_boss_center",
+      "mapCoordinate": {
+        "x": 190,
+        "y": 191
+      },
+      "replayEntityKeys": [
+        "2714:253:4147866:718:-1",
+        "3289:380:6229209:718:123857"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "CNPC_MidBoss class confirmed in replay outputs",
+        "human annotation places Mid Boss at exact visual center"
+      ],
+      "identityStatus": "supported",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "fit",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "two_mid_boss_generations_share_fixed_landmark",
+        "replay_world_coordinate_unavailable_for_candidate_entities"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "2714:253:4147866:718:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "3289:380:6229209:718:123857",
+          "eventCount": 8,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    },
+    {
+      "ledgerId": "ledger_standard_sapphire_yellow_walker",
+      "landmarkType": "walker",
+      "mapLandmarkId": "standard_sapphire_yellow_walker",
+      "mapCoordinate": {
+        "x": 86,
+        "y": 87
+      },
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityStatus": "unresolved",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "fit",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "walker_entity_to_map_landmark_pairing_unresolved_before_residuals",
+        "replay_world_coordinate_unavailable_for_candidate_entities",
+        "permutation_search_prohibited"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "307:381:6242611:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "308:523:8569140:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "309:685:11223349:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "310:1003:16433462:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "311:565:9257271:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "312:533:8732984:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    },
+    {
+      "ledgerId": "ledger_standard_sapphire_blue_walker",
+      "landmarkType": "walker",
+      "mapLandmarkId": "standard_sapphire_blue_walker",
+      "mapCoordinate": {
+        "x": 219,
+        "y": 131
+      },
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityStatus": "unresolved",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "validation",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "walker_entity_to_map_landmark_pairing_unresolved_before_residuals",
+        "replay_world_coordinate_unavailable_for_candidate_entities",
+        "permutation_search_prohibited"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "307:381:6242611:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "308:523:8569140:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "309:685:11223349:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "310:1003:16433462:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "311:565:9257271:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "312:533:8732984:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    },
+    {
+      "ledgerId": "ledger_standard_sapphire_green_walker",
+      "landmarkType": "walker",
+      "mapLandmarkId": "standard_sapphire_green_walker",
+      "mapCoordinate": {
+        "x": 302,
+        "y": 88
+      },
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityStatus": "unresolved",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "fit",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "walker_entity_to_map_landmark_pairing_unresolved_before_residuals",
+        "replay_world_coordinate_unavailable_for_candidate_entities",
+        "permutation_search_prohibited"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "307:381:6242611:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "308:523:8569140:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "309:685:11223349:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "310:1003:16433462:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "311:565:9257271:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "312:533:8732984:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    },
+    {
+      "ledgerId": "ledger_standard_amber_yellow_walker",
+      "landmarkType": "walker",
+      "mapLandmarkId": "standard_amber_yellow_walker",
+      "mapCoordinate": {
+        "x": 81,
+        "y": 283
+      },
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityStatus": "unresolved",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "fit",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "walker_entity_to_map_landmark_pairing_unresolved_before_residuals",
+        "replay_world_coordinate_unavailable_for_candidate_entities",
+        "permutation_search_prohibited"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "307:381:6242611:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "308:523:8569140:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "309:685:11223349:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "310:1003:16433462:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "311:565:9257271:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "312:533:8732984:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    },
+    {
+      "ledgerId": "ledger_standard_amber_blue_walker",
+      "landmarkType": "walker",
+      "mapLandmarkId": "standard_amber_blue_walker",
+      "mapCoordinate": {
+        "x": 160,
+        "y": 247
+      },
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityStatus": "unresolved",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "fit",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "walker_entity_to_map_landmark_pairing_unresolved_before_residuals",
+        "replay_world_coordinate_unavailable_for_candidate_entities",
+        "permutation_search_prohibited"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "307:381:6242611:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "308:523:8569140:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "309:685:11223349:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "310:1003:16433462:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "311:565:9257271:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "312:533:8732984:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    },
+    {
+      "ledgerId": "ledger_standard_amber_green_walker",
+      "landmarkType": "walker",
+      "mapLandmarkId": "standard_amber_green_walker",
+      "mapCoordinate": {
+        "x": 303,
+        "y": 283
+      },
+      "replayEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "replayWorldCoordinate": null,
+      "identityEvidence": [
+        "Six CNPC_Boss_Tier2 walker entities in replay outputs",
+        "six fixed Walker symbols measured on the map image"
+      ],
+      "identityStatus": "unresolved",
+      "coordinateIndependence": "independent_map_image_coordinate_vs_parser_entity_coordinate",
+      "preregisteredRole": "validation",
+      "eligibility": "blocked",
+      "exclusionReasons": [
+        "walker_entity_to_map_landmark_pairing_unresolved_before_residuals",
+        "replay_world_coordinate_unavailable_for_candidate_entities",
+        "permutation_search_prohibited"
+      ],
+      "canonicalSpatialEvidence": [
+        {
+          "entityKey": "307:381:6242611:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "308:523:8569140:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "309:685:11223349:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "310:1003:16433462:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "311:565:9257271:713:-1",
+          "eventCount": 7,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        },
+        {
+          "entityKey": "312:533:8732984:713:-1",
+          "eventCount": 6,
+          "worldPositionRecords": 0,
+          "spatialStatuses": [
+            "unavailable"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "ledgerRows": 7,
+    "groundedCorrespondences": 0,
+    "unresolvedCorrespondences": 6,
+    "supportedButCoordinateMissing": 1,
+    "walkerIdentitiesResolved": false,
+    "midBossUsableForFit": false
+  }
+}

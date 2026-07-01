@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "073",
+  "targetSpace": "standard_replay_minimap_pixels",
+  "primaryMetric": "held_out_validation_pixel_residual",
+  "thresholdPolicyStatus": "registered_but_not_applied",
+  "classifications": [
+    {
+      "class": "excellent",
+      "rule": "Validation residuals are within the measured landmark uncertainty radius for every held-out anchor."
+    },
+    {
+      "class": "acceptable_for_coarse_visualization",
+      "rule": "Validation residuals exceed some landmark uncertainty radii but remain small relative to the minimap diameter and topology checks pass."
+    },
+    {
+      "class": "marginal",
+      "rule": "Residuals are interpretable only for rough visual orientation and must not support regions, lanes, or proximity."
+    },
+    {
+      "class": "rejected",
+      "rule": "Held-out residuals fail preregistered checks, topology is contradicted, or fit lacks independent validation."
+    },
+    {
+      "class": "not_evaluable",
+      "rule": "No model was fit because grounded correspondences were insufficient."
+    }
+  ],
+  "appliedClassification": "not_evaluable",
+  "limitations": [
+    "No residual threshold was applied because no eligible model was fitted.",
+    "Training residual alone is never sufficient for validation."
+  ]
+}
