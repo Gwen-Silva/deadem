@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "075",
+  "targetClassesInspected": [
+    "CNPC_MidBoss",
+    "CNPC_Boss_Tier2"
+  ],
+  "serializerSpatialDeclarationsFound": 68,
+  "targetFieldPathsObserved": 1097,
+  "targetPositionFieldPathsObserved": 724,
+  "createBaselineSpatialFields": 724,
+  "componentReferencesResolved": 0,
+  "playerControlComparisonResult": "player_position_path_works",
+  "coordinateDecoderTypesFound": [
+    "coordinate_float_decoder",
+    "vector_decoder",
+    "cell_quantized_coordinate_decoder"
+  ],
+  "independentParserResult": "comparison_unavailable",
+  "coordinateCandidatesRecovered": 8,
+  "currentStateCoordinateCandidatesRecovered": 4,
+  "observedPayloadCoordinateCandidatesRecovered": 4,
+  "coordinateBasisResult": "parser_body_component_coordinate_like_fields_exposed_without_map_transform",
+  "boundedExtractorCreated": true,
+  "diagnosisDecision": "coordinates_omitted_by_compact_filter",
+  "directCoordinatesExposed": true,
+  "componentResolvedCoordinatesExposed": false,
+  "compactFilterOmissionFound": true,
+  "newDecoderRequired": false,
+  "transformFitted": false,
+  "lanesRegionsProximityEmitted": false,
+  "mechanicEffectsApplied": 0,
+  "protections": {
+    "replay005Read": false,
+    "replay005Processed": false,
+    "botFixturesProcessed": false
+  },
+  "gate": "replay_009_fixed_entity_spatial_properties_ready_with_gaps",
+  "blockedFollowUp": "tasks/blocked/076-resolve-replay-009-fixed-entity-coordinates-and-walker-identities.md",
+  "predecessorGate": "replay_009_walker_identity_coordinates_not_ready"
+}

@@ -147,6 +147,12 @@ the standard replay minimap, modded/reference maps, and Urn diagram are
 inventoried with hashes and bounded pixel landmark coordinates. This creates
 inputs for a future transform-validation retry, but no transform, region, lane,
 proximity, or mechanic effect is validated yet.
+Task 073 and Task 074 then showed that the committed compact replay-009
+objective/structure path did not preserve replay-side fixed-entity coordinates.
+Task 075 narrowed that gap: a bounded parser diagnosis recovers
+`CBodyComponent.m_vecX/Y/Z` and `m_cellX/Y/Z` coordinate-like fields for
+Walker-class target entities, so the missing layer is compact-filter omission
+with unresolved target coverage and identity.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -210,6 +216,7 @@ Major current reports:
 - [`reports/replay-009-user-map-landmark-measurement.md`](./reports/replay-009-user-map-landmark-measurement.md)
 - [`reports/replay-009-transform-validation-retry.md`](./reports/replay-009-transform-validation-retry.md)
 - [`reports/replay-009-walker-identity-fixed-coordinate-resolution.md`](./reports/replay-009-walker-identity-fixed-coordinate-resolution.md)
+- [`reports/replay-009-fixed-entity-spatial-property-diagnosis.md`](./reports/replay-009-fixed-entity-spatial-property-diagnosis.md)
 
 ## Running Validation
 

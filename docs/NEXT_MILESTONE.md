@@ -79,6 +79,15 @@ component/reference-style properties, but no usable replay-world coordinates or
 pre-fit Walker team/lane identities. The next task should diagnose parser
 spatial-property extraction for those target classes before any transform retry.
 
+Task 075 diagnosed that parser spatial-property layer directly. The gate is
+`replay_009_fixed_entity_spatial_properties_ready_with_gaps`: bounded
+parser-level evidence exposes `CBodyComponent.m_vecX/Y/Z` and
+`CBodyComponent.m_cellX/Y/Z` coordinate-like fields for `CNPC_Boss_Tier2`,
+including CREATE payloads. The earlier gap was a compact-filter omission, not a
+decoder failure. The next missing layer is bounded coordinate extraction across
+target generations and non-circular Walker identity resolution; transform
+fitting, lane/region output, proximity, and mechanic effects remain blocked.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

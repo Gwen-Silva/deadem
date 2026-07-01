@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "075",
+  "decoders": [
+    {
+      "decoderId": "coordinate_float_decoder",
+      "supported": true,
+      "usedByPlayerPositions": true,
+      "usedByTargetCandidates": true,
+      "implementationPath": "packages/engine/src/data/fields/decoding/FieldDecoderFactory.js",
+      "testCoverage": [
+        "packages/engine/tests/FieldDecoderQuantizedFloat.test.js",
+        "player pawn coordinate control in Task 075"
+      ],
+      "knownLimitations": []
+    },
+    {
+      "decoderId": "vector_decoder",
+      "supported": true,
+      "usedByPlayerPositions": true,
+      "usedByTargetCandidates": true,
+      "implementationPath": "packages/engine/src/data/fields/decoding/FieldDecoderFactory.js",
+      "testCoverage": [
+        "player pawn coordinate control in Task 075"
+      ],
+      "knownLimitations": [
+        "Task 075 diagnoses exposure only; it does not establish map transform compatibility or fixed-entity semantic state."
+      ]
+    },
+    {
+      "decoderId": "cell_quantized_coordinate_decoder",
+      "supported": true,
+      "usedByPlayerPositions": false,
+      "usedByTargetCandidates": true,
+      "implementationPath": "packages/engine/src/data/fields/decoding/FieldDecoderFactory.js and FieldDecoderQuantizedFloat.js",
+      "testCoverage": [
+        "packages/engine/tests/FieldDecoderQuantizedFloat.test.js"
+      ],
+      "knownLimitations": [
+        "Cell coordinates are retained as raw parser fields; no transform or region interpretation is applied."
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 # Latest Report
 
-Latest report: `reports/replay-009-walker-identity-fixed-coordinate-resolution.md`
+Latest report: `reports/replay-009-fixed-entity-spatial-property-diagnosis.md`
 
-Latest gate: `replay_009_walker_identity_coordinates_not_ready`
+Latest gate: `replay_009_fixed_entity_spatial_properties_ready_with_gaps`

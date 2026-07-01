@@ -193,3 +193,11 @@ properties, but no usable direct or component-resolved world coordinates, no
 Walker team/lane identities, and no fit-eligible or validation-eligible
 correspondences. No transform, lane, region, proximity, production spatial
 field, or mechanic effect was emitted.
+
+`output/replay-009-fixed-spatial-diagnosis/` contains the Task 075 bounded
+parser diagnosis for `CNPC_MidBoss` and `CNPC_Boss_Tier2`. The gate is
+`replay_009_fixed_entity_spatial_properties_ready_with_gaps`: parser-level
+evidence exposes `CBodyComponent.m_vecX/Y/Z` and `CBodyComponent.m_cellX/Y/Z`
+coordinate-like fields for `CNPC_Boss_Tier2`, including CREATE payloads, while
+prior compact objective/structure filters omitted them. No transform, lane,
+region, proximity, production spatial field, or mechanic effect was emitted.

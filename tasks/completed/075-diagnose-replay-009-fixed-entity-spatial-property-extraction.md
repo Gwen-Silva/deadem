@@ -1,6 +1,6 @@
 # Task 075: Diagnose Replay 009 Fixed Entity Spatial Property Extraction
 
-Status: blocked
+Status: completed
 
 Execution mode: autonomous after unlock
 

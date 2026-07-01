@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "075",
+  "controlClass": "CCitadelPlayerPawn",
+  "controls": [
+    {
+      "controlId": "control_pawn_1",
+      "entityKey": "77:889:14565453:620",
+      "directPosition": {
+        "x": 770.375,
+        "y": 242.53125,
+        "z": 383.875
+      },
+      "coordinateTriples": [
+        {
+          "fields": [
+            "CBodyComponent.m_vecX",
+            "CBodyComponent.m_vecY",
+            "CBodyComponent.m_vecZ"
+          ],
+          "values": {
+            "x": 770.375,
+            "y": 242.53125,
+            "z": 383.875
+          }
+        },
+        {
+          "fields": [
+            "CBodyComponent.m_cellX",
+            "CBodyComponent.m_cellY",
+            "CBodyComponent.m_cellZ"
+          ],
+          "values": {
+            "x": 30,
+            "y": 28,
+            "z": 32
+          }
+        }
+      ],
+      "result": "position_path_works"
+    },
+    {
+      "controlId": "control_pawn_2",
+      "entityKey": "78:627:10272846:620",
+      "directPosition": {
+        "x": 1022.46875,
+        "y": 250.8125,
+        "z": 191.84375
+      },
+      "coordinateTriples": [
+        {
+          "fields": [
+            "CBodyComponent.m_vecX",
+            "CBodyComponent.m_vecY",
+            "CBodyComponent.m_vecZ"
+          ],
+          "values": {
+            "x": 1022.46875,
+            "y": 250.8125,
+            "z": 191.84375
+          }
+        },
+        {
+          "fields": [
+            "CBodyComponent.m_cellX",
+            "CBodyComponent.m_cellY",
+            "CBodyComponent.m_cellZ"
+          ],
+          "values": {
+            "x": 30,
+            "y": 12,
+            "z": 34
+          }
+        }
+      ],
+      "result": "position_path_works"
+    }
+  ],
+  "targetComparison": [
+    {
+      "entityKey": "308:523:8569140:713",
+      "className": "CNPC_Boss_Tier2",
+      "coordinateTriples": [
+        {
+          "fields": [
+            "CBodyComponent.m_vecX",
+            "CBodyComponent.m_vecY",
+            "CBodyComponent.m_vecZ"
+          ],
+          "values": {
+            "x": 128,
+            "y": 640,
+            "z": 384
+          }
+        },
+        {
+          "fields": [
+            "CBodyComponent.m_cellX",
+            "CBodyComponent.m_cellY",
+            "CBodyComponent.m_cellZ"
+          ],
+          "values": {
+            "x": 44,
+            "y": 40,
+            "z": 32
+          }
+        }
+      ],
+      "positionCandidateFields": [
+        "CBodyComponent",
+        "CBodyComponent.m_cellX",
+        "CBodyComponent.m_cellY",
+        "CBodyComponent.m_cellZ",
+        "CBodyComponent.m_vecX",
+        "CBodyComponent.m_vecY",
+        "CBodyComponent.m_vecZ",
+        "CBodyComponent.m_hParent",
+        "CBodyComponent.m_angRotation",
+        "CBodyComponent.m_flScale",
+        "CBodyComponent.m_hSequence",
+        "CBodyComponent.m_flSeqStartTime",
+        "CBodyComponent.m_flSeqFixedCycle",
+        "CBodyComponent.m_nAnimLoopMode",
+        "CBodyComponent.m_flPlaybackRate",
+        "CBodyComponent.m_name",
+        "CBodyComponent.m_hierarchyAttachName",
+        "CBodyComponent.m_hModel",
+        "CBodyComponent.m_vRootBoneOffset",
+        "CBodyComponent.m_nRootBoneOffsetResetSerialNumber",
+        "CBodyComponent.m_bClientClothCreationSuppressed",
+        "CBodyComponent.m_MeshGroupMask",
+        "CBodyComponent.m_nBodyGroupChoices",
+        "CBodyComponent.m_nBodyGroupChoices.0000",
+        "CBodyComponent.m_nIdealMotionType",
+        "CBodyComponent.m_bUseParentRenderBounds",
+        "CBodyComponent.m_materialGroup",
+        "CBodyComponent.m_nHitboxSet",
+        "CBodyComponent.m_nAnimationAlgorithm",
+        "CBodyComponent.m_vecSecondarySkeletons",
+        "CBodyComponent.m_nSecondarySkeletonMasterCount",
+        "CBodyComponent.m_hGraphDefinitionAG2",
+        "CBodyComponent.m_serializedPoseRecipeAG2",
+        "CBodyComponent.m_nSerializePoseRecipeSizeAG2",
+        "CBodyComponent.m_nSerializePoseRecipeVersionAG2",
+        "CBodyComponent.m_nServerGraphInstanceIteration",
+        "CBodyComponent.m_nServerSerializationContextIteration",
+        "CBodyComponent.m_primaryGraphId",
+        "CBodyComponent.m_vecExternalGraphIds",
+        "CBodyComponent.m_vecExternalClipIds",
+        "CBodyComponent.m_PredBoolVariables",
+        "CBodyComponent.m_PredBoolVariables.0000",
+        "CBodyComponent.m_PredByteVariables",
+        "CBodyComponent.m_PredByteVariables.0000",
+        "CBodyComponent.m_PredByteVariables.0001",
+        "CBodyComponent.m_PredByteVariables.0002",
+        "CBodyComponent.m_PredByteVariables.0003",
+        "CBodyComponent.m_PredByteVariables.0004",
+        "CBodyComponent.m_PredByteVariables.0005",
+        "CBodyComponent.m_PredByteVariables.0006",
+        "CBodyComponent.m_PredByteVariables.0007",
+        "CBodyComponent.m_PredByteVariables.0008",
+        "CBodyComponent.m_PredByteVariables.0009",
+        "CBodyComponent.m_PredByteVariables.0010",
+        "CBodyComponent.m_PredByteVariables.0011",
+        "CBodyComponent.m_PredByteVariables.0012",
+        "CBodyComponent.m_PredByteVariables.0013",
+        "CBodyComponent.m_PredByteVariables.0014",
+        "CBodyComponent.m_PredByteVariables.0015",
+        "CBodyComponent.m_PredByteVariables.0016",
+        "CBodyComponent.m_PredByteVariables.0017",
+        "CBodyComponent.m_PredByteVariables.0018",
+        "CBodyComponent.m_PredByteVariables.0019",
+        "CBodyComponent.m_PredByteVariables.0020",
+        "CBodyComponent.m_PredByteVariables.0021"
+      ],
+      "result": "coordinate_like_fields_present"
+    },
+    {
+      "entityKey": "312:533:8732984:713",
+      "className": "CNPC_Boss_Tier2",
+      "coordinateTriples": [
+        {
+          "fields": [
+            "CBodyComponent.m_vecX",
+            "CBodyComponent.m_vecY",
+            "CBodyComponent.m_vecZ"
+          ],
+          "values": {
+            "x": 648,
+            "y": 128,
+            "z": 384
+          }
+        },
+        {
+          "fields": [
+            "CBodyComponent.m_cellX",
+            "CBodyComponent.m_cellY",
+            "CBodyComponent.m_cellZ"
+          ],
+          "values": {
+            "x": 34,
+            "y": 38,
+            "z": 32
+          }
+        }
+      ],
+      "positionCandidateFields": [
+        "CBodyComponent",
+        "CBodyComponent.m_cellX",
+        "CBodyComponent.m_cellY",
+        "CBodyComponent.m_cellZ",
+        "CBodyComponent.m_vecX",
+        "CBodyComponent.m_vecY",
+        "CBodyComponent.m_vecZ",
+        "CBodyComponent.m_hParent",
+        "CBodyComponent.m_angRotation",
+        "CBodyComponent.m_flScale",
+        "CBodyComponent.m_hSequence",
+        "CBodyComponent.m_flSeqStartTime",
+        "CBodyComponent.m_flSeqFixedCycle",
+        "CBodyComponent.m_nAnimLoopMode",
+        "CBodyComponent.m_flPlaybackRate",
+        "CBodyComponent.m_name",
+        "CBodyComponent.m_hierarchyAttachName",
+        "CBodyComponent.m_hModel",
+        "CBodyComponent.m_vRootBoneOffset",
+        "CBodyComponent.m_nRootBoneOffsetResetSerialNumber",
+        "CBodyComponent.m_bClientClothCreationSuppressed",
+        "CBodyComponent.m_MeshGroupMask",
+        "CBodyComponent.m_nBodyGroupChoices",
+        "CBodyComponent.m_nBodyGroupChoices.0000",
+        "CBodyComponent.m_nIdealMotionType",
+        "CBodyComponent.m_bUseParentRenderBounds",
+        "CBodyComponent.m_materialGroup",
+        "CBodyComponent.m_nHitboxSet",
+        "CBodyComponent.m_nAnimationAlgorithm",
+        "CBodyComponent.m_vecSecondarySkeletons",
+        "CBodyComponent.m_nSecondarySkeletonMasterCount",
+        "CBodyComponent.m_hGraphDefinitionAG2",
+        "CBodyComponent.m_serializedPoseRecipeAG2",
+        "CBodyComponent.m_nSerializePoseRecipeSizeAG2",
+        "CBodyComponent.m_nSerializePoseRecipeVersionAG2",
+        "CBodyComponent.m_nServerGraphInstanceIteration",
+        "CBodyComponent.m_nServerSerializationContextIteration",
+        "CBodyComponent.m_primaryGraphId",
+        "CBodyComponent.m_vecExternalGraphIds",
+        "CBodyComponent.m_vecExternalClipIds",
+        "CBodyComponent.m_PredBoolVariables",
+        "CBodyComponent.m_PredBoolVariables.0000",
+        "CBodyComponent.m_PredByteVariables",
+        "CBodyComponent.m_PredByteVariables.0000",
+        "CBodyComponent.m_PredByteVariables.0001",
+        "CBodyComponent.m_PredByteVariables.0002",
+        "CBodyComponent.m_PredByteVariables.0003",
+        "CBodyComponent.m_PredByteVariables.0004",
+        "CBodyComponent.m_PredByteVariables.0005",
+        "CBodyComponent.m_PredByteVariables.0006",
+        "CBodyComponent.m_PredByteVariables.0007",
+        "CBodyComponent.m_PredByteVariables.0008",
+        "CBodyComponent.m_PredByteVariables.0009",
+        "CBodyComponent.m_PredByteVariables.0010",
+        "CBodyComponent.m_PredByteVariables.0011",
+        "CBodyComponent.m_PredByteVariables.0012",
+        "CBodyComponent.m_PredByteVariables.0013",
+        "CBodyComponent.m_PredByteVariables.0014",
+        "CBodyComponent.m_PredByteVariables.0015",
+        "CBodyComponent.m_PredByteVariables.0016",
+        "CBodyComponent.m_PredByteVariables.0017",
+        "CBodyComponent.m_PredByteVariables.0018",
+        "CBodyComponent.m_PredByteVariables.0019",
+        "CBodyComponent.m_PredByteVariables.0020",
+        "CBodyComponent.m_PredByteVariables.0021"
+      ],
+      "result": "coordinate_like_fields_present"
+    }
+  ],
+  "difference": "target serializers declare component spatial fields, and bounded target observations expose CBodyComponent coordinate triples for some current Walker-class entities"
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "075",
+  "diagnosis": "coordinates_omitted_by_compact_filter",
+  "gate": "replay_009_fixed_entity_spatial_properties_ready_with_gaps",
+  "rationale": [
+    "Target serializers and bounded field-path observations were inspected for Mid Boss and Walker classes.",
+    "Player pawn controls prove the parser can expose CBodyComponent.m_vecX/Y/Z positions in replay 009.",
+    "Target CREATE/UPDATE payloads and current-state samples expose CBodyComponent coordinate triples for Walker-class entities.",
+    "The prior compact objective/structure observability filters omitted these coordinate fields, so Task 074 did not have fixed-entity coordinates to resolve.",
+    "The recovered coordinates are still not a validated map projection and do not establish Walker lane identity, regions, proximity, or mechanic effects."
+  ],
+  "summary": {
+    "schemaVersion": "1.0.0",
+    "taskId": "075",
+    "targetClassesInspected": [
+      "CNPC_MidBoss",
+      "CNPC_Boss_Tier2"
+    ],
+    "serializerSpatialDeclarationsFound": 68,
+    "targetFieldPathsObserved": 1097,
+    "targetPositionFieldPathsObserved": 724,
+    "createBaselineSpatialFields": 724,
+    "componentReferencesResolved": 0,
+    "playerControlComparisonResult": "player_position_path_works",
+    "coordinateDecoderTypesFound": [
+      "coordinate_float_decoder",
+      "vector_decoder",
+      "cell_quantized_coordinate_decoder"
+    ],
+    "independentParserResult": "comparison_unavailable",
+    "coordinateCandidatesRecovered": 8,
+    "currentStateCoordinateCandidatesRecovered": 4,
+    "observedPayloadCoordinateCandidatesRecovered": 4,
+    "coordinateBasisResult": "parser_body_component_coordinate_like_fields_exposed_without_map_transform",
+    "boundedExtractorCreated": true,
+    "diagnosisDecision": "coordinates_omitted_by_compact_filter",
+    "directCoordinatesExposed": true,
+    "componentResolvedCoordinatesExposed": false,
+    "compactFilterOmissionFound": true,
+    "newDecoderRequired": false,
+    "transformFitted": false,
+    "lanesRegionsProximityEmitted": false,
+    "mechanicEffectsApplied": 0,
+    "protections": {
+      "replay005Read": false,
+      "replay005Processed": false,
+      "botFixturesProcessed": false
+    },
+    "gate": "replay_009_fixed_entity_spatial_properties_ready_with_gaps",
+    "blockedFollowUp": "tasks/blocked/076-resolve-replay-009-fixed-entity-coordinates-and-walker-identities.md"
+  }
+}

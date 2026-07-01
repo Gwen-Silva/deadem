@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "075",
+  "stages": [
+    {
+      "stageId": "serializer_schema_registration",
+      "codePaths": [
+        "packages/engine/src/data/fields/Serializer.js",
+        "packages/engine/src/data/Class.js"
+      ],
+      "inputRepresentation": "network serializer definitions",
+      "outputRepresentation": "Class.serializer and field path name/decoder lookup",
+      "positionRelevantBehavior": "Serializer can declare nested component fields and resolve flattened field names for decoded field path ids.",
+      "knownFilters": [],
+      "potentialLossPoints": [
+        "declaration present but never updated for target entity"
+      ],
+      "evidence": [
+        "Serializer.getNameForFieldPathId",
+        "Serializer.getDecoderForFieldPathId"
+      ]
+    },
+    {
+      "stageId": "field_path_decode",
+      "codePaths": [
+        "packages/engine/src/extractors/FieldPathExtractor.js",
+        "packages/engine/src/extractors/EntityMutationExtractor.js"
+      ],
+      "inputRepresentation": "entity mutation bitstream",
+      "outputRepresentation": "field path ids plus decoded values",
+      "positionRelevantBehavior": "EntityMutationExtractor decodes every field path id through the class serializer before entity state update.",
+      "knownFilters": [],
+      "potentialLossPoints": [
+        "field path absent from CREATE/UPDATE payload",
+        "decoder cannot parse unsupported type"
+      ],
+      "evidence": [
+        "EntityMutationExtractor.all/applyTo"
+      ]
+    },
+    {
+      "stageId": "entity_state_storage",
+      "codePaths": [
+        "packages/engine/src/data/entity/Entity.js",
+        "packages/engine/src/data/entity/EntityStateLayout.js"
+      ],
+      "inputRepresentation": "field path id and normalized value",
+      "outputRepresentation": "typed entity state addressable by getField/fieldEntries",
+      "positionRelevantBehavior": "Float/vector/int fields are retained when present; fieldEntries can enumerate current present fields.",
+      "knownFilters": [],
+      "potentialLossPoints": [
+        "field not present on target entity",
+        "component relation exists but no coordinate component is network entity"
+      ],
+      "evidence": [
+        "Entity.updateByFieldPathId",
+        "Entity.fieldEntries"
+      ]
+    },
+    {
+      "stageId": "compact_observability_filter",
+      "codePaths": [
+        "scripts/extract-replay-009-objective-structure-observability.js"
+      ],
+      "inputRepresentation": "decoded entity mutations and selected property terms",
+      "outputRepresentation": "objective-structure-property-inventory.json",
+      "positionRelevantBehavior": "Task 062 selected objective/state/team/health/name/parent terms, not a full spatial dump.",
+      "knownFilters": [
+        "PROPERTY_TERMS in Task 062 omit most coordinate-specific words except parent/name/model"
+      ],
+      "potentialLossPoints": [
+        "coordinate field could be decoded but omitted by compact filter"
+      ],
+      "evidence": [
+        "Task 062 property inventory"
+      ]
+    },
+    {
+      "stageId": "factual_event_conversion",
+      "codePaths": [
+        "scripts/convert-replay-009-objective-structure-factual-events.js"
+      ],
+      "inputRepresentation": "Task 062 compact lifecycle/property evidence",
+      "outputRepresentation": "bounded factual objective/structure events",
+      "positionRelevantBehavior": "Task 063 converts lifecycle/health/team/state only; it does not create spatial observations.",
+      "knownFilters": [
+        "event type whitelist excludes position events"
+      ],
+      "potentialLossPoints": [
+        "position not represented in factual event model"
+      ],
+      "evidence": [
+        "Task 063 factual events have no world position"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "075",
+  "rawPayloadAccess": "not_committed",
+  "decoderOutputCompared": true,
+  "targetSpatialFieldPathObservations": 724,
+  "compactSpatialCandidateProperties": 16,
+  "lossAssessment": [
+    {
+      "failureMode": "unsupported_vector_codec",
+      "observed": false,
+      "evidence": "Player pawn control positions decode through existing scalar/vector-capable decoder path."
+    },
+    {
+      "failureMode": "quantized_vector_decoder_gap",
+      "observed": false,
+      "evidence": "Target cell coordinate field paths are observed; no missing quantized-vector decoder is required for the bounded evidence."
+    },
+    {
+      "failureMode": "nested_serializer_flattening",
+      "observed": false,
+      "evidence": "Component fields such as CBodyComponent.* flatten and decode for non-coordinate target properties."
+    },
+    {
+      "failureMode": "component_reference_not_followed",
+      "observed": true,
+      "evidence": "Reference-style CBodyComponent fields exist, but no explicit coordinate-bearing scene-node/component target was resolved."
+    },
+    {
+      "failureMode": "field_path_name_resolution_failure",
+      "observed": false,
+      "evidence": "Target field path ids resolve to names in bounded observations."
+    },
+    {
+      "failureMode": "compact_filter_omission",
+      "observed": true,
+      "evidence": "The bounded target field-path audit recovered CBodyComponent coordinate triples, while the prior compact Task 062 property inventory did not preserve coordinate properties."
+    },
+    {
+      "failureMode": "create_only_field_omission",
+      "observed": true,
+      "evidence": "Coordinate triples are present in target CREATE payloads and can be recovered by a bounded target-class extraction pass."
+    }
+  ],
+  "coordinateTriplesRecovered": 4,
+  "compactHasCompleteCoordinateTriple": false,
+  "compactFilterOmissionObserved": true
+}

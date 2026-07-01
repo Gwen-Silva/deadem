@@ -68,3 +68,4 @@ This is a compact navigation index. The task files remain the source records.
 | 072 | Measure Replay 009 User-Supplied Map Landmarks | replay_009_independent_landmark_coordinates_ready_with_limitations | pending commit | `reports/replay-009-user-map-landmark-measurement.md` | Task 073 blocked |
 | 073 | Retry Replay 009 Transform Validation With Measured Landmarks | replay_009_candidate_transform_not_ready | pending commit | `reports/replay-009-transform-validation-retry.md` | Task 074 blocked |
 | 074 | Resolve Replay 009 Walker Identity And Fixed Entity Coordinates | replay_009_walker_identity_coordinates_not_ready | pending commit | `reports/replay-009-walker-identity-fixed-coordinate-resolution.md` | Task 075 blocked |
+| 075 | Diagnose Replay 009 Fixed Entity Spatial Property Extraction | replay_009_fixed_entity_spatial_properties_ready_with_gaps | pending commit | `reports/replay-009-fixed-entity-spatial-property-diagnosis.md` | Task 076 blocked |

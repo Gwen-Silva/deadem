@@ -171,3 +171,10 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   `CNPC_Boss_Tier2` world coordinates and does not resolve Walker team/lane
   identity. The next layer is a narrow parser spatial-property extraction
   diagnosis, not transform fitting.
+- Replay 009 fixed spatial-property diagnosis outputs live in
+  `output/replay-009-fixed-spatial-diagnosis/`. Task 075 shows that bounded
+  parser-level evidence does expose `CBodyComponent.m_vecX/Y/Z` and
+  `CBodyComponent.m_cellX/Y/Z` coordinate-like fields for `CNPC_Boss_Tier2`;
+  the compact objective/structure filters omitted them. These are still not a
+  validated transform, lane assignment, region projection, objective proximity,
+  or mechanic effect.
