@@ -190,3 +190,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   named Sapphire/Amber lane Walker symbols before residual inspection. Raw team
   values and two coordinate-ready Walkers are preserved, but no transform retry
   is eligible.
+- Replay 009 Walker lane-evidence outputs live in
+  `output/replay-009-walker-lane-evidence/`. Task 078 uses participant and
+  parser-roster controls to map raw team `3` to Sapphire/Archmother and raw
+  team `2` to Amber/Hidden King for all six Walker handles. Lane identity,
+  named Walker landmark joins, fit/validation correspondences, transform
+  fitting, regions, proximity, and mechanic effects remain unavailable.

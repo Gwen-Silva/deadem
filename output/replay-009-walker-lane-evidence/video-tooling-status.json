@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "078",
+  "videoPath": "samples/videos/replay_009_independent_validation.mp4.mp4",
+  "videoExists": true,
+  "tools": [
+    {
+      "command": "ffmpeg",
+      "available": false,
+      "normalizedPath": null,
+      "version": null,
+      "limitations": [
+        "ffmpeg was not found on PATH; no new frame extraction or ffprobe metadata was produced."
+      ]
+    },
+    {
+      "command": "ffprobe",
+      "available": false,
+      "normalizedPath": null,
+      "version": null,
+      "limitations": [
+        "ffprobe was not found on PATH; no new frame extraction or ffprobe metadata was produced."
+      ]
+    }
+  ],
+  "boundedFrameExtractionPerformed": false,
+  "reason": "ffmpeg/ffprobe are unavailable on PATH in this environment.",
+  "limitations": [
+    "Existing Task 064 visual overlays remain class/set-level for Walkers.",
+    "Task 078 did not use visual fit, coordinate signs, or map position to identify handles."
+  ]
+}

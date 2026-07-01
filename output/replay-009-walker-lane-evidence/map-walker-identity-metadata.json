@@ -1,0 +1,1448 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "078",
+  "sources": [
+    "output/replay-009-transform-validation/map-resource-inventory.json",
+    "output/replay-009-transform-validation/extraction-tool-inventory.json",
+    "output/replay-009-landmark-measurement/measured-landmarks.json"
+  ],
+  "extractionTools": [
+    {
+      "toolId": "task070_vpk_directory_parser",
+      "used": true,
+      "outputTypes": [
+        "bounded resource inventory"
+      ],
+      "limitations": [
+        "Does not decode compiled VMAP, entity lumps, binary KV3, or texture payloads."
+      ]
+    },
+    {
+      "toolId": "task070_gametracking_index_filter",
+      "used": true,
+      "outputTypes": [
+        "bounded spatial resource inventory"
+      ],
+      "limitations": [
+        "Index rows expose names, CRCs, and sizes only; they do not expose coordinates."
+      ]
+    },
+    {
+      "toolId": "valveresourceformat",
+      "used": false,
+      "outputTypes": [
+        "resource-specific decoded metadata"
+      ],
+      "limitations": [
+        "Unavailable locally; no external clone or binary was committed."
+      ]
+    }
+  ],
+  "walkerResourceMatches": [
+    {
+      "resourceId": "resource_013",
+      "relativePackagePath": "materials/minimap/boss_health_fill_t2.vtex_c",
+      "resourceType": "minimap_material_or_texture",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_018",
+      "relativePackagePath": "materials/minimap/boss_health_t2.vtex_c",
+      "resourceType": "minimap_material_or_texture",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_059",
+      "relativePackagePath": "materials/models/particle/tier2_boss_bullet.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_060",
+      "relativePackagePath": "materials/models/particle/tier2_boss_bullet_color_psd_29ad3c53.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_061",
+      "relativePackagePath": "materials/models/particle/tier2_boss_bullet_trans_psd_9831837f.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_062",
+      "relativePackagePath": "materials/models/particle/tier2_boss_bullet_trans_tga_24ead17.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_063",
+      "relativePackagePath": "materials/models/particle/tier2_boss_bullet_vmat_g_tnormalroughness_53b47c48.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_064",
+      "relativePackagePath": "materials/models/particle/tier2_boss_tracer.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_065",
+      "relativePackagePath": "materials/models/particle/tier2_boss_tracer_vmat_g_tnormalroughness_53b47c48.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_066",
+      "relativePackagePath": "materials/models/particle/tier2boss_barrage_projectile_color_psd_da133fc8.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_067",
+      "relativePackagePath": "materials/models/particle/tier2boss_barrage_projectile_core.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_068",
+      "relativePackagePath": "materials/models/particle/tier2boss_barrage_projectile_shell.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_069",
+      "relativePackagePath": "materials/models/particle/tier2boss_barrage_projectile_shell_vmat_g_tnormalroughness_53b47c48.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_087",
+      "relativePackagePath": "materials/particle/npc/tier2boss_ground_stomp_projected.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_088",
+      "relativePackagePath": "materials/particle/npc/tier2boss_ground_stomp_projected_vmat_g_tnormalroughness_53b47c48.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_089",
+      "relativePackagePath": "materials/particle/npc/tier2boss_ground_stomp_projected_vmat_g_tselfillum_2a5a2fce.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_090",
+      "relativePackagePath": "materials/particle/projected/tier2boss_rocket_ground.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_091",
+      "relativePackagePath": "materials/particle/projected/tier2boss_rocket_ground_light.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_092",
+      "relativePackagePath": "materials/particle/projected/tier2boss_rocket_ground_light_vmat_g_tnormalroughness_9d01035b.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_093",
+      "relativePackagePath": "materials/particle/projected/tier2boss_rocket_ground_vmat_g_tselfillum_2a5a2fce.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_094",
+      "relativePackagePath": "materials/particle/projected/tier2boss_rocket_lava_ground.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_157",
+      "relativePackagePath": "models/npc/boss_defense/boss_defense.vmdl_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_158",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_159",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_color_psd_af96b941.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_160",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_damage.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_161",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_damage_color_psd_8ae3b07b.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_162",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_damage_vmat_g_tselfillummask_2b2ebb3f.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_163",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_destroyed.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_164",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_destroyed_ao_psd_8e4071de.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_165",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_destroyed_color_psd_4e1ad2a5.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_166",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_destroyed_mask_psd_7d3febcd.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_167",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_destroyed_mask_psd_9e16f8f3.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_168",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_destroyed_rough_psd_a41febe1.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_169",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_ankles_rough_psd_f4cf1051.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_170",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_detail_psd_fcc7eeee.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_171",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_eye.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_172",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_eye_vmat_g_tnormalroughness_53b47c48.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_173",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_guns.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_174",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_guns_ao_psd_dde1a04c.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_175",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_guns_color_psd_2731b2d.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_176",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_guns_new.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_177",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_guns_new_enemy.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_178",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_guns_rough_psd_d00e09a0.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_179",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_180",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_ao_psd_24874908.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_181",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_color_enemy_test_psd_73edbd43.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_182",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_color_psd_106a79f3.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_183",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_color_test_ao_psd_2ea018c1.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_184",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_color_test_psd_8d80415c.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_185",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_enemy.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_186",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_enemy_color_psd_61ee5b6b.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_187",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_enemy_test.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_188",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_new.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_189",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_new_enemy.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_190",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_rough_psd_fd482c4a.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_191",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_head_test.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_192",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_193",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_ao_psd_9915e0d6.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_194",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_color_psd_c866fbcf.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_195",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_damage.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_196",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_damage_color_psd_e4cd6e0e.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_197",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_damage_vmat_g_tselfillummask_2b2ebb3f.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_198",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_destroyed.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_199",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_destroyed_color_psd_59b4c68d.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_200",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_destroyed_mask_psd_1cfbcee9.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_201",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_destroyed_mask_psd_8a8c3a6b.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_202",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_laser_destroyed_rough_psd_68cd45e1.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_203",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_204",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_ao_psd_3c1985aa.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_205",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_color_psd_d191907d.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_206",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_enemy.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_207",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_enemy_color_psd_80fc11bf.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_208",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_new.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_209",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_new_enemy.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_210",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_legs_rough_psd_8e6f0e4d.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_211",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_new_enemy_feet.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_212",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_new_feet.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_213",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_new_torso.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_214",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_parts_new.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_215",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_red_glow.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_216",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_red_glow_vmat_g_tcolor_480c1a3a.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_217",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_red_glow_vmat_g_tnormalroughness_53b47c48.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_218",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_219",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_color_psd_44acbf15.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_220",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_damage.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_221",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_damage_color_psd_2f86cd5c.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_222",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_damage_vmat_g_tselfillummask_2b2ebb3f.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_223",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_destroyed.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_224",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_destroyed_color_psd_e5dc7eb1.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_225",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_launcher_destroyed_vmat_g_tnormalroughness_2856af9b.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_226",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_new.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_227",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_rocket_test.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_228",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_torso.vmat_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_229",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_torso_color_psd_b7343a14.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    },
+    {
+      "resourceId": "resource_230",
+      "relativePackagePath": "models/npc/boss_defense/materials/boss_defense_torso_rough_psd_2349c077.vtex_c",
+      "resourceType": "other",
+      "inspectionStatus": "available",
+      "candidateMeaning": "walker_or_tier2_material_or_model_metadata",
+      "explicitLaneOrTeamField": false,
+      "explicitReplayJoinKey": false,
+      "usableForHandleToLandmarkJoin": false,
+      "limitations": [
+        "Package index metadata exposes resource names only; no entity-lump targetname, lane, route, spawn, or map entity ID join was decoded.",
+        "Resource names are class/set-level clues, not individual replay handle identities."
+      ]
+    }
+  ],
+  "measuredMapWalkerLandmarks": [
+    {
+      "landmarkId": "standard_sapphire_yellow_walker",
+      "team": "sapphire",
+      "lane": "yellow",
+      "identityStatus": "supported",
+      "pixelCoordinateAvailable": true,
+      "usableForIdentityJoin": false,
+      "limitations": [
+        "Map-side landmark label is available, but no non-coordinate replay handle join exists.",
+        "Pixel coordinates are not used in Task 078 identity decisions."
+      ]
+    },
+    {
+      "landmarkId": "standard_sapphire_blue_walker",
+      "team": "sapphire",
+      "lane": "blue",
+      "identityStatus": "supported",
+      "pixelCoordinateAvailable": true,
+      "usableForIdentityJoin": false,
+      "limitations": [
+        "Map-side landmark label is available, but no non-coordinate replay handle join exists.",
+        "Pixel coordinates are not used in Task 078 identity decisions."
+      ]
+    },
+    {
+      "landmarkId": "standard_sapphire_green_walker",
+      "team": "sapphire",
+      "lane": "green",
+      "identityStatus": "supported",
+      "pixelCoordinateAvailable": true,
+      "usableForIdentityJoin": false,
+      "limitations": [
+        "Map-side landmark label is available, but no non-coordinate replay handle join exists.",
+        "Pixel coordinates are not used in Task 078 identity decisions."
+      ]
+    },
+    {
+      "landmarkId": "standard_amber_yellow_walker",
+      "team": "amber",
+      "lane": "yellow",
+      "identityStatus": "supported",
+      "pixelCoordinateAvailable": true,
+      "usableForIdentityJoin": false,
+      "limitations": [
+        "Map-side landmark label is available, but no non-coordinate replay handle join exists.",
+        "Pixel coordinates are not used in Task 078 identity decisions."
+      ]
+    },
+    {
+      "landmarkId": "standard_amber_blue_walker",
+      "team": "amber",
+      "lane": "blue",
+      "identityStatus": "supported",
+      "pixelCoordinateAvailable": true,
+      "usableForIdentityJoin": false,
+      "limitations": [
+        "Map-side landmark label is available, but no non-coordinate replay handle join exists.",
+        "Pixel coordinates are not used in Task 078 identity decisions."
+      ]
+    },
+    {
+      "landmarkId": "standard_amber_green_walker",
+      "team": "amber",
+      "lane": "green",
+      "identityStatus": "supported",
+      "pixelCoordinateAvailable": true,
+      "usableForIdentityJoin": false,
+      "limitations": [
+        "Map-side landmark label is available, but no non-coordinate replay handle join exists.",
+        "Pixel coordinates are not used in Task 078 identity decisions."
+      ]
+    }
+  ],
+  "directJoinFound": false
+}

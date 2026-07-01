@@ -162,6 +162,11 @@ Task 077 then attempted identity-only Walker resolution and kept the transform
 blocked: raw team IDs remain unmapped to named teams, participant/video evidence
 is only class/set-level, and no individual Walker handle is linked to a named
 map landmark before residual inspection.
+Task 078 acquired a narrow non-coordinate team-control bridge: Aresius maps to
+raw team `3`, supporting raw team `3` as Sapphire/Archmother and raw team `2`
+as Amber/Hidden King. This resolves named faction for the six Walker handles,
+but Yellow/Blue/Green lane identity and handle-to-map-landmark correspondence
+remain unresolved; transform retry is still blocked.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer

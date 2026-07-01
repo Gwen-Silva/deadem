@@ -217,3 +217,11 @@ are evaluated as set-level evidence, and existing visual-validation metadata is
 kept bounded. No named team/lane identity, map-side correspondence,
 fit/validation anchor split, transform, region, proximity, canonical spatial
 field, or mechanic effect is emitted.
+
+`output/replay-009-walker-lane-evidence/` contains the Task 078 narrow
+non-coordinate identity acquisition. The gate is
+`replay_009_walker_lane_identity_evidence_ready_with_gaps`: raw team `3` is
+supported as Sapphire/Archmother and raw team `2` as Amber/Hidden King, giving
+all six Walker handles named faction. No Yellow/Blue/Green lane identity,
+handle-to-named-landmark join, fit/validation correspondence, transform,
+region, proximity, canonical spatial field, or mechanic effect is emitted.

@@ -104,6 +104,14 @@ lane/route/spawn/name field was exposed. Transform retry remains blocked until
 new non-coordinate evidence links at least some Walker handles to named
 team/lane map landmarks before residual inspection.
 
+Task 078 acquired the first narrow identity improvement. The gate is
+`replay_009_walker_lane_identity_evidence_ready_with_gaps`: participant and
+parser-roster controls support raw team `3` as Sapphire/Archmother and raw team
+`2` as Amber/Hidden King, so all six Walkers have named faction. This still
+does not identify Yellow/Blue/Green lane or a specific map Walker landmark for
+any handle, so transform retry remains blocked pending lane-only identity
+evidence.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

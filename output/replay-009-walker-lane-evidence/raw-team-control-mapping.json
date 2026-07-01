@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "078",
+  "replayId": "replay_009",
+  "participantControl": {
+    "participantName": "Aresius",
+    "participantHero": "Warden",
+    "parserPlayerKey": "76561198277999856",
+    "parserRawTeamValue": 3,
+    "evidenceStatus": "supported",
+    "limitations": [
+      "Parser roster exposes player display names in the heroName/heroClass field path for this compact output.",
+      "The participant packet is advisory human evidence, independent from parser output but not independent from the match origin."
+    ]
+  },
+  "namedTeamControls": [
+    {
+      "rawTeamValue": 3,
+      "namedTeam": "sapphire",
+      "faction": "archmother",
+      "confidence": "supported",
+      "evidence": [
+        "Parser roster maps participant name Aresius to raw team value 3.",
+        "Human packet identifies Archmother/Sapphire as the top replay-side faction and Hidden King as enemy in replay annotations.",
+        "Human packet reports Archmother team taking Rejuvenator charges."
+      ],
+      "limitations": [
+        "This maps raw team values to named factions only; it does not identify Walker lanes.",
+        "Human participant evidence is advisory and cannot validate exact coordinates."
+      ]
+    },
+    {
+      "rawTeamValue": 2,
+      "namedTeam": "amber",
+      "faction": "hidden_king",
+      "confidence": "supported",
+      "evidence": [
+        "Replay 009 roster has exactly two raw teams with six players each.",
+        "Raw team value 3 is supported as the participant/Archmother/Sapphire side; the other player team is raw value 2.",
+        "Human packet refers to Hidden King as enemy."
+      ],
+      "limitations": [
+        "This is a derived two-team complement, not a direct parser faction label.",
+        "It must not be used to infer lane identity or map symbol pairing."
+      ]
+    }
+  ],
+  "rawTeamValuesMapped": 2,
+  "walkerTeamAssignments": [
+    {
+      "entityKey": "307:381:6242611:713:-1",
+      "className": "CNPC_Boss_Tier2",
+      "rawTeamValue": 3,
+      "namedTeam": "sapphire",
+      "faction": "archmother",
+      "confidence": "supported",
+      "evidenceRefs": [
+        "raw_team_control_3"
+      ],
+      "coordinateUsedForIdentity": false,
+      "lane": null,
+      "mapLandmarkId": null,
+      "limitations": [
+        "Named team assignment does not imply lane or map landmark identity.",
+        "No coordinate sign, map position, symmetry, nearest symbol, residual, or permutation evidence was used."
+      ]
+    },
+    {
+      "entityKey": "308:523:8569140:713:-1",
+      "className": "CNPC_Boss_Tier2",
+      "rawTeamValue": 3,
+      "namedTeam": "sapphire",
+      "faction": "archmother",
+      "confidence": "supported",
+      "evidenceRefs": [
+        "raw_team_control_3"
+      ],
+      "coordinateUsedForIdentity": false,
+      "lane": null,
+      "mapLandmarkId": null,
+      "limitations": [
+        "Named team assignment does not imply lane or map landmark identity.",
+        "No coordinate sign, map position, symmetry, nearest symbol, residual, or permutation evidence was used."
+      ]
+    },
+    {
+      "entityKey": "309:685:11223349:713:-1",
+      "className": "CNPC_Boss_Tier2",
+      "rawTeamValue": 2,
+      "namedTeam": "amber",
+      "faction": "hidden_king",
+      "confidence": "supported",
+      "evidenceRefs": [
+        "raw_team_control_2"
+      ],
+      "coordinateUsedForIdentity": false,
+      "lane": null,
+      "mapLandmarkId": null,
+      "limitations": [
+        "Named team assignment does not imply lane or map landmark identity.",
+        "No coordinate sign, map position, symmetry, nearest symbol, residual, or permutation evidence was used."
+      ]
+    },
+    {
+      "entityKey": "310:1003:16433462:713:-1",
+      "className": "CNPC_Boss_Tier2",
+      "rawTeamValue": 2,
+      "namedTeam": "amber",
+      "faction": "hidden_king",
+      "confidence": "supported",
+      "evidenceRefs": [
+        "raw_team_control_2"
+      ],
+      "coordinateUsedForIdentity": false,
+      "lane": null,
+      "mapLandmarkId": null,
+      "limitations": [
+        "Named team assignment does not imply lane or map landmark identity.",
+        "No coordinate sign, map position, symmetry, nearest symbol, residual, or permutation evidence was used."
+      ]
+    },
+    {
+      "entityKey": "311:565:9257271:713:-1",
+      "className": "CNPC_Boss_Tier2",
+      "rawTeamValue": 2,
+      "namedTeam": "amber",
+      "faction": "hidden_king",
+      "confidence": "supported",
+      "evidenceRefs": [
+        "raw_team_control_2"
+      ],
+      "coordinateUsedForIdentity": false,
+      "lane": null,
+      "mapLandmarkId": null,
+      "limitations": [
+        "Named team assignment does not imply lane or map landmark identity.",
+        "No coordinate sign, map position, symmetry, nearest symbol, residual, or permutation evidence was used."
+      ]
+    },
+    {
+      "entityKey": "312:533:8732984:713:-1",
+      "className": "CNPC_Boss_Tier2",
+      "rawTeamValue": 3,
+      "namedTeam": "sapphire",
+      "faction": "archmother",
+      "confidence": "supported",
+      "evidenceRefs": [
+        "raw_team_control_3"
+      ],
+      "coordinateUsedForIdentity": false,
+      "lane": null,
+      "mapLandmarkId": null,
+      "limitations": [
+        "Named team assignment does not imply lane or map landmark identity.",
+        "No coordinate sign, map position, symmetry, nearest symbol, residual, or permutation evidence was used."
+      ]
+    }
+  ],
+  "result": "raw_team_values_mapped_to_named_factions_with_constraints"
+}
