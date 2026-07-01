@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/ingest-replay-009-human-landmarks.mjs",
+  "gate": "replay_009_independent_landmark_coordinates_missing",
+  "reason": "Text annotations were ingested, but the five user-supplied map images were not locally accessible and no independent map-side coordinates could be measured.",
+  "requiredUserAction": {
+    "directory": ".local/spatial-inputs/replay-009-user-maps/",
+    "filenames": [
+      "replay-009-custom-map-dense.jpg",
+      "replay-009-custom-map-reduced.jpg",
+      "replay-009-custom-map-clean.jpg",
+      "replay-009-standard-minimap.jpg",
+      "replay-009-urn-spawn-diagram.png"
+    ]
+  }
+}

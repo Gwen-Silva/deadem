@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Replay Human Annotation Packet",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "source",
+    "replayContext"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object"
+    },
+    "replayContext": {
+      "type": "object"
+    },
+    "eventAnnotationCount": {
+      "type": "number"
+    },
+    "mechanicsAnnotationCount": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": true
+}

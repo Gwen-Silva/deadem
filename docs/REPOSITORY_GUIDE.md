@@ -147,3 +147,8 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   landmark-candidate rejection, model preregistration, and the transform gate.
   No transform is fitted because independent map-side landmark coordinates and
   held-out validation anchors are missing.
+- Replay 009 human annotation outputs live in
+  `output/replay-009-human-annotations/`, and independent landmark acquisition
+  outputs live in `output/replay-009-independent-landmarks/`. Task 071 records
+  the participant packet as advisory evidence. The referenced map/minimap images
+  were not locally accessible, so no coordinate-bearing landmark set exists yet.

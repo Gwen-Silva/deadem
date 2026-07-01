@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/ingest-replay-009-human-landmarks.mjs",
+  "source": {
+    "annotationSourceId": "user_replay_009_participant_2026_07_01",
+    "sourceType": "human_player_annotation",
+    "participantStatus": "played_in_match",
+    "participantPlayerName": "Aresius",
+    "participantHero": "Warden",
+    "recordedAt": "2026-07-01",
+    "independenceFromParser": true,
+    "independenceFromMatchDataOrigin": false,
+    "authority": "advisory",
+    "mayGuideSearch": true,
+    "mayConstrainIdentity": true,
+    "mayValidateExactCoordinates": false,
+    "mayValidateMechanicVersion": false
+  },
+  "replayContext": {
+    "replayId": "replay_009",
+    "matchId": "91381179",
+    "userPlayedInMatch": true,
+    "playerName": "Aresius",
+    "hero": "Warden",
+    "approximateMatchDate": "approximately one day before 2026-07-01",
+    "mapVisualCompatibilityStatement": "Map visually matches the current map used by the player; no major map-layout changes were known between the match and current play.",
+    "updateRegressionStatement": "Replay opened before a game update on 2026-06-30; after the update it began failing approximately 5-10 seconds after heroes left the zipline.",
+    "datePrecision": "approximate_user_report",
+    "limitations": [
+      "Replay date and update behavior are participant reports, not independently verified by Task 071."
+    ]
+  },
+  "videoRecording": {
+    "videoRecordedAtNormalSpeed": true,
+    "noSeeking": true,
+    "noAcceleration": true,
+    "noRewinding": true,
+    "noSkippedSections": true,
+    "replayTimelineVisible": true,
+    "minimapContinuouslyVisible": true,
+    "cameraRemainedAttachedToPlayer": true,
+    "fullMapViewOpened": false,
+    "minimapUsedCustomMod": true,
+    "limitations": [
+      "Custom minimap is suitable for relative identity/search guidance, not automatically official or version-authoritative geometry."
+    ]
+  },
+  "orientation": {
+    "replayMinimapOrientationFixed": true,
+    "top": [
+      "Archmother",
+      "Sapphire team",
+      "blue team"
+    ],
+    "bottom": [
+      "Hidden King",
+      "Amber team",
+      "yellow team"
+    ],
+    "livePlayCaution": "In normal live play, the minimap usually places the allied team at the bottom; in replay mode Archmother remains top and Hidden King remains bottom.",
+    "limitations": [
+      "Do not confuse replay orientation with player-relative live orientation."
+    ]
+  },
+  "laneOrder": [
+    {
+      "perspective": "Archmother/Sapphire",
+      "left": "Yellow lane",
+      "center": "Blue lane",
+      "right": "Green lane",
+      "sourceType": "human_player_annotation",
+      "semanticStatus": "human_semantic_annotation"
+    },
+    {
+      "perspective": "Hidden King/Amber",
+      "left": "Green lane",
+      "center": "Blue lane",
+      "right": "Yellow lane",
+      "sourceType": "human_player_annotation",
+      "semanticStatus": "human_semantic_annotation"
+    }
+  ],
+  "eventAnnotationCount": 17,
+  "mechanicsAnnotationCount": 13,
+  "annotationHash": "4aa6f18d6b1c953093d593551fdca79778c3600af77f9cb9b19bc364400d5c6e"
+}

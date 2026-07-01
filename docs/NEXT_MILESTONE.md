@@ -50,6 +50,11 @@ Task 070 inspected the local-only preferred VPK candidate and the local package
 index. It found bounded spatial resource metadata but no coordinate-bearing map
 landmarks, so the gate is `replay_009_candidate_transform_not_ready`.
 
+Task 071 ingested a replay-009 participant annotation packet as advisory human
+evidence. The text packet supports search and identity constraints, but the five
+referenced map/minimap images were not locally accessible, so the gate is
+`replay_009_independent_landmark_coordinates_missing`.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

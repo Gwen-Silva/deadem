@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/ingest-replay-009-human-landmarks.mjs",
+  "source": {
+    "annotationSourceId": "user_replay_009_participant_2026_07_01",
+    "sourceType": "human_mechanics_statement",
+    "participantStatus": "played_in_match",
+    "participantPlayerName": "Aresius",
+    "participantHero": "Warden",
+    "recordedAt": "2026-07-01",
+    "independenceFromParser": true,
+    "independenceFromMatchDataOrigin": false,
+    "authority": "advisory",
+    "mayGuideSearch": true,
+    "mayConstrainIdentity": true,
+    "mayValidateExactCoordinates": false,
+    "mayValidateMechanicVersion": false
+  },
+  "mechanics": [
+    {
+      "annotationId": "mechanic_urn_spawn_after_10",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "After 10 minutes, Soul Urn spawns in one of six possible locations.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_neutral_bridge",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "Neutral Urn location is next to the bridge in either Yellow or Green lane.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_favored",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "Favored Urn location is next to a jungle camp near either the favored team's Yellow or Green Walker.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_unfavored",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "Unfavored Urn location is next to a jungle camp near either the enemy team's Yellow or Green Walker.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_respawn_alternates",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "The Urn respawns and alternates lanes every five minutes.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_delayed_respawn",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "If picked up before a scheduled spawn time and delivered after it, it does not spawn again until the next scheduled spawn time.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_descends",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "The Urn descends from the sky for 12 seconds before becoming available.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_urn_melee_pickup",
+      "mechanicId": "spirit_urn",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "A landed Urn is picked up using a melee attack.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_rejuv_visual",
+      "mechanicId": "rejuvenator",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "Rejuvenator appears as a green crystal with green aura and contains the golden angel symbol.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_rejuv_descends",
+      "mechanicId": "rejuvenator",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "Rejuvenator descends where Mid Boss was and becomes claimable after reaching the ground.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_rejuv_three_charges",
+      "mechanicId": "rejuvenator",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "Rejuvenator may be claimed three times using heavy melee; each claimed charge grants a team member a personal Rejuvenator buff.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "mechanic_rejuv_personal_consumption",
+      "mechanicId": "rejuvenator",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "current_player_understanding",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "On death, a player consumes one personal buff; one player cannot consume more than the buff they possess.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved."
+      ]
+    },
+    {
+      "annotationId": "hypothesis_personal_rejuvenator_class",
+      "mechanicId": "rejuvenator",
+      "sourceType": "human_mechanics_statement",
+      "versionStatus": "hypothesis",
+      "applicabilityToReplayBuild": "likely_but_not_version_validated",
+      "mechanicEffectApplied": false,
+      "statement": "CCitadel_ArmorUpgrade_PersonalRejuvenator may represent the personal post-claim buff.",
+      "limitations": [
+        "Do not apply this rule to canonical replay events until build applicability is resolved.",
+        "Treat as hypothesis, not confirmed class mapping."
+      ]
+    }
+  ],
+  "internalClassUncertainty": [
+    "user does not recognize the internal entity classes directly",
+    "CNPC_Boss_Tier2 may correspond to Walker",
+    "Guardian may conceptually be Tier 1",
+    "CCitadel_ArmorUpgrade_PersonalRejuvenator may represent the individual buff",
+    "CNPC_BarrackBoss identity unresolved",
+    "CNPC_Boss_Tier3 identity unresolved",
+    "CNPC_TrooperBoss identity unresolved"
+  ]
+}

@@ -140,6 +140,9 @@ open until independent map coordinates and compatibility evidence are validated.
 Task 070 inspected the local-only preferred package candidate and indexed
 spatially relevant resources, but it still found zero coordinate-bearing
 landmarks and fitted no transform.
+Task 071 ingested a participant annotation packet for replay 009, but the five
+referenced map/minimap images are not present locally, so no independent pixel
+landmark coordinates have been measured yet.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -198,6 +201,8 @@ Major current reports:
 - [`reports/deadem-next-milestone-decision.md`](./reports/deadem-next-milestone-decision.md)
 - [`reports/replay-009-map-geometry-input-acquisition.md`](./reports/replay-009-map-geometry-input-acquisition.md)
 - [`reports/replay-009-candidate-world-to-map-transform-validation.md`](./reports/replay-009-candidate-world-to-map-transform-validation.md)
+- [`reports/replay-009-human-annotation-packet.md`](./reports/replay-009-human-annotation-packet.md)
+- [`reports/replay-009-independent-landmark-coordinate-acquisition.md`](./reports/replay-009-independent-landmark-coordinate-acquisition.md)
 
 ## Running Validation
 

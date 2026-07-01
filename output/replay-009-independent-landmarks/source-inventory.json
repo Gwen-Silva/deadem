@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/ingest-replay-009-human-landmarks.mjs",
+  "sources": [
+    {
+      "sourceId": "user_replay_009_participant_2026_07_01",
+      "sourceType": "human_player_annotation",
+      "authority": "advisory",
+      "available": true,
+      "mayGuideSearch": true,
+      "mayDirectlyValidateTransform": false
+    },
+    {
+      "sourceId": "user_supplied_chat_map_images",
+      "sourceType": "user_supplied_chat_attachment",
+      "available": false,
+      "expectedCount": 5,
+      "mayGuideSearch": true,
+      "mayDirectlyValidateTransform": false,
+      "limitations": [
+        "Referenced in conversation but not accessible as local files to Codex."
+      ]
+    }
+  ]
+}

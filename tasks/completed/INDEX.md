@@ -64,3 +64,4 @@ This is a compact navigation index. The task files remain the source records.
 | 068 | Define Next Deadem Project Milestone | deadem_next_milestone_defined_with_open_dependencies | pending commit | `reports/deadem-next-milestone-decision.md` | Task 069 blocked |
 | 069 | Acquire Replay 009 Map Geometry And Calibration Inputs | replay_009_map_geometry_inputs_ready_with_limitations | pending commit | `reports/replay-009-map-geometry-input-acquisition.md` | Task 070 blocked |
 | 070 | Validate Replay 009 Candidate World-To-Map Transform | replay_009_candidate_transform_not_ready | pending commit | `reports/replay-009-candidate-world-to-map-transform-validation.md` | Task 071 blocked |
+| 071 | Acquire Replay 009 Independent Landmark Coordinates | replay_009_independent_landmark_coordinates_missing | pending commit | `reports/replay-009-independent-landmark-coordinate-acquisition.md` | User must place five map images locally |

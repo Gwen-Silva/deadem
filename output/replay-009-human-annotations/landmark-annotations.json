@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/ingest-replay-009-human-landmarks.mjs",
+  "source": {
+    "annotationSourceId": "user_replay_009_participant_2026_07_01",
+    "sourceType": "human_player_annotation",
+    "participantStatus": "played_in_match",
+    "participantPlayerName": "Aresius",
+    "participantHero": "Warden",
+    "recordedAt": "2026-07-01",
+    "independenceFromParser": true,
+    "independenceFromMatchDataOrigin": false,
+    "authority": "advisory",
+    "mayGuideSearch": true,
+    "mayConstrainIdentity": true,
+    "mayValidateExactCoordinates": false,
+    "mayValidateMechanicVersion": false
+  },
+  "stableLandmarks": [
+    {
+      "landmarkType": "mid_boss",
+      "statements": [
+        "Located exactly at the visual center of the map.",
+        "Located underground on the lowest relevant level.",
+        "Accessed by stairs adjacent to the center.",
+        "Marked on minimap by a golden/yellow angel symbol.",
+        "Similar angel symbols point toward stair access.",
+        "Location has not changed relative to the current map."
+      ],
+      "coordinateAvailable": false
+    },
+    {
+      "landmarkType": "walker",
+      "statements": [
+        "Six fixed Walker positions.",
+        "Positions are mirrored rather than perfectly symmetric.",
+        "One Walker per lane per team.",
+        "Lane line passes through the large Walker diamond on the minimap.",
+        "Team can be identified by side or color.",
+        "Positions have not changed relative to the current map."
+      ],
+      "coordinateAvailable": false
+    },
+    {
+      "landmarkType": "lane_guardian",
+      "statements": [
+        "One Guardian per lane per team.",
+        "Small diamonds near the map midline/equator.",
+        "Lane line passes through the corresponding Guardian.",
+        "Positions have not changed.",
+        "Guardian visual model is humanoid, grey, armored, and holds a large staff."
+      ],
+      "coordinateAvailable": false
+    },
+    {
+      "landmarkType": "patron_base_structures",
+      "statements": [
+        "Patron represented by a diamond covered by a semicircle at top or bottom.",
+        "Weakened Patron occupies same location after Patron state transition.",
+        "Two smaller hollow diamonds are Shrines.",
+        "Three nearby smaller diamonds correspond to three base Guardians."
+      ],
+      "coordinateAvailable": false,
+      "limitations": [
+        "Internal class mappings remain unresolved."
+      ]
+    }
+  ],
+  "orientation": {
+    "replayMinimapOrientationFixed": true,
+    "top": [
+      "Archmother",
+      "Sapphire team",
+      "blue team"
+    ],
+    "bottom": [
+      "Hidden King",
+      "Amber team",
+      "yellow team"
+    ],
+    "livePlayCaution": "In normal live play, the minimap usually places the allied team at the bottom; in replay mode Archmother remains top and Hidden King remains bottom.",
+    "limitations": [
+      "Do not confuse replay orientation with player-relative live orientation."
+    ]
+  },
+  "laneOrder": [
+    {
+      "perspective": "Archmother/Sapphire",
+      "left": "Yellow lane",
+      "center": "Blue lane",
+      "right": "Green lane",
+      "sourceType": "human_player_annotation",
+      "semanticStatus": "human_semantic_annotation"
+    },
+    {
+      "perspective": "Hidden King/Amber",
+      "left": "Green lane",
+      "center": "Blue lane",
+      "right": "Yellow lane",
+      "sourceType": "human_player_annotation",
+      "semanticStatus": "human_semantic_annotation"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Task 071: Acquire Replay 009 Independent Landmark Coordinates
 
-Status: blocked
+Status: completed
 
 Unlocked by: explicit user authorization after Task 070 gate `replay_009_candidate_transform_not_ready`
 

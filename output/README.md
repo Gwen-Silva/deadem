@@ -155,3 +155,16 @@ metadata, preregisters candidate model families, and records why fitting is not
 allowed. The gate is `replay_009_candidate_transform_not_ready`: no independent
 coordinate-bearing map landmarks, fit anchors, held-out validation anchors,
 fitted transform, region, lane, proximity, or mechanic-effect output exists.
+
+## Replay 009 Human Annotations And Independent Landmarks
+
+`output/replay-009-human-annotations/` contains the Task 071 participant
+annotation packet. It is advisory human evidence: it can guide search and
+constrain identity hypotheses, but it does not overwrite canonical facts,
+convert human game times into parser seconds, apply mechanics, or validate exact
+coordinates.
+
+`output/replay-009-independent-landmarks/` contains the Task 071 coordinate
+acquisition result. The five referenced map/minimap images were not found
+locally, so no pixel landmarks, accepted map coordinates, reserved validation
+anchor, transform, lane, region, proximity, or mechanic-effect output exists.
