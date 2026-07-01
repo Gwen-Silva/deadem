@@ -158,6 +158,10 @@ eight target generations, resolves vector-only replay coordinates for two late
 Walker generations, preserves raw team IDs for all six Walkers, and keeps named
 teams, lanes, fit correspondences, regions, proximity, and transform fitting
 blocked.
+Task 077 then attempted identity-only Walker resolution and kept the transform
+blocked: raw team IDs remain unmapped to named teams, participant/video evidence
+is only class/set-level, and no individual Walker handle is linked to a named
+map landmark before residual inspection.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -223,6 +227,7 @@ Major current reports:
 - [`reports/replay-009-walker-identity-fixed-coordinate-resolution.md`](./reports/replay-009-walker-identity-fixed-coordinate-resolution.md)
 - [`reports/replay-009-fixed-entity-spatial-property-diagnosis.md`](./reports/replay-009-fixed-entity-spatial-property-diagnosis.md)
 - [`reports/replay-009-fixed-entity-coordinate-resolution.md`](./reports/replay-009-fixed-entity-coordinate-resolution.md)
+- [`reports/replay-009-walker-identity-resolution.md`](./reports/replay-009-walker-identity-resolution.md)
 
 ## Running Validation
 

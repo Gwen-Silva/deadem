@@ -30,6 +30,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/replay-009-walker-identity-fixed-coordinate-resolution.md`
 - `reports/replay-009-fixed-entity-spatial-property-diagnosis.md`
 - `reports/replay-009-fixed-entity-coordinate-resolution.md`
+- `reports/replay-009-walker-identity-resolution.md`
 - `reports/versioned-mechanics-knowledge-foundation.md`
 - `reports/build-23916427-mechanics-mapping.md`
 - `reports/repository-hygiene-and-cleanup-audit.md`

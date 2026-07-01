@@ -96,6 +96,14 @@ Mid Boss has no coordinate anchor, named Walker teams and lanes remain
 unresolved, and no correspondence is fit-eligible. The next missing layer is
 identity-only Walker resolution before any transform retry.
 
+Task 077 attempted that identity-only Walker resolution. The gate is
+`replay_009_walker_identity_not_ready`: raw team values remain unmapped to
+Sapphire/Amber, participant Walker annotations and existing visual-validation
+metadata remain class/set-level rather than handle-specific, and no direct
+lane/route/spawn/name field was exposed. Transform retry remains blocked until
+new non-coordinate evidence links at least some Walker handles to named
+team/lane map landmarks before residual inspection.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

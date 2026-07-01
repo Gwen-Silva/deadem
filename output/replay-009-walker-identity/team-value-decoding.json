@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "077",
+  "rawTeamValuesFound": [
+    2,
+    3
+  ],
+  "rawTeamValueCount": 2,
+  "walkerRawTeamValuesResolved": 6,
+  "namedTeamMappings": [
+    {
+      "rawValue": 2,
+      "namedTeam": "unknown",
+      "status": "unresolved",
+      "evidence": [
+        "Task 076 observed m_iTeamNum/raw team value 2 on Walker entities."
+      ],
+      "limitations": [
+        "No non-spatial control in the permitted evidence maps this raw value to Sapphire/Archmother or Amber/Hidden King.",
+        "Coordinate orientation and map-side position were not used."
+      ]
+    },
+    {
+      "rawValue": 3,
+      "namedTeam": "unknown",
+      "status": "unresolved",
+      "evidence": [
+        "Task 076 observed m_iTeamNum/raw team value 3 on Walker entities."
+      ],
+      "limitations": [
+        "No non-spatial control in the permitted evidence maps this raw value to Sapphire/Archmother or Amber/Hidden King.",
+        "Coordinate orientation and map-side position were not used."
+      ]
+    }
+  ],
+  "sapphireResolved": 0,
+  "amberResolved": 0,
+  "controlsUsed": [
+    "Task 076 walker-team-resolution raw m_iTeamNum values",
+    "Task 071 participant orientation annotation, advisory only and not direct parser mapping"
+  ],
+  "result": "raw_team_values_supported_named_team_mapping_unresolved"
+}

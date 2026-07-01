@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "077",
+  "planningStatus": "not_ready_identity_insufficient",
+  "sourceTask072Plan": {
+    "candidateFitAnchors": [
+      "standard_mid_boss_center",
+      "standard_sapphire_yellow_walker",
+      "standard_sapphire_green_walker",
+      "standard_amber_yellow_walker",
+      "standard_amber_blue_walker"
+    ],
+    "reservedValidationAnchors": [
+      "standard_sapphire_blue_walker",
+      "standard_amber_green_walker"
+    ],
+    "mapSideDistribution": {
+      "central": 1,
+      "upper": 3,
+      "lower": 3,
+      "lateral": 4,
+      "status": "distributed_with_visual_measurement_limitations"
+    }
+  },
+  "fitCorrespondenceIds": [],
+  "validationCorrespondenceIds": [],
+  "frozenSplitCreated": false,
+  "reasons": [
+    "No Walker has a named team and lane identity before residual inspection.",
+    "Only two Walker generations currently have replay-side coordinates.",
+    "No correspondence can be reserved as held-out validation because map-symbol pairing remains unresolved."
+  ],
+  "transformFitted": false,
+  "residualsComputed": false,
+  "permutationSearchPerformed": false
+}

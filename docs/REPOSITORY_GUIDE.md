@@ -184,3 +184,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   raw team values for all six Walkers. Named teams, Walker lane identity,
   fit-eligible correspondences, transform fitting, regions, proximity,
   canonical spatial fields, and mechanic effects remain blocked.
+- Replay 009 Walker identity outputs live in
+  `output/replay-009-walker-identity/`. Task 077 confirms that the current
+  permitted evidence still cannot map individual `CNPC_Boss_Tier2` handles to
+  named Sapphire/Amber lane Walker symbols before residual inspection. Raw team
+  values and two coordinate-ready Walkers are preserved, but no transform retry
+  is eligible.

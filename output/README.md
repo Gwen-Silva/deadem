@@ -209,3 +209,11 @@ generations are retained, two late Walker generations have supported
 vector-only replay coordinates, all six Walkers have raw team values, but named
 teams, lanes, fit/validation correspondences, transform fitting, regions,
 proximity, canonical spatial fields, and mechanic effects remain blocked.
+
+`output/replay-009-walker-identity/` contains the Task 077 identity-only follow
+up. The gate is `replay_009_walker_identity_not_ready`: six Walker generations
+and their raw team values are preserved, three participant Walker annotations
+are evaluated as set-level evidence, and existing visual-validation metadata is
+kept bounded. No named team/lane identity, map-side correspondence,
+fit/validation anchor split, transform, region, proximity, canonical spatial
+field, or mechanic effect is emitted.
