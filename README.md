@@ -209,6 +209,7 @@ Major current reports:
 - [`reports/replay-009-independent-landmark-coordinate-acquisition.md`](./reports/replay-009-independent-landmark-coordinate-acquisition.md)
 - [`reports/replay-009-user-map-landmark-measurement.md`](./reports/replay-009-user-map-landmark-measurement.md)
 - [`reports/replay-009-transform-validation-retry.md`](./reports/replay-009-transform-validation-retry.md)
+- [`reports/replay-009-walker-identity-fixed-coordinate-resolution.md`](./reports/replay-009-walker-identity-fixed-coordinate-resolution.md)
 
 ## Running Validation
 

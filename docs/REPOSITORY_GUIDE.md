@@ -165,3 +165,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   coordinates and pre-residual Walker pairings remain unavailable. Do not use
   permutation search, nearest projected points, or training residuals to fill
   this gap.
+- Replay 009 fixed-entity resolution outputs live in
+  `output/replay-009-fixed-entity-resolution/`. Task 074 confirms that the
+  committed compact path does not expose usable `CNPC_MidBoss` or
+  `CNPC_Boss_Tier2` world coordinates and does not resolve Walker team/lane
+  identity. The next layer is a narrow parser spatial-property extraction
+  diagnosis, not transform fitting.

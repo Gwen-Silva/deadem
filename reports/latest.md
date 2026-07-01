@@ -1,5 +1,5 @@
 # Latest Report
 
-Latest report: `reports/replay-009-transform-validation-retry.md`
+Latest report: `reports/replay-009-walker-identity-fixed-coordinate-resolution.md`
 
-Latest gate: `replay_009_candidate_transform_not_ready`
+Latest gate: `replay_009_walker_identity_coordinates_not_ready`

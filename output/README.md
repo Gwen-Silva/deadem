@@ -184,3 +184,12 @@ records still do not expose replay-world coordinates, and Walker entity-to-map
 landmark identities remain unresolved before residual inspection. No transform,
 held-out residual, topology check, lane, region, proximity, production spatial
 field, or mechanic effect was emitted.
+
+`output/replay-009-fixed-entity-resolution/` contains the Task 074 audit for
+`CNPC_MidBoss` and `CNPC_Boss_Tier2`. The gate is
+`replay_009_walker_identity_coordinates_not_ready`: existing compact outputs
+show target class/lifecycle/health evidence and component/reference-style
+properties, but no usable direct or component-resolved world coordinates, no
+Walker team/lane identities, and no fit-eligible or validation-eligible
+correspondences. No transform, lane, region, proximity, production spatial
+field, or mechanic effect was emitted.

@@ -67,3 +67,4 @@ This is a compact navigation index. The task files remain the source records.
 | 071 | Acquire Replay 009 Independent Landmark Coordinates | replay_009_independent_landmark_coordinates_missing | pending commit | `reports/replay-009-independent-landmark-coordinate-acquisition.md` | User must place five map images locally |
 | 072 | Measure Replay 009 User-Supplied Map Landmarks | replay_009_independent_landmark_coordinates_ready_with_limitations | pending commit | `reports/replay-009-user-map-landmark-measurement.md` | Task 073 blocked |
 | 073 | Retry Replay 009 Transform Validation With Measured Landmarks | replay_009_candidate_transform_not_ready | pending commit | `reports/replay-009-transform-validation-retry.md` | Task 074 blocked |
+| 074 | Resolve Replay 009 Walker Identity And Fixed Entity Coordinates | replay_009_walker_identity_coordinates_not_ready | pending commit | `reports/replay-009-walker-identity-fixed-coordinate-resolution.md` | Task 075 blocked |

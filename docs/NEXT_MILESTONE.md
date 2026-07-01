@@ -71,6 +71,14 @@ paired with six map Walker symbols by pre-residual evidence. The next missing
 layer is non-circular replay-side fixed-entity coordinates and Walker
 team/lane identity evidence, not a broader map-geometry search.
 
+Task 074 audited that missing layer and confirmed it remains unavailable in the
+committed compact replay-009 outputs. The gate is
+`replay_009_walker_identity_coordinates_not_ready`: `CNPC_MidBoss` and
+`CNPC_Boss_Tier2` expose class/lifecycle/health evidence plus
+component/reference-style properties, but no usable replay-world coordinates or
+pre-fit Walker team/lane identities. The next task should diagnose parser
+spatial-property extraction for those target classes before any transform retry.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.
