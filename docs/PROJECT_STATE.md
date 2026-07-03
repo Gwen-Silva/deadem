@@ -117,6 +117,19 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Replay 009 Walker identity gate is `replay_009_walker_identity_not_ready`: Task 077 inspects all six `CNPC_Boss_Tier2` Walker generations, preserves six raw team values and two coordinate-ready late Walker generations, and evaluates participant Walker annotations plus existing visual-validation metadata. The evidence remains set-level or raw: no raw team value is mapped to Sapphire/Amber, no direct lane/route/spawn/name field is exposed, no unique video-to-handle correlation is available, and zero fit/validation correspondences are eligible. No transform, residual search, permutation search, lane/region/proximity output, canonical spatial field, mechanic effect, or macro interpretation was emitted. Blocked Task 078 tracks the narrow missing layer: non-coordinate Walker handle-to-landmark identity evidence.
 - Replay 009 Walker lane-evidence gate is `replay_009_walker_lane_identity_evidence_ready_with_gaps`: Task 078 maps Walker raw team values to named factions using the Aresius participant control and two-team roster evidence (`3 -> Sapphire/Archmother`, `2 -> Amber/Hidden King`). All six Walker handles now have supported named faction, including the two coordinate-ready late Walker generations. Lane identity, handle-to-named-Walker-landmark joins, fit/validation correspondences, transform fitting, residuals, permutation search, regions, proximity, mechanic effects, and macro interpretation remain blocked. Blocked Task 079 tracks the next narrow missing layer: lane-only Walker identity evidence.
 
+## Long-Term Roadmap Position
+
+The long-term roadmap lives in `docs/PROJECT_VISION_AND_ROADMAP.md`. It
+describes Deadem's intended independent runtime architecture, staged AI roadmap,
+and eventual analytical product. Roadmap phases are not current capabilities and
+do not override the gates in this file.
+
+Current position: parser and factual replay foundation are established for the
+supported normal corpus and replay 009 with constraints. The selected tactical
+milestone remains spatial foundation. Task 078 supports named Walker faction
+values, but Walker lane/map-landmark identity and transform retry remain
+blocked.
+
 ## Open Questions
 
 - Which fields or derived metrics are reliable enough for combat/objective analysis?

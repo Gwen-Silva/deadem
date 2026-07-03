@@ -28,6 +28,18 @@ gameplay telemetry validation, non-spatial factual state detection, and a
 versioned mechanics knowledge layer. It does not assume that the current game
 rules apply to historical replays.
 
+## Long-Term Vision
+
+Deadem is intended to become an independent replay-analysis platform whose
+runtime pipeline does not depend on GPT or Codex. Deterministic replay
+reconstruction, versioned mechanics/map context, event detection, feature
+generation, model inference, and evidence-backed outputs should remain
+available without an LLM.
+
+Language models may later be optional explanation adapters, but they must not
+replace structured factual state, provenance, confidence, limitations, or model
+outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_ROADMAP.md).
+
 ## Current Validated Capabilities
 
 - Normal human replay parsing for fixtures 001-004 and 009.
@@ -203,6 +215,7 @@ does not prove that a patch-sensitive mechanic effect was active.
 - Current project state: [`docs/PROJECT_STATE.md`](./docs/PROJECT_STATE.md)
 - Repository guide: [`docs/REPOSITORY_GUIDE.md`](./docs/REPOSITORY_GUIDE.md)
 - Next milestone: [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md)
+- Long-term vision and roadmap: [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_ROADMAP.md)
 - Report index: [`reports/INDEX.md`](./reports/INDEX.md)
 - Mechanics knowledge: [`knowledge/README.md`](./knowledge/README.md)
 - Output conventions: [`output/README.md`](./output/README.md)

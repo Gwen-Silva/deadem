@@ -112,6 +112,18 @@ does not identify Yellow/Blue/Green lane or a specific map Walker landmark for
 any handle, so transform retry remains blocked pending lane-only identity
 evidence.
 
+## Relationship To Long-Term Roadmap
+
+The long-term strategic roadmap is `docs/PROJECT_VISION_AND_ROADMAP.md`. It
+frames spatial foundation as one layer in a larger path toward deterministic
+events, feature engineering, learned models, bounded decision-window analysis,
+and optional explanation adapters.
+
+This tactical milestone remains evidence-driven and spatial-first. The roadmap
+does not override current gates, does not authorize transform fitting from
+unresolved Walker identities, and does not make macro or decision analysis
+available.
+
 ## Validation Strategy
 
 1. Acquire geometry and provenance.

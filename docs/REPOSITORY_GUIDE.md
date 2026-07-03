@@ -13,8 +13,14 @@ This repository keeps source code, task history, compact evidence, reports, and 
 ## Project State
 
 - Current narrative state: `docs/PROJECT_STATE.md`
+- Long-term product and AI roadmap: `docs/PROJECT_VISION_AND_ROADMAP.md`
 - Queue rules: `AGENTS.md`, `docs/WORKFLOW.md`, `docs/CODEX_QUEUE_RUNNER.md`
 - Parser failure catalog: `docs/PARSER_FAILURE_CATALOG.md`
+
+Use `docs/PROJECT_VISION_AND_ROADMAP.md` when you need the intended product
+shape, independent runtime policy, staged AI roadmap, or distinction between
+future research targets and current capabilities. Use `docs/PROJECT_STATE.md`
+and task gates for what exists now.
 
 ## Evidence And Outputs
 
