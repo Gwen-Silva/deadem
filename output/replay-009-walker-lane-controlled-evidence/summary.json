@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "079",
+  "gate": "replay_009_walker_lane_identity_evidence_unavailable",
+  "newEvidenceSourcesAudited": 8,
+  "meaningfulSourcesExamined": [
+    "existing_replay_009_video_opencv",
+    "task064_local_frame_artifacts",
+    "task070_map_resource_metadata",
+    "task078_parser_team_controls"
+  ],
+  "controlledVideoWindowsInspected": 3,
+  "exactReplayMapIdentityJoins": 0,
+  "uniqueVideoToHandleLinks": 0,
+  "customMatchEvidenceUsed": false,
+  "transferableFieldSemanticsFound": 0,
+  "namedLanesResolved": 0,
+  "namedMapLandmarksResolved": 0,
+  "coordinateReadyIdentifiedWalkers": 0,
+  "fitEligibleCorrespondences": 0,
+  "validationEligibleCorrespondences": 0,
+  "transformRetryEligible": false,
+  "coordinatesUsedForIdentity": false,
+  "permutationSearchPerformed": false,
+  "residualsCalculated": false,
+  "transformFitted": false,
+  "spatialOutputsEmitted": false,
+  "mechanicEffectsApplied": 0,
+  "highestImpactGap": "no replay-009-specific non-coordinate signal links a Walker handle to Yellow, Blue, or Green lane",
+  "recommendedFollowUp": "blocked_spatial_milestone_reassessment",
+  "sourceHashes": {
+    "sourceAvailability": "b52be0807130c9f3ec2abfde3e32caea3dfaa18e58e7bc2cda87bbc9ae438a47",
+    "replayClientCompatibility": "e4891c1c1edc4e05562ecef71017b2461abc0edc11e9790b1641efc96e478b2e",
+    "mapIdentityExtraction": "9962aec1e46ba9918d4e882da7e4289c4c6f7c87fe062c58b2a7be8571906e79",
+    "controlledVideoObservations": "ee44c0c904d93fb427f943d4dfc30e25d72b20b05c70c302bc91205182c78b57",
+    "transferabilityAssessment": "e01c0d419ea0566faf79ea1c8d1c2c380055c7c3fe1535f76b49419cf7cbd008",
+    "walkerLaneDecisions": "6da95ac76811b8e80a746e2e0e84fe812bdb4a68279537760f5505b00190c48f",
+    "transformPrerequisiteDecision": "74d0b191b4e7fa2f441ea1d0064eaae10c947434e9fe93e121259fc5f17ee8db"
+  }
+}

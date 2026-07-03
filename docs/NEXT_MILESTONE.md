@@ -112,6 +112,14 @@ does not identify Yellow/Blue/Green lane or a specific map Walker landmark for
 any handle, so transform retry remains blocked pending lane-only identity
 evidence.
 
+Task 079 audited that lane-only evidence path. The gate is
+`replay_009_walker_lane_identity_evidence_unavailable`: bounded local video
+contact sheets, existing Task 064 frame artifacts, map/resource tooling checks,
+and transferability analysis did not produce a replay-specific non-coordinate
+handle-to-lane signal. Transform retry remains blocked, and the next step is
+spatial-milestone reassessment rather than repeating broad Walker identity
+searches.
+
 ## Relationship To Long-Term Roadmap
 
 The long-term strategic roadmap is `docs/PROJECT_VISION_AND_ROADMAP.md`. It

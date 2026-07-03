@@ -179,6 +179,11 @@ raw team `3`, supporting raw team `3` as Sapphire/Archmother and raw team `2`
 as Amber/Hidden King. This resolves named faction for the six Walker handles,
 but Yellow/Blue/Green lane identity and handle-to-map-landmark correspondence
 remain unresolved; transform retry is still blocked.
+Task 079 audited the remaining lane-only evidence paths using local video
+contact sheets, existing validation frames, map-resource tooling availability,
+and transferability boundaries. No replay-specific handle-to-lane signal was
+found, so replay-009 transform work remains blocked pending milestone
+reassessment or genuinely new evidence.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer

@@ -225,3 +225,12 @@ supported as Sapphire/Archmother and raw team `2` as Amber/Hidden King, giving
 all six Walker handles named faction. No Yellow/Blue/Green lane identity,
 handle-to-named-landmark join, fit/validation correspondence, transform,
 region, proximity, canonical spatial field, or mechanic effect is emitted.
+
+`output/replay-009-walker-lane-controlled-evidence/` contains the Task 079
+lane-only evidence audit. The gate is
+`replay_009_walker_lane_identity_evidence_unavailable`: local video contact
+sheets, existing validation frames, map-resource tooling availability, parser
+field availability, and custom-match transferability boundaries were checked,
+but no replay-specific handle-to-lane identity source was found. No transform,
+residual, permutation search, region, proximity, production spatial field, or
+mechanic effect is emitted.

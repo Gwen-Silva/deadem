@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "079",
+  "sources": [
+    {
+      "sourceId": "current_deadlock_client_replay_open",
+      "available": false,
+      "newRelativeToTasks077And078": true,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": false,
+      "limitations": [
+        "No automated, non-interactive client replay-open check is available in this repository task.",
+        "Launching the game client would be interactive and was not required after deterministic video/local metadata sources were examined.",
+        "Participant report says replay 009 began failing after a 2026-06-30 update; this task did not modify or open the replay."
+      ]
+    },
+    {
+      "sourceId": "older_compatible_deadlock_build",
+      "available": false,
+      "newRelativeToTasks077And078": false,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": false,
+      "limitations": [
+        "Task 069/070 metadata records installed build relationship as newer or unresolved, not exact replay-build compatibility.",
+        "No older compatible build was found or used."
+      ]
+    },
+    {
+      "sourceId": "existing_replay_009_video_opencv",
+      "available": true,
+      "newRelativeToTasks077And078": true,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": true,
+      "limitations": [
+        "Video path exists: true.",
+        "OpenCV available: true (4.13.0).",
+        "Bounded local contact sheets were inspected, but no unique handle-specific Walker signal was visible."
+      ]
+    },
+    {
+      "sourceId": "ffmpeg_ffprobe_video_tooling",
+      "available": false,
+      "newRelativeToTasks077And078": false,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": true,
+      "limitations": [
+        "ffmpeg and ffprobe are not both available on PATH in this environment.",
+        "OpenCV was used instead for bounded local contact sheets."
+      ]
+    },
+    {
+      "sourceId": "task064_local_frame_artifacts",
+      "available": true,
+      "newRelativeToTasks077And078": false,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": true,
+      "limitations": [
+        "Existing Task 064 frame artifacts are local-only and class/set-level for Walker evidence.",
+        "They do not provide a new handle-to-lane identity source."
+      ]
+    },
+    {
+      "sourceId": "valveresourceformat_or_equivalent",
+      "available": false,
+      "newRelativeToTasks077And078": true,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": false,
+      "limitations": [
+        "Source2Viewer-CLI and VRF.CLI were not found on PATH.",
+        "Task 070 tools still expose package/index metadata only, not identity-bearing entity lumps."
+      ]
+    },
+    {
+      "sourceId": "new_parser_lane_fields",
+      "available": false,
+      "newRelativeToTasks077And078": false,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": false,
+      "limitations": [
+        "Task 077 and 078 bounded fields found raw team values but no lane, route, spawn, targetname, or stable map entity identifier.",
+        "Task 079 found no newly available parser field outside those prior compact outputs."
+      ]
+    },
+    {
+      "sourceId": "controlled_custom_match_transfer",
+      "available": false,
+      "newRelativeToTasks077And078": true,
+      "independentOfCoordinates": true,
+      "transferableToReplay009": false,
+      "limitations": [
+        "No controlled custom-match capture was provided or produced.",
+        "Current-build observations would not identify replay-009 handles unless the same replay-exposed field was present."
+      ]
+    }
+  ]
+}

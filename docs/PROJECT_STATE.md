@@ -116,6 +116,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Replay 009 fixed-entity coordinate resolution gate is `replay_009_fixed_entity_coordinates_ready_with_gaps`: Task 076 preserves all eight target generations, accepts `CBodyComponent.m_vecX/Y/Z` as the project replay-coordinate basis through player-control reconstruction, and resolves four coordinate observations for two late `CNPC_Boss_Tier2` Walker generations. It preserves raw team values for all six Walkers but maps zero named Sapphire/Amber teams, assigns zero lanes, produces zero fit-eligible or validation-eligible correspondences, and emits no transform, region, proximity, production canonical spatial field, mechanic effect, or macro interpretation. Blocked Task 077 tracks identity-only Walker resolution before any transform retry.
 - Replay 009 Walker identity gate is `replay_009_walker_identity_not_ready`: Task 077 inspects all six `CNPC_Boss_Tier2` Walker generations, preserves six raw team values and two coordinate-ready late Walker generations, and evaluates participant Walker annotations plus existing visual-validation metadata. The evidence remains set-level or raw: no raw team value is mapped to Sapphire/Amber, no direct lane/route/spawn/name field is exposed, no unique video-to-handle correlation is available, and zero fit/validation correspondences are eligible. No transform, residual search, permutation search, lane/region/proximity output, canonical spatial field, mechanic effect, or macro interpretation was emitted. Blocked Task 078 tracks the narrow missing layer: non-coordinate Walker handle-to-landmark identity evidence.
 - Replay 009 Walker lane-evidence gate is `replay_009_walker_lane_identity_evidence_ready_with_gaps`: Task 078 maps Walker raw team values to named factions using the Aresius participant control and two-team roster evidence (`3 -> Sapphire/Archmother`, `2 -> Amber/Hidden King`). All six Walker handles now have supported named faction, including the two coordinate-ready late Walker generations. Lane identity, handle-to-named-Walker-landmark joins, fit/validation correspondences, transform fitting, residuals, permutation search, regions, proximity, mechanic effects, and macro interpretation remain blocked. Blocked Task 079 tracks the next narrow missing layer: lane-only Walker identity evidence.
+- Replay 009 Walker lane controlled-evidence gate is `replay_009_walker_lane_identity_evidence_unavailable`: Task 079 examined permitted new lane-only sources, including OpenCV-extracted local contact sheets for the three participant Walker annotations, existing Task 064 local frame artifacts, map/resource tooling availability, and custom-match transferability boundaries. No replay-specific non-coordinate signal linked any Walker handle to Yellow/Blue/Green lane or a Task 072 map-side Walker landmark. Coordinate-ready identified Walkers, fit-eligible correspondences, validation-eligible correspondences, transform fitting, residuals, permutation search, production spatial fields, regions, proximity, mechanic effects, and macro interpretation remain zero/blocked. Blocked Task 081 tracks spatial-milestone reassessment rather than another broad Walker identity search.
 
 ## Long-Term Roadmap Position
 
@@ -127,8 +128,9 @@ do not override the gates in this file.
 Current position: parser and factual replay foundation are established for the
 supported normal corpus and replay 009 with constraints. The selected tactical
 milestone remains spatial foundation. Task 078 supports named Walker faction
-values, but Walker lane/map-landmark identity and transform retry remain
-blocked.
+values, but Task 079 found replay-specific lane identity evidence unavailable
+from the permitted local sources, so Walker lane/map-landmark identity and
+transform retry remain blocked.
 
 ## Open Questions
 

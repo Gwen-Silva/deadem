@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "079",
+  "localFrameArtifacts": {
+    "directory": "output-local/replay-009-walker-lane-controlled-evidence",
+    "manifestAvailable": true,
+    "committed": false,
+    "limitations": [
+      "Contact sheets are local-only and intentionally untracked.",
+      "They were used only to look for non-spatial unique signals."
+    ]
+  },
+  "observations": [
+    {
+      "observationId": "obs_human_event_1355_enemy_green_walker",
+      "namedTeam": "amber",
+      "namedLane": "green",
+      "videoOrClientTime": "13:55",
+      "parserWindow": {
+        "status": "not_directly_mapped",
+        "humanReportedSeconds": 835,
+        "limitations": [
+          "Human reported game time is not parserSeconds.",
+          "Task 057 found no reliable active-game or pause-adjusted time mapping."
+        ]
+      },
+      "visibleNonSpatialSignals": [],
+      "candidateEntityKeys": [
+        "309:685:11223349:713:-1",
+        "310:1003:16433462:713:-1",
+        "311:565:9257271:713:-1"
+      ],
+      "uniquelyLinkedEntityKey": null,
+      "status": "set_level_only",
+      "coordinatesUsed": false,
+      "limitations": [
+        "Bounded contact-sheet inspection showed no readable exact Walker health, debug/entity identifier, or unique state signal.",
+        "Named team and lane are human visual annotation, but no handle-specific signal links the visible Walker to one parser entity.",
+        "Existing Task 064 Walker overlays remain class/set-level."
+      ]
+    },
+    {
+      "observationId": "obs_human_event_1906_allied_green_walker",
+      "namedTeam": "sapphire",
+      "namedLane": "green",
+      "videoOrClientTime": "19:06",
+      "parserWindow": {
+        "status": "not_directly_mapped",
+        "humanReportedSeconds": 1146,
+        "limitations": [
+          "Human reported game time is not parserSeconds.",
+          "Task 057 found no reliable active-game or pause-adjusted time mapping."
+        ]
+      },
+      "visibleNonSpatialSignals": [],
+      "candidateEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "uniquelyLinkedEntityKey": null,
+      "status": "set_level_only",
+      "coordinatesUsed": false,
+      "limitations": [
+        "Bounded contact-sheet inspection showed no readable exact Walker health, debug/entity identifier, or unique state signal.",
+        "Named team and lane are human visual annotation, but no handle-specific signal links the visible Walker to one parser entity.",
+        "Existing Task 064 Walker overlays remain class/set-level."
+      ]
+    },
+    {
+      "observationId": "obs_human_event_2235_allied_blue_walker",
+      "namedTeam": "sapphire",
+      "namedLane": "blue",
+      "videoOrClientTime": "22:35",
+      "parserWindow": {
+        "status": "not_directly_mapped",
+        "humanReportedSeconds": 1355,
+        "limitations": [
+          "Human reported game time is not parserSeconds.",
+          "Task 057 found no reliable active-game or pause-adjusted time mapping."
+        ]
+      },
+      "visibleNonSpatialSignals": [],
+      "candidateEntityKeys": [
+        "307:381:6242611:713:-1",
+        "308:523:8569140:713:-1",
+        "312:533:8732984:713:-1"
+      ],
+      "uniquelyLinkedEntityKey": null,
+      "status": "set_level_only",
+      "coordinatesUsed": false,
+      "limitations": [
+        "Bounded contact-sheet inspection showed no readable exact Walker health, debug/entity identifier, or unique state signal.",
+        "Named team and lane are human visual annotation, but no handle-specific signal links the visible Walker to one parser entity.",
+        "Existing Task 064 Walker overlays remain class/set-level."
+      ]
+    }
+  ]
+}

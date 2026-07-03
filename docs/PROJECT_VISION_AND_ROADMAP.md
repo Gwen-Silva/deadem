@@ -135,8 +135,9 @@ lanes, jungle, bases, objectives, traversable connections, ziplines, regions,
 and distances.
 
 This is the current primary milestone and remains incomplete. Task 078 supports
-raw Walker team-to-faction mapping, but lane identity, handle-to-map-landmark
-identity, and transform retry remain blocked.
+raw Walker team-to-faction mapping. Task 079 found no replay-specific
+non-coordinate lane identity source in the currently permitted local evidence,
+so handle-to-map-landmark identity and transform retry remain blocked.
 
 ### Layer 5 - Derived Deterministic Events
 
@@ -265,8 +266,9 @@ validation anchors.
 
 Current status: in progress. Task 078 supports raw team `3` as
 Sapphire/Archmother and raw team `2` as Amber/Hidden King for six Walker
-handles, but Yellow/Blue/Green lane identity and handle-to-named-Walker-landmark
-identity remain blocked. Transform retry is not yet eligible.
+handles. Task 079 found Yellow/Blue/Green lane identity evidence unavailable
+from the permitted local sources, so handle-to-named-Walker-landmark identity
+remains blocked. Transform retry is not yet eligible.
 
 ### Phase 3 - Spatial Semantics
 
@@ -481,6 +483,8 @@ confidence until quantitative calibration is implemented.
 - Partial fixed-entity coordinates: two late Walker generations only.
 - Walker raw team values mapped to named factions by Task 078:
   `3 -> Sapphire/Archmother`, `2 -> Amber/Hidden King`.
+- Task 079 concluded current local lane-only evidence is unavailable for
+  replay-specific Walker handle-to-lane identity.
 
 ### Partial Or Blocked
 

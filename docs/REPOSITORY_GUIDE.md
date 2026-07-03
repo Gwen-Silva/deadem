@@ -202,3 +202,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   team `2` to Amber/Hidden King for all six Walker handles. Lane identity,
   named Walker landmark joins, fit/validation correspondences, transform
   fitting, regions, proximity, and mechanic effects remain unavailable.
+- Replay 009 Walker lane controlled-evidence outputs live in
+  `output/replay-009-walker-lane-controlled-evidence/`. Task 079 audits
+  genuinely new lane-only sources and concludes that replay-specific
+  handle-to-lane evidence is unavailable from current local video, frame,
+  map-resource, parser-field, and transferability sources. Do not repeat broad
+  Walker identity searches without new evidence.
