@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "path": "scripts/build-replay-009-canonical-state.js",
+      "role": "replay009CanonicalScript",
+      "replay": "009",
+      "schemaVersion": null,
+      "generator": "scripts/build-replay-009-canonical-state.js",
+      "informationType": "code_or_report",
+      "generality": "replay_009_specific_needs_parameterization",
+      "requiredForReplay002": false,
+      "sha256": "e5fe3dc2430bdb294cb6c4164197c6efad0698d5bf9d4ab27996d468ef85b0f9"
+    },
+    {
+      "path": "output/replay-009-canonical/player-registry.json",
+      "role": "replay009PlayerRegistry",
+      "replay": "009",
+      "schemaVersion": "1.0.0",
+      "generator": null,
+      "informationType": "json_document",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": true,
+      "sha256": "772834c99c970a1b7c70aec7dd5303dc917f09be52e52b5ea1a7e585beea72d7"
+    },
+    {
+      "path": "output/replay-009-canonical/entity-registry.json",
+      "role": "replay009EntityRegistry",
+      "replay": "009",
+      "schemaVersion": "1.0.0",
+      "generator": null,
+      "informationType": "json_document",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": true,
+      "sha256": "e2a5f1ead671ee0042d50e4f00653faf448c15c7590047f3eebabe59678e79f6"
+    },
+    {
+      "path": "output/replay-009-canonical/factual-events.jsonl",
+      "role": "replay009FactualEvents",
+      "replay": "009",
+      "schemaVersion": null,
+      "generator": null,
+      "informationType": "jsonl_records",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": true,
+      "sha256": "1e76a8c996fd6538c5b7d0fdc8ae0bd148c8a2682d504dd50a06be390665ac4e"
+    },
+    {
+      "path": "output/replay-009-canonical/non-timeline-metadata.json",
+      "role": "replay009Metadata",
+      "replay": "009",
+      "schemaVersion": 1,
+      "generator": null,
+      "informationType": "json_document",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": false,
+      "sha256": "f9bf25f500e89d06e1f7629e1457f5116689e78291458857b1bb64aa95065d06"
+    },
+    {
+      "path": "output/replay-009-canonical/independent-validation-overlay.json",
+      "role": "replay009Overlay",
+      "replay": "009",
+      "schemaVersion": 1,
+      "generator": null,
+      "informationType": "json_document",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": false,
+      "sha256": "2446f6d976d34486a782cb63e2a05b8cf08dda67c4f24eadd41940a196953514"
+    },
+    {
+      "path": "output/replay-009-canonical/snapshots.jsonl",
+      "role": "replay009Snapshots",
+      "replay": "009",
+      "schemaVersion": null,
+      "generator": null,
+      "informationType": "jsonl_records",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": true,
+      "sha256": "e374ea49e6791815673afbbfc89de4a318939c5781b252edaf109c96d741bd4e"
+    },
+    {
+      "path": "output/replay-009-canonical/capability-matrix.json",
+      "role": "replay009Capabilities",
+      "replay": "009",
+      "schemaVersion": 1,
+      "generator": null,
+      "informationType": "json_document",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": true,
+      "sha256": "454e5d3408d5674ba36c94cd7297175fad7068390fec0851761464b705770490"
+    },
+    {
+      "path": "output/replay-009-canonical/validation-summary.json",
+      "role": "replay009Validation",
+      "replay": "009",
+      "schemaVersion": 1,
+      "generator": null,
+      "informationType": "json_document",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": true,
+      "sha256": "39ea23c10629451d85e6f2314c502123c929a36f279ca1643cffbcd292e3556a"
+    },
+    {
+      "path": "reports/replay-009-canonical-factual-state-schema.md",
+      "role": "replay009Report",
+      "replay": "009",
+      "schemaVersion": null,
+      "generator": null,
+      "informationType": "code_or_report",
+      "generality": "replay_009_reference_artifact",
+      "requiredForReplay002": false,
+      "sha256": "d0f6d0f477f272a7e91334925b9b025bf2ce9c7bcbf3db36b1d05898a49ff203"
+    },
+    {
+      "path": "tools/query-replay-state.mjs",
+      "role": "queryTool",
+      "replay": "generic",
+      "schemaVersion": null,
+      "generator": null,
+      "informationType": "code_or_report",
+      "generality": "generic_tooling",
+      "requiredForReplay002": false,
+      "sha256": "7602001a936f5cf2694b734dab5e573ba741f63bc058a1732968292b90b08f09"
+    },
+    {
+      "path": "tools/replay-state-filter.mjs",
+      "role": "sharedFilter",
+      "replay": "generic",
+      "schemaVersion": null,
+      "generator": null,
+      "informationType": "code_or_report",
+      "generality": "generic_tooling",
+      "requiredForReplay002": false,
+      "sha256": "51f289d0667b8a602ee1fda419faa16ee652cffcd530553ae412752bf0c13fb4"
+    },
+    {
+      "path": "tests/canonical-replay-state/canonical-replay-state.test.mjs",
+      "role": "canonicalTest",
+      "replay": "generic",
+      "schemaVersion": null,
+      "generator": null,
+      "informationType": "code_or_report",
+      "generality": "generic_tooling",
+      "requiredForReplay002": false,
+      "sha256": "553ab7774b0cf01dd0febe9c912a39a66a7c769e5d5527c7f79fac95b7ff6cc2"
+    }
+  ]
+}

@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_002",
+  "rawReplayAccessed": [
+    "samples/partida_002.dem"
+  ],
+  "rawReplaysForbiddenAndNotAccessed": [
+    "samples/partida_005.dem",
+    "samples/replay_007_bots01.dem",
+    "samples/replay_008_bots02_short.dem"
+  ],
+  "reads": [
+    {
+      "path": "samples/partida_002.dem",
+      "accessType": "raw_replay_processed",
+      "mode": "sha256_and_size_only",
+      "accessClass": "raw_replay_processed"
+    },
+    {
+      "path": "output/parser-compatibility/parser-compatibility-matrix.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-quality.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/pre-geometry-pipeline.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/one-second-spatial/manifest.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/one-second-spatial/quality.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/canonical-death-events.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/death-event-validation.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/respawn-events.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/damage-healing-counter-timeline.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/damage-healing-validation.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/objective-entity-inventory.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/objective-lifecycle-events.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/objective-validation.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/spatial-milestone-reassessment/cross-replay-generalization-assessment.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/spatial-milestone-reassessment/milestone-decision.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replay-009-canonical/validation-summary.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text",
+      "accessClass": "canonical_reference"
+    },
+    {
+      "path": "output/replay-009-canonical/player-registry.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text",
+      "accessClass": "canonical_reference"
+    },
+    {
+      "path": "output/replay-009-canonical/entity-registry.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text",
+      "accessClass": "canonical_reference"
+    },
+    {
+      "path": "output/replay-009-canonical/factual-events.jsonl",
+      "accessType": "canonical_reference",
+      "mode": "read_text",
+      "accessClass": "canonical_reference"
+    },
+    {
+      "path": "output/replay-009-canonical/snapshots.jsonl",
+      "accessType": "canonical_reference",
+      "mode": "read_text",
+      "accessClass": "canonical_reference"
+    },
+    {
+      "path": "output/replay-009-canonical/capability-matrix.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text",
+      "accessClass": "canonical_reference"
+    },
+    {
+      "path": "scripts/build-replay-009-canonical-state.js",
+      "accessType": "code_schema",
+      "mode": "read_text",
+      "accessClass": "code_schema"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_001.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_002.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_003.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_004.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_005.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_006.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_007.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text",
+      "accessClass": "artifact_aggregate"
+    },
+    {
+      "path": "output/replay-002-canonical/player-registry.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/entity-registry.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/factual-events.jsonl",
+      "accessType": "generated",
+      "mode": "write_jsonl",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/non-timeline-metadata.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/independent-validation-overlay.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/snapshots.jsonl",
+      "accessType": "generated",
+      "mode": "write_jsonl",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/capability-matrix.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/validation-summary.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    },
+    {
+      "path": "output/replay-002-canonical/canonical-state-gate.json",
+      "accessType": "generated",
+      "mode": "write_json",
+      "accessClass": "generated"
+    }
+  ],
+  "accesses": [
+    {
+      "path": "samples/partida_002.dem",
+      "accessType": "raw_replay_processed",
+      "mode": "sha256_and_size_only"
+    },
+    {
+      "path": "output/parser-compatibility/parser-compatibility-matrix.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-quality.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/pre-geometry-pipeline.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/one-second-spatial/manifest.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/one-second-spatial/quality.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/canonical-death-events.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/death-event-validation.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/respawn-events.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/damage-healing-counter-timeline.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/damage-healing-validation.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/objective-entity-inventory.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/objective-lifecycle-events.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/objective-validation.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/spatial-milestone-reassessment/cross-replay-generalization-assessment.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/spatial-milestone-reassessment/milestone-decision.json",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-009-canonical/validation-summary.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-009-canonical/player-registry.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-009-canonical/entity-registry.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-009-canonical/factual-events.jsonl",
+      "accessType": "canonical_reference",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-009-canonical/snapshots.jsonl",
+      "accessType": "canonical_reference",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-009-canonical/capability-matrix.json",
+      "accessType": "canonical_reference",
+      "mode": "read_text"
+    },
+    {
+      "path": "scripts/build-replay-009-canonical-state.js",
+      "accessType": "code_schema",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_001.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_002.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_003.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_004.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_005.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_006.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_007.jsonl",
+      "accessType": "artifact_aggregate",
+      "mode": "read_text"
+    },
+    {
+      "path": "output/replay-002-canonical/player-registry.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical/entity-registry.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical/factual-events.jsonl",
+      "accessType": "generated",
+      "mode": "write_jsonl"
+    },
+    {
+      "path": "output/replay-002-canonical/non-timeline-metadata.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical/independent-validation-overlay.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical/snapshots.jsonl",
+      "accessType": "generated",
+      "mode": "write_jsonl"
+    },
+    {
+      "path": "output/replay-002-canonical/capability-matrix.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical/validation-summary.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical/canonical-state-gate.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical-generalization/reference-artifact-inventory.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical-generalization/replay-009-assumption-audit.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical-generalization/replay-002-prerequisite-audit.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical-generalization/canonical-schema-diff.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical-generalization/canonical-coverage-and-gaps.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    },
+    {
+      "path": "output/replay-002-canonical-generalization/provenance-audit.json",
+      "accessType": "generated",
+      "mode": "write_json"
+    }
+  ]
+}

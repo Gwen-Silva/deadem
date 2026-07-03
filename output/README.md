@@ -115,6 +115,22 @@ The inspector is a local review surface only. It preserves provenance and
 semantic limits, keeps parser time unadjusted, and applies zero mechanic
 effects.
 
+## Replay 002 Canonical Factual State Generalization
+
+`output/replay-002-canonical/` contains the Task 082 canonical factual-state
+package for the first bounded normal-control generalization case. It includes
+player and entity registries, factual events, non-timeline metadata, empty
+independent-validation overlay metadata, snapshots, capability matrix,
+validation summary, and gate.
+
+`output/replay-002-canonical-generalization/` contains the Task 082 assessment
+package: source inventory, replay-009 assumption audit, replay-002 prerequisite
+audit, schema diff, coverage/gap matrix, provenance audit, input-access log,
+deterministic rerun result, summary, and gate. These outputs do not emit
+lane/region/proximity/transform/residual fields, mechanic effects, objective
+completion, combat/fight grouping, rotations, pressure, macro interpretation,
+or replay-005 evidence.
+
 ## Replay 009 Inspector Workflow Evaluation
 
 `output/replay-009-inspection-evaluation/` contains the Task 067 workflow

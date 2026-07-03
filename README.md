@@ -89,6 +89,14 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     broad user research;
   - remaining medium limitations are single-reviewer scope and careful
     Patron/base class reading.
+- Replay-002 canonical generalization from Task 082:
+  - first bounded external canonical factual-state package for a compatible
+    normal control replay;
+  - 12 players, 6v6 raw teams, player snapshots, death/respawn events,
+    `m_iGoldNetWorth` team observations, and raw objective/structure lifecycle
+    observations are represented with provenance;
+  - no replay-009 validation overlays, build/mechanic assumptions, spatial
+    semantics, or mechanic effects are inherited.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -131,6 +139,7 @@ Replay bytes
   -> player identity/lifecycle              [available with constraints]
   -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
   -> canonical factual state schema         [replay_009_canonical_factual_state_ready_with_constraints]
+  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints]
   -> spatial map projection                 [not available]
   -> mechanic version resolution            [unresolved for build 23916427]
   -> mechanic activation                    [blocked]
@@ -139,12 +148,11 @@ Replay bytes
 
 ## Current Direction
 
-The active primary milestone is now **cross-replay canonical generalization**:
-extend the replay-009 canonical factual-state approach to one compatible human
-control replay, starting with replay 002 after explicit authorization. This
-improves schema stability, reduces replay-009 overfitting risk, and prepares
-for eventual replay-005 holdout release without weakening spatial evidence
-standards.
+The active primary milestone is **cross-replay canonical generalization**.
+Task 082 completed the first bounded external case on replay 002 with the gate
+`replay_002_canonical_factual_state_ready_with_constraints`. This improves
+schema stability and reduces replay-009 overfitting risk, but it is not yet
+proof of full corpus generalization or replay-005 release readiness.
 
 The replay-009 spatial foundation remains strategically important but is
 parked under the Task 081 evidence contract. It should resume only when a

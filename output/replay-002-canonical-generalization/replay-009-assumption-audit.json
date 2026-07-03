@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "assumptions": [
+    {
+      "location": "scripts/build-replay-009-canonical-state.js constants",
+      "description": "Hard-coded replay id, match id, build id, output directory, source paths, Task 064 visual overlays, and replay-009 category counts.",
+      "classification": "replay_009_specific",
+      "actionTaken": "created parameterized replay-002 generator that accepts explicit replay id/source/output and makes validation overlay optional",
+      "evidence": [
+        "REPLAY_ID",
+        "MATCH_ID",
+        "BUILD_ID",
+        "SOURCE_PATHS",
+        "independent validation overlay code"
+      ],
+      "impactOnReplay002": "removed from replay-002 generation; replay 002 has no inherited match/build/overlay values"
+    },
+    {
+      "location": "scripts/build-replay-009-canonical-state.js spatial shape",
+      "description": "Replay 009 emitted a spatial object with unavailable lane/map fields.",
+      "classification": "unsupported_assumption",
+      "actionTaken": "replay-002 canonical records omit lane/region/proximity/transform/residual fields entirely; snapshots preserve only rawReplayPosition",
+      "evidence": [
+        "Task 082 mandatory protections"
+      ],
+      "impactOnReplay002": "prevents accidental reuse of historical lane projection artifacts"
+    },
+    {
+      "location": "output/replay-009-canonical/independent-validation-overlay.json",
+      "description": "Task 064 visual overlay exists only for replay 009.",
+      "classification": "replay_009_specific",
+      "actionTaken": "not applied to replay 002; independent validation marked unavailable",
+      "evidence": [
+        "no replay-002 video validation source in task scope"
+      ],
+      "impactOnReplay002": "validation coverage is lower but provenance remains honest"
+    },
+    {
+      "location": "canonical schema categories",
+      "description": "Player identity, player death/respawn, net worth, objective raw lifecycle, snapshots, and provenance are structurally reusable.",
+      "classification": "generic_but_unvalidated",
+      "actionTaken": "mapped replay-002 source artifacts into same category families and produced schema diff",
+      "evidence": [
+        "output/replay-002-canonical/*",
+        "canonical-schema-diff.json"
+      ],
+      "impactOnReplay002": "compatible with constraints, not full corpus generalization"
+    },
+    {
+      "location": "raw team handling",
+      "description": "Replay 009 later mapped raw teams to named factions for Walker work, but this is not universal.",
+      "classification": "unsupported_assumption",
+      "actionTaken": "replay 002 preserves only rawTeam values",
+      "evidence": [
+        "Task 082 protections"
+      ],
+      "impactOnReplay002": "no Sapphire/Amber/Archmother/Hidden King labels emitted"
+    }
+  ]
+}

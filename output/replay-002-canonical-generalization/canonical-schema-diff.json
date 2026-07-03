@@ -1,0 +1,2205 @@
+{
+  "schemaVersion": 1,
+  "replay009": {
+    "playerRegistry": {
+      "type": "object",
+      "fields": {
+        "buildId": "string",
+        "matchId": "string",
+        "players": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "controllerEntityIndex": "number",
+              "firstSeenTick": "number",
+              "identityStatus": "string",
+              "independentValidation": {
+                "type": "object",
+                "fields": {
+                  "reason": "string",
+                  "status": "string"
+                }
+              },
+              "lastSeenTick": "number",
+              "pawnEntityIndices": {
+                "type": "array",
+                "item": "number"
+              },
+              "playerKey": "string",
+              "playerSlot": "null",
+              "team": "number",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "summary": {
+          "type": "object",
+          "fields": {
+            "controllerContinuity": "string",
+            "detectedPlayers": "number",
+            "identityStatus": "string",
+            "observedDeaths": "number",
+            "observedReturns": "number",
+            "pawnReplacementContinuity": "string",
+            "teamDistribution": {
+              "type": "object",
+              "fields": {
+                "2": "number",
+                "3": "number"
+              }
+            },
+            "unresolvedReturnsBeforeReplayEnd": "number"
+          }
+        }
+      }
+    },
+    "entityRegistry": {
+      "type": "object",
+      "fields": {
+        "entities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "classification": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "firstSeenTick": "number",
+              "handle": "null",
+              "independentValidation": {
+                "type": "object",
+                "fields": {
+                  "categoryStatus": "string",
+                  "comparisonIds": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "identityStatus": "string",
+                  "limitations": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "sampled": "boolean",
+                  "timingStatus": "string",
+                  "visible": "boolean"
+                }
+              },
+              "lastSeenTick": "number",
+              "playerKey": "string",
+              "replayId": "string",
+              "schemaVersion": "string",
+              "serial": "null",
+              "team": "number"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string"
+      }
+    },
+    "factualEvent": {
+      "type": "object",
+      "fields": {
+        "buildId": "string",
+        "epistemicStatus": {
+          "type": "object",
+          "fields": {
+            "confidence": "string",
+            "mechanicEffectApplied": "boolean",
+            "mechanicVersionStatus": "string",
+            "observationStatus": "string",
+            "semanticLimit": "string",
+            "validationStatus": "string",
+            "warnings": {
+              "type": "array",
+              "item": "string"
+            }
+          }
+        },
+        "eventCategory": "string",
+        "eventId": "string",
+        "eventType": "string",
+        "independentValidation": {
+          "type": "object",
+          "fields": {
+            "available": "boolean",
+            "comparisonId": "null",
+            "comparisonStatus": "null",
+            "limitations": {
+              "type": "array",
+              "item": "unknown"
+            },
+            "predictedVideoSeconds": "null",
+            "sourceIndependenceScope": "null",
+            "synchronizationStatus": "null",
+            "timingDeltaSeconds": "null",
+            "timingWindowSeconds": "null",
+            "videoSeconds": "null"
+          }
+        },
+        "matchId": "string",
+        "provenance": {
+          "type": "object",
+          "fields": {
+            "parserDerived": "boolean",
+            "sourceEventId": "string",
+            "sourceOperation": "string",
+            "sourcePath": "string",
+            "sourceTaskId": "string",
+            "visualValidationSourceId": "null"
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "spatial": {
+          "type": "object",
+          "fields": {
+            "lane": "null",
+            "mapPosition": "null",
+            "mapRegion": "null",
+            "status": "string",
+            "worldPosition": "null"
+          }
+        },
+        "subject": {
+          "type": "object",
+          "fields": {
+            "classId": "null",
+            "className": "null",
+            "entityIndex": "null",
+            "entityKey": "null",
+            "entitySerial": "null",
+            "mechanicId": "null",
+            "playerKey": "string",
+            "subjectId": "string",
+            "subjectType": "string",
+            "team": "number"
+          }
+        },
+        "time": {
+          "type": "object",
+          "fields": {
+            "activeGameSeconds": "null",
+            "demoTick": "number",
+            "parserSeconds": "number",
+            "pauseAdjusted": "boolean",
+            "timeBasis": "string"
+          }
+        },
+        "value": {
+          "type": "object",
+          "fields": {
+            "current": "number",
+            "previous": "null",
+            "sourceProperty": "string",
+            "unit": "string"
+          }
+        }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "fields": {
+        "demoTick": "number",
+        "entityPresence": {
+          "type": "object",
+          "fields": {}
+        },
+        "mechanicEffectsApplied": "boolean",
+        "parserSeconds": "number",
+        "players": {
+          "type": "object",
+          "fields": {
+            "76561198057452710": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198080971309": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198144455377": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198277999856": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198333532769": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198810406708": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198824019977": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198835717166": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198853073718": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561199143692579": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561199550367846": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561199629896135": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "snapshotId": "string",
+        "spatialStatus": "string",
+        "teamNetWorth": {
+          "type": "object",
+          "fields": {
+            "carried": "boolean",
+            "differenceTeam2MinusTeam3": "number",
+            "sourceObservationTick": "number",
+            "team2NetWorth": "number",
+            "team3NetWorth": "number"
+          }
+        }
+      }
+    },
+    "capabilityMatrix": {
+      "type": "object",
+      "fields": {
+        "capabilities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "capability": "string",
+              "evidence": "string",
+              "status": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "number"
+      }
+    }
+  },
+  "replay002": {
+    "playerRegistry": {
+      "type": "object",
+      "fields": {
+        "players": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "controllerEntityIndex": "number",
+              "firstSeenTick": "number",
+              "heroIdRaw": "number",
+              "identityStatus": "string",
+              "lastSeenTick": "number",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "pawnEntityIndices": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "playerKey": "string",
+              "playerName": "string",
+              "provenance": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "derivationMethod": "string",
+                    "evidenceType": "string",
+                    "sourceField": "string",
+                    "sourcePath": "string",
+                    "transformation": "string",
+                    "validationLevel": "string"
+                  }
+                }
+              },
+              "rawTeam": "number",
+              "replayId": "string",
+              "schemaVersion": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "sourceReplay": "string",
+        "summary": {
+          "type": "object",
+          "fields": {
+            "observedDeaths": "number",
+            "observedRespawnReturns": "number",
+            "playerCount": "number",
+            "rawTeamDistribution": {
+              "type": "object",
+              "fields": {
+                "2": "number",
+                "3": "number"
+              }
+            },
+            "stablePlayerIdentities": "boolean",
+            "unresolvedReturnsBeforeReplayEnd": "number"
+          }
+        }
+      }
+    },
+    "entityRegistry": {
+      "type": "object",
+      "fields": {
+        "entities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "classification": "string",
+              "confidence": "string",
+              "entityGeneration": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "firstObservedParserSeconds": "number",
+              "healthFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "lastObservedParserSeconds": "number",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "maxHealthFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "mechanicCandidate": "string",
+              "observedHealthSummary": {
+                "type": "object",
+                "fields": {
+                  "count": "number",
+                  "examples": {
+                    "type": "array",
+                    "item": "number"
+                  },
+                  "max": "number",
+                  "min": "number"
+                }
+              },
+              "provenance": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "derivationMethod": "string",
+                    "evidenceType": "string",
+                    "sourceField": "string",
+                    "sourcePath": "string",
+                    "transformation": "string",
+                    "validationLevel": "string"
+                  }
+                }
+              },
+              "rawTeam": "number",
+              "replayId": "string",
+              "schemaVersion": "string",
+              "semanticLimits": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string"
+      }
+    },
+    "factualEvent": {
+      "type": "object",
+      "fields": {
+        "epistemicStatus": {
+          "type": "object",
+          "fields": {
+            "confidence": "string",
+            "independentValidation": "string",
+            "mechanicEffectApplied": "boolean",
+            "mechanicVersionStatus": "string",
+            "observationStatus": "string",
+            "semanticLimit": "string",
+            "warnings": {
+              "type": "array",
+              "item": "unknown"
+            }
+          }
+        },
+        "eventCategory": "string",
+        "eventId": "string",
+        "eventType": "string",
+        "provenance": {
+          "type": "object",
+          "fields": {
+            "derivationMethod": "string",
+            "evidenceType": "string",
+            "method": "string",
+            "sourceEventId": "string",
+            "sourceField": "string",
+            "sourcePath": "string",
+            "sourceTask": "string",
+            "transformation": "string",
+            "validationLevel": "string"
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "subject": {
+          "type": "object",
+          "fields": {
+            "className": "null",
+            "entityGeneration": "null",
+            "entityIndex": "null",
+            "entityKey": "null",
+            "mechanicCandidate": "null",
+            "playerKey": "null",
+            "rawTeam": "null",
+            "subjectId": "string",
+            "subjectType": "string"
+          }
+        },
+        "time": {
+          "type": "object",
+          "fields": {
+            "demoTick": "number",
+            "parserSeconds": "number",
+            "pauseAdjusted": "boolean",
+            "timeBasis": "string"
+          }
+        },
+        "value": {
+          "type": "object",
+          "fields": {
+            "current": {
+              "type": "object",
+              "fields": {
+                "differenceTeam2MinusTeam3": "number",
+                "rawTeam2": "number",
+                "rawTeam3": "number"
+              }
+            },
+            "previous": "null",
+            "unit": "string"
+          }
+        }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "fields": {
+        "demoTick": "number",
+        "limitations": {
+          "type": "array",
+          "item": "string"
+        },
+        "mechanicEffectsApplied": "boolean",
+        "parserSeconds": "number",
+        "players": {
+          "type": "object",
+          "fields": {
+            "76561198086065951": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198110941637": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198141839984": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198197551365": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198277999856": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198305874157": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198387584891": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198404370682": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561198958797538": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561199006512996": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561199117525543": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            },
+            "76561199766207026": {
+              "type": "object",
+              "fields": {
+                "alive": "boolean",
+                "netWorth": "number",
+                "provenance": {
+                  "type": "object",
+                  "fields": {
+                    "evidenceType": "string",
+                    "sourceFields": {
+                      "type": "array",
+                      "item": "string"
+                    },
+                    "sourcePath": "string"
+                  }
+                },
+                "rawReplayPosition": {
+                  "type": "object",
+                  "fields": {
+                    "quality": "string",
+                    "x": "number",
+                    "y": "number",
+                    "z": "number"
+                  }
+                },
+                "rawTeam": "number"
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "snapshotId": "string",
+        "teamNetWorth": {
+          "type": "object",
+          "fields": {
+            "differenceTeam2MinusTeam3": "number",
+            "rawTeam2": "number",
+            "rawTeam3": "number",
+            "sourceField": "string"
+          }
+        },
+        "validationStatus": "string"
+      }
+    },
+    "capabilityMatrix": {
+      "type": "object",
+      "fields": {
+        "capabilities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "capability": "string",
+              "evidence": "string",
+              "status": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "number"
+      }
+    }
+  },
+  "differences": [
+    {
+      "field": "playerRegistry.buildId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.matchId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.players[].heroIdRaw",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "playerRegistry.players[].independentValidation",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "reason": "string",
+          "status": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.players[].limitations",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": "string"
+      }
+    },
+    {
+      "field": "playerRegistry.players[].pawnEntityIndices[]",
+      "differenceType": "nullable_or_empty_coverage_difference",
+      "replay009Type": "number",
+      "replay002Type": "unknown"
+    },
+    {
+      "field": "playerRegistry.players[].playerName",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "playerRegistry.players[].playerSlot",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.players[].provenance",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": {
+          "type": "object",
+          "fields": {
+            "derivationMethod": "string",
+            "evidenceType": "string",
+            "sourceField": "string",
+            "sourcePath": "string",
+            "transformation": "string",
+            "validationLevel": "string"
+          }
+        }
+      }
+    },
+    {
+      "field": "playerRegistry.players[].rawTeam",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "playerRegistry.players[].replayId",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "playerRegistry.players[].schemaVersion",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "playerRegistry.players[].team",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.players[].warnings",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "array",
+        "item": "unknown"
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.sourceReplay",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "playerRegistry.summary.controllerContinuity",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.summary.detectedPlayers",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.summary.identityStatus",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.summary.observedRespawnReturns",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "playerRegistry.summary.observedReturns",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.summary.pawnReplacementContinuity",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "playerRegistry.summary.playerCount",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "playerRegistry.summary.rawTeamDistribution",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "2": "number",
+          "3": "number"
+        }
+      }
+    },
+    {
+      "field": "playerRegistry.summary.stablePlayerIdentities",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "boolean"
+    },
+    {
+      "field": "playerRegistry.summary.teamDistribution",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "2": "number",
+          "3": "number"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].classId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].className",
+      "differenceType": "nullable_or_empty_coverage_difference",
+      "replay009Type": "null",
+      "replay002Type": "string"
+    },
+    {
+      "field": "entityRegistry.entities[].confidence",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "entityRegistry.entities[].entityGeneration",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "entityRegistry.entities[].firstObservedParserSeconds",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "entityRegistry.entities[].firstSeenTick",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].handle",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].healthFields",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": "string"
+      }
+    },
+    {
+      "field": "entityRegistry.entities[].independentValidation",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "categoryStatus": "string",
+          "comparisonIds": {
+            "type": "array",
+            "item": "unknown"
+          },
+          "identityStatus": "string",
+          "limitations": {
+            "type": "array",
+            "item": "unknown"
+          },
+          "sampled": "boolean",
+          "timingStatus": "string",
+          "visible": "boolean"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].lastObservedParserSeconds",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "entityRegistry.entities[].lastSeenTick",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].limitations",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": "unknown"
+      }
+    },
+    {
+      "field": "entityRegistry.entities[].maxHealthFields",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": "string"
+      }
+    },
+    {
+      "field": "entityRegistry.entities[].mechanicCandidate",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "entityRegistry.entities[].observedHealthSummary",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "count": "number",
+          "examples": {
+            "type": "array",
+            "item": "number"
+          },
+          "max": "number",
+          "min": "number"
+        }
+      }
+    },
+    {
+      "field": "entityRegistry.entities[].playerKey",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].provenance",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": {
+          "type": "object",
+          "fields": {
+            "derivationMethod": "string",
+            "evidenceType": "string",
+            "sourceField": "string",
+            "sourcePath": "string",
+            "transformation": "string",
+            "validationLevel": "string"
+          }
+        }
+      }
+    },
+    {
+      "field": "entityRegistry.entities[].rawTeam",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "entityRegistry.entities[].semanticLimits",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": "string"
+      }
+    },
+    {
+      "field": "entityRegistry.entities[].serial",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "entityRegistry.entities[].team",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.buildId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.epistemicStatus.independentValidation",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.epistemicStatus.validationStatus",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.epistemicStatus.warnings[]",
+      "differenceType": "nullable_or_empty_coverage_difference",
+      "replay009Type": "string",
+      "replay002Type": "unknown"
+    },
+    {
+      "field": "factualEvent.independentValidation",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "available": "boolean",
+          "comparisonId": "null",
+          "comparisonStatus": "null",
+          "limitations": {
+            "type": "array",
+            "item": "unknown"
+          },
+          "predictedVideoSeconds": "null",
+          "sourceIndependenceScope": "null",
+          "synchronizationStatus": "null",
+          "timingDeltaSeconds": "null",
+          "timingWindowSeconds": "null",
+          "videoSeconds": "null"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.matchId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.provenance.derivationMethod",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.evidenceType",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.method",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.parserDerived",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "boolean",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.provenance.sourceField",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.sourceOperation",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.provenance.sourceTask",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.sourceTaskId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.provenance.transformation",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.validationLevel",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "factualEvent.provenance.visualValidationSourceId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.spatial",
+      "differenceType": "replay_009_specific_assumption_removed",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "lane": "null",
+          "mapPosition": "null",
+          "mapRegion": "null",
+          "status": "string",
+          "worldPosition": "null"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.subject.classId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.subject.entityGeneration",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "null"
+    },
+    {
+      "field": "factualEvent.subject.entitySerial",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.subject.mechanicCandidate",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "null"
+    },
+    {
+      "field": "factualEvent.subject.mechanicId",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.subject.playerKey",
+      "differenceType": "nullable_or_empty_coverage_difference",
+      "replay009Type": "string",
+      "replay002Type": "null"
+    },
+    {
+      "field": "factualEvent.subject.rawTeam",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "null"
+    },
+    {
+      "field": "factualEvent.subject.team",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.time.activeGameSeconds",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "null",
+      "replay002Type": null
+    },
+    {
+      "field": "factualEvent.value.current",
+      "differenceType": "event_payload_shape_difference",
+      "replay009Type": "number",
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "differenceTeam2MinusTeam3": "number",
+          "rawTeam2": "number",
+          "rawTeam3": "number"
+        }
+      }
+    },
+    {
+      "field": "factualEvent.value.sourceProperty",
+      "differenceType": "event_payload_shape_difference",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.entityPresence",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {}
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.limitations",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "array",
+        "item": "string"
+      }
+    },
+    {
+      "field": "snapshot.players.76561198057452710",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198080971309",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198086065951",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198110941637",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198141839984",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198144455377",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198197551365",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198277999856.alive",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "boolean"
+    },
+    {
+      "field": "snapshot.players.76561198277999856.carried",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "boolean",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198277999856.expiryPolicy",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198277999856.netWorth",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "snapshot.players.76561198277999856.provenance",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "evidenceType": "string",
+          "sourceFields": {
+            "type": "array",
+            "item": "string"
+          },
+          "sourcePath": "string"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198277999856.rawReplayPosition",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "quality": "string",
+          "x": "number",
+          "y": "number",
+          "z": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198277999856.rawTeam",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "snapshot.players.76561198277999856.sourceObservationTick",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198277999856.state",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198305874157",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198333532769",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198387584891",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198404370682",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561198810406708",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198824019977",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198835717166",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198853073718",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561198958797538",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561199006512996",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561199117525543",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.players.76561199143692579",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561199550367846",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561199629896135",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": {
+        "type": "object",
+        "fields": {
+          "carried": "boolean",
+          "expiryPolicy": "string",
+          "sourceObservationTick": "number",
+          "state": "string"
+        }
+      },
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.players.76561199766207026",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": {
+        "type": "object",
+        "fields": {
+          "alive": "boolean",
+          "netWorth": "number",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "evidenceType": "string",
+              "sourceFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "sourcePath": "string"
+            }
+          },
+          "rawReplayPosition": {
+            "type": "object",
+            "fields": {
+              "quality": "string",
+              "x": "number",
+              "y": "number",
+              "z": "number"
+            }
+          },
+          "rawTeam": "number"
+        }
+      }
+    },
+    {
+      "field": "snapshot.spatialStatus",
+      "differenceType": "replay_009_specific_assumption_removed",
+      "replay009Type": "string",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.teamNetWorth.carried",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "boolean",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.teamNetWorth.rawTeam2",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "snapshot.teamNetWorth.rawTeam3",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "number"
+    },
+    {
+      "field": "snapshot.teamNetWorth.sourceField",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    },
+    {
+      "field": "snapshot.teamNetWorth.sourceObservationTick",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.teamNetWorth.team2NetWorth",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.teamNetWorth.team3NetWorth",
+      "differenceType": "source_unavailable_in_replay_002",
+      "replay009Type": "number",
+      "replay002Type": null
+    },
+    {
+      "field": "snapshot.validationStatus",
+      "differenceType": "optional_coverage_difference",
+      "replay009Type": null,
+      "replay002Type": "string"
+    }
+  ],
+  "summary": {
+    "schemaBreaks": 0,
+    "sourceUnavailableInReplay002": 54,
+    "replay009AssumptionsRemoved": 2,
+    "note": "Count differences are classified as content differences, not schema breaks."
+  }
+}

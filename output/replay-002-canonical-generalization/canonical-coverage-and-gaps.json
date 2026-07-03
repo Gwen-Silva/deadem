@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "matrix": [
+    {
+      "category": "player identity",
+      "replay009": "supported",
+      "replay002": "supported",
+      "validationCoverage": "internal only",
+      "provenanceCompleteness": "complete"
+    },
+    {
+      "category": "life/death/respawn",
+      "replay009": "supported",
+      "replay002": "supported_with_constraints",
+      "validationCoverage": "internal only; death counter mismatches retained",
+      "provenanceCompleteness": "complete"
+    },
+    {
+      "category": "m_iGoldNetWorth",
+      "replay009": "endpoint summaries",
+      "replay002": "per-second snapshots and team totals",
+      "validationCoverage": "internal only",
+      "provenanceCompleteness": "complete"
+    },
+    {
+      "category": "raw replay-side coordinates",
+      "replay009": "supported",
+      "replay002": "supported_raw_only",
+      "validationCoverage": "internal only",
+      "provenanceCompleteness": "complete"
+    },
+    {
+      "category": "objective/structure raw lifecycle",
+      "replay009": "supported_with_visual_sample_gaps",
+      "replay002": "supported_internal_only",
+      "validationCoverage": "no independent visual validation",
+      "provenanceCompleteness": "complete"
+    },
+    {
+      "category": "independent visual validation",
+      "replay009": "partial",
+      "replay002": "absent",
+      "validationCoverage": "unavailable",
+      "provenanceCompleteness": "not_applicable"
+    },
+    {
+      "category": "mechanic effects",
+      "replay009": "blocked",
+      "replay002": "blocked",
+      "validationCoverage": "not_applicable",
+      "provenanceCompleteness": "not_applicable"
+    },
+    {
+      "category": "spatial semantics",
+      "replay009": "unavailable",
+      "replay002": "not_emitted",
+      "validationCoverage": "not_applicable",
+      "provenanceCompleteness": "not_applicable"
+    }
+  ]
+}

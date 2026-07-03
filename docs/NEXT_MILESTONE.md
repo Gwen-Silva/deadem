@@ -29,6 +29,13 @@ Primary milestone: **cross-replay canonical generalization**.
 
 Preferred first case: **replay 002**.
 
+Task 082 has now completed that first case with gate
+`replay_002_canonical_factual_state_ready_with_constraints`. Replay 002 now has
+a provenance-preserving canonical factual-state package, schema-diff evidence
+against replay 009, and deterministic rerun evidence. The result supports the
+milestone direction but does not yet release replay 005 or prove full corpus
+generalization.
+
 Replay-009 spatial foundation remains parked under a concrete resume contract,
 not abandoned. It should resume only when genuinely new, replay-compatible,
 non-circular evidence supplies replay-to-map identity or independent fit and

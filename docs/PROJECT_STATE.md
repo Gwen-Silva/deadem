@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-06-29
+Last updated: 2026-07-03
 
 ## Latest Work
 
@@ -118,6 +118,7 @@ The current investigation has frozen semantic lane-occupancy episodes and is piv
 - Replay 009 Walker lane-evidence gate is `replay_009_walker_lane_identity_evidence_ready_with_gaps`: Task 078 maps Walker raw team values to named factions using the Aresius participant control and two-team roster evidence (`3 -> Sapphire/Archmother`, `2 -> Amber/Hidden King`). All six Walker handles now have supported named faction, including the two coordinate-ready late Walker generations. Lane identity, handle-to-named-Walker-landmark joins, fit/validation correspondences, transform fitting, residuals, permutation search, regions, proximity, mechanic effects, and macro interpretation remain blocked. Blocked Task 079 tracks the next narrow missing layer: lane-only Walker identity evidence.
 - Replay 009 Walker lane controlled-evidence gate is `replay_009_walker_lane_identity_evidence_unavailable`: Task 079 examined permitted new lane-only sources, including OpenCV-extracted local contact sheets for the three participant Walker annotations, existing Task 064 local frame artifacts, map/resource tooling availability, and custom-match transferability boundaries. No replay-specific non-coordinate signal linked any Walker handle to Yellow/Blue/Green lane or a Task 072 map-side Walker landmark. Coordinate-ready identified Walkers, fit-eligible correspondences, validation-eligible correspondences, transform fitting, residuals, permutation search, production spatial fields, regions, proximity, mechanic effects, and macro interpretation remain zero/blocked. Blocked Task 081 tracks spatial-milestone reassessment rather than another broad Walker identity search.
 - Spatial milestone reassessment gate is `deadem_milestone_cross_replay_generalization_selected`: Task 081 formally pauses immediate replay-009 transform work under current evidence and selects cross-replay canonical factual-state generalization as the active primary milestone. Replay 002 is the preferred first bounded external generalization case. Replay-009 spatial foundation is parked, not abandoned, and resumes only under the explicit spatial resume contract: compatible client/build evidence, exact replay-to-map identifier, unique debug capture, identity-bearing entity-lump metadata, or a separate independently identified fixed-anchor set. Map/resource extraction tooling is optional parallel research only with an exact identifier proof target.
+- Replay 002 canonical generalization gate is `replay_002_canonical_factual_state_ready_with_constraints`: Task 082 builds the first bounded cross-replay canonical factual-state package from `samples/partida_002.dem`. The package contains 12 player identities with raw 6v6 teams, player snapshots, death/respawn events, team `m_iGoldNetWorth` observations, raw objective/structure lifecycle events, schema-diff evidence against replay 009, provenance audit, and deterministic rerun evidence. It intentionally omits replay-009 visual overlays, build/mechanic assumptions, lane/region/proximity/transform/residual fields, mechanic effects, combat/fight/rotation/pressure/macro conclusions, and replay-005/bot-fixture processing. This is one successful external control case, not full project generalization.
 
 ## Long-Term Roadmap Position
 
@@ -127,12 +128,11 @@ and eventual analytical product. Roadmap phases are not current capabilities and
 do not override the gates in this file.
 
 Current position: parser and factual replay foundation are established for the
-supported normal corpus and replay 009 with constraints. Task 081 shifts the
-active tactical milestone to cross-replay canonical generalization, starting
-with replay 002 after explicit authorization. Spatial foundation remains a
-major strategic blocker, but immediate replay-009 transform work is paused until
-genuinely new non-circular identity or anchor evidence satisfies the resume
-contract.
+supported normal corpus and replay 009 with constraints. Task 082 has completed
+the first bounded cross-replay canonical generalization case on replay 002.
+Spatial foundation remains a major strategic blocker, but immediate replay-009
+transform work is paused until genuinely new non-circular identity or anchor
+evidence satisfies the resume contract.
 
 ## Open Questions
 

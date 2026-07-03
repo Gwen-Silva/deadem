@@ -1,3 +1,3 @@
 # Latest Report
 
-- [Deadem Spatial Milestone Reassessment](deadem-spatial-milestone-reassessment.md)
+- [Replay 002 Canonical Factual State Generalization](replay-002-canonical-factual-state-generalization.md)

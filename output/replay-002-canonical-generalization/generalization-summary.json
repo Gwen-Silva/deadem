@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "taskId": "082",
+  "replayId": "replay_002",
+  "gate": "replay_002_canonical_factual_state_ready_with_constraints",
+  "rawReplayProcessed": "samples/partida_002.dem",
+  "rawReplaySha256": "8175e5cdd4b590fb92ba2b7e6ae3709af28ff645fcbeaa2fadd9a8d40d22912c",
+  "parserResult": {
+    "completed": true,
+    "finalParsedTick": 117423,
+    "durationSeconds": 3669,
+    "telemetryRows": 44028
+  },
+  "playersObserved": 12,
+  "rawTeamDistribution": {
+    "2": 6,
+    "3": 6
+  },
+  "canonicalCategoriesProduced": [
+    "player_identity",
+    "player_snapshot",
+    "player_death",
+    "player_respawn",
+    "team_net_worth",
+    "raw_objective_structure_lifecycle"
+  ],
+  "absentOrBlockedCategories": [
+    "independent_visual_validation",
+    "lane_region_proximity_transform_residual",
+    "mechanic_effects",
+    "macro_interpretation"
+  ],
+  "assumptions": {
+    "generic": 0,
+    "parameterized": 0,
+    "replay009SpecificRemoved": 2,
+    "unresolved": 3
+  },
+  "schemaDiffSummary": {
+    "schemaBreaks": 0,
+    "sourceUnavailableInReplay002": 54,
+    "replay009AssumptionsRemoved": 2,
+    "note": "Count differences are classified as content differences, not schema breaks."
+  },
+  "provenanceAudit": {
+    "factualRecordsWithoutSource": 0,
+    "derivationsWithoutMethod": 0,
+    "entityIndexWithoutGeneration": 0,
+    "missingFieldsSilentlyDefaulted": 0,
+    "replay009ValidationOverlayApplied": false,
+    "buildOrMechanicVersionInherited": false,
+    "semanticSpatialFieldsEmitted": false,
+    "destructionKillSecureClaimDepositInferred": false,
+    "replay005Accessed": false,
+    "botFixturesProcessed": false
+  },
+  "canonicalHashes": {
+    "playerRegistry": "bf3d75ceeb9e72959fb3f24b6379a62a371feb48e405c8d5ced1afa940dc10cf",
+    "entityRegistry": "ff0e8ff595df8df2eaff3f7b438285605e3c381ec77cdf7fcd34828458f13c2a",
+    "factualEvents": "bf9afaa418e64959a473ebb126241ac1f91b13a2dc8da07645ba07561027ee7e",
+    "nonTimelineMetadata": "4d4f120689d55e1d834ca842ff856186b55a002fd964d16b61300f2691fb8203",
+    "independentValidationOverlay": "229f699348106057b85dbbbfc8aed786f6d9654f906159c5f5dddddddb3ba7b3",
+    "snapshots": "f4bc5ece91c35490ab64ca75e5d05bc0abfded4b15c8261070a3eda450e4037f",
+    "capabilityMatrix": "fc60717b03d8c1d14ea7c462eaf86422b97a00e318249431a06e1419047d37bb",
+    "validationSummary": "3805acff81f8562c8b0af66c0ff54dca5def6a9a5ffc9e51c4ac066fa1a2f255",
+    "canonicalStateGate": "6055a876c557084c9cdbb21c5408961c10b8fbadf22693a02ac49c12fa5f77e2",
+    "readme": "b0d47321583d187a5a1fd6c597eb7ed4adabe856beb419f836c25525dc36b1ee"
+  },
+  "protections": {
+    "replay005Accessed": false,
+    "botFixturesProcessed": false,
+    "lanesRegionsProximityTransformResidualsEmitted": false,
+    "mechanicsMacroEmitted": false
+  },
+  "nextBlockedTask": "083-select-next-canonical-generalization-control.md"
+}

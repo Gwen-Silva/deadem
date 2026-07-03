@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_002",
+  "records": [
+    {
+      "category": "parser_prerequisite",
+      "data": {
+        "modeName": "default_parser",
+        "parserConfiguration": {
+          "allowUnresolvedEntityReference": false,
+          "allowMissingClassBaseline": false,
+          "addedRecoveryBehavior": false
+        },
+        "completed": true,
+        "firstError": {
+          "category": "none",
+          "rawError": null,
+          "tick": null,
+          "gameTimeSeconds": null,
+          "finalParsedTick": 117423
+        },
+        "firstErrorCategory": "none",
+        "firstErrorTick": null,
+        "firstErrorGameTimeSeconds": null,
+        "finalParsedTick": 117423,
+        "finalParsedGameTimeSeconds": 3669,
+        "lastTick": 117423,
+        "durationSeconds": 3669,
+        "percentParsed": 100,
+        "packetsProcessed": 117459,
+        "messagePacketsProcessed": 2422602,
+        "entityPacketsProcessed": 117442,
+        "telemetryRows": 44028,
+        "warnings": [],
+        "warningCount": 0,
+        "missingEntityReferences": [],
+        "missingBaselineReferences": [],
+        "missingClassReferences": [],
+        "outputRemainsSynchronized": true,
+        "identitiesRemainStable": true,
+        "metadata": {
+          "demoProtocol": null,
+          "networkProtocol": null,
+          "gameBuild": null,
+          "mapName": null,
+          "matchId": null,
+          "lastTick": 117423,
+          "durationSeconds": 3669,
+          "classCount": 825,
+          "entityCount": 0,
+          "stringTableCount": null,
+          "metadataAvailability": "direct_parser_metadata_methods_unavailable_or_null_values_preserved"
+        },
+        "stats": {
+          "classBaselines": 179,
+          "classes": 825,
+          "entities": 2656,
+          "serializers": 870
+        }
+      }
+    },
+    {
+      "category": "match_state_quality",
+      "data": {
+        "schemaVersion": 1,
+        "kind": "match_state_quality",
+        "replayId": "replay_002",
+        "rows": 1835,
+        "shardCount": 7,
+        "chronological": true,
+        "playerCountRange": {
+          "min": 12,
+          "max": 12
+        },
+        "objectiveStateCountRange": {
+          "min": 33,
+          "max": 50
+        },
+        "secondsWithDeaths": 53,
+        "secondsWithRespawns": 51,
+        "secondsWithObjectiveDamage": 213,
+        "replay005Protection": {
+          "processed": false,
+          "status": "preserved"
+        },
+        "limitations": [
+          "This timeline is factual/descriptive and does not define fights.",
+          "Lane fields are physical proximity evidence, not semantic occupancy.",
+          "Damage deltas are cumulative counter deltas, not source-target attribution."
+        ]
+      }
+    },
+    {
+      "category": "death_validation",
+      "data": {
+        "schemaVersion": 1,
+        "kind": "death_event_validation",
+        "replayId": "replay_002",
+        "checks": {
+          "everyDeathHasOneVictim": true,
+          "noDoubleDeathWithoutRespawn": true,
+          "nonNegativeDeadDurations": true,
+          "orderedTimes": true,
+          "ordinaryDeathsFollowedByRespawnUnlessReplayEnds": 2,
+          "noKillerEqualsVictimUnlessSuicide": true,
+          "assistIdentitiesUnique": true,
+          "counterReconciliationAvailable": true,
+          "deathCounterMismatches": 2,
+          "spatialCoveragePercent": 100
+        },
+        "errors": [],
+        "warnings": [
+          {
+            "type": "death_counter_mismatch",
+            "playerId": "76561198141839984",
+            "counter": 7,
+            "canonical": 8
+          },
+          {
+            "type": "death_counter_mismatch",
+            "playerId": "76561198086065951",
+            "counter": 1,
+            "canonical": 3
+          }
+        ],
+        "replay005Protection": {
+          "processed": false,
+          "status": "preserved"
+        }
+      }
+    },
+    {
+      "category": "objective_validation",
+      "data": {
+        "schemaVersion": 1,
+        "kind": "objective_validation",
+        "replayId": "replay_002",
+        "checks": {
+          "uniqueObjectiveIds": true,
+          "chronologicalLifecycle": true,
+          "nonNegativeHealth": true,
+          "laneAssociatedStructuresHaveOneLane": true,
+          "centralObjectivesNotAssignedToLane": true,
+          "replay005Protection": {
+            "processed": false,
+            "status": "preserved"
+          }
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "category": "damage_validation",
+      "data": {
+        "schemaVersion": 1,
+        "kind": "damage_healing_validation",
+        "replayId": "replay_002",
+        "checks": {
+          "twelvePlayersReconciled": true,
+          "rowsChronologicalByPlayer": true,
+          "controllerFieldCoverage": {
+            "m_iHeroDamage": 100,
+            "m_iObjectiveDamage": 100,
+            "m_iHeroHealing": 100,
+            "m_iSelfHealing": 100,
+            "m_iGuidedBotMatchDamageTaken": 100,
+            "m_iGuidedBotMatchDamageToPlayers": 100,
+            "m_iGuidedBotMatchDamageToGuardians": 100,
+            "m_iGoldNetWorth": 100,
+            "m_iAPNetWorth": 100
+          },
+          "pawnFieldCoverage": {
+            "m_flCurrentHealingAmount": 100,
+            "m_flLastDamageTime": 100,
+            "m_iHealth": 100,
+            "m_iHealthMax": 0,
+            "m_iMaxHealth": 100
+          },
+          "monotonicity": {
+            "m_iHeroDamage": true,
+            "m_iObjectiveDamage": true,
+            "m_iHeroHealing": true,
+            "m_iSelfHealing": true,
+            "m_iGuidedBotMatchDamageTaken": true,
+            "m_iGuidedBotMatchDamageToPlayers": true,
+            "m_iGuidedBotMatchDamageToGuardians": true,
+            "m_iGoldNetWorth": false,
+            "m_iAPNetWorth": true
+          },
+          "replay005Protection": {
+            "processed": false,
+            "status": "preserved"
+          }
+        },
+        "errors": [],
+        "warnings": [
+          {
+            "type": "negative_or_reset_like_delta",
+            "field": "m_iGoldNetWorth",
+            "count": 13
+          }
+        ]
+      }
+    }
+  ],
+  "note": "Metadata records are intentionally outside the chronological timeline."
+}
