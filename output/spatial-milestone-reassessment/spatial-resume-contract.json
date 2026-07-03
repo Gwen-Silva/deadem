@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "note": "New minimap screenshots alone are insufficient unless they provide replay-handle identity.",
+  "conditions": [
+    {
+      "conditionId": "compatible_replay_client_build",
+      "requiredEvidence": "Original or compatible client opens replay 009 and exposes handle/lane/object debug data.",
+      "whyItIsNew": "Tasks 077-079 did not have a compatible handle-visible client path.",
+      "whyItIsNonCircular": "Lane identity would be read directly from the client/debug source, not selected by fit residuals.",
+      "minimumAcceptanceEvidence": [
+        "client/build provenance",
+        "captured handle or equivalent replay entity identifier",
+        "lane/map landmark label"
+      ],
+      "taskThatWouldBecomeExecutable": "retry replay-009 transform validation with preregistered correspondences"
+    },
+    {
+      "conditionId": "exact_replay_to_map_identifier",
+      "requiredEvidence": "Decoded field joins replay Walker generation to map entity targetname/Hammer ID/resource ID.",
+      "whyItIsNew": "Current compact and parser-level audits found zero exact replay/map identity joins.",
+      "whyItIsNonCircular": "The join is identifier-based and independent of coordinates.",
+      "minimumAcceptanceEvidence": [
+        "field path",
+        "sample values",
+        "map resource provenance",
+        "six-Walker coverage or bounded subset with held-out anchor"
+      ],
+      "taskThatWouldBecomeExecutable": "validate candidate world-to-map transform with exact identity anchors"
+    },
+    {
+      "conditionId": "unique_debug_capture",
+      "requiredEvidence": "New recording/debug capture uniquely links a Walker handle/entity index to Yellow, Blue, or Green lane.",
+      "whyItIsNew": "Task 079 inspected bounded video windows and found only set-level visibility.",
+      "whyItIsNonCircular": "The capture supplies identity before any transform fitting.",
+      "minimumAcceptanceEvidence": [
+        "visible unique handle or entity identifier",
+        "visible lane/map landmark identity",
+        "time or event correlation"
+      ],
+      "taskThatWouldBecomeExecutable": "convert handle-to-lane evidence into fit/validation correspondences"
+    },
+    {
+      "conditionId": "identity_bearing_entity_lump",
+      "requiredEvidence": "Map entity-lump metadata exposes Walker lane/team identity and a replay-joinable identifier.",
+      "whyItIsNew": "Task 070 found no coordinate-bearing landmarks; Task 079 found no identity-bearing metadata through current tooling.",
+      "whyItIsNonCircular": "The metadata carries semantic identity without using replay coordinates.",
+      "minimumAcceptanceEvidence": [
+        "decoder provenance",
+        "resource hash",
+        "entity records",
+        "exact replay join field"
+      ],
+      "taskThatWouldBecomeExecutable": "map-resource identity proof task, then transform validation"
+    },
+    {
+      "conditionId": "alternate_fixed_anchor_set",
+      "requiredEvidence": "Independent non-Walker fixed landmarks with replay-side coordinates and map-side coordinates are identified.",
+      "whyItIsNew": "The current blocker is Walker lane pairing; alternate anchors could bypass it.",
+      "whyItIsNonCircular": "Anchors must be identity-grounded before residual inspection.",
+      "minimumAcceptanceEvidence": [
+        "at least three distributed fit anchors",
+        "one held-out validation anchor",
+        "identity evidence not based on coordinates"
+      ],
+      "taskThatWouldBecomeExecutable": "transform validation using alternate anchors"
+    }
+  ]
+}

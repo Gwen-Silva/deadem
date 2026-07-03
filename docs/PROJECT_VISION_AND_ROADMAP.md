@@ -134,10 +134,12 @@ Responsibilities: world-to-map transform, map bounds, height/floor handling,
 lanes, jungle, bases, objectives, traversable connections, ziplines, regions,
 and distances.
 
-This is the current primary milestone and remains incomplete. Task 078 supports
+This remains a major strategic milestone and is incomplete. Task 078 supports
 raw Walker team-to-faction mapping. Task 079 found no replay-specific
 non-coordinate lane identity source in the currently permitted local evidence,
-so handle-to-map-landmark identity and transform retry remain blocked.
+so handle-to-map-landmark identity and transform retry remain blocked. Task 081
+parks immediate replay-009 transform work under a concrete resume contract while
+the active tactical milestone shifts to cross-replay canonical generalization.
 
 ### Layer 5 - Derived Deterministic Events
 
@@ -264,11 +266,13 @@ Goals: fixed entity coordinates, landmark identity, world-to-map transform, map
 bounds, map-version relationship, fixed landmark validation, and held-out
 validation anchors.
 
-Current status: in progress. Task 078 supports raw team `3` as
-Sapphire/Archmother and raw team `2` as Amber/Hidden King for six Walker
+Current status: parked under evidence contract. Task 078 supports raw team `3`
+as Sapphire/Archmother and raw team `2` as Amber/Hidden King for six Walker
 handles. Task 079 found Yellow/Blue/Green lane identity evidence unavailable
 from the permitted local sources, so handle-to-named-Walker-landmark identity
-remains blocked. Transform retry is not yet eligible.
+remains blocked. Task 081 selected cross-replay canonical generalization as the
+active tactical milestone until genuinely new non-circular spatial evidence is
+available.
 
 ### Phase 3 - Spatial Semantics
 
@@ -503,15 +507,16 @@ confidence until quantitative calibration is implemented.
 
 ## 15. Immediate Next Steps
 
-The current tactical milestone remains aligned with `docs/NEXT_MILESTONE.md`.
-This roadmap does not invent a new milestone.
+The current tactical milestone is defined by `docs/NEXT_MILESTONE.md`. This
+roadmap does not invent a new milestone.
 
-1. Resolve or formally close the current Walker lane/map-landmark identity gap.
-2. Validate or reject a bounded world-to-map transform.
-3. Integrate a non-production spatial projection layer.
-4. Validate regions independently.
-5. Validate lanes independently.
-6. Expand to additional normal human replays.
+1. Generalize the canonical factual-state package to replay 002.
+2. Audit replay-009-specific assumptions against the second canonical replay.
+3. Continue cross-replay schema compatibility toward holdout readiness.
+4. Resume replay-009 spatial transform work only if the Task 081 evidence
+   contract is satisfied.
+5. Validate regions independently after a transform is valid.
+6. Validate lanes independently after generic spatial projection is valid.
 7. Prepare the first versioned temporal feature dataset.
 8. Train the first independent player-state classifier only after labels and
    spatial prerequisites are adequate.

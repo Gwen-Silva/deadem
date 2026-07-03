@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "081",
+  "gate": "deadem_milestone_cross_replay_generalization_selected",
+  "replay009SpatialContinuation": "exhausted_under_current_sources",
+  "exhaustedEvidencePaths": 6,
+  "spatialResumeConditions": 5,
+  "candidateReplaysAssessed": 4,
+  "preferredNextReplay": "002",
+  "crossReplayGeneralizationReadiness": "ready_as_bounded_next_case_with_validation_required",
+  "mapToolingTrackStatus": "parallel",
+  "selectedPrimaryMilestone": "cross_replay_canonical_generalization",
+  "pausedTracks": [
+    "replay_009_world_to_map_transform"
+  ],
+  "parallelTracks": [
+    "map_resource_extraction_tooling"
+  ],
+  "nextBlockedTask": "082-generalize-canonical-factual-state-to-replay-002.md",
+  "protections": {
+    "replay005Read": false,
+    "replay005Processed": false,
+    "botFixturesProcessed": false,
+    "transformFitted": false,
+    "residualsCalculated": false,
+    "spatialOutputsEmitted": false,
+    "macroOutputsEmitted": false
+  }
+}

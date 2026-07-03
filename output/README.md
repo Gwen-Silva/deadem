@@ -234,3 +234,11 @@ field availability, and custom-match transferability boundaries were checked,
 but no replay-specific handle-to-lane identity source was found. No transform,
 residual, permutation search, region, proximity, production spatial field, or
 mechanic effect is emitted.
+
+`output/spatial-milestone-reassessment/` contains the Task 081 milestone
+decision package. The gate is
+`deadem_milestone_cross_replay_generalization_selected`: immediate replay-009
+transform work is paused under current evidence, replay 002 is selected as the
+first cross-replay canonical-generalization target after explicit
+authorization, and replay-009 spatial work may resume only under the explicit
+non-circular evidence contract.

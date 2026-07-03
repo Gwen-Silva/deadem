@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "assessmentType": "existing-output-assessment_no_replay_processing",
+  "fixtures": [
+    {
+      "fixture": "001",
+      "structurallyCompatible": true,
+      "telemetryValidationStatus": "compatible_controls_with_existing_match_state_outputs_not_fully_task056_validated",
+      "canonicalOutputExists": false,
+      "knownBuild": null,
+      "candidateAsNextReplay": false,
+      "selectionReasons": [
+        "compatible human control",
+        "existing factual outputs available",
+        "longest development fixture, less ideal as first external canonical case"
+      ],
+      "risks": [
+        "not yet normalized into replay-009 canonical factual schema",
+        "build metadata remains unavailable",
+        "must audit replay-009-specific assumptions before integration",
+        "existing spatial/lane artifacts must not be treated as semantic lane occupancy"
+      ],
+      "requiredPreparation": [
+        "validate telemetry and identity in the target replay",
+        "map existing match-state/objective/death/economy evidence into canonical schema",
+        "compare schema against replay 009",
+        "preserve replay 005 and exclude bot fixtures"
+      ],
+      "evidence": {
+        "parserDurationSeconds": 5982,
+        "parserTelemetryRows": 71760,
+        "matchStateRows": 2992,
+        "playerCountRange": {
+          "min": 12,
+          "max": 12
+        },
+        "oneSecondCoordinateRows": 35904,
+        "directCoordinatePercent": 100,
+        "objectiveStableCount": 47,
+        "objectiveValidationErrors": 0
+      }
+    },
+    {
+      "fixture": "002",
+      "structurallyCompatible": true,
+      "telemetryValidationStatus": "compatible_controls_with_existing_match_state_outputs_not_fully_task056_validated",
+      "canonicalOutputExists": false,
+      "knownBuild": null,
+      "candidateAsNextReplay": true,
+      "selectionReasons": [
+        "shortest non-holdout compatible normal control among 001-004",
+        "parser completed under default mode",
+        "12-player match-state range is stable",
+        "one-second coordinate rows have 100 percent direct presence",
+        "objective lifecycle evidence has zero validation errors",
+        "role is generalization_or_diagnostic rather than development baseline"
+      ],
+      "risks": [
+        "not yet normalized into replay-009 canonical factual schema",
+        "build metadata remains unavailable",
+        "must audit replay-009-specific assumptions before integration",
+        "existing spatial/lane artifacts must not be treated as semantic lane occupancy"
+      ],
+      "requiredPreparation": [
+        "validate telemetry and identity in the target replay",
+        "map existing match-state/objective/death/economy evidence into canonical schema",
+        "compare schema against replay 009",
+        "preserve replay 005 and exclude bot fixtures"
+      ],
+      "evidence": {
+        "parserDurationSeconds": 3669,
+        "parserTelemetryRows": 44028,
+        "matchStateRows": 1835,
+        "playerCountRange": {
+          "min": 12,
+          "max": 12
+        },
+        "oneSecondCoordinateRows": 22020,
+        "directCoordinatePercent": 100,
+        "objectiveStableCount": 47,
+        "objectiveValidationErrors": 0
+      }
+    },
+    {
+      "fixture": "003",
+      "structurallyCompatible": true,
+      "telemetryValidationStatus": "compatible_controls_with_existing_match_state_outputs_not_fully_task056_validated",
+      "canonicalOutputExists": false,
+      "knownBuild": null,
+      "candidateAsNextReplay": false,
+      "selectionReasons": [
+        "compatible human control",
+        "existing factual outputs available",
+        "usable later after the first bounded generalization case"
+      ],
+      "risks": [
+        "not yet normalized into replay-009 canonical factual schema",
+        "build metadata remains unavailable",
+        "must audit replay-009-specific assumptions before integration",
+        "existing spatial/lane artifacts must not be treated as semantic lane occupancy"
+      ],
+      "requiredPreparation": [
+        "validate telemetry and identity in the target replay",
+        "map existing match-state/objective/death/economy evidence into canonical schema",
+        "compare schema against replay 009",
+        "preserve replay 005 and exclude bot fixtures"
+      ],
+      "evidence": {
+        "parserDurationSeconds": 4559,
+        "parserTelemetryRows": 54684,
+        "matchStateRows": 2280,
+        "playerCountRange": {
+          "min": 12,
+          "max": 12
+        },
+        "oneSecondCoordinateRows": 27360,
+        "directCoordinatePercent": 100,
+        "objectiveStableCount": 47,
+        "objectiveValidationErrors": 0
+      }
+    },
+    {
+      "fixture": "004",
+      "structurallyCompatible": true,
+      "telemetryValidationStatus": "compatible_controls_with_existing_match_state_outputs_not_fully_task056_validated",
+      "canonicalOutputExists": false,
+      "knownBuild": null,
+      "candidateAsNextReplay": false,
+      "selectionReasons": [
+        "compatible human control",
+        "existing factual outputs available",
+        "usable later after the first bounded generalization case"
+      ],
+      "risks": [
+        "not yet normalized into replay-009 canonical factual schema",
+        "build metadata remains unavailable",
+        "must audit replay-009-specific assumptions before integration",
+        "existing spatial/lane artifacts must not be treated as semantic lane occupancy"
+      ],
+      "requiredPreparation": [
+        "validate telemetry and identity in the target replay",
+        "map existing match-state/objective/death/economy evidence into canonical schema",
+        "compare schema against replay 009",
+        "preserve replay 005 and exclude bot fixtures"
+      ],
+      "evidence": {
+        "parserDurationSeconds": 4024,
+        "parserTelemetryRows": 48288,
+        "matchStateRows": 2013,
+        "playerCountRange": {
+          "min": 12,
+          "max": 12
+        },
+        "oneSecondCoordinateRows": 24156,
+        "directCoordinatePercent": 100,
+        "objectiveStableCount": 47,
+        "objectiveValidationErrors": 0
+      }
+    }
+  ],
+  "preferredNextReplay": "002",
+  "readiness": "ready_as_bounded_next_case_with_validation_required",
+  "rationale": [
+    "Replays 001-004 already parse and have comparable factual outputs.",
+    "Replay 002 is the smallest non-holdout generalization fixture with existing match-state, coordinate, death/respawn, and objective evidence.",
+    "The work improves schema stability and holdout readiness without requiring the blocked replay-009 spatial identity layer."
+  ]
+}

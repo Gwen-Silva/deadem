@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "recommendedStatus": "parallel",
+  "concreteProofTargets": [
+    "decode compiled entity lump or equivalent map entity metadata",
+    "prove whether targetname/hammer ID/team/lane fields exist for Walker entities",
+    "map exact resource identifiers to replay fields without coordinate residuals"
+  ],
+  "availableInputs": [
+    "local installed dl_midtown.vpk metadata",
+    "Task 070 bounded map-resource inventory",
+    "Task 079 map-resource tooling availability audit"
+  ],
+  "missingInputs": [
+    "working, validated Source 2 entity-lump decoder for this map package",
+    "evidence that decoded metadata contains replay-joinable identifiers"
+  ],
+  "expectedDownstreamImpact": [
+    "may unblock replay-009 transform if exact Walker/map identity metadata exists",
+    "may improve future map-version registry"
+  ],
+  "stopConditions": [
+    "tool only repeats broad asset listing",
+    "decoded fields cannot join to replay handles or entity generations",
+    "licensing or local-only constraints prevent compact derived metadata"
+  ]
+}

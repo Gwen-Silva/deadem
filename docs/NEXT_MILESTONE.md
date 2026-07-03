@@ -1,4 +1,4 @@
-# Next Milestone: Spatial Foundation First
+# Next Milestone: Cross-Replay Canonical Generalization
 
 ## Current Project State
 
@@ -25,11 +25,20 @@ Track A, spatial and map geometry foundation, has the highest downstream impact 
 
 ## Selected Milestone
 
-Primary milestone: **spatial foundation first**.
+Primary milestone: **cross-replay canonical generalization**.
 
-Optional preparatory milestone: **cross-replay canonical generalization if map assets are unavailable or delayed**.
+Preferred first case: **replay 002**.
 
-The milestone is selected because spatial grounding is the largest shared blocker across lane presence, movement paths, objective proximity, map pressure prerequisites, rotations, and later macro context.
+Replay-009 spatial foundation remains parked under a concrete resume contract,
+not abandoned. It should resume only when genuinely new, replay-compatible,
+non-circular evidence supplies replay-to-map identity or independent fit and
+validation anchors.
+
+The milestone changed because Tasks 077-079 exhausted currently permitted
+replay-009 Walker lane/map-landmark identity evidence. Cross-replay canonical
+generalization is executable now, improves schema stability, reduces
+replay-009 overfitting risk, and prepares the project for eventual replay-005
+holdout release.
 
 ## Required New Inputs
 
@@ -120,6 +129,13 @@ handle-to-lane signal. Transform retry remains blocked, and the next step is
 spatial-milestone reassessment rather than repeating broad Walker identity
 searches.
 
+Task 081 completed that reassessment. The gate is
+`deadem_milestone_cross_replay_generalization_selected`: immediate replay-009
+transform work is paused under current evidence, replay 002 is selected as the
+first bounded canonical-generalization case, and map/resource extraction tooling
+is parked as optional parallel research only when scoped to exact
+identity-bearing proof targets.
+
 ## Relationship To Long-Term Roadmap
 
 The long-term strategic roadmap is `docs/PROJECT_VISION_AND_ROADMAP.md`. It
@@ -143,9 +159,11 @@ available.
 
 ## Proposed Task Sequence
 
-See `output/project-milestone-analysis/recommended-task-sequence.json`.
+See `output/spatial-milestone-reassessment/milestone-decision.json` and
+`output/spatial-milestone-reassessment/spatial-resume-contract.json`.
 
-The first task is blocked on user-supplied or otherwise authorized geometry/calibration inputs.
+The first follow-up task is blocked pending explicit authorization:
+`tasks/blocked/082-generalize-canonical-factual-state-to-replay-002.md`.
 
 ## Replay 005 Release Criteria
 

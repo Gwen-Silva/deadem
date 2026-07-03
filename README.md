@@ -139,10 +139,17 @@ Replay bytes
 
 ## Current Direction
 
-The next defined milestone is the **spatial foundation**: acquire or validate
-map geometry, coordinate anchors, map bounds, regions, lanes, and
-objective/structure positions before attempting objective proximity, movement
-paths, rotations, map pressure, or macro context.
+The active primary milestone is now **cross-replay canonical generalization**:
+extend the replay-009 canonical factual-state approach to one compatible human
+control replay, starting with replay 002 after explicit authorization. This
+improves schema stability, reduces replay-009 overfitting risk, and prepares
+for eventual replay-005 holdout release without weakening spatial evidence
+standards.
+
+The replay-009 spatial foundation remains strategically important but is
+parked under the Task 081 evidence contract. It should resume only when a
+genuinely new, replay-compatible, non-circular source links replay entities to
+map landmarks or otherwise provides independent fit and validation anchors.
 
 Task 069 acquired limited spatial-foundation inputs: local installed map-package
 metadata, external/reference metadata, and replay-derived landmark candidates.
@@ -184,6 +191,10 @@ contact sheets, existing validation frames, map-resource tooling availability,
 and transferability boundaries. No replay-specific handle-to-lane signal was
 found, so replay-009 transform work remains blocked pending milestone
 reassessment or genuinely new evidence.
+Task 081 selected cross-replay canonical generalization as the next primary
+milestone and parked replay-009 transform validation until the explicit spatial
+resume conditions are met. Map/resource extraction remains optional parallel
+research only when scoped to exact identity-bearing proof targets.
 See [`docs/NEXT_MILESTONE.md`](./docs/NEXT_MILESTONE.md).
 
 ## Knowledge Layer
@@ -251,6 +262,7 @@ Major current reports:
 - [`reports/replay-009-fixed-entity-spatial-property-diagnosis.md`](./reports/replay-009-fixed-entity-spatial-property-diagnosis.md)
 - [`reports/replay-009-fixed-entity-coordinate-resolution.md`](./reports/replay-009-fixed-entity-coordinate-resolution.md)
 - [`reports/replay-009-walker-identity-resolution.md`](./reports/replay-009-walker-identity-resolution.md)
+- [`reports/deadem-spatial-milestone-reassessment.md`](./reports/deadem-spatial-milestone-reassessment.md)
 
 ## Running Validation
 

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "directions": [
+    {
+      "direction": "continue_replay_009_spatial_work_immediately",
+      "executableNow": "blocked",
+      "evidenceAvailability": "low",
+      "downstreamUnlocks": "high_if_unblocked",
+      "generalizationValue": "low",
+      "holdoutPreparation": "low",
+      "circularityRisk": "high",
+      "replayOverfittingRisk": "high",
+      "implementationEffort": "research",
+      "expectedValidatedOutput": "low_under_current_sources",
+      "usefulnessForFutureMl": "medium_if_unblocked",
+      "decision": "parked"
+    },
+    {
+      "direction": "cross_replay_canonical_generalization",
+      "executableNow": "high",
+      "evidenceAvailability": "high",
+      "downstreamUnlocks": "medium",
+      "generalizationValue": "very_high",
+      "holdoutPreparation": "high",
+      "circularityRisk": "low",
+      "replayOverfittingRisk": "low",
+      "implementationEffort": "moderate",
+      "expectedValidatedOutput": "high",
+      "usefulnessForFutureMl": "high",
+      "decision": "selected_primary"
+    },
+    {
+      "direction": "map_resource_extraction_tooling",
+      "executableNow": "medium",
+      "evidenceAvailability": "medium",
+      "downstreamUnlocks": "high_if_exact_metadata_exists",
+      "generalizationValue": "medium",
+      "holdoutPreparation": "medium",
+      "circularityRisk": "low_if_exact_identifiers_only",
+      "replayOverfittingRisk": "medium",
+      "implementationEffort": "research",
+      "expectedValidatedOutput": "uncertain",
+      "usefulnessForFutureMl": "medium",
+      "decision": "parallel_optional_research"
+    },
+    {
+      "direction": "pause_until_new_source",
+      "executableNow": "blocked",
+      "evidenceAvailability": "blocked",
+      "downstreamUnlocks": "low",
+      "generalizationValue": "low",
+      "holdoutPreparation": "low",
+      "circularityRisk": "low",
+      "replayOverfittingRisk": "low",
+      "implementationEffort": "none",
+      "expectedValidatedOutput": "none",
+      "usefulnessForFutureMl": "low",
+      "decision": "not_selected"
+    }
+  ]
+}

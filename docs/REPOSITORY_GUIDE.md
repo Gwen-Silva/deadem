@@ -208,3 +208,9 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   handle-to-lane evidence is unavailable from current local video, frame,
   map-resource, parser-field, and transferability sources. Do not repeat broad
   Walker identity searches without new evidence.
+- Spatial milestone reassessment outputs live in
+  `output/spatial-milestone-reassessment/`. Task 081 selects cross-replay
+  canonical generalization as the active primary milestone, with replay 002 as
+  the first bounded follow-up after explicit authorization. Replay-009 spatial
+  transform work is paused under the resume contract in
+  `spatial-resume-contract.json`.

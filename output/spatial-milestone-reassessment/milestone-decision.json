@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "primaryMilestone": "cross_replay_canonical_generalization",
+  "decision": "pause_replay_009_transform_work_and_generalize_canonical_factual_state_to_one_control_replay",
+  "rationale": [
+    "Task 079 exhausted currently permitted replay-009 lane-only identity evidence.",
+    "Cross-replay canonical generalization is executable now from compatible human controls 001-004.",
+    "The work directly improves schema stability, replay-009 overfitting resistance, future dataset readiness, and replay-005 holdout readiness.",
+    "It preserves the spatial foundation as strategically important while refusing circular transform shortcuts."
+  ],
+  "pausedTracks": [
+    {
+      "track": "replay_009_world_to_map_transform",
+      "status": "paused_waiting_for_genuinely_new_identity_evidence"
+    }
+  ],
+  "parallelTracks": [
+    {
+      "track": "map_resource_extraction_tooling",
+      "status": "optional_parallel_research_only_with_exact_identifier_proof_target"
+    }
+  ],
+  "resumeConditions": {
+    "replay_009_spatial": [
+      "compatible original replay client/build becomes available",
+      "exact replay handle-to-map entity identifier is decoded",
+      "new debug capture exposes a unique Walker handle/lane relation",
+      "identity-bearing entity-lump metadata is extracted and joined exactly",
+      "different independently identified fixed landmarks provide sufficient fit/validation anchors"
+    ]
+  },
+  "forbiddenNextActions": [
+    "repeat Tasks 077-079 without new replay-compatible evidence",
+    "fit transforms from coordinate ordering, symmetry, nearest landmark, or permutation search",
+    "use residual quality to select Walker identity",
+    "infer lane, region, proximity, mechanics, fights, rotations, pressure, or macro conclusions",
+    "process replay 005 or bot fixtures 006-008"
+  ],
+  "nextExecutableTask": {
+    "taskType": "blocked_follow_up",
+    "scope": "generalize canonical factual state to one compatible human replay",
+    "preferredFixture": "002"
+  }
+}
