@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "replayId": "replay_002",
   "sourceReplay": "samples/partida_002.dem",
   "summary": {
@@ -8,322 +8,548 @@
       "2": 6,
       "3": 6
     },
-    "stablePlayerIdentities": true,
-    "observedDeaths": 56,
-    "observedRespawnReturns": 54,
-    "unresolvedReturnsBeforeReplayEnd": 2
+    "controllerContinuity": "raw_controller_handles_preserved_index_generation_unavailable",
+    "pawnContinuity": "not_available_from_source_registry"
   },
   "players": [
     {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561198277999856",
-      "playerName": "Aresius",
-      "heroIdRaw": -13,
-      "rawTeam": 2,
-      "controllerEntityIndex": 2260994,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561198141839984",
-      "playerName": "Bixiv",
-      "heroIdRaw": 40,
-      "rawTeam": 2,
-      "controllerEntityIndex": 16711687,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561198110941637",
-      "playerName": "éomarley",
-      "heroIdRaw": -1,
-      "rawTeam": 2,
-      "controllerEntityIndex": 6733827,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561199766207026",
-      "playerName": "LZAGO14",
-      "heroIdRaw": 38,
-      "rawTeam": 2,
-      "controllerEntityIndex": 7356425,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561198305874157",
-      "playerName": "Mayki the creator",
-      "heroIdRaw": -41,
-      "rawTeam": 2,
-      "controllerEntityIndex": 11501576,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561198404370682",
-      "playerName": "Ray K.",
-      "heroIdRaw": 7,
-      "rawTeam": 2,
-      "controllerEntityIndex": 4816902,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561199006512996",
-      "playerName": "Felipin",
-      "heroIdRaw": -7,
-      "rawTeam": 3,
-      "controllerEntityIndex": 16744458,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198086065951",
-      "playerName": "kamus",
+      "playerSlot": null,
+      "rawTeam": 3,
+      "controller": {
+        "rawHandle": "6438924",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
       "heroIdRaw": -35,
-      "rawTeam": 3,
-      "controllerEntityIndex": 6438924,
-      "pawnEntityIndices": [],
       "firstSeenTick": 0,
       "lastSeenTick": 117423,
       "identityStatus": "supported",
       "provenance": [
         {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
         }
       ],
       "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
       ]
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "playerKey": "76561199117525543",
-      "playerName": "Neto Iver",
-      "heroIdRaw": -6,
-      "rawTeam": 3,
-      "controllerEntityIndex": 7602189,
-      "pawnEntityIndices": [],
+      "playerKey": "76561198110941637",
+      "playerSlot": null,
+      "rawTeam": 2,
+      "controller": {
+        "rawHandle": "6733827",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": -1,
       "firstSeenTick": 0,
       "lastSeenTick": 117423,
       "identityStatus": "supported",
       "provenance": [
         {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
         }
       ],
       "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
       ]
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "playerKey": "76561198387584891",
-      "playerName": "Sambucetti",
-      "heroIdRaw": 29,
-      "rawTeam": 3,
-      "controllerEntityIndex": 9256964,
-      "pawnEntityIndices": [],
+      "playerKey": "76561198141839984",
+      "playerSlot": null,
+      "rawTeam": 2,
+      "controller": {
+        "rawHandle": "16711687",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": 40,
       "firstSeenTick": 0,
       "lastSeenTick": 117423,
       "identityStatus": "supported",
       "provenance": [
         {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
         }
       ],
       "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
       ]
     },
     {
-      "schemaVersion": "1.0.0",
-      "replayId": "replay_002",
-      "playerKey": "76561198958797538",
-      "playerName": "showcado",
-      "heroIdRaw": 36,
-      "rawTeam": 3,
-      "controllerEntityIndex": 6995973,
-      "pawnEntityIndices": [],
-      "firstSeenTick": 0,
-      "lastSeenTick": 117423,
-      "identityStatus": "supported",
-      "provenance": [
-        {
-          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
-          "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
-        }
-      ],
-      "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
-      ]
-    },
-    {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198197551365",
-      "playerName": "ViniciusSirSpy",
-      "heroIdRaw": -39,
+      "playerSlot": null,
       "rawTeam": 3,
-      "controllerEntityIndex": 196619,
-      "pawnEntityIndices": [],
+      "controller": {
+        "rawHandle": "196619",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": -39,
       "firstSeenTick": 0,
       "lastSeenTick": 117423,
       "identityStatus": "supported",
       "provenance": [
         {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
         }
       ],
       "limitations": [
-        "raw team is not mapped to Sapphire/Amber/Archmother/Hidden King for replay 002"
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561198277999856",
+      "playerSlot": null,
+      "rawTeam": 2,
+      "controller": {
+        "rawHandle": "2260994",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": -13,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561198305874157",
+      "playerSlot": null,
+      "rawTeam": 2,
+      "controller": {
+        "rawHandle": "11501576",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": -41,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561198387584891",
+      "playerSlot": null,
+      "rawTeam": 3,
+      "controller": {
+        "rawHandle": "9256964",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": 29,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561198404370682",
+      "playerSlot": null,
+      "rawTeam": 2,
+      "controller": {
+        "rawHandle": "4816902",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": 7,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561198958797538",
+      "playerSlot": null,
+      "rawTeam": 3,
+      "controller": {
+        "rawHandle": "6995973",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": 36,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561199006512996",
+      "playerSlot": null,
+      "rawTeam": 3,
+      "controller": {
+        "rawHandle": "16744458",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": -7,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561199117525543",
+      "playerSlot": null,
+      "rawTeam": 3,
+      "controller": {
+        "rawHandle": "7602189",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": -6,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "replayId": "replay_002",
+      "playerKey": "76561199766207026",
+      "playerSlot": null,
+      "rawTeam": 2,
+      "controller": {
+        "rawHandle": "7356425",
+        "entityIndex": null,
+        "entityIndexSource": "not_decoded",
+        "entitySerial": null,
+        "generation": null,
+        "generationStatus": "unavailable"
+      },
+      "pawn": {
+        "rawHandles": [],
+        "entityIndices": [],
+        "generationCount": null,
+        "continuityStatus": "not_available_from_source_registry"
+      },
+      "heroIdRaw": 38,
+      "firstSeenTick": 0,
+      "lastSeenTick": 117423,
+      "identityStatus": "supported",
+      "provenance": [
+        {
+          "sourceTask": "026-build-one-second-spatial-extraction",
+          "sourceId": "oneSecondQuality",
+          "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+          "sourceEventId": null,
+          "sourceField": "playerReconciliation.players",
+          "epistemicType": "direct_parser_observation",
+          "method": "copied player identity and raw team from replay-specific aggregate",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {},
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": null
+        }
+      ],
+      "limitations": [
+        "controller handle is preserved as raw handle; controller entity index/serial/generation are not decoded by this source"
       ]
     }
   ]

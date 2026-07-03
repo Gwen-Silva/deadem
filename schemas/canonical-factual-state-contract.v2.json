@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "2.0.0",
+  "contractId": "canonical_factual_state_v2",
+  "description": "Versioned canonical factual-state contract used by Task 083. The executable copy lives in lib/canonical-state/contract.mjs.",
+  "epistemicTypes": [
+    "direct_parser_observation",
+    "deterministic_derivation",
+    "human_annotation",
+    "independent_visual_validation",
+    "heuristic",
+    "unresolved"
+  ],
+  "identityRules": {
+    "entityKey": "neutral canonical key derived from replay id, class name, and raw handle; legacy spatial identifiers are provenance only",
+    "rawHandle": "preserved verbatim when available",
+    "entityIndex": "null unless source explicitly provides a decoded index",
+    "entitySerial": "null unless source explicitly provides serial",
+    "entityGeneration": "null unless lifecycle evidence supports a generation",
+    "generationStatus": [
+      "supported",
+      "unavailable",
+      "not_applicable"
+    ]
+  },
+  "requiredPackageFiles": [
+    "player-registry.json",
+    "entity-registry.json",
+    "factual-events.jsonl",
+    "non-timeline-metadata.json",
+    "independent-validation-overlay.json",
+    "snapshots.jsonl",
+    "capability-matrix.json",
+    "validation-summary.json",
+    "canonical-state-gate.json",
+    "README.md"
+  ],
+  "forbiddenCanonicalFields": [
+    "lane",
+    "laneAxis",
+    "laneProgress",
+    "nearestLane",
+    "region",
+    "mapRegion",
+    "structuralRegion",
+    "proximity",
+    "transform",
+    "residual"
+  ],
+  "forbiddenPromotedStringPatterns": [
+    "lane_axis_",
+    "nearest_lane",
+    "structural_region"
+  ]
+}

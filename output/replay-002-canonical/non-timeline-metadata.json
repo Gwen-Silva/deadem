@@ -1,10 +1,11 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": "2.0.0",
   "replayId": "replay_002",
   "records": [
     {
-      "category": "parser_prerequisite",
-      "data": {
+      "metadataId": "parser_matrix_result",
+      "category": "parser_result",
+      "value": {
         "modeName": "default_parser",
         "parserConfiguration": {
           "allowUnresolvedEntityReference": false,
@@ -57,42 +58,27 @@
           "entities": 2656,
           "serializers": 870
         }
+      },
+      "provenance": {
+        "sourceTask": "046-run-parser-compatibility-matrix",
+        "sourceId": "parserMatrix",
+        "sourcePath": "output/parser-compatibility/parser-compatibility-matrix.json",
+        "sourceEventId": null,
+        "sourceField": "replays[].modes.default",
+        "epistemicType": "deterministic_derivation",
+        "method": "imported parser result from prior parser compatibility matrix; parser not executed in Task 083",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {},
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
       }
     },
     {
-      "category": "match_state_quality",
-      "data": {
-        "schemaVersion": 1,
-        "kind": "match_state_quality",
-        "replayId": "replay_002",
-        "rows": 1835,
-        "shardCount": 7,
-        "chronological": true,
-        "playerCountRange": {
-          "min": 12,
-          "max": 12
-        },
-        "objectiveStateCountRange": {
-          "min": 33,
-          "max": 50
-        },
-        "secondsWithDeaths": 53,
-        "secondsWithRespawns": 51,
-        "secondsWithObjectiveDamage": 213,
-        "replay005Protection": {
-          "processed": false,
-          "status": "preserved"
-        },
-        "limitations": [
-          "This timeline is factual/descriptive and does not define fights.",
-          "Lane fields are physical proximity evidence, not semantic occupancy.",
-          "Damage deltas are cumulative counter deltas, not source-target attribution."
-        ]
-      }
-    },
-    {
-      "category": "death_validation",
-      "data": {
+      "metadataId": "death_validation",
+      "category": "validation",
+      "value": {
         "schemaVersion": 1,
         "kind": "death_event_validation",
         "replayId": "replay_002",
@@ -127,82 +113,46 @@
           "processed": false,
           "status": "preserved"
         }
+      },
+      "provenance": {
+        "sourceTask": "029-extract-multi-replay-death-events",
+        "sourceId": "deathValidation",
+        "sourcePath": "output/replays/replay_002/death-event-validation.json",
+        "sourceEventId": null,
+        "sourceField": "summary",
+        "epistemicType": "deterministic_derivation",
+        "method": "imported existing death validation summary",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {},
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
       }
     },
     {
-      "category": "objective_validation",
-      "data": {
-        "schemaVersion": 1,
-        "kind": "objective_validation",
-        "replayId": "replay_002",
-        "checks": {
-          "uniqueObjectiveIds": true,
-          "chronologicalLifecycle": true,
-          "nonNegativeHealth": true,
-          "laneAssociatedStructuresHaveOneLane": true,
-          "centralObjectivesNotAssignedToLane": true,
-          "replay005Protection": {
-            "processed": false,
-            "status": "preserved"
-          }
-        },
-        "errors": [],
-        "warnings": []
-      }
-    },
-    {
-      "category": "damage_validation",
-      "data": {
-        "schemaVersion": 1,
-        "kind": "damage_healing_validation",
-        "replayId": "replay_002",
-        "checks": {
-          "twelvePlayersReconciled": true,
-          "rowsChronologicalByPlayer": true,
-          "controllerFieldCoverage": {
-            "m_iHeroDamage": 100,
-            "m_iObjectiveDamage": 100,
-            "m_iHeroHealing": 100,
-            "m_iSelfHealing": 100,
-            "m_iGuidedBotMatchDamageTaken": 100,
-            "m_iGuidedBotMatchDamageToPlayers": 100,
-            "m_iGuidedBotMatchDamageToGuardians": 100,
-            "m_iGoldNetWorth": 100,
-            "m_iAPNetWorth": 100
-          },
-          "pawnFieldCoverage": {
-            "m_flCurrentHealingAmount": 100,
-            "m_flLastDamageTime": 100,
-            "m_iHealth": 100,
-            "m_iHealthMax": 0,
-            "m_iMaxHealth": 100
-          },
-          "monotonicity": {
-            "m_iHeroDamage": true,
-            "m_iObjectiveDamage": true,
-            "m_iHeroHealing": true,
-            "m_iSelfHealing": true,
-            "m_iGuidedBotMatchDamageTaken": true,
-            "m_iGuidedBotMatchDamageToPlayers": true,
-            "m_iGuidedBotMatchDamageToGuardians": true,
-            "m_iGoldNetWorth": false,
-            "m_iAPNetWorth": true
-          },
-          "replay005Protection": {
-            "processed": false,
-            "status": "preserved"
-          }
-        },
-        "errors": [],
-        "warnings": [
-          {
-            "type": "negative_or_reset_like_delta",
-            "field": "m_iGoldNetWorth",
-            "count": 13
-          }
-        ]
+      "metadataId": "raw_replay_identity_hash",
+      "category": "raw_replay_identity",
+      "value": {
+        "path": "samples/partida_002.dem",
+        "sizeBytes": 396772195,
+        "sha256": "8175e5cdd4b590fb92ba2b7e6ae3709af28ff645fcbeaa2fadd9a8d40d22912c"
+      },
+      "provenance": {
+        "sourceTask": "source_fixture",
+        "sourceId": "rawReplay",
+        "sourcePath": "samples/partida_002.dem",
+        "sourceEventId": null,
+        "sourceField": "sha256",
+        "epistemicType": "deterministic_derivation",
+        "method": "hashed raw replay only to verify identity; replay was not parsed in Task 083",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {},
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
       }
     }
-  ],
-  "note": "Metadata records are intentionally outside the chronological timeline."
+  ]
 }

@@ -4,12 +4,12 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 
 const ROOT = process.cwd();
-const TASK_ID = '082';
+const TASK_ID = '083';
 const OUTPUT_A = 'output-local/replay-002-canonical-rerun/a/canonical';
 const ASSESS_A = 'output-local/replay-002-canonical-rerun/a/assessment';
 const OUTPUT_B = 'output-local/replay-002-canonical-rerun/b/canonical';
 const ASSESS_B = 'output-local/replay-002-canonical-rerun/b/assessment';
-const RESULT = 'output/replay-002-canonical-generalization/deterministic-rerun.json';
+const RESULT = 'output/replay-002-canonical-correction/deterministic-rerun.json';
 
 async function rm(dir) {
     await fs.rm(dir, { recursive: true, force: true });
@@ -62,7 +62,7 @@ async function hashTree(dir, replacements = []) {
         const relativePath = path.relative(dir, file).replaceAll(path.sep, '/');
         records.push({
             path: relativePath,
-            sha256: await hashFile(file, relativePath === 'input-access-log.json' ? replacements : [])
+            sha256: await hashFile(file, ['input-access-log.json', 'input-manifest.json'].includes(relativePath) ? replacements : [])
         });
     }
     return records;
@@ -118,7 +118,7 @@ async function main() {
         },
         mismatches,
         normalization: {
-            inputAccessLogOutputDirectories: 'normalized_before_hashing'
+            inputAccessLogAndManifestOutputDirectories: 'normalized_before_hashing'
         },
         comparedFiles: canonicalA.length + assessmentA.length
     };

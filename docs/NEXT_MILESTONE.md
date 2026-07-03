@@ -21,7 +21,7 @@ The most central blocked node is `map_geometry`. It depends on validated coordin
 
 ## Candidate Milestone Comparison
 
-Track A, spatial and map geometry foundation, has the highest downstream impact and dependency centrality. It also has open input requirements. Cross-replay canonical generalization is the strongest fallback if map inputs are unavailable, because it improves holdout readiness using existing data but does not unlock spatial capabilities.
+Track A, spatial and map geometry foundation, has the highest downstream impact and dependency centrality, but Tasks 077-081 showed that its immediate replay-009 transform branch is paused until the explicit spatial resume contract is satisfied. Cross-replay canonical generalization is the active tactical milestone because it improves holdout readiness using existing compatible human controls without weakening spatial evidence standards.
 
 ## Selected Milestone
 
@@ -29,12 +29,18 @@ Primary milestone: **cross-replay canonical generalization**.
 
 Preferred first case: **replay 002**.
 
-Task 082 has now completed that first case with gate
-`replay_002_canonical_factual_state_ready_with_constraints`. Replay 002 now has
-a provenance-preserving canonical factual-state package, schema-diff evidence
-against replay 009, and deterministic rerun evidence. The result supports the
-milestone direction but does not yet release replay 005 or prove full corpus
-generalization.
+Task 082 attempted that first case, but its gate did not pass technical review:
+the implementation was too replay-specific, raw replay access was overstated,
+IO was not centrally allowlisted, provenance did not sufficiently separate
+direct observations from derivations, and entity handle/index/generation
+handling leaked assumptions. Task 083 is the corrective foundation task.
+
+Task 083 has corrected the first case with gate
+`replay_002_canonical_factual_state_ready_with_constraints_v2`. Replay 002 now
+has a provenance-preserving canonical factual-state package, schema-contract
+validation, schema-diff evidence against replay 009, and deterministic rerun
+evidence. The result supports the milestone direction but does not yet release
+replay 005 or prove full corpus generalization.
 
 Replay-009 spatial foundation remains parked under a concrete resume contract,
 not abandoned. It should resume only when genuinely new, replay-compatible,

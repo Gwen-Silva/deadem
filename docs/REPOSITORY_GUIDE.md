@@ -136,12 +136,16 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   automated plus single-reviewer technical inspection, not broad usability
   research.
 - Replay 002 canonical factual-state outputs live in
-  `output/replay-002-canonical/`, with Task 082 assessment outputs in
-  `output/replay-002-canonical-generalization/`. Regenerate with
+  `output/replay-002-canonical/`, with Task 083 correction outputs in
+  `output/replay-002-canonical-correction/`. Task 082's first-attempt
+  assessment remains preserved in `output/replay-002-canonical-generalization/`
+  but its original gate was not accepted after technical review. Regenerate the
+  corrected package with
   `node tools/build-replay-002-canonical-state.mjs --clean` and validate
   determinism with `node tools/check-replay-002-canonical-determinism.mjs`.
-  This is the first bounded cross-replay canonical package. It preserves raw
-  parser-side facts and provenance while omitting replay-009 visual overlays,
+  This is the corrected first bounded cross-replay canonical package. It uses a
+  generic manifest-driven builder and allowlisted IO, preserves raw parser-side
+  facts and derivations with provenance, and omits replay-009 visual overlays,
   lane/region/proximity/transform/residual fields, mechanic effects, and macro
   interpretation.
 - The next milestone decision lives in `docs/NEXT_MILESTONE.md` and

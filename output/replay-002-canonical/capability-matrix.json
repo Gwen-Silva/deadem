@@ -1,51 +1,63 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": "2.0.0",
   "replayId": "replay_002",
   "capabilities": [
     {
-      "capability": "player identity",
+      "capability": "player_identity",
       "status": "ready_with_constraints",
-      "evidence": "12 stable parser-derived players; raw teams only"
+      "evidence": [
+        "oneSecondQuality player reconciliation"
+      ],
+      "limitations": [
+        "controller handles raw; pawn generations unavailable"
+      ]
     },
     {
-      "capability": "player life/death/respawn",
+      "capability": "death_respawn",
       "status": "ready_with_constraints",
-      "evidence": "56 death records, 54 respawn/return records with direct/inferred flags"
+      "evidence": [
+        "deathEvents",
+        "respawnEvents"
+      ],
+      "limitations": [
+        "inferred respawns marked deterministic derivation"
+      ]
     },
     {
-      "capability": "player/team net worth",
+      "capability": "team_net_worth",
       "status": "ready_with_constraints",
-      "evidence": "m_iGoldNetWorth preserved in snapshots and team events"
+      "evidence": [
+        "match-state player net worth"
+      ],
+      "limitations": [
+        "net worth only; not spendable/secured/unsecured"
+      ]
     },
     {
-      "capability": "raw replay-side coordinates",
+      "capability": "objective_structure_raw_lifecycle",
       "status": "ready_with_constraints",
-      "evidence": "22020 direct coordinate rows; no spatial semantics emitted"
+      "evidence": [
+        "objective inventory/lifecycle"
+      ],
+      "limitations": [
+        "legacy spatial identifiers provenance only; no destruction/completion semantics"
+      ]
     },
     {
-      "capability": "objective/structure raw lifecycle",
-      "status": "ready_with_constraints",
-      "evidence": "47 objective/structure candidates and 1519 raw lifecycle events"
-    },
-    {
-      "capability": "independent visual validation",
-      "status": "unavailable",
-      "evidence": "no replay-002 equivalent of Task 064 provided"
-    },
-    {
-      "capability": "lane/region/proximity",
+      "capability": "spatial_semantics",
       "status": "blocked",
-      "evidence": "explicitly prohibited for Task 082 canonical package"
+      "evidence": [],
+      "limitations": [
+        "no lane, region, proximity, transform, or residual emitted"
+      ]
     },
     {
-      "capability": "mechanic effects",
+      "capability": "mechanic_effects",
       "status": "blocked",
-      "evidence": "no mechanics applied"
-    },
-    {
-      "capability": "macro interpretation",
-      "status": "blocked",
-      "evidence": "not implemented and not authorized"
+      "evidence": [],
+      "limitations": [
+        "zero mechanic effects applied"
+      ]
     }
   ]
 }

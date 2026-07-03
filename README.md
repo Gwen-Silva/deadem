@@ -89,14 +89,17 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     broad user research;
   - remaining medium limitations are single-reviewer scope and careful
     Patron/base class reading.
-- Replay-002 canonical generalization from Task 082:
-  - first bounded external canonical factual-state package for a compatible
-    normal control replay;
+- Replay-002 canonical generalization from Task 083:
+  - corrected first bounded external canonical factual-state package for a
+    compatible normal control replay;
   - 12 players, 6v6 raw teams, player snapshots, death/respawn events,
     `m_iGoldNetWorth` team observations, and raw objective/structure lifecycle
     observations are represented with provenance;
-  - no replay-009 validation overlays, build/mechanic assumptions, spatial
-    semantics, or mechanic effects are inherited.
+  - raw replay access is identity-hash-only, parser results are imported from
+    prior artifacts with provenance, handles are not decoded as entity indexes,
+    generations are not fabricated, and no replay-009 validation overlays,
+    build/mechanic assumptions, spatial semantics, or mechanic effects are
+    inherited.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -139,7 +142,7 @@ Replay bytes
   -> player identity/lifecycle              [available with constraints]
   -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
   -> canonical factual state schema         [replay_009_canonical_factual_state_ready_with_constraints]
-  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints]
+  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints_v2]
   -> spatial map projection                 [not available]
   -> mechanic version resolution            [unresolved for build 23916427]
   -> mechanic activation                    [blocked]
@@ -149,8 +152,9 @@ Replay bytes
 ## Current Direction
 
 The active primary milestone is **cross-replay canonical generalization**.
-Task 082 completed the first bounded external case on replay 002 with the gate
-`replay_002_canonical_factual_state_ready_with_constraints`. This improves
+Task 082 was preserved as a first attempt, but its gate was not accepted after
+technical review. Task 083 corrected that foundation with the gate
+`replay_002_canonical_factual_state_ready_with_constraints_v2`. This improves
 schema stability and reduces replay-009 overfitting risk, but it is not yet
 proof of full corpus generalization or replay-005 release readiness.
 

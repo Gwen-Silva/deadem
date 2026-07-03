@@ -1,10 +1,8 @@
 {
-  "schemaVersion": 1,
-  "taskId": "082",
+  "schemaVersion": "2.0.0",
+  "taskId": "083",
   "replayId": "replay_002",
-  "gate": "replay_002_canonical_factual_state_ready_with_constraints",
-  "rawReplayProcessed": "samples/partida_002.dem",
-  "rawReplaySha256": "8175e5cdd4b590fb92ba2b7e6ae3709af28ff645fcbeaa2fadd9a8d40d22912c",
+  "gate": "replay_002_canonical_factual_state_ready_with_constraints_v2",
   "playerCount": 12,
   "rawTeamDistribution": {
     "2": 6,
@@ -13,18 +11,13 @@
   "entityCount": 47,
   "canonicalEventCount": 3476,
   "snapshotCount": 1835,
-  "metadataRecordCount": 5,
   "validationOverlayCount": 0,
-  "mechanicEffectsApplied": 0,
-  "independentValidation": "not_available_for_replay_002",
-  "spatialSemanticStatus": "not_emitted",
-  "schemaDiffSummary": {
-    "schemaBreaks": 0,
-    "sourceUnavailableInReplay002": 54,
-    "replay009AssumptionsRemoved": 2,
-    "note": "Count differences are classified as content differences, not schema breaks."
+  "epistemicTypeCounts": {
+    "deterministic_derivation": 3414,
+    "direct_parser_observation": 62
   },
-  "provenanceAuditPassed": true,
-  "replay005Protection": "not_read_or_processed",
-  "botFixtureExclusion": "not_processed"
+  "schemaValid": true,
+  "spatialLeakageFindings": 0,
+  "mechanicEffectsApplied": 0,
+  "rawReplayAccessClassification": "raw_replay_identity_hash_verified"
 }

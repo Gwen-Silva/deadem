@@ -117,16 +117,23 @@ effects.
 
 ## Replay 002 Canonical Factual State Generalization
 
-`output/replay-002-canonical/` contains the Task 082 canonical factual-state
-package for the first bounded normal-control generalization case. It includes
+`output/replay-002-canonical/` contains the Task 083 corrected canonical
+factual-state package for the first bounded normal-control generalization case.
+It includes
 player and entity registries, factual events, non-timeline metadata, empty
 independent-validation overlay metadata, snapshots, capability matrix,
 validation summary, and gate.
 
-`output/replay-002-canonical-generalization/` contains the Task 082 assessment
-package: source inventory, replay-009 assumption audit, replay-002 prerequisite
-audit, schema diff, coverage/gap matrix, provenance audit, input-access log,
-deterministic rerun result, summary, and gate. These outputs do not emit
+`output/replay-002-canonical-correction/` contains the Task 083 correction
+package: canonical contract, input manifest, access log, raw replay access
+classification, assumption audit, identity/generation audit, spatial leakage
+audit, provenance audit, schema validation, schema diff, deterministic rerun
+result, summary, and gate.
+
+`output/replay-002-canonical-generalization/` preserves the Task 082 first
+attempt. Its original gate was not accepted after technical review; use the Task
+083 correction package for current replay-002 canonical evidence. These outputs
+do not emit
 lane/region/proximity/transform/residual fields, mechanic effects, objective
 completion, combat/fight grouping, rotations, pressure, macro interpretation,
 or replay-005 evidence.

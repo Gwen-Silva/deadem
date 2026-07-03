@@ -31,3 +31,7 @@ Do not infer lanes, fit map transforms, apply mechanics, evaluate decisions, tra
 ## Acceptance Criteria
 
 Replay 002 has a canonical factual-state package with provenance and explicit gaps, or the task documents the earliest blocking telemetry layer. Replay 005 remains untouched and bot fixtures remain excluded.
+
+## Technical Review Note
+
+Task 083 supersedes this task's original gate. The Task 082 output remains preserved as a first attempt, but its gate was not accepted after technical review because the implementation was replay-specific, raw replay access was overstated, IO was not centrally allowlisted, provenance did not sufficiently distinguish direct observations from derivations, entity handles were treated too strongly, generations were fabricated, and legacy spatial identifiers leaked into canonical entity keys. Task 083 owns the corrected v2 foundation.

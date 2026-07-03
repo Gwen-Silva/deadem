@@ -1,0 +1,3380 @@
+{
+  "schemaVersion": 1,
+  "contract": {
+    "schemaVersion": "2.0.0",
+    "contractId": "canonical_factual_state_v2",
+    "requiredPackageFiles": [
+      "player-registry.json",
+      "entity-registry.json",
+      "factual-events.jsonl",
+      "non-timeline-metadata.json",
+      "independent-validation-overlay.json",
+      "snapshots.jsonl",
+      "capability-matrix.json",
+      "validation-summary.json",
+      "canonical-state-gate.json",
+      "README.md"
+    ],
+    "forbiddenCanonicalFields": [
+      "lane",
+      "laneAxis",
+      "laneProgress",
+      "nearestLane",
+      "region",
+      "mapRegion",
+      "structuralRegion",
+      "proximity",
+      "transform",
+      "residual"
+    ],
+    "forbiddenPromotedStringPatterns": [
+      "lane_axis_",
+      "nearest_lane",
+      "structural_region"
+    ],
+    "epistemicTypes": [
+      "direct_parser_observation",
+      "deterministic_derivation",
+      "human_annotation",
+      "independent_visual_validation",
+      "heuristic",
+      "unresolved"
+    ],
+    "categories": {
+      "player_identity": {
+        "timeline": true,
+        "provenanceMinimum": [
+          "sourceTask",
+          "sourcePath",
+          "sourceField",
+          "epistemicType",
+          "validationStatus"
+        ],
+        "semantics": "parser-side player identity and raw team, without faction or strategic interpretation"
+      },
+      "player_death": {
+        "timeline": true,
+        "provenanceMinimum": [
+          "sourceTask",
+          "sourcePath",
+          "sourceField",
+          "epistemicType",
+          "validationStatus"
+        ],
+        "semantics": "factual death observation only; killer, assists, fights, and cause are not promoted"
+      },
+      "player_respawn": {
+        "timeline": true,
+        "provenanceMinimum": [
+          "sourceTask",
+          "sourcePath",
+          "sourceField",
+          "epistemicType",
+          "validationStatus"
+        ],
+        "semantics": "parser-time return observation or deterministic inference, not official respawn timer"
+      },
+      "team_net_worth": {
+        "timeline": true,
+        "provenanceMinimum": [
+          "sourceTask",
+          "sourcePath",
+          "sourceField",
+          "epistemicType",
+          "formula",
+          "validationStatus"
+        ],
+        "semantics": "team aggregate of m_iGoldNetWorth only"
+      },
+      "raw_objective_structure_lifecycle": {
+        "timeline": true,
+        "provenanceMinimum": [
+          "sourceTask",
+          "sourcePath",
+          "sourceField",
+          "epistemicType",
+          "method",
+          "validationStatus"
+        ],
+        "semantics": "raw lifecycle/health/state observation transformed to neutral canonical category without objective completion semantics"
+      }
+    },
+    "identityRules": {
+      "entityKey": "neutral canonical key derived from replay id, class name, and raw handle; legacy spatial identifiers are provenance only",
+      "rawHandle": "preserved verbatim when available",
+      "entityIndex": "null unless source explicitly provides a decoded index",
+      "entitySerial": "null unless source explicitly provides serial",
+      "entityGeneration": "null unless lifecycle evidence supports a generation",
+      "generationStatus": [
+        "supported",
+        "unavailable",
+        "not_applicable"
+      ]
+    }
+  },
+  "replay009Schemas": {
+    "playerRegistry": {
+      "type": "object",
+      "fields": {
+        "buildId": "string",
+        "matchId": "string",
+        "players": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "controllerEntityIndex": "number",
+              "firstSeenTick": "number",
+              "identityStatus": "string",
+              "independentValidation": {
+                "type": "object",
+                "fields": {
+                  "reason": "string",
+                  "status": "string"
+                }
+              },
+              "lastSeenTick": "number",
+              "pawnEntityIndices": {
+                "type": "array",
+                "item": "number"
+              },
+              "playerKey": "string",
+              "playerSlot": "null",
+              "team": "number",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "summary": {
+          "type": "object",
+          "fields": {
+            "controllerContinuity": "string",
+            "detectedPlayers": "number",
+            "identityStatus": "string",
+            "observedDeaths": "number",
+            "observedReturns": "number",
+            "pawnReplacementContinuity": "string",
+            "teamDistribution": {
+              "type": "object",
+              "fields": {
+                "2": "number",
+                "3": "number"
+              }
+            },
+            "unresolvedReturnsBeforeReplayEnd": "number"
+          }
+        }
+      }
+    },
+    "entityRegistry": {
+      "type": "object",
+      "fields": {
+        "entities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "classification": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "firstSeenTick": "number",
+              "handle": "null",
+              "independentValidation": {
+                "type": "object",
+                "fields": {
+                  "categoryStatus": "string",
+                  "comparisonIds": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "identityStatus": "string",
+                  "limitations": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "sampled": "boolean",
+                  "timingStatus": "string",
+                  "visible": "boolean"
+                }
+              },
+              "lastSeenTick": "number",
+              "playerKey": "string",
+              "replayId": "string",
+              "schemaVersion": "string",
+              "serial": "null",
+              "team": "number"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string"
+      }
+    },
+    "factualEventVariants": {
+      "candidate_entity_created:candidate_entity_created": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": "null",
+              "sourceProperty": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "candidate_entity_deleted:candidate_entity_deleted": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": "null",
+              "sourceProperty": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "candidate_entity_present:candidate_entity_present": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": "null",
+              "sourceProperty": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "entity_created:entity_created": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": "null",
+              "sourceProperty": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "entity_deleted:entity_deleted": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "string",
+              "comparisonStatus": "string",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "predictedVideoSeconds": "number",
+              "sourceIndependenceScope": "string",
+              "synchronizationStatus": "string",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": {
+                "type": "object",
+                "fields": {
+                  "after": "number",
+                  "before": "number"
+                }
+              },
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": "null",
+              "sourceProperty": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "entity_health_changed:health_changed": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "number",
+              "previous": "number",
+              "sourceProperty": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "entity_health_observed:health_observed": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "number",
+              "previous": "null",
+              "sourceProperty": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "entity_present:entity_present": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "string",
+              "comparisonStatus": "string",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "predictedVideoSeconds": "number",
+              "sourceIndependenceScope": "string",
+              "synchronizationStatus": "string",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": {
+                "type": "object",
+                "fields": {
+                  "after": "number",
+                  "before": "number"
+                }
+              },
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "number",
+              "className": "string",
+              "entityIndex": "number",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicId": "string",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": "null",
+              "sourceProperty": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "player_dead:dead": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "entityIndex": "number",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicId": "null",
+              "playerKey": "string",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "number"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "string",
+              "previous": "string",
+              "sourceProperty": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "player_identity:player_identity": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicId": "null",
+              "playerKey": "string",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "number"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "null",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "string",
+              "previous": "null",
+              "sourceProperty": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "player_net_worth:player_net_worth_observed": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicId": "null",
+              "playerKey": "string",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "number"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "number",
+              "previous": "null",
+              "sourceProperty": "string",
+              "unit": "string"
+            }
+          }
+        }
+      },
+      "player_respawned:alive": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "entityIndex": "number",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicId": "null",
+              "playerKey": "string",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "number"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "string",
+              "previous": "string",
+              "sourceProperty": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "team_net_worth:team_net_worth_observed": {
+        "type": "object",
+        "fields": {
+          "buildId": "string",
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "validationStatus": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "independentValidation": {
+            "type": "object",
+            "fields": {
+              "available": "boolean",
+              "comparisonId": "null",
+              "comparisonStatus": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "predictedVideoSeconds": "null",
+              "sourceIndependenceScope": "null",
+              "synchronizationStatus": "null",
+              "timingDeltaSeconds": "null",
+              "timingWindowSeconds": "null",
+              "videoSeconds": "null"
+            }
+          },
+          "matchId": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "parserDerived": "boolean",
+              "sourceEventId": "string",
+              "sourceOperation": "string",
+              "sourcePath": "string",
+              "sourceTaskId": "string",
+              "visualValidationSourceId": "null"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "spatial": {
+            "type": "object",
+            "fields": {
+              "lane": "null",
+              "mapPosition": "null",
+              "mapRegion": "null",
+              "status": "string",
+              "worldPosition": "null"
+            }
+          },
+          "subject": {
+            "type": "object",
+            "fields": {
+              "classId": "null",
+              "className": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicId": "null",
+              "playerKey": "null",
+              "subjectId": "string",
+              "subjectType": "string",
+              "team": "null"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "activeGameSeconds": "null",
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "differenceTeam2MinusTeam3": "number",
+                  "leadingTeam": "string",
+                  "team2NetWorth": "number",
+                  "team3NetWorth": "number"
+                }
+              },
+              "previous": "null",
+              "sourceProperty": "string",
+              "unit": "string"
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "fields": {
+        "categoryPriority": {
+          "type": "array",
+          "item": "string"
+        },
+        "eventsWithoutParserTimeline": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "buildId": "string",
+              "epistemicStatus": {
+                "type": "object",
+                "fields": {
+                  "confidence": "string",
+                  "mechanicEffectApplied": "boolean",
+                  "mechanicVersionStatus": "string",
+                  "observationStatus": "string",
+                  "semanticLimit": "string",
+                  "validationStatus": "string",
+                  "warnings": {
+                    "type": "array",
+                    "item": "string"
+                  }
+                }
+              },
+              "eventCategory": "string",
+              "eventId": "string",
+              "eventType": "string",
+              "independentValidation": {
+                "type": "object",
+                "fields": {
+                  "available": "boolean",
+                  "comparisonId": "null",
+                  "comparisonStatus": "null",
+                  "limitations": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "predictedVideoSeconds": "null",
+                  "sourceIndependenceScope": "null",
+                  "synchronizationStatus": "null",
+                  "timingDeltaSeconds": "null",
+                  "timingWindowSeconds": "null",
+                  "videoSeconds": "null"
+                }
+              },
+              "matchId": "string",
+              "provenance": {
+                "type": "object",
+                "fields": {
+                  "parserDerived": "boolean",
+                  "sourceEventId": "string",
+                  "sourceOperation": "string",
+                  "sourcePath": "string",
+                  "sourceTaskId": "string",
+                  "visualValidationSourceId": "null"
+                }
+              },
+              "replayId": "string",
+              "schemaVersion": "string",
+              "spatial": {
+                "type": "object",
+                "fields": {
+                  "lane": "null",
+                  "mapPosition": "null",
+                  "mapRegion": "null",
+                  "status": "string",
+                  "worldPosition": "null"
+                }
+              },
+              "subject": {
+                "type": "object",
+                "fields": {
+                  "classId": "number",
+                  "className": "string",
+                  "entityIndex": "number",
+                  "entityKey": "string",
+                  "entitySerial": "null",
+                  "mechanicId": "string",
+                  "playerKey": "null",
+                  "subjectId": "string",
+                  "subjectType": "string",
+                  "team": "null"
+                }
+              },
+              "time": {
+                "type": "object",
+                "fields": {
+                  "activeGameSeconds": "null",
+                  "demoTick": "number",
+                  "parserSeconds": "null",
+                  "pauseAdjusted": "boolean",
+                  "timeBasis": "string"
+                }
+              },
+              "value": {
+                "type": "object",
+                "fields": {
+                  "current": "null",
+                  "previous": "null",
+                  "sourceProperty": "null",
+                  "unit": "null"
+                }
+              }
+            }
+          }
+        },
+        "note": "string",
+        "replayId": "string",
+        "schemaVersion": "number"
+      }
+    },
+    "overlay": {
+      "type": "object",
+      "fields": {
+        "overlays": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "canonicalEventId": "string",
+              "category": "string",
+              "comparisonId": "string",
+              "comparisonStatus": "string",
+              "confidence": "string",
+              "identityStatus": "string",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "parserEventId": "string",
+              "predictedVideoSeconds": "number",
+              "semanticLimits": {
+                "type": "array",
+                "item": "string"
+              },
+              "timingDeltaSeconds": "null",
+              "timingStatus": "string",
+              "timingWindowSeconds": {
+                "type": "object",
+                "fields": {
+                  "after": "number",
+                  "before": "number"
+                }
+              },
+              "videoSeconds": "null",
+              "visibility": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "number"
+      }
+    },
+    "snapshots": {
+      "type": "object",
+      "fields": {
+        "demoTick": "number",
+        "entityPresence": {
+          "type": "object",
+          "fields": {}
+        },
+        "mechanicEffectsApplied": "boolean",
+        "parserSeconds": "number",
+        "players": {
+          "type": "object",
+          "fields": {
+            "76561198057452710": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198080971309": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198144455377": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198277999856": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198333532769": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198810406708": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198824019977": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198835717166": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561198853073718": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561199143692579": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561199550367846": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            },
+            "76561199629896135": {
+              "type": "object",
+              "fields": {
+                "carried": "boolean",
+                "expiryPolicy": "string",
+                "sourceObservationTick": "number",
+                "state": "string"
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "snapshotId": "string",
+        "spatialStatus": "string",
+        "teamNetWorth": {
+          "type": "object",
+          "fields": {
+            "carried": "boolean",
+            "differenceTeam2MinusTeam3": "number",
+            "sourceObservationTick": "number",
+            "team2NetWorth": "number",
+            "team3NetWorth": "number"
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "fields": {
+        "capabilities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "capability": "string",
+              "evidence": "string",
+              "status": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "number"
+      }
+    },
+    "validation": {
+      "type": "object",
+      "fields": {
+        "botFixtureExclusion": "string",
+        "canonicalEventCount": "number",
+        "categoryValidation": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "category": "string",
+              "confirmedEvents": "number",
+              "contradictedEvents": "number",
+              "identityStatus": "string",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "notVisibleEvents": "number",
+              "overallStatus": "string",
+              "sampledEvents": "number",
+              "supportedEvents": "number",
+              "timingAmbiguousEvents": "number",
+              "timingStatus": "string",
+              "visibleEvents": "number"
+            }
+          }
+        },
+        "duplicatesRemoved": "number",
+        "entityRegistryCount": "number",
+        "gate": "string",
+        "mechanicEffectsApplied": "number",
+        "nonTimelineEventCount": "number",
+        "playerRegistryCount": "number",
+        "replay005Protection": "string",
+        "replayId": "string",
+        "schemaVersion": "number",
+        "snapshotCount": "number",
+        "sourceTasksIntegrated": {
+          "type": "array",
+          "item": "string"
+        },
+        "spatialStatus": "string",
+        "synchronizationUncertainty": {
+          "type": "object",
+          "fields": {
+            "maximumResidualSeconds": "number",
+            "medianResidualSeconds": "number",
+            "status": "string",
+            "timingWindowSeconds": {
+              "type": "object",
+              "fields": {
+                "after": "number",
+                "before": "number"
+              }
+            }
+          }
+        },
+        "taskId": "string",
+        "timelineEventCount": "number",
+        "unmatchedValidationCount": "number",
+        "validationOverlayCount": "number"
+      }
+    }
+  },
+  "replay002Schemas": {
+    "playerRegistry": {
+      "type": "object",
+      "fields": {
+        "players": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "controller": {
+                "type": "object",
+                "fields": {
+                  "entityIndex": "null",
+                  "entityIndexSource": "string",
+                  "entitySerial": "null",
+                  "generation": "null",
+                  "generationStatus": "string",
+                  "rawHandle": "string"
+                }
+              },
+              "firstSeenTick": "number",
+              "heroIdRaw": "number",
+              "identityStatus": "string",
+              "lastSeenTick": "number",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "pawn": {
+                "type": "object",
+                "fields": {
+                  "continuityStatus": "string",
+                  "entityIndices": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "generationCount": "null",
+                  "rawHandles": {
+                    "type": "array",
+                    "item": "unknown"
+                  }
+                }
+              },
+              "playerKey": "string",
+              "playerSlot": "null",
+              "provenance": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "code": "string",
+                    "epistemicType": "string",
+                    "formula": "null",
+                    "legacySourceIdentifier": "null",
+                    "limitations": {
+                      "type": "array",
+                      "item": "unknown"
+                    },
+                    "method": "string",
+                    "parameters": {
+                      "type": "object",
+                      "fields": {}
+                    },
+                    "sourceEventId": "null",
+                    "sourceField": "string",
+                    "sourceId": "string",
+                    "sourcePath": "string",
+                    "sourceTask": "string",
+                    "validationStatus": "string"
+                  }
+                }
+              },
+              "rawTeam": "number",
+              "replayId": "string",
+              "schemaVersion": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "sourceReplay": "string",
+        "summary": {
+          "type": "object",
+          "fields": {
+            "controllerContinuity": "string",
+            "pawnContinuity": "string",
+            "playerCount": "number",
+            "rawTeamDistribution": {
+              "type": "object",
+              "fields": {
+                "2": "number",
+                "3": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "entityRegistry": {
+      "type": "object",
+      "fields": {
+        "entities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "classification": "string",
+              "confidence": "string",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityIndexSource": "string",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "firstObservedParserSeconds": "number",
+              "generationEvidence": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "generationStatus": "string",
+              "healthFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "lastObservedParserSeconds": "number",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "maxHealthFields": {
+                "type": "array",
+                "item": "string"
+              },
+              "mechanicCandidate": "string",
+              "observedHealthSummary": {
+                "type": "object",
+                "fields": {
+                  "count": "number",
+                  "examples": {
+                    "type": "array",
+                    "item": "number"
+                  },
+                  "max": "number",
+                  "min": "number"
+                }
+              },
+              "provenance": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "code": "string",
+                    "epistemicType": "string",
+                    "formula": "null",
+                    "legacySourceIdentifier": {
+                      "type": "object",
+                      "fields": {
+                        "legacySourceIdentifier": "boolean",
+                        "value": "string"
+                      }
+                    },
+                    "limitations": {
+                      "type": "array",
+                      "item": "unknown"
+                    },
+                    "method": "string",
+                    "parameters": {
+                      "type": "object",
+                      "fields": {
+                        "keyBasis": {
+                          "type": "array",
+                          "item": "string"
+                        }
+                      }
+                    },
+                    "sourceEventId": "null",
+                    "sourceField": "string",
+                    "sourceId": "string",
+                    "sourcePath": "string",
+                    "sourceTask": "string",
+                    "validationStatus": "string"
+                  }
+                }
+              },
+              "rawHandle": "string",
+              "rawTeam": "number",
+              "replayId": "string",
+              "schemaVersion": "string",
+              "semanticLimits": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          }
+        },
+        "identityRules": {
+          "type": "object",
+          "fields": {
+            "entityGeneration": "string",
+            "entityIndex": "string",
+            "entityKey": "string",
+            "entitySerial": "string",
+            "generationStatus": {
+              "type": "array",
+              "item": "string"
+            },
+            "rawHandle": "string"
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string"
+      }
+    },
+    "factualEventVariants": {
+      "player_death:player_death_observed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "removedFields": {
+                    "type": "array",
+                    "item": "string"
+                  }
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "null",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicCandidate": "null",
+              "playerKey": "string",
+              "rawHandle": "null",
+              "rawTeam": "number",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "null",
+              "parserSeconds": "null",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "string",
+              "evidenceNames": {
+                "type": "array",
+                "item": "string"
+              },
+              "previous": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "player_identity:player_identity_observed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {}
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "null",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicCandidate": "null",
+              "playerKey": "string",
+              "rawHandle": "null",
+              "rawTeam": "number",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "null",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "heroIdRaw": "number",
+                  "rawControllerHandle": "string"
+                }
+              },
+              "previous": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "player_respawn:player_respawn_observed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": "null",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {}
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "null",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicCandidate": "null",
+              "playerKey": "null",
+              "rawHandle": "null",
+              "rawTeam": "null",
+              "subjectId": "null",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "string",
+              "deadDurationParserSeconds": "number",
+              "previous": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "player_respawn:player_return_inferred": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "string"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "string",
+              "legacySourceIdentifier": "null",
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {}
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "null",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicCandidate": "null",
+              "playerKey": "null",
+              "rawHandle": "null",
+              "rawTeam": "null",
+              "subjectId": "null",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "string",
+              "deadDurationParserSeconds": "number",
+              "previous": "string",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "raw_objective_structure_lifecycle:entity_deleted_or_absent_observed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": {
+                "type": "object",
+                "fields": {
+                  "legacySourceIdentifier": "boolean",
+                  "value": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "sourceEventType": "string"
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicCandidate": "string",
+              "playerKey": "null",
+              "rawHandle": "string",
+              "rawTeam": "null",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": "null",
+              "previous": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number"
+                }
+              },
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "raw_objective_structure_lifecycle:entity_present": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": {
+                "type": "object",
+                "fields": {
+                  "legacySourceIdentifier": "boolean",
+                  "value": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "sourceEventType": "string"
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicCandidate": "string",
+              "playerKey": "null",
+              "rawHandle": "string",
+              "rawTeam": "null",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number",
+                  "rawTeam": "number"
+                }
+              },
+              "previous": "null",
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "raw_objective_structure_lifecycle:raw_health_changed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": {
+                "type": "object",
+                "fields": {
+                  "legacySourceIdentifier": "boolean",
+                  "value": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "sourceEventType": "string"
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicCandidate": "string",
+              "playerKey": "null",
+              "rawHandle": "string",
+              "rawTeam": "null",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number",
+                  "rawTeam": "number"
+                }
+              },
+              "previous": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number"
+                }
+              },
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "raw_objective_structure_lifecycle:raw_health_zero_or_terminal_observed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": {
+                "type": "object",
+                "fields": {
+                  "legacySourceIdentifier": "boolean",
+                  "value": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "sourceEventType": "string"
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicCandidate": "string",
+              "playerKey": "null",
+              "rawHandle": "string",
+              "rawTeam": "null",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number",
+                  "rawTeam": "number"
+                }
+              },
+              "previous": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number"
+                }
+              },
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "raw_objective_structure_lifecycle:raw_state_changed": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "null",
+              "legacySourceIdentifier": {
+                "type": "object",
+                "fields": {
+                  "legacySourceIdentifier": "boolean",
+                  "value": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "sourceEventType": "string"
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "string",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "string",
+              "entitySerial": "null",
+              "mechanicCandidate": "string",
+              "playerKey": "null",
+              "rawHandle": "string",
+              "rawTeam": "null",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "number",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number",
+                  "rawTeam": "number"
+                }
+              },
+              "previous": {
+                "type": "object",
+                "fields": {
+                  "health": "number",
+                  "maxHealth": "number"
+                }
+              },
+              "unit": "null"
+            }
+          }
+        }
+      },
+      "team_net_worth:team_net_worth_derived": {
+        "type": "object",
+        "fields": {
+          "epistemicStatus": {
+            "type": "object",
+            "fields": {
+              "confidence": "string",
+              "independentValidation": "string",
+              "mechanicEffectApplied": "boolean",
+              "mechanicVersionStatus": "string",
+              "observationStatus": "string",
+              "semanticLimit": "string",
+              "warnings": {
+                "type": "array",
+                "item": "unknown"
+              }
+            }
+          },
+          "eventCategory": "string",
+          "eventId": "string",
+          "eventType": "string",
+          "provenance": {
+            "type": "object",
+            "fields": {
+              "code": "string",
+              "epistemicType": "string",
+              "formula": "string",
+              "legacySourceIdentifier": "null",
+              "limitations": {
+                "type": "array",
+                "item": "unknown"
+              },
+              "method": "string",
+              "parameters": {
+                "type": "object",
+                "fields": {
+                  "rawTeams": {
+                    "type": "array",
+                    "item": "number"
+                  }
+                }
+              },
+              "sourceEventId": "string",
+              "sourceField": "string",
+              "sourceId": "string",
+              "sourcePath": "string",
+              "sourceTask": "string",
+              "validationStatus": "string"
+            }
+          },
+          "replayId": "string",
+          "schemaVersion": "string",
+          "subject": {
+            "type": "object",
+            "fields": {
+              "className": "null",
+              "entityGeneration": "null",
+              "entityIndex": "null",
+              "entityKey": "null",
+              "entitySerial": "null",
+              "mechanicCandidate": "null",
+              "playerKey": "null",
+              "rawHandle": "null",
+              "rawTeam": "null",
+              "subjectId": "string",
+              "subjectType": "string"
+            }
+          },
+          "time": {
+            "type": "object",
+            "fields": {
+              "demoTick": "null",
+              "parserSeconds": "number",
+              "pauseAdjusted": "boolean",
+              "timeBasis": "string"
+            }
+          },
+          "value": {
+            "type": "object",
+            "fields": {
+              "current": {
+                "type": "object",
+                "fields": {
+                  "differenceTeam2MinusTeam3": "number",
+                  "rawTeam2": "number",
+                  "rawTeam3": "number"
+                }
+              },
+              "previous": "null",
+              "unit": "string"
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "fields": {
+        "records": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "category": "string",
+              "metadataId": "string",
+              "provenance": {
+                "type": "object",
+                "fields": {
+                  "code": "string",
+                  "epistemicType": "string",
+                  "formula": "null",
+                  "legacySourceIdentifier": "null",
+                  "limitations": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "method": "string",
+                  "parameters": {
+                    "type": "object",
+                    "fields": {}
+                  },
+                  "sourceEventId": "null",
+                  "sourceField": "string",
+                  "sourceId": "string",
+                  "sourcePath": "string",
+                  "sourceTask": "string",
+                  "validationStatus": "string"
+                }
+              },
+              "value": {
+                "type": "object",
+                "fields": {
+                  "completed": "boolean",
+                  "durationSeconds": "number",
+                  "entityPacketsProcessed": "number",
+                  "finalParsedGameTimeSeconds": "number",
+                  "finalParsedTick": "number",
+                  "firstError": {
+                    "type": "object",
+                    "fields": {
+                      "category": "string",
+                      "finalParsedTick": "number",
+                      "gameTimeSeconds": "null",
+                      "rawError": "null",
+                      "tick": "null"
+                    }
+                  },
+                  "firstErrorCategory": "string",
+                  "firstErrorGameTimeSeconds": "null",
+                  "firstErrorTick": "null",
+                  "identitiesRemainStable": "boolean",
+                  "lastTick": "number",
+                  "messagePacketsProcessed": "number",
+                  "metadata": {
+                    "type": "object",
+                    "fields": {
+                      "classCount": "number",
+                      "demoProtocol": "null",
+                      "durationSeconds": "number",
+                      "entityCount": "number",
+                      "gameBuild": "null",
+                      "lastTick": "number",
+                      "mapName": "null",
+                      "matchId": "null",
+                      "metadataAvailability": "string",
+                      "networkProtocol": "null",
+                      "stringTableCount": "null"
+                    }
+                  },
+                  "missingBaselineReferences": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "missingClassReferences": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "missingEntityReferences": {
+                    "type": "array",
+                    "item": "unknown"
+                  },
+                  "modeName": "string",
+                  "outputRemainsSynchronized": "boolean",
+                  "packetsProcessed": "number",
+                  "parserConfiguration": {
+                    "type": "object",
+                    "fields": {
+                      "addedRecoveryBehavior": "boolean",
+                      "allowMissingClassBaseline": "boolean",
+                      "allowUnresolvedEntityReference": "boolean"
+                    }
+                  },
+                  "percentParsed": "number",
+                  "stats": {
+                    "type": "object",
+                    "fields": {
+                      "classBaselines": "number",
+                      "classes": "number",
+                      "entities": "number",
+                      "serializers": "number"
+                    }
+                  },
+                  "telemetryRows": "number",
+                  "warningCount": "number",
+                  "warnings": {
+                    "type": "array",
+                    "item": "unknown"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string"
+      }
+    },
+    "overlay": {
+      "type": "object",
+      "fields": {
+        "overlays": {
+          "type": "array",
+          "item": "unknown"
+        },
+        "provenance": {
+          "type": "array",
+          "item": "unknown"
+        },
+        "reason": "string",
+        "replayId": "string",
+        "schemaVersion": "string",
+        "status": "string"
+      }
+    },
+    "snapshots": {
+      "type": "object",
+      "fields": {
+        "limitations": {
+          "type": "array",
+          "item": "string"
+        },
+        "players": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "alive": "boolean",
+              "netWorth": "number",
+              "playerKey": "string",
+              "rawReplayPosition": {
+                "type": "object",
+                "fields": {
+                  "coordinateBasis": "string",
+                  "x": "number",
+                  "y": "number",
+                  "z": "number"
+                }
+              },
+              "rawTeam": "number"
+            }
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "fields": {
+            "code": "string",
+            "epistemicType": "string",
+            "formula": "null",
+            "legacySourceIdentifier": "null",
+            "limitations": {
+              "type": "array",
+              "item": "unknown"
+            },
+            "method": "string",
+            "parameters": {
+              "type": "object",
+              "fields": {}
+            },
+            "sourceEventId": "null",
+            "sourceField": "string",
+            "sourceId": "string",
+            "sourcePath": "string",
+            "sourceTask": "string",
+            "validationStatus": "string"
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string",
+        "snapshotId": "string",
+        "teamNetWorth": {
+          "type": "object",
+          "fields": {
+            "differenceTeam2MinusTeam3": "number",
+            "rawTeam2": "number",
+            "rawTeam3": "number",
+            "unit": "string"
+          }
+        },
+        "time": {
+          "type": "object",
+          "fields": {
+            "demoTick": "undefined",
+            "parserSeconds": "number",
+            "pauseAdjusted": "boolean",
+            "timeBasis": "string"
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "fields": {
+        "capabilities": {
+          "type": "array",
+          "item": {
+            "type": "object",
+            "fields": {
+              "capability": "string",
+              "evidence": {
+                "type": "array",
+                "item": "string"
+              },
+              "limitations": {
+                "type": "array",
+                "item": "string"
+              },
+              "status": "string"
+            }
+          }
+        },
+        "replayId": "string",
+        "schemaVersion": "string"
+      }
+    },
+    "validation": null
+  },
+  "contractValidation": {
+    "schemaVersion": "2.0.0",
+    "valid": true,
+    "errors": [],
+    "eventVariants": [
+      {
+        "variant": "player_death:player_death_observed",
+        "count": 56
+      },
+      {
+        "variant": "player_identity:player_identity_observed",
+        "count": 12
+      },
+      {
+        "variant": "player_respawn:player_respawn_observed",
+        "count": 50
+      },
+      {
+        "variant": "player_respawn:player_return_inferred",
+        "count": 4
+      },
+      {
+        "variant": "raw_objective_structure_lifecycle:entity_deleted_or_absent_observed",
+        "count": 47
+      },
+      {
+        "variant": "raw_objective_structure_lifecycle:entity_present",
+        "count": 47
+      },
+      {
+        "variant": "raw_objective_structure_lifecycle:raw_health_changed",
+        "count": 1361
+      },
+      {
+        "variant": "raw_objective_structure_lifecycle:raw_health_zero_or_terminal_observed",
+        "count": 26
+      },
+      {
+        "variant": "raw_objective_structure_lifecycle:raw_state_changed",
+        "count": 38
+      },
+      {
+        "variant": "team_net_worth:team_net_worth_derived",
+        "count": 1835
+      }
+    ]
+  },
+  "replay002VsReplay009KnownDifferences": [
+    {
+      "category": "independent_validation_overlay",
+      "status": "source_unavailable_for_target_replay"
+    },
+    {
+      "category": "entity_identity",
+      "status": "v2_neutral_keys_replace_legacy_spatial_objective_ids"
+    },
+    {
+      "category": "entity_generation",
+      "status": "v2_marks_generation_unavailable_instead_of_fabricating"
+    }
+  ],
+  "schemaBreaks": []
+}

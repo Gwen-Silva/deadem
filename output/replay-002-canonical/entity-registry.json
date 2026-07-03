@@ -1,13 +1,30 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "replayId": "replay_002",
+  "identityRules": {
+    "entityKey": "neutral canonical key derived from replay id, class name, and raw handle; legacy spatial identifiers are provenance only",
+    "rawHandle": "preserved verbatim when available",
+    "entityIndex": "null unless source explicitly provides a decoded index",
+    "entitySerial": "null unless source explicitly provides serial",
+    "entityGeneration": "null unless lifecycle evidence supports a generation",
+    "generationStatus": [
+      "supported",
+      "unavailable",
+      "not_applicable"
+    ]
+  },
   "entities": [
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "central_midboss",
-      "entityIndex": 4197024,
-      "entityGeneration": "objective_generation:central_midboss:0",
+      "entityKey": "replay_002:entity:5fcd5618eac786ebb7",
+      "rawHandle": "4197024",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_MidBoss",
       "rawTeam": 4,
       "mechanicCandidate": "mid_boss",
@@ -31,26 +48,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.0",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "central_midboss",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_barrack_inner_a",
-      "entityIndex": 2769241,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_barrack_inner_a:0",
+      "entityKey": "replay_002:entity:fb3c4cd9becefae9c3",
+      "rawHandle": "2769241",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -78,26 +117,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.1",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_barrack_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_barrack_outer_b",
-      "entityIndex": 12910938,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_barrack_outer_b:0",
+      "entityKey": "replay_002:entity:808c7ee1d2cdabea11",
+      "rawHandle": "12910938",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -125,29 +186,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.2",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_barrack_outer_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_base_guardian_inner_b",
-      "entityIndex": 7406001,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_base_guardian_inner_b:0",
+      "entityKey": "replay_002:entity:c1b4055f02aeb6a8e2",
+      "rawHandle": "7406001",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 2,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -168,29 +251,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.3",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_base_guardian_inner_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_base_guardian_outer_b",
-      "entityIndex": 8667612,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_base_guardian_outer_b:0",
+      "entityKey": "replay_002:entity:a42bee69fd42fd37c4",
+      "rawHandle": "8667612",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 2,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -211,26 +316,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.4",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_base_guardian_outer_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_guardian_inner_a",
-      "entityIndex": 3262939,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_guardian_inner_a:0",
+      "entityKey": "replay_002:entity:60fd6ec919ca420383",
+      "rawHandle": "3262939",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_TrooperBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -258,26 +385,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.5",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_guardian_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_patron_outer_a",
-      "entityIndex": 3473708,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_patron_outer_a:0",
+      "entityKey": "replay_002:entity:eebb5255300e467f06",
+      "rawHandle": "3473708",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier3",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -305,29 +454,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.6",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_patron_outer_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_2_walker_inner_b",
-      "entityIndex": 4358452,
-      "entityGeneration": "objective_generation:lane_axis_1_team_2_walker_inner_b:0",
+      "entityKey": "replay_002:entity:4704f68b153129c624",
+      "rawHandle": "4358452",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier2",
       "rawTeam": 2,
-      "mechanicCandidate": "walker",
+      "mechanicCandidate": "walker_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1391,
       "healthFields": [
@@ -352,26 +523,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.7",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_2_walker_inner_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_3_barrack_inner_a",
-      "entityIndex": 14565727,
-      "entityGeneration": "objective_generation:lane_axis_1_team_3_barrack_inner_a:0",
+      "entityKey": "replay_002:entity:6ee8dc7c9ac20c786c",
+      "rawHandle": "14565727",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -395,26 +588,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.8",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_3_barrack_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_3_barrack_middle",
-      "entityIndex": 11223392,
-      "entityGeneration": "objective_generation:lane_axis_1_team_3_barrack_middle:0",
+      "entityKey": "replay_002:entity:16a70a3b50fe99faa7",
+      "rawHandle": "11223392",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -438,29 +653,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.9",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_3_barrack_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_3_base_guardian_inner_b",
-      "entityIndex": 9322970,
-      "entityGeneration": "objective_generation:lane_axis_1_team_3_base_guardian_inner_b:0",
+      "entityKey": "replay_002:entity:f1e0b294f798b89f7d",
+      "rawHandle": "9322970",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 3,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -481,29 +718,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.10",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_3_base_guardian_inner_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_3_base_guardian_middle",
-      "entityIndex": 14565800,
-      "entityGeneration": "objective_generation:lane_axis_1_team_3_base_guardian_middle:0",
+      "entityKey": "replay_002:entity:038eca7d99a3691215",
+      "rawHandle": "14565800",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 3,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -524,26 +783,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.11",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_3_base_guardian_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_3_guardian_outer_b",
-      "entityIndex": 15600092,
-      "entityGeneration": "objective_generation:lane_axis_1_team_3_guardian_outer_b:0",
+      "entityKey": "replay_002:entity:4319e623a62a1707d6",
+      "rawHandle": "15600092",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_TrooperBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -571,29 +852,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.12",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_3_guardian_outer_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_1_team_3_walker_middle",
-      "entityIndex": 6930741,
-      "entityGeneration": "objective_generation:lane_axis_1_team_3_walker_middle:0",
+      "entityKey": "replay_002:entity:2bf06b5bf2dad26b2b",
+      "rawHandle": "6930741",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier2",
       "rawTeam": 3,
-      "mechanicCandidate": "walker",
+      "mechanicCandidate": "walker_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -618,26 +921,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.13",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_1_team_3_walker_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_2_barrack_middle",
-      "entityIndex": 11698523,
-      "entityGeneration": "objective_generation:lane_axis_2_team_2_barrack_middle:0",
+      "entityKey": "replay_002:entity:7202b8965a0f46afcd",
+      "rawHandle": "11698523",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -665,29 +990,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.14",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_2_barrack_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_2_base_guardian_inner_a",
-      "entityIndex": 5308893,
-      "entityGeneration": "objective_generation:lane_axis_2_team_2_base_guardian_inner_a:0",
+      "entityKey": "replay_002:entity:ae08b7b51b38de0dba",
+      "rawHandle": "5308893",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 2,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -708,29 +1055,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.15",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_2_base_guardian_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_2_base_guardian_middle",
-      "entityIndex": 5505440,
-      "entityGeneration": "objective_generation:lane_axis_2_team_2_base_guardian_middle:0",
+      "entityKey": "replay_002:entity:40078585b7688106dd",
+      "rawHandle": "5505440",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 2,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -751,26 +1120,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.16",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_2_base_guardian_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_2_guardian_outer_b",
-      "entityIndex": 4573656,
-      "entityGeneration": "objective_generation:lane_axis_2_team_2_guardian_outer_b:0",
+      "entityKey": "replay_002:entity:93c281dafb1b3a82e8",
+      "rawHandle": "4573656",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_TrooperBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -798,29 +1189,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.17",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_2_guardian_outer_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_2_walker_inner_b",
-      "entityIndex": 9699634,
-      "entityGeneration": "objective_generation:lane_axis_2_team_2_walker_inner_b:0",
+      "entityKey": "replay_002:entity:e096e4284ec1e874f4",
+      "rawHandle": "9699634",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier2",
       "rawTeam": 2,
-      "mechanicCandidate": "walker",
+      "mechanicCandidate": "walker_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1198,
       "healthFields": [
@@ -845,26 +1258,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.18",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_2_walker_inner_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_barrack_middle",
-      "entityIndex": 13664678,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_barrack_middle:0",
+      "entityKey": "replay_002:entity:b24c932037699e29fd",
+      "rawHandle": "13664678",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -888,26 +1323,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.19",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_barrack_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_barrack_outer_b",
-      "entityIndex": 1917349,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_barrack_outer_b:0",
+      "entityKey": "replay_002:entity:7f1008e4039d4e3fcc",
+      "rawHandle": "1917349",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -933,29 +1390,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.20",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_barrack_outer_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_base_guardian_inner_a",
-      "entityIndex": 14483931,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_base_guardian_inner_a:0",
+      "entityKey": "replay_002:entity:1a2458afb2f7d7bd71",
+      "rawHandle": "14483931",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 3,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -976,29 +1455,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.21",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_base_guardian_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_base_guardian_middle",
-      "entityIndex": 16581031,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_base_guardian_middle:0",
+      "entityKey": "replay_002:entity:ec08209bf74fce238f",
+      "rawHandle": "16581031",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BaseDefenseSentry",
       "rawTeam": 3,
-      "mechanicCandidate": "guardian_or_base_sentry",
+      "mechanicCandidate": "guardian_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1019,26 +1520,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.22",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_base_guardian_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_guardian_middle",
-      "entityIndex": 2083289,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_guardian_middle:0",
+      "entityKey": "replay_002:entity:7e20ae83122bacbbdb",
+      "rawHandle": "2083289",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_TrooperBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -1066,26 +1589,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.23",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_guardian_middle",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_patron_outer_a",
-      "entityIndex": 590123,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_patron_outer_a:0",
+      "entityKey": "replay_002:entity:2d117046e49b3a13c8",
+      "rawHandle": "590123",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier3",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -1113,29 +1658,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.24",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_patron_outer_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_2_team_3_walker_inner_a",
-      "entityIndex": 14909745,
-      "entityGeneration": "objective_generation:lane_axis_2_team_3_walker_inner_a:0",
+      "entityKey": "replay_002:entity:948c251ded3c297e57",
+      "rawHandle": "14909745",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier2",
       "rawTeam": 3,
-      "mechanicCandidate": "walker",
+      "mechanicCandidate": "walker_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1249,
       "healthFields": [
@@ -1160,26 +1727,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.25",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_2_team_3_walker_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_3_team_2_barrack_inner_a",
-      "entityIndex": 12829021,
-      "entityGeneration": "objective_generation:lane_axis_3_team_2_barrack_inner_a:0",
+      "entityKey": "replay_002:entity:42cb47bc2d9282f87b",
+      "rawHandle": "12829021",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -1207,26 +1796,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.26",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_3_team_2_barrack_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_3_team_2_guardian_inner_a",
-      "entityIndex": 4360663,
-      "entityGeneration": "objective_generation:lane_axis_3_team_2_guardian_inner_a:0",
+      "entityKey": "replay_002:entity:b1cb4733c65ea5c809",
+      "rawHandle": "4360663",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_TrooperBoss",
       "rawTeam": 2,
       "mechanicCandidate": "base_structure_candidate",
@@ -1254,29 +1865,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.27",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_3_team_2_guardian_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_3_team_2_walker_inner_b",
-      "entityIndex": 3457331,
-      "entityGeneration": "objective_generation:lane_axis_3_team_2_walker_inner_b:0",
+      "entityKey": "replay_002:entity:b7cc75cc8b625b09a4",
+      "rawHandle": "3457331",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier2",
       "rawTeam": 2,
-      "mechanicCandidate": "walker",
+      "mechanicCandidate": "walker_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1431,
       "healthFields": [
@@ -1301,26 +1934,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.28",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_3_team_2_walker_inner_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_3_team_3_barrack_inner_a",
-      "entityIndex": 10420577,
-      "entityGeneration": "objective_generation:lane_axis_3_team_3_barrack_inner_a:0",
+      "entityKey": "replay_002:entity:692017ed928ca3362d",
+      "rawHandle": "10420577",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_BarrackBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -1348,26 +2003,48 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.29",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_3_team_3_barrack_inner_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_3_team_3_guardian_outer_a",
-      "entityIndex": 15141338,
-      "entityGeneration": "objective_generation:lane_axis_3_team_3_guardian_outer_a:0",
+      "entityKey": "replay_002:entity:765c1abe02cd265719",
+      "rawHandle": "15141338",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_TrooperBoss",
       "rawTeam": 3,
       "mechanicCandidate": "base_structure_candidate",
@@ -1395,29 +2072,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.30",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_3_team_3_guardian_outer_a",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "lane_axis_3_team_3_walker_inner_b",
-      "entityIndex": 7684400,
-      "entityGeneration": "objective_generation:lane_axis_3_team_3_walker_inner_b:0",
+      "entityKey": "replay_002:entity:741e5e2b8ac20e5fcb",
+      "rawHandle": "7684400",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Boss_Tier2",
       "rawTeam": 3,
-      "mechanicCandidate": "walker",
+      "mechanicCandidate": "walker_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1023,
       "healthFields": [
@@ -1442,29 +2141,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.31",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "lane_axis_3_team_3_walker_inner_b",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "neutral_spawner_ccitadel_herotestorbspawner_0_100_0",
-      "entityIndex": 10453409,
-      "entityGeneration": "objective_generation:neutral_spawner_ccitadel_herotestorbspawner_0_100_0:0",
+      "entityKey": "replay_002:entity:d14703e4b72b9a2d83",
+      "rawHandle": "10453409",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CCitadel_HeroTestOrbSpawner",
       "rawTeam": 0,
-      "mechanicCandidate": "spawner",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1485,29 +2206,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.32",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "neutral_spawner_ccitadel_herotestorbspawner_0_100_0",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "neutral_spawner_ccitadel_herotestorbspawner_0_800_100",
-      "entityIndex": 5292457,
-      "entityGeneration": "objective_generation:neutral_spawner_ccitadel_herotestorbspawner_0_800_100:0",
+      "entityKey": "replay_002:entity:84b9cf57e4bd9d3525",
+      "rawHandle": "5292457",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CCitadel_HeroTestOrbSpawner",
       "rawTeam": 0,
-      "mechanicCandidate": "spawner",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1528,29 +2271,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.33",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "neutral_spawner_ccitadel_herotestorbspawner_0_800_100",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "neutral_spawner_ccitadel_pickupitemspawner_0_200_100",
-      "entityIndex": 14057872,
-      "entityGeneration": "objective_generation:neutral_spawner_ccitadel_pickupitemspawner_0_200_100:0",
+      "entityKey": "replay_002:entity:5d36f5737858851694",
+      "rawHandle": "14057872",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CCitadel_PickupItemSpawner",
       "rawTeam": 0,
-      "mechanicCandidate": "spawner",
+      "mechanicCandidate": "spawner_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1571,29 +2336,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.34",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "neutral_spawner_ccitadel_pickupitemspawner_0_200_100",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "neutral_spawner_ccitadel_pickupitemspawner_0_900_900",
-      "entityIndex": 7651729,
-      "entityGeneration": "objective_generation:neutral_spawner_ccitadel_pickupitemspawner_0_900_900:0",
+      "entityKey": "replay_002:entity:18b65cd8e293944cd8",
+      "rawHandle": "7651729",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CCitadel_PickupItemSpawner",
       "rawTeam": 0,
-      "mechanicCandidate": "spawner",
+      "mechanicCandidate": "spawner_candidate",
       "firstObservedParserSeconds": 0,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1614,29 +2401,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.35",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "neutral_spawner_ccitadel_pickupitemspawner_0_900_900",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_100_300",
-      "entityIndex": 822487,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_100_300:481",
+      "entityKey": "replay_002:entity:668afd05589e4f1c80",
+      "rawHandle": "822487",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1661,29 +2470,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.36",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_100_300",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_100_900",
-      "entityIndex": 7081218,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_100_900:481",
+      "entityKey": "replay_002:entity:3bf28e42357b60c660",
+      "rawHandle": "7081218",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1708,29 +2539,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.37",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_100_900",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_1000_800",
-      "entityIndex": 4345056,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_1000_800:481",
+      "entityKey": "replay_002:entity:3f1c72de36d452207e",
+      "rawHandle": "4345056",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1755,29 +2608,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.38",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_1000_800",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_300_100",
-      "entityIndex": 9932002,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_300_100:481",
+      "entityKey": "replay_002:entity:8bc1cd67a55bcaae1d",
+      "rawHandle": "9932002",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1802,29 +2677,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.39",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_300_100",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_400_100",
-      "entityIndex": 4771073,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_400_100:481",
+      "entityKey": "replay_002:entity:e5b62815fa5b238b65",
+      "rawHandle": "4771073",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1849,29 +2746,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.40",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_400_100",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_400_500",
-      "entityIndex": 10063062,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_400_500:481",
+      "entityKey": "replay_002:entity:550bce8cc22a186989",
+      "rawHandle": "10063062",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1896,29 +2815,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.41",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_400_500",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_600_1000",
-      "entityIndex": 4181247,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_600_1000:481",
+      "entityKey": "replay_002:entity:e98f7adc7d8731f6cf",
+      "rawHandle": "4181247",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1943,29 +2884,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.42",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_600_1000",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_600_900",
-      "entityIndex": 14814464,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_600_900:481",
+      "entityKey": "replay_002:entity:88a72d4dc218163990",
+      "rawHandle": "14814464",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -1990,29 +2953,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.43",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_600_900",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_700_900",
-      "entityIndex": 10341617,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_700_900:481",
+      "entityKey": "replay_002:entity:b98d0b8e99c739bd2a",
+      "rawHandle": "10341617",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -2037,29 +3022,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.44",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_700_900",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_800_500",
-      "entityIndex": 7097567,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_800_500:481",
+      "entityKey": "replay_002:entity:ec0df01a386f8137b7",
+      "rawHandle": "7097567",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -2084,29 +3091,51 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.45",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_800_500",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     },
     {
-      "schemaVersion": "1.0.0",
+      "schemaVersion": "2.0.0",
       "replayId": "replay_002",
-      "entityKey": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_900_200",
-      "entityIndex": 6393091,
-      "entityGeneration": "objective_generation:team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_900_200:481",
+      "entityKey": "replay_002:entity:839a79d1a26d5ccfed",
+      "rawHandle": "6393091",
+      "entityIndex": null,
+      "entityIndexSource": "not_decoded",
+      "entitySerial": null,
+      "entityGeneration": null,
+      "generationStatus": "unavailable",
+      "generationEvidence": [],
       "className": "CNPC_Neutral_SinnersSacrifice",
       "rawTeam": 4,
-      "mechanicCandidate": "urn_related_candidate",
+      "mechanicCandidate": "objective_or_structure_candidate",
       "firstObservedParserSeconds": 481,
       "lastObservedParserSeconds": 1834,
       "healthFields": [
@@ -2131,17 +3160,34 @@
       "confidence": "high",
       "provenance": [
         {
+          "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+          "sourceId": "objectiveInventory",
           "sourcePath": "output/replays/replay_002/objective-entity-inventory.json",
-          "sourceField": "entities.46",
-          "evidenceType": "direct_parser_observation",
-          "transformation": "copied_or_filtered_without_semantic_upgrade",
-          "derivationMethod": "copied_or_filtered_without_semantic_upgrade",
-          "validationLevel": "internal_consistency_only"
+          "sourceEventId": null,
+          "sourceField": "entities[]",
+          "epistemicType": "deterministic_derivation",
+          "method": "created neutral entity registry row from source entity inventory without promoting legacy spatial identifier",
+          "formula": null,
+          "code": "lib/canonical-state/builder.mjs",
+          "parameters": {
+            "keyBasis": [
+              "replayId",
+              "className",
+              "rawHandle"
+            ]
+          },
+          "limitations": [],
+          "validationStatus": "internal_consistency_only",
+          "legacySourceIdentifier": {
+            "value": "team_4_urn_related_cnpc_neutral_sinnerssacrifice_0_900_200",
+            "legacySourceIdentifier": true
+          }
         }
       ],
       "semanticLimits": [
-        "entity registry preserves parser/objective inventory identity only",
-        "entity absence, zero health, or old objective labels are not promoted to destruction/secure/claim/deposit"
+        "raw handle is not decoded as entity index",
+        "generation is unavailable unless lifecycle evidence supports it",
+        "legacy objective identifier remains provenance only"
       ],
       "limitations": []
     }
