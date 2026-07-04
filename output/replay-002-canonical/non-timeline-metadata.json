@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "3.0.0",
+  "schemaVersion": "4.0.0",
   "replayId": "replay_002",
   "records": [
     {
@@ -66,10 +66,15 @@
         "sourceEventId": null,
         "sourceField": "replays[].modes.default",
         "epistemicType": "deterministic_derivation",
-        "method": "imported parser result from prior parser compatibility matrix; parser not executed in Task 083",
+        "method": "imported parser result from prior parser compatibility matrix; parser not executed in Task 085",
         "formula": null,
         "code": "lib/canonical-state/builder.mjs",
-        "parameters": {},
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
         "limitations": [],
         "validationStatus": "internal_consistency_only",
         "legacySourceIdentifier": null
@@ -124,7 +129,12 @@
         "method": "imported existing death validation summary",
         "formula": null,
         "code": "lib/canonical-state/builder.mjs",
-        "parameters": {},
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
         "limitations": [],
         "validationStatus": "internal_consistency_only",
         "legacySourceIdentifier": null
@@ -145,10 +155,15 @@
         "sourceEventId": null,
         "sourceField": "sha256",
         "epistemicType": "deterministic_derivation",
-        "method": "hashed raw replay only to verify identity; replay was not parsed in Task 083",
+        "method": "hashed raw replay only to verify identity; replay was not parsed in Task 085",
         "formula": null,
         "code": "lib/canonical-state/builder.mjs",
-        "parameters": {},
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
         "limitations": [],
         "validationStatus": "internal_consistency_only",
         "legacySourceIdentifier": null

@@ -6,7 +6,7 @@ import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
-const correctionDir = 'output/replay-002-canonical-v3-validation';
+const correctionDir = 'output/replay-002-canonical-v4-validation';
 
 async function readJson(file) {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -117,6 +117,7 @@ async function makeSyntheticManifest(id, seed) {
         allowedInputs: [...Object.values(sources).map(source => source.path), matchShard],
         outputDir: `output-local/${id}-canonical`,
         assessmentDir: `output-local/${id}-assessment`,
+        generatedRootPrefixes: [`output-local/${id}-canonical`, `output-local/${id}-assessment`],
         followUpTaskPath: `output-local/${id}-followup.md`
     };
 }
@@ -159,6 +160,66 @@ test('two synthetic manifests prove the core is parameterized', async () => {
     }
 });
 
+test('manifest enabled categories are applied before package generation', async () => {
+    const manifest = await makeSyntheticManifest('synthetic_manifest_disabled', 3);
+    manifest.enabledCategories = ['player_identity', 'player_respawn'];
+    const io = createCanonicalIo({ allowlist: manifest.allowedInputs, generatedRootPrefixes: [manifest.outputDir, manifest.assessmentDir] });
+    await buildCanonicalState(manifest, io, { clean: true });
+    const events = await readJsonl(`${manifest.outputDir}/factual-events.jsonl`);
+    assert(events.every(event => ['player_identity', 'player_respawn'].includes(event.eventCategory)));
+    const snapshots = await readJsonl(`${manifest.outputDir}/snapshots.jsonl`);
+    assert.equal(snapshots.length, 0);
+    const behavior = await readJson(`${manifest.assessmentDir}/manifest-behavior-validation.json`);
+    assert.deepEqual(behavior.disabledCategoriesFound, []);
+    assert.equal(behavior.passed, true);
+});
+
+test('optional validation overlays are allowlisted and replay-scoped', async () => {
+    const manifest = await makeSyntheticManifest('synthetic_overlay_allowed', 4);
+    const overlayPath = 'output-local/synthetic_overlay_allowed-sources/overlay.json';
+    await writeJson(overlayPath, {
+        schemaVersion: '4.0.0',
+        replayId: manifest.replayId,
+        overlays: [{
+            overlayId: 'synthetic-overlay:1',
+            replayId: manifest.replayId,
+            eventId: 'synthetic-event',
+            comparisonStatus: 'not_comparable',
+            validationStatus: 'not_independently_validated',
+            confidence: 'unknown',
+            semanticLimit: 'synthetic overlay only',
+            provenance: {
+                sourceTask: 'synthetic_fixture',
+                sourceId: 'syntheticOverlay',
+                sourcePath: overlayPath,
+                sourceEventId: null,
+                sourceField: 'overlays[]',
+                epistemicType: 'independent_visual_validation',
+                method: 'synthetic allowed overlay fixture',
+                formula: null,
+                code: 'tests/replay-002-canonical-generalization.test.mjs',
+                parameters: { keyBasis: [], removedFields: [], rawTeams: [], sourceEventType: null },
+                limitations: [],
+                validationStatus: 'not_independently_validated',
+                legacySourceIdentifier: null
+            },
+            limitations: []
+        }]
+    });
+    manifest.sources.syntheticOverlay = { path: overlayPath, sourceTask: 'synthetic_fixture' };
+    manifest.allowedInputs.push(overlayPath);
+    manifest.optionalValidationOverlays = ['syntheticOverlay'];
+    const io = createCanonicalIo({ allowlist: manifest.allowedInputs, generatedRootPrefixes: [manifest.outputDir, manifest.assessmentDir] });
+    await buildCanonicalState(manifest, io, { clean: true });
+    const overlay = await readJson(`${manifest.outputDir}/independent-validation-overlay.json`);
+    assert.equal(overlay.overlays.length, 1);
+
+    const rejected = await makeSyntheticManifest('synthetic_overlay_rejected', 5);
+    rejected.optionalValidationOverlays = ['missingOverlay'];
+    const rejectedIo = createCanonicalIo({ allowlist: rejected.allowedInputs, generatedRootPrefixes: [rejected.outputDir, rejected.assessmentDir] });
+    await assert.rejects(() => buildCanonicalState(rejected, rejectedIo, { clean: true }), /Manifest source missing: missingOverlay/);
+});
+
 test('allowlist rejects protected replays including 005 and 006-008', async () => {
     const manifest = await createReplay002Manifest();
     const io = createCanonicalIo({ allowlist: manifest.allowedInputs, generatedRootPrefixes: [manifest.outputDir, manifest.assessmentDir] });
@@ -188,7 +249,7 @@ test('epistemic types distinguish direct observations from derivations', async (
     assert(inferredRespawns.length > 0);
     assert(inferredRespawns.every(event => event.provenance.epistemicType === 'deterministic_derivation'));
     const identity = events.filter(event => event.eventCategory === 'player_identity');
-    assert(identity.every(event => event.provenance.epistemicType === 'direct_parser_observation'));
+    assert(identity.every(event => event.provenance.epistemicType === 'deterministic_derivation'));
 });
 
 test('handles, entity indexes, and generations are separated and not fabricated', async () => {
@@ -226,11 +287,16 @@ test('canonical entity keys and promoted values do not leak spatial semantics', 
 test('all records validate against contract and schema diff covers variants', async () => {
     const validation = await readJson(`${correctionDir}/canonical-schema-validation.json`);
     assert.equal(validation.valid, true);
+    assert.equal(validation.genericObjectSchemasRemaining, 0);
+    assert.equal(validation.genericArrayItemSchemasRemaining, 0);
     assert(validation.eventVariants.length >= 5);
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
     assert(diff.replay009Schemas);
     assert(diff.replay002Schemas.factualEventVariants);
     assert(diff.contract);
+    const coverage = await readJson(`${correctionDir}/schema-diff-coverage.json`);
+    assert.equal(coverage.passed, true);
+    assert(coverage.targetEventVariantCoverage.length >= 10);
 });
 
 test('schema break detection is not name-based suppression', async () => {
@@ -279,15 +345,15 @@ test('contract validation covers every artifact and final gate follows matrix', 
     assert.equal(matrix.deterministicRerunPassed, true);
     const gate = await readJson(`${correctionDir}/correction-gate.json`);
     assert.equal(gate.success, true);
-    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v3');
+    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v4');
 });
 
 test('schema diff is real and negative schema cases fail', async () => {
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
-    assert(diff.targetV2VersusContractV3);
-    assert.equal(diff.targetV2VersusContractV3.schemaBreaks, 0);
-    assert(diff.replay009V1VersusContractV3.differences.length > 0);
-    assert(diff.replay009V1VersusReplay002V3.differences.length > 0);
+    assert(diff.targetV4VersusContractV4);
+    assert.equal(diff.targetV4VersusContractV4.schemaBreaks, 0);
+    assert(diff.replay009V1VersusContractV4.differences.length > 0);
+    assert(diff.replay009V1VersusReplay002V4.differences.length > 0);
 
     const { validateCanonicalPackage, CANONICAL_CONTRACT } = await import('../lib/canonical-state/contract.mjs');
     const events = await readJsonl(`${canonicalDir}/factual-events.jsonl`);
@@ -303,21 +369,33 @@ test('schema diff is real and negative schema cases fail', async () => {
         canonicalGate: await readJson(`${canonicalDir}/canonical-state-gate.json`)
     };
     const renamed = structuredClone(packageData);
-    renamed.factualEvents[0].eventIdRenamed = renamed.factualEvents[0].eventId;
-    delete renamed.factualEvents[0].eventId;
+    renamed.playerRegistry.players[0].controller = undefined;
     assert.equal(validateCanonicalPackage(renamed, CANONICAL_CONTRACT).valid, false);
 
     const typed = structuredClone(packageData);
-    typed.factualEvents[0].time.demoTick = '0';
+    typed.entityRegistry.entities[0].rawTeam = '2';
     assert.equal(validateCanonicalPackage(typed, CANONICAL_CONTRACT).valid, false);
 
     const noProv = structuredClone(packageData);
-    delete noProv.factualEvents[0].provenance;
+    delete noProv.capabilityMatrix.capabilities[0].provenance;
     assert.equal(validateCanonicalPackage(noProv, CANONICAL_CONTRACT).valid, false);
 
     const unknownVariant = structuredClone(packageData);
-    unknownVariant.factualEvents[0].eventType = 'new_unknown_variant';
+    unknownVariant.nonTimelineMetadata.records[0].metadataId = 'new_unknown_metadata_variant';
     assert.equal(validateCanonicalPackage(unknownVariant, CANONICAL_CONTRACT).valid, false);
+
+    const incompatiblePayload = structuredClone(packageData);
+    const teamEvent = incompatiblePayload.factualEvents.find(event => event.eventCategory === 'team_net_worth');
+    teamEvent.value.current.rawTeam2 = 'not-a-number';
+    assert.equal(validateCanonicalPackage(incompatiblePayload, CANONICAL_CONTRACT).valid, false);
+
+    const badSnapshot = structuredClone(packageData);
+    badSnapshot.snapshots[0].players[0].netWorth = '100';
+    assert.equal(validateCanonicalPackage(badSnapshot, CANONICAL_CONTRACT).valid, false);
+
+    const directWithoutJustification = structuredClone(packageData);
+    directWithoutJustification.factualEvents[0].provenance.epistemicType = 'direct_parser_observation';
+    assert.equal(validateCanonicalPackage(directWithoutJustification, CANONICAL_CONTRACT).valid, false);
 
     const forbidden = structuredClone(packageData);
     forbidden.factualEvents[0].laneAxis = 'lane_axis_1';

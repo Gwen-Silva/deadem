@@ -89,10 +89,10 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     broad user research;
   - remaining medium limitations are single-reviewer scope and careful
     Patron/base class reading.
-- Replay-002 canonical generalization from Task 084:
+- Replay-002 canonical generalization from Task 085:
   - corrected first bounded external canonical factual-state package for a
-    compatible normal control replay after Tasks 082 and 083 failed technical
-    review;
+    compatible normal control replay after Tasks 082, 083, and 084 failed
+    technical review;
   - 12 players, 6v6 raw teams, player snapshots, death/respawn events,
     `m_iGoldNetWorth` team observations, and raw objective/structure lifecycle
     observations are represented with provenance;
@@ -101,8 +101,9 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     generations are not fabricated, and no replay-009 validation overlays,
     build/mechanic assumptions, spatial semantics, or mechanic effects are
     inherited;
-  - the v3 gate is driven by executable contract validation, real schema diff,
-    full provenance audit, IO audit, deterministic rerun, documentation
+  - the v4 gate is driven by nested executable contract validation, event
+    variant schema diff, full provenance and direct-observation audits, applied
+    manifest behavior, IO audit, deterministic rerun, documentation
     consistency, and replay-protection checks.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
@@ -146,7 +147,7 @@ Replay bytes
   -> player identity/lifecycle              [available with constraints]
   -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
   -> canonical factual state schema         [replay_009_canonical_factual_state_ready_with_constraints]
-  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints_v3]
+  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints_v4]
   -> spatial map projection                 [not available]
   -> mechanic version resolution            [unresolved for build 23916427]
   -> mechanic activation                    [blocked]
@@ -156,9 +157,9 @@ Replay bytes
 ## Current Direction
 
 The active primary milestone is **cross-replay canonical generalization**.
-Task 082 and Task 083 are preserved as unaccepted attempts after technical
-review. Task 084 supersedes them with the gate
-`replay_002_canonical_factual_state_ready_with_constraints_v3`. This improves
+Task 082, Task 083, and Task 084 are preserved as unaccepted attempts after
+technical review. Task 085 supersedes them with the gate
+`replay_002_canonical_factual_state_ready_with_constraints_v4`. This improves
 schema stability and reduces replay-009 overfitting risk, but it is not proof of
 full corpus generalization or replay-005 release readiness.
 
@@ -279,7 +280,7 @@ Major current reports:
 - [`reports/replay-009-fixed-entity-coordinate-resolution.md`](./reports/replay-009-fixed-entity-coordinate-resolution.md)
 - [`reports/replay-009-walker-identity-resolution.md`](./reports/replay-009-walker-identity-resolution.md)
 - [`reports/deadem-spatial-milestone-reassessment.md`](./reports/deadem-spatial-milestone-reassessment.md)
-- [`reports/replay-002-canonical-factual-state-v3-validation.md`](./reports/replay-002-canonical-factual-state-v3-validation.md)
+- [`reports/replay-002-canonical-factual-state-v4-validation.md`](./reports/replay-002-canonical-factual-state-v4-validation.md)
 
 ## Running Validation
 

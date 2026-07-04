@@ -35,3 +35,7 @@ The gate means replay 002 is represented by the corrected canonical factual-stat
 ## Follow-Up
 
 Created `tasks/blocked/085-select-next-canonical-generalization-control.md`.
+
+## Post-Completion Technical Review Note
+
+Task 084 is preserved as the v3 corrective attempt, but its gate was not accepted after Task 085 review. The v3 result still had generic internal object schemas, omitted factual-event variants from schema-diff coverage, declared manifest behavior without fully applying it, did not audit capability provenance as derived assertions, treated some reconciled observations as direct parser observations, and populated parts of the validation matrix from positive constants rather than executable verifiers. Task 085 supersedes v3 with a nested contract, event-variant diff coverage, applied manifest behavior, full provenance/direct-observation audits, calculated verifier outputs, and a v4 final gate.

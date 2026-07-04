@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "4.0.0",
+  "valid": true,
+  "totalRecordsFound": 5381,
+  "totalRecordsValidated": 5381,
+  "genericObjectSchemasRemaining": 0,
+  "genericArrayItemSchemasRemaining": 0,
+  "byArtifact": {
+    "playerRegistry": {
+      "recordsFound": 12,
+      "recordsValidated": 12,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {
+        "playerFieldsChecked": 12
+      }
+    },
+    "entityRegistry": {
+      "recordsFound": 47,
+      "recordsValidated": 47,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {
+        "entityFieldsChecked": 47
+      }
+    },
+    "factualEvents": {
+      "recordsFound": 3476,
+      "recordsValidated": 3476,
+      "errors": [],
+      "warnings": [],
+      "variants": [
+        {
+          "variant": "player_death:player_death_observed",
+          "count": 56
+        },
+        {
+          "variant": "player_identity:player_identity_observed",
+          "count": 12
+        },
+        {
+          "variant": "team_net_worth:team_net_worth_derived",
+          "count": 1835
+        },
+        {
+          "variant": "raw_objective_structure_lifecycle:entity_present",
+          "count": 47
+        },
+        {
+          "variant": "raw_objective_structure_lifecycle:raw_health_changed",
+          "count": 1361
+        },
+        {
+          "variant": "player_respawn:player_respawn_observed",
+          "count": 50
+        },
+        {
+          "variant": "raw_objective_structure_lifecycle:raw_state_changed",
+          "count": 38
+        },
+        {
+          "variant": "raw_objective_structure_lifecycle:raw_health_zero_or_terminal_observed",
+          "count": 26
+        },
+        {
+          "variant": "raw_objective_structure_lifecycle:entity_deleted_or_absent_observed",
+          "count": 47
+        },
+        {
+          "variant": "player_respawn:player_return_inferred",
+          "count": 4
+        }
+      ],
+      "subrecords": {
+        "eventPayloadsChecked": 3476
+      }
+    },
+    "nonTimelineMetadata": {
+      "recordsFound": 3,
+      "recordsValidated": 3,
+      "errors": [],
+      "warnings": [],
+      "variants": [
+        {
+          "variant": "parser_matrix_result",
+          "count": 1
+        },
+        {
+          "variant": "death_validation",
+          "count": 1
+        },
+        {
+          "variant": "raw_replay_identity_hash",
+          "count": 1
+        }
+      ],
+      "subrecords": {
+        "metadataValuesChecked": 3
+      }
+    },
+    "independentValidationOverlay": {
+      "recordsFound": 0,
+      "recordsValidated": 0,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {
+        "overlayItemsChecked": 0
+      }
+    },
+    "snapshots": {
+      "recordsFound": 1835,
+      "recordsValidated": 1835,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {
+        "snapshotPlayersChecked": 22020
+      }
+    },
+    "capabilityMatrix": {
+      "recordsFound": 6,
+      "recordsValidated": 6,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {
+        "capabilityProvenanceChecked": 6
+      }
+    },
+    "validationSummary": {
+      "recordsFound": 1,
+      "recordsValidated": 1,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {}
+    },
+    "canonicalStateGate": {
+      "recordsFound": 1,
+      "recordsValidated": 1,
+      "errors": [],
+      "warnings": [],
+      "variants": [],
+      "subrecords": {}
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "eventVariants": [
+    {
+      "variant": "player_death:player_death_observed",
+      "count": 56
+    },
+    {
+      "variant": "player_identity:player_identity_observed",
+      "count": 12
+    },
+    {
+      "variant": "player_respawn:player_respawn_observed",
+      "count": 50
+    },
+    {
+      "variant": "player_respawn:player_return_inferred",
+      "count": 4
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:entity_deleted_or_absent_observed",
+      "count": 47
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:entity_present",
+      "count": 47
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_health_changed",
+      "count": 1361
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_health_zero_or_terminal_observed",
+      "count": 26
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_state_changed",
+      "count": 38
+    },
+    {
+      "variant": "team_net_worth:team_net_worth_derived",
+      "count": 1835
+    }
+  ],
+  "unknownEventVariants": []
+}

@@ -117,24 +117,26 @@ effects.
 
 ## Replay 002 Canonical Factual State Generalization
 
-`output/replay-002-canonical/` contains the Task 084 v3 canonical
+`output/replay-002-canonical/` contains the Task 085 v4 canonical
 factual-state package for the first bounded normal-control generalization case.
 It includes
 player and entity registries, factual events, non-timeline metadata, empty
 independent-validation overlay metadata, snapshots, capability matrix,
 validation summary, and gate.
 
-`output/replay-002-canonical-v3-validation/` contains the accepted Task 084
-validation package: executable canonical contract, source-consistency check,
+`output/replay-002-canonical-v4-validation/` contains the accepted Task 085
+validation package: nested executable canonical contract, source-consistency check,
 input manifest, access log, IO audit, raw replay access classification,
 assumption audit, identity/generation audit, spatial leakage audit, provenance
-audit, schema validation, real schema diff, manifest behavior validation,
-deterministic rerun result, validation matrix, summary, and gate.
+audit, direct-observation justification, schema validation, real event-variant
+schema diff, manifest behavior validation, deterministic rerun result,
+validation matrix, summary, and gate.
 
 `output/replay-002-canonical-generalization/` preserves the Task 082 first
 attempt, and `output/replay-002-canonical-correction/` preserves the Task 083
-second attempt. Neither earlier gate was accepted after technical review; use
-the Task 084 v3 package for current replay-002 canonical evidence. These
+second attempt. `output/replay-002-canonical-v3-validation/` preserves Task
+084's third attempt. None of those earlier gates was accepted after technical
+review; use the Task 085 v4 package for current replay-002 canonical evidence. These
 outputs do not emit
 lane/region/proximity/transform/residual fields, mechanic effects, objective
 completion, combat/fight grouping, rotations, pressure, macro interpretation,

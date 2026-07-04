@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "3.0.0",
+  "schemaVersion": "4.0.0",
   "replayId": "replay_002",
   "capabilities": [
     {
@@ -10,7 +10,27 @@
       ],
       "limitations": [
         "controller handles raw; pawn generations unavailable"
-      ]
+      ],
+      "provenance": {
+        "sourceTask": "026-build-one-second-spatial-extraction",
+        "sourceId": "oneSecondQuality",
+        "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
+        "sourceEventId": null,
+        "sourceField": "playerReconciliation.players",
+        "epistemicType": "deterministic_derivation",
+        "method": "derived capability status from produced canonical categories, source availability, and blocked semantic layers",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
+      }
     },
     {
       "capability": "death_respawn",
@@ -21,7 +41,27 @@
       ],
       "limitations": [
         "inferred respawns marked deterministic derivation"
-      ]
+      ],
+      "provenance": {
+        "sourceTask": "029-extract-multi-replay-death-events",
+        "sourceId": "deathEvents",
+        "sourcePath": "output/replays/replay_002/canonical-death-events.json",
+        "sourceEventId": null,
+        "sourceField": "events[]",
+        "epistemicType": "deterministic_derivation",
+        "method": "derived capability status from produced canonical categories, source availability, and blocked semantic layers",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
+      }
     },
     {
       "capability": "team_net_worth",
@@ -31,7 +71,27 @@
       ],
       "limitations": [
         "net worth only; not spendable/secured/unsecured"
-      ]
+      ],
+      "provenance": {
+        "sourceTask": "032-build-unified-descriptive-match-state-timeline",
+        "sourceId": "matchStateShard",
+        "sourcePath": "output/replays/replay_002/match-state-timeline-shards/*.jsonl",
+        "sourceEventId": null,
+        "sourceField": "players[].netWorth",
+        "epistemicType": "deterministic_derivation",
+        "method": "derived capability status from produced canonical categories, source availability, and blocked semantic layers",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
+      }
     },
     {
       "capability": "objective_structure_raw_lifecycle",
@@ -41,7 +101,27 @@
       ],
       "limitations": [
         "legacy spatial identifiers provenance only; no destruction/completion semantics"
-      ]
+      ],
+      "provenance": {
+        "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+        "sourceId": "objectiveLifecycle",
+        "sourcePath": "output/replays/replay_002/objective-lifecycle-events.json",
+        "sourceEventId": null,
+        "sourceField": "events[]",
+        "epistemicType": "deterministic_derivation",
+        "method": "derived capability status from produced canonical categories, source availability, and blocked semantic layers",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
+      }
     },
     {
       "capability": "spatial_semantics",
@@ -49,7 +129,27 @@
       "evidence": [],
       "limitations": [
         "no lane, region, proximity, transform, or residual emitted"
-      ]
+      ],
+      "provenance": {
+        "sourceTask": "032-build-unified-descriptive-match-state-timeline",
+        "sourceId": "matchStateShard",
+        "sourcePath": "output/replays/replay_002/match-state-timeline-shards/*.jsonl",
+        "sourceEventId": null,
+        "sourceField": "rows[].players[].position",
+        "epistemicType": "deterministic_derivation",
+        "method": "derived capability status from produced canonical categories, source availability, and blocked semantic layers",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
+      }
     },
     {
       "capability": "mechanic_effects",
@@ -57,7 +157,27 @@
       "evidence": [],
       "limitations": [
         "zero mechanic effects applied"
-      ]
+      ],
+      "provenance": {
+        "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+        "sourceId": "objectiveLifecycle",
+        "sourcePath": "output/replays/replay_002/objective-lifecycle-events.json",
+        "sourceEventId": null,
+        "sourceField": "events[]",
+        "epistemicType": "deterministic_derivation",
+        "method": "derived capability status from produced canonical categories, source availability, and blocked semantic layers",
+        "formula": null,
+        "code": "lib/canonical-state/builder.mjs",
+        "parameters": {
+          "keyBasis": [],
+          "removedFields": [],
+          "rawTeams": [],
+          "sourceEventType": null
+        },
+        "limitations": [],
+        "validationStatus": "internal_consistency_only",
+        "legacySourceIdentifier": null
+      }
     }
   ]
 }

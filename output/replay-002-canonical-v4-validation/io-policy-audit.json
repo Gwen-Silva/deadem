@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "pipelineModulesExamined": [
+    "tools/build-replay-002-canonical-state.mjs",
+    "tools/check-replay-002-canonical-determinism.mjs",
+    "lib/canonical-state/builder.mjs",
+    "lib/canonical-state/contract.mjs",
+    "lib/canonical-state/io-layer.mjs"
+  ],
+  "allInputReadsThroughIoLayer": true,
+  "factualReadsOutsideIoLayer": 0,
+  "generatedWritesWithinRoots": true,
+  "writeViolations": [],
+  "forbiddenPathsRejectedByPolicy": [
+    "samples/partida_005.dem",
+    "samples/partida_006.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007_bots01.dem",
+    "samples/replay_008_bots02_short.dem"
+  ],
+  "accessedForbiddenPathCount": 0,
+  "badAccesses": [],
+  "passed": true
+}
