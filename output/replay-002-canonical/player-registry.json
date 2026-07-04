@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "4.0.0",
+  "schemaVersion": "5.0.0",
   "replayId": "replay_002",
   "sourceReplay": "samples/partida_002.dem",
   "summary": {
@@ -13,7 +13,7 @@
   },
   "players": [
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198086065951",
       "playerSlot": null,
@@ -43,8 +43,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -53,7 +53,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -63,7 +65,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198110941637",
       "playerSlot": null,
@@ -93,8 +95,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -103,7 +105,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -113,7 +117,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198141839984",
       "playerSlot": null,
@@ -143,8 +147,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -153,7 +157,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -163,7 +169,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198197551365",
       "playerSlot": null,
@@ -193,8 +199,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -203,7 +209,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -213,7 +221,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198277999856",
       "playerSlot": null,
@@ -243,8 +251,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -253,7 +261,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -263,7 +273,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198305874157",
       "playerSlot": null,
@@ -293,8 +303,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -303,7 +313,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -313,7 +325,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198387584891",
       "playerSlot": null,
@@ -343,8 +355,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -353,7 +365,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -363,7 +377,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198404370682",
       "playerSlot": null,
@@ -393,8 +407,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -403,7 +417,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -413,7 +429,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561198958797538",
       "playerSlot": null,
@@ -443,8 +459,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -453,7 +469,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -463,7 +481,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561199006512996",
       "playerSlot": null,
@@ -493,8 +511,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -503,7 +521,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -513,7 +533,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561199117525543",
       "playerSlot": null,
@@ -543,8 +563,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -553,7 +573,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }
@@ -563,7 +585,7 @@
       ]
     },
     {
-      "schemaVersion": "4.0.0",
+      "schemaVersion": "5.0.0",
       "replayId": "replay_002",
       "playerKey": "76561199766207026",
       "playerSlot": null,
@@ -593,8 +615,8 @@
           "sourcePath": "output/replays/replay_002/one-second-spatial/quality.json",
           "sourceEventId": null,
           "sourceField": "playerReconciliation.players",
-          "epistemicType": "direct_parser_observation",
-          "method": "copied player identity and raw team from replay-specific aggregate",
+          "epistemicType": "deterministic_derivation",
+          "method": "copied reconciled player identity aggregate; original parser-side field chain is not preserved in this artifact",
           "formula": null,
           "code": "lib/canonical-state/builder.mjs",
           "parameters": {
@@ -603,7 +625,9 @@
             "rawTeams": [],
             "sourceEventType": null
           },
-          "limitations": [],
+          "limitations": [
+            "playerReconciliation.players is an aggregate/reconciled artifact, not an unmodified parser-side field chain"
+          ],
           "validationStatus": "internal_consistency_only",
           "legacySourceIdentifier": null
         }

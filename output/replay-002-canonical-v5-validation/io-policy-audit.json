@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "modulesExamined": [
+    {
+      "path": "tools/build-replay-002-canonical-state.mjs",
+      "sha256": "658ec140fce03b90f0349b4f51a5c1246bcf577e3af8e6e501cee2a7a4c3c821",
+      "lineCount": 129
+    },
+    {
+      "path": "tools/check-replay-002-canonical-determinism.mjs",
+      "sha256": "687ba3c2338a479841a5208a73fc34d8ae12569bef5998edb165aa1251999800",
+      "lineCount": 265
+    },
+    {
+      "path": "lib/canonical-state/builder.mjs",
+      "sha256": "8653f8ec34399749969aa61f69be2c5be28e29cb4873ab7261b1d937d816c9f8",
+      "lineCount": 1030
+    },
+    {
+      "path": "lib/canonical-state/contract.mjs",
+      "sha256": "839b62c983f0ddd2c170e53a1bc4fc1ef6f68680e59e303aba4fff47f9b9cdf1",
+      "lineCount": 659
+    },
+    {
+      "path": "lib/canonical-state/io-layer.mjs",
+      "sha256": "e9e08d70d91c3cc440aed44fbdcf4e457164e2c79f4fec9065daace4686c49ba",
+      "lineCount": 123
+    },
+    {
+      "path": "lib/canonical-state/audits/common.mjs",
+      "sha256": "da8bb670ecbf65ae26ded7f61f30c2c8ab1c7e0ece0a929d3484489dd2961cc1",
+      "lineCount": 53
+    },
+    {
+      "path": "lib/canonical-state/audits/contract-source-consistency.mjs",
+      "sha256": "17b773a709ff3ee7c47362b2c2635da5b8cc7082a76f8b32af24c610afdc8d8e",
+      "lineCount": 41
+    },
+    {
+      "path": "lib/canonical-state/audits/documentation-audit.mjs",
+      "sha256": "bf0fbdce1824eb87960cc2776e70f2afb7ac78a0deb4cfe00ce8ce58e7443111",
+      "lineCount": 69
+    },
+    {
+      "path": "lib/canonical-state/audits/epistemic-audit.mjs",
+      "sha256": "55ba15ecd70107298154e321fc4e44d46b7c8c407b5442c08404154e880fa817",
+      "lineCount": 107
+    },
+    {
+      "path": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "sha256": "74c8120e4260b1a58b7a03d02ba6965f86a8ccf5afc84d5bc0f00036f8d95ea7",
+      "lineCount": 44
+    }
+  ],
+  "findings": [
+    {
+      "file": "tools/build-replay-002-canonical-state.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "file": "tools/build-replay-002-canonical-state.mjs",
+      "line": 116,
+      "api": "access",
+      "classification": "validation_or_io_allowed",
+      "text": "await fs.access(manifest.followUpTaskPath);"
+    },
+    {
+      "file": "tools/check-replay-002-canonical-determinism.mjs",
+      "line": 2,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "file": "tools/check-replay-002-canonical-determinism.mjs",
+      "line": 39,
+      "api": "readdir",
+      "classification": "validation_or_io_allowed",
+      "text": "const entries = await fs.readdir(dir, { withFileTypes: true });"
+    },
+    {
+      "file": "tools/check-replay-002-canonical-determinism.mjs",
+      "line": 53,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "let bytes = await fs.readFile(file);"
+    },
+    {
+      "file": "tools/check-replay-002-canonical-determinism.mjs",
+      "line": 65,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "return JSON.parse(await fs.readFile(file, 'utf8'));"
+    },
+    {
+      "file": "tools/check-replay-002-canonical-determinism.mjs",
+      "line": 91,
+      "api": "stat",
+      "classification": "validation_or_io_allowed",
+      "text": "sizeBytes: (await fs.stat(file)).size"
+    },
+    {
+      "file": "lib/canonical-state/io-layer.mjs",
+      "line": 41,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "const text = await readFile(normalized, 'utf8');"
+    },
+    {
+      "file": "lib/canonical-state/io-layer.mjs",
+      "line": 66,
+      "api": "createReadStream",
+      "classification": "validation_or_io_allowed",
+      "text": "const stream = createReadStream(normalized);"
+    },
+    {
+      "file": "lib/canonical-state/audits/common.mjs",
+      "line": 2,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "file": "lib/canonical-state/audits/common.mjs",
+      "line": 15,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "return sha256Text(await fs.readFile(file, 'utf8'));"
+    },
+    {
+      "file": "lib/canonical-state/audits/common.mjs",
+      "line": 19,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "return JSON.parse(await fs.readFile(file, 'utf8'));"
+    },
+    {
+      "file": "lib/canonical-state/audits/common.mjs",
+      "line": 23,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "const text = await fs.readFile(file, 'utf8');"
+    },
+    {
+      "file": "lib/canonical-state/audits/documentation-audit.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "file": "lib/canonical-state/audits/documentation-audit.mjs",
+      "line": 30,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "const text = await fs.readFile(file, 'utf8');"
+    },
+    {
+      "file": "lib/canonical-state/audits/documentation-audit.mjs",
+      "line": 61,
+      "api": "access",
+      "classification": "validation_or_io_allowed",
+      "text": "await fs.access(file);"
+    },
+    {
+      "file": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "file": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 11,
+      "api": "readFile",
+      "classification": "validation_or_io_allowed",
+      "text": "const text = await fs.readFile(modulePath, 'utf8');"
+    },
+    {
+      "file": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 17,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "const importsFs = line.includes('node:fs') || line.match(/\\bfrom ['\"]fs['\"]/u);"
+    },
+    {
+      "file": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 19,
+      "api": "node:fs import",
+      "classification": "validation_or_orchestration_read",
+      "text": "findings.push({ file: modulePath, line: index + 1, api: 'node:fs import', classification: modulePath.includes('/audits/') || modulePath.includes('\\\\audits\\\\') || modulePath.includes('check-replay-002-canonical-determinism') || modulePath.includes('build-replay-002-canonical-state') ? 'validation_or_orchestration_read' : 'potential_factual_io_outside_layer', text: line.trim() });"
+    }
+  ],
+  "forbiddenFindings": [],
+  "apisChecked": [
+    "readFile",
+    "createReadStream",
+    "open",
+    "stat",
+    "readdir",
+    "access"
+  ],
+  "passed": true
+}

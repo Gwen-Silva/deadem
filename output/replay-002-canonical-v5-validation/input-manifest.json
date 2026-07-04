@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "taskId": "086",
+  "replayId": "replay_002",
+  "eventIdPrefix": "canon002v5",
+  "parserMatrixReplayId": "replay_002",
+  "rawReplay": {
+    "path": "samples/partida_002.dem",
+    "accessMode": "raw_replay_identity_hash_verified"
+  },
+  "outputDir": "output/replay-002-canonical",
+  "assessmentDir": "output/replay-002-canonical-v5-validation",
+  "expectedGate": "replay_002_canonical_factual_state_ready_with_constraints_v5",
+  "blockedGate": "replay_002_canonical_factual_state_v5_blocked",
+  "referenceReplayLabel": "historical_reference_v1",
+  "enabledCategories": [
+    "player_identity",
+    "player_death",
+    "player_respawn",
+    "team_net_worth",
+    "raw_objective_structure_lifecycle",
+    "snapshots"
+  ],
+  "optionalValidationOverlays": [],
+  "blockedFieldsOrCategories": [
+    "lane",
+    "region",
+    "proximity",
+    "transform",
+    "residual",
+    "mechanic_effects",
+    "fight",
+    "rotation",
+    "pressure",
+    "macro",
+    "decision"
+  ],
+  "generatedRootPrefixes": [
+    "output/replay-002-canonical",
+    "output/replay-002-canonical-v5-validation"
+  ],
+  "forbiddenPaths": [
+    "samples/partida_005.dem",
+    "samples/partida_006.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007_bots01.dem",
+    "samples/replay_008_bots02_short.dem"
+  ],
+  "followUpTaskPath": "tasks/blocked/087-select-next-canonical-generalization-control.md",
+  "pipelineModules": [
+    "tools/build-replay-002-canonical-state.mjs",
+    "tools/check-replay-002-canonical-determinism.mjs",
+    "lib/canonical-state/builder.mjs",
+    "lib/canonical-state/contract.mjs",
+    "lib/canonical-state/io-layer.mjs",
+    "lib/canonical-state/audits/common.mjs",
+    "lib/canonical-state/audits/contract-source-consistency.mjs",
+    "lib/canonical-state/audits/documentation-audit.mjs",
+    "lib/canonical-state/audits/epistemic-audit.mjs",
+    "lib/canonical-state/audits/io-policy-audit.mjs"
+  ],
+  "sources": {
+    "rawReplay": {
+      "path": "samples/partida_002.dem",
+      "sourceTask": "source_fixture",
+      "accessClass": "raw_replay"
+    },
+    "parserMatrix": {
+      "path": "output/parser-compatibility/parser-compatibility-matrix.json",
+      "sourceTask": "046-run-parser-compatibility-matrix",
+      "accessClass": "artifact_factual"
+    },
+    "matchStateIndex": {
+      "path": "output/replays/replay_002/match-state-timeline.jsonl",
+      "sourceTask": "032-build-unified-descriptive-match-state-timeline",
+      "accessClass": "artifact_factual"
+    },
+    "matchStateShard": {
+      "path": "output/replays/replay_002/match-state-timeline-shards/*.jsonl",
+      "sourceTask": "032-build-unified-descriptive-match-state-timeline",
+      "accessClass": "artifact_factual"
+    },
+    "matchStateQuality": {
+      "path": "output/replays/replay_002/match-state-quality.json",
+      "sourceTask": "032-build-unified-descriptive-match-state-timeline",
+      "accessClass": "artifact_factual"
+    },
+    "oneSecondQuality": {
+      "path": "output/replays/replay_002/one-second-spatial/quality.json",
+      "sourceTask": "026-build-one-second-spatial-extraction",
+      "accessClass": "artifact_factual"
+    },
+    "deathEvents": {
+      "path": "output/replays/replay_002/canonical-death-events.json",
+      "sourceTask": "029-extract-multi-replay-death-events",
+      "accessClass": "artifact_factual"
+    },
+    "deathValidation": {
+      "path": "output/replays/replay_002/death-event-validation.json",
+      "sourceTask": "029-extract-multi-replay-death-events",
+      "accessClass": "artifact_factual"
+    },
+    "respawnEvents": {
+      "path": "output/replays/replay_002/respawn-events.json",
+      "sourceTask": "029-extract-multi-replay-death-events",
+      "accessClass": "artifact_factual"
+    },
+    "objectiveInventory": {
+      "path": "output/replays/replay_002/objective-entity-inventory.json",
+      "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+      "accessClass": "artifact_factual"
+    },
+    "objectiveLifecycle": {
+      "path": "output/replays/replay_002/objective-lifecycle-events.json",
+      "sourceTask": "031-map-multi-replay-objective-entities-and-lifecycle",
+      "accessClass": "artifact_factual"
+    },
+    "referencePlayerRegistry": {
+      "path": "output/replay-009-canonical/player-registry.json",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceEntityRegistry": {
+      "path": "output/replay-009-canonical/entity-registry.json",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceFactualEvents": {
+      "path": "output/replay-009-canonical/factual-events.jsonl",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceMetadata": {
+      "path": "output/replay-009-canonical/non-timeline-metadata.json",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceOverlay": {
+      "path": "output/replay-009-canonical/independent-validation-overlay.json",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceSnapshots": {
+      "path": "output/replay-009-canonical/snapshots.jsonl",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceCapabilities": {
+      "path": "output/replay-009-canonical/capability-matrix.json",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    },
+    "referenceValidation": {
+      "path": "output/replay-009-canonical/validation-summary.json",
+      "sourceTask": "065-build-canonical-replay-009-factual-state",
+      "accessClass": "canonical_reference"
+    }
+  },
+  "allowedInputs": [
+    "samples/partida_002.dem",
+    "output/parser-compatibility/parser-compatibility-matrix.json",
+    "output/replays/replay_002/match-state-timeline.jsonl",
+    "output/replays/replay_002/match-state-quality.json",
+    "output/replays/replay_002/one-second-spatial/quality.json",
+    "output/replays/replay_002/canonical-death-events.json",
+    "output/replays/replay_002/death-event-validation.json",
+    "output/replays/replay_002/respawn-events.json",
+    "output/replays/replay_002/objective-entity-inventory.json",
+    "output/replays/replay_002/objective-lifecycle-events.json",
+    "output/replay-009-canonical/player-registry.json",
+    "output/replay-009-canonical/entity-registry.json",
+    "output/replay-009-canonical/factual-events.jsonl",
+    "output/replay-009-canonical/non-timeline-metadata.json",
+    "output/replay-009-canonical/independent-validation-overlay.json",
+    "output/replay-009-canonical/snapshots.jsonl",
+    "output/replay-009-canonical/capability-matrix.json",
+    "output/replay-009-canonical/validation-summary.json",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_001.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_002.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_003.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_004.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_005.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_006.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_007.jsonl"
+  ],
+  "matchStateShardPaths": [
+    "output/replays/replay_002/match-state-timeline-shards/chunk_001.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_002.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_003.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_004.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_005.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_006.jsonl",
+    "output/replays/replay_002/match-state-timeline-shards/chunk_007.jsonl"
+  ]
+}

@@ -60,3 +60,14 @@ Blocked gate: `replay_002_canonical_factual_state_v4_blocked`.
 If v4 passes, create `tasks/blocked/086-select-next-canonical-generalization-control.md`.
 
 If blocked, create exactly one Task 086 for the first blocker. Do not execute Task 086.
+
+## Technical Review Note
+
+The v4 gate was preserved but not accepted after later review. Task 086 supersedes
+it because player registry still contained `direct_parser_observation` provenance
+not captured by the audit, epistemic distribution covered only factual events,
+replay 009 versus contract v4 did not compare every artifact, schema-diff coverage
+declared artifacts without proving all comparisons, IO audit did not run static
+module inspection, contract-source consistency compared the in-memory object with
+itself, and documentation consistency used constants rather than reading the
+documents.

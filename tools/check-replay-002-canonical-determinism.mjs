@@ -2,16 +2,20 @@ import { createHash } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { auditContractSourceConsistency } from '../lib/canonical-state/audits/contract-source-consistency.mjs';
+import { auditDocumentation } from '../lib/canonical-state/audits/documentation-audit.mjs';
+import { auditDirectObservations, auditEpistemicClassification } from '../lib/canonical-state/audits/epistemic-audit.mjs';
+import { auditIoPolicy } from '../lib/canonical-state/audits/io-policy-audit.mjs';
 
 const ROOT = process.cwd();
-const TASK_ID = '085';
+const TASK_ID = '086';
 const OUTPUT_A = 'output-local/replay-002-canonical-rerun/a/canonical';
 const ASSESS_A = 'output-local/replay-002-canonical-rerun/a/assessment';
 const OUTPUT_B = 'output-local/replay-002-canonical-rerun/b/canonical';
 const ASSESS_B = 'output-local/replay-002-canonical-rerun/b/assessment';
-const RESULT = 'output/replay-002-canonical-v4-validation/deterministic-rerun.json';
-const SUCCESS_GATE = 'replay_002_canonical_factual_state_ready_with_constraints_v4';
-const BLOCKED_GATE = 'replay_002_canonical_factual_state_v4_blocked';
+const RESULT = 'output/replay-002-canonical-v5-validation/deterministic-rerun.json';
+const SUCCESS_GATE = 'replay_002_canonical_factual_state_ready_with_constraints_v5';
+const BLOCKED_GATE = 'replay_002_canonical_factual_state_v5_blocked';
 
 async function rm(dir) {
     await fs.rm(dir, { recursive: true, force: true });
@@ -55,6 +59,38 @@ async function hashFile(file, replacements = []) {
         bytes = Buffer.from(text, 'utf8');
     }
     return createHash('sha256').update(bytes).digest('hex');
+}
+
+async function readJson(file) {
+    return JSON.parse(await fs.readFile(file, 'utf8'));
+}
+
+async function writeJson(file, value) {
+    await fs.mkdir(path.dirname(file), { recursive: true });
+    await fs.writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+async function artifactRef(file) {
+    return {
+        artifact: path.relative(path.dirname(RESULT), file).replaceAll(path.sep, '/'),
+        path: file.replaceAll(path.sep, '/'),
+        sha256: await hashFile(file)
+    };
+}
+
+async function buildAuditManifest(assessmentDir) {
+    const files = (await listFiles(assessmentDir))
+        .filter(file => file.endsWith('.json'))
+        .filter(file => !file.endsWith('audit-artifact-manifest.json') && !file.endsWith('validation-matrix.json') && !file.endsWith('correction-gate.json'));
+    return {
+        schemaVersion: 1,
+        taskId: TASK_ID,
+        artifacts: await Promise.all(files.map(async file => ({
+            path: path.relative(assessmentDir, file).replaceAll(path.sep, '/'),
+            sha256: await hashFile(file),
+            sizeBytes: (await fs.stat(file)).size
+        })))
+    };
 }
 
 async function hashTree(dir, replacements = []) {
@@ -132,36 +168,90 @@ async function main() {
     await fs.mkdir(path.dirname(RESULT), { recursive: true });
     await fs.writeFile(RESULT, `${JSON.stringify(result, null, 2)}\n`);
     const assessmentDir = path.dirname(RESULT);
+    const manifest = await readJson(path.join(assessmentDir, 'input-manifest.json'));
+    const epistemicAudit = await auditEpistemicClassification('output/replay-002-canonical');
+    await writeJson(path.join(assessmentDir, 'epistemic-classification-audit.json'), epistemicAudit);
+    const directObservationAudit = await auditDirectObservations('output/replay-002-canonical');
+    await writeJson(path.join(assessmentDir, 'direct-observation-justification.json'), directObservationAudit);
+    const ioAudit = await auditIoPolicy(manifest);
+    await writeJson(path.join(assessmentDir, 'io-policy-audit.json'), ioAudit);
+    const contractConsistency = await auditContractSourceConsistency({
+        schemaPath: 'schemas/canonical-factual-state-contract.v2.json',
+        emittedPath: path.join(assessmentDir, 'canonical-contract.json')
+    });
+    await writeJson(path.join(assessmentDir, 'contract-source-consistency.json'), contractConsistency);
+    const documentationAudit = await auditDocumentation();
+    await writeJson(path.join(assessmentDir, 'documentation-consistency.json'), documentationAudit);
+    const auditManifest = await buildAuditManifest(assessmentDir);
+    await writeJson(path.join(assessmentDir, 'audit-artifact-manifest.json'), auditManifest);
+
     const matrixPath = path.join(assessmentDir, 'validation-matrix.json');
     const gatePath = path.join(assessmentDir, 'correction-gate.json');
     try {
-        const matrix = JSON.parse(await fs.readFile(matrixPath, 'utf8'));
-        matrix.deterministicRerunPassed = result.deterministic;
-        await fs.writeFile(matrixPath, `${JSON.stringify(matrix, null, 2)}\n`);
-        const success = Object.entries(matrix).every(([key, value]) => key === 'schemaVersion' || value === true || (key === 'targetSchemaBreaks' && value === 0));
-        const gate = JSON.parse(await fs.readFile(gatePath, 'utf8'));
+        const priorMatrix = await readJson(matrixPath);
+        const schemaDiff = await readJson(path.join(assessmentDir, 'canonical-schema-diff.json'));
+        const schemaDiffCoverage = await readJson(path.join(assessmentDir, 'schema-diff-coverage.json'));
+        const contractValidation = await readJson(path.join(assessmentDir, 'canonical-schema-validation.json'));
+        const contractCompleteness = await readJson(path.join(assessmentDir, 'contract-completeness-audit.json'));
+        const provenanceAudit = await readJson(path.join(assessmentDir, 'provenance-audit.json'));
+        const identityAudit = await readJson(path.join(assessmentDir, 'identity-and-generation-audit.json'));
+        const spatialAudit = await readJson(path.join(assessmentDir, 'spatial-leakage-audit.json'));
+        const manifestBehavior = await readJson(path.join(assessmentDir, 'manifest-behavior-validation.json'));
+        const protectionsAudit = await readJson(path.join(assessmentDir, 'protections-audit.json'));
+        const ref = async (name, passed) => ({ passed, ...await artifactRef(path.join(assessmentDir, name)) });
+        const matrix = {
+            schemaVersion: 2,
+            taskId: TASK_ID,
+            replayId: 'replay_002',
+            contractCompleteness: await ref('contract-completeness-audit.json', contractCompleteness.passed),
+            contractValidation: await ref('canonical-schema-validation.json', contractValidation.valid),
+            schemaDiffCoverage: await ref('schema-diff-coverage.json', schemaDiffCoverage.passed && schemaDiffCoverage.comparisons.every(item => item.missingComparisons.length === 0)),
+            targetSchemaBreaks: schemaDiff.targetV5VersusContractV5.schemaBreaks,
+            replay009ContractCoverage: await ref('schema-diff-coverage.json', schemaDiffCoverage.comparisons.find(item => item.comparison === 'replay009V1VersusContractV5')?.passed === true),
+            provenanceAudit: await ref('provenance-audit.json', provenanceAudit.passed),
+            globalEpistemicAudit: await ref('epistemic-classification-audit.json', epistemicAudit.passed),
+            directObservationAudit: await ref('direct-observation-justification.json', directObservationAudit.passed),
+            identityAudit: await ref('identity-and-generation-audit.json', identityAudit.fabricatedGenerationCount === 0 && identityAudit.eventRegistryReferenceMismatches.length === 0),
+            spatialLeakageAudit: await ref('spatial-leakage-audit.json', spatialAudit.findings.length === 0),
+            manifestBehaviorAudit: await ref('manifest-behavior-validation.json', manifestBehavior.passed),
+            ioStaticAudit: await ref('io-policy-audit.json', ioAudit.passed),
+            contractDeepConsistency: await ref('contract-source-consistency.json', contractConsistency.passed),
+            documentationContentAudit: await ref('documentation-consistency.json', documentationAudit.passed),
+            protectionsAudit: await ref('protections-audit.json', protectionsAudit.passed),
+            deterministicRerun: await ref('deterministic-rerun.json', result.deterministic),
+            auditArtifactManifest: await ref('audit-artifact-manifest.json', true),
+            previousMatrixShape: Object.keys(priorMatrix).sort()
+        };
+        const matrixPassed = Object.entries(matrix)
+            .filter(([key]) => !['schemaVersion', 'taskId', 'replayId', 'targetSchemaBreaks', 'previousMatrixShape'].includes(key))
+            .every(([, value]) => value.passed === true);
+        const success = matrixPassed && matrix.targetSchemaBreaks === 0;
+        await writeJson(matrixPath, matrix);
+        const gate = await readJson(gatePath);
         gate.success = success;
         gate.gate = success ? SUCCESS_GATE : BLOCKED_GATE;
         gate.validationMatrix = matrix;
-        await fs.writeFile(gatePath, `${JSON.stringify(gate, null, 2)}\n`);
+        await writeJson(gatePath, gate);
         const canonicalGatePath = 'output/replay-002-canonical/canonical-state-gate.json';
         const validationSummaryPath = 'output/replay-002-canonical/validation-summary.json';
-        const canonicalGate = JSON.parse(await fs.readFile(canonicalGatePath, 'utf8'));
+        const canonicalGate = await readJson(canonicalGatePath);
         canonicalGate.gate = gate.gate;
         canonicalGate.readyWithConstraints = success;
-        canonicalGate.finalGateSource = 'output/replay-002-canonical-v4-validation/validation-matrix.json';
-        canonicalGate.validationMatrixPath = 'output/replay-002-canonical-v4-validation/validation-matrix.json';
-        await fs.writeFile(canonicalGatePath, `${JSON.stringify(canonicalGate, null, 2)}\n`);
-        const validationSummary = JSON.parse(await fs.readFile(validationSummaryPath, 'utf8'));
+        canonicalGate.finalGateSource = 'output/replay-002-canonical-v5-validation/validation-matrix.json';
+        canonicalGate.validationMatrixPath = 'output/replay-002-canonical-v5-validation/validation-matrix.json';
+        await writeJson(canonicalGatePath, canonicalGate);
+        const validationSummary = await readJson(validationSummaryPath);
         validationSummary.gate = gate.gate;
-        validationSummary.finalGateVerifiedBy = 'output/replay-002-canonical-v4-validation/validation-matrix.json';
-        await fs.writeFile(validationSummaryPath, `${JSON.stringify(validationSummary, null, 2)}\n`);
+        validationSummary.finalGateVerifiedBy = 'output/replay-002-canonical-v5-validation/validation-matrix.json';
+        validationSummary.factualEventEpistemicTypeCounts = validationSummary.epistemicTypeCounts;
+        validationSummary.packageEpistemicTypeCounts = epistemicAudit.byArtifact;
+        await writeJson(validationSummaryPath, validationSummary);
         const summaryPath = path.join(assessmentDir, 'correction-summary.json');
-        const correctionSummary = JSON.parse(await fs.readFile(summaryPath, 'utf8'));
+        const correctionSummary = await readJson(summaryPath);
         correctionSummary.gate = gate.gate;
-        await fs.writeFile(summaryPath, `${JSON.stringify(correctionSummary, null, 2)}\n`);
+        await writeJson(summaryPath, correctionSummary);
         await fs.mkdir('reports', { recursive: true });
-        await fs.writeFile('reports/replay-002-canonical-factual-state-v4-validation.md', `# Replay 002 Canonical Factual State V4 Validation\n\n## Gate\n\n\`${gate.gate}\`\n\nTask 085 completes the corrective pass after Task 084's v3 gate was rejected in technical review. Tasks 082 and 083 remain preserved as earlier attempts; Task 084 is preserved as the v3 attempt that exposed the remaining need for nested contract coverage, event-variant diff coverage, manifest behavior enforcement, capability provenance, direct-observation justification, and calculated audit gates.\n\n## Executable Contract\n\nThe canonical contract is sourced from \`lib/canonical-state/contract.mjs\` and emitted to \`schemas/canonical-factual-state-contract.v2.json\` plus \`output/replay-002-canonical-v4-validation/canonical-contract.json\`. Validation covers nested registries, event variants, metadata variants, overlays, snapshots, capability matrix, validation summary, and canonical gate.\n\n## Raw Replay Access\n\nApproach: \`${correctionSummary.rawReplayApproach}\`.\n\nThe replay file is hashed only for identity. Parser completion is imported from the parser compatibility matrix with provenance; the parser is not executed by Task 085.\n\n## Results\n\n- Players: ${correctionSummary.players}\n- Entities: ${correctionSummary.entities}\n- Factual events: ${correctionSummary.events}\n- Snapshots: ${correctionSummary.snapshots}\n- Schema valid: ${correctionSummary.schemaValid}\n- Target schema breaks: ${matrix.targetSchemaBreaks}\n- Generic schemas remaining: 0 objects / 0 arrays\n- Deterministic rerun: ${matrix.deterministicRerunPassed}\n- Mechanic effects applied: 0\n\n## Provenance And Gate\n\nThe v4 package validates ${correctionSummary.players} player records, ${correctionSummary.entities} entity records, ${correctionSummary.events} factual events, ${correctionSummary.snapshots} snapshots, metadata, capabilities, validation summary, and canonical gate. Capability provenance and direct-observation justification are audited separately; direct parser observations are zero because replay-002 consumed reconciled artifacts rather than raw parser-side field chains.\n\n## Remaining Constraints\n\nDecoded entity indices, entity serials, objective entity generations, pawn generations, independent visual validation, spatial semantics, mechanic effects, combat grouping, rotations, pressure, macro, and decision analysis remain unavailable or blocked. Replay 005 remains protected.\n`);
+        await fs.writeFile('reports/replay-002-canonical-factual-state-v5-validation.md', `# Replay 002 Canonical Factual State V5 Validation\n\n## Gate\n\n\`${gate.gate}\`\n\nTask 086 closes final audit coverage and independence gaps after Task 085's v4 gate was rejected in technical review. Tasks 082 through 085 remain preserved as historical attempts.\n\n## Executable Contract And Audits\n\nThe v5 contract is sourced from \`lib/canonical-state/contract.mjs\` and deeply compared against \`schemas/canonical-factual-state-contract.v2.json\` and \`output/replay-002-canonical-v5-validation/canonical-contract.json\`. Static IO, documentation, epistemic, direct-observation, schema-diff coverage, and contract-source consistency audits are generated by independent audit modules and referenced by hash in the validation matrix.\n\n## Results\n\n- Players: ${correctionSummary.players}\n- Entities: ${correctionSummary.entities}\n- Factual events: ${correctionSummary.events}\n- Snapshots: ${correctionSummary.snapshots}\n- Target schema breaks: ${matrix.targetSchemaBreaks}\n- Global provenance records: ${epistemicAudit.totalProvenanceRecords}\n- Direct observations: ${directObservationAudit.directObservationCount}\n- Deterministic rerun: ${matrix.deterministicRerun.passed}\n- Mechanic effects applied: 0\n\n## Remaining Constraints\n\nDecoded entity indices, entity serials, objective entity generations, pawn generations, independent visual validation, spatial semantics, mechanic effects, combat grouping, rotations, pressure, macro, and decision analysis remain unavailable or blocked. Replay 005 remains protected.\n`);
     } catch {
         // Standalone deterministic checks may target temp dirs without gate files.
     }

@@ -136,13 +136,13 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   automated plus single-reviewer technical inspection, not broad usability
   research.
 - Replay 002 canonical factual-state outputs live in
-  `output/replay-002-canonical/`, with Task 085 v4 validation outputs in
-  `output/replay-002-canonical-v4-validation/`. Task 082's first-attempt
+  `output/replay-002-canonical/`, with Task 086 v5 validation outputs in
+  `output/replay-002-canonical-v5-validation/`. Task 082's first-attempt
   assessment remains preserved in `output/replay-002-canonical-generalization/`
   and Task 083's second attempt remains preserved in
   `output/replay-002-canonical-correction/`; Task 084's v3 validation remains
   preserved in `output/replay-002-canonical-v3-validation/`. None of the
-  earlier gates was accepted after technical review. Regenerate the accepted v4
+  earlier gates was accepted after technical review. Regenerate the accepted v5
   package with
   `node tools/build-replay-002-canonical-state.mjs --clean` and validate
   determinism with `node tools/check-replay-002-canonical-determinism.mjs`.

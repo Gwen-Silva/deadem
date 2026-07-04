@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "comparisons": [
+    {
+      "comparison": "targetReplay002V5VersusContractV5",
+      "requiredArtifacts": [
+        "playerRegistry",
+        "entityRegistry",
+        "factualEventVariants",
+        "metadataVariants",
+        "independentValidationOverlay",
+        "snapshot",
+        "capabilityMatrix",
+        "validationSummary",
+        "canonicalGate"
+      ],
+      "actuallyComparedArtifacts": [
+        "playerRegistry",
+        "entityRegistry",
+        "factualEventVariants",
+        "metadataVariants",
+        "independentValidationOverlay",
+        "snapshot",
+        "capabilityMatrix",
+        "validationSummary",
+        "canonicalGate"
+      ],
+      "missingComparisons": [],
+      "passed": true
+    },
+    {
+      "comparison": "replay009V1VersusContractV5",
+      "requiredArtifacts": [
+        "playerRegistry",
+        "entityRegistry",
+        "factualEventVariants",
+        "metadata",
+        "metadataVariants",
+        "independentValidationOverlay",
+        "snapshot",
+        "capabilityMatrix",
+        "validationSummary",
+        "canonicalGate"
+      ],
+      "actuallyComparedArtifacts": [
+        "playerRegistry",
+        "entityRegistry",
+        "factualEventVariants",
+        "metadata",
+        "metadataVariants",
+        "independentValidationOverlay",
+        "snapshot",
+        "capabilityMatrix",
+        "validationSummary",
+        "canonicalGate"
+      ],
+      "missingComparisons": [],
+      "passed": true
+    },
+    {
+      "comparison": "replay009V1VersusReplay002V5",
+      "requiredArtifacts": [
+        "playerRegistry",
+        "entityRegistry",
+        "factualEventVariants",
+        "metadata",
+        "independentValidationOverlay",
+        "snapshot",
+        "capabilityMatrix",
+        "validationSummary"
+      ],
+      "actuallyComparedArtifacts": [
+        "playerRegistry",
+        "entityRegistry",
+        "factualEventVariants",
+        "metadata",
+        "independentValidationOverlay",
+        "snapshot",
+        "capabilityMatrix",
+        "validationSummary"
+      ],
+      "missingComparisons": [],
+      "passed": true
+    }
+  ],
+  "artifactsCompared": [
+    "playerRegistry",
+    "entityRegistry",
+    "factualEventVariants",
+    "metadataVariants",
+    "independentValidationOverlay",
+    "snapshot",
+    "capabilityMatrix",
+    "validationSummary",
+    "canonicalGate"
+  ],
+  "targetEventVariantCoverage": [
+    {
+      "variant": "player_death:player_death_observed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_identity:player_identity_observed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_respawn:player_respawn_observed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_respawn:player_return_inferred",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:entity_deleted_or_absent_observed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:entity_present",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_health_changed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_health_zero_or_terminal_observed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_state_changed",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "team_net_worth:team_net_worth_derived",
+      "expectedPresent": true,
+      "actualPresent": true
+    }
+  ],
+  "targetMetadataVariantCoverage": [
+    {
+      "variant": "death_validation",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "parser_matrix_result",
+      "expectedPresent": true,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_replay_identity_hash",
+      "expectedPresent": true,
+      "actualPresent": true
+    }
+  ],
+  "replay009VersusReplay002EventVariantCoverage": [
+    {
+      "variant": "candidate_entity_created:candidate_entity_created",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "candidate_entity_deleted:candidate_entity_deleted",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "candidate_entity_present:candidate_entity_present",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "entity_created:entity_created",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "entity_deleted:entity_deleted",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "entity_health_changed:health_changed",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "entity_health_observed:health_observed",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "entity_present:entity_present",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "player_dead:dead",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "player_death:player_death_observed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_identity:player_identity",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "player_identity:player_identity_observed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_net_worth:player_net_worth_observed",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "player_respawn:player_respawn_observed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_respawn:player_return_inferred",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "player_respawned:alive",
+      "expectedPresent": true,
+      "actualPresent": false
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:entity_deleted_or_absent_observed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:entity_present",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_health_changed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_health_zero_or_terminal_observed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "raw_objective_structure_lifecycle:raw_state_changed",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "team_net_worth:team_net_worth_derived",
+      "expectedPresent": false,
+      "actualPresent": true
+    },
+    {
+      "variant": "team_net_worth:team_net_worth_observed",
+      "expectedPresent": true,
+      "actualPresent": false
+    }
+  ],
+  "missingTargetEventVariantContracts": [],
+  "targetEventVariantsCompared": 10,
+  "passed": true
+}

@@ -6,7 +6,7 @@ import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
-const correctionDir = 'output/replay-002-canonical-v4-validation';
+const correctionDir = 'output/replay-002-canonical-v5-validation';
 
 async function readJson(file) {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -337,23 +337,27 @@ test('contract validation covers every artifact and final gate follows matrix', 
     }
     assert.equal(validation.totalRecordsFound, validation.totalRecordsValidated);
     const matrix = await readJson(`${correctionDir}/validation-matrix.json`);
-    assert.equal(matrix.contractValidationPassed, true);
-    assert.equal(matrix.schemaDiffExecuted, true);
+    assert.equal(matrix.contractValidation.passed, true);
+    assert.equal(matrix.schemaDiffCoverage.passed, true);
     assert.equal(matrix.targetSchemaBreaks, 0);
-    assert.equal(matrix.provenanceAuditPassed, true);
-    assert.equal(matrix.ioAuditPassed, true);
-    assert.equal(matrix.deterministicRerunPassed, true);
+    assert.equal(matrix.provenanceAudit.passed, true);
+    assert.equal(matrix.globalEpistemicAudit.passed, true);
+    assert.equal(matrix.directObservationAudit.passed, true);
+    assert.equal(matrix.ioStaticAudit.passed, true);
+    assert.equal(matrix.contractDeepConsistency.passed, true);
+    assert.equal(matrix.documentationContentAudit.passed, true);
+    assert.equal(matrix.deterministicRerun.passed, true);
     const gate = await readJson(`${correctionDir}/correction-gate.json`);
     assert.equal(gate.success, true);
-    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v4');
+    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v5');
 });
 
 test('schema diff is real and negative schema cases fail', async () => {
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
-    assert(diff.targetV4VersusContractV4);
-    assert.equal(diff.targetV4VersusContractV4.schemaBreaks, 0);
-    assert(diff.replay009V1VersusContractV4.differences.length > 0);
-    assert(diff.replay009V1VersusReplay002V4.differences.length > 0);
+    assert(diff.targetV5VersusContractV5);
+    assert.equal(diff.targetV5VersusContractV5.schemaBreaks, 0);
+    assert(diff.replay009V1VersusContractV5.differences.length > 0);
+    assert(diff.replay009V1VersusReplay002V5.differences.length > 0);
 
     const { validateCanonicalPackage, CANONICAL_CONTRACT } = await import('../lib/canonical-state/contract.mjs');
     const events = await readJsonl(`${canonicalDir}/factual-events.jsonl`);
