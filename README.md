@@ -89,7 +89,7 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     broad user research;
   - remaining medium limitations are single-reviewer scope and careful
     Patron/base class reading.
-- Replay-002 canonical generalization from Task 088:
+- Replay-002 canonical generalization from Task 089:
   - corrected first bounded external canonical factual-state package for a
     compatible normal control replay after Tasks 082, 083, and 084 failed
     technical review;
@@ -101,7 +101,7 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     generations are not fabricated, and no replay-009 validation overlays,
     build/mechanic assumptions, spatial semantics, or mechanic effects are
     inherited;
-  - the v7 gate is driven by full-pipeline determinism, verified audit-artifact
+  - the v8 gate is driven by full-pipeline determinism, verified audit-artifact
     manifests, final attestation, ledger-derived schema coverage, role/path IO
     auditing, file-specific documentation auditing, and replay-protection
     checks.
@@ -147,7 +147,7 @@ Replay bytes
   -> player identity/lifecycle              [available with constraints]
   -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
   -> canonical factual state schema         [replay_009_canonical_factual_state_ready_with_constraints]
-  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints_v7]
+  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints_v8]
   -> spatial map projection                 [not available]
   -> mechanic version resolution            [unresolved for build 23916427]
   -> mechanic activation                    [blocked]
@@ -157,9 +157,9 @@ Replay bytes
 ## Current Direction
 
 The active primary milestone is **cross-replay canonical generalization**.
-Task 082, Task 083, Task 084, Task 085, and Task 086 are preserved as
-unaccepted attempts after technical review. Task 088 supersedes them with the gate
-`replay_002_canonical_factual_state_ready_with_constraints_v7`. This improves
+Task 082, Task 083, Task 084, Task 085, Task 086, Task 087, and Task 088 are preserved as
+unaccepted attempts after technical review. Task 089 supersedes them with the gate
+`replay_002_canonical_factual_state_ready_with_constraints_v8`. This improves
 schema stability and reduces replay-009 overfitting risk, but it is not proof of
 full corpus generalization or replay-005 release readiness.
 
@@ -280,7 +280,7 @@ Major current reports:
 - [`reports/replay-009-fixed-entity-coordinate-resolution.md`](./reports/replay-009-fixed-entity-coordinate-resolution.md)
 - [`reports/replay-009-walker-identity-resolution.md`](./reports/replay-009-walker-identity-resolution.md)
 - [`reports/deadem-spatial-milestone-reassessment.md`](./reports/deadem-spatial-milestone-reassessment.md)
-- [`reports/replay-002-canonical-factual-state-v7-validation.md`](./reports/replay-002-canonical-factual-state-v7-validation.md)
+- [`reports/replay-002-canonical-factual-state-v8-validation.md`](./reports/replay-002-canonical-factual-state-v8-validation.md)
 
 ## Running Validation
 

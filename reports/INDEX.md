@@ -37,7 +37,7 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/replay-002-canonical-factual-state-generalization.md`
 - `reports/replay-002-canonical-factual-state-correction.md`
 - `reports/replay-002-canonical-factual-state-v3-validation.md`
-- `reports/replay-002-canonical-factual-state-v7-validation.md`
+- `reports/replay-002-canonical-factual-state-v8-validation.md`
 - `reports/deadem-long-term-vision-and-ai-roadmap-documentation.md`
 - `reports/versioned-mechanics-knowledge-foundation.md`
 - `reports/build-23916427-mechanics-mapping.md`

@@ -49,8 +49,8 @@ behavior more strongly than it applied it, did not audit capability provenance,
 treated some reconciled observations as direct parser observations, and kept
 some validation-matrix entries as positive constants.
 
-Task 088 is the active corrective audit closure for this case. Its gate is
-`replay_002_canonical_factual_state_ready_with_constraints_v7`. Replay 002 now
+Task 089 is the active corrective audit closure for this case. Its gate is
+`replay_002_canonical_factual_state_ready_with_constraints_v8`. Replay 002 now
 has a provenance-preserving canonical factual-state package with nested
 executable contract validation, full event-variant schema diff coverage,
 complete provenance and direct-observation audits, applied manifest behavior,
@@ -193,7 +193,7 @@ See `output/spatial-milestone-reassessment/milestone-decision.json` and
 `output/spatial-milestone-reassessment/spatial-resume-contract.json`.
 
 The first follow-up task is blocked pending explicit authorization:
-`tasks/blocked/089-select-next-canonical-generalization-control.md`.
+`tasks/blocked/090-select-next-canonical-generalization-control.md`.
 
 ## Replay 005 Release Criteria
 

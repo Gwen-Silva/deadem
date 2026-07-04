@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 2,
+  "filesExamined": [
+    {
+      "path": "README.md",
+      "sha256": "18c32f4743a98d87f9f6baf54bf745e828f72c592bb37607899639e335a6d481",
+      "exists": true
+    },
+    {
+      "path": "docs/PROJECT_STATE.md",
+      "sha256": "d647733a733b317cab070d61e20a76b9b2ba1daea5059cf3c6a48535743c22f1",
+      "exists": true
+    },
+    {
+      "path": "docs/NEXT_MILESTONE.md",
+      "sha256": "1d66d29afa3a4da93f63e57b70e10b8820e1c9fb8d9abd2344f23edffa852987",
+      "exists": true
+    },
+    {
+      "path": "docs/PROJECT_VISION_AND_ROADMAP.md",
+      "sha256": "4f68e5ae0c827c36b1eb9f2e55b745727db533557db8d71e0adfb7751e68d1a5",
+      "exists": true
+    },
+    {
+      "path": "docs/REPOSITORY_GUIDE.md",
+      "sha256": "73883237b4ea497af33813514ece7369811448eb2d8ff64829b8d978fc5596b5",
+      "exists": true
+    },
+    {
+      "path": "output/README.md",
+      "sha256": "f0effa7b8269ebad211e34ca51c03e9573aaf61f7a32e3490f198b3cbe5b9f91",
+      "exists": true
+    },
+    {
+      "path": "reports/INDEX.md",
+      "sha256": "e6da8aa3c8965467e5ad8d100d4f51622c93bc29b27c74203cb299a046837d58",
+      "exists": true
+    },
+    {
+      "path": "reports/latest.md",
+      "sha256": "54357600b63942103325d606766162a8af83696d770bab67a6a40e87b77c08d1",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md",
+      "sha256": "bfe1c2ed1dfbc2b04cef1baad2d2d17b8b304184d997da9bdfd6d79b11324af4",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md",
+      "sha256": "2fbff708188d5e11a03fabfb0b03f52930cdfa42099ced6480f49002aa419488",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md",
+      "sha256": "a75b3c6e84eccfa14f01c20e05bfbf8b0b4da8880245659ccfb78a5537ecfb2f",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md",
+      "sha256": "838635788f08143bcc9e27f7cde680ad930559d49197c507e8e059e9b8f97941",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/086-close-canonical-audit-coverage-and-independence.md",
+      "sha256": "aa9c23337b585ef8d41b4b4b1ec8053a52b27f4144428f733e023ba1108dea78",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md",
+      "sha256": "b82eedf64b6172fc215e9cedde96813f56fc1f957d808354f2772a1749c4552f",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/088-make-final-attestation-authoritative-and-schema-ledger-executable.md",
+      "sha256": "0156b26fd3b0cf7a8b8d6d2a68553c063c5798e0b5f0476c5e57ab181c7675f2",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/089-make-release-decision-fail-closed-and-enforce-dynamic-io-guards.md",
+      "sha256": "8ef325f836a5661989dbbbbcf87e72bf9e84d38684f9282ef90726813827c386",
+      "exists": true
+    },
+    {
+      "path": "tasks/blocked/090-select-next-canonical-generalization-control.md",
+      "sha256": "32ff44615b90916fdd1bc609721396232ab0b91a037cef111df0ad2e081b0bdb",
+      "exists": true
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "readme_declares_v8",
+      "files": [
+        "README.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "project_state_declares_v8",
+      "files": [
+        "docs/PROJECT_STATE.md"
+      ],
+      "matches": [
+        {
+          "file": "docs/PROJECT_STATE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "next_milestone_points_to_090",
+      "files": [
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "latest_points_to_v8_report",
+      "files": [
+        "reports/latest.md"
+      ],
+      "matches": [
+        {
+          "file": "reports/latest.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "index_points_to_v8_report",
+      "files": [
+        "reports/INDEX.md"
+      ],
+      "matches": [
+        {
+          "file": "reports/INDEX.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "previous_tasks_preserved",
+      "files": [
+        "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md",
+        "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md",
+        "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md",
+        "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md",
+        "tasks/completed/086-close-canonical-audit-coverage-and-independence.md",
+        "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md",
+        "tasks/completed/088-make-final-attestation-authoritative-and-schema-ledger-executable.md"
+      ],
+      "matches": [
+        {
+          "file": "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md"
+        },
+        {
+          "file": "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md"
+        },
+        {
+          "file": "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md"
+        },
+        {
+          "file": "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md"
+        },
+        {
+          "file": "tasks/completed/086-close-canonical-audit-coverage-and-independence.md"
+        },
+        {
+          "file": "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md"
+        },
+        {
+          "file": "tasks/completed/088-make-final-attestation-authoritative-and-schema-ledger-executable.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "task089_records_scope",
+      "files": [
+        "tasks/completed/089-make-release-decision-fail-closed-and-enforce-dynamic-io-guards.md"
+      ],
+      "matches": [
+        {
+          "file": "tasks/completed/089-make-release-decision-fail-closed-and-enforce-dynamic-io-guards.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "replay005_protected_in_state_docs",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_full_corpus_generalization_claim",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_spatial_mechanics_macro_ready_claim",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md",
+        "docs/REPOSITORY_GUIDE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        },
+        {
+          "file": "docs/REPOSITORY_GUIDE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_stale_next_task_089_select",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md",
+        "reports/latest.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        },
+        {
+          "file": "reports/latest.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "taskId": "089",
+  "replayId": "replay_002",
+  "gate": "replay_002_canonical_factual_state_v8_blocked",
+  "coreBuilderArchitecture": "manifest-driven generic builder plus allowlisted IO layer",
+  "rawReplayApproach": "raw_replay_identity_hash_verified",
+  "players": 12,
+  "rawTeamDistribution": {
+    "2": 6,
+    "3": 6
+  },
+  "entities": 47,
+  "events": 3476,
+  "snapshots": 1835,
+  "epistemicTypeCounts": {
+    "direct_parser_observation": 0,
+    "deterministic_derivation": 3476,
+    "human_annotation": 0,
+    "independent_visual_validation": 0,
+    "heuristic": 0,
+    "unresolved": 0
+  },
+  "identityAudit": {
+    "schemaVersion": 1,
+    "entityCount": 47,
+    "rawHandlePreserved": 47,
+    "decodedEntityIndexCount": 0,
+    "entityGenerationSupportedCount": 0,
+    "entityGenerationUnavailableCount": 47,
+    "fabricatedGenerationCount": 0,
+    "eventRegistryReferenceMismatches": []
+  },
+  "spatialLeakageFindings": 0,
+  "schemaValid": true,
+  "nextBlockedTask": "tasks/blocked/090-select-next-canonical-generalization-control.md"
+}

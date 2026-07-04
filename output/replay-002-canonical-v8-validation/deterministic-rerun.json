@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskId": "089",
+  "replayId": "replay_002",
+  "fullPipeline": true,
+  "deterministic": true,
+  "firstRun": {
+    "canonicalDir": "output-local/replay-002-canonical-v8-rerun/a/canonical",
+    "assessmentDir": "output-local/replay-002-canonical-v8-rerun/a/assessment",
+    "canonicalFileCount": 10,
+    "assessmentFileCount": 28
+  },
+  "secondRun": {
+    "canonicalDir": "output-local/replay-002-canonical-v8-rerun/b/canonical",
+    "assessmentDir": "output-local/replay-002-canonical-v8-rerun/b/assessment",
+    "canonicalFileCount": 10,
+    "assessmentFileCount": 28
+  },
+  "comparedCanonicalFiles": 10,
+  "comparedEvidenceFiles": 28,
+  "evidenceOnlyFilesNotProduced": [
+    "release-decision.json",
+    "correction-gate.json",
+    "canonical-state-gate.success",
+    "release-envelope.json"
+  ],
+  "innerRunReleaseStatus": "not_evaluated_in_evidence_only_mode",
+  "comparedAuditFiles": 28,
+  "comparedFinalFiles": 0,
+  "normalizationsApplied": [
+    {
+      "field": "temporary canonical output root",
+      "reason": "root differs by A/B run, relative artifact paths and stored hashes are preserved"
+    },
+    {
+      "field": "temporary assessment output root",
+      "reason": "root differs by A/B run, relative artifact paths and stored hashes are preserved"
+    }
+  ],
+  "mismatches": []
+}

@@ -2,11 +2,13 @@ import assert from 'node:assert/strict';
 import { promises as fs } from 'node:fs';
 import test from 'node:test';
 import { buildCanonicalState } from '../lib/canonical-state/builder.mjs';
+import { auditIoPolicy } from '../lib/canonical-state/audits/io-policy-audit.mjs';
 import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
+import { coverageFromLedger, decideRelease, verifyArtifactSet } from '../tools/finalize-replay-002-canonical-v8.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
-const correctionDir = 'output/replay-002-canonical-v7-validation';
+const correctionDir = 'output/replay-002-canonical-v8-validation';
 
 async function readJson(file) {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -296,21 +298,23 @@ test('all records validate against contract and schema diff covers variants', as
     const coverage = await readJson(`${correctionDir}/schema-diff-coverage.json`);
     assert.equal(coverage.passed, true);
     const ledger = await readJson(`${correctionDir}/schema-comparison-ledger.json`);
-    assert(ledger.entries.some(entry => entry.comparison === 'targetReplay002V7VersusContractV7' && entry.artifact === 'snapshot' && entry.status === 'completed' && entry.sourceShapeHash && entry.targetShapeHash));
+    assert(ledger.entries.some(entry => entry.comparison === 'targetReplay002V8VersusContractV8' && entry.artifact === 'snapshot' && entry.status === 'completed' && entry.sourceShapeHash && entry.targetShapeHash));
     assert(ledger.entries.length >= 27);
 });
 
-test('v7 attestation, release decision, metadata variants, and dynamic IO policy are authoritative', async () => {
-    const finalAttestation = await readJson(`${correctionDir}/final-attestation.json`);
-    assert.equal(Object.hasOwn(finalAttestation, 'passed'), false);
-    const verification = await readJson(`${correctionDir}/final-attestation-verification.json`);
+test('v8 release envelope, release decision, metadata variants, and dynamic IO policy are authoritative', async () => {
+    const releaseEnvelope = await readJson(`${correctionDir}/release-envelope.json`);
+    assert.equal(Object.hasOwn(releaseEnvelope, 'passed'), false);
+    const verification = await readJson(`${correctionDir}/release-envelope-verification.json`);
     assert.equal(verification.passed, true);
     assert.equal(verification.missingRoles.length, 0);
     assert.equal(verification.duplicateRoles.length, 0);
     assert.equal(verification.unknownRoles.length, 0);
     const release = await readJson(`${correctionDir}/release-decision.json`);
     assert.equal(release.releaseAuthorized, true);
-    assert.equal(release.finalAttestationVerificationPassed, true);
+    assert.equal(release.evidenceAttestationVerificationPassed, true);
+    const consistency = await readJson(`${correctionDir}/release-consistency-verification.json`);
+    assert.equal(consistency.passed, true);
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
     assert(diff.historicalMetadataVariants.every(variant => variant.comparedAgainstEmptyObject === false));
     assert(diff.historicalMetadataVariants.every(variant => variant.observedSchema !== undefined));
@@ -322,6 +326,7 @@ test('v7 attestation, release decision, metadata variants, and dynamic IO policy
     assert.equal(rerun.deterministic, true);
     assert.equal(rerun.mismatches.length, 0);
     assert(!JSON.stringify(rerun.normalizationsApplied).includes('sha256'));
+    assert.equal(rerun.innerRunReleaseStatus, 'not_evaluated_in_evidence_only_mode');
 });
 
 test('schema break detection is not name-based suppression', async () => {
@@ -374,15 +379,17 @@ test('contract validation covers every artifact and final gate follows matrix', 
     assert.equal(matrix.deterministicRerun.passed, true);
     const gate = await readJson(`${correctionDir}/correction-gate.json`);
     assert.equal(gate.success, true);
-    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v7');
+    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v8');
+    const release = await readJson(`${correctionDir}/release-decision.json`);
+    assert.equal(gate.success, release.releaseAuthorized);
 });
 
 test('schema diff is real and negative schema cases fail', async () => {
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
-    assert(diff.targetV7VersusContractV7);
-    assert.equal(diff.targetV7VersusContractV7.schemaBreaks, 0);
-    assert(diff.replay009V1VersusContractV7.differences.length > 0);
-    assert(diff.replay009V1VersusReplay002V7.differences.length > 0);
+    assert(diff.targetV8VersusContractV8);
+    assert.equal(diff.targetV8VersusContractV8.schemaBreaks, 0);
+    assert(diff.replay009V1VersusContractV8.differences.length > 0);
+    assert(diff.replay009V1VersusReplay002V8.differences.length > 0);
 
     const { validateCanonicalPackage, CANONICAL_CONTRACT } = await import('../lib/canonical-state/contract.mjs');
     const events = await readJsonl(`${canonicalDir}/factual-events.jsonl`);
@@ -429,4 +436,80 @@ test('schema diff is real and negative schema cases fail', async () => {
     const forbidden = structuredClone(packageData);
     forbidden.factualEvents[0].laneAxis = 'lane_axis_1';
     assert.equal(validateCanonicalPackage(forbidden, CANONICAL_CONTRACT).valid, false);
+});
+
+test('release decision is fail-closed for false verifier inputs', async () => {
+    const ok = { passed: true };
+    const goodDecision = decideRelease({
+        evidenceMatrix: { allPassed: true },
+        baseVerification: ok,
+        evidenceAttestationVerification: ok,
+        deterministic: { deterministic: true }
+    });
+    assert.equal(goodDecision.releaseAuthorized, true);
+    for (const bad of [
+        { evidenceMatrix: { allPassed: false }, baseVerification: ok, evidenceAttestationVerification: ok, deterministic: { deterministic: true } },
+        { evidenceMatrix: { allPassed: true }, baseVerification: { passed: false }, evidenceAttestationVerification: ok, deterministic: { deterministic: true } },
+        { evidenceMatrix: { allPassed: true }, baseVerification: ok, evidenceAttestationVerification: { passed: false }, deterministic: { deterministic: true } },
+        { evidenceMatrix: { allPassed: true }, baseVerification: ok, evidenceAttestationVerification: ok, deterministic: { status: 'nested_rerun_not_applicable', deterministic: null } }
+    ]) {
+        const decision = decideRelease(bad);
+        assert.equal(decision.releaseAuthorized, false);
+        assert.equal(decision.gate, 'replay_002_canonical_factual_state_v8_blocked');
+    }
+});
+
+test('artifact-set verifier detects missing, duplicate, unknown, and changed artifacts', async () => {
+    const root = 'output-local/task-089-artifact-verifier';
+    await fs.mkdir(root, { recursive: true });
+    const artifactPath = `${root}/artifact.json`;
+    await fs.writeFile(artifactPath, '{"ok":true}\n');
+    const sha256 = await import('node:crypto').then(({ createHash }) => createHash('sha256').update('{"ok":true}\n').digest('hex'));
+    const envelope = {
+        artifacts: [
+            { role: 'required role', scope: 'assessment', relativePath: 'artifact.json', sizeBytes: 12, sha256 }
+        ]
+    };
+    const passed = await verifyArtifactSet({ canonicalDir: root, assessmentDir: root, reportPath: `${root}/report.md`, envelope, requiredRoles: ['required role'], allowReport: false });
+    assert.equal(passed.passed, true);
+    const duplicate = await verifyArtifactSet({ canonicalDir: root, assessmentDir: root, reportPath: `${root}/report.md`, envelope: { artifacts: [...envelope.artifacts, ...envelope.artifacts] }, requiredRoles: ['required role'], allowReport: false });
+    assert.equal(duplicate.passed, false);
+    assert.equal(duplicate.duplicateRoles.length, 1);
+    const unknown = await verifyArtifactSet({ canonicalDir: root, assessmentDir: root, reportPath: `${root}/report.md`, envelope: { artifacts: [{ ...envelope.artifacts[0], role: 'unknown role' }] }, requiredRoles: ['required role'], allowReport: false });
+    assert.equal(unknown.passed, false);
+    assert.equal(unknown.unknownRoles.length, 1);
+    await fs.writeFile(artifactPath, '{"ok":false}\n');
+    const changed = await verifyArtifactSet({ canonicalDir: root, assessmentDir: root, reportPath: `${root}/report.md`, envelope, requiredRoles: ['required role'], allowReport: false });
+    assert.equal(changed.passed, false);
+    assert.equal(changed.mismatches.length, 1);
+});
+
+test('IO policy rejects unguarded dynamic reads and allows tracked guards', async () => {
+    const root = 'output-local/task-089-io-audit';
+    await fs.mkdir(root, { recursive: true });
+    const badModule = `${root}/bad-audit.mjs`;
+    const goodModule = `${root}/good-audit.mjs`;
+    await fs.writeFile(badModule, "import { promises as fs } from 'node:fs';\nexport async function bad(input) { return fs.readFile(input, 'utf8'); }\n");
+    await fs.writeFile(goodModule, "import { promises as fs } from 'node:fs';\nimport { assertPathWithinRoots } from '../../lib/canonical-state/audits/common.mjs';\nexport async function good(input) { const safe = assertPathWithinRoots(input); return fs.readFile(safe, 'utf8'); }\n");
+    const manifest = {
+        outputDir: `${root}/canonical`,
+        assessmentDir: `${root}/assessment`,
+        allowedInputs: [],
+        generatedRootPrefixes: [`${root}/canonical`, `${root}/assessment`],
+        pipelineModules: [badModule, goodModule]
+    };
+    const audit = await auditIoPolicy(manifest);
+    assert.equal(audit.passed, false);
+    assert(audit.findings.some(finding => finding.module === badModule && finding.pathClassification === 'unresolved_dynamic_path' && !finding.allowed));
+    assert(audit.findings.some(finding => finding.module === goodModule && finding.pathClassification === 'dynamic_path_guarded_by_tracked_variable' && finding.allowed));
+});
+
+test('schema coverage is derived from completed ledger entries only', () => {
+    const incomplete = coverageFromLedger({
+        entries: [
+            { comparison: 'targetReplay002V8VersusContractV8', artifact: 'playerRegistry', status: 'completed', sourceShapeHash: 'a', targetShapeHash: 'b', comparatorId: 'test', differenceCount: 0 }
+        ]
+    });
+    assert.equal(incomplete.passed, false);
+    assert(incomplete.comparisons.some(comparison => comparison.missingComparisons.includes('snapshot')));
 });

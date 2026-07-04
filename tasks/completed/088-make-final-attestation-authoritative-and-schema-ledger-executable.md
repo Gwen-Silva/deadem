@@ -29,3 +29,7 @@ Gate: `replay_002_canonical_factual_state_ready_with_constraints_v7`.
 ## Follow-up
 
 Created `tasks/blocked/089-select-next-canonical-generalization-control.md`. Do not execute Task 089 without explicit authorization.
+
+## Review Note
+
+The v7 gate was not accepted in later technical review. The remaining blockers were: `nested_rerun_not_applicable` was converted into a determinism pass; inner runs could produce positive release decisions without a real outer A/B run; correction and canonical gates were written before the final release decision; a late attestation failure would not update those gates; dynamic paths were approved solely by module role; the attested final report could still publish pending/null candidate values; and tests primarily checked positive outputs rather than the required negative verifier scenarios.
