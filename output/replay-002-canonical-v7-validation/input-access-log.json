@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_002",
+  "policy": "all input reads and hashes go through lib/canonical-state/io-layer.mjs",
+  "forbiddenAssets": [
+    "samples/partida_005.dem",
+    "samples/partida_006.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007_bots01.dem",
+    "samples/replay_008_bots02_short.dem"
+  ],
+  "accesses": [
+    {
+      "path": "samples/partida_002.dem",
+      "sourceId": "rawReplay",
+      "operation": "sha256",
+      "accessClass": "raw_replay",
+      "mode": "raw_replay_identity_hash_verified",
+      "sizeBytes": 396772195,
+      "sha256": "8175e5cdd4b590fb92ba2b7e6ae3709af28ff645fcbeaa2fadd9a8d40d22912c"
+    },
+    {
+      "path": "output/parser-compatibility/parser-compatibility-matrix.json",
+      "sourceId": "parserMatrix",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 39869
+    },
+    {
+      "path": "output/replays/replay_002/match-state-quality.json",
+      "sourceId": "matchStateQuality",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 699
+    },
+    {
+      "path": "output/replays/replay_002/one-second-spatial/quality.json",
+      "sourceId": "oneSecondQuality",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 10524
+    },
+    {
+      "path": "output/replays/replay_002/canonical-death-events.json",
+      "sourceId": "deathEvents",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 235094
+    },
+    {
+      "path": "output/replays/replay_002/death-event-validation.json",
+      "sourceId": "deathValidation",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 885
+    },
+    {
+      "path": "output/replays/replay_002/respawn-events.json",
+      "sourceId": "respawnEvents",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 107543
+    },
+    {
+      "path": "output/replays/replay_002/objective-entity-inventory.json",
+      "sourceId": "objectiveInventory",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 117823
+    },
+    {
+      "path": "output/replays/replay_002/objective-lifecycle-events.json",
+      "sourceId": "objectiveLifecycle",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 2124346
+    },
+    {
+      "path": "output/replay-009-canonical/player-registry.json",
+      "sourceId": "referencePlayerRegistry",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 6262
+    },
+    {
+      "path": "output/replay-009-canonical/entity-registry.json",
+      "sourceId": "referenceEntityRegistry",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 61616
+    },
+    {
+      "path": "output/replay-009-canonical/factual-events.jsonl",
+      "sourceId": "referenceFactualEvents",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 725571
+    },
+    {
+      "path": "output/replay-009-canonical/non-timeline-metadata.json",
+      "sourceId": "referenceMetadata",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 888744
+    },
+    {
+      "path": "output/replay-009-canonical/independent-validation-overlay.json",
+      "sourceId": "referenceOverlay",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 43439
+    },
+    {
+      "path": "output/replay-009-canonical/snapshots.jsonl",
+      "sourceId": "referenceSnapshots",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 394729
+    },
+    {
+      "path": "output/replay-009-canonical/capability-matrix.json",
+      "sourceId": "referenceCapabilities",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 2202
+    },
+    {
+      "path": "output/replay-009-canonical/validation-summary.json",
+      "sourceId": "referenceValidation",
+      "operation": "read_text",
+      "accessClass": "canonical_reference",
+      "byteLength": 4945
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline.jsonl",
+      "sourceId": "matchStateIndex",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 1082
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_001.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 3354339
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_002.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 3559428
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_003.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 3895735
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_004.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 3783348
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_005.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 3493424
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_006.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 3307022
+    },
+    {
+      "path": "output/replays/replay_002/match-state-timeline-shards/chunk_007.jsonl",
+      "sourceId": "matchStateShard",
+      "operation": "read_text",
+      "accessClass": "artifact_factual",
+      "byteLength": 366171
+    },
+    {
+      "path": "<canonical-output>/player-registry.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 22994
+    },
+    {
+      "path": "<canonical-output>/entity-registry.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 108944
+    },
+    {
+      "path": "<canonical-output>/factual-events.jsonl",
+      "operation": "write_text",
+      "accessClass": "generated_jsonl",
+      "byteLength": 5994117
+    },
+    {
+      "path": "<canonical-output>/non-timeline-metadata.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 5670
+    },
+    {
+      "path": "<canonical-output>/independent-validation-overlay.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 238
+    },
+    {
+      "path": "<canonical-output>/snapshots.jsonl",
+      "operation": "write_text",
+      "accessClass": "generated_jsonl",
+      "byteLength": 5843826
+    },
+    {
+      "path": "<canonical-output>/capability-matrix.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 6558
+    },
+    {
+      "path": "<canonical-output>/validation-summary.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 2955
+    },
+    {
+      "path": "<canonical-output>/canonical-state-gate.json",
+      "operation": "write_text",
+      "accessClass": "generated_json",
+      "byteLength": 288
+    },
+    {
+      "path": "<canonical-output>/README.md",
+      "operation": "write_text",
+      "accessClass": "generated",
+      "byteLength": 307
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "taskId": "088",
+  "replayId": "replay_002",
+  "fullPipeline": true,
+  "deterministic": true,
+  "firstRun": {
+    "canonicalDir": "output-local/replay-002-canonical-v7-rerun/a/canonical",
+    "assessmentDir": "output-local/replay-002-canonical-v7-rerun/a/assessment",
+    "canonicalFileCount": 10,
+    "assessmentFileCount": 32
+  },
+  "secondRun": {
+    "canonicalDir": "output-local/replay-002-canonical-v7-rerun/b/canonical",
+    "assessmentDir": "output-local/replay-002-canonical-v7-rerun/b/assessment",
+    "canonicalFileCount": 10,
+    "assessmentFileCount": 32
+  },
+  "comparedCanonicalFiles": 10,
+  "comparedAuditFiles": 25,
+  "comparedFinalFiles": 7,
+  "normalizationsApplied": [
+    {
+      "field": "temporary canonical output root",
+      "reason": "root differs by A/B run, relative artifact paths and stored hashes are preserved"
+    },
+    {
+      "field": "temporary assessment output root",
+      "reason": "root differs by A/B run, relative artifact paths and stored hashes are preserved"
+    }
+  ],
+  "mismatches": []
+}

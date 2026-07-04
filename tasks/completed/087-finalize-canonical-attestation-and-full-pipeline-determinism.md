@@ -31,3 +31,7 @@ Blocked gate: `replay_002_canonical_factual_state_v6_blocked`.
 ## Follow-up
 
 If v6 passes, create `tasks/blocked/088-select-next-canonical-generalization-control.md`. If blocked, create one Task 088 for the first blocker. Do not execute Task 088.
+
+## Review Note
+
+The v6 gate was not accepted in later technical review. The remaining gaps were: the base manifest was verified before the final canonical files were updated; manifest hashes did not correspond to the final gate and summary; the gate depended only on attestation preconditions; `final-attestation.json` declared `passed: true` instead of relying on an independent verifier; the schema ledger was reconstructed from fixed lists; historical metadata variants were still compared against `{}`; dynamic IO paths were automatically allowed; and internal hashes were masked in the rerun.

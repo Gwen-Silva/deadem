@@ -6,7 +6,7 @@ import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
-const correctionDir = 'output/replay-002-canonical-v6-validation';
+const correctionDir = 'output/replay-002-canonical-v7-validation';
 
 async function readJson(file) {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -296,8 +296,32 @@ test('all records validate against contract and schema diff covers variants', as
     const coverage = await readJson(`${correctionDir}/schema-diff-coverage.json`);
     assert.equal(coverage.passed, true);
     const ledger = await readJson(`${correctionDir}/schema-comparison-ledger.json`);
-    assert(ledger.entries.some(entry => entry.comparison === 'targetReplay002V6VersusContractV6' && entry.artifact === 'snapshot'));
+    assert(ledger.entries.some(entry => entry.comparison === 'targetReplay002V7VersusContractV7' && entry.artifact === 'snapshot' && entry.status === 'completed' && entry.sourceShapeHash && entry.targetShapeHash));
     assert(ledger.entries.length >= 27);
+});
+
+test('v7 attestation, release decision, metadata variants, and dynamic IO policy are authoritative', async () => {
+    const finalAttestation = await readJson(`${correctionDir}/final-attestation.json`);
+    assert.equal(Object.hasOwn(finalAttestation, 'passed'), false);
+    const verification = await readJson(`${correctionDir}/final-attestation-verification.json`);
+    assert.equal(verification.passed, true);
+    assert.equal(verification.missingRoles.length, 0);
+    assert.equal(verification.duplicateRoles.length, 0);
+    assert.equal(verification.unknownRoles.length, 0);
+    const release = await readJson(`${correctionDir}/release-decision.json`);
+    assert.equal(release.releaseAuthorized, true);
+    assert.equal(release.finalAttestationVerificationPassed, true);
+    const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
+    assert(diff.historicalMetadataVariants.every(variant => variant.comparedAgainstEmptyObject === false));
+    assert(diff.historicalMetadataVariants.every(variant => variant.observedSchema !== undefined));
+    const ioAudit = await readJson(`${correctionDir}/io-policy-audit.json`);
+    assert.equal(ioAudit.passed, true);
+    assert.equal(ioAudit.forbiddenFindings.length, 0);
+    assert(!JSON.stringify(ioAudit.findings).includes('unresolved_dynamic_path'));
+    const rerun = await readJson(`${correctionDir}/deterministic-rerun.json`);
+    assert.equal(rerun.deterministic, true);
+    assert.equal(rerun.mismatches.length, 0);
+    assert(!JSON.stringify(rerun.normalizationsApplied).includes('sha256'));
 });
 
 test('schema break detection is not name-based suppression', async () => {
@@ -350,15 +374,15 @@ test('contract validation covers every artifact and final gate follows matrix', 
     assert.equal(matrix.deterministicRerun.passed, true);
     const gate = await readJson(`${correctionDir}/correction-gate.json`);
     assert.equal(gate.success, true);
-    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v6');
+    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v7');
 });
 
 test('schema diff is real and negative schema cases fail', async () => {
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
-    assert(diff.targetV6VersusContractV6);
-    assert.equal(diff.targetV6VersusContractV6.schemaBreaks, 0);
-    assert(diff.replay009V1VersusContractV6.differences.length > 0);
-    assert(diff.replay009V1VersusReplay002V6.differences.length > 0);
+    assert(diff.targetV7VersusContractV7);
+    assert.equal(diff.targetV7VersusContractV7.schemaBreaks, 0);
+    assert(diff.replay009V1VersusContractV7.differences.length > 0);
+    assert(diff.replay009V1VersusReplay002V7.differences.length > 0);
 
     const { validateCanonicalPackage, CANONICAL_CONTRACT } = await import('../lib/canonical-state/contract.mjs');
     const events = await readJsonl(`${canonicalDir}/factual-events.jsonl`);

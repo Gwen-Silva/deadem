@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 2,
+  "filesExamined": [
+    {
+      "path": "README.md",
+      "sha256": "9e1d64f5663930aa12c23e7fed3ee92b8ba1e6c8b047520b73c54962658bca6f",
+      "exists": true
+    },
+    {
+      "path": "docs/PROJECT_STATE.md",
+      "sha256": "aae5254d6a58646b9d3071a8f7dcb84061a0829f5e7a6e44927b09942839e4a3",
+      "exists": true
+    },
+    {
+      "path": "docs/NEXT_MILESTONE.md",
+      "sha256": "dedd6bffca8641b27653da3db89edc1148f72ea1fa070a39eba6dcaa194a82b3",
+      "exists": true
+    },
+    {
+      "path": "docs/PROJECT_VISION_AND_ROADMAP.md",
+      "sha256": "138de35009214f169b19185fea5be715a6bcff16d71aebfa2a5f3895876a25a7",
+      "exists": true
+    },
+    {
+      "path": "docs/REPOSITORY_GUIDE.md",
+      "sha256": "abc67d5f6714c0c0ea8a538164ebcc45f99b786c92f9ae73ff3be3d771fbb90e",
+      "exists": true
+    },
+    {
+      "path": "output/README.md",
+      "sha256": "3cdbbd6eb2397a6f099ad98e22afd7c66d68db385259f52f4885f0333b414111",
+      "exists": true
+    },
+    {
+      "path": "reports/INDEX.md",
+      "sha256": "2d68fbf58c4b0d4b7ca418ac25d0af38499e103a58bcf8e9a3a40f0a4cb4a872",
+      "exists": true
+    },
+    {
+      "path": "reports/latest.md",
+      "sha256": "9ae5345cc7dc36ba800c7f9e2ab45f70240aee7db322c71b2387b55b709bd02d",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md",
+      "sha256": "bfe1c2ed1dfbc2b04cef1baad2d2d17b8b304184d997da9bdfd6d79b11324af4",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md",
+      "sha256": "2fbff708188d5e11a03fabfb0b03f52930cdfa42099ced6480f49002aa419488",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md",
+      "sha256": "a75b3c6e84eccfa14f01c20e05bfbf8b0b4da8880245659ccfb78a5537ecfb2f",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md",
+      "sha256": "838635788f08143bcc9e27f7cde680ad930559d49197c507e8e059e9b8f97941",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/086-close-canonical-audit-coverage-and-independence.md",
+      "sha256": "aa9c23337b585ef8d41b4b4b1ec8053a52b27f4144428f733e023ba1108dea78",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md",
+      "sha256": "b82eedf64b6172fc215e9cedde96813f56fc1f957d808354f2772a1749c4552f",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/088-make-final-attestation-authoritative-and-schema-ledger-executable.md",
+      "sha256": "d08833a580a017a83afa0e8f45716e06a17283286f46cdabd8ba2e80d9397f79",
+      "exists": true
+    },
+    {
+      "path": "tasks/blocked/089-select-next-canonical-generalization-control.md",
+      "sha256": "5dd88a1291b03c08e68105b9b3eba6a0d85db479063cb51589582f847b7d1c1e",
+      "exists": true
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "readme_declares_v7",
+      "files": [
+        "README.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "project_state_declares_v7",
+      "files": [
+        "docs/PROJECT_STATE.md"
+      ],
+      "matches": [
+        {
+          "file": "docs/PROJECT_STATE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "next_milestone_points_to_089",
+      "files": [
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "latest_points_to_v7_report",
+      "files": [
+        "reports/latest.md"
+      ],
+      "matches": [
+        {
+          "file": "reports/latest.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "index_points_to_v7_report",
+      "files": [
+        "reports/INDEX.md"
+      ],
+      "matches": [
+        {
+          "file": "reports/INDEX.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "previous_tasks_preserved",
+      "files": [
+        "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md",
+        "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md",
+        "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md",
+        "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md",
+        "tasks/completed/086-close-canonical-audit-coverage-and-independence.md",
+        "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md"
+      ],
+      "matches": [
+        {
+          "file": "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md"
+        },
+        {
+          "file": "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md"
+        },
+        {
+          "file": "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md"
+        },
+        {
+          "file": "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md"
+        },
+        {
+          "file": "tasks/completed/086-close-canonical-audit-coverage-and-independence.md"
+        },
+        {
+          "file": "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "task088_records_scope",
+      "files": [
+        "tasks/completed/088-make-final-attestation-authoritative-and-schema-ledger-executable.md"
+      ],
+      "matches": [
+        {
+          "file": "tasks/completed/088-make-final-attestation-authoritative-and-schema-ledger-executable.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "replay005_protected_in_state_docs",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_full_corpus_generalization_claim",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_spatial_mechanics_macro_ready_claim",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md",
+        "docs/REPOSITORY_GUIDE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        },
+        {
+          "file": "docs/REPOSITORY_GUIDE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_stale_next_task_088_select",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md",
+        "reports/latest.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        },
+        {
+          "file": "reports/latest.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

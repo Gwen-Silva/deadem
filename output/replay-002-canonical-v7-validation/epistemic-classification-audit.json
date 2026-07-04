@@ -1,34 +1,17 @@
 {
-  "schemaVersion": "7.0.0",
-  "taskId": "088",
-  "replayId": "replay_002",
-  "gate": "replay_002_canonical_factual_state_ready_with_constraints_v7",
-  "playerCount": 12,
-  "rawTeamDistribution": {
-    "2": 6,
-    "3": 6
-  },
-  "entityCount": 47,
-  "canonicalEventCount": 3476,
-  "snapshotCount": 1835,
-  "validationOverlayCount": 0,
-  "epistemicTypeCounts": {
-    "direct_parser_observation": 0,
-    "deterministic_derivation": 3476,
-    "human_annotation": 0,
-    "independent_visual_validation": 0,
-    "heuristic": 0,
-    "unresolved": 0
-  },
-  "factualEventEpistemicTypeCounts": {
-    "direct_parser_observation": 0,
-    "deterministic_derivation": 3476,
-    "human_annotation": 0,
-    "independent_visual_validation": 0,
-    "heuristic": 0,
-    "unresolved": 0
-  },
-  "packageEpistemicTypeCounts": {
+  "schemaVersion": 1,
+  "artifactsCovered": [
+    "playerRegistry",
+    "entityRegistry",
+    "factualEvents",
+    "metadata",
+    "overlays",
+    "snapshots",
+    "capabilities",
+    "validationSummary",
+    "canonicalGate"
+  ],
+  "byArtifact": {
     "playerRegistry": {
       "direct_parser_observation": 0,
       "deterministic_derivation": 12,
@@ -102,9 +85,12 @@
       "unresolved": 0
     }
   },
-  "schemaValid": true,
-  "spatialLeakageFindings": 0,
-  "mechanicEffectsApplied": 0,
-  "rawReplayAccessClassification": "raw_replay_identity_hash_verified",
-  "finalGateVerifiedBy": "release-decision.json"
+  "totalProvenanceRecords": 5379,
+  "missingEpistemicType": [],
+  "incompatibleEpistemicType": [],
+  "directObservations": [],
+  "unjustifiedDirectObservations": [],
+  "derivationsWithoutMethod": [],
+  "formulaRequiredMissing": [],
+  "passed": true
 }

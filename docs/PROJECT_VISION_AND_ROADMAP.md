@@ -120,7 +120,7 @@ Presence, deletion, zero health, and disappearance remain observations unless
 separate evidence supports stronger semantics.
 
 Current implementation note: Task 065 establishes the canonical replay-009
-factual layer, and Task 087 supplies the accepted v6 correction for the first
+factual layer, and Task 088 supplies the accepted v7 correction for the first
 replay-002 bounded normal-control canonical generalization case after Tasks 082,
 083, and 084 failed technical review. This supports schema stability work only; it still does not apply
 mechanics, spatial regions, lane semantics, objective completion, or macro
@@ -542,3 +542,4 @@ Can classify patterns and bounded decision windows without GPT or Codex.
 
 Can compare large replay corpora, test strategic hypotheses, train versioned
 models, and estimate action value with traceable uncertainty.
+

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "attestationType": "replay_002_canonical_v7_final",
+  "requiredRoles": [
+    "audit artifact manifest",
+    "audit artifact verification",
+    "evidence matrix",
+    "validation matrix",
+    "correction gate",
+    "correction summary",
+    "canonical gate",
+    "validation summary",
+    "deterministic rerun",
+    "final report"
+  ],
+  "artifacts": [
+    {
+      "role": "audit artifact manifest",
+      "scope": "assessment",
+      "relativePath": "audit-artifact-manifest.json",
+      "sha256": "b8d4cfb347a41404cf5734b9a2d3d6960ce76a53dbfb94d9472b1a7b34bb6573",
+      "sizeBytes": 6766
+    },
+    {
+      "role": "audit artifact verification",
+      "scope": "assessment",
+      "relativePath": "audit-artifact-verification.json",
+      "sha256": "72c25d93fd3a4b6893b2d4e4215b786ca4a080cdbb9e5cade400ebd340469576",
+      "sizeBytes": 285
+    },
+    {
+      "role": "evidence matrix",
+      "scope": "assessment",
+      "relativePath": "evidence-matrix.json",
+      "sha256": "0bfd798cf75e7af3e5bebf4ec12d3fe0b5f3327899833adce65c025240d438f7",
+      "sizeBytes": 3757
+    },
+    {
+      "role": "validation matrix",
+      "scope": "assessment",
+      "relativePath": "validation-matrix.json",
+      "sha256": "391addc930cbca049599501fe630079a51a90664abc927186f8712914ebda8a3",
+      "sizeBytes": 4000
+    },
+    {
+      "role": "correction gate",
+      "scope": "assessment",
+      "relativePath": "correction-gate.json",
+      "sha256": "b4c4fcee00f8dae387a4e598ebbb35ab22e64a37e73fa2880320964a63294233",
+      "sizeBytes": 247
+    },
+    {
+      "role": "correction summary",
+      "scope": "assessment",
+      "relativePath": "correction-summary.json",
+      "sha256": "b2e139c6bcdc25a17110fa13defb7d4412c13fbc57917ef990809149efad4f5b",
+      "sizeBytes": 1185
+    },
+    {
+      "role": "deterministic rerun",
+      "scope": "assessment",
+      "relativePath": "deterministic-rerun.json",
+      "sha256": "762b390615c07dbaba6f3d65403e10df04c14d63d8e324a6cc1b15c74f983b22",
+      "sizeBytes": 1065
+    },
+    {
+      "role": "canonical gate",
+      "scope": "canonical_package",
+      "relativePath": "canonical-state-gate.json",
+      "sha256": "5cedb46c8184dcc992502ca95c501c40667baf46f2057b8928df3779e64a6242",
+      "sizeBytes": 282
+    },
+    {
+      "role": "validation summary",
+      "scope": "canonical_package",
+      "relativePath": "validation-summary.json",
+      "sha256": "ebb378d1fe3747ba6b03e80cbdbe30be46fb842bea3a99c6e7e9d670540c600c",
+      "sizeBytes": 2998
+    },
+    {
+      "role": "final report",
+      "scope": "report",
+      "relativePath": "replay-002-canonical-factual-state-v7-validation.md",
+      "sha256": "457b35fdbd706a28d6bad3762db2b7365b8a1a5ef195c511e31d61f0c307c3f8",
+      "sizeBytes": 838
+    }
+  ]
+}
