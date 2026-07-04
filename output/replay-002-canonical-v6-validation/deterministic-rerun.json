@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "taskId": "087",
+  "replayId": "replay_002",
+  "fullPipeline": true,
+  "deterministic": true,
+  "firstRun": {
+    "canonicalDir": "output-local/replay-002-canonical-v6-rerun/a/canonical",
+    "assessmentDir": "output-local/replay-002-canonical-v6-rerun/a/assessment",
+    "canonicalFileCount": 10,
+    "assessmentFileCount": 29
+  },
+  "secondRun": {
+    "canonicalDir": "output-local/replay-002-canonical-v6-rerun/b/canonical",
+    "assessmentDir": "output-local/replay-002-canonical-v6-rerun/b/assessment",
+    "canonicalFileCount": 10,
+    "assessmentFileCount": 29
+  },
+  "comparedCanonicalFiles": 10,
+  "comparedAuditFiles": 26,
+  "comparedFinalFiles": 3,
+  "normalizationsApplied": [
+    "canonical output root",
+    "assessment output root",
+    "generated attestation hash fields for temp-root path sensitivity"
+  ],
+  "mismatches": []
+}

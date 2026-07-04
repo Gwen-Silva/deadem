@@ -35,3 +35,13 @@ Blocked gate: `replay_002_canonical_factual_state_v5_blocked`.
 If v5 passes, create `tasks/blocked/087-select-next-canonical-generalization-control.md`.
 
 If blocked, create exactly one Task 087 for the first blocker. Do not execute Task 087.
+
+## Review Note
+
+The v5 gate was preserved but not accepted after later review. Task 087
+supersedes it because the audit-artifact manifest was marked as passed without
+verifying each entry, files could be modified after manifest creation, the
+deterministic rerun compared provisional outputs from before the independent
+auditors, schema-diff coverage still used manual lists, historical metadata
+variants were compared against `{}`, and the IO audit permitted reads based on
+module directory instead of an explicit role/path policy.

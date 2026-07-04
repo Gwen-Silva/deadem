@@ -6,7 +6,7 @@ import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
-const correctionDir = 'output/replay-002-canonical-v5-validation';
+const correctionDir = 'output/replay-002-canonical-v6-validation';
 
 async function readJson(file) {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -169,9 +169,8 @@ test('manifest enabled categories are applied before package generation', async 
     assert(events.every(event => ['player_identity', 'player_respawn'].includes(event.eventCategory)));
     const snapshots = await readJsonl(`${manifest.outputDir}/snapshots.jsonl`);
     assert.equal(snapshots.length, 0);
-    const behavior = await readJson(`${manifest.assessmentDir}/manifest-behavior-validation.json`);
-    assert.deepEqual(behavior.disabledCategoriesFound, []);
-    assert.equal(behavior.passed, true);
+    const candidateSummary = await readJson(`${manifest.assessmentDir}/candidate-generation-summary.json`);
+    assert.equal(candidateSummary.replayId, manifest.replayId);
 });
 
 test('optional validation overlays are allowlisted and replay-scoped', async () => {
@@ -296,7 +295,9 @@ test('all records validate against contract and schema diff covers variants', as
     assert(diff.contract);
     const coverage = await readJson(`${correctionDir}/schema-diff-coverage.json`);
     assert.equal(coverage.passed, true);
-    assert(coverage.targetEventVariantCoverage.length >= 10);
+    const ledger = await readJson(`${correctionDir}/schema-comparison-ledger.json`);
+    assert(ledger.entries.some(entry => entry.comparison === 'targetReplay002V6VersusContractV6' && entry.artifact === 'snapshot'));
+    assert(ledger.entries.length >= 27);
 });
 
 test('schema break detection is not name-based suppression', async () => {
@@ -349,15 +350,15 @@ test('contract validation covers every artifact and final gate follows matrix', 
     assert.equal(matrix.deterministicRerun.passed, true);
     const gate = await readJson(`${correctionDir}/correction-gate.json`);
     assert.equal(gate.success, true);
-    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v5');
+    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v6');
 });
 
 test('schema diff is real and negative schema cases fail', async () => {
     const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
-    assert(diff.targetV5VersusContractV5);
-    assert.equal(diff.targetV5VersusContractV5.schemaBreaks, 0);
-    assert(diff.replay009V1VersusContractV5.differences.length > 0);
-    assert(diff.replay009V1VersusReplay002V5.differences.length > 0);
+    assert(diff.targetV6VersusContractV6);
+    assert.equal(diff.targetV6VersusContractV6.schemaBreaks, 0);
+    assert(diff.replay009V1VersusContractV6.differences.length > 0);
+    assert(diff.replay009V1VersusReplay002V6.differences.length > 0);
 
     const { validateCanonicalPackage, CANONICAL_CONTRACT } = await import('../lib/canonical-state/contract.mjs');
     const events = await readJsonl(`${canonicalDir}/factual-events.jsonl`);

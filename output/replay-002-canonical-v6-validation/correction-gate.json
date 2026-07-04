@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "taskId": "087",
+  "replayId": "replay_002",
+  "gate": "replay_002_canonical_factual_state_ready_with_constraints_v6",
+  "success": true,
+  "validationMatrix": {
+    "schemaVersion": 3,
+    "taskId": "087",
+    "replayId": "replay_002",
+    "contractCompleteness": {
+      "passed": true,
+      "artifact": "contract-completeness-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/contract-completeness-audit.json",
+      "sha256": "320aa2f0bde86ecc262541014cd89abae8455ea1ae68a56b3f349e8a06a52de0"
+    },
+    "contractValidation": {
+      "passed": true,
+      "artifact": "canonical-schema-validation.json",
+      "path": "output/replay-002-canonical-v6-validation/canonical-schema-validation.json",
+      "sha256": "2e213cd948adbafb892ae479754b0175b630a1b6614ce5017cd3f173237143dc"
+    },
+    "schemaDiff": {
+      "passed": true,
+      "artifact": "canonical-schema-diff.json",
+      "path": "output/replay-002-canonical-v6-validation/canonical-schema-diff.json",
+      "sha256": "215c06101206a3567196cc7568354d18f96ed87e84451a6292dc61262447ebf8"
+    },
+    "schemaComparisonLedger": {
+      "passed": true,
+      "artifact": "schema-comparison-ledger.json",
+      "path": "output/replay-002-canonical-v6-validation/schema-comparison-ledger.json",
+      "sha256": "dd4dcd7e88d07a4d81c8187e091e29ddb3ac9fba3a18e30cd1231eceeeb6dbd1"
+    },
+    "schemaDiffCoverage": {
+      "passed": true,
+      "artifact": "schema-diff-coverage.json",
+      "path": "output/replay-002-canonical-v6-validation/schema-diff-coverage.json",
+      "sha256": "f672efffcfebd96892c9e5e8644dbd9f51fde4a6560f56470724c33398b6ece8"
+    },
+    "targetSchemaBreaks": 0,
+    "missingComparisons": [],
+    "provenanceAudit": {
+      "passed": true,
+      "artifact": "provenance-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/provenance-audit.json",
+      "sha256": "25ba1d3ad2a00386b79891b32761affcfab7373f1d16716742be415244343ff1"
+    },
+    "globalEpistemicAudit": {
+      "passed": true,
+      "artifact": "epistemic-classification-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/epistemic-classification-audit.json",
+      "sha256": "2baa26f73defa9f33a5b7062ab65ac974416903dd8e6689fc7697ae4c84c71e6"
+    },
+    "directObservationAudit": {
+      "passed": true,
+      "artifact": "direct-observation-justification.json",
+      "path": "output/replay-002-canonical-v6-validation/direct-observation-justification.json",
+      "sha256": "96e4b158a7768e9c95886778bd94e2567c8e1750a18d925524a2e9085250ae23"
+    },
+    "identityAudit": {
+      "passed": true,
+      "artifact": "identity-and-generation-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/identity-and-generation-audit.json",
+      "sha256": "e9c4abdd3b468e6448ffac3b0fd6a4c47a239578f878a0b711c243e1dd27ed66"
+    },
+    "spatialLeakageAudit": {
+      "passed": true,
+      "artifact": "spatial-leakage-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/spatial-leakage-audit.json",
+      "sha256": "777c217b1d94cb61b8a0b409b9913e8a8b05004785fd0c7216703755c613d5c1"
+    },
+    "manifestBehaviorAudit": {
+      "passed": true,
+      "artifact": "manifest-behavior-validation.json",
+      "path": "output/replay-002-canonical-v6-validation/manifest-behavior-validation.json",
+      "sha256": "d814c4f2e1f3139f4e9621d11f7462040710681e36e6ad7ab1953640ae914294"
+    },
+    "ioStaticAudit": {
+      "passed": true,
+      "artifact": "io-policy-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/io-policy-audit.json",
+      "sha256": "1c274a10354a1e48dcc13603391d02aaba45b78efd6d55874727a4979ba59bc8"
+    },
+    "contractDeepConsistency": {
+      "passed": true,
+      "artifact": "contract-source-consistency.json",
+      "path": "output/replay-002-canonical-v6-validation/contract-source-consistency.json",
+      "sha256": "e16eba809857bee10bcb70f12206bf4ec9dfa9575b0f72f87cba3a840c578d91"
+    },
+    "documentationContentAudit": {
+      "passed": true,
+      "artifact": "documentation-consistency.json",
+      "path": "output/replay-002-canonical-v6-validation/documentation-consistency.json",
+      "sha256": "00ebcc22a9cf7e6e9539f64d273ee10cfe1efcb09d72dfd02dd0a83cbffc3ff8"
+    },
+    "protectionsAudit": {
+      "passed": true,
+      "artifact": "protections-audit.json",
+      "path": "output/replay-002-canonical-v6-validation/protections-audit.json",
+      "sha256": "eb0fbbd873514d1b5c961f751bf1a37af07cb1c9c0835f6769ad0af9ca9fac7c"
+    },
+    "deterministicRerun": {
+      "passed": true,
+      "artifact": "deterministic-rerun.json",
+      "path": "output/replay-002-canonical-v6-validation/deterministic-rerun.json",
+      "sha256": "d1a76072ed66c4f15ce12760d6717bfa63da16527b6193a3ac311333fa85dcde"
+    },
+    "baseAuditManifestVerification": {
+      "passed": true,
+      "artifact": "audit-artifact-verification.json",
+      "path": "output/replay-002-canonical-v6-validation/audit-artifact-verification.json",
+      "sha256": "c86abeef4ac01e968da7dd04357d744e33c0d3bbf347509ccd0156057ee120ff"
+    },
+    "finalAttestationPreconditions": {
+      "passed": true,
+      "artifact": "pending_final-attestation.json",
+      "sha256": null
+    },
+    "allPassed": true
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 2,
+  "filesExamined": [
+    {
+      "path": "README.md",
+      "sha256": "faadc03bbe563a7cfc9db48ec45a0d8a0c67dd7f6e276496debd0d7f600ab92f",
+      "exists": true
+    },
+    {
+      "path": "docs/PROJECT_STATE.md",
+      "sha256": "6193cec26c766ad573714a6dbddcafc3e52252d0c2f91e3af789d0202e55f52b",
+      "exists": true
+    },
+    {
+      "path": "docs/NEXT_MILESTONE.md",
+      "sha256": "318692557c471d9ca57127fa5998662b98430e388ee0d2e7dd43b9e821ccc457",
+      "exists": true
+    },
+    {
+      "path": "docs/PROJECT_VISION_AND_ROADMAP.md",
+      "sha256": "3eb008481659d03ef0d08f70f243069613036c15dde4b5519b457062e5d26924",
+      "exists": true
+    },
+    {
+      "path": "docs/REPOSITORY_GUIDE.md",
+      "sha256": "878847e30ac4d81dea3d511b9fa55319e59379c2a7c4826356c8668d469e9e35",
+      "exists": true
+    },
+    {
+      "path": "output/README.md",
+      "sha256": "e54d14898c3696b6c97a6b7a881b9c563dd25ebb805974653da9fe99482d86e1",
+      "exists": true
+    },
+    {
+      "path": "reports/INDEX.md",
+      "sha256": "9697780474db78a72d5b4c51a0ef0078b1c68270df3120943eaf8276487498af",
+      "exists": true
+    },
+    {
+      "path": "reports/latest.md",
+      "sha256": "83b5183a4ce7d36f5a01a2424494a62c494510aa63a04e76d71c84123cd86c25",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md",
+      "sha256": "bfe1c2ed1dfbc2b04cef1baad2d2d17b8b304184d997da9bdfd6d79b11324af4",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md",
+      "sha256": "2fbff708188d5e11a03fabfb0b03f52930cdfa42099ced6480f49002aa419488",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md",
+      "sha256": "a75b3c6e84eccfa14f01c20e05bfbf8b0b4da8880245659ccfb78a5537ecfb2f",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md",
+      "sha256": "838635788f08143bcc9e27f7cde680ad930559d49197c507e8e059e9b8f97941",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/086-close-canonical-audit-coverage-and-independence.md",
+      "sha256": "aa9c23337b585ef8d41b4b4b1ec8053a52b27f4144428f733e023ba1108dea78",
+      "exists": true
+    },
+    {
+      "path": "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md",
+      "sha256": "fe48576cf072071289088f3a3e1395dc3fb9a38b2e624d85cb9d5fe4468c48b1",
+      "exists": true
+    },
+    {
+      "path": "tasks/blocked/088-select-next-canonical-generalization-control.md",
+      "sha256": "7cf6d6cabe81205de65299a42851bee6a4830c216136122e6f0d26c7bcf8b9f6",
+      "exists": true
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "readme_declares_v6",
+      "files": [
+        "README.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "project_state_declares_v6",
+      "files": [
+        "docs/PROJECT_STATE.md"
+      ],
+      "matches": [
+        {
+          "file": "docs/PROJECT_STATE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "next_milestone_points_to_088",
+      "files": [
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "latest_points_to_v6_report",
+      "files": [
+        "reports/latest.md"
+      ],
+      "matches": [
+        {
+          "file": "reports/latest.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "index_points_to_v6_report",
+      "files": [
+        "reports/INDEX.md"
+      ],
+      "matches": [
+        {
+          "file": "reports/INDEX.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "previous_tasks_preserved",
+      "files": [
+        "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md",
+        "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md",
+        "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md",
+        "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md",
+        "tasks/completed/086-close-canonical-audit-coverage-and-independence.md"
+      ],
+      "matches": [
+        {
+          "file": "tasks/completed/082-generalize-canonical-factual-state-to-replay-002.md"
+        },
+        {
+          "file": "tasks/completed/083-correct-replay-002-canonical-generalization-foundation.md"
+        },
+        {
+          "file": "tasks/completed/084-enforce-canonical-contract-diff-io-and-final-gate.md"
+        },
+        {
+          "file": "tasks/completed/085-complete-nested-contract-event-diff-and-audit-gate.md"
+        },
+        {
+          "file": "tasks/completed/086-close-canonical-audit-coverage-and-independence.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "task087_records_scope",
+      "files": [
+        "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md"
+      ],
+      "matches": [
+        {
+          "file": "tasks/completed/087-finalize-canonical-attestation-and-full-pipeline-determinism.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "replay005_protected_in_state_docs",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_full_corpus_generalization_claim",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_spatial_mechanics_macro_ready_claim",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md",
+        "docs/REPOSITORY_GUIDE.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        },
+        {
+          "file": "docs/REPOSITORY_GUIDE.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    },
+    {
+      "ruleId": "no_stale_next_task_087_select",
+      "files": [
+        "README.md",
+        "docs/PROJECT_STATE.md",
+        "docs/NEXT_MILESTONE.md",
+        "reports/latest.md"
+      ],
+      "matches": [
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "docs/PROJECT_STATE.md"
+        },
+        {
+          "file": "docs/NEXT_MILESTONE.md"
+        },
+        {
+          "file": "reports/latest.md"
+        }
+      ],
+      "failures": [],
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

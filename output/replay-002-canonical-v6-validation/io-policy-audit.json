@@ -1,0 +1,1085 @@
+{
+  "schemaVersion": 2,
+  "modulesExamined": [
+    {
+      "path": "tools/build-replay-002-canonical-state.mjs",
+      "sha256": "65243880faa33bfbd4cd2234755b38d9d934c1bf8d553d2cef3f3e982178c7cf",
+      "lineCount": 129,
+      "role": "validator_or_wrapper"
+    },
+    {
+      "path": "tools/check-replay-002-canonical-determinism.mjs",
+      "sha256": "72ac18478ea9e1da49519066d203fbd29a32e57673c816e8d1dc0fe92269f455",
+      "lineCount": 12,
+      "role": "validator_or_wrapper"
+    },
+    {
+      "path": "lib/canonical-state/builder.mjs",
+      "sha256": "3b967c57d7400dded73a5c512247e3fcc6d6dac568c9230d8d8f4f88634b0dfb",
+      "lineCount": 1036,
+      "role": "builder"
+    },
+    {
+      "path": "lib/canonical-state/contract.mjs",
+      "sha256": "2b1ea7aa6eee61d090eacfb12b33d66f74ce212b2e490f322c424d3130a67f11",
+      "lineCount": 659,
+      "role": "validator_or_wrapper"
+    },
+    {
+      "path": "lib/canonical-state/io-layer.mjs",
+      "sha256": "e9e08d70d91c3cc440aed44fbdcf4e457164e2c79f4fec9065daace4686c49ba",
+      "lineCount": 123,
+      "role": "factual_io_layer"
+    },
+    {
+      "path": "lib/canonical-state/audits/common.mjs",
+      "sha256": "da8bb670ecbf65ae26ded7f61f30c2c8ab1c7e0ece0a929d3484489dd2961cc1",
+      "lineCount": 53,
+      "role": "audit"
+    },
+    {
+      "path": "lib/canonical-state/audits/contract-source-consistency.mjs",
+      "sha256": "17b773a709ff3ee7c47362b2c2635da5b8cc7082a76f8b32af24c610afdc8d8e",
+      "lineCount": 41,
+      "role": "audit"
+    },
+    {
+      "path": "lib/canonical-state/audits/documentation-audit.mjs",
+      "sha256": "53ce55b312a77d471ac2aa95b6356eee66eefcdc36e282a76e9074150e51d651",
+      "lineCount": 96,
+      "role": "audit"
+    },
+    {
+      "path": "lib/canonical-state/audits/epistemic-audit.mjs",
+      "sha256": "55ba15ecd70107298154e321fc4e44d46b7c8c407b5442c08404154e880fa817",
+      "lineCount": 107,
+      "role": "audit"
+    },
+    {
+      "path": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "sha256": "b5dd16701972baa9dc4855c30ecd7a2f339ce42b6715385c1dc61d7c4a3bb917",
+      "lineCount": 111,
+      "role": "audit"
+    },
+    {
+      "path": "tools/finalize-replay-002-canonical-v6.mjs",
+      "sha256": "ca72598857b57f433e5787ea1f832f653769e6194b9c889f4ae26df7f1257e18",
+      "lineCount": 438,
+      "role": "orchestrator"
+    },
+    {
+      "path": "tools/verify-replay-002-canonical-v6-attestation.mjs",
+      "sha256": "3ce628975f0f1b7408c1e76d04bca8c4f8938b824f8b3ff17daaaa023d1ae7a4",
+      "lineCount": 45,
+      "role": "orchestrator"
+    },
+    {
+      "path": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "sha256": "45fe41f0a42792ad954f1fb98b8b1968f98d388f4282f90bec859b177448bd86",
+      "lineCount": 135,
+      "role": "audit"
+    }
+  ],
+  "modulePolicies": [
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "role": "validator_or_wrapper",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools",
+        "output-local"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "reports",
+        "tasks/blocked",
+        "output-local"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "tools/check-replay-002-canonical-determinism.mjs",
+      "role": "validator_or_wrapper",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools",
+        "output-local"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "reports",
+        "tasks/blocked",
+        "output-local"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/builder.mjs",
+      "role": "builder",
+      "allowedReadRoots": [],
+      "allowedWriteRoots": [],
+      "allowedApis": []
+    },
+    {
+      "module": "lib/canonical-state/contract.mjs",
+      "role": "validator_or_wrapper",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools",
+        "output-local"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "reports",
+        "tasks/blocked",
+        "output-local"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "role": "factual_io_layer",
+      "allowedReadRoots": [
+        "samples/partida_002.dem",
+        "output/parser-compatibility/parser-compatibility-matrix.json",
+        "output/replays/replay_002/match-state-timeline.jsonl",
+        "output/replays/replay_002/match-state-quality.json",
+        "output/replays/replay_002/one-second-spatial/quality.json",
+        "output/replays/replay_002/canonical-death-events.json",
+        "output/replays/replay_002/death-event-validation.json",
+        "output/replays/replay_002/respawn-events.json",
+        "output/replays/replay_002/objective-entity-inventory.json",
+        "output/replays/replay_002/objective-lifecycle-events.json",
+        "output/replay-009-canonical/player-registry.json",
+        "output/replay-009-canonical/entity-registry.json",
+        "output/replay-009-canonical/factual-events.jsonl",
+        "output/replay-009-canonical/non-timeline-metadata.json",
+        "output/replay-009-canonical/independent-validation-overlay.json",
+        "output/replay-009-canonical/snapshots.jsonl",
+        "output/replay-009-canonical/capability-matrix.json",
+        "output/replay-009-canonical/validation-summary.json",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_001.jsonl",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_002.jsonl",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_003.jsonl",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_004.jsonl",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_005.jsonl",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_006.jsonl",
+        "output/replays/replay_002/match-state-timeline-shards/chunk_007.jsonl"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "role": "audit",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/audits/contract-source-consistency.mjs",
+      "role": "audit",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/audits/documentation-audit.mjs",
+      "role": "audit",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/audits/epistemic-audit.mjs",
+      "role": "audit",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "role": "audit",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "role": "orchestrator",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools",
+        "output-local"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "reports",
+        "tasks/blocked",
+        "output-local"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "tools/verify-replay-002-canonical-v6-attestation.mjs",
+      "role": "orchestrator",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools",
+        "output-local"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "reports",
+        "tasks/blocked",
+        "output-local"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "role": "audit",
+      "allowedReadRoots": [
+        "output/replay-002-canonical",
+        "output/replay-002-canonical-v6-validation",
+        "schemas",
+        "docs",
+        "reports",
+        "tasks",
+        "README.md",
+        "output/README.md",
+        "lib",
+        "tools"
+      ],
+      "allowedWriteRoots": [
+        "output/replay-002-canonical-v6-validation"
+      ],
+      "allowedApis": [
+        "readFile",
+        "writeFile",
+        "createReadStream",
+        "open",
+        "stat",
+        "readdir",
+        "access",
+        "rm",
+        "mkdir"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 111,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": "schemas",
+      "pathClassification": "path_within_role_roots",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.mkdir('schemas', { recursive: true });"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 112,
+      "api": "writeFile",
+      "alias": null,
+      "pathLiteral": "schemas/canonical-factual-state-contract.v2.json",
+      "pathClassification": "path_within_role_roots",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.writeFile('schemas/canonical-factual-state-contract.v2.json', `${JSON.stringify(canonicalContractForJson(), null, 2)}\\n`);"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 114,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.mkdir(path.dirname(manifest.followUpTaskPath), { recursive: true });"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 116,
+      "api": "access",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.access(manifest.followUpTaskPath);"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 118,
+      "api": "writeFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.writeFile(manifest.followUpTaskPath, `# Task 088: Select Next Canonical Generalization Control\\n\\nStatus: blocked\\n\\nExecution mode: autonomous after explicit authorization\\n\\nBlocked by: explicit user authorization after reviewing Task 087 gate \\`${manifest.expectedGate}\\`.\\n\\nUnlocked by: explicit user authorization after reviewing Task 087 gate \\`${manifest.expectedGate}\\`\\n\\nUnlock gate: replay_002_canonical_factual_state_ready_with_constraints_v6_reviewed_and_next_control_authorized\\n\\n## Objective\\n\\nSelect the next compatible human replay for canonical factual-state generalization after the v6 replay-002 audit coverage and independence checks pass.\\n\\n## Constraints\\n\\nDo not process replay 005. Do not process bot fixtures 006-008. Do not apply spatial semantics, mechanic effects, fights, rotations, pressure, macro, or decision analysis.\\n`);"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 120,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": "reports",
+      "pathClassification": "path_within_role_roots",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.mkdir('reports', { recursive: true });"
+    },
+    {
+      "module": "tools/build-replay-002-canonical-state.mjs",
+      "line": 121,
+      "api": "writeFile",
+      "alias": null,
+      "pathLiteral": "reports/replay-002-canonical-factual-state-v6-validation.md",
+      "pathClassification": "path_within_role_roots",
+      "role": "validator_or_wrapper",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.writeFile('reports/replay-002-canonical-factual-state-v6-validation.md', `# Replay 002 Canonical Factual State v6 Validation\\n\\n## Gate\\n\\n\\`${result.correctionSummary.gate}\\`\\n\\nTask 087 closes final audit coverage and independence gaps after Task 085's v4 gate was rejected in technical review.\\n\\n## Executable Contract\\n\\nThe canonical contract is sourced from \\`lib/canonical-state/contract.mjs\\` and emitted to \\`schemas/canonical-factual-state-contract.v2.json\\` plus \\`${manifest.assessmentDir}/canonical-contract.json\\`.\\n\\n## Raw Replay Access\\n\\nApproach: \\`${result.correctionSummary.rawReplayApproach}\\`.\\n\\nThe replay file is hashed only for identity. Parser completion is imported from the parser compatibility matrix with provenance; the parser is not executed by Task 087.\\n\\n## Results\\n\\n- Players: ${result.correctionSummary.players}\\n- Entities: ${result.correctionSummary.entities}\\n- Factual events: ${result.correctionSummary.events}\\n- Snapshots: ${result.correctionSummary.snapshots}\\n- Schema valid: ${result.correctionSummary.schemaValid}\\n- Mechanic effects applied: 0\\n\\n## Remaining Constraints\\n\\nDecoded entity indices, entity serials, objective entity generations, pawn generations, independent visual validation, spatial semantics, mechanic effects, combat grouping, rotations, pressure, macro, and decision analysis remain unavailable or blocked. Replay 005 remains protected.\\n`);"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 2,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "factual_io_layer",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { createReadStream } from 'node:fs';"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 3,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "factual_io_layer",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 41,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "factual_io_layer",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const text = await readFile(normalized, 'utf8');"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 66,
+      "api": "createReadStream",
+      "alias": "createReadStream",
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "factual_io_layer",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const stream = createReadStream(normalized);"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 92,
+      "api": "rm",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "factual_io_layer",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await rm(normalized, { recursive: true, force: true });"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 97,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "factual_io_layer",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await mkdir(path.dirname(normalized), { recursive: true });"
+    },
+    {
+      "module": "lib/canonical-state/io-layer.mjs",
+      "line": 98,
+      "api": "writeFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "factual_io_layer",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await writeFile(normalized, text);"
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "line": 2,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "line": 15,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "return sha256Text(await fs.readFile(file, 'utf8'));"
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "line": 19,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "return JSON.parse(await fs.readFile(file, 'utf8'));"
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "line": 23,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const text = await fs.readFile(file, 'utf8');"
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "line": 50,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fsModule.mkdir(file.split(/[\\\\/]/u).slice(0, -1).join('/'), { recursive: true });"
+    },
+    {
+      "module": "lib/canonical-state/audits/common.mjs",
+      "line": 51,
+      "api": "writeFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fsModule.writeFile(file, `${JSON.stringify(value, null, 2)}\\n`);"
+    },
+    {
+      "module": "lib/canonical-state/audits/documentation-audit.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "lib/canonical-state/audits/documentation-audit.mjs",
+      "line": 33,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const text = await fs.readFile(file, 'utf8');"
+    },
+    {
+      "module": "lib/canonical-state/audits/documentation-audit.mjs",
+      "line": 87,
+      "api": "access",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.access(file);"
+    },
+    {
+      "module": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 42,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "const destructure = line.match(new RegExp(`\\\\{[^}]*\\\\b${api}\\\\s*(?::\\\\s*(\\\\w+))?[^}]*\\\\}\\\\s+from\\\\s+['\"]node:fs['\"]`, 'u'));"
+    },
+    {
+      "module": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 55,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const text = await fs.readFile(modulePath, 'utf8');"
+    },
+    {
+      "module": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 62,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "const importsFs = line.includes('node:fs') || /\\bfrom ['\"]fs['\"]/u.test(line) || /import\\s*\\(['\"]node:fs['\"]\\)/u.test(line);"
+    },
+    {
+      "module": "lib/canonical-state/audits/io-policy-audit.mjs",
+      "line": 67,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "api: 'node:fs import',"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 2,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "orchestrator",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 37,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.mkdir(path.dirname(file), { recursive: true });"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 38,
+      "api": "writeFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.writeFile(file, text);"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 60,
+      "api": "readFile",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "let text = await fs.readFile(file, 'utf8');"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 98,
+      "api": "rm",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.rm(root, { recursive: true, force: true });"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 218,
+      "api": "mkdir",
+      "alias": null,
+      "pathLiteral": "schemas",
+      "pathClassification": "path_within_role_roots",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.mkdir('schemas', { recursive: true });"
+    },
+    {
+      "module": "tools/finalize-replay-002-canonical-v6.mjs",
+      "line": 404,
+      "api": "access",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "await fs.access(taskPath);"
+    },
+    {
+      "module": "tools/verify-replay-002-canonical-v6-attestation.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "orchestrator",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "tools/verify-replay-002-canonical-v6-attestation.mjs",
+      "line": 22,
+      "api": "stat",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "orchestrator",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const actualSize = (await fs.stat(artifact.path)).size;"
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "line": 1,
+      "api": "node:fs import",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "module_import",
+      "role": "audit",
+      "ruleApplied": "module role may import fs only if allowedApis is non-empty",
+      "allowed": true,
+      "justification": "role has explicit fs API allowance",
+      "text": "import { promises as fs } from 'node:fs';"
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "line": 15,
+      "api": "readdir",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const entries = await fs.readdir(root, { withFileTypes: true });"
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "line": 34,
+      "api": "stat",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "const stat = await fs.stat(file);"
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "line": 110,
+      "api": "stat",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "sizeBytes: (await fs.stat(resolved)).size"
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "line": 119,
+      "api": "stat",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "sizeBytes: (await fs.stat(resolved)).size"
+    },
+    {
+      "module": "lib/canonical-state/audits/artifact-attestation.mjs",
+      "line": 126,
+      "api": "stat",
+      "alias": null,
+      "pathLiteral": null,
+      "pathClassification": "dynamic_path_requires_runtime_policy",
+      "role": "audit",
+      "ruleApplied": "API and literal/dynamic path must be allowed by module role",
+      "allowed": true,
+      "justification": "role and path policy allow this IO use",
+      "text": "sizeBytes: (await fs.stat(reportPath)).size"
+    }
+  ],
+  "forbiddenFindings": [],
+  "apisChecked": [
+    "readFile",
+    "writeFile",
+    "createReadStream",
+    "open",
+    "stat",
+    "readdir",
+    "access",
+    "rm",
+    "mkdir"
+  ],
+  "passed": true
+}
