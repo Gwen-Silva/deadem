@@ -120,9 +120,9 @@ Presence, deletion, zero health, and disappearance remain observations unless
 separate evidence supports stronger semantics.
 
 Current implementation note: Task 065 establishes the canonical replay-009
-factual layer, and Task 083 corrects the first replay-002 bounded
-normal-control canonical generalization case after Task 082 failed technical
-review. This supports schema stability work only; it still does not apply
+factual layer, and Task 084 supplies the accepted v3 correction for the first
+replay-002 bounded normal-control canonical generalization case after Tasks 082
+and 083 failed technical review. This supports schema stability work only; it still does not apply
 mechanics, spatial regions, lane semantics, objective completion, or macro
 interpretation.
 

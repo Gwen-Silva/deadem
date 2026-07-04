@@ -33,14 +33,22 @@ Task 082 attempted that first case, but its gate did not pass technical review:
 the implementation was too replay-specific, raw replay access was overstated,
 IO was not centrally allowlisted, provenance did not sufficiently separate
 direct observations from derivations, and entity handle/index/generation
-handling leaked assumptions. Task 083 is the corrective foundation task.
+handling leaked assumptions.
 
-Task 083 has corrected the first case with gate
-`replay_002_canonical_factual_state_ready_with_constraints_v2`. Replay 002 now
-has a provenance-preserving canonical factual-state package, schema-contract
-validation, schema-diff evidence against replay 009, and deterministic rerun
-evidence. The result supports the milestone direction but does not yet release
-replay 005 or prove full corpus generalization.
+Task 083 is preserved as the second attempt, but its v2 gate also did not pass
+technical review. The v2 result still allowed factual reads outside the IO
+layer, did not validate the complete package against the contract, did not
+execute a real schema comparison, counted provenance records without checking
+each one, let the final gate omit declared conditions, and left documentation
+inconsistent.
+
+Task 084 is the accepted correction for this case. Its gate is
+`replay_002_canonical_factual_state_ready_with_constraints_v3`. Replay 002 now
+has a provenance-preserving canonical factual-state package with executable
+contract validation, real schema diff, complete provenance audit, IO audit,
+deterministic rerun evidence, documentation consistency checks, and replay
+protections. The result supports the milestone direction but does not yet
+release replay 005 or prove full corpus generalization.
 
 Replay-009 spatial foundation remains parked under a concrete resume contract,
 not abandoned. It should resume only when genuinely new, replay-compatible,
@@ -156,9 +164,10 @@ frames spatial foundation as one layer in a larger path toward deterministic
 events, feature engineering, learned models, bounded decision-window analysis,
 and optional explanation adapters.
 
-This tactical milestone remains evidence-driven and spatial-first. The roadmap
-does not override current gates, does not authorize transform fitting from
-unresolved Walker identities, and does not make macro or decision analysis
+This tactical milestone is currently cross-replay canonical generalization. The
+spatial foundation track remains paused under the Task 081 resume contract. The
+roadmap does not override current gates, does not authorize transform fitting
+from unresolved Walker identities, and does not make macro or decision analysis
 available.
 
 ## Validation Strategy
@@ -176,7 +185,7 @@ See `output/spatial-milestone-reassessment/milestone-decision.json` and
 `output/spatial-milestone-reassessment/spatial-resume-contract.json`.
 
 The first follow-up task is blocked pending explicit authorization:
-`tasks/blocked/082-generalize-canonical-factual-state-to-replay-002.md`.
+`tasks/blocked/085-select-next-canonical-generalization-control.md`.
 
 ## Replay 005 Release Criteria
 

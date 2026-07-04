@@ -1,3 +1,3 @@
 # Latest Report
 
-- [Replay 002 Canonical Factual State Correction](replay-002-canonical-factual-state-correction.md)
+- [Replay 002 Canonical Factual State V3 Validation](replay-002-canonical-factual-state-v3-validation.md)

@@ -4,12 +4,12 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 
 const ROOT = process.cwd();
-const TASK_ID = '083';
+const TASK_ID = '084';
 const OUTPUT_A = 'output-local/replay-002-canonical-rerun/a/canonical';
 const ASSESS_A = 'output-local/replay-002-canonical-rerun/a/assessment';
 const OUTPUT_B = 'output-local/replay-002-canonical-rerun/b/canonical';
 const ASSESS_B = 'output-local/replay-002-canonical-rerun/b/assessment';
-const RESULT = 'output/replay-002-canonical-correction/deterministic-rerun.json';
+const RESULT = 'output/replay-002-canonical-v3-validation/deterministic-rerun.json';
 
 async function rm(dir) {
     await fs.rm(dir, { recursive: true, force: true });
@@ -60,9 +60,10 @@ async function hashTree(dir, replacements = []) {
     const records = [];
     for (const file of files) {
         const relativePath = path.relative(dir, file).replaceAll(path.sep, '/');
+        const normalizable = ['input-access-log.json', 'input-manifest.json', 'contract-source-consistency.json'].includes(relativePath);
         records.push({
             path: relativePath,
-            sha256: await hashFile(file, ['input-access-log.json', 'input-manifest.json'].includes(relativePath) ? replacements : [])
+            sha256: await hashFile(file, normalizable ? replacements : [])
         });
     }
     return records;
@@ -124,6 +125,31 @@ async function main() {
     };
     await fs.mkdir(path.dirname(RESULT), { recursive: true });
     await fs.writeFile(RESULT, `${JSON.stringify(result, null, 2)}\n`);
+    const assessmentDir = path.dirname(RESULT);
+    const matrixPath = path.join(assessmentDir, 'validation-matrix.json');
+    const gatePath = path.join(assessmentDir, 'correction-gate.json');
+    try {
+        const matrix = JSON.parse(await fs.readFile(matrixPath, 'utf8'));
+        matrix.deterministicRerunPassed = result.deterministic;
+        await fs.writeFile(matrixPath, `${JSON.stringify(matrix, null, 2)}\n`);
+        const success = Object.entries(matrix).every(([key, value]) => key === 'schemaVersion' || value === true || (key === 'targetSchemaBreaks' && value === 0));
+        const gate = JSON.parse(await fs.readFile(gatePath, 'utf8'));
+        gate.success = success;
+        gate.gate = success ? 'replay_002_canonical_factual_state_ready_with_constraints_v3' : 'replay_002_canonical_factual_state_v3_blocked';
+        gate.validationMatrix = matrix;
+        await fs.writeFile(gatePath, `${JSON.stringify(gate, null, 2)}\n`);
+        const canonicalGatePath = 'output/replay-002-canonical/canonical-state-gate.json';
+        const validationSummaryPath = 'output/replay-002-canonical/validation-summary.json';
+        const canonicalGate = JSON.parse(await fs.readFile(canonicalGatePath, 'utf8'));
+        canonicalGate.gate = gate.gate;
+        canonicalGate.readyWithConstraints = success;
+        await fs.writeFile(canonicalGatePath, `${JSON.stringify(canonicalGate, null, 2)}\n`);
+        const validationSummary = JSON.parse(await fs.readFile(validationSummaryPath, 'utf8'));
+        validationSummary.gate = gate.gate;
+        await fs.writeFile(validationSummaryPath, `${JSON.stringify(validationSummary, null, 2)}\n`);
+    } catch {
+        // Standalone deterministic checks may target temp dirs without gate files.
+    }
     if (!result.deterministic) {
         throw new Error(`Replay 002 canonical generation is not deterministic: ${JSON.stringify(mismatches, null, 2)}`);
     }

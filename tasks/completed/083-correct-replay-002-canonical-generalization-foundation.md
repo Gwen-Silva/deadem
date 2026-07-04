@@ -75,3 +75,7 @@ If blocked, create exactly one Task 084 for the first factual blocker.
 Run focused Task 083 tests, full schema validation, category audit, synthetic parameterization tests, allowlist tests, deterministic rerun, JSON/JSONL validation, ESLint, related engine tests, task queue validation, Markdown links, output-size guard, and final git status.
 
 The pre-existing `output/04-controller-pawn-lifecycle.json` output-size warning remains unrelated; do not modify it artificially.
+
+## Post-Completion Technical Review Note
+
+Task 083 is preserved as the second corrective attempt, but its v2 gate was not accepted after Task 084 review. The v2 result still allowed factual reads outside the centralized IO layer, did not validate the complete canonical package against the contract, did not execute a real schema comparison for every required package surface, counted provenance records without checking every corresponding record, let the gate omit declared validation conditions, and left project documentation inconsistent about readiness. Task 084 supersedes the v2 gate with an executable v3 contract, schema diff, provenance audit, IO audit, deterministic rerun, and final validation matrix.

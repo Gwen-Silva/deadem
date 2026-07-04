@@ -6,7 +6,7 @@ import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
-const correctionDir = 'output/replay-002-canonical-correction';
+const correctionDir = 'output/replay-002-canonical-v3-validation';
 
 async function readJson(file) {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -25,6 +25,102 @@ function walk(value, visitor, path = []) {
     }
 }
 
+async function writeJson(file, value) {
+    await fs.mkdir(file.split('/').slice(0, -1).join('/'), { recursive: true });
+    await fs.writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+async function writeJsonl(file, rows) {
+    await fs.mkdir(file.split('/').slice(0, -1).join('/'), { recursive: true });
+    await fs.writeFile(file, `${rows.map(row => JSON.stringify(row)).join('\n')}\n`);
+}
+
+async function makeSyntheticManifest(id, seed) {
+    const root = `output-local/${id}-sources`;
+    const rawReplay = `${root}/${id}.dem`;
+    await fs.mkdir(root, { recursive: true });
+    await fs.writeFile(rawReplay, `synthetic replay identity ${id} ${seed}\n`);
+    const parserMatrix = `${root}/parser-matrix.json`;
+    const matchStateQuality = `${root}/match-state-quality.json`;
+    const oneSecondQuality = `${root}/one-second-quality.json`;
+    const deathEvents = `${root}/death-events.json`;
+    const deathValidation = `${root}/death-validation.json`;
+    const respawnEvents = `${root}/respawn-events.json`;
+    const objectiveInventory = `${root}/objective-inventory.json`;
+    const objectiveLifecycle = `${root}/objective-lifecycle.json`;
+    const referencePlayerRegistry = `${root}/reference-player-registry.json`;
+    const referenceEntityRegistry = `${root}/reference-entity-registry.json`;
+    const referenceFactualEvents = `${root}/reference-factual-events.jsonl`;
+    const referenceMetadata = `${root}/reference-metadata.json`;
+    const referenceOverlay = `${root}/reference-overlay.json`;
+    const referenceSnapshots = `${root}/reference-snapshots.jsonl`;
+    const referenceCapabilities = `${root}/reference-capabilities.json`;
+    const referenceValidation = `${root}/reference-validation.json`;
+    const matchStateIndex = `${root}/match-state-index.jsonl`;
+    const matchShard = `${root}/match-state-shard.jsonl`;
+    await writeJson(parserMatrix, { rows: [{ replayId: id, modes: { default_parser: { completed: true, finalParsedTick: 100 + seed } } }] });
+    await writeJson(matchStateQuality, { summary: { synthetic: true, seed } });
+    await writeJson(oneSecondQuality, { playerReconciliation: { players: [
+        { playerId: `${id}:p1`, team: 2, heroId: 10 + seed, controllerHandle: 1000 + seed },
+        { playerId: `${id}:p2`, team: 3, heroId: 20 + seed, controllerHandle: 2000 + seed }
+    ] } });
+    await writeJson(deathEvents, { events: [{ eventId: `${id}:death:1`, tick: 50 + seed, gameTimeSeconds: 5 + seed, victim: { playerId: `${id}:p1`, team: 2 }, evidence: [{ name: 'synthetic_counter' }], confidence: 'supported', validationFlags: [] }] });
+    await writeJson(deathValidation, { summary: { matchedEvents: 1, synthetic: true } });
+    await writeJson(respawnEvents, { events: [{ eventId: `${id}:respawn:1`, playerId: `${id}:p1`, team: 2, respawn: { tick: 70 + seed, gameTimeSeconds: 7 + seed, deadDurationSeconds: 2 }, validationFlags: [] }] });
+    await writeJson(objectiveInventory, { entities: [{ objectiveId: `${id}:objective:1`, entityClass: seed === 1 ? 'CNPC_MidBoss' : 'CNPC_Boss_Tier2', handles: [3000 + seed], team: 2, firstObservedTime: 0, lastObservedTime: 10, healthFields: ['health'], maxHealthFields: ['maxHealth'], observedHealthSummary: { count: 1, min: 100, max: 100, examples: [100] }, classification: 'candidate', confidence: 'supported' }] });
+    await writeJson(objectiveLifecycle, { events: [{ eventId: `${id}:objective-event:1`, objectiveId: `${id}:objective:1`, eventType: 'objective_spawned', tick: 1, gameTimeSeconds: 1, value: { health: 100 }, previousValue: null, sourceField: 'synthetic.health', confidence: 'supported', flags: [] }] });
+    await writeJson(referencePlayerRegistry, { schemaVersion: '1.0.0', replayId: `${id}:reference`, players: [] });
+    await writeJson(referenceEntityRegistry, { schemaVersion: '1.0.0', replayId: `${id}:reference`, entities: [] });
+    await writeJsonl(referenceFactualEvents, []);
+    await writeJson(referenceMetadata, { schemaVersion: '1.0.0', replayId: `${id}:reference`, records: [] });
+    await writeJson(referenceOverlay, { schemaVersion: '1.0.0', replayId: `${id}:reference`, overlays: [] });
+    await writeJsonl(referenceSnapshots, []);
+    await writeJson(referenceCapabilities, { schemaVersion: '1.0.0', replayId: `${id}:reference`, capabilities: [] });
+    await writeJson(referenceValidation, { schemaVersion: '1.0.0', replayId: `${id}:reference`, gate: 'synthetic_reference' });
+    await writeJsonl(matchStateIndex, [{ file: matchShard }]);
+    await writeJsonl(matchShard, [{ tick: 10 + seed, gameTimeSeconds: 1 + seed, players: [
+        { playerId: `${id}:p1`, team: 2, alive: true, position: { quality: 'direct', x: seed, y: seed + 1, z: 0 }, netWorth: 100 + seed },
+        { playerId: `${id}:p2`, team: 3, alive: true, position: { quality: 'direct', x: seed + 2, y: seed + 3, z: 0 }, netWorth: 90 + seed }
+    ] }]);
+    const sources = {
+        rawReplay: { path: rawReplay, sourceTask: 'synthetic_fixture' },
+        parserMatrix: { path: parserMatrix, sourceTask: 'synthetic_fixture' },
+        matchStateQuality: { path: matchStateQuality, sourceTask: 'synthetic_fixture' },
+        oneSecondQuality: { path: oneSecondQuality, sourceTask: 'synthetic_fixture' },
+        deathEvents: { path: deathEvents, sourceTask: 'synthetic_fixture' },
+        deathValidation: { path: deathValidation, sourceTask: 'synthetic_fixture' },
+        respawnEvents: { path: respawnEvents, sourceTask: 'synthetic_fixture' },
+        objectiveInventory: { path: objectiveInventory, sourceTask: 'synthetic_fixture' },
+        objectiveLifecycle: { path: objectiveLifecycle, sourceTask: 'synthetic_fixture' },
+        referencePlayerRegistry: { path: referencePlayerRegistry, sourceTask: 'synthetic_fixture' },
+        referenceEntityRegistry: { path: referenceEntityRegistry, sourceTask: 'synthetic_fixture' },
+        referenceFactualEvents: { path: referenceFactualEvents, sourceTask: 'synthetic_fixture' },
+        referenceMetadata: { path: referenceMetadata, sourceTask: 'synthetic_fixture' },
+        referenceOverlay: { path: referenceOverlay, sourceTask: 'synthetic_fixture' },
+        referenceSnapshots: { path: referenceSnapshots, sourceTask: 'synthetic_fixture' },
+        referenceCapabilities: { path: referenceCapabilities, sourceTask: 'synthetic_fixture' },
+        referenceValidation: { path: referenceValidation, sourceTask: 'synthetic_fixture' },
+        matchStateIndex: { path: matchStateIndex, sourceTask: 'synthetic_fixture' },
+        matchStateShard: { path: matchShard, sourceTask: 'synthetic_fixture' }
+    };
+    const base = await createReplay002Manifest({
+        outputDir: `output-local/${id}-canonical`,
+        assessmentDir: `output-local/${id}-assessment`
+    });
+    return {
+        ...base,
+        replayId: id,
+        parserMatrixReplayId: id,
+        eventIdPrefix: `${id}:event`,
+        rawReplay: { path: rawReplay, accessMode: 'raw_replay_identity_hash_verified' },
+        sources,
+        allowedInputs: [...Object.values(sources).map(source => source.path), matchShard],
+        outputDir: `output-local/${id}-canonical`,
+        assessmentDir: `output-local/${id}-assessment`,
+        followUpTaskPath: `output-local/${id}-followup.md`
+    };
+}
+
 test('core builder contains no replay-specific literals', async () => {
     const source = await fs.readFile('lib/canonical-state/builder.mjs', 'utf8');
     assert(!source.includes('replay_002'));
@@ -33,23 +129,27 @@ test('core builder contains no replay-specific literals', async () => {
     assert(!source.includes('replay_009'));
 });
 
+test('pipeline wrappers and core do not read factual inputs outside IO layer', async () => {
+    const files = [
+        'tools/build-replay-002-canonical-state.mjs',
+        'lib/canonical-state/builder.mjs'
+    ];
+    for (const file of files) {
+        const source = await fs.readFile(file, 'utf8');
+        assert(!source.includes('readFile('), `${file} uses readFile`);
+        assert(!source.includes('createReadStream('), `${file} uses createReadStream`);
+        assert(!source.includes('stat('), `${file} uses stat`);
+        assert(!source.includes('open('), `${file} uses open`);
+    }
+    const ioSource = await fs.readFile('lib/canonical-state/io-layer.mjs', 'utf8');
+    assert(ioSource.includes('readFile('));
+    assert(ioSource.includes('createReadStream('));
+});
+
 test('two synthetic manifests prove the core is parameterized', async () => {
-    const base = await createReplay002Manifest({
-        outputDir: 'output-local/synthetic-canonical-a',
-        assessmentDir: 'output-local/synthetic-assessment-a'
-    });
-    const makeSynthetic = (id, outputDir, assessmentDir) => ({
-        ...base,
-        replayId: id,
-        eventIdPrefix: `${id}:event`,
-        outputDir,
-        assessmentDir,
-        expectedGate: `${id}:gate`,
-        followUpTaskPath: `output-local/${id}-followup.md`
-    });
     for (const manifest of [
-        makeSynthetic('synthetic_alpha', 'output-local/synthetic-canonical-alpha', 'output-local/synthetic-assessment-alpha'),
-        makeSynthetic('synthetic_beta', 'output-local/synthetic-canonical-beta', 'output-local/synthetic-assessment-beta')
+        await makeSyntheticManifest('synthetic_alpha', 1),
+        await makeSyntheticManifest('synthetic_beta', 2)
     ]) {
         const io = createCanonicalIo({ allowlist: manifest.allowedInputs, generatedRootPrefixes: [manifest.outputDir, manifest.assessmentDir] });
         const result = await buildCanonicalState(manifest, io, { clean: true });
@@ -160,4 +260,66 @@ test('replay 009 overlays are not applied and deterministic rerun is stable', as
     const rerun = await readJson(`${correctionDir}/deterministic-rerun.json`);
     assert.equal(rerun.deterministic, true);
     assert.equal(rerun.mismatches.length, 0);
+});
+
+test('contract validation covers every artifact and final gate follows matrix', async () => {
+    const validation = await readJson(`${correctionDir}/canonical-schema-validation.json`);
+    const expectedArtifacts = ['playerRegistry', 'entityRegistry', 'factualEvents', 'nonTimelineMetadata', 'independentValidationOverlay', 'snapshots', 'capabilityMatrix', 'validationSummary', 'canonicalStateGate'];
+    for (const artifact of expectedArtifacts) {
+        assert(validation.byArtifact[artifact], `missing validation artifact ${artifact}`);
+        assert.equal(validation.byArtifact[artifact].errors.length, 0, artifact);
+    }
+    assert.equal(validation.totalRecordsFound, validation.totalRecordsValidated);
+    const matrix = await readJson(`${correctionDir}/validation-matrix.json`);
+    assert.equal(matrix.contractValidationPassed, true);
+    assert.equal(matrix.schemaDiffExecuted, true);
+    assert.equal(matrix.targetSchemaBreaks, 0);
+    assert.equal(matrix.provenanceAuditPassed, true);
+    assert.equal(matrix.ioAuditPassed, true);
+    assert.equal(matrix.deterministicRerunPassed, true);
+    const gate = await readJson(`${correctionDir}/correction-gate.json`);
+    assert.equal(gate.success, true);
+    assert.equal(gate.gate, 'replay_002_canonical_factual_state_ready_with_constraints_v3');
+});
+
+test('schema diff is real and negative schema cases fail', async () => {
+    const diff = await readJson(`${correctionDir}/canonical-schema-diff.json`);
+    assert(diff.targetV2VersusContractV3);
+    assert.equal(diff.targetV2VersusContractV3.schemaBreaks, 0);
+    assert(diff.replay009V1VersusContractV3.differences.length > 0);
+    assert(diff.replay009V1VersusReplay002V3.differences.length > 0);
+
+    const { validateCanonicalPackage, CANONICAL_CONTRACT } = await import('../lib/canonical-state/contract.mjs');
+    const events = await readJsonl(`${canonicalDir}/factual-events.jsonl`);
+    const packageData = {
+        playerRegistry: await readJson(`${canonicalDir}/player-registry.json`),
+        entityRegistry: await readJson(`${canonicalDir}/entity-registry.json`),
+        factualEvents: events,
+        nonTimelineMetadata: await readJson(`${canonicalDir}/non-timeline-metadata.json`),
+        independentValidationOverlay: await readJson(`${canonicalDir}/independent-validation-overlay.json`),
+        snapshots: await readJsonl(`${canonicalDir}/snapshots.jsonl`),
+        capabilityMatrix: await readJson(`${canonicalDir}/capability-matrix.json`),
+        validationSummary: await readJson(`${canonicalDir}/validation-summary.json`),
+        canonicalGate: await readJson(`${canonicalDir}/canonical-state-gate.json`)
+    };
+    const renamed = structuredClone(packageData);
+    renamed.factualEvents[0].eventIdRenamed = renamed.factualEvents[0].eventId;
+    delete renamed.factualEvents[0].eventId;
+    assert.equal(validateCanonicalPackage(renamed, CANONICAL_CONTRACT).valid, false);
+
+    const typed = structuredClone(packageData);
+    typed.factualEvents[0].time.demoTick = '0';
+    assert.equal(validateCanonicalPackage(typed, CANONICAL_CONTRACT).valid, false);
+
+    const noProv = structuredClone(packageData);
+    delete noProv.factualEvents[0].provenance;
+    assert.equal(validateCanonicalPackage(noProv, CANONICAL_CONTRACT).valid, false);
+
+    const unknownVariant = structuredClone(packageData);
+    unknownVariant.factualEvents[0].eventType = 'new_unknown_variant';
+    assert.equal(validateCanonicalPackage(unknownVariant, CANONICAL_CONTRACT).valid, false);
+
+    const forbidden = structuredClone(packageData);
+    forbidden.factualEvents[0].laneAxis = 'lane_axis_1';
+    assert.equal(validateCanonicalPackage(forbidden, CANONICAL_CONTRACT).valid, false);
 });

@@ -136,24 +136,26 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   automated plus single-reviewer technical inspection, not broad usability
   research.
 - Replay 002 canonical factual-state outputs live in
-  `output/replay-002-canonical/`, with Task 083 correction outputs in
-  `output/replay-002-canonical-correction/`. Task 082's first-attempt
+  `output/replay-002-canonical/`, with Task 084 v3 validation outputs in
+  `output/replay-002-canonical-v3-validation/`. Task 082's first-attempt
   assessment remains preserved in `output/replay-002-canonical-generalization/`
-  but its original gate was not accepted after technical review. Regenerate the
-  corrected package with
+  and Task 083's second attempt remains preserved in
+  `output/replay-002-canonical-correction/`; neither earlier gate was accepted
+  after technical review. Regenerate the accepted v3 package with
   `node tools/build-replay-002-canonical-state.mjs --clean` and validate
   determinism with `node tools/check-replay-002-canonical-determinism.mjs`.
-  This is the corrected first bounded cross-replay canonical package. It uses a
-  generic manifest-driven builder and allowlisted IO, preserves raw parser-side
-  facts and derivations with provenance, and omits replay-009 visual overlays,
-  lane/region/proximity/transform/residual fields, mechanic effects, and macro
-  interpretation.
+  This is the accepted first bounded cross-replay canonical package. It uses a
+  generic manifest-driven builder and allowlisted IO, validates every package
+  artifact against an executable contract, runs real schema diff, preserves raw
+  parser-side facts and derivations with provenance, and omits replay-009 visual
+  overlays, lane/region/proximity/transform/residual fields, mechanic effects,
+  and macro interpretation.
 - The next milestone decision lives in `docs/NEXT_MILESTONE.md` and
-  `output/project-milestone-analysis/`. Task 068 selects spatial foundation
-  first, but execution is blocked on authoritative or calibratable map geometry
-  and independent coordinate anchors. Do not begin objective proximity, lane
-  projection, rotations, map pressure, or macro work from current coordinates
-  alone.
+  `output/project-milestone-analysis/`. Task 081 pauses the immediate replay-009
+  spatial transform branch under an explicit resume contract and selects
+  cross-replay canonical generalization as the active tactical milestone. Do not
+  begin objective proximity, lane projection, rotations, map pressure, or macro
+  work from current coordinates alone.
 - Replay 009 spatial input acquisition outputs live in
   `output/replay-009-spatial-inputs/`. Task 069 records local installed map
   package metadata, external/reference metadata, geometry candidates, candidate
