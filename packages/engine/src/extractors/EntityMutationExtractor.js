@@ -53,12 +53,14 @@ class EntityMutationExtractor {
 
             for (let i = 0; i < fieldPathIds.length; i++) {
                 const id = fieldPathIds[i];
+                const decoder = this._serializer.getDecoderForFieldPathId(id);
 
                 ids[i] = id;
                 values[i] = this._decodeWithDiagnostic(
                     diagnostic,
                     i,
-                    () => this._serializer.getDecoderForFieldPathId(id)(this._bitBuffer)
+                    this._buildFieldSegmentMetadata(id, null, decoder),
+                    () => decoder(this._bitBuffer)
                 );
             }
 
@@ -92,7 +94,12 @@ class EntityMutationExtractor {
                 const fieldPath = fieldPaths[i];
 
                 const decoder = this._serializer.getDecoderForFieldPath(fieldPath);
-                const value = this._decodeWithDiagnostic(diagnostic, i, () => decoder(this._bitBuffer));
+                const value = this._decodeWithDiagnostic(
+                    diagnostic,
+                    i,
+                    this._buildFieldSegmentMetadata(fieldPath.id, fieldPath, decoder),
+                    () => decoder(this._bitBuffer)
+                );
 
                 mutations.push(fieldPath.transferCode, value);
             }
@@ -122,10 +129,12 @@ class EntityMutationExtractor {
 
             for (let i = 0; i < ids.length; i++) {
                 const id = ids[i];
+                const decoder = this._serializer.getDecoderForFieldPathId(id);
                 const value = this._decodeWithDiagnostic(
                     diagnostic,
                     i,
-                    () => this._serializer.getDecoderForFieldPathId(id)(this._bitBuffer)
+                    this._buildFieldSegmentMetadata(id, null, decoder),
+                    () => decoder(this._bitBuffer)
                 );
 
                 entity.updateByFieldPathId(id, value);
@@ -154,9 +163,15 @@ class EntityMutationExtractor {
             this._recordFieldPathDiagnostic(diagnostic, ids);
 
             for (let i = 0; i < ids.length; i++) {
-                const decoder = this._serializer.getDecoderForFieldPathId(ids[i]);
+                const id = ids[i];
+                const decoder = this._serializer.getDecoderForFieldPathId(id);
 
-                this._decodeWithDiagnostic(diagnostic, i, () => decoder(this._bitBuffer));
+                this._decodeWithDiagnostic(
+                    diagnostic,
+                    i,
+                    this._buildFieldSegmentMetadata(id, null, decoder),
+                    () => decoder(this._bitBuffer)
+                );
             }
         } catch (error) {
             this._recordDiagnosticError(diagnostic, error);
@@ -213,10 +228,11 @@ class EntityMutationExtractor {
      * @private
      * @param {object|null} diagnostic
      * @param {number} ordinal
+     * @param {object|null} metadata
      * @param {function(): *} decode
      * @returns {*}
      */
-    _decodeWithDiagnostic(diagnostic, ordinal, decode) {
+    _decodeWithDiagnostic(diagnostic, ordinal, metadata, decode) {
         if (diagnostic === null) {
             return decode();
         }
@@ -242,11 +258,71 @@ class EntityMutationExtractor {
                 ordinal,
                 beforeReadCount,
                 afterReadCount,
-                bitsConsumed
+                bitsConsumed,
+                ...(metadata ?? {})
             });
         }
 
         return value;
+    }
+
+    /**
+     * @private
+     * @param {number|null} fieldPathId
+     * @param {FieldPath|null} fieldPath
+     * @param {function(BitBuffer): *} decoder
+     * @returns {object|null}
+     */
+    _buildFieldSegmentMetadata(fieldPathId, fieldPath, decoder) {
+        if (this._diagnostics?.recordSegments !== true) {
+            return null;
+        }
+
+        const safeFieldPathId = Number.isInteger(fieldPathId) ? fieldPathId : null;
+        let fieldPathName = null;
+        let storage = null;
+
+        if (safeFieldPathId !== null) {
+            try {
+                fieldPathName = this._serializer.getNameForFieldPathId(safeFieldPathId);
+            } catch {
+                fieldPathName = null;
+            }
+
+            try {
+                storage = this._serializer.getStorageForFieldPathId(safeFieldPathId);
+            } catch {
+                storage = null;
+            }
+        } else if (fieldPath !== null) {
+            try {
+                fieldPathName = this._serializer.getNameForFieldPath(fieldPath);
+            } catch {
+                fieldPathName = null;
+            }
+
+            try {
+                storage = this._serializer.getStorageForFieldPath(fieldPath);
+            } catch {
+                storage = null;
+            }
+        }
+
+        const transferCode = fieldPath?.transferCode;
+
+        return {
+            fieldPathId: safeFieldPathId,
+            fieldPathTransferCode: typeof transferCode === 'bigint' ? transferCode.toString() : transferCode ?? null,
+            fieldPathName,
+            decoderName: typeof decoder?.name === 'string' && decoder.name.length > 0 ? decoder.name : null,
+            decoderType: typeof decoder,
+            serializerName: this._serializer?.key?.name ?? null,
+            serializerVersion: this._serializer?.key?.version ?? null,
+            storageType: storage?.type?.code ?? null,
+            storageDimension: Number.isInteger(storage?.dim) ? storage.dim : null,
+            storageSigned: typeof storage?.signed === 'boolean' ? storage.signed : null,
+            storageBool: typeof storage?.bool === 'boolean' ? storage.bool : null
+        };
     }
 
     /**

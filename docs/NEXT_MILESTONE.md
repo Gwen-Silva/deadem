@@ -94,8 +94,11 @@ payload-consumption baseline with the gate
 Task 112 is complete as an explicitly authorized field-level/cursor-level
 diagnosis of the packet-953 pre-recovery mismatches with the gate
 `local_replay_pre_recovery_mismatch_field_consumption_diagnosed`.
+Task 113 is complete as an explicitly authorized loop-26 field-reader segment
+accounting diagnosis with the gate
+`local_replay_loop_26_field_reader_segments_diagnosed`.
 
-Do not create Task 113 automatically. Stop and wait for a human milestone
+Do not create Task 114 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -434,7 +437,36 @@ read counts remained monotonic. The evidence supports a field-level or
 cursor-accounting mismatch but does not prove Source 2 semantics, replay
 corruption, or a safe missing-UPDATE skip. No parser fix, recovery, canonical
 package, source artifact, factual event, spatial semantic, mechanic, combat,
-macro, decision, or ML output was emitted. Task 113 was not created.
+macro, decision, or ML output was emitted. Task 113 was not created
+automatically; it was later executed only after explicit authorization.
+
+## Task 113
+
+Purpose: inspect, without field values or parser recovery, which loop-26
+field-reader segments explain the extra 280 bits in replay_010 packet ordinal
+953.
+
+Gate: `local_replay_loop_26_field_reader_segments_diagnosed`.
+
+Partial gate: `local_replay_loop_26_field_reader_segments_partial`.
+
+Blocked gate: `local_replay_loop_26_field_reader_segments_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing-entity failure, and the diagnostic pass failed
+closed at the same entity 2905 boundary without recovery. Loop 26 remained
+entity 2598, class `CCitadel_Ability_Familiar_HelpingHands`, `payloadBits` 221,
+and 501 actual bits consumed after command. The extractor recorded 7 field
+reader segments: segment sum 448 bits, field-path accounting 53 bits, and total
+extractor consumption 501 bits. The largest segment consumed 288 bits, so one
+segment accounts for most of the extra 280 bits, but it does not exactly equal
+the extra. Loops 27-29 produced zero field paths and zero field reader segments
+at the current cursor by local metrics only. The comparative hypotheses remain
+possible or supported locally, while causal conclusion remains
+`not_determined`. No field values, raw entityData, raw serializedEntities, raw
+payloads, parser fix, recovery, canonical package, source artifact, factual
+event, spatial semantic, mechanic, combat, macro, decision, or ML output was
+emitted. Task 114 was not created.
 
 ## Non-Goals
 

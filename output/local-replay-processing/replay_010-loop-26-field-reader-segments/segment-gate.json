@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_loop_26_field_reader_segments_diagnosed",
+  "successGate": "local_replay_loop_26_field_reader_segments_diagnosed",
+  "partialGate": "local_replay_loop_26_field_reader_segments_partial",
+  "blockedGate": "local_replay_loop_26_field_reader_segments_blocked",
+  "defaultFailureReproduced": true,
+  "diagnosticFailureReproducedWithoutRecovery": true,
+  "loop26SegmentMetricsProduced": true,
+  "loops27To29ZeroSegmentsReported": true,
+  "task112NumbersMatchedExactly": true,
+  "parserDefaultBehaviorChanged": false,
+  "recoveryAddedOrPromoted": false,
+  "canonicalPackageConstructed": false,
+  "factualArtifactsEmitted": false,
+  "fieldValuesEmitted": false,
+  "rawPayloadsEmitted": false,
+  "protectionAuditPassed": true,
+  "causalConclusion": "not_determined",
+  "reasons": [
+    "default pass reproduced Task 105 failure",
+    "diagnostic pass reproduced first failure without recovery",
+    "loop 26 segment metrics were produced and match Task 112 accounting",
+    "loops 27-29 zero segment status was reported",
+    "Task 112 numbers matched exactly",
+    "protection and branch audits passed"
+  ]
+}

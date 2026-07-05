@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "targetPacketOrdinal": 953,
+  "loop26_overconsumption_absorbed_following_payloads_possible": {
+    "status": "possible_not_proven",
+    "followingLoopsPayloadBitsSum": 207,
+    "loop26ExtraBits": 280,
+    "exactBitEqualityWithLoops27To29Payloads": false,
+    "basis": "loops 27-29 have positive serializedEntities payloadBits but zero extractor consumption at the current cursor",
+    "limitations": [
+      "cursor correlation is not causal proof",
+      "following payload sum does not equal the loop 26 extra bits"
+    ]
+  },
+  "loop26_large_field_segment_possible": {
+    "status": "supported",
+    "largestSegmentBits": 288,
+    "singleSegmentAccountsForMostOfExtra280": true,
+    "singleSegmentEqualsExtra280Bits": false,
+    "singleSegmentExceedsExtra280Bits": true
+  },
+  "serializedEntities_not_direct_skip_supported": {
+    "status": "supported_for_this_canary",
+    "basis": "Task 111 and Task 112 mismatches remain exact; direct missing-UPDATE skip remains unsafe",
+    "recoveryRecommendation": "diagnostic_only_do_not_use_as_safe_skip"
+  },
+  "accounting_artifact_possible": {
+    "status": "possible",
+    "basis": "field path bits, field reader bits, and serializedEntities payload bits use different local accounting paths",
+    "limitations": [
+      "no external parser or Source 2 semantic reference was used"
+    ]
+  },
+  "causalConclusion": "not_determined",
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false
+}

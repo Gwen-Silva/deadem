@@ -92,7 +92,13 @@ workaround. Task 102 created a bounded generic local-input canary for only
   while loops 27-29 decoded zero extractor mutations and zero bits at the
   current cursor despite positive payloadBits. This supports a field-level or
   cursor-accounting mismatch, not a Source 2 semantic conclusion or parser fix.
-  No canonical package or factual artifacts were constructed.
+  Task 113 then inspected the loop 26 field-reader segments under
+  `local_replay_loop_26_field_reader_segments_diagnosed`: the 7 loop-26 field
+  reader segments summed to 448 bits, field-path accounting consumed 53 bits,
+  and one 288-bit segment accounted for most of the 280-bit extra consumption.
+  Loops 27-29 remained metric-only zero-path/zero-reader updates at the current
+  cursor. Causality remains not determined; no field values, raw payloads,
+  recovery, canonical package, or factual artifacts were emitted.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -207,5 +213,6 @@ semantics diagnosis, and Task 110 is complete with a bounded local
 serializedEntities schema/extractor semantics investigation. Task 111 is
 complete with a bounded pre-recovery payload-consumption baseline. Task 112 is
 complete with a bounded field-consumption diagnosis of the same packet-953
-mismatches. Do not create Task 113 automatically; stop and wait for a human
+mismatches. Task 113 is complete with bounded field-reader segment accounting
+for loop 26. Do not create Task 114 automatically; stop and wait for a human
 milestone decision.

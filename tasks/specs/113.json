@@ -1,0 +1,209 @@
+{
+  "taskId": "113",
+  "title": "Inspect Loop 26 Field-Reader Segment Accounting Without Field Values",
+  "status": "completed",
+  "objective": "Diagnose which extractor field-reader segments explain the extra 280 bits in replay_010 packet ordinal 953 loop 26, without parser fixes, recovery promotion, canonicalization, field values, or match facts.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/extractors/FieldPathExtractor.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/engine/src/data/entity/EntityMutationBatch.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/engine/src/data/enums/MessagePacketType.js",
+    "packages/engine/src/data/field/**",
+    "packages/engine/src/serializers/**",
+    "packages/deadem/index.js",
+    "tools/diagnose-replay-010-pre-recovery-mismatch-field-consumption.mjs",
+    "tests/pre-recovery-mismatch-field-consumption.test.mjs",
+    "output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption/**",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/**",
+    "reports/local-replay-pre-recovery-mismatch-field-consumption.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/113.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "tools/inspect-replay-010-loop-26-field-reader-segments.mjs",
+    "tests/loop-26-field-reader-segments.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+    "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+    "tests/serialized-entities-semantics-investigation.test.mjs",
+    "tests/pre-recovery-payload-consumption-baseline.test.mjs",
+    "tests/pre-recovery-mismatch-field-consumption.test.mjs",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/**",
+    "reports/local-replay-loop-26-field-reader-segments.md",
+    "tasks/specs/113.json",
+    "tasks/completed/113-inspect-loop-26-field-reader-segments.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/114.json",
+    "tasks/blocked/114-*",
+    "tasks/completed/114-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "loop-26-field-reader-segments-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-field-reader-segments.test.mjs"
+      ]
+    },
+    {
+      "id": "pre-recovery-mismatch-field-consumption-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-mismatch-field-consumption.test.mjs"
+      ]
+    },
+    {
+      "id": "pre-recovery-payload-baseline-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-payload-consumption-baseline.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entities-semantics-investigation-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entities-semantics-investigation.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entity-payload-semantics-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entity-payload-semantics-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-packet-cursor-alignment-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-packet-cursor-alignment-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "out-of-range-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/out-of-range-entity-create-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/input-identity.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/default-pass-result.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/diagnostic-pass-result.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/loop-26-segment-summary.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/loops-27-29-zero-segment-summary.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/segment-hypotheses.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/task112-comparison.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/risk-assessment.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/protection-audit.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/segment-gate.json",
+    "reports/local-replay-loop-26-field-reader-segments.md",
+    "tasks/completed/113-inspect-loop-26-field-reader-segments.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes",
+    "Do not commit raw entityData, raw serializedEntities, field values, .dem files, or .local files",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE",
+    "Do not alter default parser behavior",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not claim Source 2 semantics or replay corruption",
+    "Do not create Task 114"
+  ],
+  "successGate": "local_replay_loop_26_field_reader_segments_diagnosed",
+  "blockedGate": "local_replay_loop_26_field_reader_segments_blocked",
+  "allowedAlternateGates": [
+    "local_replay_loop_26_field_reader_segments_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-loop-26-field-reader-segments/segment-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

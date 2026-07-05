@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "segmentMetricsCollected": true,
+  "task112NumbersMatched": true,
+  "loops27To29ZeroSegmentStatus": "observed_zero_paths_zero_segments_zero_consumption_at_current_cursor",
+  "directMissingUpdateSkipStatus": "unsafe",
+  "parserFixRecommendedNow": false,
+  "recoveryRecommendation": "diagnostic_only_do_not_use_as_safe_skip",
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "causalConclusion": "not_determined",
+  "fieldValuesRecorded": false,
+  "rawPayloadsRecorded": false,
+  "limitations": [
+    "single local canary replay",
+    "diagnostic stops at first default missing-entity failure",
+    "field values are intentionally not emitted",
+    "field-level counts do not prove Source 2 serializedEntities semantics",
+    "field names and serializer metadata are metadata only, not decoded values"
+  ]
+}
