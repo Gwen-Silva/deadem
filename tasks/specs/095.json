@@ -1,0 +1,95 @@
+{
+  "taskId": "095",
+  "title": "Canonicalize Remaining Human Pilot Replays",
+  "status": "blocked",
+  "objective": "Create a generic batch entrypoint using the existing canonical core and canonicalize replay 001, replay 003, and replay 004 without replay-specific branches.",
+  "includedReplays": [
+    "replay_001",
+    "replay_003",
+    "replay_004"
+  ],
+  "frozenAcceptanceCriteria": [
+    "process only replays 001, 003, and 004",
+    "reuse the existing canonical core",
+    "do not add replay-specific branches",
+    "preserve replay 005 protection",
+    "leave bot fixtures 006-008 unsupported",
+    "emit no spatial, mechanic-effect, fight, rotation, pressure, macro, or decision analysis"
+  ],
+  "acceptedLimitations": [
+    "replay 002 acceptance depends on Task 094",
+    "replay 009 remains accepted with constraints",
+    "schema differences discovered in 001/003/004 may block canonicalization"
+  ],
+  "permittedCorrectionCount": 1,
+  "automaticNewTaskAllowed": false,
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/FIVE_REPLAY_PILOT_PLAN.md",
+    "data/five-human-replay-pilot.json",
+    "tasks/specs/095.json"
+  ],
+  "optionalReadPaths": [
+    "data/current-artifact-registry.json",
+    "reports/project-consolidation-and-five-replay-pilot-readiness.md"
+  ],
+  "writePaths": [
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "reports/remaining-human-controls-canonicalization.md",
+    "tasks/completed/095-canonicalize-remaining-human-pilot-replays.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/partida_005.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007*.dem",
+    "samples/replay_008*.dem",
+    "output/replays/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "reports/remaining-human-controls-canonicalization.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "followUpTask": "096",
+  "stopConditions": [
+    "Do not process replay 005",
+    "Do not process replay 006, 007, or 008",
+    "Do not create Task 097",
+    "Stop if a false positive gate, protected data access, or unauthorized canonical fact change is detected"
+  ],
+  "successGate": "remaining_human_controls_canonicalized",
+  "blockedGate": "remaining_human_controls_canonicalization_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "regenerate",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  }
+}

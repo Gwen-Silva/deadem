@@ -1,18 +1,24 @@
 # Reports Index
 
-Final/current reports are listed first. Historical reports are grouped by domain and should be preserved unless a cleanup phase is explicitly approved.
+Reports are historical records unless the current project-state documents cite
+them as accepted current state. Do not use an old report or output to override
+`docs/PROJECT_STATE.md` or `docs/NEXT_MILESTONE.md`.
 
-## Current And Final Reports
+## Current Project Decisions
 
 - `reports/latest.md`
+- `reports/project-consolidation-and-five-replay-pilot-readiness.md`
+- `reports/codex-workflow-optimization-v3.md`
+- `reports/deadem-spatial-milestone-reassessment.md`
+- `reports/deadem-next-milestone-decision.md`
+- `reports/deadem-long-term-vision-and-ai-roadmap-documentation.md`
+
+## Current Accepted Factual Foundations
+
 - `reports/parser-compatibility-matrix.md`
 - `reports/structural-replay-stream-pass.md`
-- `reports/replay-006-external-parser-oracle-comparison.md`
-- `reports/build-23916427-bot-normal-replay-comparison.md`
-- `reports/generic-bot-solo-lifecycle-comparison.md`
 - `reports/replay-009-end-to-end-telemetry-validation.md`
 - `reports/replay-009-pause-clock-observability.md`
-- `reports/replay-009-spatial-geometric-projection-validation.md`
 - `reports/replay-009-factual-state-detection.md`
 - `reports/replay-009-objective-structure-entity-observability.md`
 - `reports/replay-009-objective-structure-factual-state-events.md`
@@ -20,66 +26,79 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/replay-009-canonical-factual-state-schema.md`
 - `reports/replay-009-factual-state-inspection-interface.md`
 - `reports/replay-009-inspector-workflow-evaluation.md`
-- `reports/deadem-next-milestone-decision.md`
-- `reports/replay-009-map-geometry-input-acquisition.md`
+- `reports/versioned-mechanics-knowledge-foundation.md`
+- `reports/build-23916427-mechanics-mapping.md`
+
+## Current Blocked Work
+
+- `reports/replay-002-canonical-factual-state-v8-validation.md` (rejected historical v8; Task 094 owns v9)
 - `reports/replay-009-candidate-world-to-map-transform-validation.md`
+- `reports/replay-009-transform-validation-retry.md`
+- `reports/replay-009-walker-lane-controlled-evidence.md`
+
+## Historical Replay-002 Attempts
+
+- `reports/replay-002-canonical-factual-state-generalization.md`
+- `reports/replay-002-canonical-factual-state-correction.md`
+- `reports/replay-002-canonical-factual-state-v3-validation.md`
+- `reports/replay-002-canonical-factual-state-v8-validation.md`
+
+## Historical Spatial Work
+
+- `reports/replay-009-spatial-geometric-projection-validation.md`
+- `reports/replay-009-map-geometry-input-acquisition.md`
 - `reports/replay-009-human-annotation-packet.md`
 - `reports/replay-009-independent-landmark-coordinate-acquisition.md`
 - `reports/replay-009-user-map-landmark-measurement.md`
-- `reports/replay-009-transform-validation-retry.md`
 - `reports/replay-009-walker-identity-fixed-coordinate-resolution.md`
 - `reports/replay-009-fixed-entity-spatial-property-diagnosis.md`
 - `reports/replay-009-fixed-entity-coordinate-resolution.md`
 - `reports/replay-009-walker-identity-resolution.md`
 - `reports/replay-009-walker-lane-identity-evidence-acquisition.md`
-- `reports/replay-009-walker-lane-controlled-evidence.md`
-- `reports/deadem-spatial-milestone-reassessment.md`
-- `reports/replay-002-canonical-factual-state-generalization.md`
-- `reports/replay-002-canonical-factual-state-correction.md`
-- `reports/replay-002-canonical-factual-state-v3-validation.md`
-- `reports/replay-002-canonical-factual-state-v8-validation.md`
-- `reports/deadem-long-term-vision-and-ai-roadmap-documentation.md`
-- `reports/versioned-mechanics-knowledge-foundation.md`
-- `reports/build-23916427-mechanics-mapping.md`
-- `reports/repository-hygiene-and-cleanup-audit.md`
+- `reports/multi-replay-geometry-profile-analysis.md`
+- `reports/structural-lane-axis-topology.md`
+- `reports/lane-axis-distance-mapping.md`
+- `reports/full-multi-replay-spatial-timeline.md`
+- `reports/one-second-multi-replay-spatial-extraction.md`
+- `reports/frozen-occupancy-generalization.md`
+- `reports/frozen-occupancy-one-second-resolution-comparison.md`
 
-## Visual Calibration
+## Historical Parser/Video Work
 
-- `reports/match-91119257-annotation-frame-visibility.md`
-- `reports/match-91119257-baseline-709-parser-continuation.md`
-- `reports/match-91119257-complete-annotation-frame-extraction.md`
-- `reports/match-91119257-controlled-game-clock-ocr.md`
-- `reports/match-91119257-dense-manual-review-rebuild.md`
-- `reports/match-91119257-e088-timestamp-record-resolution.md`
-- `reports/match-91119257-entity-5594-parser-recovery.md`
-- `reports/match-91119257-human-visual-review-final.md`
-- `reports/match-91119257-landmark-packet.md`
+- `reports/replay-intake-and-compatibility.md`
+- `reports/replay-build-map-compatibility.md`
+- `reports/replay-006-state-reconstruction-divergence.md`
+- `reports/replay-006-entity-lifecycle-state-refresh-gap.md`
+- `reports/replay-006-external-parser-oracle-comparison.md`
+- `reports/build-23916427-bot-normal-replay-comparison.md`
+- `reports/generic-bot-solo-lifecycle-comparison.md`
 - `reports/match-91119257-local-video-demo-override.md`
-- `reports/match-91119257-minimized-human-review-preparation.md`
 - `reports/match-91119257-visual-demo-calibration.md`
+- `reports/match-91119257-entity-5594-parser-recovery.md`
+- `reports/match-91119257-baseline-709-parser-continuation.md`
 - `reports/video-pipeline-mvp.md`
 - `reports/video-pipeline-runtime-validation.md`
+- `reports/match-91119257-complete-annotation-frame-extraction.md`
+- `reports/match-91119257-annotation-frame-visibility.md`
+- `reports/match-91119257-minimized-human-review-preparation.md`
+- `reports/match-91119257-controlled-game-clock-ocr.md`
+- `reports/match-91119257-dense-manual-review-rebuild.md`
+- `reports/match-91119257-human-visual-review-final.md`
+- `reports/match-91119257-e088-timestamp-record-resolution.md`
+- `reports/match-91119257-landmark-packet.md`
 
-## Human Review
+## Cleanup And Process History
 
-- None currently identified.
-
-## Parser Recovery
-
-- `reports/replay-build-map-compatibility.md`
-- `reports/replay-intake-and-compatibility.md`
-
-## Project Process
-
-- `reports/full-multi-replay-spatial-timeline.md`
-- `reports/multi-replay-damage-healing-field-discovery.md`
-- `reports/multi-replay-death-assist-respawn-events.md`
-- `reports/multi-replay-geometry-profile-analysis.md`
-- `reports/multi-replay-objective-lifecycle.md`
-- `reports/one-second-multi-replay-spatial-extraction.md`
+- `reports/repository-hygiene-and-cleanup-audit.md`
+- `reports/repository-cleanup-execution.md`
 - `reports/publish-existing-project-sources.md`
 - `reports/publish-own-repository.md`
 - `reports/setup-efficient-codex-workflow.md`
+- `reports/codex-workflow-optimization.md`
+- `reports/codex-workflow-optimization-v2.md`
+- `reports/codex-workflow-optimization-v3.md`
+- `reports/REPORT_TEMPLATE.md`
+- `reports/INDEX.md`
 
 ## Other Historical Reports
 
@@ -91,19 +110,8 @@ Final/current reports are listed first. Historical reports are grouped by domain
 - `reports/24-occupancy-holdout-validation.md`
 - `reports/24-uncertainty-aware-episode-architecture.md`
 - `reports/descriptive-spatial-evidence-layer.md`
-- `reports/frozen-occupancy-generalization.md`
-- `reports/frozen-occupancy-one-second-resolution-comparison.md`
-- `reports/INDEX.md`
-- `reports/lane-axis-distance-mapping.md`
 - `reports/pre-geometry-replay-pipeline.md`
-- `reports/REPORT_TEMPLATE.md`
-- `reports/structural-lane-axis-topology.md`
+- `reports/multi-replay-death-assist-respawn-events.md`
+- `reports/multi-replay-damage-healing-field-discovery.md`
+- `reports/multi-replay-objective-lifecycle.md`
 - `reports/unified-descriptive-match-state-timeline.md`
-
-## Cleanup Reports
-
-- `reports/repository-cleanup-execution.md`
-
-- `reports/replay-006-state-reconstruction-divergence.md`
-- `reports/replay-006-entity-lifecycle-state-refresh-gap.md`
-

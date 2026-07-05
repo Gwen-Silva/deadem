@@ -14,7 +14,10 @@ This repository keeps source code, task history, compact evidence, reports, and 
 
 - Current narrative state: `docs/PROJECT_STATE.md`
 - Long-term product and AI roadmap: `docs/PROJECT_VISION_AND_ROADMAP.md`
-- Queue rules: `AGENTS.md`, `docs/WORKFLOW.md`, `docs/CODEX_QUEUE_RUNNER.md`
+- Scientific workflow: `docs/WORKFLOW.md`
+- Codex execution workflow: `AGENTS.md`, `docs/codex/WORKFLOW.md`,
+  `tasks/specs/<id>.json`
+- Historical queue runner: `docs/CODEX_QUEUE_RUNNER.md` (deprecated)
 - Parser failure catalog: `docs/PARSER_FAILURE_CATALOG.md`
 
 Use `docs/PROJECT_VISION_AND_ROADMAP.md` when you need the intended product
@@ -22,15 +25,35 @@ shape, independent runtime policy, staged AI roadmap, or distinction between
 future research targets and current capabilities. Use `docs/PROJECT_STATE.md`
 and task gates for what exists now.
 
+Canonical source hierarchy:
+
+1. `docs/PROJECT_STATE.md`: authoritative narrative current state and
+   accepted/rejected gates.
+2. `docs/NEXT_MILESTONE.md`: authoritative current milestone and finite
+   execution horizon.
+3. `docs/codex/CURRENT_STATE.md`: compact Codex-readable state.
+4. `tasks/specs/<id>.json`: executable scope for an authorized task.
+5. Task files and reports: historical implementation and review records.
+6. Output artifacts: evidence and generated results, not automatic project
+   acceptance.
+
+A historical report or output cannot override the current project-state
+documents.
+
 ## Evidence And Outputs
 
-Tracked compact evidence lives under `output/`. Files there may be canonical, diagnostic, historical, or regenerable. See `output/README.md` and `output/repository-audit/canonical-file-map.json`.
+Tracked compact evidence lives under `output/`. Files there may be canonical,
+diagnostic, historical, rejected, or regenerable. Use
+`data/current-artifact-registry.json` for compact current navigation. The old
+`output/repository-audit/canonical-file-map.json` is a June 2026 audit snapshot,
+not the current source of truth.
 
 Current canonical topics include:
 
 - project_state: `docs/PROJECT_STATE.md`
 - latest_report_pointer: `reports/latest.md`
-- replay_manifest: `data/replay-manifest.json`
+- five_replay_pilot_manifest: `data/five-human-replay-pilot.json`
+- historical_replay_intake_manifest: `data/replay-manifest.json`
 - completed_human_review: `output/match_91119257/manual-review-form-v2-completed.json`
 - alias_evidence: `output/match_91119257/canonical-map-aliases.json`
 - representative_visual_intervals: `output/match_91119257/annotation-visibility-audit.json`
@@ -136,22 +159,12 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   automated plus single-reviewer technical inspection, not broad usability
   research.
 - Replay 002 canonical factual-state outputs live in
-  `output/replay-002-canonical/`, with Task 089 v8 Validation outputs in
-  `output/replay-002-canonical-v8-validation/`. Task 082's first-attempt
-  assessment remains preserved in `output/replay-002-canonical-generalization/`
-  and Task 083's second attempt remains preserved in
-  `output/replay-002-canonical-correction/`; Task 084's v3 validation remains
-  preserved in `output/replay-002-canonical-v3-validation/`. None of the
-  earlier gates was accepted after technical review. Regenerate the accepted v8
-  package with
-  `node tools/build-replay-002-canonical-state.mjs --clean` and validate
-  determinism with `node tools/check-replay-002-canonical-determinism.mjs`.
-  This is the accepted first bounded cross-replay canonical package. It uses a
-  generic manifest-driven builder and allowlisted IO, validates every package
-  artifact against an executable contract, runs real schema diff, preserves raw
-  parser-side facts and derivations with provenance, and omits replay-009 visual
-  overlays, lane/region/proximity/transform/residual fields, mechanic effects,
-  and macro interpretation.
+  `output/replay-002-canonical/`, with Task 089 v8 validation outputs preserved
+  in `output/replay-002-canonical-v8-validation/`. Task 089's v8 gate is
+  rejected after technical review and is historical evidence only. Replay 002
+  is not accepted yet. Blocked Task 094 owns the v9 terminal validation
+  correction; do not regenerate replay-002 canonical outputs or run v8/v9
+  finalizers unless Task 094 explicitly authorizes that work.
 - The next milestone decision lives in `docs/NEXT_MILESTONE.md` and
   `output/project-milestone-analysis/`. Task 081 pauses the immediate replay-009
   spatial transform branch under an explicit resume contract and selects
@@ -226,10 +239,10 @@ Use `inspectReplayStructure` or `scripts/inspect-replay-structure.js` for metada
   map-resource, parser-field, and transferability sources. Do not repeat broad
   Walker identity searches without new evidence.
 - Spatial milestone reassessment outputs live in
-  `output/spatial-milestone-reassessment/`. Task 081 selects cross-replay
-  canonical generalization as the active primary milestone, with replay 002 as
-  the first bounded follow-up after explicit authorization. Replay-009 spatial
-  transform work is paused under the resume contract in
-  `spatial-resume-contract.json`.
+  `output/spatial-milestone-reassessment/`. Task 081 paused immediate
+  replay-009 transform work under the resume contract in
+  `spatial-resume-contract.json`. The active milestone is now the
+  five-human-replay factual pilot, defined by
+  `docs/FIVE_REPLAY_PILOT_PLAN.md` and `data/five-human-replay-pilot.json`.
 
 

@@ -1,88 +1,70 @@
 {
   "taskId": "093",
-  "title": "Close Replay 002 Terminal Validation Gaps",
-  "status": "blocked",
-  "objective": "Correct the remaining terminal validation blockers for replay 002 without regenerating the factual layer unless a factual logic test proves it is necessary.",
-  "blockers": [
-    "base manifest becomes stale after final files are created",
-    "evidence-only turns an unevaluated determinism state into approval",
-    "artifact verifiers allow escaping the declared scope",
-    "guarded-variable tracking ignores function, order, reassignment, and shadowing"
-  ],
+  "title": "Consolidate Project State For The Five-Replay Pilot",
+  "status": "completed",
+  "objective": "Consolidate current project state, accept workflow v3 operationally, define the five-human-replay pilot, and create the finite Task 094-096 pilot horizon without processing replays.",
   "readPaths": [
     "AGENTS.md",
+    "README.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/PROJECT_VISION_AND_ROADMAP.md",
+    "docs/REPOSITORY_GUIDE.md",
     "docs/codex/CURRENT_STATE.md",
-    "docs/codex/WORKFLOW.md",
-    "docs/codex/REPLAY_PROTECTION.md",
-    "docs/codex/EPISTEMIC_SAFETY.md",
-    "docs/codex/TASK_EXECUTION.md",
-    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
-    "tasks/specs/093.json",
-    "tasks/completed/089-make-release-decision-fail-closed-and-enforce-dynamic-io-guards.md",
-    "tools/finalize-replay-002-canonical-v8.mjs",
-    "tools/verify-replay-002-canonical-v8-release-envelope.mjs",
-    "lib/canonical-state/audits/common.mjs",
-    "lib/canonical-state/audits/io-policy-audit.mjs",
-    "output/replay-002-canonical-v8-validation/release-decision.json",
-    "output/replay-002-canonical-v8-validation/audit-artifact-manifest.json",
-    "output/replay-002-canonical-v8-validation/audit-artifact-verification.json",
-    "output/replay-002-canonical-v8-validation/deterministic-rerun.json",
-    "output/replay-002-canonical-v8-validation/io-policy-audit.json"
+    "reports/latest.md",
+    "reports/INDEX.md",
+    "tasks/specs/093.json"
   ],
   "optionalReadPaths": [
-    "output/replay-002-canonical-v8-validation/schema-comparison-ledger.json",
-    "output/replay-002-canonical-v8-validation/release-envelope.json",
-    "output/replay-002-canonical-v8-validation/release-envelope-verification.json",
-    "tests/replay-002-canonical-generalization.test.mjs"
+    "output/README.md",
+    "tasks/completed/INDEX.md",
+    "tools/README.md",
+    "output/repository-audit/README.md"
   ],
   "writePaths": [
-    "tools/finalize-replay-002-canonical-v9.mjs",
-    "tools/verify-replay-002-canonical-v9-release-envelope.mjs",
-    "lib/canonical-state/audits/common.mjs",
-    "lib/canonical-state/audits/io-policy-audit.mjs",
-    "tests/replay-002-canonical-generalization.test.mjs",
-    "output/replay-002-canonical-v9-validation/**",
-    "reports/replay-002-canonical-factual-state-v9-validation.md",
-    "tasks/completed/093-close-replay-002-terminal-validation-gaps.md",
-    "tasks/blocked/094-select-next-canonical-generalization-control.md",
-    "docs/codex/CURRENT_STATE.md",
+    "README.md",
+    "docs/PROJECT_STATE.md",
     "docs/NEXT_MILESTONE.md",
-    "docs/PROJECT_STATE.md"
+    "docs/PROJECT_VISION_AND_ROADMAP.md",
+    "docs/REPOSITORY_GUIDE.md",
+    "docs/WORKFLOW.md",
+    "docs/CODEX_QUEUE_RUNNER.md",
+    "docs/FIVE_REPLAY_PILOT_PLAN.md",
+    "docs/codex/CURRENT_STATE.md",
+    "data/five-human-replay-pilot.json",
+    "data/current-artifact-registry.json",
+    "output/README.md",
+    "output/repository-audit/README.md",
+    "reports/latest.md",
+    "reports/INDEX.md",
+    "reports/repository-hygiene-and-cleanup-audit.md",
+    "reports/project-consolidation-and-five-replay-pilot-readiness.md",
+    "tasks/completed/INDEX.md",
+    "tasks/specs/093.json",
+    "tasks/specs/094.json",
+    "tasks/specs/095.json",
+    "tasks/specs/096.json",
+    "tasks/blocked/094-finalize-replay-002-terminal-validation.md",
+    "tasks/blocked/095-canonicalize-remaining-human-pilot-replays.md",
+    "tasks/blocked/096-audit-five-human-replay-factual-pilot.md",
+    "tasks/completed/093-consolidate-project-state-for-five-replay-pilot.md",
+    "tools/README.md"
   ],
   "forbiddenPaths": [
     "samples/**",
-    "samples/partida_005.dem",
-    "samples/replay_006*.dem",
-    "samples/replay_007_bots01.dem",
-    "samples/replay_008_bots02_short.dem",
     "output/replays/**",
-    "output/replay-002-canonical/factual-events.jsonl",
-    "output/replay-002-canonical/snapshots.jsonl",
-    "output/replay-002-canonical/entity-registry.json",
-    "output/replay-002-canonical/player-registry.json"
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v8-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**"
   ],
   "requiredPolicies": [
     "docs/codex/WORKFLOW.md",
     "docs/codex/REPLAY_PROTECTION.md",
-    "docs/codex/EPISTEMIC_SAFETY.md",
-    "docs/codex/TASK_EXECUTION.md",
-    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+    "docs/codex/TASK_EXECUTION.md"
   ],
   "requiredCommands": [
-    {
-      "id": "future-task-prepare",
-      "type": "workflow",
-      "action": "prepare",
-      "taskId": "093",
-      "dryRun": true
-    },
-    {
-      "id": "future-task-preflight",
-      "type": "workflow",
-      "action": "preflight",
-      "taskId": "093",
-      "dryRun": true
-    },
     {
       "id": "task-queue",
       "type": "npm-script",
@@ -92,38 +74,39 @@
       "id": "lint",
       "type": "npm-script",
       "script": "lint"
+    },
+    {
+      "id": "output-check",
+      "type": "npm-script",
+      "script": "check:outputs"
     }
   ],
   "expectedOutputs": [
-    "output/replay-002-canonical-v9-validation/terminal-base-manifest-verification.json",
-    "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
-    "reports/replay-002-canonical-factual-state-v9-validation.md"
+    "data/five-human-replay-pilot.json",
+    "data/current-artifact-registry.json",
+    "docs/FIVE_REPLAY_PILOT_PLAN.md",
+    "reports/project-consolidation-and-five-replay-pilot-readiness.md"
   ],
-  "largeOutputsAllowed": [
-    {
-      "path": "output/replay-002-canonical-v9-validation/canonical-schema-diff.json",
-      "justification": "bounded schema comparison output reused for terminal validation review"
-    }
-  ],
+  "largeOutputsAllowed": [],
   "replayProcessingAllowed": false,
   "followUpTask": "094",
   "stopConditions": [
-    "Task 093 remains blocked until explicitly authorized",
     "Do not execute Task 094",
-    "Stop if fixing terminal validation requires factual replay regeneration"
+    "Do not create Task 097",
+    "Do not process or inspect any replay"
   ],
-  "successGate": "replay_002_canonical_factual_state_ready_with_constraints_v9",
-  "blockedGate": "replay_002_canonical_factual_state_v9_blocked",
+  "successGate": "project_consolidation_ready_for_five_replay_pilot",
+  "blockedGate": "project_consolidation_blocked",
   "gateSource": {
-    "type": "json-file",
-    "path": "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
-    "jsonField": "gate"
+    "type": "spec",
+    "path": null,
+    "jsonField": null
   },
-  "successStopReason": "REPLAY_002_TERMINAL_VALIDATION_COMPLETE_AWAITING_REVIEW",
-  "blockedStopReason": "REPLAY_002_TERMINAL_VALIDATION_BLOCKED_AWAITING_REVIEW",
+  "successStopReason": "PROJECT_CONSOLIDATION_COMPLETE_AWAITING_REVIEW",
+  "blockedStopReason": "PROJECT_CONSOLIDATION_BLOCKED_AWAITING_REVIEW",
   "regenerationPolicy": {
-    "canonicalFacts": "reuse",
-    "validationArtifacts": "regenerate",
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "forbidden",
     "reports": "regenerate",
     "replayParsing": "forbidden"
   }

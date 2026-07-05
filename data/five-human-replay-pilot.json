@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "pilotId": "five_human_replay_factual_pilot",
+  "status": "defined_not_complete",
+  "includedReplays": [
+    "replay_001",
+    "replay_002",
+    "replay_003",
+    "replay_004",
+    "replay_009"
+  ],
+  "includedReplayStatus": {
+    "replay_001": "pending_task_095",
+    "replay_002": "pending_task_094",
+    "replay_003": "pending_task_095",
+    "replay_004": "pending_task_095",
+    "replay_009": "accepted_with_constraints"
+  },
+  "excludedReplays": [
+    {
+      "replayId": "replay_005",
+      "reason": "protected_final_holdout"
+    },
+    {
+      "replayId": "replay_006",
+      "reason": "unsupported_bot_fixture"
+    },
+    {
+      "replayId": "replay_007",
+      "reason": "unsupported_bot_fixture"
+    },
+    {
+      "replayId": "replay_008",
+      "reason": "unsupported_bot_fixture"
+    }
+  ],
+  "milestoneTasks": [
+    "094",
+    "095",
+    "096"
+  ],
+  "automaticFollowUpAfterFinalTask": false
+}

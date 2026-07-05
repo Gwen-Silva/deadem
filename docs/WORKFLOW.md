@@ -1,145 +1,78 @@
-# Workflow
+# Scientific Workflow
 
-## Standard Process
+This document describes Deadem's high-level project and evidence workflow. It
+does not define the Codex command workflow. For task execution commands, context
+packets, validation packets, and compact review handoff, use
+`docs/codex/WORKFLOW.md`.
 
-1. Read `AGENTS.md`.
-2. Read the active task under `tasks/pending/`, when present.
-3. Read `docs/PROJECT_STATE.md`.
-4. Read only task-relevant docs, reports, scripts, and outputs.
-5. Implement the smallest isolated change that satisfies the task.
-6. Run ESLint for changed JavaScript.
-7. Validate JSON outputs with `JSON.parse` when outputs are created or inspected.
-8. Check output sizes for relevant experiment files.
-9. Write a short report in `reports/`.
-10. Update `reports/latest.md`.
+## Evidence Standards
 
-## Task Queue Lifecycle
+Deadem separates observations, deterministic derivations, independent support,
+human annotations, hypotheses, and interpretations. A higher-level conclusion
+must not rewrite lower-level evidence.
 
-```text
-pending
-   |
-   v
-active
-   |
-   v
-completed
+Do not infer:
 
-or
+- death from health zero alone;
+- objective destruction or completion from deletion alone;
+- lane occupancy from nearest lane alone;
+- decision quality from outcome alone;
+- spatial identity from a transform that was fitted using that same identity.
 
-active
-   |
-   v
-blocked
+Uncertainty must remain visible when evidence is partial, version-mismatched,
+or derived from advisory human knowledge.
 
-backlog
-```
+## Task Lifecycle Concepts
 
-- `pending`: fully specified and ready to execute.
-- `active`: currently being executed.
-- `completed`: acceptance criteria satisfied.
-- `blocked`: cannot proceed without missing data, access, or a conceptual decision.
-- `backlog`: future work that is not sufficiently specified or should not be scheduled yet.
+Task files and specs may be `blocked`, `pending`, `authorized`, `active`, or
+`completed`. Current execution uses explicit authorization and
+`tasks/specs/<id>.json`; the old autonomous queue-runner is deprecated.
 
-Tasks are processed by ascending numeric ID. File modification time, alphabetical title, or perceived importance must not override the numeric order.
+Blocked tasks must not be executed until explicitly authorized. A task may
+create exactly the follow-up allowed by its own scope, but roadmap order alone
+does not authorize execution.
 
-Task IDs and experiment IDs are separate namespaces. A task may implement a different experiment number, and queue order still follows the task ID in the filename.
+## Scope Freezing
 
-## Queue Visibility
+For the five-human-replay pilot, scope changes are allowed only when a finding:
 
-The autonomous runner may:
+- makes a required output factually incorrect;
+- produces a false positive gate;
+- accesses protected data;
+- changes canonical facts without authorization;
+- prevents the declared result.
 
-- list `tasks/pending/`
-- select the lowest numeric pending task
-- move that task to `tasks/active/`
-- complete or block that task
-- inspect `tasks/pending/` again
+Other findings belong in backlog after Task 096. Do not create another workflow,
+cleanup, documentation, or repository-refactoring task before the pilot
+finishes.
 
-The autonomous runner must not:
+## Human Review Escalation
 
-- execute files in `tasks/blocked/`
-- execute files in `tasks/backlog/`
-- automatically promote blocked tasks
-- automatically promote backlog tasks
-- create future scientific tasks from a roadmap
-- treat roadmap order as execution authorization
-- continue to a human task
-- remain idle waiting for a human gate
+Human review is an escalation mechanism, not a default next step. Request it
+only when semantic ground truth cannot be derived from available data, the
+unresolved distinction materially changes the next project decision, the sample
+set has been minimized, and every requested question is explicit.
 
-## Promotion Rules
+Autonomous evidence may support or weaken a conclusion, but it is not human
+ground truth.
 
-A blocked task may move to `tasks/pending/` only when all declared dependencies are completed, gate evidence exists, the task objective and acceptance criteria are complete, the execution mode permits autonomous execution, and promotion is explicitly authorized by a user instruction or by a deterministic promotion rule already written in the task.
+## Stop Conditions
 
-A backlog item may move to `tasks/pending/` or `tasks/blocked/` only after it has been converted into a fully specified task. Codex must not perform this conversion autonomously when scientific scope, thresholds, methodology, or priorities are still undecided.
+Stop when:
 
-Tasks with `Execution mode: human` must never be executed by the autonomous runner. They may remain in `tasks/blocked/` while waiting for human work. After the human gate is completed, a separate Codex task may verify the artifacts, but the queue runner must not fabricate, infer, or complete human labels.
+- no authorized task remains;
+- the next stage requires a human milestone decision;
+- a blocked gate has not been fulfilled;
+- required input is unavailable;
+- evidence is contradictory in a way that changes the decision;
+- replay processing would be required but is not explicitly authorized;
+- task acceptance criteria cannot be tested.
 
-## Evidence Escalation Before Human Review
+After Task 096, do not create Task 097 automatically. Stop and wait for a human
+milestone decision.
 
-Codex must exhaust available independent, reproducible, non-circular validation before requesting broad human review.
+## Reports
 
-Human review should be requested only when:
-
-- semantic ground truth cannot be derived from available data
-- the unresolved distinction materially changes the next project decision
-- the sample set has been minimized
-- each requested review has an explicit question
-- no deterministic or independent evidence can answer it
-
-Codex must distinguish internal consistency, independent supporting evidence, independent contradictory evidence, semantic ground truth, and unresolved interpretation. Autonomous evidence may support or weaken a conclusion, but it must not be described as human ground truth.
-
-Codex must not request human approval merely because a task was originally designed with a human gate.
-
-## Parser Investigation Policy
-
-After two sequential parser blockers at the same boundary, stop serial symptom repair and run an assessment experiment.
-
-Parser investigations must not:
-
-- fabricate entities
-- create empty fabricated baselines
-- substitute neighboring classes
-- silently suppress warnings
-- derive downstream semantic analysis from unstable continuation
-
-Sequentially exposed parser errors at one boundary must be cataloged as related blockers until an assessment experiment distinguishes replay-specific data, build/protocol compatibility, parser state reconstruction, and packet-framing behavior. Do not add another local skip merely because a previous skip exposed the next symptom.
-
-## Successful Stop Conditions
-
-- no pending task
-- next step requires a methodological decision
-- next stage requires human labels
-- a blocked gate has not been fulfilled
-- only backlog items remain
-- required input is unavailable
-- evidence is contradictory
-- replay reprocessing is required but not explicitly authorized
-- previous outputs would need to be modified
-- task acceptance criteria cannot be tested
-
-Use:
-
-```text
-Stop reason: NO_EXECUTABLE_PENDING_TASK
-```
-
-## When Dividir Uma Tarefa
-
-Divide a task when it would require more than one of these at the same time:
-
-- replay reprocessing
-- parser/library changes
-- new experiment outputs
-- data dictionary changes
-- manual Explorer validation
-- report-only workflow maintenance
-
-Each split task should have a clear input list, expected output files, validation commands, and stop conditions.
-
-## O Que Nao Deve Entrar No Relatorio
-
-- Full JSON output contents.
-- Large tables copied from `output/*`.
-- Unvalidated claims presented as facts.
-- Chat history that is not needed to reproduce the work.
-- Speculation about future parser or database designs.
-- Raw replay data.
+Reports should summarize changed files, commands, validation results, evidence,
+and remaining uncertainty. They should not paste full JSON outputs, raw replay
+data, full logs, long tables, or chat history.

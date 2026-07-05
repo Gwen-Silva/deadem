@@ -4,7 +4,8 @@
 
 ## Conventions
 
-- Canonical evidence: current decision or input artifacts listed in `output/repository-audit/canonical-file-map.json`.
+- Canonical evidence: current decision or input artifacts listed in
+  `data/current-artifact-registry.json`.
 - Diagnostic outputs: parser, video, model, geometry, and replay-analysis evidence used to explain a decision.
 - Intermediate outputs: generated files that can often be regenerated, but may still be tracked to preserve exact provenance.
 - Regenerable outputs: files with known producer scripts; do not delete until a cleanup phase is approved.
@@ -23,6 +24,7 @@
 - Regenerable output files: 0
 - Unknown files requiring investigation: 59
 - Cleanup proposal: `output/repository-audit/cleanup-proposal.json`
+  (historical; not authorized for execution)
 
 ## Archive
 
@@ -117,15 +119,17 @@ effects.
 
 ## Replay 002 Canonical Factual State Generalization
 
-`output/replay-002-canonical/` contains the Task 089 v8 canonical
-factual-state package for the first bounded normal-control generalization case.
+`output/replay-002-canonical/` contains the Task 089 v8 replay-002 canonical
+factual-state package as historical evidence. The v8 gate was rejected after
+technical review; replay 002 is not accepted yet.
 It includes
 player and entity registries, factual events, non-timeline metadata, empty
 independent-validation overlay metadata, snapshots, capability matrix,
 validation summary, and gate.
 
-`output/replay-002-canonical-v8-validation/` contains the accepted Task 089
-validation package: nested executable canonical contract, source-consistency check,
+`output/replay-002-canonical-v8-validation/` contains the rejected historical
+Task 089 validation package: nested executable canonical contract,
+source-consistency check,
 input manifest, access log, IO audit, raw replay access classification,
 assumption audit, identity/generation audit, spatial leakage audit, provenance
 audit, direct-observation justification, schema validation, real event-variant
@@ -135,9 +139,9 @@ validation matrix, summary, and gate.
 `output/replay-002-canonical-generalization/` preserves the Task 082 first
 attempt, and `output/replay-002-canonical-correction/` preserves the Task 083
 second attempt. `output/replay-002-canonical-v3-validation/` preserves Task
-084's third attempt. None of those earlier gates was accepted after technical
-review; use the Task 089 v8 package for current replay-002 canonical evidence. These
-outputs do not emit
+084's third attempt. None of the replay-002 gates through v8 is accepted after
+technical review. Blocked Task 094 owns the v9 terminal validation correction.
+These outputs do not emit
 lane/region/proximity/transform/residual fields, mechanic effects, objective
 completion, combat/fight grouping, rotations, pressure, macro interpretation,
 or replay-005 evidence.
@@ -156,10 +160,9 @@ broad user research and it does not add gameplay facts or mechanic effects.
 `output/project-milestone-analysis/` contains the Task 068 planning outputs:
 dependency graph, capability-blocker matrix, gap recoverability, replay-005
 release criteria, milestone comparison, recommended task sequence, milestone
-decision, and gate. The selected primary milestone is spatial foundation first,
-with open dependencies on map geometry and coordinate anchors. These outputs are
-planning artifacts only and do not implement spatial projection or macro
-analysis.
+decision, and gate. This is historical planning evidence. The current milestone
+is the five-human-replay factual pilot in `docs/FIVE_REPLAY_PILOT_PLAN.md`.
+These outputs do not implement spatial projection or macro analysis.
 
 ## Replay 009 Spatial Input Acquisition
 

@@ -40,33 +40,57 @@ This is a compact navigation index. The task files remain the source records.
 | 044 | Task 044: Investigate Match 91119257 Entity 5594 Parser Recovery | entity_5594_root_cause_confirmed |  | `reports/match-91119257-visual-demo-calibration.md` |  |
 | 045 | Task 045: Investigate Match 91119257 Baseline 709 Parser Continuation | baseline_709_protocol_support_blocked |  | `reports/match-91119257-entity-5594-parser-recovery.md` |  |
 | 046 | Task 046: Run Parser Compatibility Matrix | parser_compatibility_matrix_ready_with_insufficient_diversity |  | `reports/match-91119257-baseline-709-parser-continuation.md` |  |
-| 047 | Task 047: Implement Structural Replay Stream Pass Without Entity Materialization | structural_replay_pass_ready | pending commit | `reports/structural-replay-stream-pass.md` | Task 050 blocked |
+| 047 | Task 047: Implement Structural Replay Stream Pass Without Entity Materialization | structural_replay_pass_ready | not recorded in task file | `reports/structural-replay-stream-pass.md` | Task 050 blocked |
 | 048 | Task 048: Audit Repository Hygiene and Cleanup | repository_cleanup_audit_ready_with_unknowns |  | `reports/INDEX.md` |  |
 
 | 049 | Apply Approved Repository Cleanup Plan | repository_cleanup_applied_with_deferred_items | b811b4b | `reports/repository-cleanup-execution.md` | |
 | 050 | Isolate Replay 006 State Reconstruction Divergence Before Tick 3808 | replay_006_divergence_narrowed_not_confirmed |  | `reports/replay-006-state-reconstruction-divergence.md` | Task 051 |
 | 051 | Investigate Replay 006 Entity Lifecycle Or State Refresh Gap | replay_006_entity_lifecycle_narrowed_not_confirmed | a8dbda9 | `reports/replay-006-entity-lifecycle-state-refresh-gap.md` | Task 052 |
-| 052 | External Parser Oracle And Upstream Comparison For Replay 006 | external_oracle_comparison_ready_without_resolution | pending commit | `reports/replay-006-external-parser-oracle-comparison.md` | Task 053 blocked |
-| 054 | Expand Parser Compatibility Matrix With Build-23916427 Bot And Normal Replays | new_replay_corpus_comparison_ready | pending commit | `reports/build-23916427-bot-normal-replay-comparison.md` | Task 055 blocked |
-| 055 | Investigate Generic Bot/Solo Lifecycle Comparison | bot_solo_failures_are_distinct | pending commit | `reports/generic-bot-solo-lifecycle-comparison.md` | Task 053 remains blocked |
-| 056 | Validate End-To-End Telemetry Quality On Replay 009 | replay_009_telemetry_usable_with_known_gaps | pending commit | `reports/replay-009-end-to-end-telemetry-validation.md` | Task 057 blocked |
-| 057 | Investigate Replay 009 Pause And Clock Observability | replay_009_pause_clock_not_exposed | pending commit | `reports/replay-009-pause-clock-observability.md` | No parser follow-up |
-| 058 | Establish Versioned Deadlock Mechanics Knowledge Base | versioned_mechanics_knowledge_foundation_ready_with_unresolved_build_mapping | pending commit | `reports/versioned-mechanics-knowledge-foundation.md` | Tasks 059 and 060 blocked |
-| 059 | Map Build 23916427 To Applicable Mechanic Versions | build_23916427_mechanics_mapping_unresolved | pending commit | `reports/build-23916427-mechanics-mapping.md` | Task 060 remains blocked |
-| 060 | Detect Replay States Without Applying Unresolved Mechanics | replay_009_factual_state_detection_ready_with_gaps | pending commit | `reports/replay-009-factual-state-detection.md` | Task 062 blocked |
-| 061 | Validate Replay 009 Spatial Geometric Projection | replay_009_spatial_geometric_projection_ready_with_limitations | pending commit | `reports/replay-009-spatial-geometric-projection-validation.md` | Task 060 remains blocked until separately authorized |
-| 062 | Extract Replay 009 Objective And Structure Entity Observability | replay_009_objective_structure_observability_ready_with_gaps | pending commit | `reports/replay-009-objective-structure-entity-observability.md` | Task 063 blocked |
-| 063 | Convert Replay 009 Objective/Structure Observability To Factual State Events | replay_009_objective_structure_factual_events_ready_with_gaps | pending commit | `reports/replay-009-objective-structure-factual-state-events.md` | Task 064 blocked |
-| 064 | Validate Replay 009 Objective/Structure Factual Events Against Independent Source | replay_009_objective_structure_events_independently_validated_with_gaps | pending commit | `reports/replay-009-objective-structure-independent-validation.md` | Task 065 blocked |
-| 065 | Build Canonical Replay 009 Factual State Schema | replay_009_canonical_factual_state_ready_with_constraints | pending commit | `reports/replay-009-canonical-factual-state-schema.md` | Task 066 blocked |
-| 066 | Build Replay 009 Factual State Inspection Interface | replay_009_factual_state_inspector_ready_with_constraints | pending commit | `reports/replay-009-factual-state-inspection-interface.md` | Task 067 blocked |
-| 067 | Evaluate Replay 009 Factual State Inspector Review Workflows | replay_009_inspector_workflows_validated_with_gaps | pending commit | `reports/replay-009-inspector-workflow-evaluation.md` | Task 068 blocked |
-| 068 | Define Next Deadem Project Milestone | deadem_next_milestone_defined_with_open_dependencies | pending commit | `reports/deadem-next-milestone-decision.md` | Task 069 blocked |
-| 069 | Acquire Replay 009 Map Geometry And Calibration Inputs | replay_009_map_geometry_inputs_ready_with_limitations | pending commit | `reports/replay-009-map-geometry-input-acquisition.md` | Task 070 blocked |
-| 070 | Validate Replay 009 Candidate World-To-Map Transform | replay_009_candidate_transform_not_ready | pending commit | `reports/replay-009-candidate-world-to-map-transform-validation.md` | Task 071 blocked |
-| 071 | Acquire Replay 009 Independent Landmark Coordinates | replay_009_independent_landmark_coordinates_missing | pending commit | `reports/replay-009-independent-landmark-coordinate-acquisition.md` | User must place five map images locally |
-| 072 | Measure Replay 009 User-Supplied Map Landmarks | replay_009_independent_landmark_coordinates_ready_with_limitations | pending commit | `reports/replay-009-user-map-landmark-measurement.md` | Task 073 blocked |
-| 073 | Retry Replay 009 Transform Validation With Measured Landmarks | replay_009_candidate_transform_not_ready | pending commit | `reports/replay-009-transform-validation-retry.md` | Task 074 blocked |
-| 074 | Resolve Replay 009 Walker Identity And Fixed Entity Coordinates | replay_009_walker_identity_coordinates_not_ready | pending commit | `reports/replay-009-walker-identity-fixed-coordinate-resolution.md` | Task 075 blocked |
-| 075 | Diagnose Replay 009 Fixed Entity Spatial Property Extraction | replay_009_fixed_entity_spatial_properties_ready_with_gaps | pending commit | `reports/replay-009-fixed-entity-spatial-property-diagnosis.md` | Task 076 blocked |
-| 076 | Resolve Replay 009 Fixed Entity Coordinates And Walker Identities | replay_009_fixed_entity_coordinates_ready_with_gaps | pending commit | `reports/replay-009-fixed-entity-coordinate-resolution.md` | Task 077 blocked |
+| 052 | External Parser Oracle And Upstream Comparison For Replay 006 | external_oracle_comparison_ready_without_resolution | not recorded in task file | `reports/replay-006-external-parser-oracle-comparison.md` | Task 053 blocked |
+| 054 | Expand Parser Compatibility Matrix With Build-23916427 Bot And Normal Replays | new_replay_corpus_comparison_ready | not recorded in task file | `reports/build-23916427-bot-normal-replay-comparison.md` | Task 055 blocked |
+| 055 | Investigate Generic Bot/Solo Lifecycle Comparison | bot_solo_failures_are_distinct | not recorded in task file | `reports/generic-bot-solo-lifecycle-comparison.md` | Task 053 remains blocked |
+| 056 | Validate End-To-End Telemetry Quality On Replay 009 | replay_009_telemetry_usable_with_known_gaps | not recorded in task file | `reports/replay-009-end-to-end-telemetry-validation.md` | Task 057 blocked |
+| 057 | Investigate Replay 009 Pause And Clock Observability | replay_009_pause_clock_not_exposed | not recorded in task file | `reports/replay-009-pause-clock-observability.md` | No parser follow-up |
+| 058 | Establish Versioned Deadlock Mechanics Knowledge Base | versioned_mechanics_knowledge_foundation_ready_with_unresolved_build_mapping | not recorded in task file | `reports/versioned-mechanics-knowledge-foundation.md` | Tasks 059 and 060 blocked |
+| 059 | Map Build 23916427 To Applicable Mechanic Versions | build_23916427_mechanics_mapping_unresolved | not recorded in task file | `reports/build-23916427-mechanics-mapping.md` | Task 060 remains blocked |
+| 060 | Detect Replay States Without Applying Unresolved Mechanics | replay_009_factual_state_detection_ready_with_gaps | not recorded in task file | `reports/replay-009-factual-state-detection.md` | Task 062 blocked |
+| 061 | Validate Replay 009 Spatial Geometric Projection | replay_009_spatial_geometric_projection_ready_with_limitations | not recorded in task file | `reports/replay-009-spatial-geometric-projection-validation.md` | Task 060 remains blocked until separately authorized |
+| 062 | Extract Replay 009 Objective And Structure Entity Observability | replay_009_objective_structure_observability_ready_with_gaps | not recorded in task file | `reports/replay-009-objective-structure-entity-observability.md` | Task 063 blocked |
+| 063 | Convert Replay 009 Objective/Structure Observability To Factual State Events | replay_009_objective_structure_factual_events_ready_with_gaps | not recorded in task file | `reports/replay-009-objective-structure-factual-state-events.md` | Task 064 blocked |
+| 064 | Validate Replay 009 Objective/Structure Factual Events Against Independent Source | replay_009_objective_structure_events_independently_validated_with_gaps | not recorded in task file | `reports/replay-009-objective-structure-independent-validation.md` | Task 065 blocked |
+| 065 | Build Canonical Replay 009 Factual State Schema | replay_009_canonical_factual_state_ready_with_constraints | not recorded in task file | `reports/replay-009-canonical-factual-state-schema.md` | Task 066 blocked |
+| 066 | Build Replay 009 Factual State Inspection Interface | replay_009_factual_state_inspector_ready_with_constraints | not recorded in task file | `reports/replay-009-factual-state-inspection-interface.md` | Task 067 blocked |
+| 067 | Evaluate Replay 009 Factual State Inspector Review Workflows | replay_009_inspector_workflows_validated_with_gaps | not recorded in task file | `reports/replay-009-inspector-workflow-evaluation.md` | Task 068 blocked |
+| 068 | Define Next Deadem Project Milestone | deadem_next_milestone_defined_with_open_dependencies | not recorded in task file | `reports/deadem-next-milestone-decision.md` | Task 069 blocked |
+| 069 | Acquire Replay 009 Map Geometry And Calibration Inputs | replay_009_map_geometry_inputs_ready_with_limitations | not recorded in task file | `reports/replay-009-map-geometry-input-acquisition.md` | Task 070 blocked |
+| 070 | Validate Replay 009 Candidate World-To-Map Transform | replay_009_candidate_transform_not_ready | not recorded in task file | `reports/replay-009-candidate-world-to-map-transform-validation.md` | Task 071 blocked |
+| 071 | Acquire Replay 009 Independent Landmark Coordinates | replay_009_independent_landmark_coordinates_missing | not recorded in task file | `reports/replay-009-independent-landmark-coordinate-acquisition.md` | User must place five map images locally |
+| 072 | Measure Replay 009 User-Supplied Map Landmarks | replay_009_independent_landmark_coordinates_ready_with_limitations | not recorded in task file | `reports/replay-009-user-map-landmark-measurement.md` | Task 073 blocked |
+| 073 | Retry Replay 009 Transform Validation With Measured Landmarks | replay_009_candidate_transform_not_ready | not recorded in task file | `reports/replay-009-transform-validation-retry.md` | Task 074 blocked |
+| 074 | Resolve Replay 009 Walker Identity And Fixed Entity Coordinates | replay_009_walker_identity_coordinates_not_ready | not recorded in task file | `reports/replay-009-walker-identity-fixed-coordinate-resolution.md` | Task 075 blocked |
+| 075 | Diagnose Replay 009 Fixed Entity Spatial Property Extraction | replay_009_fixed_entity_spatial_properties_ready_with_gaps | not recorded in task file | `reports/replay-009-fixed-entity-spatial-property-diagnosis.md` | Task 076 blocked |
+| 076 | Resolve Replay 009 Fixed Entity Coordinates And Walker Identities | replay_009_fixed_entity_coordinates_ready_with_gaps | not recorded in task file | `reports/replay-009-fixed-entity-coordinate-resolution.md` | Task 077 blocked |
+
+## Recent Completed Tasks
+
+When an exact commit is not recorded in the task file, this index says
+`not recorded in task file` rather than inventing a hash.
+
+| Task | Title | Gate | Commit | Main report | Successor |
+| --- | --- | --- | --- | --- | --- |
+| 077 | Resolve Replay 009 Walker Identity | replay_009_walker_identity_not_ready | not recorded in task file | `reports/replay-009-walker-identity-resolution.md` | Task 078 blocked |
+| 078 | Acquire Replay 009 Walker Lane Identity Evidence | replay_009_walker_lane_identity_evidence_ready_with_gaps | not recorded in task file | `reports/replay-009-walker-lane-identity-evidence-acquisition.md` | Task 079 blocked |
+| 079 | Acquire Replay 009 Walker Lane Controlled Evidence | replay_009_walker_lane_identity_evidence_unavailable | not recorded in task file | `reports/replay-009-walker-lane-controlled-evidence.md` | Task 081 blocked |
+| 081 | Reassess Spatial Milestone And Resume Contract | deadem_milestone_cross_replay_generalization_selected | not recorded in task file | `reports/deadem-spatial-milestone-reassessment.md` | Task 082 blocked |
+| 082 | Generate Replay 002 Canonical Factual State | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-generalization.md` | Task 083 corrective |
+| 083 | Correct Replay 002 Canonical Factual State | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-correction.md` | Task 084 corrective |
+| 084 | Enforce Canonical Contract, Schema Diff, IO And Final Gate | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-v3-validation.md` | Task 085 corrective |
+| 085 | Complete Nested Contract, Event Diff And Audit Gate | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-v4-validation.md` | Task 086 corrective |
+| 086 | Close Canonical Audit Coverage And Independence | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-v5-validation.md` | Task 087 corrective |
+| 087 | Finalize Canonical Attestation And Full-Pipeline Determinism | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-v6-validation.md` | Task 088 corrective |
+| 088 | Make Final Attestation Authoritative And Schema Ledger Executable | rejected historical attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-v7-validation.md` | Task 089 corrective |
+| 089 | Make Release Decision Fail-Closed And Enforce Dynamic IO Guards | rejected historical v8 attempt | not recorded in task file | `reports/replay-002-canonical-factual-state-v8-validation.md` | Task 090 workflow |
+| 090 | Optimize Codex Task Workflow And Context Efficiency | codex_task_workflow_optimization_ready | not recorded in task file | `reports/codex-workflow-optimization.md` | Task 091 workflow |
+| 091 | Harden Codex Workflow Enforcement | codex_task_workflow_optimization_ready_v2 | not recorded in task file | `reports/codex-workflow-optimization-v2.md` | Task 092 workflow |
+| 092 | Close Codex Workflow Lifecycle And Staleness Gaps | codex_task_workflow_optimization_ready_v3 | not recorded in task file | `reports/codex-workflow-optimization-v3.md` | Task 093 consolidation |
+| 093 | Consolidate Project State For The Five-Replay Pilot | project_consolidation_ready_for_five_replay_pilot | current task commit | `reports/project-consolidation-and-five-replay-pilot-readiness.md` | Task 094 blocked |

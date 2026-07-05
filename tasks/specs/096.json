@@ -1,0 +1,95 @@
+{
+  "taskId": "096",
+  "title": "Audit Five Human Replay Factual Pilot",
+  "status": "blocked",
+  "objective": "Audit the five-human-replay factual pilot across replays 001, 002, 003, 004, and 009 for schema compatibility, provenance, failures, duration, memory, storage, caching, and readiness to expand to 15 replays.",
+  "includedReplays": [
+    "replay_001",
+    "replay_002",
+    "replay_003",
+    "replay_004",
+    "replay_009"
+  ],
+  "frozenAcceptanceCriteria": [
+    "audit exactly the five human pilot replays",
+    "do not release replay 005",
+    "do not process unsupported bot fixtures 006-008",
+    "measure storage and caching requirements",
+    "do not start spatial, mechanics, ML, macro, fight, pressure, rotation, or decision analysis",
+    "do not create Task 097"
+  ],
+  "acceptedLimitations": [
+    "pilot readiness is not full corpus generalization",
+    "spatial and mechanic interpretation remain unavailable",
+    "human review may be required before any next milestone"
+  ],
+  "permittedCorrectionCount": 1,
+  "automaticNewTaskAllowed": false,
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/FIVE_REPLAY_PILOT_PLAN.md",
+    "data/five-human-replay-pilot.json",
+    "tasks/specs/096.json"
+  ],
+  "optionalReadPaths": [
+    "data/current-artifact-registry.json"
+  ],
+  "writePaths": [
+    "output/five-replay-pilot/audit/**",
+    "reports/five-human-replay-factual-pilot-audit.md",
+    "tasks/completed/096-audit-five-human-replay-factual-pilot.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/partida_005.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007*.dem",
+    "samples/replay_008*.dem",
+    "output/replays/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "reports/five-human-replay-factual-pilot-audit.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not create Task 097",
+    "Do not release replay 005",
+    "Wait for human milestone decision after handoff"
+  ],
+  "successGate": "five_human_replay_factual_pilot_ready",
+  "blockedGate": "five_human_replay_factual_pilot_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/five-replay-pilot/audit/pilot-audit-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "reuse",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  }
+}

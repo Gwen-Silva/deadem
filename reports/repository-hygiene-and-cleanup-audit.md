@@ -1,5 +1,7 @@
 # Repository Hygiene And Cleanup Audit
 
+Status notice: Historical audit — cleanup proposal not currently authorized.
+
 Date: 2026-06-29
 
 ## Scope

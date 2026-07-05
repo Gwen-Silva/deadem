@@ -120,11 +120,11 @@ Presence, deletion, zero health, and disappearance remain observations unless
 separate evidence supports stronger semantics.
 
 Current implementation note: Task 065 establishes the canonical replay-009
-factual layer, and Task 089 supplies the accepted v8 correction for the first
-replay-002 bounded normal-control canonical generalization case after Tasks 082,
-083, and 084 failed technical review. This supports schema stability work only; it still does not apply
-mechanics, spatial regions, lane semantics, objective completion, or macro
-interpretation.
+factual layer. Replay 002 is not accepted yet: Task 089's v8 package is
+preserved as a rejected historical attempt, and blocked Task 094 owns the v9
+terminal validation correction. This supports schema stability work only; it
+still does not apply mechanics, spatial regions, lane semantics, objective
+completion, or macro interpretation.
 
 ### Layer 3 - Versioned World Knowledge
 
@@ -514,19 +514,18 @@ confidence until quantitative calibration is implemented.
 
 ## 15. Immediate Next Steps
 
-The current tactical milestone is defined by `docs/NEXT_MILESTONE.md`. This
-roadmap does not invent a new milestone.
+The current tactical milestone is defined by `docs/NEXT_MILESTONE.md` and
+`docs/FIVE_REPLAY_PILOT_PLAN.md`. This roadmap does not invent a new milestone.
 
-1. Generalize the canonical factual-state package to replay 002.
-2. Audit replay-009-specific assumptions against the second canonical replay.
-3. Continue cross-replay schema compatibility toward holdout readiness.
-4. Resume replay-009 spatial transform work only if the Task 081 evidence
+1. Finish replay-002 terminal validation through Task 094.
+2. Canonicalize the remaining human pilot controls through Task 095.
+3. Audit the five-human-replay factual pilot through Task 096.
+4. Stop after Task 096 for a human milestone decision.
+5. Resume replay-009 spatial transform work only if the Task 081 evidence
    contract is satisfied.
-5. Validate regions independently after a transform is valid.
-6. Validate lanes independently after generic spatial projection is valid.
-7. Prepare the first versioned temporal feature dataset.
-8. Train the first independent player-state classifier only after labels and
-   spatial prerequisites are adequate.
+6. Validate regions and lanes only after generic spatial projection is valid.
+7. Prepare temporal feature datasets and learned classifiers only after factual,
+   spatial, label, and validation prerequisites are adequate.
 
 ## 16. Success Definition
 

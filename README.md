@@ -89,22 +89,6 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
     broad user research;
   - remaining medium limitations are single-reviewer scope and careful
     Patron/base class reading.
-- Replay-002 canonical generalization from Task 089:
-  - corrected first bounded external canonical factual-state package for a
-    compatible normal control replay after Tasks 082, 083, and 084 failed
-    technical review;
-  - 12 players, 6v6 raw teams, player snapshots, death/respawn events,
-    `m_iGoldNetWorth` team observations, and raw objective/structure lifecycle
-    observations are represented with provenance;
-  - raw replay access is identity-hash-only, parser results are imported from
-    prior artifacts with provenance, handles are not decoded as entity indexes,
-    generations are not fabricated, and no replay-009 validation overlays,
-    build/mechanic assumptions, spatial semantics, or mechanic effects are
-    inherited;
-  - the v8 gate is driven by full-pipeline determinism, verified audit-artifact
-    manifests, final attestation, ledger-derived schema coverage, role/path IO
-    auditing, file-specific documentation auditing, and replay-protection
-    checks.
 - Versioned mechanic schemas and conservative query behavior for ambiguous
   builds.
 
@@ -112,6 +96,9 @@ outputs. See [`docs/PROJECT_VISION_AND_ROADMAP.md`](./docs/PROJECT_VISION_AND_RO
 
 - Replay 005 remains protected as the final holdout.
 - Solo-bot fixtures 006-008 are unsupported by gameplay-state reconstruction.
+- Replay 002 is not accepted yet. Task 089's v8 package is rejected historical
+  evidence after technical review; Task 094 owns the v9 terminal validation
+  correction.
 - Build `23916427` has no confirmed patch mapping.
 - Active-game-time and explicit pause intervals are unavailable.
 - Map transform and map-version compatibility are unresolved for replay 009.
@@ -147,7 +134,7 @@ Replay bytes
   -> player identity/lifecycle              [available with constraints]
   -> factual non-spatial state detection    [replay_009_factual_state_detection_ready_with_gaps]
   -> canonical factual state schema         [replay_009_canonical_factual_state_ready_with_constraints]
-  -> first cross-replay canonical package   [replay_002_canonical_factual_state_ready_with_constraints_v8]
+  -> first cross-replay canonical package   [blocked: Task 094 replay-002 v9]
   -> spatial map projection                 [not available]
   -> mechanic version resolution            [unresolved for build 23916427]
   -> mechanic activation                    [blocked]
@@ -156,12 +143,16 @@ Replay bytes
 
 ## Current Direction
 
-The active primary milestone is **cross-replay canonical generalization**.
-Task 082, Task 083, Task 084, Task 085, Task 086, Task 087, and Task 088 are preserved as
-unaccepted attempts after technical review. Task 089 supersedes them with the gate
-`replay_002_canonical_factual_state_ready_with_constraints_v8`. This improves
-schema stability and reduces replay-009 overfitting risk, but it is not proof of
-full corpus generalization or replay-005 release readiness.
+The active milestone is the **five-human-replay factual pilot**. Workflow v3 is
+accepted as operationally sufficient, replay 009 remains accepted with
+constraints, and replay 002 is not yet accepted. Task 089's v8 gate is rejected
+historical evidence after technical review. Task 094 will resolve the frozen
+replay-002 v9 terminal blockers; Tasks 095 and 096 complete and audit the
+five-replay pilot.
+
+The current pilot includes replays 001, 002, 003, 004, and 009. Replay 005
+remains protected; replays 006-008 remain unsupported bot fixtures. See
+[`docs/FIVE_REPLAY_PILOT_PLAN.md`](./docs/FIVE_REPLAY_PILOT_PLAN.md).
 
 The replay-009 spatial foundation remains strategically important but is
 parked under the Task 081 evidence contract. It should resume only when a
@@ -256,6 +247,8 @@ does not prove that a patch-sensitive mechanic effect was active.
 
 Major current reports:
 
+- [`reports/project-consolidation-and-five-replay-pilot-readiness.md`](./reports/project-consolidation-and-five-replay-pilot-readiness.md)
+- [`reports/codex-workflow-optimization-v3.md`](./reports/codex-workflow-optimization-v3.md)
 - [`reports/replay-009-end-to-end-telemetry-validation.md`](./reports/replay-009-end-to-end-telemetry-validation.md)
 - [`reports/replay-009-pause-clock-observability.md`](./reports/replay-009-pause-clock-observability.md)
 - [`reports/replay-009-spatial-geometric-projection-validation.md`](./reports/replay-009-spatial-geometric-projection-validation.md)
@@ -280,6 +273,9 @@ Major current reports:
 - [`reports/replay-009-fixed-entity-coordinate-resolution.md`](./reports/replay-009-fixed-entity-coordinate-resolution.md)
 - [`reports/replay-009-walker-identity-resolution.md`](./reports/replay-009-walker-identity-resolution.md)
 - [`reports/deadem-spatial-milestone-reassessment.md`](./reports/deadem-spatial-milestone-reassessment.md)
+
+Historical rejected replay-002 report:
+
 - [`reports/replay-002-canonical-factual-state-v8-validation.md`](./reports/replay-002-canonical-factual-state-v8-validation.md)
 
 ## Running Validation

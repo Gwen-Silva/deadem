@@ -1,210 +1,102 @@
-# Next Milestone: Cross-Replay Canonical Generalization
+# Next Milestone: Five-Human-Replay Factual Pilot
 
-## Current Project State
+## Current State
 
-Deadem now has normal replay parsing for fixtures 001-004 and 009, replay-009 factual telemetry, canonical factual-state outputs, query/export tooling, a static inspector, and validated inspector review workflows.
+The accepted Codex workflow gate is
+`codex_task_workflow_optimization_ready_v3`. Its documented limitations in
+`reports/codex-workflow-optimization-v3.md` are accepted operational
+limitations for the five-replay pilot.
 
-The validated factual layer supports player identity, life/death/respawn events, `m_iGoldNetWorth` endpoint summaries, raw Mid Boss/structure events, candidate Spirit Urn records, and bounded visual validation overlays. It applies zero mechanic effects.
+Replay 009 remains the accepted canonical factual-state package with
+constraints. Replay 002 is not accepted yet: Task 089's v8 gate is preserved as
+a rejected historical attempt, and the remaining terminal validation work is
+assigned to blocked Task 094.
 
-## Remaining Blockers
+Spatial work remains parked under the Task 081 resume contract. Replay 005 is
+protected. Replays 006-008 remain unsupported bot fixtures. Macro, fights,
+rotations, pressure, mechanic effects, ML, and decision analysis remain
+unavailable.
 
-- Replay 005 remains protected.
-- Bot fixtures 006-008 remain unsupported.
-- Build `23916427` has no confirmed patch mapping.
-- Active-game time and pause intervals are unavailable.
-- Map transform, regions, lanes, objective geometry, structure geometry, and proximity are unavailable.
-- Spirit Urn identity, Rejuvenator observability, Patron/base identity, objective completion, mechanic activation, combat/fight grouping, map pressure, macro interpretation, and decision analysis remain blocked or partial.
+## Source Hierarchy
 
-## Dependency Graph Summary
+Use `docs/PROJECT_STATE.md` for the authoritative narrative current state, this
+file for the active milestone and finite execution horizon,
+`docs/codex/CURRENT_STATE.md` for compact Codex state, and
+`tasks/specs/<id>.json` for executable scope. Reports, task files, and outputs
+are historical evidence unless current state documents accept them.
 
-The most central blocked node is `map_geometry`. It depends on validated coordinates plus external or independently supported geometry, and it unlocks lane presence, movement paths, objective proximity, structure association, rotations, map pressure prerequisites, and later bounded macro context.
+## Five-Replay Pilot
 
-## Candidate Milestone Comparison
+The current pilot is defined by `data/five-human-replay-pilot.json`.
 
-Track A, spatial and map geometry foundation, has the highest downstream impact and dependency centrality, but Tasks 077-081 showed that its immediate replay-009 transform branch is paused until the explicit spatial resume contract is satisfied. Cross-replay canonical generalization is the active tactical milestone because it improves holdout readiness using existing compatible human controls without weakening spatial evidence standards.
+Included human replays:
 
-## Selected Milestone
+- `replay_001`
+- `replay_002`
+- `replay_003`
+- `replay_004`
+- `replay_009`
 
-Primary milestone: **cross-replay canonical generalization**.
+Excluded replays:
 
-Preferred first case: **replay 002**.
+- `replay_005`: protected final holdout
+- `replay_006`: unsupported bot fixture
+- `replay_007`: unsupported bot fixture
+- `replay_008`: unsupported bot fixture
 
-Task 082 attempted that first case, but its gate did not pass technical review:
-the implementation was too replay-specific, raw replay access was overstated,
-IO was not centrally allowlisted, provenance did not sufficiently separate
-direct observations from derivations, and entity handle/index/generation
-handling leaked assumptions.
+The historical `data/replay-manifest.json` remains an intake inventory, not the
+current pilot definition.
 
-Task 083 is preserved as the second attempt, but its v2 gate also did not pass
-technical review. The v2 result still allowed factual reads outside the IO
-layer, did not validate the complete package against the contract, did not
-execute a real schema comparison, counted provenance records without checking
-each one, let the final gate omit declared conditions, and left documentation
-inconsistent.
+## Finite Execution Horizon
 
-Task 084 is preserved as the third attempt, but its v3 gate did not pass
-technical review. The v3 result still left generic internal contract objects,
-omitted factual-event variants from schema diff coverage, declared manifest
-behavior more strongly than it applied it, did not audit capability provenance,
-treated some reconciled observations as direct parser observations, and kept
-some validation-matrix entries as positive constants.
+Exactly three execution tasks remain in the current pilot horizon:
 
-Task 089 is preserved as the v8 attempt, but its gate was not accepted after
-technical review. Tasks 090-092 establish the compact Codex workflow and close
-workflow lifecycle/staleness enforcement before replay validation work resumes.
-The remaining replay-002 terminal blockers are assigned to blocked Task 093.
-Replay 002 is not approved for next-stage generalization until Task 093 is
-reviewed and accepted.
+1. Task 094, `Finalize Replay 002 Terminal Validation`
+2. Task 095, `Canonicalize Remaining Human Pilot Replays`
+3. Task 096, `Audit Five Human Replay Factual Pilot`
 
-Replay-009 spatial foundation remains parked under a concrete resume contract,
-not abandoned. It should resume only when genuinely new, replay-compatible,
-non-circular evidence supplies replay-to-map identity or independent fit and
-validation anchors.
+Do not create Task 097 automatically. After Task 096, stop and wait for a human
+milestone decision.
 
-The milestone changed because Tasks 077-079 exhausted currently permitted
-replay-009 Walker lane/map-landmark identity evidence. Cross-replay canonical
-generalization is executable now, improves schema stability, reduces
-replay-009 overfitting risk, and prepares the project for eventual replay-005
-holdout release.
+## Task 094
 
-## Required New Inputs
+Purpose: resolve only the four frozen replay-002 terminal blockers:
 
-- Authoritative or calibratable map geometry for the replay-009 map/build.
-- Independent coordinate anchors with provenance.
+- terminal manifest freshness
+- evidence-only determinism representation
+- strict scope containment
+- intraprocedural and order-aware IO guard analysis
 
-Current map geometry must not be silently assumed valid for build `23916427`.
+Success gate: `replay_002_canonical_factual_state_ready_with_constraints_v9`.
 
-Task 069 acquired limited candidate inputs: local installed Deadlock map-package
-metadata, GameTracking/deadlock-metadata references, and replay-derived landmark
-candidates. The gate is
-`replay_009_map_geometry_inputs_ready_with_limitations`. The current installed
-map package is useful as a local-only candidate, but build compatibility,
-extractable geometry, and independent map-coordinate anchors are still
-unresolved.
+Blocked gate: `replay_002_canonical_factual_state_v9_blocked`.
 
-Task 070 inspected the local-only preferred VPK candidate and the local package
-index. It found bounded spatial resource metadata but no coordinate-bearing map
-landmarks, so the gate is `replay_009_candidate_transform_not_ready`.
+## Task 095
 
-Task 071 ingested a replay-009 participant annotation packet as advisory human
-evidence. The text packet supports search and identity constraints, but the five
-referenced map/minimap images were not locally accessible, so the gate is
-`replay_009_independent_landmark_coordinates_missing`.
+Purpose: use the existing canonical core to canonicalize the remaining human
+pilot controls, `replay_001`, `replay_003`, and `replay_004`, without
+replay-specific branches.
 
-Task 072 measured the subsequently supplied local map/minimap images as
-human-supplied visual evidence. It inventories image roles and hashes, records
-standard/minimap registration limits, measures Mid Boss, Walker, Guardian, and
-base-symbol pixel coordinates, and preregisters fit/validation anchors. The gate
-is `replay_009_independent_landmark_coordinates_ready_with_limitations`: a
-bounded transform-validation retry can be attempted, but no transform, lane,
-region, proximity, or mechanic effect has been produced.
+Success gate: `remaining_human_controls_canonicalized`.
 
-Task 073 attempted that bounded retry and stopped before fitting. The gate is
-`replay_009_candidate_transform_not_ready`: map-image coordinates are available,
-but replay-side fixed Mid Boss/Walker world coordinates are not exposed in the
-compact canonical evidence, and the six replay Walker entities cannot yet be
-paired with six map Walker symbols by pre-residual evidence. The next missing
-layer is non-circular replay-side fixed-entity coordinates and Walker
-team/lane identity evidence, not a broader map-geometry search.
+Blocked gate: `remaining_human_controls_canonicalization_blocked`.
 
-Task 074 audited that missing layer and confirmed it remains unavailable in the
-committed compact replay-009 outputs. The gate is
-`replay_009_walker_identity_coordinates_not_ready`: `CNPC_MidBoss` and
-`CNPC_Boss_Tier2` expose class/lifecycle/health evidence plus
-component/reference-style properties, but no usable replay-world coordinates or
-pre-fit Walker team/lane identities. The next task should diagnose parser
-spatial-property extraction for those target classes before any transform retry.
+## Task 096
 
-Task 075 diagnosed that parser spatial-property layer directly. The gate is
-`replay_009_fixed_entity_spatial_properties_ready_with_gaps`: bounded
-parser-level evidence exposes `CBodyComponent.m_vecX/Y/Z` and
-`CBodyComponent.m_cellX/Y/Z` coordinate-like fields for `CNPC_Boss_Tier2`,
-including CREATE payloads. The earlier gap was a compact-filter omission, not a
-decoder failure. The next missing layer is bounded coordinate extraction across
-target generations and non-circular Walker identity resolution; transform
-fitting, lane/region output, proximity, and mechanic effects remain blocked.
+Purpose: audit the five-human-replay factual pilot across replays 001, 002,
+003, 004, and 009 for schema compatibility, provenance, failures, processing
+duration, memory, storage, caching, and readiness to expand to 15 replays.
 
-Task 076 completed the bounded coordinate extraction layer with gaps. The gate
-is `replay_009_fixed_entity_coordinates_ready_with_gaps`: two late Walker
-generations have supported vector-only replay coordinates and all six Walkers
-have raw team values, but only two of eight target generations have coordinates,
-Mid Boss has no coordinate anchor, named Walker teams and lanes remain
-unresolved, and no correspondence is fit-eligible. The next missing layer is
-identity-only Walker resolution before any transform retry.
+Success gate: `five_human_replay_factual_pilot_ready`.
 
-Task 077 attempted that identity-only Walker resolution. The gate is
-`replay_009_walker_identity_not_ready`: raw team values remain unmapped to
-Sapphire/Amber, participant Walker annotations and existing visual-validation
-metadata remain class/set-level rather than handle-specific, and no direct
-lane/route/spawn/name field was exposed. Transform retry remains blocked until
-new non-coordinate evidence links at least some Walker handles to named
-team/lane map landmarks before residual inspection.
+Blocked gate: `five_human_replay_factual_pilot_blocked`.
 
-Task 078 acquired the first narrow identity improvement. The gate is
-`replay_009_walker_lane_identity_evidence_ready_with_gaps`: participant and
-parser-roster controls support raw team `3` as Sapphire/Archmother and raw team
-`2` as Amber/Hidden King, so all six Walkers have named faction. This still
-does not identify Yellow/Blue/Green lane or a specific map Walker landmark for
-any handle, so transform retry remains blocked pending lane-only identity
-evidence.
-
-Task 079 audited that lane-only evidence path. The gate is
-`replay_009_walker_lane_identity_evidence_unavailable`: bounded local video
-contact sheets, existing Task 064 frame artifacts, map/resource tooling checks,
-and transferability analysis did not produce a replay-specific non-coordinate
-handle-to-lane signal. Transform retry remains blocked, and the next step is
-spatial-milestone reassessment rather than repeating broad Walker identity
-searches.
-
-Task 081 completed that reassessment. The gate is
-`deadem_milestone_cross_replay_generalization_selected`: immediate replay-009
-transform work is paused under current evidence, replay 002 is selected as the
-first bounded canonical-generalization case, and map/resource extraction tooling
-is parked as optional parallel research only when scoped to exact
-identity-bearing proof targets.
-
-## Relationship To Long-Term Roadmap
-
-The long-term strategic roadmap is `docs/PROJECT_VISION_AND_ROADMAP.md`. It
-frames spatial foundation as one layer in a larger path toward deterministic
-events, feature engineering, learned models, bounded decision-window analysis,
-and optional explanation adapters.
-
-This tactical milestone is currently cross-replay canonical generalization. The
-spatial foundation track remains paused under the Task 081 resume contract. The
-roadmap does not override current gates, does not authorize transform fitting
-from unresolved Walker identities, and does not make macro or decision analysis
-available.
-
-## Validation Strategy
-
-1. Acquire geometry and provenance.
-2. Validate coordinate transform against independent anchors.
-3. Quantify projection coverage, out-of-bounds samples, and ambiguity.
-4. Validate generic regions separately from lanes.
-5. Validate objective and structure static geometry separately from entity semantics.
-6. Integrate only factual spatial fields with visible semantic limits.
-
-## Proposed Task Sequence
-
-See `output/spatial-milestone-reassessment/milestone-decision.json` and
-`output/spatial-milestone-reassessment/spatial-resume-contract.json`.
-
-The first replay-validation follow-up task is blocked pending explicit authorization:
-`tasks/blocked/093-close-replay-002-terminal-validation-gaps.md`.
-
-## Replay 005 Release Criteria
-
-Replay 005 release decision: `replay_005_release_not_ready`.
-
-Release is not ready. Missing evidence includes canonical outputs for more than one human replay, cross-replay schema stability, formal no-replay-specific assumptions, and a resolved or explicitly scoped spatial decision.
-
-## Explicit Non-Goals
+## Non-Goals
 
 - Do not inspect or process replay 005.
 - Do not process bot fixtures 006-008.
-- Do not apply mechanic effects.
-- Do not infer objective completion from deletion.
-- Do not infer lane occupancy from nearest lane.
-- Do not implement fight, macro, or decision-quality analysis.
-
+- Do not start spatial, mechanic-effect, ML, macro, fight, rotation, pressure,
+  role, or decision analysis.
+- Do not treat replay 002 v8 as accepted.
+- Do not create another workflow, cleanup, documentation, or repository
+  refactoring task before the pilot finishes.

@@ -1,26 +1,68 @@
 {
   "taskId": "094",
-  "title": "Select Next Canonical Generalization Control",
+  "title": "Finalize Replay 002 Terminal Validation",
   "status": "blocked",
-  "objective": "Select the next compatible human replay for canonical factual-state generalization after Task 093 is reviewed and accepted.",
+  "objective": "Correct the remaining terminal validation blockers for replay 002 without regenerating the factual layer unless a factual logic test proves it is necessary.",
+  "blockers": [
+    "base manifest becomes stale after final files are created",
+    "evidence-only turns an unevaluated determinism state into approval",
+    "artifact verifiers allow escaping the declared scope",
+    "guarded-variable tracking ignores function, order, reassignment, and shadowing"
+  ],
+  "frozenAcceptanceCriteria": [
+    "terminal manifest freshness resolved",
+    "evidence-only determinism representation corrected",
+    "strict scope containment enforced",
+    "intraprocedural and order-aware IO guard analysis implemented"
+  ],
+  "explicitNonGoals": [
+    "do not process replay 005",
+    "do not process replays 006-008",
+    "do not create spatial, mechanic-effect, fight, rotation, pressure, macro, or decision analysis",
+    "do not change canonical facts without authorization"
+  ],
+  "acceptedLimitations": [
+    "replay 002 remains unaccepted until this task gate passes",
+    "the five-replay pilot remains incomplete until Tasks 095 and 096 pass"
+  ],
+  "permittedCorrectionCount": 1,
+  "automaticNewTaskAllowed": false,
   "readPaths": [
     "AGENTS.md",
     "docs/codex/CURRENT_STATE.md",
     "docs/codex/WORKFLOW.md",
     "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
     "tasks/specs/094.json",
-    "output/parser-compatibility/parser-compatibility-matrix.json",
-    "output/parser-compatibility/replay-inventory.json"
+    "tasks/completed/089-make-release-decision-fail-closed-and-enforce-dynamic-io-guards.md",
+    "tools/finalize-replay-002-canonical-v8.mjs",
+    "tools/verify-replay-002-canonical-v8-release-envelope.mjs",
+    "lib/canonical-state/audits/common.mjs",
+    "lib/canonical-state/audits/io-policy-audit.mjs",
+    "output/replay-002-canonical-v8-validation/release-decision.json",
+    "output/replay-002-canonical-v8-validation/audit-artifact-manifest.json",
+    "output/replay-002-canonical-v8-validation/audit-artifact-verification.json",
+    "output/replay-002-canonical-v8-validation/deterministic-rerun.json",
+    "output/replay-002-canonical-v8-validation/io-policy-audit.json"
   ],
   "optionalReadPaths": [
-    "reports/parser-compatibility-matrix.md",
-    "docs/PROJECT_STATE.md"
+    "output/replay-002-canonical-v8-validation/schema-comparison-ledger.json",
+    "output/replay-002-canonical-v8-validation/release-envelope.json",
+    "output/replay-002-canonical-v8-validation/release-envelope-verification.json",
+    "tests/replay-002-canonical-generalization.test.mjs"
   ],
   "writePaths": [
-    "output/canonical-generalization-selection/**",
-    "reports/canonical-generalization-selection.md",
-    "tasks/completed/094-select-next-canonical-generalization-control.md",
-    "tasks/blocked/095-*.md",
+    "tools/finalize-replay-002-canonical-v9.mjs",
+    "tools/verify-replay-002-canonical-v9-release-envelope.mjs",
+    "lib/canonical-state/audits/common.mjs",
+    "lib/canonical-state/audits/io-policy-audit.mjs",
+    "tests/replay-002-canonical-generalization.test.mjs",
+    "output/replay-002-canonical-v9-validation/**",
+    "reports/replay-002-canonical-factual-state-v9-validation.md",
+    "tasks/completed/094-finalize-replay-002-terminal-validation.md",
+    "tasks/blocked/095-canonicalize-remaining-human-pilot-replays.md",
     "docs/codex/CURRENT_STATE.md",
     "docs/NEXT_MILESTONE.md",
     "docs/PROJECT_STATE.md"
@@ -31,11 +73,16 @@
     "samples/replay_006*.dem",
     "samples/replay_007_bots01.dem",
     "samples/replay_008_bots02_short.dem",
-    "output/replays/**"
+    "output/replays/**",
+    "output/replay-002-canonical/factual-events.jsonl",
+    "output/replay-002-canonical/snapshots.jsonl",
+    "output/replay-002-canonical/entity-registry.json",
+    "output/replay-002-canonical/player-registry.json"
   ],
   "requiredPolicies": [
     "docs/codex/WORKFLOW.md",
     "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
     "docs/codex/TASK_EXECUTION.md",
     "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
   ],
@@ -66,29 +113,35 @@
     }
   ],
   "expectedOutputs": [
-    "output/canonical-generalization-selection/selection-decision.json",
-    "reports/canonical-generalization-selection.md"
+    "output/replay-002-canonical-v9-validation/terminal-base-manifest-verification.json",
+    "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
+    "reports/replay-002-canonical-factual-state-v9-validation.md"
   ],
-  "largeOutputsAllowed": [],
+  "largeOutputsAllowed": [
+    {
+      "path": "output/replay-002-canonical-v9-validation/canonical-schema-diff.json",
+      "justification": "bounded schema comparison output reused for terminal validation review"
+    }
+  ],
   "replayProcessingAllowed": false,
   "followUpTask": "095",
   "stopConditions": [
-    "Do not process any replay",
-    "Do not inspect replay 005",
-    "Stop if selection requires parser execution"
+    "Task 094 remains blocked until explicitly authorized",
+    "Do not execute Task 095",
+    "Stop if fixing terminal validation requires factual replay regeneration"
   ],
-  "successGate": "canonical_generalization_control_selected",
-  "blockedGate": "canonical_generalization_control_selection_blocked",
+  "successGate": "replay_002_canonical_factual_state_ready_with_constraints_v9",
+  "blockedGate": "replay_002_canonical_factual_state_v9_blocked",
   "gateSource": {
     "type": "json-file",
-    "path": "output/canonical-generalization-selection/selection-decision.json",
+    "path": "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
     "jsonField": "gate"
   },
-  "successStopReason": "SELECTION_COMPLETE_AWAITING_REVIEW",
-  "blockedStopReason": "SELECTION_BLOCKED_AWAITING_REVIEW",
+  "successStopReason": "REPLAY_002_TERMINAL_VALIDATION_COMPLETE_AWAITING_REVIEW",
+  "blockedStopReason": "REPLAY_002_TERMINAL_VALIDATION_BLOCKED_AWAITING_REVIEW",
   "regenerationPolicy": {
-    "canonicalFacts": "forbidden",
-    "validationArtifacts": "reuse",
+    "canonicalFacts": "reuse",
+    "validationArtifacts": "regenerate",
     "reports": "regenerate",
     "replayParsing": "forbidden"
   }
