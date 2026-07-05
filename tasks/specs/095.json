@@ -1,7 +1,7 @@
 {
   "taskId": "095",
   "title": "Canonicalize Remaining Human Pilot Replays",
-  "status": "blocked",
+  "status": "completed",
   "objective": "Create a generic batch entrypoint using the existing canonical core and canonicalize replay 001, replay 003, and replay 004 without replay-specific branches.",
   "includedReplays": [
     "replay_001",
@@ -29,18 +29,37 @@
     "docs/NEXT_MILESTONE.md",
     "docs/FIVE_REPLAY_PILOT_PLAN.md",
     "data/five-human-replay-pilot.json",
-    "tasks/specs/095.json"
+    "tasks/specs/095.json",
+    "output/parser-compatibility/parser-compatibility-matrix.json",
+    "output/replays/replay_001/**",
+    "output/replays/replay_003/**",
+    "output/replays/replay_004/**",
+    "output/replay-009-canonical/**",
+    "output/replay-002-canonical-v9-validation/release-decision.json",
+    "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
+    "output/replay-002-canonical/**",
+    "lib/canonical-state/builder.mjs",
+    "lib/canonical-state/io-layer.mjs",
+    "lib/canonical-state/contract.mjs",
+    "tools/build-replay-002-canonical-state.mjs"
   ],
   "optionalReadPaths": [
     "data/current-artifact-registry.json",
-    "reports/project-consolidation-and-five-replay-pilot-readiness.md"
+    "reports/project-consolidation-and-five-replay-pilot-readiness.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tests/remaining-human-controls-canonicalization.test.mjs"
   ],
   "writePaths": [
+    "tools/canonicalize-remaining-human-pilot-replays.mjs",
+    "tests/remaining-human-controls-canonicalization.test.mjs",
     "output/five-replay-pilot/remaining-human-controls/**",
     "reports/remaining-human-controls-canonicalization.md",
+    "tasks/specs/095.json",
+    "tasks/blocked/095-canonicalize-remaining-human-pilot-replays.md",
     "tasks/completed/095-canonicalize-remaining-human-pilot-replays.md",
     "docs/PROJECT_STATE.md",
     "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
     "data/current-artifact-registry.json"
   ],
   "forbiddenPaths": [
@@ -48,7 +67,10 @@
     "samples/replay_006*.dem",
     "samples/replay_007*.dem",
     "samples/replay_008*.dem",
-    "output/replays/**"
+    "output/replays/replay_005/**",
+    "output/replays/replay_006/**",
+    "output/replays/replay_007/**",
+    "output/replays/replay_008/**"
   ],
   "requiredPolicies": [
     "docs/codex/WORKFLOW.md",
@@ -56,6 +78,27 @@
     "docs/codex/EPISTEMIC_SAFETY.md"
   ],
   "requiredCommands": [
+    {
+      "id": "task-prepare-dry-run",
+      "type": "workflow",
+      "action": "prepare",
+      "taskId": "095",
+      "dryRun": true
+    },
+    {
+      "id": "task-preflight-dry-run",
+      "type": "workflow",
+      "action": "preflight",
+      "taskId": "095",
+      "dryRun": true
+    },
+    {
+      "id": "remaining-controls-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/remaining-human-controls-canonicalization.test.mjs"
+      ]
+    },
     {
       "id": "task-queue",
       "type": "npm-script",
@@ -68,10 +111,16 @@
     }
   ],
   "expectedOutputs": [
+    "output/five-replay-pilot/remaining-human-controls/manifest.json",
+    "output/five-replay-pilot/remaining-human-controls/compatibility-matrix.json",
+    "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json",
+    "output/five-replay-pilot/remaining-human-controls/processing-summary.json",
+    "output/five-replay-pilot/remaining-human-controls/replay-specific-branch-audit.json",
+    "output/five-replay-pilot/remaining-human-controls/performance-baseline.json",
     "reports/remaining-human-controls-canonicalization.md"
   ],
   "largeOutputsAllowed": [],
-  "replayProcessingAllowed": true,
+  "replayProcessingAllowed": false,
   "followUpTask": "096",
   "stopConditions": [
     "Do not process replay 005",
@@ -87,9 +136,9 @@
     "jsonField": "gate"
   },
   "regenerationPolicy": {
-    "canonicalFacts": "regenerate",
+    "canonicalFacts": "reuse",
     "validationArtifacts": "regenerate",
     "reports": "regenerate",
-    "replayParsing": "regenerate"
+    "replayParsing": "forbidden"
   }
 }

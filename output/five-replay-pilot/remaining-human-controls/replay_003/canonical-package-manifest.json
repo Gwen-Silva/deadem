@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_003",
+  "representation": "compact_canonical_package_manifest",
+  "fullCanonicalPackageCommitted": false,
+  "packageHash": "3c13153e33d6ac3e0612b1f9236da21319b2ea09cf69ebfe0bd57bc4e131c098",
+  "packageSizeBytes": 16044406,
+  "validationValid": true,
+  "sourceArtifacts": [
+    {
+      "path": "output/parser-compatibility/parser-compatibility-matrix.json",
+      "sizeBytes": 39869,
+      "sha256": "6ae9b8fff732d928fb85f898c8e33ae42b93dbaae1bdb04a4ef080da64e29a30"
+    },
+    {
+      "path": "output/replays/replay_003/match-state-quality.json",
+      "sizeBytes": 701,
+      "sha256": "c1f2402594cec9fe8571cd618b0368960aaec386a774301853746b816dbdf531"
+    },
+    {
+      "path": "output/replays/replay_003/one-second-spatial/quality.json",
+      "sizeBytes": 10527,
+      "sha256": "757a7e1d28003dfc0b34c45c2f9f16def52f3565711bc0fe3ef6d62215d52384"
+    },
+    {
+      "path": "output/replays/replay_003/canonical-death-events.json",
+      "sizeBytes": 521354,
+      "sha256": "8f1211fb1da8f773d92f6e35567cdadeb14f231ad532e18aa601386689817159"
+    },
+    {
+      "path": "output/replays/replay_003/death-event-validation.json",
+      "sizeBytes": 1155,
+      "sha256": "39c75ceb8f1590eaeba4f958c5b7060691c19627a8307edb069e3f4223439423"
+    },
+    {
+      "path": "output/replays/replay_003/respawn-events.json",
+      "sizeBytes": 240236,
+      "sha256": "19efc2840d063639defc8fddb93756b5db2e6a515fa0b1a5a94048004ff45aed"
+    },
+    {
+      "path": "output/replays/replay_003/objective-entity-inventory.json",
+      "sizeBytes": 117875,
+      "sha256": "33870cb954f5c44e0b1407c25998c3682a42abe1186345bf5510711bfd9cf96a"
+    },
+    {
+      "path": "output/replays/replay_003/objective-lifecycle-events.json",
+      "sizeBytes": 3174442,
+      "sha256": "d11c71475652f432d00d958284079996bbed300e4c08f36911306a3d28179ec7"
+    },
+    {
+      "path": "output/replays/replay_003/match-state-timeline.jsonl",
+      "sizeBytes": 1239,
+      "sha256": "d901eca3755b008f708ffd181136ebc71657a1c3432ef3cc9fc0748e1567b10c"
+    }
+  ],
+  "recordCounts": {
+    "players": 12,
+    "entities": 47,
+    "factualEvents": 4724,
+    "metadata": 2,
+    "snapshots": 2280,
+    "capabilities": 6,
+    "overlays": 0
+  },
+  "emittedCategories": [
+    "player_death",
+    "player_identity",
+    "player_respawn",
+    "raw_objective_structure_lifecycle",
+    "snapshots",
+    "team_net_worth"
+  ],
+  "missingCategories": [],
+  "rawReplayAccess": {
+    "read": false,
+    "hashed": false,
+    "processed": false,
+    "status": "not_touched_existing_artifacts_only"
+  },
+  "limitations": [
+    "large canonical package material is represented by hash and counts in committed output"
+  ]
+}

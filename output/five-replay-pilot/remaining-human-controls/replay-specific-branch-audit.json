@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "auditedFiles": [
+    "tools/canonicalize-remaining-human-pilot-replays.mjs"
+  ],
+  "forbiddenPatternsChecked": [
+    "if replay_001/003/004",
+    "switch replay",
+    "case replay_001/003/004",
+    "partida-specific logic",
+    "specific replay equality branch"
+  ],
+  "findings": [],
+  "allowedUses": [
+    "declarative replay lists",
+    "output paths",
+    "per-replay result rows"
+  ],
+  "passed": true
+}

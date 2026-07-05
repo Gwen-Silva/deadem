@@ -9,11 +9,11 @@ with constraints after Task 094.
 Latest rejected replay-002 gate:
 `replay_002_canonical_factual_state_ready_with_constraints_v8`.
 
-Authorized task: none after Task 094 terminal validation.
+Authorized task: none after Task 095 remaining human controls canonicalization.
 
-Latest completed task: Task 094, finalize replay 002 terminal validation.
+Latest completed task: Task 095, canonicalize remaining human pilot replays.
 
-Blocked follow-up: Task 095, canonicalize remaining human pilot replays.
+Blocked follow-up: Task 096, audit five human replay factual pilot.
 
 Selection follow-up: superseded by the finite pilot plan; no selection-only task
 is executable.
@@ -25,13 +25,10 @@ Current milestone: five-human-replay factual pilot.
 Pilot replays: `replay_001`, `replay_002`, `replay_003`, `replay_004`,
 `replay_009`.
 
-Execution horizon: Task 095, Task 096. Do not create Task 097
-automatically.
+Execution horizon: Task 096. Do not create Task 097 automatically.
 
 Active blockers:
 
-- remaining human pilot replays 001, 003, and 004 are not canonicalized under
-  the current contract;
 - the five-human-replay pilot has not been audited.
 
 Protected replays: replay 005 is protected final holdout. Replays 006-008 are

@@ -5,8 +5,10 @@ Last updated: 2026-07-05
 ## Authoritative Current State
 
 The current milestone is the five-human-replay factual pilot. Task 094 has
-completed replay-002 terminal validation v9; replay work may resume only through
-the remaining finite Task 095-096 sequence in `docs/FIVE_REPLAY_PILOT_PLAN.md`.
+completed replay-002 terminal validation v9, and Task 095 has canonicalized the
+remaining human controls 001, 003, and 004 with compact package manifests.
+Replay work may resume only through Task 096 in
+`docs/FIVE_REPLAY_PILOT_PLAN.md`.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -40,6 +42,9 @@ Historical reports or outputs cannot override this file or
 - Normal human replays currently in the pilot scope are `replay_001`,
   `replay_002`, `replay_003`, `replay_004`, and `replay_009`.
 - The five-replay pilot definition is `data/five-human-replay-pilot.json`.
+- Replays 001, 003, and 004 are canonicalized under Task 095 with compact
+  manifests and full in-memory contract validation under
+  `remaining_human_controls_canonicalized`.
 
 ## Rejected Or Historical Results
 
@@ -58,11 +63,10 @@ Historical reports or outputs cannot override this file or
 
 ## Current Blocked Work
 
-- Task 095: canonicalize replays 001, 003, and 004.
 - Task 096: audit the five-human-replay factual pilot.
 
-Task 095 and Task 096 remain blocked until explicitly authorized. Do not create
-Task 097 automatically.
+Task 096 remains blocked until explicitly authorized. Do not create Task 097
+automatically.
 
 ## Protected And Unsupported Replays
 

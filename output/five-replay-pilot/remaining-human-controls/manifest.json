@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "095",
+  "pilotId": "five_human_replay_factual_pilot",
+  "defaultReplayList": [
+    "replay_001",
+    "replay_003",
+    "replay_004"
+  ],
+  "requestedReplays": [
+    "replay_001",
+    "replay_003",
+    "replay_004"
+  ],
+  "outputRoot": "output/five-replay-pilot/remaining-human-controls",
+  "representation": "compact_package_manifests_with_full_in_memory_contract_validation",
+  "canonicalCoreUsed": [
+    "lib/canonical-state/contract.mjs",
+    "CANONICAL_CONTRACT",
+    "validateCanonicalPackage"
+  ],
+  "replayProcessingAllowed": false,
+  "rawReplayAccess": "none",
+  "perReplayManifests": [
+    "output/five-replay-pilot/remaining-human-controls/replay_001/canonical-package-manifest.json",
+    "output/five-replay-pilot/remaining-human-controls/replay_003/canonical-package-manifest.json",
+    "output/five-replay-pilot/remaining-human-controls/replay_004/canonical-package-manifest.json"
+  ]
+}
