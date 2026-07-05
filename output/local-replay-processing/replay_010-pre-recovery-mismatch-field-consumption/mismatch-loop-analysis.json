@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "targetPacketOrdinal": 953,
+  "targetLoops": [
+    26,
+    27,
+    28,
+    29
+  ],
+  "allTargetLoopsCollected": true,
+  "missingLoops": [],
+  "loop26ExtraConsumptionBits": 280,
+  "loop26HasExtraConsumptionOf280Bits": true,
+  "loops27To29ZeroConsumptionObserved": true,
+  "payloadIteratorCountAlignedWithUpdatedEntries": true,
+  "readCountsMonotonicForTargetLoops": true,
+  "targetLoopAdjacencyAligned": true,
+  "zeroLoopClassification": [
+    {
+      "loop": 27,
+      "entityIndex": 2599,
+      "className": "CCitadel_Ability_Familiar_Ability01",
+      "observedActualConsumedAfterCommand": 0,
+      "extractorMutationCount": 0,
+      "fieldReadSegmentCount": 0,
+      "totalExtractorBitsConsumed": 0,
+      "classification": "observed_zero_mutation_update_at_current_cursor",
+      "skippedDueToState": false,
+      "limitations": [
+        "this is extractor/cursor evidence only",
+        "no field values or Source 2 semantic rule are emitted"
+      ]
+    },
+    {
+      "loop": 28,
+      "entityIndex": 2600,
+      "className": "CCitadel_Ability_PrimaryWeapon_Empty",
+      "observedActualConsumedAfterCommand": 0,
+      "extractorMutationCount": 0,
+      "fieldReadSegmentCount": 0,
+      "totalExtractorBitsConsumed": 0,
+      "classification": "observed_zero_mutation_update_at_current_cursor",
+      "skippedDueToState": false,
+      "limitations": [
+        "this is extractor/cursor evidence only",
+        "no field values or Source 2 semantic rule are emitted"
+      ]
+    },
+    {
+      "loop": 29,
+      "entityIndex": 2601,
+      "className": "CCitadel_Ability_HoldMelee",
+      "observedActualConsumedAfterCommand": 0,
+      "extractorMutationCount": 0,
+      "fieldReadSegmentCount": 0,
+      "totalExtractorBitsConsumed": 0,
+      "classification": "observed_zero_mutation_update_at_current_cursor",
+      "skippedDueToState": false,
+      "limitations": [
+        "this is extractor/cursor evidence only",
+        "no field values or Source 2 semantic rule are emitted"
+      ]
+    }
+  ],
+  "evidenceClassification": "field_level_consumption_mismatch_with_following_zero_mutation_updates",
+  "semanticConclusion": "not_claimed",
+  "causalConclusion": "not_determined",
+  "interpretation": "loop 26 consumed 280 more bits than its serializedEntities payloadBits while loops 27-29 decoded zero mutations at the current cursor; this supports a field-level/cursor-accounting mismatch but does not prove Source 2 semantics",
+  "nonClaims": [
+    "does not prove replay corruption",
+    "does not prove serializedEntities skip semantics",
+    "does not justify missing UPDATE recovery"
+  ]
+}

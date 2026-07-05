@@ -142,7 +142,8 @@ class DemoMessageHandler {
                     updateCursorEntry(cursorEntry, {
                         payloadBits,
                         payloadSizeIteratorAvailable: payloadSizes !== null,
-                        registryStateBefore: entity === null ? 'missing' : 'present'
+                        registryStateBefore: entity === null ? 'missing' : 'present',
+                        className: entity?.class?.name ?? null
                     });
 
                     if (entity === null) {
@@ -186,6 +187,7 @@ class DemoMessageHandler {
                     extractor.serializer = entity.class.serializer;
 
                     const allowed = !hasFilter || this._entityClassFilter(entity.class.name);
+                    attachExtractorDiagnostics(recovery, extractor, cursorEntry, 'packet_update');
 
                     if (allowed) {
                         if (events === null) {
@@ -224,6 +226,7 @@ class DemoMessageHandler {
                             registerEntityTouched: false
                         });
                     } else {
+                        attachExtractorDiagnostics(recovery, extractor, cursorEntry, 'filtered_update_skip');
                         extractor.skip();
                         finishCursorEntry(cursorLedger, cursorEntry, {
                             action: 'filtered_update_extractor_skip',
@@ -398,6 +401,7 @@ class DemoMessageHandler {
                     const allowed = !hasFilter || this._entityClassFilter(clazz.name);
 
                     extractor.serializer = entity.class.serializer;
+                    attachExtractorDiagnostics(recovery, extractor, cursorEntry, 'packet_create');
 
                     if (allowed) {
                         const baseline = this._demo.getClassBaselineById(classId);
@@ -428,6 +432,7 @@ class DemoMessageHandler {
                         }
 
                         const baselineExtractor = new EntityMutationExtractor(new BitBuffer(baseline), entity.class.serializer);
+                        attachExtractorDiagnostics(recovery, baselineExtractor, cursorEntry, 'baseline_create');
 
                         if (events === null) {
                             this._demo.registerEntity(entity);
@@ -634,7 +639,9 @@ function createPayloadIterator(message, startLoop = 0) {
 
 function createCursorLedger(recovery, message, startLoop) {
     if (recovery === null ||
-        (recovery.diagnoseEntityPacketCursorAlignment !== true && recovery.diagnosePreRecoveryPayloadConsumption !== true)) {
+        (recovery.diagnoseEntityPacketCursorAlignment !== true &&
+            recovery.diagnosePreRecoveryPayloadConsumption !== true &&
+            recovery.diagnosePreRecoveryFieldConsumption !== true)) {
         return null;
     }
 
@@ -695,7 +702,16 @@ function createCursorEntry(cursorLedger, values) {
         baselineTouched: false,
         fieldsTouched: false,
         registerEntityTouched: false,
-        failureStage: null
+        failureStage: null,
+        extractorDiagnostics: [],
+        extractorMutationCount: null,
+        fieldReadSegmentCount: null,
+        fieldReaderBitsConsumed: null,
+        fieldPathBitsConsumed: null,
+        totalExtractorBitsConsumed: null,
+        extractorConsumedZeroBits: null,
+        extractorThrew: false,
+        extractorInternalCondition: null
     };
 
     cursorLedger.entries.push(entry);
@@ -718,6 +734,66 @@ function finishCursorEntry(cursorLedger, entry, values) {
 
     Object.assign(entry, rest);
     entry.readCounts.afterAction = afterActionReadCount;
+}
+
+function attachExtractorDiagnostics(recovery, extractor, entry, source) {
+    if (recovery === null || recovery.diagnosePreRecoveryFieldConsumption !== true || entry === null) {
+        return false;
+    }
+
+    extractor.diagnostics = {
+        recordSegments: entry.loop >= 20 && entry.loop <= 30,
+        record: diagnostic => recordExtractorDiagnostic(entry, source, diagnostic)
+    };
+
+    return true;
+}
+
+function recordExtractorDiagnostic(entry, source, diagnostic) {
+    const compact = {
+        source,
+        method: diagnostic.method,
+        beforeExtractorReadCount: diagnostic.beforeExtractorReadCount,
+        afterFieldPathReadCount: diagnostic.afterFieldPathReadCount,
+        afterExtractorReadCount: diagnostic.afterExtractorReadCount,
+        mutationCount: diagnostic.mutationCount,
+        fieldPathBitsConsumed: diagnostic.fieldPathBitsConsumed,
+        fieldReadSegmentCount: diagnostic.fieldReadSegmentCount,
+        fieldReaderBitsConsumed: diagnostic.fieldReaderBitsConsumed,
+        zeroBitFieldReadSegments: diagnostic.zeroBitFieldReadSegments,
+        minFieldReaderBitsConsumed: diagnostic.minFieldReaderBitsConsumed,
+        maxFieldReaderBitsConsumed: diagnostic.maxFieldReaderBitsConsumed,
+        totalExtractorBitsConsumed: diagnostic.totalExtractorBitsConsumed,
+        extractorConsumedZeroBits: diagnostic.extractorConsumedZeroBits,
+        fieldReaderMatchesExtractor: diagnostic.fieldReaderMatchesExtractor,
+        threw: diagnostic.threw,
+        errorMessage: diagnostic.errorMessage,
+        fieldReadSegments: diagnostic.fieldReadSegments
+    };
+
+    entry.extractorDiagnostics.push(compact);
+    entry.extractorMutationCount = sumDiagnosticMetric(entry.extractorDiagnostics, 'mutationCount');
+    entry.fieldReadSegmentCount = sumDiagnosticMetric(entry.extractorDiagnostics, 'fieldReadSegmentCount');
+    entry.fieldReaderBitsConsumed = sumDiagnosticMetric(entry.extractorDiagnostics, 'fieldReaderBitsConsumed');
+    entry.fieldPathBitsConsumed = sumDiagnosticMetric(entry.extractorDiagnostics, 'fieldPathBitsConsumed');
+    entry.totalExtractorBitsConsumed = sumDiagnosticMetric(entry.extractorDiagnostics, 'totalExtractorBitsConsumed');
+    entry.extractorConsumedZeroBits = entry.totalExtractorBitsConsumed === 0;
+    entry.extractorThrew = entry.extractorDiagnostics.some(item => item.threw === true);
+    entry.extractorInternalCondition = entry.extractorThrew ? 'extractor_error' : null;
+}
+
+function sumDiagnosticMetric(diagnostics, key) {
+    let seen = false;
+    const sum = diagnostics.reduce((total, diagnostic) => {
+        if (Number.isInteger(diagnostic[key])) {
+            seen = true;
+            return total + diagnostic[key];
+        }
+
+        return total;
+    }, 0);
+
+    return seen ? sum : null;
 }
 
 function getPreviousEntityIndex(cursorLedger, boundaryLoop) {
@@ -778,7 +854,9 @@ function recordEntityPacketCursorAlignment(recovery, cursorLedger, context) {
 }
 
 function recordPreRecoveryPayloadConsumption(recovery, cursorLedger, boundary) {
-    if (recovery === null || recovery.diagnosePreRecoveryPayloadConsumption !== true || cursorLedger === null) {
+    if (recovery === null ||
+        (recovery.diagnosePreRecoveryPayloadConsumption !== true && recovery.diagnosePreRecoveryFieldConsumption !== true) ||
+        cursorLedger === null) {
         return false;
     }
 
@@ -805,7 +883,35 @@ function recordPreRecoveryPayloadConsumption(recovery, cursorLedger, boundary) {
             baselineTouched: entry.baselineTouched,
             fieldsTouched: entry.fieldsTouched,
             registerEntityTouched: entry.registerEntityTouched,
-            failureStage: entry.failureStage
+            failureStage: entry.failureStage,
+            extractorMutationCount: entry.extractorMutationCount,
+            fieldReadSegmentCount: entry.fieldReadSegmentCount,
+            fieldReaderBitsConsumed: entry.fieldReaderBitsConsumed,
+            fieldPathBitsConsumed: entry.fieldPathBitsConsumed,
+            totalExtractorBitsConsumed: entry.totalExtractorBitsConsumed,
+            extractorConsumedZeroBits: entry.extractorConsumedZeroBits,
+            extractorThrew: entry.extractorThrew,
+            extractorInternalCondition: entry.extractorInternalCondition,
+            extractorDiagnostics: entry.extractorDiagnostics.map(diagnostic => ({
+                source: diagnostic.source,
+                method: diagnostic.method,
+                beforeExtractorReadCount: diagnostic.beforeExtractorReadCount,
+                afterFieldPathReadCount: diagnostic.afterFieldPathReadCount,
+                afterExtractorReadCount: diagnostic.afterExtractorReadCount,
+                mutationCount: diagnostic.mutationCount,
+                fieldPathBitsConsumed: diagnostic.fieldPathBitsConsumed,
+                fieldReadSegmentCount: diagnostic.fieldReadSegmentCount,
+                fieldReaderBitsConsumed: diagnostic.fieldReaderBitsConsumed,
+                zeroBitFieldReadSegments: diagnostic.zeroBitFieldReadSegments,
+                minFieldReaderBitsConsumed: diagnostic.minFieldReaderBitsConsumed,
+                maxFieldReaderBitsConsumed: diagnostic.maxFieldReaderBitsConsumed,
+                totalExtractorBitsConsumed: diagnostic.totalExtractorBitsConsumed,
+                extractorConsumedZeroBits: diagnostic.extractorConsumedZeroBits,
+                fieldReaderMatchesExtractor: diagnostic.fieldReaderMatchesExtractor,
+                threw: diagnostic.threw,
+                errorMessage: diagnostic.errorMessage,
+                fieldReadSegments: diagnostic.fieldReadSegments
+            }))
         }))
     });
 

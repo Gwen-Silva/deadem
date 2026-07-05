@@ -8,10 +8,12 @@ class EntityMutationExtractor {
      * @constructor
      * @param {BitBuffer} bitBuffer
      * @param {Serializer|null} [serializer=null]
+     * @param {{ record?: function(object): void }|null} [diagnostics=null]
      */
-    constructor(bitBuffer, serializer = null) {
+    constructor(bitBuffer, serializer = null, diagnostics = null) {
         this._bitBuffer = bitBuffer;
         this._serializer = serializer;
+        this._diagnostics = diagnostics;
 
         this._fieldPathExtractor = new FieldPathExtractor(bitBuffer);
     }
@@ -25,25 +27,48 @@ class EntityMutationExtractor {
     }
 
     /**
+     * @public
+     * @param {{ record?: function(object): void }|null} diagnostics
+     */
+    set diagnostics(diagnostics) {
+        this._diagnostics = diagnostics;
+    }
+
+    /**
      * Extracts all entity mutations from the buffer as a {@link EntityMutationBatch}.
      *
      * @public
      * @returns {EntityMutationBatch}
      */
     all() {
-        const fieldPathIds = this._fieldPathExtractor.allIds();
+        const diagnostic = this._startDiagnostic('all');
+        let fieldPathIds;
 
-        const ids = new Uint32Array(fieldPathIds.length);
-        const values = new Array(fieldPathIds.length);
+        try {
+            fieldPathIds = this._fieldPathExtractor.allIds();
+            this._recordFieldPathDiagnostic(diagnostic, fieldPathIds);
 
-        for (let i = 0; i < fieldPathIds.length; i++) {
-            const id = fieldPathIds[i];
+            const ids = new Uint32Array(fieldPathIds.length);
+            const values = new Array(fieldPathIds.length);
 
-            ids[i] = id;
-            values[i] = this._serializer.getDecoderForFieldPathId(id)(this._bitBuffer);
+            for (let i = 0; i < fieldPathIds.length; i++) {
+                const id = fieldPathIds[i];
+
+                ids[i] = id;
+                values[i] = this._decodeWithDiagnostic(
+                    diagnostic,
+                    i,
+                    () => this._serializer.getDecoderForFieldPathId(id)(this._bitBuffer)
+                );
+            }
+
+            return new EntityMutationBatch(ids, values);
+        } catch (error) {
+            this._recordDiagnosticError(diagnostic, error);
+            throw error;
+        } finally {
+            this._finishDiagnostic(diagnostic);
         }
-
-        return new EntityMutationBatch(ids, values);
     }
 
     /**
@@ -54,20 +79,31 @@ class EntityMutationExtractor {
      * @returns {Array<bigint|*>}
      */
     allPacked() {
-        const fieldPaths = this._fieldPathExtractor.all();
+        const diagnostic = this._startDiagnostic('allPacked');
+        let fieldPaths;
 
-        const mutations = [ ];
+        try {
+            fieldPaths = this._fieldPathExtractor.all();
+            this._recordFieldPathDiagnostic(diagnostic, fieldPaths);
 
-        for (let i = 0; i < fieldPaths.length; i++) {
-            const fieldPath = fieldPaths[i];
+            const mutations = [ ];
 
-            const decoder = this._serializer.getDecoderForFieldPath(fieldPath);
-            const value = decoder(this._bitBuffer);
+            for (let i = 0; i < fieldPaths.length; i++) {
+                const fieldPath = fieldPaths[i];
 
-            mutations.push(fieldPath.transferCode, value);
+                const decoder = this._serializer.getDecoderForFieldPath(fieldPath);
+                const value = this._decodeWithDiagnostic(diagnostic, i, () => decoder(this._bitBuffer));
+
+                mutations.push(fieldPath.transferCode, value);
+            }
+
+            return mutations;
+        } catch (error) {
+            this._recordDiagnosticError(diagnostic, error);
+            throw error;
+        } finally {
+            this._finishDiagnostic(diagnostic);
         }
-
-        return mutations;
     }
 
     /**
@@ -77,13 +113,28 @@ class EntityMutationExtractor {
      * @param {Entity} entity
      */
     applyTo(entity) {
-        const ids = this._fieldPathExtractor.allIds();
+        const diagnostic = this._startDiagnostic('applyTo');
+        let ids;
 
-        for (let i = 0; i < ids.length; i++) {
-            const id = ids[i];
-            const value = this._serializer.getDecoderForFieldPathId(id)(this._bitBuffer);
+        try {
+            ids = this._fieldPathExtractor.allIds();
+            this._recordFieldPathDiagnostic(diagnostic, ids);
 
-            entity.updateByFieldPathId(id, value);
+            for (let i = 0; i < ids.length; i++) {
+                const id = ids[i];
+                const value = this._decodeWithDiagnostic(
+                    diagnostic,
+                    i,
+                    () => this._serializer.getDecoderForFieldPathId(id)(this._bitBuffer)
+                );
+
+                entity.updateByFieldPathId(id, value);
+            }
+        } catch (error) {
+            this._recordDiagnosticError(diagnostic, error);
+            throw error;
+        } finally {
+            this._finishDiagnostic(diagnostic);
         }
     }
  
@@ -95,13 +146,137 @@ class EntityMutationExtractor {
      * @public
      */
     skip() {
-        const ids = this._fieldPathExtractor.allIds();
+        const diagnostic = this._startDiagnostic('skip');
+        let ids;
 
-        for (let i = 0; i < ids.length; i++) {
-            const decoder = this._serializer.getDecoderForFieldPathId(ids[i]);
+        try {
+            ids = this._fieldPathExtractor.allIds();
+            this._recordFieldPathDiagnostic(diagnostic, ids);
 
-            decoder(this._bitBuffer);
+            for (let i = 0; i < ids.length; i++) {
+                const decoder = this._serializer.getDecoderForFieldPathId(ids[i]);
+
+                this._decodeWithDiagnostic(diagnostic, i, () => decoder(this._bitBuffer));
+            }
+        } catch (error) {
+            this._recordDiagnosticError(diagnostic, error);
+            throw error;
+        } finally {
+            this._finishDiagnostic(diagnostic);
         }
+    }
+
+    /**
+     * @private
+     * @param {string} method
+     * @returns {object|null}
+     */
+    _startDiagnostic(method) {
+        if (typeof this._diagnostics?.record !== 'function') {
+            return null;
+        }
+
+        return {
+            method,
+            beforeExtractorReadCount: this._bitBuffer.getReadCount(),
+            afterFieldPathReadCount: null,
+            afterExtractorReadCount: null,
+            mutationCount: null,
+            fieldPathBitsConsumed: null,
+            fieldReadSegmentCount: 0,
+            fieldReaderBitsConsumed: 0,
+            zeroBitFieldReadSegments: 0,
+            minFieldReaderBitsConsumed: null,
+            maxFieldReaderBitsConsumed: null,
+            fieldReadSegments: [],
+            threw: false,
+            errorMessage: null
+        };
+    }
+
+    /**
+     * @private
+     * @param {object|null} diagnostic
+     * @param {Array|Uint32Array} paths
+     */
+    _recordFieldPathDiagnostic(diagnostic, paths) {
+        if (diagnostic === null) {
+            return;
+        }
+
+        diagnostic.afterFieldPathReadCount = this._bitBuffer.getReadCount();
+        diagnostic.mutationCount = paths.length;
+        diagnostic.fieldPathBitsConsumed = diagnostic.afterFieldPathReadCount - diagnostic.beforeExtractorReadCount;
+    }
+
+    /**
+     * @private
+     * @param {object|null} diagnostic
+     * @param {number} ordinal
+     * @param {function(): *} decode
+     * @returns {*}
+     */
+    _decodeWithDiagnostic(diagnostic, ordinal, decode) {
+        if (diagnostic === null) {
+            return decode();
+        }
+
+        const beforeReadCount = this._bitBuffer.getReadCount();
+        const value = decode();
+        const afterReadCount = this._bitBuffer.getReadCount();
+        const bitsConsumed = afterReadCount - beforeReadCount;
+
+        diagnostic.fieldReadSegmentCount++;
+        diagnostic.fieldReaderBitsConsumed += bitsConsumed;
+        diagnostic.minFieldReaderBitsConsumed = diagnostic.minFieldReaderBitsConsumed === null ?
+            bitsConsumed :
+            Math.min(diagnostic.minFieldReaderBitsConsumed, bitsConsumed);
+        diagnostic.maxFieldReaderBitsConsumed = diagnostic.maxFieldReaderBitsConsumed === null ?
+            bitsConsumed :
+            Math.max(diagnostic.maxFieldReaderBitsConsumed, bitsConsumed);
+        if (bitsConsumed === 0) {
+            diagnostic.zeroBitFieldReadSegments++;
+        }
+        if (this._diagnostics.recordSegments === true) {
+            diagnostic.fieldReadSegments.push({
+                ordinal,
+                beforeReadCount,
+                afterReadCount,
+                bitsConsumed
+            });
+        }
+
+        return value;
+    }
+
+    /**
+     * @private
+     * @param {object|null} diagnostic
+     * @param {Error} error
+     */
+    _recordDiagnosticError(diagnostic, error) {
+        if (diagnostic !== null) {
+            diagnostic.threw = true;
+            diagnostic.errorMessage = error?.message ?? String(error);
+        }
+    }
+
+    /**
+     * @private
+     * @param {object|null} diagnostic
+     */
+    _finishDiagnostic(diagnostic) {
+        if (diagnostic === null) {
+            return;
+        }
+
+        diagnostic.afterExtractorReadCount = this._bitBuffer.getReadCount();
+        diagnostic.totalExtractorBitsConsumed = diagnostic.afterExtractorReadCount - diagnostic.beforeExtractorReadCount;
+        diagnostic.extractorConsumedZeroBits = diagnostic.totalExtractorBitsConsumed === 0;
+        diagnostic.fieldReaderMatchesExtractor = diagnostic.fieldPathBitsConsumed !== null &&
+            diagnostic.fieldPathBitsConsumed + diagnostic.fieldReaderBitsConsumed === diagnostic.totalExtractorBitsConsumed;
+
+        this._diagnostics.record(diagnostic);
     }
 }
 

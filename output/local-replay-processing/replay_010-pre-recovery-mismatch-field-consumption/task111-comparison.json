@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "task111SourcePath": "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/present-update-consistency-summary.json",
+  "task111PresentUpdatesCompared": 1940,
+  "task111MismatchesAfterCommand": 4,
+  "observedMismatchesAfterCommand": 4,
+  "sameFourMismatchesTargeted": true,
+  "stillPreRecovery": true,
+  "observed": [
+    {
+      "packetOrdinal": 953,
+      "loop": 26,
+      "operation": "UPDATE",
+      "entityIndex": 2598,
+      "payloadBitsFromSerializedEntities": 221,
+      "actualConsumedAfterCommand": 501,
+      "payloadMinusActualAfterCommand": -280
+    },
+    {
+      "packetOrdinal": 953,
+      "loop": 27,
+      "operation": "UPDATE",
+      "entityIndex": 2599,
+      "payloadBitsFromSerializedEntities": 112,
+      "actualConsumedAfterCommand": 0,
+      "payloadMinusActualAfterCommand": 112
+    },
+    {
+      "packetOrdinal": 953,
+      "loop": 28,
+      "operation": "UPDATE",
+      "entityIndex": 2600,
+      "payloadBitsFromSerializedEntities": 22,
+      "actualConsumedAfterCommand": 0,
+      "payloadMinusActualAfterCommand": 22
+    },
+    {
+      "packetOrdinal": 953,
+      "loop": 29,
+      "operation": "UPDATE",
+      "entityIndex": 2601,
+      "payloadBitsFromSerializedEntities": 73,
+      "actualConsumedAfterCommand": 0,
+      "payloadMinusActualAfterCommand": 73
+    }
+  ],
+  "expected": [
+    {
+      "packetOrdinal": 953,
+      "loop": 26,
+      "operation": "UPDATE",
+      "entityIndex": 2598,
+      "payloadBitsFromSerializedEntities": 221,
+      "actualConsumedAfterCommand": 501,
+      "payloadMinusActualAfterCommand": -280
+    },
+    {
+      "packetOrdinal": 953,
+      "loop": 27,
+      "operation": "UPDATE",
+      "entityIndex": 2599,
+      "payloadBitsFromSerializedEntities": 112,
+      "actualConsumedAfterCommand": 0,
+      "payloadMinusActualAfterCommand": 112
+    },
+    {
+      "packetOrdinal": 953,
+      "loop": 28,
+      "operation": "UPDATE",
+      "entityIndex": 2600,
+      "payloadBitsFromSerializedEntities": 22,
+      "actualConsumedAfterCommand": 0,
+      "payloadMinusActualAfterCommand": 22
+    },
+    {
+      "packetOrdinal": 953,
+      "loop": 29,
+      "operation": "UPDATE",
+      "entityIndex": 2601,
+      "payloadBitsFromSerializedEntities": 73,
+      "actualConsumedAfterCommand": 0,
+      "payloadMinusActualAfterCommand": 73
+    }
+  ],
+  "evidenceImpact": "reinforces_field_level_consumption_mismatch_or_accounting_issue",
+  "conclusion": "Task 112 targets the same four pre-recovery Task 111 mismatches"
+}

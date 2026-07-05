@@ -85,8 +85,14 @@ workaround. Task 102 created a bounded generic local-input canary for only
   original Task 105 failure, 1,940 present UPDATE entries were compared, 1,936
   matched after-command consumption, and 4 mismatched before any recovery was
   attempted. This sustains Task 109's mismatch as not solely post-recovery
-  contamination and keeps direct missing-UPDATE skip unsafe. No canonical
-  package or factual artifacts were constructed.
+  contamination and keeps direct missing-UPDATE skip unsafe. Task 112 then
+  diagnosed those four packet-953 mismatches under
+  `local_replay_pre_recovery_mismatch_field_consumption_diagnosed`: loop 26
+  consumed 501 bits through extractor accounting despite `payloadBits` 221,
+  while loops 27-29 decoded zero extractor mutations and zero bits at the
+  current cursor despite positive payloadBits. This supports a field-level or
+  cursor-accounting mismatch, not a Source 2 semantic conclusion or parser fix.
+  No canonical package or factual artifacts were constructed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -160,13 +166,15 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   Task 110 confirmed local schema evidence is insufficient to validate direct
   skip semantics and recommended diagnostic-only recovery while external
   proto/engine semantics or broader instrumentation remain unresolved. Task
-  111 confirmed mismatches occur before any recovery on the default path. Stop
-  for a human milestone decision about whether to investigate external
-  serializedEntities semantics, field-level extractor accounting, or the
-  entity-index stream boundary further, wire local-input canonicalization after
-  that blocker is resolved, improve cache tooling, revisit spatial evidence
-  only with genuinely new evidence, improve mechanics/build mapping, or defer
-  toward local AI/runtime benchmarking later.
+  111 confirmed mismatches occur before any recovery on the default path. Task
+  112 confirmed the target mismatch loops are field-level/cursor-accounting
+  evidence, with loop 26 over-consuming and loops 27-29 consuming zero bits at
+  the current cursor. Stop for a human milestone decision about whether to
+  investigate external serializedEntities semantics or the entity-index stream
+  boundary further, wire local-input canonicalization after that blocker is
+  resolved, improve cache tooling, revisit spatial evidence only with genuinely
+  new evidence, improve mechanics/build mapping, or defer toward local
+  AI/runtime benchmarking later.
 
 ## Protected And Unsupported Replays
 
@@ -197,5 +205,7 @@ boundary, Task 108 is complete with a bounded cursor-alignment diagnosis around
 that boundary, Task 109 is complete with a bounded serialized payload-size
 semantics diagnosis, and Task 110 is complete with a bounded local
 serializedEntities schema/extractor semantics investigation. Task 111 is
-complete with a bounded pre-recovery payload-consumption baseline. Do not
-create Task 112 automatically; stop and wait for a human milestone decision.
+complete with a bounded pre-recovery payload-consumption baseline. Task 112 is
+complete with a bounded field-consumption diagnosis of the same packet-953
+mismatches. Do not create Task 113 automatically; stop and wait for a human
+milestone decision.

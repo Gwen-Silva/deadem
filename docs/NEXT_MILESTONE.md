@@ -91,8 +91,11 @@ extractor-contract investigation with the gate
 Task 111 is complete as an explicitly authorized pre-recovery/default-path
 payload-consumption baseline with the gate
 `local_replay_pre_recovery_payload_consumption_baseline_ready`.
+Task 112 is complete as an explicitly authorized field-level/cursor-level
+diagnosis of the packet-953 pre-recovery mismatches with the gate
+`local_replay_pre_recovery_mismatch_field_consumption_diagnosed`.
 
-Do not create Task 112 automatically. Stop and wait for a human milestone
+Do not create Task 113 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -404,7 +407,34 @@ mismatch as not solely post-recovery contamination. Direct missing-UPDATE skip
 remains unsafe and diagnostic-only. The full ledger remains local-only; no raw
 entityData, raw serializedEntities, field values, parser recovery, canonical
 package, source artifacts, factual events, spatial semantics, mechanics,
-combat, macro, decision, or ML output was emitted. Task 112 was not created.
+combat, macro, decision, or ML output was emitted. Task 112 was not created
+automatically; it was later executed only after explicit authorization.
+
+## Task 112
+
+Purpose: diagnose, without parser recovery or canonicalization, why the four
+present UPDATEs in replay_010 packet ordinal 953 mismatch
+`serializedEntities payloadBits` versus after-command extractor consumption on
+the default pre-recovery path.
+
+Gate: `local_replay_pre_recovery_mismatch_field_consumption_diagnosed`.
+
+Partial gate: `local_replay_pre_recovery_mismatch_field_consumption_partial`.
+
+Blocked gate: `local_replay_pre_recovery_mismatch_field_consumption_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing-entity failure, and the diagnostic pass failed
+closed at the same entity 2905 boundary without recovery. Packet 953 and loops
+26-29 were analyzed. Loop 26 consumed 501 bits through extractor accounting
+despite `payloadBits` 221, an extra 280 bits. Loops 27-29 decoded zero extractor
+mutations and consumed zero bits at the current cursor despite positive
+payloadBits. Payload iterator count aligned with updatedEntries and target-loop
+read counts remained monotonic. The evidence supports a field-level or
+cursor-accounting mismatch but does not prove Source 2 semantics, replay
+corruption, or a safe missing-UPDATE skip. No parser fix, recovery, canonical
+package, source artifact, factual event, spatial semantic, mechanic, combat,
+macro, decision, or ML output was emitted. Task 113 was not created.
 
 ## Non-Goals
 

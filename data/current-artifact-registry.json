@@ -159,6 +159,12 @@
       "notes": "Task 111 collected a pre-recovery/default-path replay_010 payload-consumption baseline: 1,940 present UPDATE comparisons before the Task 105 failure found 4 mismatches before any recovery, so direct missing-UPDATE skip remains unsafe."
     },
     {
+      "id": "generic_local_replay_pre_recovery_mismatch_field_consumption",
+      "path": "output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption/field-consumption-gate.json",
+      "status": "current",
+      "notes": "Task 112 diagnosed the four packet-953 pre-recovery mismatches: loop 26 over-consumed by 280 bits, while loops 27-29 decoded zero extractor mutations at the current cursor; no parser fix or recovery was promoted."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
