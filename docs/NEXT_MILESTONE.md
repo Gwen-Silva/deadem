@@ -100,8 +100,11 @@ accounting diagnosis with the gate
 Task 114 is complete as an explicitly authorized field path 59
 decoder/serializer contract investigation with the gate
 `local_replay_loop_26_fieldpath_59_decoder_contract_investigated`.
+Task 115 is complete as an explicitly authorized runtime field definition
+metadata capture for field path 59 with the gate
+`local_replay_loop_26_fieldpath_59_runtime_definition_captured`.
 
-Do not create Task 115 automatically. Stop and wait for a human milestone
+Do not create Task 116 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -491,6 +494,31 @@ suspicious by convention, but no parser bug, Source 2 semantic conclusion,
 replay corruption conclusion, recovery recommendation, canonical package, field
 value, raw payload, source artifact, factual event, spatial semantic,
 mechanic, combat, macro, decision, or ML output was emitted. No Task 115 was
+created.
+
+## Task 115
+
+Purpose: capture, without field values, parser recovery, parser fixes, or
+canonical output, the runtime field definition metadata that led replay_010
+packet ordinal 953 loop 26 field path 59 `m_nAvailableHelperCount` to resolve
+to `decodeString` and `MISC` storage.
+
+Gate: `local_replay_loop_26_fieldpath_59_runtime_definition_captured`.
+
+Partial gate: `local_replay_loop_26_fieldpath_59_runtime_definition_partial`.
+
+Blocked gate: `local_replay_loop_26_fieldpath_59_runtime_definition_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing-entity failure, and the diagnostic pass failed
+closed at the same entity 2905 boundary without recovery. Field path 59 was
+captured from local runtime metadata as varType `char`, classified as
+string-like, with `decodeString` and `MISC` storage. This makes the decoder
+assignment more coherent locally while preserving the field-name suspicion and
+causal conclusion `not_determined`. No field values, raw payload, raw
+entityData, raw serializedEntities, full raw send-table payload, parser fix,
+recovery, canonical package, source artifact, factual event, spatial semantic,
+mechanic, combat, macro, decision, or ML output was emitted. No Task 116 was
 created.
 
 ## Non-Goals

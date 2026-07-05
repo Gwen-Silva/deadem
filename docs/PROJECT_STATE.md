@@ -107,7 +107,14 @@ workaround. Task 102 created a bounded generic local-input canary for only
   assignment as a hypothesis only. The exact runtime varType is not present in
   committed evidence, no local static source/proto declaration was found, and
   no parser bug, Source 2 semantic conclusion, replay corruption conclusion, or
-  recovery recommendation was made.
+  recovery recommendation was made. Task 115 then captured runtime field
+  definition metadata for the same field path under
+  `local_replay_loop_26_fieldpath_59_runtime_definition_captured`: field path
+  59 resolves locally to runtime varType `char`, classified as string-like,
+  making the `decodeString`/`MISC` pairing more coherent in the local runtime
+  metadata while keeping the field name convention suspicious and causality
+  `not_determined`. No field values, raw payloads, full raw send-table payload,
+  parser fix, recovery, canonical package, or factual artifacts were emitted.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -228,5 +235,6 @@ complete with a bounded pre-recovery payload-consumption baseline. Task 112 is
 complete with a bounded field-consumption diagnosis of the same packet-953
 mismatches. Task 113 is complete with bounded field-reader segment accounting
 for loop 26. Task 114 is complete with bounded field path 59 decoder/serializer
-contract investigation. Do not create Task 115 automatically; stop and wait for
-a human milestone decision.
+contract investigation. Task 115 is complete with bounded runtime field
+definition metadata capture for field path 59. Do not create Task 116
+automatically; stop and wait for a human milestone decision.

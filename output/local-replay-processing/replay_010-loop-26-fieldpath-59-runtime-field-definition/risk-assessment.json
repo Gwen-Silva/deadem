@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "runtimeDefinitionCaptured": true,
+  "runtimeVarTypeKnown": true,
+  "runtimeVarTypeClassification": "string_like",
+  "task114NumbersMatched": true,
+  "parserFixRecommendedNow": false,
+  "recoveryRecommendation": "do_not_add_recovery_from_metadata_only_evidence",
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "parserBugConcluded": false,
+  "causalConclusion": "not_determined",
+  "safestNextStep": "compare independent parser/oracle serializer metadata before changing parser behavior",
+  "limitations": [
+    "runtime metadata is local parser/send-table metadata, not independent Source 2 semantics",
+    "field values are not decoded or emitted",
+    "metadata suspicion alone does not establish parser bug causality"
+  ]
+}

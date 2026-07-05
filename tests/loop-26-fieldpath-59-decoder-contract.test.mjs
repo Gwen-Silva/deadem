@@ -174,8 +174,8 @@ test('static serializer inventory finds local decodeString/MISC construction evi
     assert.equal(inventory.rawPayloadsRecorded, false);
 });
 
-test('Task 115 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/115.json'), false);
-    assert.equal(existsSync('tasks/blocked/115-select-next-canonical-generalization-control.md'), false);
-    assert.equal(existsSync('tasks/completed/115-investigate-loop-26-fieldpath-59-decoder-contract.md'), false);
+test('Task 116 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/116.json'), false);
+    assert.equal(existsSync('tasks/blocked/116-select-next-canonical-generalization-control.md'), false);
+    assert.equal(existsSync('tasks/completed/116-investigate-loop-26-fieldpath-59-decoder-contract.md'), false);
 });

@@ -13,23 +13,51 @@ import StringTableHandler from '#handlers/StringTableHandler.js';
 
 import SchemaRegistry from '#src/SchemaRegistry.js';
 
+let runtimeFieldDefinitionCaptureEnabledForDiagnostics = false;
+
 class DemoPacketHandler {
     /**
      * @constructor
      * @param {SchemaRegistry} registry
      * @param {Demo} demo
      * @param {StringTableHandler} stringTableHandler
+     * @param {boolean} captureRuntimeFieldDefinitions
      */
-    constructor(registry, demo, stringTableHandler) {
+    constructor(registry, demo, stringTableHandler, captureRuntimeFieldDefinitions = runtimeFieldDefinitionCaptureEnabledForDiagnostics) {
         Assert.isTrue(registry instanceof SchemaRegistry);
         Assert.isTrue(demo instanceof Demo);
         Assert.isTrue(stringTableHandler instanceof StringTableHandler);
+        Assert.isTrue(typeof captureRuntimeFieldDefinitions === 'boolean');
 
         this._registry = registry;
         this._demo = demo;
         this._stringTableHandler = stringTableHandler;
+        this._captureRuntimeFieldDefinitions = captureRuntimeFieldDefinitions;
 
-        this._fieldFactory = new FieldFactory(registry.getFieldRuleRegistry());
+        this._fieldFactory = new FieldFactory(registry.getFieldRuleRegistry(), captureRuntimeFieldDefinitions);
+    }
+
+    /**
+     * Enables runtime field-definition metadata capture for bounded diagnostic
+     * runs. Default parser construction leaves this disabled.
+     *
+     * @public
+     * @static
+     * @param {boolean} enabled
+     */
+    static setRuntimeFieldDefinitionCaptureEnabledForDiagnostics(enabled) {
+        Assert.isTrue(typeof enabled === 'boolean');
+
+        runtimeFieldDefinitionCaptureEnabledForDiagnostics = enabled;
+    }
+
+    /**
+     * @public
+     * @static
+     * @returns {boolean}
+     */
+    static getRuntimeFieldDefinitionCaptureEnabledForDiagnostics() {
+        return runtimeFieldDefinitionCaptureEnabledForDiagnostics;
     }
 
     /**
@@ -120,6 +148,15 @@ class DemoPacketHandler {
                     // TODO: polymorphic types
 
                     field = this._fieldFactory.create(name, definition, sendNode, instructionsRaw, fieldSerializer);
+                    if (this._captureRuntimeFieldDefinitions) {
+                        field.runtimeDefinitionMetadata = enrichRuntimeDefinitionMetadata(
+                            field.runtimeDefinitionMetadata,
+                            fieldIndex,
+                            fieldRaw,
+                            symbols,
+                            serializer
+                        );
+                    }
                 }
 
                 serializer.push(field);
@@ -174,3 +211,25 @@ class DemoPacketHandler {
 }
 
 export default DemoPacketHandler;
+
+function enrichRuntimeDefinitionMetadata(metadata, fieldIndex, fieldRaw, symbols, serializer) {
+    return {
+        ...metadata,
+        construction: {
+            source: 'DEM_SEND_TABLES',
+            ownerSerializerName: serializer.key.name,
+            ownerSerializerVersion: serializer.key.version,
+            fieldIndex,
+            varNameSymbol: fieldRaw.varNameSym,
+            varTypeSymbol: fieldRaw.varTypeSym,
+            varEncoderSymbol: fieldRaw.varEncoderSym ?? null,
+            sendNodeSymbol: fieldRaw.sendNodeSym,
+            varName: symbols[fieldRaw.varNameSym] ?? null,
+            varType: symbols[fieldRaw.varTypeSym] ?? null,
+            varEncoder: typeof symbols[fieldRaw.varEncoderSym] === 'string' ? symbols[fieldRaw.varEncoderSym] : null,
+            sendNode: typeof symbols[fieldRaw.sendNodeSym] === 'string' ? symbols[fieldRaw.sendNodeSym] : null,
+            fieldSerializerName: Object.hasOwn(fieldRaw, 'fieldSerializerNameSym') ? symbols[fieldRaw.fieldSerializerNameSym] : null,
+            fieldSerializerVersion: Object.hasOwn(fieldRaw, 'fieldSerializerVersion') ? fieldRaw.fieldSerializerVersion : null
+        }
+    };
+}

@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+  "serializerVersion": 0,
+  "serializerFound": true,
+  "captureStatus": "captured",
+  "fieldCount": 45,
+  "capturedFieldPathIds": [
+    0,
+    1,
+    24,
+    56,
+    57,
+    58,
+    59,
+    60,
+    3373
+  ],
+  "resolvableFieldPathIds": [
+    0,
+    1,
+    24,
+    56,
+    57,
+    58,
+    59,
+    60,
+    3373
+  ],
+  "targetFieldPathId": 59,
+  "targetResolvable": true,
+  "loop26FieldPathIds": [
+    0,
+    1,
+    24,
+    56,
+    3373,
+    58,
+    59
+  ],
+  "nearbyFieldPathIds": [
+    56,
+    57,
+    58,
+    59,
+    60
+  ],
+  "fieldPaths": [
+    {
+      "fieldPathId": 0,
+      "fieldPath": [
+        2
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_nUpgradeInfo",
+      "originalSerializerFieldName": "m_nUpgradeInfo",
+      "varType": "CitadelAbilityUpgradeInfoPacked_t",
+      "baseType": "CitadelAbilityUpgradeInfoPacked_t",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "other",
+      "decoderResolutionSource": "fallback_var_uint_32",
+      "decoderDescriptorType": null,
+      "decoderFunctionName": "decodeUVarInt32",
+      "storageType": "INT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 2,
+          "fieldName": "m_nUpgradeInfo",
+          "fieldModel": "SIMPLE",
+          "varType": "CitadelAbilityUpgradeInfoPacked_t"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CAbility_Drifter_BloodBlast",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 11,
+        "varNameSymbol": 888,
+        "varTypeSymbol": 887,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_nUpgradeInfo",
+        "varType": "CitadelAbilityUpgradeInfoPacked_t",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 1,
+      "fieldPath": [
+        3
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_flCooldownStart",
+      "originalSerializerFieldName": "m_flCooldownStart",
+      "varType": "GameTime_t",
+      "baseType": "GameTime_t",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "numeric_like",
+      "decoderResolutionSource": "type_decoder",
+      "decoderDescriptorType": "NO_SCALE",
+      "decoderFunctionName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "numeric_like_simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 3,
+          "fieldName": "m_flCooldownStart",
+          "fieldModel": "SIMPLE",
+          "varType": "GameTime_t"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CAbility_Drifter_BloodBlast",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 12,
+        "varNameSymbol": 890,
+        "varTypeSymbol": 889,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_flCooldownStart",
+        "varType": "GameTime_t",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 24,
+      "fieldPath": [
+        4
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_flCooldownEnd",
+      "originalSerializerFieldName": "m_flCooldownEnd",
+      "varType": "GameTime_t",
+      "baseType": "GameTime_t",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "numeric_like",
+      "decoderResolutionSource": "type_decoder",
+      "decoderDescriptorType": "NO_SCALE",
+      "decoderFunctionName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "numeric_like_simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 4,
+          "fieldName": "m_flCooldownEnd",
+          "fieldModel": "SIMPLE",
+          "varType": "GameTime_t"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CAbility_Drifter_BloodBlast",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 13,
+        "varNameSymbol": 891,
+        "varTypeSymbol": 889,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_flCooldownEnd",
+        "varType": "GameTime_t",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 56,
+      "fieldPath": [
+        36
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_vecHelpers",
+      "originalSerializerFieldName": "m_vecHelpers",
+      "varType": "CNetworkUtlVectorBase< CHandle< CBaseEntity > >",
+      "baseType": "CNetworkUtlVectorBase",
+      "generic": {
+        "rawType": "CHandle< CBaseEntity >",
+        "baseType": "CHandle",
+        "generic": {
+          "rawType": "CBaseEntity",
+          "baseType": "CBaseEntity",
+          "generic": null,
+          "count": null,
+          "pointer": false
+        },
+        "count": null,
+        "pointer": false
+      },
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "generic_container_like",
+      "decoderResolutionSource": "array_variable_base_default",
+      "decoderDescriptorType": null,
+      "decoderFunctionName": "decodeUVarInt32",
+      "storageType": "INT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "ARRAY_VARIABLE",
+      "fieldPathKind": "array_container_field_path",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 36,
+          "fieldName": "m_vecHelpers",
+          "fieldModel": "ARRAY_VARIABLE",
+          "varType": "CNetworkUtlVectorBase< CHandle< CBaseEntity > >"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CCitadel_Ability_Familiar_HelpingHands",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 542,
+        "varNameSymbol": 1512,
+        "varTypeSymbol": 1504,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_vecHelpers",
+        "varType": "CNetworkUtlVectorBase< CHandle< CBaseEntity > >",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 57,
+      "fieldPath": [
+        37
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_tChoreUseCooldownEndTime",
+      "originalSerializerFieldName": "m_tChoreUseCooldownEndTime",
+      "varType": "GameTime_t",
+      "baseType": "GameTime_t",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "numeric_like",
+      "decoderResolutionSource": "type_decoder",
+      "decoderDescriptorType": "NO_SCALE",
+      "decoderFunctionName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "numeric_like_simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 37,
+          "fieldName": "m_tChoreUseCooldownEndTime",
+          "fieldModel": "SIMPLE",
+          "varType": "GameTime_t"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CCitadel_Ability_Familiar_HelpingHands",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 543,
+        "varNameSymbol": 1513,
+        "varTypeSymbol": 889,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_tChoreUseCooldownEndTime",
+        "varType": "GameTime_t",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 58,
+      "fieldPath": [
+        38
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_tSoonestHelperCooldownEndTime",
+      "originalSerializerFieldName": "m_tSoonestHelperCooldownEndTime",
+      "varType": "GameTime_t",
+      "baseType": "GameTime_t",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "numeric_like",
+      "decoderResolutionSource": "type_decoder",
+      "decoderDescriptorType": "NO_SCALE",
+      "decoderFunctionName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "numeric_like_simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 38,
+          "fieldName": "m_tSoonestHelperCooldownEndTime",
+          "fieldModel": "SIMPLE",
+          "varType": "GameTime_t"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CCitadel_Ability_Familiar_HelpingHands",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 544,
+        "varNameSymbol": 1514,
+        "varTypeSymbol": 889,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_tSoonestHelperCooldownEndTime",
+        "varType": "GameTime_t",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 59,
+      "fieldPath": [
+        39
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_nAvailableHelperCount",
+      "originalSerializerFieldName": "m_nAvailableHelperCount",
+      "varType": "char",
+      "baseType": "char",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "string_like",
+      "decoderResolutionSource": "type_decoder",
+      "decoderDescriptorType": "STRING",
+      "decoderFunctionName": "decodeString",
+      "storageType": "MISC",
+      "storageDimension": 0,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "string_like_simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 39,
+          "fieldName": "m_nAvailableHelperCount",
+          "fieldModel": "SIMPLE",
+          "varType": "char"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CCitadel_Ability_Familiar_HelpingHands",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 545,
+        "varNameSymbol": 1516,
+        "varTypeSymbol": 1515,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_nAvailableHelperCount",
+        "varType": "char",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 60,
+      "fieldPath": [
+        40
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_flPostCastDelayEndTime",
+      "originalSerializerFieldName": "m_flPostCastDelayEndTime",
+      "varType": "GameTime_t",
+      "baseType": "GameTime_t",
+      "generic": null,
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "numeric_like",
+      "decoderResolutionSource": "type_decoder",
+      "decoderDescriptorType": "NO_SCALE",
+      "decoderFunctionName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "SIMPLE",
+      "fieldPathKind": "numeric_like_simple_field",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 40,
+          "fieldName": "m_flPostCastDelayEndTime",
+          "fieldModel": "SIMPLE",
+          "varType": "GameTime_t"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CAbility_Drifter_BloodBlast",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 45,
+        "varNameSymbol": 931,
+        "varTypeSymbol": 889,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_flPostCastDelayEndTime",
+        "varType": "GameTime_t",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    },
+    {
+      "fieldPathId": 3373,
+      "fieldPath": [
+        36,
+        0
+      ],
+      "resolvable": true,
+      "flattenedFieldName": "m_vecHelpers.0000",
+      "originalSerializerFieldName": "m_vecHelpers",
+      "varType": "CNetworkUtlVectorBase< CHandle< CBaseEntity > >",
+      "baseType": "CNetworkUtlVectorBase",
+      "generic": {
+        "rawType": "CHandle< CBaseEntity >",
+        "baseType": "CHandle",
+        "generic": {
+          "rawType": "CBaseEntity",
+          "baseType": "CBaseEntity",
+          "generic": null,
+          "count": null,
+          "pointer": false
+        },
+        "count": null,
+        "pointer": false
+      },
+      "count": null,
+      "pointer": false,
+      "runtimeVarTypeClassification": "generic_container_like",
+      "decoderResolutionSource": "fallback_var_uint_32",
+      "decoderDescriptorType": null,
+      "decoderFunctionName": "decodeUVarInt32",
+      "storageType": "INT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "fieldModel": "ARRAY_VARIABLE",
+      "fieldPathKind": "array_indexed_field_path",
+      "parentChain": [
+        {
+          "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+          "serializerVersion": 0,
+          "fieldIndex": 36,
+          "fieldName": "m_vecHelpers",
+          "fieldModel": "ARRAY_VARIABLE",
+          "varType": "CNetworkUtlVectorBase< CHandle< CBaseEntity > >"
+        }
+      ],
+      "construction": {
+        "source": "DEM_SEND_TABLES",
+        "ownerSerializerName": "CCitadel_Ability_Familiar_HelpingHands",
+        "ownerSerializerVersion": 0,
+        "fieldIndex": 542,
+        "varNameSymbol": 1512,
+        "varTypeSymbol": 1504,
+        "varEncoderSymbol": 0,
+        "sendNodeSymbol": 865,
+        "varName": "m_vecHelpers",
+        "varType": "CNetworkUtlVectorBase< CHandle< CBaseEntity > >",
+        "varEncoder": "CEntityIdentity",
+        "sendNode": "",
+        "fieldSerializerName": null,
+        "fieldSerializerVersion": null
+      },
+      "valuesIncluded": false,
+      "rawPayloadIncluded": false
+    }
+  ],
+  "valuesIncluded": false,
+  "rawPayloadIncluded": false,
+  "fullRawSendTablePayloadIncluded": false,
+  "limitations": []
+}

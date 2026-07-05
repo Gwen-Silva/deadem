@@ -22,11 +22,14 @@ class FieldFactory {
     /**
      * @constructor
      * @param {FieldRuleRegistry} fieldRuleRegistry
+     * @param {boolean} captureRuntimeFieldDefinitions
      */
-    constructor(fieldRuleRegistry) {
+    constructor(fieldRuleRegistry, captureRuntimeFieldDefinitions = false) {
         Assert.isTrue(fieldRuleRegistry instanceof FieldRuleRegistry);
+        Assert.isTrue(typeof captureRuntimeFieldDefinitions === 'boolean');
 
         this._fieldRuleRegistry = fieldRuleRegistry;
+        this._captureRuntimeFieldDefinitions = captureRuntimeFieldDefinitions;
 
         this._decoderCatalog = new FieldDecoderCatalog();
         this._instructionsFactory = new FieldDecoderInstructionsFactory();
@@ -57,23 +60,60 @@ class FieldFactory {
         );
 
         const model = this._classify(definition, serializer);
+        let field;
+        let decoderResolution;
 
         switch (model) {
-            case FieldModel.SIMPLE:
-                return new FieldSimple(name, sendNode, this._resolveDecoder(name, definition.baseType, decoderInstructions));
-            case FieldModel.ARRAY_FIXED:
-                return new FieldArrayFixed(name, sendNode, this._resolveDecoder(name, definition.baseType, decoderInstructions));
-            case FieldModel.ARRAY_VARIABLE:
+            case FieldModel.SIMPLE: {
+                decoderResolution = this._resolveDecoderWithMetadata(name, definition.baseType, decoderInstructions);
+                field = new FieldSimple(name, sendNode, decoderResolution.decoder);
+                break;
+            }
+            case FieldModel.ARRAY_FIXED: {
+                decoderResolution = this._resolveDecoderWithMetadata(name, definition.baseType, decoderInstructions);
+                field = new FieldArrayFixed(name, sendNode, decoderResolution.decoder);
+                break;
+            }
+            case FieldModel.ARRAY_VARIABLE: {
                 Assert.isTrue(definition.generic !== null, 'ARRAY_VARIABLE field requires a generic definition');
 
-                return new FieldArrayVariable(name, sendNode, VAR_UINT_32_DECODER, this._resolveDecoder(name, definition.generic.baseType, decoderInstructions));
-            case FieldModel.TABLE_FIXED:
-                return new FieldTableFixed(name, sendNode, serializer, this._resolveDecoderOverride(name, decoderInstructions) || BOOLEAN_DECODER);
-            case FieldModel.TABLE_VARIABLE:
-                return new FieldTableVariable(name, sendNode, serializer, this._resolveDecoderOverride(name, decoderInstructions) || VAR_UINT_32_DECODER);
+                decoderResolution = {
+                    base: describeStaticDecoder(VAR_UINT_32_DECODER, 'array_variable_base_default', definition.baseType),
+                    child: this._resolveDecoderWithMetadata(name, definition.generic.baseType, decoderInstructions)
+                };
+                field = new FieldArrayVariable(name, sendNode, VAR_UINT_32_DECODER, decoderResolution.child.decoder);
+                break;
+            }
+            case FieldModel.TABLE_FIXED: {
+                const override = this._resolveDecoderOverrideWithMetadata(name, decoderInstructions);
+                decoderResolution = override ?? describeStaticDecoder(BOOLEAN_DECODER, 'table_fixed_base_default', definition.baseType);
+                field = new FieldTableFixed(name, sendNode, serializer, decoderResolution.decoder);
+                break;
+            }
+            case FieldModel.TABLE_VARIABLE: {
+                const override = this._resolveDecoderOverrideWithMetadata(name, decoderInstructions);
+                decoderResolution = override ?? describeStaticDecoder(VAR_UINT_32_DECODER, 'table_variable_base_default', definition.baseType);
+                field = new FieldTableVariable(name, sendNode, serializer, decoderResolution.decoder);
+                break;
+            }
             default:
                 throw new Error(`Unhandled field model [ ${model.code} ]`);
         }
+
+        if (this._captureRuntimeFieldDefinitions) {
+            field.runtimeDefinitionMetadata = buildRuntimeDefinitionMetadata(
+                name,
+                definition,
+                sendNode,
+                instructionsRaw,
+                model,
+                encoderOverride !== null,
+                decoderResolution,
+                serializer
+            );
+        }
+
+        return field;
     }
 
     /**
@@ -110,7 +150,18 @@ class FieldFactory {
      * @returns {FieldDecoder}
      */
     _resolveDecoder(name, baseType, decoderInstructions) {
-        const override = this._resolveDecoderOverride(name, decoderInstructions);
+        return this._resolveDecoderWithMetadata(name, baseType, decoderInstructions).decoder;
+    }
+
+    /**
+     * @protected
+     * @param {String} name
+     * @param {String} baseType
+     * @param {FieldDecoderInstructions} decoderInstructions
+     * @returns {{decoder: FieldDecoder, source: string, baseType: string, descriptorType: string|null, descriptorOptions: object|null}}
+     */
+    _resolveDecoderWithMetadata(name, baseType, decoderInstructions) {
+        const override = this._resolveDecoderOverrideWithMetadata(name, decoderInstructions);
 
         if (override !== null) {
             return override;
@@ -119,10 +170,16 @@ class FieldFactory {
         const descriptor = this._fieldRuleRegistry.getFieldTypeDecoder(baseType);
 
         if (descriptor === null) {
-            return VAR_UINT_32_DECODER;
+            return describeStaticDecoder(VAR_UINT_32_DECODER, 'fallback_var_uint_32', baseType);
         }
 
-        return this._decoderCatalog.resolve(descriptor, decoderInstructions);
+        return {
+            decoder: this._decoderCatalog.resolve(descriptor, decoderInstructions),
+            source: 'type_decoder',
+            baseType,
+            descriptorType: descriptor.type.code,
+            descriptorOptions: descriptor.options
+        };
     }
 
     /**
@@ -132,14 +189,89 @@ class FieldFactory {
      * @returns {FieldDecoder|null}
      */
     _resolveDecoderOverride(name, decoderInstructions) {
+        return this._resolveDecoderOverrideWithMetadata(name, decoderInstructions)?.decoder ?? null;
+    }
+
+    /**
+     * @protected
+     * @param {String} name
+     * @param {FieldDecoderInstructions} decoderInstructions
+     * @returns {{decoder: FieldDecoder, source: string, baseType: string|null, descriptorType: string, descriptorOptions: object}|null}
+     */
+    _resolveDecoderOverrideWithMetadata(name, decoderInstructions) {
         const override = this._fieldRuleRegistry.getFieldDecoderOverride(name);
 
         if (override === null) {
             return null;
         }
 
-        return this._decoderCatalog.resolve(override, decoderInstructions);
+        return {
+            decoder: this._decoderCatalog.resolve(override, decoderInstructions),
+            source: 'name_override',
+            baseType: null,
+            descriptorType: override.type.code,
+            descriptorOptions: override.options
+        };
     }
+}
+
+function buildRuntimeDefinitionMetadata(name, definition, sendNode, instructionsRaw, model, encoderOverrideApplied, decoderResolution, serializer) {
+    return {
+        name,
+        sendNode: sendNode.slice(),
+        definition: definition.describe(),
+        model: model.code,
+        instructions: {
+            encoder: instructionsRaw.encoder,
+            encoderFlags: instructionsRaw.encoderFlags,
+            bitCount: instructionsRaw.bitCount,
+            valueLow: instructionsRaw.valueLow,
+            valueHigh: instructionsRaw.valueHigh
+        },
+        encoderOverrideApplied,
+        decoderResolution: serializeDecoderResolution(decoderResolution),
+        nestedSerializer: serializer === null ? null : {
+            name: serializer.key.name,
+            version: serializer.key.version
+        }
+    };
+}
+
+function describeStaticDecoder(decoder, source, baseType) {
+    return {
+        decoder,
+        source,
+        baseType,
+        descriptorType: null,
+        descriptorOptions: null
+    };
+}
+
+function serializeDecoderResolution(value) {
+    if (value?.decoder instanceof FieldDecoder) {
+        return serializeSingleDecoderResolution(value);
+    }
+
+    return Object.fromEntries(
+        Object.entries(value).map(([ key, resolution ]) => [ key, serializeSingleDecoderResolution(resolution) ])
+    );
+}
+
+function serializeSingleDecoderResolution(resolution) {
+    const storage = resolution.decoder.storage;
+    return {
+        source: resolution.source,
+        baseType: resolution.baseType,
+        descriptorType: resolution.descriptorType,
+        descriptorOptions: resolution.descriptorOptions,
+        decoderFunctionName: resolution.decoder.fn.name || null,
+        storage: {
+            type: storage.type.code,
+            dimension: storage.dim,
+            signed: storage.signed,
+            bool: storage.bool
+        }
+    };
 }
 
 const VAR_UINT_32_DECODER = new FieldDecoder(FieldDecoderFactory.VAR_UINT_32, FieldStorageDescriptor.INT_UNSIGNED);

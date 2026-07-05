@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "packetOrdinal": 953,
+  "loop": 26,
+  "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+  "fieldPathId": 59,
+  "captured": true,
+  "runtimeVarTypeKnown": true,
+  "runtimeVarTypeClassification": "string_like",
+  "fieldPath": {
+    "fieldPathId": 59,
+    "fieldPath": [
+      39
+    ],
+    "resolvable": true,
+    "flattenedFieldName": "m_nAvailableHelperCount",
+    "originalSerializerFieldName": "m_nAvailableHelperCount",
+    "varType": "char",
+    "baseType": "char",
+    "generic": null,
+    "count": null,
+    "pointer": false,
+    "runtimeVarTypeClassification": "string_like",
+    "decoderResolutionSource": "type_decoder",
+    "decoderDescriptorType": "STRING",
+    "decoderFunctionName": "decodeString",
+    "storageType": "MISC",
+    "storageDimension": 0,
+    "storageSigned": false,
+    "storageBool": false,
+    "fieldModel": "SIMPLE",
+    "fieldPathKind": "string_like_simple_field",
+    "parentChain": [
+      {
+        "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+        "serializerVersion": 0,
+        "fieldIndex": 39,
+        "fieldName": "m_nAvailableHelperCount",
+        "fieldModel": "SIMPLE",
+        "varType": "char"
+      }
+    ],
+    "construction": {
+      "source": "DEM_SEND_TABLES",
+      "ownerSerializerName": "CCitadel_Ability_Familiar_HelpingHands",
+      "ownerSerializerVersion": 0,
+      "fieldIndex": 545,
+      "varNameSymbol": 1516,
+      "varTypeSymbol": 1515,
+      "varEncoderSymbol": 0,
+      "sendNodeSymbol": 865,
+      "varName": "m_nAvailableHelperCount",
+      "varType": "char",
+      "varEncoder": "CEntityIdentity",
+      "sendNode": "",
+      "fieldSerializerName": null,
+      "fieldSerializerVersion": null
+    },
+    "valuesIncluded": false,
+    "rawPayloadIncluded": false
+  },
+  "answer": {
+    "originalRuntimeDefinition": "char",
+    "conclusion": "string_like_runtime_type_makes_decodeString_MISC_more_locally_coherent",
+    "parserBugConcluded": false,
+    "source2SemanticsClaimed": false,
+    "replayCorruptionClaimed": false,
+    "causalConclusion": "not_determined"
+  },
+  "limitations": [
+    "runtime metadata is local parser/send-table metadata, not independent Source 2 semantics",
+    "field values are not decoded or emitted",
+    "metadata suspicion alone does not establish parser bug causality"
+  ]
+}

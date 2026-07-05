@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "sourceTask": "114",
+  "sourceRoot": "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/",
+  "exactTask114NumbersMatched": true,
+  "differences": [],
+  "comparedFields": [
+    "fieldPathId",
+    "flattenedFieldName",
+    "decoderFunctionName",
+    "storageType",
+    "task114LargestSegmentBits",
+    "task114ExactRuntimeVarTypeKnown"
+  ],
+  "task114RuntimeVarTypeKnown": false,
+  "task115RuntimeVarTypeKnown": true,
+  "task115RuntimeVarType": "char",
+  "task115RuntimeVarTypeClassification": "string_like",
+  "task114Gate": {
+    "schemaVersion": 1,
+    "replayId": "replay_010",
+    "gate": "local_replay_loop_26_fieldpath_59_decoder_contract_investigated",
+    "successGate": "local_replay_loop_26_fieldpath_59_decoder_contract_investigated",
+    "partialGate": "local_replay_loop_26_fieldpath_59_decoder_contract_partial",
+    "blockedGate": "local_replay_loop_26_fieldpath_59_decoder_contract_blocked",
+    "defaultFailureReproduced": true,
+    "diagnosticFailureReproducedWithoutRecovery": true,
+    "task113NumbersMatchedExactly": true,
+    "staticSerializerInventoryProduced": true,
+    "fieldPath59ContractInvestigated": true,
+    "decodeStringMiscSupportedByLocalMetadata": true,
+    "suspiciousNameDecoderPair": true,
+    "parserDefaultBehaviorChanged": false,
+    "recoveryAddedOrPromoted": false,
+    "canonicalPackageConstructed": false,
+    "factualArtifactsEmitted": false,
+    "fieldValuesEmitted": false,
+    "rawPayloadsEmitted": false,
+    "protectionAuditPassed": true,
+    "source2SemanticsClaimed": false,
+    "replayCorruptionClaimed": false,
+    "causalConclusion": "not_determined",
+    "reasons": [
+      "default pass reproduced Task 105 failure",
+      "diagnostic pass reproduced first failure without recovery",
+      "Task 113 loop and segment numbers matched exactly",
+      "local decoder/serializer construction inventory was produced",
+      "decodeString/MISC is supported by local runtime metadata and decoder catalog",
+      "protection and branch audits passed"
+    ]
+  }
+}
