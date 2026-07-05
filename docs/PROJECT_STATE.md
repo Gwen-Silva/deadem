@@ -4,11 +4,12 @@ Last updated: 2026-07-05
 
 ## Authoritative Current State
 
-The current milestone is the five-human-replay factual pilot. Task 094 has
-completed replay-002 terminal validation v9, and Task 095 has canonicalized the
-remaining human controls 001, 003, and 004 with compact package manifests.
-Replay work may resume only through Task 096 in
-`docs/FIVE_REPLAY_PILOT_PLAN.md`.
+The current milestone is the five-human-replay factual pilot. Task 094
+completed replay-002 terminal validation v9, Task 095 canonicalized the
+remaining human controls 001, 003, and 004 with compact package manifests, and
+Task 096 audited the five-human-replay factual pilot. The pilot is ready as a
+bounded factual foundation for a human milestone decision under
+`five_human_replay_factual_pilot_ready`.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -61,12 +62,13 @@ Historical reports or outputs cannot override this file or
 - `output/repository-audit/cleanup-proposal.json` is a historical cleanup
   proposal and is not authorized for execution.
 
-## Current Blocked Work
+## Current Human Decision Point
 
-- Task 096: audit the five-human-replay factual pilot.
-
-Task 096 remains blocked until explicitly authorized. Do not create Task 097
-automatically.
+The finite Task 094-096 pilot horizon is complete. Do not create Task 097
+automatically. Stop for a human milestone decision about whether to expand the
+factual batch, improve storage/cache strategy, revisit spatial evidence only
+with genuinely new evidence, improve mechanics/build mapping, or defer toward
+local AI/runtime benchmarking later.
 
 ## Protected And Unsupported Replays
 
@@ -90,5 +92,5 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. After Task 096, stop and wait
-for a human milestone decision.
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 096 is complete; stop
+and wait for a human milestone decision.

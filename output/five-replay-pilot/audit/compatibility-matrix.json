@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "replayId": "replay_001",
+      "acceptedGate": "remaining_human_controls_canonicalized",
+      "packageRepresentation": "compact_manifest_with_hashes_and_counts",
+      "schemaCompatibility": "schema_identical",
+      "categoryAvailability": {
+        "player_identity": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "player_death": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "player_respawn": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "team_net_worth": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "raw_objective_structure_lifecycle": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "snapshots": {
+          "available": true,
+          "basis": "compact manifest recordCounts.snapshots",
+          "limitations": []
+        },
+        "metadata": {
+          "available": true,
+          "basis": "compact manifest recordCounts.metadata",
+          "limitations": []
+        },
+        "entities": {
+          "available": true,
+          "basis": "compact manifest recordCounts.entities",
+          "limitations": []
+        },
+        "capabilities": {
+          "available": true,
+          "basis": "compact manifest recordCounts.capabilities",
+          "limitations": [
+            "Task 095 compact packages may contain zero capability rows."
+          ]
+        },
+        "independent_validation_overlay": {
+          "available": false,
+          "basis": "compact manifest recordCounts.overlays",
+          "limitations": [
+            "No independent validation overlay was produced for Task 095 compact packages."
+          ]
+        }
+      },
+      "missingCategories": [],
+      "provenanceStatus": "complete_for_emitted_records",
+      "rawReplayAccessStatus": "not_touched_existing_artifacts_only",
+      "validationStatus": "accepted",
+      "limitations": [
+        "large canonical package material is represented by hash and counts in committed output"
+      ]
+    },
+    {
+      "replayId": "replay_002",
+      "acceptedGate": "replay_002_canonical_factual_state_ready_with_constraints_v9",
+      "packageRepresentation": "v9_terminal_validation_of_reused_canonical_facts",
+      "schemaCompatibility": "accepted_by_v9_terminal_validation",
+      "categoryAvailability": {
+        "player_identity": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "player_death": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "player_respawn": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "team_net_worth": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "raw_objective_structure_lifecycle": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "snapshots": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "metadata": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "entities": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "capabilities": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "independent_validation_overlay": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        }
+      },
+      "missingCategories": [
+        "category_counts_not_reemitted_by_v9_terminal_audit"
+      ],
+      "provenanceStatus": "accepted_by_v9_terminal_validation; category-level provenance summary not reemitted in v9 artifacts",
+      "rawReplayAccessStatus": "not_touched_existing_artifacts_only",
+      "validationStatus": "accepted",
+      "limitations": [
+        "Task 094 v9 fixed terminal validation gaps without regenerating factual package material."
+      ]
+    },
+    {
+      "replayId": "replay_003",
+      "acceptedGate": "remaining_human_controls_canonicalized",
+      "packageRepresentation": "compact_manifest_with_hashes_and_counts",
+      "schemaCompatibility": "schema_identical",
+      "categoryAvailability": {
+        "player_identity": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "player_death": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "player_respawn": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "team_net_worth": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "raw_objective_structure_lifecycle": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "snapshots": {
+          "available": true,
+          "basis": "compact manifest recordCounts.snapshots",
+          "limitations": []
+        },
+        "metadata": {
+          "available": true,
+          "basis": "compact manifest recordCounts.metadata",
+          "limitations": []
+        },
+        "entities": {
+          "available": true,
+          "basis": "compact manifest recordCounts.entities",
+          "limitations": []
+        },
+        "capabilities": {
+          "available": true,
+          "basis": "compact manifest recordCounts.capabilities",
+          "limitations": [
+            "Task 095 compact packages may contain zero capability rows."
+          ]
+        },
+        "independent_validation_overlay": {
+          "available": false,
+          "basis": "compact manifest recordCounts.overlays",
+          "limitations": [
+            "No independent validation overlay was produced for Task 095 compact packages."
+          ]
+        }
+      },
+      "missingCategories": [],
+      "provenanceStatus": "complete_for_emitted_records",
+      "rawReplayAccessStatus": "not_touched_existing_artifacts_only",
+      "validationStatus": "accepted",
+      "limitations": [
+        "large canonical package material is represented by hash and counts in committed output"
+      ]
+    },
+    {
+      "replayId": "replay_004",
+      "acceptedGate": "remaining_human_controls_canonicalized",
+      "packageRepresentation": "compact_manifest_with_hashes_and_counts",
+      "schemaCompatibility": "schema_identical",
+      "categoryAvailability": {
+        "player_identity": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "player_death": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "player_respawn": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "team_net_worth": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "raw_objective_structure_lifecycle": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "snapshots": {
+          "available": true,
+          "basis": "compact manifest recordCounts.snapshots",
+          "limitations": []
+        },
+        "metadata": {
+          "available": true,
+          "basis": "compact manifest recordCounts.metadata",
+          "limitations": []
+        },
+        "entities": {
+          "available": true,
+          "basis": "compact manifest recordCounts.entities",
+          "limitations": []
+        },
+        "capabilities": {
+          "available": true,
+          "basis": "compact manifest recordCounts.capabilities",
+          "limitations": [
+            "Task 095 compact packages may contain zero capability rows."
+          ]
+        },
+        "independent_validation_overlay": {
+          "available": false,
+          "basis": "compact manifest recordCounts.overlays",
+          "limitations": [
+            "No independent validation overlay was produced for Task 095 compact packages."
+          ]
+        }
+      },
+      "missingCategories": [],
+      "provenanceStatus": "complete_for_emitted_records",
+      "rawReplayAccessStatus": "not_touched_existing_artifacts_only",
+      "validationStatus": "accepted",
+      "limitations": [
+        "large canonical package material is represented by hash and counts in committed output"
+      ]
+    },
+    {
+      "replayId": "replay_009",
+      "acceptedGate": "replay_009_canonical_factual_state_ready_with_constraints",
+      "packageRepresentation": "full_canonical_package_committed",
+      "schemaCompatibility": "accepted_with_constraints",
+      "categoryAvailability": {
+        "player_identity": {
+          "available": true,
+          "basis": "validation-summary.playerRegistryCount",
+          "limitations": []
+        },
+        "player_death": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        },
+        "player_respawn": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        },
+        "team_net_worth": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        },
+        "raw_objective_structure_lifecycle": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        },
+        "snapshots": {
+          "available": true,
+          "basis": "validation-summary.snapshotCount",
+          "limitations": []
+        },
+        "metadata": {
+          "available": true,
+          "basis": "validation-summary.nonTimelineEventCount",
+          "limitations": []
+        },
+        "entities": {
+          "available": true,
+          "basis": "validation-summary.entityRegistryCount",
+          "limitations": []
+        },
+        "capabilities": {
+          "available": true,
+          "basis": "capability-matrix.json exists",
+          "limitations": []
+        },
+        "independent_validation_overlay": {
+          "available": true,
+          "basis": "validation-summary.validationOverlayCount",
+          "limitations": []
+        }
+      },
+      "missingCategories": [],
+      "provenanceStatus": "complete_for_accepted_canonical_package_with_constraints",
+      "rawReplayAccessStatus": "not_touched_by_task_096_existing_canonical_package_only",
+      "validationStatus": "accepted",
+      "limitations": [
+        "Replay 009 remains constrained by spatial unavailability, unresolved build mapping, and bounded visual validation gaps.",
+        "Synchronization uncertainty remains documented in validation-summary.json."
+      ]
+    }
+  ]
+}

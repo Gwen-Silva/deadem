@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "replayId": "replay_001",
+      "packageRepresentation": "compact_manifest_with_hashes_and_counts",
+      "committedOutputSizeBytes": 3526,
+      "fullPackageSizeBytes": 23995922,
+      "compactOutputSizeBytes": 3526,
+      "largeHistoricalOutputsExcludedFromScalingEstimate": true
+    },
+    {
+      "replayId": "replay_002",
+      "packageRepresentation": "v9_terminal_validation_of_reused_canonical_facts",
+      "committedOutputSizeBytes": 26404,
+      "fullPackageSizeBytes": null,
+      "compactOutputSizeBytes": null,
+      "largeHistoricalOutputsExcludedFromScalingEstimate": true
+    },
+    {
+      "replayId": "replay_003",
+      "packageRepresentation": "compact_manifest_with_hashes_and_counts",
+      "committedOutputSizeBytes": 3526,
+      "fullPackageSizeBytes": 16044406,
+      "compactOutputSizeBytes": 3526,
+      "largeHistoricalOutputsExcludedFromScalingEstimate": true
+    },
+    {
+      "replayId": "replay_004",
+      "packageRepresentation": "compact_manifest_with_hashes_and_counts",
+      "committedOutputSizeBytes": 3525,
+      "fullPackageSizeBytes": 14621259,
+      "compactOutputSizeBytes": 3525,
+      "largeHistoricalOutputsExcludedFromScalingEstimate": true
+    },
+    {
+      "replayId": "replay_009",
+      "packageRepresentation": "full_canonical_package_committed",
+      "committedOutputSizeBytes": 2132809,
+      "fullPackageSizeBytes": 2132809,
+      "compactOutputSizeBytes": null,
+      "largeHistoricalOutputsExcludedFromScalingEstimate": true
+    }
+  ],
+  "knownOversizedHistoricalFile": "output/04-controller-pawn-lifecycle.json",
+  "scalingNotes": [
+    "Compact manifests keep committed output small for replays 001, 003, and 004.",
+    "Full package commitment should be reviewed before scaling to 15 or 50 replays.",
+    "Historical large outputs are excluded from this pilot scaling estimate."
+  ]
+}

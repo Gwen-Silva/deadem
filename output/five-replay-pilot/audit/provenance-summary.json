@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "replayId": "replay_001",
+      "provenanceStatus": "complete_for_emitted_records",
+      "sourceArtifactBasis": "output/five-replay-pilot/remaining-human-controls/replay_001/canonical-package-manifest.json",
+      "validationOverlayStatus": "not_available_for_task_095",
+      "rawReplayAccessClassification": "not_touched_existing_artifacts_only",
+      "compactManifestOnly": true,
+      "limitations": [
+        "large canonical package material is represented by hash and counts in committed output"
+      ]
+    },
+    {
+      "replayId": "replay_002",
+      "provenanceStatus": "accepted_by_v9_terminal_validation; category-level provenance summary not reemitted in v9 artifacts",
+      "sourceArtifactBasis": "output/replay-002-canonical-v9-validation",
+      "validationOverlayStatus": "not_summarized_by_v9_terminal_artifacts",
+      "rawReplayAccessClassification": "not_touched_existing_artifacts_only",
+      "compactManifestOnly": false,
+      "limitations": [
+        "Task 094 v9 fixed terminal validation gaps without regenerating factual package material."
+      ]
+    },
+    {
+      "replayId": "replay_003",
+      "provenanceStatus": "complete_for_emitted_records",
+      "sourceArtifactBasis": "output/five-replay-pilot/remaining-human-controls/replay_003/canonical-package-manifest.json",
+      "validationOverlayStatus": "not_available_for_task_095",
+      "rawReplayAccessClassification": "not_touched_existing_artifacts_only",
+      "compactManifestOnly": true,
+      "limitations": [
+        "large canonical package material is represented by hash and counts in committed output"
+      ]
+    },
+    {
+      "replayId": "replay_004",
+      "provenanceStatus": "complete_for_emitted_records",
+      "sourceArtifactBasis": "output/five-replay-pilot/remaining-human-controls/replay_004/canonical-package-manifest.json",
+      "validationOverlayStatus": "not_available_for_task_095",
+      "rawReplayAccessClassification": "not_touched_existing_artifacts_only",
+      "compactManifestOnly": true,
+      "limitations": [
+        "large canonical package material is represented by hash and counts in committed output"
+      ]
+    },
+    {
+      "replayId": "replay_009",
+      "provenanceStatus": "complete_for_accepted_canonical_package_with_constraints",
+      "sourceArtifactBasis": "output/replay-009-canonical",
+      "validationOverlayStatus": "37 validation overlays; unmatched=0",
+      "rawReplayAccessClassification": "not_touched_by_task_096_existing_canonical_package_only",
+      "compactManifestOnly": false,
+      "limitations": [
+        "Replay 009 remains constrained by spatial unavailability, unresolved build mapping, and bounded visual validation gaps.",
+        "Synchronization uncertainty remains documented in validation-summary.json."
+      ]
+    }
+  ]
+}

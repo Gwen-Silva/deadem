@@ -10,8 +10,9 @@ limitations for the five-replay pilot.
 Replay 009 remains the accepted canonical factual-state package with
 constraints. Replay 002 terminal validation v9 is ready with constraints after
 Task 094. Replays 001, 003, and 004 are canonicalized with compact package
-manifests after Task 095. Task 089's v8 gate remains a rejected historical
-attempt.
+manifests after Task 095. Task 096 audited the five-human-replay factual pilot
+as ready for a bounded human milestone decision. Task 089's v8 gate remains a
+rejected historical attempt.
 
 Spatial work remains parked under the Task 081 resume contract. Replay 005 is
 protected. Replays 006-008 remain unsupported bot fixtures. Macro, fights,
@@ -50,13 +51,11 @@ current pilot definition.
 
 ## Finite Execution Horizon
 
-Tasks 094 and 095 are complete. Exactly one execution task remains in the
-current pilot horizon:
+Tasks 094, 095, and 096 are complete. No execution task remains in the current
+pilot horizon.
 
-1. Task 096, `Audit Five Human Replay Factual Pilot`
-
-Do not create Task 097 automatically. After Task 096, stop and wait for a human
-milestone decision.
+Do not create Task 097 automatically. Stop and wait for a human milestone
+decision.
 
 ## Task 094
 
@@ -94,6 +93,9 @@ duration, memory, storage, caching, and readiness to expand to 15 replays.
 Success gate: `five_human_replay_factual_pilot_ready`.
 
 Blocked gate: `five_human_replay_factual_pilot_blocked`.
+
+Status: completed with the success gate above. The result is a bounded factual
+foundation, not full corpus generalization.
 
 ## Non-Goals
 

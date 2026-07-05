@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    "player_identity",
+    "player_death",
+    "player_respawn",
+    "team_net_worth",
+    "raw_objective_structure_lifecycle",
+    "snapshots",
+    "metadata",
+    "entities",
+    "capabilities",
+    "independent_validation_overlay"
+  ],
+  "forbiddenSemanticLayersExcluded": [
+    "lanes",
+    "regions",
+    "proximity",
+    "map_transform",
+    "mechanic_effects",
+    "fights",
+    "rotations",
+    "pressure",
+    "macro",
+    "roles",
+    "decision_quality",
+    "objective_completion"
+  ],
+  "rows": [
+    {
+      "category": "player_identity",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "validation-summary.playerRegistryCount",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "player_death",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "player_respawn",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "team_net_worth",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "raw_objective_structure_lifecycle",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest emittedCategories",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "accepted replay-009 canonical factual-event package",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "snapshots",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest recordCounts.snapshots",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest recordCounts.snapshots",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest recordCounts.snapshots",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "validation-summary.snapshotCount",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "metadata",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest recordCounts.metadata",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest recordCounts.metadata",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest recordCounts.metadata",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "validation-summary.nonTimelineEventCount",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "entities",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest recordCounts.entities",
+          "limitations": []
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest recordCounts.entities",
+          "limitations": []
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest recordCounts.entities",
+          "limitations": []
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "validation-summary.entityRegistryCount",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "capabilities",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": true,
+          "basis": "compact manifest recordCounts.capabilities",
+          "limitations": [
+            "Task 095 compact packages may contain zero capability rows."
+          ]
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": true,
+          "basis": "compact manifest recordCounts.capabilities",
+          "limitations": [
+            "Task 095 compact packages may contain zero capability rows."
+          ]
+        },
+        "replay_004": {
+          "available": true,
+          "basis": "compact manifest recordCounts.capabilities",
+          "limitations": [
+            "Task 095 compact packages may contain zero capability rows."
+          ]
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "capability-matrix.json exists",
+          "limitations": []
+        }
+      }
+    },
+    {
+      "category": "independent_validation_overlay",
+      "forbiddenSemanticLayer": false,
+      "perReplay": {
+        "replay_001": {
+          "available": false,
+          "basis": "compact manifest recordCounts.overlays",
+          "limitations": [
+            "No independent validation overlay was produced for Task 095 compact packages."
+          ]
+        },
+        "replay_002": {
+          "available": null,
+          "basis": "output/replay-002-canonical-v9-validation terminal audit artifacts",
+          "limitations": [
+            "Task 094 v9 accepted terminal validation of reused replay-002 canonical facts but did not re-emit category-level package counts."
+          ]
+        },
+        "replay_003": {
+          "available": false,
+          "basis": "compact manifest recordCounts.overlays",
+          "limitations": [
+            "No independent validation overlay was produced for Task 095 compact packages."
+          ]
+        },
+        "replay_004": {
+          "available": false,
+          "basis": "compact manifest recordCounts.overlays",
+          "limitations": [
+            "No independent validation overlay was produced for Task 095 compact packages."
+          ]
+        },
+        "replay_009": {
+          "available": true,
+          "basis": "validation-summary.validationOverlayCount",
+          "limitations": []
+        }
+      }
+    }
+  ]
+}

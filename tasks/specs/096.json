@@ -1,7 +1,7 @@
 {
   "taskId": "096",
   "title": "Audit Five Human Replay Factual Pilot",
-  "status": "blocked",
+  "status": "completed",
   "objective": "Audit the five-human-replay factual pilot across replays 001, 002, 003, 004, and 009 for schema compatibility, provenance, failures, duration, memory, storage, caching, and readiness to expand to 15 replays.",
   "includedReplays": [
     "replay_001",
@@ -31,7 +31,10 @@
     "docs/NEXT_MILESTONE.md",
     "docs/FIVE_REPLAY_PILOT_PLAN.md",
     "data/five-human-replay-pilot.json",
-    "tasks/specs/096.json"
+    "tasks/specs/096.json",
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**"
   ],
   "optionalReadPaths": [
     "data/current-artifact-registry.json"
@@ -39,6 +42,10 @@
   "writePaths": [
     "output/five-replay-pilot/audit/**",
     "reports/five-human-replay-factual-pilot-audit.md",
+    "tools/audit-five-human-replay-pilot.mjs",
+    "tests/five-replay-pilot-audit.test.mjs",
+    "tasks/specs/096.json",
+    "tasks/blocked/096-audit-five-human-replay-factual-pilot.md",
     "tasks/completed/096-audit-five-human-replay-factual-pilot.md",
     "docs/PROJECT_STATE.md",
     "docs/NEXT_MILESTONE.md",
@@ -69,6 +76,15 @@
     }
   ],
   "expectedOutputs": [
+    "output/five-replay-pilot/audit/manifest.json",
+    "output/five-replay-pilot/audit/compatibility-matrix.json",
+    "output/five-replay-pilot/audit/performance-baseline.json",
+    "output/five-replay-pilot/audit/storage-baseline.json",
+    "output/five-replay-pilot/audit/provenance-summary.json",
+    "output/five-replay-pilot/audit/category-coverage.json",
+    "output/five-replay-pilot/audit/protection-audit.json",
+    "output/five-replay-pilot/audit/readiness-assessment.json",
+    "output/five-replay-pilot/audit/pilot-audit-gate.json",
     "reports/five-human-replay-factual-pilot-audit.md"
   ],
   "largeOutputsAllowed": [],

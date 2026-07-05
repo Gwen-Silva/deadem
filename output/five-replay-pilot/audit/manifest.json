@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "096",
+  "pilotId": "five_human_replay_factual_pilot",
+  "auditedReplays": [
+    "replay_001",
+    "replay_002",
+    "replay_003",
+    "replay_004",
+    "replay_009"
+  ],
+  "sourceArtifacts": {
+    "replay_001": "output/five-replay-pilot/remaining-human-controls/replay_001/canonical-package-manifest.json",
+    "replay_002": "output/replay-002-canonical-v9-validation",
+    "replay_003": "output/five-replay-pilot/remaining-human-controls/replay_003/canonical-package-manifest.json",
+    "replay_004": "output/five-replay-pilot/remaining-human-controls/replay_004/canonical-package-manifest.json",
+    "replay_009": "output/replay-009-canonical"
+  },
+  "acceptedGateSources": {
+    "replay_001": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json",
+    "replay_002": "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
+    "replay_003": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json",
+    "replay_004": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json",
+    "replay_009": "output/replay-009-canonical/canonical-state-gate.json"
+  },
+  "packageRepresentation": {
+    "replay_001": "compact_manifest_with_hashes_and_counts",
+    "replay_002": "v9_terminal_validation_of_reused_canonical_facts",
+    "replay_003": "compact_manifest_with_hashes_and_counts",
+    "replay_004": "compact_manifest_with_hashes_and_counts",
+    "replay_009": "full_canonical_package_committed"
+  },
+  "rawReplayTouched": false,
+  "replay005Touched": false,
+  "botFixturesProcessed": false,
+  "auditRunMarker": "deterministic_task_096_audit",
+  "automaticFollowUpAfterFinalTask": false
+}
