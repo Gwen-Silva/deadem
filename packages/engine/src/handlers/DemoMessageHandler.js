@@ -173,6 +173,13 @@ class DemoMessageHandler {
                             fieldsTouched: false,
                             registerEntityTouched: false
                         });
+                        recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
+                            failureType: 'missing_entity_reference',
+                            operation: EntityOperation.UPDATE.code,
+                            loop: i,
+                            entityIndex: index,
+                            errorMessage: `Unable to find an entity with index [ ${index} ]`
+                        });
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -265,6 +272,13 @@ class DemoMessageHandler {
                             baselineTouched: false,
                             fieldsTouched: false,
                             registerEntityTouched: false
+                        });
+                        recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
+                            failureType: 'missing_entity_reference',
+                            operation: EntityOperation.LEAVE.code,
+                            loop: i,
+                            entityIndex: index,
+                            errorMessage: `Unable to find an entity with index [ ${index} ]`
                         });
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
@@ -367,6 +381,15 @@ class DemoMessageHandler {
                             boundaryStartReadCount: beforeIndexReadCount,
                             previousEntityIndex: getPreviousEntityIndex(cursorLedger, i),
                             error
+                        });
+                        recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
+                            failureType: 'out_of_range_entity_create',
+                            operation: EntityOperation.CREATE.code,
+                            loop: i,
+                            entityIndex: index,
+                            classId,
+                            className: clazz.name,
+                            errorMessage: error?.message ?? String(error)
                         });
 
                         throw error;
@@ -496,6 +519,13 @@ class DemoMessageHandler {
                             fieldsTouched: false,
                             registerEntityTouched: false
                         });
+                        recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
+                            failureType: 'missing_entity_reference',
+                            operation: EntityOperation.DELETE.code,
+                            loop: i,
+                            entityIndex: index,
+                            errorMessage: `Unable to find an entity with index [ ${index} ]`
+                        });
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -521,6 +551,8 @@ class DemoMessageHandler {
                 }
             }
         }
+
+        recordPreRecoveryPayloadConsumption(recovery, cursorLedger, null);
 
         return events;
     }
@@ -601,7 +633,8 @@ function createPayloadIterator(message, startLoop = 0) {
 }
 
 function createCursorLedger(recovery, message, startLoop) {
-    if (recovery === null || recovery.diagnoseEntityPacketCursorAlignment !== true) {
+    if (recovery === null ||
+        (recovery.diagnoseEntityPacketCursorAlignment !== true && recovery.diagnosePreRecoveryPayloadConsumption !== true)) {
         return null;
     }
 
@@ -739,6 +772,41 @@ function recordEntityPacketCursorAlignment(recovery, cursorLedger, context) {
             'whether misalignment began before loop 22',
             'whether the replay data or parser assumptions are responsible'
         ]
+    });
+
+    return true;
+}
+
+function recordPreRecoveryPayloadConsumption(recovery, cursorLedger, boundary) {
+    if (recovery === null || recovery.diagnosePreRecoveryPayloadConsumption !== true || cursorLedger === null) {
+        return false;
+    }
+
+    recovery.recordPreRecoveryPayloadConsumption?.({
+        packetMetrics: {
+            ...cursorLedger.packetMetrics,
+            entriesExamined: cursorLedger.entries.length
+        },
+        boundary,
+        ledgerEntries: cursorLedger.entries.map(entry => ({
+            loop: entry.loop,
+            readCounts: entry.readCounts,
+            indexDelta: entry.indexDelta,
+            accumulatedEntityIndex: entry.accumulatedEntityIndex,
+            commandId: entry.commandId,
+            operation: entry.operation,
+            payloadBits: entry.payloadBits,
+            payloadSizeIteratorAvailable: entry.payloadSizeIteratorAvailable,
+            action: entry.action,
+            registryStateBefore: entry.registryStateBefore,
+            classId: entry.classId,
+            className: entry.className,
+            entityTouched: entry.entityTouched,
+            baselineTouched: entry.baselineTouched,
+            fieldsTouched: entry.fieldsTouched,
+            registerEntityTouched: entry.registerEntityTouched,
+            failureStage: entry.failureStage
+        }))
     });
 
     return true;

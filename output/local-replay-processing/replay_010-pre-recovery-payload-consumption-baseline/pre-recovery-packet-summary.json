@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "source": "opt_in_pre_recovery_payload_consumption_diagnostic",
+  "packetCount": 954,
+  "packetsWithBoundary": 1,
+  "totalPresentUpdates": 1940,
+  "totalPresentUpdateMismatchesAfterCommand": 4,
+  "committedRawPayloads": false,
+  "committedRawSerializedEntities": false,
+  "committedFieldValues": false,
+  "fullPacketSummaryLocalOnly": {
+    "path": ".local/deadem/cache/local-replay-processing/replay_010/pre-recovery-payload-consumption-baseline/full-pre-recovery-payload-ledger.json",
+    "includesAllPackets": true,
+    "commitPolicy": "local_only"
+  },
+  "packetCoverage": {
+    "firstPacketOrdinal": 1,
+    "lastPacketOrdinal": 954,
+    "mismatchPacketOrdinals": [
+      953
+    ],
+    "boundaryPacketOrdinals": [
+      954
+    ]
+  },
+  "packetSamples": {
+    "firstPackets": [
+      {
+        "packetOrdinal": 1,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 1456,
+        "entityDataBitLength": 909304,
+        "serializedEntitiesByteLength": 2856,
+        "payloadSizeCount": 1456,
+        "payloadBitsSum": 846644,
+        "entriesExamined": 1456,
+        "entriesByOperation": {
+          "CREATE": 1456
+        },
+        "presentUpdateCount": 0,
+        "presentUpdateExactMatchesAfterCommand": 0,
+        "presentUpdateMismatchesAfterCommand": 0,
+        "mismatchExamples": [],
+        "boundary": null
+      },
+      {
+        "packetOrdinal": 2,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 1456,
+        "entityDataBitLength": 909304,
+        "serializedEntitiesByteLength": 2856,
+        "payloadSizeCount": 1456,
+        "payloadBitsSum": 846644,
+        "entriesExamined": 1456,
+        "entriesByOperation": {
+          "CREATE": 1456
+        },
+        "presentUpdateCount": 0,
+        "presentUpdateExactMatchesAfterCommand": 0,
+        "presentUpdateMismatchesAfterCommand": 0,
+        "mismatchExamples": [],
+        "boundary": null
+      },
+      {
+        "packetOrdinal": 3,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 1,
+        "entityDataBitLength": 32,
+        "serializedEntitiesByteLength": 1,
+        "payloadSizeCount": 1,
+        "payloadBitsSum": 22,
+        "entriesExamined": 1,
+        "entriesByOperation": {
+          "UPDATE": 1
+        },
+        "presentUpdateCount": 1,
+        "presentUpdateExactMatchesAfterCommand": 1,
+        "presentUpdateMismatchesAfterCommand": 0,
+        "mismatchExamples": [],
+        "boundary": null
+      }
+    ],
+    "packetsWithMismatches": [
+      {
+        "packetOrdinal": 953,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 30,
+        "entityDataBitLength": 5344,
+        "serializedEntitiesByteLength": 43,
+        "payloadSizeCount": 30,
+        "payloadBitsSum": 5010,
+        "entriesExamined": 30,
+        "entriesByOperation": {
+          "UPDATE": 30
+        },
+        "presentUpdateCount": 30,
+        "presentUpdateExactMatchesAfterCommand": 26,
+        "presentUpdateMismatchesAfterCommand": 4,
+        "mismatchExamples": [
+          {
+            "packetOrdinal": 953,
+            "loop": 26,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 221,
+            "actualConsumedAfterCommand": 501,
+            "payloadMinusActualAfterCommand": -280,
+            "action": "normal_update_apply",
+            "entityIndex": 2598,
+            "className": null
+          },
+          {
+            "packetOrdinal": 953,
+            "loop": 27,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 112,
+            "actualConsumedAfterCommand": 0,
+            "payloadMinusActualAfterCommand": 112,
+            "action": "normal_update_apply",
+            "entityIndex": 2599,
+            "className": null
+          },
+          {
+            "packetOrdinal": 953,
+            "loop": 28,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 22,
+            "actualConsumedAfterCommand": 0,
+            "payloadMinusActualAfterCommand": 22,
+            "action": "normal_update_apply",
+            "entityIndex": 2600,
+            "className": null
+          },
+          {
+            "packetOrdinal": 953,
+            "loop": 29,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 73,
+            "actualConsumedAfterCommand": 0,
+            "payloadMinusActualAfterCommand": 73,
+            "action": "normal_update_apply",
+            "entityIndex": 2601,
+            "className": null
+          }
+        ],
+        "boundary": null
+      }
+    ],
+    "boundaryPackets": [
+      {
+        "packetOrdinal": 954,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 34,
+        "entityDataBitLength": 5936,
+        "serializedEntitiesByteLength": 49,
+        "payloadSizeCount": 34,
+        "payloadBitsSum": 5601,
+        "entriesExamined": 34,
+        "entriesByOperation": {
+          "UPDATE": 34
+        },
+        "presentUpdateCount": 33,
+        "presentUpdateExactMatchesAfterCommand": 33,
+        "presentUpdateMismatchesAfterCommand": 0,
+        "mismatchExamples": [],
+        "boundary": {
+          "failureType": "missing_entity_reference",
+          "operation": "UPDATE",
+          "loop": 33,
+          "entityIndex": 2905,
+          "errorMessage": "Unable to find an entity with index [ 2905 ]"
+        }
+      }
+    ],
+    "lastPackets": [
+      {
+        "packetOrdinal": 952,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 28,
+        "entityDataBitLength": 5056,
+        "serializedEntitiesByteLength": 40,
+        "payloadSizeCount": 28,
+        "payloadBitsSum": 4772,
+        "entriesExamined": 28,
+        "entriesByOperation": {
+          "UPDATE": 28
+        },
+        "presentUpdateCount": 28,
+        "presentUpdateExactMatchesAfterCommand": 28,
+        "presentUpdateMismatchesAfterCommand": 0,
+        "mismatchExamples": [],
+        "boundary": null
+      },
+      {
+        "packetOrdinal": 953,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 30,
+        "entityDataBitLength": 5344,
+        "serializedEntitiesByteLength": 43,
+        "payloadSizeCount": 30,
+        "payloadBitsSum": 5010,
+        "entriesExamined": 30,
+        "entriesByOperation": {
+          "UPDATE": 30
+        },
+        "presentUpdateCount": 30,
+        "presentUpdateExactMatchesAfterCommand": 26,
+        "presentUpdateMismatchesAfterCommand": 4,
+        "mismatchExamples": [
+          {
+            "packetOrdinal": 953,
+            "loop": 26,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 221,
+            "actualConsumedAfterCommand": 501,
+            "payloadMinusActualAfterCommand": -280,
+            "action": "normal_update_apply",
+            "entityIndex": 2598,
+            "className": null
+          },
+          {
+            "packetOrdinal": 953,
+            "loop": 27,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 112,
+            "actualConsumedAfterCommand": 0,
+            "payloadMinusActualAfterCommand": 112,
+            "action": "normal_update_apply",
+            "entityIndex": 2599,
+            "className": null
+          },
+          {
+            "packetOrdinal": 953,
+            "loop": 28,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 22,
+            "actualConsumedAfterCommand": 0,
+            "payloadMinusActualAfterCommand": 22,
+            "action": "normal_update_apply",
+            "entityIndex": 2600,
+            "className": null
+          },
+          {
+            "packetOrdinal": 953,
+            "loop": 29,
+            "operation": "UPDATE",
+            "registryStateBefore": "present",
+            "payloadBitsFromSerializedEntities": 73,
+            "actualConsumedAfterCommand": 0,
+            "payloadMinusActualAfterCommand": 73,
+            "action": "normal_update_apply",
+            "entityIndex": 2601,
+            "className": null
+          }
+        ],
+        "boundary": null
+      },
+      {
+        "packetOrdinal": 954,
+        "tick": null,
+        "tickAvailability": "not_available_to_message_handler_without_analyzer_scope_change",
+        "updatedEntries": 34,
+        "entityDataBitLength": 5936,
+        "serializedEntitiesByteLength": 49,
+        "payloadSizeCount": 34,
+        "payloadBitsSum": 5601,
+        "entriesExamined": 34,
+        "entriesByOperation": {
+          "UPDATE": 34
+        },
+        "presentUpdateCount": 33,
+        "presentUpdateExactMatchesAfterCommand": 33,
+        "presentUpdateMismatchesAfterCommand": 0,
+        "mismatchExamples": [],
+        "boundary": {
+          "failureType": "missing_entity_reference",
+          "operation": "UPDATE",
+          "loop": 33,
+          "entityIndex": 2905,
+          "errorMessage": "Unable to find an entity with index [ 2905 ]"
+        }
+      }
+    ]
+  }
+}

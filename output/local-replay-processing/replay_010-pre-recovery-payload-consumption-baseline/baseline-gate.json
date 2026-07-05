@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_pre_recovery_payload_consumption_baseline_ready",
+  "successGate": "local_replay_pre_recovery_payload_consumption_baseline_ready",
+  "partialGate": "local_replay_pre_recovery_payload_consumption_baseline_partial",
+  "blockedGate": "local_replay_pre_recovery_payload_consumption_baseline_blocked",
+  "defaultFailureReproduced": true,
+  "diagnosticFailureReproducedWithoutRecovery": true,
+  "packetsSummarized": true,
+  "presentUpdateMetricsProduced": true,
+  "mismatchesOccurBeforeAnyRecovery": true,
+  "task109ComparisonCompleted": true,
+  "directSkipStatus": "unsafe",
+  "parserDefaultBehaviorChanged": false,
+  "recoveryAddedOrPromoted": false,
+  "canonicalPackageConstructed": false,
+  "factualArtifactsEmitted": false,
+  "protectionAuditPassed": true,
+  "reasons": [
+    "default pass reproduced Task 105 failure",
+    "diagnostic pass reproduced first failure without recovery",
+    "pre-recovery packet summaries were collected",
+    "present UPDATE metrics were produced",
+    "mismatch-before-recovery question was answered",
+    "Task 109 loop 21 comparison was completed",
+    "protection and branch audits passed"
+  ]
+}

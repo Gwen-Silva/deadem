@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "task109SourcePaths": [
+    "output/local-replay-processing/replay_010-serialized-entity-payload-semantics/boundary-packet-payload-consumption-summary.json",
+    "output/local-replay-processing/replay_010-serialized-entity-payload-semantics/payload-size-consistency-summary.json",
+    "output/local-replay-processing/replay_010-serialized-entity-payload-semantics/payload-semantics-hypotheses.json"
+  ],
+  "task109BoundaryWasPostRecoveryPath": true,
+  "task109Loop21Mismatch": true,
+  "task109Loop21PayloadBits": 227,
+  "task109Loop21ActualConsumedAfterCommand": 363,
+  "task109Loop22StillNotIndependentlyJustified": true,
+  "preRecoveryPresentUpdatesCompared": 1940,
+  "preRecoveryMismatchesAfterCommand": 4,
+  "preRecoveryMismatchRate": 0.002061855670103093,
+  "hypothesisImpact": "sustains_task109_not_recovery_contaminated",
+  "priorRiskStatus": "unsafe",
+  "conclusion": "payload-size mismatches are observable before any recovery, so Task 109 loop 21 is not solely a post-recovery contamination signal"
+}

@@ -79,8 +79,14 @@ workaround. Task 102 created a bounded generic local-input canary for only
   Task 109 loop 21 remains contradictory evidence (`payloadBits` 227 versus
   363 consumed bits), and loop 22 remains arithmetic-only evidence. Keep
   missing-UPDATE recovery diagnostic-only pending external/source-engine
-  semantics or broader instrumentation. No canonical package or factual
-  artifacts were constructed.
+  semantics or broader instrumentation. Task 111 then collected a pre-recovery
+  default-path baseline under
+  `local_replay_pre_recovery_payload_consumption_baseline_ready`: before the
+  original Task 105 failure, 1,940 present UPDATE entries were compared, 1,936
+  matched after-command consumption, and 4 mismatched before any recovery was
+  attempted. This sustains Task 109's mismatch as not solely post-recovery
+  contamination and keeps direct missing-UPDATE skip unsafe. No canonical
+  package or factual artifacts were constructed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -153,13 +159,14 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   mismatch and classified direct missing-UPDATE payload skipping as unsafe.
   Task 110 confirmed local schema evidence is insufficient to validate direct
   skip semantics and recommended diagnostic-only recovery while external
-  proto/engine semantics or broader instrumentation remain unresolved. Stop
+  proto/engine semantics or broader instrumentation remain unresolved. Task
+  111 confirmed mismatches occur before any recovery on the default path. Stop
   for a human milestone decision about whether to investigate external
-  serializedEntities semantics, extractor consumption, or the entity-index
-  stream boundary further, wire local-input canonicalization after that blocker
-  is resolved, improve cache tooling,
-revisit spatial evidence only with genuinely new evidence, improve
-mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
+  serializedEntities semantics, field-level extractor accounting, or the
+  entity-index stream boundary further, wire local-input canonicalization after
+  that blocker is resolved, improve cache tooling, revisit spatial evidence
+  only with genuinely new evidence, improve mechanics/build mapping, or defer
+  toward local AI/runtime benchmarking later.
 
 ## Protected And Unsupported Replays
 
@@ -189,5 +196,6 @@ complete with a bounded diagnosis of the subsequent out-of-range CREATE
 boundary, Task 108 is complete with a bounded cursor-alignment diagnosis around
 that boundary, Task 109 is complete with a bounded serialized payload-size
 semantics diagnosis, and Task 110 is complete with a bounded local
-serializedEntities schema/extractor semantics investigation. Do not create Task
-111 automatically; stop and wait for a human milestone decision.
+serializedEntities schema/extractor semantics investigation. Task 111 is
+complete with a bounded pre-recovery payload-consumption baseline. Do not
+create Task 112 automatically; stop and wait for a human milestone decision.

@@ -38,7 +38,7 @@ const DEFAULTS = {
 class ParserConfiguration {
     /**
      * @constructor
-     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
+     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
      */
     constructor(options) {
         const getOption = key => (options && options[key] !== undefined) ? options[key] : DEFAULTS[key];
@@ -236,7 +236,7 @@ function buildMessagePacketFilter(include, exclude) {
 }
 
 /**
- * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean }|null} options
+ * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean }|null} options
  * @returns {object|null}
  */
 function buildRecovery(options) {
@@ -244,7 +244,7 @@ function buildRecovery(options) {
         return null;
     }
 
-    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment' ]);
+    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption' ]);
     const keys = Object.keys(options);
 
     Assert.isTrue(keys.every(key => allowedKeys.has(key)), 'options.recovery contains unsupported keys');
@@ -252,25 +252,37 @@ function buildRecovery(options) {
     Assert.isTrue(options.allowMissingClassBaseline === undefined || typeof options.allowMissingClassBaseline === 'boolean', 'options.recovery.allowMissingClassBaseline must be a boolean when provided');
     Assert.isTrue(options.diagnoseOutOfRangeEntityCreate === undefined || typeof options.diagnoseOutOfRangeEntityCreate === 'boolean', 'options.recovery.diagnoseOutOfRangeEntityCreate must be a boolean when provided');
     Assert.isTrue(options.diagnoseEntityPacketCursorAlignment === undefined || typeof options.diagnoseEntityPacketCursorAlignment === 'boolean', 'options.recovery.diagnoseEntityPacketCursorAlignment must be a boolean when provided');
+    Assert.isTrue(options.diagnosePreRecoveryPayloadConsumption === undefined || typeof options.diagnosePreRecoveryPayloadConsumption === 'boolean', 'options.recovery.diagnosePreRecoveryPayloadConsumption must be a boolean when provided');
 
     const allowUnresolvedEntityReference = options.allowUnresolvedEntityReference === true;
     const allowMissingClassBaseline = options.allowMissingClassBaseline === true;
     const diagnoseOutOfRangeEntityCreate = options.diagnoseOutOfRangeEntityCreate === true;
     const diagnoseEntityPacketCursorAlignment = options.diagnoseEntityPacketCursorAlignment === true;
+    const diagnosePreRecoveryPayloadConsumption = options.diagnosePreRecoveryPayloadConsumption === true;
     const warnings = [];
     const diagnostics = [];
+    let preRecoveryPayloadPacketOrdinal = 0;
 
     return {
         allowUnresolvedEntityReference,
         allowMissingClassBaseline,
         diagnoseOutOfRangeEntityCreate,
         diagnoseEntityPacketCursorAlignment,
+        diagnosePreRecoveryPayloadConsumption,
         warnings,
         diagnostics,
         recordUnresolvedEntityReference: warning => warnings.push({ type: 'unresolved_entity_reference', ...warning }),
         recordMissingClassBaseline: warning => warnings.push({ type: 'missing_class_baseline', ...warning }),
         recordOutOfRangeEntityCreateBoundary: diagnostic => diagnostics.push({ type: 'out_of_range_entity_create_boundary', ...diagnostic }),
-        recordEntityPacketCursorAlignment: diagnostic => diagnostics.push({ type: 'entity_packet_cursor_alignment', ...diagnostic })
+        recordEntityPacketCursorAlignment: diagnostic => diagnostics.push({ type: 'entity_packet_cursor_alignment', ...diagnostic }),
+        recordPreRecoveryPayloadConsumption: diagnostic => {
+            preRecoveryPayloadPacketOrdinal++;
+            diagnostics.push({
+                type: 'pre_recovery_payload_consumption',
+                packetOrdinal: preRecoveryPayloadPacketOrdinal,
+                ...diagnostic
+            });
+        }
     };
 }
 

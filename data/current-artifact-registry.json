@@ -153,6 +153,12 @@
       "notes": "Task 110 investigated local proto/schema and extractor contract evidence: serialized_entities is optional bytes field 13; payload-size/direct skip semantics are local inference and contradicted by Task 109 loop 21 mismatch."
     },
     {
+      "id": "generic_local_replay_pre_recovery_payload_consumption_baseline",
+      "path": "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/baseline-gate.json",
+      "status": "current",
+      "notes": "Task 111 collected a pre-recovery/default-path replay_010 payload-consumption baseline: 1,940 present UPDATE comparisons before the Task 105 failure found 4 mismatches before any recovery, so direct missing-UPDATE skip remains unsafe."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

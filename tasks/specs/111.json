@@ -1,0 +1,197 @@
+{
+  "taskId": "111",
+  "title": "Collect Pre-Recovery SerializedEntities Consumption Baseline For Replay 010",
+  "status": "completed",
+  "objective": "Collect a compact dynamic pre-recovery baseline for replay_010 serializedEntities payload-size consumption in the default path before the Task 105 missing-entity failure, without parser fixes, recovery promotion, canonicalization, or match facts.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/engine/src/data/enums/MessagePacketType.js",
+    "packages/deadem/index.js",
+    "tools/investigate-serialized-entities-semantics.mjs",
+    "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+    "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+    "tests/serialized-entities-semantics-investigation.test.mjs",
+    "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+    "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/**",
+    "output/local-replay-processing/replay_010-serialized-entity-payload-semantics/**",
+    "output/local-replay-processing/replay_010-entity-packet-cursor-alignment/**",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/**",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/**",
+    "reports/local-replay-serialized-entities-semantics-investigation.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/111.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tools/collect-replay-010-pre-recovery-payload-consumption-baseline.mjs",
+    "tests/pre-recovery-payload-consumption-baseline.test.mjs",
+    "tests/serialized-entities-semantics-investigation.test.mjs",
+    "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+    "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/**",
+    "reports/local-replay-pre-recovery-payload-consumption-baseline.md",
+    "tasks/specs/111.json",
+    "tasks/completed/111-collect-pre-recovery-payload-consumption-baseline.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/112.json",
+    "tasks/blocked/112-*",
+    "tasks/completed/112-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "pre-recovery-payload-baseline-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-payload-consumption-baseline.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entities-semantics-investigation-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entities-semantics-investigation.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entity-payload-semantics-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entity-payload-semantics-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-packet-cursor-alignment-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-packet-cursor-alignment-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "out-of-range-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/out-of-range-entity-create-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/input-identity.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/default-pass-result.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/diagnostic-pass-result.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/pre-recovery-packet-summary.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/present-update-consistency-summary.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/first-missing-entity-boundary.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/task109-comparison.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/baseline-risk-assessment.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/protection-audit.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/baseline-gate.json",
+    "reports/local-replay-pre-recovery-payload-consumption-baseline.md",
+    "tasks/completed/111-collect-pre-recovery-payload-consumption-baseline.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes",
+    "Do not commit raw entityData, raw serializedEntities, field values, .dem files, or .local files",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE",
+    "Do not alter default parser behavior",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not create Task 112"
+  ],
+  "successGate": "local_replay_pre_recovery_payload_consumption_baseline_ready",
+  "blockedGate": "local_replay_pre_recovery_payload_consumption_baseline_blocked",
+  "allowedAlternateGates": [
+    "local_replay_pre_recovery_payload_consumption_baseline_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/baseline-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

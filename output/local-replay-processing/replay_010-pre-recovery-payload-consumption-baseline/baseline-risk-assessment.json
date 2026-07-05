@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "mismatchesOccurBeforeAnyRecovery": true,
+  "presentUpdateEntriesCompared": 1940,
+  "mismatchRate": 0.002061855670103093,
+  "largestAbsoluteDelta": 280,
+  "task109HypothesisImpact": "sustains_task109_not_recovery_contaminated",
+  "directSkipStatus": "unsafe",
+  "missingUpdateRecoveryRecommendation": "diagnostic_only_do_not_use_as_safe_skip",
+  "source2SemanticsClaimed": false,
+  "parserFixRecommendedNow": false,
+  "recommendedNextSteps": [
+    "external/source-engine serializedEntities semantic investigation",
+    "field-level extractor accounting over present UPDATE entries before considering parser fixes"
+  ],
+  "limitations": [
+    "baseline covers replay_010 only",
+    "diagnostic pass stops at the first default missing-entity failure",
+    "no recovery path is used for this baseline"
+  ]
+}

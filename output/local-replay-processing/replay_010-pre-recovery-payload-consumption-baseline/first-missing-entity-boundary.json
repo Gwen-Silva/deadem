@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "boundaryFound": true,
+  "expectedTask105FailureReproduced": true,
+  "errorMessage": "Unable to find an entity with index [ 2905 ]",
+  "packetOrdinal": 954,
+  "boundary": {
+    "failureType": "missing_entity_reference",
+    "operation": "UPDATE",
+    "loop": 33,
+    "entityIndex": 2905,
+    "errorMessage": "Unable to find an entity with index [ 2905 ]"
+  },
+  "boundaryEntry": {
+    "loop": 33,
+    "readCounts": {
+      "beforeIndex": 5724,
+      "afterIndex": 5734,
+      "afterCommand": 5736,
+      "afterAction": 5736
+    },
+    "indexDelta": 187,
+    "accumulatedEntityIndex": 2905,
+    "commandId": 0,
+    "operation": "UPDATE",
+    "payloadBits": 193,
+    "payloadSizeIteratorAvailable": true,
+    "action": "missing_update_failed",
+    "registryStateBefore": "missing",
+    "classId": null,
+    "className": null,
+    "entityTouched": false,
+    "baselineTouched": false,
+    "fieldsTouched": false,
+    "registerEntityTouched": false,
+    "failureStage": null
+  },
+  "recoveryAttempted": false,
+  "recoveryApplied": false,
+  "failedClosed": true
+}

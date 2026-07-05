@@ -88,8 +88,11 @@ semantics diagnosis with the gate
 Task 110 is complete as an explicitly authorized local proto/schema and
 extractor-contract investigation with the gate
 `local_replay_serialized_entities_semantics_investigated`.
+Task 111 is complete as an explicitly authorized pre-recovery/default-path
+payload-consumption baseline with the gate
+`local_replay_pre_recovery_payload_consumption_baseline_ready`.
 
-Do not create Task 111 automatically. Stop and wait for a human milestone
+Do not create Task 112 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -374,7 +377,34 @@ contradicts the direct skip assumption with `payloadBits` 227 versus 363
 after-command consumed bits, and loop 22 remains not independently justified.
 Missing-UPDATE recovery remains diagnostic-only. No parser or engine behavior
 was changed, no recovery was added, no canonical package or factual artifacts
-were emitted, and Task 111 was not created.
+were emitted, and Task 111 was not created automatically. Task 111 was later
+executed only after explicit authorization.
+
+## Task 111
+
+Purpose: collect a compact dynamic baseline of
+`CSVCMsg_PacketEntities.serializedEntities` consumption in the default
+pre-recovery path for replay_010 before the original Task 105 missing-entity
+failure.
+
+Gate: `local_replay_pre_recovery_payload_consumption_baseline_ready`.
+
+Partial gate: `local_replay_pre_recovery_payload_consumption_baseline_partial`.
+
+Blocked gate: `local_replay_pre_recovery_payload_consumption_baseline_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 failure at entity 2905. The diagnostic pass used
+opt-in instrumentation without recovery allowances and failed closed at the
+same missing-entity boundary. Before that failure, 954 packet summaries were
+collected locally, 1,940 present UPDATE entries were compared, 1,936 matched
+after-command consumption, and 4 mismatched before any recovery was attempted
+with a largest absolute delta of 280 bits. This sustains the Task 109 loop 21
+mismatch as not solely post-recovery contamination. Direct missing-UPDATE skip
+remains unsafe and diagnostic-only. The full ledger remains local-only; no raw
+entityData, raw serializedEntities, field values, parser recovery, canonical
+package, source artifacts, factual events, spatial semantics, mechanics,
+combat, macro, decision, or ML output was emitted. Task 112 was not created.
 
 ## Non-Goals
 
