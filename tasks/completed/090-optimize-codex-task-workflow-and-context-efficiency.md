@@ -43,4 +43,4 @@ Synthetic workflow tests, dry-run Task 091 preparation/preflight, lint, task que
 
 ## Follow-up
 
-Task 091 remains blocked for terminal replay-002 validation gaps. Task 092 remains blocked for next-control selection after Task 091 review.
+Task 091 was later reserved for workflow-enforcement hardening before replay work resumes. The terminal replay-002 validation correction moved to blocked Task 092, and next-control selection moved to blocked Task 093.

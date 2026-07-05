@@ -28,3 +28,11 @@ Do not execute the follow-up task.
 Stop when no authorized pending task remains, the next task is blocked, a human/research gate is missing, a task requires semantic ground truth unavailable from current evidence, or validation fails in a way outside the authorized scope.
 
 Do not use multiple agents for small related changes. Do not run tasks in parallel when they touch related files.
+
+## Enforcement Limits
+
+The workflow tool validates task specs, declared paths, command checks, generated packets, and changed files that pass through `scripts/codex-workflow.js`. It does not intercept arbitrary commands run directly outside the workflow.
+
+`AGENTS.md` remains the behavioral rule for the agent. The workflow checks are guardrails and review evidence, not an absolute sandbox for unregistered shell activity.
+
+Search guidance is operational policy unless a command is executed through the workflow. Prefer targeted `rg` and file reads over broad repository scans, and keep excluded directories out of manual searches.

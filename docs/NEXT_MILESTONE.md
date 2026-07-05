@@ -50,10 +50,11 @@ treated some reconciled observations as direct parser observations, and kept
 some validation-matrix entries as positive constants.
 
 Task 089 is preserved as the v8 attempt, but its gate was not accepted after
-technical review. Remaining blockers are assigned to blocked Task 091. Task 090
-is a workflow-optimization task only; it does not alter replay facts or repair
-the v8 gate. Replay 002 is not approved for next-stage generalization until
-Task 091 is reviewed and accepted.
+technical review. Task 090 introduced the compact Codex workflow, and Task 091
+hardens that workflow enforcement before replay validation work resumes. The
+remaining replay-002 terminal blockers are assigned to blocked Task 092. Replay
+002 is not approved for next-stage generalization until Task 092 is reviewed and
+accepted.
 
 Replay-009 spatial foundation remains parked under a concrete resume contract,
 not abandoned. It should resume only when genuinely new, replay-compatible,
@@ -189,8 +190,8 @@ available.
 See `output/spatial-milestone-reassessment/milestone-decision.json` and
 `output/spatial-milestone-reassessment/spatial-resume-contract.json`.
 
-The first follow-up task is blocked pending explicit authorization:
-`tasks/blocked/090-select-next-canonical-generalization-control.md`.
+The first replay-validation follow-up task is blocked pending explicit authorization:
+`tasks/blocked/092-close-replay-002-terminal-validation-gaps.md`.
 
 ## Replay 005 Release Criteria
 
