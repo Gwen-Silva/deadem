@@ -724,7 +724,8 @@ async function writeReport(root, gate, replayResults, branchAudit, performanceBa
         `Performance baseline: ${performanceBaseline.replays.map(row => `${row.replayId}:${row.processingDurationMs}ms`).join(', ')}`,
         'Validation commands: see compact review packet after `codex:review`.',
         'Accepted limitations: full package material is represented by hashes and counts; Task 096 performs the pilot-wide audit.',
-        'Next task blocked: Task 096.'
+        'Next task blocked: Task 096.',
+        'Task 097 not created.'
     ];
     await writeText(reportPath, `${lines.join('\n')}\n`);
 }

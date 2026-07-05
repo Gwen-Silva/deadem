@@ -22,17 +22,18 @@
 
 Gate: `remaining_human_controls_canonicalized`
 
-Replays attempted: replay_001
-Replays succeeded: replay_001
+Replays attempted: replay_001, replay_003, replay_004
+Replays succeeded: replay_001, replay_003, replay_004
 Replays blocked: none
 Raw replay access: none; existing generated artifacts only.
 Schema compatibility: all emitted compact packages validated against the canonical contract.
 Provenance status: complete for emitted records.
-Missing categories: replay_001=none
+Missing categories: replay_001=none; replay_003=none; replay_004=none
 Replay-specific branch audit: passed with 0 findings.
 Protections: replay 005 not accessed; bot fixtures 006-008 not processed.
-Output-size status: compact outputs under .local/codex/095/test-output; largest committed package output remains bounded.
-Performance baseline: replay_001:517ms
+Output-size status: compact outputs under output/five-replay-pilot/remaining-human-controls; largest committed package output remains bounded.
+Performance baseline: replay_001:711ms, replay_003:383ms, replay_004:396ms
 Validation commands: see compact review packet after `codex:review`.
 Accepted limitations: full package material is represented by hashes and counts; Task 096 performs the pilot-wide audit.
 Next task blocked: Task 096.
+Task 097 not created.
