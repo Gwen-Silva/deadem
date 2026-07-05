@@ -54,7 +54,14 @@ workaround. Task 102 created a bounded generic local-input canary for only
   packet entry was a CREATE at loop 23 of 42 with accumulated entity index
   570655505, class ID 139, serial 35052, and class
   `CCitadel_Ability_Frank_ShockTarget2`; it failed in Entity construction
-  before baseline lookup, `registerEntity`, or field extraction. No canonical
+  before baseline lookup, `registerEntity`, or field extraction. Task 108 then
+  diagnosed the packet cursor alignment under
+  `local_replay_entity_packet_cursor_alignment_diagnosed`: loop 22 was a
+  recovered missing UPDATE for entity 6679, the current relative skip model
+  moved from read count 5958 by 266 bits to the loop 23 start at 6224, and that
+  arithmetic was internally consistent; however, bounded nearby-offset
+  simulation found plausible entity index/command pairs, so cursor
+  misalignment remains a viable hypothesis but not a proved cause. No canonical
   package or factual artifacts were constructed.
 
 The accepted Codex workflow gate is
@@ -122,8 +129,11 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   parser advancement itself, and Task 106 showed opt-in missing-entity recovery
   makes partial progress but does not finish the replay. Task 107 diagnosed the
   later out-of-range CREATE boundary before baseline lookup, entity
-  registration, or field extraction. Stop for a human milestone decision about
-  whether to investigate the entity-index stream/cursor boundary, wire
+  registration, or field extraction. Task 108 diagnosed cursor alignment around
+  loop 22/23 and showed current skip arithmetic is internally consistent while
+  nearby plausible offsets exist. Stop for a human milestone decision about
+  whether to investigate serialized entity payload semantics, entity packet
+  cursor alignment, or the entity-index stream boundary further, wire
   local-input canonicalization after that blocker is resolved,
   improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
@@ -154,4 +164,5 @@ Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
 `docs/NEXT_MILESTONE.md` for the active milestone. Task 106 is complete with
 partial opt-in missing-entity recovery progress for replay_010, and Task 107
 is complete with a bounded diagnosis of the subsequent out-of-range CREATE
-boundary; stop and wait for a human milestone decision.
+boundary. Task 108 is complete with a bounded cursor-alignment diagnosis around
+that boundary; stop and wait for a human milestone decision.

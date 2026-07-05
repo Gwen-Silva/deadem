@@ -135,6 +135,12 @@
       "notes": "Task 107 diagnosed the replay_010 opt-in recovery boundary as an out-of-range CREATE accumulated entity index before baseline lookup, registerEntity, or field extraction."
     },
     {
+      "id": "generic_local_replay_entity_packet_cursor_alignment",
+      "path": "output/local-replay-processing/replay_010-entity-packet-cursor-alignment/cursor-alignment-gate.json",
+      "status": "current",
+      "notes": "Task 108 diagnosed the replay_010 loop 22/23 cursor alignment boundary: current skip arithmetic is internally consistent, while nearby plausible offsets keep cursor misalignment as a viable hypothesis."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

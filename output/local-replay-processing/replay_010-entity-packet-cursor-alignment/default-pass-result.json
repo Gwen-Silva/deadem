@@ -1,0 +1,19 @@
+{
+  "mode": "default",
+  "expectedFailureReproduced": true,
+  "recoveryEnabled": false,
+  "reachedEnd": false,
+  "ticksAdvanced": 953,
+  "currentTick": 952,
+  "finalTick": 89074,
+  "errorMessage": "Unable to find an entity with index [ 2905 ]",
+  "stackTop": [
+    "Error: Unable to find an entity with index [ 2905 ]",
+    "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:176:31)",
+    "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+    "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)",
+    "    at DemoStreamPacketAnalyzer._transform (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/stream/Transform.node.js:55:24)",
+    "    at Transform._write (node:internal/streams/transform:171:8)"
+  ],
+  "durationMs": 1406
+}

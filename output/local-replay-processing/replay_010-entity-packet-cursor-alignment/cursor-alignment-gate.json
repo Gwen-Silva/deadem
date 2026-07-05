@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_entity_packet_cursor_alignment_diagnosed",
+  "successGate": "local_replay_entity_packet_cursor_alignment_diagnosed",
+  "partialGate": "local_replay_entity_packet_cursor_alignment_partially_diagnosed",
+  "blockedGate": "local_replay_entity_packet_cursor_alignment_blocked",
+  "defaultBehaviorReproduced": true,
+  "recoveryReachedTask107Boundary": true,
+  "ledgerWindowCaptured": true,
+  "loop22SkipCaptured": true,
+  "loop23CreateCaptured": true,
+  "currentSkipModelInternallyConsistent": true,
+  "nearbyPlausibleOffsetsFound": true,
+  "canonicalPackageConstructed": false,
+  "factualArtifactsEmitted": false,
+  "reasons": [
+    "default behavior reproduced Task 105 failure",
+    "opt-in recovery reached the Task 107 boundary",
+    "ledger captured loops 18-23 including loop 22 and 23",
+    "current skip model assessed",
+    "nearby offset model assessed",
+    "safety audits passed"
+  ]
+}

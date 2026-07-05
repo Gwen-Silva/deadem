@@ -79,8 +79,11 @@ progress gate `local_replay_missing_entity_recovery_partial_progress`. Task 107
 is complete as an explicitly authorized diagnosis of the subsequent
 out-of-range CREATE boundary with the gate
 `local_replay_out_of_range_entity_create_boundary_diagnosed`.
+Task 108 is complete as an explicitly authorized cursor-alignment diagnosis
+around that boundary with the gate
+`local_replay_entity_packet_cursor_alignment_diagnosed`.
 
-Do not create Task 108 automatically. Stop and wait for a human milestone
+Do not create Task 109 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -292,7 +295,28 @@ class ID 139, serial 35052, and class
 construction before baseline lookup, `registerEntity`, and field extraction.
 No automatic recovery, canonical package, factual source artifacts,
 lane/region/proximity, mechanics, or strategic analysis were emitted. Task 108
-was not created.
+was later executed only after explicit authorization.
+
+## Task 108
+
+Purpose: diagnose whether the Task 107 `entity index out of range` boundary is
+preceded by `CSVCMsg_PacketEntities.entityData` cursor misalignment, especially
+around the recovered missing UPDATE at loop 22 and the CREATE at loop 23.
+
+Gate: `local_replay_entity_packet_cursor_alignment_diagnosed`.
+
+Blocked gate: `local_replay_entity_packet_cursor_alignment_blocked`.
+
+Status: completed with the success gate above. The compact ledger captured
+loops 18-23 of the failing packet. Loop 22 was a missing UPDATE for entity 6679
+with payloadBits 266 and action `skipped_missing_update_payload`; the current
+model moved from read count 5958 to 6224, which is internally consistent with
+the next loop start. Loop 23 then decoded as CREATE with accumulated entity
+index 570655505. Nearby bounded offset simulation found plausible entity
+index/command pairs, including offset -2 bits decoding to CREATE entity 7694,
+so cursor misalignment remains a viable hypothesis. The task did not prove
+that loop 22 caused the boundary and did not recover, canonicalize, emit
+source artifacts, or create Task 109.
 
 ## Non-Goals
 

@@ -113,21 +113,37 @@ class DemoMessageHandler {
         const payloadSizes = hasFilter || hasRecovery ? createPayloadIterator(message, startLoop) : null;
         const events = direct ? null : [];
         const extractor = new EntityMutationExtractor(bitBuffer);
+        const cursorLedger = createCursorLedger(recovery, message, startLoop);
 
         let index = startIndex;
 
         for (let i = startLoop; i < message.updatedEntries; i++) {
             const beforeIndexReadCount = bitBuffer.getReadCount();
-            index += bitBuffer.readUVarInt() + 1;
+            const indexDelta = bitBuffer.readUVarInt();
+            index += indexDelta + 1;
             const afterIndexReadCount = bitBuffer.getReadCount();
 
             const command = bitBuffer.readBitsAsUInt(2);
             const afterCommandReadCount = bitBuffer.getReadCount();
+            const cursorEntry = createCursorEntry(cursorLedger, {
+                loop: i,
+                beforeIndexReadCount,
+                afterIndexReadCount,
+                indexDelta,
+                accumulatedEntityIndex: index,
+                afterCommandReadCount,
+                command
+            });
 
             switch (command) {
                 case EntityOperation.UPDATE.id: {
                     const entity = this._demo.getEntity(index);
                     const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
+                    updateCursorEntry(cursorEntry, {
+                        payloadBits,
+                        payloadSizeIteratorAvailable: payloadSizes !== null,
+                        registryStateBefore: entity === null ? 'missing' : 'present'
+                    });
 
                     if (entity === null) {
                         if (recoverMissingEntityReference(recovery, {
@@ -138,9 +154,25 @@ class DemoMessageHandler {
                             loop: i,
                             registryState: 'missing'
                         })) {
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'skipped_missing_update_payload',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                entityTouched: false,
+                                baselineTouched: false,
+                                fieldsTouched: false,
+                                registerEntityTouched: false
+                            });
                             break;
                         }
 
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'missing_update_failed',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            entityTouched: false,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false
+                        });
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -155,19 +187,56 @@ class DemoMessageHandler {
                             }
 
                             extractor.applyTo(entity);
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'normal_update_apply',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                entityTouched: true,
+                                baselineTouched: false,
+                                fieldsTouched: true,
+                                registerEntityTouched: false
+                            });
                         } else {
                             events.push(new EntityMutationEvent(EntityOperation.UPDATE, entity, extractor.all()));
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'normal_update_event',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                entityTouched: true,
+                                baselineTouched: false,
+                                fieldsTouched: true,
+                                registerEntityTouched: false
+                            });
                         }
                     } else if (payloadBits !== null) {
                         bitBuffer.move(payloadBits);
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'filtered_update_skip_payload',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            entityTouched: true,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false
+                        });
                     } else {
                         extractor.skip();
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'filtered_update_extractor_skip',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            entityTouched: true,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false
+                        });
                     }
 
                     break;
                 }
                 case EntityOperation.LEAVE.id: {
                     const entity = this._demo.getEntity(index);
+                    updateCursorEntry(cursorEntry, {
+                        payloadBits: 0,
+                        payloadSizeIteratorAvailable: payloadSizes !== null,
+                        registryStateBefore: entity === null ? 'missing' : (entity.active ? 'present_active' : 'present_inactive')
+                    });
 
                     if (entity === null) {
                         if (recoverMissingEntityReference(recovery, {
@@ -178,9 +247,25 @@ class DemoMessageHandler {
                             loop: i,
                             registryState: 'missing'
                         })) {
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'ignored_missing_leave',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                entityTouched: false,
+                                baselineTouched: false,
+                                fieldsTouched: false,
+                                registerEntityTouched: false
+                            });
                             break;
                         }
 
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'missing_leave_failed',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            entityTouched: false,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false
+                        });
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -193,21 +278,43 @@ class DemoMessageHandler {
                     } else {
                         events.push(EntityMutationEvent.createEmpty(EntityOperation.LEAVE, entity));
                     }
+                    finishCursorEntry(cursorLedger, cursorEntry, {
+                        action: 'leave_or_deactivate',
+                        afterActionReadCount: bitBuffer.getReadCount(),
+                        entityTouched: true,
+                        baselineTouched: false,
+                        fieldsTouched: false,
+                        registerEntityTouched: false
+                    });
 
                     break;
                 }
                 case EntityOperation.CREATE.id: {
                     const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
                     const classIdSizeBits = this._demo.server.classIdSizeBits;
+                    updateCursorEntry(cursorEntry, {
+                        payloadBits,
+                        payloadSizeIteratorAvailable: payloadSizes !== null,
+                        registryStateBefore: this._demo.getEntity(index) === null ? 'missing' : 'present'
+                    });
 
                     const beforeClassIdReadCount = bitBuffer.getReadCount();
                     const classId = bitBuffer.readBitsAsUInt(classIdSizeBits);
                     const afterClassIdReadCount = bitBuffer.getReadCount();
                     const serial = bitBuffer.readBitsAsUInt(17);
                     const afterSerialReadCount = bitBuffer.getReadCount();
+                    updateCursorEntry(cursorEntry, {
+                        classId,
+                        serial,
+                        classIdSizeBits,
+                        beforeClassIdReadCount,
+                        afterClassIdReadCount,
+                        afterSerialReadCount
+                    });
 
                     bitBuffer.readUVarInt32();
                     const beforeEntityConstructorReadCount = bitBuffer.getReadCount();
+                    updateCursorEntry(cursorEntry, { beforeEntityConstructorReadCount });
 
                     const clazz = this._demo.getClassById(classId);
 
@@ -220,6 +327,16 @@ class DemoMessageHandler {
                     try {
                         entity = new Entity(index, serial, clazz);
                     } catch (error) {
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'create_attempt_out_of_range',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            className: clazz.name,
+                            entityTouched: false,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false,
+                            failureStage: 'entity_constructor'
+                        });
                         recordOutOfRangeEntityCreateBoundary(recovery, {
                             messageUpdatedEntries: message.updatedEntries,
                             loop: i,
@@ -245,6 +362,12 @@ class DemoMessageHandler {
                             registerEntityAttempted: false,
                             fieldExtractionAttempted: false
                         }, error);
+                        recordEntityPacketCursorAlignment(recovery, cursorLedger, {
+                            boundaryLoop: i,
+                            boundaryStartReadCount: beforeIndexReadCount,
+                            previousEntityIndex: getPreviousEntityIndex(cursorLedger, i),
+                            error
+                        });
 
                         throw error;
                     }
@@ -266,6 +389,15 @@ class DemoMessageHandler {
                                 payloadBits,
                                 loop: i
                             })) {
+                                finishCursorEntry(cursorLedger, cursorEntry, {
+                                    action: 'skipped_create_payload_missing_baseline',
+                                    afterActionReadCount: bitBuffer.getReadCount(),
+                                    className: clazz.name,
+                                    entityTouched: false,
+                                    baselineTouched: true,
+                                    fieldsTouched: false,
+                                    registerEntityTouched: false
+                                });
                                 break;
                             }
 
@@ -279,6 +411,15 @@ class DemoMessageHandler {
 
                             baselineExtractor.applyTo(entity);
                             extractor.applyTo(entity);
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'create_register_and_apply',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                className: clazz.name,
+                                entityTouched: true,
+                                baselineTouched: true,
+                                fieldsTouched: true,
+                                registerEntityTouched: true
+                            });
                         } else {
                             const baselineBatch = baselineExtractor.all();
                             const packetBatch = extractor.all();
@@ -288,6 +429,15 @@ class DemoMessageHandler {
                                 entity,
                                 EntityMutationBatch.concat([ baselineBatch, packetBatch ])
                             ));
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'create_event',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                className: clazz.name,
+                                entityTouched: true,
+                                baselineTouched: true,
+                                fieldsTouched: true,
+                                registerEntityTouched: false
+                            });
                         }
                     } else {
                         this._demo.registerEntity(entity);
@@ -297,12 +447,26 @@ class DemoMessageHandler {
                         } else {
                             extractor.skip();
                         }
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'filtered_create_register_skip_payload',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            className: clazz.name,
+                            entityTouched: true,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: true
+                        });
                     }
 
                     break;
                 }
                 case EntityOperation.DELETE.id: {
                     const entity = this._demo.getEntity(index);
+                    updateCursorEntry(cursorEntry, {
+                        payloadBits: 0,
+                        payloadSizeIteratorAvailable: payloadSizes !== null,
+                        registryStateBefore: entity === null ? 'missing' : (entity.active ? 'present_active' : 'present_inactive')
+                    });
 
                     if (entity === null) {
                         if (recoverMissingEntityReference(recovery, {
@@ -313,9 +477,25 @@ class DemoMessageHandler {
                             loop: i,
                             registryState: 'missing'
                         })) {
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'ignored_missing_delete',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                entityTouched: false,
+                                baselineTouched: false,
+                                fieldsTouched: false,
+                                registerEntityTouched: false
+                            });
                             break;
                         }
 
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'missing_delete_failed',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            entityTouched: false,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false
+                        });
                         throw new Error(`Unable to find an entity with index [ ${index} ]`);
                     }
 
@@ -328,6 +508,14 @@ class DemoMessageHandler {
                     } else {
                         events.push(EntityMutationEvent.createEmpty(EntityOperation.DELETE, entity));
                     }
+                    finishCursorEntry(cursorLedger, cursorEntry, {
+                        action: 'delete',
+                        afterActionReadCount: bitBuffer.getReadCount(),
+                        entityTouched: true,
+                        baselineTouched: false,
+                        fieldsTouched: false,
+                        registerEntityTouched: false
+                    });
 
                     break;
                 }
@@ -410,6 +598,275 @@ function createPayloadIterator(message, startLoop = 0) {
     }
 
     return iterator;
+}
+
+function createCursorLedger(recovery, message, startLoop) {
+    if (recovery === null || recovery.diagnoseEntityPacketCursorAlignment !== true) {
+        return null;
+    }
+
+    const payloadSizes = listPayloadSizes(message);
+
+    return {
+        packetMetrics: {
+            updatedEntries: message.updatedEntries,
+            entityDataBitLength: message.entityData.length * BitBuffer.BITS_PER_BYTE,
+            serializedEntitiesByteLength: message.serializedEntities?.length ?? 0,
+            payloadSizeIteratorAvailable: payloadSizes !== null,
+            payloadSizeCount: payloadSizes?.length ?? 0,
+            payloadBitsSum: payloadSizes?.reduce((sum, value) => sum + value, 0) ?? 0,
+            startLoop
+        },
+        entityData: message.entityData,
+        entries: []
+    };
+}
+
+function listPayloadSizes(message) {
+    const buffer = message.serializedEntities;
+
+    if (!buffer || buffer.length === 0) {
+        return null;
+    }
+
+    return Array.from(new EntityPayloadSizeExtractor(buffer).retrieve());
+}
+
+function createCursorEntry(cursorLedger, values) {
+    if (cursorLedger === null) {
+        return null;
+    }
+
+    const operation = EntityOperation.parseById(values.command);
+    const entry = {
+        loop: values.loop,
+        readCounts: {
+            beforeIndex: values.beforeIndexReadCount,
+            afterIndex: values.afterIndexReadCount,
+            afterCommand: values.afterCommandReadCount,
+            afterAction: null
+        },
+        indexDelta: values.indexDelta,
+        accumulatedEntityIndex: values.accumulatedEntityIndex,
+        commandId: values.command,
+        operation: operation?.code ?? 'UNKNOWN',
+        payloadBits: null,
+        payloadSizeIteratorAvailable: null,
+        action: null,
+        registryStateBefore: null,
+        classId: null,
+        serial: null,
+        classIdSizeBits: null,
+        className: null,
+        entityTouched: false,
+        baselineTouched: false,
+        fieldsTouched: false,
+        registerEntityTouched: false,
+        failureStage: null
+    };
+
+    cursorLedger.entries.push(entry);
+
+    return entry;
+}
+
+function updateCursorEntry(entry, values) {
+    if (entry !== null) {
+        Object.assign(entry, values);
+    }
+}
+
+function finishCursorEntry(cursorLedger, entry, values) {
+    if (cursorLedger === null || entry === null) {
+        return;
+    }
+
+    const { afterActionReadCount, ...rest } = values;
+
+    Object.assign(entry, rest);
+    entry.readCounts.afterAction = afterActionReadCount;
+}
+
+function getPreviousEntityIndex(cursorLedger, boundaryLoop) {
+    if (cursorLedger === null) {
+        return null;
+    }
+
+    const previous = cursorLedger.entries.find(entry => entry.loop === boundaryLoop - 1);
+
+    return previous?.accumulatedEntityIndex ?? null;
+}
+
+function recordEntityPacketCursorAlignment(recovery, cursorLedger, context) {
+    if (recovery === null || recovery.diagnoseEntityPacketCursorAlignment !== true || cursorLedger === null) {
+        return false;
+    }
+
+    const comparison = buildCursorModelComparison(cursorLedger, context);
+
+    recovery.recordEntityPacketCursorAlignment?.({
+        packetMetrics: {
+            ...cursorLedger.packetMetrics,
+            entriesIteratedToBoundary: cursorLedger.entries.length
+        },
+        boundary: {
+            loop: context.boundaryLoop,
+            boundaryStartReadCount: context.boundaryStartReadCount,
+            previousEntityIndex: context.previousEntityIndex,
+            errorMessage: context.error?.message ?? String(context.error)
+        },
+        ledgerEntries: cursorLedger.entries,
+        windowDefault: {
+            startLoop: 18,
+            endLoop: 23,
+            entries: cursorLedger.entries.filter(entry => entry.loop >= 18 && entry.loop <= 23)
+        },
+        cursorModelComparison: comparison,
+        observedFacts: [
+            'loop 22 was a recovered missing UPDATE immediately before the out-of-range CREATE',
+            'loop 23 started at the read count produced by the current skip model',
+            'the out-of-range CREATE was observed without recovering the boundary'
+        ],
+        simulations: [
+            'alternative offsets were decoded locally without advancing the real parser'
+        ],
+        hypotheses: [
+            'cursor alignment may be wrong before loop 23',
+            'serializedEntities payload size may not be sufficient by itself to skip this missing UPDATE safely'
+        ],
+        undetermined: [
+            'whether loop 22 caused the boundary',
+            'whether misalignment began before loop 22',
+            'whether the replay data or parser assumptions are responsible'
+        ]
+    });
+
+    return true;
+}
+
+function buildCursorModelComparison(cursorLedger, context) {
+    const loop22 = cursorLedger.entries.find(entry => entry.loop === context.boundaryLoop - 1);
+    const loop23 = cursorLedger.entries.find(entry => entry.loop === context.boundaryLoop);
+    const currentModel = loop22 === undefined ? null : {
+        modelId: 'current_payload_bits_as_relative_skip_after_command',
+        sourceLoop: loop22.loop,
+        afterCommandReadCount: loop22.readCounts.afterCommand,
+        payloadBits: loop22.payloadBits,
+        expectedAfterActionReadCount: Number.isInteger(loop22.payloadBits) ? loop22.readCounts.afterCommand + loop22.payloadBits : null,
+        actualAfterActionReadCount: loop22.readCounts.afterAction,
+        nextLoopStartReadCount: loop23?.readCounts.beforeIndex ?? null,
+        internallyConsistent: Number.isInteger(loop22.payloadBits) &&
+            loop22.readCounts.afterCommand + loop22.payloadBits === loop22.readCounts.afterAction &&
+            loop22.readCounts.afterAction === loop23?.readCounts.beforeIndex
+    };
+    const alternativesA = buildAlternativeBoundaryModels(cursorLedger.entityData, context.previousEntityIndex, loop22);
+    const nearby = scanNearbyOffsets(cursorLedger.entityData, context.previousEntityIndex, context.boundaryStartReadCount);
+
+    return {
+        currentModel,
+        alternativeBoundaryModelA: alternativesA,
+        alternativeBoundaryModelB: {
+            modelId: 'nearby_offset_scan_plus_minus_64_bits',
+            observedStartReadCount: context.boundaryStartReadCount,
+            searchRadiusBits: 64,
+            plausibleCandidateCount: nearby.length,
+            plausibleCandidates: nearby.slice(0, 25)
+        },
+        modelConclusion: {
+            currentSkipInternallyConsistent: currentModel?.internallyConsistent ?? false,
+            nearbyPlausibleOffsetsFound: nearby.length > 0,
+            interpretation: nearby.length > 0 ?
+                'nearby offsets can decode plausible entity index and command pairs, so cursor misalignment remains a viable hypothesis' :
+                'no nearby offset in the bounded scan produced a plausible next entity index'
+        }
+    };
+}
+
+function buildAlternativeBoundaryModels(entityData, previousEntityIndex, priorEntry) {
+    if (priorEntry === undefined || previousEntityIndex === null || !Number.isInteger(priorEntry.payloadBits)) {
+        return [];
+    }
+
+    const starts = [
+        {
+            modelId: 'payload_bits_excludes_command_current_equivalent',
+            simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits
+        },
+        {
+            modelId: 'payload_bits_includes_command_bits',
+            simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits - 2
+        },
+        {
+            modelId: 'payload_bits_excludes_one_byte_header',
+            simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits + 8
+        }
+    ];
+
+    return starts.map(candidate => ({
+        ...candidate,
+        decodedNextEntry: decodeNextEntryAtOffset(entityData, previousEntityIndex, candidate.simulatedStartReadCount)
+    }));
+}
+
+function scanNearbyOffsets(entityData, previousEntityIndex, observedStartReadCount) {
+    const candidates = [];
+
+    if (previousEntityIndex === null) {
+        return candidates;
+    }
+
+    for (let delta = -64; delta <= 64; delta++) {
+        const offset = observedStartReadCount + delta;
+
+        if (offset < 0 || offset >= entityData.length * BitBuffer.BITS_PER_BYTE) {
+            continue;
+        }
+
+        const decoded = decodeNextEntryAtOffset(entityData, previousEntityIndex, offset);
+
+        if (decoded.plausibleEntityIndex && decoded.plausibleCommand) {
+            candidates.push({
+                offsetDeltaBits: delta,
+                readCount: offset,
+                decoded
+            });
+        }
+    }
+
+    return candidates.sort((left, right) => Math.abs(left.offsetDeltaBits) - Math.abs(right.offsetDeltaBits));
+}
+
+function decodeNextEntryAtOffset(entityData, previousEntityIndex, readCount) {
+    try {
+        const buffer = new BitBuffer(entityData);
+
+        buffer.move(readCount);
+        const beforeIndexReadCount = buffer.getReadCount();
+        const indexDelta = buffer.readUVarInt();
+        const afterIndexReadCount = buffer.getReadCount();
+        const entityIndex = previousEntityIndex + indexDelta + 1;
+        const commandId = buffer.readBitsAsUInt(2);
+        const afterCommandReadCount = buffer.getReadCount();
+        const operation = EntityOperation.parseById(commandId);
+
+        return {
+            beforeIndexReadCount,
+            afterIndexReadCount,
+            afterCommandReadCount,
+            indexDelta,
+            entityIndex,
+            commandId,
+            operation: operation?.code ?? 'UNKNOWN',
+            plausibleEntityIndex: Number.isInteger(entityIndex) && entityIndex >= 0 && entityIndex < (1 << 14),
+            plausibleCommand: operation !== null
+        };
+    } catch (error) {
+        return {
+            error: error?.message ?? String(error),
+            plausibleEntityIndex: false,
+            plausibleCommand: false
+        };
+    }
 }
 
 /**
@@ -576,4 +1033,9 @@ function recordOutOfRangeEntityCreateBoundary(recovery, context, error) {
 }
 
 export default DemoMessageHandler;
-export { recoverMissingClassBaseline, recoverMissingEntityReference, recordOutOfRangeEntityCreateBoundary };
+export {
+    decodeNextEntryAtOffset,
+    recoverMissingClassBaseline,
+    recoverMissingEntityReference,
+    recordOutOfRangeEntityCreateBoundary
+};

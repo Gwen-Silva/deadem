@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "diagnosticPresent": true,
+  "comparison": {
+    "currentModel": {
+      "modelId": "current_payload_bits_as_relative_skip_after_command",
+      "sourceLoop": 22,
+      "afterCommandReadCount": 5958,
+      "payloadBits": 266,
+      "expectedAfterActionReadCount": 6224,
+      "actualAfterActionReadCount": 6224,
+      "nextLoopStartReadCount": 6224,
+      "internallyConsistent": true
+    },
+    "alternativeBoundaryModelA": [
+      {
+        "modelId": "payload_bits_excludes_command_current_equivalent",
+        "simulatedStartReadCount": 6224,
+        "decodedNextEntry": {
+          "beforeIndexReadCount": 6224,
+          "afterIndexReadCount": 6258,
+          "afterCommandReadCount": 6260,
+          "indexDelta": 570648825,
+          "entityIndex": 570655505,
+          "commandId": 2,
+          "operation": "CREATE",
+          "plausibleEntityIndex": false,
+          "plausibleCommand": true
+        }
+      },
+      {
+        "modelId": "payload_bits_includes_command_bits",
+        "simulatedStartReadCount": 6222,
+        "decodedNextEntry": {
+          "beforeIndexReadCount": 6222,
+          "afterIndexReadCount": 6236,
+          "afterCommandReadCount": 6238,
+          "indexDelta": 1014,
+          "entityIndex": 7694,
+          "commandId": 2,
+          "operation": "CREATE",
+          "plausibleEntityIndex": true,
+          "plausibleCommand": true
+        }
+      },
+      {
+        "modelId": "payload_bits_excludes_one_byte_header",
+        "simulatedStartReadCount": 6232,
+        "decodedNextEntry": {
+          "beforeIndexReadCount": 6232,
+          "afterIndexReadCount": 6246,
+          "afterCommandReadCount": 6248,
+          "indexDelta": 867,
+          "entityIndex": 7547,
+          "commandId": 0,
+          "operation": "UPDATE",
+          "plausibleEntityIndex": true,
+          "plausibleCommand": true
+        }
+      }
+    ],
+    "alternativeBoundaryModelB": {
+      "modelId": "nearby_offset_scan_plus_minus_64_bits",
+      "observedStartReadCount": 6224,
+      "searchRadiusBits": 64,
+      "plausibleCandidateCount": 97,
+      "plausibleCandidates": [
+        {
+          "offsetDeltaBits": -2,
+          "readCount": 6222,
+          "decoded": {
+            "beforeIndexReadCount": 6222,
+            "afterIndexReadCount": 6236,
+            "afterCommandReadCount": 6238,
+            "indexDelta": 1014,
+            "entityIndex": 7694,
+            "commandId": 2,
+            "operation": "CREATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -3,
+          "readCount": 6221,
+          "decoded": {
+            "beforeIndexReadCount": 6221,
+            "afterIndexReadCount": 6227,
+            "afterCommandReadCount": 6229,
+            "indexDelta": 13,
+            "entityIndex": 6693,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -4,
+          "readCount": 6220,
+          "decoded": {
+            "beforeIndexReadCount": 6220,
+            "afterIndexReadCount": 6230,
+            "afterCommandReadCount": 6232,
+            "indexDelta": 235,
+            "entityIndex": 6915,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 5,
+          "readCount": 6229,
+          "decoded": {
+            "beforeIndexReadCount": 6229,
+            "afterIndexReadCount": 6239,
+            "afterCommandReadCount": 6241,
+            "indexDelta": 79,
+            "entityIndex": 6759,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -6,
+          "readCount": 6218,
+          "decoded": {
+            "beforeIndexReadCount": 6218,
+            "afterIndexReadCount": 6232,
+            "afterCommandReadCount": 6234,
+            "indexDelta": 3997,
+            "entityIndex": 10677,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 6,
+          "readCount": 6230,
+          "decoded": {
+            "beforeIndexReadCount": 6230,
+            "afterIndexReadCount": 6236,
+            "afterCommandReadCount": 6238,
+            "indexDelta": 15,
+            "entityIndex": 6695,
+            "commandId": 2,
+            "operation": "CREATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -7,
+          "readCount": 6217,
+          "decoded": {
+            "beforeIndexReadCount": 6217,
+            "afterIndexReadCount": 6227,
+            "afterCommandReadCount": 6229,
+            "indexDelta": 59,
+            "entityIndex": 6739,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 7,
+          "readCount": 6231,
+          "decoded": {
+            "beforeIndexReadCount": 6231,
+            "afterIndexReadCount": 6237,
+            "afterCommandReadCount": 6239,
+            "indexDelta": 7,
+            "entityIndex": 6687,
+            "commandId": 1,
+            "operation": "LEAVE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 8,
+          "readCount": 6232,
+          "decoded": {
+            "beforeIndexReadCount": 6232,
+            "afterIndexReadCount": 6246,
+            "afterCommandReadCount": 6248,
+            "indexDelta": 867,
+            "entityIndex": 7547,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -9,
+          "readCount": 6215,
+          "decoded": {
+            "beforeIndexReadCount": 6215,
+            "afterIndexReadCount": 6229,
+            "afterCommandReadCount": 6231,
+            "indexDelta": 3295,
+            "entityIndex": 9975,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 9,
+          "readCount": 6233,
+          "decoded": {
+            "beforeIndexReadCount": 6233,
+            "afterIndexReadCount": 6243,
+            "afterCommandReadCount": 6245,
+            "indexDelta": 177,
+            "entityIndex": 6857,
+            "commandId": 1,
+            "operation": "LEAVE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -10,
+          "readCount": 6214,
+          "decoded": {
+            "beforeIndexReadCount": 6214,
+            "afterIndexReadCount": 6224,
+            "afterCommandReadCount": 6226,
+            "indexDelta": 191,
+            "entityIndex": 6871,
+            "commandId": 1,
+            "operation": "LEAVE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 10,
+          "readCount": 6234,
+          "decoded": {
+            "beforeIndexReadCount": 6234,
+            "afterIndexReadCount": 6248,
+            "afterCommandReadCount": 6250,
+            "indexDelta": 216,
+            "entityIndex": 6896,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 12,
+          "readCount": 6236,
+          "decoded": {
+            "beforeIndexReadCount": 6236,
+            "afterIndexReadCount": 6246,
+            "afterCommandReadCount": 6248,
+            "indexDelta": 58,
+            "entityIndex": 6738,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 13,
+          "readCount": 6237,
+          "decoded": {
+            "beforeIndexReadCount": 6237,
+            "afterIndexReadCount": 6251,
+            "afterCommandReadCount": 6253,
+            "indexDelta": 29,
+            "entityIndex": 6709,
+            "commandId": 1,
+            "operation": "LEAVE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 15,
+          "readCount": 6239,
+          "decoded": {
+            "beforeIndexReadCount": 6239,
+            "afterIndexReadCount": 6249,
+            "afterCommandReadCount": 6251,
+            "indexDelta": 11,
+            "entityIndex": 6691,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 16,
+          "readCount": 6240,
+          "decoded": {
+            "beforeIndexReadCount": 6240,
+            "afterIndexReadCount": 6246,
+            "afterCommandReadCount": 6248,
+            "indexDelta": 13,
+            "entityIndex": 6693,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 17,
+          "readCount": 6241,
+          "decoded": {
+            "beforeIndexReadCount": 6241,
+            "afterIndexReadCount": 6247,
+            "afterCommandReadCount": 6249,
+            "indexDelta": 6,
+            "entityIndex": 6686,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -18,
+          "readCount": 6206,
+          "decoded": {
+            "beforeIndexReadCount": 6206,
+            "afterIndexReadCount": 6220,
+            "afterCommandReadCount": 6222,
+            "indexDelta": 2044,
+            "entityIndex": 8724,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 18,
+          "readCount": 6242,
+          "decoded": {
+            "beforeIndexReadCount": 6242,
+            "afterIndexReadCount": 6248,
+            "afterCommandReadCount": 6250,
+            "indexDelta": 3,
+            "entityIndex": 6683,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -19,
+          "readCount": 6205,
+          "decoded": {
+            "beforeIndexReadCount": 6205,
+            "afterIndexReadCount": 6215,
+            "afterCommandReadCount": 6217,
+            "indexDelta": 248,
+            "entityIndex": 6928,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 19,
+          "readCount": 6243,
+          "decoded": {
+            "beforeIndexReadCount": 6243,
+            "afterIndexReadCount": 6249,
+            "afterCommandReadCount": 6251,
+            "indexDelta": 1,
+            "entityIndex": 6681,
+            "commandId": 0,
+            "operation": "UPDATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 20,
+          "readCount": 6244,
+          "decoded": {
+            "beforeIndexReadCount": 6244,
+            "afterIndexReadCount": 6250,
+            "afterCommandReadCount": 6252,
+            "indexDelta": 0,
+            "entityIndex": 6680,
+            "commandId": 2,
+            "operation": "CREATE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": -21,
+          "readCount": 6203,
+          "decoded": {
+            "beforeIndexReadCount": 6203,
+            "afterIndexReadCount": 6217,
+            "afterCommandReadCount": 6219,
+            "indexDelta": 4049,
+            "entityIndex": 10729,
+            "commandId": 3,
+            "operation": "DELETE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        },
+        {
+          "offsetDeltaBits": 21,
+          "readCount": 6245,
+          "decoded": {
+            "beforeIndexReadCount": 6245,
+            "afterIndexReadCount": 6251,
+            "afterCommandReadCount": 6253,
+            "indexDelta": 0,
+            "entityIndex": 6680,
+            "commandId": 1,
+            "operation": "LEAVE",
+            "plausibleEntityIndex": true,
+            "plausibleCommand": true
+          }
+        }
+      ]
+    },
+    "modelConclusion": {
+      "currentSkipInternallyConsistent": true,
+      "nearbyPlausibleOffsetsFound": true,
+      "interpretation": "nearby offsets can decode plausible entity index and command pairs, so cursor misalignment remains a viable hypothesis"
+    }
+  },
+  "observedFacts": [
+    "loop 22 was a recovered missing UPDATE immediately before the out-of-range CREATE",
+    "loop 23 started at the read count produced by the current skip model",
+    "the out-of-range CREATE was observed without recovering the boundary"
+  ],
+  "simulations": [
+    "alternative offsets were decoded locally without advancing the real parser"
+  ],
+  "hypotheses": [
+    "cursor alignment may be wrong before loop 23",
+    "serializedEntities payload size may not be sufficient by itself to skip this missing UPDATE safely"
+  ],
+  "notDetermined": [
+    "whether loop 22 caused the boundary",
+    "whether misalignment began before loop 22",
+    "whether the replay data or parser assumptions are responsible"
+  ]
+}
