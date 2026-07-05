@@ -31,7 +31,11 @@ workaround. Task 102 created a bounded generic local-input canary for only
 `partida_010.dem` and reached
 `generic_local_replay_source_artifacts_ready_canonicalization_pending`: source
 artifact generation works from the local path, but generic canonical package
-construction remains pending.
+construction remains pending. Task 103 then attempted the canonical
+source-artifact set for the same single input and blocked under
+`generic_local_replay_canonical_source_artifacts_blocked` because replay
+seek/sampling failed through the current generic `deadem.Player` path with
+`Unable to find an entity with index [ 2905 ]`.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -91,10 +95,11 @@ automatically; Task 097 has now completed as an explicitly authorized
 post-pilot planning task. Task 098 has now completed as an explicitly
 authorized expansion attempt, Task 099 prepared human replay intake, and Task
 100 normalized local candidate filenames into the ignored inbox, Task 101
-blocked candidate processing, and Task 102 validated the first generic
-local-input source-artifact canary while leaving canonicalization pending. Stop
-for a human milestone decision about whether to wire generic local-input
-canonicalization, improve cache tooling,
+blocked candidate processing, Task 102 validated the first generic local-input
+parser canary, and Task 103 blocked on seek-dependent source-artifact
+extraction for the same single input. Stop for a human milestone decision about
+whether to fix generic local replay sampling, wire local-input canonicalization
+after that blocker is resolved, improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
@@ -120,5 +125,5 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. Task 102 is complete with a
-partial source-artifact gate; stop and wait for a human milestone decision.
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 103 is complete with a
+blocked source-artifact gate; stop and wait for a human milestone decision.

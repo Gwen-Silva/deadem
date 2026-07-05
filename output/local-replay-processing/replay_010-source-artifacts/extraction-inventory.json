@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "phase": "extraction_inventory_before_parse",
+  "allowedInput": ".local/deadem/replays/inbox/partida_010.dem",
+  "rows": [
+    {
+      "artifactClass": "match_state_timeline",
+      "sourcePath": "scripts/build-unified-match-state-timeline.js",
+      "classification": "hardcoded_to_samples_or_existing_outputs",
+      "notes": "Existing script writes output/replays and is not reused."
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "sourcePath": "scripts/validate-replay-009-telemetry.js snapshot logic",
+      "classification": "reusable_with_parameterization",
+      "notes": "Task 103 implements bounded parameterized sampling using Player API."
+    },
+    {
+      "artifactClass": "death_events",
+      "sourcePath": "scripts/validate-replay-009-telemetry.js counter-transition logic",
+      "classification": "reusable_with_parameterization",
+      "notes": "Task 103 uses death-counter increments only."
+    },
+    {
+      "artifactClass": "respawn_events",
+      "sourcePath": "scripts/validate-replay-009-telemetry.js lifecycle logic",
+      "classification": "reusable_with_parameterization",
+      "notes": "Task 103 uses alive false-to-true source observations."
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "sourcePath": "scripts/map-multi-replay-objective-lifecycle.js",
+      "classification": "hardcoded_to_samples_or_existing_outputs",
+      "notes": "Task 103 uses a bounded class-observation extractor instead of the script."
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "sourcePath": "scripts/map-multi-replay-objective-lifecycle.js",
+      "classification": "hardcoded_to_samples_or_existing_outputs",
+      "notes": "Task 103 emits raw observation lifecycle samples only."
+    },
+    {
+      "artifactClass": "parser_compatibility",
+      "sourcePath": "packages/deadem/index.js Player API",
+      "classification": "reusable_directly",
+      "notes": "Player.load(createReadStream(input)) accepts the local input path."
+    },
+    {
+      "artifactClass": "quality_summaries",
+      "sourcePath": "scripts/validate-replay-009-telemetry.js quality builders",
+      "classification": "reusable_with_parameterization",
+      "notes": "Task 103 emits compact local-input quality summaries."
+    }
+  ],
+  "conclusion": "bounded_parameterized_source_artifact_extractor_required"
+}

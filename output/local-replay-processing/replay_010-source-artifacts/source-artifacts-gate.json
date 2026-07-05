@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "generic_local_replay_canonical_source_artifacts_blocked",
+  "successGate": "generic_local_replay_canonical_source_artifacts_ready",
+  "blockedGate": "generic_local_replay_canonical_source_artifacts_blocked",
+  "artifactClassesAttempted": [
+    "parser_source_summary",
+    "match_state_timeline",
+    "match_state_quality",
+    "one_second_player_reconciliation_or_equivalent",
+    "death_events",
+    "death_validation",
+    "respawn_events",
+    "objective_entity_inventory",
+    "objective_lifecycle_events"
+  ],
+  "artifactClassesReady": [
+    "parser_source_summary"
+  ],
+  "artifactClassesUnavailable": [],
+  "artifactClassesBlocked": [
+    "match_state_timeline",
+    "match_state_quality",
+    "one_second_player_reconciliation_or_equivalent",
+    "death_events",
+    "death_validation",
+    "respawn_events",
+    "objective_entity_inventory",
+    "objective_lifecycle_events"
+  ],
+  "canonicalPackageConstructed": false,
+  "reasons": [
+    "extractor failed: Unable to find an entity with index [ 2905 ]",
+    "match_state_timeline blocked",
+    "match_state_quality blocked",
+    "one_second_player_reconciliation_or_equivalent blocked",
+    "death_events blocked",
+    "death_validation blocked",
+    "respawn_events blocked",
+    "objective_entity_inventory blocked",
+    "objective_lifecycle_events blocked"
+  ]
+}

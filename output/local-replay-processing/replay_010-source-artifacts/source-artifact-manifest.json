@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "localOnlyArtifacts": [
+    {
+      "path": ".local/deadem/cache/local-replay-processing/replay_010/source-artifacts/parser-source-summary.json",
+      "sizeBytes": 415,
+      "sha256": "ee37e8dc07c419d491adf1dd85ce9a10f5f80fea252c576c3ba90eb935ce4e66"
+    },
+    {
+      "path": ".local/deadem/cache/local-replay-processing/replay_010/source-artifacts/source-artifact-sampling-error.json",
+      "sizeBytes": 863,
+      "sha256": "00363938623491bebde2bc9b9016c9acab4c263470967a86ebcee4cd2f8e890f"
+    }
+  ],
+  "committedSummaryArtifacts": [
+    "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json"
+  ],
+  "sourceArtifactClasses": [
+    {
+      "artifactClass": "parser_source_summary",
+      "status": "ready",
+      "localArtifactPath": ".local/deadem/cache/local-replay-processing/replay_010/source-artifacts/parser-source-summary.json",
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": 1,
+      "sourceMethod": "deadem.Player metadata after load",
+      "limitations": [
+        "Source artifact only; no canonical package construction claimed."
+      ]
+    },
+    {
+      "artifactClass": "match_state_timeline",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "one-second parser snapshot timeline",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "match_state_quality",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "quality summary over timeline and counters",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "steam/controller/pawn reconciliation sampled once per second",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "death_events",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "m_iDeaths counter increments only",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "death_validation",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "duplicate and source-method validation for death counter events",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "respawn_events",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "alive flag false-to-true observations only",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "configured objective-like entity class observations",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "raw objective-like entity observation samples",
+      "limitations": [
+        "Replay seek/sampling failed through the current generic Player API; this source artifact class cannot be generated safely in Task 103.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    }
+  ],
+  "canonicalPackageConstructed": false,
+  "forbiddenSemanticLayers": [],
+  "limitations": [
+    "Full local source artifacts stay under .local and are not committed."
+  ]
+}

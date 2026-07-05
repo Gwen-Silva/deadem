@@ -1,0 +1,114 @@
+{
+  "taskId": "103",
+  "title": "Generate Canonical Source Artifacts For Local Replay Canary",
+  "status": "completed",
+  "objective": "Generate the canonical source-artifact set needed for later factual construction from only .local/deadem/replays/inbox/partida_010.dem mapped to replay_010.",
+  "readPaths": [
+    "package.json",
+    "packages/**",
+    "scripts/**",
+    "tools/**",
+    "lib/**",
+    "docs/PROJECT_STATE.md",
+    "reports/**",
+    "output/local-replay-processing/replay_010-canary/**",
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "output/five-replay-pilot/audit/**",
+    "tasks/specs/103.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "tools/generate-local-replay-source-artifacts.mjs",
+    "tests/local-replay-source-artifacts-canary.test.mjs",
+    "output/local-replay-processing/replay_010-source-artifacts/**",
+    "reports/local-replay-source-artifacts-canary.md",
+    "tasks/specs/103.json",
+    "tasks/completed/103-generate-canonical-source-artifacts-for-local-replay-canary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "output/five-replay-pilot/**",
+    "schemas/**",
+    "tasks/specs/104.json",
+    "tasks/blocked/104-*",
+    "tasks/completed/104-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "local-replay-source-artifacts-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/local-replay-source-artifacts-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-source-artifacts/extraction-inventory.json",
+    "output/local-replay-processing/replay_010-source-artifacts/input-identity.json",
+    "output/local-replay-processing/replay_010-source-artifacts/source-artifact-availability.json",
+    "output/local-replay-processing/replay_010-source-artifacts/source-artifact-manifest.json",
+    "output/local-replay-processing/replay_010-source-artifacts/quality-summary.json",
+    "output/local-replay-processing/replay_010-source-artifacts/performance-baseline.json",
+    "output/local-replay-processing/replay_010-source-artifacts/storage-baseline.json",
+    "output/local-replay-processing/replay_010-source-artifacts/protection-audit.json",
+    "output/local-replay-processing/replay_010-source-artifacts/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-source-artifacts/source-artifacts-gate.json",
+    "reports/local-replay-source-artifacts-canary.md",
+    "tasks/completed/103-generate-canonical-source-artifacts-for-local-replay-canary.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or write samples",
+    "Do not copy replay bytes",
+    "Do not create Task 104",
+    "Do not construct a canonical package"
+  ],
+  "successGate": "generic_local_replay_canonical_source_artifacts_ready",
+  "blockedGate": "generic_local_replay_canonical_source_artifacts_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-source-artifacts/source-artifacts-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "regenerate",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

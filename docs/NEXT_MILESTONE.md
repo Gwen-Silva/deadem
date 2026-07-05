@@ -65,9 +65,12 @@ explicitly authorized local inbox normalization task with the gate
 authorized local candidate processing attempt with the blocked gate
 `factual_batch_15_candidate_processing_blocked`. Task 102 is complete as an
 explicitly authorized single-replay local-input canary with the partial gate
-`generic_local_replay_source_artifacts_ready_canonicalization_pending`.
+`generic_local_replay_source_artifacts_ready_canonicalization_pending`. Task
+103 is complete as an explicitly authorized source-artifact attempt for only
+`partida_010.dem` with the blocked gate
+`generic_local_replay_canonical_source_artifacts_blocked`.
 
-Do not create Task 103 automatically. Stop and wait for a human milestone
+Do not create Task 104 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -193,6 +196,21 @@ Blocked gate: `generic_local_replay_processing_canary_blocked`.
 Status: completed with the partial source-artifact gate above. The generic
 local parser API can open the authorized local input and produce compact source
 artifact summaries, but generic canonical package construction remains pending.
+
+## Task 103
+
+Purpose: generate the canonical source-artifact set needed for later factual
+construction from only `.local/deadem/replays/inbox/partida_010.dem` mapped to
+`replay_010`.
+
+Success gate: `generic_local_replay_canonical_source_artifacts_ready`.
+
+Blocked gate: `generic_local_replay_canonical_source_artifacts_blocked`.
+
+Status: completed with the blocked gate above. Parser-source summary was ready,
+but seek-dependent source classes blocked because the current generic
+`deadem.Player` path failed with `Unable to find an entity with index [ 2905 ]`.
+No canonical package was constructed and Task 104 was not created.
 
 ## Non-Goals
 
