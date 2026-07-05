@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 3,
+  "taskId": "094",
+  "replayId": "replay_002",
+  "closedSet": true,
+  "scopeRoots": {
+    "assessment": "<assessment-output>"
+  },
+  "terminalExclusions": {
+    "assessment": [
+      "audit-artifact-manifest.json",
+      "audit-artifact-verification.json",
+      "terminal-base-manifest-verification.json",
+      "evidence-attestation.json",
+      "evidence-attestation-verification.json",
+      "release-consistency-verification.json",
+      "release-envelope.json",
+      "release-envelope-verification.json",
+      "terminal-release-verification.json",
+      "release-decision.json",
+      "correction-gate.json",
+      "correction-summary.json"
+    ]
+  },
+  "artifactCount": 8,
+  "artifacts": [
+    {
+      "scope": "assessment",
+      "relativePath": "candidate-generation-summary.json",
+      "sizeBytes": 205,
+      "sha256": "1b1e442b7407fb50401b72dd981296d7bad6eb485536fee69f97eb327193773c"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "deterministic-rerun.json",
+      "sizeBytes": 296,
+      "sha256": "8e6fd29b819a7dd11353a61939d544793e59175ebf4a0cd096e55e7191baf0a4"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "evidence-matrix.json",
+      "sizeBytes": 674,
+      "sha256": "ab021a345066cbcc7719160c3cd5cc521ef6e4f6ec7e6b28326b195d9e6de6f3"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "historical-v8-blocker-summary.json",
+      "sizeBytes": 363,
+      "sha256": "e7c07e72446e90767a7cc65e43b5f433c23e53adef69cb4aca5a3076d439fd1f"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "input-access-log.json",
+      "sizeBytes": 553,
+      "sha256": "b4f611678aba4161b10364596ab4510a7f27c9314a3ce71116f9ad36dc12acb3"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "input-manifest.json",
+      "sizeBytes": 438,
+      "sha256": "09d55aaf8368095aee0fee25b9f8c5c3c9857d8c1c12d73e2f64305bd02a4c50"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "io-policy-audit.json",
+      "sizeBytes": 23688,
+      "sha256": "7c34a8e986bf2b4a26e1e635c92cb9f82995f105e87efd71b8bbd26e3a63468b"
+    },
+    {
+      "scope": "assessment",
+      "relativePath": "raw-replay-access-classification.json",
+      "sizeBytes": 187,
+      "sha256": "9fa160e442c1ee0a4481068fb6739bdef23d8c25d25498d7fc224c8a94ab92f5"
+    }
+  ]
+}

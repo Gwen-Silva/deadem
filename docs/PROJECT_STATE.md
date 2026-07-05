@@ -4,9 +4,9 @@ Last updated: 2026-07-05
 
 ## Authoritative Current State
 
-The current milestone is the five-human-replay factual pilot. The repository is
-ready to resume replay work only through the finite Task 094-096 sequence in
-`docs/FIVE_REPLAY_PILOT_PLAN.md`.
+The current milestone is the five-human-replay factual pilot. Task 094 has
+completed replay-002 terminal validation v9; replay work may resume only through
+the remaining finite Task 095-096 sequence in `docs/FIVE_REPLAY_PILOT_PLAN.md`.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -46,7 +46,8 @@ Historical reports or outputs cannot override this file or
 - Replay 002 Task 089 v8 gate
   `replay_002_canonical_factual_state_ready_with_constraints_v8` is rejected
   after technical review. It is historical evidence only.
-- Replay 002 is not accepted yet.
+- Replay 002 terminal validation v9 is ready with constraints under
+  `replay_002_canonical_factual_state_ready_with_constraints_v9`.
 - Tasks 082-089 are preserved as replay-002 validation attempts and review
   history.
 - Tasks 090-092 are workflow optimization tasks. They do not accept replay 002.
@@ -57,12 +58,11 @@ Historical reports or outputs cannot override this file or
 
 ## Current Blocked Work
 
-- Task 094: finalize replay 002 terminal validation v9.
 - Task 095: canonicalize replays 001, 003, and 004.
 - Task 096: audit the five-human-replay factual pilot.
 
-All three tasks remain blocked until explicitly authorized. Do not create Task
-097 automatically.
+Task 095 and Task 096 remain blocked until explicitly authorized. Do not create
+Task 097 automatically.
 
 ## Protected And Unsupported Replays
 

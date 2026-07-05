@@ -8,9 +8,8 @@ The accepted Codex workflow gate is
 limitations for the five-replay pilot.
 
 Replay 009 remains the accepted canonical factual-state package with
-constraints. Replay 002 is not accepted yet: Task 089's v8 gate is preserved as
-a rejected historical attempt, and the remaining terminal validation work is
-assigned to blocked Task 094.
+constraints. Replay 002 terminal validation v9 is ready with constraints after
+Task 094. Task 089's v8 gate remains a rejected historical attempt.
 
 Spatial work remains parked under the Task 081 resume contract. Replay 005 is
 protected. Replays 006-008 remain unsupported bot fixtures. Macro, fights,
@@ -49,11 +48,11 @@ current pilot definition.
 
 ## Finite Execution Horizon
 
-Exactly three execution tasks remain in the current pilot horizon:
+Task 094 is complete. Exactly two execution tasks remain in the current pilot
+horizon:
 
-1. Task 094, `Finalize Replay 002 Terminal Validation`
-2. Task 095, `Canonicalize Remaining Human Pilot Replays`
-3. Task 096, `Audit Five Human Replay Factual Pilot`
+1. Task 095, `Canonicalize Remaining Human Pilot Replays`
+2. Task 096, `Audit Five Human Replay Factual Pilot`
 
 Do not create Task 097 automatically. After Task 096, stop and wait for a human
 milestone decision.
@@ -70,6 +69,8 @@ Purpose: resolve only the four frozen replay-002 terminal blockers:
 Success gate: `replay_002_canonical_factual_state_ready_with_constraints_v9`.
 
 Blocked gate: `replay_002_canonical_factual_state_v9_blocked`.
+
+Status: completed with the success gate above.
 
 ## Task 095
 

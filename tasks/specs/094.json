@@ -1,7 +1,7 @@
 {
   "taskId": "094",
   "title": "Finalize Replay 002 Terminal Validation",
-  "status": "blocked",
+  "status": "completed",
   "objective": "Correct the remaining terminal validation blockers for replay 002 without regenerating the factual layer unless a factual logic test proves it is necessary.",
   "blockers": [
     "base manifest becomes stale after final files are created",
@@ -61,6 +61,8 @@
     "tests/replay-002-canonical-generalization.test.mjs",
     "output/replay-002-canonical-v9-validation/**",
     "reports/replay-002-canonical-factual-state-v9-validation.md",
+    "tasks/specs/094.json",
+    "tasks/blocked/094-finalize-replay-002-terminal-validation.md",
     "tasks/completed/094-finalize-replay-002-terminal-validation.md",
     "tasks/blocked/095-canonicalize-remaining-human-pilot-replays.md",
     "docs/codex/CURRENT_STATE.md",

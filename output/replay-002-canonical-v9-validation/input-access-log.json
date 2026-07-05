@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "taskId": "094",
+  "accesses": [
+    {
+      "path": "output/replay-002-canonical-v8-validation/release-decision.json",
+      "purpose": "historical gate comparison"
+    },
+    {
+      "path": "output/replay-002-canonical-v8-validation/audit-artifact-verification.json",
+      "purpose": "historical base-manifest blocker evidence"
+    },
+    {
+      "path": "output/replay-002-canonical-v8-validation/deterministic-rerun.json",
+      "purpose": "historical determinism blocker evidence"
+    }
+  ],
+  "forbiddenAccesses": []
+}

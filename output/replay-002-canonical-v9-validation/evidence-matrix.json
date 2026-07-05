@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "094",
+  "replayId": "replay_002",
+  "checks": {
+    "terminalManifestFreshness": {
+      "passed": true,
+      "artifact": "terminal-base-manifest-verification.json"
+    },
+    "evidenceOnlyDeterminismRepresentation": {
+      "passed": true,
+      "artifact": "deterministic-rerun.json"
+    },
+    "strictScopeContainment": {
+      "passed": true,
+      "artifact": "release-envelope-verification.json"
+    },
+    "ioGuardTracking": {
+      "passed": true,
+      "artifact": "io-policy-audit.json"
+    },
+    "deterministicRerun": {
+      "status": "evaluated",
+      "passed": true
+    }
+  },
+  "allPassed": true,
+  "mode": "release"
+}

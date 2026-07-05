@@ -6,6 +6,7 @@ import { auditIoPolicy } from '../lib/canonical-state/audits/io-policy-audit.mjs
 import { createCanonicalIo } from '../lib/canonical-state/io-layer.mjs';
 import { createReplay002Manifest } from '../tools/build-replay-002-canonical-state.mjs';
 import { coverageFromLedger, decideRelease, verifyArtifactSet } from '../tools/finalize-replay-002-canonical-v8.mjs';
+import { buildBaseManifest, evidenceOnlyDeterminism, verifyBaseManifest, verifyReleaseEnvelope as verifyV9ReleaseEnvelope } from '../tools/finalize-replay-002-canonical-v9.mjs';
 
 const canonicalDir = 'output/replay-002-canonical';
 const correctionDir = 'output/replay-002-canonical-v8-validation';
@@ -512,4 +513,83 @@ test('schema coverage is derived from completed ledger entries only', () => {
     });
     assert.equal(incomplete.passed, false);
     assert(incomplete.comparisons.some(comparison => comparison.missingComparisons.includes('snapshot')));
+});
+
+test('v9 evidence-only determinism is not converted into a pass', () => {
+    const deterministic = evidenceOnlyDeterminism();
+    assert.equal(deterministic.deterministic, null);
+    assert.equal(deterministic.passed, null);
+    assert.equal(deterministic.determinismDecision, 'owned_by_outer_run');
+    assert.equal(deterministic.releaseAuthorized, false);
+});
+
+test('v9 terminal base manifest catches post-verification extras unless excluded', async () => {
+    const root = 'output-local/task-094-terminal-manifest';
+    await fs.rm(root, { recursive: true, force: true });
+    await fs.mkdir(root, { recursive: true });
+    await writeJson(`${root}/base-audit.json`, { ok: true });
+    const manifest = await buildBaseManifest(root);
+    await writeJson(`${root}/evidence-attestation.json`, { terminal: true });
+    const withExcludedTerminal = await verifyBaseManifest(root, manifest, 'terminal');
+    assert.equal(withExcludedTerminal.passed, true);
+    await writeJson(`${root}/unexpected-terminal.json`, { bad: true });
+    const withExtra = await verifyBaseManifest(root, manifest, 'terminal');
+    assert.equal(withExtra.passed, false);
+    assert(withExtra.extraArtifacts.includes('unexpected-terminal.json'));
+});
+
+test('v9 release envelope enforces strict scope containment', async () => {
+    const root = 'output-local/task-094-release-envelope';
+    await fs.rm(root, { recursive: true, force: true });
+    await fs.mkdir(root, { recursive: true });
+    const files = ['release-decision.json', 'terminal-release-verification.json', 'terminal-base-manifest-verification.json', 'correction-gate.json', 'correction-summary.json'];
+    for (const file of files) await writeJson(`${root}/${file}`, { file });
+    await fs.mkdir('output-local/task-094-report', { recursive: true });
+    await fs.writeFile('output-local/task-094-report/report.md', '# report\n');
+    const goodArtifacts = [];
+    for (const file of files) {
+        const text = await fs.readFile(`${root}/${file}`, 'utf8');
+        const sha256 = await import('node:crypto').then(({ createHash }) => createHash('sha256').update(text).digest('hex'));
+        goodArtifacts.push({ role: file.replaceAll('-', ' ').replace('.json', ''), scope: 'assessment', relativePath: file, sizeBytes: Buffer.byteLength(text), sha256 });
+    }
+    const reportText = await fs.readFile('output-local/task-094-report/report.md', 'utf8');
+    const reportSha = await import('node:crypto').then(({ createHash }) => createHash('sha256').update(reportText).digest('hex'));
+    const envelope = {
+        artifacts: [
+            { role: 'release decision', scope: 'assessment', relativePath: 'release-decision.json', sizeBytes: (await fs.stat(`${root}/release-decision.json`)).size, sha256: goodArtifacts[0].sha256 },
+            { role: 'terminal release verification', scope: 'assessment', relativePath: 'terminal-release-verification.json', sizeBytes: (await fs.stat(`${root}/terminal-release-verification.json`)).size, sha256: goodArtifacts[1].sha256 },
+            { role: 'terminal base manifest verification', scope: 'assessment', relativePath: 'terminal-base-manifest-verification.json', sizeBytes: (await fs.stat(`${root}/terminal-base-manifest-verification.json`)).size, sha256: goodArtifacts[2].sha256 },
+            { role: 'correction gate', scope: 'assessment', relativePath: 'correction-gate.json', sizeBytes: (await fs.stat(`${root}/correction-gate.json`)).size, sha256: goodArtifacts[3].sha256 },
+            { role: 'correction summary', scope: 'assessment', relativePath: 'correction-summary.json', sizeBytes: (await fs.stat(`${root}/correction-summary.json`)).size, sha256: goodArtifacts[4].sha256 },
+            { role: 'final report', scope: 'report', relativePath: 'report.md', sizeBytes: Buffer.byteLength(reportText), sha256: reportSha }
+        ]
+    };
+    const ok = await verifyV9ReleaseEnvelope({ assessmentDir: root, reportPath: 'output-local/task-094-report/report.md', envelope });
+    assert.equal(ok.passed, true);
+    const escaped = structuredClone(envelope);
+    escaped.artifacts[0].relativePath = '../task-094-report/report.md';
+    const bad = await verifyV9ReleaseEnvelope({ assessmentDir: root, reportPath: 'output-local/task-094-report/report.md', envelope: escaped });
+    assert.equal(bad.passed, false);
+    assert(bad.mismatches.some(item => item.issue === 'artifact_unreadable'));
+});
+
+test('v9 IO audit rejects guards from another function, use-before-guard, and reassignment', async () => {
+    const root = 'output-local/task-094-io-audit';
+    await fs.rm(root, { recursive: true, force: true });
+    await fs.mkdir(root, { recursive: true });
+    const modulePath = `${root}/bad-audit.mjs`;
+    await fs.writeFile(modulePath, `import { promises as fs } from 'node:fs';
+import { assertPathWithinRoots } from '../../lib/canonical-state/audits/common.mjs';
+function guardElsewhere(input) { const safe = assertPathWithinRoots(input); return safe; }
+export async function otherFunction(input) { return fs.readFile(input, 'utf8'); }
+export async function useBefore(input) { const value = await fs.readFile(safe, 'utf8'); const safe = assertPathWithinRoots(input); return value; }
+export async function reassigned(input) { let safe = assertPathWithinRoots(input); safe = input; return fs.readFile(safe, 'utf8'); }
+export async function ok(input) { const safe = assertPathWithinRoots(input); return fs.readFile(safe, 'utf8'); }
+`);
+    const audit = await auditIoPolicy({ outputDir: `${root}/canonical`, assessmentDir: `${root}/assessment`, pipelineModules: [modulePath], allowedInputs: [], generatedRootPrefixes: [`${root}/canonical`, `${root}/assessment`] });
+    assert.equal(audit.passed, false);
+    assert(audit.findings.some(finding => finding.functionName === 'otherFunction' && finding.pathClassification === 'unresolved_dynamic_path' && !finding.allowed));
+    assert(audit.findings.some(finding => finding.functionName === 'useBefore' && finding.pathClassification === 'unresolved_dynamic_path' && !finding.allowed));
+    assert(audit.findings.some(finding => finding.functionName === 'reassigned' && finding.pathClassification === 'dynamic_path_guard_invalidated_by_reassignment' && !finding.allowed));
+    assert(audit.findings.some(finding => finding.functionName === 'ok' && finding.pathClassification === 'dynamic_path_guarded_by_tracked_variable' && finding.allowed));
 });
