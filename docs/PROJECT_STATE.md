@@ -9,7 +9,9 @@ completed replay-002 terminal validation v9, Task 095 canonicalized the
 remaining human controls 001, 003, and 004 with compact package manifests, and
 Task 096 audited the five-human-replay factual pilot. The pilot is ready as a
 bounded factual foundation for a human milestone decision under
-`five_human_replay_factual_pilot_ready`.
+`five_human_replay_factual_pilot_ready`. Task 097 defined the storage and cache
+strategy needed before scaling under
+`storage_cache_strategy_ready_for_scaling_decision`.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -65,10 +67,12 @@ Historical reports or outputs cannot override this file or
 ## Current Human Decision Point
 
 The finite Task 094-096 pilot horizon is complete. Do not create Task 097
-automatically. Stop for a human milestone decision about whether to expand the
-factual batch, improve storage/cache strategy, revisit spatial evidence only
-with genuinely new evidence, improve mechanics/build mapping, or defer toward
-local AI/runtime benchmarking later.
+automatically; Task 097 has now completed as an explicitly authorized
+post-pilot planning task. Do not create Task 098 automatically. Stop for a
+human milestone decision about whether to expand the factual batch, improve
+cache tooling, revisit spatial evidence only with genuinely new evidence,
+improve mechanics/build mapping, or defer toward local AI/runtime benchmarking
+later.
 
 ## Protected And Unsupported Replays
 

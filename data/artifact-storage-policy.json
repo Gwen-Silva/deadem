@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "policyId": "deadem_artifact_storage_policy_v1",
+  "largeOutputThresholdBytes": 10485760,
+  "artifactClasses": [
+    {
+      "artifactClass": "raw_replay",
+      "gitPolicy": "forbidden",
+      "cachePolicy": "preserve",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Raw replay files are never committed; protected replay 005 cannot be read or hashed before release."
+    },
+    {
+      "artifactClass": "protected_replay",
+      "gitPolicy": "forbidden",
+      "cachePolicy": "protected",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Replay 005 is the final holdout and must not be touched by cache-key calculation."
+    },
+    {
+      "artifactClass": "unsupported_bot_replay",
+      "gitPolicy": "forbidden",
+      "cachePolicy": "protected",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Replays 006-008 remain unsupported bot fixtures outside factual scaling."
+    },
+    {
+      "artifactClass": "parser_output",
+      "gitPolicy": "summary_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Commit compact summaries and manifests; keep dense parser traces local."
+    },
+    {
+      "artifactClass": "source_extraction_artifact",
+      "gitPolicy": "summary_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Commit bounded extraction summaries when they support gates."
+    },
+    {
+      "artifactClass": "canonical_factual_package",
+      "gitPolicy": "summary_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "At scale, commit compact manifests by default and keep full package material in local cache."
+    },
+    {
+      "artifactClass": "compact_package_manifest",
+      "gitPolicy": "commit",
+      "cachePolicy": "preserve",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Preferred committed representation for replay-scale factual packages."
+    },
+    {
+      "artifactClass": "validation_audit_artifact",
+      "gitPolicy": "commit",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Commit compact gate, validation, and audit JSON when bounded."
+    },
+    {
+      "artifactClass": "report",
+      "gitPolicy": "commit",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Commit concise reports; keep raw logs local."
+    },
+    {
+      "artifactClass": "benchmark_profiling_artifact",
+      "gitPolicy": "summary_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Commit summaries only; keep traces and profiles local."
+    },
+    {
+      "artifactClass": "local_cache",
+      "gitPolicy": "local_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Use ignored .local/deadem roots for reusable cache material."
+    },
+    {
+      "artifactClass": "temporary_rerun",
+      "gitPolicy": "local_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": false,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Temporary A/B or retry outputs stay local."
+    },
+    {
+      "artifactClass": "logs",
+      "gitPolicy": "local_only",
+      "cachePolicy": "regenerable",
+      "provenanceRequired": false,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Full command and debug logs stay under .local."
+    },
+    {
+      "artifactClass": "screenshots_videos_frames",
+      "gitPolicy": "local_only",
+      "cachePolicy": "preserve",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Commit only compact metadata, hashes, or cleared thumbnails when explicitly authorized."
+    },
+    {
+      "artifactClass": "vpk_map_extracted_assets",
+      "gitPolicy": "local_only",
+      "cachePolicy": "preserve",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Do not redistribute proprietary game assets; commit metadata only."
+    },
+    {
+      "artifactClass": "model_runtime_artifacts",
+      "gitPolicy": "local_only",
+      "cachePolicy": "preserve",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Runtime/model artifacts are future work and remain local by default."
+    },
+    {
+      "artifactClass": "human_annotations",
+      "gitPolicy": "commit",
+      "cachePolicy": "preserve",
+      "provenanceRequired": true,
+      "largeOutputAllowedByDefault": false,
+      "notes": "Preserve compact annotation packets with source, uncertainty, replay ID, event ID, and artifact hash references."
+    }
+  ],
+  "gitPolicySummary": {
+    "commitByDefault": [
+      "source code",
+      "tests",
+      "schemas",
+      "compact docs",
+      "compact manifests",
+      "hashes",
+      "small validation summaries",
+      "bounded audit reports"
+    ],
+    "localOnlyByDefault": [
+      "full replay files",
+      "videos",
+      "frames",
+      "VPKs",
+      "extracted maps",
+      "traces",
+      "logs",
+      "local profiling",
+      "huge reruns",
+      "large generated full packages at scale"
+    ],
+    "forbidden": [
+      "protected replay access before release",
+      "bot fixture processing outside authorized parser work",
+      "raw replay commitment"
+    ]
+  },
+  "localCacheRoots": [
+    ".local/deadem/cache/",
+    ".local/deadem/runs/",
+    ".local/deadem/logs/",
+    ".local/deadem/replays/",
+    ".local/deadem/models/"
+  ],
+  "runtimeIndependence": "GPT, Codex, and local LLMs are development or explanation tools only; factual processing and cache decisions must not depend on hosted LLM runtime."
+}

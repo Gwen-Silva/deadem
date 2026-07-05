@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "requiredFields": [
+    "replayId",
+    "rawReplayHashWhenAllowed",
+    "sourceArtifactHashes",
+    "parserVersionOrCommit",
+    "canonicalContractVersion",
+    "toolVersionOrCommit",
+    "manifestHash",
+    "categorySet",
+    "extractionMode",
+    "buildVersionMetadataIfAvailable",
+    "validationPolicyVersion"
+  ],
+  "replay005Rule": "Do not read or hash replay 005 before final-holdout release; cache keys for protected holdouts may only use pre-existing authorized metadata.",
+  "sourceArtifactHashRule": "Use hashes from committed manifests or generated summaries when available; do not hash protected raw replay files.",
+  "validationPolicyVersionRule": "Include the audit/validation policy version so cache invalidation follows epistemic rule changes.",
+  "localCacheRoots": [
+    ".local/deadem/cache/",
+    ".local/deadem/runs/",
+    ".local/deadem/logs/",
+    ".local/deadem/replays/",
+    ".local/deadem/models/"
+  ],
+  "batchLayout": {
+    "committed": "output/factual-batches/<batch-id>/",
+    "localCache": ".local/deadem/cache/factual-batches/<batch-id>/"
+  }
+}

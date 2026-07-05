@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "basis": "rough_projection_from_task_096_storage_baseline",
+  "approximate": true,
+  "assumptions": [
+    "Compact-manifest estimates use the average committed compact output size from replays 001, 003, and 004.",
+    "Full-package estimates use current recorded full package sizes for 001, 003, 004, and 009.",
+    "Replay 002 full package size is unavailable from v9 terminal artifacts and is not imputed.",
+    "Historical oversized outputs are excluded from scaling projections."
+  ],
+  "averageCompactManifestBytes": 3526,
+  "averageFullPackageBytes": 14198599,
+  "targets": [
+    {
+      "replayCount": 15,
+      "scenarios": {
+        "compact_manifests_committed_only": {
+          "approximate": true,
+          "estimatedCommittedBytes": 52885,
+          "localCacheBytes": 0
+        },
+        "full_canonical_packages_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 212978985,
+          "localCacheBytes": 0
+        },
+        "full_packages_local_cache_compact_manifests_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 52885,
+          "estimatedLocalCacheBytes": 212978985
+        }
+      }
+    },
+    {
+      "replayCount": 50,
+      "scenarios": {
+        "compact_manifests_committed_only": {
+          "approximate": true,
+          "estimatedCommittedBytes": 176283,
+          "localCacheBytes": 0
+        },
+        "full_canonical_packages_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 709929950,
+          "localCacheBytes": 0
+        },
+        "full_packages_local_cache_compact_manifests_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 176283,
+          "estimatedLocalCacheBytes": 709929950
+        }
+      }
+    },
+    {
+      "replayCount": 100,
+      "scenarios": {
+        "compact_manifests_committed_only": {
+          "approximate": true,
+          "estimatedCommittedBytes": 352567,
+          "localCacheBytes": 0
+        },
+        "full_canonical_packages_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 1419859900,
+          "localCacheBytes": 0
+        },
+        "full_packages_local_cache_compact_manifests_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 352567,
+          "estimatedLocalCacheBytes": 1419859900
+        }
+      }
+    },
+    {
+      "replayCount": 500,
+      "scenarios": {
+        "compact_manifests_committed_only": {
+          "approximate": true,
+          "estimatedCommittedBytes": 1762833,
+          "localCacheBytes": 0
+        },
+        "full_canonical_packages_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 7099299500,
+          "localCacheBytes": 0
+        },
+        "full_packages_local_cache_compact_manifests_committed": {
+          "approximate": true,
+          "estimatedCommittedBytes": 1762833,
+          "estimatedLocalCacheBytes": 7099299500
+        }
+      }
+    }
+  ]
+}

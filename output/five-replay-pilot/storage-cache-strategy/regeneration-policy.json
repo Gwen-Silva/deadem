@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "rules": [
+    {
+      "artifactType": "canonical factual facts",
+      "policy": "regenerate only when factual extraction or canonical schema changes; report-only tasks must reuse"
+    },
+    {
+      "artifactType": "compact manifests",
+      "policy": "regenerate from accepted package/cache when validation artifacts change"
+    },
+    {
+      "artifactType": "validation artifacts",
+      "policy": "regenerable from accepted facts and policy version"
+    },
+    {
+      "artifactType": "reports",
+      "policy": "regenerable from compact audit outputs"
+    },
+    {
+      "artifactType": "human annotations",
+      "policy": "preserve; never overwrite by automated regeneration"
+    },
+    {
+      "artifactType": "external evidence metadata",
+      "policy": "preserve compact provenance and source references"
+    },
+    {
+      "artifactType": "temporary reruns and logs",
+      "policy": "disposable local-only unless explicitly promoted as compact evidence"
+    }
+  ],
+  "reportOnlyTaskRule": "If a task changes only reports or validation, it must not regenerate canonical factual packages.",
+  "replayParsingPolicy": "forbidden unless the task explicitly authorizes replay processing."
+}
