@@ -103,8 +103,11 @@ decoder/serializer contract investigation with the gate
 Task 115 is complete as an explicitly authorized runtime field definition
 metadata capture for field path 59 with the gate
 `local_replay_loop_26_fieldpath_59_runtime_definition_captured`.
+Task 116 is complete as an explicitly authorized string-reader length and
+payload-boundary accounting diagnosis for the same field path with the gate
+`local_replay_loop_26_string_reader_accounting_diagnosed`.
 
-Do not create Task 116 automatically. Stop and wait for a human milestone
+Do not create Task 117 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -518,8 +521,33 @@ assignment more coherent locally while preserving the field-name suspicion and
 causal conclusion `not_determined`. No field values, raw payload, raw
 entityData, raw serializedEntities, full raw send-table payload, parser fix,
 recovery, canonical package, source artifact, factual event, spatial semantic,
-mechanic, combat, macro, decision, or ML output was emitted. No Task 116 was
-created.
+mechanic, combat, macro, decision, or ML output was emitted.
+
+## Task 116
+
+Purpose: diagnose, without string values, raw bytes, parser recovery, parser
+fixes, or canonical output, how replay_010 packet ordinal 953 loop 26 field
+path 59 `decodeString` consumed 288 bits and how that segment relates to the
+loop 26 `payloadBits` boundary.
+
+Gate: `local_replay_loop_26_string_reader_accounting_diagnosed`.
+
+Partial gate: `local_replay_loop_26_string_reader_accounting_partial`.
+
+Blocked gate: `local_replay_loop_26_string_reader_accounting_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing-entity failure, and the diagnostic pass failed
+closed at the same entity 2905 boundary without recovery. Field path 59's
+`decodeString` segment consumed 36 bytes, observed a null terminator after 35
+non-null bytes, and stopped because of that null terminator. The segment began
+8 bits before loop 26's expected `payloadBits` end and ended 280 bits after it.
+This is a metric boundary-crossing result, not a Source 2 semantic, parser bug,
+replay corruption, or causal conclusion. No field values, string values, string
+bytes, raw payload, raw entityData, raw serializedEntities, full raw send-table
+payload, parser fix, recovery, canonical package, source artifact, factual
+event, spatial semantic, mechanic, combat, macro, decision, or ML output was
+emitted. No Task 117 was created.
 
 ## Non-Goals
 

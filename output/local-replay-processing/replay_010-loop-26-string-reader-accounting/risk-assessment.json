@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "directMissingUpdateSkipStatus": "unsafe_diagnostic_only",
+  "parserFixRecommendedNow": false,
+  "recoveryRecommendedNow": false,
+  "decodeStringSegmentLocallyWellFormed": true,
+  "loop26PayloadBoundaryCrossed": true,
+  "fieldPath59ExplainsExtra280AfterBoundary": true,
+  "fieldPath59StringLikeRuntimeType": true,
+  "causalConclusion": "not_determined",
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "limitations": [
+    "string-reader metrics are local parser accounting, not Source 2 semantic proof",
+    "field values and raw bytes were not recorded",
+    "boundary crossing is metric correlation only and does not prove causality"
+  ]
+}

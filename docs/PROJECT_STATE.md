@@ -113,8 +113,16 @@ workaround. Task 102 created a bounded generic local-input canary for only
   59 resolves locally to runtime varType `char`, classified as string-like,
   making the `decodeString`/`MISC` pairing more coherent in the local runtime
   metadata while keeping the field name convention suspicious and causality
-  `not_determined`. No field values, raw payloads, full raw send-table payload,
-  parser fix, recovery, canonical package, or factual artifacts were emitted.
+  `not_determined`. Task 116 then diagnosed the `decodeString` string-reader
+  accounting for that field path under
+  `local_replay_loop_26_string_reader_accounting_diagnosed`: the 288-bit
+  segment is a 36-byte local string read that observed a null terminator after
+  35 non-null bytes, while 280 bits of the segment sit beyond loop 26's
+  `payloadBits` expected boundary. This supports a local payload-boundary or
+  accounting mismatch while keeping causality `not_determined`. No field
+  values, string values, string bytes, raw payloads, full raw send-table
+  payload, parser fix, recovery, canonical package, or factual artifacts were
+  emitted.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -236,5 +244,7 @@ complete with a bounded field-consumption diagnosis of the same packet-953
 mismatches. Task 113 is complete with bounded field-reader segment accounting
 for loop 26. Task 114 is complete with bounded field path 59 decoder/serializer
 contract investigation. Task 115 is complete with bounded runtime field
-definition metadata capture for field path 59. Do not create Task 116
-automatically; stop and wait for a human milestone decision.
+definition metadata capture for field path 59. Task 116 is complete with
+bounded string-reader and payload-boundary accounting for the same field path.
+Do not create Task 117 automatically; stop and wait for a human milestone
+decision.

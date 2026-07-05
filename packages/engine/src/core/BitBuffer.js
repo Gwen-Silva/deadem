@@ -25,6 +25,17 @@ class BitBuffer {
     }
 
     /**
+     * Installs an opt-in diagnostic collector for string-reader accounting.
+     *
+     * @public
+     * @static
+     * @param {function(object): void|null} collector
+     */
+    static setStringReadDiagnosticsCollectorForDiagnostics(collector) {
+        stringReadDiagnosticsCollector = typeof collector === 'function' ? collector : null;
+    }
+
+    /**
      * Reads an unsigned 32-bit integer from the given buffer, supporting buffers of length 1 to 4 bytes.
      *
      * @public
@@ -362,22 +373,62 @@ class BitBuffer {
      */
     readString(length) {
         const bytes = [ ];
+        const beforeReadCount = this.getReadCount();
+        const limitProvided = Number.isInteger(length);
+        let bytesRead = 0;
+        let nullTerminatorObserved = false;
+        let bytesBeforeTerminator = null;
+        let stoppedBecause = 'unknown';
+        let threw = false;
+        let errorMessage = null;
 
-        while (true) {
-            if (Number.isInteger(length) && bytes.length >= length) {
-                break;
+        try {
+            while (true) {
+                if (limitProvided && bytes.length >= length) {
+                    stoppedBecause = 'fixed_length';
+                    break;
+                }
+
+                const buffer = this.read(BITS_PER_BYTE);
+                bytesRead++;
+
+                if (buffer[0] === 0) {
+                    nullTerminatorObserved = true;
+                    bytesBeforeTerminator = bytes.length;
+                    stoppedBecause = 'null_terminator';
+                    break;
+                }
+
+                bytes.push(buffer[0]);
             }
 
-            const buffer = this.read(BITS_PER_BYTE);
-
-            if (buffer[0] === 0) {
-                break;
+            return textDecoder.decode(new Uint8Array(bytes));
+        } catch (error) {
+            threw = true;
+            errorMessage = error?.message ?? String(error);
+            stoppedBecause = this.getReadCount() >= this._totalBits ? 'buffer_end' : 'unknown';
+            throw error;
+        } finally {
+            if (stringReadDiagnosticsCollector !== null) {
+                const afterReadCount = this.getReadCount();
+                const bitsConsumed = afterReadCount - beforeReadCount;
+                stringReadDiagnosticsCollector({
+                    beforeReadCount,
+                    afterReadCount,
+                    bitsConsumed,
+                    bytesConsumed: bitsConsumed % BITS_PER_BYTE === 0 ? bitsConsumed / BITS_PER_BYTE : null,
+                    bytesRead,
+                    stringReaderLimitProvided: limitProvided ? length : null,
+                    nullTerminatorObserved,
+                    bytesBeforeTerminator,
+                    stoppedBecause,
+                    valueRecorded: false,
+                    rawBytesRecorded: false,
+                    threw,
+                    errorMessage
+                });
             }
-
-            bytes.push(buffer[0]);
         }
-
-        return textDecoder.decode(new Uint8Array(bytes));
     }
 
     /**
@@ -705,5 +756,6 @@ for (let i = 0; i < REUSABLE_BUFFER_SIZE; i++) {
 const textDecoder = new TextDecoder();
 const dataViewBuffer = new ArrayBuffer(8);
 const dataView = new DataView(dataViewBuffer);
+let stringReadDiagnosticsCollector = null;
 
 export default BitBuffer;
