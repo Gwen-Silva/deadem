@@ -282,8 +282,8 @@ test('output roots are fixed to Task 113 local and summary paths', () => {
     assert.equal(roots.summary.relativePath, 'output/local-replay-processing/replay_010-loop-26-field-reader-segments/');
 });
 
-test('Task 117 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/117.json'), false);
-    assert.equal(existsSync('tasks/blocked/117-select-next-canonical-generalization-control.md'), false);
-    assert.equal(existsSync('tasks/completed/117-inspect-loop-26-field-reader-segments.md'), false);
+test('Task 118 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/118.json'), false);
+    assert.equal(existsSync('tasks/blocked/118-select-next-canonical-generalization-control.md'), false);
+    assert.equal(existsSync('tasks/completed/118-inspect-loop-26-field-reader-segments.md'), false);
 });

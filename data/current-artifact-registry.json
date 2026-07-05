@@ -189,6 +189,12 @@
       "notes": "Task 116 diagnosed field path 59 decodeString accounting: the 288-bit segment is a 36-byte null-terminated local string read, with 280 bits after loop 26's expected payloadBits boundary; causality remains not determined."
     },
     {
+      "id": "generic_local_replay_packet_953_payload_iterator_alignment",
+      "path": "output/local-replay-processing/replay_010-packet-953-payload-iterator-alignment/payload-iterator-gate.json",
+      "status": "current",
+      "notes": "Task 117 diagnosed packet 953 payload-size iterator alignment: payloadSizeCount equals updatedEntries, but current alignment, small shifts, grouped sums, and nearby cumulative boundaries do not exactly explain the loop 26/27-29 mismatch; causality remains not determined."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

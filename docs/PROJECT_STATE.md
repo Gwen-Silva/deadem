@@ -122,7 +122,16 @@ workaround. Task 102 created a bounded generic local-input canary for only
   accounting mismatch while keeping causality `not_determined`. No field
   values, string values, string bytes, raw payloads, full raw send-table
   payload, parser fix, recovery, canonical package, or factual artifacts were
-  emitted.
+  emitted. Task 117 then diagnosed packet 953 payload-size iterator alignment
+  under `local_replay_packet_953_payload_iterator_alignment_diagnosed`: the
+  payload-size count equals `updatedEntries`, contains no null sizes, and
+  supports one size per updated entry, but current alignment, small shifts,
+  grouped following-payload sums, and nearby cumulative boundaries do not
+  exactly explain loop 26 over-consuming while loops 27-29 consume zero. This
+  strengthens the local payloadBits non-boundary or field-level accounting
+  mismatch hypothesis while preserving causality `not_determined`. No field
+  values, string bytes, raw payloads, parser fix, recovery, canonical package,
+  or factual artifacts were emitted.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -246,5 +255,7 @@ for loop 26. Task 114 is complete with bounded field path 59 decoder/serializer
 contract investigation. Task 115 is complete with bounded runtime field
 definition metadata capture for field path 59. Task 116 is complete with
 bounded string-reader and payload-boundary accounting for the same field path.
-Do not create Task 117 automatically; stop and wait for a human milestone
+Task 117 is complete with bounded payload-size iterator alignment diagnosis
+for packet 953. Do not create Task 118 automatically; stop and wait for a
+human milestone
 decision.

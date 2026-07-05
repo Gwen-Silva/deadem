@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "sourceTask": "116",
+  "sourceReport": "reports/local-replay-loop-26-string-reader-accounting.md",
+  "checks": [
+    {
+      "field": "fieldPathId",
+      "actual": 59,
+      "expected": 59,
+      "matched": true
+    },
+    {
+      "field": "fieldPathName",
+      "actual": "m_nAvailableHelperCount",
+      "expected": "m_nAvailableHelperCount",
+      "matched": true
+    },
+    {
+      "field": "bitsConsumed",
+      "actual": 288,
+      "expected": 288,
+      "matched": true
+    },
+    {
+      "field": "bytesConsumed",
+      "actual": 36,
+      "expected": 36,
+      "matched": true
+    },
+    {
+      "field": "nullTerminatorObserved",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "field": "bytesBeforeTerminator",
+      "actual": 35,
+      "expected": 35,
+      "matched": true
+    },
+    {
+      "field": "stoppedBecause",
+      "actual": "null_terminator",
+      "expected": "null_terminator",
+      "matched": true
+    },
+    {
+      "field": "bitsAfterExpectedEndInsideSegment",
+      "actual": 280,
+      "expected": 280,
+      "matched": true
+    },
+    {
+      "field": "rawBytesRecorded",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "field": "valueRecorded",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "field": "gate",
+      "actual": "local_replay_loop_26_string_reader_accounting_diagnosed",
+      "expected": "local_replay_loop_26_string_reader_accounting_diagnosed",
+      "matched": true
+    }
+  ],
+  "exactTask116NumbersMatched": true,
+  "valuesRecorded": false,
+  "rawBytesRecorded": false,
+  "rawPayloadsRecorded": false,
+  "summary": {
+    "stringSegmentBits": 288,
+    "stringSegmentBytes": 36,
+    "stoppedBecause": "null_terminator",
+    "nullTerminatorObserved": true,
+    "bitsAfterExpectedBoundary": 280,
+    "segmentSpanCoversLoops27To29PayloadWindow": true
+  }
+}

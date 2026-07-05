@@ -106,8 +106,11 @@ metadata capture for field path 59 with the gate
 Task 116 is complete as an explicitly authorized string-reader length and
 payload-boundary accounting diagnosis for the same field path with the gate
 `local_replay_loop_26_string_reader_accounting_diagnosed`.
+Task 117 is complete as an explicitly authorized payload-size iterator
+alignment diagnosis for packet 953 with the gate
+`local_replay_packet_953_payload_iterator_alignment_diagnosed`.
 
-Do not create Task 117 automatically. Stop and wait for a human milestone
+Do not create Task 118 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -547,7 +550,35 @@ replay corruption, or causal conclusion. No field values, string values, string
 bytes, raw payload, raw entityData, raw serializedEntities, full raw send-table
 payload, parser fix, recovery, canonical package, source artifact, factual
 event, spatial semantic, mechanic, combat, macro, decision, or ML output was
-emitted. No Task 117 was created.
+emitted. At Task 116 completion, no Task 117 had been created automatically.
+
+## Task 117
+
+Purpose: diagnose, without parser recovery, parser fixes, canonical output, or
+match facts, whether the decoded `serializedEntities` payload-size iterator for
+replay_010 packet ordinal 953 is aligned to entries 26-29 or whether small
+shifts, grouped sums, or cumulative nearby boundaries better explain the loop
+26/27-29 mismatch.
+
+Gate: `local_replay_packet_953_payload_iterator_alignment_diagnosed`.
+
+Partial gate: `local_replay_packet_953_payload_iterator_alignment_partial`.
+
+Blocked gate: `local_replay_packet_953_payload_iterator_alignment_blocked`.
+
+Status: completed with the success gate above. The diagnostic reused Task 116
+default and opt-in diagnostic failure evidence without parser recovery. Packet
+953 has `payloadSizeCount` equal to `updatedEntries` with no null or undefined
+payload sizes, supporting one payload size per entry. The current alignment
+does not explain loop 26, no small shift reduces the loop 26-29 mismatch,
+grouped payload sums do not exactly match loop 26 actual consumption, and
+nearby cumulative boundaries do not close the residual. The conclusion remains
+`not_determined`; the local payloadBits non-boundary or field-level accounting
+mismatch hypothesis is strengthened. No field values, string values, string
+bytes, raw payload, raw entityData, raw serializedEntities, full raw
+send-table payload, parser fix, recovery, canonical package, source artifact,
+factual event, spatial semantic, mechanic, combat, macro, decision, or ML
+output was emitted. No Task 118 was created.
 
 ## Non-Goals
 

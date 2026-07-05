@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_packet_953_payload_iterator_alignment_diagnosed",
+  "successGate": "local_replay_packet_953_payload_iterator_alignment_diagnosed",
+  "partialGate": "local_replay_packet_953_payload_iterator_alignment_partial",
+  "blockedGate": "local_replay_packet_953_payload_iterator_alignment_blocked",
+  "successConditions": {
+    "defaultFailureReproduced": true,
+    "diagnosticFailureReproducedWithoutRecovery": true,
+    "packetInventoryProduced": true,
+    "payloadIteratorCardinalityAudited": true,
+    "alignmentModelsCompared": true,
+    "cumulativeBoundariesCompared": true,
+    "task116NumbersMatchedExactly": true,
+    "noParserFixOrRecoveryRecommended": true,
+    "protectionAuditPassed": true,
+    "causalConclusionNotDetermined": true
+  },
+  "payloadIteratorAlignmentConclusion": {
+    "currentAlignmentExplainsLoop26": "no",
+    "smallShiftExplainsMismatch": "no",
+    "groupedPayloadExplainsMismatch": "not_strengthened",
+    "cumulativeBoundaryExplainsMismatch": "no",
+    "payloadIteratorCardinalitySupportsOneSizePerEntry": true,
+    "causalConclusion": "not_determined"
+  },
+  "reasons": [
+    "Task 116 default and diagnostic failure evidence was reused without recovery",
+    "packet 953 inventory matched Task 112 loop 26-29 numbers",
+    "payload size count equals updatedEntries and contains no null payload sizes",
+    "small shifts, grouped sums, and cumulative nearby boundaries were compared",
+    "no compared model exactly explains the loop 26/27-29 mismatch",
+    "Task 116 string-reader numbers matched exactly",
+    "protection and replay-specific branch audits passed"
+  ]
+}
