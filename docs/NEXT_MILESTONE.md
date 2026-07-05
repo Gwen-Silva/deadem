@@ -12,8 +12,10 @@ constraints. Replay 002 terminal validation v9 is ready with constraints after
 Task 094. Replays 001, 003, and 004 are canonicalized with compact package
 manifests after Task 095. Task 096 audited the five-human-replay factual pilot
 as ready for a bounded human milestone decision. Task 097 defined the storage
-and cache strategy before scaling. Task 089's v8 gate remains a rejected
-historical attempt.
+and cache strategy before scaling. Task 098 attempted expansion toward a
+15-human-replay factual batch using existing generated artifacts only and
+blocked because only five accepted pilot replays were eligible. Task 089's v8
+gate remains a rejected historical attempt.
 
 Spatial work remains parked under the Task 081 resume contract. Replay 005 is
 protected. Replays 006-008 remain unsupported bot fixtures. Macro, fights,
@@ -53,9 +55,11 @@ current pilot definition.
 ## Finite Execution Horizon
 
 Tasks 094, 095, 096, and the explicitly authorized post-pilot storage strategy
-Task 097 are complete. No execution task remains in the current pilot horizon.
+Task 097 are complete. Task 098 is also complete as an explicitly authorized
+post-pilot expansion attempt with the blocked gate
+`factual_batch_15_expansion_blocked`.
 
-Do not create Task 098 automatically. Stop and wait for a human milestone
+Do not create Task 099 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -109,6 +113,19 @@ Blocked gate: `storage_cache_strategy_blocked`.
 
 Status: completed with the success gate above. No replay was processed and no
 output migration was performed.
+
+## Task 098
+
+Purpose: attempt to expand the factual batch toward 15 human replays using
+existing generated artifacts only, without raw replay processing.
+
+Success gate: `factual_batch_15_ready`.
+
+Blocked gate: `factual_batch_15_expansion_blocked`.
+
+Status: completed with the blocked gate above. The repository currently exposes
+only five eligible accepted human replay entries, so ten more eligible generated
+human replay entries are needed before a 15-replay batch can be formed.
 
 ## Non-Goals
 

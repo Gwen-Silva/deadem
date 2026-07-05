@@ -11,7 +11,12 @@ Task 096 audited the five-human-replay factual pilot. The pilot is ready as a
 bounded factual foundation for a human milestone decision under
 `five_human_replay_factual_pilot_ready`. Task 097 defined the storage and cache
 strategy needed before scaling under
-`storage_cache_strategy_ready_for_scaling_decision`.
+`storage_cache_strategy_ready_for_scaling_decision`. Task 098 attempted the
+explicitly authorized expansion toward a 15-human-replay factual batch using
+existing generated artifacts only and blocked under
+`factual_batch_15_expansion_blocked`: only the five accepted pilot replays were
+eligible, so ten additional eligible generated human replay entries are still
+needed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -68,11 +73,12 @@ Historical reports or outputs cannot override this file or
 
 The finite Task 094-096 pilot horizon is complete. Do not create Task 097
 automatically; Task 097 has now completed as an explicitly authorized
-post-pilot planning task. Do not create Task 098 automatically. Stop for a
-human milestone decision about whether to expand the factual batch, improve
-cache tooling, revisit spatial evidence only with genuinely new evidence,
-improve mechanics/build mapping, or defer toward local AI/runtime benchmarking
-later.
+post-pilot planning task. Task 098 has now completed as an explicitly
+authorized expansion attempt and did not create Task 099. Stop for a human
+milestone decision about whether to supply additional generated human replay
+artifacts, authorize future raw replay processing, improve cache tooling,
+revisit spatial evidence only with genuinely new evidence, improve
+mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
 ## Protected And Unsupported Replays
 
@@ -96,5 +102,5 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. Task 096 is complete; stop
-and wait for a human milestone decision.
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 098 is complete with a
+blocked 15-replay expansion gate; stop and wait for a human milestone decision.

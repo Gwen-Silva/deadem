@@ -1,0 +1,140 @@
+{
+  "taskId": "098",
+  "title": "Expand Factual Batch Toward 15 Human Replays",
+  "status": "completed",
+  "objective": "Attempt to expand the factual replay batch from the accepted five-human-replay pilot toward a 15-human-replay factual batch using existing generated artifacts only.",
+  "includedReplays": [
+    "replay_001",
+    "replay_002",
+    "replay_003",
+    "replay_004",
+    "replay_009"
+  ],
+  "targetBatchSize": 15,
+  "frozenAcceptanceCriteria": [
+    "inventory currently available replay candidates from generated metadata",
+    "exclude replay 005 and unsupported bot fixtures 006-008",
+    "reuse accepted five-replay pilot outputs",
+    "canonicalize additional eligible human replays only when required generated source artifacts already exist",
+    "use compact manifests in Git",
+    "avoid full package commits by default",
+    "record why the target of 15 was or was not reached",
+    "do not process raw replay files",
+    "do not create Task 099"
+  ],
+  "acceptedLimitations": [
+    "a blocked gate is acceptable when fewer than 15 eligible generated human replay entries exist",
+    "candidate discovery is limited to existing generated artifact metadata",
+    "no raw replay parsing is allowed to force success"
+  ],
+  "permittedCorrectionCount": 1,
+  "automaticNewTaskAllowed": false,
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/five-human-replay-pilot.json",
+    "data/current-artifact-registry.json",
+    "data/replay-manifest.json",
+    "data/artifact-storage-policy.json",
+    "output/five-replay-pilot/audit/**",
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "output/five-replay-pilot/storage-cache-strategy/**",
+    "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
+    "output/replay-002-canonical-v9-validation/release-decision.json",
+    "output/replay-009-canonical/canonical-state-gate.json",
+    "output/replay-009-canonical/validation-summary.json",
+    "output/parser-compatibility/parser-compatibility-matrix.json",
+    "output/replays/replay_001/**",
+    "output/replays/replay_002/**",
+    "output/replays/replay_003/**",
+    "output/replays/replay_004/**",
+    "tasks/specs/098.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "tools/expand-factual-batch-to-15-human-replays.mjs",
+    "tests/factual-batch-15-expansion.test.mjs",
+    "output/factual-batches/batch-015-human-factual-v1/**",
+    "reports/factual-batch-15-human-expansion.md",
+    "tasks/specs/098.json",
+    "tasks/completed/098-expand-factual-batch-toward-15-human-replays.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/replay_005/**",
+    "output/replays/replay_006/**",
+    "output/replays/replay_007/**",
+    "output/replays/replay_008/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "output/five-replay-pilot/audit/**",
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "schemas/**",
+    "lib/canonical-state/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "batch-15-tool",
+      "type": "node-test",
+      "paths": [
+        "tests/factual-batch-15-expansion.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/factual-batches/batch-015-human-factual-v1/manifest.json",
+    "output/factual-batches/batch-015-human-factual-v1/candidate-inventory.json",
+    "output/factual-batches/batch-015-human-factual-v1/eligibility-matrix.json",
+    "output/factual-batches/batch-015-human-factual-v1/batch-compatibility-matrix.json",
+    "output/factual-batches/batch-015-human-factual-v1/canonicalization-summary.json",
+    "output/factual-batches/batch-015-human-factual-v1/performance-baseline.json",
+    "output/factual-batches/batch-015-human-factual-v1/storage-baseline.json",
+    "output/factual-batches/batch-015-human-factual-v1/replay-specific-branch-audit.json",
+    "output/factual-batches/batch-015-human-factual-v1/protection-audit.json",
+    "output/factual-batches/batch-015-human-factual-v1/batch-gate.json",
+    "reports/factual-batch-15-human-expansion.md",
+    "tasks/completed/098-expand-factual-batch-toward-15-human-replays.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process raw replay files",
+    "Do not create Task 099",
+    "Stop with a blocked gate if fewer than 15 eligible human replay entries exist"
+  ],
+  "successGate": "factual_batch_15_ready",
+  "blockedGate": "factual_batch_15_expansion_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/factual-batches/batch-015-human-factual-v1/batch-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "reuse",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  }
+}
