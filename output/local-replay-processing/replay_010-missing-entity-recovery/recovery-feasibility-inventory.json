@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "task105Failure": {
+    "error": "Unable to find an entity with index [ 2905 ]",
+    "firstFailingProbe": "probe_2_next_tick_only",
+    "firstFailingOperation": "nextTick",
+    "suspectedLayer": "parser_advancement",
+    "sourcePath": "output/local-replay-processing/replay_010-entity-lookup-diagnosis/failure-localization.json"
+  },
+  "existingRecoveryHelpers": {
+    "recoverMissingEntityReference": {
+      "exists": true,
+      "supportsFailingOperation": true,
+      "supportedOperations": [
+        "UPDATE with known payload size",
+        "LEAVE missing entity transition",
+        "DELETE missing entity transition"
+      ],
+      "safetyBoundary": "Does not create an entity, activate an entity, delete another entity, or materialize fields."
+    },
+    "recoverMissingClassBaseline": {
+      "exists": true,
+      "relevantToTask105Failure": false,
+      "reason": "Task 105 failure was a missing entity UPDATE during nextTick, not a CREATE with missing class baseline."
+    }
+  },
+  "payloadSizeAvailability": {
+    "availableInHandler": true,
+    "source": "createPayloadIterator(message, startLoop) over message.serializedEntities",
+    "failClosedWhenUnavailable": true,
+    "notes": [
+      "DemoMessageHandler already creates payloadSizes when a recovery object is present.",
+      "Missing entity UPDATE can only be skipped when payloadBits is an integer."
+    ]
+  },
+  "recoveryThreadingRequired": [
+    {
+      "file": "packages/engine/src/ParserConfiguration.js",
+      "change": "Add disabled-by-default recovery configuration and warning recorder."
+    },
+    {
+      "file": "packages/engine/src/ParserEngine.js",
+      "change": "Expose the configured recovery object to stream analyzers."
+    },
+    {
+      "file": "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+      "change": "Pass the configured recovery object into handleSvcPacketEntities."
+    },
+    {
+      "file": "packages/deadem/index.js",
+      "change": "Allow the deadem Player/Parser wrapper to construct ParserConfiguration from plain option objects."
+    }
+  ],
+  "existingParserConfigurationOption": {
+    "exists": false,
+    "notes": [
+      "No current ParserConfiguration recovery option is present.",
+      "Default parser behavior must remain unchanged by keeping recovery null unless explicitly configured."
+    ]
+  },
+  "defaultBehaviorMustRemainUnchanged": {
+    "required": true,
+    "reason": "Existing parser users expect missing entity references to throw; Task 106 only evaluates an opt-in local canary recovery mode."
+  },
+  "implementationDecision": {
+    "proceed": true,
+    "scope": "bounded opt-in configuration threading only",
+    "nonGoals": [
+      "No parser default behavior change.",
+      "No fake entity creation.",
+      "No missing field materialization.",
+      "No canonical package construction.",
+      "No replay-specific recovery logic."
+    ]
+  }
+}

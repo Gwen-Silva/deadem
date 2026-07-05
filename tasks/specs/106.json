@@ -1,0 +1,123 @@
+{
+  "taskId": "106",
+  "title": "Evaluate Opt-In Missing Entity Recovery For Local Replay Canary",
+  "status": "completed",
+  "objective": "Evaluate whether the existing parser engine can safely expose opt-in missing entity recovery for replay_010 without changing default behavior, fabricating entity state, constructing canonical packages, or processing any other replay.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/deadem/index.js",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/**",
+    "tasks/specs/106.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/deadem/index.js",
+    "tools/evaluate-missing-entity-recovery-canary.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/**",
+    "reports/local-replay-missing-entity-recovery-canary.md",
+    "tasks/specs/106.json",
+    "tasks/completed/106-evaluate-opt-in-missing-entity-recovery.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/107.json",
+    "tasks/blocked/107-*",
+    "tasks/completed/107-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-missing-entity-recovery/recovery-feasibility-inventory.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/input-identity.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/default-pass-result.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/recovery-pass-result.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/recovery-warning-summary.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/protection-audit.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/recovery-gate.json",
+    "reports/local-replay-missing-entity-recovery-canary.md",
+    "tasks/completed/106-evaluate-opt-in-missing-entity-recovery.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or write samples",
+    "Do not copy replay bytes",
+    "Do not create Task 107",
+    "Do not construct a canonical package",
+    "Do not emit factual source artifacts"
+  ],
+  "fullSuccessGate": "local_replay_missing_entity_recovery_canary_ready",
+  "successGate": "local_replay_missing_entity_recovery_partial_progress",
+  "blockedGate": "local_replay_missing_entity_recovery_blocked",
+  "allowedAlternateGates": [
+    "local_replay_missing_entity_recovery_canary_ready"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-missing-entity-recovery/recovery-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "mode": "opt_in_recovery",
+  "recoveryEnabled": true,
+  "advancedPastTask105Failure": true,
+  "reachedEnd": false,
+  "ticksAdvanced": 2863,
+  "currentTick": 2862,
+  "finalTick": 89074,
+  "laterFailure": {
+    "name": "Error",
+    "message": "entity index out of range",
+    "stackTop": [
+      "Error: entity index out of range",
+      "    at Assert.isTrue (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/core/Assert.js:10:19)",
+      "    at new Entity (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/data/entity/Entity.js:25:16)",
+      "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:211:36)",
+      "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+      "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)"
+    ]
+  },
+  "durationMs": 1078
+}

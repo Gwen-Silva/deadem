@@ -44,8 +44,12 @@ workaround. Task 102 created a bounded generic local-input canary for only
   `local_replay_entity_lookup_failure_diagnosed`: load-only passed, and
   `nextTick` alone failed after 953 ticks before any entity class lookup, field
   access, pawn/controller relationship resolution, or extractor snapshot logic.
-  The next fix scope is parser API investigation, not a tool-level safe-access
-  workaround.
+  Task 106 then evaluated a narrow opt-in parser recovery path under
+  `local_replay_missing_entity_recovery_partial_progress`: default behavior
+  still reproduced the Task 105 failure, opt-in missing-entity recovery advanced
+  past that 953-tick blocker to tick 2862, no fake entities or fields were
+  materialized, and the run stopped later on `entity index out of range`. No
+  canonical package or factual artifacts were constructed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -109,9 +113,11 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   parser canary, Task 103 blocked on seek-dependent source-artifact extraction,
   and Task 104 confirmed that a forward-only canary still reaches the same
   parser entity-index blocker. Task 105 localized the blocker to `nextTick`
-  parser advancement itself. Stop for a human milestone decision about whether
-  to investigate the parser API/engine replay compatibility path, wire local-input
-  canonicalization after that blocker is resolved, improve cache tooling,
+  parser advancement itself, and Task 106 showed opt-in missing-entity recovery
+  makes partial progress but does not finish the replay. Stop for a human
+  milestone decision about whether to investigate the later parser entity-index
+  boundary, wire local-input canonicalization after that blocker is resolved,
+  improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
@@ -137,6 +143,6 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. Task 105 is complete with a
-diagnosed local replay entity lookup failure; stop and wait for a human
-milestone decision.
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 106 is complete with
+partial opt-in missing-entity recovery progress for replay_010; stop and wait
+for a human milestone decision.

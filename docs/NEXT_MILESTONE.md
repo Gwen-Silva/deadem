@@ -73,9 +73,11 @@ as an explicitly authorized forward-only source-artifact canary for the same
 single input with the blocked gate
 `generic_local_replay_forward_source_artifacts_blocked`. Task 105 is complete as
 an explicitly authorized diagnosis of that failure with the gate
-`local_replay_entity_lookup_failure_diagnosed`.
+`local_replay_entity_lookup_failure_diagnosed`. Task 106 is complete as an
+explicitly authorized opt-in missing-entity recovery canary with the partial
+progress gate `local_replay_missing_entity_recovery_partial_progress`.
 
-Do not create Task 106 automatically. Stop and wait for a human milestone
+Do not create Task 107 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -245,8 +247,27 @@ Status: completed with the success gate above. Load-only passed. `nextTick`
 alone failed after 953 ticks with `Unable to find an entity with index [ 2905 ]`
 before any entity class lookup, field access, pawn/controller relationship
 resolution, or extractor snapshot logic. The next recommended fix scope is
-parser API investigation. No canonical package was constructed and Task 106 was
-not created.
+parser API investigation. No canonical package was constructed. Task 106 was
+later executed only after explicit authorization.
+
+## Task 106
+
+Purpose: evaluate whether a bounded opt-in missing entity recovery path can
+advance the authorized local replay canary beyond the Task 105 parser
+advancement failure without changing default behavior or fabricating state.
+
+Success gate: `local_replay_missing_entity_recovery_canary_ready`.
+
+Partial gate: `local_replay_missing_entity_recovery_partial_progress`.
+
+Blocked gate: `local_replay_missing_entity_recovery_blocked`.
+
+Status: completed with the partial progress gate above. Default behavior still
+reproduced the Task 105 `Unable to find an entity with index [ 2905 ]` failure.
+Opt-in recovery skipped invalid missing-entity update payloads and advanced
+past the prior 953-tick failure to tick 2862, then stopped on a later `entity
+index out of range` parser boundary. No canonical package, factual artifacts,
+Task 107, lane/region/proximity, mechanics, or strategic analysis were emitted.
 
 ## Non-Goals
 

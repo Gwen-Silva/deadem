@@ -1,6 +1,7 @@
 import {
     Parser as EngineParser,
     Player as EnginePlayer,
+    ParserConfiguration as EngineParserConfiguration,
     SchemaRegistry
 } from '@deademx/engine';
 
@@ -25,7 +26,7 @@ class Parser extends EngineParser {
      * @param {Logger=} logger
      */
     constructor(configuration, logger) {
-        super(createRegistry(), configuration, logger);
+        super(createRegistry(), normalizeConfiguration(configuration), logger);
     }
 }
 
@@ -36,8 +37,16 @@ class Player extends EnginePlayer {
      * @param {Logger=} logger
      */
     constructor(configuration, logger) {
-        super(createRegistry(), configuration, logger);
+        super(createRegistry(), normalizeConfiguration(configuration), logger);
     }
+}
+
+function normalizeConfiguration(configuration) {
+    if (configuration === undefined || configuration instanceof EngineParserConfiguration) {
+        return configuration;
+    }
+
+    return new EngineParserConfiguration(configuration);
 }
 
 export {

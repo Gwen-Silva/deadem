@@ -10,6 +10,7 @@ const OPTIONS = {
     MESSAGE_PACKET_TYPES: 'messagePacketTypes',
     MESSAGE_PACKET_TYPES_EXCLUDE: 'messagePacketTypesExclude',
     PARSER_THREADS: 'parserThreads',
+    RECOVERY: 'recovery',
     SPLITTER_CHUNK_SIZE: 'splitterChunkSize',
     STREAM_HIGH_WATER_MARK: 'streamHighWaterMark'
 };
@@ -29,6 +30,7 @@ const DEFAULTS = {
     [OPTIONS.MESSAGE_PACKET_TYPES]: null,
     [OPTIONS.MESSAGE_PACKET_TYPES_EXCLUDE]: null,
     [OPTIONS.PARSER_THREADS]: 0,
+    [OPTIONS.RECOVERY]: null,
     [OPTIONS.SPLITTER_CHUNK_SIZE]: 200 * 1024,
     [OPTIONS.STREAM_HIGH_WATER_MARK]: 6
 };
@@ -36,10 +38,10 @@ const DEFAULTS = {
 class ParserConfiguration {
     /**
      * @constructor
-     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, splitterChunkSize?: number, streamHighWaterMark?: number }} options
+     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
      */
     constructor(options) {
-        const getOption = key => (options && options[key]) ? options[key] : DEFAULTS[key];
+        const getOption = key => (options && options[key] !== undefined) ? options[key] : DEFAULTS[key];
 
         const batcherChunkSize = getOption(OPTIONS.BATCHER_CHUNK_SIZE);
         const batcherThresholdMilliseconds = getOption(OPTIONS.BATCHER_THRESHOLD_MILLISECONDS);
@@ -48,6 +50,7 @@ class ParserConfiguration {
         const messagePacketTypes = getOption(OPTIONS.MESSAGE_PACKET_TYPES);
         const messagePacketTypesExclude = getOption(OPTIONS.MESSAGE_PACKET_TYPES_EXCLUDE);
         const parserThreads = getOption(OPTIONS.PARSER_THREADS);
+        const recovery = getOption(OPTIONS.RECOVERY);
         const splitterChunkSize = getOption(OPTIONS.SPLITTER_CHUNK_SIZE);
         const streamHighWaterMark = getOption(OPTIONS.STREAM_HIGH_WATER_MARK);
 
@@ -59,6 +62,7 @@ class ParserConfiguration {
         Assert.isTrue(messagePacketTypesExclude === null || Array.isArray(messagePacketTypesExclude), 'options.messagePacketTypesExclude must be an array or null');
         Assert.isTrue(messagePacketTypes === null || messagePacketTypesExclude === null, 'options.messagePacketTypes and options.messagePacketTypesExclude are mutually exclusive');
         Assert.isTrue(Number.isInteger(parserThreads) && parserThreads >= 0, 'options.parserThreads must be a not negative integer');
+        Assert.isTrue(recovery === null || typeof recovery === 'object', 'options.recovery must be an object or null');
         Assert.isTrue(Number.isInteger(splitterChunkSize) && splitterChunkSize > 0, 'options.splitterChunkSize must be a positive integer');
         Assert.isTrue(Number.isInteger(streamHighWaterMark) && streamHighWaterMark > 0, 'options.streamHighWaterMark must be a positive integer');
 
@@ -66,6 +70,7 @@ class ParserConfiguration {
         this._batcherThresholdMilliseconds = batcherThresholdMilliseconds;
         this._breakInterval = breakInterval;
         this._parserThreads = parserThreads;
+        this._recovery = buildRecovery(recovery);
         this._splitterChunkSize = splitterChunkSize;
         this._streamHighWaterMark = streamHighWaterMark;
 
@@ -74,6 +79,10 @@ class ParserConfiguration {
 
         if (entityClasses !== null && this._messagePacketFilter !== null) {
             Assert.isTrue(this._messagePacketFilter(MessagePacketType.SVC_PACKET_ENTITIES.id), 'options.entityClasses requires MessagePacketType.SVC_PACKET_ENTITIES to be enabled by options.messagePacketTypes/options.messagePacketTypesExclude');
+        }
+
+        if (this._recovery !== null) {
+            Assert.isTrue(parserThreads === 0, 'options.recovery requires parserThreads === 0');
         }
     }
 
@@ -115,6 +124,22 @@ class ParserConfiguration {
      */
     get parserThreads() {
         return this._parserThreads;
+    }
+
+    /**
+     * @public
+     * @returns {object|null}
+     */
+    get recovery() {
+        return this._recovery;
+    }
+
+    /**
+     * @public
+     * @returns {Array<object>}
+     */
+    get recoveryWarnings() {
+        return this._recovery === null ? [] : this._recovery.warnings;
     }
 
     /**
@@ -200,6 +225,35 @@ function buildMessagePacketFilter(include, exclude) {
     }
 
     return null;
+}
+
+/**
+ * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean }|null} options
+ * @returns {object|null}
+ */
+function buildRecovery(options) {
+    if (options === null) {
+        return null;
+    }
+
+    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline' ]);
+    const keys = Object.keys(options);
+
+    Assert.isTrue(keys.every(key => allowedKeys.has(key)), 'options.recovery contains unsupported keys');
+    Assert.isTrue(options.allowUnresolvedEntityReference === undefined || typeof options.allowUnresolvedEntityReference === 'boolean', 'options.recovery.allowUnresolvedEntityReference must be a boolean when provided');
+    Assert.isTrue(options.allowMissingClassBaseline === undefined || typeof options.allowMissingClassBaseline === 'boolean', 'options.recovery.allowMissingClassBaseline must be a boolean when provided');
+
+    const allowUnresolvedEntityReference = options.allowUnresolvedEntityReference === true;
+    const allowMissingClassBaseline = options.allowMissingClassBaseline === true;
+    const warnings = [];
+
+    return {
+        allowUnresolvedEntityReference,
+        allowMissingClassBaseline,
+        warnings,
+        recordUnresolvedEntityReference: warning => warnings.push({ type: 'unresolved_entity_reference', ...warning }),
+        recordMissingClassBaseline: warning => warnings.push({ type: 'missing_class_baseline', ...warning })
+    };
 }
 
 const defaultConfiguration = new ParserConfiguration({ ...DEFAULTS });

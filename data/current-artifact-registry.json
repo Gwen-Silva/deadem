@@ -123,6 +123,12 @@
       "notes": "Task 105 diagnosed the replay_010 local input failure as nextTick parser advancement failing after 953 ticks before entity lookup, field access, or extractor snapshot logic."
     },
     {
+      "id": "generic_local_replay_missing_entity_recovery_canary",
+      "path": "output/local-replay-processing/replay_010-missing-entity-recovery/recovery-gate.json",
+      "status": "blocked",
+      "notes": "Task 106 evaluated opt-in missing-entity recovery for replay_010: default behavior reproduced the Task 105 failure, recovery advanced to tick 2862, and the run stopped on a later entity-index boundary without constructing canonical facts."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

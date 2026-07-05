@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_missing_entity_recovery_partial_progress",
+  "successGate": "local_replay_missing_entity_recovery_canary_ready",
+  "partialGate": "local_replay_missing_entity_recovery_partial_progress",
+  "blockedGate": "local_replay_missing_entity_recovery_blocked",
+  "defaultBehaviorReproduced": true,
+  "recoveryAdvancedPastTask105Failure": true,
+  "recoveryReachedEnd": false,
+  "canonicalPackageConstructed": false,
+  "factualArtifactsEmitted": false,
+  "reasons": [
+    "default behavior reproduced Task 105 failure",
+    "opt-in recovery advanced past prior failure point",
+    "opt-in recovery did not reach end",
+    "safety audits passed"
+  ]
+}

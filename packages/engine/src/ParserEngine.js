@@ -310,6 +310,22 @@ class ParserEngine {
 
     /**
      * @public
+     * @returns {object|null}
+     */
+    getRecovery() {
+        return this._configuration.recovery;
+    }
+
+    /**
+     * @public
+     * @returns {Array<object>}
+     */
+    getRecoveryWarnings() {
+        return this._configuration.recoveryWarnings;
+    }
+
+    /**
+     * @public
      * @param {InterceptorStage} stage
      * @param {...*} args
      */
