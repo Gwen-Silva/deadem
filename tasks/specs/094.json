@@ -1,0 +1,95 @@
+{
+  "taskId": "094",
+  "title": "Select Next Canonical Generalization Control",
+  "status": "blocked",
+  "objective": "Select the next compatible human replay for canonical factual-state generalization after Task 093 is reviewed and accepted.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "tasks/specs/094.json",
+    "output/parser-compatibility/parser-compatibility-matrix.json",
+    "output/parser-compatibility/replay-inventory.json"
+  ],
+  "optionalReadPaths": [
+    "reports/parser-compatibility-matrix.md",
+    "docs/PROJECT_STATE.md"
+  ],
+  "writePaths": [
+    "output/canonical-generalization-selection/**",
+    "reports/canonical-generalization-selection.md",
+    "tasks/completed/094-select-next-canonical-generalization-control.md",
+    "tasks/blocked/095-*.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/PROJECT_STATE.md"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "samples/partida_005.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007_bots01.dem",
+    "samples/replay_008_bots02_short.dem",
+    "output/replays/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "future-task-prepare",
+      "type": "workflow",
+      "action": "prepare",
+      "taskId": "094",
+      "dryRun": true
+    },
+    {
+      "id": "future-task-preflight",
+      "type": "workflow",
+      "action": "preflight",
+      "taskId": "094",
+      "dryRun": true
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/canonical-generalization-selection/selection-decision.json",
+    "reports/canonical-generalization-selection.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "095",
+  "stopConditions": [
+    "Do not process any replay",
+    "Do not inspect replay 005",
+    "Stop if selection requires parser execution"
+  ],
+  "successGate": "canonical_generalization_control_selected",
+  "blockedGate": "canonical_generalization_control_selection_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/canonical-generalization-selection/selection-decision.json",
+    "jsonField": "gate"
+  },
+  "successStopReason": "SELECTION_COMPLETE_AWAITING_REVIEW",
+  "blockedStopReason": "SELECTION_BLOCKED_AWAITING_REVIEW",
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "reuse",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  }
+}

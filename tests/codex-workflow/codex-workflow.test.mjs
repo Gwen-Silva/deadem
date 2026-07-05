@@ -9,7 +9,7 @@ import {
     REVIEW_JSON_LIMIT,
     REVIEW_MD_LIMIT,
     buildContextPacket,
-    commandAllowed,
+    checkAllowed,
     gateForSpec,
     hasProtectedReplayReference,
     isAllowedWrite,
@@ -19,7 +19,8 @@ import {
     resolveRepoPath,
     review,
     safePathResult,
-    validateSpecObject
+    validateSpecObject,
+    validateTask
 } from '../../scripts/codex-workflow.js';
 
 const fixtureRoot = 'output-local/codex-workflow-test';
@@ -33,11 +34,18 @@ function validSpec(overrides = {}) {
         objective: 'Validate workflow behavior with synthetic files only.',
         readPaths: ['AGENTS.md'],
         optionalReadPaths: [],
-        writePaths: [`${fixtureRoot}/allowed/**`],
+        writePaths: [
+            `${fixtureRoot}/**`,
+            'docs/**',
+            'reports/**',
+            'scripts/**',
+            'tasks/**',
+            'tests/**'
+        ],
         forbiddenPaths: ['samples/**', 'output/replays/**'],
         requiredPolicies: ['docs/codex/WORKFLOW.md'],
         requiredCommands: [
-            { id: 'synthetic-pass', command: 'node --test tests/codex-workflow/codex-workflow.test.mjs' }
+            { id: 'synthetic-status', type: 'workflow', action: 'status', taskId: '900', dryRun: true }
         ],
         expectedOutputs: [],
         largeOutputsAllowed: [],
@@ -148,7 +156,7 @@ test('write path through safe missing ancestor is allowed', async () => {
 test('path scope helpers detect allowed, unexpected, forbidden, and large output authorization', () => {
     const spec = validSpec({ largeOutputsAllowed: [{ path: `${fixtureRoot}/allowed/large.json`, justification: 'fixture' }] });
     assert.equal(isAllowedWrite(spec, `${fixtureRoot}/allowed/file.json`), true);
-    assert.equal(isAllowedWrite(spec, `${fixtureRoot}/other/file.json`), false);
+    assert.equal(isAllowedWrite(spec, 'output-local/outside-workflow/file.json'), false);
     assert.equal(isForbidden(spec, 'samples/partida_005.dem'), true);
     assert.equal(isForbidden(spec, 'output/replays/replay_002/file.json'), true);
     assert.equal(largeAllowed(spec, `${fixtureRoot}/allowed/large.json`), true);
@@ -164,12 +172,13 @@ test('context packet is reference-only and limit is enforced', async () => {
     await assert.rejects(() => buildContextPacket('900', { specDir, dryRun: true }), /context packet exceeds/u);
 });
 
-test('command allowlist rejects arbitrary shell and allows controlled checks', () => {
-    assert.equal(commandAllowed('npm run validate:tasks'), true);
-    assert.equal(commandAllowed('node --test tests/codex-workflow/codex-workflow.test.mjs'), true);
-    assert.equal(commandAllowed('npx eslint scripts/codex-workflow.js'), true);
-    assert.equal(commandAllowed('powershell rm samples/partida_005.dem'), false);
-    assert.equal(commandAllowed('node --test ../outside.test.mjs'), false);
+test('structured check allowlist rejects shell-like commands and allows controlled checks', () => {
+    assert.equal(checkAllowed({ id: 'tasks', type: 'npm-script', script: 'validate:tasks' }), true);
+    assert.equal(checkAllowed({ id: 'node', type: 'node-test', paths: ['tests/codex-workflow/codex-workflow.test.mjs'] }), true);
+    assert.equal(checkAllowed({ id: 'lint', type: 'eslint', paths: ['scripts/codex-workflow.js'] }), true);
+    assert.equal(checkAllowed({ id: 'wf', type: 'workflow', action: 'prepare', taskId: '093', dryRun: true }), true);
+    assert.equal(checkAllowed({ id: 'bad', command: 'powershell rm samples/partida_005.dem' }), false);
+    assert.equal(checkAllowed({ id: 'bad', type: 'node-test', paths: ['../outside.test.mjs'] }), false);
 });
 
 test('review fails without validation and with stale validation', async () => {
@@ -177,6 +186,68 @@ test('review fails without validation and with stale validation', async () => {
     await rm('.local/codex/900', { recursive: true, force: true });
     await writeSpec('900', validSpec({ status: 'authorized' }));
     await assert.rejects(() => review('900', { specDir, base: 'HEAD' }), /validate-result.json missing/u);
+});
+
+test('validate followed by review passes without intervening changes', async () => {
+    await rm('.local/codex/900', { recursive: true, force: true });
+    await rm(fixtureRoot, { recursive: true, force: true });
+    await writeSpec('900', validSpec({ status: 'authorized' }));
+    const validation = await validateTask('900', { specDir, base: 'HEAD' });
+    assert.equal(validation.passed, true);
+    assert.equal(validation.workingTreeFingerprint.length, 64);
+    const packet = await review('900', { specDir, base: 'HEAD' });
+    assert.equal(packet.reviewJson.reviewReady, true);
+    assert.equal(packet.reviewJson.validationStatus, 'passed');
+});
+
+test('review detects stale validation after untracked content changes', async () => {
+    await rm('.local/codex/900', { recursive: true, force: true });
+    await rm(fixtureRoot, { recursive: true, force: true });
+    await rm('tasks/specs/900-extra.json', { force: true });
+    await writeSpec('900', validSpec({ status: 'authorized' }));
+    assert.equal((await validateTask('900', { specDir, base: 'HEAD' })).passed, true);
+    await writeFile('tasks/specs/900-extra.json', '{"changed":true}\n');
+    await assert.rejects(() => review('900', { specDir, base: 'HEAD' }), /stale/u);
+    await rm('tasks/specs/900-extra.json', { force: true });
+});
+
+test('review detects stale validation after task spec changes', async () => {
+    await rm('.local/codex/900', { recursive: true, force: true });
+    await rm(fixtureRoot, { recursive: true, force: true });
+    await writeSpec('900', validSpec({ status: 'authorized' }));
+    assert.equal((await validateTask('900', { specDir, base: 'HEAD' })).passed, true);
+    const changed = validSpec({ objective: 'Changed after validation.' });
+    await writeSpec('900', changed);
+    await assert.rejects(() => review('900', { specDir, base: 'HEAD' }), /task spec changed/u);
+});
+
+test('lifecycle blocks validate and review for non-executable statuses', async () => {
+    for (const status of ['blocked', 'pending', 'completed']) {
+        await rm('.local/codex/900', { recursive: true, force: true });
+        await writeSpec('900', validSpec({ status }));
+        await assert.rejects(() => validateTask('900', { specDir, base: 'HEAD' }), /not allowed/u);
+        await assert.rejects(() => review('900', { specDir, base: 'HEAD' }), /not allowed/u);
+    }
+});
+
+test('completed final transition can still validate when explicitly declared', async () => {
+    await rm('.local/codex/900', { recursive: true, force: true });
+    await rm(fixtureRoot, { recursive: true, force: true });
+    await writeSpec('900', validSpec({
+        status: 'completed',
+        lifecycle: { initialStatus: 'authorized', finalStatus: 'completed', allowFinalValidation: true }
+    }));
+    const validation = await validateTask('900', { specDir, base: 'HEAD' });
+    assert.equal(validation.passed, true);
+});
+
+test('authorized and active lifecycle states can validate', async () => {
+    for (const status of ['authorized', 'active']) {
+        await rm('.local/codex/900', { recursive: true, force: true });
+        await rm(fixtureRoot, { recursive: true, force: true });
+        await writeSpec('900', validSpec({ status }));
+        assert.equal((await validateTask('900', { specDir, base: 'HEAD' })).passed, true);
+    }
 });
 
 test('gate and stop reason come from spec, never replay v8 constants', async () => {
@@ -191,16 +262,16 @@ test('protected replay references are global across fields', () => {
     }
 });
 
-test('future Task 092 and Task 093 remain blocked and dry-run safe', async () => {
+test('future Task 093 and Task 094 remain blocked and dry-run safe', async () => {
     const before = snapshotLocal();
-    const dryRun = await preflight('092', { dryRun: true });
+    const dryRun = await preflight('093', { dryRun: true });
     const after = snapshotLocal();
     assert.equal(dryRun.passed, true);
     assert.deepEqual(after, before);
-    assert.equal(JSON.parse(await readFile('tasks/specs/092.json', 'utf8')).status, 'blocked');
     assert.equal(JSON.parse(await readFile('tasks/specs/093.json', 'utf8')).status, 'blocked');
-    assert.equal(existsSync('tasks/blocked/092-close-replay-002-terminal-validation-gaps.md'), true);
-    assert.equal(existsSync('tasks/blocked/093-select-next-canonical-generalization-control.md'), true);
+    assert.equal(JSON.parse(await readFile('tasks/specs/094.json', 'utf8')).status, 'blocked');
+    assert.equal(existsSync('tasks/blocked/093-close-replay-002-terminal-validation-gaps.md'), true);
+    assert.equal(existsSync('tasks/blocked/094-select-next-canonical-generalization-control.md'), true);
 });
 
 test('current compact context limits are preserved', () => {
@@ -244,21 +315,26 @@ for (const [name, file, safe] of [
     });
 }
 
-for (const [name, command, allowed] of [
-    ['npm script', 'npm run lint', true],
-    ['node test', 'node --test tests/codex-workflow/codex-workflow.test.mjs', true],
-    ['eslint repo path', 'npx eslint scripts/codex-workflow.js', true],
-    ['arbitrary shell', 'cmd /c dir', false],
-    ['node outside tests', 'node --test ../outside.test.mjs', false]
+for (const [name, check, allowed] of [
+    ['npm script', { id: 'lint', type: 'npm-script', script: 'lint' }, true],
+    ['missing npm script', { id: 'missing', type: 'npm-script', script: 'missing-script' }, false],
+    ['npm metacharacter', { id: 'bad', type: 'npm-script', script: 'lint&echo' }, false],
+    ['node test', { id: 'node', type: 'node-test', paths: ['tests/codex-workflow/codex-workflow.test.mjs'] }, true],
+    ['node outside tests', { id: 'node', type: 'node-test', paths: ['../outside.test.mjs'] }, false],
+    ['eslint repo path', { id: 'eslint', type: 'eslint', paths: ['scripts/codex-workflow.js'] }, true],
+    ['eslint absolute path', { id: 'eslint', type: 'eslint', paths: ['C:/tmp/file.js'] }, false],
+    ['workflow action', { id: 'wf', type: 'workflow', action: 'prepare', taskId: '093', dryRun: true }, true],
+    ['unknown workflow action', { id: 'wf', type: 'workflow', action: 'delete', taskId: '093', dryRun: true }, false],
+    ['free command string', { id: 'bad', command: 'npm run lint' }, false]
 ]) {
-    test(`command allowlist case: ${name}`, () => {
-        assert.equal(commandAllowed(command), allowed);
+    test(`structured check case: ${name}`, () => {
+        assert.equal(checkAllowed(check), allowed);
     });
 }
 
 for (const [name, file, expected] of [
     ['allowed write path', `${fixtureRoot}/allowed/result.json`, true],
-    ['unexpected write path', `${fixtureRoot}/outside/result.json`, false],
+    ['unexpected write path', 'output-local/outside-workflow/result.json', false],
     ['forbidden sample path', 'samples/not-real.dem', false]
 ]) {
     test(`write scope case: ${name}`, () => {

@@ -1,7 +1,7 @@
 {
   "taskId": "091",
   "title": "Harden Codex Workflow Enforcement",
-  "status": "authorized",
+  "status": "completed",
   "objective": "Harden the Codex workflow so dry-runs are pure, path containment is symlink-aware, review depends on validation, checks are executed by controlled identities, and gates are task-specific.",
   "readPaths": [
     "AGENTS.md",
@@ -56,19 +56,25 @@
   "requiredCommands": [
     {
       "id": "workflow-tests",
-      "command": "node --test tests/codex-workflow/codex-workflow.test.mjs"
+      "type": "node-test",
+      "paths": [
+        "tests/codex-workflow/codex-workflow.test.mjs"
+      ]
     },
     {
       "id": "task-queue",
-      "command": "npm run validate:tasks"
+      "type": "npm-script",
+      "script": "validate:tasks"
     },
     {
       "id": "lint",
-      "command": "npm run lint"
+      "type": "npm-script",
+      "script": "lint"
     },
     {
       "id": "output-size",
-      "command": "npm run check:outputs",
+      "type": "npm-script",
+      "script": "check:outputs",
       "allowFailure": true,
       "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
     }

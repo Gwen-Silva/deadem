@@ -1,18 +1,18 @@
-# Task 093: Select Next Canonical Generalization Control
+# Task 094: Select Next Canonical Generalization Control
 
 Status: blocked
 
 Execution mode: autonomous after explicit authorization
 
-Blocked by: explicit user authorization after reviewing Task 092 gate.
+Blocked by: explicit user authorization after reviewing Task 093 gate.
 
-Unlocked by: explicit user authorization after reviewing Task 092 gate.
+Unlocked by: explicit user authorization after reviewing Task 093 gate.
 
 Unlock gate: replay_002_terminal_validation_gaps_closed_and_reviewed
 
 ## Objective
 
-Select the next compatible human replay for canonical factual-state generalization after Task 092 is reviewed and accepted.
+Select the next compatible human replay for canonical factual-state generalization after Task 093 is reviewed and accepted.
 
 ## Constraints
 

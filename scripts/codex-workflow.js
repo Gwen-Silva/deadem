@@ -122,8 +122,22 @@ function hasProtectedReplayReference(value) {
 }
 
 function normalizeCheck(check) {
-    if (typeof check === 'string') return { id: check.replaceAll(/\W+/gu, '-').replace(/^-|-$/gu, ''), command: check };
+    if (typeof check === 'string') return { id: 'invalid-string-command', type: 'invalid', original: check };
     return check;
+}
+
+function checkDisplay(check) {
+    if (check.type === 'npm-script') return `npm-script:${check.script}`;
+    if (check.type === 'node-test') return `node-test:${(check.paths ?? []).join(',')}`;
+    if (check.type === 'eslint') return `eslint:${(check.paths ?? []).join(',')}`;
+    if (check.type === 'workflow') return `workflow:${check.action}:${check.taskId}${check.dryRun ? ':dry-run' : ''}`;
+    return `invalid:${check.id ?? 'unknown'}`;
+}
+
+function safeSpecPath(value) {
+    if (typeof value !== 'string' || value.length === 0) return false;
+    if (/[&|><^\r\n]/u.test(value)) return false;
+    return safePathResult(value).safe;
 }
 
 async function loadSpec(taskId, options = {}) {
@@ -152,8 +166,8 @@ function validateSpecObject(spec, specPath = '') {
     if (spec.gateSource?.type === 'json-file' && (!spec.gateSource.path || !spec.gateSource.jsonField)) errors.push('json-file gateSource requires path and jsonField');
     for (const check of spec.requiredCommands ?? []) {
         const normalizedCheck = normalizeCheck(check);
-        if (!normalizedCheck.id || !normalizedCheck.command) errors.push('requiredCommands entries need id and command');
-        else if (!commandAllowed(normalizedCheck.command)) errors.push(`required command is not allowed: ${normalizedCheck.command}`);
+        if (!normalizedCheck.id || !normalizedCheck.type) errors.push('requiredCommands entries need id and type');
+        else if (!checkAllowed(normalizedCheck)) errors.push(`required check is not allowed: ${normalizedCheck.id}`);
     }
     for (const field of ['readPaths', 'optionalReadPaths', 'writePaths', 'requiredPolicies', 'expectedOutputs']) {
         for (const item of spec[field] ?? []) {
@@ -211,6 +225,72 @@ function changedFilesSince(base) {
     return [...files].sort();
 }
 
+function parseNameStatus(output, source) {
+    const entries = [];
+    for (const line of output.split(/\r?\n/u).filter(Boolean)) {
+        const parts = line.split(/\t/u);
+        const status = parts[0];
+        if (status.startsWith('R') || status.startsWith('C')) entries.push({ status, oldPath: parts[1]?.replaceAll('\\', '/'), path: parts[2]?.replaceAll('\\', '/'), source });
+        else entries.push({ status, path: parts[1]?.replaceAll('\\', '/'), source });
+    }
+    return entries.filter(item => item.path);
+}
+
+function statusName(status) {
+    if (status.startsWith('D')) return 'deleted';
+    if (status.startsWith('R')) return 'renamed';
+    if (status.startsWith('A')) return 'added';
+    if (status === '??') return 'untracked';
+    return 'modified';
+}
+
+async function fileFingerprintEntry(entry) {
+    const file = entry.path;
+    const resolved = await resolveRepoPath(file, { forWrite: true });
+    const exists = existsSync(resolved);
+    const stats = exists ? statSync(resolved) : null;
+    return {
+        path: file,
+        oldPath: entry.oldPath ?? null,
+        status: statusName(entry.status),
+        rawStatus: entry.status,
+        source: entry.source,
+        exists,
+        sha256: exists && stats?.isFile() ? await sha256File(resolved) : null,
+        sizeBytes: exists && stats?.isFile() ? stats.size : null,
+        mode: exists ? stats.mode : null
+    };
+}
+
+async function buildValidationFingerprint(taskId, baseCommit, specPathOverride = `tasks/specs/${taskId}.json`) {
+    const baseFull = baseCommit ? git(['rev-parse', '--verify', baseCommit]) : null;
+    const headFull = git(['rev-parse', 'HEAD']);
+    const status = gitStatusShort();
+    const entries = [
+        ...parseNameStatus(baseFull ? git(['diff', '--name-status', '-M', baseFull, 'HEAD']) : '', 'base-to-head'),
+        ...parseNameStatus(git(['diff', '--name-status', '-M', '--cached']), 'staged'),
+        ...parseNameStatus(git(['diff', '--name-status', '-M']), 'unstaged'),
+        ...git(['ls-files', '--others', '--exclude-standard']).split(/\r?\n/u).filter(Boolean).map(file => ({ status: '??', path: file.replaceAll('\\', '/'), source: 'untracked' }))
+    ];
+    const deduped = new Map();
+    for (const entry of entries) deduped.set(`${entry.source}:${entry.oldPath ?? ''}:${entry.path}`, entry);
+    const changedFiles = [];
+    for (const entry of [...deduped.values()].sort((a, b) => `${a.source}:${a.path}`.localeCompare(`${b.source}:${b.path}`))) {
+        if (!entry.path.startsWith('.local/')) changedFiles.push(await fileFingerprintEntry(entry));
+    }
+    const specPath = await resolveRepoPath(specPathOverride);
+    const workflowPath = await resolveRepoPath('scripts/codex-workflow.js');
+    const specSha256 = await sha256File(specPath);
+    const workflowSha256 = await sha256File(workflowPath);
+    const gitStatusSha256 = sha256(status);
+    const payload = { baseCommit: baseFull, headCommit: headFull, specSha256, workflowSha256, gitStatusSha256, changedFiles };
+    return {
+        ...payload,
+        gitStatus: status,
+        workingTreeFingerprint: sha256(JSON.stringify(payload))
+    };
+}
+
 async function fileInfo(file, purpose = '') {
     const info = { path: file, purpose, exists: false, sizeBytes: null, lineCount: null, sha256: null, large: false };
     const resolved = await resolveRepoPath(file);
@@ -265,7 +345,7 @@ async function buildContextText(spec, specPath) {
         ...policies.map(formatFileInfo),
         '',
         '## Required Checks',
-        ...spec.requiredCommands.map(item => `- ${normalizeCheck(item).id}: ${normalizeCheck(item).command}`),
+        ...spec.requiredCommands.map(item => `- ${normalizeCheck(item).id}: ${checkDisplay(normalizeCheck(item))}`),
         '',
         '## Stop Conditions',
         ...spec.stopConditions.map(item => `- ${item}`),
@@ -281,9 +361,22 @@ async function localTaskDir(taskId, options = {}) {
     return dir;
 }
 
+function canExecuteLifecycle(spec, phase, options = {}) {
+    if (options.dryRun === true && ['prepare', 'preflight'].includes(phase)) return true;
+    if (['authorized', 'active'].includes(spec.status)) return true;
+    if (['validate', 'review'].includes(phase) && spec.status === 'completed' && spec.lifecycle?.allowFinalValidation === true && spec.lifecycle.finalStatus === 'completed') return true;
+    return false;
+}
+
+function enforceLifecycle(spec, phase, options = {}) {
+    if (!canExecuteLifecycle(spec, phase, options)) {
+        throw new Error(`${phase} is not allowed for task ${spec.taskId} with status ${spec.status}`);
+    }
+}
+
 async function buildContextPacket(taskId, options = {}) {
     const { spec, specPath } = await ensureSpec(taskId, options);
-    if (spec.status === 'blocked' && !options.dryRun) throw new Error(`task ${taskId} is blocked; use --dry-run for validation only`);
+    enforceLifecycle(spec, 'prepare', options);
     const text = await buildContextText(spec, specPath);
     const sizeBytes = Buffer.byteLength(text, 'utf8');
     if (sizeBytes > CONTEXT_LIMIT) throw new Error(`context packet exceeds ${CONTEXT_LIMIT} bytes`);
@@ -307,7 +400,11 @@ async function preflight(taskId, options = {}) {
     const { spec, validation } = await ensureSpec(taskId, options);
     const failures = [];
     const warnings = [...validation.warnings];
-    if (spec.status === 'blocked' && !options.dryRun) failures.push(`task ${taskId} is blocked`);
+    try {
+        enforceLifecycle(spec, 'preflight', options);
+    } catch (error) {
+        failures.push(error.message);
+    }
     for (const field of ['readPaths', 'optionalReadPaths', 'writePaths', 'requiredPolicies', 'expectedOutputs']) {
         for (const item of spec[field] ?? []) {
             const value = typeof item === 'string' ? item : item.path;
@@ -359,20 +456,44 @@ function regenerationViolation(spec, file) {
     return null;
 }
 
-function parseCommand(command) {
-    return command.split(/\s+/u);
+function localEslintBin() {
+    return process.platform === 'win32' ? 'node_modules/eslint/bin/eslint.js' : 'node_modules/eslint/bin/eslint.js';
 }
 
-function commandAllowed(command) {
-    const parts = parseCommand(command);
-    if (parts[0] === 'npm' && parts[1] === 'run') {
+function checkAllowed(check) {
+    if (typeof check !== 'object' || check === null || typeof check.id !== 'string' || !/^[A-Za-z0-9:_-]+$/u.test(check.id)) return false;
+    if (check.type === 'npm-script') {
+        if (typeof check.script !== 'string' || !/^[A-Za-z0-9:_-]+$/u.test(check.script)) return false;
         const packageJson = JSON.parse(readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
-        return Boolean(packageJson.scripts?.[parts[2]]);
+        return Boolean(packageJson.scripts?.[check.script]);
     }
-    if (parts[0] === 'node' && parts[1] === '--test' && parts.slice(2).every(item => item.startsWith('tests/'))) return true;
-    if (parts[0] === 'npx' && parts[1] === 'eslint' && parts.slice(2).every(item => !path.isAbsolute(item) && !item.includes('..'))) return true;
-    if (parts[0] === 'node' && parts[1] === 'scripts/codex-workflow.js') return true;
+    if (check.type === 'node-test') {
+        return Array.isArray(check.paths) && check.paths.length > 0 && check.paths.every(item => item.startsWith('tests/') && safeSpecPath(item));
+    }
+    if (check.type === 'eslint') {
+        return Array.isArray(check.paths) && check.paths.length > 0 && check.paths.every(item => safeSpecPath(item));
+    }
+    if (check.type === 'workflow') {
+        return ['prepare', 'preflight', 'status'].includes(check.action) && /^[0-9]{3}$/u.test(String(check.taskId)) && (check.dryRun === true || check.action === 'status');
+    }
     return false;
+}
+
+function checkInvocation(check) {
+    if (!checkAllowed(check)) throw new Error(`check is not allowed: ${check.id ?? 'unknown'}`);
+    if (check.type === 'npm-script') {
+        if (process.platform === 'win32') return { executable: 'cmd.exe', args: ['/d', '/s', '/c', 'npm.cmd', 'run', check.script] };
+        return { executable: 'npm', args: ['run', check.script] };
+    }
+    if (check.type === 'node-test') return { executable: process.execPath, args: ['--test', ...check.paths] };
+    if (check.type === 'eslint') return { executable: process.execPath, args: [localEslintBin(), ...check.paths] };
+    if (check.type === 'workflow') {
+        const args = ['scripts/codex-workflow.js', check.action];
+        if (check.taskId) args.push('--task', String(check.taskId));
+        if (check.dryRun) args.push('--dry-run');
+        return { executable: process.execPath, args };
+    }
+    throw new Error(`unsupported check type: ${check.type}`);
 }
 
 async function runRequiredChecks(taskId, spec) {
@@ -380,23 +501,23 @@ async function runRequiredChecks(taskId, spec) {
     const logDir = await resolveRepoPath(`${LOCAL_ROOT}/${taskId}/logs`, { forWrite: true });
     await mkdir(logDir, { recursive: true });
     for (const rawCheck of spec.requiredCommands.map(normalizeCheck)) {
-        if (!commandAllowed(rawCheck.command)) throw new Error(`command is not allowed: ${rawCheck.command}`);
+        const invocation = checkInvocation(rawCheck);
+        const startedAt = new Date();
         const start = Date.now();
-        const parts = parseCommand(rawCheck.command);
-        const executable = process.platform === 'win32' && parts[0] === 'npm' ? 'cmd.exe' : parts[0];
-        const runArgs = process.platform === 'win32' && parts[0] === 'npm' ? ['/d', '/s', '/c', 'npm.cmd', ...parts.slice(1)] : parts.slice(1);
-        const run = spawnSync(executable, runArgs, { cwd: ROOT, encoding: 'utf8' });
+        const run = spawnSync(invocation.executable, invocation.args, { cwd: ROOT, encoding: 'utf8', shell: false });
         const output = `${run.stdout ?? ''}${run.stderr ?? ''}${run.error ? run.error.message : ''}`;
         const durationMs = Date.now() - start;
+        const endedAt = new Date();
         const logPath = path.join(logDir, `${rawCheck.id}.log`);
         await writeFile(logPath, output);
         const logHash = sha256(output);
         const patternOk = rawCheck.allowFailure && rawCheck.allowedFailurePattern && new RegExp(rawCheck.allowedFailurePattern, 'u').test(output);
         results.push({
             id: rawCheck.id,
-            command: rawCheck.command,
-            startedAt: new Date(0).toISOString(),
-            endedAt: new Date(durationMs).toISOString(),
+            type: rawCheck.type,
+            display: checkDisplay(rawCheck),
+            startedAt: startedAt.toISOString(),
+            endedAt: endedAt.toISOString(),
             exitCode: run.status ?? 1,
             passed: run.status === 0 || patternOk === true,
             allowedFailure: patternOk === true,
@@ -410,7 +531,8 @@ async function runRequiredChecks(taskId, spec) {
 }
 
 async function validateTask(taskId, options = {}) {
-    const { spec } = await ensureSpec(taskId, options);
+    const { spec, specPath } = await ensureSpec(taskId, options);
+    enforceLifecycle(spec, 'validate', options);
     const base = options.base;
     const failures = [];
     if (!base) failures.push('base commit is required');
@@ -422,6 +544,7 @@ async function validateTask(taskId, options = {}) {
         }
     }
     const current = git(['rev-parse', '--short', 'HEAD']);
+    const fingerprint = base && failures.length === 0 ? await buildValidationFingerprint(taskId, base, specPath) : null;
     let changed = [];
     if (base && failures.length === 0) {
         changed = changedFilesSince(base);
@@ -429,10 +552,12 @@ async function validateTask(taskId, options = {}) {
         changed = changedFilesSince('HEAD');
     }
     const classifications = [];
+    const fingerprintByPath = new Map((fingerprint?.changedFiles ?? []).map(item => [item.path, item]));
     for (const file of changed) {
         if (file.startsWith('.local/')) continue;
         const item = await classifyChangedFile(spec, file);
-        classifications.push(item);
+        const enriched = { ...item, ...(fingerprintByPath.get(file) ?? {}) };
+        classifications.push(enriched);
         if (!item.allowed) failures.push(`changed file outside writePaths: ${file}`);
         if (item.forbidden) failures.push(`forbidden file changed: ${file}`);
         if (item.largeUnauthorized) failures.push(`large output not authorized: ${file}`);
@@ -466,8 +591,15 @@ async function validateTask(taskId, options = {}) {
     const result = {
         taskId,
         base,
+        baseCommit: fingerprint?.baseCommit ?? null,
+        headCommit: fingerprint?.headCommit ?? null,
         current,
-        validatedAt: new Date(0).toISOString(),
+        specSha256: fingerprint?.specSha256 ?? null,
+        workflowSha256: fingerprint?.workflowSha256 ?? null,
+        gitStatusSha256: fingerprint?.gitStatusSha256 ?? null,
+        workingTreeFingerprint: fingerprint?.workingTreeFingerprint ?? null,
+        fingerprint,
+        validatedAt: new Date().toISOString(),
         changedFiles: classifications,
         checks,
         failures,
@@ -504,19 +636,29 @@ async function gateForSpec(spec, validationPassed) {
 }
 
 async function review(taskId, options = {}) {
-    const { spec } = await ensureSpec(taskId, options);
+    const { spec, specPath } = await ensureSpec(taskId, options);
+    enforceLifecycle(spec, 'review', options);
     const base = options.base;
     const current = git(['rev-parse', '--short', 'HEAD']);
+    const currentFingerprint = base ? await buildValidationFingerprint(taskId, base, specPath) : null;
     const validation = await readValidateResult(taskId);
     let validationStatus = 'missing';
+    const staleReasons = [];
     const failures = [];
     if (!validation) failures.push('validate-result.json missing');
     else {
         if (validation.base !== base) failures.push('validate result base commit is stale or different');
         if (validation.current !== current) failures.push('validate result current commit is stale');
+        if (validation.baseCommit !== currentFingerprint?.baseCommit) staleReasons.push('baseCommit changed');
+        if (validation.headCommit !== currentFingerprint?.headCommit) staleReasons.push('headCommit changed');
+        if (validation.specSha256 !== currentFingerprint?.specSha256) staleReasons.push('task spec changed');
+        if (validation.workflowSha256 !== currentFingerprint?.workflowSha256) staleReasons.push('workflow script changed');
+        if (validation.gitStatusSha256 !== currentFingerprint?.gitStatusSha256) staleReasons.push('git status changed');
+        if (validation.workingTreeFingerprint !== currentFingerprint?.workingTreeFingerprint) staleReasons.push('working tree fingerprint changed');
+        if (staleReasons.length > 0) failures.push(`validate result stale: ${staleReasons.join(', ')}`);
         if (!validation.passed) failures.push('validate result failed');
         validationStatus = validation.passed ? 'passed' : 'failed';
-        if (validation.base !== base || validation.current !== current) validationStatus = 'stale';
+        if (validation.base !== base || validation.current !== current || staleReasons.length > 0) validationStatus = 'stale';
     }
     const reviewReady = failures.length === 0;
     const gate = await gateForSpec(spec, reviewReady);
@@ -530,9 +672,12 @@ async function review(taskId, options = {}) {
         commitBase: base,
         commitCurrent: current,
         validationStatus,
+        staleReasons,
+        validatedFingerprint: validation?.workingTreeFingerprint ?? null,
+        currentFingerprint: currentFingerprint?.workingTreeFingerprint ?? null,
         reviewReady,
         changedFiles: changed,
-        testsExecuted: validation?.checks?.map(({ id, command, passed, exitCode, logPath, logSha256, summary }) => ({ id, command, passed, exitCode, logPath, logSha256, summary })) ?? [],
+        testsExecuted: validation?.checks?.map(({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs }) => ({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs })) ?? [],
         unexpectedFiles: validation?.changedFiles?.filter(item => !item.allowed).map(item => item.file) ?? [],
         largeOutputs: validation?.changedFiles?.filter(item => item.largeUnauthorized).map(item => item.file) ?? [],
         gate: reviewReady ? gate : spec.blockedGate,
@@ -623,7 +768,8 @@ export {
     REVIEW_MD_LIMIT,
     buildContextPacket,
     changedFilesSince,
-    commandAllowed,
+    checkAllowed,
+    checkInvocation,
     gateForSpec,
     hasProtectedReplayReference,
     isAllowedWrite,

@@ -34,3 +34,7 @@ Harden the Codex workflow before any new replay-related task runs. This task onl
 ## Follow-up
 
 Task 092 remains blocked. Task 093 remains blocked. Neither was executed.
+
+## Review Note
+
+The v2 workflow gate was not accepted after review. Task lifecycle handling and stale-validation detection were transferred to Task 092. Do not treat v2 as the accepted final workflow gate.

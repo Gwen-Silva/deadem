@@ -23,6 +23,12 @@ Do not execute the follow-up task.
 8. Stage explicitly, commit once, push only when requested.
 9. Handoff using the compact format from the review packet.
 
+Execution without `--dry-run` is limited to tasks whose spec status is `authorized` or `active`. Blocked, pending, and completed tasks can be inspected only with `prepare --dry-run` or `preflight --dry-run`, except for a declared final validation transition that marks the current task completed.
+
+`validate` records a fingerprint of the base commit, head commit, task spec, workflow script, Git status, changed files, file hashes, removals, renames, staged files, unstaged files, and untracked files. `review` recomputes that fingerprint and fails closed if anything changed.
+
+Task checks are structured records, not shell command strings. Supported check types are `npm-script`, `node-test`, `eslint`, and workflow dry-runs. Logs stay under `.local/codex/<task>/logs/`.
+
 ## Stop Conditions
 
 Stop when no authorized pending task remains, the next task is blocked, a human/research gate is missing, a task requires semantic ground truth unavailable from current evidence, or validation fails in a way outside the authorized scope.
