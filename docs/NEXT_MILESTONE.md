@@ -59,9 +59,11 @@ Task 097 are complete. Task 098 is also complete as an explicitly authorized
 post-pilot expansion attempt with the blocked gate
 `factual_batch_15_expansion_blocked`. Task 099 is complete as an explicitly
 authorized intake-preparation task with the gate
-`human_replay_intake_ready_for_user_files`.
+`human_replay_intake_ready_for_user_files`. Task 100 is complete as an
+explicitly authorized local inbox normalization task with the gate
+`human_replay_inbox_normalized`.
 
-Do not create Task 100 automatically. Stop and wait for user replay files or a
+Do not create Task 101 automatically. Stop and wait for metadata review or a
 human milestone decision.
 
 ## Task 094
@@ -142,6 +144,20 @@ Status: completed with the success gate above. The local inbox may be absent;
 the user can create `.local/deadem/replays/inbox/` and add candidate replay
 filenames plus metadata entries for a future explicitly authorized processing
 task.
+
+## Task 100
+
+Purpose: normalize replay candidate filenames accidentally placed in
+`replays/inbox/` into `.local/deadem/replays/inbox/` by rename only and create
+safe metadata stubs.
+
+Success gate: `human_replay_inbox_normalized`.
+
+Blocked gate: `human_replay_inbox_normalization_blocked`.
+
+Status: completed with the success gate above. Eleven local candidate filenames
+are ready for future processing authorization with metadata stubs, but no
+replay bytes were read, copied, hashed, parsed, or processed.
 
 ## Non-Goals
 

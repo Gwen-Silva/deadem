@@ -6,7 +6,7 @@ before the 15-replay factual batch can be attempted again.
 
 ## Where To Put Files
 
-Place future replay files only in this ignored local folder:
+Place future replay files in this ignored local folder:
 
 ```text
 .local/deadem/replays/inbox/
@@ -14,6 +14,22 @@ Place future replay files only in this ignored local folder:
 
 Do not commit replay files. The intake audit only checks whether the folder
 exists and lists filenames directly inside it.
+
+If files are accidentally placed under this repo-local folder:
+
+```text
+replays/inbox/
+```
+
+run the normalization tool:
+
+```text
+node tools/normalize-human-replay-inbox.mjs --apply
+```
+
+Task 100 uses rename-only movement from `replays/inbox/` to the canonical
+`.local/deadem/replays/inbox/` folder and creates missing metadata stubs. It
+does not copy replay bytes and stops instead of falling back to copy.
 
 ## Metadata
 
@@ -29,6 +45,10 @@ Use `output/replay-intake/human-replay-intake-template.json` as the template.
 Keep `doNotProcessYet` set to `true`. A future explicitly authorized task will
 decide whether and how to process the candidate.
 
+The normalization tool can auto-generate missing metadata with safe defaults.
+Review the generated stubs and confirm that each candidate is a human match
+before any future processing task is authorized.
+
 ## Protections
 
 Do not place replay 005 in the inbox. Replay 005 remains the protected final
@@ -39,8 +59,9 @@ explicit bot-fixture parser work.
 
 ## What This Task Does Not Do
 
-This intake task does not read replay bytes, compute replay hashes, parse
-replays, copy files, create cache entries, or generate replay artifacts.
+The intake and normalization tasks do not read replay bytes, compute replay
+hashes, parse replays, copy files, create cache entries, or generate replay
+artifacts.
 
 ## Future Processing
 

@@ -1,0 +1,103 @@
+{
+  "taskId": "100",
+  "title": "Normalize Local Human Replay Inbox And Generate Metadata",
+  "status": "completed",
+  "objective": "Move eligible local human replay candidate files from the accidental repo-local inbox to the ignored canonical inbox by rename only and create metadata stubs without reading replay contents.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/HUMAN_REPLAY_INTAKE.md",
+    "data/human-replay-intake-policy.json",
+    "output/replay-intake/human-replay-intake-readiness.json",
+    "tasks/specs/099.json",
+    "tasks/specs/100.json",
+    ".gitignore"
+  ],
+  "optionalReadPaths": [
+    "replays/inbox/",
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "docs/HUMAN_REPLAY_INTAKE.md",
+    "data/human-replay-intake-policy.json",
+    "output/replay-intake/human-replay-intake-readiness.json",
+    "output/replay-intake/human-replay-normalization-summary.json",
+    "reports/human-replay-inbox-normalization.md",
+    "tools/normalize-human-replay-inbox.mjs",
+    "tests/human-replay-inbox-normalization.test.mjs",
+    "tasks/specs/100.json",
+    "tasks/completed/100-normalize-local-human-replay-inbox-and-generate-metadata.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    ".gitignore"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "output/five-replay-pilot/audit/**",
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "output/factual-batches/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "packages/**",
+    "tasks/specs/101.json",
+    "tasks/blocked/101-*",
+    "tasks/completed/101-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "human-replay-normalization-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/human-replay-inbox-normalization.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/replay-intake/human-replay-intake-readiness.json",
+    "output/replay-intake/human-replay-normalization-summary.json",
+    "reports/human-replay-inbox-normalization.md",
+    "tasks/completed/100-normalize-local-human-replay-inbox-and-generate-metadata.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not read replay file contents",
+    "Do not hash replay files",
+    "Do not copy replay bytes",
+    "Do not create Task 101"
+  ],
+  "successGate": "human_replay_inbox_normalized",
+  "blockedGate": "human_replay_inbox_normalization_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/replay-intake/human-replay-normalization-summary.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  }
+}
