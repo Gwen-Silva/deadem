@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch_015_human_factual_v2",
+  "taskId": "101",
+  "gate": "factual_batch_15_candidate_processing_blocked",
+  "targetBatchSize": 15,
+  "requiredNewAcceptedCandidates": 10,
+  "existingAcceptedReplayCount": 5,
+  "newAcceptedReplayCount": 0,
+  "totalAcceptedReplayCount": 5,
+  "batchReached15": false,
+  "existingAcceptedReplays": [
+    {
+      "replayId": "replay_001",
+      "status": "accepted_existing_pilot_replay",
+      "gateSource": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json"
+    },
+    {
+      "replayId": "replay_002",
+      "status": "accepted_existing_pilot_replay",
+      "gateSource": "output/replay-002-canonical-v9-validation/terminal-release-verification.json"
+    },
+    {
+      "replayId": "replay_003",
+      "status": "accepted_existing_pilot_replay",
+      "gateSource": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json"
+    },
+    {
+      "replayId": "replay_004",
+      "status": "accepted_existing_pilot_replay",
+      "gateSource": "output/five-replay-pilot/remaining-human-controls/canonicalization-gate.json"
+    },
+    {
+      "replayId": "replay_009",
+      "status": "accepted_existing_pilot_replay",
+      "gateSource": "output/replay-009-canonical/canonical-state-gate.json"
+    }
+  ],
+  "newAcceptedReplays": [],
+  "blockedReason": "No scoped generic parser/canonicalization command is available that accepts arbitrary local input paths and local output roots without moving candidates into samples or modifying existing replay outputs.",
+  "fullPackageDumpsCommitted": false,
+  "compactManifestsCommitted": false,
+  "task102Created": false
+}

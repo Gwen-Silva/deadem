@@ -1,0 +1,116 @@
+{
+  "taskId": "101",
+  "title": "Process Local Human Replay Candidates For 15-Replay Batch",
+  "status": "completed",
+  "objective": "Process only the explicitly authorized local human replay candidates 010-020 from the ignored inbox and attempt to form a 15-human-replay factual batch, blocking if a safe generic local-input processing path is unavailable.",
+  "readPaths": [
+    "output/factual-batches/batch-015-human-factual-v1/**",
+    "output/five-replay-pilot/audit/**",
+    "output/five-replay-pilot/remaining-human-controls/**",
+    "output/replay-002-canonical-v9-validation/terminal-release-verification.json",
+    "output/replay-002-canonical-v9-validation/release-decision.json",
+    "output/replay-009-canonical/canonical-state-gate.json",
+    "output/replay-009-canonical/validation-summary.json",
+    "output/replay-intake/**",
+    "data/human-replay-intake-policy.json",
+    "data/artifact-storage-policy.json",
+    "docs/STORAGE_AND_CACHE_STRATEGY.md",
+    "tasks/specs/101.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "tools/process-local-human-candidates-for-15-batch.mjs",
+    "tests/process-local-human-candidates-for-15-batch.test.mjs",
+    "output/factual-batches/batch-015-human-factual-v2/**",
+    "reports/factual-batch-15-local-candidate-processing.md",
+    "tasks/specs/101.json",
+    "tasks/completed/101-process-local-human-replay-candidates-for-15-batch.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "output/factual-batches/batch-015-human-factual-v1/**",
+    "output/five-replay-pilot/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/102.json",
+    "tasks/blocked/102-*",
+    "tasks/completed/102-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "candidate-processing-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/process-local-human-candidates-for-15-batch.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/factual-batches/batch-015-human-factual-v2/manifest.json",
+    "output/factual-batches/batch-015-human-factual-v2/candidate-processing-summary.json",
+    "output/factual-batches/batch-015-human-factual-v2/candidate-failure-report.json",
+    "output/factual-batches/batch-015-human-factual-v2/batch-gate.json",
+    "reports/factual-batch-15-local-candidate-processing.md",
+    "tasks/completed/101-process-local-human-replay-candidates-for-15-batch.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem",
+    "partida_011.dem",
+    "partida_012.dem",
+    "partida_013.dem",
+    "partida_014.dem",
+    "partida_015.dem",
+    "partida_016.dem",
+    "partida_017.dem",
+    "partida_018.dem",
+    "partida_019.dem",
+    "partida_020.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates outside 010-020",
+    "Do not copy replay bytes or move candidates into samples",
+    "Stop with blocked gate if a generic local-input processing path is unavailable",
+    "Do not create Task 102"
+  ],
+  "successGate": "factual_batch_15_ready",
+  "blockedGate": "factual_batch_15_candidate_processing_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/factual-batches/batch-015-human-factual-v2/batch-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "regenerate",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  }
+}

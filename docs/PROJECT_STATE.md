@@ -22,7 +22,12 @@ or hash any replay. Task 100 normalized the user-created `replays/inbox/`
 folder into `.local/deadem/replays/inbox/` under
 `human_replay_inbox_normalized`, generating local metadata stubs for 11
 candidate filenames without reading replay bytes, hashing, copying, parsing, or
-processing them. Task 101 was not created.
+processing them. Task 101 then used the explicit authorization to hash those 11
+local candidates and attempt the 15-replay batch. It blocked under
+`factual_batch_15_candidate_processing_blocked` because no scoped generic
+parser/canonicalization command is available for arbitrary local input paths
+without moving candidates into forbidden locations or introducing a one-off
+workaround. Task 102 was not created.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -81,9 +86,10 @@ The finite Task 094-096 pilot horizon is complete. Do not create Task 097
 automatically; Task 097 has now completed as an explicitly authorized
 post-pilot planning task. Task 098 has now completed as an explicitly
 authorized expansion attempt, Task 099 prepared human replay intake, and Task
-100 normalized local candidate filenames into the ignored inbox without
-creating Task 101. Stop for a human milestone decision about whether to review
-the generated metadata stubs, authorize future raw replay processing, improve cache tooling,
+100 normalized local candidate filenames into the ignored inbox, and Task 101
+blocked candidate processing without creating Task 102. Stop for a human
+milestone decision about whether to implement a generic local-input replay
+processing path, improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
@@ -109,6 +115,6 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. Task 100 is complete with a
-safe normalization gate; stop and wait for metadata review or a human milestone
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 101 is complete with a
+blocked candidate-processing gate; stop and wait for a human milestone
 decision.

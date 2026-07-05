@@ -61,10 +61,12 @@ post-pilot expansion attempt with the blocked gate
 authorized intake-preparation task with the gate
 `human_replay_intake_ready_for_user_files`. Task 100 is complete as an
 explicitly authorized local inbox normalization task with the gate
-`human_replay_inbox_normalized`.
+`human_replay_inbox_normalized`. Task 101 is complete as an explicitly
+authorized local candidate processing attempt with the blocked gate
+`factual_batch_15_candidate_processing_blocked`.
 
-Do not create Task 101 automatically. Stop and wait for metadata review or a
-human milestone decision.
+Do not create Task 102 automatically. Stop and wait for a human milestone
+decision.
 
 ## Task 094
 
@@ -158,6 +160,21 @@ Blocked gate: `human_replay_inbox_normalization_blocked`.
 Status: completed with the success gate above. Eleven local candidate filenames
 are ready for future processing authorization with metadata stubs, but no
 replay bytes were read, copied, hashed, parsed, or processed.
+
+## Task 101
+
+Purpose: process the authorized local human replay candidates 010-020 and
+attempt to create a 15-human-replay factual batch.
+
+Success gate: `factual_batch_15_ready`.
+
+Blocked gate: `factual_batch_15_candidate_processing_blocked`.
+
+Status: completed with the blocked gate above. Eleven candidate files were
+hashed under explicit authorization, but zero were accepted because no scoped
+generic parser/canonicalization command is available for arbitrary local input
+paths without moving candidates into forbidden locations or introducing a
+one-off workaround.
 
 ## Non-Goals
 
