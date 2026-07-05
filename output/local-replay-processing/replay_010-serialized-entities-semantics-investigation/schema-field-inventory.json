@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 1,
+  "message": "CSVCMsg_PacketEntities",
+  "field": "serializedEntities",
+  "sourceDefinitions": [
+    {
+      "path": "packages/deadem/proto/source/netmessages.proto",
+      "message": "CSVCMsg_PacketEntities",
+      "fieldName": "serialized_entities",
+      "localName": "serializedEntities",
+      "fieldNumber": 13,
+      "protoType": "bytes",
+      "rule": "optional",
+      "line": 393,
+      "commentsNearby": [],
+      "messageSnippetSha256": "50005d26a72a1d04e9eaa893c6c43afa890110df76b8f65fb6f16e59f29b78d0"
+    },
+    {
+      "path": "packages/cs2/proto/source/netmessages.proto",
+      "message": "CSVCMsg_PacketEntities",
+      "fieldName": "serialized_entities",
+      "localName": "serializedEntities",
+      "fieldNumber": 13,
+      "protoType": "bytes",
+      "rule": "optional",
+      "line": 388,
+      "commentsNearby": [],
+      "messageSnippetSha256": "50005d26a72a1d04e9eaa893c6c43afa890110df76b8f65fb6f16e59f29b78d0"
+    },
+    {
+      "path": "packages/dota2/proto/source/netmessages.proto",
+      "message": "CSVCMsg_PacketEntities",
+      "fieldName": "serialized_entities",
+      "localName": "serializedEntities",
+      "fieldNumber": 13,
+      "protoType": "bytes",
+      "rule": "optional",
+      "line": 388,
+      "commentsNearby": [],
+      "messageSnippetSha256": "50005d26a72a1d04e9eaa893c6c43afa890110df76b8f65fb6f16e59f29b78d0"
+    }
+  ],
+  "compiledDefinitions": [
+    {
+      "path": "packages/deadem/proto/compiled/proto.json",
+      "message": "CSVCMsg_PacketEntities",
+      "fieldName": "serializedEntities",
+      "protoName": "serialized_entities",
+      "fieldNumber": 13,
+      "protoType": "bytes",
+      "rule": "optional",
+      "present": true,
+      "fieldObject": {
+        "type": "bytes",
+        "id": 13,
+        "protoName": "serialized_entities"
+      }
+    },
+    {
+      "path": "packages/cs2/proto/compiled/proto.json",
+      "message": "CSVCMsg_PacketEntities",
+      "fieldName": "serializedEntities",
+      "protoName": "serialized_entities",
+      "fieldNumber": 13,
+      "protoType": "bytes",
+      "rule": "optional",
+      "present": true,
+      "fieldObject": {
+        "type": "bytes",
+        "id": 13,
+        "protoName": "serialized_entities"
+      }
+    },
+    {
+      "path": "packages/dota2/proto/compiled/proto.json",
+      "message": "CSVCMsg_PacketEntities",
+      "fieldName": "serializedEntities",
+      "protoName": "serialized_entities",
+      "fieldNumber": 13,
+      "protoType": "bytes",
+      "rule": "optional",
+      "present": true,
+      "fieldObject": {
+        "type": "bytes",
+        "id": 13,
+        "protoName": "serialized_entities"
+      }
+    }
+  ],
+  "aliasesOrWrappers": [
+    {
+      "protoName": "serialized_entities",
+      "generatedName": "serializedEntities",
+      "evidence": "compiled proto JSON maps protoName serialized_entities to field serializedEntities"
+    }
+  ],
+  "localInterpretations": [
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "line": 4,
+      "lineText": "* Extracts per-entity payload sizes (in bits) from {@link CSVCMsg_PacketEntities.serializedEntities}."
+    },
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "line": 6,
+      "lineText": "class EntityPayloadSizeExtractor {"
+    },
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "line": 44,
+      "lineText": "export default EntityPayloadSizeExtractor;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 15,
+      "lineText": "import EntityPayloadSizeExtractor from '#extractors/EntityPayloadSizeExtractor.js';"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 113,
+      "lineText": "const payloadSizes = hasFilter || hasRecovery ? createPayloadIterator(message, startLoop) : null;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 141,
+      "lineText": "const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 143,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 144,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 153,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 209,
+      "lineText": "} else if (payloadBits !== null) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 210,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 236,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 237,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 246,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 293,
+      "lineText": "const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 296,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 297,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 348,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 349,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 389,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 445,
+      "lineText": "if (payloadBits !== null) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 446,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 466,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 467,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 476,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 581,
+      "lineText": "* Builds a payload-size iterator over the packet's `serializedEntities` index."
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 588,
+      "lineText": "const buffer = message.serializedEntities;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 594,
+      "lineText": "const iterator = new EntityPayloadSizeExtractor(buffer).retrieve();"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 608,
+      "lineText": "const payloadSizes = listPayloadSizes(message);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 614,
+      "lineText": "serializedEntitiesByteLength: message.serializedEntities?.length ?? 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 615,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 616,
+      "lineText": "payloadSizeCount: payloadSizes?.length ?? 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 617,
+      "lineText": "payloadBitsSum: payloadSizes?.reduce((sum, value) => sum + value, 0) ?? 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 626,
+      "lineText": "const buffer = message.serializedEntities;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 632,
+      "lineText": "return Array.from(new EntityPayloadSizeExtractor(buffer).retrieve());"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 653,
+      "lineText": "payloadBits: null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 735,
+      "lineText": "'serializedEntities payload size may not be sufficient by itself to skip this missing UPDATE safely'"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 754,
+      "lineText": "payloadBits: loop22.payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 755,
+      "lineText": "expectedAfterActionReadCount: Number.isInteger(loop22.payloadBits) ? loop22.readCounts.afterCommand + loop22.payloadBits : null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 758,
+      "lineText": "internallyConsistent: Number.isInteger(loop22.payloadBits) &&"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 759,
+      "lineText": "loop22.readCounts.afterCommand + loop22.payloadBits === loop22.readCounts.afterAction &&"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 786,
+      "lineText": "if (priorEntry === undefined || previousEntityIndex === null || !Number.isInteger(priorEntry.payloadBits)) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 793,
+      "lineText": "simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 797,
+      "lineText": "simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits - 2"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 801,
+      "lineText": "simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits + 8"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 891,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 900,
+      "lineText": "payloadBits: payloadBits ?? null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 908,
+      "lineText": "if (!Number.isInteger(payloadBits)) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 916,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 961,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 972,
+      "lineText": "payloadBits: payloadBits ?? null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 979,
+      "lineText": "if (!Number.isInteger(payloadBits)) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 987,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 177,
+      "lineText": "payloadBits: loop22.payloadBits,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 181,
+      "lineText": "expectedAfterActionReadCount: Number.isInteger(loop22.payloadBits) ? loop22.readCounts.afterCommand + loop22.payloadBits : null,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 182,
+      "lineText": "internallyConsistentWithCurrentModel: Number.isInteger(loop22.payloadBits) &&"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 183,
+      "lineText": "loop22.readCounts.afterCommand + loop22.payloadBits === loop22.readCounts.afterAction"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 166,
+      "lineText": "function nullableDelta(payloadBits, consumed) {"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 167,
+      "lineText": "return Number.isInteger(payloadBits) && Number.isInteger(consumed) ? payloadBits - consumed : null;"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 187,
+      "lineText": "payloadBitsFromSerializedEntities: entry.payloadBits,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 192,
+      "lineText": "payloadMinusActualAfterCommand: nullableDelta(entry.payloadBits, actualConsumedAfterCommand),"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 193,
+      "lineText": "payloadMinusActualAfterIndex: nullableDelta(entry.payloadBits, actualConsumedAfterIndex),"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 194,
+      "lineText": "payloadMinusActualFromEntryStart: nullableDelta(entry.payloadBits, actualConsumedFromEntryStart),"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 204,
+      "lineText": "payloadMatchesActualAfterCommand: entry.payloadBits === actualConsumedAfterCommand,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 205,
+      "lineText": "payloadMatchesActualAfterIndex: entry.payloadBits === actualConsumedAfterIndex,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 206,
+      "lineText": "payloadMatchesActualFromEntryStart: entry.payloadBits === actualConsumedFromEntryStart"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 215,
+      "lineText": "payloadBitsFromSerializedEntities: entry.payloadBitsFromSerializedEntities,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 296,
+      "lineText": "reason: 'the missing UPDATE was skipped by moving payloadBits, so afterAction equality is arithmetic evidence rather than extractor-consumption evidence'"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 304,
+      "lineText": "const entriesWithPayload = entries.filter(entry => Number.isInteger(entry.payloadBitsFromSerializedEntities));"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 348,
+      "lineText": "'investigate EntityPayloadSizeExtractor and serializedEntities proto semantics before using payloadBits as missing UPDATE skip input' :"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 361,
+      "lineText": "payloadBitsFromSerializedEntities: loop21.payloadBitsFromSerializedEntities,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 369,
+      "lineText": "payloadBitsFromSerializedEntities: loop22.payloadBitsFromSerializedEntities,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 382,
+      "lineText": "'serializedEntities payloadBits is unsafe as a direct universal skip length after command for missing UPDATE recovery' :"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 383,
+      "lineText": "'serializedEntities payloadBits may require more samples before it can be considered a direct skip length',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 388,
+      "lineText": "'the exact serializedEntities proto semantic meaning',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 389,
+      "lineText": "'whether EntityPayloadSizeExtractor is decoding the correct varint stream but using the wrong referential frame',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 393,
+      "lineText": "payloadBitsDirectMissingUpdateSkipAssessment: unsafe ? 'unsafe' : 'not_determined',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 503,
+      "lineText": "const safeAssessment = hypotheses.payloadBitsDirectMissingUpdateSkipAssessment === 'unsafe' ||"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 504,
+      "lineText": "hypotheses.payloadBitsDirectMissingUpdateSkipAssessment === 'not_determined';"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 527,
+      "lineText": "payloadBitsDirectMissingUpdateSkipAssessment: hypotheses.payloadBitsDirectMissingUpdateSkipAssessment,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 568,
+      "lineText": "`Loop 21 payloadBits: \\`${boundarySummary.loop21?.payloadBitsFromSerializedEntities ?? 'missing'}\\``,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 574,
+      "lineText": "`Direct missing UPDATE skip assessment: \\`${hypotheses.payloadBitsDirectMissingUpdateSkipAssessment}\\``,"
+    }
+  ],
+  "localTextualEvidenceForPayloadSizes": [
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "line": 4,
+      "lineText": "* Extracts per-entity payload sizes (in bits) from {@link CSVCMsg_PacketEntities.serializedEntities}."
+    },
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "line": 6,
+      "lineText": "class EntityPayloadSizeExtractor {"
+    },
+    {
+      "path": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+      "line": 44,
+      "lineText": "export default EntityPayloadSizeExtractor;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 15,
+      "lineText": "import EntityPayloadSizeExtractor from '#extractors/EntityPayloadSizeExtractor.js';"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 113,
+      "lineText": "const payloadSizes = hasFilter || hasRecovery ? createPayloadIterator(message, startLoop) : null;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 141,
+      "lineText": "const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 143,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 144,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 153,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 209,
+      "lineText": "} else if (payloadBits !== null) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 210,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 236,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 237,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 246,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 293,
+      "lineText": "const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 296,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 297,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 348,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 349,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 389,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 445,
+      "lineText": "if (payloadBits !== null) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 446,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 466,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 467,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 476,
+      "lineText": "payloadBits: 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 581,
+      "lineText": "* Builds a payload-size iterator over the packet's `serializedEntities` index."
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 594,
+      "lineText": "const iterator = new EntityPayloadSizeExtractor(buffer).retrieve();"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 608,
+      "lineText": "const payloadSizes = listPayloadSizes(message);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 615,
+      "lineText": "payloadSizeIteratorAvailable: payloadSizes !== null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 616,
+      "lineText": "payloadSizeCount: payloadSizes?.length ?? 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 617,
+      "lineText": "payloadBitsSum: payloadSizes?.reduce((sum, value) => sum + value, 0) ?? 0,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 632,
+      "lineText": "return Array.from(new EntityPayloadSizeExtractor(buffer).retrieve());"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 653,
+      "lineText": "payloadBits: null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 735,
+      "lineText": "'serializedEntities payload size may not be sufficient by itself to skip this missing UPDATE safely'"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 754,
+      "lineText": "payloadBits: loop22.payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 755,
+      "lineText": "expectedAfterActionReadCount: Number.isInteger(loop22.payloadBits) ? loop22.readCounts.afterCommand + loop22.payloadBits : null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 758,
+      "lineText": "internallyConsistent: Number.isInteger(loop22.payloadBits) &&"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 759,
+      "lineText": "loop22.readCounts.afterCommand + loop22.payloadBits === loop22.readCounts.afterAction &&"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 786,
+      "lineText": "if (priorEntry === undefined || previousEntityIndex === null || !Number.isInteger(priorEntry.payloadBits)) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 793,
+      "lineText": "simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 797,
+      "lineText": "simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits - 2"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 801,
+      "lineText": "simulatedStartReadCount: priorEntry.readCounts.afterCommand + priorEntry.payloadBits + 8"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 891,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 900,
+      "lineText": "payloadBits: payloadBits ?? null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 908,
+      "lineText": "if (!Number.isInteger(payloadBits)) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 916,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 961,
+      "lineText": "payloadBits,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 972,
+      "lineText": "payloadBits: payloadBits ?? null,"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 979,
+      "lineText": "if (!Number.isInteger(payloadBits)) {"
+    },
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "line": 987,
+      "lineText": "bitBuffer.move(payloadBits);"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 177,
+      "lineText": "payloadBits: loop22.payloadBits,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 181,
+      "lineText": "expectedAfterActionReadCount: Number.isInteger(loop22.payloadBits) ? loop22.readCounts.afterCommand + loop22.payloadBits : null,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 182,
+      "lineText": "internallyConsistentWithCurrentModel: Number.isInteger(loop22.payloadBits) &&"
+    },
+    {
+      "path": "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+      "line": 183,
+      "lineText": "loop22.readCounts.afterCommand + loop22.payloadBits === loop22.readCounts.afterAction"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 166,
+      "lineText": "function nullableDelta(payloadBits, consumed) {"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 167,
+      "lineText": "return Number.isInteger(payloadBits) && Number.isInteger(consumed) ? payloadBits - consumed : null;"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 187,
+      "lineText": "payloadBitsFromSerializedEntities: entry.payloadBits,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 192,
+      "lineText": "payloadMinusActualAfterCommand: nullableDelta(entry.payloadBits, actualConsumedAfterCommand),"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 193,
+      "lineText": "payloadMinusActualAfterIndex: nullableDelta(entry.payloadBits, actualConsumedAfterIndex),"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 194,
+      "lineText": "payloadMinusActualFromEntryStart: nullableDelta(entry.payloadBits, actualConsumedFromEntryStart),"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 204,
+      "lineText": "payloadMatchesActualAfterCommand: entry.payloadBits === actualConsumedAfterCommand,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 205,
+      "lineText": "payloadMatchesActualAfterIndex: entry.payloadBits === actualConsumedAfterIndex,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 206,
+      "lineText": "payloadMatchesActualFromEntryStart: entry.payloadBits === actualConsumedFromEntryStart"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 215,
+      "lineText": "payloadBitsFromSerializedEntities: entry.payloadBitsFromSerializedEntities,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 296,
+      "lineText": "reason: 'the missing UPDATE was skipped by moving payloadBits, so afterAction equality is arithmetic evidence rather than extractor-consumption evidence'"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 304,
+      "lineText": "const entriesWithPayload = entries.filter(entry => Number.isInteger(entry.payloadBitsFromSerializedEntities));"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 348,
+      "lineText": "'investigate EntityPayloadSizeExtractor and serializedEntities proto semantics before using payloadBits as missing UPDATE skip input' :"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 361,
+      "lineText": "payloadBitsFromSerializedEntities: loop21.payloadBitsFromSerializedEntities,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 369,
+      "lineText": "payloadBitsFromSerializedEntities: loop22.payloadBitsFromSerializedEntities,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 382,
+      "lineText": "'serializedEntities payloadBits is unsafe as a direct universal skip length after command for missing UPDATE recovery' :"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 383,
+      "lineText": "'serializedEntities payloadBits may require more samples before it can be considered a direct skip length',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 389,
+      "lineText": "'whether EntityPayloadSizeExtractor is decoding the correct varint stream but using the wrong referential frame',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 393,
+      "lineText": "payloadBitsDirectMissingUpdateSkipAssessment: unsafe ? 'unsafe' : 'not_determined',"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 503,
+      "lineText": "const safeAssessment = hypotheses.payloadBitsDirectMissingUpdateSkipAssessment === 'unsafe' ||"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 504,
+      "lineText": "hypotheses.payloadBitsDirectMissingUpdateSkipAssessment === 'not_determined';"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 527,
+      "lineText": "payloadBitsDirectMissingUpdateSkipAssessment: hypotheses.payloadBitsDirectMissingUpdateSkipAssessment,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 568,
+      "lineText": "`Loop 21 payloadBits: \\`${boundarySummary.loop21?.payloadBitsFromSerializedEntities ?? 'missing'}\\``,"
+    },
+    {
+      "path": "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+      "line": 574,
+      "lineText": "`Direct missing UPDATE skip assessment: \\`${hypotheses.payloadBitsDirectMissingUpdateSkipAssessment}\\``,"
+    }
+  ],
+  "schemaConclusion": {
+    "fieldIsPresent": true,
+    "schemaType": "optional bytes",
+    "schemaNamesPayloadSize": false,
+    "schemaNamesEncodedEntities": false,
+    "schemaDocumentsDirectSkipBits": false,
+    "conclusion": "local proto schema identifies serialized_entities only as optional bytes field 13; payload-size semantics are not documented by schema comments or field type"
+  }
+}

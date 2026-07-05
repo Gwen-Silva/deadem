@@ -1,0 +1,192 @@
+{
+  "taskId": "110",
+  "title": "Investigate SerializedEntities Proto Semantics And PayloadSizeExtractor Contract",
+  "status": "completed",
+  "objective": "Investigate local schema/code evidence and bounded replay_010 diagnostics for CSVCMsg_PacketEntities.serializedEntities and EntityPayloadSizeExtractor semantics without parser fixes, recovery changes, canonicalization, or match facts.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/engine/src/data/enums/MessagePacketType.js",
+    "packages/deadem/index.js",
+    "packages/deadem/src/**",
+    "packages/deadem/providers/**",
+    "packages/engine/src/**",
+    "packages/**/proto/**",
+    "packages/**/protos/**",
+    "packages/**/generated/**",
+    "packages/**/schema/**",
+    "tools/evaluate-missing-entity-recovery-canary.mjs",
+    "tools/diagnose-replay-010-out-of-range-entity-create.mjs",
+    "tools/diagnose-replay-010-entity-packet-cursor-alignment.mjs",
+    "tools/diagnose-replay-010-serialized-entity-payload-semantics.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+    "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/**",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/**",
+    "output/local-replay-processing/replay_010-entity-packet-cursor-alignment/**",
+    "output/local-replay-processing/replay_010-serialized-entity-payload-semantics/**",
+    "reports/local-replay-missing-entity-recovery-canary.md",
+    "reports/local-replay-out-of-range-entity-create-diagnosis.md",
+    "reports/local-replay-entity-packet-cursor-alignment.md",
+    "reports/local-replay-serialized-entity-payload-semantics.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/110.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "tools/investigate-serialized-entities-semantics.mjs",
+    "tests/serialized-entities-semantics-investigation.test.mjs",
+    "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+    "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/**",
+    "reports/local-replay-serialized-entities-semantics-investigation.md",
+    "tasks/specs/110.json",
+    "tasks/completed/110-investigate-serialized-entities-semantics.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tasks/specs/111.json",
+    "tasks/blocked/111-*",
+    "tasks/completed/111-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "serialized-entities-semantics-investigation-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entities-semantics-investigation.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entity-payload-semantics-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entity-payload-semantics-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-packet-cursor-alignment-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-packet-cursor-alignment-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "out-of-range-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/out-of-range-entity-create-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/input-identity.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/default-pass-result.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/recovery-boundary-result.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/schema-field-inventory.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/extractor-contract-analysis.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/dynamic-payload-semantics-sample.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/semantic-risk-assessment.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/protection-audit.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/semantics-investigation-gate.json",
+    "reports/local-replay-serialized-entities-semantics-investigation.md",
+    "tasks/completed/110-investigate-serialized-entities-semantics.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or write samples",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not copy replay bytes",
+    "Do not create Task 111",
+    "Do not modify parser or engine behavior",
+    "Do not construct a canonical package",
+    "Do not emit factual source artifacts",
+    "Do not add recovery or recover missing UPDATE/out-of-range CREATE",
+    "Do not change default parser behavior"
+  ],
+  "successGate": "local_replay_serialized_entities_semantics_investigated",
+  "blockedGate": "local_replay_serialized_entities_semantics_blocked",
+  "allowedAlternateGates": [
+    "local_replay_serialized_entities_semantics_partially_investigated"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/semantics-investigation-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

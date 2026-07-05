@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "extractor": "EntityPayloadSizeExtractor",
+  "contractFromCode": {
+    "inputType": "Uint8Array",
+    "output": "Generator<number>",
+    "algorithm": "byte-oriented unsigned varint stream: each byte contributes 7 payload bits and high bit indicates continuation",
+    "consumesBitsFromEntityData": false,
+    "readsSerializedEntitiesAsOpaqueBytes": true,
+    "valueCountRule": "one value per decoded byte-varint until serializedEntities byte buffer is exhausted",
+    "enforcesUpdatedEntriesCount": false,
+    "validatesValueMeaningAgainstEntityData": false,
+    "unitNameInCode": "payload sizes in bits",
+    "unitNameEvidence": "local extractor JSDoc and local variable names only"
+  },
+  "comparisonWithBitBuffer": {
+    "readUVarInt": "bit-packed Source 2 custom varint; initial 6 bits determine additional bits",
+    "readUVarInt32": "byte-oriented unsigned varint over a BitBuffer byte stream",
+    "extractorMatchesReadUVarInt32Shape": true,
+    "extractorMatchesReadUVarIntShape": false,
+    "syntheticBytes": [
+      22,
+      63,
+      227,
+      1,
+      138,
+      2
+    ],
+    "extractorValues": [
+      22,
+      63,
+      227,
+      266
+    ],
+    "bitBufferReadUVarInt32Values": [
+      22,
+      63,
+      227,
+      266
+    ]
+  },
+  "supportedBySchema": false,
+  "supportedByLocalCodeOnly": true,
+  "namePayloadBitsStatus": "local_inference_not_schema_proof",
+  "directAfterCommandSkipContractStatus": "not_established",
+  "unsafeAssumptions": [
+    "assuming each decoded value has a one-to-one relation to updatedEntries without checking count and operation semantics",
+    "assuming decoded values are direct after-command skip bit counts for every entry",
+    "assuming arithmetic movement over a missing UPDATE validates semantic equivalence"
+  ],
+  "testsEncodedInTask": [
+    "byte-varint decoding over synthetic bytes",
+    "comparison to BitBuffer.readUVarInt32 byte-varint behavior",
+    "separation from BitBuffer.readUVarInt bit-packed index/command-adjacent varints"
+  ]
+}

@@ -147,6 +147,12 @@
       "notes": "Task 109 diagnosed replay_010 serializedEntities payload-size semantics: loop 21 confirmed payloadBits mismatch before the loop 22 missing UPDATE, making direct missing-UPDATE payload skipping unsafe pending extractor/proto semantics work."
     },
     {
+      "id": "generic_local_replay_serialized_entities_semantics_investigation",
+      "path": "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation/semantics-investigation-gate.json",
+      "status": "current",
+      "notes": "Task 110 investigated local proto/schema and extractor contract evidence: serialized_entities is optional bytes field 13; payload-size/direct skip semantics are local inference and contradicted by Task 109 loop 21 mismatch."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

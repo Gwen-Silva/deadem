@@ -70,7 +70,17 @@ workaround. Task 102 created a bounded generic local-input canary for only
   remains arithmetic-only evidence because no entity extractor could consume
   that entry independently. Treat `serializedEntities` payloadBits as unsafe
   direct missing-UPDATE skip input until the extractor/proto semantics are
-  resolved. No canonical package or factual artifacts were constructed.
+  resolved. Task 110 then investigated the local proto/schema and extractor
+  contract under `local_replay_serialized_entities_semantics_investigated`:
+  local Deadem, CS2, and Dota 2 protos all identify
+  `CSVCMsg_PacketEntities.serialized_entities` only as optional bytes field 13,
+  and the `EntityPayloadSizeExtractor` byte-varint contract is local code
+  inference rather than schema proof of direct after-command skip semantics.
+  Task 109 loop 21 remains contradictory evidence (`payloadBits` 227 versus
+  363 consumed bits), and loop 22 remains arithmetic-only evidence. Keep
+  missing-UPDATE recovery diagnostic-only pending external/source-engine
+  semantics or broader instrumentation. No canonical package or factual
+  artifacts were constructed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -141,11 +151,13 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   loop 22/23 and showed current skip arithmetic is internally consistent while
   nearby plausible offsets exist. Task 109 confirmed loop 21 payload-size
   mismatch and classified direct missing-UPDATE payload skipping as unsafe.
-  Stop for a human milestone decision about whether to investigate
-  `EntityPayloadSizeExtractor`, serializedEntities proto semantics, extractor
-  consumption, or the entity-index stream boundary further, wire
-  local-input canonicalization after that blocker is resolved,
-  improve cache tooling,
+  Task 110 confirmed local schema evidence is insufficient to validate direct
+  skip semantics and recommended diagnostic-only recovery while external
+  proto/engine semantics or broader instrumentation remain unresolved. Stop
+  for a human milestone decision about whether to investigate external
+  serializedEntities semantics, extractor consumption, or the entity-index
+  stream boundary further, wire local-input canonicalization after that blocker
+  is resolved, improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
@@ -175,6 +187,7 @@ Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
 partial opt-in missing-entity recovery progress for replay_010, Task 107 is
 complete with a bounded diagnosis of the subsequent out-of-range CREATE
 boundary, Task 108 is complete with a bounded cursor-alignment diagnosis around
-that boundary, and Task 109 is complete with a bounded serialized payload-size
-semantics diagnosis. Do not create Task 110 automatically; stop and wait for a
-human milestone decision.
+that boundary, Task 109 is complete with a bounded serialized payload-size
+semantics diagnosis, and Task 110 is complete with a bounded local
+serializedEntities schema/extractor semantics investigation. Do not create Task
+111 automatically; stop and wait for a human milestone decision.

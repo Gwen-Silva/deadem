@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "questionsAnswered": {
+    "schemaSays": "serialized_entities is optional bytes field 13 on CSVCMsg_PacketEntities",
+    "documentedMeaning": "no local proto comment or type name documents direct payload-size or skip semantics",
+    "extractorEvidence": "extractor decodes a byte-varint stream from serializedEntities; the payload-size meaning is local code inference",
+    "valuesPerUpdatedEntries": "matches boundary packet count, but extractor itself does not enforce this invariant",
+    "comparisonReference": "after_command is closest for Task 109 present UPDATE entries, but this is empirical for one boundary packet and contradicted by loop 21",
+    "loop21Meaning": "loop 21 shows observed extractor consumption exceeded decoded payloadBits by 136 bits",
+    "safeInvariantWithoutFields": "no safe invariant was found for missing UPDATE skip without understanding field consumption or serializedEntities semantics",
+    "finalRecommendation": "keep missing UPDATE recovery diagnostic-only and investigate proto/external engine semantics before any parser fix"
+  },
+  "evidenceClassification": {
+    "schemaFacts": [
+      "field 13 serialized_entities exists as optional bytes in deadem, cs2, and dota2 local protos",
+      "compiled proto JSON maps serialized_entities to serializedEntities with type bytes"
+    ],
+    "codeFacts": [
+      "EntityPayloadSizeExtractor decodes byte-oriented varints until the serializedEntities byte buffer ends",
+      "DemoMessageHandler currently uses decoded values for filtered skips and opt-in recovery skips",
+      "no local schema assertion proves direct after-command skip semantics"
+    ],
+    "observedReplayMetrics": [
+      "Task 109 loop 21 mismatch: payloadBits 227, after-command consumption 363",
+      "Task 109 loop 22 skip remains arithmetic-only because the entity was missing",
+      "Task 109 boundary packet had 21/22 present UPDATE after-command matches before boundary"
+    ],
+    "hypotheses": [
+      "serializedEntities may encode per-entry metadata whose relation to field decoding is conditional",
+      "the extractor may decode the byte-varint stream correctly but the local payloadBits contract may be over-broad",
+      "the loop 21 mismatch may indicate extractor contract mismatch, observed-consumption accounting issue, or semantics requiring field-level understanding"
+    ],
+    "unsafeAssumptions": [
+      "assuming each decoded value has a one-to-one relation to updatedEntries without checking count and operation semantics",
+      "assuming decoded values are direct after-command skip bit counts for every entry",
+      "assuming arithmetic movement over a missing UPDATE validates semantic equivalence"
+    ],
+    "notDetermined": [
+      "exact Valve/Source 2 semantic contract for serialized_entities",
+      "whether loop 21 is a parser-consumption bug or conditional semantic case",
+      "whether loop 22 caused the out-of-range CREATE boundary"
+    ]
+  },
+  "directAfterCommandSkipAssumptionStatus": "contradicted_by_observed_replay_metric_and_not_supported_by_schema",
+  "missingUpdateRecoveryRecommendation": "diagnostic_only_do_not_use_as_safe_skip",
+  "shouldRemoveOrDisableExperimentalRecovery": "do_not_expand; keep diagnostic-only pending human decision",
+  "shouldInvestigateExternalProtoOrEngineSemantics": true,
+  "shouldImplementBroaderDiagnosticBeforeFix": true,
+  "shouldChangeParserNow": false
+}

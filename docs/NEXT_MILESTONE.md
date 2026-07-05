@@ -85,8 +85,11 @@ around that boundary with the gate
 Task 109 is complete as an explicitly authorized serialized entity payload
 semantics diagnosis with the gate
 `local_replay_serialized_entity_payload_semantics_diagnosed`.
+Task 110 is complete as an explicitly authorized local proto/schema and
+extractor-contract investigation with the gate
+`local_replay_serialized_entities_semantics_investigated`.
 
-Do not create Task 110 automatically. Stop and wait for a human milestone
+Do not create Task 111 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -345,7 +348,33 @@ that entry. In the boundary packet, 21 of 22 present UPDATE entries before the
 boundary matched after-command consumption, while loop 21 did not. Treat
 `serializedEntities` payloadBits as unsafe direct missing-UPDATE skip input
 until extractor/proto semantics are resolved. The task did not recover,
-canonicalize, emit source artifacts, or create Task 110.
+canonicalize, emit source artifacts, or create Task 110 automatically. Task 110
+was later executed only after explicit authorization.
+
+## Task 110
+
+Purpose: investigate local proto/schema evidence and the
+`EntityPayloadSizeExtractor` contract for
+`CSVCMsg_PacketEntities.serializedEntities` without changing parser behavior,
+recovery behavior, canonical facts, or source-artifact generation.
+
+Gate: `local_replay_serialized_entities_semantics_investigated`.
+
+Partial gate: `local_replay_serialized_entities_semantics_partially_investigated`.
+
+Blocked gate: `local_replay_serialized_entities_semantics_blocked`.
+
+Status: completed with the success gate above. Local Deadem, CS2, and Dota 2
+proto sources and compiled proto JSON identify
+`CSVCMsg_PacketEntities.serialized_entities` only as optional bytes field 13.
+`EntityPayloadSizeExtractor` decodes a byte-oriented unsigned varint stream
+from the bytes field, but treating those values as direct after-command skip
+bits remains a local inference rather than schema proof. Task 109 loop 21 still
+contradicts the direct skip assumption with `payloadBits` 227 versus 363
+after-command consumed bits, and loop 22 remains not independently justified.
+Missing-UPDATE recovery remains diagnostic-only. No parser or engine behavior
+was changed, no recovery was added, no canonical package or factual artifacts
+were emitted, and Task 111 was not created.
 
 ## Non-Goals
 
