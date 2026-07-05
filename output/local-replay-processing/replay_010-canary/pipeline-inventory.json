@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "phase": "pipeline_inventory_before_parse",
+  "candidateInput": ".local/deadem/replays/inbox/partida_010.dem",
+  "parserEntrypoints": [
+    {
+      "id": "deadem_player_load_stream",
+      "sourcePath": "packages/deadem/index.js",
+      "api": "Player.load(createReadStream(inputPath))",
+      "genericLocalPathSupport": "supported_by_api_shape",
+      "limitations": [
+        "The existing replay-009 telemetry script hardcodes samples paths; this canary uses the Player API directly instead.",
+        "Canonical package construction for arbitrary local input remains separate from source-artifact generation."
+      ]
+    }
+  ],
+  "existingHardcodedPathsObserved": [
+    "scripts/validate-replay-009-telemetry.js uses samples/replay_009_normal.dem and is not reused for this local canary."
+  ],
+  "blockedPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/replay-002-canonical/**",
+    "output/replay-009-canonical/**"
+  ],
+  "noReplaySpecificBranchPolicy": "The canary accepts only the authorized filename but must not add replay_010-only canonical branches.",
+  "inventoryConclusion": "generic_player_api_available_for_bounded_canary"
+}

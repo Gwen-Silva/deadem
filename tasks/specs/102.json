@@ -1,0 +1,116 @@
+{
+  "taskId": "102",
+  "title": "Create Generic Local Replay Processing Canary",
+  "status": "completed",
+  "objective": "Create or validate a safe generic local-input replay processing canary for .local/deadem/replays/inbox/partida_010.dem mapped to replay_010.",
+  "readPaths": [
+    "package.json",
+    "packages/deadem/package.json",
+    "packages/**",
+    "scripts/**",
+    "tools/**",
+    "data/artifact-storage-policy.json",
+    "data/human-replay-intake-policy.json",
+    "output/factual-batches/batch-015-human-factual-v2/**",
+    "output/replay-intake/**",
+    "tasks/specs/102.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "tools/process-local-replay-input.mjs",
+    "tests/local-replay-processing-canary.test.mjs",
+    "output/local-replay-processing/replay_010-canary/**",
+    "reports/generic-local-replay-processing-canary.md",
+    "tasks/specs/102.json",
+    "tasks/completed/102-create-generic-local-replay-processing-canary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "output/five-replay-pilot/**",
+    "output/factual-batches/batch-015-human-factual-v1/**",
+    "output/factual-batches/batch-015-human-factual-v2/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/103.json",
+    "tasks/blocked/103-*",
+    "tasks/completed/103-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "local-replay-processing-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/local-replay-processing-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-canary/pipeline-inventory.json",
+    "output/local-replay-processing/replay_010-canary/input-identity.json",
+    "output/local-replay-processing/replay_010-canary/source-artifact-manifest.json",
+    "output/local-replay-processing/replay_010-canary/canonical-compact-manifest.json",
+    "output/local-replay-processing/replay_010-canary/validation-summary.json",
+    "output/local-replay-processing/replay_010-canary/performance-baseline.json",
+    "output/local-replay-processing/replay_010-canary/storage-baseline.json",
+    "output/local-replay-processing/replay_010-canary/protection-audit.json",
+    "output/local-replay-processing/replay_010-canary/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-canary/local-processing-gate.json",
+    "reports/generic-local-replay-processing-canary.md",
+    "tasks/completed/102-create-generic-local-replay-processing-canary.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or write samples",
+    "Do not copy replay bytes",
+    "Do not create Task 103"
+  ],
+  "successGate": "generic_local_replay_source_artifacts_ready_canonicalization_pending",
+  "blockedGate": "generic_local_replay_processing_canary_blocked",
+  "fullSuccessGate": "generic_local_replay_processing_canary_ready",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-canary/local-processing-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "regenerate",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

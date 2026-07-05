@@ -25,9 +25,13 @@ candidate filenames without reading replay bytes, hashing, copying, parsing, or
 processing them. Task 101 then used the explicit authorization to hash those 11
 local candidates and attempt the 15-replay batch. It blocked under
 `factual_batch_15_candidate_processing_blocked` because no scoped generic
-parser/canonicalization command is available for arbitrary local input paths
+parser/canonicalization command was available for arbitrary local input paths
 without moving candidates into forbidden locations or introducing a one-off
-workaround. Task 102 was not created.
+workaround. Task 102 created a bounded generic local-input canary for only
+`partida_010.dem` and reached
+`generic_local_replay_source_artifacts_ready_canonicalization_pending`: source
+artifact generation works from the local path, but generic canonical package
+construction remains pending.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -86,10 +90,11 @@ The finite Task 094-096 pilot horizon is complete. Do not create Task 097
 automatically; Task 097 has now completed as an explicitly authorized
 post-pilot planning task. Task 098 has now completed as an explicitly
 authorized expansion attempt, Task 099 prepared human replay intake, and Task
-100 normalized local candidate filenames into the ignored inbox, and Task 101
-blocked candidate processing without creating Task 102. Stop for a human
-milestone decision about whether to implement a generic local-input replay
-processing path, improve cache tooling,
+100 normalized local candidate filenames into the ignored inbox, Task 101
+blocked candidate processing, and Task 102 validated the first generic
+local-input source-artifact canary while leaving canonicalization pending. Stop
+for a human milestone decision about whether to wire generic local-input
+canonicalization, improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
@@ -115,6 +120,5 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. Task 101 is complete with a
-blocked candidate-processing gate; stop and wait for a human milestone
-decision.
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 102 is complete with a
+partial source-artifact gate; stop and wait for a human milestone decision.

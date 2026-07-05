@@ -63,9 +63,11 @@ authorized intake-preparation task with the gate
 explicitly authorized local inbox normalization task with the gate
 `human_replay_inbox_normalized`. Task 101 is complete as an explicitly
 authorized local candidate processing attempt with the blocked gate
-`factual_batch_15_candidate_processing_blocked`.
+`factual_batch_15_candidate_processing_blocked`. Task 102 is complete as an
+explicitly authorized single-replay local-input canary with the partial gate
+`generic_local_replay_source_artifacts_ready_canonicalization_pending`.
 
-Do not create Task 102 automatically. Stop and wait for a human milestone
+Do not create Task 103 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -175,6 +177,22 @@ hashed under explicit authorization, but zero were accepted because no scoped
 generic parser/canonicalization command is available for arbitrary local input
 paths without moving candidates into forbidden locations or introducing a
 one-off workaround.
+
+## Task 102
+
+Purpose: create a bounded generic local-input replay processing canary for only
+`.local/deadem/replays/inbox/partida_010.dem` mapped to `replay_010`.
+
+Full success gate: `generic_local_replay_processing_canary_ready`.
+
+Partial source-artifact gate:
+`generic_local_replay_source_artifacts_ready_canonicalization_pending`.
+
+Blocked gate: `generic_local_replay_processing_canary_blocked`.
+
+Status: completed with the partial source-artifact gate above. The generic
+local parser API can open the authorized local input and produce compact source
+artifact summaries, but generic canonical package construction remains pending.
 
 ## Non-Goals
 
