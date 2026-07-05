@@ -1,0 +1,113 @@
+{
+  "taskId": "105",
+  "title": "Diagnose Local Replay Entity Lookup Failure",
+  "status": "completed",
+  "objective": "Diagnose the exact cause of the replay_010 local canary failure Unable to find an entity with index [ 2905 ] without constructing a canonical package or modifying parser internals.",
+  "readPaths": [
+    "package.json",
+    "tools/generate-local-replay-forward-source-artifacts.mjs",
+    "output/local-replay-processing/replay_010-forward-source-artifacts/**",
+    "tasks/specs/105.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "tools/diagnose-local-replay-entity-lookup.mjs",
+    "tests/local-replay-entity-lookup-diagnosis.test.mjs",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/**",
+    "reports/local-replay-entity-lookup-diagnosis.md",
+    "tasks/specs/105.json",
+    "tasks/completed/105-diagnose-local-replay-entity-lookup-failure.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "packages/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/106.json",
+    "tasks/blocked/106-*",
+    "tasks/completed/106-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "local-replay-entity-lookup-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/local-replay-entity-lookup-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/input-identity.json",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/probe-results.json",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/failure-localization.json",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/safe-access-capability.json",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/protection-audit.json",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-entity-lookup-diagnosis/diagnosis-gate.json",
+    "reports/local-replay-entity-lookup-diagnosis.md",
+    "tasks/completed/105-diagnose-local-replay-entity-lookup-failure.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or write samples",
+    "Do not copy replay bytes",
+    "Do not create Task 106",
+    "Do not construct a canonical package",
+    "Do not modify parser or engine internals"
+  ],
+  "successGate": "local_replay_entity_lookup_failure_diagnosed",
+  "blockedGate": "local_replay_entity_lookup_failure_diagnosis_blocked",
+  "allowedAlternateGates": [
+    "local_replay_entity_lookup_tool_level_workaround_ready"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-entity-lookup-diagnosis/diagnosis-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

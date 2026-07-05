@@ -71,9 +71,11 @@ explicitly authorized single-replay local-input canary with the partial gate
 `generic_local_replay_canonical_source_artifacts_blocked`. Task 104 is complete
 as an explicitly authorized forward-only source-artifact canary for the same
 single input with the blocked gate
-`generic_local_replay_forward_source_artifacts_blocked`.
+`generic_local_replay_forward_source_artifacts_blocked`. Task 105 is complete as
+an explicitly authorized diagnosis of that failure with the gate
+`local_replay_entity_lookup_failure_diagnosed`.
 
-Do not create Task 105 automatically. Stop and wait for a human milestone
+Do not create Task 106 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -229,6 +231,22 @@ Status: completed with the blocked gate above. Parser load succeeded and
 forward-only advancement produced 15 samples across 953 ticks, but the same
 `Unable to find an entity with index [ 2905 ]` failure occurred during forward
 sampling. No canonical package was constructed and Task 105 was not created.
+
+## Task 105
+
+Purpose: diagnose the exact local replay entity lookup failure for only
+`.local/deadem/replays/inbox/partida_010.dem`.
+
+Gate: `local_replay_entity_lookup_failure_diagnosed`.
+
+Blocked gate: `local_replay_entity_lookup_failure_diagnosis_blocked`.
+
+Status: completed with the success gate above. Load-only passed. `nextTick`
+alone failed after 953 ticks with `Unable to find an entity with index [ 2905 ]`
+before any entity class lookup, field access, pawn/controller relationship
+resolution, or extractor snapshot logic. The next recommended fix scope is
+parser API investigation. No canonical package was constructed and Task 106 was
+not created.
 
 ## Non-Goals
 

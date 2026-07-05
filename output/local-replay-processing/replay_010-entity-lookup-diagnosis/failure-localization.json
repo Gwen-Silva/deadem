@@ -1,0 +1,12 @@
+{
+  "error": "Unable to find an entity with index [ 2905 ]",
+  "firstFailingProbe": "probe_2_next_tick_only",
+  "firstFailingOperation": "nextTick",
+  "suspectedLayer": "parser_advancement",
+  "evidence": [
+    "probe_2_next_tick_only failed with Unable to find an entity with index [ 2905 ]",
+    "Operation flags: nextTick=true, classLookup=false, getField=false, pawnControllerResolution=false",
+    "Ticks attempted=953, ticks advanced=953, samples produced=0"
+  ],
+  "nextRecommendedFixScope": "parser_api_investigation"
+}
