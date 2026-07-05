@@ -31,3 +31,7 @@ Blocked gate: `replay_002_canonical_factual_state_v8_blocked`.
 ## Follow-up
 
 If v8 passes, create `tasks/blocked/090-select-next-canonical-generalization-control.md`. If blocked, create exactly one Task 090 for the first blocker. Do not execute Task 090.
+
+## Review Note
+
+The v8 gate was rejected after review. The remaining technical correction was transferred to Task 091, while Task 090 was reserved for Codex workflow optimization. Do not treat Task 089 as an accepted canonical gate.

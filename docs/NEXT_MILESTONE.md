@@ -49,14 +49,11 @@ behavior more strongly than it applied it, did not audit capability provenance,
 treated some reconciled observations as direct parser observations, and kept
 some validation-matrix entries as positive constants.
 
-Task 089 is the active corrective audit closure for this case. Its gate is
-`replay_002_canonical_factual_state_ready_with_constraints_v8`. Replay 002 now
-has a provenance-preserving canonical factual-state package with nested
-executable contract validation, full event-variant schema diff coverage,
-complete provenance and direct-observation audits, applied manifest behavior,
-IO audit, deterministic rerun evidence, documentation consistency checks, and
-replay protections. The result supports the milestone direction but does not yet
-release replay 005 or prove full corpus generalization.
+Task 089 is preserved as the v8 attempt, but its gate was not accepted after
+technical review. Remaining blockers are assigned to blocked Task 091. Task 090
+is a workflow-optimization task only; it does not alter replay facts or repair
+the v8 gate. Replay 002 is not approved for next-stage generalization until
+Task 091 is reviewed and accepted.
 
 Replay-009 spatial foundation remains parked under a concrete resume contract,
 not abandoned. It should resume only when genuinely new, replay-compatible,

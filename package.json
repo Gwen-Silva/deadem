@@ -10,6 +10,11 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "check:outputs": "node scripts/check-output-sizes.js",
+    "codex:prepare": "node scripts/codex-workflow.js prepare",
+    "codex:preflight": "node scripts/codex-workflow.js preflight",
+    "codex:review": "node scripts/codex-workflow.js review",
+    "codex:status": "node scripts/codex-workflow.js status",
+    "codex:validate": "node scripts/codex-workflow.js validate",
     "lint": "npm run lint --workspaces --if-present --",
     "preview": "npm run preview --workspace=@deademx/ui",
     "proto:json": "npm run proto:json --workspaces --if-present",

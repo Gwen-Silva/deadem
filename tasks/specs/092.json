@@ -1,0 +1,66 @@
+{
+  "taskId": "092",
+  "title": "Select Next Canonical Generalization Control",
+  "status": "blocked",
+  "objective": "Select the next compatible human replay for canonical factual-state generalization after Task 091 is reviewed and accepted.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "tasks/specs/092.json",
+    "output/parser-compatibility/parser-compatibility-matrix.json",
+    "output/parser-compatibility/replay-inventory.json"
+  ],
+  "optionalReadPaths": [
+    "reports/parser-compatibility-matrix.md",
+    "docs/PROJECT_STATE.md"
+  ],
+  "writePaths": [
+    "output/canonical-generalization-selection/**",
+    "reports/canonical-generalization-selection.md",
+    "tasks/completed/092-select-next-canonical-generalization-control.md",
+    "tasks/blocked/093-*.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/PROJECT_STATE.md"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "samples/partida_005.dem",
+    "samples/replay_006*.dem",
+    "samples/replay_007_bots01.dem",
+    "samples/replay_008_bots02_short.dem",
+    "output/replays/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    "npm run codex:prepare -- --task 092 --dry-run",
+    "npm run codex:preflight -- --task 092 --dry-run",
+    "npm run validate:tasks",
+    "npm run lint"
+  ],
+  "expectedOutputs": [
+    "output/canonical-generalization-selection/selection-decision.json",
+    "reports/canonical-generalization-selection.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "093",
+  "stopConditions": [
+    "Do not process any replay",
+    "Do not inspect replay 005",
+    "Stop if selection requires parser execution"
+  ],
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "reuse",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  }
+}
