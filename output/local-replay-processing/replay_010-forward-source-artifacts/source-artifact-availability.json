@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "rows": [
+    {
+      "artifactClass": "parser_source_summary",
+      "status": "ready",
+      "localArtifactPath": ".local/deadem/cache/local-replay-processing/replay_010/forward-source-artifacts/parser-source-summary.json",
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": 1,
+      "sourceMethod": "deadem.Player metadata after load",
+      "limitations": [
+        "Source artifact only; no canonical package construction claimed."
+      ]
+    },
+    {
+      "artifactClass": "match_state_timeline",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "forward-only one-second parser snapshot timeline",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "match_state_quality",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "quality summary over forward-only timeline and counters",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "steam/controller/pawn reconciliation accumulated during forward-only sampling",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "death_events",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "m_iDeaths counter increments only",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "death_validation",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "duplicate and source-method validation for death counter events",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "respawn_events",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "alive flag false-to-true observations only",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "configured objective-like entity class observations",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "status": "blocked",
+      "localArtifactPath": null,
+      "committedSummaryPath": "output/local-replay-processing/replay_010-forward-source-artifacts/source-artifact-manifest.json",
+      "recordCount": null,
+      "sourceMethod": "raw objective-like entity observation samples",
+      "limitations": [
+        "Forward-only sampling did not produce this required source artifact class safely in Task 104.",
+        "Parser error: Unable to find an entity with index [ 2905 ]"
+      ]
+    }
+  ]
+}

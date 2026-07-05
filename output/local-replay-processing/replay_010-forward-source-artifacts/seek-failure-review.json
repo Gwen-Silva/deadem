@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "predecessorTask": "103",
+  "predecessorGate": "generic_local_replay_canonical_source_artifacts_blocked",
+  "exactError": "Unable to find an entity with index [ 2905 ]",
+  "blockedClasses": [
+    "match_state_timeline",
+    "match_state_quality",
+    "one_second_player_reconciliation_or_equivalent",
+    "death_events",
+    "death_validation",
+    "respawn_events",
+    "objective_entity_inventory",
+    "objective_lifecycle_events"
+  ],
+  "seekSamplingLocation": "tools/generate-local-replay-source-artifacts.mjs predecessor sampling path used random-access replay sampling before one-second source artifacts could be emitted.",
+  "forwardOnlyRationale": "The next bounded test is to avoid replay random access and advance monotonically through the loaded replay state.",
+  "nonGoals": [
+    "No canonical package construction.",
+    "No 15-replay batch attempt.",
+    "No candidates 011-020.",
+    "No replay 005 or bot fixture access."
+  ],
+  "writtenFirst": true,
+  "committedPath": "output/local-replay-processing/replay_010-forward-source-artifacts/seek-failure-review.json"
+}

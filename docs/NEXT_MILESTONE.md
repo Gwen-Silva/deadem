@@ -66,11 +66,14 @@ authorized local candidate processing attempt with the blocked gate
 `factual_batch_15_candidate_processing_blocked`. Task 102 is complete as an
 explicitly authorized single-replay local-input canary with the partial gate
 `generic_local_replay_source_artifacts_ready_canonicalization_pending`. Task
-103 is complete as an explicitly authorized source-artifact attempt for only
+  103 is complete as an explicitly authorized source-artifact attempt for only
 `partida_010.dem` with the blocked gate
-`generic_local_replay_canonical_source_artifacts_blocked`.
+`generic_local_replay_canonical_source_artifacts_blocked`. Task 104 is complete
+as an explicitly authorized forward-only source-artifact canary for the same
+single input with the blocked gate
+`generic_local_replay_forward_source_artifacts_blocked`.
 
-Do not create Task 104 automatically. Stop and wait for a human milestone
+Do not create Task 105 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -210,7 +213,22 @@ Blocked gate: `generic_local_replay_canonical_source_artifacts_blocked`.
 Status: completed with the blocked gate above. Parser-source summary was ready,
 but seek-dependent source classes blocked because the current generic
 `deadem.Player` path failed with `Unable to find an entity with index [ 2905 ]`.
-No canonical package was constructed and Task 104 was not created.
+No canonical package was constructed. Task 104 was later executed only after
+explicit authorization.
+
+## Task 104
+
+Purpose: replace Task 103's seek-dependent sampling with a forward-only source
+artifact canary for only `.local/deadem/replays/inbox/partida_010.dem`.
+
+Gate: `generic_local_replay_forward_source_artifacts_ready`.
+
+Blocked gate: `generic_local_replay_forward_source_artifacts_blocked`.
+
+Status: completed with the blocked gate above. Parser load succeeded and
+forward-only advancement produced 15 samples across 953 ticks, but the same
+`Unable to find an entity with index [ 2905 ]` failure occurred during forward
+sampling. No canonical package was constructed and Task 105 was not created.
 
 ## Non-Goals
 
