@@ -16,7 +16,9 @@ explicitly authorized expansion toward a 15-human-replay factual batch using
 existing generated artifacts only and blocked under
 `factual_batch_15_expansion_blocked`: only the five accepted pilot replays were
 eligible, so ten additional eligible generated human replay entries are still
-needed.
+needed. Task 099 prepared a safe local intake path for future human replay
+candidates under `human_replay_intake_ready_for_user_files`; it did not process
+or hash any replay and did not create Task 100.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -74,9 +76,10 @@ Historical reports or outputs cannot override this file or
 The finite Task 094-096 pilot horizon is complete. Do not create Task 097
 automatically; Task 097 has now completed as an explicitly authorized
 post-pilot planning task. Task 098 has now completed as an explicitly
-authorized expansion attempt and did not create Task 099. Stop for a human
-milestone decision about whether to supply additional generated human replay
-artifacts, authorize future raw replay processing, improve cache tooling,
+authorized expansion attempt, and Task 099 has prepared human replay intake for
+future candidates without creating Task 100. Stop for a human milestone
+decision about whether to place additional human replay candidates in the local
+intake inbox, authorize future raw replay processing, improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
 
@@ -102,5 +105,6 @@ semantics, and proximity analysis remain unavailable.
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
-`docs/NEXT_MILESTONE.md` for the active milestone. Task 098 is complete with a
-blocked 15-replay expansion gate; stop and wait for a human milestone decision.
+`docs/NEXT_MILESTONE.md` for the active milestone. Task 099 is complete with a
+safe intake gate; stop and wait for user replay files or a human milestone
+decision.

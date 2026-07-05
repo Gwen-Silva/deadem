@@ -1,0 +1,104 @@
+{
+  "taskId": "099",
+  "title": "Prepare Human Replay Intake For Future Batch Expansion",
+  "status": "completed",
+  "objective": "Create a safe intake process for adding new human replay candidates before attempting the 15-replay batch again, without reading or processing replay files.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/STORAGE_AND_CACHE_STRATEGY.md",
+    "docs/SCALING_TO_15_50_500_REPLAYS.md",
+    "data/artifact-storage-policy.json",
+    "output/factual-batches/batch-015-human-factual-v1/batch-gate.json",
+    "output/factual-batches/batch-015-human-factual-v1/candidate-inventory.json",
+    "output/factual-batches/batch-015-human-factual-v1/canonicalization-summary.json",
+    "reports/factual-batch-15-human-expansion.md",
+    "tasks/specs/098.json",
+    "tasks/specs/099.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "docs/HUMAN_REPLAY_INTAKE.md",
+    "data/human-replay-intake-policy.json",
+    "output/replay-intake/human-replay-intake-readiness.json",
+    "output/replay-intake/human-replay-intake-template.json",
+    "reports/human-replay-intake-for-batch-expansion.md",
+    "tools/audit-human-replay-intake.mjs",
+    "tests/human-replay-intake.test.mjs",
+    "tasks/specs/099.json",
+    "tasks/completed/099-prepare-human-replay-intake-for-batch-expansion.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "output/five-replay-pilot/**",
+    "schemas/**",
+    "lib/canonical-state/**",
+    "tasks/specs/100.json",
+    "tasks/blocked/100-*",
+    "tasks/completed/100-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "human-replay-intake-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/human-replay-intake.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "docs/HUMAN_REPLAY_INTAKE.md",
+    "data/human-replay-intake-policy.json",
+    "output/replay-intake/human-replay-intake-readiness.json",
+    "output/replay-intake/human-replay-intake-template.json",
+    "reports/human-replay-intake-for-batch-expansion.md",
+    "tasks/completed/099-prepare-human-replay-intake-for-batch-expansion.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process raw replay files",
+    "Do not create Task 100",
+    "Stop after preparing intake and reporting readiness for user files"
+  ],
+  "successGate": "human_replay_intake_ready_for_user_files",
+  "blockedGate": "human_replay_intake_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/replay-intake/human-replay-intake-readiness.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  }
+}

@@ -57,10 +57,12 @@ current pilot definition.
 Tasks 094, 095, 096, and the explicitly authorized post-pilot storage strategy
 Task 097 are complete. Task 098 is also complete as an explicitly authorized
 post-pilot expansion attempt with the blocked gate
-`factual_batch_15_expansion_blocked`.
+`factual_batch_15_expansion_blocked`. Task 099 is complete as an explicitly
+authorized intake-preparation task with the gate
+`human_replay_intake_ready_for_user_files`.
 
-Do not create Task 099 automatically. Stop and wait for a human milestone
-decision.
+Do not create Task 100 automatically. Stop and wait for user replay files or a
+human milestone decision.
 
 ## Task 094
 
@@ -126,6 +128,20 @@ Blocked gate: `factual_batch_15_expansion_blocked`.
 Status: completed with the blocked gate above. The repository currently exposes
 only five eligible accepted human replay entries, so ten more eligible generated
 human replay entries are needed before a 15-replay batch can be formed.
+
+## Task 099
+
+Purpose: prepare a safe local intake process for future human replay candidates
+without reading, hashing, copying, parsing, or processing replay files.
+
+Success gate: `human_replay_intake_ready_for_user_files`.
+
+Blocked gate: `human_replay_intake_blocked`.
+
+Status: completed with the success gate above. The local inbox may be absent;
+the user can create `.local/deadem/replays/inbox/` and add candidate replay
+filenames plus metadata entries for a future explicitly authorized processing
+task.
 
 ## Non-Goals
 

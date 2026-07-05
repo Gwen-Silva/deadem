@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "templatePurpose": "human_replay_candidate_metadata",
+  "localInboxRoot": ".local/deadem/replays/inbox/",
+  "metadata": {
+    "candidateId": "human_replay_short_label",
+    "localFileName": "human-replay-short-label.dem",
+    "source": "user_supplied_local_file",
+    "isHumanMatch": true,
+    "knownReplayId": null,
+    "notes": "Describe match source, approximate date, and why it is a human match.",
+    "doNotProcessYet": true
+  },
+  "policyReminder": {
+    "doNotProcessYetMustRemainTrue": true,
+    "replay005MustNotBeIncluded": true,
+    "botFixtures006To008MustNotBeIncluded": true,
+    "replayHashNotRequiredForIntake": true,
+    "fileContentsMustNotBeReadByIntakeAudit": true
+  }
+}

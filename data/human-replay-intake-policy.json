@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "policyId": "human_replay_intake_policy_v1",
+  "localInboxRoot": ".local/deadem/replays/inbox/",
+  "namingConvention": {
+    "candidateReplayFile": "human-replay-<short-label>.dem",
+    "metadataFile": "human-replay-<short-label>.metadata.json",
+    "candidateIdPattern": "human_replay_<short_label>"
+  },
+  "protectedFilenamePatterns": [
+    "replay_005",
+    "replay-005",
+    "replay005",
+    "partida_005",
+    "partida-005",
+    "partida005",
+    "match_005",
+    "match-005"
+  ],
+  "unsupportedBotPatterns": [
+    "replay_006",
+    "replay-006",
+    "replay006",
+    "replay_007",
+    "replay-007",
+    "replay007",
+    "replay_008",
+    "replay-008",
+    "replay008",
+    "bot_fixture",
+    "bot-fixture"
+  ],
+  "minimumUserMetadata": {
+    "candidateId": "",
+    "localFileName": "",
+    "source": "",
+    "isHumanMatch": true,
+    "knownReplayId": null,
+    "notes": "",
+    "doNotProcessYet": true
+  },
+  "acceptedStatuses": [
+    "candidate_pending_metadata",
+    "candidate_ready_for_future_processing",
+    "blocked_protected_replay",
+    "blocked_unsupported_bot_fixture",
+    "blocked_unknown_origin",
+    "blocked_duplicate",
+    "blocked_missing_user_metadata"
+  ],
+  "toolMayInspect": [
+    "whether the local inbox directory exists",
+    "filenames directly under the local inbox directory",
+    "metadata filenames directly under the local inbox directory"
+  ],
+  "toolMustNotInspect": [
+    "raw replay file bytes",
+    "replay hashes",
+    "replay parser output",
+    "replay 005",
+    "unsupported bot fixtures 006-008",
+    "samples directory",
+    "protected output paths"
+  ],
+  "additionalEligibleReplaysNeededForNext15ReplayAttempt": 10,
+  "replayProcessingAllowed": false,
+  "hashingAllowed": false,
+  "fileContentInspectionAllowed": false,
+  "task100CreationAllowed": false
+}
