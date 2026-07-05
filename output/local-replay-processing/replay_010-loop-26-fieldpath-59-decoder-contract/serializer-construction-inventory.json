@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+  "staticFirstInvestigation": true,
+  "filesExamined": [
+    "packages/engine/src/handlers/DemoPacketHandler.js",
+    "packages/engine/src/data/fields/FieldFactory.js",
+    "packages/engine/src/data/fields/Serializer.js",
+    "packages/engine/src/data/fields/FieldDefinition.js",
+    "packages/engine/src/data/fields/FieldRuleRegistry.js",
+    "packages/engine/src/data/fields/decoding/FieldDecoderCatalog.js",
+    "packages/engine/src/data/fields/decoding/FieldDecoderDescriptor.js",
+    "packages/engine/src/data/fields/decoding/FieldDecoderFactory.js",
+    "packages/engine/src/data/fields/decoding/FieldStorageDescriptor.js",
+    "packages/engine/src/data/fields/models/FieldSimple.js",
+    "packages/engine/src/data/fields/models/FieldArrayVariable.js",
+    "packages/engine/src/data/fields/models/FieldTableVariable.js",
+    "packages/engine/src/data/fields/path/FieldPathBuilder.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/bootstrap/Bootstrap.js",
+    "packages/deadem/src/bootstrap/Bootstrap.js"
+  ],
+  "constructionFacts": [
+    {
+      "id": "send_table_runtime_serializer_construction",
+      "status": "supported",
+      "evidence": [
+        {
+          "file": "packages/engine/src/handlers/DemoPacketHandler.js",
+          "line": 59,
+          "summary": "send-table serializers are constructed from decoded CSVCMsg_FlattenedSerializer entries"
+        },
+        {
+          "file": "packages/engine/src/handlers/DemoPacketHandler.js",
+          "line": 108,
+          "summary": "field definitions are parsed from runtime varType symbols"
+        },
+        {
+          "file": "packages/engine/src/handlers/DemoPacketHandler.js",
+          "line": 122,
+          "summary": "FieldFactory creates the field model and decoder from runtime field metadata"
+        }
+      ]
+    },
+    {
+      "id": "field_path_id_to_metadata_resolution",
+      "status": "supported",
+      "evidence": [
+        {
+          "file": "packages/engine/src/data/fields/Serializer.js",
+          "line": 78,
+          "summary": "serializer resolves field path id to decoder through FieldPathBuilder"
+        },
+        {
+          "file": "packages/engine/src/data/fields/Serializer.js",
+          "line": 119,
+          "summary": "serializer resolves field path id to flattened field name"
+        },
+        {
+          "file": "packages/engine/src/data/fields/Serializer.js",
+          "line": 163,
+          "summary": "serializer resolves field path id to storage descriptor"
+        }
+      ]
+    },
+    {
+      "id": "decode_string_misc_catalog_pair",
+      "status": "supported",
+      "evidence": [
+        {
+          "file": "packages/engine/src/data/fields/decoding/FieldDecoderCatalog.js",
+          "line": 68,
+          "summary": "STRING decoder resolves to decodeString with MISC storage"
+        },
+        {
+          "file": "packages/engine/src/data/fields/decoding/FieldDecoderFactory.js",
+          "line": 374,
+          "summary": "decodeString consumes a BitBuffer string reader and no value is recorded by this task"
+        },
+        {
+          "file": "packages/engine/src/core/BitBuffer.js",
+          "line": 363,
+          "summary": "readString reads bytes until a null byte or optional limit"
+        },
+        {
+          "file": "packages/engine/src/bootstrap/Bootstrap.js",
+          "line": 71,
+          "summary": "char base type is registered as STRING"
+        },
+        {
+          "file": "packages/engine/src/bootstrap/Bootstrap.js",
+          "line": 72,
+          "summary": "CUtlString base type is registered as STRING"
+        },
+        {
+          "file": "packages/engine/src/bootstrap/Bootstrap.js",
+          "line": 73,
+          "summary": "CUtlSymbolLarge base type is registered as STRING"
+        }
+      ]
+    },
+    {
+      "id": "name_specific_override_for_target_field",
+      "status": "not_found_in_static_rules",
+      "evidence": []
+    }
+  ],
+  "sourceSearch": {
+    "filesExamined": 198,
+    "rootsExamined": [
+      "packages/engine/src",
+      "packages/deadem/src",
+      "packages/deadem/proto/source",
+      "packages/cs2/proto/source",
+      "packages/dota2/proto/source"
+    ],
+    "terms": [
+      "m_nAvailableHelperCount",
+      "CCitadel_Ability_Familiar_HelpingHands",
+      "AvailableHelper",
+      "HelpingHands"
+    ],
+    "matches": [],
+    "targetFieldFound": false,
+    "targetSerializerFound": false
+  },
+  "fieldValuesRecorded": false,
+  "rawPayloadsRecorded": false,
+  "limitations": [
+    "the exact runtime varType symbol for field path 59 is not committed by prior diagnostics",
+    "local proto/source search does not replace the runtime send-table payload",
+    "field names are metadata and are not proof of source schema semantics"
+  ]
+}

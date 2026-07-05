@@ -97,8 +97,11 @@ diagnosis of the packet-953 pre-recovery mismatches with the gate
 Task 113 is complete as an explicitly authorized loop-26 field-reader segment
 accounting diagnosis with the gate
 `local_replay_loop_26_field_reader_segments_diagnosed`.
+Task 114 is complete as an explicitly authorized field path 59
+decoder/serializer contract investigation with the gate
+`local_replay_loop_26_fieldpath_59_decoder_contract_investigated`.
 
-Do not create Task 114 automatically. Stop and wait for a human milestone
+Do not create Task 115 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -467,6 +470,28 @@ possible or supported locally, while causal conclusion remains
 payloads, parser fix, recovery, canonical package, source artifact, factual
 event, spatial semantic, mechanic, combat, macro, decision, or ML output was
 emitted. Task 114 was not created.
+
+## Task 114
+
+Purpose: investigate, without field values, parser recovery, or parser fixes,
+whether replay_010 packet ordinal 953 loop 26 field path 59
+`m_nAvailableHelperCount` receiving `decodeString` and `MISC` storage is
+coherent with the local serializer/decoder contract.
+
+Gate: `local_replay_loop_26_fieldpath_59_decoder_contract_investigated`.
+
+Partial gate: `local_replay_loop_26_fieldpath_59_decoder_contract_partial`.
+
+Blocked gate: `local_replay_loop_26_fieldpath_59_decoder_contract_blocked`.
+
+Status: completed with the success gate above. The local runtime serializer
+metadata and decoder catalog support the `decodeString`/`MISC` assignment, and
+Task 113's largest 288-bit segment was matched exactly. The field name remains
+suspicious by convention, but no parser bug, Source 2 semantic conclusion,
+replay corruption conclusion, recovery recommendation, canonical package, field
+value, raw payload, source artifact, factual event, spatial semantic,
+mechanic, combat, macro, decision, or ML output was emitted. No Task 115 was
+created.
 
 ## Non-Goals
 

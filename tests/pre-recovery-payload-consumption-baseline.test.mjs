@@ -262,7 +262,7 @@ test('output roots are fixed to pre-recovery baseline paths', () => {
     assert.equal(roots.summary.relativePath, 'output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/');
 });
 
-test('Task 114 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/114.json'), false);
-    assert.equal(existsSync('tasks/blocked/114-select-next-canonical-generalization-control.md'), false);
+test('Task 115 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/115.json'), false);
+    assert.equal(existsSync('tasks/blocked/115-select-next-canonical-generalization-control.md'), false);
 });

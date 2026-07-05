@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "packetOrdinal": 953,
+  "loop": 26,
+  "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+  "serializerVersion": 0,
+  "target": {
+    "ordinal": 6,
+    "bitsConsumed": 288,
+    "fieldPathId": 59,
+    "fieldPathName": "m_nAvailableHelperCount",
+    "decoderName": "decodeString",
+    "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+    "serializerVersion": 0,
+    "storageType": "MISC",
+    "storageDimension": 0,
+    "storageSigned": false,
+    "storageBool": false
+  },
+  "metadataSource": "Task 113 runtime field-reader segment metadata plus Task 114 static local source inventory",
+  "localContractAssessment": {
+    "decodeStringMiscPairSupportedByLocalCatalog": true,
+    "runtimeSerializerMetadataSelfConsistent": true,
+    "fieldNameSuggestsNumericCount": true,
+    "localStaticSchemaOrProtoFieldFound": false,
+    "nameSpecificDecoderOverrideFound": false,
+    "exactRuntimeVarTypeKnownFromCommittedEvidence": false,
+    "fieldPath59ExplainsLargeSegmentByLocalDecoderBehavior": true,
+    "suspiciousNameDecoderPair": true,
+    "source2SemanticsClaimed": false,
+    "parserBugConcluded": false,
+    "replayCorruptionConcluded": false,
+    "causalConclusion": "not_determined"
+  },
+  "answer": {
+    "decodeStringForAvailableHelperCountSupportedByLocalMetadata": "supported_by_runtime_serializer_metadata_and_local_decoder_catalog",
+    "localEvidenceOfMismatch": "field_name_convention_is_suspicious_but_not_a_schema_contract_violation_by_itself",
+    "largeSegmentExplanation": "decodeString uses BitBuffer.readString, so a 288-bit segment is locally plausible for string-like metadata, but causality remains unproven",
+    "suspectedArea": "serializer_mapping_or_decoder_assignment_hypothesis",
+    "safestNextStep": "capture runtime send-table field definition metadata for field path 59 without values, or compare independent parser/oracle serializer metadata before changing parser behavior"
+  },
+  "limitations": [
+    "committed Task 113 diagnostics do not include runtime varType symbols",
+    "local static source/proto search did not find an authoritative source declaration for the target field",
+    "field names can be misleading and do not prove Source 2 semantics",
+    "the investigation does not decode or report field values"
+  ]
+}

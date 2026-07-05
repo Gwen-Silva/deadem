@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "packetOrdinal": 953,
+  "loop": 26,
+  "serializerName": "CCitadel_Ability_Familiar_HelpingHands",
+  "comparedFieldPaths": [
+    0,
+    1,
+    24,
+    56,
+    3373,
+    58,
+    59
+  ],
+  "nearbyFieldPathsRequested": [
+    56,
+    57,
+    58,
+    59,
+    60
+  ],
+  "rows": [
+    {
+      "fieldPathId": 0,
+      "observedInLoop26": true,
+      "segmentOrdinal": 0,
+      "bitsConsumed": 24,
+      "fieldPathName": "m_nUpgradeInfo",
+      "decoderName": "decodeUVarInt32",
+      "storageType": "INT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "integer_like_by_local_storage_metadata",
+      "isTarget": false,
+      "outlierReason": null
+    },
+    {
+      "fieldPathId": 1,
+      "observedInLoop26": true,
+      "segmentOrdinal": 1,
+      "bitsConsumed": 32,
+      "fieldPathName": "m_flCooldownStart",
+      "decoderName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "float_like_by_local_storage_metadata",
+      "isTarget": false,
+      "outlierReason": null
+    },
+    {
+      "fieldPathId": 24,
+      "observedInLoop26": true,
+      "segmentOrdinal": 2,
+      "bitsConsumed": 32,
+      "fieldPathName": "m_flCooldownEnd",
+      "decoderName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "float_like_by_local_storage_metadata",
+      "isTarget": false,
+      "outlierReason": null
+    },
+    {
+      "fieldPathId": 56,
+      "observedInLoop26": true,
+      "segmentOrdinal": 3,
+      "bitsConsumed": 8,
+      "fieldPathName": "m_vecHelpers",
+      "decoderName": "decodeUVarInt32",
+      "storageType": "INT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "integer_like_by_local_storage_metadata",
+      "isTarget": false,
+      "outlierReason": null
+    },
+    {
+      "fieldPathId": 3373,
+      "observedInLoop26": true,
+      "segmentOrdinal": 4,
+      "bitsConsumed": 32,
+      "fieldPathName": "m_vecHelpers.0000",
+      "decoderName": "decodeUVarInt32",
+      "storageType": "INT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "nested_or_indexed_field_path",
+      "isTarget": false,
+      "outlierReason": null
+    },
+    {
+      "fieldPathId": 58,
+      "observedInLoop26": true,
+      "segmentOrdinal": 5,
+      "bitsConsumed": 32,
+      "fieldPathName": "m_tSoonestHelperCooldownEndTime",
+      "decoderName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "storageDimension": 1,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "float_like_by_local_storage_metadata",
+      "isTarget": false,
+      "outlierReason": null
+    },
+    {
+      "fieldPathId": 59,
+      "observedInLoop26": true,
+      "segmentOrdinal": 6,
+      "bitsConsumed": 288,
+      "fieldPathName": "m_nAvailableHelperCount",
+      "decoderName": "decodeString",
+      "storageType": "MISC",
+      "storageDimension": 0,
+      "storageSigned": false,
+      "storageBool": false,
+      "localShapeClass": "string_or_misc_like_by_local_decoder_metadata",
+      "isTarget": true,
+      "outlierReason": "only observed loop 26 segment with decodeString/MISC and the largest bit consumption"
+    }
+  ],
+  "nearby": [
+    {
+      "fieldPathId": 56,
+      "availableFromTask113Loop26": true,
+      "fieldPathName": "m_vecHelpers",
+      "decoderName": "decodeUVarInt32",
+      "storageType": "INT",
+      "limitation": null
+    },
+    {
+      "fieldPathId": 57,
+      "availableFromTask113Loop26": false,
+      "fieldPathName": null,
+      "decoderName": null,
+      "storageType": null,
+      "limitation": "not observed in loop 26 Task 113 segment ledger; no field value or runtime schema dump was committed"
+    },
+    {
+      "fieldPathId": 58,
+      "availableFromTask113Loop26": true,
+      "fieldPathName": "m_tSoonestHelperCooldownEndTime",
+      "decoderName": "decodeNoScale",
+      "storageType": "FLOAT",
+      "limitation": null
+    },
+    {
+      "fieldPathId": 59,
+      "availableFromTask113Loop26": true,
+      "fieldPathName": "m_nAvailableHelperCount",
+      "decoderName": "decodeString",
+      "storageType": "MISC",
+      "limitation": null
+    },
+    {
+      "fieldPathId": 60,
+      "availableFromTask113Loop26": false,
+      "fieldPathName": null,
+      "decoderName": null,
+      "storageType": null,
+      "limitation": "not observed in loop 26 Task 113 segment ledger; no field value or runtime schema dump was committed"
+    }
+  ],
+  "targetOutlier": {
+    "fieldPathId": 59,
+    "bitsConsumed": 288,
+    "decoderName": "decodeString",
+    "storageType": "MISC",
+    "onlyStringMiscSegmentInLoop26": true,
+    "largestObservedSegment": true
+  },
+  "valuesRecorded": false,
+  "rawPayloadsRecorded": false
+}

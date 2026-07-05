@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "parserFixRecommendedNow": false,
+  "recoveryRecommendation": "do_not_add_recovery_from_this_evidence",
+  "directMissingUpdateSkipStatus": "unsafe",
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "parserBugConcluded": false,
+  "serializerMappingBugHypothesis": true,
+  "decoderAssignmentBugHypothesis": true,
+  "fieldPathInterpretationBugHypothesis": "possible_not_proven",
+  "accountingArtifactHypothesis": "possible_not_proven",
+  "strongestFinding": "field path 59 is the sole decodeString/MISC segment and the largest segment in loop 26",
+  "safestNextStep": "capture runtime send-table field definition metadata for field path 59 without values, or compare independent parser/oracle serializer metadata before changing parser behavior",
+  "limitations": [
+    "committed Task 113 diagnostics do not include runtime varType symbols",
+    "local static source/proto search did not find an authoritative source declaration for the target field",
+    "field names can be misleading and do not prove Source 2 semantics",
+    "the investigation does not decode or report field values"
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "taskId": "114",
+  "title": "Investigate Loop 26 FieldPath 59 Decoder And Serializer Contract",
+  "status": "completed",
+  "objective": "Investigate whether replay_010 packet ordinal 953 loop 26 field path 59 uses decoder, storage, and serializer metadata coherently with the local serializer contract, without parser fixes, recovery, field values, or match facts.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/FieldPathExtractor.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/engine/src/data/entity/EntityMutationBatch.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/engine/src/data/enums/MessagePacketType.js",
+    "packages/engine/src/data/field/**",
+    "packages/engine/src/serializers/**",
+    "packages/engine/src/decoders/**",
+    "packages/engine/src/PacketCodec.js",
+    "packages/engine/src/SchemaRegistry.js",
+    "packages/deadem/index.js",
+    "packages/deadem/src/**",
+    "packages/deadem/providers/**",
+    "packages/deadem/proto/**",
+    "packages/cs2/proto/**",
+    "packages/dota2/proto/**",
+    "tools/inspect-replay-010-loop-26-field-reader-segments.mjs",
+    "tests/loop-26-field-reader-segments.test.mjs",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/**",
+    "output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption/**",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/**",
+    "reports/local-replay-loop-26-field-reader-segments.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/114.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+    "writePaths": [
+      "tools/investigate-replay-010-loop-26-fieldpath-59-decoder-contract.mjs",
+      "tests/loop-26-fieldpath-59-decoder-contract.test.mjs",
+      "tests/missing-entity-recovery-canary.test.mjs",
+      "tests/out-of-range-entity-create-diagnosis.test.mjs",
+      "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+      "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+      "tests/serialized-entities-semantics-investigation.test.mjs",
+      "tests/pre-recovery-payload-consumption-baseline.test.mjs",
+      "tests/pre-recovery-mismatch-field-consumption.test.mjs",
+      "tests/loop-26-field-reader-segments.test.mjs",
+      "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/**",
+      "reports/local-replay-loop-26-fieldpath-59-decoder-contract.md",
+      "tasks/specs/114.json",
+    "tasks/completed/114-investigate-loop-26-fieldpath-59-decoder-contract.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/115.json",
+    "tasks/blocked/115-*",
+    "tasks/completed/115-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "loop-26-fieldpath-59-decoder-contract-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-fieldpath-59-decoder-contract.test.mjs"
+      ]
+    },
+    {
+      "id": "loop-26-field-reader-segments-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-field-reader-segments.test.mjs"
+      ]
+    },
+    {
+      "id": "pre-recovery-mismatch-field-consumption-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-mismatch-field-consumption.test.mjs"
+      ]
+    },
+    {
+      "id": "pre-recovery-payload-baseline-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-payload-consumption-baseline.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entities-semantics-investigation-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entities-semantics-investigation.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entity-payload-semantics-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entity-payload-semantics-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-packet-cursor-alignment-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-packet-cursor-alignment-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "out-of-range-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/out-of-range-entity-create-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/input-identity.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/default-pass-result.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/diagnostic-pass-result.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/serializer-construction-inventory.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/fieldpath-59-contract.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/loop-26-fieldpath-contract-comparison.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/task113-comparison.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/risk-assessment.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/protection-audit.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/decoder-contract-gate.json",
+    "reports/local-replay-loop-26-fieldpath-59-decoder-contract.md",
+    "tasks/completed/114-investigate-loop-26-fieldpath-59-decoder-contract.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes",
+    "Do not commit raw entityData, raw serializedEntities, raw payloads, field values, .dem files, or .local files",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE",
+    "Do not alter default parser behavior",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not claim Source 2 semantics or replay corruption",
+    "Do not create Task 115"
+  ],
+  "successGate": "local_replay_loop_26_fieldpath_59_decoder_contract_investigated",
+  "blockedGate": "local_replay_loop_26_fieldpath_59_decoder_contract_blocked",
+  "allowedAlternateGates": [
+    "local_replay_loop_26_fieldpath_59_decoder_contract_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract/decoder-contract-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

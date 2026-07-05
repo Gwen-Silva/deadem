@@ -98,7 +98,16 @@ workaround. Task 102 created a bounded generic local-input canary for only
   and one 288-bit segment accounted for most of the 280-bit extra consumption.
   Loops 27-29 remained metric-only zero-path/zero-reader updates at the current
   cursor. Causality remains not determined; no field values, raw payloads,
-  recovery, canonical package, or factual artifacts were emitted.
+  recovery, canonical package, or factual artifacts were emitted. Task 114 then
+  investigated that 288-bit segment's field path 59 decoder contract under
+  `local_replay_loop_26_fieldpath_59_decoder_contract_investigated`: the local
+  runtime serializer metadata and decoder catalog support
+  `m_nAvailableHelperCount` resolving to `decodeString` with `MISC` storage,
+  but the numeric/count-style field name keeps serializer mapping or decoder
+  assignment as a hypothesis only. The exact runtime varType is not present in
+  committed evidence, no local static source/proto declaration was found, and
+  no parser bug, Source 2 semantic conclusion, replay corruption conclusion, or
+  recovery recommendation was made.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -175,12 +184,16 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   111 confirmed mismatches occur before any recovery on the default path. Task
   112 confirmed the target mismatch loops are field-level/cursor-accounting
   evidence, with loop 26 over-consuming and loops 27-29 consuming zero bits at
-  the current cursor. Stop for a human milestone decision about whether to
-  investigate external serializedEntities semantics or the entity-index stream
-  boundary further, wire local-input canonicalization after that blocker is
-  resolved, improve cache tooling, revisit spatial evidence only with genuinely
-  new evidence, improve mechanics/build mapping, or defer toward local
-  AI/runtime benchmarking later.
+  the current cursor. Task 113 isolated the largest loop-26 field-reader
+  segment, and Task 114 confirmed the local decoder/storage contract for field
+  path 59 while preserving uncertainty about causality. Stop for a human
+  milestone decision about whether to capture runtime send-table field
+  definition metadata without values, compare an independent parser/oracle
+  serializer view, investigate external serializedEntities semantics or the
+  entity-index stream boundary further, wire local-input canonicalization after
+  that blocker is resolved, improve cache tooling, revisit spatial evidence
+  only with genuinely new evidence, improve mechanics/build mapping, or defer
+  toward local AI/runtime benchmarking later.
 
 ## Protected And Unsupported Replays
 
@@ -214,5 +227,6 @@ serializedEntities schema/extractor semantics investigation. Task 111 is
 complete with a bounded pre-recovery payload-consumption baseline. Task 112 is
 complete with a bounded field-consumption diagnosis of the same packet-953
 mismatches. Task 113 is complete with bounded field-reader segment accounting
-for loop 26. Do not create Task 114 automatically; stop and wait for a human
-milestone decision.
+for loop 26. Task 114 is complete with bounded field path 59 decoder/serializer
+contract investigation. Do not create Task 115 automatically; stop and wait for
+a human milestone decision.
