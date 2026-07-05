@@ -48,8 +48,14 @@ workaround. Task 102 created a bounded generic local-input canary for only
   `local_replay_missing_entity_recovery_partial_progress`: default behavior
   still reproduced the Task 105 failure, opt-in missing-entity recovery advanced
   past that 953-tick blocker to tick 2862, no fake entities or fields were
-  materialized, and the run stopped later on `entity index out of range`. No
-  canonical package or factual artifacts were constructed.
+  materialized, and the run stopped later on `entity index out of range`. Task
+  107 then diagnosed that later boundary under
+  `local_replay_out_of_range_entity_create_boundary_diagnosed`: the failing
+  packet entry was a CREATE at loop 23 of 42 with accumulated entity index
+  570655505, class ID 139, serial 35052, and class
+  `CCitadel_Ability_Frank_ShockTarget2`; it failed in Entity construction
+  before baseline lookup, `registerEntity`, or field extraction. No canonical
+  package or factual artifacts were constructed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -114,9 +120,11 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   and Task 104 confirmed that a forward-only canary still reaches the same
   parser entity-index blocker. Task 105 localized the blocker to `nextTick`
   parser advancement itself, and Task 106 showed opt-in missing-entity recovery
-  makes partial progress but does not finish the replay. Stop for a human
-  milestone decision about whether to investigate the later parser entity-index
-  boundary, wire local-input canonicalization after that blocker is resolved,
+  makes partial progress but does not finish the replay. Task 107 diagnosed the
+  later out-of-range CREATE boundary before baseline lookup, entity
+  registration, or field extraction. Stop for a human milestone decision about
+  whether to investigate the entity-index stream/cursor boundary, wire
+  local-input canonicalization after that blocker is resolved,
   improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
 mechanics/build mapping, or defer toward local AI/runtime benchmarking later.
@@ -144,5 +152,6 @@ semantics, and proximity analysis remain unavailable.
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
 `docs/NEXT_MILESTONE.md` for the active milestone. Task 106 is complete with
-partial opt-in missing-entity recovery progress for replay_010; stop and wait
-for a human milestone decision.
+partial opt-in missing-entity recovery progress for replay_010, and Task 107
+is complete with a bounded diagnosis of the subsequent out-of-range CREATE
+boundary; stop and wait for a human milestone decision.

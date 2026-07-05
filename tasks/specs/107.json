@@ -1,0 +1,141 @@
+{
+  "taskId": "107",
+  "title": "Diagnose Opt-In Recovery Out-Of-Range Entity Create Boundary",
+  "status": "completed",
+  "objective": "Diagnose the replay_010 opt-in recovery boundary where CREATE fails with entity index out of range, without adding automatic recovery, canonicalizing, or processing other replays.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/deadem/index.js",
+    "tools/evaluate-missing-entity-recovery-canary.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "output/local-replay-processing/replay_010-missing-entity-recovery/**",
+    "reports/local-replay-missing-entity-recovery-canary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/107.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "tools/diagnose-replay-010-out-of-range-entity-create.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/**",
+    "reports/local-replay-out-of-range-entity-create-diagnosis.md",
+    "tasks/specs/107.json",
+    "tasks/completed/107-diagnose-out-of-range-entity-create-boundary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/108.json",
+    "tasks/blocked/108-*",
+    "tasks/completed/108-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "out-of-range-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/out-of-range-entity-create-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/input-identity.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/default-pass-result.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/recovery-pass-boundary-result.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/out-of-range-boundary-diagnostic.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/recovery-warning-tail-summary.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/protection-audit.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/diagnosis-gate.json",
+    "reports/local-replay-out-of-range-entity-create-diagnosis.md",
+    "tasks/completed/107-diagnose-out-of-range-entity-create-boundary.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or write samples",
+    "Do not copy replay bytes",
+    "Do not create Task 108",
+    "Do not construct a canonical package",
+    "Do not emit factual source artifacts",
+    "Do not recover entity index out of range automatically"
+  ],
+  "successGate": "local_replay_out_of_range_entity_create_boundary_diagnosed",
+  "blockedGate": "local_replay_out_of_range_entity_create_boundary_blocked",
+  "allowedAlternateGates": [
+    "local_replay_out_of_range_entity_create_boundary_partially_diagnosed"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/diagnosis-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

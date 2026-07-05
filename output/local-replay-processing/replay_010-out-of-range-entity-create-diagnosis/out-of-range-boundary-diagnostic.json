@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "boundaryObserved": true,
+  "errorMessage": "entity index out of range",
+  "tickContext": {
+    "currentTick": 2862,
+    "ticksAdvanced": 2863,
+    "advancedPastTask105Failure": true
+  },
+  "entityPacketContext": {
+    "updatedEntries": 42,
+    "loop": 23,
+    "accumulatedEntityIndex": 570655505,
+    "operation": "CREATE",
+    "classId": 139,
+    "serial": 35052,
+    "classIdSizeBits": 10,
+    "payloadBits": 22,
+    "payloadSizeIteratorAvailable": true,
+    "className": "CCitadel_Ability_Frank_ShockTarget2",
+    "readCounts": {
+      "beforeIndex": 6224,
+      "afterIndex": 6258,
+      "afterCommand": 6260,
+      "beforeClassId": 6260,
+      "afterClassId": 6270,
+      "afterSerial": 6287,
+      "beforeEntityConstructor": 6295
+    }
+  },
+  "boundaryStage": "entity_constructor",
+  "occurredBeforeBaselineLookup": true,
+  "occurredBeforeRegisterEntity": true,
+  "occurredBeforeFieldExtraction": true,
+  "recoveryAttemptedForThisBoundary": false,
+  "factStatus": "observed_parser_boundary",
+  "facts": [
+    "CREATE command classId and serial were read before the boundary",
+    "class lookup completed before Entity construction",
+    "Entity construction failed before baseline lookup",
+    "Entity construction failed before registerEntity",
+    "Entity construction failed before extractor field application",
+    "opt-in recovery did not recover this CREATE boundary"
+  ],
+  "hypotheses": [
+    "accumulated entity index exceeded the engine entity-index range before baseline lookup"
+  ],
+  "notDetermined": [
+    "whether the index delta stream is misaligned before this entry",
+    "whether earlier skipped missing-entity updates caused later packet cursor divergence",
+    "whether this replay requires parser support beyond missing-entity reference recovery"
+  ],
+  "fakeEntityCreated": false,
+  "fieldsMaterialized": false
+}

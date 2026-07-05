@@ -75,9 +75,12 @@ single input with the blocked gate
 an explicitly authorized diagnosis of that failure with the gate
 `local_replay_entity_lookup_failure_diagnosed`. Task 106 is complete as an
 explicitly authorized opt-in missing-entity recovery canary with the partial
-progress gate `local_replay_missing_entity_recovery_partial_progress`.
+progress gate `local_replay_missing_entity_recovery_partial_progress`. Task 107
+is complete as an explicitly authorized diagnosis of the subsequent
+out-of-range CREATE boundary with the gate
+`local_replay_out_of_range_entity_create_boundary_diagnosed`.
 
-Do not create Task 107 automatically. Stop and wait for a human milestone
+Do not create Task 108 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -267,7 +270,29 @@ reproduced the Task 105 `Unable to find an entity with index [ 2905 ]` failure.
 Opt-in recovery skipped invalid missing-entity update payloads and advanced
 past the prior 953-tick failure to tick 2862, then stopped on a later `entity
 index out of range` parser boundary. No canonical package, factual artifacts,
-Task 107, lane/region/proximity, mechanics, or strategic analysis were emitted.
+lane/region/proximity, mechanics, or strategic analysis were emitted. Task 107
+was later executed only after explicit authorization.
+
+## Task 107
+
+Purpose: diagnose the `entity index out of range` CREATE boundary reached by
+Task 106's opt-in recovery pass for only
+`.local/deadem/replays/inbox/partida_010.dem`.
+
+Gate: `local_replay_out_of_range_entity_create_boundary_diagnosed`.
+
+Blocked gate: `local_replay_out_of_range_entity_create_boundary_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing-entity failure. Opt-in recovery advanced past
+953 ticks and reached the later boundary at current tick 2862. The failing
+packet entry was CREATE loop 23 of 42 with accumulated entity index 570655505,
+class ID 139, serial 35052, and class
+`CCitadel_Ability_Frank_ShockTarget2`. The failure occurred at Entity
+construction before baseline lookup, `registerEntity`, and field extraction.
+No automatic recovery, canonical package, factual source artifacts,
+lane/region/proximity, mechanics, or strategic analysis were emitted. Task 108
+was not created.
 
 ## Non-Goals
 

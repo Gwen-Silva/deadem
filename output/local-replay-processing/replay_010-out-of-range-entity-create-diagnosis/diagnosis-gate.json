@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_out_of_range_entity_create_boundary_diagnosed",
+  "successGate": "local_replay_out_of_range_entity_create_boundary_diagnosed",
+  "partialGate": "local_replay_out_of_range_entity_create_boundary_partially_diagnosed",
+  "blockedGate": "local_replay_out_of_range_entity_create_boundary_blocked",
+  "defaultBehaviorReproduced": true,
+  "recoveryAdvancedPastTask105Failure": true,
+  "boundaryReached": true,
+  "boundaryDiagnosticCaptured": true,
+  "boundaryBeforeBaselineLookup": true,
+  "boundaryBeforeRegisterEntity": true,
+  "boundaryBeforeFieldExtraction": true,
+  "canonicalPackageConstructed": false,
+  "factualArtifactsEmitted": false,
+  "reasons": [
+    "default behavior reproduced Task 105 failure",
+    "opt-in recovery advanced past prior failure point",
+    "out-of-range CREATE boundary diagnostic captured",
+    "boundary occurs before baseline lookup, registerEntity, and field extraction",
+    "safety audits passed"
+  ]
+}

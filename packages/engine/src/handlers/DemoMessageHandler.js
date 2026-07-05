@@ -117,9 +117,12 @@ class DemoMessageHandler {
         let index = startIndex;
 
         for (let i = startLoop; i < message.updatedEntries; i++) {
+            const beforeIndexReadCount = bitBuffer.getReadCount();
             index += bitBuffer.readUVarInt() + 1;
+            const afterIndexReadCount = bitBuffer.getReadCount();
 
             const command = bitBuffer.readBitsAsUInt(2);
+            const afterCommandReadCount = bitBuffer.getReadCount();
 
             switch (command) {
                 case EntityOperation.UPDATE.id: {
@@ -197,10 +200,14 @@ class DemoMessageHandler {
                     const payloadBits = payloadSizes !== null ? payloadSizes.next().value : null;
                     const classIdSizeBits = this._demo.server.classIdSizeBits;
 
+                    const beforeClassIdReadCount = bitBuffer.getReadCount();
                     const classId = bitBuffer.readBitsAsUInt(classIdSizeBits);
+                    const afterClassIdReadCount = bitBuffer.getReadCount();
                     const serial = bitBuffer.readBitsAsUInt(17);
+                    const afterSerialReadCount = bitBuffer.getReadCount();
 
                     bitBuffer.readUVarInt32();
+                    const beforeEntityConstructorReadCount = bitBuffer.getReadCount();
 
                     const clazz = this._demo.getClassById(classId);
 
@@ -208,7 +215,39 @@ class DemoMessageHandler {
                         throw new Error(`Class not found [ ${classId} ]`);
                     }
 
-                    const entity = new Entity(index, serial, clazz);
+                    let entity;
+
+                    try {
+                        entity = new Entity(index, serial, clazz);
+                    } catch (error) {
+                        recordOutOfRangeEntityCreateBoundary(recovery, {
+                            messageUpdatedEntries: message.updatedEntries,
+                            loop: i,
+                            entityIndex: index,
+                            operation: EntityOperation.CREATE,
+                            classId,
+                            serial,
+                            classIdSizeBits,
+                            payloadBits,
+                            payloadSizeIteratorAvailable: payloadSizes !== null,
+                            readCounts: {
+                                beforeIndex: beforeIndexReadCount,
+                                afterIndex: afterIndexReadCount,
+                                afterCommand: afterCommandReadCount,
+                                beforeClassId: beforeClassIdReadCount,
+                                afterClassId: afterClassIdReadCount,
+                                afterSerial: afterSerialReadCount,
+                                beforeEntityConstructor: beforeEntityConstructorReadCount
+                            },
+                            className: clazz.name,
+                            failureStage: 'entity_constructor',
+                            baselineLookupAttempted: false,
+                            registerEntityAttempted: false,
+                            fieldExtractionAttempted: false
+                        }, error);
+
+                        throw error;
+                    }
 
                     const allowed = !hasFilter || this._entityClassFilter(clazz.name);
 
@@ -497,5 +536,44 @@ function recoverMissingClassBaseline(recovery, context) {
     return true;
 }
 
+/**
+ * Records an opt-in diagnostic for a CREATE entry whose accumulated entity
+ * index is outside the engine entity-index range. This does not recover, create
+ * an entity, apply a baseline, register anything, or materialize fields.
+ *
+ * @param {object|null} recovery
+ * @param {object} context
+ * @param {Error} error
+ * @returns {boolean}
+ */
+function recordOutOfRangeEntityCreateBoundary(recovery, context, error) {
+    if (recovery === null || recovery.diagnoseOutOfRangeEntityCreate !== true) {
+        return false;
+    }
+
+    recovery.recordOutOfRangeEntityCreateBoundary?.({
+        ...context,
+        operation: context.operation.code,
+        errorMessage: error?.message ?? String(error),
+        observedFacts: {
+            classAlreadyResolved: Boolean(context.className),
+            baselineLookupAttempted: false,
+            registerEntityAttempted: false,
+            fieldExtractionAttempted: false,
+            recoveryAttemptedForThisBoundary: false
+        },
+        hypotheses: [
+            'accumulated entity index exceeded the engine entity-index range before baseline lookup'
+        ],
+        undetermined: [
+            'whether the index delta stream is misaligned before this entry',
+            'whether earlier skipped missing-entity updates caused later packet cursor divergence',
+            'whether this replay requires parser support beyond missing-entity reference recovery'
+        ]
+    });
+
+    return true;
+}
+
 export default DemoMessageHandler;
-export { recoverMissingClassBaseline, recoverMissingEntityReference };
+export { recoverMissingClassBaseline, recoverMissingEntityReference, recordOutOfRangeEntityCreateBoundary };

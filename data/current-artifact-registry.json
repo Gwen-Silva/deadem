@@ -129,6 +129,12 @@
       "notes": "Task 106 evaluated opt-in missing-entity recovery for replay_010: default behavior reproduced the Task 105 failure, recovery advanced to tick 2862, and the run stopped on a later entity-index boundary without constructing canonical facts."
     },
     {
+      "id": "generic_local_replay_out_of_range_create_diagnosis",
+      "path": "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis/diagnosis-gate.json",
+      "status": "current",
+      "notes": "Task 107 diagnosed the replay_010 opt-in recovery boundary as an out-of-range CREATE accumulated entity index before baseline lookup, registerEntity, or field extraction."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
