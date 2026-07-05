@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_serialized_entity_payload_semantics_diagnosed",
+  "successGate": "local_replay_serialized_entity_payload_semantics_diagnosed",
+  "partialGate": "local_replay_serialized_entity_payload_semantics_partially_diagnosed",
+  "blockedGate": "local_replay_serialized_entity_payload_semantics_blocked",
+  "defaultBehaviorReproduced": true,
+  "recoveryReachedTask107Boundary": true,
+  "boundaryWindowLoops18To23Captured": true,
+  "loop21PayloadMismatchReported": true,
+  "loop22SkipEvaluatedSemantically": true,
+  "compactPresentUpdateMismatchSummaryProduced": true,
+  "payloadBitsDirectMissingUpdateSkipAssessment": "unsafe",
+  "canonicalPackageConstructed": false,
+  "factualArtifactsEmitted": false,
+  "reasons": [
+    "default behavior reproduced Task 105 failure",
+    "opt-in recovery reached the Task 107/108 boundary",
+    "boundary packet loops 18-23 captured",
+    "loop 21 payload mismatch reported",
+    "loop 22 skip evaluated as semantic evidence",
+    "present UPDATE mismatch summary produced",
+    "safety audits passed"
+  ]
+}

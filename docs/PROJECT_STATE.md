@@ -61,8 +61,16 @@ workaround. Task 102 created a bounded generic local-input canary for only
   moved from read count 5958 by 266 bits to the loop 23 start at 6224, and that
   arithmetic was internally consistent; however, bounded nearby-offset
   simulation found plausible entity index/command pairs, so cursor
-  misalignment remains a viable hypothesis but not a proved cause. No canonical
-  package or factual artifacts were constructed.
+  misalignment remains a viable hypothesis but not a proved cause. Task 109
+  then diagnosed serialized entity payload-size semantics under
+  `local_replay_serialized_entity_payload_semantics_diagnosed`: in the same
+  boundary packet, 21 of 22 present UPDATE entries before the boundary matched
+  `payloadBits` to after-command extractor consumption, but loop 21 did not
+  (`payloadBits` 227 versus 363 consumed bits). The loop 22 missing UPDATE skip
+  remains arithmetic-only evidence because no entity extractor could consume
+  that entry independently. Treat `serializedEntities` payloadBits as unsafe
+  direct missing-UPDATE skip input until the extractor/proto semantics are
+  resolved. No canonical package or factual artifacts were constructed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -131,9 +139,11 @@ authorized expansion attempt, Task 099 prepared human replay intake, and Task
   later out-of-range CREATE boundary before baseline lookup, entity
   registration, or field extraction. Task 108 diagnosed cursor alignment around
   loop 22/23 and showed current skip arithmetic is internally consistent while
-  nearby plausible offsets exist. Stop for a human milestone decision about
-  whether to investigate serialized entity payload semantics, entity packet
-  cursor alignment, or the entity-index stream boundary further, wire
+  nearby plausible offsets exist. Task 109 confirmed loop 21 payload-size
+  mismatch and classified direct missing-UPDATE payload skipping as unsafe.
+  Stop for a human milestone decision about whether to investigate
+  `EntityPayloadSizeExtractor`, serializedEntities proto semantics, extractor
+  consumption, or the entity-index stream boundary further, wire
   local-input canonicalization after that blocker is resolved,
   improve cache tooling,
 revisit spatial evidence only with genuinely new evidence, improve
@@ -162,7 +172,9 @@ semantics, and proximity analysis remain unavailable.
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
 `docs/NEXT_MILESTONE.md` for the active milestone. Task 106 is complete with
-partial opt-in missing-entity recovery progress for replay_010, and Task 107
-is complete with a bounded diagnosis of the subsequent out-of-range CREATE
-boundary. Task 108 is complete with a bounded cursor-alignment diagnosis around
-that boundary; stop and wait for a human milestone decision.
+partial opt-in missing-entity recovery progress for replay_010, Task 107 is
+complete with a bounded diagnosis of the subsequent out-of-range CREATE
+boundary, Task 108 is complete with a bounded cursor-alignment diagnosis around
+that boundary, and Task 109 is complete with a bounded serialized payload-size
+semantics diagnosis. Do not create Task 110 automatically; stop and wait for a
+human milestone decision.

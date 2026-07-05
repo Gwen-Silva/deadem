@@ -82,8 +82,11 @@ out-of-range CREATE boundary with the gate
 Task 108 is complete as an explicitly authorized cursor-alignment diagnosis
 around that boundary with the gate
 `local_replay_entity_packet_cursor_alignment_diagnosed`.
+Task 109 is complete as an explicitly authorized serialized entity payload
+semantics diagnosis with the gate
+`local_replay_serialized_entity_payload_semantics_diagnosed`.
 
-Do not create Task 109 automatically. Stop and wait for a human milestone
+Do not create Task 110 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -315,8 +318,34 @@ the next loop start. Loop 23 then decoded as CREATE with accumulated entity
 index 570655505. Nearby bounded offset simulation found plausible entity
 index/command pairs, including offset -2 bits decoding to CREATE entity 7694,
 so cursor misalignment remains a viable hypothesis. The task did not prove
-that loop 22 caused the boundary and did not recover, canonicalize, emit
-source artifacts, or create Task 109.
+that loop 22 caused the boundary and did not recover, canonicalize, or emit
+source artifacts. Task 109 was later executed only after explicit
+authorization.
+
+## Task 109
+
+Purpose: diagnose whether values decoded from
+`CSVCMsg_PacketEntities.serializedEntities` by `EntityPayloadSizeExtractor`
+can be treated as the direct number of bits to skip after index + command for
+missing UPDATE recovery.
+
+Gate: `local_replay_serialized_entity_payload_semantics_diagnosed`.
+
+Blocked gate: `local_replay_serialized_entity_payload_semantics_blocked`.
+
+Status: completed with the success gate above. The replay_010 default pass
+still reproduced the Task 105 missing entity failure, and opt-in recovery still
+reached the Task 107/108 out-of-range CREATE boundary. The boundary packet
+loops 18-23 were compared by read-count reference. Loop 21 was a present UPDATE
+with `payloadBits` 227 but 363 bits consumed after command, confirming a
+payload-size mismatch before loop 22. Loop 22 was a missing UPDATE with
+`payloadBits` 266 and an after-command movement of 266 bits, but this is only
+arithmetic evidence because no present entity extractor independently consumed
+that entry. In the boundary packet, 21 of 22 present UPDATE entries before the
+boundary matched after-command consumption, while loop 21 did not. Treat
+`serializedEntities` payloadBits as unsafe direct missing-UPDATE skip input
+until extractor/proto semantics are resolved. The task did not recover,
+canonicalize, emit source artifacts, or create Task 110.
 
 ## Non-Goals
 

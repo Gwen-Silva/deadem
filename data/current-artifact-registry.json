@@ -141,6 +141,12 @@
       "notes": "Task 108 diagnosed the replay_010 loop 22/23 cursor alignment boundary: current skip arithmetic is internally consistent, while nearby plausible offsets keep cursor misalignment as a viable hypothesis."
     },
     {
+      "id": "generic_local_replay_serialized_entity_payload_semantics",
+      "path": "output/local-replay-processing/replay_010-serialized-entity-payload-semantics/payload-semantics-gate.json",
+      "status": "current",
+      "notes": "Task 109 diagnosed replay_010 serializedEntities payload-size semantics: loop 21 confirmed payloadBits mismatch before the loop 22 missing UPDATE, making direct missing-UPDATE payload skipping unsafe pending extractor/proto semantics work."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

@@ -225,7 +225,7 @@ test('branch audit detects synthetic replay-specific engine branch', async () =>
     assert.equal(result.replaySpecificBranchFindings.length, 1);
 });
 
-test('Task 109 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/109.json'), false);
-    assert.equal(existsSync('tasks/blocked/109-select-next-canonical-generalization-control.md'), false);
+test('Task 110 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/110.json'), false);
+    assert.equal(existsSync('tasks/blocked/110-select-next-canonical-generalization-control.md'), false);
 });

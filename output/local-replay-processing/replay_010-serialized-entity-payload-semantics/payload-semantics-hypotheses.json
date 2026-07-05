@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "observedFacts": [
+    "default replay_010 behavior still fails at the Task 105 missing entity boundary when recovery is disabled",
+    "opt-in missing UPDATE recovery still reaches the Task 107/108 out-of-range CREATE boundary",
+    "boundary packet loops 18-23 are available from opt-in cursor diagnostics"
+  ],
+  "numericalComparisons": {
+    "loop21": {
+      "payloadBitsFromSerializedEntities": 227,
+      "actualConsumedAfterCommand": 363,
+      "actualConsumedAfterIndex": 365,
+      "actualConsumedFromEntryStart": 375,
+      "payloadMinusActualAfterCommand": -136,
+      "mismatchConfirmed": true
+    },
+    "loop22": {
+      "payloadBitsFromSerializedEntities": 266,
+      "actualConsumedAfterCommand": 266,
+      "payloadMinusActualAfterCommand": 0,
+      "semanticJustification": "not_independently_justified",
+      "reason": "the missing UPDATE was skipped by moving payloadBits, so afterAction equality is arithmetic evidence rather than extractor-consumption evidence"
+    },
+    "closestReferenceForPresentUpdates": "after_command"
+  },
+  "simulations": [
+    "no parser state was advanced by simulations in this task; comparisons are computed from recorded read-count metrics"
+  ],
+  "hypotheses": [
+    "serializedEntities payloadBits is unsafe as a direct universal skip length after command for missing UPDATE recovery",
+    "the loop 22 skip is not independently semantically validated because the missing entity prevented extractor consumption",
+    "cursor divergence may have begun before loop 22"
+  ],
+  "notDetermined": [
+    "the exact serializedEntities proto semantic meaning",
+    "whether EntityPayloadSizeExtractor is decoding the correct varint stream but using the wrong referential frame",
+    "whether loop 22 caused the loop 23 out-of-range CREATE",
+    "whether earlier packets show the same mismatch pattern"
+  ],
+  "payloadBitsDirectMissingUpdateSkipAssessment": "unsafe",
+  "recommendedNextAction": "investigate EntityPayloadSizeExtractor and serializedEntities proto semantics before using payloadBits as missing UPDATE skip input"
+}

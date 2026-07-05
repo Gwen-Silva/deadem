@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "diagnosticPresent": true,
+  "entriesCompared": 24,
+  "entriesByOperation": {
+    "UPDATE": 23,
+    "CREATE": 1
+  },
+  "entriesByAction": {
+    "normal_update_apply": 22,
+    "skipped_missing_update_payload": 1,
+    "create_attempt_out_of_range": 1
+  },
+  "presentUpdateEntriesBeforeBoundary": 22,
+  "presentUpdateMatchesAfterCommand": 21,
+  "presentUpdateMismatchesAfterCommand": 1,
+  "mismatchAppearsBeforeLoop22": true,
+  "loop21MismatchConfirmed": true,
+  "loop21DeltaAfterCommand": -136,
+  "loop22SkipSemanticallyJustified": false,
+  "loop22SkipSemanticStatus": "arithmetic_only_not_independent_extractor_evidence",
+  "referenceFit": {
+    "scoredReferences": [
+      {
+        "reference": "after_command",
+        "comparedEntries": 22,
+        "exactMatches": 21,
+        "medianAbsoluteDelta": 0
+      },
+      {
+        "reference": "after_index",
+        "comparedEntries": 22,
+        "exactMatches": 0,
+        "medianAbsoluteDelta": 2
+      },
+      {
+        "reference": "entry_start",
+        "comparedEntries": 22,
+        "exactMatches": 0,
+        "medianAbsoluteDelta": 8
+      }
+    ],
+    "closestReference": "after_command"
+  },
+  "mismatchDeltaAfterCommandRange": {
+    "min": -136,
+    "max": -136
+  },
+  "mismatchExamples": [
+    {
+      "loop": 21,
+      "operation": "UPDATE",
+      "registryStateBefore": "present",
+      "payloadBitsFromSerializedEntities": 227,
+      "actualConsumedAfterCommand": 363,
+      "actualConsumedAfterIndex": 365,
+      "actualConsumedFromEntryStart": 375,
+      "payloadMinusActualAfterCommand": -136,
+      "payloadMinusActualAfterIndex": -138,
+      "payloadMinusActualFromEntryStart": -148,
+      "entityIndex": 2598,
+      "classId": null,
+      "className": null,
+      "action": "normal_update_apply"
+    }
+  ],
+  "priorPacketSampleStatus": "not_collected",
+  "priorPacketSampleLimitation": "existing Task 108 opt-in diagnostic records the boundary packet at failure; this task did not add broad per-packet instrumentation",
+  "fullLedger": {
+    "path": ".local/deadem/cache/local-replay-processing/replay_010/serialized-entity-payload-semantics/serialized-entity-payload-consumption-ledger-full.json",
+    "sizeBytes": 62238,
+    "sha256": "4c44a239a0b572f914bc645066ec9cae6828d1fe410cd4290fd306e003c4f25e",
+    "commitPolicy": "local_only"
+  }
+}
