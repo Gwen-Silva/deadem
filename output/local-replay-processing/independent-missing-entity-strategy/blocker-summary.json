@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "taskId": "127",
+  "summaryKind": "blocker_summary",
+  "blocker": "missing_entity_packetentities_lookup",
+  "replays": [
+    {
+      "replayId": "replay_010",
+      "localFailure": "Unable to find an entity with index [ 2905 ]",
+      "priorClassifications": [
+        "first_missing_update_to_never_registered_entity",
+        "never_registered_entity_with_create_gap",
+        "local_replay_class_issue"
+      ],
+      "keyEvidence": {
+        "firstMissingUpdatePacketOrdinal": 954,
+        "firstMissingUpdateLoop": 33,
+        "operation": "UPDATE",
+        "entityIndex": 2905,
+        "createObservedForEntity": false,
+        "registerEntityAttemptedForEntity": false,
+        "classLookupAttemptedForEntity": false,
+        "baselineLookupAttemptedForEntity": false,
+        "packet954BoundaryOrTrailingSigns": false,
+        "nearbyCreateRangeEndsBeforeEntity": true
+      }
+    },
+    {
+      "replayId": "replay_011",
+      "localFailure": "Unable to find an entity with index [ 5624 ]",
+      "priorClassification": "second_canary_same_missing_entity_class",
+      "keyEvidence": {
+        "loadSucceeded": true,
+        "ticksAdvanced": 1051,
+        "sameMissingEntityClassOccurred": true,
+        "canonicalFactsProduced": false,
+        "sourceArtifactsProduced": false
+      }
+    }
+  ],
+  "currentState": {
+    "issueRepeatedAcrossTwoHumanCanaries": true,
+    "clarityRuntimeActivePath": false,
+    "clarityViabilityDecision": "oracle_inviavel_no_ambiente_atual",
+    "javaJdkManualSetupDeferredByUser": true,
+    "externalOracleValidated": false,
+    "localParserCorrectnessConcluded": false,
+    "source2SemanticsConcluded": false,
+    "replayCorruptionConcluded": false
+  },
+  "decisionNeed": "choose a bounded local next route that reduces uncertainty without open-ended diagnosis, recovery, skip mode, parser fix, or new replay processing"
+}

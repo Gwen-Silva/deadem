@@ -313,7 +313,16 @@ Task 126 attempted to restore the direct GPT -> Codex workflow after the
 abandoned iaflow/Product Reviewer/WSL automation route. The tracked iaflow
 automation was removed by a non-destructive reverse patch under
 `direct_codex_workflow_restored`.
-This is not parser progress and does not authorize Task 127.
+This is not parser progress.
+
+## Task 127 Strategy Decision Note
+
+Task 127 selected `add_diagnostic_fail_closed_review_next` under
+`independent_missing_entity_strategy_ready`. The decision package consolidates
+the repeated replay_010/replay_011 missing-entity blocker, static prior-art
+evidence, and the unavailable Clarity runtime path. It does not authorize
+recovery, skip mode, placeholders, parser fixes, default behavior changes,
+external parser execution, Java setup, or new replay processing.
 
 ## Current Direction
 
@@ -352,6 +361,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   is `oracle_inviavel_no_ambiente_atual` because Java/JDK is not available in
   the current environment and no obvious replay execution path exists without a
   wrapper/adaptation step. This negative result does not prove the local parser
-  is correct and does not prove replay corruption or Source 2 semantics. Do not
-  create Task 126
-  automatically; stop and wait for a human milestone decision.
+  is correct and does not prove replay corruption or Source 2 semantics. Task
+  126 restored the direct GPT -> Codex workflow. Task 127 then selected
+  `add_diagnostic_fail_closed_review_next` as the next bounded local route,
+  without parser changes or recovery/skip design.

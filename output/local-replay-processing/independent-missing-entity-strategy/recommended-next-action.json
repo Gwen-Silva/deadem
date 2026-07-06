@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "127",
+  "summaryKind": "recommended_next_action",
+  "recommendedNextAction": "add_diagnostic_fail_closed_review_next",
+  "allowedRecommendations": [
+    "keep_fail_fast_and_pause_replay_expansion",
+    "add_diagnostic_fail_closed_review_next",
+    "return_to_product_infra_until_oracle_available",
+    "request_human_decision_before_parser_intervention",
+    "request_manual_external_oracle_later"
+  ],
+  "whyThisRoute": {
+    "uncertaintyReduced": "It narrows the next question to whether a fail-closed diagnostic contract should be reviewed before any parser intervention, using the already accumulated replay_010/replay_011 evidence.",
+    "riskAvoided": "It avoids recovery, skip mode, placeholders, default behavior changes, replay expansion, Java setup, and external parser execution.",
+    "betterThanOpenEndedInternalDiagnosis": "The repeated missing-entity class and unavailable Clarity oracle make another open-ended replay_010 diagnosis low-yield; a bounded fail-closed review forces a finite decision point.",
+    "nextPermittedTask": "A future direct Codex task may review and define acceptance criteria for diagnostic fail-closed handling of missing-entity PacketEntities failures, without implementing recovery, skip, placeholder entities, or default behavior changes unless separately authorized."
+  },
+  "notRecommendedNow": [
+    "recovery",
+    "skip_mode",
+    "parser_fix",
+    "external_oracle_runtime",
+    "new_replay_processing"
+  ],
+  "source2SemanticsConcluded": false,
+  "localParserCorrectnessConcluded": false,
+  "replayCorruptionConcluded": false
+}

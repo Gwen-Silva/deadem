@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "taskId": "127",
+  "summaryKind": "static_prior_art_summary",
+  "runtimeExecutionAttempted": false,
+  "javaInstalledOrExecuted": false,
+  "externalRepositoriesModified": false,
+  "observations": [
+    {
+      "repository": "skadistats/clarity",
+      "category": "documented_behavior",
+      "observation": "Local prior-art inventory records PacketEntities code and missing UPDATE handling that raises an error for a missing entity.",
+      "evidenceSource": "Task 123 external-prior-art-inventory",
+      "decisionUse": "supports treating fail-fast on missing entity as a common mature-parser posture, not as proof of local correctness"
+    },
+    {
+      "repository": "skadistats/clarity",
+      "category": "documented_behavior",
+      "observation": "Task 124 found local Deadlock support evidence and a Gradle wrapper, but Task 125 found Java/JDK unavailable and no validated simple replay execution path.",
+      "evidenceSource": "Tasks 124 and 125 summaries",
+      "decisionUse": "keeps Clarity runtime out of the short-term active path"
+    },
+    {
+      "repository": "dotabuff/manta",
+      "category": "documented_behavior",
+      "observation": "Local prior-art inventory records PacketEntities code and missing UPDATE handling that errors when UPDATE targets a nil entity.",
+      "evidenceSource": "Task 123 external-prior-art-inventory",
+      "decisionUse": "adds static evidence that implicit CREATE on missing UPDATE was not found in inspected code"
+    },
+    {
+      "repository": "LaihoE/demoparser",
+      "category": "documented_behavior",
+      "observation": "Local prior-art inventory records PacketEntities parsing over updated entries and an EntityNotFound result when update_entity has no matching local entity.",
+      "evidenceSource": "Task 123 external-prior-art-inventory",
+      "decisionUse": "keeps the local question focused on contract/bounds/lifecycle evidence, not implicit creation"
+    },
+    {
+      "repository": "markus-wa/demoinfocs-golang",
+      "category": "documented_behavior",
+      "observation": "Local prior-art inventory records PacketEntities code that panics when UPDATE/LEAVE targets a nil entity, and a configurable panic-ignore workaround.",
+      "evidenceSource": "Task 123 external-prior-art-inventory",
+      "decisionUse": "shows that a workaround exists in another parser but does not establish Source 2 semantics or justify recovery locally"
+    },
+    {
+      "repository": "all_inspected_repositories",
+      "category": "inferred_behavior",
+      "observation": "No inspected path showed an implicit CREATE for UPDATE to a never-registered entity.",
+      "evidenceSource": "Task 123 local-only static inventory",
+      "decisionUse": "weakens immediate recovery/placeholder direction, but remains an inference rather than a semantic rule"
+    },
+    {
+      "repository": "all_inspected_repositories",
+      "category": "open_question",
+      "observation": "No external runtime oracle processed replay_010 or replay_011, so no parser externally confirmed or contradicted the local failures.",
+      "evidenceSource": "Tasks 124 and 125",
+      "decisionUse": "prevents claiming parser correctness, replay corruption, or final Source 2 semantics"
+    }
+  ],
+  "conclusion": {
+    "staticPriorArtSupportsFailFastAsDefensibleCurrentPosture": true,
+    "staticPriorArtAuthorizesRecoveryOrSkip": false,
+    "externalOracleAvailableNow": false,
+    "runtimeOracleShouldRemainDeferredUntilManualEnvironmentSetup": true
+  }
+}

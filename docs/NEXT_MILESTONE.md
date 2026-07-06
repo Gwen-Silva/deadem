@@ -135,10 +135,13 @@ decision with the gate `clarity_oracle_viability_decided`.
 Task 126 attempted to restore the direct GPT -> Codex workflow after the
 abandoned iaflow/Product Reviewer/WSL automation route. The tracked cleanup is
 recorded under `direct_codex_workflow_restored`. Task 126 is not parser
-progress and does not create Task 127.
+progress.
 
-Do not create Task 127 automatically. Stop and wait for a human milestone
-decision.
+Task 127 is complete with the gate `independent_missing_entity_strategy_ready`.
+The selected next action is `add_diagnostic_fail_closed_review_next`: a future
+task may review a bounded fail-closed diagnostic route, but Task 127 does not
+authorize recovery, skip mode, parser fixes, default behavior changes, external
+parser execution, Java setup, or new replay processing.
 
 ## Task 094
 
@@ -815,6 +818,28 @@ turning into Java/Gradle/Clarity setup or debugging. No Clarity code, local
 parser code, recovery, canonical package, source artifact, match facts, raw
 replay bytes, external source tree, `.dem`, or `.local` file was committed. No
 Task 126 was created.
+
+## Task 127
+
+Purpose: choose the next bounded local strategy for the repeated PacketEntities
+`missing entity` class observed in replay_010 and replay_011, without using
+Clarity runtime, Java/JDK, external parsers, WSL, iaflow, Product Reviewer
+automation, parser changes, recovery, skip mode, or new replay processing.
+
+Gate: `independent_missing_entity_strategy_ready`.
+
+Partial gate: `independent_missing_entity_strategy_partial`.
+
+Blocked gate: `independent_missing_entity_strategy_blocked`.
+
+Status: completed with the success gate above. The blocker summary consolidates
+replay_010/entity 2905 as a never-registered entity with create/provenance gap
+and replay_011/entity 5624 as the same local missing-entity lookup class.
+Static prior-art observations are limited to existing local evidence and are
+classified as `documented_behavior`, `inferred_behavior`, or `open_question`.
+The selected next action is `add_diagnostic_fail_closed_review_next`. This is a
+strategy decision only and does not implement or specify recovery, skip mode,
+placeholders, parser default changes, or a parser fix. No Task 128 was created.
 
 ## Non-Goals
 

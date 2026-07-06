@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "taskId": "127",
+  "summaryKind": "decision_matrix",
+  "allowedRoutesOnly": true,
+  "routes": [
+    {
+      "route": "keep_fail_fast_and_pause_replay_expansion",
+      "uncertaintyReduced": "low",
+      "riskAvoided": "avoids premature parser intervention and replay expansion",
+      "cost": "does not move the missing-entity question toward a bounded local decision",
+      "assessment": "safe but too static after two canaries already reproduced the class"
+    },
+    {
+      "route": "add_diagnostic_fail_closed_review_next",
+      "uncertaintyReduced": "medium",
+      "riskAvoided": "keeps recovery, skip, placeholders, and default behavior changes out of scope while forcing a bounded contract review",
+      "cost": "requires a separate approved task before any parser change is considered",
+      "assessment": "best fit for current evidence because it turns accumulated diagnosis into a constrained local review instead of another open-ended replay investigation"
+    },
+    {
+      "route": "return_to_product_infra_until_oracle_available",
+      "uncertaintyReduced": "low_for_parser",
+      "riskAvoided": "avoids parser risk while Clarity runtime is unavailable",
+      "cost": "leaves the repeated missing-entity blocker unresolved for replay intake",
+      "assessment": "reasonable only if parser progress is intentionally parked"
+    },
+    {
+      "route": "request_human_decision_before_parser_intervention",
+      "uncertaintyReduced": "medium",
+      "riskAvoided": "prevents Codex from choosing parser intervention without authorization",
+      "cost": "adds another handoff even though the current task already asks for a single recommended route",
+      "assessment": "useful if the next action would be intervention, but the next recommended action can remain diagnostic and fail-closed"
+    },
+    {
+      "route": "request_manual_external_oracle_later",
+      "uncertaintyReduced": "high_if_later_available",
+      "riskAvoided": "avoids installing Java or adapting Clarity inside this repository",
+      "cost": "not actionable now because the user deferred Java/JDK setup",
+      "assessment": "keep as future branch, not current next step"
+    }
+  ],
+  "rejectedDirections": [
+    {
+      "direction": "recovery_or_skip_design_now",
+      "reason": "out of scope and not justified by static prior art or runtime oracle evidence"
+    },
+    {
+      "direction": "continue_open_ended_replay_010_internal_diagnosis",
+      "reason": "Task 123 already identified diminishing returns and replay_011 reproduced the same failure class"
+    },
+    {
+      "direction": "external_runtime_oracle_now",
+      "reason": "Task 125 decided Clarity is not viable in the current environment and Java/JDK setup is deferred"
+    }
+  ],
+  "selectedRoute": "add_diagnostic_fail_closed_review_next"
+}
