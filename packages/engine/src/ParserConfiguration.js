@@ -38,7 +38,7 @@ const DEFAULTS = {
 class ParserConfiguration {
     /**
      * @constructor
-     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
+     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean, allowEntityPacketBoundaryTruncation?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
      */
     constructor(options) {
         const getOption = key => (options && options[key] !== undefined) ? options[key] : DEFAULTS[key];
@@ -236,7 +236,7 @@ function buildMessagePacketFilter(include, exclude) {
 }
 
 /**
- * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean }|null} options
+ * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean, allowEntityPacketBoundaryTruncation?: boolean }|null} options
  * @returns {object|null}
  */
 function buildRecovery(options) {
@@ -244,7 +244,7 @@ function buildRecovery(options) {
         return null;
     }
 
-    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption', 'diagnosePreRecoveryFieldConsumption', 'diagnoseEntityPacketBoundaryGuard' ]);
+    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption', 'diagnosePreRecoveryFieldConsumption', 'diagnoseEntityPacketBoundaryGuard', 'allowEntityPacketBoundaryTruncation' ]);
     const keys = Object.keys(options);
 
     Assert.isTrue(keys.every(key => allowedKeys.has(key)), 'options.recovery contains unsupported keys');
@@ -255,6 +255,7 @@ function buildRecovery(options) {
     Assert.isTrue(options.diagnosePreRecoveryPayloadConsumption === undefined || typeof options.diagnosePreRecoveryPayloadConsumption === 'boolean', 'options.recovery.diagnosePreRecoveryPayloadConsumption must be a boolean when provided');
     Assert.isTrue(options.diagnosePreRecoveryFieldConsumption === undefined || typeof options.diagnosePreRecoveryFieldConsumption === 'boolean', 'options.recovery.diagnosePreRecoveryFieldConsumption must be a boolean when provided');
     Assert.isTrue(options.diagnoseEntityPacketBoundaryGuard === undefined || typeof options.diagnoseEntityPacketBoundaryGuard === 'boolean', 'options.recovery.diagnoseEntityPacketBoundaryGuard must be a boolean when provided');
+    Assert.isTrue(options.allowEntityPacketBoundaryTruncation === undefined || typeof options.allowEntityPacketBoundaryTruncation === 'boolean', 'options.recovery.allowEntityPacketBoundaryTruncation must be a boolean when provided');
 
     const allowUnresolvedEntityReference = options.allowUnresolvedEntityReference === true;
     const allowMissingClassBaseline = options.allowMissingClassBaseline === true;
@@ -263,6 +264,7 @@ function buildRecovery(options) {
     const diagnosePreRecoveryPayloadConsumption = options.diagnosePreRecoveryPayloadConsumption === true;
     const diagnosePreRecoveryFieldConsumption = options.diagnosePreRecoveryFieldConsumption === true;
     const diagnoseEntityPacketBoundaryGuard = options.diagnoseEntityPacketBoundaryGuard === true;
+    const allowEntityPacketBoundaryTruncation = options.allowEntityPacketBoundaryTruncation === true;
     const warnings = [];
     const diagnostics = [];
     let preRecoveryPayloadPacketOrdinal = 0;
@@ -276,6 +278,7 @@ function buildRecovery(options) {
         diagnosePreRecoveryPayloadConsumption,
         diagnosePreRecoveryFieldConsumption,
         diagnoseEntityPacketBoundaryGuard,
+        allowEntityPacketBoundaryTruncation,
         warnings,
         diagnostics,
         nextEntityPacketDiagnosticOrdinal: () => {
@@ -287,6 +290,7 @@ function buildRecovery(options) {
         recordOutOfRangeEntityCreateBoundary: diagnostic => diagnostics.push({ type: 'out_of_range_entity_create_boundary', ...diagnostic }),
         recordEntityPacketCursorAlignment: diagnostic => diagnostics.push({ type: 'entity_packet_cursor_alignment', ...diagnostic }),
         recordEntityPacketBoundaryCrossing: diagnostic => diagnostics.push({ type: 'entity_packet_boundary_crossing', ...diagnostic }),
+        recordEntityPacketBoundaryTruncation: diagnostic => diagnostics.push({ type: 'entity_packet_boundary_truncation', ...diagnostic }),
         recordPreRecoveryPayloadConsumption: diagnostic => {
             preRecoveryPayloadPacketOrdinal++;
             diagnostics.push({

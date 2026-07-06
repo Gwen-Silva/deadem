@@ -151,7 +151,15 @@ workaround. Task 102 created a bounded generic local-input canary for only
   entity or fields, and remains disabled by default. This strengthens the
   boundary-guard hypothesis only; it is not a parser fix, recovery, Source 2
   semantic conclusion, replay corruption conclusion, canonical package, or
-  factual artifact.
+  factual artifact. Task 120 then evaluated an opt-in PacketEntities boundary
+  truncation mode under
+  `local_replay_packet_entities_boundary_truncation_no_progress`: default
+  behavior still reproduced missing entity 2905, the truncation triggered at
+  packet 953 loop 27 before reading beyond the boundary and prevented loops
+  27-29 from being applied as semantic updates, but the parser still reached
+  missing entity 2905 afterward. The result is useful negative evidence: this
+  structural truncation alone is not sufficient progress past the original
+  failure and remains opt-in, disabled by default, and non-canonical.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -278,5 +286,7 @@ bounded string-reader and payload-boundary accounting for the same field path.
 Task 117 is complete with bounded payload-size iterator alignment diagnosis
 for packet 953. Task 118 is complete with bounded post-loop26 buffer-boundary
 diagnosis for packet 953. Task 119 is complete with bounded opt-in
-PacketEntities boundary-guard evaluation for packet 953. Do not create Task 120
+PacketEntities boundary-guard evaluation for packet 953. Task 120 is complete
+with bounded opt-in PacketEntities boundary-truncation evaluation for packet
+953, ending in no progress past missing entity 2905. Do not create Task 121
 automatically; stop and wait for a human milestone decision.

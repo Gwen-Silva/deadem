@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "task119Gate": "local_replay_packet_entities_boundary_guard_diagnosed",
+  "expected": {
+    "defaultError": "Unable to find an entity with index [ 2905 ]",
+    "guardPacketOrdinal": 953,
+    "guardLoop": 27,
+    "guardViolationStage": "after_index",
+    "entityDataBitLength": 5344,
+    "loop26AfterActionReadCount": 5343,
+    "loop27AfterIndexReadCount": 5349
+  },
+  "observedFromTask119": {
+    "defaultMissingEntity2905": true,
+    "guardPacketOrdinal": 953,
+    "guardLoop": 27,
+    "guardViolationStage": "after_index",
+    "guardBeforeIndexReadCount": 5343,
+    "guardAfterIndexReadCount": 5349,
+    "guardEntityDataBitLength": 5344
+  },
+  "observedFromTask120": {
+    "defaultError": "Unable to find an entity with index [ 2905 ]",
+    "guardPacketOrdinal": 953,
+    "guardLoop": 27,
+    "guardViolationStage": "after_index",
+    "truncationPacketOrdinal": 953,
+    "truncationLoop": 27,
+    "truncationReadCount": 5343,
+    "truncationRemainingBits": 1,
+    "truncationReason": "remaining_bits_less_than_minimum_entry_header"
+  },
+  "truncationUsesSameBoundaryBeforeFailClosedRead": true,
+  "loops27To29TreatedAsSemanticUpdates": false,
+  "rawValuesReemitted": false,
+  "matchesTask119BoundaryContext": true
+}

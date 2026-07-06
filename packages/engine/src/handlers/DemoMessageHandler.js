@@ -120,6 +120,13 @@ class DemoMessageHandler {
         for (let i = startLoop; i < message.updatedEntries; i++) {
             const previousIndex = index;
             const beforeIndexReadCount = bitBuffer.getReadCount();
+            if (maybeTruncateEntityPacketBoundary(recovery, cursorLedger, {
+                loop: i,
+                currentReadCount: beforeIndexReadCount,
+                previousEntityIndex: previousIndex
+            })) {
+                break;
+            }
             assertEntityPacketBoundary(recovery, cursorLedger, {
                 loop: i,
                 violationStage: 'before_index',
@@ -685,7 +692,8 @@ function createCursorLedger(recovery, message, startLoop) {
         (recovery.diagnoseEntityPacketCursorAlignment !== true &&
             recovery.diagnosePreRecoveryPayloadConsumption !== true &&
             recovery.diagnosePreRecoveryFieldConsumption !== true &&
-            recovery.diagnoseEntityPacketBoundaryGuard !== true)) {
+            recovery.diagnoseEntityPacketBoundaryGuard !== true &&
+            recovery.allowEntityPacketBoundaryTruncation !== true)) {
         return null;
     }
 
@@ -771,6 +779,52 @@ function assertEntityPacketBoundary(recovery, cursorLedger, context) {
     const error = new Error('entity packet boundary crossed');
     error.entityPacketBoundaryDiagnostic = diagnostic;
     throw error;
+}
+
+const MINIMUM_ENTITY_PACKET_ENTRY_BITS = 8;
+const MINIMUM_ENTITY_PACKET_ENTRY_INDEX_BITS = 6;
+const ENTITY_PACKET_COMMAND_BITS = 2;
+
+function maybeTruncateEntityPacketBoundary(recovery, cursorLedger, context) {
+    if (recovery === null || recovery.allowEntityPacketBoundaryTruncation !== true || cursorLedger === null) {
+        return false;
+    }
+
+    const entityDataBitLength = cursorLedger.packetMetrics.entityDataBitLength;
+    const currentReadCount = context.currentReadCount;
+    const remainingBits = entityDataBitLength - currentReadCount;
+
+    if (remainingBits >= MINIMUM_ENTITY_PACKET_ENTRY_BITS) {
+        return false;
+    }
+
+    const entriesSkippedByTruncation = Math.max(0, cursorLedger.packetMetrics.updatedEntries - context.loop);
+    const diagnostic = {
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: context.loop,
+        entityDataBitLength,
+        currentReadCount,
+        remainingBits,
+        updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+        entriesProcessedBeforeTruncation: cursorLedger.entries.length,
+        entriesSkippedByTruncation,
+        minimumEntryBitsRequired: MINIMUM_ENTITY_PACKET_ENTRY_BITS,
+        minimumIndexBitsRequired: MINIMUM_ENTITY_PACKET_ENTRY_INDEX_BITS,
+        commandBitsRequired: ENTITY_PACKET_COMMAND_BITS,
+        previousEntityIndex: context.previousEntityIndex ?? null,
+        reason: 'remaining_bits_less_than_minimum_entry_header',
+        phantomEntriesPrevented: entriesSkippedByTruncation > 0,
+        fakeEntityCreated: false,
+        fieldsMaterializedAfterBoundary: false,
+        semanticUpdatesAppliedAfterTruncation: false,
+        recoveryAttempted: false,
+        recoveryAction: 'truncate_packet_before_boundary_cross',
+        conclusion: 'packet entity loop ended before a read that cannot fit a minimal entry header'
+    };
+
+    recovery.recordEntityPacketBoundaryTruncation?.(diagnostic);
+
+    return true;
 }
 
 function createCursorEntry(cursorLedger, values) {
@@ -1311,6 +1365,7 @@ export default DemoMessageHandler;
 export {
     assertEntityPacketBoundary,
     decodeNextEntryAtOffset,
+    maybeTruncateEntityPacketBoundary,
     recoverMissingClassBaseline,
     recoverMissingEntityReference,
     recordOutOfRangeEntityCreateBoundary

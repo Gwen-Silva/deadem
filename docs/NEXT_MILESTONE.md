@@ -115,8 +115,11 @@ diagnosis for packet 953 with the gate
 Task 119 is complete as an explicitly authorized opt-in fail-closed
 PacketEntities boundary-guard evaluation for packet 953 with the gate
 `local_replay_packet_entities_boundary_guard_diagnosed`.
+Task 120 is complete as an explicitly authorized opt-in PacketEntities
+boundary-truncation evaluation for packet 953 with the gate
+`local_replay_packet_entities_boundary_truncation_no_progress`.
 
-Do not create Task 120 automatically. Stop and wait for a human milestone
+Do not create Task 121 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -641,7 +644,35 @@ No raw replay bytes, raw entityData, raw serializedEntities, raw payloads,
 string bytes, string values, field values, full raw send-table payload,
 parser default fix, recovery, canonical package, source artifact, factual
 event, spatial semantic, mechanic, combat, macro, decision, or ML output was
-emitted. No Task 120 was created.
+emitted. Task 120 was not created automatically; it was later explicitly
+authorized.
+
+## Task 120
+
+Purpose: evaluate, without default parser fixes, canonical output, or match
+facts, whether opt-in PacketEntities boundary truncation can end packet 953
+before loops 27-29 phantom/trailing/out-of-buffer reads and continue beyond
+the original missing entity 2905 failure.
+
+Gate: `local_replay_packet_entities_boundary_truncation_partial_progress`.
+
+No-progress gate: `local_replay_packet_entities_boundary_truncation_no_progress`.
+
+Blocked gate: `local_replay_packet_entities_boundary_truncation_blocked`.
+
+Status: completed with the no-progress gate. Default behavior without
+truncation still reproduced the Task 105 missing entity 2905 failure.
+Truncation was opt-in and disabled by default; it triggered at packet 953 loop
+27 with read count 5343 and one bit remaining, before the fail-closed guard's
+after-index boundary at read count 5349. It prevented loops 27-29 from being
+applied as semantic updates and created no placeholder entity, fake fields, or
+canonical facts. The truncation pass still reached the same missing entity
+2905 failure afterward, so structural packet-end truncation alone did not
+advance past the original failure. No raw replay bytes, raw entityData, raw
+serializedEntities, raw payloads, string bytes, string values, field values,
+full raw send-table payload, parser default fix, canonical package, source
+artifact, factual event, spatial semantic, mechanic, combat, macro, decision,
+or ML output was emitted. No Task 121 was created.
 
 ## Non-Goals
 

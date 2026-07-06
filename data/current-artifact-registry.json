@@ -207,6 +207,12 @@
       "notes": "Task 119 evaluated an opt-in fail-closed PacketEntities boundary guard: default behavior still reaches missing entity 2905, while the guard stops at packet 953 loop 27 after-index boundary without recovery or default parser changes."
     },
     {
+      "id": "generic_local_replay_packet_entities_boundary_truncation",
+      "path": "output/local-replay-processing/replay_010-packet-entities-boundary-truncation/boundary-truncation-gate.json",
+      "status": "current",
+      "notes": "Task 120 evaluated opt-in PacketEntities boundary truncation: it prevents packet 953 loops 27-29 from being applied as semantic updates, but still reaches missing entity 2905 afterward, so the gate is no-progress rather than parser-fix progress."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

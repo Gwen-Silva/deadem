@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_packet_entities_boundary_truncation_no_progress",
+  "successGate": "local_replay_packet_entities_boundary_truncation_partial_progress",
+  "noProgressGate": "local_replay_packet_entities_boundary_truncation_no_progress",
+  "blockedGate": "local_replay_packet_entities_boundary_truncation_blocked",
+  "defaultFailureReproduced": true,
+  "guardBoundaryReproduced": true,
+  "truncationTriggered": true,
+  "originalMissingEntity2905Reached": true,
+  "advancedPastOriginalFailure": false,
+  "matchesTask119BoundaryContext": true,
+  "phantomEntriesPrevented": true,
+  "defaultBehaviorChanged": false,
+  "missingEntityRecoveryAdded": false,
+  "outOfRangeCreateRecoveryAdded": false,
+  "canonicalFactsProduced": false,
+  "task121Created": false,
+  "passed": false,
+  "conclusion": "opt-in packet boundary truncation triggered but did not advance past the original missing entity failure"
+}

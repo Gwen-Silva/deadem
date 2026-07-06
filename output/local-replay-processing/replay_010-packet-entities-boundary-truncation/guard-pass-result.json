@@ -1,0 +1,25 @@
+{
+  "mode": "diagnostic_boundary_guard",
+  "guardEnabled": true,
+  "truncationEnabled": false,
+  "missingEntityRecoveryEnabled": false,
+  "missingBaselineRecoveryEnabled": false,
+  "recoveryActionsEnabled": false,
+  "expectedFailureReproduced": false,
+  "boundaryFailureReproduced": true,
+  "originalMissingEntity2905Reached": false,
+  "reachedEnd": false,
+  "ticksAdvanced": 952,
+  "currentTick": 951,
+  "finalTick": 89074,
+  "errorMessage": "entity packet boundary crossed",
+  "stackTop": [
+    "Error: entity packet boundary crossed",
+    "    at assertEntityPacketBoundary (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:779:19)",
+    "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:139:13)",
+    "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)"
+  ],
+  "durationMs": 1184,
+  "recoveryWarnings": [],
+  "boundaryDiagnosticsCount": 1
+}
