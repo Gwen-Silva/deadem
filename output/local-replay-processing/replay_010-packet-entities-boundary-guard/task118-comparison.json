@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "task118Gate": "local_replay_packet_953_buffer_boundary_diagnosed",
+  "expected": {
+    "entityDataBitLength": 5344,
+    "loop26AfterActionReadCount": 5343,
+    "loop27AfterIndexReadCount": 5349,
+    "loop27Classification": "padding_or_trailing_bit_reads",
+    "loop28Classification": "out_of_buffer_reads",
+    "loop29Classification": "out_of_buffer_reads"
+  },
+  "observedFromTask118": {
+    "entityDataBitLength": 5344,
+    "loop26AfterActionReadCount": 5343,
+    "loop27AfterIndexReadCount": 5349,
+    "loop27EndsAtOrBeyondEntityData": true,
+    "loop28Classification": "out_of_buffer_reads",
+    "loop29Classification": "out_of_buffer_reads"
+  },
+  "observedFromGuard": {
+    "packetOrdinal": 953,
+    "loop": 27,
+    "violationStage": "after_index",
+    "afterIndexReadCount": 5349,
+    "bitsBeyondEntityData": 5
+  },
+  "bitbufferSyntheticResultReused": true,
+  "bitbufferCanAdvanceBeyondEndInSyntheticProbes": true,
+  "matchesTask118ExpectedBoundary": true,
+  "rawValuesReemitted": false
+}

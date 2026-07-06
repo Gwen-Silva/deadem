@@ -141,7 +141,17 @@ workaround. Task 102 created a bounded generic local-input canary for only
   This strengthens the buffer-boundary artifact and parser bounds-check
   hypotheses while preserving causality `not_determined`. No field values,
   string bytes, raw payloads, parser fix, recovery, canonical package, or
-  factual artifacts were emitted.
+  factual artifacts were emitted. Task 119 then evaluated an opt-in fail-closed
+  PacketEntities boundary guard under
+  `local_replay_packet_entities_boundary_guard_diagnosed`: default behavior
+  still reproduced the original missing entity 2905 failure, while the guard
+  pass stopped first at packet 953 loop 27 `after_index` with read count 5349
+  beyond `entityDataBitLength` 5344. The guard prevented loops 27-29 from
+  continuing as semantic updates in that diagnostic pass, created no fake
+  entity or fields, and remains disabled by default. This strengthens the
+  boundary-guard hypothesis only; it is not a parser fix, recovery, Source 2
+  semantic conclusion, replay corruption conclusion, canonical package, or
+  factual artifact.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -267,6 +277,6 @@ definition metadata capture for field path 59. Task 116 is complete with
 bounded string-reader and payload-boundary accounting for the same field path.
 Task 117 is complete with bounded payload-size iterator alignment diagnosis
 for packet 953. Task 118 is complete with bounded post-loop26 buffer-boundary
-diagnosis for packet 953. Do not create Task 119 automatically; stop and wait for a
-human milestone
-decision.
+diagnosis for packet 953. Task 119 is complete with bounded opt-in
+PacketEntities boundary-guard evaluation for packet 953. Do not create Task 120
+automatically; stop and wait for a human milestone decision.

@@ -118,13 +118,42 @@ class DemoMessageHandler {
         let index = startIndex;
 
         for (let i = startLoop; i < message.updatedEntries; i++) {
+            const previousIndex = index;
             const beforeIndexReadCount = bitBuffer.getReadCount();
+            assertEntityPacketBoundary(recovery, cursorLedger, {
+                loop: i,
+                violationStage: 'before_index',
+                readCount: beforeIndexReadCount,
+                previousEntityIndex: previousIndex
+            });
             const indexDelta = bitBuffer.readUVarInt();
             index += indexDelta + 1;
             const afterIndexReadCount = bitBuffer.getReadCount();
+            assertEntityPacketBoundary(recovery, cursorLedger, {
+                loop: i,
+                violationStage: 'after_index',
+                readCount: afterIndexReadCount,
+                beforeIndexReadCount,
+                afterIndexReadCount,
+                previousEntityIndex: previousIndex,
+                indexDelta,
+                accumulatedEntityIndex: index
+            });
 
             const command = bitBuffer.readBitsAsUInt(2);
             const afterCommandReadCount = bitBuffer.getReadCount();
+            assertEntityPacketBoundary(recovery, cursorLedger, {
+                loop: i,
+                violationStage: 'after_command',
+                readCount: afterCommandReadCount,
+                beforeIndexReadCount,
+                afterIndexReadCount,
+                afterCommandReadCount,
+                previousEntityIndex: previousIndex,
+                indexDelta,
+                accumulatedEntityIndex: index,
+                command
+            });
             const cursorEntry = createCursorEntry(cursorLedger, {
                 loop: i,
                 beforeIndexReadCount,
@@ -555,6 +584,20 @@ class DemoMessageHandler {
                     break;
                 }
             }
+
+            assertEntityPacketBoundary(recovery, cursorLedger, {
+                loop: i,
+                violationStage: 'after_action',
+                readCount: bitBuffer.getReadCount(),
+                beforeIndexReadCount,
+                afterIndexReadCount,
+                afterCommandReadCount,
+                afterActionReadCount: bitBuffer.getReadCount(),
+                previousEntityIndex: previousIndex,
+                indexDelta,
+                accumulatedEntityIndex: index,
+                command
+            });
         }
 
         recordPreRecoveryPayloadConsumption(recovery, cursorLedger, null);
@@ -641,14 +684,17 @@ function createCursorLedger(recovery, message, startLoop) {
     if (recovery === null ||
         (recovery.diagnoseEntityPacketCursorAlignment !== true &&
             recovery.diagnosePreRecoveryPayloadConsumption !== true &&
-            recovery.diagnosePreRecoveryFieldConsumption !== true)) {
+            recovery.diagnosePreRecoveryFieldConsumption !== true &&
+            recovery.diagnoseEntityPacketBoundaryGuard !== true)) {
         return null;
     }
 
     const payloadSizes = listPayloadSizes(message);
+    const packetOrdinal = recovery.nextEntityPacketDiagnosticOrdinal?.() ?? null;
 
     return {
         packetMetrics: {
+            packetOrdinal,
             updatedEntries: message.updatedEntries,
             entityDataBitLength: message.entityData.length * BitBuffer.BITS_PER_BYTE,
             serializedEntitiesByteLength: message.serializedEntities?.length ?? 0,
@@ -670,6 +716,61 @@ function listPayloadSizes(message) {
     }
 
     return Array.from(new EntityPayloadSizeExtractor(buffer).retrieve());
+}
+
+function assertEntityPacketBoundary(recovery, cursorLedger, context) {
+    if (recovery === null || recovery.diagnoseEntityPacketBoundaryGuard !== true || cursorLedger === null) {
+        return false;
+    }
+
+    const entityDataBitLength = cursorLedger.packetMetrics.entityDataBitLength;
+    const readCount = context.readCount;
+    const violationStage = context.violationStage;
+    const crossedBoundary = violationStage === 'before_index' ?
+        readCount >= entityDataBitLength :
+        readCount > entityDataBitLength;
+
+    if (!crossedBoundary) {
+        return false;
+    }
+
+    const afterIndexCrossed = Number.isInteger(context.afterIndexReadCount) && context.afterIndexReadCount > entityDataBitLength;
+    const afterCommandCrossed = Number.isInteger(context.afterCommandReadCount) && context.afterCommandReadCount > entityDataBitLength;
+    const afterActionCrossed = Number.isInteger(context.afterActionReadCount) && context.afterActionReadCount > entityDataBitLength;
+    const safelyKnownThroughIndex = Number.isInteger(context.afterIndexReadCount) && context.afterIndexReadCount <= entityDataBitLength;
+    const safelyKnownThroughCommand = Number.isInteger(context.afterCommandReadCount) && context.afterCommandReadCount <= entityDataBitLength;
+    const diagnostic = {
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: context.loop,
+        entityDataBitLength,
+        violationStage,
+        readCount,
+        bitsBeyondEntityData: Math.max(0, readCount - entityDataBitLength),
+        beforeIndexReadCount: context.beforeIndexReadCount ?? null,
+        afterIndexReadCount: context.afterIndexReadCount ?? null,
+        afterCommandReadCount: context.afterCommandReadCount ?? null,
+        afterActionReadCount: context.afterActionReadCount ?? null,
+        previousEntityIndex: context.previousEntityIndex ?? null,
+        indexDelta: safelyKnownThroughIndex ? context.indexDelta : null,
+        entityIndex: safelyKnownThroughIndex ? context.accumulatedEntityIndex : null,
+        operation: safelyKnownThroughCommand ? EntityOperation.parseById(context.command)?.code ?? 'UNKNOWN' : null,
+        commandId: safelyKnownThroughCommand ? context.command : null,
+        afterIndexCrossed,
+        afterCommandCrossed,
+        afterActionCrossed,
+        phantomEntriesPrevented: true,
+        fakeEntityCreated: false,
+        fieldsMaterializedAfterBoundary: false,
+        recoveryAttempted: false,
+        recoveryAction: 'none',
+        conclusion: 'entityData boundary crossed before semantic continuation'
+    };
+
+    recovery.recordEntityPacketBoundaryCrossing?.(diagnostic);
+
+    const error = new Error('entity packet boundary crossed');
+    error.entityPacketBoundaryDiagnostic = diagnostic;
+    throw error;
 }
 
 function createCursorEntry(cursorLedger, values) {
@@ -1208,6 +1309,7 @@ function recordOutOfRangeEntityCreateBoundary(recovery, context, error) {
 
 export default DemoMessageHandler;
 export {
+    assertEntityPacketBoundary,
     decodeNextEntryAtOffset,
     recoverMissingClassBaseline,
     recoverMissingEntityReference,

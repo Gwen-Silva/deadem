@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "guardTriggeredBeforeLoop27SemanticCommand": true,
+  "expectedPhantomLoops": [
+    27,
+    28,
+    29
+  ],
+  "task118Classifications": {
+    "loop27": "padding_or_trailing_bit_reads",
+    "loop28": "out_of_buffer_reads",
+    "loop29": "out_of_buffer_reads"
+  },
+  "phantomEntriesPrevented": true,
+  "reachedOriginalMissingEntity2905": false,
+  "fakeEntityCreated": false,
+  "fieldsMaterializedAfterBoundary": false,
+  "placeholderEntityCreated": false,
+  "recoveryOutputProduced": false,
+  "canonicalFactsProduced": false,
+  "sourceArtifactsProduced": false,
+  "conclusion": "opt-in guard interrupts packet 953 at loop 27 boundary before the original packet 954 missing entity"
+}

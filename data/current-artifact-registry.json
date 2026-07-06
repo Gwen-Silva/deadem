@@ -201,6 +201,12 @@
       "notes": "Task 118 diagnosed packet 953 post-loop26 buffer boundaries: loop 27 crosses entityDataBitLength, loops 28-29 begin beyond it, and synthetic BitBuffer probes show some read paths can advance beyond end without throwing; causality remains not determined."
     },
     {
+      "id": "generic_local_replay_packet_entities_boundary_guard",
+      "path": "output/local-replay-processing/replay_010-packet-entities-boundary-guard/boundary-guard-gate.json",
+      "status": "current",
+      "notes": "Task 119 evaluated an opt-in fail-closed PacketEntities boundary guard: default behavior still reaches missing entity 2905, while the guard stops at packet 953 loop 27 after-index boundary without recovery or default parser changes."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

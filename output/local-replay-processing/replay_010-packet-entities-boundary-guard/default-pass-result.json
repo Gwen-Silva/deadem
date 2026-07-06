@@ -1,0 +1,20 @@
+{
+  "mode": "default_without_boundary_guard",
+  "guardEnabled": false,
+  "recoveryActionsEnabled": false,
+  "expectedFailureReproduced": true,
+  "boundaryFailureReproduced": false,
+  "reachedOriginalMissingEntity2905": true,
+  "reachedEnd": false,
+  "ticksAdvanced": 953,
+  "currentTick": 952,
+  "finalTick": 89074,
+  "errorMessage": "Unable to find an entity with index [ 2905 ]",
+  "stackTop": [
+    "Error: Unable to find an entity with index [ 2905 ]",
+    "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:213:31)",
+    "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+    "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)"
+  ],
+  "durationMs": 1121
+}

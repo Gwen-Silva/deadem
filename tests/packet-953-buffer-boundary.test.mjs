@@ -246,9 +246,8 @@ test('gate passes only with boundary inventory, synthetic BitBuffer probes, comp
     assert.equal(partial.gate, 'local_replay_packet_953_buffer_boundary_partial');
 });
 
-test('Task 119 was not created by Task 118', () => {
-    assert.equal(existsSync('tasks/specs/119.json'), false);
-    assert.equal(existsSync('tasks/completed/119-diagnose-packet-953-buffer-boundary.md'), false);
-    assert.equal(existsSync('tasks/blocked/119-select-next-canonical-generalization-control.md'), false);
+test('Task 120 was not created by Task 119', () => {
+    assert.equal(existsSync('tasks/specs/120.json'), false);
+    assert.equal(existsSync('tasks/completed/120-diagnose-packet-953-buffer-boundary.md'), false);
+    assert.equal(existsSync('tasks/blocked/120-select-next-canonical-generalization-control.md'), false);
 });
-

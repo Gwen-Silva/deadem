@@ -112,8 +112,11 @@ alignment diagnosis for packet 953 with the gate
 Task 118 is complete as an explicitly authorized post-loop26 buffer-boundary
 diagnosis for packet 953 with the gate
 `local_replay_packet_953_buffer_boundary_diagnosed`.
+Task 119 is complete as an explicitly authorized opt-in fail-closed
+PacketEntities boundary-guard evaluation for packet 953 with the gate
+`local_replay_packet_entities_boundary_guard_diagnosed`.
 
-Do not create Task 119 automatically. Stop and wait for a human milestone
+Do not create Task 120 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -610,7 +613,35 @@ but causal conclusion remains `not_determined`. No field values, string
 values, string bytes, raw payload, raw entityData, raw serializedEntities,
 full raw send-table payload, parser fix, recovery, canonical package, source
 artifact, factual event, spatial semantic, mechanic, combat, macro, decision,
-or ML output was emitted. No Task 119 was created.
+or ML output was emitted. At Task 118 completion, no Task 119 had been created
+automatically.
+
+## Task 119
+
+Purpose: evaluate, without default parser fixes, parser recovery, canonical
+output, or match facts, whether an opt-in fail-closed PacketEntities
+`entityData` boundary guard stops replay_010 packet ordinal 953 before loops
+27-29 continue as phantom entries.
+
+Gate: `local_replay_packet_entities_boundary_guard_diagnosed`.
+
+Partial gate: `local_replay_packet_entities_boundary_guard_partial`.
+
+Blocked gate: `local_replay_packet_entities_boundary_guard_blocked`.
+
+Status: completed with the success gate above. Default behavior without the
+guard still reproduced the Task 105 missing entity 2905 failure. The guard
+pass used recovery diagnostics only, with no recovery actions, and stopped at
+packet 953 loop 27 after-index read count 5349, five bits beyond
+`entityDataBitLength` 5344, before reaching the original packet 954 missing
+entity. The diagnostic matches Task 118's expected boundary, prevents loops
+27-29 from continuing as semantic updates in the guarded pass, creates no
+placeholder entity or fake fields, and leaves the guard disabled by default.
+No raw replay bytes, raw entityData, raw serializedEntities, raw payloads,
+string bytes, string values, field values, full raw send-table payload,
+parser default fix, recovery, canonical package, source artifact, factual
+event, spatial semantic, mechanic, combat, macro, decision, or ML output was
+emitted. No Task 120 was created.
 
 ## Non-Goals
 

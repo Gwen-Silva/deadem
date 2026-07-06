@@ -178,7 +178,7 @@ test('output roots are fixed to payload-semantics paths', () => {
     assert.equal(roots.summary.relativePath, 'output/local-replay-processing/replay_010-serialized-entity-payload-semantics/');
 });
 
-test('Task 119 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/119.json'), false);
-    assert.equal(existsSync('tasks/blocked/119-select-next-canonical-generalization-control.md'), false);
+test('Task 120 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/120.json'), false);
+    assert.equal(existsSync('tasks/blocked/120-select-next-canonical-generalization-control.md'), false);
 });

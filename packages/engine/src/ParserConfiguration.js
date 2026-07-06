@@ -38,7 +38,7 @@ const DEFAULTS = {
 class ParserConfiguration {
     /**
      * @constructor
-     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
+     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
      */
     constructor(options) {
         const getOption = key => (options && options[key] !== undefined) ? options[key] : DEFAULTS[key];
@@ -236,7 +236,7 @@ function buildMessagePacketFilter(include, exclude) {
 }
 
 /**
- * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean }|null} options
+ * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean }|null} options
  * @returns {object|null}
  */
 function buildRecovery(options) {
@@ -244,7 +244,7 @@ function buildRecovery(options) {
         return null;
     }
 
-    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption', 'diagnosePreRecoveryFieldConsumption' ]);
+    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption', 'diagnosePreRecoveryFieldConsumption', 'diagnoseEntityPacketBoundaryGuard' ]);
     const keys = Object.keys(options);
 
     Assert.isTrue(keys.every(key => allowedKeys.has(key)), 'options.recovery contains unsupported keys');
@@ -254,6 +254,7 @@ function buildRecovery(options) {
     Assert.isTrue(options.diagnoseEntityPacketCursorAlignment === undefined || typeof options.diagnoseEntityPacketCursorAlignment === 'boolean', 'options.recovery.diagnoseEntityPacketCursorAlignment must be a boolean when provided');
     Assert.isTrue(options.diagnosePreRecoveryPayloadConsumption === undefined || typeof options.diagnosePreRecoveryPayloadConsumption === 'boolean', 'options.recovery.diagnosePreRecoveryPayloadConsumption must be a boolean when provided');
     Assert.isTrue(options.diagnosePreRecoveryFieldConsumption === undefined || typeof options.diagnosePreRecoveryFieldConsumption === 'boolean', 'options.recovery.diagnosePreRecoveryFieldConsumption must be a boolean when provided');
+    Assert.isTrue(options.diagnoseEntityPacketBoundaryGuard === undefined || typeof options.diagnoseEntityPacketBoundaryGuard === 'boolean', 'options.recovery.diagnoseEntityPacketBoundaryGuard must be a boolean when provided');
 
     const allowUnresolvedEntityReference = options.allowUnresolvedEntityReference === true;
     const allowMissingClassBaseline = options.allowMissingClassBaseline === true;
@@ -261,9 +262,11 @@ function buildRecovery(options) {
     const diagnoseEntityPacketCursorAlignment = options.diagnoseEntityPacketCursorAlignment === true;
     const diagnosePreRecoveryPayloadConsumption = options.diagnosePreRecoveryPayloadConsumption === true;
     const diagnosePreRecoveryFieldConsumption = options.diagnosePreRecoveryFieldConsumption === true;
+    const diagnoseEntityPacketBoundaryGuard = options.diagnoseEntityPacketBoundaryGuard === true;
     const warnings = [];
     const diagnostics = [];
     let preRecoveryPayloadPacketOrdinal = 0;
+    let entityPacketDiagnosticOrdinal = 0;
 
     return {
         allowUnresolvedEntityReference,
@@ -272,12 +275,18 @@ function buildRecovery(options) {
         diagnoseEntityPacketCursorAlignment,
         diagnosePreRecoveryPayloadConsumption,
         diagnosePreRecoveryFieldConsumption,
+        diagnoseEntityPacketBoundaryGuard,
         warnings,
         diagnostics,
+        nextEntityPacketDiagnosticOrdinal: () => {
+            entityPacketDiagnosticOrdinal++;
+            return entityPacketDiagnosticOrdinal;
+        },
         recordUnresolvedEntityReference: warning => warnings.push({ type: 'unresolved_entity_reference', ...warning }),
         recordMissingClassBaseline: warning => warnings.push({ type: 'missing_class_baseline', ...warning }),
         recordOutOfRangeEntityCreateBoundary: diagnostic => diagnostics.push({ type: 'out_of_range_entity_create_boundary', ...diagnostic }),
         recordEntityPacketCursorAlignment: diagnostic => diagnostics.push({ type: 'entity_packet_cursor_alignment', ...diagnostic }),
+        recordEntityPacketBoundaryCrossing: diagnostic => diagnostics.push({ type: 'entity_packet_boundary_crossing', ...diagnostic }),
         recordPreRecoveryPayloadConsumption: diagnostic => {
             preRecoveryPayloadPacketOrdinal++;
             diagnostics.push({
