@@ -127,8 +127,10 @@ and missing CREATE provenance diagnosis around entity 2905 with the gate
 Task 123 is complete as an explicitly authorized external parser prior-art and
 second-canary triage with the gate
 `replay_parser_prior_art_and_second_canary_triage_ready`.
+Task 124 is complete as an explicitly authorized external parser oracle
+feasibility comparison with the gate `external_parser_oracle_canaries_ready`.
 
-Do not create Task 124 automatically. Stop and wait for a human milestone
+Do not create Task 125 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -762,7 +764,30 @@ ticks. The current blocker is classified as a local replay class issue, and
 the recommended next action is external oracle comparison before further local
 parser intervention. No parser default behavior, recovery, canonical package,
 source artifact, match facts, raw replay bytes, external source tree, `.dem`,
-or `.local` file was committed. No Task 124 was created.
+or `.local` file was committed. No Task 124 was created during Task 123.
+
+## Task 124
+
+Purpose: evaluate whether mature external parser clones can serve as practical
+local-only oracles for replay_010 and replay_011 canaries.
+
+Gate: `external_parser_oracle_canaries_ready`.
+
+Partial gate: `external_parser_oracle_canaries_partial`.
+
+Blocked gate: `external_parser_oracle_canaries_blocked`.
+
+Status: completed with the success gate above. The local Task 123 clones were
+inspected in order. `skadistats/clarity` advertises Deadlock/citadel support
+and exposes library runner APIs, but the offline feasibility probe blocked on
+missing Java/runtime setup before a canary oracle could run. `manta`,
+`demoparser`, and `demoinfocs-golang` did not show practical Deadlock support
+in the inspected local evidence. No external parser confirmed or contradicted
+the local missing-entity failures for replay_010 or replay_011. The
+recommended next action is `manual_external_oracle_setup_needed`. No parser
+default behavior, recovery, canonical package, source artifact, match facts,
+raw replay bytes, external source tree, `.dem`, or `.local` file was committed.
+No Task 125 was created.
 
 ## Non-Goals
 

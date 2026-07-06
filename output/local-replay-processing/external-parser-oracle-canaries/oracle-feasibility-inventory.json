@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "parsersConsideredInOrder": [
+    "skadistats/clarity",
+    "dotabuff/manta",
+    "LaihoE/demoparser",
+    "markus-wa/demoinfocs-golang"
+  ],
+  "parsers": [
+    {
+      "id": "clarity",
+      "name": "skadistats/clarity",
+      "url": "https://github.com/skadistats/clarity",
+      "localClonePath": ".local/deadem/cache/external-prior-art-task123/clarity",
+      "cloneAvailability": "available_task123_local_clone",
+      "inspectedRef": "7fb3f1d07564a12efa99194d45cfbf5762ba5910",
+      "buildToolDetected": "gradle-wrapper",
+      "cliApiEntrypointFound": true,
+      "deadlockSupportStatus": "found",
+      "supportEvidence": [
+        {
+          "path": "README.md",
+          "term": "Deadlock"
+        },
+        {
+          "path": "src/main/java/skadistats/clarity/Clarity.java",
+          "term": "Deadlock"
+        },
+        {
+          "path": "src/main/java/skadistats/clarity/model/EngineMagic.java",
+          "term": "Deadlock"
+        },
+        {
+          "path": "src/main/java/skadistats/clarity/model/engine/DeadlockEngineType.java",
+          "term": "Deadlock"
+        }
+      ],
+      "entrypointEvidence": [
+        {
+          "path": "src/main/java/skadistats/clarity/processor/runner/SimpleRunner.java",
+          "category": "library_or_example_entrypoint"
+        },
+        {
+          "path": "src/main/java/skadistats/clarity/processor/runner/ControllableRunner.java",
+          "category": "library_or_example_entrypoint"
+        }
+      ],
+      "canaryExecutionAttempted": false,
+      "feasibilityProbeAttempted": true,
+      "commandProbe": {
+        "commandCategory": "gradle_tasks_offline_probe",
+        "commandShown": "gradlew.bat tasks --offline --no-daemon",
+        "startedAt": "2026-07-06T07:45:32.579Z",
+        "endedAt": "2026-07-06T07:45:32.623Z",
+        "exitCode": 9009,
+        "signal": null,
+        "timedOut": false,
+        "spawnError": null,
+        "logPathLocalOnly": ".local/deadem/cache/local-replay-processing/external-parser-oracle-canaries/logs/clarity-gradle-tasks-offline.log",
+        "logSha256": "ffb25517530bc31d4be8b2b4c2697f7fee22d64ba0d2d3e0e077c0a8b80b06c4",
+        "stdoutPreview": [],
+        "stderrPreview": [
+          " ",
+          "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH. ",
+          " ",
+          "Please set the JAVA_HOME variable in your environment to match the ",
+          "location of your Java installation. "
+        ],
+        "passed": false,
+        "replayInputsPassedToExternalParser": false
+      },
+      "blocker": "blocked_by_build_or_runtime",
+      "noExternalSourceCommitted": true
+    },
+    {
+      "id": "manta",
+      "name": "dotabuff/manta",
+      "url": "https://github.com/dotabuff/manta",
+      "localClonePath": ".local/deadem/cache/external-prior-art-task123/manta",
+      "cloneAvailability": "available_task123_local_clone",
+      "inspectedRef": "0efe7e11c40a4f149f6414b2d162320de34e8446",
+      "buildToolDetected": "go-module",
+      "cliApiEntrypointFound": true,
+      "deadlockSupportStatus": "not_found",
+      "supportEvidence": [],
+      "entrypointEvidence": [
+        {
+          "path": "README.md",
+          "category": "library_or_example_entrypoint"
+        }
+      ],
+      "canaryExecutionAttempted": false,
+      "feasibilityProbeAttempted": false,
+      "commandProbe": null,
+      "blocker": "blocked_by_game_support",
+      "noExternalSourceCommitted": true
+    },
+    {
+      "id": "demoparser",
+      "name": "LaihoE/demoparser",
+      "url": "https://github.com/LaihoE/demoparser",
+      "localClonePath": ".local/deadem/cache/external-prior-art-task123/demoparser",
+      "cloneAvailability": "available_task123_local_clone",
+      "inspectedRef": "e8c1ad452ced4d5938219ac9a5ee6300ee1ea37c",
+      "buildToolDetected": "rust-cargo",
+      "cliApiEntrypointFound": true,
+      "deadlockSupportStatus": "not_found",
+      "supportEvidence": [],
+      "entrypointEvidence": [
+        {
+          "path": "README.md",
+          "category": "library_or_example_entrypoint"
+        }
+      ],
+      "canaryExecutionAttempted": false,
+      "feasibilityProbeAttempted": false,
+      "commandProbe": null,
+      "blocker": "blocked_by_game_support",
+      "noExternalSourceCommitted": true
+    },
+    {
+      "id": "demoinfocs-golang",
+      "name": "markus-wa/demoinfocs-golang",
+      "url": "https://github.com/markus-wa/demoinfocs-golang",
+      "localClonePath": ".local/deadem/cache/external-prior-art-task123/demoinfocs-golang",
+      "cloneAvailability": "available_task123_local_clone",
+      "inspectedRef": "b3758247207e33c63e7a07f25d10580cce644803",
+      "buildToolDetected": "go-module",
+      "cliApiEntrypointFound": true,
+      "deadlockSupportStatus": "not_found",
+      "supportEvidence": [],
+      "entrypointEvidence": [
+        {
+          "path": "README.md",
+          "category": "library_or_example_entrypoint"
+        }
+      ],
+      "canaryExecutionAttempted": false,
+      "feasibilityProbeAttempted": false,
+      "commandProbe": null,
+      "blocker": "blocked_by_game_support",
+      "noExternalSourceCommitted": true
+    }
+  ],
+  "atLeastOneFeasibilityProbeAttempted": true,
+  "atLeastOnePracticalCanaryExecutionAttempted": false,
+  "noExternalSourceCommitted": true,
+  "noExternalBuildArtifactsCommitted": true,
+  "fullLogsLocalOnly": true
+}

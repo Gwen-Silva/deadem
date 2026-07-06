@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "oracle_confirms_local_failure": false,
+  "oracle_contradicts_local_failure": false,
+  "oracle_unavailable": true,
+  "oracle_build_blocked": true,
+  "oracle_game_support_blocked": true,
+  "oracle_no_minimal_entrypoint": false,
+  "needs_manual_external_setup": true,
+  "recommendedNextAction": "manual_external_oracle_setup_needed",
+  "rationale": "Clarity is the only inspected candidate with local Deadlock support, but Task 124 found no safe minimal canary oracle entrypoint and the offline build/entrypoint probe did not produce a runnable canary command."
+}

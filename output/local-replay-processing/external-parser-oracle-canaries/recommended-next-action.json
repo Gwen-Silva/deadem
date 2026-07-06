@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "recommendedAction": "manual_external_oracle_setup_needed",
+  "tradeoff": "A manual external oracle setup may turn clarity into a practical independent check, but it should stay local-only and produce compact summaries only.",
+  "rejectedForNow": [
+    {
+      "action": "prepare_opt_in_fix_candidate",
+      "reason": "No external oracle has yet advanced either canary beyond the local PacketEntities missing-entity failures."
+    },
+    {
+      "action": "process_more_candidates",
+      "reason": "Task 124 authorizes only replay_010 and replay_011 and explicitly forbids candidates 012-020."
+    },
+    {
+      "action": "promote_recovery_or_truncation",
+      "reason": "This task is feasibility triage and does not validate a default parser fix."
+    }
+  ],
+  "noTask125Created": true
+}

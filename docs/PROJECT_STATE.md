@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-07-05
+Last updated: 2026-07-06
 
 ## Authoritative Current State
 
@@ -192,7 +192,15 @@ workaround. Task 102 created a bounded generic local-input canary for only
   next action is an external oracle comparison before further local parser
   intervention. No parser default behavior, recovery, canonical package, match
   facts, external source tree, raw replay bytes, `.dem`, or `.local` files were
-  committed.
+  committed. Task 124 then evaluated external parser oracle feasibility under
+  `external_parser_oracle_canaries_ready`: `skadistats/clarity` is the only
+  inspected local clone with Deadlock support, but the practical oracle probe
+  blocked on local Java/runtime setup before any canary execution; `manta`,
+  `demoparser`, and `demoinfocs-golang` did not show practical Deadlock
+  support in the inspected local evidence. No external parser contradicted or
+  confirmed the local missing-entity behavior because no practical canary
+  oracle ran. The recommended next action is
+  `manual_external_oracle_setup_needed`.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -329,5 +337,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   the failure as `never_registered_entity_with_create_gap`. Task 123 is
   complete with external prior-art and replay_011 second-canary triage,
   classifying the current blocker as a local replay class issue and
-  recommending an external oracle comparison. Do not create Task 124
+  recommending an external oracle comparison. Task 124 is complete with a
+  bounded external parser oracle feasibility evaluation and recommends manual
+  local-only setup before another oracle run. Do not create Task 125
   automatically; stop and wait for a human milestone decision.

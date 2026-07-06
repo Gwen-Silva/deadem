@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "perParserPerReplayStatus": {
+    "replay_010": [
+      {
+        "parserId": "clarity",
+        "status": "cannot_run",
+        "blocker": "blocked_by_build_or_runtime"
+      },
+      {
+        "parserId": "manta",
+        "status": "unsupported",
+        "blocker": "blocked_by_game_support"
+      },
+      {
+        "parserId": "demoparser",
+        "status": "unsupported",
+        "blocker": "blocked_by_game_support"
+      },
+      {
+        "parserId": "demoinfocs-golang",
+        "status": "unsupported",
+        "blocker": "blocked_by_game_support"
+      }
+    ],
+    "replay_011": [
+      {
+        "parserId": "clarity",
+        "status": "cannot_run",
+        "blocker": "blocked_by_build_or_runtime"
+      },
+      {
+        "parserId": "manta",
+        "status": "unsupported",
+        "blocker": "blocked_by_game_support"
+      },
+      {
+        "parserId": "demoparser",
+        "status": "unsupported",
+        "blocker": "blocked_by_game_support"
+      },
+      {
+        "parserId": "demoinfocs-golang",
+        "status": "unsupported",
+        "blocker": "blocked_by_game_support"
+      }
+    ]
+  },
+  "strongestOracleCandidate": {
+    "parserId": "clarity",
+    "reason": "local source advertises Deadlock/citadel support, but no safe minimal oracle entrypoint was available from the shallow clone in this environment"
+  },
+  "anyExternalParserContradictsLocalParserBehavior": false,
+  "anyExternalParserSupportsLocalFailureAsExpectedError": false,
+  "practicalOracleExecutionAttempted": false,
+  "noPracticalOracleCurrentlyAvailable": true,
+  "conclusion": "No external parser could be used as a practical local-only oracle for the canaries in this task."
+}

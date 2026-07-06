@@ -249,8 +249,8 @@ test('protection audit rejects raw artifacts and default recovery', async () => 
     assert.equal(branch.replaySpecificBranchFound, false);
 });
 
-test('Task 124 was not created by Task 122', () => {
-    assert.equal(existsSync('tasks/specs/124.json'), false);
-    assert.equal(existsSync('tasks/completed/124-diagnose-entity-index-allocation-gap.md'), false);
-    assert.equal(existsSync('tasks/blocked/124-select-next-canonical-generalization-control.md'), false);
+test('Task 125 was not created by Task 122', () => {
+    assert.equal(existsSync('tasks/specs/125.json'), false);
+    assert.equal(existsSync('tasks/completed/125-diagnose-entity-index-allocation-gap.md'), false);
+    assert.equal(existsSync('tasks/blocked/125-select-next-canonical-generalization-control.md'), false);
 });

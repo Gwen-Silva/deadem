@@ -1,0 +1,164 @@
+{
+  "taskId": "124",
+  "title": "Run External Parser Oracle Feasibility And Minimal Canaries Comparison",
+  "status": "completed",
+  "objective": "Evaluate local-only feasibility of mature external parser oracles for replay_010 and replay_011 without local parser changes, recovery promotion, canonicalization, or match facts.",
+  "readPaths": [
+    "package.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/**",
+    "reports/replay-parser-prior-art-and-second-canary.md",
+    "tools/triage-replay-parser-prior-art-and-second-canary.mjs",
+    "tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "tasks/specs/124.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/cache/external-prior-art-task123/**",
+    ".local/deadem/cache/external-oracle-task124/**"
+  ],
+  "writePaths": [
+    "tools/evaluate-external-parser-oracle-canaries.mjs",
+    "tests/external-parser-oracle-canaries.test.mjs",
+    "tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "tests/entity-index-allocation-gap.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "output/local-replay-processing/external-parser-oracle-canaries/**",
+    "reports/external-parser-oracle-canaries.md",
+    "tasks/specs/124.json",
+    "tasks/completed/124-evaluate-external-parser-oracle-canaries.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "packages/engine/**",
+    "packages/deadem/**",
+    "tasks/specs/125.json",
+    "tasks/blocked/125-*",
+    "tasks/completed/125-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-index-allocation-gap-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-index-allocation-gap.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/external-parser-oracle-canaries/input-identities.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/oracle-feasibility-inventory.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/replay-010-oracle-results.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/replay-011-oracle-results.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/external-oracle-comparison.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/task123-comparison.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/decision-matrix.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/recommended-next-action.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/protection-audit.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/replay-specific-branch-audit.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/oracle-gate.json",
+    "reports/external-parser-oracle-canaries.md",
+    "tasks/completed/124-evaluate-external-parser-oracle-canaries.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem",
+    "partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 012-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes into the repository",
+    "Do not commit external source code, source trees, jars, binaries, build artifacts, full logs, .dem files, or .local files",
+    "Do not commit raw entityData, raw serializedEntities, raw payloads, string bytes, string values, full send-table raw payloads, or field values",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE in the local parser",
+    "Do not alter local parser default behavior",
+    "Do not make truncation default",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not claim Source 2 semantics, replay corruption, causal certainty, or final parser fix",
+    "Do not create Task 125"
+  ],
+  "successGate": "external_parser_oracle_canaries_ready",
+  "blockedGate": "external_parser_oracle_canaries_blocked",
+  "allowedAlternateGates": [
+    "external_parser_oracle_canaries_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/external-parser-oracle-canaries/oracle-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

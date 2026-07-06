@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "gate": "external_parser_oracle_canaries_ready",
+  "successGate": "external_parser_oracle_canaries_ready",
+  "partialGate": "external_parser_oracle_canaries_partial",
+  "blockedGate": "external_parser_oracle_canaries_blocked",
+  "replay010IdentitySummarized": true,
+  "replay011IdentitySummarized": true,
+  "externalParserFeasibilityEvaluated": true,
+  "practicalOracleExecutionAttempted": false,
+  "noPracticalOracleCurrentlyAvailable": true,
+  "noPracticalExecutionReason": "No candidate exposed a safe minimal local-only canary oracle entrypoint in this environment; clarity supports Deadlock but remained blocked by setup/entrypoint practicality.",
+  "task123Compared": true,
+  "recommendationReady": true,
+  "parserDefaultBehaviorChanged": false,
+  "recoveryAddedOrPromoted": false,
+  "canonicalFactsProduced": false,
+  "task125Created": false,
+  "passed": true
+}
