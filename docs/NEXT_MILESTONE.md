@@ -129,8 +129,10 @@ second-canary triage with the gate
 `replay_parser_prior_art_and_second_canary_triage_ready`.
 Task 124 is complete as an explicitly authorized external parser oracle
 feasibility comparison with the gate `external_parser_oracle_canaries_ready`.
+Task 125 is complete as an explicitly authorized Clarity oracle viability
+decision with the gate `clarity_oracle_viability_decided`.
 
-Do not create Task 125 automatically. Stop and wait for a human milestone
+Do not create Task 126 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -788,6 +790,26 @@ recommended next action is `manual_external_oracle_setup_needed`. No parser
 default behavior, recovery, canonical package, source artifact, match facts,
 raw replay bytes, external source tree, `.dem`, or `.local` file was committed.
 No Task 125 was created.
+
+## Task 125
+
+Purpose: decide whether `skadistats/clarity` is a viable external oracle for
+the authorized local Deadlock canaries under current environment conditions.
+
+Gate: `clarity_oracle_viability_decided`.
+
+Partial gate: `clarity_oracle_viability_partial`.
+
+Blocked gate: `clarity_oracle_viability_blocked`.
+
+Status: completed with the success gate above. The final decision category is
+`oracle_inviavel_no_ambiente_atual`. The local Clarity clone exists and has the
+same inspected ref as Task 124, and the Gradle wrapper is present, but `java`
+and `javac` are unavailable and `JAVA_HOME` is unset. The task stopped before
+turning into Java/Gradle/Clarity setup or debugging. No Clarity code, local
+parser code, recovery, canonical package, source artifact, match facts, raw
+replay bytes, external source tree, `.dem`, or `.local` file was committed. No
+Task 126 was created.
 
 ## Non-Goals
 

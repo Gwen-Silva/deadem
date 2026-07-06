@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "recommendedAction": "manual_environment_setup_outside_codex_needed",
+  "allowedActions": [
+    "run_clarity_oracle_comparison_next",
+    "manual_environment_setup_outside_codex_needed",
+    "abandon_clarity_oracle_for_now",
+    "return_to_local_parser_strategy_review",
+    "pause_replay_expansion"
+  ],
+  "reason": "Clarity remains the only detected Deadlock-capable external candidate, but this environment cannot run a simple local-only Clarity canary without manual Java/runtime setup or an obvious invocation path.",
+  "noTask126Created": true
+}

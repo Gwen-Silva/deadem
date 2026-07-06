@@ -1,0 +1,20 @@
+{
+  "gradleTasksListAttempted": false,
+  "gradleTasksListSucceeded": false,
+  "minimalCliApiEntrypointFound": true,
+  "replayExecutionPathObvious": false,
+  "requiresCodeChangesToClarity": false,
+  "requiresClarityDebugging": false,
+  "requiresClarityAdaptation": true,
+  "stopReason": "no_obvious_minimal_replay_execution_path_without_wrapper_or_adaptation",
+  "evidence": [
+    {
+      "path": "src/main/java/skadistats/clarity/processor/runner/SimpleRunner.java",
+      "finding": "library runner class present"
+    },
+    {
+      "path": "src/main/java/skadistats/clarity/processor/runner/ControllableRunner.java",
+      "finding": "controllable library runner class present"
+    }
+  ]
+}

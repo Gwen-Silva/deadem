@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "viabilityCategory": "oracle_inviavel_no_ambiente_atual",
+  "allowedCategories": [
+    "oracle_utilizavel",
+    "oracle_utilizavel_com_limitacoes",
+    "oracle_inviavel_no_ambiente_atual"
+  ],
+  "reason": "current local environment does not support a simple Clarity oracle run",
+  "evidenceSummary": [
+    "javaAvailable=false",
+    "gradleWrapperPresent=true",
+    "minimalCliApiEntrypointFound=true",
+    "replayExecutionPathObvious=false",
+    "canaryExecutionAttempted=false"
+  ],
+  "negativeResultDoesNotProveLocalParserCorrect": true,
+  "negativeResultDoesNotProveReplayCorruption": true,
+  "source2SemanticsNotConcluded": true,
+  "parserFixNotConcluded": true
+}

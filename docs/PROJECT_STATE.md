@@ -339,5 +339,11 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   classifying the current blocker as a local replay class issue and
   recommending an external oracle comparison. Task 124 is complete with a
   bounded external parser oracle feasibility evaluation and recommends manual
-  local-only setup before another oracle run. Do not create Task 125
+  local-only setup before another oracle run. Task 125 then decided Clarity
+  oracle viability under `clarity_oracle_viability_decided`: the final category
+  is `oracle_inviavel_no_ambiente_atual` because Java/JDK is not available in
+  the current environment and no obvious replay execution path exists without a
+  wrapper/adaptation step. This negative result does not prove the local parser
+  is correct and does not prove replay corruption or Source 2 semantics. Do not
+  create Task 126
   automatically; stop and wait for a human milestone decision.

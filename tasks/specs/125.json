@@ -1,0 +1,156 @@
+{
+  "taskId": "125",
+  "title": "Decide Clarity Oracle Viability For Local Deadlock Canaries",
+  "status": "completed",
+  "objective": "Decide whether skadistats/clarity is a viable external oracle for replay_010 and replay_011 under current local conditions without modifying Clarity, local parser behavior, recovery, or factual outputs.",
+  "readPaths": [
+    "package.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "output/local-replay-processing/external-parser-oracle-canaries/**",
+    "reports/external-parser-oracle-canaries.md",
+    "tools/evaluate-external-parser-oracle-canaries.mjs",
+    "tests/external-parser-oracle-canaries.test.mjs",
+    "tasks/specs/125.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/cache/external-prior-art-task123/clarity/**",
+    ".local/deadem/cache/external-clarity-oracle-task125/clarity/**"
+  ],
+  "writePaths": [
+    "tools/decide-clarity-oracle-viability.mjs",
+    "tests/clarity-oracle-viability.test.mjs",
+    "output/local-replay-processing/clarity-oracle-viability/**",
+    "reports/clarity-oracle-viability.md",
+    "tasks/specs/125.json",
+    "tasks/completed/125-decide-clarity-oracle-viability.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "packages/engine/**",
+    "packages/deadem/**",
+    "tasks/specs/126.json",
+    "tasks/blocked/126-*",
+    "tasks/completed/126-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/clarity-oracle-viability/input-identities.json",
+    "output/local-replay-processing/clarity-oracle-viability/environment-summary.json",
+    "output/local-replay-processing/clarity-oracle-viability/clarity-entrypoint-summary.json",
+    "output/local-replay-processing/clarity-oracle-viability/replay-010-clarity-status.json",
+    "output/local-replay-processing/clarity-oracle-viability/replay-011-clarity-status.json",
+    "output/local-replay-processing/clarity-oracle-viability/final-viability-decision.json",
+    "output/local-replay-processing/clarity-oracle-viability/task124-comparison.json",
+    "output/local-replay-processing/clarity-oracle-viability/product-reviewer-alignment.json",
+    "output/local-replay-processing/clarity-oracle-viability/recommended-next-action.json",
+    "output/local-replay-processing/clarity-oracle-viability/protection-audit.json",
+    "output/local-replay-processing/clarity-oracle-viability/replay-specific-branch-audit.json",
+    "output/local-replay-processing/clarity-oracle-viability/clarity-viability-gate.json",
+    "reports/clarity-oracle-viability.md",
+    "tasks/completed/125-decide-clarity-oracle-viability.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem",
+    "partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 012-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes into the repository",
+    "Do not commit external source code, source trees, jars, binaries, build artifacts, full logs, .dem files, or .local files",
+    "Do not commit raw entityData, raw serializedEntities, raw payloads, string bytes, string values, full send-table raw payloads, or field values",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE in the local parser",
+    "Do not alter local parser default behavior",
+    "Do not make truncation default",
+    "Do not modify, debug, adapt, or vendor Clarity",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not claim Source 2 semantics, replay corruption, causal certainty, or final parser fix",
+    "Do not create Task 126"
+  ],
+  "successGate": "clarity_oracle_viability_decided",
+  "blockedGate": "clarity_oracle_viability_blocked",
+  "allowedAlternateGates": [
+    "clarity_oracle_viability_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/clarity-oracle-viability/clarity-viability-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}
