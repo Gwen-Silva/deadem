@@ -118,8 +118,11 @@ PacketEntities boundary-guard evaluation for packet 953 with the gate
 Task 120 is complete as an explicitly authorized opt-in PacketEntities
 boundary-truncation evaluation for packet 953 with the gate
 `local_replay_packet_entities_boundary_truncation_no_progress`.
+Task 121 is complete as an explicitly authorized registry lifecycle, nearby
+index, and packet-954 context diagnosis for entity 2905 with the gate
+`local_replay_entity_2905_registry_and_packet_context_diagnosed`.
 
-Do not create Task 121 automatically. Stop and wait for a human milestone
+Do not create Task 122 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -672,7 +675,36 @@ advance past the original failure. No raw replay bytes, raw entityData, raw
 serializedEntities, raw payloads, string bytes, string values, field values,
 full raw send-table payload, parser default fix, canonical package, source
 artifact, factual event, spatial semantic, mechanic, combat, macro, decision,
-or ML output was emitted. No Task 121 was created.
+or ML output was emitted. No Task 121 was created during Task 120.
+
+## Task 121
+
+Purpose: diagnose, without parser recovery, parser fixes, canonical output, or
+match facts, the replay_010 entity 2905 failure across registry lifecycle,
+nearby index context, first missing update packet context, and default versus
+packet-953 truncation behavior.
+
+Gate: `local_replay_entity_2905_registry_and_packet_context_diagnosed`.
+
+Partial gate: `local_replay_entity_2905_registry_and_packet_context_partial`.
+
+Blocked gate: `local_replay_entity_2905_registry_and_packet_context_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing entity 2905 failure. The registry diagnostic
+pass and truncation+registry diagnostic pass used no missing-entity recovery
+and no missing-baseline recovery, and both failed closed at the same entity
+2905 missing update. Entity 2905 was not observed as created, registered,
+deleted, left, or deactivated before the failure; its first known reference was
+packet ordinal 954 loop 33, already an UPDATE against missing registry state.
+Nearby indexes 2900-2902 were created and registered normally, packet 954 read
+counts stayed inside `entityDataBitLength`, and truncating packet 953 did not
+change entity 2905 registry history. The bounded classification is
+`first_missing_update_to_never_registered_entity`. No raw replay bytes, raw
+entityData, raw serializedEntities, raw payloads, string bytes, string values,
+field values, full raw send-table payload, parser default fix, recovery,
+canonical package, source artifact, factual event, spatial semantic, mechanic,
+combat, macro, decision, or ML output was emitted. No Task 122 was created.
 
 ## Non-Goals
 

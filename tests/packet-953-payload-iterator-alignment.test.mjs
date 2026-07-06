@@ -180,8 +180,8 @@ test('gate passes only when inventory, model comparison, Task 116 comparison, an
     assert.equal(blocked.gate, 'local_replay_packet_953_payload_iterator_alignment_partial');
 });
 
-test('Task 121 was not created by Task 119', () => {
-    assert.equal(existsSync('tasks/specs/121.json'), false);
-    assert.equal(existsSync('tasks/completed/121-diagnose-packet-953-payload-iterator-alignment.md'), false);
-    assert.equal(existsSync('tasks/blocked/121-select-next-canonical-generalization-control.md'), false);
+test('Task 122 was not created by Task 119', () => {
+    assert.equal(existsSync('tasks/specs/122.json'), false);
+    assert.equal(existsSync('tasks/completed/122-diagnose-packet-953-payload-iterator-alignment.md'), false);
+    assert.equal(existsSync('tasks/blocked/122-select-next-canonical-generalization-control.md'), false);
 });

@@ -245,7 +245,7 @@ test('output roots are fixed to Task 112 local and summary paths', () => {
     assert.equal(roots.summary.relativePath, 'output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption/');
 });
 
-test('Task 121 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/121.json'), false);
-    assert.equal(existsSync('tasks/blocked/121-select-next-canonical-generalization-control.md'), false);
+test('Task 122 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/122.json'), false);
+    assert.equal(existsSync('tasks/blocked/122-select-next-canonical-generalization-control.md'), false);
 });

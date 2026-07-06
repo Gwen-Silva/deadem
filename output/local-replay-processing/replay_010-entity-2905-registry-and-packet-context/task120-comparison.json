@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "task120Gate": "local_replay_packet_entities_boundary_truncation_no_progress",
+  "expected": {
+    "defaultMissingEntity2905": true,
+    "truncationPacketOrdinal": 953,
+    "truncationLoop": 27,
+    "truncationStillReachesMissingEntity2905": true,
+    "noRecoveryOrCanonicalFacts": true
+  },
+  "observedFromTask120": {
+    "defaultError": "Unable to find an entity with index [ 2905 ]",
+    "truncationTriggered": true,
+    "truncationPacketOrdinal": 953,
+    "truncationLoop": 27,
+    "originalMissingEntity2905Reached": true,
+    "canonicalFactsProduced": false
+  },
+  "observedFromTask121": {
+    "defaultError": "Unable to find an entity with index [ 2905 ]",
+    "truncationError": "Unable to find an entity with index [ 2905 ]",
+    "defaultDiagnosticStillMissingEntity2905": true,
+    "truncationDiagnosticStillMissingEntity2905": true,
+    "truncationChangesEntity2905RegistryHistory": false
+  },
+  "confirmsTask120": true,
+  "rawValuesIncluded": false
+}

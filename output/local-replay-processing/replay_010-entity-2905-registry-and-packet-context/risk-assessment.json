@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "failureClassification": "first_missing_update_to_never_registered_entity",
+  "lifecycleHypothesis": "first_missing_update_to_never_registered_entity",
+  "cursorIndexStreamHypothesis": "not_supported_by_missing_packet_bounds",
+  "truncationChangesEntity2905RegistryHistory": false,
+  "safestNextStep": "investigate_entity_create_delete_lifecycle_for_entity_2905_and_nearby_indexes",
+  "defaultParserFixProposed": false,
+  "automaticRecoveryAdded": false,
+  "boundaryTruncationDefaultEnabled": false,
+  "missingEntityRecoveryAdded": false,
+  "placeholderEntityCreated": false,
+  "fakeFieldsCreated": false,
+  "canonicalFactsProduced": false,
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "causalConclusion": "limited_to_local_registry_and_cursor_evidence",
+  "limitations": [
+    "registry history is opt-in diagnostic metadata only",
+    "no field values or raw packet payloads are committed",
+    "classification does not prove Source 2 semantics or final parser correctness"
+  ]
+}

@@ -159,7 +159,18 @@ workaround. Task 102 created a bounded generic local-input canary for only
   27-29 from being applied as semantic updates, but the parser still reached
   missing entity 2905 afterward. The result is useful negative evidence: this
   structural truncation alone is not sufficient progress past the original
-  failure and remains opt-in, disabled by default, and non-canonical.
+  failure and remains opt-in, disabled by default, and non-canonical. Task 121
+  then macro-diagnosed entity 2905 registry and packet context under
+  `local_replay_entity_2905_registry_and_packet_context_diagnosed`: the first
+  known reference to entity 2905 is packet ordinal 954 loop 33, already a
+  missing UPDATE; the entity was not created, registered, deleted, left, or
+  deactivated before that failure in the observed local registry history.
+  Nearby indexes 2900-2902 were created and registered normally, packet 954
+  read counts stayed within `entityDataBitLength`, and packet 953 truncation
+  did not change the entity 2905 registry history. This classifies the failure
+  as `first_missing_update_to_never_registered_entity`, not a recovery, parser
+  fix, Source 2 semantic conclusion, replay corruption conclusion, canonical
+  package, or factual artifact.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -286,7 +297,10 @@ bounded string-reader and payload-boundary accounting for the same field path.
 Task 117 is complete with bounded payload-size iterator alignment diagnosis
 for packet 953. Task 118 is complete with bounded post-loop26 buffer-boundary
 diagnosis for packet 953. Task 119 is complete with bounded opt-in
-PacketEntities boundary-guard evaluation for packet 953. Task 120 is complete
-with bounded opt-in PacketEntities boundary-truncation evaluation for packet
-953, ending in no progress past missing entity 2905. Do not create Task 121
+  PacketEntities boundary-guard evaluation for packet 953. Task 120 is complete
+  with bounded opt-in PacketEntities boundary-truncation evaluation for packet
+  953, ending in no progress past missing entity 2905. Task 121 is complete
+  with bounded registry lifecycle and packet-954 context diagnosis for entity
+  2905, classifying the first missing update as a never-registered entity in
+  the observed local evidence. Do not create Task 122
 automatically; stop and wait for a human milestone decision.

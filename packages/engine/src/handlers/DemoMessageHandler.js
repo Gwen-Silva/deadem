@@ -179,6 +179,8 @@ class DemoMessageHandler {
                         payloadBits,
                         payloadSizeIteratorAvailable: payloadSizes !== null,
                         registryStateBefore: entity === null ? 'missing' : 'present',
+                        classId: entity?.class?.id ?? null,
+                        serial: entity?.serial ?? null,
                         className: entity?.class?.name ?? null
                     });
 
@@ -194,6 +196,7 @@ class DemoMessageHandler {
                             finishCursorEntry(cursorLedger, cursorEntry, {
                                 action: 'skipped_missing_update_payload',
                                 afterActionReadCount: bitBuffer.getReadCount(),
+                                registryStateAfter: 'missing',
                                 entityTouched: false,
                                 baselineTouched: false,
                                 fieldsTouched: false,
@@ -205,6 +208,7 @@ class DemoMessageHandler {
                         finishCursorEntry(cursorLedger, cursorEntry, {
                             action: 'missing_update_failed',
                             afterActionReadCount: bitBuffer.getReadCount(),
+                            registryStateAfter: 'missing',
                             entityTouched: false,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -235,6 +239,7 @@ class DemoMessageHandler {
                             finishCursorEntry(cursorLedger, cursorEntry, {
                                 action: 'normal_update_apply',
                                 afterActionReadCount: bitBuffer.getReadCount(),
+                                registryStateAfter: entity.active ? 'present_active' : 'present_inactive',
                                 entityTouched: true,
                                 baselineTouched: false,
                                 fieldsTouched: true,
@@ -245,6 +250,7 @@ class DemoMessageHandler {
                             finishCursorEntry(cursorLedger, cursorEntry, {
                                 action: 'normal_update_event',
                                 afterActionReadCount: bitBuffer.getReadCount(),
+                                registryStateAfter: entity.active ? 'present_active' : 'present_inactive',
                                 entityTouched: true,
                                 baselineTouched: false,
                                 fieldsTouched: true,
@@ -256,6 +262,7 @@ class DemoMessageHandler {
                         finishCursorEntry(cursorLedger, cursorEntry, {
                             action: 'filtered_update_skip_payload',
                             afterActionReadCount: bitBuffer.getReadCount(),
+                            registryStateAfter: entity.active ? 'present_active' : 'present_inactive',
                             entityTouched: true,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -267,6 +274,7 @@ class DemoMessageHandler {
                         finishCursorEntry(cursorLedger, cursorEntry, {
                             action: 'filtered_update_extractor_skip',
                             afterActionReadCount: bitBuffer.getReadCount(),
+                            registryStateAfter: entity.active ? 'present_active' : 'present_inactive',
                             entityTouched: true,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -281,7 +289,10 @@ class DemoMessageHandler {
                     updateCursorEntry(cursorEntry, {
                         payloadBits: 0,
                         payloadSizeIteratorAvailable: payloadSizes !== null,
-                        registryStateBefore: entity === null ? 'missing' : (entity.active ? 'present_active' : 'present_inactive')
+                        registryStateBefore: entity === null ? 'missing' : (entity.active ? 'present_active' : 'present_inactive'),
+                        classId: entity?.class?.id ?? null,
+                        serial: entity?.serial ?? null,
+                        className: entity?.class?.name ?? null
                     });
 
                     if (entity === null) {
@@ -296,6 +307,7 @@ class DemoMessageHandler {
                             finishCursorEntry(cursorLedger, cursorEntry, {
                                 action: 'ignored_missing_leave',
                                 afterActionReadCount: bitBuffer.getReadCount(),
+                                registryStateAfter: 'missing',
                                 entityTouched: false,
                                 baselineTouched: false,
                                 fieldsTouched: false,
@@ -307,6 +319,7 @@ class DemoMessageHandler {
                         finishCursorEntry(cursorLedger, cursorEntry, {
                             action: 'missing_leave_failed',
                             afterActionReadCount: bitBuffer.getReadCount(),
+                            registryStateAfter: 'missing',
                             entityTouched: false,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -334,6 +347,7 @@ class DemoMessageHandler {
                     finishCursorEntry(cursorLedger, cursorEntry, {
                         action: 'leave_or_deactivate',
                         afterActionReadCount: bitBuffer.getReadCount(),
+                        registryStateAfter: entity.active ? 'present_active' : 'present_inactive',
                         entityTouched: true,
                         baselineTouched: false,
                         fieldsTouched: false,
@@ -384,6 +398,7 @@ class DemoMessageHandler {
                             action: 'create_attempt_out_of_range',
                             afterActionReadCount: bitBuffer.getReadCount(),
                             className: clazz.name,
+                            registryStateAfter: 'missing',
                             entityTouched: false,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -456,6 +471,7 @@ class DemoMessageHandler {
                                     action: 'skipped_create_payload_missing_baseline',
                                     afterActionReadCount: bitBuffer.getReadCount(),
                                     className: clazz.name,
+                                    registryStateAfter: 'missing',
                                     entityTouched: false,
                                     baselineTouched: true,
                                     fieldsTouched: false,
@@ -479,6 +495,7 @@ class DemoMessageHandler {
                                 action: 'create_register_and_apply',
                                 afterActionReadCount: bitBuffer.getReadCount(),
                                 className: clazz.name,
+                                registryStateAfter: 'present_active',
                                 entityTouched: true,
                                 baselineTouched: true,
                                 fieldsTouched: true,
@@ -497,6 +514,7 @@ class DemoMessageHandler {
                                 action: 'create_event',
                                 afterActionReadCount: bitBuffer.getReadCount(),
                                 className: clazz.name,
+                                registryStateAfter: 'pending_create_event',
                                 entityTouched: true,
                                 baselineTouched: true,
                                 fieldsTouched: true,
@@ -515,6 +533,7 @@ class DemoMessageHandler {
                             action: 'filtered_create_register_skip_payload',
                             afterActionReadCount: bitBuffer.getReadCount(),
                             className: clazz.name,
+                            registryStateAfter: 'present_active',
                             entityTouched: true,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -529,7 +548,10 @@ class DemoMessageHandler {
                     updateCursorEntry(cursorEntry, {
                         payloadBits: 0,
                         payloadSizeIteratorAvailable: payloadSizes !== null,
-                        registryStateBefore: entity === null ? 'missing' : (entity.active ? 'present_active' : 'present_inactive')
+                        registryStateBefore: entity === null ? 'missing' : (entity.active ? 'present_active' : 'present_inactive'),
+                        classId: entity?.class?.id ?? null,
+                        serial: entity?.serial ?? null,
+                        className: entity?.class?.name ?? null
                     });
 
                     if (entity === null) {
@@ -544,6 +566,7 @@ class DemoMessageHandler {
                             finishCursorEntry(cursorLedger, cursorEntry, {
                                 action: 'ignored_missing_delete',
                                 afterActionReadCount: bitBuffer.getReadCount(),
+                                registryStateAfter: 'missing',
                                 entityTouched: false,
                                 baselineTouched: false,
                                 fieldsTouched: false,
@@ -555,6 +578,7 @@ class DemoMessageHandler {
                         finishCursorEntry(cursorLedger, cursorEntry, {
                             action: 'missing_delete_failed',
                             afterActionReadCount: bitBuffer.getReadCount(),
+                            registryStateAfter: 'missing',
                             entityTouched: false,
                             baselineTouched: false,
                             fieldsTouched: false,
@@ -582,6 +606,7 @@ class DemoMessageHandler {
                     finishCursorEntry(cursorLedger, cursorEntry, {
                         action: 'delete',
                         afterActionReadCount: bitBuffer.getReadCount(),
+                        registryStateAfter: this._demo.getEntity(index) === null ? 'missing' : 'pending_delete_event',
                         entityTouched: true,
                         baselineTouched: false,
                         fieldsTouched: false,
@@ -693,7 +718,8 @@ function createCursorLedger(recovery, message, startLoop) {
             recovery.diagnosePreRecoveryPayloadConsumption !== true &&
             recovery.diagnosePreRecoveryFieldConsumption !== true &&
             recovery.diagnoseEntityPacketBoundaryGuard !== true &&
-            recovery.allowEntityPacketBoundaryTruncation !== true)) {
+            recovery.allowEntityPacketBoundaryTruncation !== true &&
+            recovery.diagnoseEntityRegistryHistory !== true)) {
         return null;
     }
 
@@ -701,6 +727,7 @@ function createCursorLedger(recovery, message, startLoop) {
     const packetOrdinal = recovery.nextEntityPacketDiagnosticOrdinal?.() ?? null;
 
     return {
+        recovery,
         packetMetrics: {
             packetOrdinal,
             updatedEntries: message.updatedEntries,
@@ -775,6 +802,22 @@ function assertEntityPacketBoundary(recovery, cursorLedger, context) {
     };
 
     recovery.recordEntityPacketBoundaryCrossing?.(diagnostic);
+    recordEntityRegistryHistoryContext(recovery, cursorLedger, {
+        action: 'boundary_guard_crossing',
+        loop: diagnostic.loop,
+        operation: diagnostic.operation,
+        entityIndex: diagnostic.entityIndex,
+        readCounts: {
+            beforeIndex: diagnostic.beforeIndexReadCount,
+            afterIndex: diagnostic.afterIndexReadCount,
+            afterCommand: diagnostic.afterCommandReadCount,
+            afterAction: diagnostic.afterActionReadCount
+        },
+        violationStage: diagnostic.violationStage,
+        bitsBeyondEntityData: diagnostic.bitsBeyondEntityData,
+        fieldsMaterialized: false,
+        fakeEntityCreated: false
+    });
 
     const error = new Error('entity packet boundary crossed');
     error.entityPacketBoundaryDiagnostic = diagnostic;
@@ -823,6 +866,23 @@ function maybeTruncateEntityPacketBoundary(recovery, cursorLedger, context) {
     };
 
     recovery.recordEntityPacketBoundaryTruncation?.(diagnostic);
+    recordEntityRegistryHistoryContext(recovery, cursorLedger, {
+        action: 'boundary_truncation',
+        loop: diagnostic.loop,
+        operation: null,
+        entityIndex: null,
+        readCounts: {
+            beforeIndex: diagnostic.currentReadCount,
+            afterIndex: null,
+            afterCommand: null,
+            afterAction: null
+        },
+        violationStage: 'before_index',
+        bitsBeyondEntityData: 0,
+        fieldsMaterialized: false,
+        fakeEntityCreated: false,
+        entriesSkippedByTruncation
+    });
 
     return true;
 }
@@ -857,6 +917,7 @@ function createCursorEntry(cursorLedger, values) {
         baselineTouched: false,
         fieldsTouched: false,
         registerEntityTouched: false,
+        registryStateAfter: null,
         failureStage: null,
         extractorDiagnostics: [],
         extractorMutationCount: null,
@@ -889,6 +950,126 @@ function finishCursorEntry(cursorLedger, entry, values) {
 
     Object.assign(entry, rest);
     entry.readCounts.afterAction = afterActionReadCount;
+    recordEntityRegistryHistoryFromEntry(cursorLedger, entry);
+}
+
+function recordEntityRegistryHistoryFromEntry(cursorLedger, entry) {
+    const recovery = cursorLedger?.recovery ?? null;
+    if (recovery === null || recovery.diagnoseEntityRegistryHistory !== true || entry === null) {
+        return;
+    }
+
+    const targetKind = getEntityRegistryHistoryTargetKind(recovery, entry.accumulatedEntityIndex);
+    if (targetKind === null) {
+        return;
+    }
+
+    recovery.recordEntityRegistryHistory?.({
+        passMode: recovery.entityRegistryHistoryPassMode ?? null,
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: entry.loop,
+        operation: entry.operation,
+        commandId: entry.commandId,
+        entityIndex: entry.accumulatedEntityIndex,
+        targetKind,
+        previousEntityIndex: getPreviousEntityIndex(cursorLedger, entry.loop),
+        indexDelta: entry.indexDelta,
+        registryStateBefore: entry.registryStateBefore,
+        registryStateAfter: entry.registryStateAfter,
+        classId: entry.classId,
+        serial: entry.serial,
+        className: entry.className,
+        readCounts: { ...entry.readCounts },
+        payloadBits: entry.payloadBits,
+        action: entry.action,
+        entityWasRegistered: entry.registerEntityTouched === true,
+        fieldsMaterialized: entry.fieldsTouched === true,
+        placeholderOrFakeEntityCreated: false,
+        recoveryAttempted: false,
+        packetMetrics: {
+            updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+            entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+            serializedEntitiesByteLength: cursorLedger.packetMetrics.serializedEntitiesByteLength,
+            payloadSizeCount: cursorLedger.packetMetrics.payloadSizeCount,
+            payloadBitsSum: cursorLedger.packetMetrics.payloadBitsSum
+        },
+        entityIndexSequenceWindow: buildEntityRegistryHistoryWindow(cursorLedger, entry.loop)
+    });
+}
+
+function recordEntityRegistryHistoryContext(recovery, cursorLedger, context) {
+    if (recovery === null || recovery.diagnoseEntityRegistryHistory !== true || cursorLedger === null) {
+        return;
+    }
+
+    recovery.recordEntityRegistryHistory?.({
+        passMode: recovery.entityRegistryHistoryPassMode ?? null,
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: context.loop,
+        operation: context.operation ?? null,
+        commandId: null,
+        entityIndex: context.entityIndex ?? null,
+        targetKind: 'other_context',
+        previousEntityIndex: null,
+        indexDelta: null,
+        registryStateBefore: null,
+        registryStateAfter: null,
+        classId: null,
+        serial: null,
+        className: null,
+        readCounts: context.readCounts,
+        payloadBits: null,
+        action: context.action,
+        entityWasRegistered: false,
+        fieldsMaterialized: context.fieldsMaterialized === true,
+        placeholderOrFakeEntityCreated: context.fakeEntityCreated === true,
+        recoveryAttempted: false,
+        violationStage: context.violationStage ?? null,
+        bitsBeyondEntityData: context.bitsBeyondEntityData ?? null,
+        entriesSkippedByTruncation: context.entriesSkippedByTruncation ?? null,
+        packetMetrics: {
+            updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+            entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+            serializedEntitiesByteLength: cursorLedger.packetMetrics.serializedEntitiesByteLength,
+            payloadSizeCount: cursorLedger.packetMetrics.payloadSizeCount,
+            payloadBitsSum: cursorLedger.packetMetrics.payloadBitsSum
+        },
+        entityIndexSequenceWindow: buildEntityRegistryHistoryWindow(cursorLedger, context.loop)
+    });
+}
+
+function getEntityRegistryHistoryTargetKind(recovery, entityIndex) {
+    if (!Number.isInteger(entityIndex)) {
+        return null;
+    }
+
+    if (Array.isArray(recovery.entityRegistryHistoryTargets) && recovery.entityRegistryHistoryTargets.includes(entityIndex)) {
+        return 'target';
+    }
+
+    const nearbyRange = recovery.entityRegistryHistoryNearbyRange ?? null;
+    if (nearbyRange !== null && entityIndex >= nearbyRange.start && entityIndex <= nearbyRange.end) {
+        return 'nearby';
+    }
+
+    return null;
+}
+
+function buildEntityRegistryHistoryWindow(cursorLedger, loop) {
+    const start = Math.max(0, loop - 3);
+    const end = loop + 3;
+
+    return cursorLedger.entries
+        .filter(entry => entry.loop >= start && entry.loop <= end)
+        .map(entry => ({
+            loop: entry.loop,
+            operation: entry.operation,
+            entityIndex: entry.accumulatedEntityIndex,
+            indexDelta: entry.indexDelta,
+            payloadBits: entry.payloadBits,
+            action: entry.action,
+            readCounts: { ...entry.readCounts }
+        }));
 }
 
 function attachExtractorDiagnostics(recovery, extractor, entry, source) {

@@ -213,6 +213,12 @@
       "notes": "Task 120 evaluated opt-in PacketEntities boundary truncation: it prevents packet 953 loops 27-29 from being applied as semantic updates, but still reaches missing entity 2905 afterward, so the gate is no-progress rather than parser-fix progress."
     },
     {
+      "id": "generic_local_replay_entity_2905_registry_and_packet_context",
+      "path": "output/local-replay-processing/replay_010-entity-2905-registry-and-packet-context/entity-2905-context-gate.json",
+      "status": "current",
+      "notes": "Task 121 diagnosed entity 2905 registry lifecycle and packet 954 context: the first observed reference is a missing UPDATE to a never-registered entity; packet 953 truncation does not change that history."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
