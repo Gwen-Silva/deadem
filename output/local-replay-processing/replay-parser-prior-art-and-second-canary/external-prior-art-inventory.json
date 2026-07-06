@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "externalPriorArtStatus": "inspected_local_only",
+  "repositories": [
+    {
+      "name": "skadistats/clarity",
+      "url": "https://github.com/skadistats/clarity",
+      "availability": "available_local_clone",
+      "inspectedRef": "7fb3f1d07564a12efa99194d45cfbf5762ba5910",
+      "packetEntitiesCodeFound": true,
+      "missingEntityUpdateHandlingFound": true,
+      "missingEntityUpdatePolicies": [
+        "error"
+      ],
+      "boundaryGuardOrTruncationFound": false,
+      "serializedEntitiesPayloadSizeHandlingFound": false,
+      "inspectedFiles": [
+        {
+          "path": "src/main/java/skadistats/clarity/processor/entities/Entities.java",
+          "packetEntitiesCodeFound": true,
+          "missingEntityUpdateHandlingFound": true,
+          "missingEntityUpdatePolicy": "error",
+          "boundaryGuardOrTruncationFound": false,
+          "serializedEntitiesPayloadSizeHandlingFound": false,
+          "compactEvidence": "processPacketEntities increments entity index by readUBitVar()+1, throws when UPDATE targets a missing entity, and processes CREATE/LEAVE/DELETE explicitly."
+        }
+      ]
+    },
+    {
+      "name": "dotabuff/manta",
+      "url": "https://github.com/dotabuff/manta",
+      "availability": "available_local_clone",
+      "inspectedRef": "0efe7e11c40a4f149f6414b2d162320de34e8446",
+      "packetEntitiesCodeFound": true,
+      "missingEntityUpdateHandlingFound": true,
+      "missingEntityUpdatePolicies": [
+        "error"
+      ],
+      "boundaryGuardOrTruncationFound": false,
+      "serializedEntitiesPayloadSizeHandlingFound": false,
+      "inspectedFiles": [
+        {
+          "path": "entity.go",
+          "packetEntitiesCodeFound": true,
+          "missingEntityUpdateHandlingFound": true,
+          "missingEntityUpdatePolicy": "error",
+          "boundaryGuardOrTruncationFound": false,
+          "serializedEntitiesPayloadSizeHandlingFound": false,
+          "compactEvidence": "onCSVCMsg_PacketEntities uses readUBitVar()+1, panics on UPDATE for a nil entity, and handles CREATE/UPDATE/LEAVE/DELETE in one entityData stream."
+        }
+      ]
+    },
+    {
+      "name": "LaihoE/demoparser",
+      "url": "https://github.com/LaihoE/demoparser",
+      "availability": "available_local_clone",
+      "inspectedRef": "e8c1ad452ced4d5938219ac9a5ee6300ee1ea37c",
+      "packetEntitiesCodeFound": true,
+      "missingEntityUpdateHandlingFound": true,
+      "missingEntityUpdatePolicies": [
+        "error",
+        "not_found"
+      ],
+      "boundaryGuardOrTruncationFound": false,
+      "serializedEntitiesPayloadSizeHandlingFound": false,
+      "inspectedFiles": [
+        {
+          "path": "src/parser/src/second_pass/entities.rs",
+          "packetEntitiesCodeFound": true,
+          "missingEntityUpdateHandlingFound": true,
+          "missingEntityUpdatePolicy": "error",
+          "boundaryGuardOrTruncationFound": false,
+          "serializedEntitiesPayloadSizeHandlingFound": false,
+          "compactEvidence": "parse_packet_ents reads updated_entries entries and update_entity returns EntityNotFound when the local entity table has no matching entity."
+        },
+        {
+          "path": "src/parser/README.md",
+          "packetEntitiesCodeFound": true,
+          "missingEntityUpdateHandlingFound": false,
+          "missingEntityUpdatePolicy": "not_found",
+          "boundaryGuardOrTruncationFound": false,
+          "serializedEntitiesPayloadSizeHandlingFound": false,
+          "compactEvidence": "README states packet entities send only changed values, so earlier state matters for later ticks."
+        }
+      ]
+    },
+    {
+      "name": "markus-wa/demoinfocs-golang",
+      "url": "https://github.com/markus-wa/demoinfocs-golang",
+      "availability": "available_local_clone",
+      "inspectedRef": "b3758247207e33c63e7a07f25d10580cce644803",
+      "packetEntitiesCodeFound": true,
+      "missingEntityUpdateHandlingFound": true,
+      "missingEntityUpdatePolicies": [
+        "error",
+        "warning_or_ignore_when_configured"
+      ],
+      "boundaryGuardOrTruncationFound": false,
+      "serializedEntitiesPayloadSizeHandlingFound": false,
+      "inspectedFiles": [
+        {
+          "path": "pkg/demoinfocs/sendtables/sendtablescs2/entity.go",
+          "packetEntitiesCodeFound": true,
+          "missingEntityUpdateHandlingFound": true,
+          "missingEntityUpdatePolicy": "error",
+          "boundaryGuardOrTruncationFound": false,
+          "serializedEntitiesPayloadSizeHandlingFound": false,
+          "compactEvidence": "OnPacketEntities reads one entityData stream, panics when UPDATE/LEAVE targets a nil entity, and leaves trailing bytes as a FIXME instead of a direct boundary truncation."
+        },
+        {
+          "path": "pkg/demoinfocs/parser.go",
+          "packetEntitiesCodeFound": true,
+          "missingEntityUpdateHandlingFound": true,
+          "missingEntityUpdatePolicy": "warning_or_ignore_when_configured",
+          "boundaryGuardOrTruncationFound": false,
+          "serializedEntitiesPayloadSizeHandlingFound": false,
+          "compactEvidence": "ParserConfig exposes IgnorePacketEntitiesPanic as an opt-in workaround for rare broken PacketEntities in some POV demos."
+        }
+      ]
+    }
+  ],
+  "copiedExternalSourceCodeCommitted": false,
+  "notes": [
+    "The inventory records only compact metadata and file references from local-only shallow clones.",
+    "No external source tree or external code is committed.",
+    "No inspected parser showed an implicit CREATE for UPDATE to a never-registered entity in the inspected PacketEntities paths.",
+    "demoinfocs-golang exposes an opt-in panic-ignore workaround for PacketEntities panics, but that is not evidence of Source 2 correctness for replay_010."
+  ]
+}

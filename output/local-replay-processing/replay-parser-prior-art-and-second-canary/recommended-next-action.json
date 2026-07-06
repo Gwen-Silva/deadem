@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "recommendedAction": "external_oracle_next",
+  "tradeoff": "Uses mature parser behavior as an independent check before changing local parser contracts; requires local-only setup and careful output hygiene.",
+  "alternativesRejectedForNow": [
+    {
+      "action": "prepare_opt_in_fix_candidate",
+      "reason": "Task 123 is triage only and external behavior has not been practically compared on the same canaries."
+    },
+    {
+      "action": "second_canary_expand_one_more",
+      "reason": "Prior art is available and more local canaries may continue the diagnostic loop."
+    },
+    {
+      "action": "pause_replay_010_and_build_infra",
+      "reason": "A focused external oracle is a smaller next step than broad infrastructure work."
+    }
+  ],
+  "noTask124Created": true
+}

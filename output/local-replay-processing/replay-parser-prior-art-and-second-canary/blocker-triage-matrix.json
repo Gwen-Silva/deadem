@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "replay010Status": {
+    "classification": "never_registered_entity_with_create_gap",
+    "packet954BoundedStatus": "bounded_no_trailing_signs_comparable_to_packet_953",
+    "internalDiagnosisDiminishingReturns": true
+  },
+  "replay011Status": {
+    "resultClassification": "second_canary_same_missing_entity_class",
+    "sameMissingEntityClassOccurred": true,
+    "ticksAdvanced": 1051,
+    "firstErrorMessage": "Unable to find an entity with index [ 5624 ]"
+  },
+  "issueRepeated": true,
+  "externalPriorArtAvailable": true,
+  "blockerClassification": "local_replay_class_issue",
+  "replay010OnlyDiagnosisShouldPause": true,
+  "recommendedNextAction": "external_oracle_next",
+  "rationale": "A second local human replay reproduced the same class of PacketEntities lookup failure, so the local parser contract deserves broader comparison."
+}

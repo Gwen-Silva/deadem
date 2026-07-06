@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "replay010": {
+    "blocker": "never_registered_entity_with_create_gap",
+    "packet954BoundedStatus": "bounded_no_trailing_signs_comparable_to_packet_953",
+    "firstKnownFailure": "Unable to find an entity with index [ 2905 ]"
+  },
+  "replay011": {
+    "loadSucceeded": true,
+    "ticksAdvanced": 1051,
+    "firstErrorMessage": "Unable to find an entity with index [ 5624 ]",
+    "missingEntityIndex": 5624,
+    "resultClassification": "second_canary_same_missing_entity_class"
+  },
+  "sameMissingEntityClassRepeated": true,
+  "secondCanaryFailureTimingRelativeToReplay010FirstFailureRegion": "after_replay_010_region",
+  "conclusion": "second canary reproduced PacketEntities missing entity class"
+}

@@ -225,6 +225,12 @@
       "notes": "Task 122 diagnosed the entity 2905 allocation/create provenance gap: nearby CREATE/register evidence ends before 2905, no CREATE/register/class/baseline path is observed for 2905, and packet 953 truncation does not change that evidence."
     },
     {
+      "id": "replay_parser_prior_art_and_second_canary_triage",
+      "path": "output/local-replay-processing/replay-parser-prior-art-and-second-canary/triage-gate.json",
+      "status": "current",
+      "notes": "Task 123 inspected external parser prior art in local-only shallow clones and minimally probed replay_011; replay_011 reproduced the missing-entity lookup class, and the recommended next action is external oracle comparison."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

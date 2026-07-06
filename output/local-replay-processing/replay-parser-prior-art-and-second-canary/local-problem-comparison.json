@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "entity2905ClassificationFromTask122": "never_registered_entity_with_create_gap",
+  "packet954BoundedStatus": "bounded_no_trailing_signs_comparable_to_packet_953",
+  "createGapSummary": {
+    "everCreatedIndexes": [
+      2897,
+      2898,
+      2899,
+      2900,
+      2901,
+      2902
+    ],
+    "entity2905GapGroup": {
+      "start": 2903,
+      "end": 2920,
+      "count": 18
+    },
+    "createRangeAppearsToEndBefore2905": true,
+    "parserSkippedExpectedCreateSupported": "not_supported_by_local_event_metadata",
+    "baselineOrClassFailureCouldPrevent2905Registration": false
+  },
+  "packet953BoundaryContext": {
+    "loop27Classification": "padding_or_trailing_bit_reads",
+    "loop28Classification": "out_of_buffer_reads",
+    "loop29Classification": "out_of_buffer_reads",
+    "truncationChangedEntity2905History": false
+  },
+  "localParserContract": {
+    "updateRequiresExistingEntity": true,
+    "errorOnMissingUpdate": true,
+    "implicitCreateOnMissingUpdate": false,
+    "source": "packages/engine/src/handlers/DemoMessageHandler.js"
+  },
+  "externalComparisonStatus": "supported_for_error_on_missing_update",
+  "externalEvidenceForNeverRegisteredUpdateBeingValid": "not_found",
+  "externalEvidenceForEntityDataBoundaryTruncation": "not_found",
+  "externalEvidenceForSerializedEntitiesDirectSkipAlternative": "not_found",
+  "rawValuesIncluded": false
+}

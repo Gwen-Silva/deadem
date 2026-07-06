@@ -1,0 +1,187 @@
+{
+  "taskId": "123",
+  "title": "External Parser Prior-Art And Second Canary Triage",
+  "status": "completed",
+  "objective": "Triage replay_010 parser diagnosis by comparing public parser prior art and probing replay_011 minimally without parser fixes, recovery promotion, canonicalization, batch processing, or match facts.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/**",
+    "packages/engine/src/data/entity/**",
+    "packages/engine/src/data/enums/**",
+    "packages/engine/src/data/fields/**",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/handlers/DemoPacketHandler.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/deadem/index.js",
+    "tools/diagnose-replay-010-entity-index-allocation-gap.mjs",
+    "output/local-replay-processing/replay_010-entity-index-allocation-gap/**",
+    "output/local-replay-processing/replay_010-entity-2905-registry-and-packet-context/**",
+    "output/local-replay-processing/replay_010-packet-entities-boundary-truncation/**",
+    "output/local-replay-processing/replay_010-packet-entities-boundary-guard/**",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/**",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/123.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "tools/triage-replay-parser-prior-art-and-second-canary.mjs",
+    "tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "tests/packet-entities-boundary-guard.test.mjs",
+    "tests/packet-entities-boundary-truncation.test.mjs",
+    "tests/entity-2905-registry-and-packet-context.test.mjs",
+    "tests/entity-index-allocation-gap.test.mjs",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/**",
+    "reports/replay-parser-prior-art-and-second-canary.md",
+    "tasks/specs/123.json",
+    "tasks/completed/123-triage-replay-parser-prior-art-and-second-canary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/124.json",
+    "tasks/blocked/124-*",
+    "tasks/completed/124-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "packet-entities-boundary-guard-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/packet-entities-boundary-guard.test.mjs"
+      ]
+    },
+    {
+      "id": "packet-entities-boundary-truncation-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/packet-entities-boundary-truncation.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-2905-registry-context-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-2905-registry-and-packet-context.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-index-allocation-gap-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-index-allocation-gap.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/input-identities.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/external-prior-art-inventory.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/local-problem-comparison.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/replay-011-probe-result.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/replay-010-vs-011-comparison.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/blocker-triage-matrix.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/recommended-next-action.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/protection-audit.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/triage-gate.json",
+    "reports/replay-parser-prior-art-and-second-canary.md",
+    "tasks/completed/123-triage-replay-parser-prior-art-and-second-canary.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem",
+    "partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 012-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes",
+    "Do not commit external source code",
+    "Do not commit raw entityData, raw serializedEntities, raw payloads, string bytes, string values, full send-table raw payloads, field values, .dem files, or .local files",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE",
+    "Do not alter default parser behavior",
+    "Do not make truncation default",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not claim Source 2 semantics, replay corruption, causal certainty, or final parser fix",
+    "Do not create Task 124"
+  ],
+  "successGate": "replay_parser_prior_art_and_second_canary_triage_ready",
+  "blockedGate": "replay_parser_prior_art_and_second_canary_triage_blocked",
+  "allowedAlternateGates": [
+    "replay_parser_prior_art_and_second_canary_triage_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay-parser-prior-art-and-second-canary/triage-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

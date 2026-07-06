@@ -124,8 +124,11 @@ index, and packet-954 context diagnosis for entity 2905 with the gate
 Task 122 is complete as an explicitly authorized entity-index allocation gap
 and missing CREATE provenance diagnosis around entity 2905 with the gate
 `local_replay_entity_index_allocation_gap_diagnosed`.
+Task 123 is complete as an explicitly authorized external parser prior-art and
+second-canary triage with the gate
+`replay_parser_prior_art_and_second_canary_triage_ready`.
 
-Do not create Task 123 automatically. Stop and wait for a human milestone
+Do not create Task 124 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -738,6 +741,28 @@ raw serializedEntities, raw payloads, string bytes, string values, field
 values, full raw send-table payload, parser default fix, recovery, canonical
 package, source artifact, factual event, spatial semantic, mechanic, combat,
 macro, decision, or ML output was emitted. No Task 123 was created.
+
+## Task 123
+
+Purpose: triage replay_010 parser diagnosis against external Source/Source 2
+parser prior art and a minimal second local canary probe of replay_011.
+
+Gate: `replay_parser_prior_art_and_second_canary_triage_ready`.
+
+Partial gate: `replay_parser_prior_art_and_second_canary_triage_partial`.
+
+Blocked gate: `replay_parser_prior_art_and_second_canary_triage_blocked`.
+
+Status: completed with the success gate above. Four mature public parser
+repositories were inspected in local-only shallow clones and no inspected
+PacketEntities path showed implicit CREATE for an UPDATE to a never-registered
+entity. Replay_011 loaded and reproduced the same missing-entity lookup class
+under a bounded minimal `nextTick` probe, failing on entity 5624 after 1051
+ticks. The current blocker is classified as a local replay class issue, and
+the recommended next action is external oracle comparison before further local
+parser intervention. No parser default behavior, recovery, canonical package,
+source artifact, match facts, raw replay bytes, external source tree, `.dem`,
+or `.local` file was committed. No Task 124 was created.
 
 ## Non-Goals
 

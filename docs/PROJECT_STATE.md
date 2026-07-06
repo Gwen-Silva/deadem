@@ -181,7 +181,18 @@ workaround. Task 102 created a bounded generic local-input canary for only
   change the allocation/provenance evidence. The bounded classification is
   `never_registered_entity_with_create_gap`; this is still not a parser fix,
   recovery, Source 2 semantic conclusion, replay corruption conclusion,
-  canonical package, or factual artifact.
+  canonical package, or factual artifact. Task 123 then triaged external parser
+  prior art and a second local canary under
+  `replay_parser_prior_art_and_second_canary_triage_ready`: four mature public
+  parser repositories were inspected in local-only shallow clones, no inspected
+  PacketEntities path showed implicit CREATE for an UPDATE to a never-registered
+  entity, and replay_011 reproduced the same missing-entity lookup failure
+  class after a minimal bounded probe. The blocker is classified as a local
+  replay class issue rather than replay_010-only evidence, and the recommended
+  next action is an external oracle comparison before further local parser
+  intervention. No parser default behavior, recovery, canonical package, match
+  facts, external source tree, raw replay bytes, `.dem`, or `.local` files were
+  committed.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -315,6 +326,8 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   2905, classifying the first missing update as a never-registered entity in
   the observed local evidence. Task 122 is complete with bounded entity-index
   allocation and CREATE-provenance diagnosis around entity 2905, classifying
-  the failure as `never_registered_entity_with_create_gap`. Do not create Task
-  123
-automatically; stop and wait for a human milestone decision.
+  the failure as `never_registered_entity_with_create_gap`. Task 123 is
+  complete with external prior-art and replay_011 second-canary triage,
+  classifying the current blocker as a local replay class issue and
+  recommending an external oracle comparison. Do not create Task 124
+  automatically; stop and wait for a human milestone decision.
