@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "gate": "local_replay_packet_953_buffer_boundary_diagnosed",
+  "successGate": "local_replay_packet_953_buffer_boundary_diagnosed",
+  "partialGate": "local_replay_packet_953_buffer_boundary_partial",
+  "blockedGate": "local_replay_packet_953_buffer_boundary_blocked",
+  "successConditions": {
+    "defaultFailureReproduced": true,
+    "diagnosticFailureReproducedWithoutRecovery": true,
+    "packetBoundaryInventoryProduced": true,
+    "bitbufferBoundaryBehaviorTestedSynthetically": true,
+    "loops27To29Classified": true,
+    "task117NumbersMatchedExactly": true,
+    "noParserFixOrRecoveryRecommended": true,
+    "protectionAuditPassed": true,
+    "causalConclusionNotDetermined": true
+  },
+  "bufferBoundaryConclusion": {
+    "loop27Classification": "padding_or_trailing_bit_reads",
+    "loop28Classification": "out_of_buffer_reads",
+    "loop29Classification": "out_of_buffer_reads",
+    "remainingBitsAfterLoop26": 1,
+    "packetFinalReadCountRelation": "exceeds_entityDataBitLength",
+    "packetFinalReadCountDeltaBits": 23,
+    "bitbufferReadsBeyondEndCanAdvanceWithoutThrowing": true,
+    "bufferBoundaryArtifactHypothesis": "strengthened_not_fix",
+    "parserBoundsCheckHypothesis": "strengthened_not_fix",
+    "causalConclusion": "not_determined"
+  },
+  "reasons": [
+    "Task 117 default and diagnostic failure evidence was reused without recovery",
+    "packet 953 boundary inventory shows loop 26 ends with one bit remaining in entityData",
+    "loop 27 index read crosses entityDataBitLength while loops 28-29 start beyond it",
+    "synthetic BitBuffer probes show some read paths can advance beyond end without throwing",
+    "Task 117 numbers matched exactly",
+    "protection and replay-specific branch audits passed"
+  ]
+}

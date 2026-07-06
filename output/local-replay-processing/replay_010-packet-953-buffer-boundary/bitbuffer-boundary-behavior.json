@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "sourceFile": "packages/engine/src/core/BitBuffer.js",
+  "staticFindings": [
+    {
+      "method": "move",
+      "hasBoundsCheck": true,
+      "behavior": "throws_when_requested_forward_move_exceeds_unread_count"
+    },
+    {
+      "method": "read/_read",
+      "hasBoundsCheck": true,
+      "behavior": "throws_when_requested_bits_exceed_unread_count"
+    },
+    {
+      "method": "readBits",
+      "exists": false,
+      "hasBoundsCheck": null,
+      "behavior": "no_standalone_readBits_method_found; local bit reads are readBit and readBitsAsUInt"
+    },
+    {
+      "method": "readBitsAsUInt",
+      "hasBoundsCheck": false,
+      "behavior": "direct_buffer_indexing_without_unread_check"
+    },
+    {
+      "method": "readBit",
+      "hasBoundsCheck": false,
+      "behavior": "direct_buffer_indexing_without_unread_check"
+    },
+    {
+      "method": "readUInt8",
+      "hasBoundsCheck": false,
+      "behavior": "byte_aligned_fast_path_direct_buffer_indexing_without_unread_check"
+    },
+    {
+      "method": "readUVarInt",
+      "hasBoundsCheck": false,
+      "behavior": "inherits_readBitsAsUInt_boundary_behavior"
+    },
+    {
+      "method": "readUVarInt32",
+      "hasBoundsCheck": false,
+      "behavior": "inherits_readUInt8_byte_aligned_boundary_behavior"
+    }
+  ],
+  "syntheticProbes": [
+    {
+      "description": "move beyond end throws",
+      "threw": true,
+      "errorMessage": "Cannot move pointer forward by 9 bits: only [ 8 ] bits unread"
+    },
+    {
+      "description": "read() beyond end throws through _read bounds check",
+      "threw": true,
+      "errorMessage": "Unable to read [ 1 ] bit(s) - only [ 0 ] bit(s) left"
+    },
+    {
+      "description": "readBitsAsUInt crosses beyond end without throwing",
+      "threw": false,
+      "errorMessage": null,
+      "value": 1,
+      "readCount": 13,
+      "unreadCount": -5
+    },
+    {
+      "description": "readUInt8 at byte-aligned end returns zero and advances",
+      "threw": false,
+      "errorMessage": null,
+      "value": 0,
+      "readCount": 16,
+      "unreadCount": -8
+    },
+    {
+      "description": "readUVarInt at end uses readBitsAsUInt and advances beyond end",
+      "threw": false,
+      "errorMessage": null,
+      "value": 0,
+      "readCount": 14,
+      "unreadCount": -6
+    },
+    {
+      "description": "readUVarInt32 at byte-aligned end uses readUInt8 and returns zero",
+      "threw": false,
+      "errorMessage": null,
+      "value": 0,
+      "readCount": 16,
+      "unreadCount": -8
+    }
+  ],
+  "syntheticReplayBytesUsed": false,
+  "readsBeyondEndCanAdvanceWithoutThrowing": true,
+  "directOutOfBoundsReadCanReturnZero": true,
+  "methodsWithNoExplicitUnreadCheck": [
+    "readBitsAsUInt",
+    "readBit",
+    "readUInt8",
+    "readUVarInt",
+    "readUVarInt32"
+  ],
+  "conclusion": "some_bitbuffer_read_paths_can_cross_or_start_beyond_end_without_throwing_in_synthetic_inputs"
+}

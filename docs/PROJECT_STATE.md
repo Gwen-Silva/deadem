@@ -131,7 +131,17 @@ workaround. Task 102 created a bounded generic local-input canary for only
   strengthens the local payloadBits non-boundary or field-level accounting
   mismatch hypothesis while preserving causality `not_determined`. No field
   values, string bytes, raw payloads, parser fix, recovery, canonical package,
-  or factual artifacts were emitted.
+  or factual artifacts were emitted. Task 118 then diagnosed packet 953
+  post-loop26 buffer boundary behavior under
+  `local_replay_packet_953_buffer_boundary_diagnosed`: loop 26 ends at read
+  count 5343 with `entityDataBitLength` 5344, leaving one bit; loop 27's index
+  read crosses the boundary, and loops 28-29 begin beyond it. Synthetic
+  `BitBuffer` probes without replay bytes showed some direct read paths can
+  advance beyond buffer end without throwing and can return zero-like values.
+  This strengthens the buffer-boundary artifact and parser bounds-check
+  hypotheses while preserving causality `not_determined`. No field values,
+  string bytes, raw payloads, parser fix, recovery, canonical package, or
+  factual artifacts were emitted.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -256,6 +266,7 @@ contract investigation. Task 115 is complete with bounded runtime field
 definition metadata capture for field path 59. Task 116 is complete with
 bounded string-reader and payload-boundary accounting for the same field path.
 Task 117 is complete with bounded payload-size iterator alignment diagnosis
-for packet 953. Do not create Task 118 automatically; stop and wait for a
+for packet 953. Task 118 is complete with bounded post-loop26 buffer-boundary
+diagnosis for packet 953. Do not create Task 119 automatically; stop and wait for a
 human milestone
 decision.

@@ -231,7 +231,7 @@ test('gate partial requires progress past prior failure', () => {
     assert.equal(gate.gate, 'local_replay_missing_entity_recovery_partial_progress');
 });
 
-test('Task 118 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/118.json'), false);
-    assert.equal(existsSync('tasks/blocked/118-select-next-canonical-generalization-control.md'), false);
+test('Task 119 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/119.json'), false);
+    assert.equal(existsSync('tasks/blocked/119-select-next-canonical-generalization-control.md'), false);
 });

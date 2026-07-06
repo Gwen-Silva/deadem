@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "sourceTask": "117",
+  "sourceReport": "reports/local-replay-packet-953-payload-iterator-alignment.md",
+  "checks": [
+    {
+      "field": "payloadSizeCount",
+      "actual": 30,
+      "expected": 30,
+      "matched": true
+    },
+    {
+      "field": "updatedEntries",
+      "actual": 30,
+      "expected": 30,
+      "matched": true
+    },
+    {
+      "field": "payloadSizeCountEqualsUpdatedEntries",
+      "actual": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "field": "anyNullOrUndefinedPayloadSize",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "field": "currentAlignmentExplainsLoop26",
+      "actual": "no",
+      "expected": "no",
+      "matched": true
+    },
+    {
+      "field": "smallShiftExplainsMismatch",
+      "actual": "no",
+      "expected": "no",
+      "matched": true
+    },
+    {
+      "field": "groupedPayloadExplainsMismatch",
+      "actual": "not_strengthened",
+      "expected": "not_strengthened",
+      "matched": true
+    },
+    {
+      "field": "cumulativeBoundaryExplainsMismatch",
+      "actual": "no",
+      "expected": "no",
+      "matched": true
+    },
+    {
+      "field": "loop26StringEnd",
+      "actual": 5343,
+      "expected": 5343,
+      "matched": true
+    },
+    {
+      "field": "remainingBitsAfterLoop26",
+      "actual": 1,
+      "expected": 1,
+      "matched": true
+    },
+    {
+      "field": "fieldPath59BitsConsumed",
+      "actual": 288,
+      "expected": 288,
+      "matched": true
+    },
+    {
+      "field": "bitsAfterExpectedEndInsideSegment",
+      "actual": 280,
+      "expected": 280,
+      "matched": true
+    },
+    {
+      "field": "valuesRecorded",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "field": "rawBytesRecorded",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "field": "rawPayloadsRecorded",
+      "actual": false,
+      "expected": false,
+      "matched": true
+    },
+    {
+      "field": "task117Gate",
+      "actual": "local_replay_packet_953_payload_iterator_alignment_diagnosed",
+      "expected": "local_replay_packet_953_payload_iterator_alignment_diagnosed",
+      "matched": true
+    }
+  ],
+  "exactTask117NumbersMatched": true,
+  "noSmallShiftGroupedOrCumulativeModelExplained": true,
+  "loop26StringEndAndRemainingBitsConfirmed": true,
+  "bitbufferBoundaryBehaviorSummary": {
+    "readsBeyondEndCanAdvanceWithoutThrowing": true,
+    "directOutOfBoundsReadCanReturnZero": true
+  },
+  "loopClassificationSummary": {
+    "validEntryReads": [],
+    "paddingOrTrailingBitReads": [
+      27
+    ],
+    "outOfBufferReads": [
+      28,
+      29
+    ],
+    "notDetermined": []
+  },
+  "valuesRecorded": false,
+  "rawBytesRecorded": false,
+  "rawPayloadsRecorded": false
+}

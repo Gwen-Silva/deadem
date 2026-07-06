@@ -195,6 +195,12 @@
       "notes": "Task 117 diagnosed packet 953 payload-size iterator alignment: payloadSizeCount equals updatedEntries, but current alignment, small shifts, grouped sums, and nearby cumulative boundaries do not exactly explain the loop 26/27-29 mismatch; causality remains not determined."
     },
     {
+      "id": "generic_local_replay_packet_953_buffer_boundary",
+      "path": "output/local-replay-processing/replay_010-packet-953-buffer-boundary/buffer-boundary-gate.json",
+      "status": "current",
+      "notes": "Task 118 diagnosed packet 953 post-loop26 buffer boundaries: loop 27 crosses entityDataBitLength, loops 28-29 begin beyond it, and synthetic BitBuffer probes show some read paths can advance beyond end without throwing; causality remains not determined."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

@@ -1,0 +1,246 @@
+{
+  "taskId": "118",
+  "title": "Diagnose Packet 953 Post-Loop26 Buffer Boundary And Phantom Entries",
+  "status": "completed",
+  "objective": "Diagnose whether replay_010 packet ordinal 953 loops 27-29 are valid entry reads or cursor/buffer-boundary artifacts after loop 26 consumes nearly all entityData, without parser recovery, parser fixes, canonical package generation, or match facts.",
+  "readPaths": [
+    "package.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/extractors/FieldPathExtractor.js",
+    "packages/engine/src/data/fields/**",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/handlers/DemoPacketHandler.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "packages/deadem/index.js",
+    "tools/diagnose-replay-010-packet-953-payload-iterator-alignment.mjs",
+    "tests/packet-953-payload-iterator-alignment.test.mjs",
+    "output/local-replay-processing/replay_010-packet-953-payload-iterator-alignment/**",
+    "output/local-replay-processing/replay_010-loop-26-string-reader-accounting/**",
+    "output/local-replay-processing/replay_010-loop-26-fieldpath-59-runtime-field-definition/**",
+    "output/local-replay-processing/replay_010-loop-26-field-reader-segments/**",
+    "output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption/**",
+    "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline/**",
+    "reports/local-replay-packet-953-payload-iterator-alignment.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/118.json"
+  ],
+  "optionalReadPaths": [
+    ".local/deadem/replays/inbox/"
+  ],
+  "writePaths": [
+    "tools/diagnose-replay-010-packet-953-buffer-boundary.mjs",
+    "tests/packet-953-buffer-boundary.test.mjs",
+    "tests/missing-entity-recovery-canary.test.mjs",
+    "tests/out-of-range-entity-create-diagnosis.test.mjs",
+    "tests/entity-packet-cursor-alignment-diagnosis.test.mjs",
+    "tests/serialized-entity-payload-semantics-diagnosis.test.mjs",
+    "tests/serialized-entities-semantics-investigation.test.mjs",
+    "tests/pre-recovery-payload-consumption-baseline.test.mjs",
+    "tests/pre-recovery-mismatch-field-consumption.test.mjs",
+    "tests/loop-26-field-reader-segments.test.mjs",
+    "tests/loop-26-fieldpath-59-decoder-contract.test.mjs",
+    "tests/loop-26-fieldpath-59-runtime-field-definition.test.mjs",
+    "tests/loop-26-string-reader-accounting.test.mjs",
+    "tests/packet-953-payload-iterator-alignment.test.mjs",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/**",
+    "reports/local-replay-packet-953-buffer-boundary.md",
+    "tasks/specs/118.json",
+    "tasks/completed/118-diagnose-packet-953-buffer-boundary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    "output/five-replay-pilot/**",
+    "output/replay-002-canonical/**",
+    "output/replay-002-canonical-v9-validation/**",
+    "output/replay-009-canonical/**",
+    "lib/canonical-state/**",
+    "schemas/**",
+    "tasks/specs/119.json",
+    "tasks/blocked/119-*",
+    "tasks/completed/119-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/CURRENT_STATE.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "packet-953-buffer-boundary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/packet-953-buffer-boundary.test.mjs"
+      ]
+    },
+    {
+      "id": "packet-953-payload-iterator-alignment-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/packet-953-payload-iterator-alignment.test.mjs"
+      ]
+    },
+    {
+      "id": "loop-26-string-reader-accounting-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-string-reader-accounting.test.mjs"
+      ]
+    },
+    {
+      "id": "loop-26-fieldpath-59-runtime-field-definition-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-fieldpath-59-runtime-field-definition.test.mjs"
+      ]
+    },
+    {
+      "id": "loop-26-fieldpath-59-decoder-contract-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-fieldpath-59-decoder-contract.test.mjs"
+      ]
+    },
+    {
+      "id": "loop-26-field-reader-segments-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/loop-26-field-reader-segments.test.mjs"
+      ]
+    },
+    {
+      "id": "pre-recovery-mismatch-field-consumption-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-mismatch-field-consumption.test.mjs"
+      ]
+    },
+    {
+      "id": "pre-recovery-payload-baseline-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/pre-recovery-payload-consumption-baseline.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entities-semantics-investigation-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entities-semantics-investigation.test.mjs"
+      ]
+    },
+    {
+      "id": "serialized-entity-payload-semantics-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/serialized-entity-payload-semantics-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "entity-packet-cursor-alignment-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/entity-packet-cursor-alignment-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "out-of-range-diagnosis-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/out-of-range-entity-create-diagnosis.test.mjs"
+      ]
+    },
+    {
+      "id": "missing-entity-recovery-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/missing-entity-recovery-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/input-identity.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/default-pass-result.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/diagnostic-pass-result.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/packet-953-boundary-inventory.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/bitbuffer-boundary-behavior.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/loops-27-29-boundary-classification.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/task117-comparison.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/risk-assessment.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/protection-audit.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/replay-specific-branch-audit.json",
+    "output/local-replay-processing/replay_010-packet-953-buffer-boundary/buffer-boundary-gate.json",
+    "reports/local-replay-packet-953-buffer-boundary.md",
+    "tasks/completed/118-diagnose-packet-953-buffer-boundary.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayInputFilenames": [
+    "partida_010.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process candidates 011-020",
+    "Do not read or process replay 005",
+    "Do not process replays 006-008",
+    "Do not use samples or output/replays",
+    "Do not copy replay bytes",
+    "Do not commit raw entityData, raw serializedEntities, raw payloads, string bytes, string values, full send-table raw payloads, field values, .dem files, or .local files",
+    "Do not construct a canonical package or factual source artifacts",
+    "Do not emit snapshots, registries, events, spatial, mechanics, fights, macro, decision, or ML outputs",
+    "Do not add automatic recovery or recover missing UPDATE/out-of-range CREATE",
+    "Do not alter default parser behavior",
+    "Do not create placeholders, fake fields, or synthetic entity state",
+    "Do not claim Source 2 semantics, replay corruption, or causal conclusions from cursor correlation alone",
+    "Do not create Task 119"
+  ],
+  "successGate": "local_replay_packet_953_buffer_boundary_diagnosed",
+  "blockedGate": "local_replay_packet_953_buffer_boundary_blocked",
+  "allowedAlternateGates": [
+    "local_replay_packet_953_buffer_boundary_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay_010-packet-953-buffer-boundary/buffer-boundary-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

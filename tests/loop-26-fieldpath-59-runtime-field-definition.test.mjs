@@ -213,8 +213,8 @@ test('risk assessment keeps metadata suspiciousness diagnostic-only', () => {
     assert.equal(risk.causalConclusion, 'not_determined');
 });
 
-test('Task 118 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/118.json'), false);
-    assert.equal(existsSync('tasks/blocked/118-select-next-canonical-generalization-control.md'), false);
-    assert.equal(existsSync('tasks/completed/118-capture-loop-26-fieldpath-59-runtime-field-definition.md'), false);
+test('Task 119 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/119.json'), false);
+    assert.equal(existsSync('tasks/blocked/119-select-next-canonical-generalization-control.md'), false);
+    assert.equal(existsSync('tasks/completed/119-capture-loop-26-fieldpath-59-runtime-field-definition.md'), false);
 });

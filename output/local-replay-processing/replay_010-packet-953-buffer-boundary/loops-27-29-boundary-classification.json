@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "packetOrdinal": 953,
+  "entityDataBitLength": 5344,
+  "classifications": [
+    {
+      "loop": 27,
+      "entityIndex": 2599,
+      "className": "CCitadel_Ability_Familiar_Ability01",
+      "readCounts": {
+        "beforeIndex": 5343,
+        "afterIndex": 5349,
+        "afterCommand": 5351,
+        "afterAction": 5351
+      },
+      "remainingBitsBeforeIndexRead": 1,
+      "remainingBitsBeforeCommandRead": -5,
+      "indexReadBeginsWithinBuffer": true,
+      "indexReadEndsBeyondBuffer": true,
+      "commandReadBeginsBeyondOrAtBuffer": true,
+      "actionReadBeginsBeyondOrAtBuffer": true,
+      "anyReadCountExceedsEntityDataBitLength": true,
+      "classification": "padding_or_trailing_bit_reads",
+      "basis": "at least one recorded read starts with remaining bits but crosses entityDataBitLength"
+    },
+    {
+      "loop": 28,
+      "entityIndex": 2600,
+      "className": "CCitadel_Ability_PrimaryWeapon_Empty",
+      "readCounts": {
+        "beforeIndex": 5351,
+        "afterIndex": 5357,
+        "afterCommand": 5359,
+        "afterAction": 5359
+      },
+      "remainingBitsBeforeIndexRead": -7,
+      "remainingBitsBeforeCommandRead": -13,
+      "indexReadBeginsWithinBuffer": false,
+      "indexReadEndsBeyondBuffer": true,
+      "commandReadBeginsBeyondOrAtBuffer": true,
+      "actionReadBeginsBeyondOrAtBuffer": true,
+      "anyReadCountExceedsEntityDataBitLength": true,
+      "classification": "out_of_buffer_reads",
+      "basis": "recorded reads start at or beyond entityDataBitLength"
+    },
+    {
+      "loop": 29,
+      "entityIndex": 2601,
+      "className": "CCitadel_Ability_HoldMelee",
+      "readCounts": {
+        "beforeIndex": 5359,
+        "afterIndex": 5365,
+        "afterCommand": 5367,
+        "afterAction": 5367
+      },
+      "remainingBitsBeforeIndexRead": -15,
+      "remainingBitsBeforeCommandRead": -21,
+      "indexReadBeginsWithinBuffer": false,
+      "indexReadEndsBeyondBuffer": true,
+      "commandReadBeginsBeyondOrAtBuffer": true,
+      "actionReadBeginsBeyondOrAtBuffer": true,
+      "anyReadCountExceedsEntityDataBitLength": true,
+      "classification": "out_of_buffer_reads",
+      "basis": "recorded reads start at or beyond entityDataBitLength"
+    }
+  ],
+  "summary": {
+    "validEntryReads": [],
+    "paddingOrTrailingBitReads": [
+      27
+    ],
+    "outOfBufferReads": [
+      28,
+      29
+    ],
+    "notDetermined": []
+  },
+  "bitbufferBoundaryBehaviorSupportsPhantomEntryHypothesis": true,
+  "bufferBoundaryArtifactHypothesis": "strengthened_not_fix",
+  "causalConclusion": "not_determined"
+}

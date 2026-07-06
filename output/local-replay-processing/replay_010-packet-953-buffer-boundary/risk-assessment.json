@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "packetOrdinal": 953,
+  "directMissingUpdateSkipStatus": "unsafe_diagnostic_only",
+  "recoveryRecommendedNow": false,
+  "parserFixRecommendedNow": false,
+  "bufferBoundaryArtifactHypothesis": "strengthened_not_fix",
+  "parserBoundsCheckHypothesis": "strengthened_not_fix",
+  "loop27Classification": "padding_or_trailing_bit_reads",
+  "loop28Classification": "out_of_buffer_reads",
+  "loop29Classification": "out_of_buffer_reads",
+  "packetFinalReadCountRelation": "exceeds_entityDataBitLength",
+  "packetFinalReadCountDeltaBits": 23,
+  "task117NumbersMatchedExactly": true,
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "parserBugConcluded": false,
+  "causalConclusion": "not_determined",
+  "limitations": [
+    "classification is based on local read-count and buffer-length evidence only",
+    "synthetic BitBuffer probes do not use replay bytes",
+    "no recovery, parser fix, or Source 2 semantic conclusion is made"
+  ]
+}

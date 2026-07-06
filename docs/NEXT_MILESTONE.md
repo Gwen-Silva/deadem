@@ -109,8 +109,11 @@ payload-boundary accounting diagnosis for the same field path with the gate
 Task 117 is complete as an explicitly authorized payload-size iterator
 alignment diagnosis for packet 953 with the gate
 `local_replay_packet_953_payload_iterator_alignment_diagnosed`.
+Task 118 is complete as an explicitly authorized post-loop26 buffer-boundary
+diagnosis for packet 953 with the gate
+`local_replay_packet_953_buffer_boundary_diagnosed`.
 
-Do not create Task 118 automatically. Stop and wait for a human milestone
+Do not create Task 119 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -578,7 +581,36 @@ mismatch hypothesis is strengthened. No field values, string values, string
 bytes, raw payload, raw entityData, raw serializedEntities, full raw
 send-table payload, parser fix, recovery, canonical package, source artifact,
 factual event, spatial semantic, mechanic, combat, macro, decision, or ML
-output was emitted. No Task 118 was created.
+output was emitted. At Task 117 completion, no Task 118 had been created
+automatically.
+
+## Task 118
+
+Purpose: diagnose, without parser recovery, parser fixes, canonical output, or
+match facts, whether replay_010 packet ordinal 953 loops 27-29 are valid entry
+reads or cursor/buffer-boundary artifacts after loop 26 consumed nearly all of
+the local `entityData` bit window.
+
+Gate: `local_replay_packet_953_buffer_boundary_diagnosed`.
+
+Partial gate: `local_replay_packet_953_buffer_boundary_partial`.
+
+Blocked gate: `local_replay_packet_953_buffer_boundary_blocked`.
+
+Status: completed with the success gate above. The diagnostic reused Task 117
+default and opt-in diagnostic failure evidence without parser recovery. Loop
+26 ended at read count 5343 with `entityDataBitLength` 5344, leaving one bit.
+Loop 27's index read begins with that one remaining bit and crosses the
+boundary; loops 28 and 29 begin beyond the boundary. Synthetic `BitBuffer`
+tests without replay bytes showed `move` and `read()` guard against overrun,
+while `readBitsAsUInt`, `readUInt8`, `readUVarInt`, and `readUVarInt32` can
+advance beyond the end without throwing in local synthetic cases. This
+strengthens a buffer-boundary artifact and parser bounds-check hypothesis,
+but causal conclusion remains `not_determined`. No field values, string
+values, string bytes, raw payload, raw entityData, raw serializedEntities,
+full raw send-table payload, parser fix, recovery, canonical package, source
+artifact, factual event, spatial semantic, mechanic, combat, macro, decision,
+or ML output was emitted. No Task 119 was created.
 
 ## Non-Goals
 
