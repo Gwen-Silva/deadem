@@ -132,7 +132,12 @@ feasibility comparison with the gate `external_parser_oracle_canaries_ready`.
 Task 125 is complete as an explicitly authorized Clarity oracle viability
 decision with the gate `clarity_oracle_viability_decided`.
 
-Do not create Task 126 automatically. Stop and wait for a human milestone
+Task 126 attempted to restore the direct GPT -> Codex workflow after the
+abandoned iaflow/Product Reviewer/WSL automation route. The tracked cleanup is
+recorded under `direct_codex_workflow_restored`. Task 126 is not parser
+progress and does not create Task 127.
+
+Do not create Task 127 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094

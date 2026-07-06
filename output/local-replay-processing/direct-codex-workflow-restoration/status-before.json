@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "taskId": "126",
+  "branch": "main",
+  "head": "fb1bd83690a8048a62c4445fda752f5f702e8964",
+  "expectedBaseCommit": "0f7650b0fded0b278b7ce6cd12f57d006ac299d4",
+  "headMatchesExpectedBaseCommit": false,
+  "originMain": "0f7650b0fded0b278b7ce6cd12f57d006ac299d4",
+  "originMainDiffers": true,
+  "localCommitsAfterExpectedBase": [
+    {
+      "sha": "fb1bd83690a8048a62c4445fda752f5f702e8964",
+      "subject": "Add browser-backed iaflow orchestrator",
+      "classification": "abandoned_iaflow_browser_product_reviewer_automation"
+    }
+  ],
+  "latestCommits": [
+    "fb1bd83 Add browser-backed iaflow orchestrator",
+    "0f7650b Decide clarity oracle viability",
+    "d2de7b2 Evaluate external parser oracle canaries",
+    "b2bc60d Triage parser prior art and second canary",
+    "90a1a1e Diagnose entity index allocation gap"
+  ],
+  "dirtyFilesBeforeCleanup": [
+    "M ai-flow/README.md",
+    "M ai-flow/config.json",
+    "M ai-flow/tasks/TASK-LOCAL-VALIDATION/events.jsonl",
+    "M ai-flow/tasks/TASK-LOCAL-VALIDATION/state.json",
+    "M iaflow/core.py",
+    "M tests/iaflow/test_iaflow.py"
+  ],
+  "untrackedFilesBeforeCleanup": [
+    "ai-flow/IAFLOW_OPERATOR_GUIDE.md",
+    "ai-flow/tasks/TASK-0126/",
+    "ai-flow/tasks/TASK-0128/",
+    "ai-flow/tasks/TASK-LOCAL-VALIDATION/05-codex-report.md"
+  ],
+  "fetchOriginResult": "succeeded_after_git_metadata_permission_escalation",
+  "notes": [
+    "The expected base commit is origin/main.",
+    "The local HEAD contains one later iaflow automation commit.",
+    "A destructive reset was avoided."
+  ]
+}

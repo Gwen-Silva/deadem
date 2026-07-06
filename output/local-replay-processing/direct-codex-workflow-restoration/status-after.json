@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "taskId": "126",
+  "finalHeadBeforeCommit": "fb1bd83690a8048a62c4445fda752f5f702e8964",
+  "finalGitStatusShortAtReportTime": [
+    "M .gitignore",
+    "D ai-flow/**",
+    "D iaflow/**",
+    "D tests/iaflow/test_iaflow.py",
+    "M data/current-artifact-registry.json",
+    "M docs/NEXT_MILESTONE.md",
+    "M docs/PROJECT_STATE.md",
+    "?? reports/direct-codex-workflow-restoration.md",
+    "?? tasks/completed/126-restore-direct-codex-workflow.md",
+    "?? tasks/specs/126.json"
+  ],
+  "repositoryClean": false,
+  "directGptToCodexWorkflowRestoredInTrackedTree": true,
+  "anyIaflowOrWslAutomationArtifactsRemain": false,
+  "remainingArtifacts": [],
+  "remainingArtifactsCommitted": false,
+  "notes": [
+    "Tracked iaflow automation is removed by the pending Task 126 reverse patch.",
+    ".iaflow-real-chrome was removed after the user closed the browser process.",
+    ".tmp and .pytest-tmp cleanup residue no longer appears in git status.",
+    "The repository is not clean before commit only because intended Task 126 restoration changes remain."
+  ]
+}

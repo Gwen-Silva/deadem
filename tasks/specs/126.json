@@ -1,0 +1,110 @@
+{
+  "taskId": "126",
+  "title": "Restore Direct Codex Workflow And Remove Abandoned iaflow/WSL Artifacts",
+  "status": "completed",
+  "objective": "Restore the repository to the direct GPT-to-Codex workflow by removing abandoned iaflow, Product Reviewer, browser automation, WSL/Codex automation, and TASK-0128 artifacts without modifying parser behavior or processing replays.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/125.json",
+    "tasks/completed/125-decide-clarity-oracle-viability.md"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    ".gitignore",
+    "ai-flow/**",
+    "iaflow/**",
+    "tests/iaflow/**",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/126.json",
+    "tasks/completed/126-restore-direct-codex-workflow.md",
+    "reports/direct-codex-workflow-restoration.md",
+    "output/local-replay-processing/direct-codex-workflow-restoration/**"
+  ],
+  "forbiddenPaths": [
+    "packages/engine/**",
+    "packages/deadem/**",
+    "samples/**",
+    "output/replays/**",
+    "output/local-replay-processing/replay_010-*/**",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/**",
+    "output/local-replay-processing/external-parser-oracle-canaries/**",
+    "output/local-replay-processing/clarity-oracle-viability/**",
+    "tasks/specs/127.json",
+    "tasks/blocked/127-*",
+    "tasks/completed/127-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/direct-codex-workflow-restoration/status-before.json",
+    "output/local-replay-processing/direct-codex-workflow-restoration/cleanup-actions.json",
+    "output/local-replay-processing/direct-codex-workflow-restoration/status-after.json",
+    "output/local-replay-processing/direct-codex-workflow-restoration/protection-audit.json",
+    "output/local-replay-processing/direct-codex-workflow-restoration/restoration-gate.json",
+    "reports/direct-codex-workflow-restoration.md",
+    "tasks/completed/126-restore-direct-codex-workflow.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not use WSL",
+    "Do not use iaflow",
+    "Do not use Product Reviewer automation",
+    "Do not modify parser or engine code",
+    "Do not process replays",
+    "Do not touch replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not install or execute Java",
+    "Do not execute Clarity or external parsers",
+    "Do not add recovery, skip mode, opt-in parser behavior, or parser fixes",
+    "Do not create Task 127"
+  ],
+  "successGate": "direct_codex_workflow_restored",
+  "blockedGate": "direct_codex_workflow_restoration_blocked",
+  "allowedAlternateGates": [
+    "direct_codex_workflow_already_clean"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/direct-codex-workflow-restoration/restoration-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

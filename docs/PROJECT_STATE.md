@@ -307,6 +307,14 @@ Macro interpretation, fights, rotations, pressure, mechanic effects, ML,
 decision-quality analysis, objective completion inference, lane/region
 semantics, and proximity analysis remain unavailable.
 
+## Task 126 Process Restoration Note
+
+Task 126 attempted to restore the direct GPT -> Codex workflow after the
+abandoned iaflow/Product Reviewer/WSL automation route. The tracked iaflow
+automation was removed by a non-destructive reverse patch under
+`direct_codex_workflow_restored`.
+This is not parser progress and does not authorize Task 127.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and

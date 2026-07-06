@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "126",
+  "destructiveResetAvoided": true,
+  "filesRestored": [
+    "ai-flow/README.md",
+    "ai-flow/config.json",
+    "ai-flow/tasks/TASK-LOCAL-VALIDATION/events.jsonl",
+    "ai-flow/tasks/TASK-LOCAL-VALIDATION/state.json",
+    "iaflow/core.py",
+    "tests/iaflow/test_iaflow.py"
+  ],
+  "filesRemoved": [
+    "ai-flow/IAFLOW_OPERATOR_GUIDE.md",
+    "ai-flow/tasks/TASK-0126/",
+    "ai-flow/tasks/TASK-0128/",
+    "ai-flow/tasks/TASK-LOCAL-VALIDATION/05-codex-report.md",
+    ".iaflow-browser/",
+    ".iaflow-real-chrome/",
+    ".tmp/playwright-artifacts-*"
+  ],
+  "reversePatchApplied": [
+    {
+      "commit": "fb1bd83690a8048a62c4445fda752f5f702e8964",
+      "subject": "Add browser-backed iaflow orchestrator",
+      "mode": "git revert --no-commit",
+      "reason": "Remove abandoned iaflow/Product Reviewer/browser automation from the tracked tree without destructive reset."
+    }
+  ],
+  "filesIntentionallyKept": [
+    "Task 121-125 reports and outputs",
+    "Deadem parser, engine, package, and replay files"
+  ],
+  "filesRequiringHumanReview": [],
+  "notes": [
+    "No reset --hard was used.",
+    "No replay, parser, engine, Clarity, Java, WSL, iaflow command, or Product Reviewer automation was used during Task 126 execution.",
+    "The remaining locked temp artifacts were manually removed before final validation."
+  ]
+}
