@@ -240,8 +240,8 @@ test('gate is diagnosed only when string metrics, boundary relation, Task 115, a
     assert.equal(blocked.gate, 'local_replay_loop_26_string_reader_accounting_blocked');
 });
 
-test('Task 122 does not exist', () => {
-    assert.equal(existsSync('tasks/specs/122.json'), false);
-    assert.equal(existsSync('tasks/blocked/122-select-next-canonical-generalization-control.md'), false);
-    assert.equal(existsSync('tasks/completed/122-diagnose-loop-26-string-reader-accounting.md'), false);
+test('Task 123 does not exist', () => {
+    assert.equal(existsSync('tasks/specs/123.json'), false);
+    assert.equal(existsSync('tasks/blocked/123-select-next-canonical-generalization-control.md'), false);
+    assert.equal(existsSync('tasks/completed/123-diagnose-loop-26-string-reader-accounting.md'), false);
 });

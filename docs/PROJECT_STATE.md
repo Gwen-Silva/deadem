@@ -170,7 +170,18 @@ workaround. Task 102 created a bounded generic local-input canary for only
   did not change the entity 2905 registry history. This classifies the failure
   as `first_missing_update_to_never_registered_entity`, not a recovery, parser
   fix, Source 2 semantic conclusion, replay corruption conclusion, canonical
-  package, or factual artifact.
+  package, or factual artifact. Task 122 then macro-diagnosed entity-index
+  allocation and missing CREATE provenance under
+  `local_replay_entity_index_allocation_gap_diagnosed`: indexes 2897-2902,
+  including 2900-2902, were observed as CREATE/register entries before the
+  failure, while 2903-2910 remained an allocation gap except for the packet
+  954 loop 33 missing UPDATE reference to 2905. No CREATE, register attempt,
+  class lookup, baseline lookup, or earlier failure stage was observed for
+  2905, packet 954 remained locally bounded, and packet 953 truncation did not
+  change the allocation/provenance evidence. The bounded classification is
+  `never_registered_entity_with_create_gap`; this is still not a parser fix,
+  recovery, Source 2 semantic conclusion, replay corruption conclusion,
+  canonical package, or factual artifact.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. The limitations documented in
@@ -302,5 +313,8 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   953, ending in no progress past missing entity 2905. Task 121 is complete
   with bounded registry lifecycle and packet-954 context diagnosis for entity
   2905, classifying the first missing update as a never-registered entity in
-  the observed local evidence. Do not create Task 122
+  the observed local evidence. Task 122 is complete with bounded entity-index
+  allocation and CREATE-provenance diagnosis around entity 2905, classifying
+  the failure as `never_registered_entity_with_create_gap`. Do not create Task
+  123
 automatically; stop and wait for a human milestone decision.

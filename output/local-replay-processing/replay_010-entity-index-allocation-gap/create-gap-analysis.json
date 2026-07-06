@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "normalCreatesNear2900": [
+    {
+      "entityIndex": 2900,
+      "className": "CNPC_Trooper"
+    },
+    {
+      "entityIndex": 2901,
+      "className": "CNPC_Trooper"
+    },
+    {
+      "entityIndex": 2902,
+      "className": "CNPC_Trooper"
+    }
+  ],
+  "createRangeAppearsToEndBefore2905": true,
+  "gaps2903To2910": [
+    2903,
+    2904,
+    2905,
+    2906,
+    2907,
+    2908,
+    2909,
+    2910
+  ],
+  "gap2903To2910ExceptMissingUpdate2905": true,
+  "createsAbove2905BeforeFailureCount": 0,
+  "createsAbove2905BeforeFailure": [],
+  "parserSkippedExpectedCreateSupported": "not_supported_by_local_event_metadata",
+  "baselineOrClassFailureCouldPrevent2905Registration": false,
+  "filteredCreateOrSkipCouldRegisterWithoutFields": false,
+  "compatibleWithNeverRegisteredEntityWithoutEarlierError": true,
+  "conclusion": "entity 2905 is observed as a missing UPDATE inside an allocation gap without prior local CREATE/register/class/baseline evidence"
+}

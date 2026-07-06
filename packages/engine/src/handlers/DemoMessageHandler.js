@@ -243,7 +243,9 @@ class DemoMessageHandler {
                                 entityTouched: true,
                                 baselineTouched: false,
                                 fieldsTouched: true,
-                                registerEntityTouched: false
+                                registerEntityTouched: false,
+                                fieldExtractionAttempted: true,
+                                fieldExtractionSucceeded: true
                             });
                         } else {
                             events.push(new EntityMutationEvent(EntityOperation.UPDATE, entity, extractor.all()));
@@ -254,7 +256,9 @@ class DemoMessageHandler {
                                 entityTouched: true,
                                 baselineTouched: false,
                                 fieldsTouched: true,
-                                registerEntityTouched: false
+                                registerEntityTouched: false,
+                                fieldExtractionAttempted: true,
+                                fieldExtractionSucceeded: true
                             });
                         }
                     } else if (payloadBits !== null) {
@@ -266,7 +270,9 @@ class DemoMessageHandler {
                             entityTouched: true,
                             baselineTouched: false,
                             fieldsTouched: false,
-                            registerEntityTouched: false
+                            registerEntityTouched: false,
+                            fieldExtractionAttempted: false,
+                            fieldExtractionSucceeded: false
                         });
                     } else {
                         attachExtractorDiagnostics(recovery, extractor, cursorEntry, 'filtered_update_skip');
@@ -278,7 +284,9 @@ class DemoMessageHandler {
                             entityTouched: true,
                             baselineTouched: false,
                             fieldsTouched: false,
-                            registerEntityTouched: false
+                            registerEntityTouched: false,
+                            fieldExtractionAttempted: true,
+                            fieldExtractionSucceeded: true
                         });
                     }
 
@@ -376,7 +384,8 @@ class DemoMessageHandler {
                         classIdSizeBits,
                         beforeClassIdReadCount,
                         afterClassIdReadCount,
-                        afterSerialReadCount
+                        afterSerialReadCount,
+                        classLookupAttempted: true
                     });
 
                     bitBuffer.readUVarInt32();
@@ -386,8 +395,30 @@ class DemoMessageHandler {
                     const clazz = this._demo.getClassById(classId);
 
                     if (clazz === null) {
+                        finishCursorEntry(cursorLedger, cursorEntry, {
+                            action: 'class_lookup_failed',
+                            afterActionReadCount: bitBuffer.getReadCount(),
+                            registryStateAfter: 'missing',
+                            entityTouched: false,
+                            baselineTouched: false,
+                            fieldsTouched: false,
+                            registerEntityTouched: false,
+                            classLookupSucceeded: false,
+                            baselineLookupAttempted: false,
+                            baselineLookupSucceeded: false,
+                            registerEntityAttempted: false,
+                            registerEntitySucceeded: false,
+                            fieldExtractionAttempted: false,
+                            fieldExtractionSucceeded: false,
+                            failureStage: 'class_lookup'
+                        });
                         throw new Error(`Class not found [ ${classId} ]`);
                     }
+
+                    updateCursorEntry(cursorEntry, {
+                        className: clazz.name,
+                        classLookupSucceeded: true
+                    });
 
                     let entity;
 
@@ -403,6 +434,13 @@ class DemoMessageHandler {
                             baselineTouched: false,
                             fieldsTouched: false,
                             registerEntityTouched: false,
+                            classLookupSucceeded: true,
+                            baselineLookupAttempted: false,
+                            baselineLookupSucceeded: false,
+                            registerEntityAttempted: false,
+                            registerEntitySucceeded: false,
+                            fieldExtractionAttempted: false,
+                            fieldExtractionSucceeded: false,
                             failureStage: 'entity_constructor'
                         });
                         recordOutOfRangeEntityCreateBoundary(recovery, {
@@ -455,6 +493,7 @@ class DemoMessageHandler {
                     attachExtractorDiagnostics(recovery, extractor, cursorEntry, 'packet_create');
 
                     if (allowed) {
+                        updateCursorEntry(cursorEntry, { baselineLookupAttempted: true });
                         const baseline = this._demo.getClassBaselineById(classId);
 
                         if (baseline === null) {
@@ -475,18 +514,43 @@ class DemoMessageHandler {
                                     entityTouched: false,
                                     baselineTouched: true,
                                     fieldsTouched: false,
-                                    registerEntityTouched: false
+                                    registerEntityTouched: false,
+                                    baselineLookupSucceeded: false,
+                                    registerEntityAttempted: false,
+                                    registerEntitySucceeded: false,
+                                    fieldExtractionAttempted: false,
+                                    fieldExtractionSucceeded: false,
+                                    failureStage: 'baseline_lookup'
                                 });
                                 break;
                             }
 
+                            finishCursorEntry(cursorLedger, cursorEntry, {
+                                action: 'baseline_lookup_failed',
+                                afterActionReadCount: bitBuffer.getReadCount(),
+                                className: clazz.name,
+                                registryStateAfter: 'missing',
+                                entityTouched: false,
+                                baselineTouched: true,
+                                fieldsTouched: false,
+                                registerEntityTouched: false,
+                                baselineLookupSucceeded: false,
+                                registerEntityAttempted: false,
+                                registerEntitySucceeded: false,
+                                fieldExtractionAttempted: false,
+                                fieldExtractionSucceeded: false,
+                                failureStage: 'baseline_lookup'
+                            });
                             throw new Error(`Baseline not found [ ${classId} ]`);
                         }
+
+                        updateCursorEntry(cursorEntry, { baselineLookupSucceeded: true });
 
                         const baselineExtractor = new EntityMutationExtractor(new BitBuffer(baseline), entity.class.serializer);
                         attachExtractorDiagnostics(recovery, baselineExtractor, cursorEntry, 'baseline_create');
 
                         if (events === null) {
+                            updateCursorEntry(cursorEntry, { registerEntityAttempted: true });
                             this._demo.registerEntity(entity);
 
                             baselineExtractor.applyTo(entity);
@@ -499,9 +563,15 @@ class DemoMessageHandler {
                                 entityTouched: true,
                                 baselineTouched: true,
                                 fieldsTouched: true,
-                                registerEntityTouched: true
+                                registerEntityTouched: true,
+                                registerEntitySucceeded: true,
+                                fieldExtractionAttempted: true,
+                                fieldExtractionSucceeded: true
                             });
                         } else {
+                            updateCursorEntry(cursorEntry, {
+                                fieldExtractionAttempted: true
+                            });
                             const baselineBatch = baselineExtractor.all();
                             const packetBatch = extractor.all();
 
@@ -518,10 +588,14 @@ class DemoMessageHandler {
                                 entityTouched: true,
                                 baselineTouched: true,
                                 fieldsTouched: true,
-                                registerEntityTouched: false
+                                registerEntityTouched: false,
+                                registerEntityAttempted: false,
+                                registerEntitySucceeded: false,
+                                fieldExtractionSucceeded: true
                             });
                         }
                     } else {
+                        updateCursorEntry(cursorEntry, { registerEntityAttempted: true });
                         this._demo.registerEntity(entity);
 
                         if (payloadBits !== null) {
@@ -537,7 +611,10 @@ class DemoMessageHandler {
                             entityTouched: true,
                             baselineTouched: false,
                             fieldsTouched: false,
-                            registerEntityTouched: true
+                            registerEntityTouched: true,
+                            registerEntitySucceeded: true,
+                            fieldExtractionAttempted: false,
+                            fieldExtractionSucceeded: false
                         });
                     }
 
@@ -719,7 +796,8 @@ function createCursorLedger(recovery, message, startLoop) {
             recovery.diagnosePreRecoveryFieldConsumption !== true &&
             recovery.diagnoseEntityPacketBoundaryGuard !== true &&
             recovery.allowEntityPacketBoundaryTruncation !== true &&
-            recovery.diagnoseEntityRegistryHistory !== true)) {
+            recovery.diagnoseEntityRegistryHistory !== true &&
+            recovery.diagnoseEntityIndexAllocation !== true)) {
         return null;
     }
 
@@ -818,6 +896,22 @@ function assertEntityPacketBoundary(recovery, cursorLedger, context) {
         fieldsMaterialized: false,
         fakeEntityCreated: false
     });
+    recordEntityIndexAllocationContext(recovery, cursorLedger, {
+        action: 'boundary_guard_crossing',
+        loop: diagnostic.loop,
+        operation: diagnostic.operation,
+        entityIndex: diagnostic.entityIndex,
+        readCounts: {
+            beforeIndex: diagnostic.beforeIndexReadCount,
+            afterIndex: diagnostic.afterIndexReadCount,
+            afterCommand: diagnostic.afterCommandReadCount,
+            afterAction: diagnostic.afterActionReadCount
+        },
+        violationStage: diagnostic.violationStage,
+        bitsBeyondEntityData: diagnostic.bitsBeyondEntityData,
+        fieldsMaterialized: false,
+        fakeEntityCreated: false
+    });
 
     const error = new Error('entity packet boundary crossed');
     error.entityPacketBoundaryDiagnostic = diagnostic;
@@ -883,6 +977,23 @@ function maybeTruncateEntityPacketBoundary(recovery, cursorLedger, context) {
         fakeEntityCreated: false,
         entriesSkippedByTruncation
     });
+    recordEntityIndexAllocationContext(recovery, cursorLedger, {
+        action: 'boundary_truncation',
+        loop: diagnostic.loop,
+        operation: null,
+        entityIndex: null,
+        readCounts: {
+            beforeIndex: diagnostic.currentReadCount,
+            afterIndex: null,
+            afterCommand: null,
+            afterAction: null
+        },
+        violationStage: 'before_index',
+        bitsBeyondEntityData: 0,
+        fieldsMaterialized: false,
+        fakeEntityCreated: false,
+        entriesSkippedByTruncation
+    });
 
     return true;
 }
@@ -917,6 +1028,14 @@ function createCursorEntry(cursorLedger, values) {
         baselineTouched: false,
         fieldsTouched: false,
         registerEntityTouched: false,
+        classLookupAttempted: false,
+        classLookupSucceeded: false,
+        baselineLookupAttempted: false,
+        baselineLookupSucceeded: false,
+        registerEntityAttempted: false,
+        registerEntitySucceeded: false,
+        fieldExtractionAttempted: false,
+        fieldExtractionSucceeded: false,
         registryStateAfter: null,
         failureStage: null,
         extractorDiagnostics: [],
@@ -951,6 +1070,7 @@ function finishCursorEntry(cursorLedger, entry, values) {
     Object.assign(entry, rest);
     entry.readCounts.afterAction = afterActionReadCount;
     recordEntityRegistryHistoryFromEntry(cursorLedger, entry);
+    recordEntityIndexAllocationFromEntry(cursorLedger, entry);
 }
 
 function recordEntityRegistryHistoryFromEntry(cursorLedger, entry) {
@@ -1038,6 +1158,109 @@ function recordEntityRegistryHistoryContext(recovery, cursorLedger, context) {
     });
 }
 
+function recordEntityIndexAllocationFromEntry(cursorLedger, entry) {
+    const recovery = cursorLedger?.recovery ?? null;
+    if (recovery === null || recovery.diagnoseEntityIndexAllocation !== true || entry === null) {
+        return;
+    }
+
+    const targetKind = getEntityIndexAllocationTargetKind(recovery, entry.accumulatedEntityIndex, entry.operation);
+    if (targetKind === null) {
+        return;
+    }
+
+    recovery.recordEntityIndexAllocation?.({
+        passMode: recovery.entityIndexAllocationPassMode ?? null,
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: entry.loop,
+        operation: entry.operation,
+        commandId: entry.commandId,
+        entityIndex: entry.accumulatedEntityIndex,
+        targetKind,
+        previousEntityIndex: getPreviousEntityIndex(cursorLedger, entry.loop),
+        indexDelta: entry.indexDelta,
+        registryStateBefore: entry.registryStateBefore,
+        registryStateAfter: entry.registryStateAfter,
+        classId: entry.classId,
+        serial: entry.serial,
+        className: entry.className,
+        readCounts: { ...entry.readCounts },
+        payloadBits: entry.payloadBits,
+        classLookupAttempted: entry.classLookupAttempted === true,
+        classLookupSucceeded: entry.classLookupSucceeded === true,
+        baselineLookupAttempted: entry.baselineLookupAttempted === true,
+        baselineLookupSucceeded: entry.baselineLookupSucceeded === true,
+        registerEntityAttempted: entry.registerEntityAttempted === true,
+        registerEntitySucceeded: entry.registerEntitySucceeded === true,
+        fieldExtractionAttempted: entry.fieldExtractionAttempted === true,
+        fieldExtractionSucceeded: entry.fieldExtractionSucceeded === true,
+        action: entry.action,
+        failureStage: entry.failureStage,
+        fakeEntityCreated: false,
+        placeholderOrFakeEntityCreated: false,
+        recoveryAttempted: false,
+        fieldsMaterialized: entry.fieldsTouched === true,
+        packetMetrics: {
+            updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+            entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+            serializedEntitiesByteLength: cursorLedger.packetMetrics.serializedEntitiesByteLength,
+            payloadSizeCount: cursorLedger.packetMetrics.payloadSizeCount,
+            payloadBitsSum: cursorLedger.packetMetrics.payloadBitsSum
+        },
+        entityIndexSequenceWindow: buildEntityRegistryHistoryWindow(cursorLedger, entry.loop)
+    });
+}
+
+function recordEntityIndexAllocationContext(recovery, cursorLedger, context) {
+    if (recovery === null || recovery.diagnoseEntityIndexAllocation !== true || cursorLedger === null) {
+        return;
+    }
+
+    recovery.recordEntityIndexAllocation?.({
+        passMode: recovery.entityIndexAllocationPassMode ?? null,
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: context.loop,
+        operation: context.operation ?? null,
+        commandId: null,
+        entityIndex: context.entityIndex ?? null,
+        targetKind: 'packet_context',
+        previousEntityIndex: null,
+        indexDelta: null,
+        registryStateBefore: null,
+        registryStateAfter: null,
+        classId: null,
+        serial: null,
+        className: null,
+        readCounts: context.readCounts,
+        payloadBits: null,
+        classLookupAttempted: false,
+        classLookupSucceeded: false,
+        baselineLookupAttempted: false,
+        baselineLookupSucceeded: false,
+        registerEntityAttempted: false,
+        registerEntitySucceeded: false,
+        fieldExtractionAttempted: false,
+        fieldExtractionSucceeded: false,
+        action: context.action,
+        failureStage: context.violationStage ?? null,
+        fakeEntityCreated: context.fakeEntityCreated === true,
+        placeholderOrFakeEntityCreated: context.fakeEntityCreated === true,
+        recoveryAttempted: false,
+        fieldsMaterialized: context.fieldsMaterialized === true,
+        violationStage: context.violationStage ?? null,
+        bitsBeyondEntityData: context.bitsBeyondEntityData ?? null,
+        entriesSkippedByTruncation: context.entriesSkippedByTruncation ?? null,
+        packetMetrics: {
+            updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+            entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+            serializedEntitiesByteLength: cursorLedger.packetMetrics.serializedEntitiesByteLength,
+            payloadSizeCount: cursorLedger.packetMetrics.payloadSizeCount,
+            payloadBitsSum: cursorLedger.packetMetrics.payloadBitsSum
+        },
+        entityIndexSequenceWindow: buildEntityRegistryHistoryWindow(cursorLedger, context.loop)
+    });
+}
+
 function getEntityRegistryHistoryTargetKind(recovery, entityIndex) {
     if (!Number.isInteger(entityIndex)) {
         return null;
@@ -1050,6 +1273,28 @@ function getEntityRegistryHistoryTargetKind(recovery, entityIndex) {
     const nearbyRange = recovery.entityRegistryHistoryNearbyRange ?? null;
     if (nearbyRange !== null && entityIndex >= nearbyRange.start && entityIndex <= nearbyRange.end) {
         return 'nearby';
+    }
+
+    return null;
+}
+
+function getEntityIndexAllocationTargetKind(recovery, entityIndex, operation) {
+    if (!Number.isInteger(entityIndex)) {
+        return null;
+    }
+
+    if (Number.isInteger(recovery.entityIndexAllocationTargetIndex) &&
+        entityIndex === recovery.entityIndexAllocationTargetIndex) {
+        return 'target';
+    }
+
+    const range = recovery.entityIndexAllocationRange ?? null;
+    if (range !== null && entityIndex >= range.start && entityIndex <= range.end) {
+        return 'range';
+    }
+
+    if (recovery.entityIndexAllocationIncludeAllCreates === true && operation === EntityOperation.CREATE.code) {
+        return 'outside_range_create_context';
     }
 
     return null;

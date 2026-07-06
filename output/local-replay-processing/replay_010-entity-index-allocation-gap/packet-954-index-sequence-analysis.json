@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "packetOrdinal": 954,
+  "failingLoop": 33,
+  "window": [
+    {
+      "loop": 30,
+      "operation": "UPDATE",
+      "entityIndex": 2621,
+      "indexDelta": 22,
+      "payloadBits": 112,
+      "action": "normal_update_apply",
+      "readCounts": {
+        "beforeIndex": 5523,
+        "afterIndex": 5533,
+        "afterCommand": 5535,
+        "afterAction": 5647
+      }
+    },
+    {
+      "loop": 31,
+      "operation": "UPDATE",
+      "entityIndex": 2632,
+      "indexDelta": 10,
+      "payloadBits": 35,
+      "action": "normal_update_apply",
+      "readCounts": {
+        "beforeIndex": 5647,
+        "afterIndex": 5653,
+        "afterCommand": 5655,
+        "afterAction": 5690
+      }
+    },
+    {
+      "loop": 32,
+      "operation": "UPDATE",
+      "entityIndex": 2717,
+      "indexDelta": 84,
+      "payloadBits": 22,
+      "action": "normal_update_apply",
+      "readCounts": {
+        "beforeIndex": 5690,
+        "afterIndex": 5700,
+        "afterCommand": 5702,
+        "afterAction": 5724
+      }
+    },
+    {
+      "loop": 33,
+      "operation": "UPDATE",
+      "entityIndex": 2905,
+      "indexDelta": 187,
+      "payloadBits": 193,
+      "action": "missing_update_failed",
+      "readCounts": {
+        "beforeIndex": 5724,
+        "afterIndex": 5734,
+        "afterCommand": 5736,
+        "afterAction": 5736
+      }
+    }
+  ],
+  "monotonicIncreasingIndexes": true,
+  "indexDeltas": [
+    22,
+    10,
+    84,
+    187
+  ],
+  "jumpTo2905": {
+    "previousEntityIndex": 2717,
+    "indexDelta": 187,
+    "accumulatedEntityIndex": 2905,
+    "largeRelativeToLocalWindow": true
+  },
+  "loop30To33PayloadAndReadCountsLocallyBounded": true,
+  "payloadBitsAtFailure": 193,
+  "updatedEntries": 34,
+  "entityDataBitLength": 5936,
+  "payloadSizeCount": 34,
+  "packet954BoundaryOrTrailingSigns": false,
+  "indexStreamMisalignmentAssessment": "not_determined_large_jump_but_bounds_clean",
+  "rawBytesIncluded": false,
+  "rawPayloadsIncluded": false,
+  "fieldValuesIncluded": false
+}

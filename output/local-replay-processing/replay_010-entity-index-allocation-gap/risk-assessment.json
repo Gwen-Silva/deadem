@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "failureClassification": "never_registered_entity_with_create_gap",
+  "createGapConclusion": "entity 2905 is observed as a missing UPDATE inside an allocation gap without prior local CREATE/register/class/baseline evidence",
+  "packet954IndexStreamAssessment": "not_determined_large_jump_but_bounds_clean",
+  "defaultVsTruncationConclusion": "packet 953 truncation did not change the allocation/provenance evidence for entity 2905 before the packet 954 missing update",
+  "safestNextStep": "compare_packet_954_index_stream_with_independent_decoder_or_static_source2_contract",
+  "parserFixProposed": false,
+  "automaticRecoveryAdded": false,
+  "missingEntityRecoveryAdded": false,
+  "boundaryTruncationDefaultEnabled": false,
+  "placeholderEntityCreated": false,
+  "fakeFieldsCreated": false,
+  "canonicalFactsProduced": false,
+  "source2SemanticsClaimed": false,
+  "replayCorruptionClaimed": false,
+  "causalConclusion": "limited_to_local_create_provenance_and_index_accounting_evidence"
+}

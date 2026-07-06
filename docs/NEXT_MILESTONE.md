@@ -121,8 +121,11 @@ boundary-truncation evaluation for packet 953 with the gate
 Task 121 is complete as an explicitly authorized registry lifecycle, nearby
 index, and packet-954 context diagnosis for entity 2905 with the gate
 `local_replay_entity_2905_registry_and_packet_context_diagnosed`.
+Task 122 is complete as an explicitly authorized entity-index allocation gap
+and missing CREATE provenance diagnosis around entity 2905 with the gate
+`local_replay_entity_index_allocation_gap_diagnosed`.
 
-Do not create Task 122 automatically. Stop and wait for a human milestone
+Do not create Task 123 automatically. Stop and wait for a human milestone
 decision.
 
 ## Task 094
@@ -704,7 +707,37 @@ change entity 2905 registry history. The bounded classification is
 entityData, raw serializedEntities, raw payloads, string bytes, string values,
 field values, full raw send-table payload, parser default fix, recovery,
 canonical package, source artifact, factual event, spatial semantic, mechanic,
-combat, macro, decision, or ML output was emitted. No Task 122 was created.
+combat, macro, decision, or ML output was emitted. No Task 122 was created
+during Task 121.
+
+## Task 122
+
+Purpose: diagnose, without parser recovery, parser fixes, canonical output, or
+match facts, the replay_010 entity 2905 missing CREATE provenance and
+entity-index allocation gap around indexes 2880-2920.
+
+Gate: `local_replay_entity_index_allocation_gap_diagnosed`.
+
+Partial gate: `local_replay_entity_index_allocation_gap_partial`.
+
+Blocked gate: `local_replay_entity_index_allocation_gap_blocked`.
+
+Status: completed with the success gate above. Default behavior still
+reproduced the Task 105 missing entity 2905 failure. The allocation diagnostic
+pass and truncation+allocation diagnostic pass used no missing-entity recovery
+and no missing-baseline recovery, and both reached the same packet 954 loop 33
+missing UPDATE. Indexes 2897-2902 were observed as CREATE/register entries
+before the failure, while 2903-2910 remained an allocation gap except for the
+missing UPDATE reference to 2905. For entity 2905 itself, no CREATE,
+registerEntity attempt, class lookup, baseline lookup, or earlier failure
+stage was observed. Packet 954 remained locally bounded, the jump to 2905 was
+large but monotonic in the local window, and packet 953 truncation did not
+change the allocation/provenance evidence. The bounded classification is
+`never_registered_entity_with_create_gap`. No raw replay bytes, raw entityData,
+raw serializedEntities, raw payloads, string bytes, string values, field
+values, full raw send-table payload, parser default fix, recovery, canonical
+package, source artifact, factual event, spatial semantic, mechanic, combat,
+macro, decision, or ML output was emitted. No Task 123 was created.
 
 ## Non-Goals
 

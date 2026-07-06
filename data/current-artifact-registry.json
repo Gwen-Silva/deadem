@@ -219,6 +219,12 @@
       "notes": "Task 121 diagnosed entity 2905 registry lifecycle and packet 954 context: the first observed reference is a missing UPDATE to a never-registered entity; packet 953 truncation does not change that history."
     },
     {
+      "id": "generic_local_replay_entity_index_allocation_gap",
+      "path": "output/local-replay-processing/replay_010-entity-index-allocation-gap/entity-index-allocation-gate.json",
+      "status": "current",
+      "notes": "Task 122 diagnosed the entity 2905 allocation/create provenance gap: nearby CREATE/register evidence ends before 2905, no CREATE/register/class/baseline path is observed for 2905, and packet 953 truncation does not change that evidence."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

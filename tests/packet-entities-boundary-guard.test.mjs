@@ -186,8 +186,8 @@ test('builder helpers require exact Task 118 boundary details', () => {
     assert.equal(comparison.matchesTask118ExpectedBoundary, true);
 });
 
-test('Task 122 was not created by Task 119', () => {
-    assert.equal(existsSync('tasks/specs/122.json'), false);
-    assert.equal(existsSync('tasks/completed/122-evaluate-packet-entities-boundary-guard.md'), false);
-    assert.equal(existsSync('tasks/blocked/122-select-next-canonical-generalization-control.md'), false);
+test('Task 123 was not created by Task 119', () => {
+    assert.equal(existsSync('tasks/specs/123.json'), false);
+    assert.equal(existsSync('tasks/completed/123-evaluate-packet-entities-boundary-guard.md'), false);
+    assert.equal(existsSync('tasks/blocked/123-select-next-canonical-generalization-control.md'), false);
 });
