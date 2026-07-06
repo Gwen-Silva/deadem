@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "taskId": "128",
+  "reviewKind": "future_implementation_criteria",
+  "thisReviewAuthorizesImplementation": false,
+  "minimumCriteriaBeforeFutureImplementation": [
+    "a new human-authored task explicitly authorizes implementation scope",
+    "the task states whether replay processing is permitted and names authorized inputs",
+    "the diagnostic is disabled by default",
+    "the diagnostic is fail-closed and does not continue after the missing entity boundary",
+    "the diagnostic records compact metadata only",
+    "default behavior comparison is required if parser code is touched",
+    "field values, raw payloads, raw entityData, and raw serializedEntities remain forbidden in committed outputs",
+    "protection audit explicitly covers replay 005, bot fixtures 006-008, candidates 012-020, samples, output/replays, Java, Clarity, WSL, iaflow, and Product Reviewer automation",
+    "acceptance criteria require no placeholder entity, no fake fields, no synthetic registry state, no canonical facts, and no Source 2 semantics claim"
+  ],
+  "minimumOutputsForFutureImplementation": [
+    "input identity if replay processing is separately authorized",
+    "default-pass result if parser code is touched",
+    "diagnostic fail-closed result",
+    "missing-entity boundary diagnostic",
+    "protection audit",
+    "gate JSON",
+    "bounded report"
+  ],
+  "explicitlyNotAuthorizedByThisReview": [
+    "parser code changes",
+    "engine code changes",
+    "recovery",
+    "skip mode",
+    "placeholder entity",
+    "opt-in parser behavior",
+    "default behavior changes",
+    "new replay processing",
+    "external parser runtime execution",
+    "canonical or factual outputs"
+  ],
+  "recommendedFutureGateNames": [
+    "diagnostic_fail_closed_missing_entity_implemented",
+    "diagnostic_fail_closed_missing_entity_partial",
+    "diagnostic_fail_closed_missing_entity_blocked"
+  ],
+  "humanDecisionNeededBeforeImplementation": true
+}

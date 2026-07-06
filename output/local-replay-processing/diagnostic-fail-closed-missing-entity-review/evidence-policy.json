@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "taskId": "128",
+  "reviewKind": "evidence_policy",
+  "versionableDiagnosticMetadata": [
+    "packet ordinal",
+    "loop",
+    "operation",
+    "entity index",
+    "index delta",
+    "previous entity index",
+    "payload bit count",
+    "read counts",
+    "entityData bit length",
+    "registry presence or absence",
+    "class/serial/name metadata already available before failure",
+    "error class and compact message",
+    "booleans proving no fields/materialized state/canonical facts were produced"
+  ],
+  "localOnlyOrForbiddenData": [
+    {
+      "data": "raw replay bytes",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "raw entityData",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "raw serializedEntities",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "raw payloads",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "string bytes or string values",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "field values",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "full send-table payloads",
+      "policy": "forbidden_to_version"
+    },
+    {
+      "data": "full logs or external source trees",
+      "policy": "local_only_if_created_at_all"
+    }
+  ],
+  "provenanceRequirements": [
+    "mark each item as observed local parser evidence, hypothesis, inference, or engineering decision",
+    "record whether any replay was processed and which authorized replay if future task permits it",
+    "record whether field extraction was attempted",
+    "record whether parser default behavior was unchanged",
+    "record whether diagnostic mode was disabled by default if any future implementation is separately authorized"
+  ],
+  "claimsThatMustRemainProhibited": [
+    "missing entity proves replay corruption",
+    "missing entity proves Source 2 permits or forbids the stream shape",
+    "missing entity proves local parser is correct",
+    "absence of CREATE proves no game entity existed",
+    "fail-closed diagnostic proves recovery or skip is safe",
+    "diagnostic metadata is canonical match fact"
+  ]
+}

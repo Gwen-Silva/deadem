@@ -1,0 +1,167 @@
+{
+  "taskId": "128",
+  "title": "Review Diagnostic Fail-Closed Missing Entity Contract",
+  "status": "completed",
+  "objective": "Produce a minimal technical contract review for a possible diagnostic fail-closed response to PacketEntities missing-entity failures, without implementing parser behavior, recovery, skip mode, placeholders, opt-in behavior, or parser fixes.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/121.json",
+    "tasks/specs/122.json",
+    "tasks/specs/123.json",
+    "tasks/specs/124.json",
+    "tasks/specs/125.json",
+    "tasks/specs/126.json",
+    "tasks/specs/127.json",
+    "tasks/completed/121-diagnose-entity-2905-registry-and-packet-context.md",
+    "tasks/completed/122-diagnose-entity-index-allocation-gap.md",
+    "tasks/completed/123-triage-replay-parser-prior-art-and-second-canary.md",
+    "tasks/completed/124-evaluate-external-parser-oracle-canaries.md",
+    "tasks/completed/125-decide-clarity-oracle-viability.md",
+    "tasks/completed/126-restore-direct-codex-workflow.md",
+    "tasks/completed/127-independent-missing-entity-strategy.md",
+    "output/local-replay-processing/replay_010-entity-2905-registry-and-packet-context/**",
+    "output/local-replay-processing/replay_010-entity-index-allocation-gap/**",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/**",
+    "output/local-replay-processing/external-parser-oracle-canaries/**",
+    "output/local-replay-processing/clarity-oracle-viability/**",
+    "output/local-replay-processing/independent-missing-entity-strategy/**",
+    "reports/local-replay-entity-2905-registry-and-packet-context.md",
+    "reports/local-replay-entity-index-allocation-gap.md",
+    "reports/replay-parser-prior-art-and-second-canary.md",
+    "reports/external-parser-oracle-canaries.md",
+    "reports/clarity-oracle-viability.md",
+    "reports/independent-missing-entity-strategy.md"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/128.json",
+    "tasks/completed/128-diagnostic-fail-closed-missing-entity-review.md",
+    "reports/diagnostic-fail-closed-missing-entity-review.md",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/**"
+  ],
+  "forbiddenPaths": [
+    "packages/engine/**",
+    "packages/deadem/**",
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "tasks/specs/129.json",
+    "tasks/completed/129-*",
+    "tasks/blocked/129-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/contract-definition.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/fail-closed-boundaries.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/evidence-policy.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/risk-register.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/future-implementation-criteria.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/protection-audit.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/review-gate.json",
+    "reports/diagnostic-fail-closed-missing-entity-review.md",
+    "tasks/completed/128-diagnostic-fail-closed-missing-entity-review.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not use WSL",
+    "Do not use iaflow",
+    "Do not use Product Reviewer automation",
+    "Do not modify parser or engine code",
+    "Do not process replays",
+    "Do not touch replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not install or execute Java",
+    "Do not execute Clarity or external parsers",
+    "Do not implement or design recovery, skip mode, opt-in parser behavior, placeholders, or parser fixes",
+    "Do not create canonical, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not create Task 129"
+  ],
+  "successGate": "diagnostic_fail_closed_missing_entity_contract_ready",
+  "blockedGate": "diagnostic_fail_closed_missing_entity_contract_blocked",
+  "allowedAlternateGates": [
+    "diagnostic_fail_closed_missing_entity_contract_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/review-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

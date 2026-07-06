@@ -324,6 +324,16 @@ evidence, and the unavailable Clarity runtime path. It does not authorize
 recovery, skip mode, placeholders, parser fixes, default behavior changes,
 external parser execution, Java setup, or new replay processing.
 
+## Task 128 Diagnostic Contract Review Note
+
+Task 128 reviewed the diagnostic fail-closed missing-entity contract under
+`diagnostic_fail_closed_missing_entity_contract_ready`. The review defines
+diagnostic fail-closed as a possible future diagnostic-only stop at the first
+PacketEntities missing-entity boundary with compact metadata and no
+continuation, recovery, skip mode, placeholder entity, parser fix, canonical
+facts, or default behavior change. It does not authorize implementation; any
+future implementation requires a new human-authored task.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -363,5 +373,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   wrapper/adaptation step. This negative result does not prove the local parser
   is correct and does not prove replay corruption or Source 2 semantics. Task
   126 restored the direct GPT -> Codex workflow. Task 127 then selected
-  `add_diagnostic_fail_closed_review_next` as the next bounded local route,
-  without parser changes or recovery/skip design.
+  `add_diagnostic_fail_closed_review_next` as the next bounded local route.
+  Task 128 reviewed that route as a diagnostic fail-closed contract only,
+  without parser changes, implementation authorization, or recovery/skip
+  design.

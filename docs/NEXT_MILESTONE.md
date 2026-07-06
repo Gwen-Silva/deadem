@@ -143,6 +143,11 @@ task may review a bounded fail-closed diagnostic route, but Task 127 does not
 authorize recovery, skip mode, parser fixes, default behavior changes, external
 parser execution, Java setup, or new replay processing.
 
+Task 128 is complete with the gate
+`diagnostic_fail_closed_missing_entity_contract_ready`. It reviewed the
+diagnostic fail-closed contract and does not authorize implementation. A future
+implementation still requires a separate human-authored task.
+
 ## Task 094
 
 Purpose: resolve only the four frozen replay-002 terminal blockers:
@@ -839,7 +844,28 @@ Static prior-art observations are limited to existing local evidence and are
 classified as `documented_behavior`, `inferred_behavior`, or `open_question`.
 The selected next action is `add_diagnostic_fail_closed_review_next`. This is a
 strategy decision only and does not implement or specify recovery, skip mode,
-placeholders, parser default changes, or a parser fix. No Task 128 was created.
+placeholders, parser default changes, or a parser fix. Task 128 was later
+authorized separately as a contract review task.
+
+## Task 128
+
+Purpose: review the technical contract for a possible future diagnostic
+fail-closed response to PacketEntities missing-entity failures.
+
+Gate: `diagnostic_fail_closed_missing_entity_contract_ready`.
+
+Partial gate: `diagnostic_fail_closed_missing_entity_contract_partial`.
+
+Blocked gate: `diagnostic_fail_closed_missing_entity_contract_blocked`.
+
+Status: completed with the success gate above. Diagnostic fail-closed is
+defined as a possible future diagnostic-only stop at the first missing-entity
+PacketEntities boundary with compact metadata and no continuation as if the
+UPDATE were valid. The review distinguishes this from current fail-fast,
+recovery, skip mode, placeholder entities, and parser fixes. It does not
+authorize implementation, parser or engine changes, replay processing,
+external runtime execution, canonical facts, or semantic claims. No Task 129
+was created.
 
 ## Non-Goals
 

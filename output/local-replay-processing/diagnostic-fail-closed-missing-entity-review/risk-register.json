@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "taskId": "128",
+  "reviewKind": "risk_register",
+  "risks": [
+    {
+      "id": "accidental_recovery",
+      "risk": "A diagnostic mode could accidentally continue parsing or suppress the error.",
+      "severity": "high",
+      "mitigation": "Future implementation must stop at the boundary and prove continuation did not occur."
+    },
+    {
+      "id": "synthetic_state",
+      "risk": "A diagnostic could create a placeholder entity or materialize fake fields to inspect more data.",
+      "severity": "high",
+      "mitigation": "Future implementation must record placeholderOrFakeEntityCreated=false and fieldsMaterialized=false."
+    },
+    {
+      "id": "raw_payload_leak",
+      "risk": "Debugging the boundary could accidentally version raw payload, entityData, string bytes, or field values.",
+      "severity": "high",
+      "mitigation": "Version only compact metadata; keep any full diagnostics local-only and exclude them from commits."
+    },
+    {
+      "id": "semantic_overclaim",
+      "risk": "The diagnostic could be interpreted as proving Source 2 semantics, replay corruption, or parser correctness.",
+      "severity": "high",
+      "mitigation": "Outputs must keep observed facts, hypotheses, inferences, and engineering decisions separate."
+    },
+    {
+      "id": "default_behavior_drift",
+      "risk": "A diagnostic hook could change parser behavior outside the explicit diagnostic path.",
+      "severity": "high",
+      "mitigation": "Future implementation must include disabled-by-default evidence and default-pass comparison if separately authorized."
+    },
+    {
+      "id": "infinite_diagnosis",
+      "risk": "Another diagnostic could expand into broad replay investigation without a decision point.",
+      "severity": "medium",
+      "mitigation": "Future task must have a fixed gate, compact outputs, and explicit stop condition at the first boundary."
+    }
+  ],
+  "rejectionSignals": [
+    "requires recovery, skip mode, or placeholder state to collect evidence",
+    "requires changing default parser behavior",
+    "requires field values or raw payloads in committed outputs",
+    "requires processing protected or unauthorized replays",
+    "cannot distinguish diagnostic stop from recovery continuation",
+    "starts making Source 2 semantics or replay-corruption claims"
+  ]
+}

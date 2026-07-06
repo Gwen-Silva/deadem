@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "taskId": "128",
+  "reviewKind": "diagnostic_fail_closed_missing_entity_contract",
+  "basis": {
+    "baseCommit": "8e26b096f6812f4499e7a6d60354a9833de55008",
+    "sourceDecisionTask": "127",
+    "sourceDecision": "add_diagnostic_fail_closed_review_next",
+    "blocker": "PacketEntities missing entity lookup repeated across replay_010 and replay_011",
+    "implementationAuthorizedByThisReview": false
+  },
+  "definition": {
+    "diagnosticFailClosed": "A possible future mode that would stop parsing at the first observed PacketEntities missing-entity contract violation, emit compact diagnostic metadata, and refuse to continue as if the entity update were valid.",
+    "purpose": "Preserve the earliest failure boundary and evidence needed for human/parser-contract review without fabricating state or converting the failure into a playable/canonical parse.",
+    "nonPurpose": "It is not a recovery path, not a skip mode, not a parser fix, not a placeholder mechanism, and not a claim that the replay or Source 2 stream is invalid."
+  },
+  "modeDifferences": [
+    {
+      "mode": "current_fail_fast",
+      "meaning": "The parser throws at the missing entity because UPDATE requires an existing local entity.",
+      "continuesAfterFailure": false,
+      "createsState": false,
+      "canonicalizable": false
+    },
+    {
+      "mode": "diagnostic_fail_closed",
+      "meaning": "A future diagnostic-only variant could throw or stop at the same class of boundary while recording approved compact metadata about where and why it stopped.",
+      "continuesAfterFailure": false,
+      "createsState": false,
+      "canonicalizable": false
+    },
+    {
+      "mode": "recovery",
+      "meaning": "A parser behavior that attempts to continue after the violation by resolving or bypassing the missing entity condition.",
+      "allowedByThisReview": false
+    },
+    {
+      "mode": "skip_mode",
+      "meaning": "A parser behavior that skips the offending update/payload/entry and continues parsing later stream state.",
+      "allowedByThisReview": false
+    },
+    {
+      "mode": "placeholder_entity",
+      "meaning": "A parser behavior that creates a synthetic entity or state container for a missing UPDATE target.",
+      "allowedByThisReview": false
+    },
+    {
+      "mode": "parser_fix",
+      "meaning": "A default or opt-in behavioral change intended to parse the replay successfully or redefine PacketEntities semantics.",
+      "allowedByThisReview": false
+    }
+  ],
+  "epistemicSeparation": {
+    "observedFact": "The local parser observed a PacketEntities UPDATE target with no matching local entity state.",
+    "hypothesis": "The failure may indicate a local parser contract gap, missing create provenance, prior cursor issue, game-specific semantics, or unsupported replay condition.",
+    "engineeringDecision": "A fail-closed diagnostic review can preserve evidence while avoiding unapproved continuation behavior.",
+    "forbiddenConclusions": [
+      "Source 2 semantics concluded",
+      "replay corruption concluded",
+      "local parser correctness concluded",
+      "recovery safety concluded",
+      "skip safety concluded"
+    ]
+  }
+}

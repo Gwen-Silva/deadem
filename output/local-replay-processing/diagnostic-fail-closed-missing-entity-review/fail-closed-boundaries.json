@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "taskId": "128",
+  "reviewKind": "fail_closed_boundaries",
+  "safeStopPointsForFutureReview": [
+    {
+      "point": "before_field_extraction_for_missing_update",
+      "description": "Stop after the entity index and operation identify a missing UPDATE target, before reading or materializing field values for that entity.",
+      "safeBecause": "No fake entity or fake fields are needed to record the boundary."
+    },
+    {
+      "point": "before_placeholder_or_registration",
+      "description": "Stop before any create/register/placeholder behavior could alter the entity registry.",
+      "safeBecause": "Registry evidence remains factual to the local parser state."
+    },
+    {
+      "point": "before_payload_skip_or_continuation",
+      "description": "Stop before attempting to skip the entry payload or continue to later entries/packets.",
+      "safeBecause": "Continuation could hide the earliest contract boundary or create misleading downstream diagnostics."
+    }
+  ],
+  "minimumDiagnosticFieldsThatCouldBeRecorded": [
+    "replayId",
+    "passMode",
+    "packetOrdinal",
+    "loop",
+    "updatedEntries",
+    "operation",
+    "entityIndex",
+    "previousEntityIndex",
+    "indexDelta",
+    "payloadBits",
+    "readCounts.beforeIndex",
+    "readCounts.afterIndex",
+    "readCounts.afterCommand",
+    "entityDataBitLength",
+    "registryStateBefore",
+    "classIdIfAlreadyKnown",
+    "serialIfAlreadyKnown",
+    "classNameIfAlreadyKnown",
+    "failureMessage",
+    "fieldsMaterialized=false",
+    "placeholderOrFakeEntityCreated=false",
+    "canonicalFactsProduced=false"
+  ],
+  "continuationBoundaries": {
+    "mayContinueParsing": false,
+    "mayApplyUpdate": false,
+    "maySkipPayload": false,
+    "mayCreatePlaceholder": false,
+    "mayChangeDefaultBehavior": false,
+    "mayEmitCanonicalFacts": false
+  },
+  "allowedFutureOutputs": [
+    "compact failure-boundary JSON",
+    "compact protection audit",
+    "compact comparison against prior diagnostics",
+    "human-readable bounded report"
+  ],
+  "forbiddenFutureOutputs": [
+    "canonical package",
+    "source artifacts",
+    "match facts",
+    "field values",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "snapshots or registries that imply synthetic state",
+    "spatial, macro, mechanics, fight, decision, or ML outputs"
+  ]
+}
