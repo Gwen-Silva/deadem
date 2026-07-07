@@ -425,6 +425,20 @@ change, recovery, skip mode, placeholder, fake fields, synthetic registry
 state, parser continuation, replay processing, or canonical/source/match
 output was added.
 
+## Task 137 Replay 010 Index Lifecycle Probe Canary
+
+Task 137 ran the approved diagnostic index/lifecycle probe on replay_010 only
+under `missing_entity_index_lifecycle_probe_replay_010_canary_ready`. The
+diagnostic pass used only `recovery.diagnoseMissingEntityFailClosed: true` and
+captured the known packet 954 loop 33 missing UPDATE for entity 2905 with the
+new lifecycle/classification fields present. The observed classification is
+`not_determined` because the compact packet-local evidence has no prior
+same-entity entry but does not establish replay-wide lifecycle or index-stream
+cause. The parser still throws fail-closed, and no recovery, skip,
+placeholder, fake fields, synthetic registry state, continuation, default
+behavior change, raw data versioning, or canonical/source/match output was
+introduced.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -487,4 +501,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   without implementation or replay processing. Task 136 then implemented that
   approved diagnostic-only lifecycle probe extension synthetically, preserving
   fail-closed behavior and adding no recovery, skip, placeholders, default
-  behavior change, replay processing, or semantic claims.
+  behavior change, replay processing, or semantic claims. Task 137 then ran
+  that lifecycle probe on the authorized replay_010 canary and observed
+  `classificationCandidate: not_determined` at packet 954 loop 33 for entity
+  2905, with fail-closed behavior preserved and no raw/canonical output.

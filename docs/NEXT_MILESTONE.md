@@ -1011,6 +1011,22 @@ continuation, recovery, skip mode, placeholder/fake entity, payload skip,
 update application, canonical output, replay processing, default behavior
 change, or new opt-in option.
 
+## Task 137
+
+Purpose: run the diagnostic index/lifecycle probe on the authorized replay_010
+canary only.
+
+Gate: `missing_entity_index_lifecycle_probe_replay_010_canary_ready`.
+
+Status: completed with the success gate above. The diagnostic pass used only
+`recovery.diagnoseMissingEntityFailClosed: true`, captured packet 954 loop 33
+for missing entity 2905, recorded the new lifecycle/classification fields, and
+still threw fail-closed. The observed classification is `not_determined`. No
+recovery, skip mode, placeholder/fake entity, synthetic registry state,
+payload skip, update application, continuation, default behavior change, raw
+data versioning, canonical output, source artifact, match fact, or additional
+replay processing occurred.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
