@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "validationPurpose": "Define tests required for any future implementation of diagnostic_index_lifecycle_probe_only. This task does not implement or run that future intervention.",
+  "requiredSyntheticTestsForFutureImplementation": [
+    "diagnostic remains disabled by default",
+    "diagnostic records compact metadata only when explicitly enabled",
+    "diagnostic still throws after recording metadata",
+    "diagnostic does not create placeholder entities",
+    "diagnostic does not materialize fake fields",
+    "diagnostic does not create synthetic registry state",
+    "diagnostic does not skip payloads or PacketEntities entries",
+    "diagnostic does not continue parsing after missing entity",
+    "diagnostic rejects incompatible recovery and truncation options",
+    "classification categories remain explicit and can return not_determined"
+  ],
+  "requiredRegressionTestsForFutureImplementation": [
+    "node --test tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "node --test tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "node --test tests/external-parser-oracle-canaries.test.mjs",
+    "node --test tests/clarity-oracle-viability.test.mjs",
+    "npm run validate:tasks",
+    "npm run lint",
+    "npm run check:outputs",
+    "npm run codex:validate -- --task <future-task> --base <approved-base>",
+    "npm run codex:review -- --task <future-task> --base <approved-base>"
+  ],
+  "replayValidationPolicy": {
+    "default": "forbidden",
+    "allowedOnlyIfFutureTaskNamesAuthorizedReplay": true,
+    "replay005": "always_forbidden_without_final_holdout_release",
+    "bots006To008": "forbidden_without_bot_fixture_scope",
+    "candidates012To020": "forbidden_without_explicit_authorization"
+  },
+  "checkOutputsKnownWarning": {
+    "path": "output/04-controller-pawn-lifecycle.json",
+    "treatment": "pre_existing_warning_if_only_failure"
+  }
+}

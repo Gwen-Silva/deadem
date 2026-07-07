@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "selectedIntervention": "diagnostic_index_lifecycle_probe_only",
+  "scopeStatement": "A future implementation may add or refine diagnostic-only metadata around the existing missing-entity fail-closed boundary to classify local index/lifecycle evidence. It must not recover, skip, continue, create entities, or emit facts.",
+  "futureFilesPotentiallyTouchAllowedOnlyIfSeparatelyAuthorized": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tools/*missing-entity*diagnostic*.mjs",
+    "output/local-replay-processing/<future-task-specific-diagnostic-output>/**",
+    "reports/<future-task-specific-report>.md",
+    "tasks/specs/<future-task>.json",
+    "tasks/completed/<future-task>.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "futureInputsForbiddenUnlessExplicitlyAuthorized": [
+    "replay_010",
+    "replay_011",
+    "replay 005",
+    "replays 006-008",
+    "candidates 012-020",
+    "samples/**",
+    "output/replays/**",
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes or values",
+    "field values",
+    "full send-table payload"
+  ],
+  "futureBehaviorForbidden": [
+    "recovery",
+    "skip mode",
+    "payload skip",
+    "placeholder entity",
+    "fake fields",
+    "synthetic registry state",
+    "continuation after missing entity",
+    "default behavior change",
+    "canonicalization",
+    "source artifact generation",
+    "match fact generation",
+    "spatial/macro/mechanics/fight/decision/ML output"
+  ],
+  "permittedConfigurationShapeForFutureImplementation": {
+    "defaultDisabled": true,
+    "diagnosticOnly": true,
+    "allowedIfSeparatelyAuthorized": [
+      "recovery.diagnoseMissingEntityFailClosed with additional compact index/lifecycle metadata"
+    ],
+    "requiresNewHumanApprovalForNewOption": true
+  },
+  "rejectedConfigurationCombinations": [
+    "diagnostic mode with recovery.allowUnresolvedEntityReference",
+    "diagnostic mode with recovery.allowMissingClassBaseline",
+    "diagnostic mode with recovery.allowEntityPacketBoundaryTruncation",
+    "diagnostic mode with any option that suppresses the missing-entity throw",
+    "diagnostic mode with any option that advances after the missing-entity boundary"
+  ]
+}

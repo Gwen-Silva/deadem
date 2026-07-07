@@ -401,6 +401,17 @@ fixes, default behavior changes, new opt-in behavior, replay processing,
 canonical/source/match outputs, or Source 2/replay-corruption/local parser
 correctness claims.
 
+## Task 135 Missing Entity Bounded Parser Intervention Spec
+
+Task 135 prepared a bounded, non-implementing future-intervention spec under
+`missing_entity_bounded_parser_intervention_spec_ready`. The selected proposed
+future intervention is `diagnostic_index_lifecycle_probe_only`: a diagnostic
+index/lifecycle probe that would preserve fail-closed throwing and compact
+metadata boundaries if separately approved later. Task 135 does not authorize
+implementation, parser/engine changes, replay processing, recovery, skip mode,
+placeholder entities, default behavior changes, new opt-in behavior,
+canonical/source/match outputs, or semantic claims.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -458,4 +469,6 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   route, with no replay processing or parser changes. Task 134 then reviewed
   parser-intervention design boundaries and selected
   `prepare_bounded_parser_intervention_spec_for_human_approval` as a
-  non-implementing next step.
+  non-implementing next step. Task 135 prepared that bounded spec and selected
+  `diagnostic_index_lifecycle_probe_only` for future human approval, again
+  without implementation or replay processing.

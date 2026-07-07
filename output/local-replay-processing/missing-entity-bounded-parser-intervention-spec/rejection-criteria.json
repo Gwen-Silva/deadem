@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "mandatoryRejectionSignals": [
+    "The future task asks to recover missing UPDATEs.",
+    "The future task asks to skip payloads or PacketEntities entries.",
+    "The future task asks to create placeholder entities, fake fields, or synthetic registry state.",
+    "The future task asks to continue parsing after missing entity as if the update were valid.",
+    "The future task asks to alter parser default behavior.",
+    "The future task asks to create a new opt-in behavior without explicit human approval.",
+    "The future task asks to process replay 005, replays 006-008, candidates 012-020, samples, or output/replays without explicit authorization.",
+    "The future task would version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes/values, field values, or full send-table payload.",
+    "The future task would emit canonical facts, source artifacts, match facts, or interpretation outputs.",
+    "The future task treats local diagnostics as proof of Source 2 semantics, replay corruption, or local parser correctness.",
+    "The future task requires Java, Clarity, external parser execution, WSL, iaflow, or Product Reviewer automation."
+  ],
+  "rejectedAlternativesForImmediateImplementation": [
+    "direct recovery",
+    "direct skip",
+    "placeholder entity",
+    "canonicalization",
+    "automatic replay expansion",
+    "processing candidates 012-020"
+  ],
+  "requiredResponseIfRejected": "Stop and report the blocking criterion. Do not implement partial behavior around the rejection."
+}

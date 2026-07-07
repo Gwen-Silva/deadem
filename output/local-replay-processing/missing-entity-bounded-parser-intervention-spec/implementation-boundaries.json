@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "implementationAuthorizedByThisTask": false,
+  "selectedIntervention": "diagnostic_index_lifecycle_probe_only",
+  "allowedFutureImplementationBoundariesIfApproved": [
+    "Record compact metadata at the same missing-entity boundary where the parser already throws.",
+    "Classify local evidence using explicit categories such as never_registered_candidate, removed_entity_candidate, registry_state_loss_candidate, index_stream_suspected, or not_determined.",
+    "Record only metadata already available in parser control flow or compact registry summaries.",
+    "Throw the same missing-entity error after diagnostic capture.",
+    "Keep default behavior disabled and unchanged.",
+    "Reject incompatible recovery/truncation/baseline options before parsing."
+  ],
+  "notAllowedInFutureImplementationWithoutSeparateDesign": [
+    "Advance the PacketEntities cursor past the missing update.",
+    "Read or skip missing-entity payload to continue parsing.",
+    "Create or register any placeholder entity.",
+    "Materialize fields for the missing update.",
+    "Suppress or downgrade the thrown error.",
+    "Emit canonical facts or match facts.",
+    "Process additional replays without explicit authorization.",
+    "Claim Source 2 semantics, replay corruption, or local parser correctness."
+  ],
+  "permittedCompactMetadataIfApproved": [
+    "packet ordinal",
+    "loop",
+    "updatedEntries",
+    "operation",
+    "entityIndex",
+    "previousEntityIndex",
+    "indexDelta",
+    "payloadBits",
+    "readCounts",
+    "entityDataBitLength",
+    "registry state before and after",
+    "whether entity was ever observed as created/registered/updated/removed in bounded local diagnostics if available",
+    "classification candidate",
+    "booleans proving no recovery, skip, continuation, placeholders, fake fields, synthetic registry state, canonical facts, or raw data capture"
+  ],
+  "prohibitedVersionedEvidence": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "full parser dumps",
+    "full external parser logs",
+    "canonical match package"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "approvalStillRequired": true,
+  "requestedFutureAuthorization": "Approve or reject a future implementation task for diagnostic_index_lifecycle_probe_only.",
+  "selectedInterventionForApproval": "diagnostic_index_lifecycle_probe_only",
+  "implementationNotAuthorizedByTask135": true,
+  "humanDecisionNeededBeforeImplementation": [
+    "Whether to authorize a future diagnostic-only implementation.",
+    "Whether the future implementation may touch parser/engine files.",
+    "Whether any replay processing is authorized, and if so exactly which replay IDs.",
+    "Whether synthetic-only validation is sufficient for the first implementation task.",
+    "Whether new diagnostic metadata may extend recovery.diagnoseMissingEntityFailClosed or requires a separately named option."
+  ],
+  "recommendedFutureTaskFraming": "Implement a diagnostic-only PacketEntities index/lifecycle probe for missing_entity_fail_closed, disabled by default, preserving fail-closed throwing and forbidding recovery, skip, placeholders, synthetic state, canonical outputs, and semantic claims.",
+  "explicitNonAuthorization": [
+    "No recovery",
+    "No skip mode",
+    "No placeholder entity",
+    "No parser fix",
+    "No default behavior change",
+    "No new opt-in behavior from Task 135",
+    "No replay processing from Task 135",
+    "No canonical package",
+    "No source artifacts",
+    "No match facts"
+  ]
+}

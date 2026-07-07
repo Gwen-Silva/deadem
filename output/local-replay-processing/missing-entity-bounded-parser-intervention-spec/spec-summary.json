@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "specType": "bounded_non_implementing_parser_intervention_spec",
+  "implementationAuthorized": false,
+  "selectedIntervention": "diagnostic_index_lifecycle_probe_only",
+  "selectionRationale": "The repeated replay_010 and replay_011 missing_entity_fail_closed class points to PacketEntities index/lifecycle uncertainty, while recovery, skip, placeholders, parser fixes, default changes, and canonicalization remain unsafe and unauthorized.",
+  "wouldTryToProve": [
+    "Whether compact index/lifecycle metadata at the existing missing-entity boundary can distinguish never-registered, removed, registry-loss, and index-stream-suspected cases more consistently.",
+    "Whether the existing fail-closed boundary can be enriched diagnostically without changing parser continuation, registry state, or field materialization.",
+    "Whether future intervention evidence is strong enough for a later human decision about behavior-changing work."
+  ],
+  "wouldNotTryToResolve": [
+    "It would not recover missing UPDATEs.",
+    "It would not skip payloads or PacketEntities entries.",
+    "It would not create placeholder entities or synthetic registry state.",
+    "It would not continue parsing after missing entity as if the UPDATE were valid.",
+    "It would not change default behavior.",
+    "It would not generate canonical facts, source artifacts, match facts, or interpretation outputs.",
+    "It would not prove Source 2 semantics, replay corruption, or local parser correctness."
+  ],
+  "sourceEvidence": [
+    {
+      "taskId": "131",
+      "replayId": "replay_010",
+      "boundary": "packet 954 loop 33 UPDATE entity 2905"
+    },
+    {
+      "taskId": "132",
+      "replayId": "replay_011",
+      "boundary": "packet 1052 loop 28 UPDATE entity 5624"
+    },
+    {
+      "taskId": "134",
+      "decision": "prepare_bounded_parser_intervention_spec_for_human_approval"
+    }
+  ]
+}

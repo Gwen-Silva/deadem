@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "taskId": "135",
+  "futureGatePlan": {
+    "successGate": "missing_entity_index_lifecycle_probe_ready",
+    "partialGate": "missing_entity_index_lifecycle_probe_partial",
+    "blockedGate": "missing_entity_index_lifecycle_probe_blocked"
+  },
+  "successCriteriaForFutureImplementation": [
+    "Diagnostic is disabled by default.",
+    "Diagnostic remains fail-closed and throws after recording metadata.",
+    "Diagnostic records only compact permitted metadata.",
+    "Diagnostic produces explicit local-evidence classification candidates or not_determined.",
+    "Diagnostic proves no recovery, skip, payload skip, placeholders, fake fields, synthetic registry state, continuation, canonical facts, source artifacts, or match facts.",
+    "Incompatible configurations are rejected.",
+    "No protected replay, bot fixture, candidate replay, samples, or output/replays are touched outside explicit authorization.",
+    "No raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes/values, field values, or full send-table payload are versioned."
+  ],
+  "partialCriteriaForFutureImplementation": [
+    "Metadata capture is bounded but classification remains not_determined.",
+    "Synthetic tests pass but replay canary execution is not authorized.",
+    "A future task explicitly blocks replay validation while accepting synthetic-only evidence."
+  ],
+  "blockedCriteriaForFutureImplementation": [
+    "Implementation would require recovery, skip, placeholders, or continuation.",
+    "Implementation would require raw payload/entity data capture in versioned outputs.",
+    "Implementation would require touching protected replay 005 or unauthorized candidates.",
+    "Implementation would require external parser runtime, Java, Clarity, WSL, iaflow, or Product Reviewer automation.",
+    "Implementation would require claiming Source 2 semantics, replay corruption, or local parser correctness."
+  ]
+}

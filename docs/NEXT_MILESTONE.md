@@ -982,6 +982,21 @@ placeholder entities, fake fields, synthetic registry state, continuation
 after missing entity, default behavior changes, new opt-in behavior, replay
 processing, canonical/source/match outputs, or semantic claims.
 
+## Task 135
+
+Purpose: prepare a bounded, non-implementing parser-intervention spec for the
+repeated `missing_entity_fail_closed` class.
+
+Gate: `missing_entity_bounded_parser_intervention_spec_ready`.
+
+Status: completed with the success gate above. The spec selects
+`diagnostic_index_lifecycle_probe_only` for future human approval. It defines
+scope, boundaries, validation, gates, rejection criteria, and human approval
+requirements for a future diagnostic-only implementation, but does not
+authorize implementation, parser/engine changes, replay processing, recovery,
+skip mode, placeholders, default behavior changes, new opt-in behavior,
+canonical/source/match outputs, or semantic claims.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
