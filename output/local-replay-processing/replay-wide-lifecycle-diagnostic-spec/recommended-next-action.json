@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "recommendedAlternative": "design_replay_wide_entity_lifecycle_ledger",
+  "recommendedNextAction": "request_human_approval_for_replay_wide_lifecycle_diagnostic_implementation_spec",
+  "implementationAuthorizedNow": false,
+  "why": [
+    "Task 139 identified replay-wide lifecycle provenance as the next evidence boundary.",
+    "The selected alternative defines the evidence surface without implementing parser behavior.",
+    "It is more targeted than repeating packet-local probes and less environment-dependent than returning to Clarity."
+  ],
+  "requiredHumanAuthorizationBeforeImplementation": [
+    "Explicit approval to implement a diagnostic-only replay-wide lifecycle ledger.",
+    "Explicit replay authorization for each canary to be processed.",
+    "Explicit confirmation that the future task remains fail-closed and non-recovery."
+  ],
+  "nextTaskIfApprovedLater": {
+    "type": "implementation_or_more_detailed_implementation_spec",
+    "mustBeSeparateTask": true,
+    "mustPreserve": [
+      "disabled-by-default diagnostics",
+      "fail-closed throw",
+      "no recovery",
+      "no skip",
+      "no placeholder",
+      "no continuation after missing entity",
+      "no raw data",
+      "no canonical/source/match outputs"
+    ]
+  }
+}

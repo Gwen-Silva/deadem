@@ -1063,6 +1063,24 @@ replay-wide lifecycle or index-stream cause. No replay was processed, and no
 parser/engine change, recovery, skip mode, placeholder, raw data capture, or
 canonical/source/match output was produced.
 
+## Task 140
+
+Purpose: prepare a bounded, non-implementing spec for a future replay-wide
+lifecycle/registry diagnostic for the repeated `missing_entity_fail_closed`
+class.
+
+Gate: `replay_wide_lifecycle_diagnostic_spec_ready`.
+
+Status: completed with the success gate above. The selected alternative is
+`design_replay_wide_entity_lifecycle_ledger`. The spec defines the compact
+metadata, forbidden raw data, classification candidates, fail-closed
+boundaries, validation plan, gates, and rejection criteria for a possible
+future diagnostic-only implementation. It does not authorize implementation,
+replay processing, parser/engine changes, recovery, skip mode, placeholder
+entities, continuation after missing entity, default behavior changes,
+canonical/source/match outputs, or semantic claims. Any future implementation
+or canary run still requires separate human authorization.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

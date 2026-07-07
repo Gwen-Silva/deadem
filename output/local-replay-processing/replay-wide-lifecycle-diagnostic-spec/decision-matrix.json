@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "alternativesEvaluated": [
+    {
+      "id": "keep_packet_local_probe_only",
+      "fit": "low",
+      "reason": "Tasks 137-139 showed packet-local evidence remains not_determined and cannot establish replay-wide lifecycle or index-stream cause."
+    },
+    {
+      "id": "design_replay_wide_entity_lifecycle_ledger",
+      "fit": "high",
+      "reason": "It directly targets the evidence gap identified by Task 139 while remaining spec-only and requiring separate approval before implementation."
+    },
+    {
+      "id": "design_registry_transition_audit_only",
+      "fit": "medium",
+      "reason": "It would reduce registry-state uncertainty but may miss indexDelta, command sequence, and create/register provenance context needed for the repeated missing entity class."
+    },
+    {
+      "id": "require_external_oracle_before_replay_wide_diagnostic",
+      "fit": "low_current_environment",
+      "reason": "Task 125 found Clarity unavailable in the current environment and the user deferred Java/JDK setup."
+    },
+    {
+      "id": "pause_parser_intervention_until_new_strategy",
+      "fit": "medium_low",
+      "reason": "It avoids risk but does not reduce the known not_determined lifecycle evidence gap."
+    }
+  ],
+  "selectedAlternative": "design_replay_wide_entity_lifecycle_ledger",
+  "selectionConstraints": [
+    "spec-only",
+    "no implementation",
+    "no replay processing",
+    "no recovery",
+    "no skip",
+    "no placeholder",
+    "no parser fix",
+    "no canonicalization",
+    "no automatic replay expansion",
+    "no candidates 012-020",
+    "no replay 005"
+  ]
+}

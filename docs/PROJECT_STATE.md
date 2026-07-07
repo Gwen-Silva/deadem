@@ -467,6 +467,17 @@ canonical/source/match/raw outputs. The selected next action is
 `prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval`, a future
 spec-only route if separately authorized.
 
+## Task 140 Replay-Wide Lifecycle Diagnostic Spec
+
+Task 140 prepared a bounded, non-implementing replay-wide lifecycle diagnostic
+spec under `replay_wide_lifecycle_diagnostic_spec_ready`. The selected
+alternative is `design_replay_wide_entity_lifecycle_ledger`: a future
+diagnostic-only route that would collect compact parser-local lifecycle and
+registry metadata up to the first `missing_entity_fail_closed` boundary if
+separately approved. Task 140 does not authorize implementation, replay
+processing, parser/engine changes, recovery, skip mode, placeholders, default
+behavior changes, canonical/source/match outputs, or semantic claims.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -539,4 +550,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   output. Task 139 consolidated both lifecycle probe canaries and selected
   `prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval` as the
   next bounded route because packet-local evidence is insufficient to decide
-  replay-wide lifecycle or index-stream cause.
+  replay-wide lifecycle or index-stream cause. Task 140 prepared that bounded
+  non-implementing spec and selected
+  `design_replay_wide_entity_lifecycle_ledger` as the future route requiring
+  separate human approval before any implementation or replay processing.

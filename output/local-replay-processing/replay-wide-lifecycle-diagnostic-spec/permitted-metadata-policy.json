@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "permittedMetadataIfFutureImplementationApproved": [
+    "replayId",
+    "passMode",
+    "packetOrdinal",
+    "loop",
+    "updatedEntries",
+    "operation",
+    "entityIndex",
+    "previousEntityIndex",
+    "indexDelta",
+    "serial",
+    "classId",
+    "className if already resolved by normal parser flow",
+    "payloadBits",
+    "entityDataBitLength",
+    "readCounts beforeIndex/afterIndex/afterCommand/afterAction",
+    "registryStateBefore",
+    "registryStateAfter",
+    "registerEntityAttempted",
+    "registerEntitySucceeded",
+    "classLookupAttempted",
+    "classLookupSucceeded",
+    "baselineLookupAttempted",
+    "baselineLookupSucceeded",
+    "fieldExtractionAttempted",
+    "failureStage",
+    "diagnosticClassificationCandidate",
+    "diagnosticClassificationBasis"
+  ],
+  "metadataConstraints": [
+    "Record only compact metadata.",
+    "Do not record field values.",
+    "Do not record raw payload bytes or entityData bytes.",
+    "Do not infer game facts from registry metadata.",
+    "Keep full logs local-only if needed and do not commit them."
+  ]
+}

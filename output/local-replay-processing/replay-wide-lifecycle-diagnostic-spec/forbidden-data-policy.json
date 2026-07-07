@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "forbiddenVersionedData": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "canonical facts",
+    "source artifacts",
+    "match facts",
+    "spatial outputs",
+    "macro outputs",
+    "mechanics outputs",
+    "fight outputs",
+    "decision outputs",
+    "ML outputs",
+    "external parser source trees",
+    "Java or Clarity artifacts"
+  ],
+  "forbiddenActions": [
+    "process replay 005",
+    "process bot fixtures 006-008",
+    "access candidates 012-020",
+    "use samples/**",
+    "use output/replays/**",
+    "execute Java",
+    "execute Clarity",
+    "execute external parsers",
+    "use WSL",
+    "use iaflow",
+    "use Product Reviewer automation"
+  ],
+  "rawDataPolicy": "A future diagnostic may only commit compact metadata summaries. Raw or value-bearing data must remain unrecorded or local-only and ignored."
+}

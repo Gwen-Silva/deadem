@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "problem": "The current packet-local missing_entity_fail_closed probe records the immediate boundary but cannot determine replay-wide create/register/removal provenance or index-stream cause.",
+  "knownPacketLocalBoundaries": [
+    {
+      "replayId": "replay_010",
+      "packetOrdinal": 954,
+      "loop": 33,
+      "operation": "UPDATE",
+      "entityIndex": 2905,
+      "classificationCandidate": "not_determined"
+    },
+    {
+      "replayId": "replay_011",
+      "packetOrdinal": 1052,
+      "loop": 28,
+      "operation": "UPDATE",
+      "entityIndex": 5624,
+      "classificationCandidate": "not_determined"
+    }
+  ],
+  "questionsToReduce": [
+    "Was the missing entity ever observed in local parser history before the fail-closed boundary?",
+    "Was a CREATE/register attempt observed and then followed by missing registry state?",
+    "Was a removal-like operation observed before the missing UPDATE?",
+    "Is entity index reuse or generation ambiguity visible in compact local metadata?",
+    "Is index-stream or cursor contract suspicion strengthened by replay-wide metadata?"
+  ],
+  "questionsNotAnswered": [
+    "Whether the entity existed in the game world.",
+    "Whether Source 2 semantics permit the observed update.",
+    "Whether the replay is corrupt.",
+    "Whether the local parser is correct.",
+    "Whether recovery, skip, or placeholder behavior is safe."
+  ]
+}

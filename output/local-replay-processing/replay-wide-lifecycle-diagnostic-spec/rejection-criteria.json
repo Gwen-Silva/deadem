@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "rejectFutureImplementationIf": [
+    "It requires continuing parser execution after the missing entity boundary.",
+    "It requires applying a missing UPDATE.",
+    "It requires skipping payloads or moving cursor state to bypass failure.",
+    "It requires creating placeholder entities, fake fields, or synthetic registry state.",
+    "It requires default behavior changes.",
+    "It records raw payloads, entityData, serializedEntities, replay bytes, string bytes/values, field values, or full send-table payload.",
+    "It cannot preserve fail-closed error behavior.",
+    "It cannot reject incompatible recovery/truncation combinations.",
+    "It requires replay 005, bot fixtures 006-008, candidates 012-020, samples/**, or output/replays/**.",
+    "It becomes canonical/source/match/spatial/macro/mechanics/fight/decision/ML output.",
+    "It claims Source 2 semantics, replay corruption, local parser correctness, or game-world entity existence/nonexistence."
+  ],
+  "blockInsteadOfProceedIf": [
+    "Required compact lifecycle metadata cannot be collected without raw data.",
+    "Required hooks would materially alter parser behavior.",
+    "Human authorization is absent for implementation or replay processing.",
+    "The future task scope broadens from diagnostic evidence to recovery or parser fix."
+  ]
+}

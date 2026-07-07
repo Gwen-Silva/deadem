@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "allowedFutureClassificationCandidates": [
+    "never_registered_in_observed_parser_history_candidate",
+    "created_then_missing_registry_state_candidate",
+    "removed_before_missing_update_candidate",
+    "entity_index_reused_or_generation_ambiguous_candidate",
+    "index_stream_or_cursor_contract_suspected",
+    "not_determined"
+  ],
+  "classificationScope": "local parser diagnostic evidence only",
+  "classificationRequirements": {
+    "never_registered_in_observed_parser_history_candidate": "No CREATE/register/update/removal event for the target was observed in the compact local parser ledger before the first missing UPDATE, with the limitation that this is observed parser history only.",
+    "created_then_missing_registry_state_candidate": "A CREATE/register success for the target was observed before the boundary, but registryStateBefore at the missing UPDATE is missing and no sufficient removal evidence explains it.",
+    "removed_before_missing_update_candidate": "A compact removal-like parser operation for the target was observed before the missing UPDATE; this is not a game destruction/death/objective claim.",
+    "entity_index_reused_or_generation_ambiguous_candidate": "Serial/generation or repeated index metadata makes local identity ambiguous without resolving game semantics.",
+    "index_stream_or_cursor_contract_suspected": "Read-count, indexDelta, or packet sequence metadata suggests local cursor/index interpretation may be involved.",
+    "not_determined": "Evidence remains insufficient or conflicting."
+  },
+  "forbiddenClassificationsAndClaims": [
+    "entity_never_existed_in_game",
+    "source2_semantics_confirmed",
+    "replay_corruption_confirmed",
+    "local_parser_correct",
+    "recovery_safe",
+    "skip_safe",
+    "placeholder_safe",
+    "destruction_or_delete_or_leave_inferred_from_registry_absence"
+  ],
+  "confidencePolicy": "Classifications are diagnostic candidates. They must include basis and limitations, and must not be promoted to facts."
+}

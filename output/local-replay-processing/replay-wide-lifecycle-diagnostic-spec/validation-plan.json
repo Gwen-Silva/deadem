@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "validationPlanForFutureImplementation": [
+    {
+      "category": "synthetic_unit_tests",
+      "purpose": "Verify disabled-by-default behavior, option validation, fail-closed throw preservation, no continuation, no recovery, no skip, no placeholder, and compact metadata shape."
+    },
+    {
+      "category": "canary_tests_if_separately_authorized",
+      "purpose": "Run exactly one authorized replay canary per task, bounded to first missing_entity_fail_closed, and emit compact summaries only."
+    },
+    {
+      "category": "output_policy_checks",
+      "purpose": "Confirm no raw replay bytes, raw payloads, entityData, serializedEntities, string bytes/values, field values, full send-table payload, canonical facts, or source/match outputs are versioned."
+    },
+    {
+      "category": "workflow_checks",
+      "purpose": "Run task validation, lint, output checks, codex validate, and codex review for each future task."
+    }
+  ],
+  "requiredCurrentTaskValidation": [
+    "node --test tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "node --test tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "node --test tests/external-parser-oracle-canaries.test.mjs",
+    "node --test tests/clarity-oracle-viability.test.mjs",
+    "npm run validate:tasks",
+    "npm run lint",
+    "npm run check:outputs",
+    "npm run codex:validate -- --task 140 --base 18c714322093ad400b0449e1856e03bc3987e2d3",
+    "npm run codex:review -- --task 140 --base 18c714322093ad400b0449e1856e03bc3987e2d3"
+  ],
+  "knownAllowedOutputWarning": "output/04-controller-pawn-lifecycle.json oversized warning is pre-existing if it is the only check:outputs failure."
+}

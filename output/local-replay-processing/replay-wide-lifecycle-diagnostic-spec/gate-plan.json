@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "currentTaskGates": {
+    "success": "replay_wide_lifecycle_diagnostic_spec_ready",
+    "partial": "replay_wide_lifecycle_diagnostic_spec_partial",
+    "blocked": "replay_wide_lifecycle_diagnostic_spec_blocked"
+  },
+  "futureImplementationGateSuggestions": [
+    "replay_wide_lifecycle_diagnostic_implemented",
+    "replay_wide_lifecycle_diagnostic_partial",
+    "replay_wide_lifecycle_diagnostic_blocked"
+  ],
+  "futureCanaryGateSuggestions": [
+    "replay_wide_lifecycle_diagnostic_replay_010_canary_ready",
+    "replay_wide_lifecycle_diagnostic_replay_011_canary_ready",
+    "replay_wide_lifecycle_diagnostic_canary_partial",
+    "replay_wide_lifecycle_diagnostic_canary_blocked"
+  ],
+  "successCriteriaForFutureImplementation": [
+    "diagnostic remains disabled by default",
+    "fail-closed throw remains preserved",
+    "compact replay-wide lifecycle metadata can be recorded before the first missing entity",
+    "no recovery, skip, placeholder, synthetic registry state, continuation, or default behavior change",
+    "raw/value-bearing data remains unversioned"
+  ]
+}

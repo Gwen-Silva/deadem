@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "implementationAuthorized": false,
+  "futureImplementationMayTouchOnlyIfSeparatelyApproved": [
+    "ParserConfiguration diagnostic/recovery option validation",
+    "DemoMessageHandler or equivalent PacketEntities diagnostic hook",
+    "compact local diagnostic tool",
+    "synthetic tests",
+    "authorized canary output summaries",
+    "bounded reports and task docs"
+  ],
+  "futureImplementationMustNot": [
+    "change default behavior",
+    "continue parsing after missing entity",
+    "recover missing UPDATE",
+    "skip payload",
+    "create placeholder entity",
+    "create fake fields",
+    "create synthetic registry state",
+    "materialize fields after the boundary",
+    "turn classifications into canonical facts",
+    "process unauthorized replays",
+    "expand to batch processing"
+  ],
+  "failClosedPreservation": {
+    "defaultMode": "unchanged fail-fast behavior",
+    "diagnosticModeIfApproved": "record compact metadata before throwing the same missing-entity error",
+    "postBoundaryBehavior": "no continuation and no mutation application after missing entity"
+  },
+  "antiDisguiseRules": [
+    "A diagnostic ledger must not move the bit cursor to bypass an error.",
+    "A diagnostic ledger must not fabricate registry entries.",
+    "A diagnostic ledger must not mark missing updates as applied.",
+    "A diagnostic ledger must not convert skipped payloads into progress.",
+    "A diagnostic ledger must reject incompatible recovery/truncation combinations."
+  ]
+}

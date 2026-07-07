@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "futureDiagnosticName": "replay_wide_entity_lifecycle_ledger",
+  "recommendedAlternative": "design_replay_wide_entity_lifecycle_ledger",
+  "ledgerScope": {
+    "targetFailureClass": "missing_entity_fail_closed",
+    "targetIndexes": "only indexes involved in the first missing entity boundary plus bounded nearby context if explicitly authorized",
+    "timeRange": "from parser load to the first missing_entity_fail_closed boundary",
+    "stopPoint": "immediately before rethrowing the original missing entity error",
+    "eventKinds": [
+      "CREATE metadata",
+      "registerEntity attempt metadata",
+      "registerEntity success metadata",
+      "UPDATE metadata",
+      "DELETE or LEAVE command metadata if present in normal parser flow",
+      "missing UPDATE boundary metadata",
+      "registry state transition metadata"
+    ]
+  },
+  "mustRemainCompact": true,
+  "mustRemainDiagnosticOnly": true,
+  "mustNotMaterializeFieldsAfterBoundary": true,
+  "mustNotContinueAfterMissingEntity": true,
+  "mustNotChangeDefaultBehavior": true,
+  "futureAuthorizedCanaryLimits": {
+    "default": "no replay processing",
+    "ifSeparatelyApproved": [
+      "replay_010 only, bounded to first missing entity",
+      "replay_011 only, bounded to first missing entity"
+    ],
+    "notAutomaticallyAuthorized": [
+      "more canaries",
+      "candidates 012-020",
+      "replay 005",
+      "bot fixtures 006-008",
+      "batch processing"
+    ]
+  }
+}

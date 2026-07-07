@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "140",
+  "specName": "replay_wide_lifecycle_diagnostic_spec",
+  "status": "ready",
+  "sourceDecision": {
+    "taskId": "139",
+    "recommendedNextAction": "prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval",
+    "reason": "Packet-local lifecycle probe canaries for replay_010 and replay_011 both remained not_determined because they cannot establish replay-wide lifecycle or index-stream cause."
+  },
+  "selectedAlternative": "design_replay_wide_entity_lifecycle_ledger",
+  "implementationAuthorizedByThisTask": false,
+  "replayProcessingAuthorizedByThisTask": false,
+  "coreBoundary": "A future implementation, if separately approved, may collect compact lifecycle/registry metadata across a replay prefix and must still fail closed at the first missing_entity_fail_closed boundary.",
+  "nonGoals": [
+    "parser fix",
+    "recovery",
+    "skip mode",
+    "placeholder entity",
+    "synthetic registry state",
+    "continuation after missing entity",
+    "canonicalization",
+    "source artifact generation",
+    "match fact generation",
+    "Source 2 semantic conclusion",
+    "replay corruption conclusion",
+    "local parser correctness conclusion"
+  ]
+}
