@@ -412,6 +412,19 @@ implementation, parser/engine changes, replay processing, recovery, skip mode,
 placeholder entities, default behavior changes, new opt-in behavior,
 canonical/source/match outputs, or semantic claims.
 
+## Task 136 Missing Entity Index Lifecycle Probe Implementation
+
+Task 136 implemented the separately authorized
+`diagnostic_index_lifecycle_probe_only` extension under
+`missing_entity_index_lifecycle_probe_ready`. The existing
+`recovery.diagnoseMissingEntityFailClosed` mode now records compact
+packet-local lifecycle evidence and conservative classification metadata
+(`not_determined` when evidence is insufficient) while preserving the same
+fail-closed missing-entity throw. No new opt-in option, default behavior
+change, recovery, skip mode, placeholder, fake fields, synthetic registry
+state, parser continuation, replay processing, or canonical/source/match
+output was added.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -471,4 +484,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   `prepare_bounded_parser_intervention_spec_for_human_approval` as a
   non-implementing next step. Task 135 prepared that bounded spec and selected
   `diagnostic_index_lifecycle_probe_only` for future human approval, again
-  without implementation or replay processing.
+  without implementation or replay processing. Task 136 then implemented that
+  approved diagnostic-only lifecycle probe extension synthetically, preserving
+  fail-closed behavior and adding no recovery, skip, placeholders, default
+  behavior change, replay processing, or semantic claims.

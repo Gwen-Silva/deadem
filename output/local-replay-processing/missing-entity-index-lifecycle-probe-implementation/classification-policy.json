@@ -1,0 +1,22 @@
+{
+  "taskId": "136",
+  "classificationPolicy": {
+    "evidenceScope": "local_diagnostic_metadata_only",
+    "defaultCandidateWhenEvidenceIsInsufficient": "not_determined",
+    "defaultConfidenceWhenEvidenceIsInsufficient": "not_applicable",
+    "neverRegisteredCandidatePolicy": "not emitted from packet-local evidence alone because replay-wide lifecycle history is not known",
+    "removedEntityCandidatePolicy": "low-confidence candidate only when same entity index has a prior packet-local removal entry before the missing reference",
+    "registryStateLossCandidatePolicy": "low-confidence candidate only when same entity index has prior packet-local create/register evidence but registry state is missing at failure",
+    "indexStreamSuspectedPolicy": "reserved for future evidence; this implementation does not infer it from a large index delta alone",
+    "semanticClaimsAllowed": false
+  },
+  "forbiddenConclusions": [
+    "Source 2 semantics",
+    "replay corruption",
+    "local parser correctness",
+    "entity never existed in game",
+    "entity death/destruction/delete from absence",
+    "safe recovery",
+    "safe skip"
+  ]
+}

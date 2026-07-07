@@ -1,0 +1,175 @@
+{
+  "taskId": "136",
+  "title": "Implement Diagnostic Index Lifecycle Probe For Missing Entity",
+  "status": "completed",
+  "objective": "Implement the approved diagnostic_index_lifecycle_probe_only intervention as an extension of recovery.diagnoseMissingEntityFailClosed, enriching missing_entity_fail_closed diagnostics with compact index/lifecycle metadata and conservative local classification while preserving default behavior, fail-closed throwing, and no recovery/skip/placeholders/continuation/canonicalization.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/128.json",
+    "tasks/specs/129.json",
+    "tasks/specs/130.json",
+    "tasks/specs/131.json",
+    "tasks/specs/132.json",
+    "tasks/specs/133.json",
+    "tasks/specs/134.json",
+    "tasks/specs/135.json",
+    "tasks/completed/128-diagnostic-fail-closed-missing-entity-review.md",
+    "tasks/completed/129-diagnostic-fail-closed-missing-entity-implementation.md",
+    "tasks/completed/130-diagnostic-fail-closed-config-isolation.md",
+    "tasks/completed/131-diagnostic-fail-closed-replay-010-canary.md",
+    "tasks/completed/132-diagnostic-fail-closed-replay-011-canary.md",
+    "tasks/completed/133-dual-missing-entity-diagnostic-canaries.md",
+    "tasks/completed/134-missing-entity-parser-intervention-design.md",
+    "tasks/completed/135-missing-entity-bounded-parser-intervention-spec.md",
+    "output/local-replay-processing/missing-entity-bounded-parser-intervention-spec/**",
+    "reports/missing-entity-bounded-parser-intervention-spec.md"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/136.json",
+    "tasks/completed/136-missing-entity-index-lifecycle-probe-implementation.md",
+    "reports/missing-entity-index-lifecycle-probe-implementation.md",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/**"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_011.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/deadem/**",
+    "tasks/specs/137.json",
+    "tasks/completed/137-*",
+    "tasks/blocked/137-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/implementation-summary.json",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/default-behavior-preservation.json",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/synthetic-probe-result.json",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/classification-policy.json",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/no-continuation-proof.json",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/protection-audit.json",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/implementation-gate.json",
+    "reports/missing-entity-index-lifecycle-probe-implementation.md",
+    "tasks/completed/136-missing-entity-index-lifecycle-probe-implementation.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "authorizedReplayIds": [],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process replay_010 or replay_011",
+    "Do not process replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify packages/deadem",
+    "Do not create a new opt-in option or change default behavior",
+    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, parser fixes, continuation after missing entity, or canonicalization",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not create canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
+    "Do not conclude Source 2 semantics, replay corruption, local parser correctness, entity never existed in game, or destruction/delete/leave/remove from registry absence",
+    "Do not create Task 137"
+  ],
+  "successGate": "missing_entity_index_lifecycle_probe_ready",
+  "blockedGate": "missing_entity_index_lifecycle_probe_blocked",
+  "allowedAlternateGates": [
+    "missing_entity_index_lifecycle_probe_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/implementation-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

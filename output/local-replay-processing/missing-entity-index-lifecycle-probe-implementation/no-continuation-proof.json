@@ -1,0 +1,17 @@
+{
+  "taskId": "136",
+  "diagnosticBoundary": "existing missing entity fail-fast boundary",
+  "proofSummary": {
+    "recordingLocation": "before throwing the existing missing-entity error",
+    "controlFlowAfterDiagnostic": "throws same missing-entity error",
+    "parserContinuedAfterFailure": false,
+    "entityUpdateApplied": false,
+    "payloadSkipped": false,
+    "recoveryAttempted": false,
+    "placeholderOrFakeEntityCreated": false,
+    "fakeFieldsCreated": false,
+    "syntheticRegistryStateCreated": false,
+    "canonicalFactsProduced": false
+  },
+  "validationSource": "synthetic unit tests assert no entity materialization and no continuation booleans"
+}

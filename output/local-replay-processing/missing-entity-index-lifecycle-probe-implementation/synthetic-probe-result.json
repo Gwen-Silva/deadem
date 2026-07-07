@@ -1,0 +1,35 @@
+{
+  "taskId": "136",
+  "source": "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+  "testInputKind": "synthetic_packet_and_synthetic_cursor_ledger",
+  "diagnosticType": "missing_entity_fail_closed",
+  "observedLifecycleFields": {
+    "lifecycleEvidenceSummary": {
+      "evidenceScope": "packet_local_cursor_ledger",
+      "evidenceCompleteness": "packet_local_only",
+      "targetOperation": "UPDATE",
+      "sameEntityPriorEntryCount": 0,
+      "priorCreateEntryObserved": false,
+      "priorUpdateEntryObserved": false,
+      "priorRemovalEntryObserved": false,
+      "priorRegisterAttemptObserved": false,
+      "priorRegisterSuccessObserved": false,
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "readCountsWithinEntityData": true,
+      "replayWideHistoryKnown": false,
+      "rawDataCaptured": false
+    },
+    "classificationCandidate": "not_determined",
+    "classificationConfidence": "not_applicable",
+    "classificationBasis": "diagnostic evidence is limited to packet-local cursor metadata and cannot establish replay-wide lifecycle or index-stream cause",
+    "rawDataCaptured": false
+  },
+  "rawDataExcluded": {
+    "fieldValues": true,
+    "rawPayload": true,
+    "rawEntityData": true,
+    "rawSerializedEntities": true,
+    "stringValue": true
+  }
+}

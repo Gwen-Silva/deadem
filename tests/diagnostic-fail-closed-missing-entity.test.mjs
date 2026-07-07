@@ -179,8 +179,32 @@ test('missing entity fail-closed helper records compact metadata and no continua
     assert.equal(diagnostic.classId, null);
     assert.equal(diagnostic.serial, null);
     assert.equal(diagnostic.className, null);
+    assert.deepEqual(diagnostic.lifecycleEvidenceSummary, {
+        evidenceScope: 'packet_local_cursor_ledger',
+        evidenceCompleteness: 'packet_local_only',
+        targetEntityIndex: 2905,
+        targetOperation: 'UPDATE',
+        priorEntriesExamined: 1,
+        sameEntityPriorEntryCount: 0,
+        priorCreateEntryObserved: false,
+        priorUpdateEntryObserved: false,
+        priorRemovalEntryObserved: false,
+        priorRegisterAttemptObserved: false,
+        priorRegisterSuccessObserved: false,
+        registryStateBefore: 'missing',
+        registryStateAfter: 'missing',
+        previousEntityIndex: 2717,
+        indexDelta: 187,
+        readCountsWithinEntityData: true,
+        replayWideHistoryKnown: false,
+        rawDataCaptured: false
+    });
+    assert.equal(diagnostic.classificationCandidate, 'not_determined');
+    assert.equal(diagnostic.classificationConfidence, 'not_applicable');
+    assert.match(diagnostic.classificationBasis, /packet-local cursor metadata/);
     assert.equal(diagnostic.errorClass, 'MissingEntityReferenceError');
     assert.equal(diagnostic.errorMessage, 'Unable to find an entity with index [ 2905 ]');
+    assert.equal(diagnostic.rawDataCaptured, false);
     assert.equal(diagnostic.fieldsMaterialized, false);
     assert.equal(diagnostic.placeholderOrFakeEntityCreated, false);
     assert.equal(diagnostic.parserContinuedAfterFailure, false);
@@ -195,6 +219,7 @@ test('missing entity fail-closed helper records compact metadata and no continua
     assert.equal(Object.hasOwn(diagnostic, 'fieldValues'), false);
     assert.equal(Object.hasOwn(diagnostic, 'rawPayload'), false);
     assert.equal(Object.hasOwn(diagnostic, 'rawEntityData'), false);
+    assert.equal(Object.hasOwn(diagnostic, 'rawSerializedEntities'), false);
     assert.equal(Object.hasOwn(diagnostic, 'stringValue'), false);
 });
 
@@ -235,6 +260,12 @@ test('diagnostic handler mode records boundary and still throws fail-closed', ()
     });
     assert.equal(diagnostic.entityDataBitLength, 8);
     assert.equal(diagnostic.registryStateBefore, 'missing');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.evidenceScope, 'packet_local_cursor_ledger');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.sameEntityPriorEntryCount, 0);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.rawDataCaptured, false);
+    assert.equal(diagnostic.classificationCandidate, 'not_determined');
+    assert.equal(diagnostic.classificationConfidence, 'not_applicable');
+    assert.equal(diagnostic.rawDataCaptured, false);
     assert.equal(diagnostic.fieldsMaterialized, false);
     assert.equal(diagnostic.placeholderOrFakeEntityCreated, false);
     assert.equal(diagnostic.parserContinuedAfterFailure, false);

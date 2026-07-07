@@ -997,6 +997,20 @@ authorize implementation, parser/engine changes, replay processing, recovery,
 skip mode, placeholders, default behavior changes, new opt-in behavior,
 canonical/source/match outputs, or semantic claims.
 
+## Task 136
+
+Purpose: implement the approved diagnostic index/lifecycle probe extension for
+the existing `recovery.diagnoseMissingEntityFailClosed` mode.
+
+Gate: `missing_entity_index_lifecycle_probe_ready`.
+
+Status: completed with the success gate above. The diagnostic records compact
+packet-local lifecycle metadata and a conservative classification candidate
+while preserving the same missing-entity throw. Synthetic tests confirm no
+continuation, recovery, skip mode, placeholder/fake entity, payload skip,
+update application, canonical output, replay processing, default behavior
+change, or new opt-in option.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

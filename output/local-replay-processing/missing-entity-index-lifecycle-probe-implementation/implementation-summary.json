@@ -1,0 +1,36 @@
+{
+  "taskId": "136",
+  "title": "Implement Diagnostic Index Lifecycle Probe For Missing Entity",
+  "gate": "missing_entity_index_lifecycle_probe_ready",
+  "baseCommit": "6e0491fc590af94a70554b9f2e633101599c423e",
+  "implementedIntervention": "diagnostic_index_lifecycle_probe_only",
+  "scope": "extension_of_existing_recovery.diagnoseMissingEntityFailClosed",
+  "summary": {
+    "parserDefaultBehaviorChanged": false,
+    "newOptInOptionAdded": false,
+    "existingOptInExtended": true,
+    "recoveryAdded": false,
+    "skipModeAdded": false,
+    "placeholderEntityAdded": false,
+    "parserContinuationAdded": false,
+    "replayProcessingUsed": false,
+    "syntheticValidationOnly": true
+  },
+  "codeChanges": [
+    {
+      "path": "packages/engine/src/handlers/DemoMessageHandler.js",
+      "change": "missing_entity_fail_closed diagnostics now include compact packet-local lifecycle evidence, conservative classification, classification basis, confidence, and rawDataCaptured=false"
+    },
+    {
+      "path": "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+      "change": "synthetic tests assert lifecycle probe fields, conservative not_determined classification, raw data exclusion, and no continuation"
+    }
+  ],
+  "classificationCandidatesAllowed": [
+    "never_registered_candidate",
+    "removed_entity_candidate",
+    "registry_state_loss_candidate",
+    "index_stream_suspected",
+    "not_determined"
+  ]
+}
