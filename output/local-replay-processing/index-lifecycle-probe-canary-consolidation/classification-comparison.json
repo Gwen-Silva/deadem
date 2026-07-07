@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "taskId": "139",
+  "sourceTasks": ["137", "138"],
+  "classificationComparison": [
+    {
+      "replayId": "replay_010",
+      "entityIndex": 2905,
+      "packetOrdinal": 954,
+      "loop": 33,
+      "classificationCandidate": "not_determined",
+      "classificationConfidence": "not_applicable",
+      "classificationBasis": "diagnostic evidence is limited to packet-local cursor metadata and cannot establish replay-wide lifecycle or index-stream cause",
+      "lifecycleEvidenceSummary": {
+        "evidenceScope": "packet_local_cursor_ledger",
+        "evidenceCompleteness": "packet_local_only",
+        "targetEntityIndex": 2905,
+        "targetOperation": "UPDATE",
+        "priorEntriesExamined": 33,
+        "sameEntityPriorEntryCount": 0,
+        "priorCreateEntryObserved": false,
+        "priorUpdateEntryObserved": false,
+        "priorRemovalEntryObserved": false,
+        "priorRegisterAttemptObserved": false,
+        "priorRegisterSuccessObserved": false,
+        "registryStateBefore": "missing",
+        "registryStateAfter": "missing",
+        "previousEntityIndex": 2717,
+        "indexDelta": 187,
+        "readCountsWithinEntityData": true,
+        "replayWideHistoryKnown": false,
+        "rawDataCaptured": false
+      }
+    },
+    {
+      "replayId": "replay_011",
+      "entityIndex": 5624,
+      "packetOrdinal": 1052,
+      "loop": 28,
+      "classificationCandidate": "not_determined",
+      "classificationConfidence": "not_applicable",
+      "classificationBasis": "diagnostic evidence is limited to packet-local cursor metadata and cannot establish replay-wide lifecycle or index-stream cause",
+      "lifecycleEvidenceSummary": {
+        "evidenceScope": "packet_local_cursor_ledger",
+        "evidenceCompleteness": "packet_local_only",
+        "targetEntityIndex": 5624,
+        "targetOperation": "UPDATE",
+        "priorEntriesExamined": 28,
+        "sameEntityPriorEntryCount": 0,
+        "priorCreateEntryObserved": false,
+        "priorUpdateEntryObserved": false,
+        "priorRemovalEntryObserved": false,
+        "priorRegisterAttemptObserved": false,
+        "priorRegisterSuccessObserved": false,
+        "registryStateBefore": "missing",
+        "registryStateAfter": "missing",
+        "previousEntityIndex": 2681,
+        "indexDelta": 2942,
+        "readCountsWithinEntityData": true,
+        "replayWideHistoryKnown": false,
+        "rawDataCaptured": false
+      }
+    }
+  ],
+  "consolidatedClassification": {
+    "candidate": "not_determined",
+    "confidence": "not_applicable",
+    "basis": "Both canaries stop at packet-local missing UPDATE diagnostics with no replay-wide lifecycle ledger in the Task 137/138 committed evidence.",
+    "packetLocalEvidenceSufficientForReplayWideLifecycle": false,
+    "packetLocalEvidenceSufficientForIndexStreamCause": false,
+    "missingEntityClassRepeatedAcrossHumanCanaries": true
+  },
+  "forbiddenConclusionsNotMade": {
+    "source2Semantics": true,
+    "replayCorruption": true,
+    "localParserCorrectness": true,
+    "entityNeverExistedInGame": true,
+    "destructionDeleteLeaveRemoveFromRegistryAbsence": true
+  }
+}

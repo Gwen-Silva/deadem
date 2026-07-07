@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "taskId": "139",
+  "evidenceTaxonomy": {
+    "observed_fact": "Directly present in committed Task 137/138 compact outputs.",
+    "hypothesis": "Possible explanation not established by the committed evidence.",
+    "weak_inference": "Limited engineering inference from repeated local pattern; not treated as semantic fact.",
+    "indetermined": "Question remains open because evidence scope is insufficient.",
+    "forbidden_claim": "Claim explicitly not allowed by task policy or epistemic safety."
+  },
+  "items": [
+    {
+      "claim": "replay_010 diagnostic fail-closed boundary is packet 954 loop 33 UPDATE for entity 2905.",
+      "classification": "observed_fact",
+      "source": "Task 137 missing-entity-boundary-diagnostic.json"
+    },
+    {
+      "claim": "replay_011 diagnostic fail-closed boundary is packet 1052 loop 28 UPDATE for entity 5624.",
+      "classification": "observed_fact",
+      "source": "Task 138 missing-entity-boundary-diagnostic.json"
+    },
+    {
+      "claim": "Both probes recorded registryStateBefore and registryStateAfter as missing.",
+      "classification": "observed_fact",
+      "source": "Task 137/138 boundary diagnostics"
+    },
+    {
+      "claim": "Both probes preserved fail-closed behavior with no continuation, recovery, skip, placeholder, canonical output, or raw data capture.",
+      "classification": "observed_fact",
+      "source": "Task 137/138 no-continuation-proof and protection-audit outputs"
+    },
+    {
+      "claim": "The repeated class across two human canaries indicates this is not only the original replay_010 packet-953 boundary artifact.",
+      "classification": "weak_inference",
+      "source": "Task 137/138 packet-local diagnostics plus prior Task 120/123 context"
+    },
+    {
+      "claim": "Packet-local lifecycle evidence is insufficient to decide whether each target was never created, previously removed, lost by registry state, or produced by index-stream interpretation.",
+      "classification": "indetermined",
+      "source": "Task 137/138 classificationBasis and replayWideHistoryKnown=false"
+    },
+    {
+      "claim": "A replay-wide lifecycle diagnostic ledger could reduce uncertainty about create/register/removal provenance if separately authorized.",
+      "classification": "hypothesis",
+      "source": "Engineering decision inference; no implementation authorized in Task 139"
+    },
+    {
+      "claim": "Missing registry state proves the entity never existed in the game.",
+      "classification": "forbidden_claim",
+      "source": "Epistemic safety policy"
+    },
+    {
+      "claim": "The observed missing entity proves replay corruption or Source 2 semantics.",
+      "classification": "forbidden_claim",
+      "source": "Task 139 stop conditions"
+    },
+    {
+      "claim": "Recovery, skip mode, placeholder entity, or parser fix is safe.",
+      "classification": "forbidden_claim",
+      "source": "Task 139 scope and accepted boundaries"
+    }
+  ]
+}

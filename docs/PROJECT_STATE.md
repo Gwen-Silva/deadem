@@ -453,6 +453,20 @@ placeholder, fake fields, synthetic registry state, continuation, default
 behavior change, raw data versioning, or canonical/source/match output was
 introduced.
 
+## Task 139 Index Lifecycle Probe Canary Consolidation
+
+Task 139 consolidated the Task 137 and Task 138 index lifecycle probe canaries
+under `index_lifecycle_probe_canaries_consolidated`. Both canaries remain
+`classificationCandidate: not_determined`: replay_010 stopped fail-closed at
+packet 954 loop 33 UPDATE entity 2905, and replay_011 stopped fail-closed at
+packet 1052 loop 28 UPDATE entity 5624. The shared evidence is packet-local
+only and cannot establish replay-wide lifecycle, create/register/removal
+provenance, or index-stream cause. Task 139 did not process replays, modify
+parser/engine code, create recovery/skip/placeholder behavior, or emit
+canonical/source/match/raw outputs. The selected next action is
+`prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval`, a future
+spec-only route if separately authorized.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -522,4 +536,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   138 then ran the same lifecycle probe on the authorized replay_011 canary and
   observed `classificationCandidate: not_determined` at packet 1052 loop 28 for
   entity 5624, again preserving fail-closed behavior with no raw/canonical
-  output.
+  output. Task 139 consolidated both lifecycle probe canaries and selected
+  `prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval` as the
+  next bounded route because packet-local evidence is insufficient to decide
+  replay-wide lifecycle or index-stream cause.

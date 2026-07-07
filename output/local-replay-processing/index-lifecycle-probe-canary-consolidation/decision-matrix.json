@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "taskId": "139",
+  "decisionMatrixScope": "bounded_strategy_after_packet_local_lifecycle_probe_canaries",
+  "allowedOptionsOnly": true,
+  "options": [
+    {
+      "id": "keep_probe_fail_closed_and_pause_parser_intervention",
+      "summary": "Keep the current fail-closed probe as-is and pause parser intervention work.",
+      "uncertaintyReduced": "low",
+      "risksAvoided": ["premature recovery", "premature skip", "semantic overclaim"],
+      "residualRisk": "Leaves the repeated missing-entity class unresolved and does not identify what evidence would unblock a decision.",
+      "fit": "medium"
+    },
+    {
+      "id": "prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval",
+      "summary": "Prepare a future non-implementing spec for replay-wide lifecycle diagnostics, subject to explicit human approval.",
+      "uncertaintyReduced": "medium",
+      "risksAvoided": ["implementation before approval", "recovery or skip design drift", "unbounded replay expansion"],
+      "residualRisk": "Still requires a later approval and does not itself collect new evidence.",
+      "fit": "high"
+    },
+    {
+      "id": "request_human_authorization_for_more_probe_canaries",
+      "summary": "Ask for more canary probes using the same packet-local diagnostic.",
+      "uncertaintyReduced": "low",
+      "risksAvoided": ["parser modification"],
+      "residualRisk": "Repeating packet-local probes likely reproduces the same not_determined limit without replay-wide lifecycle evidence.",
+      "fit": "low"
+    },
+    {
+      "id": "return_to_external_oracle_environment_plan",
+      "summary": "Return to planning an external oracle environment.",
+      "uncertaintyReduced": "medium_if_environment_changes",
+      "risksAvoided": ["local-only overfitting"],
+      "residualRisk": "Task 125 already found Clarity unavailable in the current environment and the user deferred Java/JDK setup.",
+      "fit": "low"
+    },
+    {
+      "id": "return_to_product_infra_until_parser_strategy_changes",
+      "summary": "Pause parser strategy and work on unrelated product or infrastructure.",
+      "uncertaintyReduced": "none_for_missing_entity",
+      "risksAvoided": ["diagnostic churn"],
+      "residualRisk": "Does not move the current parser blocker toward a decision.",
+      "fit": "medium_low"
+    }
+  ],
+  "rejectedDirections": [
+    {
+      "direction": "recovery_or_skip_or_placeholder",
+      "reason": "Forbidden in Task 139 and unsupported by packet-local not_determined evidence."
+    },
+    {
+      "direction": "process_more_replays_now",
+      "reason": "Forbidden by Task 139; repeated packet-local canaries already showed the same evidence limitation."
+    },
+    {
+      "direction": "external_parser_runtime_now",
+      "reason": "Forbidden by Task 139 and blocked by Task 125 current-environment decision."
+    }
+  ],
+  "selectedOption": "prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval"
+}

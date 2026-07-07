@@ -321,6 +321,12 @@
       "notes": "Task 138 ran the index/lifecycle probe on replay_011 only. The diagnostic captured packet 1052 loop 28 entity 5624 with classificationCandidate not_determined and preserved fail-closed behavior without recovery, skip, placeholders, continuation, raw data, or canonical/source/match output."
     },
     {
+      "id": "index_lifecycle_probe_canary_consolidation",
+      "path": "output/local-replay-processing/index-lifecycle-probe-canary-consolidation/consolidation-gate.json",
+      "status": "current",
+      "notes": "Task 139 consolidated the replay_010 and replay_011 index lifecycle probe canaries. Both remain not_determined because packet-local evidence cannot establish replay-wide lifecycle or index-stream cause; the selected next action is a future replay-wide lifecycle diagnostic spec for human approval."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

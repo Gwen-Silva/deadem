@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "taskId": "139",
+  "sourceTasks": ["137", "138"],
+  "comparisonScope": "committed_compact_diagnostic_outputs_only",
+  "replayProcessingPerformedInTask139": false,
+  "canaries": [
+    {
+      "replayId": "replay_010",
+      "defaultError": "Unable to find an entity with index [ 2905 ]",
+      "diagnosticError": "Unable to find an entity with index [ 2905 ]",
+      "packetOrdinal": 954,
+      "loop": 33,
+      "updatedEntries": 34,
+      "operation": "UPDATE",
+      "entityIndex": 2905,
+      "previousEntityIndex": 2717,
+      "indexDelta": 187,
+      "payloadBits": 193,
+      "readCounts": {
+        "beforeIndex": 5724,
+        "afterIndex": 5734,
+        "afterCommand": 5736,
+        "afterAction": 5736
+      },
+      "entityDataBitLength": 5936,
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "readCountsWithinEntityData": true,
+      "diagnosticRecordedBeforeThrow": true,
+      "errorStillThrown": true,
+      "noContinuation": true,
+      "noRecovery": true,
+      "noSkip": true,
+      "noPlaceholder": true,
+      "noCanonical": true,
+      "noRawData": true
+    },
+    {
+      "replayId": "replay_011",
+      "defaultError": "Unable to find an entity with index [ 5624 ]",
+      "diagnosticError": "Unable to find an entity with index [ 5624 ]",
+      "packetOrdinal": 1052,
+      "loop": 28,
+      "updatedEntries": 34,
+      "operation": "UPDATE",
+      "entityIndex": 5624,
+      "previousEntityIndex": 2681,
+      "indexDelta": 2942,
+      "payloadBits": 133,
+      "readCounts": {
+        "beforeIndex": 5212,
+        "afterIndex": 5226,
+        "afterCommand": 5228,
+        "afterAction": 5228
+      },
+      "entityDataBitLength": 5848,
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "readCountsWithinEntityData": true,
+      "diagnosticRecordedBeforeThrow": true,
+      "errorStillThrown": true,
+      "noContinuation": true,
+      "noRecovery": true,
+      "noSkip": true,
+      "noPlaceholder": true,
+      "noCanonical": true,
+      "noRawData": true
+    }
+  ],
+  "sharedBoundaryPattern": {
+    "sameFailureClass": true,
+    "sameOperation": "UPDATE",
+    "sameRegistryStateBefore": "missing",
+    "sameRegistryStateAfter": "missing",
+    "sameUpdatedEntries": 34,
+    "sameDiagnosticBehavior": "record_compact_packet_local_metadata_then_throw_fail_closed",
+    "bothReadCountsWithinEntityData": true,
+    "bothPreserveNoContinuation": true
+  },
+  "limits": [
+    "This comparison is derived from committed Task 137 and Task 138 summaries only.",
+    "Task 139 did not process replay files or inspect raw payload/entity data.",
+    "Packet-local read-count metadata does not establish replay-wide lifecycle or Source 2 semantics."
+  ]
+}

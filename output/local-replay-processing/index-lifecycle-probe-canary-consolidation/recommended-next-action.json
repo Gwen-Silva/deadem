@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "taskId": "139",
+  "recommendedNextAction": "prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval",
+  "whyThisAction": [
+    "Both replay_010 and replay_011 lifecycle probe canaries ended with classificationCandidate not_determined.",
+    "The shared limitation is evidence scope: packet-local cursor ledgers cannot establish replay-wide create/register/removal provenance or index-stream cause.",
+    "A future spec-only task can define the evidence needed before any implementation decision, while preserving the current prohibition on recovery, skip, placeholders, default behavior changes, and semantic claims."
+  ],
+  "uncertaintyReduced": "Defines the next evidence boundary: replay-wide lifecycle provenance rather than more packet-local canary repetition.",
+  "riskAvoided": "Avoids drifting from not_determined packet-local evidence into premature parser intervention, recovery, skip mode, or broader replay expansion.",
+  "betterThanOpenEndedInternalDiagnosis": "It converts the current repeated not_determined result into one bounded next decision artifact instead of continuing ad hoc probe tasks.",
+  "nextTaskPermittedIfAuthorizedLater": {
+    "type": "non_implementing_spec",
+    "scope": "replay-wide lifecycle diagnostic evidence requirements for missing-entity boundaries",
+    "mustNotDo": [
+      "implement parser behavior",
+      "process new replays",
+      "recover missing UPDATE",
+      "skip payloads",
+      "create placeholders",
+      "change default behavior",
+      "emit canonical or factual match outputs"
+    ]
+  }
+}

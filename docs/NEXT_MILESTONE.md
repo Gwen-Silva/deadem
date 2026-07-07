@@ -1043,6 +1043,26 @@ payload skip, update application, continuation, default behavior change, raw
 data versioning, canonical output, source artifact, match fact, or additional
 replay processing occurred.
 
+## Task 139
+
+Purpose: consolidate the replay_010 and replay_011 index lifecycle probe
+canaries and choose one bounded next route without replay processing or parser
+changes.
+
+Gate: `index_lifecycle_probe_canaries_consolidated`.
+
+Status: completed with the success gate above. Both canaries remain
+`classificationCandidate: not_determined`: replay_010 stopped fail-closed at
+packet 954 loop 33 UPDATE entity 2905, and replay_011 stopped fail-closed at
+packet 1052 loop 28 UPDATE entity 5624. The consolidation separates observed
+facts from hypotheses, weak inferences, indetermined questions, and forbidden
+claims. It selected
+`prepare_replay_wide_lifecycle_diagnostic_spec_for_human_approval` as the next
+bounded route because packet-local evidence is insufficient to decide
+replay-wide lifecycle or index-stream cause. No replay was processed, and no
+parser/engine change, recovery, skip mode, placeholder, raw data capture, or
+canonical/source/match output was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
