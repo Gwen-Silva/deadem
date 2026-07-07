@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "taskId": "133",
+  "options": [
+    {
+      "option": "keep_parser_fail_closed_and_pause_local_replay_expansion",
+      "summary": "Keep the current fail-closed posture and avoid more local replay processing until a human decision changes scope.",
+      "reducesUncertainty": "Low",
+      "avoidsRisk": "High",
+      "risk": "May stall parser learning despite a repeated blocker class.",
+      "fit": "Acceptable if risk avoidance is now more important than parser progress.",
+      "recommendationStatus": "not_selected"
+    },
+    {
+      "option": "request_human_authorization_for_more_diagnostic_canaries",
+      "summary": "Ask for explicit human authorization before running any additional canary diagnostics beyond replay_010 and replay_011.",
+      "reducesUncertainty": "Medium",
+      "avoidsRisk": "Medium",
+      "risk": "Could become replay expansion without an external oracle or clearer parser-intervention decision.",
+      "fit": "Useful only if the user wants more prevalence evidence before design discussion.",
+      "recommendationStatus": "not_selected"
+    },
+    {
+      "option": "request_human_decision_for_parser_intervention_design",
+      "summary": "Stop open-ended diagnostics and request a human decision on whether to authorize a bounded parser-intervention design task, still without direct recovery/skip implementation.",
+      "reducesUncertainty": "High",
+      "avoidsRisk": "High",
+      "risk": "Requires an explicit design-scope decision before more technical implementation progress.",
+      "fit": "Best match because two canaries now confirm the same fail-closed diagnostic class and continuing diagnostics alone has diminishing returns.",
+      "recommendationStatus": "selected"
+    },
+    {
+      "option": "return_to_product_infra_until_external_oracle_available",
+      "summary": "Pause parser expansion and work on non-parser product or infrastructure while waiting for an executable external oracle.",
+      "reducesUncertainty": "Low",
+      "avoidsRisk": "High",
+      "risk": "Does not move the missing-entity blocker toward resolution.",
+      "fit": "Reasonable if parser intervention design is not acceptable without an oracle.",
+      "recommendationStatus": "not_selected"
+    },
+    {
+      "option": "prepare_manual_external_oracle_environment_plan",
+      "summary": "Prepare a manual plan for Java/JDK or other external oracle environment setup without executing it in this task.",
+      "reducesUncertainty": "Medium",
+      "avoidsRisk": "Medium",
+      "risk": "The user has already declined Java/JDK setup for now; this could reopen a paused route prematurely.",
+      "fit": "Not preferred until the user reopens external oracle setup.",
+      "recommendationStatus": "not_selected"
+    }
+  ],
+  "selectedOption": "request_human_decision_for_parser_intervention_design",
+  "rejectedDirectRecommendations": [
+    "direct recovery",
+    "direct skip mode",
+    "placeholder entity",
+    "canonicalization",
+    "automatic replay expansion",
+    "processing candidates 012-020 without explicit human authorization"
+  ]
+}

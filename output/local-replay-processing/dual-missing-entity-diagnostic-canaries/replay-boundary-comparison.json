@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "taskId": "133",
+  "comparisonType": "dual_missing_entity_diagnostic_canaries",
+  "sourceTasks": [
+    "131",
+    "132"
+  ],
+  "replays": [
+    {
+      "replayId": "replay_010",
+      "defaultError": "Unable to find an entity with index [ 2905 ]",
+      "diagnosticError": "Unable to find an entity with index [ 2905 ]",
+      "packetOrdinal": 954,
+      "loop": 33,
+      "updatedEntries": 34,
+      "operation": "UPDATE",
+      "entityIndex": 2905,
+      "previousEntityIndex": 2717,
+      "indexDelta": 187,
+      "payloadBits": 193,
+      "readCounts": {
+        "beforeIndex": 5724,
+        "afterIndex": 5734,
+        "afterCommand": 5736,
+        "afterAction": 5736
+      },
+      "entityDataBitLength": 5936,
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "noContinuation": true,
+      "noRecovery": true,
+      "noSkip": true,
+      "noPlaceholder": true,
+      "noCanonical": true,
+      "fieldsMaterialized": false,
+      "payloadSkipped": false,
+      "updateApplied": false,
+      "fakeFieldsCreated": false,
+      "syntheticRegistryStateCreated": false
+    },
+    {
+      "replayId": "replay_011",
+      "defaultError": "Unable to find an entity with index [ 5624 ]",
+      "diagnosticError": "Unable to find an entity with index [ 5624 ]",
+      "packetOrdinal": 1052,
+      "loop": 28,
+      "updatedEntries": 34,
+      "operation": "UPDATE",
+      "entityIndex": 5624,
+      "previousEntityIndex": 2681,
+      "indexDelta": 2942,
+      "payloadBits": 133,
+      "readCounts": {
+        "beforeIndex": 5212,
+        "afterIndex": 5226,
+        "afterCommand": 5228,
+        "afterAction": 5228
+      },
+      "entityDataBitLength": 5848,
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "noContinuation": true,
+      "noRecovery": true,
+      "noSkip": true,
+      "noPlaceholder": true,
+      "noCanonical": true,
+      "fieldsMaterialized": false,
+      "payloadSkipped": false,
+      "updateApplied": false,
+      "fakeFieldsCreated": false,
+      "syntheticRegistryStateCreated": false
+    }
+  ],
+  "observedCommonPattern": {
+    "defaultMissingEntityErrorRepeated": true,
+    "diagnosticTypeRepeated": "missing_entity_fail_closed",
+    "operationRepeated": "UPDATE",
+    "registryStateBeforeRepeated": "missing",
+    "registryStateAfterRepeated": "missing",
+    "diagnosticPreservedThrow": true,
+    "diagnosticPreservedNoContinuation": true,
+    "diagnosticPreservedNoRecoveryOrSkip": true,
+    "diagnosticPreservedNoPlaceholderOrSyntheticRegistry": true,
+    "diagnosticPreservedNoCanonicalOutput": true
+  },
+  "observedDifferences": {
+    "entityIndex": {
+      "replay_010": 2905,
+      "replay_011": 5624
+    },
+    "packetOrdinal": {
+      "replay_010": 954,
+      "replay_011": 1052
+    },
+    "loop": {
+      "replay_010": 33,
+      "replay_011": 28
+    },
+    "indexDelta": {
+      "replay_010": 187,
+      "replay_011": 2942
+    },
+    "payloadBits": {
+      "replay_010": 193,
+      "replay_011": 133
+    },
+    "entityDataBitLength": {
+      "replay_010": 5936,
+      "replay_011": 5848
+    }
+  }
+}

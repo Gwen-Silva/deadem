@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "taskId": "133",
+  "classificationScope": "compact_evidence_from_tasks_131_and_132_only",
+  "observedFacts": [
+    {
+      "id": "dual_canary_missing_entity_class",
+      "statement": "Both replay_010 and replay_011 default passes fail with PacketEntities missing-entity lookup errors.",
+      "evidence": [
+        "Task 131 default-behavior-comparison.json",
+        "Task 132 default-behavior-comparison.json"
+      ]
+    },
+    {
+      "id": "dual_canary_diagnostic_boundary",
+      "statement": "Both diagnostic passes record one missing_entity_fail_closed diagnostic at the same missing-entity boundary as the default failure and still throw.",
+      "evidence": [
+        "Task 131 missing-entity-boundary-diagnostic.json",
+        "Task 132 missing-entity-boundary-diagnostic.json"
+      ]
+    },
+    {
+      "id": "replay_010_boundary",
+      "statement": "replay_010 diagnostic boundary is packet ordinal 954 loop 33, UPDATE entity 2905, previous entity index 2717, index delta 187, payloadBits 193.",
+      "evidence": [
+        "Task 131 missing-entity-boundary-diagnostic.json"
+      ]
+    },
+    {
+      "id": "replay_011_boundary",
+      "statement": "replay_011 diagnostic boundary is packet ordinal 1052 loop 28, UPDATE entity 5624, previous entity index 2681, index delta 2942, payloadBits 133.",
+      "evidence": [
+        "Task 132 missing-entity-boundary-diagnostic.json"
+      ]
+    },
+    {
+      "id": "no_continuation_or_recovery",
+      "statement": "Both canaries preserved fail-closed behavior without parser continuation, recovery, skip mode, payload skip, placeholder/fake entity, field materialization, synthetic registry state, or canonical output.",
+      "evidence": [
+        "Task 131 no-continuation-proof.json",
+        "Task 132 no-continuation-proof.json"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "class_issue_repeated",
+      "statement": "The repeated missing-entity class across two human canaries strengthens the hypothesis that this is not isolated to replay_010.",
+      "confidence": "moderate",
+      "limits": "Only two authorized canaries are represented; this is not a broad replay expansion."
+    },
+    {
+      "id": "diagnostic_mode_suitable_for_boundary_capture",
+      "statement": "The disabled diagnostic appears suitable for compact boundary capture because it records metadata and preserves fail-closed behavior in both canaries.",
+      "confidence": "moderate",
+      "limits": "This does not authorize recovery, skip, parser fixes, or continuation."
+    }
+  ],
+  "weakInferences": [
+    {
+      "id": "index_stream_attention_needed",
+      "statement": "The large replay_011 index delta and prior replay_010 create-gap evidence suggest that any future parser intervention review should focus on PacketEntities index/lifecycle contract questions rather than only replay_010 local history.",
+      "basis": "Comparison of compact boundary metadata and earlier Task 122 classification.",
+      "limit": "This is not proof of index-stream misalignment or Source 2 semantics."
+    }
+  ],
+  "undetermined": [
+    "Whether the local parser contract is correct for Deadlock PacketEntities semantics.",
+    "Whether either replay contains corruption.",
+    "Whether missing UPDATE to a never-registered entity has valid game/replay semantics.",
+    "Whether a future recovery or skip behavior would be safe.",
+    "Whether external parser runtime would confirm or contradict local behavior."
+  ],
+  "forbiddenConclusions": [
+    "Do not conclude Source 2 semantics.",
+    "Do not conclude replay corruption.",
+    "Do not conclude local parser correctness.",
+    "Do not conclude recovery is safe.",
+    "Do not conclude skip mode is safe.",
+    "Do not conclude placeholder entities or synthetic registry state are acceptable.",
+    "Do not emit canonical, factual, source, spatial, macro, mechanics, fight, decision, or ML claims from these diagnostics."
+  ]
+}

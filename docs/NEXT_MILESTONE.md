@@ -952,6 +952,22 @@ materialization, payload skip, update application, continuation, canonical
 facts, or semantic claims were produced. No replay other than replay_011 was
 processed.
 
+## Task 133
+
+Purpose: consolidate the replay_010 and replay_011 diagnostic fail-closed
+canaries and choose one bounded next route.
+
+Gate: `dual_missing_entity_diagnostic_canaries_consolidated`.
+
+Status: completed with the success gate above. The consolidation compares
+replay_010 packet 954 loop 33 entity 2905 with replay_011 packet 1052 loop 28
+entity 5624. Both canaries preserve the same `missing_entity_fail_closed`
+class with no continuation, recovery, skip mode, placeholder/fake entity,
+field materialization, payload skip, update application, canonical facts, or
+semantic claims. The selected next action is
+`request_human_decision_for_parser_intervention_design`. No replay was
+processed, and no parser/engine change was made.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

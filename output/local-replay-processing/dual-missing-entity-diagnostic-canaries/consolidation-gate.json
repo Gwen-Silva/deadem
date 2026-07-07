@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "133",
+  "gate": "dual_missing_entity_diagnostic_canaries_consolidated",
+  "reason": "The compact replay_010 and replay_011 diagnostic canaries were consolidated without processing replays, modifying parser/engine behavior, or adding recovery/skip/placeholder/canonical outputs. The recommended next action is request_human_decision_for_parser_intervention_design.",
+  "recommendedNextAction": "request_human_decision_for_parser_intervention_design",
+  "replay010BoundaryCompared": true,
+  "replay011BoundaryCompared": true,
+  "noReplayProcessed": true,
+  "parserModified": false,
+  "engineModified": false,
+  "recoveryImplemented": false,
+  "skipModeImplemented": false,
+  "placeholderEntityImplemented": false,
+  "canonicalFactsProduced": false,
+  "task134Created": false
+}

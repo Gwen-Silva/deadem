@@ -377,6 +377,18 @@ still throws without recovery, skip, placeholder/fake entity, field
 materialization, payload skip, update application, canonical output, or
 continuation. No replay other than replay_011 was accessed or processed.
 
+## Task 133 Dual Missing Entity Diagnostic Canary Consolidation
+
+Task 133 consolidated the compact replay_010 and replay_011 diagnostic canary
+evidence under `dual_missing_entity_diagnostic_canaries_consolidated`. Both
+canaries reproduce the `missing_entity_fail_closed` class: replay_010 at packet
+954 loop 33 for entity 2905, and replay_011 at packet 1052 loop 28 for entity
+5624. The consolidation selected
+`request_human_decision_for_parser_intervention_design` as the next route,
+without processing replays, changing parser/engine behavior, recommending
+recovery/skip/placeholder behavior, or making Source 2/replay-corruption/local
+parser correctness claims.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -429,4 +441,6 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   33 for entity 2905, and the parser still fails closed without continuation.
   Task 132 confirmed the same diagnostic class on the authorized replay_011
   canary: packet 1052 loop 28 for entity 5624, again fail-closed without
-  continuation.
+  continuation. Task 133 consolidated both canaries and selected
+  `request_human_decision_for_parser_intervention_design` as the next bounded
+  route, with no replay processing or parser changes.

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "133",
+  "recommendedNextAction": "request_human_decision_for_parser_intervention_design",
+  "reason": "The repeated replay_010 and replay_011 missing-entity class is now compactly captured with fail-closed diagnostics in both canaries. More internal diagnostics without a design decision risks another open-ended loop, while direct recovery, skip mode, placeholders, parser fixes, and replay expansion remain out of scope.",
+  "uncertaintyReduced": [
+    "Confirms the disabled diagnostic captures the same class across two authorized human canaries.",
+    "Confirms both boundaries preserve no continuation, no recovery, no skip, no placeholders, and no canonical output.",
+    "Clarifies that the remaining uncertainty is a parser-intervention decision problem, not a need for another replay_010-only diagnosis."
+  ],
+  "riskAvoided": [
+    "Avoids treating diagnostic metadata as Source 2 semantics.",
+    "Avoids implementing or recommending recovery/skip before explicit authorization.",
+    "Avoids unauthorized replay expansion and protected replay access.",
+    "Avoids relying on unavailable Clarity runtime as if it validated the local parser."
+  ],
+  "whyBetterThanOpenEndedDiagnostics": "Two canaries already show the repeated class and the diagnostic boundary behavior. Continuing to collect local-only diagnostics without a decision would increase documentation volume more than decision quality.",
+  "nextPermittedTaskShape": "A future task may ask the user to choose whether to authorize a bounded parser-intervention design review. That task should still avoid implementation unless explicitly authorized and should keep recovery/skip/placeholder/canonicalization out of scope unless separately approved.",
+  "notRecommended": [
+    "direct recovery",
+    "direct skip mode",
+    "placeholder entity",
+    "canonical package generation",
+    "automatic replay expansion",
+    "Source 2 semantic claim",
+    "replay corruption claim",
+    "local parser correctness claim"
+  ]
+}

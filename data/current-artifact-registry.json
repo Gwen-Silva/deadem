@@ -285,6 +285,12 @@
       "notes": "Task 132 ran the replay_011-only diagnostic fail-closed canary. The diagnostic captured packet 1052 loop 28 for missing entity 5624 and still threw without recovery, skip, placeholders, field materialization, canonical output, or continuation."
     },
     {
+      "id": "dual_missing_entity_diagnostic_canaries",
+      "path": "output/local-replay-processing/dual-missing-entity-diagnostic-canaries/consolidation-gate.json",
+      "status": "current",
+      "notes": "Task 133 consolidated the replay_010 and replay_011 missing-entity diagnostic canaries and selected request_human_decision_for_parser_intervention_design as the next bounded route without replay processing, parser changes, recovery, skip, placeholders, or semantic claims."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
