@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "taskId": "129",
+  "proofKind": "no_continuation",
+  "replay010Processed": false,
+  "testMethod": "synthetic_unit_handler_fixture",
+  "observations": {
+    "sameMissingEntityErrorThrown": true,
+    "diagnosticRecordedBeforeThrow": true,
+    "handlerReturnedNormally": false,
+    "eventsReturned": false,
+    "entityRegistryCreatedEntity": false,
+    "fieldExtractionAttemptedForMissingUpdate": false,
+    "payloadSkipAttempted": false,
+    "parserContinuedAfterFailure": false
+  },
+  "forbiddenContinuationBehaviorsObserved": false,
+  "defaultBehaviorChanged": false,
+  "notes": [
+    "The synthetic fixture contains no replay bytes and is not a replay parser execution.",
+    "Replay_010 was not processed because the fail-closed behavior was testable with a synthetic unit fixture."
+  ]
+}

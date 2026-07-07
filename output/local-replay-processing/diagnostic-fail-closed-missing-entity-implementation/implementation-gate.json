@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "taskId": "129",
+  "gate": "diagnostic_fail_closed_missing_entity_implemented",
+  "reason": "A disabled-by-default opt-in diagnostic records compact metadata at the existing missing-entity fail-fast boundary and still throws without recovery, skip, placeholder state, field materialization, continuation, or default behavior change.",
+  "diagnosticOption": "recovery.diagnoseMissingEntityFailClosed",
+  "replay010Processed": false,
+  "testMethod": "synthetic_unit_handler_fixture",
+  "defaultBehaviorChanged": false,
+  "recoveryAddedOrPromoted": false,
+  "skipModeAdded": false,
+  "placeholderOrFakeEntityCreated": false,
+  "parserContinuedAfterFailure": false,
+  "canonicalFactsProduced": false,
+  "source2SemanticsConcluded": false,
+  "replayCorruptionConcluded": false,
+  "localParserCorrectnessConcluded": false,
+  "task130Created": false
+}

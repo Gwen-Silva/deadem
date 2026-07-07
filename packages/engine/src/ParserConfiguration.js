@@ -38,7 +38,7 @@ const DEFAULTS = {
 class ParserConfiguration {
     /**
      * @constructor
-     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean, allowEntityPacketBoundaryTruncation?: boolean, diagnoseEntityRegistryHistory?: boolean|object, diagnoseEntityIndexAllocation?: boolean|object }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
+     * @param {{ batcherChunkSize?: number, batcherThresholdMilliseconds?: number, breakInterval?: number, entityClasses?: Array<string>, messagePacketTypes?: Array<MessagePacketType>, messagePacketTypesExclude?: Array<MessagePacketType>, parserThreads?: number, recovery?: { allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean, allowEntityPacketBoundaryTruncation?: boolean, diagnoseEntityRegistryHistory?: boolean|object, diagnoseEntityIndexAllocation?: boolean|object, diagnoseMissingEntityFailClosed?: boolean }, splitterChunkSize?: number, streamHighWaterMark?: number }} options
      */
     constructor(options) {
         const getOption = key => (options && options[key] !== undefined) ? options[key] : DEFAULTS[key];
@@ -236,7 +236,7 @@ function buildMessagePacketFilter(include, exclude) {
 }
 
 /**
- * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean, allowEntityPacketBoundaryTruncation?: boolean, diagnoseEntityRegistryHistory?: boolean|object, diagnoseEntityIndexAllocation?: boolean|object }|null} options
+ * @param {{ allowUnresolvedEntityReference?: boolean, allowMissingClassBaseline?: boolean, diagnoseOutOfRangeEntityCreate?: boolean, diagnoseEntityPacketCursorAlignment?: boolean, diagnosePreRecoveryPayloadConsumption?: boolean, diagnosePreRecoveryFieldConsumption?: boolean, diagnoseEntityPacketBoundaryGuard?: boolean, allowEntityPacketBoundaryTruncation?: boolean, diagnoseEntityRegistryHistory?: boolean|object, diagnoseEntityIndexAllocation?: boolean|object, diagnoseMissingEntityFailClosed?: boolean }|null} options
  * @returns {object|null}
  */
 function buildRecovery(options) {
@@ -244,7 +244,7 @@ function buildRecovery(options) {
         return null;
     }
 
-    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption', 'diagnosePreRecoveryFieldConsumption', 'diagnoseEntityPacketBoundaryGuard', 'allowEntityPacketBoundaryTruncation', 'diagnoseEntityRegistryHistory', 'diagnoseEntityIndexAllocation' ]);
+    const allowedKeys = new Set([ 'allowUnresolvedEntityReference', 'allowMissingClassBaseline', 'diagnoseOutOfRangeEntityCreate', 'diagnoseEntityPacketCursorAlignment', 'diagnosePreRecoveryPayloadConsumption', 'diagnosePreRecoveryFieldConsumption', 'diagnoseEntityPacketBoundaryGuard', 'allowEntityPacketBoundaryTruncation', 'diagnoseEntityRegistryHistory', 'diagnoseEntityIndexAllocation', 'diagnoseMissingEntityFailClosed' ]);
     const keys = Object.keys(options);
 
     Assert.isTrue(keys.every(key => allowedKeys.has(key)), 'options.recovery contains unsupported keys');
@@ -256,6 +256,7 @@ function buildRecovery(options) {
     Assert.isTrue(options.diagnosePreRecoveryFieldConsumption === undefined || typeof options.diagnosePreRecoveryFieldConsumption === 'boolean', 'options.recovery.diagnosePreRecoveryFieldConsumption must be a boolean when provided');
     Assert.isTrue(options.diagnoseEntityPacketBoundaryGuard === undefined || typeof options.diagnoseEntityPacketBoundaryGuard === 'boolean', 'options.recovery.diagnoseEntityPacketBoundaryGuard must be a boolean when provided');
     Assert.isTrue(options.allowEntityPacketBoundaryTruncation === undefined || typeof options.allowEntityPacketBoundaryTruncation === 'boolean', 'options.recovery.allowEntityPacketBoundaryTruncation must be a boolean when provided');
+    Assert.isTrue(options.diagnoseMissingEntityFailClosed === undefined || typeof options.diagnoseMissingEntityFailClosed === 'boolean', 'options.recovery.diagnoseMissingEntityFailClosed must be a boolean when provided');
     Assert.isTrue(options.diagnoseEntityRegistryHistory === undefined ||
         typeof options.diagnoseEntityRegistryHistory === 'boolean' ||
         (typeof options.diagnoseEntityRegistryHistory === 'object' && options.diagnoseEntityRegistryHistory !== null),
@@ -273,6 +274,7 @@ function buildRecovery(options) {
     const diagnosePreRecoveryFieldConsumption = options.diagnosePreRecoveryFieldConsumption === true;
     const diagnoseEntityPacketBoundaryGuard = options.diagnoseEntityPacketBoundaryGuard === true;
     const allowEntityPacketBoundaryTruncation = options.allowEntityPacketBoundaryTruncation === true;
+    const diagnoseMissingEntityFailClosed = options.diagnoseMissingEntityFailClosed === true;
     const entityRegistryHistory = normalizeEntityRegistryHistoryOptions(options.diagnoseEntityRegistryHistory);
     const entityIndexAllocation = normalizeEntityIndexAllocationOptions(options.diagnoseEntityIndexAllocation);
     const warnings = [];
@@ -289,6 +291,7 @@ function buildRecovery(options) {
         diagnosePreRecoveryFieldConsumption,
         diagnoseEntityPacketBoundaryGuard,
         allowEntityPacketBoundaryTruncation,
+        diagnoseMissingEntityFailClosed,
         diagnoseEntityRegistryHistory: entityRegistryHistory.enabled,
         entityRegistryHistoryTargets: entityRegistryHistory.targetIndexes,
         entityRegistryHistoryNearbyRange: entityRegistryHistory.nearbyRange,
@@ -312,6 +315,7 @@ function buildRecovery(options) {
         recordEntityPacketBoundaryTruncation: diagnostic => diagnostics.push({ type: 'entity_packet_boundary_truncation', ...diagnostic }),
         recordEntityRegistryHistory: diagnostic => diagnostics.push({ type: 'entity_registry_history', ...diagnostic }),
         recordEntityIndexAllocation: diagnostic => diagnostics.push({ type: 'entity_index_allocation', ...diagnostic }),
+        recordMissingEntityFailClosed: diagnostic => diagnostics.push({ type: 'missing_entity_fail_closed', ...diagnostic }),
         recordPreRecoveryPayloadConsumption: diagnostic => {
             preRecoveryPayloadPacketOrdinal++;
             diagnostics.push({

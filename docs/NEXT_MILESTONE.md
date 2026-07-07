@@ -148,6 +148,14 @@ Task 128 is complete with the gate
 diagnostic fail-closed contract and does not authorize implementation. A future
 implementation still requires a separate human-authored task.
 
+Task 129 is complete with the gate
+`diagnostic_fail_closed_missing_entity_implemented`. It implemented the
+separately authorized disabled-by-default missing-entity diagnostic hook
+`recovery.diagnoseMissingEntityFailClosed` and validated it with synthetic
+fixtures. Default behavior remains unchanged, and the diagnostic does not
+recover, skip, create placeholders, continue parsing, emit canonical facts, or
+process replays.
+
 ## Task 094
 
 Purpose: resolve only the four frozen replay-002 terminal blockers:
@@ -866,6 +874,20 @@ recovery, skip mode, placeholder entities, and parser fixes. It does not
 authorize implementation, parser or engine changes, replay processing,
 external runtime execution, canonical facts, or semantic claims. No Task 129
 was created.
+
+## Task 129
+
+Purpose: implement the authorized disabled-by-default diagnostic fail-closed
+metadata hook for PacketEntities missing-entity failures.
+
+Gate: `diagnostic_fail_closed_missing_entity_implemented`.
+
+Status: completed with the success gate above. The new
+`recovery.diagnoseMissingEntityFailClosed` option records compact diagnostic
+metadata at the existing missing-entity failure boundary and still throws
+without recovery, skip mode, placeholder entities, fake fields, synthetic
+registry state, parser continuation, canonical facts, replay processing, or
+semantic claims. Default parser behavior remains unchanged.
 
 ## Non-Goals
 

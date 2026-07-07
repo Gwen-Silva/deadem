@@ -261,6 +261,12 @@
       "notes": "Task 128 reviewed the diagnostic fail-closed missing-entity contract: compact diagnostic stop only, no implementation authorization, no recovery, no skip, no placeholders, no parser fix, and no semantic claims."
     },
     {
+      "id": "diagnostic_fail_closed_missing_entity_implementation",
+      "path": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/implementation-gate.json",
+      "status": "current",
+      "notes": "Task 129 implemented disabled-by-default recovery.diagnoseMissingEntityFailClosed diagnostic metadata at the existing missing-entity fail-fast boundary. It remains diagnostic-only and does not recover, skip, create placeholders, continue parsing, change default behavior, process replays, or emit canonical facts."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

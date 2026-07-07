@@ -1,0 +1,182 @@
+{
+  "taskId": "129",
+  "title": "Implement Disabled-By-Default Missing Entity Diagnostic Fail-Closed",
+  "status": "completed",
+  "objective": "Implement a minimal opt-in disabled-by-default diagnostic fail-closed path for PacketEntities missing-entity failures, preserving default behavior and avoiding recovery, skip mode, placeholders, parser-fix claims, replay expansion, and canonical outputs.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "tasks/specs/121.json",
+    "tasks/specs/122.json",
+    "tasks/specs/123.json",
+    "tasks/specs/124.json",
+    "tasks/specs/125.json",
+    "tasks/specs/126.json",
+    "tasks/specs/127.json",
+    "tasks/specs/128.json",
+    "tasks/completed/121-diagnose-entity-2905-registry-and-packet-context.md",
+    "tasks/completed/122-diagnose-entity-index-allocation-gap.md",
+    "tasks/completed/123-triage-replay-parser-prior-art-and-second-canary.md",
+    "tasks/completed/124-evaluate-external-parser-oracle-canaries.md",
+    "tasks/completed/125-decide-clarity-oracle-viability.md",
+    "tasks/completed/126-restore-direct-codex-workflow.md",
+    "tasks/completed/127-independent-missing-entity-strategy.md",
+    "tasks/completed/128-diagnostic-fail-closed-missing-entity-review.md",
+    "output/local-replay-processing/replay_010-entity-2905-registry-and-packet-context/**",
+    "output/local-replay-processing/replay_010-entity-index-allocation-gap/**",
+    "output/local-replay-processing/replay-parser-prior-art-and-second-canary/**",
+    "output/local-replay-processing/external-parser-oracle-canaries/**",
+    "output/local-replay-processing/clarity-oracle-viability/**",
+    "output/local-replay-processing/independent-missing-entity-strategy/**",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review/**",
+    "reports/independent-missing-entity-strategy.md",
+    "reports/diagnostic-fail-closed-missing-entity-review.md"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/129.json",
+    "tasks/completed/129-diagnostic-fail-closed-missing-entity-implementation.md",
+    "reports/diagnostic-fail-closed-missing-entity-implementation.md",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_011.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "tasks/specs/130.json",
+    "tasks/completed/130-*",
+    "tasks/blocked/130-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/default-behavior-comparison.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/diagnostic-fail-closed-result.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/missing-entity-boundary-diagnostic.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/no-continuation-proof.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/protection-audit.json",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/implementation-gate.json",
+    "reports/diagnostic-fail-closed-missing-entity-implementation.md",
+    "tasks/completed/129-diagnostic-fail-closed-missing-entity-implementation.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not use WSL",
+    "Do not use iaflow",
+    "Do not use Product Reviewer automation",
+    "Do not process replay_011 or any replay other than explicitly authorized replay_010",
+    "Prefer synthetic/unit tests when possible and record if replay_010 was not processed",
+    "Do not touch replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not install or execute Java",
+    "Do not execute Clarity or external parsers",
+    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, or semantic parser fix",
+    "Do not continue parsing after missing entity in diagnostic mode",
+    "Do not change parser default behavior",
+    "Do not create canonical, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
+    "Do not create Task 130"
+  ],
+  "successGate": "diagnostic_fail_closed_missing_entity_implemented",
+  "blockedGate": "diagnostic_fail_closed_missing_entity_blocked",
+  "allowedAlternateGates": [
+    "diagnostic_fail_closed_missing_entity_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/implementation-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

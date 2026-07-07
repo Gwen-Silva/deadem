@@ -334,6 +334,17 @@ continuation, recovery, skip mode, placeholder entity, parser fix, canonical
 facts, or default behavior change. It does not authorize implementation; any
 future implementation requires a new human-authored task.
 
+## Task 129 Diagnostic Fail-Closed Implementation Note
+
+Task 129 implemented a disabled-by-default diagnostic fail-closed missing-entity
+metadata hook under `diagnostic_fail_closed_missing_entity_implemented`. The
+option is `recovery.diagnoseMissingEntityFailClosed`; default parser behavior
+remains unchanged. The diagnostic records compact boundary metadata at the
+existing missing-entity failure point and still fails closed without recovery,
+skip mode, placeholder entities, fake fields, synthetic registry state,
+continuation, canonical facts, or Source 2/replay-corruption/parser-correctness
+claims. Validation used synthetic handler fixtures; no replay was processed.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -376,4 +387,6 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   `add_diagnostic_fail_closed_review_next` as the next bounded local route.
   Task 128 reviewed that route as a diagnostic fail-closed contract only,
   without parser changes, implementation authorization, or recovery/skip
-  design.
+  design. Task 129 implemented the separately authorized disabled-by-default
+  diagnostic metadata hook and preserved fail-closed/no-continuation behavior
+  using synthetic tests rather than replay processing.

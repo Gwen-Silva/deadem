@@ -214,6 +214,11 @@ class DemoMessageHandler {
                             fieldsTouched: false,
                             registerEntityTouched: false
                         });
+                        recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, cursorEntry, {
+                            operation: EntityOperation.UPDATE,
+                            index,
+                            errorMessage: `Unable to find an entity with index [ ${index} ]`
+                        });
                         recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
                             failureType: 'missing_entity_reference',
                             operation: EntityOperation.UPDATE.code,
@@ -332,6 +337,11 @@ class DemoMessageHandler {
                             baselineTouched: false,
                             fieldsTouched: false,
                             registerEntityTouched: false
+                        });
+                        recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, cursorEntry, {
+                            operation: EntityOperation.LEAVE,
+                            index,
+                            errorMessage: `Unable to find an entity with index [ ${index} ]`
                         });
                         recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
                             failureType: 'missing_entity_reference',
@@ -661,6 +671,11 @@ class DemoMessageHandler {
                             fieldsTouched: false,
                             registerEntityTouched: false
                         });
+                        recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, cursorEntry, {
+                            operation: EntityOperation.DELETE,
+                            index,
+                            errorMessage: `Unable to find an entity with index [ ${index} ]`
+                        });
                         recordPreRecoveryPayloadConsumption(recovery, cursorLedger, {
                             failureType: 'missing_entity_reference',
                             operation: EntityOperation.DELETE.code,
@@ -797,7 +812,8 @@ function createCursorLedger(recovery, message, startLoop) {
             recovery.diagnoseEntityPacketBoundaryGuard !== true &&
             recovery.allowEntityPacketBoundaryTruncation !== true &&
             recovery.diagnoseEntityRegistryHistory !== true &&
-            recovery.diagnoseEntityIndexAllocation !== true)) {
+            recovery.diagnoseEntityIndexAllocation !== true &&
+            recovery.diagnoseMissingEntityFailClosed !== true)) {
         return null;
     }
 
@@ -1499,6 +1515,46 @@ function recordPreRecoveryPayloadConsumption(recovery, cursorLedger, boundary) {
     return true;
 }
 
+function recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, entry, context) {
+    if (recovery === null || recovery.diagnoseMissingEntityFailClosed !== true || cursorLedger === null || entry === null) {
+        return false;
+    }
+
+    recovery.recordMissingEntityFailClosed?.({
+        passMode: 'diagnostic_fail_closed',
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: entry.loop,
+        updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+        operation: context.operation.code,
+        entityIndex: context.index,
+        previousEntityIndex: getPreviousEntityIndex(cursorLedger, entry.loop),
+        indexDelta: entry.indexDelta,
+        payloadBits: entry.payloadBits,
+        readCounts: { ...entry.readCounts },
+        entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+        registryStateBefore: entry.registryStateBefore,
+        registryStateAfter: 'missing',
+        classId: entry.classId,
+        serial: entry.serial,
+        className: entry.className,
+        errorClass: 'MissingEntityReferenceError',
+        errorMessage: context.errorMessage,
+        fieldsMaterialized: false,
+        placeholderOrFakeEntityCreated: false,
+        parserContinuedAfterFailure: false,
+        canonicalFactsProduced: false,
+        defaultBehaviorChanged: false,
+        recoveryAttempted: false,
+        skipModeApplied: false,
+        payloadSkipped: false,
+        updateApplied: false,
+        fakeFieldsCreated: false,
+        syntheticRegistryStateCreated: false
+    });
+
+    return true;
+}
+
 function buildCursorModelComparison(cursorLedger, context) {
     const loop22 = cursorLedger.entries.find(entry => entry.loop === context.boundaryLoop - 1);
     const loop23 = cursorLedger.entries.find(entry => entry.loop === context.boundaryLoop);
@@ -1794,5 +1850,6 @@ export {
     maybeTruncateEntityPacketBoundary,
     recoverMissingClassBaseline,
     recoverMissingEntityReference,
+    recordMissingEntityDiagnosticFailClosed,
     recordOutOfRangeEntityCreateBoundary
 };
