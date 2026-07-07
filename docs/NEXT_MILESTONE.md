@@ -168,6 +168,12 @@ confirmed the diagnostic captures packet 954 loop 33 for missing entity 2905
 while still throwing without recovery, skip, placeholders, canonical facts, or
 continuation.
 
+Task 132 is complete with the gate
+`diagnostic_fail_closed_replay_011_canary_ready`. It ran only replay_011 and
+confirmed the diagnostic captures packet 1052 loop 28 for missing entity 5624
+while still throwing without recovery, skip, placeholders, canonical facts, or
+continuation.
+
 ## Task 094
 
 Purpose: resolve only the four frozen replay-002 terminal blockers:
@@ -929,6 +935,22 @@ fails with missing entity 2905. The diagnostic pass, using only
 throws. No recovery, skip mode, placeholder/fake entity, field materialization,
 payload skip, update application, continuation, canonical facts, or semantic
 claims were produced. No replay other than replay_010 was processed.
+
+## Task 132
+
+Purpose: run a replay_011-only canary for
+`recovery.diagnoseMissingEntityFailClosed`.
+
+Gate: `diagnostic_fail_closed_replay_011_canary_ready`.
+
+Status: completed with the success gate above. Default replay_011 parsing still
+fails with missing entity 5624. The diagnostic pass, using only
+`recovery.diagnoseMissingEntityFailClosed: true`, records one compact
+`missing_entity_fail_closed` diagnostic at packet ordinal 1052 loop 28 and
+still throws. No recovery, skip mode, placeholder/fake entity, field
+materialization, payload skip, update application, continuation, canonical
+facts, or semantic claims were produced. No replay other than replay_011 was
+processed.
 
 ## Non-Goals
 

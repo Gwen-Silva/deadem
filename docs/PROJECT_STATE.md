@@ -366,6 +366,17 @@ throws without recovery, skip, placeholder/fake entity, field materialization,
 payload skip, update application, canonical output, or continuation. No replay
 other than replay_010 was accessed or processed.
 
+## Task 132 Replay 011 Diagnostic Canary Note
+
+Task 132 ran the authorized replay_011-only canary under
+`diagnostic_fail_closed_replay_011_canary_ready`. Default behavior still fails
+with `Unable to find an entity with index [ 5624 ]`. With only
+`recovery.diagnoseMissingEntityFailClosed: true`, the parser records one compact
+`missing_entity_fail_closed` diagnostic at packet ordinal 1052 loop 28 and
+still throws without recovery, skip, placeholder/fake entity, field
+materialization, payload skip, update application, canonical output, or
+continuation. No replay other than replay_011 was accessed or processed.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -416,3 +427,6 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   truncation. Task 131 then confirmed the diagnostic on the authorized
   replay_010 canary: the real first missing-entity boundary is packet 954 loop
   33 for entity 2905, and the parser still fails closed without continuation.
+  Task 132 confirmed the same diagnostic class on the authorized replay_011
+  canary: packet 1052 loop 28 for entity 5624, again fail-closed without
+  continuation.
