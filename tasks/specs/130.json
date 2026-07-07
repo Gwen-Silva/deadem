@@ -1,0 +1,156 @@
+{
+  "taskId": "130",
+  "title": "Harden Missing Entity Diagnostic Configuration Isolation",
+  "status": "completed",
+  "objective": "Harden recovery.diagnoseMissingEntityFailClosed configuration so it cannot be combined with recovery, skip, truncation, or continuation options that would let the parser pass the missing-entity boundary.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/129.json",
+    "tasks/completed/129-diagnostic-fail-closed-missing-entity-implementation.md",
+    "reports/diagnostic-fail-closed-missing-entity-implementation.md",
+    "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation/**"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/130.json",
+    "tasks/completed/130-diagnostic-fail-closed-config-isolation.md",
+    "reports/diagnostic-fail-closed-config-isolation.md",
+    "output/local-replay-processing/diagnostic-fail-closed-config-isolation/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_011.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "tasks/specs/131.json",
+    "tasks/completed/131-*",
+    "tasks/blocked/131-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/diagnostic-fail-closed-config-isolation/config-isolation-decision.json",
+    "output/local-replay-processing/diagnostic-fail-closed-config-isolation/default-behavior-preservation.json",
+    "output/local-replay-processing/diagnostic-fail-closed-config-isolation/incompatible-options-test-result.json",
+    "output/local-replay-processing/diagnostic-fail-closed-config-isolation/protection-audit.json",
+    "output/local-replay-processing/diagnostic-fail-closed-config-isolation/isolation-gate.json",
+    "reports/diagnostic-fail-closed-config-isolation.md",
+    "tasks/completed/130-diagnostic-fail-closed-config-isolation.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process replay_010 or replay_011",
+    "Do not touch replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, or parser fixes",
+    "Do not continue parsing after missing entity in diagnostic mode",
+    "Do not change parser default behavior",
+    "Do not execute Java, Clarity, or external parsers",
+    "Do not use WSL, iaflow, or Product Reviewer automation",
+    "Do not create canonical, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
+    "Do not create Task 131"
+  ],
+  "successGate": "diagnostic_fail_closed_config_isolation_ready",
+  "blockedGate": "diagnostic_fail_closed_config_isolation_blocked",
+  "allowedAlternateGates": [
+    "diagnostic_fail_closed_config_isolation_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/diagnostic-fail-closed-config-isolation/isolation-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

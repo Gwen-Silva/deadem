@@ -156,6 +156,12 @@ fixtures. Default behavior remains unchanged, and the diagnostic does not
 recover, skip, create placeholders, continue parsing, emit canonical facts, or
 process replays.
 
+Task 130 is complete with the gate
+`diagnostic_fail_closed_config_isolation_ready`. It hardened
+`recovery.diagnoseMissingEntityFailClosed` by rejecting incompatible recovery
+and truncation options at configuration construction. This preserves default
+behavior and keeps validation synthetic-only.
+
 ## Task 094
 
 Purpose: resolve only the four frozen replay-002 terminal blockers:
@@ -888,6 +894,20 @@ metadata at the existing missing-entity failure boundary and still throws
 without recovery, skip mode, placeholder entities, fake fields, synthetic
 registry state, parser continuation, canonical facts, replay processing, or
 semantic claims. Default parser behavior remains unchanged.
+
+## Task 130
+
+Purpose: harden missing-entity diagnostic configuration isolation so
+`recovery.diagnoseMissingEntityFailClosed` cannot be combined with options that
+would undermine fail-closed behavior.
+
+Gate: `diagnostic_fail_closed_config_isolation_ready`.
+
+Status: completed with the success gate above. `ParserConfiguration` rejects
+the diagnostic option when combined with `allowUnresolvedEntityReference`,
+`allowMissingClassBaseline`, or `allowEntityPacketBoundaryTruncation`. No
+handler behavior change, recovery, skip mode, replay processing, canonical
+facts, or semantic claims were added.
 
 ## Non-Goals
 

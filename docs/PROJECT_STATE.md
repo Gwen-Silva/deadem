@@ -345,6 +345,16 @@ skip mode, placeholder entities, fake fields, synthetic registry state,
 continuation, canonical facts, or Source 2/replay-corruption/parser-correctness
 claims. Validation used synthetic handler fixtures; no replay was processed.
 
+## Task 130 Diagnostic Config Isolation Note
+
+Task 130 hardened the Task 129 diagnostic option under
+`diagnostic_fail_closed_config_isolation_ready`. When
+`recovery.diagnoseMissingEntityFailClosed` is true, `ParserConfiguration`
+rejects `allowUnresolvedEntityReference`, `allowMissingClassBaseline`, and
+`allowEntityPacketBoundaryTruncation` so the missing-entity diagnostic remains
+isolated from recovery and continuation-oriented modes. Default behavior is
+unchanged, and validation used synthetic tests only; no replay was processed.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -389,4 +399,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   without parser changes, implementation authorization, or recovery/skip
   design. Task 129 implemented the separately authorized disabled-by-default
   diagnostic metadata hook and preserved fail-closed/no-continuation behavior
-  using synthetic tests rather than replay processing.
+  using synthetic tests rather than replay processing. Task 130 then hardened
+  the configuration boundary so the diagnostic cannot be combined with
+  missing-entity recovery, missing-baseline recovery, or entity packet boundary
+  truncation.

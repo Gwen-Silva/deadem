@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "taskId": "130",
+  "gate": "diagnostic_fail_closed_config_isolation_ready",
+  "reason": "ParserConfiguration now rejects recovery.diagnoseMissingEntityFailClosed when combined with missing-entity recovery, missing-baseline recovery, or entity packet boundary truncation, preserving diagnostic fail-closed isolation before parser execution.",
+  "diagnosticOption": "recovery.diagnoseMissingEntityFailClosed",
+  "defaultBehaviorChanged": false,
+  "incompatibleOptionsRejected": true,
+  "replayProcessingUsed": false,
+  "recoveryAddedOrPromoted": false,
+  "skipModeAdded": false,
+  "placeholderOrFakeEntityCreated": false,
+  "parserContinuedAfterFailure": false,
+  "canonicalFactsProduced": false,
+  "source2SemanticsConcluded": false,
+  "replayCorruptionConcluded": false,
+  "localParserCorrectnessConcluded": false,
+  "task131Created": false
+}

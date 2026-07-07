@@ -267,6 +267,12 @@
       "notes": "Task 129 implemented disabled-by-default recovery.diagnoseMissingEntityFailClosed diagnostic metadata at the existing missing-entity fail-fast boundary. It remains diagnostic-only and does not recover, skip, create placeholders, continue parsing, change default behavior, process replays, or emit canonical facts."
     },
     {
+      "id": "diagnostic_fail_closed_config_isolation",
+      "path": "output/local-replay-processing/diagnostic-fail-closed-config-isolation/isolation-gate.json",
+      "status": "current",
+      "notes": "Task 130 hardened recovery.diagnoseMissingEntityFailClosed configuration isolation by rejecting combinations with allowUnresolvedEntityReference, allowMissingClassBaseline, and allowEntityPacketBoundaryTruncation. Validation was synthetic-only and no replay was processed."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

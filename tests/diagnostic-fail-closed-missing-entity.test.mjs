@@ -100,6 +100,29 @@ test('diagnostic fail-closed is explicit opt-in and does not enable recovery', (
     assert.equal(configuration.recovery.allowEntityPacketBoundaryTruncation, false);
 });
 
+test('diagnostic fail-closed rejects incompatible recovery and truncation options', () => {
+    assert.throws(() => new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true,
+            allowUnresolvedEntityReference: true
+        }
+    }), /diagnoseMissingEntityFailClosed cannot be combined with options\.recovery\.allowUnresolvedEntityReference/);
+
+    assert.throws(() => new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true,
+            allowMissingClassBaseline: true
+        }
+    }), /diagnoseMissingEntityFailClosed cannot be combined with options\.recovery\.allowMissingClassBaseline/);
+
+    assert.throws(() => new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true,
+            allowEntityPacketBoundaryTruncation: true
+        }
+    }), /diagnoseMissingEntityFailClosed cannot be combined with options\.recovery\.allowEntityPacketBoundaryTruncation/);
+});
+
 test('missing entity fail-closed helper records no diagnostic without opt-in', () => {
     const configuration = new ParserConfiguration({
         recovery: {}

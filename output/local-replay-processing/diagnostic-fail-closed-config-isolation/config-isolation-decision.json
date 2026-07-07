@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "taskId": "130",
+  "decision": "reject_incompatible_configuration",
+  "diagnosticOption": "recovery.diagnoseMissingEntityFailClosed",
+  "rejectedWhenTrue": [
+    "recovery.allowUnresolvedEntityReference",
+    "recovery.allowMissingClassBaseline",
+    "recovery.allowEntityPacketBoundaryTruncation"
+  ],
+  "rationale": {
+    "allowUnresolvedEntityReference": "Rejected because it is the existing missing-entity recovery path and could let the parser pass the missing-entity boundary before the diagnostic fails closed.",
+    "allowMissingClassBaseline": "Rejected because the fail-closed diagnostic is intentionally isolated from recovery-oriented configuration, even though this option targets missing class baselines rather than missing entity references.",
+    "allowEntityPacketBoundaryTruncation": "Rejected because truncation is a continuation-oriented structural mode and should not be combined with a missing-entity diagnostic whose contract is to stop at the missing-entity boundary."
+  },
+  "handlerPrecedenceChange": false,
+  "defaultBehaviorChanged": false,
+  "replayProcessingUsed": false,
+  "rawDataRecorded": false
+}

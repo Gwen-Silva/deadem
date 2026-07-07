@@ -282,6 +282,12 @@ function buildRecovery(options) {
     let preRecoveryPayloadPacketOrdinal = 0;
     let entityPacketDiagnosticOrdinal = 0;
 
+    if (diagnoseMissingEntityFailClosed) {
+        Assert.isTrue(!allowUnresolvedEntityReference, 'options.recovery.diagnoseMissingEntityFailClosed cannot be combined with options.recovery.allowUnresolvedEntityReference');
+        Assert.isTrue(!allowMissingClassBaseline, 'options.recovery.diagnoseMissingEntityFailClosed cannot be combined with options.recovery.allowMissingClassBaseline');
+        Assert.isTrue(!allowEntityPacketBoundaryTruncation, 'options.recovery.diagnoseMissingEntityFailClosed cannot be combined with options.recovery.allowEntityPacketBoundaryTruncation');
+    }
+
     return {
         allowUnresolvedEntityReference,
         allowMissingClassBaseline,

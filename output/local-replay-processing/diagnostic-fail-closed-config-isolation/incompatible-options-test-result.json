@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "130",
+  "testFile": "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+  "testName": "diagnostic fail-closed rejects incompatible recovery and truncation options",
+  "combinations": [
+    {
+      "diagnoseMissingEntityFailClosed": true,
+      "option": "allowUnresolvedEntityReference",
+      "optionValue": true,
+      "configurationAccepted": false,
+      "failureStage": "ParserConfiguration construction",
+      "expectedErrorContains": "diagnoseMissingEntityFailClosed cannot be combined with options.recovery.allowUnresolvedEntityReference"
+    },
+    {
+      "diagnoseMissingEntityFailClosed": true,
+      "option": "allowMissingClassBaseline",
+      "optionValue": true,
+      "configurationAccepted": false,
+      "failureStage": "ParserConfiguration construction",
+      "expectedErrorContains": "diagnoseMissingEntityFailClosed cannot be combined with options.recovery.allowMissingClassBaseline"
+    },
+    {
+      "diagnoseMissingEntityFailClosed": true,
+      "option": "allowEntityPacketBoundaryTruncation",
+      "optionValue": true,
+      "configurationAccepted": false,
+      "failureStage": "ParserConfiguration construction",
+      "expectedErrorContains": "diagnoseMissingEntityFailClosed cannot be combined with options.recovery.allowEntityPacketBoundaryTruncation"
+    }
+  ],
+  "allIncompatibleCombinationsRejected": true,
+  "noReplayUsed": true
+}
