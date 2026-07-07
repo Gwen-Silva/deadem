@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "141",
+  "defaultRecoveryConfiguration": "null_or_disabled",
+  "diagnosticDisabledByDefault": true,
+  "existingOptInUsed": "recovery.diagnoseMissingEntityFailClosed",
+  "newOptInOptionAdded": false,
+  "incompatibleCombinationsStillRejected": [
+    "allowUnresolvedEntityReference",
+    "allowMissingClassBaseline",
+    "allowEntityPacketBoundaryTruncation"
+  ],
+  "defaultMissingEntityBehavior": {
+    "throwsMissingEntityError": true,
+    "recordsDiagnosticWithoutOptIn": false,
+    "createsEntity": false,
+    "materializesFields": false
+  },
+  "diagnosticModeBehavior": {
+    "recordsCompactLifecycleLedger": true,
+    "recordsMissingEntityDiagnostic": true,
+    "throwsSameMissingEntityError": true,
+    "continuesParsing": false,
+    "appliesUpdate": false,
+    "skipsPayload": false,
+    "createsPlaceholder": false,
+    "changesDefaultBehavior": false
+  }
+}

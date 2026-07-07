@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "141",
+  "implementedClassificationCandidates": [
+    "never_registered_in_observed_parser_history_candidate",
+    "created_then_missing_registry_state_candidate",
+    "removed_before_missing_update_candidate",
+    "entity_index_reused_or_generation_ambiguous_candidate",
+    "index_stream_or_cursor_contract_suspected",
+    "not_determined"
+  ],
+  "classificationScope": "local_parser_diagnostic_evidence_only",
+  "confidenceValues": [
+    "low",
+    "medium",
+    "not_applicable"
+  ],
+  "limitationsAlwaysAttached": [
+    "classification is local parser diagnostic evidence only",
+    "not a game fact",
+    "not Source 2 semantics",
+    "not replay corruption evidence",
+    "not proof of local parser correctness"
+  ],
+  "forbiddenClaimsNotMade": [
+    "entity never existed in game",
+    "game destruction or death",
+    "Source 2 semantics",
+    "replay corruption",
+    "local parser correctness",
+    "recovery safety",
+    "skip safety",
+    "placeholder safety"
+  ]
+}

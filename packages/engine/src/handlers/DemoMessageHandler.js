@@ -1085,8 +1085,54 @@ function finishCursorEntry(cursorLedger, entry, values) {
 
     Object.assign(entry, rest);
     entry.readCounts.afterAction = afterActionReadCount;
+    recordMissingEntityLifecycleLedgerFromEntry(cursorLedger, entry);
     recordEntityRegistryHistoryFromEntry(cursorLedger, entry);
     recordEntityIndexAllocationFromEntry(cursorLedger, entry);
+}
+
+function recordMissingEntityLifecycleLedgerFromEntry(cursorLedger, entry) {
+    const recovery = cursorLedger?.recovery ?? null;
+    if (recovery === null || recovery.diagnoseMissingEntityFailClosed !== true || entry === null) {
+        return;
+    }
+
+    if (!Array.isArray(recovery.missingEntityLifecycleLedger)) {
+        recovery.missingEntityLifecycleLedger = [];
+    }
+
+    recovery.missingEntityLifecycleLedger.push({
+        eventSequence: recovery.missingEntityLifecycleLedger.length,
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: entry.loop,
+        updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+        operation: entry.operation,
+        commandId: entry.commandId,
+        entityIndex: entry.accumulatedEntityIndex,
+        previousEntityIndex: getPreviousEntityIndex(cursorLedger, entry.loop),
+        indexDelta: entry.indexDelta,
+        serial: entry.serial,
+        classId: entry.classId,
+        className: entry.className,
+        payloadBits: entry.payloadBits,
+        entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+        readCounts: { ...entry.readCounts },
+        registryStateBefore: entry.registryStateBefore,
+        registryStateAfter: entry.registryStateAfter,
+        action: entry.action,
+        classLookupAttempted: entry.classLookupAttempted === true,
+        classLookupSucceeded: entry.classLookupSucceeded === true,
+        baselineLookupAttempted: entry.baselineLookupAttempted === true,
+        baselineLookupSucceeded: entry.baselineLookupSucceeded === true,
+        registerEntityAttempted: entry.registerEntityAttempted === true || entry.registerEntityTouched === true,
+        registerEntitySucceeded: entry.registerEntitySucceeded === true || entry.registerEntityTouched === true,
+        fieldExtractionAttempted: entry.fieldExtractionAttempted === true,
+        fieldExtractionSucceeded: entry.fieldExtractionSucceeded === true,
+        fieldsMaterialized: entry.fieldsTouched === true,
+        placeholderOrFakeEntityCreated: false,
+        fakeFieldsCreated: false,
+        syntheticRegistryStateCreated: false,
+        rawDataCaptured: false
+    });
 }
 
 function recordEntityRegistryHistoryFromEntry(cursorLedger, entry) {
@@ -1404,21 +1450,29 @@ function getPreviousEntityIndex(cursorLedger, boundaryLoop) {
 }
 
 function buildMissingEntityLifecycleProbe(cursorLedger, entry, context) {
+    const ledger = Array.isArray(cursorLedger.recovery?.missingEntityLifecycleLedger) ?
+        cursorLedger.recovery.missingEntityLifecycleLedger :
+        [];
+    const boundaryEvent = ledger.find(candidate =>
+        candidate.packetOrdinal === cursorLedger.packetMetrics.packetOrdinal &&
+        candidate.loop === entry.loop &&
+        candidate.entityIndex === context.index
+    ) ?? null;
+    const compactEventsBeforeBoundary = boundaryEvent === null ?
+        ledger.filter(candidate => candidate.packetOrdinal !== cursorLedger.packetMetrics.packetOrdinal || candidate.loop < entry.loop) :
+        ledger.filter(candidate => candidate.eventSequence < boundaryEvent.eventSequence);
+    const sameEntityPriorEvents = compactEventsBeforeBoundary.filter(candidate => candidate.entityIndex === context.index);
     const priorEntries = cursorLedger.entries.filter(candidate => Number.isInteger(candidate.loop) && candidate.loop < entry.loop);
     const sameEntityPriorEntries = priorEntries.filter(candidate => candidate.accumulatedEntityIndex === context.index);
-    const priorCreateEntryObserved = sameEntityPriorEntries.some(candidate => candidate.operation === EntityOperation.CREATE.code);
-    const priorUpdateEntryObserved = sameEntityPriorEntries.some(candidate => candidate.operation === EntityOperation.UPDATE.code);
-    const priorRemovalEntryObserved = sameEntityPriorEntries.some(candidate =>
+    const priorCreateEntryObserved = sameEntityPriorEvents.some(candidate => candidate.operation === EntityOperation.CREATE.code);
+    const priorUpdateEntryObserved = sameEntityPriorEvents.some(candidate => candidate.operation === EntityOperation.UPDATE.code);
+    const priorRemovalEntryObserved = sameEntityPriorEvents.some(candidate =>
         candidate.operation === EntityOperation.DELETE.code || candidate.operation === EntityOperation.LEAVE.code
     );
-    const priorRegisterAttemptObserved = sameEntityPriorEntries.some(candidate =>
-        candidate.registerEntityAttempted === true ||
-        candidate.registerEntityTouched === true ||
-        candidate.registerEntitySucceeded === true
+    const priorRegisterAttemptObserved = sameEntityPriorEvents.some(candidate =>
+        candidate.registerEntityAttempted === true || candidate.registerEntitySucceeded === true
     );
-    const priorRegisterSuccessObserved = sameEntityPriorEntries.some(candidate =>
-        candidate.registerEntitySucceeded === true || candidate.registerEntityTouched === true
-    );
+    const priorRegisterSuccessObserved = sameEntityPriorEvents.some(candidate => candidate.registerEntitySucceeded === true);
     const entityDataBitLength = cursorLedger.packetMetrics.entityDataBitLength;
     const afterCommandReadCount = entry.readCounts?.afterCommand ?? null;
     const afterActionReadCount = entry.readCounts?.afterAction ?? null;
@@ -1426,13 +1480,40 @@ function buildMissingEntityLifecycleProbe(cursorLedger, entry, context) {
         Number.isInteger(afterCommandReadCount) &&
         afterCommandReadCount <= entityDataBitLength &&
         (afterActionReadCount === null || afterActionReadCount <= entityDataBitLength);
+    const firstTargetEvent = sameEntityPriorEvents[0] ?? null;
+    const lastTargetEvent = sameEntityPriorEvents[sameEntityPriorEvents.length - 1] ?? null;
+    const serials = new Set(sameEntityPriorEvents
+        .map(candidate => candidate.serial)
+        .filter(serial => serial !== null && serial !== undefined));
+    const repeatedIndexObserved = sameEntityPriorEvents.length > 1;
+    const serialOrGenerationAmbiguous = serials.size > 1;
     const lifecycleEvidenceSummary = {
-        evidenceScope: 'packet_local_cursor_ledger',
-        evidenceCompleteness: 'packet_local_only',
+        evidenceScope: 'replay_wide_local_parser_lifecycle_ledger',
+        evidenceCompleteness: 'local_parser_prefix_until_first_missing_entity',
         targetEntityIndex: context.index,
         targetOperation: context.operation.code,
         priorEntriesExamined: priorEntries.length,
         sameEntityPriorEntryCount: sameEntityPriorEntries.length,
+        observedParserHistoryScope: 'local_parser_prefix_until_missing_entity_boundary',
+        firstObservedPacketOrdinal: firstTargetEvent?.packetOrdinal ?? null,
+        firstObservedLoop: firstTargetEvent?.loop ?? null,
+        lastObservedPacketOrdinalBeforeBoundary: lastTargetEvent?.packetOrdinal ?? null,
+        lastObservedLoopBeforeBoundary: lastTargetEvent?.loop ?? null,
+        createObserved: priorCreateEntryObserved,
+        registerAttemptObserved: priorRegisterAttemptObserved,
+        registerSuccessObserved: priorRegisterSuccessObserved,
+        updateObservedBeforeBoundary: priorUpdateEntryObserved,
+        deleteOrLeaveObservedBeforeBoundary: priorRemovalEntryObserved,
+        removalLikeOperationObservedBeforeBoundary: priorRemovalEntryObserved,
+        classLookupAttempted: sameEntityPriorEvents.some(candidate => candidate.classLookupAttempted === true),
+        classLookupSucceeded: sameEntityPriorEvents.some(candidate => candidate.classLookupSucceeded === true),
+        baselineLookupAttempted: sameEntityPriorEvents.some(candidate => candidate.baselineLookupAttempted === true),
+        baselineLookupSucceeded: sameEntityPriorEvents.some(candidate => candidate.baselineLookupSucceeded === true),
+        fieldExtractionAttemptedBeforeBoundary: sameEntityPriorEvents.some(candidate => candidate.fieldExtractionAttempted === true),
+        repeatedIndexObserved,
+        serialOrGenerationAmbiguous,
+        totalCompactEventsForTarget: sameEntityPriorEvents.length,
+        totalCompactEventsTracked: compactEventsBeforeBoundary.length,
         priorCreateEntryObserved,
         priorUpdateEntryObserved,
         priorRemovalEntryObserved,
@@ -1443,7 +1524,7 @@ function buildMissingEntityLifecycleProbe(cursorLedger, entry, context) {
         previousEntityIndex: getPreviousEntityIndex(cursorLedger, entry.loop),
         indexDelta: entry.indexDelta,
         readCountsWithinEntityData,
-        replayWideHistoryKnown: false,
+        replayWideHistoryKnown: true,
         rawDataCaptured: false
     };
     const classification = classifyMissingEntityLifecycleProbe(lifecycleEvidenceSummary);
@@ -1455,34 +1536,73 @@ function buildMissingEntityLifecycleProbe(cursorLedger, entry, context) {
 }
 
 function classifyMissingEntityLifecycleProbe(summary) {
-    if (summary.priorRemovalEntryObserved === true && summary.registryStateBefore === 'missing') {
+    const limitations = [
+        'classification is local parser diagnostic evidence only',
+        'not a game fact',
+        'not Source 2 semantics',
+        'not replay corruption evidence',
+        'not proof of local parser correctness'
+    ];
+
+    if (summary.replayWideHistoryKnown !== true || summary.totalCompactEventsTracked === 0) {
         return {
-            classificationCandidate: 'removed_entity_candidate',
-            classificationConfidence: 'low',
-            classificationBasis: 'same entity index has a prior packet-local removal entry before the missing reference; replay-wide lifecycle is not known'
+            classificationCandidate: 'not_determined',
+            classificationConfidence: 'not_applicable',
+            classificationBasis: 'diagnostic evidence has no replay-wide local parser lifecycle history before the missing reference',
+            classificationLimitations: limitations
         };
     }
 
-    if (summary.priorRegisterSuccessObserved === true && summary.registryStateBefore === 'missing') {
+    if (summary.serialOrGenerationAmbiguous === true) {
         return {
-            classificationCandidate: 'registry_state_loss_candidate',
+            classificationCandidate: 'entity_index_reused_or_generation_ambiguous_candidate',
             classificationConfidence: 'low',
-            classificationBasis: 'same entity index has prior packet-local register evidence but registry state is missing at failure; replay-wide lifecycle is not known'
+            classificationBasis: 'same entity index has compact prior events with more than one serial or generation value before the missing reference',
+            classificationLimitations: limitations
         };
     }
 
-    if (summary.priorCreateEntryObserved === true && summary.registryStateBefore === 'missing') {
+    if (summary.deleteOrLeaveObservedBeforeBoundary === true && summary.registryStateBefore === 'missing') {
         return {
-            classificationCandidate: 'registry_state_loss_candidate',
+            classificationCandidate: 'removed_before_missing_update_candidate',
             classificationConfidence: 'low',
-            classificationBasis: 'same entity index has a prior packet-local CREATE entry but registry state is missing at failure; replay-wide lifecycle is not known'
+            classificationBasis: 'same entity index has a compact local parser DELETE or LEAVE operation before the missing reference; this does not claim game destruction, death, or true removal semantics',
+            classificationLimitations: limitations
+        };
+    }
+
+    if ((summary.registerSuccessObserved === true || summary.createObserved === true) && summary.registryStateBefore === 'missing') {
+        return {
+            classificationCandidate: 'created_then_missing_registry_state_candidate',
+            classificationConfidence: summary.registerSuccessObserved === true ? 'medium' : 'low',
+            classificationBasis: 'same entity index has compact local parser CREATE/register evidence before the missing reference, but registry state is missing at the boundary',
+            classificationLimitations: limitations
+        };
+    }
+
+    if (summary.readCountsWithinEntityData === false || Math.abs(summary.indexDelta ?? 0) > 1024) {
+        return {
+            classificationCandidate: 'index_stream_or_cursor_contract_suspected',
+            classificationConfidence: 'low',
+            classificationBasis: 'compact readCounts or indexDelta metadata explicitly suggests the local index stream or cursor contract may need review',
+            classificationLimitations: limitations
+        };
+    }
+
+    if (summary.totalCompactEventsForTarget === 0 && summary.totalCompactEventsTracked > 0) {
+        return {
+            classificationCandidate: 'never_registered_in_observed_parser_history_candidate',
+            classificationConfidence: 'low',
+            classificationBasis: 'target entity index was not observed in the compact local parser lifecycle history before the missing reference; this does not mean the entity never existed in game',
+            classificationLimitations: limitations
         };
     }
 
     return {
         classificationCandidate: 'not_determined',
         classificationConfidence: 'not_applicable',
-        classificationBasis: 'diagnostic evidence is limited to packet-local cursor metadata and cannot establish replay-wide lifecycle or index-stream cause'
+        classificationBasis: 'compact local parser lifecycle evidence is insufficient or conflicting',
+        classificationLimitations: limitations
     };
 }
 
@@ -1626,6 +1746,11 @@ function recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, entry, 
         classificationCandidate: lifecycleProbe.classificationCandidate,
         classificationConfidence: lifecycleProbe.classificationConfidence,
         classificationBasis: lifecycleProbe.classificationBasis,
+        classificationLimitations: lifecycleProbe.classificationLimitations,
+        diagnosticClassificationCandidate: lifecycleProbe.classificationCandidate,
+        diagnosticClassificationConfidence: lifecycleProbe.classificationConfidence,
+        diagnosticClassificationBasis: lifecycleProbe.classificationBasis,
+        diagnosticClassificationLimitations: lifecycleProbe.classificationLimitations,
         errorClass: 'MissingEntityReferenceError',
         errorMessage: context.errorMessage,
         rawDataCaptured: false,

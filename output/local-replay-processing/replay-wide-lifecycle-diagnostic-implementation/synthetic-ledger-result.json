@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "taskId": "141",
+  "testSource": "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+  "syntheticScenarios": [
+    {
+      "scenario": "no_sufficient_prior_lifecycle_history",
+      "classificationCandidate": "not_determined",
+      "classificationConfidence": "not_applicable",
+      "basisPattern": "no replay-wide local parser lifecycle history before the missing reference",
+      "rawDataCaptured": false
+    },
+    {
+      "scenario": "create_register_observed_then_registry_missing_at_boundary",
+      "classificationCandidate": "created_then_missing_registry_state_candidate",
+      "classificationConfidence": "medium",
+      "basisPattern": "local parser CREATE/register evidence before the missing reference",
+      "limitationsInclude": [
+        "not a game fact",
+        "not Source 2 semantics",
+        "not replay corruption evidence",
+        "not proof of local parser correctness"
+      ],
+      "rawDataCaptured": false
+    },
+    {
+      "scenario": "leave_observed_before_missing_update",
+      "classificationCandidate": "removed_before_missing_update_candidate",
+      "classificationConfidence": "low",
+      "basisPattern": "local parser DELETE or LEAVE operation before the missing reference",
+      "explicitlyAvoidsGameDestructionClaim": true,
+      "rawDataCaptured": false
+    }
+  ],
+  "ledgerSummaryFieldsCovered": [
+    "targetEntityIndex",
+    "observedParserHistoryScope",
+    "firstObservedPacketOrdinal",
+    "firstObservedLoop",
+    "lastObservedPacketOrdinalBeforeBoundary",
+    "lastObservedLoopBeforeBoundary",
+    "createObserved",
+    "registerAttemptObserved",
+    "registerSuccessObserved",
+    "updateObservedBeforeBoundary",
+    "deleteOrLeaveObservedBeforeBoundary",
+    "removalLikeOperationObservedBeforeBoundary",
+    "classLookupAttempted",
+    "classLookupSucceeded",
+    "baselineLookupAttempted",
+    "baselineLookupSucceeded",
+    "fieldExtractionAttemptedBeforeBoundary",
+    "repeatedIndexObserved",
+    "serialOrGenerationAmbiguous",
+    "totalCompactEventsForTarget",
+    "totalCompactEventsTracked",
+    "replayWideHistoryKnown",
+    "rawDataCaptured"
+  ]
+}

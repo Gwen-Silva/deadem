@@ -478,6 +478,21 @@ separately approved. Task 140 does not authorize implementation, replay
 processing, parser/engine changes, recovery, skip mode, placeholders, default
 behavior changes, canonical/source/match outputs, or semantic claims.
 
+## Task 141 Replay-Wide Lifecycle Diagnostic Ledger Implementation
+
+Task 141 implemented the approved diagnostic-only replay-wide/local-parser
+lifecycle ledger under `replay_wide_lifecycle_diagnostic_implemented`, using
+only synthetic validation. The existing
+`recovery.diagnoseMissingEntityFailClosed` mode now records compact lifecycle
+metadata before the first missing entity boundary and includes diagnostic
+classification fields such as `not_determined`,
+`created_then_missing_registry_state_candidate`, and
+`removed_before_missing_update_candidate`. The mode remains disabled by
+default and still throws fail-closed. No replay was processed, no new opt-in
+option was created, and no recovery, skip mode, placeholder, continuation,
+default behavior change, canonical/source/match output, or semantic claim was
+introduced.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -553,4 +568,8 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   replay-wide lifecycle or index-stream cause. Task 140 prepared that bounded
   non-implementing spec and selected
   `design_replay_wide_entity_lifecycle_ledger` as the future route requiring
-  separate human approval before any implementation or replay processing.
+  separate human approval before any implementation or replay processing. Task
+  141 then implemented that diagnostic-only ledger with synthetic validation,
+  preserving disabled-by-default fail-closed behavior and adding no recovery,
+  skip, placeholder, continuation, default behavior change, or replay
+  processing.

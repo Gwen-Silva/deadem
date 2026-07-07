@@ -48,6 +48,52 @@ function syntheticEntry(cursorLedger) {
     return cursorLedger.entries[1];
 }
 
+function addSyntheticLifecycleEvent(recovery, event) {
+    if (!Array.isArray(recovery.missingEntityLifecycleLedger)) {
+        recovery.missingEntityLifecycleLedger = [];
+    }
+
+    recovery.missingEntityLifecycleLedger.push({
+        eventSequence: recovery.missingEntityLifecycleLedger.length,
+        packetOrdinal: 900,
+        loop: recovery.missingEntityLifecycleLedger.length,
+        updatedEntries: 1,
+        operation: EntityOperation.UPDATE.code,
+        commandId: EntityOperation.UPDATE.id,
+        entityIndex: 2905,
+        previousEntityIndex: 2904,
+        indexDelta: 0,
+        serial: 7,
+        classId: 10,
+        className: 'SyntheticEntity',
+        payloadBits: 0,
+        entityDataBitLength: 128,
+        readCounts: {
+            beforeIndex: 0,
+            afterIndex: 1,
+            afterCommand: 3,
+            afterAction: 3
+        },
+        registryStateBefore: 'present_active',
+        registryStateAfter: 'present_active',
+        action: 'synthetic_prior_event',
+        classLookupAttempted: false,
+        classLookupSucceeded: false,
+        baselineLookupAttempted: false,
+        baselineLookupSucceeded: false,
+        registerEntityAttempted: false,
+        registerEntitySucceeded: false,
+        fieldExtractionAttempted: false,
+        fieldExtractionSucceeded: false,
+        fieldsMaterialized: false,
+        placeholderOrFakeEntityCreated: false,
+        fakeFieldsCreated: false,
+        syntheticRegistryStateCreated: false,
+        rawDataCaptured: false,
+        ...event
+    });
+}
+
 function createSyntheticHandler() {
     const registry = new SchemaRegistry(new ProtoProvider({ nested: {} }));
     const demo = new Demo();
@@ -179,29 +225,37 @@ test('missing entity fail-closed helper records compact metadata and no continua
     assert.equal(diagnostic.classId, null);
     assert.equal(diagnostic.serial, null);
     assert.equal(diagnostic.className, null);
-    assert.deepEqual(diagnostic.lifecycleEvidenceSummary, {
-        evidenceScope: 'packet_local_cursor_ledger',
-        evidenceCompleteness: 'packet_local_only',
-        targetEntityIndex: 2905,
-        targetOperation: 'UPDATE',
-        priorEntriesExamined: 1,
-        sameEntityPriorEntryCount: 0,
-        priorCreateEntryObserved: false,
-        priorUpdateEntryObserved: false,
-        priorRemovalEntryObserved: false,
-        priorRegisterAttemptObserved: false,
-        priorRegisterSuccessObserved: false,
-        registryStateBefore: 'missing',
-        registryStateAfter: 'missing',
-        previousEntityIndex: 2717,
-        indexDelta: 187,
-        readCountsWithinEntityData: true,
-        replayWideHistoryKnown: false,
-        rawDataCaptured: false
-    });
+    assert.equal(diagnostic.lifecycleEvidenceSummary.evidenceScope, 'replay_wide_local_parser_lifecycle_ledger');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.evidenceCompleteness, 'local_parser_prefix_until_first_missing_entity');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.targetEntityIndex, 2905);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.targetOperation, 'UPDATE');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.observedParserHistoryScope, 'local_parser_prefix_until_missing_entity_boundary');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.priorEntriesExamined, 1);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.sameEntityPriorEntryCount, 0);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.totalCompactEventsForTarget, 0);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.totalCompactEventsTracked, 0);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.createObserved, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.registerAttemptObserved, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.registerSuccessObserved, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.updateObservedBeforeBoundary, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.deleteOrLeaveObservedBeforeBoundary, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.removalLikeOperationObservedBeforeBoundary, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.repeatedIndexObserved, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.serialOrGenerationAmbiguous, false);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.registryStateBefore, 'missing');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.registryStateAfter, 'missing');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.previousEntityIndex, 2717);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.indexDelta, 187);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.readCountsWithinEntityData, true);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.replayWideHistoryKnown, true);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.rawDataCaptured, false);
     assert.equal(diagnostic.classificationCandidate, 'not_determined');
     assert.equal(diagnostic.classificationConfidence, 'not_applicable');
-    assert.match(diagnostic.classificationBasis, /packet-local cursor metadata/);
+    assert.match(diagnostic.classificationBasis, /no replay-wide local parser lifecycle history/);
+    assert.equal(diagnostic.diagnosticClassificationCandidate, 'not_determined');
+    assert.equal(diagnostic.diagnosticClassificationConfidence, 'not_applicable');
+    assert.match(diagnostic.diagnosticClassificationBasis, /no replay-wide local parser lifecycle history/);
+    assert.ok(diagnostic.diagnosticClassificationLimitations.includes('not a game fact'));
     assert.equal(diagnostic.errorClass, 'MissingEntityReferenceError');
     assert.equal(diagnostic.errorMessage, 'Unable to find an entity with index [ 2905 ]');
     assert.equal(diagnostic.rawDataCaptured, false);
@@ -216,6 +270,90 @@ test('missing entity fail-closed helper records compact metadata and no continua
     assert.equal(diagnostic.updateApplied, false);
     assert.equal(diagnostic.fakeFieldsCreated, false);
     assert.equal(diagnostic.syntheticRegistryStateCreated, false);
+    assert.equal(Object.hasOwn(diagnostic, 'fieldValues'), false);
+    assert.equal(Object.hasOwn(diagnostic, 'rawPayload'), false);
+    assert.equal(Object.hasOwn(diagnostic, 'rawEntityData'), false);
+    assert.equal(Object.hasOwn(diagnostic, 'rawSerializedEntities'), false);
+    assert.equal(Object.hasOwn(diagnostic, 'stringValue'), false);
+});
+
+test('missing entity lifecycle ledger classifies created then missing registry state candidate', () => {
+    const configuration = new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true
+        }
+    });
+    addSyntheticLifecycleEvent(configuration.recovery, {
+        operation: EntityOperation.CREATE.code,
+        commandId: EntityOperation.CREATE.id,
+        action: 'create_register_and_apply',
+        classLookupAttempted: true,
+        classLookupSucceeded: true,
+        baselineLookupAttempted: true,
+        baselineLookupSucceeded: true,
+        registerEntityAttempted: true,
+        registerEntitySucceeded: true,
+        fieldExtractionAttempted: true,
+        fieldExtractionSucceeded: true,
+        registryStateAfter: 'present_active'
+    });
+    const cursorLedger = syntheticCursorLedger(configuration.recovery);
+
+    const recorded = recordMissingEntityDiagnosticFailClosed(configuration.recovery, cursorLedger, syntheticEntry(cursorLedger), {
+        operation: EntityOperation.UPDATE,
+        index: 2905,
+        errorMessage: 'Unable to find an entity with index [ 2905 ]'
+    });
+
+    assert.equal(recorded, true);
+    const diagnostic = configuration.recovery.diagnostics[0];
+    assert.equal(diagnostic.diagnosticClassificationCandidate, 'created_then_missing_registry_state_candidate');
+    assert.equal(diagnostic.diagnosticClassificationConfidence, 'medium');
+    assert.match(diagnostic.diagnosticClassificationBasis, /CREATE\/register evidence/);
+    assert.ok(diagnostic.diagnosticClassificationLimitations.includes('not a game fact'));
+    assert.equal(diagnostic.lifecycleEvidenceSummary.createObserved, true);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.registerSuccessObserved, true);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.fieldExtractionAttemptedBeforeBoundary, true);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.rawDataCaptured, false);
+    assert.equal(diagnostic.recoveryAttempted, false);
+    assert.equal(diagnostic.skipModeApplied, false);
+    assert.equal(diagnostic.payloadSkipped, false);
+    assert.equal(diagnostic.placeholderOrFakeEntityCreated, false);
+    assert.equal(diagnostic.fakeFieldsCreated, false);
+    assert.equal(diagnostic.syntheticRegistryStateCreated, false);
+    assert.equal(diagnostic.parserContinuedAfterFailure, false);
+    assert.equal(diagnostic.canonicalFactsProduced, false);
+});
+
+test('missing entity lifecycle ledger classifies prior local removal-like operation without game semantic claim', () => {
+    const configuration = new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true
+        }
+    });
+    addSyntheticLifecycleEvent(configuration.recovery, {
+        operation: EntityOperation.LEAVE.code,
+        commandId: EntityOperation.LEAVE.id,
+        action: 'leave_or_deactivate',
+        registryStateAfter: 'present_inactive'
+    });
+    const cursorLedger = syntheticCursorLedger(configuration.recovery);
+
+    const recorded = recordMissingEntityDiagnosticFailClosed(configuration.recovery, cursorLedger, syntheticEntry(cursorLedger), {
+        operation: EntityOperation.UPDATE,
+        index: 2905,
+        errorMessage: 'Unable to find an entity with index [ 2905 ]'
+    });
+
+    assert.equal(recorded, true);
+    const diagnostic = configuration.recovery.diagnostics[0];
+    assert.equal(diagnostic.diagnosticClassificationCandidate, 'removed_before_missing_update_candidate');
+    assert.equal(diagnostic.diagnosticClassificationConfidence, 'low');
+    assert.match(diagnostic.diagnosticClassificationBasis, /does not claim game destruction/);
+    assert.ok(diagnostic.diagnosticClassificationLimitations.includes('not Source 2 semantics'));
+    assert.equal(diagnostic.lifecycleEvidenceSummary.deleteOrLeaveObservedBeforeBoundary, true);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.removalLikeOperationObservedBeforeBoundary, true);
+    assert.equal(diagnostic.rawDataCaptured, false);
     assert.equal(Object.hasOwn(diagnostic, 'fieldValues'), false);
     assert.equal(Object.hasOwn(diagnostic, 'rawPayload'), false);
     assert.equal(Object.hasOwn(diagnostic, 'rawEntityData'), false);
@@ -260,8 +398,9 @@ test('diagnostic handler mode records boundary and still throws fail-closed', ()
     });
     assert.equal(diagnostic.entityDataBitLength, 8);
     assert.equal(diagnostic.registryStateBefore, 'missing');
-    assert.equal(diagnostic.lifecycleEvidenceSummary.evidenceScope, 'packet_local_cursor_ledger');
+    assert.equal(diagnostic.lifecycleEvidenceSummary.evidenceScope, 'replay_wide_local_parser_lifecycle_ledger');
     assert.equal(diagnostic.lifecycleEvidenceSummary.sameEntityPriorEntryCount, 0);
+    assert.equal(diagnostic.lifecycleEvidenceSummary.totalCompactEventsTracked, 0);
     assert.equal(diagnostic.lifecycleEvidenceSummary.rawDataCaptured, false);
     assert.equal(diagnostic.classificationCandidate, 'not_determined');
     assert.equal(diagnostic.classificationConfidence, 'not_applicable');

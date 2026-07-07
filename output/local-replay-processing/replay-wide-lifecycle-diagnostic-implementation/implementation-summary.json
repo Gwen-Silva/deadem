@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "taskId": "141",
+  "gate": "replay_wide_lifecycle_diagnostic_implemented",
+  "implementedMode": "recovery.diagnoseMissingEntityFailClosed",
+  "newOptInOptionAdded": false,
+  "defaultBehaviorChanged": false,
+  "implementationScope": [
+    "DemoMessageHandler records a compact local-parser lifecycle ledger when the existing diagnostic opt-in is enabled.",
+    "The first missing entity diagnostic includes replay-wide/local-parser lifecycle summary and diagnostic classification fields.",
+    "The parser still throws the same missing entity error at the boundary."
+  ],
+  "filesModifiedForImplementation": [
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+  ],
+  "parserConfigurationModified": false,
+  "entityModelModified": false,
+  "replayProcessingPerformed": false,
+  "syntheticValidationOnly": true,
+  "recoveryImplemented": false,
+  "skipModeImplemented": false,
+  "placeholderImplemented": false,
+  "continuationAfterMissingEntityImplemented": false,
+  "canonicalOrSourceOrMatchOutputProduced": false
+}

@@ -1081,6 +1081,25 @@ entities, continuation after missing entity, default behavior changes,
 canonical/source/match outputs, or semantic claims. Any future implementation
 or canary run still requires separate human authorization.
 
+## Task 141
+
+Purpose: implement the approved diagnostic-only replay-wide/local-parser
+lifecycle ledger for the existing `recovery.diagnoseMissingEntityFailClosed`
+mode using synthetic validation only.
+
+Gate: `replay_wide_lifecycle_diagnostic_implemented`.
+
+Status: completed with the success gate above. The implementation records
+compact lifecycle/registry metadata in the existing diagnostic mode and adds a
+local parser lifecycle summary plus diagnostic classification fields at the
+first missing entity boundary. Synthetic tests cover `not_determined`,
+`created_then_missing_registry_state_candidate`, and
+`removed_before_missing_update_candidate`. The mode remains disabled by
+default, creates no new opt-in option, and still throws fail-closed with no
+recovery, skip mode, placeholder/fake entity, synthetic registry state,
+continuation after missing entity, canonical/source/match output, or replay
+processing.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
