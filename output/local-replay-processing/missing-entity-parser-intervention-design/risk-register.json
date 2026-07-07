@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "taskId": "134",
+  "risks": [
+    {
+      "id": "continuation_after_missing_entity",
+      "risk": "Continuing after a missing UPDATE could materialize invalid downstream parser state.",
+      "severity": "high",
+      "mitigation": "Any future design must keep fail-closed stop semantics unless continuation is separately approved with stronger evidence."
+    },
+    {
+      "id": "implicit_recovery_or_skip",
+      "risk": "A diagnostic path could become de facto recovery or skip behavior if it advances the cursor or suppresses the error.",
+      "severity": "high",
+      "mitigation": "Keep recovery, skip, payload skip, and error suppression explicitly rejected unless a new human-approved task scopes them."
+    },
+    {
+      "id": "synthetic_entity_state",
+      "risk": "Placeholder entities or synthetic registry state could contaminate later factual extraction.",
+      "severity": "high",
+      "mitigation": "Reject placeholders, fake fields, and synthetic registry state for this class."
+    },
+    {
+      "id": "semantic_overclaim",
+      "risk": "Local diagnostics could be misread as proof of Source 2 semantics, replay corruption, or parser correctness.",
+      "severity": "high",
+      "mitigation": "Every future artifact must separate observed facts, hypotheses, weak inferences, and forbidden conclusions."
+    },
+    {
+      "id": "raw_data_leakage",
+      "risk": "Boundary investigation could accidentally version raw replay bytes or field values.",
+      "severity": "high",
+      "mitigation": "Commit only compact metadata and keep full logs/local diagnostics outside versioned outputs."
+    },
+    {
+      "id": "open_ended_local_diagnostics",
+      "risk": "More local-only diagnostics could add volume without changing the intervention decision.",
+      "severity": "medium",
+      "mitigation": "Require a bounded parser-intervention spec for human approval before new diagnostic expansion."
+    }
+  ],
+  "rejectionSignals": [
+    "Any future task asks to continue parsing after missing entity without explicit behavior authorization.",
+    "Any future task proposes recovery, skip, placeholder, or synthetic registry state as an implementation detail before approval.",
+    "Any future output would version raw replay bytes, raw payloads, field values, or full send-table payload.",
+    "Any future task touches replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays without explicit authorization.",
+    "Any future claim treats local diagnostic correlation as Source 2 semantics, replay corruption, or parser correctness."
+  ]
+}

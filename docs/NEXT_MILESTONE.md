@@ -968,6 +968,20 @@ semantic claims. The selected next action is
 `request_human_decision_for_parser_intervention_design`. No replay was
 processed, and no parser/engine change was made.
 
+## Task 134
+
+Purpose: review design boundaries for a possible future parser intervention
+for the repeated `missing_entity_fail_closed` class.
+
+Gate: `missing_entity_parser_intervention_design_ready`.
+
+Status: completed with the success gate above. The review selected
+`prepare_bounded_parser_intervention_spec_for_human_approval` as the next
+route. It does not authorize parser implementation, recovery, skip mode,
+placeholder entities, fake fields, synthetic registry state, continuation
+after missing entity, default behavior changes, new opt-in behavior, replay
+processing, canonical/source/match outputs, or semantic claims.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

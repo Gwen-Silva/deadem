@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "taskId": "134",
+  "problemClass": "missing_entity_fail_closed",
+  "designReviewOnly": true,
+  "minimumTechnicalProblem": "The local parser encounters PacketEntities UPDATE commands for entity indexes that are not present in the local registry, and the class is now observed in two authorized human canaries: replay_010 entity 2905 and replay_011 entity 5624.",
+  "observedFacts": [
+    {
+      "source": "Task 131",
+      "replayId": "replay_010",
+      "boundary": {
+        "packetOrdinal": 954,
+        "loop": 33,
+        "operation": "UPDATE",
+        "entityIndex": 2905,
+        "previousEntityIndex": 2717,
+        "indexDelta": 187,
+        "payloadBits": 193
+      },
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "diagnosticStillThrows": true
+    },
+    {
+      "source": "Task 132",
+      "replayId": "replay_011",
+      "boundary": {
+        "packetOrdinal": 1052,
+        "loop": 28,
+        "operation": "UPDATE",
+        "entityIndex": 5624,
+        "previousEntityIndex": 2681,
+        "indexDelta": 2942,
+        "payloadBits": 133
+      },
+      "registryStateBefore": "missing",
+      "registryStateAfter": "missing",
+      "diagnosticStillThrows": true
+    }
+  ],
+  "priorReplay010LocalContext": {
+    "entity2905ClassificationTask121": "first_missing_update_to_never_registered_entity",
+    "entity2905ClassificationTask122": "never_registered_entity_with_create_gap",
+    "packet954BoundaryComparableToPacket953": false,
+    "source2SemanticsKnown": false,
+    "replayCorruptionKnown": false,
+    "localParserCorrectnessKnown": false
+  },
+  "futureInterventionCouldTryToResolve": [
+    "Whether the parser can safely distinguish a diagnostic boundary from a parser-contract gap before any continuation-oriented behavior is discussed.",
+    "Whether missing-entity PacketEntities UPDATE boundaries need additional compact contract probes around index/lifecycle metadata.",
+    "Whether enough bounded evidence exists to draft a human-reviewed intervention spec without implementing it."
+  ],
+  "stillProhibited": [
+    "direct implementation",
+    "recovery",
+    "skip mode",
+    "placeholder entity",
+    "fake fields",
+    "synthetic registry state",
+    "continuation after missing entity",
+    "default behavior change",
+    "new opt-in behavior",
+    "canonical facts",
+    "source artifacts",
+    "match facts",
+    "spatial/macro/mechanics/fight/decision/ML outputs",
+    "Source 2 semantics conclusion",
+    "replay corruption conclusion",
+    "local parser correctness conclusion"
+  ]
+}

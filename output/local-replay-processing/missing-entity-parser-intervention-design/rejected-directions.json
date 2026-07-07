@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "134",
+  "rejectedDirections": [
+    {
+      "direction": "direct_implementation",
+      "reason": "Task 134 is a design review only and does not authorize parser changes."
+    },
+    {
+      "direction": "direct_recovery",
+      "reason": "Recovery could hide missing registry state and requires a separately approved contract and safety proof."
+    },
+    {
+      "direction": "skip_mode",
+      "reason": "Skipping payloads or entries would change parser progression and risks false downstream state."
+    },
+    {
+      "direction": "placeholder_entity",
+      "reason": "Placeholder entities would create synthetic registry state and could contaminate factual extraction."
+    },
+    {
+      "direction": "fake_fields",
+      "reason": "Fake fields would materialize non-observed data."
+    },
+    {
+      "direction": "default_behavior_change",
+      "reason": "Default fail-fast behavior is not authorized to change."
+    },
+    {
+      "direction": "new_opt_in_behavior",
+      "reason": "This task may review design alternatives but may not create new behavior."
+    },
+    {
+      "direction": "canonicalization_or_fact_generation",
+      "reason": "Missing-entity diagnostics are parser boundary evidence, not match facts."
+    },
+    {
+      "direction": "automatic_replay_expansion",
+      "reason": "Further replay processing requires explicit human authorization and must preserve protected replay rules."
+    },
+    {
+      "direction": "external_oracle_runtime_now",
+      "reason": "Clarity/Java runtime remains out of scope and unavailable by prior decision."
+    }
+  ]
+}

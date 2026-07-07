@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "taskId": "134",
+  "beforeAnyImplementation": [
+    "A new human-authored task must explicitly authorize the implementation scope.",
+    "The task must name any replay processing authorization and must not imply access to replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays.",
+    "The task must state whether the work is diagnostic-only, contract-probe-only, or behavior-changing.",
+    "The task must define accepted gates and explicit rejection gates before code changes.",
+    "The task must preserve default parser behavior unless a future task explicitly authorizes a default change.",
+    "The task must prove no placeholder entities, fake fields, synthetic registry state, canonical facts, source artifacts, or match facts are produced.",
+    "The task must define compact metadata outputs and forbid raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes/values, field values, and full send-table payload."
+  ],
+  "perAlternativeMinimumEvidence": [
+    {
+      "alternative": "keep_fail_closed_no_parser_intervention",
+      "minimumEvidence": [
+        "Current fail-closed diagnostics remain accepted as sufficient.",
+        "User accepts pausing parser intervention despite repeated canary class."
+      ]
+    },
+    {
+      "alternative": "design_additional_diagnostic_contract_only",
+      "minimumEvidence": [
+        "Specific diagnostic questions are listed before any new task.",
+        "Expected metadata is compact and does not require replay expansion by default."
+      ]
+    },
+    {
+      "alternative": "design_packetentities_index_lifecycle_contract_probe",
+      "minimumEvidence": [
+        "Probe scope is limited to PacketEntities index/lifecycle metadata.",
+        "Probe has explicit safe stop conditions and cannot continue after missing entity as a semantic update.",
+        "Probe does not create recovery, skip, placeholder, fake field, or synthetic registry behavior."
+      ]
+    },
+    {
+      "alternative": "require_external_oracle_before_parser_intervention",
+      "minimumEvidence": [
+        "External oracle environment is manually made available by the user.",
+        "Oracle can be run without committing external code, binaries, logs, raw replay bytes, or canonical outputs.",
+        "Oracle result is treated as comparison evidence, not as proof of Source 2 semantics."
+      ]
+    },
+    {
+      "alternative": "prepare_bounded_parser_intervention_spec_for_human_approval",
+      "minimumEvidence": [
+        "Spec remains non-implementing unless the user explicitly approves implementation later.",
+        "Spec enumerates allowed and rejected behavior changes separately.",
+        "Spec includes validation and protection audits before any future code path is written.",
+        "Spec preserves epistemic limits: no Source 2 semantics, replay corruption, or local parser correctness claims."
+      ]
+    }
+  ],
+  "futureImplementationPermittedOutputsIfSeparatelyAuthorized": [
+    "compact diagnostic metadata",
+    "configuration decision summaries",
+    "synthetic test outputs",
+    "bounded validation reports",
+    "protection audits",
+    "gate files"
+  ],
+  "outputsContinuingForbidden": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "canonical facts",
+    "source artifacts",
+    "match facts",
+    "spatial/macro/mechanics/fight/decision/ML outputs"
+  ]
+}

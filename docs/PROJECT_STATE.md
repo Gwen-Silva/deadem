@@ -389,6 +389,18 @@ without processing replays, changing parser/engine behavior, recommending
 recovery/skip/placeholder behavior, or making Source 2/replay-corruption/local
 parser correctness claims.
 
+## Task 134 Missing Entity Parser Intervention Design Review
+
+Task 134 reviewed possible future parser-intervention design boundaries under
+`missing_entity_parser_intervention_design_ready`. It selected
+`prepare_bounded_parser_intervention_spec_for_human_approval` as the next
+route. The review defines the minimum problem as PacketEntities UPDATE
+commands for entity indexes missing from the local registry, but does not
+authorize implementation, recovery, skip mode, placeholder entities, parser
+fixes, default behavior changes, new opt-in behavior, replay processing,
+canonical/source/match outputs, or Source 2/replay-corruption/local parser
+correctness claims.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -443,4 +455,7 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   canary: packet 1052 loop 28 for entity 5624, again fail-closed without
   continuation. Task 133 consolidated both canaries and selected
   `request_human_decision_for_parser_intervention_design` as the next bounded
-  route, with no replay processing or parser changes.
+  route, with no replay processing or parser changes. Task 134 then reviewed
+  parser-intervention design boundaries and selected
+  `prepare_bounded_parser_intervention_spec_for_human_approval` as a
+  non-implementing next step.

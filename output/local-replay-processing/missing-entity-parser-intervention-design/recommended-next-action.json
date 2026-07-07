@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskId": "134",
+  "recommendedNextAction": "prepare_bounded_parser_intervention_spec_for_human_approval",
+  "implementationAuthorized": false,
+  "reason": "The repeated replay_010 and replay_011 missing-entity diagnostic class now supports moving from broad diagnosis to a bounded human-approved intervention specification. This next step would define a possible intervention contract and gates without implementing behavior.",
+  "uncertaintyReduced": [
+    "Identifies the minimum technical problem as missing UPDATE against absent local registry state in PacketEntities.",
+    "Separates intervention design from recovery, skip, placeholders, parser fixes, and canonicalization.",
+    "Names evidence and rejection criteria required before any implementation."
+  ],
+  "riskAvoided": [
+    "Avoids direct parser behavior changes from this design review.",
+    "Avoids treating local diagnostics as Source 2 semantics or local parser correctness.",
+    "Avoids replay expansion and external runtime dependency while preserving a decision path."
+  ],
+  "nextTaskShape": "A future task may draft a bounded parser-intervention specification for human approval. It must remain non-implementing unless the user explicitly authorizes implementation in that task or a later task.",
+  "notAuthorized": [
+    "parser change",
+    "recovery",
+    "skip mode",
+    "placeholder entity",
+    "fake fields",
+    "synthetic registry state",
+    "continuation after missing entity",
+    "default behavior change",
+    "new opt-in behavior",
+    "canonical facts",
+    "source artifacts",
+    "match facts"
+  ]
+}

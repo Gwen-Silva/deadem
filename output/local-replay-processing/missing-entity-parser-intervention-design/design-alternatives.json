@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "taskId": "134",
+  "alternatives": [
+    {
+      "id": "keep_fail_closed_no_parser_intervention",
+      "description": "Keep current fail-closed behavior and do not authorize parser intervention design or implementation.",
+      "couldResolve": "Avoids all parser-intervention risk.",
+      "cannotResolve": "Does not reduce uncertainty about the repeated missing-entity class.",
+      "implementationAuthorized": false,
+      "status": "not_selected"
+    },
+    {
+      "id": "design_additional_diagnostic_contract_only",
+      "description": "Define additional diagnostic contract questions without preparing an intervention spec.",
+      "couldResolve": "May clarify metadata boundaries while staying far from behavior changes.",
+      "cannotResolve": "Risks another documentation-only loop after two canaries already confirm the class.",
+      "implementationAuthorized": false,
+      "status": "not_selected"
+    },
+    {
+      "id": "design_packetentities_index_lifecycle_contract_probe",
+      "description": "Design a future probe focused on PacketEntities index/lifecycle contract metadata, without implementation in this task.",
+      "couldResolve": "Targets the strongest current uncertainty: index/lifecycle contract around missing UPDATEs.",
+      "cannotResolve": "Still would not decide whether parser continuation is safe.",
+      "implementationAuthorized": false,
+      "status": "not_selected"
+    },
+    {
+      "id": "require_external_oracle_before_parser_intervention",
+      "description": "Require an executable external oracle before any parser-intervention design progresses.",
+      "couldResolve": "Would reduce dependence on local-only inference if an oracle becomes available.",
+      "cannotResolve": "Clarity runtime is currently not viable in the environment and Java/JDK setup is paused by user decision.",
+      "implementationAuthorized": false,
+      "status": "not_selected"
+    },
+    {
+      "id": "prepare_bounded_parser_intervention_spec_for_human_approval",
+      "description": "Prepare a future human-reviewed parser-intervention specification that stays bounded, evidence-driven, and non-implementing until separately approved.",
+      "couldResolve": "Converts repeated canary evidence into a concrete approval checkpoint before any code behavior change.",
+      "cannotResolve": "Does not itself implement or prove a parser fix.",
+      "implementationAuthorized": false,
+      "status": "selected"
+    }
+  ],
+  "selectedAlternative": "prepare_bounded_parser_intervention_spec_for_human_approval",
+  "selectionRationale": "Two canaries now establish a repeated fail-closed boundary class, and Task 133 already found that more open-ended diagnostics have diminishing returns. The next useful step is a bounded spec for human approval, not implementation."
+}
