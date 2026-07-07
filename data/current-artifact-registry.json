@@ -273,6 +273,12 @@
       "notes": "Task 130 hardened recovery.diagnoseMissingEntityFailClosed configuration isolation by rejecting combinations with allowUnresolvedEntityReference, allowMissingClassBaseline, and allowEntityPacketBoundaryTruncation. Validation was synthetic-only and no replay was processed."
     },
     {
+      "id": "diagnostic_fail_closed_replay_010_canary",
+      "path": "output/local-replay-processing/diagnostic-fail-closed-replay-010-canary/canary-gate.json",
+      "status": "current",
+      "notes": "Task 131 ran the replay_010-only diagnostic fail-closed canary. The diagnostic captured packet 954 loop 33 for missing entity 2905 and still threw without recovery, skip, placeholders, field materialization, canonical output, or continuation."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

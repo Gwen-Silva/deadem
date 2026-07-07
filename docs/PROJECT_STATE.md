@@ -355,6 +355,17 @@ rejects `allowUnresolvedEntityReference`, `allowMissingClassBaseline`, and
 isolated from recovery and continuation-oriented modes. Default behavior is
 unchanged, and validation used synthetic tests only; no replay was processed.
 
+## Task 131 Replay 010 Diagnostic Canary Note
+
+Task 131 ran the authorized replay_010-only canary under
+`diagnostic_fail_closed_replay_010_canary_ready`. Default behavior still fails
+with `Unable to find an entity with index [ 2905 ]`. With only
+`recovery.diagnoseMissingEntityFailClosed: true`, the parser records one compact
+`missing_entity_fail_closed` diagnostic at packet ordinal 954 loop 33 and still
+throws without recovery, skip, placeholder/fake entity, field materialization,
+payload skip, update application, canonical output, or continuation. No replay
+other than replay_010 was accessed or processed.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and
@@ -402,4 +413,6 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   using synthetic tests rather than replay processing. Task 130 then hardened
   the configuration boundary so the diagnostic cannot be combined with
   missing-entity recovery, missing-baseline recovery, or entity packet boundary
-  truncation.
+  truncation. Task 131 then confirmed the diagnostic on the authorized
+  replay_010 canary: the real first missing-entity boundary is packet 954 loop
+  33 for entity 2905, and the parser still fails closed without continuation.

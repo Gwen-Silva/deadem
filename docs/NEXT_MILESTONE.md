@@ -162,6 +162,12 @@ Task 130 is complete with the gate
 and truncation options at configuration construction. This preserves default
 behavior and keeps validation synthetic-only.
 
+Task 131 is complete with the gate
+`diagnostic_fail_closed_replay_010_canary_ready`. It ran only replay_010 and
+confirmed the diagnostic captures packet 954 loop 33 for missing entity 2905
+while still throwing without recovery, skip, placeholders, canonical facts, or
+continuation.
+
 ## Task 094
 
 Purpose: resolve only the four frozen replay-002 terminal blockers:
@@ -908,6 +914,21 @@ the diagnostic option when combined with `allowUnresolvedEntityReference`,
 `allowMissingClassBaseline`, or `allowEntityPacketBoundaryTruncation`. No
 handler behavior change, recovery, skip mode, replay processing, canonical
 facts, or semantic claims were added.
+
+## Task 131
+
+Purpose: run a replay_010-only canary for
+`recovery.diagnoseMissingEntityFailClosed`.
+
+Gate: `diagnostic_fail_closed_replay_010_canary_ready`.
+
+Status: completed with the success gate above. Default replay_010 parsing still
+fails with missing entity 2905. The diagnostic pass, using only
+`recovery.diagnoseMissingEntityFailClosed: true`, records one compact
+`missing_entity_fail_closed` diagnostic at packet ordinal 954 loop 33 and still
+throws. No recovery, skip mode, placeholder/fake entity, field materialization,
+payload skip, update application, continuation, canonical facts, or semantic
+claims were produced. No replay other than replay_010 was processed.
 
 ## Non-Goals
 

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "taskId": "131",
+  "gate": "diagnostic_fail_closed_replay_010_canary_ready",
+  "reason": "The replay_010 canary confirms recovery.diagnoseMissingEntityFailClosed captures the real first missing-entity boundary at packet 954 loop 33 for entity 2905, then preserves fail-closed throwing without recovery, skip, placeholders, field materialization, canonical output, or continuation.",
+  "replayId": "replay_010",
+  "defaultStillFailsWithMissingEntity": true,
+  "diagnosticCapturedFirstBoundary": true,
+  "diagnosticStillThrows": true,
+  "parserContinuedAfterFailure": false,
+  "recoveryAttempted": false,
+  "skipModeApplied": false,
+  "payloadSkipped": false,
+  "updateApplied": false,
+  "fieldsMaterialized": false,
+  "placeholderOrFakeEntityCreated": false,
+  "canonicalFactsProduced": false,
+  "rawDataVersioned": false,
+  "onlyReplay010Processed": true,
+  "task132Created": false
+}
