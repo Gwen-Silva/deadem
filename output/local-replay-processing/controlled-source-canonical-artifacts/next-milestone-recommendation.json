@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "recommendedMilestone": "review_controlled_source_class_policy_before_expanding_artifact_content",
+  "rationale": "Compact source/canonical manifests are emitted for both authorized canaries; value-bearing source classes remain blocked until a separate policy review authorizes exactly which compact rows are safe.",
+  "futureTaskRequirements": [
+    "review each blocked source class before emitting value-bearing rows",
+    "keep replay scope explicit",
+    "preserve output policy and size audit",
+    "avoid gameplay interpretation outputs"
+  ]
+}

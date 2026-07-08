@@ -1324,3 +1324,22 @@ and no first blocker remains. The next recommended milestone is
 `emit_controlled_source_canonical_artifacts_for_replay_010_011`, requiring a
 separate explicit task before any final source/canonical/match facts are
 written.
+
+## Task 155
+
+Purpose: emit controlled compact source/canonical manifest artifacts for
+replay_010 and replay_011 after Task 154 readiness.
+
+Success gate: `controlled_source_canonical_artifacts_emitted`.
+
+Blocked gate: `controlled_source_canonical_artifacts_blocked`.
+
+Status: completed with the success gate above. The emitted classes are compact
+manifest/audit classes only: `parser_source_summary`,
+`source_readiness_manifest`, `canonical_readiness_manifest`,
+`source_artifact_manifest`, `canonical_artifact_manifest`,
+`schema_validation_summary`, and `output_policy_audit`. Value-bearing source
+classes such as timelines, event rows, objective inventories, and reconciliation
+rows remain blocked until a future source-class policy review. The next
+recommended milestone is
+`review_controlled_source_class_policy_before_expanding_artifact_content`.

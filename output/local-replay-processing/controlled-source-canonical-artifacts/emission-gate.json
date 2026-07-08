@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "gate": "controlled_source_canonical_artifacts_emitted",
+  "successGate": "controlled_source_canonical_artifacts_emitted",
+  "partialGate": "controlled_source_canonical_artifacts_partial",
+  "blockedGate": "controlled_source_canonical_artifacts_blocked",
+  "classification": "controlled_source_canonical_artifacts_emitted",
+  "firstBlockerType": "none",
+  "emittedArtifactClasses": [
+    "canonical_artifact_manifest",
+    "canonical_readiness_manifest",
+    "output_policy_audit",
+    "parser_source_summary",
+    "schema_validation_summary",
+    "source_artifact_manifest",
+    "source_readiness_manifest"
+  ],
+  "blockedArtifactClasses": [
+    "death_events",
+    "death_validation",
+    "match_state_quality",
+    "match_state_timeline",
+    "objective_entity_inventory",
+    "objective_lifecycle_events",
+    "one_second_player_reconciliation_or_equivalent",
+    "respawn_events"
+  ],
+  "finalFactsProduced": false,
+  "rawDataCaptured": false
+}

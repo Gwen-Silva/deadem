@@ -713,3 +713,27 @@ values, full entity histories, parser/engine behavior changes,
 change, new opt-in, pull/merge/cherry-pick/rebase, Java/Clarity/external parser,
 WSL, iaflow, Product Reviewer automation, protected replay access, bot replay
 processing, candidate replay processing, or Task 155 was created.
+
+## Task 155 Controlled Source/Canonical Artifacts Note
+
+Task 155 emitted controlled compact source/canonical manifest artifacts for
+replay_010 and replay_011 under `controlled_source_canonical_artifacts_emitted`.
+The Task 154 dry-run was re-run first and remained
+`generic_source_canonical_dry_run_ready`. Both replays completed parser
+advancement. For each replay, Task 155 emitted `parser_source_summary`,
+`source_readiness_manifest`, `canonical_readiness_manifest`,
+`source_artifact_manifest`, `canonical_artifact_manifest`,
+`schema_validation_summary`, and `output_policy_audit`. The value-bearing/source
+row classes `death_events`, `death_validation`, `match_state_quality`,
+`match_state_timeline`, `objective_entity_inventory`,
+`objective_lifecycle_events`, `one_second_player_reconciliation_or_equivalent`,
+and `respawn_events` were intentionally blocked for a future policy-specific
+task. Schema validation, output policy, and size audit passed; no first blocker
+remains for the compact manifest layer. No raw replay bytes, payloads,
+entityData, serializedEntities, string values, field values, full entity
+histories, complete snapshots, gameplay interpretation outputs, parser/engine
+behavior changes, `packages/deadem/**` changes, recovery, skip, placeholder,
+default behavior change, new opt-in, upstream pull/merge/cherry-pick/rebase,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+protected replay access, bot replay processing, candidate replay processing, or
+Task 156 was created.
