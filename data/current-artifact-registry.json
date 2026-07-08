@@ -513,6 +513,18 @@
       "notes": "Task 170 defines safe labels, forbidden labels, field usage, readiness checklist, and interpretation boundaries for consuming the Task 169 compact summary without converting candidate counts into deaths, kills, attribution, final facts, or gameplay interpretation."
     },
     {
+      "id": "allowlisted_death_validation_batch_runner",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/exact-15-parity-manifest.json",
+      "status": "current",
+      "notes": "Task 171 adds a manifest-driven allowlisted death_validation compact emission runner. The exact-15 parity manifest explicitly allows replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_019 while blocking replay_005, replay_006 through replay_008, and replay_020."
+    },
+    {
+      "id": "allowlisted_death_validation_batch_parity",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batch-parity/allowlisted-batch-gate.json",
+      "status": "current",
+      "notes": "Task 171 emitted 15 compact death_validation artifacts through the new manifest-driven runner and matched Task 168 on replay ids, eventCount, duplicateKeyCount, and validationStatus. The artifacts remain compact counter-transition candidate summaries, not final death facts or gameplay interpretation."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

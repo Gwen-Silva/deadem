@@ -1620,3 +1620,24 @@ candidates` and `Total source-observed counter transition candidates`, and must
 not present those counts as deaths, kills, death events, attribution, final
 facts, canonical truth, Source 2 semantics, parser correctness, replay
 corruption status, or gameplay interpretation.
+
+## Task 171
+
+Purpose: replace the exact-15 hardcoded emission path with a reusable
+manifest-driven allowlisted batch runner and validate exact-15 parity.
+
+Success gate: `allowlisted_death_validation_batch_parity_emitted`.
+
+Blocked gate: `allowlisted_death_validation_batch_parity_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run emit:allowlisted-death-validation-batch`. It processed only
+replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010
+through replay_019 from the explicit exact-15 parity manifest, emitted 15
+compact `death_validation` artifacts, and passed schema validation, output
+policy audit, size audit, and parity comparison against Task 168. The runner
+blocks protected/bot/out-of-scope replays and unsafe paths before filesystem
+access. The next milestone can use the manifest-driven runner as the standard
+safe path for future explicitly allowlisted compact `death_validation` batches;
+`eventCount` remains a source-observed counter transition candidate count, not
+a final death fact.
