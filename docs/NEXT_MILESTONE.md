@@ -1343,3 +1343,19 @@ classes such as timelines, event rows, objective inventories, and reconciliation
 rows remain blocked until a future source-class policy review. The next
 recommended milestone is
 `review_controlled_source_class_policy_before_expanding_artifact_content`.
+
+## Task 156
+
+Purpose: review the Task 155 blocked source classes and define a compact-safe
+policy before any richer source/canonical content is emitted.
+
+Success gate: `controlled_source_class_policy_reviewed`.
+
+Blocked gate: `controlled_source_class_policy_blocked`.
+
+Status: completed with the success gate above. No replay was processed and no
+final source/canonical/match facts were emitted. The reviewed class policy
+selected `death_validation` as the first future class for schema design because
+it can remain a compact validation summary. The recommended next milestone is
+`design_death_validation_compact_schema`, which must remain schema-first and
+must not emit event rows or field values without separate authorization.

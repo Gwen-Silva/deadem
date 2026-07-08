@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "artifactClass": "death_events",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "eventCount", "sourceMethod", "samplingPolicy", "limitations", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "death_validation",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "sourceMethod", "eventCount", "duplicateKeyCount", "validationStatus", "limitations", "rawDataCaptured=false", "finalFactsProduced=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "match_state_quality",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "sampleCount", "playerCount", "coverageStatus", "missingnessSummary", "limitations", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "match_state_timeline",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "plannedRowCount", "samplingIntervalSeconds", "schemaStatus", "blockedReason", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "configuredClassCount", "observedClassCount", "observationCoverageStatus", "limitations", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "plannedObservationCount", "blockedReason", "limitations", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "sampleCount", "identityCoverageStatus", "mismatchCount", "limitations", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    },
+    {
+      "artifactClass": "respawn_events",
+      "allowedMetadata": ["schemaVersion", "replayId", "artifactClass", "eventCount", "sourceMethod", "samplingPolicy", "limitations", "rawDataCaptured=false"],
+      "rowEmissionAllowedNow": false
+    }
+  ]
+}

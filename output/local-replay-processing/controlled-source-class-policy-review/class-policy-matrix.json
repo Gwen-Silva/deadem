@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "artifactClass": "death_events",
+      "intendedRepresentation": "death counter transition observations from sampled source state",
+      "policyClassification": "compact_summary_only_candidate",
+      "compactSafeVersion": "summary counts and validation status only unless a future schema explicitly authorizes event rows",
+      "primaryRisk": "event rows can be mistaken for kill, fight, or causality facts",
+      "sizeRisk": "low if summary-only; medium if row-based",
+      "schemaStatus": "requires_new_schema"
+    },
+    {
+      "artifactClass": "death_validation",
+      "intendedRepresentation": "validation summary for death counter transition extraction",
+      "policyClassification": "compact_safe_candidate",
+      "compactSafeVersion": "single summary object with eventCount, duplicateKeyCount, sourceMethod, validationStatus, and limitations",
+      "primaryRisk": "low if it avoids event rows and counter values",
+      "sizeRisk": "low",
+      "schemaStatus": "selected_for_schema_design"
+    },
+    {
+      "artifactClass": "match_state_quality",
+      "intendedRepresentation": "aggregate quality and coverage over sampled match-state source observations",
+      "policyClassification": "compact_summary_only_candidate",
+      "compactSafeVersion": "aggregate counts, coverage status, missingness flags, and limitations only",
+      "primaryRisk": "quality summaries may import position/economy aggregates that look like gameplay analysis",
+      "sizeRisk": "low if summary-only",
+      "schemaStatus": "requires_new_schema"
+    },
+    {
+      "artifactClass": "match_state_timeline",
+      "intendedRepresentation": "one-second sampled timeline rows for players and team state",
+      "policyClassification": "blocked_requires_field_values",
+      "compactSafeVersion": "not row-based in current form; only a manifest/count summary is safe now",
+      "primaryRisk": "timeline rows include value-bearing state and can become full match facts",
+      "sizeRisk": "high",
+      "schemaStatus": "blocked_until_value_policy"
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "intendedRepresentation": "configured objective-like entity class observation inventory",
+      "policyClassification": "compact_summary_only_candidate",
+      "compactSafeVersion": "class-level counts and observation coverage only; no entity keys, health, team, or lifecycle claims",
+      "primaryRisk": "objective naming can imply destruction, completion, claim, secure, reward, or strategic semantics",
+      "sizeRisk": "medium if entity rows are emitted",
+      "schemaStatus": "requires_new_schema"
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "intendedRepresentation": "raw observation samples for objective-like entities over time",
+      "policyClassification": "blocked_gameplay_interpretation_risk",
+      "compactSafeVersion": "no lifecycle rows in current policy; only aggregate availability metadata is safe now",
+      "primaryRisk": "lifecycle wording and health samples can be overread as destruction or objective completion",
+      "sizeRisk": "high",
+      "schemaStatus": "blocked_until_semantic_policy"
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "intendedRepresentation": "controller, pawn, and player identity reconciliation sampled once per second",
+      "policyClassification": "blocked_requires_full_snapshots",
+      "compactSafeVersion": "only aggregate reconciliation coverage and mismatch counts are safe now",
+      "primaryRisk": "current form can include player arrays and sampled snapshots",
+      "sizeRisk": "high",
+      "schemaStatus": "blocked_until_snapshot_policy"
+    },
+    {
+      "artifactClass": "respawn_events",
+      "intendedRepresentation": "alive flag false-to-true transition observations",
+      "policyClassification": "compact_summary_only_candidate",
+      "compactSafeVersion": "summary counts and validation status only unless event-row schema is separately approved",
+      "primaryRisk": "respawn label can be overread as death causality or mechanics timing",
+      "sizeRisk": "low if summary-only; medium if row-based",
+      "schemaStatus": "requires_new_schema"
+    }
+  ],
+  "reviewConclusion": "Only death_validation is safe enough to design next because it can remain summary-only. Row-bearing timelines, snapshots, objective lifecycle, and field-value surfaces remain blocked."
+}

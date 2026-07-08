@@ -737,3 +737,24 @@ default behavior change, new opt-in, upstream pull/merge/cherry-pick/rebase,
 Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 protected replay access, bot replay processing, candidate replay processing, or
 Task 156 was created.
+
+## Task 156 Controlled Source Class Policy Note
+
+Task 156 reviewed the eight Task 155 blocked source classes under
+`controlled_source_class_policy_reviewed` without processing replays or emitting
+final source/canonical/match facts. The review classified `death_validation` as
+the safest next class because it can be designed as a compact summary-only
+validation artifact. `death_events`, `match_state_quality`,
+`objective_entity_inventory`, and `respawn_events` remain summary-only
+candidates; `match_state_timeline` remains blocked by field-value and size risk;
+`objective_lifecycle_events` remains blocked by gameplay interpretation risk;
+and `one_second_player_reconciliation_or_equivalent` remains blocked by full
+snapshot risk. The selected next action is
+`design_schema_for_selected_source_class`, specifically for `death_validation`.
+This task did not process replay_010, replay_011, replay 005, bot fixtures,
+candidate replays, `samples/**`, or `output/replays/**`, and it made no
+parser/engine behavior, `packages/deadem/**`, recovery, skip, placeholder,
+default behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow,
+Product Reviewer automation, pull/merge/cherry-pick/rebase, final source facts,
+canonical facts, match facts, gameplay interpretation outputs, or Task 157
+change.

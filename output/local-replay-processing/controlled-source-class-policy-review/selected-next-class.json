@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "selectedNextAction": "design_schema_for_selected_source_class",
+  "selectedNextClass": "death_validation",
+  "selectionReason": "death_validation can be represented as a single compact validation summary and does not require event rows, field values, complete snapshots, objective semantics, or timeline data.",
+  "futureTaskShouldEmitArtifacts": false,
+  "futureTaskMinimumScope": [
+    "define compact schema for death_validation",
+    "define pre/post policy audit for the selected schema",
+    "keep replay scope separately authorized",
+    "do not emit event rows until schema and value policy are approved"
+  ]
+}

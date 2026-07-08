@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "commonForbiddenFields": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "complete snapshots",
+    "full entity histories",
+    "gameplay interpretation outputs"
+  ],
+  "rows": [
+    {
+      "artifactClass": "death_events",
+      "forbiddenFields": ["previousDeaths", "currentDeaths", "killer", "victim attribution", "fight attribution", "objective attribution", "decision claims"]
+    },
+    {
+      "artifactClass": "death_validation",
+      "forbiddenFields": ["event rows", "counter values", "killer attribution", "fight validation", "semantic death proof"]
+    },
+    {
+      "artifactClass": "match_state_quality",
+      "forbiddenFields": ["positions", "netWorth values", "souls values", "health values", "team advantage interpretation", "macro quality claims"]
+    },
+    {
+      "artifactClass": "match_state_timeline",
+      "forbiddenFields": ["timeline rows", "player state rows", "team economy rows", "position rows", "health rows", "field values"]
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "forbiddenFields": ["entity keys in first compact policy", "health values", "team values", "completion status", "destroyed status", "secure or reward claims"]
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "forbiddenFields": ["lifecycle rows", "health samples", "destroyed/completed/claimed/secured labels", "objective event causality"]
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "forbiddenFields": ["player snapshots", "controller field values", "pawn field values", "positions", "health", "economy values", "full identity histories"]
+    },
+    {
+      "artifactClass": "respawn_events",
+      "forbiddenFields": ["previousAlive", "currentAlive", "death cause", "respawn mechanic interpretation", "fight attribution"]
+    }
+  ]
+}

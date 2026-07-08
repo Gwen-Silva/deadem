@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "options": [
+    {
+      "option": "emit_one_compact_safe_source_class",
+      "decision": "not_selected",
+      "rationale": "death_validation looks safe enough for schema design, but immediate emission would skip schema-first review for the first value-adjacent source class."
+    },
+    {
+      "option": "design_schema_for_selected_source_class",
+      "decision": "selected",
+      "rationale": "This reduces risk by approving exact fields, size limits, and policy checks before any richer class is emitted."
+    },
+    {
+      "option": "keep_all_value_bearing_classes_blocked",
+      "decision": "not_selected",
+      "rationale": "Too conservative: death_validation can plausibly be reduced to compact validation metadata."
+    },
+    {
+      "option": "expand_manifest_only_metadata",
+      "decision": "not_selected",
+      "rationale": "Task 155 already emitted manifest metadata; the next useful step is one schema for one controlled class."
+    },
+    {
+      "option": "return_to_pipeline_readiness",
+      "decision": "not_selected",
+      "rationale": "Pipeline readiness passed for compact manifests; the remaining blocker is class policy and schema."
+    }
+  ],
+  "selectedOption": "design_schema_for_selected_source_class"
+}

@@ -1,0 +1,197 @@
+{
+  "taskId": "156",
+  "title": "Review Controlled Source Class Policy",
+  "status": "completed",
+  "objective": "Review the source/canonical artifact classes blocked by Task 155 and define a compact-safe emission policy before any future expansion of value-bearing content.",
+  "baseCommitExpected": "10eae9c96c85b0d705bce7c6102769f5fb18c977",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/155.json",
+    "tasks/completed/155-controlled-source-canonical-artifacts.md",
+    "reports/controlled-source-canonical-artifacts.md",
+    "output/local-replay-processing/controlled-source-canonical-artifacts/blocked-artifacts.json",
+    "output/local-replay-processing/controlled-source-canonical-artifacts/artifact-class-summary.json",
+    "output/local-replay-processing/controlled-source-canonical-artifacts/output-policy-audit.json",
+    "output/local-replay-processing/controlled-source-canonical-artifacts/schema-validation-summary.json",
+    "tools/emit-controlled-source-canonical-artifacts.mjs",
+    "tools/generate-local-replay-source-artifacts.mjs",
+    "tools/generate-local-replay-forward-source-artifacts.mjs",
+    "tools/process-local-replay-input.mjs"
+  ],
+  "optionalReadPaths": [
+    "tests/**",
+    "scripts/**"
+  ],
+  "writePaths": [
+    "output/local-replay-processing/controlled-source-class-policy-review/**",
+    "reports/controlled-source-class-policy-review.md",
+    "tasks/specs/156.json",
+    "tasks/completed/156-controlled-source-class-policy-review.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/engine/**",
+    "packages/deadem/**",
+    "tasks/specs/157.json",
+    "tasks/completed/157-*",
+    "tasks/blocked/157-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "fieldfactory-char-decoder-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ]
+    },
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "upstream-deadem-update-check-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/upstream-deadem-update-check.test.mjs"
+      ]
+    },
+    {
+      "id": "generic-source-canonical-dry-run-readiness-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/generic-source-canonical-dry-run-readiness.test.mjs"
+      ]
+    },
+    {
+      "id": "controlled-source-canonical-artifacts-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/controlled-source-canonical-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/controlled-source-class-policy-review/policy-gate.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/class-policy-matrix.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/allowed-metadata-by-class.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/forbidden-fields-by-class.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/schema-requirements.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/size-policy.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/gameplay-interpretation-risk.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/selected-next-class.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/decision-matrix.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/rejected-actions.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/next-milestone-recommendation.json",
+    "output/local-replay-processing/controlled-source-class-policy-review/protection-audit.json",
+    "reports/controlled-source-class-policy-review.md",
+    "tasks/completed/156-controlled-source-class-policy-review.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "authorizedReplayIds": [],
+  "authorizedReplayPaths": [],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process replay_010, replay_011, replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify parser/engine behavior or packages/deadem",
+    "Do not emit source/canonical/match facts final artifacts",
+    "Do not emit gameplay interpretation outputs or spatial/macro/mechanics/fight/decision/ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string values, field values, complete snapshots, full entity histories, or full send-table payload",
+    "Do not implement recovery, skip, placeholder, parser fix, default behavior change, or new opt-in",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not pull, merge, cherry-pick, or rebase",
+    "Do not create Task 157"
+  ],
+  "successGate": "controlled_source_class_policy_reviewed",
+  "blockedGate": "controlled_source_class_policy_blocked",
+  "allowedAlternateGates": [
+    "controlled_source_class_policy_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/controlled-source-class-policy-review/policy-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

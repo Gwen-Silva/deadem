@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "recommendedMilestone": "design_death_validation_compact_schema",
+  "selectedNextAction": "design_schema_for_selected_source_class",
+  "selectedNextClass": "death_validation",
+  "rationale": "A schema-first task is the smallest safe step from manifest-only artifacts toward controlled source content. It avoids rows, field values, snapshots, and gameplay interpretation while clarifying exactly what a future emission may contain.",
+  "futureTaskConstraints": [
+    "no replay processing unless separately authorized",
+    "no event rows unless explicitly authorized",
+    "no field values or gameplay interpretation",
+    "pre/post output policy audit required"
+  ]
+}

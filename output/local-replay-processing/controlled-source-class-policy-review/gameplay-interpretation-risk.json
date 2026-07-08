@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    { "artifactClass": "death_events", "riskLevel": "medium", "risk": "counter increments can be misread as kill or fight attribution" },
+    { "artifactClass": "death_validation", "riskLevel": "low", "risk": "safe if limited to source-method validation counts" },
+    { "artifactClass": "match_state_quality", "riskLevel": "medium", "risk": "quality fields can look like match analysis if they include economy or position aggregates" },
+    { "artifactClass": "match_state_timeline", "riskLevel": "high", "risk": "timeline rows are close to match facts and may include value-bearing state" },
+    { "artifactClass": "objective_entity_inventory", "riskLevel": "medium", "risk": "objective labels can imply game-state conclusions without direct policy" },
+    { "artifactClass": "objective_lifecycle_events", "riskLevel": "high", "risk": "lifecycle wording can imply destruction or completion semantics" },
+    { "artifactClass": "one_second_player_reconciliation_or_equivalent", "riskLevel": "high", "risk": "snapshots and identity rows can become full match state history" },
+    { "artifactClass": "respawn_events", "riskLevel": "medium", "risk": "alive transition can be overread as respawn mechanics or death causality" }
+  ],
+  "globalInterpretationLimits": [
+    "No killer, fight, objective, macro, mechanics, spatial, decision, or ML interpretation is authorized.",
+    "Absence, deletion, disappearance, or zero health does not prove death, destruction, objective completion, claim, deposit, secure, or reward."
+  ]
+}

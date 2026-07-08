@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "selectedSchemaTarget": "death_validation",
+  "minimumSchemaForSelectedClass": {
+    "requiredFields": ["schemaVersion", "replayId", "artifactClass", "sourceMethod", "eventCount", "duplicateKeyCount", "validationStatus", "limitations", "rawDataCaptured", "finalFactsProduced"],
+    "allowedValidationStatus": ["source_events_available_with_limitations", "no_counter_increments_observed", "source_validation_blocked"],
+    "mustNotContain": ["event rows", "field values", "killer attribution", "fight attribution", "gameplay interpretation"]
+  },
+  "requirementsByClass": [
+    { "artifactClass": "death_events", "schemaNeed": "summary schema before event rows" },
+    { "artifactClass": "death_validation", "schemaNeed": "single-object compact validation schema" },
+    { "artifactClass": "match_state_quality", "schemaNeed": "aggregate coverage schema without values" },
+    { "artifactClass": "match_state_timeline", "schemaNeed": "manifest-only schema unless values are separately authorized" },
+    { "artifactClass": "objective_entity_inventory", "schemaNeed": "class-count summary schema without entity rows" },
+    { "artifactClass": "objective_lifecycle_events", "schemaNeed": "blocked until semantic and value policy exists" },
+    { "artifactClass": "one_second_player_reconciliation_or_equivalent", "schemaNeed": "coverage summary schema without snapshots" },
+    { "artifactClass": "respawn_events", "schemaNeed": "summary schema before event rows" }
+  ]
+}

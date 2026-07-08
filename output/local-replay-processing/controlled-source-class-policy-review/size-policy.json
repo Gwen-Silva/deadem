@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "defaultPerArtifactLimitBytes": 102400,
+  "preferredCompactArtifactLimitBytes": 32768,
+  "rowLimitPolicy": {
+    "summaryOnlyClasses": "one object per replay",
+    "futureEventRows": "not authorized by this task",
+    "futureTimelineRows": "blocked unless separately authorized with sharding and value policy"
+  },
+  "classSizeRisk": [
+    { "artifactClass": "death_events", "risk": "medium_if_row_based" },
+    { "artifactClass": "death_validation", "risk": "low" },
+    { "artifactClass": "match_state_quality", "risk": "low_if_summary_only" },
+    { "artifactClass": "match_state_timeline", "risk": "high" },
+    { "artifactClass": "objective_entity_inventory", "risk": "medium_if_entity_rows" },
+    { "artifactClass": "objective_lifecycle_events", "risk": "high" },
+    { "artifactClass": "one_second_player_reconciliation_or_equivalent", "risk": "high" },
+    { "artifactClass": "respawn_events", "risk": "medium_if_row_based" }
+  ],
+  "requiredAudits": ["pre-emission size estimate", "post-emission size check", "output policy audit"]
+}
