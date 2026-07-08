@@ -399,6 +399,12 @@
       "notes": "Task 151 validated the next safe local pipeline stage after the parser fix. replay_010 and replay_011 both completed default parser advancement to the end; no post-parser blocker was found at parser completion, and the next milestone is a separately scoped controlled canonical/source readiness task."
     },
     {
+      "id": "controlled_canonical_source_readiness",
+      "path": "output/local-replay-processing/controlled-canonical-source-readiness/readiness-gate.json",
+      "status": "current",
+      "notes": "Task 152 validated controlled source/canonical readiness metadata for replay_010 and replay_011. Parser prerequisites passed, but readiness is blocked by pipeline wiring: existing source-artifact entrypoints are replay_010-oriented and no safe compact dry-run/generic canonical readiness entrypoint for both canaries was validated."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "firstSourceCanonicalStage": "source artifact availability/manifest generation after parser completion",
+  "firstStageExists": true,
+  "firstStageCallable": true,
+  "dryRunAvailableForBothAuthorizedReplays": false,
+  "needsAdditionalConfiguration": true,
+  "configurationNeeded": [
+    "generic replay_010/replay_011 input support",
+    "dry-run or compact-readiness mode that does not write source artifacts",
+    "formal output policy checks before source/canonical emission",
+    "schema contract for readiness manifests distinct from final facts"
+  ],
+  "toolsInspected": [
+    {
+      "toolPath": "tools/generate-local-replay-source-artifacts.mjs",
+      "entrypointExists": true,
+      "acceptsReplay010": true,
+      "acceptsReplay011": false,
+      "supportsBothAuthorizedReplays": false,
+      "hasDryRunMode": false,
+      "emitsSourceArtifactsWhenRun": true,
+      "writesLocalOnlyArtifacts": true,
+      "canonicalPackageConstructedFalse": true,
+      "artifactClasses": [
+        "parser_source_summary",
+        "match_state_timeline",
+        "match_state_quality",
+        "one_second_player_reconciliation_or_equivalent",
+        "death_events",
+        "death_validation",
+        "respawn_events",
+        "objective_entity_inventory",
+        "objective_lifecycle_events"
+      ],
+      "artifactClassCount": 9,
+      "safeToExecuteInTask152": false,
+      "compactReason": "no dry-run mode detected; executing would produce source artifacts or local artifact payloads"
+    },
+    {
+      "toolPath": "tools/generate-local-replay-forward-source-artifacts.mjs",
+      "entrypointExists": true,
+      "acceptsReplay010": true,
+      "acceptsReplay011": false,
+      "supportsBothAuthorizedReplays": false,
+      "hasDryRunMode": false,
+      "emitsSourceArtifactsWhenRun": true,
+      "writesLocalOnlyArtifacts": true,
+      "canonicalPackageConstructedFalse": true,
+      "artifactClasses": [
+        "parser_source_summary",
+        "match_state_timeline",
+        "match_state_quality",
+        "one_second_player_reconciliation_or_equivalent",
+        "death_events",
+        "death_validation",
+        "respawn_events",
+        "objective_entity_inventory",
+        "objective_lifecycle_events"
+      ],
+      "artifactClassCount": 9,
+      "safeToExecuteInTask152": false,
+      "compactReason": "no dry-run mode detected; executing would produce source artifacts or local artifact payloads"
+    },
+    {
+      "toolPath": "tools/process-local-replay-input.mjs",
+      "entrypointExists": true,
+      "acceptsReplay010": true,
+      "acceptsReplay011": false,
+      "sourceReadinessManifestOnly": true,
+      "canonicalCompactManifestPresent": true,
+      "canonicalPackageConstructedFalse": true,
+      "supportsBothAuthorizedReplays": false,
+      "safeToExecuteInTask152": false,
+      "compactReason": "single-replay replay_010 canary and not a generic replay_010/replay_011 readiness entrypoint"
+    }
+  ],
+  "artifactsAttempted": [],
+  "artifactsPlannedByExistingTools": [
+    "death_events",
+    "death_validation",
+    "match_state_quality",
+    "match_state_timeline",
+    "objective_entity_inventory",
+    "objective_lifecycle_events",
+    "one_second_player_reconciliation_or_equivalent",
+    "parser_source_summary",
+    "respawn_events"
+  ],
+  "schemaDefinedForReadinessOutputs": true,
+  "schemaDefinedForFinalSourceEmission": "not_validated_in_task_152",
+  "classification": "controlled_canonical_source_readiness_blocked_by_pipeline_wiring",
+  "finalSourceFactsProduced": false,
+  "limitations": [
+    "Existing source artifact generators were inspected but not executed.",
+    "Existing generators are replay_010-oriented and would emit source artifacts rather than dry-run readiness only.",
+    "Task 152 validates readiness wiring, not final artifact content."
+  ]
+}

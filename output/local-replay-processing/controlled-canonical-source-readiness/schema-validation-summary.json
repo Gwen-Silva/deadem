@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "validationMode": "compact_readiness_schema_shape_only",
+  "rows": [
+    {
+      "id": "scopeSummary",
+      "requiredFields": [
+        "schemaVersion",
+        "taskId",
+        "authorizedReplayIds",
+        "processedReplayIds"
+      ],
+      "missingFields": [],
+      "valid": true
+    },
+    {
+      "id": "parserConfirmation",
+      "requiredFields": [
+        "schemaVersion",
+        "replay010ParseCompleted",
+        "replay011ParseCompleted"
+      ],
+      "missingFields": [],
+      "valid": true
+    },
+    {
+      "id": "sourceReadiness",
+      "requiredFields": [
+        "schemaVersion",
+        "firstStageExists",
+        "dryRunAvailableForBothAuthorizedReplays",
+        "classification"
+      ],
+      "missingFields": [],
+      "valid": true
+    },
+    {
+      "id": "canonicalReadiness",
+      "requiredFields": [
+        "schemaVersion",
+        "canonicalPackageConstructed",
+        "classification"
+      ],
+      "missingFields": [],
+      "valid": true
+    },
+    {
+      "id": "protectionAudit",
+      "requiredFields": [
+        "schemaVersion",
+        "passed",
+        "replay005AccessedOrProcessed"
+      ],
+      "missingFields": [],
+      "valid": true
+    }
+  ],
+  "allSchemasValid": true,
+  "finalFactsValidated": false
+}

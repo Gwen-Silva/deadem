@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "blockerFound": true,
+  "blockerType": "pipeline_wiring",
+  "blockerSummary": "No safe generic dry-run/compact readiness entrypoint exists for both replay_010 and replay_011; existing source artifact generators are replay_010-oriented and would emit source artifacts if executed.",
+  "parserBlocker": null,
+  "schemaBlocker": null,
+  "outputPolicyBlocker": "existing source artifact generators would emit source artifacts if executed",
+  "canonicalizationBlocker": "no safe generic canonical dry-run entrypoint for both authorized replays"
+}

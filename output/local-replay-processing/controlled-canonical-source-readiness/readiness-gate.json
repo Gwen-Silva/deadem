@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "gate": "controlled_canonical_source_readiness_validated",
+  "classification": "controlled_canonical_source_readiness_blocked_by_pipeline_wiring",
+  "reasons": [
+    "default parser completion confirmed for replay_010 and replay_011",
+    "source/canonical readiness is blocked by missing safe dry-run/generic wiring, not by parser completion"
+  ],
+  "firstBlockerType": "pipeline_wiring",
+  "finalFactsProduced": false
+}

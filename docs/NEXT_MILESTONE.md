@@ -1270,3 +1270,21 @@ recommended milestone is
 `controlled_canonical_source_readiness_task_for_replay_010_and_011`, which
 requires separate authorization before any canonical/source/match artifacts or
 facts are emitted.
+
+## Task 152
+
+Purpose: validate controlled source/canonical readiness after parser completion
+for replay_010 and replay_011 without emitting final facts.
+
+Success gate: `controlled_canonical_source_readiness_validated`.
+
+Blocked gate: `controlled_canonical_source_readiness_blocked`.
+
+Status: completed with the success gate above. Both replay_010 and replay_011
+still complete default parser advancement. The readiness classification is
+`controlled_canonical_source_readiness_blocked_by_pipeline_wiring`: existing
+source-artifact entrypoints are replay_010-oriented and would emit source
+artifacts, while no safe compact dry-run/readiness entrypoint for both
+authorized canaries or generic canonical dry-run was validated. The next
+recommended milestone is
+`design_generic_compact_source_canonical_dry_run_entrypoint`.

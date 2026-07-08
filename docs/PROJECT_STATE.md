@@ -663,3 +663,22 @@ No parser/engine behavior, `packages/deadem/**` behavior, recovery, skip mode,
 placeholder, default behavior, new opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, protected replay access, bot replay
 processing, candidate replay processing, or Task 152 was created.
+
+## Task 152 Controlled Source/Canonical Readiness Note
+
+Task 152 validated the controlled source/canonical readiness layer under
+`controlled_canonical_source_readiness_validated`. Only replay_010 and
+replay_011 were processed, both completed default parser advancement, and the
+old missing-entity blockers did not reopen. The readiness classification is
+`controlled_canonical_source_readiness_blocked_by_pipeline_wiring`: the first
+source/canonical layer exists as source-artifact generation and manifesting, but
+current entrypoints are replay_010-oriented and would emit source artifacts
+rather than a compact dry-run/readiness result for both replay_010 and
+replay_011. No generic canonical dry-run entrypoint for both authorized canaries
+was validated. The recommended next milestone is
+`design_generic_compact_source_canonical_dry_run_entrypoint`. This task emitted
+only readiness metadata, not source/canonical/match facts, and made no
+parser/engine behavior, `packages/deadem/**`, recovery, skip, placeholder,
+default behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow,
+Product Reviewer automation, protected replay, bot replay, candidate replay, or
+Task 153 change.
