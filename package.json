@@ -27,6 +27,7 @@
     "preview": "npm run preview --workspace=@deademx/ui",
     "proto:json": "npm run proto:json --workspaces --if-present",
     "start": "npm run start --workspace=@deademx/ui",
+    "summarize:exact-15-death-validation-compact": "node tools/summarize-exact-15-death-validation-compact-artifacts.mjs --input-root output/local-replay-processing/exact-15-death-validation-compact-emission/ --summary-output output/local-replay-processing/exact-15-death-validation-compact-summary/",
     "summarize:experiment": "node scripts/summarize-experiment.js",
     "test": "npm run test --workspaces --if-present",
     "validate:experiment": "node scripts/validate-experiment.js",

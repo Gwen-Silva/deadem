@@ -1581,3 +1581,23 @@ schema, output-policy, and size audits. `eventCount` remains a source-observed
 counter transition candidate summary, not final death facts. The next milestone
 should review how these compact artifacts are consumed or summarized without
 creating gameplay interpretation or broader source/canonical/match facts.
+
+## Task 169
+
+Purpose: build a compact summary/index over the 15 Task 168
+`death_validation` artifacts without replay access, parser execution, emission
+runner execution, new real artifacts, final facts, attribution, or gameplay
+interpretation.
+
+Success gate: `exact_15_death_validation_compact_summary_ready`.
+
+Blocked gate: `exact_15_death_validation_compact_summary_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run summarize:exact-15-death-validation-compact`. It produced a replay
+event-count index, aggregate counter-transition candidate summary,
+schema/policy/size rollup, interpretation boundaries, and protection audit. The
+aggregate field is `sourceObservedCounterTransitionCandidateTotal` with value
+1199; min `eventCount` is 45 and max `eventCount` is 117. These are not final
+death facts or gameplay truth. The next milestone should decide how, if at all,
+to present or consume the compact summary while preserving the same boundaries.

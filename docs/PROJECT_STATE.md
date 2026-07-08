@@ -995,3 +995,23 @@ iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task
 169 was produced. replay_005 remains the protected final holdout, replay_006
 through replay_008 remain blocked unsupported bot fixtures, and replay_020 was
 not accessed or processed.
+
+## Task 169 Exact 15 Death Validation Compact Summary Note
+
+Task 169 built a consumable summary/index over the 15 Task 168 compact
+`death_validation` artifacts under
+`exact_15_death_validation_compact_summary_ready`. The summary consumed only
+committed compact JSON artifacts and Task 168 summaries; no replay file was
+accessed, opened, hashed, copied, inspected, parsed, or processed, and no parser
+or emission runner executed. The aggregate field is named
+`sourceObservedCounterTransitionCandidateTotal` and totals 1199 across the 15
+artifacts, with min `eventCount` 45, max `eventCount` 117, and
+`duplicateKeyTotal` 0. These values remain source-observed counter transition
+candidate counts, not final death facts, canonical truth, attribution, player
+identity, objective attribution, timeline, Source 2 semantic validation, parser
+correctness proof, or gameplay interpretation. No new `death_validation.json`,
+death events, respawn events, raw data, field values, source/canonical/match
+final facts, parser/engine behavior change, `packages/deadem/**` change,
+recovery, skip, placeholder, default behavior change, parser opt-in,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+pull/merge/cherry-pick/rebase, or Task 170 was produced.
