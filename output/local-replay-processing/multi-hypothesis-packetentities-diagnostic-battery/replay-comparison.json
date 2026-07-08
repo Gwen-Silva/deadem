@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "sharedPattern": [
+    "both fail closed on UPDATE for missing local registry entity",
+    "both have zero action delta at the boundary because the missing UPDATE payload is not applied",
+    "both preserve local index formula consistency and two-bit UPDATE command decode at the boundary",
+    "both provide comparable compact nearby-window payloadBits/actionDelta entries before the boundary"
+  ],
+  "replay010Distinctive": [
+    "boundary entity 2905",
+    "indexDelta 187",
+    "classification nearby_offset_alternative_candidate"
+  ],
+  "replay011Distinctive": [
+    "boundary entity 5624",
+    "indexDelta 2942",
+    "classification payloadbits_contract_suspected",
+    "nearby offset candidates 5"
+  ],
+  "highDeltaComparison": {
+    "replay010HighDeltaSignal": false,
+    "replay011HighDeltaSignal": true,
+    "assessment": "replay_011 remains the stronger cursor/index suspicion canary"
+  },
+  "payloadMismatchComparison": {
+    "replay010NearbyMismatchCount": 0,
+    "replay011NearbyMismatchCount": 1,
+    "assessment": "payloadBits/actionDelta mismatch is currently replay_011-specific among the two authorized canaries"
+  },
+  "rawDataCaptured": false
+}

@@ -641,4 +641,13 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   corruption, recovery safety, or skip safety. The selected recommendation is
   `treat_payloadbits_action_delta_comparison_as_conditional`, with future
   synthetic contract evidence as the safest next clarification path if separately
-  authorized.
+  authorized. Task 149 then ran a compact fail-closed multi-hypothesis battery
+  on authorized replay_010 and replay_011 only, plus synthetic comparison
+  scenarios. Both canaries still failed closed at their first missing UPDATE
+  boundaries and preserved internal local index formula and UPDATE command
+  consistency. replay_010's five-entry nearby window matched payloadBits/action
+  delta throughout, while replay_011 retained one pre-boundary mismatch at loop
+  27. The consolidated classification is
+  `payloadbits_action_delta_contract_conditional`, strongest hypothesis is
+  `probe_metric_mismatch_candidate`, and root-cause readiness remains
+  `not_ready_for_parser_fix`.

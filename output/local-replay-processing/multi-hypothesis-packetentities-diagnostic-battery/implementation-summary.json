@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "taskId": "149",
+  "implementationType": "standalone_compact_diagnostic_battery_tool",
+  "tool": "tools/run-multi-hypothesis-packetentities-diagnostic-battery.mjs",
+  "replayScope": [
+    {
+      "replayId": "replay_010",
+      "inputPath": ".local/deadem/replays/inbox/partida_010.dem"
+    },
+    {
+      "replayId": "replay_011",
+      "inputPath": ".local/deadem/replays/inbox/partida_011.dem"
+    }
+  ],
+  "existingDiagnosticOptionUsed": "recovery.diagnoseMissingEntityFailClosed",
+  "newParserOptionCreated": false,
+  "parserBehaviorModified": false,
+  "syntheticScenariosIncluded": true,
+  "rawDataCaptured": false
+}

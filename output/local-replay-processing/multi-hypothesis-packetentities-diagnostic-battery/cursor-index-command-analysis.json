@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "replay010": {
+    "formulaConsistent": true,
+    "expectedEntityIndexByLocalFormula": 2905,
+    "commandName": "UPDATE",
+    "commandId": 0,
+    "commandReadBitWidth": 2,
+    "commandPositionPlausible": true,
+    "highDeltaSignal": false
+  },
+  "replay011": {
+    "formulaConsistent": true,
+    "expectedEntityIndexByLocalFormula": 5624,
+    "commandName": "UPDATE",
+    "commandId": 0,
+    "commandReadBitWidth": 2,
+    "commandPositionPlausible": true,
+    "highDeltaSignal": true
+  },
+  "assessment": "simple index formula and two-bit UPDATE command decode remain internally consistent in both canaries, weakening simple index accumulation and command-position bugs while preserving cursor-contract suspicion from high delta and nearby offset alternatives",
+  "rawDataCaptured": false
+}

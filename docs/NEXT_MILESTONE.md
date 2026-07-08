@@ -1232,6 +1232,30 @@ recovery/skip safety. The selected recommendation is
 processed, no parser/engine behavior changed, and no recovery/skip/placeholder
 or canonical/source/match output was produced.
 
+## Task 149
+
+Purpose: run a compact fail-closed multi-hypothesis PacketEntities diagnostic
+battery combining synthetic comparison scenarios with authorized replay_010 and
+replay_011 first missing-entity boundaries.
+
+Gate: `multi_hypothesis_packetentities_diagnostic_battery_ready`.
+
+Status: completed. The battery processed only replay_010 and replay_011, and
+only until their first `missing_entity_fail_closed` boundaries. Both boundaries
+kept local index formula and two-bit UPDATE command decode internally
+consistent. replay_010 had zero nearby payloadBits/action-delta mismatches in
+the five-entry window; replay_011 retained one mismatch at loop 27
+(`payloadBits: 221`, `actionDelta: 373`) plus the high indexDelta signal.
+Synthetic scenarios showed exact matches, divergence in both directions, and
+non-comparable fail-closed boundaries are possible under compact local
+metadata. Consolidated classification:
+`payloadbits_action_delta_contract_conditional`. Strongest hypothesis:
+`probe_metric_mismatch_candidate`. Root-cause readiness:
+`not_ready_for_parser_fix`. Recommended next action:
+`design_compact_payloadbits_segment_attribution_probe`. No parser/engine
+behavior changed, and no recovery/skip/placeholder/continuation/default change
+or canonical/source/match output was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
