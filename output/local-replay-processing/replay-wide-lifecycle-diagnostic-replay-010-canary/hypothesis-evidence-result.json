@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "observedClassification": "never_registered_in_observed_parser_history_candidate",
+  "strengthenedHypotheses": [
+    "not_enough_parser_evidence narrowed to no observed local-parser target history before boundary"
+  ],
+  "weakenedHypotheses": [
+    "create_register_path_gap_candidate",
+    "registry_state_loss_candidate",
+    "delete_leave_semantics_gap_candidate",
+    "boundary_identity_changed_candidate",
+    "class_or_baseline_pre_register_failure_candidate_for_entity_2905",
+    "removed_before_missing_update_candidate",
+    "entity_index_reused_or_generation_ambiguous_candidate"
+  ],
+  "stillOpenHypotheses": [
+    "source_semantics_unknown_candidate",
+    "payload_bits_skip_contract_candidate",
+    "command_decode_or_cursor_alignment_candidate"
+  ],
+  "compactCursorSignal": {
+    "expectedBoundaryMatched": true,
+    "previousEntityIndex": 2717,
+    "indexDelta": 187,
+    "readCountsWithinKnownEntityData": true,
+    "suspiciousByTask142StaticReview": false
+  },
+  "interpretationLimitations": [
+    "classification is local parser diagnostic evidence only",
+    "not a game fact",
+    "not Source 2 semantics",
+    "not replay corruption evidence",
+    "not proof of local parser correctness"
+  ],
+  "nextEvidenceRecommended": "run the same replay-wide lifecycle diagnostic on replay_011 in a separately authorized task if replay_010 result needs comparison",
+  "rawDataCaptured": false
+}

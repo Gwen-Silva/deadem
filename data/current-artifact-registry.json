@@ -345,6 +345,12 @@
       "notes": "Task 142 reviewed the local PacketEntities missing-entity parser mechanism and mapped index, command, registry lifecycle, payloadBits, hypotheses, evidence gaps, and the next safe evidence plan without processing replays or modifying parser behavior."
     },
     {
+      "id": "replay_wide_lifecycle_diagnostic_replay_010_canary",
+      "path": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-010-canary/canary-gate.json",
+      "status": "current",
+      "notes": "Task 143 ran the existing fail-closed replay-wide/local-parser lifecycle ledger on authorized replay_010 only. It reproduced the packet 954 loop 33 UPDATE missing entity 2905 boundary and classified it as never_registered_in_observed_parser_history_candidate with 4852 compact events tracked and zero target events."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

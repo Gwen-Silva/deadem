@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "defaultPass": {
+    "mode": "default_no_diagnostics",
+    "expectedFailureReproduced": true,
+    "errorThrown": true,
+    "errorMessage": "Unable to find an entity with index [ 2905 ]",
+    "ticksAdvanced": 953,
+    "currentTick": 952,
+    "reachedEnd": false,
+    "parserContinuedAfterFailure": false
+  },
+  "diagnosticPass": {
+    "mode": "diagnostic_fail_closed_replay_wide_lifecycle",
+    "expectedFailureReproduced": true,
+    "errorThrown": true,
+    "errorMessage": "Unable to find an entity with index [ 2905 ]",
+    "ticksAdvanced": 953,
+    "currentTick": 952,
+    "reachedEnd": false,
+    "parserContinuedAfterFailure": false,
+    "recoveryDiagnosticsCount": 1,
+    "missingEntityFailClosedDiagnosticsCount": 1
+  },
+  "sameFailureMessage": true,
+  "defaultBehaviorChanged": false,
+  "rawDataCaptured": false
+}

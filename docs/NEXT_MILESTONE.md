@@ -1117,6 +1117,23 @@ replay was processed, no parser/engine behavior was modified, and no recovery,
 skip mode, placeholder, continuation, new opt-in, default behavior change,
 canonical/source/match output, or Task 143 was created.
 
+## Task 143
+
+Purpose: run the existing fail-closed replay-wide/local-parser lifecycle ledger
+on the authorized replay_010 canary.
+
+Gate: `replay_wide_lifecycle_diagnostic_replay_010_canary_ready`.
+
+Status: completed. Default and diagnostic passes reproduced `Unable to find an
+entity with index [ 2905 ]` at packet ordinal 954, loop 33, operation UPDATE,
+previousEntityIndex 2717, indexDelta 187, and payloadBits 193. The ledger
+tracked 4852 compact events before the boundary and zero compact target events
+for entity 2905, producing
+`never_registered_in_observed_parser_history_candidate`. This is local parser
+diagnostic evidence only and does not mean the entity never existed in game. No
+parser/engine behavior changed, no recovery/skip/placeholder/continuation/new
+opt-in was used, and no raw/canonical/source/match output was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
