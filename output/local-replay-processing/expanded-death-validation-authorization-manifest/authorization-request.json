@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "recommendedNextAction": "await_explicit_replay_authorization",
+  "reason": "Task 164 prepares the template only; it does not name or authorize new replay paths.",
+  "futureAuthorizationMustProvide": [
+    "replayId",
+    "localPath",
+    "mode",
+    "artifactClass",
+    "taskSpecificAuthorization",
+    "confirmationRealEmissionLimitedToDeathValidation",
+    "confirmationEventCountIsNotFinalDeathFact",
+    "confirmationReplay005ContinuesHoldout",
+    "confirmationReplays006To008RemainBlocked",
+    "explicitOneByOneConfirmationForAnyCandidate012To020",
+    "confirmationExpandedDryRunBeforeRealEmissionUnlessFutureTaskExplicitlyJustifiesOtherwise"
+  ],
+  "requiredValues": {
+    "mode": "death_validation_compact_emission",
+    "artifactClass": "death_validation",
+    "confirmationRealEmissionLimitedToDeathValidation": true,
+    "confirmationEventCountIsNotFinalDeathFact": true,
+    "confirmationReplay005ContinuesHoldout": true,
+    "confirmationReplays006To008RemainBlocked": true,
+    "explicitOneByOneConfirmationForAnyCandidate012To020": true
+  },
+  "notAuthorizedByThisTask": [
+    "expanded dry-run",
+    "real emission for expansion",
+    "automatic use of replay_012 through replay_020",
+    "15-replay processing",
+    "new death_validation artifacts"
+  ]
+}

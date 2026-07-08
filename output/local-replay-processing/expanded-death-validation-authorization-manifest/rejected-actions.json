@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "rejectedActions": [
+    {
+      "action": "authorize_replay_012_to_replay_020_automatically",
+      "reason": "Task 164 requires one-by-one future user authorization with replayId and localPath."
+    },
+    {
+      "action": "run_expanded_dry_run_now",
+      "reason": "No expanded replay list is authorized in this task."
+    },
+    {
+      "action": "emit_expanded_death_validation_now",
+      "reason": "Task 164 forbids replay processing and new real artifact emission."
+    },
+    {
+      "action": "process_15_replays_now",
+      "reason": "15-replay processing remains unauthorized."
+    },
+    {
+      "action": "emit_death_events_or_attribution",
+      "reason": "Only compact death_validation can be considered in this route, and even that requires future authorization."
+    }
+  ],
+  "newDeathValidationArtifactsEmitted": false,
+  "finalFactsProduced": false
+}

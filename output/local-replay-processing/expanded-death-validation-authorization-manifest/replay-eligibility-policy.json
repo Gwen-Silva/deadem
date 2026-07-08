@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "eligibleWithoutFutureAuthorization": [],
+  "seedEvidenceOnly": [
+    {
+      "replayId": "replay_010",
+      "status": "seed_evidence_only",
+      "automaticReprocessingAuthorized": false
+    },
+    {
+      "replayId": "replay_011",
+      "status": "seed_evidence_only",
+      "automaticReprocessingAuthorized": false
+    }
+  ],
+  "pendingCandidateRange": {
+    "replayIds": [
+      "replay_012",
+      "replay_013",
+      "replay_014",
+      "replay_015",
+      "replay_016",
+      "replay_017",
+      "replay_018",
+      "replay_019",
+      "replay_020"
+    ],
+    "authorizationStatus": "pending_user_authorization",
+    "localPathsKnownInThisManifest": false,
+    "oneByOneAuthorizationRequired": true
+  },
+  "blockedReplayClasses": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008",
+    "samples/**",
+    "output/replays/**"
+  ],
+  "fifteenReplayProcessingAuthorized": false
+}

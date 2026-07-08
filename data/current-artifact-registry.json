@@ -471,6 +471,12 @@
       "notes": "Task 163 selected prepare_expanded_death_validation_authorization_manifest as the next action after the two-replay compact death_validation mini-pilot. It processed no replays and preserved that eventCount is not a final death fact."
     },
     {
+      "id": "expanded_death_validation_authorization_manifest",
+      "path": "output/local-replay-processing/expanded-death-validation-authorization-manifest/authorization-manifest-gate.json",
+      "status": "current",
+      "notes": "Task 164 prepared the expanded death_validation authorization template without replay processing. It keeps replay_010 and replay_011 as seed evidence only, leaves replay_012 through replay_020 pending one-by-one user authorization, and selects await_explicit_replay_authorization."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

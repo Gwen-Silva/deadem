@@ -1489,3 +1489,21 @@ mode, authorized artifact class, and protections preserving replay_005 as
 holdout, replays 006-008 as blocked bot fixtures, and candidates 012-020 as
 individually authorized only. No replay was processed and no new real artifact
 or gameplay interpretation was emitted in Task 163.
+
+## Task 164
+
+Purpose: prepare the expanded `death_validation_compact_emission` authorization
+manifest package without processing any replay.
+
+Success gate: `expanded_death_validation_authorization_manifest_ready`.
+
+Blocked gate: `expanded_death_validation_authorization_manifest_blocked`.
+
+Status: completed with the success gate above. The manifest template keeps
+replay_010 and replay_011 as already validated seed evidence only and does not
+authorize automatic reprocessing. No candidates are authorized yet; replay_012
+through replay_020 remain `pending_user_authorization` and require one-by-one
+future authorization with replayId and localPath. replay_005 remains the
+protected holdout, and replays 006-008 remain blocked unsupported bot fixtures.
+Both `expandedDryRunAuthorized` and `realEmissionAuthorizedForExpansion` are
+false. The selected next action is `await_explicit_replay_authorization`.

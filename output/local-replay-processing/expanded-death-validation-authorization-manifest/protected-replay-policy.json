@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "replay005": {
+    "status": "protected_final_holdout",
+    "policy": "Not authorized for access, hash, copy, inspect, parse, or processing in Task 164 or in any expansion manifest unless a future final-holdout release task explicitly authorizes it."
+  },
+  "replays006To008": {
+    "status": "blocked_unsupported_bot_fixtures",
+    "policy": "Remain blocked and must not be treated as supported human fixtures."
+  },
+  "replays012To020": {
+    "status": "pending_user_authorization",
+    "policy": "No candidate in this range is authorized automatically. A future task must name each replayId and localPath explicitly before dry-run or real emission."
+  },
+  "seedReplays010And011": {
+    "status": "already_validated_seed_evidence_only",
+    "policy": "Task 162 evidence may inform the template, but Task 164 does not authorize automatic reprocessing."
+  },
+  "task164ReplayProcessing": "none"
+}

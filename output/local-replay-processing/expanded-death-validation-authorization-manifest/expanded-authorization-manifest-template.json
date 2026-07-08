@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "manifestType": "expanded_death_validation_authorization_template",
+  "mode": "death_validation_compact_emission",
+  "allowedArtifactClass": "death_validation",
+  "rawDataCaptured": false,
+  "finalFactsProduced": false,
+  "eventCountNotFinalFact": true,
+  "protectedReplay005RemainsHoldout": true,
+  "bots006To008RemainBlocked": true,
+  "candidates012To020RequireOneByOneAuthorization": true,
+  "authorizedSeedReplays": [
+    {
+      "replayId": "replay_010",
+      "seedEvidenceStatus": "already_validated_seed_evidence_only",
+      "task162EventCount": 45,
+      "task162DuplicateKeyCount": 0,
+      "automaticReprocessingAuthorized": false
+    },
+    {
+      "replayId": "replay_011",
+      "seedEvidenceStatus": "already_validated_seed_evidence_only",
+      "task162EventCount": 80,
+      "task162DuplicateKeyCount": 0,
+      "automaticReprocessingAuthorized": false
+    }
+  ],
+  "pendingExpansionCandidates": [],
+  "candidateSlotPolicy": {
+    "authorizationStatus": "pending_user_authorization",
+    "localPathRequiredBeforeUse": true,
+    "realPathIncludedInTemplate": false,
+    "oneByOneAuthorizationRequired": true
+  },
+  "realEmissionAuthorizedForExpansion": false,
+  "expandedDryRunAuthorized": false,
+  "nextAction": "await_explicit_replay_authorization"
+}

@@ -899,3 +899,21 @@ parser/engine behavior change, `packages/deadem/**` change, recovery, skip,
 placeholder, default behavior change, parser opt-in, Java/Clarity/external
 parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase,
 or Task 164 was produced.
+
+## Task 164 Expanded Death Validation Authorization Manifest Note
+
+Task 164 prepared the no-replay expanded authorization package under
+`expanded_death_validation_authorization_manifest_ready`. The package defines a
+template for future `death_validation_compact_emission` expansion but does not
+authorize expanded dry-run or real emission. replay_010 and replay_011 are kept
+only as already validated seed evidence from Task 162, not automatic
+reprocessing authorization. Candidates replay_012 through replay_020 remain
+`pending_user_authorization` and require future one-by-one replayId/localPath
+authorization. replay_005 remains the protected holdout, and replays 006-008
+remain blocked unsupported bot fixtures. The selected next action is
+`await_explicit_replay_authorization`. No replay was accessed, opened, hashed,
+copied, inspected, parsed, or processed. No new real artifact, final fact,
+gameplay interpretation, parser/engine behavior change, `packages/deadem/**`
+change, recovery, skip, placeholder, default behavior change, parser opt-in,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+pull/merge/cherry-pick/rebase, or Task 165 was produced.

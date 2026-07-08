@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "preflightRequiredBeforeExpandedRealEmission": true,
+  "recommendedPreflightOrder": [
+    "obtain explicit replay authorization manifest",
+    "verify replayId/localPath allowlist one by one",
+    "run expanded dry-run only after authorization",
+    "review blocked replay audit, schema readiness, output policy, and size policy",
+    "run real death_validation_compact_emission only in a later task if dry-run passes and real emission is explicitly authorized"
+  ],
+  "dryRunBeforeRealEmissionPolicy": "required unless a future task explicitly justifies otherwise",
+  "realEmissionLimits": {
+    "mode": "death_validation_compact_emission",
+    "allowedArtifactClass": "death_validation",
+    "eventCountNotFinalFact": true,
+    "deathEventsForbidden": true,
+    "attributionForbidden": true,
+    "gameplayInterpretationForbidden": true
+  },
+  "blockersBeforeExpansion": [
+    "no explicit replay list authorized in Task 164",
+    "no localPath values for pending candidates",
+    "expandedDryRunAuthorized is false",
+    "realEmissionAuthorizedForExpansion is false"
+  ]
+}
