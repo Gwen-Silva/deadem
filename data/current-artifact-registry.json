@@ -351,6 +351,12 @@
       "notes": "Task 143 ran the existing fail-closed replay-wide/local-parser lifecycle ledger on authorized replay_010 only. It reproduced the packet 954 loop 33 UPDATE missing entity 2905 boundary and classified it as never_registered_in_observed_parser_history_candidate with 4852 compact events tracked and zero target events."
     },
     {
+      "id": "replay_wide_lifecycle_diagnostic_replay_011_canary",
+      "path": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/canary-gate.json",
+      "status": "current",
+      "notes": "Task 144 ran the existing fail-closed replay-wide/local-parser lifecycle ledger on authorized replay_011 only. It reproduced the packet 1052 loop 28 UPDATE missing entity 5624 boundary and classified it as index_stream_or_cursor_contract_suspected with 41408 compact events tracked, zero target events, and a large indexDelta of 2942."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

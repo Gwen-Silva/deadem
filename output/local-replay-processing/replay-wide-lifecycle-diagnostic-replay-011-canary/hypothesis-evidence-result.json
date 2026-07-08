@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_011",
+  "observedClassification": "index_stream_or_cursor_contract_suspected",
+  "strengthenedHypotheses": [
+    "command_decode_or_cursor_alignment_candidate",
+    "index_stream_or_cursor_contract_suspected",
+    "no observed local-parser target history before boundary"
+  ],
+  "weakenedHypotheses": [
+    "create_register_path_gap_candidate",
+    "registry_state_loss_candidate",
+    "class_or_baseline_pre_register_failure_candidate_for_entity_5624",
+    "delete_leave_semantics_gap_candidate",
+    "removed_before_missing_update_candidate",
+    "entity_index_reused_or_generation_ambiguous_candidate"
+  ],
+  "stillOpenHypotheses": [
+    "source_semantics_unknown_candidate",
+    "payload_bits_skip_contract_candidate"
+  ],
+  "compactCursorSignal": {
+    "expectedBoundaryMatched": true,
+    "previousEntityIndex": 2681,
+    "indexDelta": 2942,
+    "readCountsWithinKnownEntityData": true,
+    "suspiciousByTask142StaticReview": true
+  },
+  "interpretationLimitations": [
+    "classification is local parser diagnostic evidence only",
+    "not a game fact",
+    "not Source 2 semantics",
+    "not replay corruption evidence",
+    "not proof of local parser correctness"
+  ],
+  "nextEvidenceRecommended": "review the shared high-index missing UPDATE pattern across replay_010 and replay_011 before any parser intervention; do not add recovery or skip from this canary alone",
+  "rawDataCaptured": false
+}

@@ -601,4 +601,16 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   141 then implemented that diagnostic-only ledger with synthetic validation,
   preserving disabled-by-default fail-closed behavior and adding no recovery,
   skip, placeholder, continuation, default behavior change, or replay
-  processing.
+  processing. Task 142 reviewed the local PacketEntities missing-entity
+  parser mechanism and recommended a future authorized fail-closed canary of
+  the existing replay-wide lifecycle ledger. Task 143 then ran that ledger on
+  authorized replay_010 only, reproducing packet 954 loop 33 UPDATE missing
+  entity 2905 with 4852 compact events tracked, zero target events, and
+  classification `never_registered_in_observed_parser_history_candidate`.
+  Task 144 then ran the same ledger on authorized replay_011 only, reproducing
+  packet 1052 loop 28 UPDATE missing entity 5624 with 41408 compact events
+  tracked, zero target events, and classification
+  `index_stream_or_cursor_contract_suspected` because of compact cursor/index
+  metadata including indexDelta 2942. These are local parser diagnostic
+  observations only; they do not establish Source 2 semantics, replay
+  corruption, or parser correctness.

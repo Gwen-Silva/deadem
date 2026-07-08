@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "comparison": "replay_010_task143_vs_replay_011_task144",
+  "replay010": {
+    "entityIndex": 2905,
+    "packetOrdinal": 954,
+    "loop": 33,
+    "operation": "UPDATE",
+    "previousEntityIndex": 2717,
+    "indexDelta": 187,
+    "payloadBits": 193,
+    "totalCompactEventsForTarget": 0,
+    "totalCompactEventsTracked": 4852,
+    "classification": "never_registered_in_observed_parser_history_candidate"
+  },
+  "replay011": {
+    "entityIndex": 5624,
+    "packetOrdinal": 1052,
+    "loop": 28,
+    "operation": "UPDATE",
+    "previousEntityIndex": 2681,
+    "indexDelta": 2942,
+    "payloadBits": 133,
+    "totalCompactEventsForTarget": 0,
+    "totalCompactEventsTracked": 41408,
+    "classification": "index_stream_or_cursor_contract_suspected"
+  },
+  "repeatedMissingEntityClass": true,
+  "sameNoObservedTargetHistoryPattern": true,
+  "classificationMatchesReplay010": false,
+  "conclusion": "both human canaries show an UPDATE for an entity index with zero compact prior local-parser events before the boundary; replay_011 additionally has a large indexDelta that strengthens cursor/index contract review",
+  "noReplay010Processing": true,
+  "replay010EvidenceSource": "versioned compact Task 143 outputs only",
+  "rawDataCaptured": false
+}

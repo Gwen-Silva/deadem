@@ -1134,6 +1134,27 @@ diagnostic evidence only and does not mean the entity never existed in game. No
 parser/engine behavior changed, no recovery/skip/placeholder/continuation/new
 opt-in was used, and no raw/canonical/source/match output was produced.
 
+## Task 144
+
+Purpose: run the existing fail-closed replay-wide/local-parser lifecycle ledger
+on the authorized replay_011 canary and compare compact evidence with Task 143.
+
+Gate: `replay_wide_lifecycle_diagnostic_replay_011_canary_ready`.
+
+Status: completed. Default and diagnostic passes reproduced `Unable to find an
+entity with index [ 5624 ]` at packet ordinal 1052, loop 28, operation UPDATE,
+previousEntityIndex 2681, indexDelta 2942, and payloadBits 133. The ledger
+tracked 41408 compact events before the boundary and zero compact target events
+for entity 5624, producing `index_stream_or_cursor_contract_suspected` because
+the compact cursor/index metadata includes a large index delta. This is local
+parser diagnostic evidence only and does not prove a parser bug, Source 2
+semantics, replay corruption, or parser correctness. Compared with replay_010,
+both human canaries show an UPDATE for an entity index with zero compact prior
+local-parser events before the boundary, while replay_011 adds stronger
+cursor/index-contract suspicion. No parser/engine behavior changed, no
+recovery/skip/placeholder/continuation/new opt-in was used, and no
+raw/canonical/source/match output was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

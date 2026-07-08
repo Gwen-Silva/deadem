@@ -1,0 +1,178 @@
+{
+  "taskId": "144",
+  "title": "Run Replay-Wide Lifecycle Diagnostic Replay 011 Canary",
+  "status": "completed",
+  "objective": "Run a strictly bounded replay_011 canary using the existing recovery.diagnoseMissingEntityFailClosed replay-wide/local-parser ledger, stopping at the first missing entity fail-closed boundary and comparing compact evidence with replay_010 Task 143.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/deadem/index.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/138.json",
+    "tasks/specs/142.json",
+    "tasks/specs/143.json",
+    "tasks/completed/138-missing-entity-index-lifecycle-probe-replay-011-canary.md",
+    "tasks/completed/142-packetentities-missing-entity-parser-mechanism-review.md",
+    "tasks/completed/143-replay-wide-lifecycle-diagnostic-replay-010-canary.md",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-replay-011-canary/**",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/**",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-010-canary/**",
+    "reports/packetentities-missing-entity-parser-mechanism-review.md",
+    "reports/replay-wide-lifecycle-diagnostic-replay-010-canary.md"
+  ],
+  "optionalReadPaths": [
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/handlers/DemoPacketHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js"
+  ],
+  "writePaths": [
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/**",
+    "reports/replay-wide-lifecycle-diagnostic-replay-011-canary.md",
+    "tasks/specs/144.json",
+    "tasks/completed/144-replay-wide-lifecycle-diagnostic-replay-011-canary.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/deadem/**",
+    "packages/engine/src/**",
+    "tasks/specs/145.json",
+    "tasks/completed/145-*",
+    "tasks/blocked/145-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/default-behavior-comparison.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/replay-011-ledger-result.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/missing-entity-boundary-diagnostic.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/lifecycle-ledger-summary.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/lifecycle-classification-result.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/hypothesis-evidence-result.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/replay-010-comparison.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/no-continuation-proof.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/protection-audit.json",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/canary-gate.json",
+    "reports/replay-wide-lifecycle-diagnostic-replay-011-canary.md",
+    "tasks/completed/144-replay-wide-lifecycle-diagnostic-replay-011-canary.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": [
+    "replay_011"
+  ],
+  "authorizedReplayPaths": [
+    ".local/deadem/replays/inbox/partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Process only replay_011 at .local/deadem/replays/inbox/partida_011.dem",
+    "Do not process replay_010, replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify parser, engine, packages/deadem, or default behavior",
+    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, parser fixes, continuation after missing entity, or new opt-in options",
+    "Use only recovery.diagnoseMissingEntityFailClosed true",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not create canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
+    "Do not conclude Source 2 semantics, replay corruption, local parser correctness, entity never existed in game, or destruction/delete/leave/remove from registry absence",
+    "Do not create Task 145"
+  ],
+  "successGate": "replay_wide_lifecycle_diagnostic_replay_011_canary_ready",
+  "blockedGate": "replay_wide_lifecycle_diagnostic_replay_011_canary_blocked",
+  "allowedAlternateGates": [
+    "replay_wide_lifecycle_diagnostic_replay_011_canary_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/canary-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "allowed_authorized_canary_only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}
