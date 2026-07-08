@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "rejectedActions": [
+    {
+      "action": "run_expanded_dry_run_now",
+      "reason": "Task 165 only materializes authorization; running the dry-run is the recommended next task."
+    },
+    {
+      "action": "emit_real_death_validation_now",
+      "reason": "realEmissionAuthorizedForExpansion is false."
+    },
+    {
+      "action": "process_15_or_16_replays_now",
+      "reason": "No runner may execute in Task 165."
+    },
+    {
+      "action": "auto_select_15_from_16",
+      "reason": "If exactly 15 are required, a future task must choose the exclusion explicitly."
+    },
+    {
+      "action": "access_blocked_replay_005_or_bots_006_008",
+      "reason": "Replay 005 remains holdout; 006-008 remain blocked bot fixtures."
+    },
+    {
+      "action": "emit_death_events_or_gameplay_interpretation",
+      "reason": "Only compact death_validation dry-run authorization is in scope."
+    }
+  ],
+  "newDeathValidationArtifactsEmitted": false,
+  "finalFactsProduced": false
+}

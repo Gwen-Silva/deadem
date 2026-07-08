@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "recommendedNextAction": "run_expanded_death_validation_dry_run",
+  "preflightOrder": [
+    "run expanded dry-run first using the materialized manifest",
+    "review blocked replay audit",
+    "review policy readiness",
+    "review schema readiness",
+    "review size readiness",
+    "only after a passing dry-run, consider real death_validation emission in a separate task"
+  ],
+  "expandedDryRunAuthorized": true,
+  "realEmissionAuthorizedForExpansion": false,
+  "dryRunMayUseEligibleReplayCount": 16,
+  "realEmissionRequiresSeparateTask": true,
+  "eventCountNotFinalFact": true
+}

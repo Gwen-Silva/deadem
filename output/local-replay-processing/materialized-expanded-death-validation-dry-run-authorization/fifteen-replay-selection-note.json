@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "eligibleReplayCount": 16,
+  "operationalFifteenReplayTargetStillRequiresSelection": true,
+  "selectionMadeInTask165": false,
+  "note": "The materialized authorization contains 16 eligible replays for future dry-run. If the operational target remains exactly 15 replays, a future task must explicitly choose which eligible replay is excluded.",
+  "automaticExclusionForbidden": true,
+  "nextDecisionNeeded": "select_exclusion_if_exactly_15_replays_required"
+}

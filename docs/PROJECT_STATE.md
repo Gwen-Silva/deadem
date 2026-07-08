@@ -917,3 +917,23 @@ gameplay interpretation, parser/engine behavior change, `packages/deadem/**`
 change, recovery, skip, placeholder, default behavior change, parser opt-in,
 Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 pull/merge/cherry-pick/rebase, or Task 165 was produced.
+
+## Task 165 Materialized Expanded Death Validation Dry-Run Authorization Note
+
+Task 165 materialized the user-provided folder authorization into an explicit
+future dry-run manifest under
+`materialized_expanded_death_validation_dry_run_authorization_ready`. The
+manifest authorizes only an expanded dry-run for `death_validation_compact_emission`;
+`realEmissionAuthorizedForExpansion` remains false. The future dry-run pool has
+16 eligible replayId/localPath entries: replay_001, replay_002, replay_003,
+replay_004, replay_009, replay_010, replay_011, and replay_012 through
+replay_020. replay_005 remains the protected final holdout, and replay_006
+through replay_008 remain blocked unsupported bot fixtures. If the operational
+target remains exactly 15 replays, a future task must explicitly choose which
+eligible replay is excluded. The selected next action is
+`run_expanded_death_validation_dry_run`. No replay was accessed, opened, hashed,
+copied, inspected, parsed, or processed; no runner executed; no new real artifact,
+final fact, gameplay interpretation, parser/engine behavior change,
+`packages/deadem/**` change, recovery, skip, placeholder, default behavior
+change, parser opt-in, Java/Clarity/external parser, WSL, iaflow, Product
+Reviewer automation, pull/merge/cherry-pick/rebase, or Task 166 was produced.

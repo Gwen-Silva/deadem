@@ -1507,3 +1507,23 @@ future authorization with replayId and localPath. replay_005 remains the
 protected holdout, and replays 006-008 remain blocked unsupported bot fixtures.
 Both `expandedDryRunAuthorized` and `realEmissionAuthorizedForExpansion` are
 false. The selected next action is `await_explicit_replay_authorization`.
+
+## Task 165
+
+Purpose: materialize the user-provided folder authorization into an explicit
+future expanded dry-run manifest for `death_validation_compact_emission`.
+
+Success gate: `materialized_expanded_death_validation_dry_run_authorization_ready`.
+
+Blocked gate: `materialized_expanded_death_validation_dry_run_authorization_blocked`.
+
+Status: completed with the success gate above. The manifest sets
+`expandedDryRunAuthorized: true` and
+`realEmissionAuthorizedForExpansion: false`. It materializes 16 eligible replay
+entries for future dry-run: replay_001, replay_002, replay_003, replay_004,
+replay_009, replay_010, replay_011, and replay_012 through replay_020. replay_005
+remains the protected holdout, and replay_006 through replay_008 remain blocked
+unsupported bot fixtures. If the operational target remains exactly 15 replays,
+a future task must explicitly choose one eligible replay to exclude. The next
+recommended milestone is `run_expanded_death_validation_dry_run`; no replay was
+accessed or processed in Task 165.

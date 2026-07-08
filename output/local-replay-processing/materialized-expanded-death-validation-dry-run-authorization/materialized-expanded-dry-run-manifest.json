@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "manifestType": "materialized_expanded_death_validation_dry_run_authorization",
+  "mode": "death_validation_compact_emission",
+  "allowedArtifactClass": "death_validation",
+  "expandedDryRunAuthorized": true,
+  "realEmissionAuthorizedForExpansion": false,
+  "rawDataCaptured": false,
+  "finalFactsProduced": false,
+  "eventCountNotFinalFact": true,
+  "protectedReplay005RemainsHoldout": true,
+  "bots006To008RemainBlocked": true,
+  "candidateReplayAuthorizationSource": "user provided folder authorization, materialized one by one in this task",
+  "nextAction": "run_expanded_death_validation_dry_run",
+  "authorizedForFutureExpandedDryRun": [
+    { "replayId": "replay_001", "localPath": "samples/partida_001.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_002", "localPath": "samples/partida_002.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_003", "localPath": "samples/partida_003.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_004", "localPath": "samples/partida_004.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_009", "localPath": "samples/replay_009_normal.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_010", "localPath": ".local/deadem/replays/inbox/partida_010.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_011", "localPath": ".local/deadem/replays/inbox/partida_011.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_012", "localPath": ".local/deadem/replays/inbox/partida_012.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_013", "localPath": ".local/deadem/replays/inbox/partida_013.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_014", "localPath": ".local/deadem/replays/inbox/partida_014.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_015", "localPath": ".local/deadem/replays/inbox/partida_015.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_016", "localPath": ".local/deadem/replays/inbox/partida_016.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_017", "localPath": ".local/deadem/replays/inbox/partida_017.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_018", "localPath": ".local/deadem/replays/inbox/partida_018.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_019", "localPath": ".local/deadem/replays/inbox/partida_019.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" },
+    { "replayId": "replay_020", "localPath": ".local/deadem/replays/inbox/partida_020.dem", "authorizationStatus": "authorized_for_future_expanded_dry_run_only" }
+  ],
+  "blockedReplays": [
+    { "replayId": "replay_005", "localPath": "samples/partida_005.dem", "reason": "protected final holdout" },
+    { "replayId": "replay_006", "localPath": "samples/partida_006.dem", "reason": "unsupported bot fixture" },
+    { "replayId": "replay_007", "localPath": "samples/replay_007_bots01.dem", "reason": "unsupported bot fixture" },
+    { "replayId": "replay_008", "localPath": "samples/replay_008_bots02_short.dem", "reason": "unsupported bot fixture" }
+  ]
+}

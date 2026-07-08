@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "blockedReplayCount": 4,
+  "blockedReplays": [
+    {
+      "replayId": "replay_005",
+      "localPath": "samples/partida_005.dem",
+      "reason": "protected final holdout",
+      "futureUseRequires": "explicit final-holdout release authorization"
+    },
+    {
+      "replayId": "replay_006",
+      "localPath": "samples/partida_006.dem",
+      "reason": "unsupported bot fixture",
+      "futureUseRequires": "explicit bot-fixture parser task authorization"
+    },
+    {
+      "replayId": "replay_007",
+      "localPath": "samples/replay_007_bots01.dem",
+      "reason": "unsupported bot fixture",
+      "futureUseRequires": "explicit bot-fixture parser task authorization"
+    },
+    {
+      "replayId": "replay_008",
+      "localPath": "samples/replay_008_bots02_short.dem",
+      "reason": "unsupported bot fixture",
+      "futureUseRequires": "explicit bot-fixture parser task authorization"
+    }
+  ],
+  "blockedReplayFilesAccessed": false,
+  "blockedReplayFilesProcessed": false
+}

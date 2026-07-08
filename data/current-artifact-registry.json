@@ -477,6 +477,12 @@
       "notes": "Task 164 prepared the expanded death_validation authorization template without replay processing. It keeps replay_010 and replay_011 as seed evidence only, leaves replay_012 through replay_020 pending one-by-one user authorization, and selects await_explicit_replay_authorization."
     },
     {
+      "id": "materialized_expanded_death_validation_dry_run_authorization",
+      "path": "output/local-replay-processing/materialized-expanded-death-validation-dry-run-authorization/materialized-authorization-gate.json",
+      "status": "current",
+      "notes": "Task 165 materialized 16 replayId/localPath entries for a future expanded death_validation dry-run only. Real emission remains unauthorized; replay_005 and replays 006-008 remain blocked."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
