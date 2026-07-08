@@ -357,6 +357,12 @@
       "notes": "Task 144 ran the existing fail-closed replay-wide/local-parser lifecycle ledger on authorized replay_011 only. It reproduced the packet 1052 loop 28 UPDATE missing entity 5624 boundary and classified it as index_stream_or_cursor_contract_suspected with 41408 compact events tracked, zero target events, and a large indexDelta of 2942."
     },
     {
+      "id": "high_index_missing_update_cursor_contract_review",
+      "path": "output/local-replay-processing/high-index-missing-update-cursor-contract-review/review-gate.json",
+      "status": "current",
+      "notes": "Task 145 consolidated the replay_010 and replay_011 fail-closed lifecycle ledger canaries and statically reviewed the local PacketEntities index/cursor/command/payloadBits contract. It selected design_cursor_index_contract_probe_spec as the next non-implementing route before any replay probe or parser intervention."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

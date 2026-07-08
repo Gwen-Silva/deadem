@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "hypotheses": [
+    {
+      "hypothesis": "index_accumulation_bug_candidate",
+      "statusAfterReplay010And011": "strengthened_but_unproven",
+      "strengthens": [
+        "replay_011 indexDelta 2942 yields high target index 5624 from previous 2681",
+        "two canaries have missing UPDATEs for target indexes with zero target history"
+      ],
+      "weakens": [
+        "local contract arithmetic is internally consistent for reported deltas",
+        "no external oracle confirms wrong accumulation"
+      ],
+      "riskOfPrematureFix": "changing accumulation can corrupt valid index streams",
+      "nextCompactDataNeeded": "offset scan comparing decoded indexDelta/entityIndex at nearby boundaries"
+    },
+    {
+      "hypothesis": "command_decode_or_cursor_alignment_candidate",
+      "statusAfterReplay010And011": "strengthened",
+      "strengthens": [
+        "replay_011 classification is index_stream_or_cursor_contract_suspected",
+        "command decode occurs immediately after variable-length indexDelta",
+        "large indexDelta can be caused by cursor position if preceding read length is wrong"
+      ],
+      "weakens": [
+        "both fail at bounded readCounts within entityData",
+        "no offset alternative evidence has been generated for replay_011"
+      ],
+      "riskOfPrematureFix": "choosing a different command/cursor model without proof may mask true semantics",
+      "nextCompactDataNeeded": "fail-closed cursor/index contract probe around replay_011 boundary and nearby offsets"
+    },
+    {
+      "hypothesis": "payload_bits_skip_contract_candidate",
+      "statusAfterReplay010And011": "open",
+      "strengthens": [
+        "payloadBits exist for both missing UPDATEs and are compact per-entry metadata"
+      ],
+      "weakens": [
+        "normal parsing uses field-level extraction, not universal payloadBits movement",
+        "Task 142 warns against direct skip assumptions"
+      ],
+      "riskOfPrematureFix": "payloadBits-based skip may silently misalign or fabricate downstream state",
+      "nextCompactDataNeeded": "static/dynamic cursor comparison showing whether payloadBits boundaries match actual next-entry starts without applying skip"
+    },
+    {
+      "hypothesis": "source_semantics_unknown_candidate",
+      "statusAfterReplay010And011": "open",
+      "strengthens": [
+        "two human canaries repeat a missing UPDATE class without target history",
+        "Clarity runtime is unavailable and no external oracle has resolved semantics"
+      ],
+      "weakens": [
+        "replay_011 adds a local cursor/index suspicion signal that is actionable before semantic claims"
+      ],
+      "riskOfPrematureFix": "assuming unknown semantics could justify unsafe recovery or implicit entity creation",
+      "nextCompactDataNeeded": "external oracle later or local fail-closed cursor evidence that narrows parser-vs-semantics ambiguity"
+    },
+    {
+      "hypothesis": "never_registered_in_observed_parser_history_pattern",
+      "statusAfterReplay010And011": "strengthened_as_pattern_only",
+      "strengthens": [
+        "both targets have totalCompactEventsForTarget 0",
+        "both ledgers tracked nonzero compact event history before boundary"
+      ],
+      "weakens": [
+        "pattern is local parser observation only and does not prove game-level nonexistence"
+      ],
+      "riskOfPrematureFix": "treating absence as fact may create invalid parser behavior",
+      "nextCompactDataNeeded": "determine whether target index is produced by valid cursor/command stream"
+    },
+    {
+      "hypothesis": "create_register_path_gap_candidate",
+      "statusAfterReplay010And011": "weakened_for_targets",
+      "strengthens": [
+        "missing entity still could reflect unseen semantics outside local parser evidence"
+      ],
+      "weakens": [
+        "no CREATE, register attempt, class lookup, baseline lookup, or field extraction was observed for either target before boundary"
+      ],
+      "riskOfPrematureFix": "adding create/register recovery without observed target create evidence would synthesize state",
+      "nextCompactDataNeeded": "cursor/index probe showing whether target index is intended before revisiting lifecycle gap"
+    },
+    {
+      "hypothesis": "registry_state_loss_candidate",
+      "statusAfterReplay010And011": "weakened_for_targets",
+      "strengthens": [
+        "registry loss remains theoretically possible outside observed local evidence"
+      ],
+      "weakens": [
+        "no prior register success for either target and registryStateBefore is missing at first observed target boundary"
+      ],
+      "riskOfPrematureFix": "registry repair without prior state evidence creates false entity history",
+      "nextCompactDataNeeded": "evidence of prior register success for the same index/serial, currently absent"
+    },
+    {
+      "hypothesis": "not_enough_parser_evidence",
+      "statusAfterReplay010And011": "narrowed",
+      "strengthens": [
+        "still no external oracle and no offset probe for replay_011"
+      ],
+      "weakens": [
+        "replay-wide ledgers now provide compact history and a stronger cursor/index signal for replay_011"
+      ],
+      "riskOfPrematureFix": "stopping at broad uncertainty can cause another open-ended diagnostic loop",
+      "nextCompactDataNeeded": "specific cursor/index contract probe spec rather than broad replay diagnostics"
+    }
+  ],
+  "rawDataCaptured": false
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "compactEvidenceAgainstCreateRegisterGap": [
+    "replay_010 target entity 2905: zero target events, no CREATE/register/class/baseline evidence before boundary",
+    "replay_011 target entity 5624: zero target events, no CREATE/register/class/baseline evidence before boundary"
+  ],
+  "missingForCursorCommandConfirmation": [
+    "nearby offset decode around replay_011 packet 1052 loop 28 using compact metadata only",
+    "previous loops read-count and payloadBits boundary comparison around replay_011 failing loop",
+    "whether alternative offsets produce plausible lower or previously registered entity indexes and different commands",
+    "whether command id UPDATE remains stable under bounded offset hypotheses"
+  ],
+  "missingForSourceSemanticsConfirmation": [
+    "external parser oracle result or documentation specific to Deadlock PacketEntities semantics",
+    "evidence that UPDATE to never-observed local parser entity is valid game/protocol behavior",
+    "evidence differentiating Source 2 semantics from local cursor/index misread without applying recovery"
+  ],
+  "smallestSafeNextExperiment": "design_cursor_index_contract_probe_spec",
+  "experimentConstraints": [
+    "non-implementing spec first",
+    "future probe fail-closed",
+    "compact-only",
+    "one replay per task",
+    "no raw payloads",
+    "no recovery or skip"
+  ],
+  "rawDataCaptured": false
+}

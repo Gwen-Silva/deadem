@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "options": [
+    {
+      "option": "design_cursor_index_contract_probe_spec",
+      "selected": true,
+      "rationale": "best match for consolidated evidence: replay_011 strengthens cursor/index suspicion, but a spec is needed before any replay probe or behavior change",
+      "reducesUncertainty": [
+        "what compact offset/read-count evidence is needed",
+        "how to test index accumulation and command decode without recovery"
+      ],
+      "avoidsRisk": [
+        "no parser behavior change",
+        "no replay processing in this task",
+        "no raw data capture"
+      ]
+    },
+    {
+      "option": "run_replay_010_cursor_alignment_probe",
+      "selected": false,
+      "rationale": "too early because probe contract is not specified in this task"
+    },
+    {
+      "option": "run_replay_011_cursor_alignment_probe",
+      "selected": false,
+      "rationale": "strong candidate after spec approval, but direct probe now would skip the required contract definition step"
+    },
+    {
+      "option": "pause_until_external_oracle_available",
+      "selected": false,
+      "rationale": "oracle remains useful but unavailable; local static evidence now points to a safe bounded cursor/index spec route"
+    },
+    {
+      "option": "prepare_parser_intervention_design_review",
+      "selected": false,
+      "rationale": "premature; current evidence supports diagnostic contract review before intervention design"
+    },
+    {
+      "option": "not_enough_evidence_continue_static_review",
+      "selected": false,
+      "rationale": "static review has now identified the specific next evidence: cursor/index contract probe spec"
+    }
+  ],
+  "selectedRecommendation": "design_cursor_index_contract_probe_spec",
+  "rawDataCaptured": false
+}

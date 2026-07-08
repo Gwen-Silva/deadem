@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "replay010": {
+    "previousEntityIndex": 2717,
+    "indexDelta": 187,
+    "entityIndex": 2905,
+    "derivedByLocalContract": "2717 + 187 + 1 = 2905",
+    "diagnosticSignal": "not independently suspicious by Task 141 heuristic"
+  },
+  "replay011": {
+    "previousEntityIndex": 2681,
+    "indexDelta": 2942,
+    "entityIndex": 5624,
+    "derivedByLocalContract": "2681 + 2942 + 1 = 5624",
+    "diagnosticSignal": "large delta crosses local heuristic threshold used by classification"
+  },
+  "proofAssessment": {
+    "indexDelta2942AloneProvesBug": false,
+    "reason": "a large delta is a compact local suspicion signal, but without an external oracle or local offset comparison it may reflect valid encoding, unknown Source 2/Deadlock semantics, or a prior cursor/command misread",
+    "sufficientForParserFix": false,
+    "nextDataNeeded": "bounded offset/cursor probe around the failing loop and preceding entries, compact-only and fail-closed"
+  },
+  "rawDataCaptured": false
+}

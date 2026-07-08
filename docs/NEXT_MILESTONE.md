@@ -1155,6 +1155,27 @@ cursor/index-contract suspicion. No parser/engine behavior changed, no
 recovery/skip/placeholder/continuation/new opt-in was used, and no
 raw/canonical/source/match output was produced.
 
+## Task 145
+
+Purpose: consolidate replay_010 and replay_011 lifecycle-ledger canaries and
+review the local PacketEntities index/cursor/command/payloadBits contract
+before any parser fix.
+
+Gate: `high_index_missing_update_cursor_contract_reviewed`.
+
+Status: completed. The review found a shared pattern: both canaries fail closed
+on UPDATE for a missing target with zero compact prior local-parser target
+events. replay_011 adds the stronger cursor/index signal with indexDelta 2942.
+The local contract is: read `indexDelta` with `readUVarInt`, accumulate
+`entityIndex = previous + indexDelta + 1`, then read a two-bit command mapped
+to UPDATE/LEAVE/CREATE/DELETE. The high delta is not proof of a bug by itself;
+it is a compact suspicion signal that still needs bounded cursor/index evidence
+before behavior changes. The selected next route is
+`design_cursor_index_contract_probe_spec`, a non-implementing spec for a future
+fail-closed, compact-only, one-replay-per-task cursor/index probe. No replay was
+processed, no parser/engine behavior changed, and no recovery/skip/placeholder
+or canonical/source/match output was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

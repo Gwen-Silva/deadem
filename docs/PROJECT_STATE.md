@@ -613,4 +613,9 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   `index_stream_or_cursor_contract_suspected` because of compact cursor/index
   metadata including indexDelta 2942. These are local parser diagnostic
   observations only; they do not establish Source 2 semantics, replay
-  corruption, or parser correctness.
+  corruption, or parser correctness. Task 145 then consolidated replay_010 and
+  replay_011 and statically reviewed the local PacketEntities
+  index/cursor/command/payloadBits contract. The review selected
+  `design_cursor_index_contract_probe_spec` as the next non-implementing route:
+  define compact fail-closed cursor/index evidence before any future replay
+  probe or parser intervention.

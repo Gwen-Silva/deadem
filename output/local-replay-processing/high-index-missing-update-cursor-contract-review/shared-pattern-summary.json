@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "review": "high_index_missing_update_cursor_contract",
+  "sourceEvidence": [
+    "Task 143 compact replay_010 outputs",
+    "Task 144 compact replay_011 outputs",
+    "Task 142 static mechanism review"
+  ],
+  "commonFindings": [
+    "both boundaries are UPDATE operations",
+    "both boundaries have registryStateBefore missing and registryStateAfter missing",
+    "both targets have zero compact prior local-parser target events",
+    "both fail closed without continuation, recovery, skip, placeholder, fake fields, or synthetic registry state",
+    "both are local parser diagnostic observations only, not game facts"
+  ],
+  "replay010": {
+    "packetOrdinal": 954,
+    "loop": 33,
+    "operation": "UPDATE",
+    "entityIndex": 2905,
+    "previousEntityIndex": 2717,
+    "indexDelta": 187,
+    "totalCompactEventsTracked": 4852,
+    "totalCompactEventsForTarget": 0,
+    "classification": "never_registered_in_observed_parser_history_candidate"
+  },
+  "replay011": {
+    "packetOrdinal": 1052,
+    "loop": 28,
+    "operation": "UPDATE",
+    "entityIndex": 5624,
+    "previousEntityIndex": 2681,
+    "indexDelta": 2942,
+    "totalCompactEventsTracked": 41408,
+    "totalCompactEventsForTarget": 0,
+    "classification": "index_stream_or_cursor_contract_suspected"
+  },
+  "interpretation": "the repeated zero-target-history UPDATE pattern strengthens the need to review cursor/index/command contract, but does not prove a parser bug or Source 2 semantics",
+  "rawDataCaptured": false
+}

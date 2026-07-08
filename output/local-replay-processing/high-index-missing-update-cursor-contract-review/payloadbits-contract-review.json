@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "localContract": {
+    "source": "EntityPayloadSizeExtractor decodes varint payload sizes from CSVCMsg_PacketEntities.serializedEntities",
+    "usage": "payloadSizes iterator is constructed when entity class filtering or recovery/diagnostics are active",
+    "updateCreatePayloadBits": "UPDATE and CREATE consume one payloadBits item for diagnostic/filter/recovery paths",
+    "leaveDeletePayloadBits": "LEAVE and DELETE use payloadBits 0",
+    "normalParsing": "normal mutation parsing advances via EntityMutationExtractor and field decoders, not by blindly moving payloadBits for all cases",
+    "existingReviewFinding": "Task 142 warned payloadBits must not be treated as a universal cursor contract without more evidence"
+  },
+  "canaryFacts": {
+    "replay010PayloadBits": 193,
+    "replay011PayloadBits": 133,
+    "bothFailedBeforeFieldMaterialization": true,
+    "payloadSkipped": false
+  },
+  "assessment": {
+    "canPayloadBitsBeUsedAsSkipContractNow": false,
+    "reason": "payloadBits are useful compact boundary metadata, but prior diagnostics already showed payload-size assumptions can be unsafe; this task adds no proof that payloadBits are a direct skip contract for missing UPDATE recovery",
+    "nextDataNeeded": "compare local cursor offsets and command/index decode around the boundary before proposing any payloadBits-based behavior"
+  },
+  "rawDataCaptured": false
+}

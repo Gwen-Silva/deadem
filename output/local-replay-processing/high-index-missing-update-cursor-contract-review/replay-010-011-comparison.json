@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "replay010": {
+    "packetOrdinal": 954,
+    "loop": 33,
+    "operation": "UPDATE",
+    "entityIndex": 2905,
+    "previousEntityIndex": 2717,
+    "indexDelta": 187,
+    "totalCompactEventsTracked": 4852,
+    "totalCompactEventsForTarget": 0,
+    "classification": "never_registered_in_observed_parser_history_candidate"
+  },
+  "replay011": {
+    "packetOrdinal": 1052,
+    "loop": 28,
+    "operation": "UPDATE",
+    "entityIndex": 5624,
+    "previousEntityIndex": 2681,
+    "indexDelta": 2942,
+    "totalCompactEventsTracked": 41408,
+    "totalCompactEventsForTarget": 0,
+    "classification": "index_stream_or_cursor_contract_suspected"
+  },
+  "shared": {
+    "operation": "UPDATE",
+    "registryStateBefore": "missing",
+    "registryStateAfter": "missing",
+    "totalCompactEventsForTarget": 0,
+    "failClosed": true
+  },
+  "differences": {
+    "replay011Adds": [
+      "larger compact ledger prefix: 41408 vs 4852 tracked events",
+      "large indexDelta: 2942 vs 187",
+      "classification moved from never_registered_in_observed_parser_history_candidate to index_stream_or_cursor_contract_suspected"
+    ],
+    "replay010Only": [
+      "smaller indexDelta does not cross the local diagnostic high-delta heuristic"
+    ]
+  },
+  "conclusion": "replay_011 does not contradict replay_010; it repeats zero observed target history and adds a stronger cursor/index signal",
+  "rawDataCaptured": false
+}

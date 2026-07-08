@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "rejectedThisTask": [
+    {
+      "fix": "parser fix",
+      "reason": "evidence is diagnostic and does not prove local parser bug"
+    },
+    {
+      "fix": "missing UPDATE recovery",
+      "reason": "would apply behavior without proving target identity or payload contract"
+    },
+    {
+      "fix": "payloadBits skip mode",
+      "reason": "payloadBits is not established as universal skip/cursor contract"
+    },
+    {
+      "fix": "placeholder entity",
+      "reason": "would create synthetic registry state and fake entity history"
+    },
+    {
+      "fix": "implicit create from UPDATE",
+      "reason": "no local or external evidence authorizes this semantics"
+    },
+    {
+      "fix": "default behavior change",
+      "reason": "current task is static review only"
+    }
+  ],
+  "noImplementationAuthorized": true,
+  "rawDataCaptured": false
+}

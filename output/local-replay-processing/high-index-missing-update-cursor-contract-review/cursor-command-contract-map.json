@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "localContract": {
+    "packetLoop": "handleSvcPacketEntities iterates i from startLoop to message.updatedEntries",
+    "indexAccumulation": "index starts at startIndex, reads indexDelta = bitBuffer.readUVarInt(), then index += indexDelta + 1",
+    "commandDecode": "after indexDelta, parser reads command = bitBuffer.readBitsAsUInt(2)",
+    "operationIds": {
+      "0": "UPDATE",
+      "1": "LEAVE",
+      "2": "CREATE",
+      "3": "DELETE"
+    },
+    "updateContract": "UPDATE looks up the accumulated entity index in the local registry and fails closed if missing unless recovery is explicitly enabled; Task 143/144 did not enable recovery",
+    "createContract": "CREATE path may register after class and baseline checks; zero target events in both ledgers means no local CREATE/register/class/baseline event was observed for the target before boundary",
+    "cursorFailureSurface": "a cursor error before readUVarInt can change both accumulated entityIndex and subsequent two-bit command; a cursor error between index and command can preserve index suspicion while changing operation interpretation"
+  },
+  "staticCodeEvidence": [
+    "DemoMessageHandler.handleSvcPacketEntities reads indexDelta before command",
+    "EntityOperation maps command ids 0/1/2/3 to UPDATE/LEAVE/CREATE/DELETE",
+    "BitBuffer.readUVarInt is variable length and readBitsAsUInt(2) immediately follows for command id",
+    "Task 141 diagnostic classifyMissingEntityLifecycleProbe flags readCounts out of entityData or abs(indexDelta) > 1024 as index_stream_or_cursor_contract_suspected"
+  ],
+  "riskNotes": [
+    "changing index accumulation or command decode without offset evidence risks corrupting valid packets",
+    "treating missing UPDATE as implicit CREATE or placeholder would create synthetic state and is outside this task"
+  ],
+  "rawDataCaptured": false
+}

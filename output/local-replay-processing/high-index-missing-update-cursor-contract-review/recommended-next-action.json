@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "recommendedNextAction": "design_cursor_index_contract_probe_spec",
+  "reason": "two human canaries share zero target lifecycle history before missing UPDATE, and replay_011 adds a large indexDelta/cursor signal; the next safest action is a non-implementing probe spec that defines compact cursor/index evidence before any replay probe or parser intervention",
+  "nextTaskAllowedShape": {
+    "type": "non_implementing_spec_or_review",
+    "replayProcessing": false,
+    "parserBehaviorChange": false,
+    "recovery": false,
+    "skip": false,
+    "placeholder": false,
+    "rawData": false
+  },
+  "futureProbeIfApprovedLater": {
+    "failClosed": true,
+    "compactOnly": true,
+    "oneReplayPerTask": true,
+    "preferredCanary": "replay_011 because it has the stronger high-index delta signal",
+    "noRawPayloads": true
+  },
+  "rejectedDirectActions": [
+    "parser fix",
+    "recovery",
+    "skip mode",
+    "placeholder entity",
+    "canonical/source/match output",
+    "replay 005",
+    "candidates 012-020"
+  ],
+  "rawDataCaptured": false
+}
