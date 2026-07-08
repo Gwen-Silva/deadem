@@ -493,6 +493,21 @@ option was created, and no recovery, skip mode, placeholder, continuation,
 default behavior change, canonical/source/match output, or semantic claim was
 introduced.
 
+## Task 142 PacketEntities Missing Entity Parser Mechanism Review
+
+Task 142 completed a static parser mechanism review under
+`packetentities_missing_entity_parser_mechanism_reviewed`. The review mapped how
+`handleSvcPacketEntities` accumulates entity indexes, reads two-bit commands,
+routes UPDATE/LEAVE/CREATE/DELETE, performs registry lookups, registers CREATEs,
+deactivates LEAVEs, deletes DELETEs, and uses `serializedEntities` payload
+sizes. It identified plausible local hypotheses including create/register gaps,
+registry state loss, delete/leave semantics gaps, command/cursor alignment, and
+payloadBits contract uncertainty, without promoting any hypothesis to a parser
+bug, Source 2 semantic, replay corruption claim, or game fact. No replay was
+processed and no parser behavior changed. The next safe evidence remains a
+future authorized run of the existing Task 141 fail-closed replay-wide lifecycle
+ledger on one canary at a time.
+
 ## Current Direction
 
 Use `docs/FIVE_REPLAY_PILOT_PLAN.md` for the finite pilot plan and

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "scope": "static index, command, cursor, and payload-size mechanism review",
+  "indexDecode": {
+    "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:136",
+    "formula": "entityIndex = previousEntityIndex + readUVarInt() + 1",
+    "initialPreviousIndex": "-1 unless caller supplies startIndex",
+    "riskIfWrong": "A single incorrect previous index, indexDelta read, or cursor position can shift subsequent entity indexes."
+  },
+  "commandDecode": {
+    "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:153",
+    "bitWidth": 2,
+    "mapping": {
+      "0": "UPDATE",
+      "1": "LEAVE",
+      "2": "CREATE",
+      "3": "DELETE"
+    },
+    "riskIfWrong": "A cursor shift before command read can reinterpret two bits as a different operation."
+  },
+  "readCountCheckpoints": [
+    "beforeIndexReadCount",
+    "afterIndexReadCount",
+    "afterCommandReadCount",
+    "afterActionReadCount",
+    "CREATE-specific classId/serial/entity-constructor checkpoints"
+  ],
+  "payloadBitsMechanism": {
+    "source": "CSVCMsg_PacketEntities.serializedEntities decoded by EntityPayloadSizeExtractor",
+    "codeReferences": [
+      "packages/engine/src/handlers/DemoMessageHandler.js:787",
+      "packages/engine/src/extractors/EntityPayloadSizeExtractor.js:16"
+    ],
+    "normalCursorRole": "In unfiltered UPDATE/CREATE parsing, field extraction advances entityData through EntityMutationExtractor. payloadBits is primarily diagnostic or used for bounded skips in filter/recovery paths.",
+    "knownRisk": "Prior packet-953 work showed payloadBits and field-level read counts can diverge, so treating payloadBits as canonical cursor movement remains unsafe without further evidence."
+  },
+  "boundaryAndDiagnosticHelpers": [
+    {
+      "helper": "assertEntityPacketBoundary",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:851",
+      "role": "Opt-in fail-closed boundary guard, not default behavior."
+    },
+    {
+      "helper": "maybeTruncateEntityPacketBoundary",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:942",
+      "role": "Opt-in truncation/recovery experiment, not active in diagnostic fail-closed mode."
+    },
+    {
+      "helper": "recordMissingEntityDiagnosticFailClosed",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:1721",
+      "role": "Records compact diagnostic metadata, then the parser still throws."
+    },
+    {
+      "helper": "recoverMissingEntityReference",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:1909",
+      "role": "Separate recovery path that can skip/ignore unresolved references when explicitly enabled; incompatible with diagnoseMissingEntityFailClosed."
+    }
+  ],
+  "currentCanaryFactsFromCommittedOutputs": [
+    {
+      "replay": "replay_010",
+      "fact": "Task 137 packet-local probe ended at packet 954 loop 33 UPDATE entity 2905 with missing registry state and not_determined classification."
+    },
+    {
+      "replay": "replay_011",
+      "fact": "Task 138 packet-local probe ended at packet 1052 loop 28 UPDATE entity 5624 with missing registry state and not_determined classification."
+    },
+    {
+      "sharedLimitation": "Packet-local probes did not know replay-wide local lifecycle history before the boundary."
+    }
+  ],
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

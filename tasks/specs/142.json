@@ -1,0 +1,191 @@
+{
+  "taskId": "142",
+  "title": "Review PacketEntities Missing Entity Parser Mechanism",
+  "status": "completed",
+  "objective": "Review the local parser mechanism around PacketEntities missing_entity_fail_closed without processing replays, changing parser behavior, adding diagnostics, recovery, skip mode, placeholders, continuation, default changes, or canonical/source/match outputs.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/131.json",
+    "tasks/specs/132.json",
+    "tasks/specs/133.json",
+    "tasks/specs/134.json",
+    "tasks/specs/135.json",
+    "tasks/specs/136.json",
+    "tasks/specs/137.json",
+    "tasks/specs/138.json",
+    "tasks/specs/139.json",
+    "tasks/specs/140.json",
+    "tasks/specs/141.json",
+    "tasks/completed/131-*",
+    "tasks/completed/132-*",
+    "tasks/completed/133-*",
+    "tasks/completed/134-*",
+    "tasks/completed/135-*",
+    "tasks/completed/136-*",
+    "tasks/completed/137-*",
+    "tasks/completed/138-*",
+    "tasks/completed/139-*",
+    "tasks/completed/140-*",
+    "tasks/completed/141-*",
+    "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation/**",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-implementation/**",
+    "reports/replay-wide-lifecycle-diagnostic-implementation.md"
+  ],
+  "optionalReadPaths": [
+    "packages/engine/src/data/entity/**",
+    "packages/engine/src/data/enums/**",
+    "packages/engine/src/extractors/**",
+    "packages/engine/src/handlers/DemoPacketHandler.js",
+    "packages/engine/src/stream/DemoStreamPacketAnalyzer.js",
+    "output/local-replay-processing/**/review-gate.json",
+    "output/local-replay-processing/**/implementation-gate.json",
+    "output/local-replay-processing/**/classification-policy.json",
+    "output/local-replay-processing/**/synthetic-ledger-result.json"
+  ],
+  "writePaths": [
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/**",
+    "reports/packetentities-missing-entity-parser-mechanism-review.md",
+    "tasks/specs/142.json",
+    "tasks/completed/142-packetentities-missing-entity-parser-mechanism-review.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_011.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/deadem/**",
+    "tasks/specs/143.json",
+    "tasks/completed/143-*",
+    "tasks/blocked/143-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/parser-flow-map.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/registry-lifecycle-map.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/index-command-cursor-map.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/hypothesis-matrix.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/evidence-gap-analysis.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/next-evidence-plan.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/rejected-fixes.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/protection-audit.json",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/review-gate.json",
+    "reports/packetentities-missing-entity-parser-mechanism-review.md",
+    "tasks/completed/142-packetentities-missing-entity-parser-mechanism-review.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "authorizedReplayIds": [],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process replay_010 or replay_011",
+    "Do not process replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify packages/deadem",
+    "Do not modify parser or engine behavior",
+    "Do not implement new diagnostics, recovery, skip mode, placeholders, fake fields, synthetic registry state, parser fixes, continuation after missing entity, or canonicalization",
+    "Do not create a new opt-in option or change default behavior",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not create canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
+    "Do not conclude Source 2 semantics, replay corruption, local parser correctness, entity never existed in game, or destruction/delete/leave/remove from registry absence",
+    "Do not create Task 143"
+  ],
+  "successGate": "packetentities_missing_entity_parser_mechanism_reviewed",
+  "blockedGate": "packetentities_missing_entity_parser_mechanism_review_blocked",
+  "allowedAlternateGates": [
+    "packetentities_missing_entity_parser_mechanism_review_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/review-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

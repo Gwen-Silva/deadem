@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "recommendedNextEvidence": "Run the existing Task 141 diagnostic fail-closed replay-wide lifecycle ledger on one authorized canary at a time, starting with replay_010, without recovery, skip mode, placeholder, continuation, parser behavior changes, or raw data capture.",
+  "whyThisIsNext": [
+    "Task 141 already implements synthetic-only ledger support under the existing opt-in.",
+    "Tasks 137 and 138 were packet-local and could not classify lifecycle provenance.",
+    "Static parser review shows the decisive gaps are prior CREATE/register/removal/class/baseline/cursor metadata, all of which can be captured compactly."
+  ],
+  "allowedFutureEvidenceFields": [
+    "packetOrdinal",
+    "loop",
+    "updatedEntries",
+    "operation",
+    "commandId",
+    "entityIndex",
+    "previousEntityIndex",
+    "indexDelta",
+    "serial",
+    "classId",
+    "className",
+    "payloadBits",
+    "entityDataBitLength",
+    "readCounts",
+    "registryStateBefore",
+    "registryStateAfter",
+    "action",
+    "failureStage",
+    "classLookupAttempted",
+    "classLookupSucceeded",
+    "baselineLookupAttempted",
+    "baselineLookupSucceeded",
+    "registerEntityAttempted",
+    "registerEntitySucceeded",
+    "fieldExtractionAttempted",
+    "fieldsMaterialized",
+    "placeholderOrFakeEntityCreated"
+  ],
+  "forbiddenFutureEvidenceFields": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "canonical facts",
+    "source artifacts",
+    "match/spatial/macro/mechanics/fight/decision/ML outputs"
+  ],
+  "classificationDecisionTree": [
+    {
+      "if": "target has no prior lifecycle events but ledger has broad prior tracked events",
+      "candidate": "never_registered_in_observed_parser_history_candidate",
+      "limitation": "observed local parser history only"
+    },
+    {
+      "if": "target has prior CREATE/register success, no sufficient removal event, and registry missing at boundary",
+      "candidate": "created_then_missing_registry_state_candidate",
+      "limitation": "does not prove game semantics or parser correctness"
+    },
+    {
+      "if": "target has prior DELETE or LEAVE before missing UPDATE",
+      "candidate": "removed_before_missing_update_candidate",
+      "limitation": "does not claim destruction, death, objective completion, or reward"
+    },
+    {
+      "if": "same target index has serial/generation ambiguity",
+      "candidate": "entity_index_reused_or_generation_ambiguous_candidate",
+      "limitation": "identity remains local-parser diagnostic only"
+    },
+    {
+      "if": "readCounts, indexDelta, command, or payloadBits show local inconsistency around boundary",
+      "candidate": "index_stream_or_cursor_contract_suspected",
+      "limitation": "not proof of bug or replay corruption"
+    },
+    {
+      "if": "evidence is absent, conflicting, or insufficient",
+      "candidate": "not_determined",
+      "limitation": "do not implement fix"
+    }
+  ],
+  "futureTaskBoundaries": [
+    "one canary per task unless explicitly authorized",
+    "fail closed at first missing entity",
+    "no recovery or skip",
+    "no continuation after boundary",
+    "no parser default behavior change",
+    "no raw data or field values",
+    "no protected replay 005, bots 006-008, candidates 012-020, samples, or output/replays"
+  ],
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

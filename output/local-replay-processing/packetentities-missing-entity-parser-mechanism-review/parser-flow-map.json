@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "scope": "static local parser mechanism review only",
+  "sourceFilesReviewed": [
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/data/Demo.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/handlers/DemoEntityHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+  ],
+  "packetEntitiesFlow": [
+    {
+      "step": "entry_loop",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:96",
+      "summary": "handleSvcPacketEntities creates a BitBuffer over message.entityData and iterates message.updatedEntries from startLoop."
+    },
+    {
+      "step": "index_accumulation",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:118",
+      "summary": "The local accumulated entity index starts at startIndex, default -1, then each entry reads indexDelta with readUVarInt and computes index += indexDelta + 1."
+    },
+    {
+      "step": "command_decode",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:153",
+      "summary": "The command is read from entityData as two bits with readBitsAsUInt(2), then dispatched against EntityOperation ids."
+    },
+    {
+      "step": "operation_mapping",
+      "codeReference": "packages/engine/src/data/enums/EntityOperation.js:81",
+      "summary": "Local mapping is UPDATE=0, LEAVE=1, CREATE=2, DELETE=3."
+    },
+    {
+      "step": "update_lookup",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:175",
+      "summary": "UPDATE performs this._demo.getEntity(index). Missing registry state throws fail-fast after optional diagnostic recording unless incompatible recovery is explicitly enabled."
+    },
+    {
+      "step": "leave_lookup",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:300",
+      "summary": "LEAVE also requires an existing entity. If present and active, direct mode deactivates it; event mode emits a LEAVE mutation for later application."
+    },
+    {
+      "step": "create_path",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:377",
+      "summary": "CREATE reads classId, serial, and an extra UVarInt32, resolves class, constructs Entity, then performs class-baseline handling before registration or event emission."
+    },
+    {
+      "step": "delete_lookup",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:633",
+      "summary": "DELETE requires an existing active entity. Direct mode removes it from registry; event mode emits a DELETE mutation for later application."
+    },
+    {
+      "step": "payload_size_iterator",
+      "codeReference": "packages/engine/src/handlers/DemoMessageHandler.js:787",
+      "summary": "Payload sizes are decoded from message.serializedEntities only when class filtering or recovery/diagnostics require them. They are not the primary PacketEntities cursor driver in normal unfiltered parsing."
+    },
+    {
+      "step": "mutation_event_application",
+      "codeReference": "packages/engine/src/handlers/DemoEntityHandler.js:15",
+      "summary": "When handleSvcPacketEntities returns events instead of direct mutation, DemoEntityHandler later registers CREATE, applies UPDATE fields, deletes DELETE, and deactivates LEAVE."
+    }
+  ],
+  "mandatoryQuestionAnswers": {
+    "entityIndexAccumulation": "index starts at startIndex, default -1, and each entry adds readUVarInt() + 1.",
+    "commandReadAndOperationMapping": "command is read as two bits from entityData and mapped by EntityOperation ids UPDATE=0, LEAVE=1, CREATE=2, DELETE=3.",
+    "creationRegistrationSite": "CREATE constructs Entity after class lookup, then either registers directly before applying baseline/packet fields or emits a CREATE event that DemoEntityHandler later registers.",
+    "conditionsPreventingRegisterEntity": [
+      "class lookup fails before Entity construction",
+      "Entity constructor throws, including out-of-range index",
+      "allowed CREATE path has missing class baseline and missing-baseline recovery is disabled",
+      "event mode defers registerEntity until event application rather than calling it inside handleSvcPacketEntities"
+    ],
+    "removalOrInactiveSites": [
+      "LEAVE direct path calls entity.deactivate()",
+      "DELETE direct path calls this._demo.deleteEntity(index)",
+      "event mode defers LEAVE/DELETE mutation to DemoEntityHandler"
+    ],
+    "deleteLeaveRegistryDistinction": "The local parser distinguishes DELETE from LEAVE by command id and direct action, but a later missing registry lookup only observes missing/present registry state unless prior lifecycle ledger evidence is available.",
+    "updateBeforeCreateViaCursorErrorPossible": "Plausible but not proven. If indexDelta, command, or preceding field cursor accounting is wrong, an UPDATE command could be decoded for an index not actually intended by the stream.",
+    "classBaselineBeforeRegister": "Yes. In the allowed CREATE path, class and baseline must resolve before registerEntity is called. Class/baseline failure can prevent registration.",
+    "payloadBitsRole": "PayloadBits come from serializedEntities and are used for metadata and bounded skipping in filter/recovery paths. Normal unfiltered UPDATE/CREATE field parsing advances via EntityMutationExtractor rather than directly moving payloadBits.",
+    "missingUpdateInvariant": "UPDATE assumes an existing entity in the local registry and throws if getEntity(index) returns null.",
+    "codeProvenVsAssumption": {
+      "provenByCode": [
+        "index accumulation formula",
+        "command bit width and operation ids",
+        "UPDATE/LEAVE/DELETE missing registry fail-fast",
+        "CREATE class/baseline/registration ordering",
+        "payloadBits decoded from serializedEntities"
+      ],
+      "assumptionsOrOpenQuestions": [
+        "serializedEntities payloadBits are reliable boundaries for all entries",
+        "local command decode matches all relevant Deadlock PacketEntities semantics",
+        "registry absence maps to game absence",
+        "missing entity can be resolved without external oracle"
+      ]
+    },
+    "task141LedgerHelpAndLimits": {
+      "helps": "It records compact local parser lifecycle history before the fail-closed boundary, letting future real canary runs distinguish observed prior CREATE/register/removal-like events from no observed target history.",
+      "limits": "It still observes local parser interpretation only. It does not validate Source 2 semantics, raw stream intent, replay corruption, or parser correctness."
+    }
+  },
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

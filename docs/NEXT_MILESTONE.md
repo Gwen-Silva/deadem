@@ -1100,6 +1100,23 @@ recovery, skip mode, placeholder/fake entity, synthetic registry state,
 continuation after missing entity, canonical/source/match output, or replay
 processing.
 
+## Task 142
+
+Purpose: review the local PacketEntities missing-entity parser mechanism before
+running another canary.
+
+Gate: `packetentities_missing_entity_parser_mechanism_reviewed`.
+
+Status: completed with a static-only review. The review maps entity index
+accumulation, two-bit command decoding, CREATE/UPDATE/LEAVE/DELETE registry
+lifecycle, payloadBits usage, and the evidence needed to distinguish lifecycle,
+registry state, cursor/command, class/baseline, payloadBits, and unknown Source
+semantics candidates. It recommends a future authorized fail-closed run of the
+existing Task 141 replay-wide lifecycle ledger on one canary at a time. No
+replay was processed, no parser/engine behavior was modified, and no recovery,
+skip mode, placeholder, continuation, new opt-in, default behavior change,
+canonical/source/match output, or Task 143 was created.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

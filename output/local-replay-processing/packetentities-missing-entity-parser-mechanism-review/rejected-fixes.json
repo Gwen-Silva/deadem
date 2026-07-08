@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "rejectedDirections": [
+    {
+      "direction": "implicit_create_on_missing_update",
+      "reasonRejected": "Would create placeholder or synthetic registry state without class/baseline/field evidence.",
+      "risk": "Fabricates entity state and hides fail-closed signal."
+    },
+    {
+      "direction": "payloadBits_skip_for_missing_update",
+      "reasonRejected": "Prior payloadBits work showed boundary/accounting ambiguity, and skip is recovery behavior outside this task.",
+      "risk": "Could skip valid field data or silently continue from a wrong cursor."
+    },
+    {
+      "direction": "ignore_missing_delete_or_leave",
+      "reasonRejected": "Would promote missing registry state to tolerated lifecycle semantics without evidence.",
+      "risk": "Can hide parser/cursor or registry-state bugs."
+    },
+    {
+      "direction": "register_before_baseline_resolution",
+      "reasonRejected": "Local CREATE path currently requires class/baseline evidence before direct registration in allowed path.",
+      "risk": "Creates unsupported entity state and may materialize fake/default fields."
+    },
+    {
+      "direction": "change_index_accumulation_or_command_decode_now",
+      "reasonRejected": "No compact evidence currently proves index accumulation or command decode is wrong.",
+      "risk": "Global PacketEntities corruption."
+    },
+    {
+      "direction": "treat_registry_absence_as_game_absence_or_delete",
+      "reasonRejected": "Epistemic safety forbids deriving game facts from local registry absence.",
+      "risk": "Converts local parser uncertainty into false match facts."
+    },
+    {
+      "direction": "run_external_parser_or_clarity",
+      "reasonRejected": "External runtime and Java/Clarity are explicitly out of scope for this task.",
+      "risk": "Violates task constraints and reopens abandoned oracle path."
+    }
+  ],
+  "parserFixImplemented": false,
+  "recoveryImplemented": false,
+  "skipModeImplemented": false,
+  "placeholderImplemented": false,
+  "defaultBehaviorChanged": false,
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

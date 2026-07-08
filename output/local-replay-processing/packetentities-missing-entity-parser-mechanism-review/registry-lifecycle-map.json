@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "scope": "static local registry lifecycle review only",
+  "registryOwner": {
+    "file": "packages/engine/src/data/Demo.js",
+    "summary": "Demo stores entities by index and class indexes. getEntity returns null when the index slot is undefined; deleteEntity clears the index slot; registerEntity overwrites any previous entity at that index."
+  },
+  "entityLifecycleStatesObservedByParser": [
+    {
+      "state": "missing",
+      "meaningInLocalCode": "this._demo.getEntity(index) returned null",
+      "semanticLimitation": "Does not prove the entity never existed in game or stream."
+    },
+    {
+      "state": "present_active",
+      "meaningInLocalCode": "Entity exists in registry and entity.active is true.",
+      "semanticLimitation": "Active is local registry state, not a game semantic claim."
+    },
+    {
+      "state": "present_inactive",
+      "meaningInLocalCode": "Entity exists in registry and entity.active is false after local deactivation.",
+      "semanticLimitation": "Inactive does not prove destruction, death, leave semantics, or objective completion."
+    },
+    {
+      "state": "pending_create_event",
+      "meaningInLocalCode": "handleSvcPacketEntities returned a CREATE event, and registration is deferred until DemoEntityHandler applies it.",
+      "semanticLimitation": "Requires event application ordering to be understood before making registry-history claims."
+    },
+    {
+      "state": "pending_delete_event",
+      "meaningInLocalCode": "handleSvcPacketEntities returned a DELETE event instead of deleting directly.",
+      "semanticLimitation": "Does not prove removal until DemoEntityHandler applies the event."
+    }
+  ],
+  "registrationPaths": [
+    {
+      "path": "direct_create_allowed",
+      "codeReferences": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:563",
+        "packages/engine/src/data/Demo.js:240"
+      ],
+      "ordering": "registerEntity before baselineExtractor.applyTo(entity) and extractor.applyTo(entity)",
+      "blockedBy": [
+        "class_lookup_failed",
+        "entity_constructor_failure",
+        "baseline_lookup_failed"
+      ]
+    },
+    {
+      "path": "direct_create_filtered",
+      "codeReferences": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:608",
+        "packages/engine/src/data/Demo.js:240"
+      ],
+      "ordering": "registerEntity before payload move or extractor skip",
+      "blockedBy": [
+        "class_lookup_failed",
+        "entity_constructor_failure"
+      ]
+    },
+    {
+      "path": "event_create",
+      "codeReferences": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:585",
+        "packages/engine/src/handlers/DemoEntityHandler.js:20"
+      ],
+      "ordering": "handleSvcPacketEntities emits CREATE event, then DemoEntityHandler registers and applies batch later",
+      "blockedBy": [
+        "event application not reached",
+        "class_lookup_failed",
+        "entity_constructor_failure",
+        "baseline_lookup_failed"
+      ]
+    }
+  ],
+  "removalOrDeactivationPaths": [
+    {
+      "operation": "LEAVE",
+      "directAction": "entity.deactivate()",
+      "eventAction": "DemoEntityHandler later calls entity.deactivate()",
+      "codeReferences": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:360",
+        "packages/engine/src/handlers/DemoEntityHandler.js:42"
+      ],
+      "registrySlotAfterDirectAction": "present_inactive"
+    },
+    {
+      "operation": "DELETE",
+      "directAction": "this._demo.deleteEntity(index)",
+      "eventAction": "DemoEntityHandler later calls this._demo.deleteEntity(entity.index)",
+      "codeReferences": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:693",
+        "packages/engine/src/handlers/DemoEntityHandler.js:38"
+      ],
+      "registrySlotAfterDirectAction": "missing"
+    }
+  ],
+  "missingEntityInvariant": {
+    "UPDATE": "getEntity(index) must be non-null or the parser throws Unable to find an entity with index.",
+    "LEAVE": "getEntity(index) must be non-null and active or the parser throws.",
+    "DELETE": "getEntity(index) must be non-null and active or the parser throws.",
+    "CREATE": "does not require prior missing state; registerEntity overwrites any previous entity at the same index."
+  },
+  "task141LedgerObservationCoverage": {
+    "observes": [
+      "operation",
+      "entityIndex",
+      "previousEntityIndex",
+      "indexDelta",
+      "classId",
+      "serial",
+      "registryStateBefore",
+      "registryStateAfter",
+      "class/baseline/register/field attempt booleans"
+    ],
+    "doesNotObserve": [
+      "raw entityData",
+      "raw serializedEntities",
+      "field values",
+      "external oracle semantics",
+      "game truth outside local parser interpretation"
+    ]
+  },
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

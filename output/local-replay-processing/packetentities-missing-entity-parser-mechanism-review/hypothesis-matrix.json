@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "scope": "technical hypotheses for future evidence collection; no parser fix authorized",
+  "hypotheses": [
+    {
+      "id": "index_accumulation_bug_candidate",
+      "description": "The local accumulated entity index may diverge from intended stream entity index because previous index, indexDelta read, or cursor position is wrong.",
+      "filesAndFunctions": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:handleSvcPacketEntities",
+        "packages/engine/src/core/BitBuffer.js:readUVarInt"
+      ],
+      "evidenceFor": [
+        "Missing UPDATE target appears after accumulated index arithmetic.",
+        "Task 122 observed a large local index jump in replay_010 packet 954."
+      ],
+      "evidenceAgainst": [
+        "Task 121/122 reported packet 954 read counts within entityData and no packet-953-like boundary signs.",
+        "The same arithmetic is used broadly for PacketEntities and is not proven wrong by current compact evidence."
+      ],
+      "confirmingCompactData": [
+        "Replay-wide ledger shows monotonic/local index sequence discontinuity immediately before first missing UPDATE.",
+        "Synthetic/local cursor replay from the same compact metadata decodes an implausible indexDelta or entityIndex at the boundary."
+      ],
+      "refutingCompactData": [
+        "Replay-wide ledger shows coherent prior entity sequence and no abnormal indexDelta/read-count signature.",
+        "Target had prior CREATE/register evidence and missing state is better explained by registry lifecycle."
+      ],
+      "prematureFixRisk": "Changing index accumulation would affect every PacketEntities entry and could corrupt otherwise valid entity state.",
+      "safeNextAction": "Use existing replay-wide ledger on authorized canaries to compare indexDelta, previousEntityIndex, readCounts, and target lifecycle before any code change."
+    },
+    {
+      "id": "command_decode_or_cursor_alignment_candidate",
+      "description": "The local cursor may read the wrong two bits as command, making an entry look like UPDATE when stream intent was different.",
+      "filesAndFunctions": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:handleSvcPacketEntities",
+        "packages/engine/src/handlers/DemoMessageHandler.js:recordEntityPacketCursorAlignment",
+        "packages/engine/src/core/BitBuffer.js"
+      ],
+      "evidenceFor": [
+        "Prior packet-953 work showed cursor/boundary artifacts can create phantom entries.",
+        "Command decode depends directly on the cursor after variable-length index read."
+      ],
+      "evidenceAgainst": [
+        "Task 121/122 did not find packet-954 boundary/trailing signs comparable to packet 953.",
+        "Both canaries fail at bounded UPDATE entries, but no current evidence proves command bits are misread."
+      ],
+      "confirmingCompactData": [
+        "Boundary diagnostic shows read count at or beyond entityDataBitLength before/after index or command.",
+        "Nearby offset probes decode plausible non-UPDATE operation with better consistency metrics."
+      ],
+      "refutingCompactData": [
+        "Read counts are in bounds and nearby offset probes do not improve consistency.",
+        "Replay-wide ledger shows target lifecycle contradiction independent of cursor position."
+      ],
+      "prematureFixRisk": "Changing command decode or cursor alignment without proof could mask real fail-fast boundaries and introduce silent state drift.",
+      "safeNextAction": "Keep fail-closed and compare compact read-count/nearby-offset diagnostics only if explicitly authorized."
+    },
+    {
+      "id": "create_register_path_gap_candidate",
+      "description": "A CREATE may be decoded but not registered because the parser takes a path that emits an event or fails before registerEntity.",
+      "filesAndFunctions": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:CREATE case",
+        "packages/engine/src/handlers/DemoEntityHandler.js:handleEntityEvents",
+        "packages/engine/src/data/Demo.js:registerEntity"
+      ],
+      "evidenceFor": [
+        "CREATE registration is not unconditional; class/baseline/entity-constructor failures can happen before register.",
+        "Event mode defers registration until later event application."
+      ],
+      "evidenceAgainst": [
+        "Task 121/122 saw no CREATE/register/class/baseline attempt for entity 2905 before its missing UPDATE.",
+        "No committed evidence currently shows an event queue registration loss for the failing targets."
+      ],
+      "confirmingCompactData": [
+        "Replay-wide ledger records CREATE for the target with registerEntityAttempted=false or registerEntitySucceeded=false before missing UPDATE.",
+        "FailureStage indicates class_lookup, baseline_lookup, entity_constructor, or event application gap."
+      ],
+      "refutingCompactData": [
+        "Replay-wide ledger records no target CREATE at all before first missing UPDATE.",
+        "Ledger records successful registerEntity followed by later DELETE/LEAVE or registry loss evidence."
+      ],
+      "prematureFixRisk": "Registering entities earlier could materialize unsupported state, bypass baseline invariants, or create fake fields.",
+      "safeNextAction": "Use the Task 141 ledger fields classLookupAttempted, baselineLookupAttempted, registerEntityAttempted, and registerEntitySucceeded."
+    },
+    {
+      "id": "registry_state_loss_candidate",
+      "description": "The target entity may have been registered earlier but removed from local registry or overwritten before a later UPDATE.",
+      "filesAndFunctions": [
+        "packages/engine/src/data/Demo.js:registerEntity",
+        "packages/engine/src/data/Demo.js:deleteEntity",
+        "packages/engine/src/handlers/DemoEntityHandler.js:handleEntityEvents"
+      ],
+      "evidenceFor": [
+        "Demo.deleteEntity clears registry slots.",
+        "Demo.registerEntity overwrites prior entity at the same index."
+      ],
+      "evidenceAgainst": [
+        "Task 121/122 did not observe prior create/register/removal for entity 2905.",
+        "Packet-local probes for 010/011 had replayWideHistoryKnown=false before Task 141."
+      ],
+      "confirmingCompactData": [
+        "Replay-wide ledger records prior register success for target, then a DELETE, overwrite, or missing registry state before missing UPDATE.",
+        "Serial/generation metadata changes for same index before boundary."
+      ],
+      "refutingCompactData": [
+        "No prior target event appears in replay-wide ledger despite many tracked compact events.",
+        "Prior target events show no registry removal and registry remains present until boundary."
+      ],
+      "prematureFixRisk": "Assuming registry loss could lead to reintroducing stale entities or ignoring legitimate fail-fast errors.",
+      "safeNextAction": "Run only an authorized fail-closed ledger pass and inspect compact target events before boundary."
+    },
+    {
+      "id": "delete_leave_semantics_gap_candidate",
+      "description": "Local DELETE/LEAVE handling may not capture game/entity lifecycle semantics needed to interpret a later UPDATE for an inactive or missing entity.",
+      "filesAndFunctions": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:LEAVE case",
+        "packages/engine/src/handlers/DemoMessageHandler.js:DELETE case",
+        "packages/engine/src/data/entity/Entity.js:deactivate"
+      ],
+      "evidenceFor": [
+        "LEAVE deactivates but preserves registry slot; DELETE removes registry slot.",
+        "A later UPDATE activates inactive entities but cannot update missing registry slots."
+      ],
+      "evidenceAgainst": [
+        "No prior DELETE/LEAVE for target has been observed in replay-wide real canary evidence yet.",
+        "Registry absence alone cannot prove delete/leave/destruction semantics."
+      ],
+      "confirmingCompactData": [
+        "Replay-wide ledger records target DELETE or LEAVE before missing UPDATE.",
+        "Boundary summary distinguishes present_inactive from missing."
+      ],
+      "refutingCompactData": [
+        "No target DELETE/LEAVE before boundary.",
+        "Target was never observed in local parser history before missing UPDATE."
+      ],
+      "prematureFixRisk": "Treating missing UPDATE as tolerated post-delete/leave could hide cursor issues or invent lifecycle semantics.",
+      "safeNextAction": "Preserve strict fail-closed behavior while collecting removal-like operation history."
+    },
+    {
+      "id": "class_or_baseline_pre_register_failure_candidate",
+      "description": "A CREATE for the target may fail before registration due to class lookup, baseline lookup, or entity construction.",
+      "filesAndFunctions": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:CREATE case",
+        "packages/engine/src/data/entity/Entity.js:constructor",
+        "packages/engine/src/data/Demo.js:getClassById",
+        "packages/engine/src/data/Demo.js:getClassBaselineById"
+      ],
+      "evidenceFor": [
+        "CREATE performs class lookup, Entity constructor, and baseline lookup before direct registration in the allowed path.",
+        "Existing diagnostics already record class/baseline/register booleans."
+      ],
+      "evidenceAgainst": [
+        "Task 121/122 reported no class or baseline lookup attempt for entity 2905 before first missing UPDATE.",
+        "This hypothesis requires a prior CREATE-like entry for the target that current compact evidence has not shown."
+      ],
+      "confirmingCompactData": [
+        "Replay-wide ledger records target CREATE with failureStage class_lookup, entity_constructor, or baseline_lookup.",
+        "registerEntityAttempted=false with class/baseline failure before missing UPDATE."
+      ],
+      "refutingCompactData": [
+        "No target CREATE before boundary.",
+        "Target CREATE succeeded and registerEntitySucceeded=true before a later registry loss."
+      ],
+      "prematureFixRisk": "Skipping class/baseline failures or registering without baseline would create unsupported entity state.",
+      "safeNextAction": "Use compact CREATE failureStage and register booleans; do not add recovery."
+    },
+    {
+      "id": "payload_bits_skip_contract_candidate",
+      "description": "serializedEntities payloadBits may be misunderstood as a safe direct cursor boundary or skip contract.",
+      "filesAndFunctions": [
+        "packages/engine/src/handlers/DemoMessageHandler.js:createPayloadIterator",
+        "packages/engine/src/extractors/EntityPayloadSizeExtractor.js:retrieve",
+        "packages/engine/src/extractors/EntityMutationExtractor.js"
+      ],
+      "evidenceFor": [
+        "Task 116/117 showed payloadBits boundaries did not explain packet-953 field reader consumption.",
+        "Recovery/filter paths can move by payloadBits, making contract clarity important."
+      ],
+      "evidenceAgainst": [
+        "Task 121/122 reported packet 954 did not show comparable boundary signs.",
+        "Normal unfiltered field parsing does not rely on payloadBits for cursor advancement."
+      ],
+      "confirmingCompactData": [
+        "Boundary packet shows payloadBits/actual read count mismatch immediately before missing UPDATE.",
+        "Payload iterator cardinality or cumulative boundaries diverge in the failure packet."
+      ],
+      "refutingCompactData": [
+        "PayloadBits and actual after-action read counts align across nearby entries.",
+        "Missing UPDATE occurs without payloadBits/cursor anomaly."
+      ],
+      "prematureFixRisk": "Using payloadBits as a universal skip boundary could silently skip valid field data or phantom entries.",
+      "safeNextAction": "Treat payloadBits as diagnostic evidence unless a future task proves a bounded contract."
+    },
+    {
+      "id": "source_semantics_unknown_candidate",
+      "description": "The observed pattern could reflect Source 2/Deadlock PacketEntities semantics not represented in the local parser contract.",
+      "filesAndFunctions": [
+        "local parser contract only; no external runtime oracle currently available"
+      ],
+      "evidenceFor": [
+        "Same missing entity class repeated across replay_010 and replay_011.",
+        "Clarity runtime was unavailable and no external oracle has confirmed or contradicted local behavior."
+      ],
+      "evidenceAgainst": [
+        "Prior art static review did not find a confirmed implicit-create-on-update behavior.",
+        "No evidence currently validates a semantic exception."
+      ],
+      "confirmingCompactData": [
+        "External oracle or documented prior art shows bounded handling for UPDATE to absent local entity in Deadlock/Source 2.",
+        "Multiple authorized human canaries show same local failure with coherent local cursor and no registry/history explanation."
+      ],
+      "refutingCompactData": [
+        "Replay-wide ledger identifies a local parser lifecycle or cursor cause.",
+        "External oracle reproduces equivalent fail-fast error."
+      ],
+      "prematureFixRisk": "Implementing assumed Source semantics would convert uncertainty into parser behavior without evidence.",
+      "safeNextAction": "Keep semantic claims forbidden; collect local compact evidence first, and revisit oracle only if manually available."
+    },
+    {
+      "id": "not_enough_parser_evidence",
+      "description": "Current committed evidence may still be insufficient to select among lifecycle, cursor, payload, and external-semantics hypotheses.",
+      "filesAndFunctions": [
+        "Tasks 137-141 compact outputs",
+        "Task 141 replay-wide ledger implementation"
+      ],
+      "evidenceFor": [
+        "Task 137/138 classifications were not_determined.",
+        "Task 141 ledger is only synthetically validated and has not been run on replay_010 or replay_011."
+      ],
+      "evidenceAgainst": [
+        "Parser mechanism is now mapped enough to define precise compact evidence needs.",
+        "Existing probes already rule out some broad claims such as packet-953 truncation resolving entity 2905."
+      ],
+      "confirmingCompactData": [
+        "Future ledger pass still yields conflicting or absent target history with no cursor/payload anomaly.",
+        "No external oracle or static prior art resolves the contract."
+      ],
+      "refutingCompactData": [
+        "Future ledger pass yields a clear allowed diagnostic candidate such as created_then_missing_registry_state_candidate or index_stream_or_cursor_contract_suspected."
+      ],
+      "prematureFixRisk": "Any fix before evidence selection risks solving the wrong mechanism and hiding the fail-closed signal.",
+      "safeNextAction": "Authorize one bounded fail-closed real-canary ledger run, not a recovery or fix."
+    }
+  ],
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "taskId": "142",
+  "scope": "evidence gaps after static mechanism review",
+  "knownFromCode": [
+    "PacketEntities index accumulation formula and command mapping.",
+    "UPDATE, LEAVE, and DELETE require a registry entity.",
+    "CREATE can fail before registerEntity on class lookup, entity construction, or baseline lookup.",
+    "LEAVE deactivates in local registry while DELETE removes the registry slot.",
+    "payloadBits are decoded from serializedEntities and used for diagnostics or bounded skip paths, not as default unfiltered cursor movement.",
+    "diagnoseMissingEntityFailClosed is incompatible with unresolved-entity recovery, missing-baseline recovery, and boundary truncation."
+  ],
+  "knownFromCommittedDiagnostics": [
+    "replay_010 and replay_011 both reached missing UPDATE fail-closed boundaries with packet-local classification not_determined.",
+    "Task 139 classified the repeated failure class as evidence that replay_010 is not the only affected human canary.",
+    "Task 141 added synthetic replay-wide local parser lifecycle classifications but did not run real replays."
+  ],
+  "remainingEvidenceGaps": [
+    {
+      "gap": "target lifecycle history before first missing UPDATE in real canaries",
+      "whyItMatters": "Distinguishes never observed in local parser history from created/register then lost, removed before update, or generation ambiguous.",
+      "compactEvidenceNeeded": "Task 141 ledger summary for replay_010 and replay_011, without raw bytes or field values."
+    },
+    {
+      "gap": "cursor/index sequence around the missing UPDATE under replay-wide context",
+      "whyItMatters": "Separates lifecycle explanations from index accumulation or command/cursor interpretation candidates.",
+      "compactEvidenceNeeded": "previousEntityIndex, indexDelta, accumulatedEntityIndex, readCounts, command, entityDataBitLength, payloadBits for nearby entries."
+    },
+    {
+      "gap": "CREATE pre-register failure evidence for target indexes",
+      "whyItMatters": "Would support class_or_baseline_pre_register_failure_candidate or create_register_path_gap_candidate.",
+      "compactEvidenceNeeded": "classLookupAttempted/Succeeded, baselineLookupAttempted/Succeeded, registerEntityAttempted/Succeeded, failureStage."
+    },
+    {
+      "gap": "DELETE/LEAVE versus registry absence distinction",
+      "whyItMatters": "Registry missing alone cannot distinguish never registered, deleted, or lost state.",
+      "compactEvidenceNeeded": "Prior target events and registryStateAfter transitions in the replay-wide ledger."
+    },
+    {
+      "gap": "payloadBits contract in failure packets",
+      "whyItMatters": "PayloadBits-based skip remains unsafe unless actual read counts and payload windows align.",
+      "compactEvidenceNeeded": "payloadSizeCount, payloadBits, afterCommand/afterAction read counts, cumulative residuals for failure packet only."
+    },
+    {
+      "gap": "external parser or Source 2 semantic confirmation",
+      "whyItMatters": "Local evidence cannot establish Source 2/Deadlock semantics.",
+      "compactEvidenceNeeded": "External oracle output or documented behavior, currently unavailable and out of scope for this task."
+    }
+  ],
+  "claimsStillForbidden": [
+    "Source 2 semantics confirmed",
+    "replay corruption confirmed",
+    "local parser correctness confirmed",
+    "entity never existed in game",
+    "missing registry state proves deletion, leave, destruction, death, objective completion, or reward",
+    "recovery, skip mode, placeholder, or parser fix is safe"
+  ],
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}
