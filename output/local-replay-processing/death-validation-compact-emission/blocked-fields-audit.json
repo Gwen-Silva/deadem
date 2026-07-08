@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "blockedFields": [
+    "event_rows",
+    "entity_ids",
+    "player_names",
+    "hero_names",
+    "team_names",
+    "map_positions",
+    "per_event_timestamps",
+    "per_event_ticks",
+    "killer",
+    "victim",
+    "assister",
+    "damage_source",
+    "fight_id",
+    "objective_id",
+    "field_values",
+    "raw_values",
+    "full_entity_snapshots",
+    "player_arrays",
+    "gameplay_interpretation_strings"
+  ],
+  "blockedFieldPolicy": "all value-bearing, attribution, per-event, identity, raw, snapshot, and interpretation fields remain blocked",
+  "eventRowsBlocked": true,
+  "fieldValuesBlocked": true,
+  "attributionBlocked": true,
+  "gameplayInterpretationBlocked": true
+}

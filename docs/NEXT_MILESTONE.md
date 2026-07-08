@@ -1376,3 +1376,22 @@ per replay and forbids event rows, field values, snapshots, attribution, and
 gameplay interpretation. The recommended next milestone is
 `emit_death_validation_compact_artifact_for_replay_010_011`, in a separately
 authorized task.
+
+## Task 158
+
+Purpose: emit the first real compact `death_validation` artifacts for
+replay_010 and replay_011 using the Task 157 schema.
+
+Success gate: `death_validation_compact_artifacts_emitted`.
+
+Blocked gate: `death_validation_compact_artifacts_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run emit:death-validation-compact`. It emitted exactly one
+`death_validation.json` per authorized replay:
+replay_010 has `eventCount: 45` and `duplicateKeyCount: 0`; replay_011 has
+`eventCount: 80` and `duplicateKeyCount: 0`. These are source-observed counter
+transition candidate counts only, not final death facts or gameplay
+interpretation. Schema validation, output policy audit, and size audit passed.
+The recommended next milestone is to review or design the next compact
+schema-backed source class before emitting any richer value-bearing content.

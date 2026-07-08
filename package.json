@@ -18,6 +18,7 @@
     "codex:validate": "node scripts/codex-workflow.js validate",
     "dry-run:source-canonical-readiness": "node tools/dry-run-generic-source-canonical-readiness.mjs",
     "emit:controlled-source-canonical": "node tools/emit-controlled-source-canonical-artifacts.mjs",
+    "emit:death-validation-compact": "node tools/emit-death-validation-compact-artifacts.mjs",
     "lint": "npm run lint --workspaces --if-present --",
     "preview": "npm run preview --workspace=@deademx/ui",
     "proto:json": "npm run proto:json --workspaces --if-present",

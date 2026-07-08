@@ -778,3 +778,22 @@ real `death_validation` emission, source/canonical/match facts, gameplay
 interpretation output, recovery, skip, placeholder, default behavior, new
 opt-in, Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 pull/merge/cherry-pick/rebase, or Task 158 change.
+
+## Task 158 Death Validation Compact Emission Note
+
+Task 158 emitted one schema-backed `death_validation` compact artifact for each
+authorized replay under `death_validation_compact_artifacts_emitted`. Only
+replay_010 and replay_011 were processed. Both completed parser advancement and
+produced summary-only counter-transition metadata using
+`controller.m_iDeaths`: replay_010 recorded `eventCount: 45`,
+`duplicateKeyCount: 0`, and replay_011 recorded `eventCount: 80`,
+`duplicateKeyCount: 0`. Schema validation, pre/post output policy audit, and
+size audit passed. The emitted objects are not final death facts and contain no
+event rows, field values, identities, attribution, snapshots, raw data, full
+entity histories, gameplay interpretation, source/canonical/match final facts,
+or spatial/macro/mechanics/fight/decision/ML output. Task 158 made no
+parser/engine behavior, `packages/deadem/**`, recovery, skip, placeholder,
+default behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow,
+Product Reviewer automation, pull/merge/cherry-pick/rebase, protected replay,
+bot replay, candidate replay, `samples/**`, `output/replays/**`, or Task 159
+change.

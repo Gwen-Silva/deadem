@@ -435,6 +435,12 @@
       "notes": "Task 157 defined schemas/death-validation-compact.schema.json plus synthetic tests/examples for summary-only death_validation metadata. No replay was processed and no real death_validation artifact or final source/canonical/match fact was emitted."
     },
     {
+      "id": "death_validation_compact_emission",
+      "path": "output/local-replay-processing/death-validation-compact-emission/emission-gate.json",
+      "status": "current",
+      "notes": "Task 158 emitted one compact schema-backed death_validation summary per authorized replay. replay_010 produced eventCount 45 and duplicateKeyCount 0; replay_011 produced eventCount 80 and duplicateKeyCount 0. These are counter-transition candidate summaries only, not final death facts or gameplay interpretation."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
