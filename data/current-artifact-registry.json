@@ -369,6 +369,12 @@
       "notes": "Task 146 prepared a non-implementing fail-closed cursor/index/command probe spec for PacketEntities missing_entity_fail_closed boundaries. It selected replay_011 as the first future canary only if separately authorized and does not authorize implementation, replay processing, recovery, skip, placeholders, default changes, raw data, or semantic claims."
     },
     {
+      "id": "cursor_index_contract_probe_replay_011",
+      "path": "output/local-replay-processing/cursor-index-contract-probe-replay-011/probe-gate.json",
+      "status": "current",
+      "notes": "Task 147 implemented and ran the compact fail-closed cursor/index/command contract probe on authorized replay_011 only. The expected packet 1052 loop 28 boundary was reached; local index formula and command position were internally consistent, while the nearby pre-boundary window produced payloadbits_contract_suspected. No recovery, skip, placeholder, continuation, default behavior change, raw data, or canonical/source/match output was produced."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

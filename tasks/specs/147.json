@@ -1,0 +1,197 @@
+{
+  "taskId": "147",
+  "title": "Implement And Run Replay 011 Cursor Index Contract Probe",
+  "status": "completed",
+  "objective": "Implement and run a compact fail-closed cursor/index/command contract probe for replay_011 only, stopping at the first missing_entity_fail_closed boundary without recovery, skip, placeholders, continuation, default behavior changes, or raw/canonical output.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/deadem/index.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "tests/external-parser-oracle-canaries.test.mjs",
+    "tests/clarity-oracle-viability.test.mjs",
+    "tasks/specs/143.json",
+    "tasks/specs/144.json",
+    "tasks/specs/145.json",
+    "tasks/specs/146.json",
+    "tasks/completed/143-replay-wide-lifecycle-diagnostic-replay-010-canary.md",
+    "tasks/completed/144-replay-wide-lifecycle-diagnostic-replay-011-canary.md",
+    "tasks/completed/145-high-index-missing-update-cursor-contract-review.md",
+    "tasks/completed/146-cursor-index-contract-probe-spec.md",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-010-canary/**",
+    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary/**",
+    "output/local-replay-processing/high-index-missing-update-cursor-contract-review/**",
+    "output/local-replay-processing/cursor-index-contract-probe-spec/**",
+    "reports/replay-wide-lifecycle-diagnostic-replay-010-canary.md",
+    "reports/replay-wide-lifecycle-diagnostic-replay-011-canary.md",
+    "reports/high-index-missing-update-cursor-contract-review.md",
+    "reports/cursor-index-contract-probe-spec.md"
+  ],
+  "optionalReadPaths": [
+    "packages/engine/src/ParserEngine.js",
+    "packages/engine/src/handlers/DemoPacketHandler.js",
+    "packages/engine/src/data/entity/Entity.js",
+    "tools/run-replay-wide-lifecycle-diagnostic-replay-011-canary.mjs",
+    "tools/run-diagnostic-fail-closed-replay-011-canary.mjs"
+  ],
+  "writePaths": [
+    "packages/engine/src/ParserConfiguration.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tools/run-cursor-index-contract-probe-replay-011.mjs",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/**",
+    "reports/cursor-index-contract-probe-replay-011.md",
+    "tasks/specs/147.json",
+    "tasks/completed/147-cursor-index-contract-probe-replay-011.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/deadem/**",
+    "tasks/specs/148.json",
+    "tasks/completed/148-*",
+    "tasks/blocked/148-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/implementation-summary.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/default-behavior-preservation.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/synthetic-probe-result.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/replay-011-probe-result.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/boundary-contract-check.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/nearby-window-summary.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/payloadbits-comparison.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/nearby-offset-summary.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/classification-result.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/hypothesis-impact.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/no-continuation-proof.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/protection-audit.json",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/probe-gate.json",
+    "reports/cursor-index-contract-probe-replay-011.md",
+    "tasks/completed/147-cursor-index-contract-probe-replay-011.md"
+  ],
+  "largeOutputsAllowed": [
+    "packages/engine/src/handlers/DemoMessageHandler.js"
+  ],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": [
+    "replay_011"
+  ],
+  "authorizedReplayPaths": [
+    ".local/deadem/replays/inbox/partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Process only replay_011 at .local/deadem/replays/inbox/partida_011.dem",
+    "Do not process replay_010, replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify packages/deadem, canonical/source/match generation, or default behavior",
+    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, parser fixes, continuation after missing entity, or canonical/source/match outputs",
+    "Prefer the existing recovery.diagnoseMissingEntityFailClosed mode; avoid creating a new option unless unavoidable",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, full send-table payloads, full offset dumps, or full parser traces",
+    "Do not conclude Source 2 semantics, replay corruption, local parser correctness, entity never existed in game, or destruction/delete/leave/remove from registry absence",
+    "Do not create Task 148"
+  ],
+  "successGate": "cursor_index_contract_probe_replay_011_ready",
+  "blockedGate": "cursor_index_contract_probe_replay_011_blocked",
+  "allowedAlternateGates": [
+    "cursor_index_contract_probe_replay_011_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/cursor-index-contract-probe-replay-011/probe-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "allowed_authorized_canary_only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

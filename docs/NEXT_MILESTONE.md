@@ -1194,6 +1194,25 @@ replays, modify parser/engine behavior, add recovery/skip/placeholder logic,
 create a new opt-in, change default behavior, or emit canonical/source/match
 output.
 
+## Task 147
+
+Purpose: implement and run the compact fail-closed cursor/index/command
+contract probe on authorized replay_011 only.
+
+Gate: `cursor_index_contract_probe_replay_011_ready`.
+
+Status: completed. The probe reached the expected replay_011 boundary at
+packet 1052 loop 28, UPDATE entity 5624, previousEntityIndex 2681,
+indexDelta 2942, payloadBits 133. The local index formula and command decode
+position were internally consistent, and read counts stayed within entityData.
+The boundary itself did not consume payload because the parser stopped
+fail-closed, but the five-entry pre-boundary window found one compact
+payloadBits/action-delta divergence at loop 27. The final diagnostic
+classification is `payloadbits_contract_suspected`. Nearby offset alternatives
+were recorded only as compact candidates, not as a replacement cursor. No
+recovery, skip, placeholder, continuation, parser fix, default behavior change,
+canonical/source/match output, raw data, or semantic claim was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

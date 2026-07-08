@@ -5,7 +5,10 @@ import Logger from '../packages/engine/src/core/Logger.js';
 import Demo from '../packages/engine/src/data/Demo.js';
 import Server from '../packages/engine/src/data/Server.js';
 import EntityOperation from '../packages/engine/src/data/enums/EntityOperation.js';
-import DemoMessageHandler, { recordMissingEntityDiagnosticFailClosed } from '../packages/engine/src/handlers/DemoMessageHandler.js';
+import DemoMessageHandler, {
+    buildCursorIndexContractProbe,
+    recordMissingEntityDiagnosticFailClosed
+} from '../packages/engine/src/handlers/DemoMessageHandler.js';
 import StringTableHandler from '../packages/engine/src/handlers/StringTableHandler.js';
 import ProtoProvider from '../packages/engine/src/providers/ProtoProvider.js';
 import SchemaRegistry from '../packages/engine/src/SchemaRegistry.js';
@@ -33,8 +36,10 @@ function syntheticCursorLedger(recovery) {
                 },
                 indexDelta: 187,
                 accumulatedEntityIndex: 2905,
+                commandId: EntityOperation.UPDATE.id,
                 operation: EntityOperation.UPDATE.code,
                 payloadBits: 193,
+                action: 'missing_update_failed',
                 registryStateBefore: 'missing',
                 classId: null,
                 serial: null,
@@ -212,6 +217,8 @@ test('missing entity fail-closed helper records compact metadata and no continua
     assert.equal(diagnostic.entityIndex, 2905);
     assert.equal(diagnostic.previousEntityIndex, 2717);
     assert.equal(diagnostic.indexDelta, 187);
+    assert.equal(diagnostic.commandId, EntityOperation.UPDATE.id);
+    assert.equal(diagnostic.commandName, EntityOperation.UPDATE.code);
     assert.equal(diagnostic.payloadBits, 193);
     assert.deepEqual(diagnostic.readCounts, {
         beforeIndex: 5724,
@@ -220,6 +227,22 @@ test('missing entity fail-closed helper records compact metadata and no continua
         afterAction: 5736
     });
     assert.equal(diagnostic.entityDataBitLength, 5936);
+    assert.equal(diagnostic.expectedEntityIndexByLocalFormula, 2905);
+    assert.equal(diagnostic.indexFormulaCheck, true);
+    assert.equal(diagnostic.commandReadBitWidth, 2);
+    assert.equal(diagnostic.commandReadPosition, 5734);
+    assert.equal(diagnostic.commandValue, EntityOperation.UPDATE.id);
+    assert.equal(diagnostic.readCountWithinEntityData, true);
+    assert.equal(diagnostic.compactConsistencyFlags.readCountsMonotonic, true);
+    assert.equal(diagnostic.compactConsistencyFlags.readCountsWithinEntityData, true);
+    assert.equal(diagnostic.compactConsistencyFlags.payloadBitsMatchesActionDelta, false);
+    assert.equal(diagnostic.compactConsistencyFlags.payloadBitsComparable, false);
+    assert.equal(diagnostic.compactConsistencyFlags.highDeltaSignal, false);
+    assert.equal(diagnostic.compactConsistencyFlags.cursorContractSuspicion, false);
+    assert.equal(diagnostic.cursorIndexDiagnosticClassificationCandidate, 'cursor_index_contract_consistent');
+    assert.match(diagnostic.cursorIndexDiagnosticClassificationBasis, /internally consistent/);
+    assert.equal(diagnostic.cursorIndexContractProbe.rawDataCaptured, false);
+    assert.equal(diagnostic.nearbyOffsetSummary.rawDataCaptured, false);
     assert.equal(diagnostic.registryStateBefore, 'missing');
     assert.equal(diagnostic.registryStateAfter, 'missing');
     assert.equal(diagnostic.classId, null);
@@ -275,6 +298,114 @@ test('missing entity fail-closed helper records compact metadata and no continua
     assert.equal(Object.hasOwn(diagnostic, 'rawEntityData'), false);
     assert.equal(Object.hasOwn(diagnostic, 'rawSerializedEntities'), false);
     assert.equal(Object.hasOwn(diagnostic, 'stringValue'), false);
+});
+
+test('cursor index contract probe classifies local formula consistency', () => {
+    const configuration = new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true
+        }
+    });
+    const cursorLedger = syntheticCursorLedger(configuration.recovery);
+    const probe = buildCursorIndexContractProbe(cursorLedger, syntheticEntry(cursorLedger), {
+        operation: EntityOperation.UPDATE,
+        index: 2905
+    });
+
+    assert.equal(probe.expectedEntityIndexByLocalFormula, 2905);
+    assert.equal(probe.indexFormulaCheck, true);
+    assert.equal(probe.commandReadBitWidth, 2);
+    assert.equal(probe.commandValue, EntityOperation.UPDATE.id);
+    assert.equal(probe.commandName, EntityOperation.UPDATE.code);
+    assert.equal(probe.compactConsistencyFlags.readCountsMonotonic, true);
+    assert.equal(probe.compactConsistencyFlags.readCountsWithinEntityData, true);
+    assert.equal(probe.diagnosticClassificationCandidate, 'cursor_index_contract_consistent');
+    assert.equal(probe.rawDataCaptured, false);
+});
+
+test('cursor index contract probe classifies high indexDelta as internally consistent when other checks pass', () => {
+    const configuration = new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true
+        }
+    });
+    const cursorLedger = syntheticCursorLedger(configuration.recovery);
+
+    cursorLedger.packetMetrics.packetOrdinal = 1052;
+    cursorLedger.packetMetrics.entityDataBitLength = 5848;
+    cursorLedger.entries[0].loop = 27;
+    cursorLedger.entries[0].accumulatedEntityIndex = 2681;
+    Object.assign(cursorLedger.entries[1], {
+        loop: 28,
+        indexDelta: 2942,
+        accumulatedEntityIndex: 5624,
+        payloadBits: 133,
+        readCounts: {
+            beforeIndex: 5212,
+            afterIndex: 5226,
+            afterCommand: 5228,
+            afterAction: 5228
+        }
+    });
+
+    const probe = buildCursorIndexContractProbe(cursorLedger, cursorLedger.entries[1], {
+        operation: EntityOperation.UPDATE,
+        index: 5624
+    });
+
+    assert.equal(probe.indexFormulaCheck, true);
+    assert.equal(probe.expectedEntityIndexByLocalFormula, 5624);
+    assert.equal(probe.compactConsistencyFlags.highDeltaSignal, true);
+    assert.equal(probe.compactConsistencyFlags.cursorContractSuspicion, false);
+    assert.equal(probe.diagnosticClassificationCandidate, 'index_delta_high_but_internally_consistent');
+    assert.match(probe.diagnosticClassificationBasis, /indexDelta is high/);
+});
+
+test('cursor index contract probe classifies comparable payloadBits divergence', () => {
+    const configuration = new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true
+        }
+    });
+    const cursorLedger = syntheticCursorLedger(configuration.recovery);
+    const entry = syntheticEntry(cursorLedger);
+
+    entry.action = 'normal_update_apply';
+    entry.payloadBits = 16;
+    entry.readCounts.afterAction = entry.readCounts.afterCommand + 8;
+
+    const probe = buildCursorIndexContractProbe(cursorLedger, entry, {
+        operation: EntityOperation.UPDATE,
+        index: 2905
+    });
+
+    assert.equal(probe.compactConsistencyFlags.payloadBitsComparable, true);
+    assert.equal(probe.compactConsistencyFlags.payloadBitsMatchesActionDelta, false);
+    assert.equal(probe.compactConsistencyFlags.cursorContractSuspicion, true);
+    assert.equal(probe.diagnosticClassificationCandidate, 'payloadbits_contract_suspected');
+});
+
+test('cursor index contract probe classifies suspicious command position', () => {
+    const configuration = new ParserConfiguration({
+        recovery: {
+            diagnoseMissingEntityFailClosed: true
+        }
+    });
+    const cursorLedger = syntheticCursorLedger(configuration.recovery);
+    const entry = syntheticEntry(cursorLedger);
+
+    entry.readCounts.afterCommand = entry.readCounts.afterIndex + 3;
+    entry.readCounts.afterAction = entry.readCounts.afterCommand;
+
+    const probe = buildCursorIndexContractProbe(cursorLedger, entry, {
+        operation: EntityOperation.UPDATE,
+        index: 2905
+    });
+
+    assert.equal(probe.commandReadBitWidth, 3);
+    assert.equal(probe.compactConsistencyFlags.commandPositionPlausibilitySignal, false);
+    assert.equal(probe.compactConsistencyFlags.cursorContractSuspicion, true);
+    assert.equal(probe.diagnosticClassificationCandidate, 'command_decode_position_suspected');
 });
 
 test('missing entity lifecycle ledger classifies created then missing registry state candidate', () => {
@@ -415,4 +546,6 @@ test('diagnostic handler mode records boundary and still throws fail-closed', ()
     assert.equal(diagnostic.updateApplied, false);
     assert.equal(diagnostic.fakeFieldsCreated, false);
     assert.equal(diagnostic.syntheticRegistryStateCreated, false);
+    assert.equal(diagnostic.cursorIndexContractProbe.rawDataCaptured, false);
+    assert.equal(diagnostic.cursorIndexContractProbe.diagnosticClassificationCandidate, 'cursor_index_contract_consistent');
 });

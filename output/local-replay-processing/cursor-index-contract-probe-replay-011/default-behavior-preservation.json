@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_011",
+  "defaultPass": {
+    "mode": "default_no_diagnostics",
+    "diagnosticEnabled": false,
+    "missingEntityRecoveryEnabled": false,
+    "missingBaselineRecoveryEnabled": false,
+    "truncationEnabled": false,
+    "recoveryActionsEnabled": false,
+    "loadSucceeded": true,
+    "reachedEnd": false,
+    "expectedFailureReached": true,
+    "ticksAdvanced": 1051,
+    "currentTick": 1050,
+    "finalTick": 164438,
+    "firstErrorMessage": "Unable to find an entity with index [ 5624 ]",
+    "stackTop": [
+      "Error: Unable to find an entity with index [ 5624 ]",
+      "    at DemoMessageHandler.handleSvcPacketEntities (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/handlers/DemoMessageHandler.js:229:31)",
+      "    at DemoStreamPacketAnalyzer._handleMessagePackets (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:110:73)",
+      "    at DemoStreamPacketAnalyzer._handle (file:///C:/Users/gwenm/Documents/deadem/packages/engine/src/stream/DemoStreamPacketAnalyzer.js:62:22)"
+    ],
+    "diagnosticsCount": 0,
+    "missingEntityDiagnosticCount": 0,
+    "durationMs": 1123
+  },
+  "originalFailurePreserved": true,
+  "diagnosticPassUsesRecoveryActions": false,
+  "defaultBehaviorChanged": false,
+  "rawDataCaptured": false
+}

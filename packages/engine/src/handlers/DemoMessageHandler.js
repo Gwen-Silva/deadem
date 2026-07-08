@@ -937,6 +937,8 @@ function assertEntityPacketBoundary(recovery, cursorLedger, context) {
 const MINIMUM_ENTITY_PACKET_ENTRY_BITS = 8;
 const MINIMUM_ENTITY_PACKET_ENTRY_INDEX_BITS = 6;
 const ENTITY_PACKET_COMMAND_BITS = 2;
+const HIGH_INDEX_DELTA_SIGNAL_THRESHOLD = 1024;
+const CURSOR_INDEX_NEARBY_OFFSET_RADIUS_BITS = 64;
 
 function maybeTruncateEntityPacketBoundary(recovery, cursorLedger, context) {
     if (recovery === null || recovery.allowEntityPacketBoundaryTruncation !== true || cursorLedger === null) {
@@ -1724,6 +1726,7 @@ function recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, entry, 
     }
 
     const lifecycleProbe = buildMissingEntityLifecycleProbe(cursorLedger, entry, context);
+    const cursorIndexContractProbe = buildCursorIndexContractProbe(cursorLedger, entry, context);
 
     recovery.recordMissingEntityFailClosed?.({
         passMode: 'diagnostic_fail_closed',
@@ -1734,9 +1737,21 @@ function recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, entry, 
         entityIndex: context.index,
         previousEntityIndex: getPreviousEntityIndex(cursorLedger, entry.loop),
         indexDelta: entry.indexDelta,
+        commandId: entry.commandId,
+        commandName: entry.operation,
         payloadBits: entry.payloadBits,
         readCounts: { ...entry.readCounts },
         entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+        readCountWithinEntityData: cursorIndexContractProbe.readCountWithinEntityData,
+        expectedEntityIndexByLocalFormula: cursorIndexContractProbe.expectedEntityIndexByLocalFormula,
+        indexFormulaCheck: cursorIndexContractProbe.indexFormulaCheck,
+        commandReadBitWidth: cursorIndexContractProbe.commandReadBitWidth,
+        commandReadPosition: cursorIndexContractProbe.commandReadPosition,
+        commandValue: cursorIndexContractProbe.commandValue,
+        nearbyWindowSummary: cursorIndexContractProbe.nearbyWindowSummary,
+        compactConsistencyFlags: cursorIndexContractProbe.compactConsistencyFlags,
+        nearbyOffsetSummary: cursorIndexContractProbe.nearbyOffsetSummary,
+        cursorIndexContractProbe,
         registryStateBefore: entry.registryStateBefore,
         registryStateAfter: 'missing',
         classId: entry.classId,
@@ -1751,6 +1766,9 @@ function recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, entry, 
         diagnosticClassificationConfidence: lifecycleProbe.classificationConfidence,
         diagnosticClassificationBasis: lifecycleProbe.classificationBasis,
         diagnosticClassificationLimitations: lifecycleProbe.classificationLimitations,
+        cursorIndexDiagnosticClassificationCandidate: cursorIndexContractProbe.diagnosticClassificationCandidate,
+        cursorIndexDiagnosticClassificationBasis: cursorIndexContractProbe.diagnosticClassificationBasis,
+        cursorIndexDiagnosticClassificationLimitations: cursorIndexContractProbe.diagnosticClassificationLimitations,
         errorClass: 'MissingEntityReferenceError',
         errorMessage: context.errorMessage,
         rawDataCaptured: false,
@@ -1768,6 +1786,258 @@ function recordMissingEntityDiagnosticFailClosed(recovery, cursorLedger, entry, 
     });
 
     return true;
+}
+
+function buildCursorIndexContractProbe(cursorLedger, entry, context) {
+    const previousEntityIndex = getPreviousEntityIndex(cursorLedger, entry.loop);
+    const expectedEntityIndexByLocalFormula = Number.isInteger(previousEntityIndex) && Number.isInteger(entry.indexDelta) ?
+        previousEntityIndex + entry.indexDelta + 1 :
+        null;
+    const indexFormulaCheck = expectedEntityIndexByLocalFormula === null ?
+        context.index === entry.accumulatedEntityIndex :
+        expectedEntityIndexByLocalFormula === context.index && expectedEntityIndexByLocalFormula === entry.accumulatedEntityIndex;
+    const readCounts = entry.readCounts ?? {};
+    const readCountsMonotonic = areReadCountsMonotonic(readCounts);
+    const readCountsWithinEntityData = areReadCountsWithinEntityData(readCounts, cursorLedger.packetMetrics.entityDataBitLength);
+    const commandReadBitWidth = Number.isInteger(readCounts.afterIndex) && Number.isInteger(readCounts.afterCommand) ?
+        readCounts.afterCommand - readCounts.afterIndex :
+        null;
+    const commandReadPosition = readCounts.afterIndex ?? null;
+    const commandPositionPlausibilitySignal = commandReadBitWidth === ENTITY_PACKET_COMMAND_BITS &&
+        Number.isInteger(commandReadPosition) &&
+        commandReadPosition >= 0 &&
+        readCountsWithinEntityData === true;
+    const commandValue = entry.commandId ?? null;
+    const commandName = entry.operation ?? EntityOperation.parseById(commandValue)?.code ?? 'UNKNOWN';
+    const commandValueCoherentWithOperation = commandValue === EntityOperation.UPDATE.id && context.operation === EntityOperation.UPDATE;
+    const actionDelta = Number.isInteger(readCounts.afterAction) && Number.isInteger(readCounts.afterCommand) ?
+        readCounts.afterAction - readCounts.afterCommand :
+        null;
+    const payloadBitsMatchesActionDelta = Number.isInteger(entry.payloadBits) && Number.isInteger(actionDelta) ?
+        entry.payloadBits === actionDelta :
+        null;
+    const previousEntry = cursorLedger.entries.find(candidate => candidate.loop === entry.loop - 1);
+    const nextEntryStartsAtPreviousAfterAction = previousEntry?.readCounts?.afterAction === readCounts.beforeIndex;
+    const highDeltaSignal = Number.isInteger(entry.indexDelta) && Math.abs(entry.indexDelta) > HIGH_INDEX_DELTA_SIGNAL_THRESHOLD;
+    const nearbyWindowSummary = buildNearbyWindowSummary(cursorLedger, entry.loop);
+    const nearbyWindowPayloadBitsMismatchFound = nearbyWindowSummary.some(candidate =>
+        candidate.payloadBitsMatchesActionDelta === false
+    );
+    const nearbyOffsetSummary = buildNearbyOffsetSummary(cursorLedger, previousEntityIndex, readCounts.beforeIndex);
+    const payloadBitsComparable = entry.action !== 'missing_update_failed' &&
+        Number.isInteger(entry.payloadBits) &&
+        Number.isInteger(actionDelta);
+    const compactConsistencyFlags = {
+        indexDeltaPlausibilitySignal: highDeltaSignal ? 'high_delta' : 'not_high_delta',
+        commandPositionPlausibilitySignal,
+        commandValueCoherentWithOperation,
+        readCountsMonotonic,
+        readCountsWithinEntityData,
+        payloadBitsMatchesActionDelta,
+        payloadBitsComparable,
+        nearbyWindowPayloadBitsMismatchFound,
+        nextEntryStartsAtPreviousAfterAction,
+        highDeltaSignal,
+        nearbyOffsetAlternativeFound: nearbyOffsetSummary.nearbyOffsetAlternativeFound,
+        cursorContractSuspicion: false
+    };
+    const classification = classifyCursorIndexContractProbe({
+        indexFormulaCheck,
+        readCountsMonotonic,
+        readCountsWithinEntityData,
+        commandPositionPlausibilitySignal,
+        payloadBitsComparable,
+        payloadBitsMatchesActionDelta,
+        nearbyWindowPayloadBitsMismatchFound,
+        highDeltaSignal,
+        nearbyOffsetAlternativeFound: nearbyOffsetSummary.nearbyOffsetAlternativeFound
+    });
+
+    compactConsistencyFlags.cursorContractSuspicion = [
+        'cursor_index_contract_suspected',
+        'command_decode_position_suspected',
+        'payloadbits_contract_suspected',
+        'nearby_offset_alternative_candidate'
+    ].includes(classification.diagnosticClassificationCandidate);
+
+    return {
+        replayBoundaryKind: 'missing_entity_fail_closed',
+        packetOrdinal: cursorLedger.packetMetrics.packetOrdinal,
+        loop: entry.loop,
+        updatedEntries: cursorLedger.packetMetrics.updatedEntries,
+        entityIndex: context.index,
+        previousEntityIndex,
+        indexDelta: entry.indexDelta,
+        expectedEntityIndexByLocalFormula,
+        indexFormulaCheck,
+        operation: context.operation.code,
+        commandId: commandValue,
+        commandName,
+        commandReadBitWidth,
+        commandReadPosition,
+        commandValue,
+        commandValueCoherentWithOperation,
+        readCounts: { ...readCounts },
+        entityDataBitLength: cursorLedger.packetMetrics.entityDataBitLength,
+        payloadBits: entry.payloadBits,
+        actionDelta,
+        readCountWithinEntityData: readCountsWithinEntityData,
+        compactConsistencyFlags,
+        nearbyWindowSummary,
+        nearbyOffsetSummary,
+        ...classification,
+        rawDataCaptured: false
+    };
+}
+
+function areReadCountsMonotonic(readCounts) {
+    const ordered = [ readCounts.beforeIndex, readCounts.afterIndex, readCounts.afterCommand, readCounts.afterAction ]
+        .filter(value => Number.isInteger(value));
+
+    return ordered.every((value, index, values) => index === 0 || value >= values[index - 1]);
+}
+
+function areReadCountsWithinEntityData(readCounts, entityDataBitLength) {
+    if (!Number.isInteger(entityDataBitLength)) {
+        return false;
+    }
+
+    return [ readCounts.beforeIndex, readCounts.afterIndex, readCounts.afterCommand, readCounts.afterAction ]
+        .filter(value => Number.isInteger(value))
+        .every(value => value <= entityDataBitLength);
+}
+
+function buildNearbyWindowSummary(cursorLedger, boundaryLoop) {
+    const startLoop = Math.max(0, boundaryLoop - 5);
+
+    return cursorLedger.entries
+        .filter(candidate => candidate.loop >= startLoop && candidate.loop < boundaryLoop)
+        .slice(-5)
+        .map(candidate => {
+            const previous = cursorLedger.entries.find(entry => entry.loop === candidate.loop - 1);
+            const readCounts = candidate.readCounts ?? {};
+            const actionDelta = Number.isInteger(readCounts.afterAction) && Number.isInteger(readCounts.afterCommand) ?
+                readCounts.afterAction - readCounts.afterCommand :
+                null;
+
+            return {
+                loop: candidate.loop,
+                entityIndex: candidate.accumulatedEntityIndex,
+                previousEntityIndex: getPreviousEntityIndex(cursorLedger, candidate.loop),
+                indexDelta: candidate.indexDelta,
+                command: candidate.operation,
+                commandId: candidate.commandId,
+                payloadBits: candidate.payloadBits,
+                beforeIndex: readCounts.beforeIndex ?? null,
+                afterIndex: readCounts.afterIndex ?? null,
+                afterCommand: readCounts.afterCommand ?? null,
+                afterAction: readCounts.afterAction ?? null,
+                readCountsMonotonic: areReadCountsMonotonic(readCounts),
+                readCountsWithinEntityData: areReadCountsWithinEntityData(readCounts, cursorLedger.packetMetrics.entityDataBitLength),
+                payloadBitsMatchesActionDelta: Number.isInteger(candidate.payloadBits) && Number.isInteger(actionDelta) ?
+                    candidate.payloadBits === actionDelta :
+                    null,
+                nextEntryStartsAtPreviousAfterAction: previous === undefined ? null : previous.readCounts?.afterAction === readCounts.beforeIndex
+            };
+        });
+}
+
+function buildNearbyOffsetSummary(cursorLedger, previousEntityIndex, observedStartReadCount) {
+    if (cursorLedger.entityData === undefined || !Number.isInteger(previousEntityIndex) || !Number.isInteger(observedStartReadCount)) {
+        return {
+            searchRadiusBits: CURSOR_INDEX_NEARBY_OFFSET_RADIUS_BITS,
+            plausibleCandidateCount: 0,
+            bestCandidateCount: 0,
+            bestCandidateSummaries: [],
+            nearbyOffsetAlternativeFound: false,
+            unavailableReason: 'entityData_or_previous_index_unavailable',
+            rawDataCaptured: false
+        };
+    }
+
+    const candidates = scanNearbyOffsets(cursorLedger.entityData, previousEntityIndex, observedStartReadCount);
+    const alternatives = candidates.filter(candidate => candidate.offsetDeltaBits !== 0 &&
+        !(Number.isInteger(candidate.decoded.indexDelta) &&
+            Math.abs(candidate.decoded.indexDelta) > HIGH_INDEX_DELTA_SIGNAL_THRESHOLD));
+    const bestCandidateSummaries = alternatives.slice(0, 5).map(candidate => ({
+        offsetDeltaBits: candidate.offsetDeltaBits,
+        readCount: candidate.readCount,
+        indexDelta: candidate.decoded.indexDelta,
+        entityIndex: candidate.decoded.entityIndex,
+        commandId: candidate.decoded.commandId,
+        commandName: candidate.decoded.operation,
+        highDeltaSignal: Number.isInteger(candidate.decoded.indexDelta) &&
+            Math.abs(candidate.decoded.indexDelta) > HIGH_INDEX_DELTA_SIGNAL_THRESHOLD
+    }));
+
+    return {
+        searchRadiusBits: CURSOR_INDEX_NEARBY_OFFSET_RADIUS_BITS,
+        plausibleCandidateCount: candidates.length,
+        bestCandidateCount: bestCandidateSummaries.length,
+        bestCandidateSummaries,
+        nearbyOffsetAlternativeFound: bestCandidateSummaries.length > 0,
+        rawDataCaptured: false
+    };
+}
+
+function classifyCursorIndexContractProbe(flags) {
+    const diagnosticClassificationLimitations = [
+        'classification is compact local parser diagnostic evidence only',
+        'not proof of parser bug',
+        'not Source 2 semantics',
+        'not replay corruption',
+        'not local parser correctness',
+        'not permission for recovery, skip, placeholder, parser fix, or default behavior change'
+    ];
+
+    if (flags.indexFormulaCheck !== true || flags.readCountsMonotonic !== true || flags.readCountsWithinEntityData !== true) {
+        return {
+            diagnosticClassificationCandidate: 'cursor_index_contract_suspected',
+            diagnosticClassificationBasis: 'compact formula or read-count checks are inconsistent with the local cursor/index contract',
+            diagnosticClassificationLimitations
+        };
+    }
+
+    if (flags.commandPositionPlausibilitySignal !== true) {
+        return {
+            diagnosticClassificationCandidate: 'command_decode_position_suspected',
+            diagnosticClassificationBasis: 'compact command read position or width is not plausible under the local two-bit command contract',
+            diagnosticClassificationLimitations
+        };
+    }
+
+    if ((flags.payloadBitsComparable === true && flags.payloadBitsMatchesActionDelta !== true) ||
+        flags.nearbyWindowPayloadBitsMismatchFound === true) {
+        return {
+            diagnosticClassificationCandidate: 'payloadbits_contract_suspected',
+            diagnosticClassificationBasis: flags.nearbyWindowPayloadBitsMismatchFound === true ?
+                'nearby pre-boundary window contains compact comparable payloadBits divergence while read counts remain monotonic' :
+                'payloadBits diverges from the compact afterAction-afterCommand delta for an entry where action consumption is comparable',
+            diagnosticClassificationLimitations
+        };
+    }
+
+    if (flags.nearbyOffsetAlternativeFound === true) {
+        return {
+            diagnosticClassificationCandidate: 'nearby_offset_alternative_candidate',
+            diagnosticClassificationBasis: 'bounded nearby offset scan found compact plausible non-observed candidates; this is not a replacement cursor',
+            diagnosticClassificationLimitations
+        };
+    }
+
+    if (flags.highDeltaSignal === true) {
+        return {
+            diagnosticClassificationCandidate: 'index_delta_high_but_internally_consistent',
+            diagnosticClassificationBasis: 'indexDelta is high, but compact local formula, command position, read-count, and boundary checks are internally consistent',
+            diagnosticClassificationLimitations
+        };
+    }
+
+    return {
+        diagnosticClassificationCandidate: 'cursor_index_contract_consistent',
+        diagnosticClassificationBasis: 'compact local formula, command position, and read-count checks are internally consistent',
+        diagnosticClassificationLimitations
+    };
 }
 
 function buildCursorModelComparison(cursorLedger, context) {
@@ -2061,6 +2331,7 @@ function recordOutOfRangeEntityCreateBoundary(recovery, context, error) {
 export default DemoMessageHandler;
 export {
     assertEntityPacketBoundary,
+    buildCursorIndexContractProbe,
     decodeNextEntryAtOffset,
     maybeTruncateEntityPacketBoundary,
     recoverMissingClassBaseline,

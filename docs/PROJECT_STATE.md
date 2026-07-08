@@ -624,3 +624,13 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   index/cursor signal with indexDelta 2942. The spec remains compact-only and
   fail-closed, and does not authorize replay processing, parser/engine changes,
   recovery, skip, placeholders, default behavior changes, or semantic claims.
+  Task 147 then implemented and ran that compact fail-closed probe on
+  authorized replay_011 only. The expected packet 1052 loop 28 UPDATE missing
+  entity 5624 boundary was reached; the local formula
+  `2681 + 2942 + 1 = 5624` and two-bit UPDATE command position were internally
+  consistent, while the nearby pre-boundary window showed one compact
+  payloadBits/action-delta divergence. The diagnostic classification is
+  `payloadbits_contract_suspected`, with high indexDelta and nearby offset
+  alternatives retained as investigation signals only. The parser still failed
+  closed with no recovery, skip, placeholder, continuation, default behavior
+  change, raw data, canonical/source/match output, or semantic conclusion.
