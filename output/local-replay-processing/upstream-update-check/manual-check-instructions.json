@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "manualCheckUrl": "https://github.com/Igor-Losev/deadem",
+  "recommendedAction": "manual_upstream_check_required",
+  "parserIssueWorkflow": [
+    "Run focused local tests for the failing area.",
+    "Run npm run check:upstream-deadem.",
+    "If an upstream release or commit is detected, read release notes and recent commits before local deep diagnosis.",
+    "If a relevant upstream fix exists, create a separate task for manual review and possible cherry-pick.",
+    "Start deep local parser investigation only when upstream evidence does not explain the issue."
+  ],
+  "forbiddenAutomation": [
+    "no automatic pull",
+    "no automatic merge",
+    "no automatic cherry-pick",
+    "no automatic rebase",
+    "no parser behavior change"
+  ]
+}

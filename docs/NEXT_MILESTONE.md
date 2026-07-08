@@ -1288,3 +1288,21 @@ artifacts, while no safe compact dry-run/readiness entrypoint for both
 authorized canaries or generic canonical dry-run was validated. The next
 recommended milestone is
 `design_generic_compact_source_canonical_dry_run_entrypoint`.
+
+## Task 153
+
+Purpose: add a preventive read-only upstream check for `Igor-Losev/deadem` so
+future parser issues first verify whether a relevant upstream fix already
+exists.
+
+Success gate: `upstream_deadem_update_check_added`.
+
+Blocked gate: `upstream_deadem_update_check_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run check:upstream-deadem`. The Task 153 snapshot classified as
+`upstream_check_unavailable` because GitHub could not be reached from this
+environment, with recommended action `manual_upstream_check_required`. This is
+not evidence that upstream has no update. Future parser debugging should run the
+upstream check before starting deep local diagnosis, and any pull, merge,
+cherry-pick, rebase, or update must remain a separate explicit task.

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "knownAppliedUpstreamFixes": [
+    {
+      "sha": "dba298dbed2b7978f9569e6e5e5c0bd787f36b4a",
+      "summary": "FieldFactory: resolved char fields without count as varint, not string",
+      "localEvidenceKeys": [
+        "char_without_count_var_uint_32",
+        "tests/fieldfactory-char-decoder.test.mjs",
+        "Task 149 upstream-char-decoder-fix artifacts"
+      ],
+      "evidencePresent": true
+    }
+  ],
+  "localEvidence": {
+    "charWithoutCountVarUint32": true,
+    "fieldFactoryChangeArtifactPresent": true,
+    "replay010Replay011ResolutionArtifactPresent": true,
+    "fieldfactoryCharDecoderTestArtifactPresent": true,
+    "testFile": "tests/fieldfactory-char-decoder.test.mjs"
+  },
+  "localVersion": null,
+  "localVersionStatus": "local_version_unknown",
+  "rawDataCaptured": false
+}

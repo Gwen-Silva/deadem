@@ -10,6 +10,7 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "check:outputs": "node scripts/check-output-sizes.js",
+    "check:upstream-deadem": "node tools/check-upstream-deadem-updates.mjs",
     "codex:prepare": "node scripts/codex-workflow.js prepare",
     "codex:preflight": "node scripts/codex-workflow.js preflight",
     "codex:review": "node scripts/codex-workflow.js review",

@@ -682,3 +682,18 @@ parser/engine behavior, `packages/deadem/**`, recovery, skip, placeholder,
 default behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow,
 Product Reviewer automation, protected replay, bot replay, candidate replay, or
 Task 153 change.
+
+## Task 153 Upstream Update Check Note
+
+Task 153 added the manual read-only `npm run check:upstream-deadem` guard under
+`upstream_deadem_update_check_added`. The check records known applied upstream
+fix `dba298dbed2b7978f9569e6e5e5c0bd787f36b4a`, local evidence including
+`char_without_count_var_uint_32`, and compact output only. The Task 153 snapshot
+was `upstream_check_unavailable` because the environment could not reach GitHub,
+so the recommended action is `manual_upstream_check_required`. This does not
+prove no upstream update exists. Future parser issues should run this check
+before deep local diagnosis. No replay processing, parser/engine behavior
+changes, `packages/deadem/**` changes, pull/merge/cherry-pick/rebase,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+recovery, skip, placeholder, new opt-in, or canonical/source/match output
+occurred.
