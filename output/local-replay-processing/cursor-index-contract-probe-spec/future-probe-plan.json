@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "recommendedFutureTask": "run_replay_011_cursor_index_contract_probe_after_spec_approval",
+  "firstReplay": "replay_011",
+  "reason": "replay_011 has indexDelta 2942 and current classification index_stream_or_cursor_contract_suspected",
+  "passConfigurationBoundary": {
+    "baseMode": "fail-closed diagnostic only",
+    "noRecovery": true,
+    "noSkip": true,
+    "noTruncation": true,
+    "noContinuation": true,
+    "noPlaceholder": true
+  },
+  "collectionPlan": [
+    "record boundary local formula check",
+    "record boundary command read position and command id/name",
+    "record compact readCount monotonicity and entityData bounds",
+    "record compact window for the preceding five loops",
+    "compare payloadBits with afterAction-afterCommand where available",
+    "summarize bounded nearby-offset alternatives by count and best candidates only, without raw bits or full dumps",
+    "stop at the first missing_entity_fail_closed boundary"
+  ],
+  "implementationNotAuthorizedHere": true,
+  "rawDataCaptured": false
+}

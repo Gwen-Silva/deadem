@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "indexAccumulationContract": {
+    "start": "index starts from startIndex, normally -1 for a packet entry sequence",
+    "indexDeltaRead": "bitBuffer.readUVarInt() inside DemoMessageHandler.handleSvcPacketEntities before command decode",
+    "entityIndexFormula": "entityIndex = previousEntityIndex + indexDelta + 1",
+    "expectedEntityIndexByLocalFormula": "checked by comparing previousEntityIndex + indexDelta + 1 to boundary entityIndex",
+    "indexFormulaCheckRequired": true
+  },
+  "commandContract": {
+    "commandReadLocation": "immediately after afterIndexReadCount",
+    "commandReadBitWidth": 2,
+    "commandReadApi": "bitBuffer.readBitsAsUInt(2)",
+    "commandIdMap": {
+      "0": "UPDATE",
+      "1": "LEAVE",
+      "2": "CREATE",
+      "3": "DELETE"
+    },
+    "commandPositionPlausibilitySignal": "true only when readCounts are monotonic, within entityDataBitLength, and neighboring loops retain plausible entity index and command sequence under the same cursor model"
+  },
+  "payloadBitsContract": {
+    "source": "EntityPayloadSizeExtractor decodes varint payload sizes from CSVCMsg_PacketEntities.serializedEntities",
+    "localUse": "available when filtering or recovery/diagnostics are active; used as compact metadata and in bounded recovery paths, not as a universal cursor contract",
+    "futureComparison": "compare payloadBits to afterAction - afterCommand for entries with actual action read counts; never move cursor to enforce payloadBits in the probe"
+  },
+  "failureSurface": {
+    "beforeIndex": "cursor error before readUVarInt can change indexDelta, entityIndex, and subsequent command position",
+    "betweenIndexAndCommand": "cursor error after index read can alter two-bit command interpretation",
+    "afterCommand": "field-level decode/action consumption can alter next entry start without changing decoded command"
+  },
+  "rawDataCaptured": false
+}

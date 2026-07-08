@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "taskId": 146,
+  "gate": "cursor_index_contract_probe_spec_ready",
+  "selectedRecommendation": "design_cursor_index_contract_probe_spec",
+  "purpose": "define a future fail-closed compact-only PacketEntities cursor/index/command contract probe before replay processing or parser intervention",
+  "sourceDecision": "design_cursor_index_contract_probe_spec",
+  "futureProbePreferredReplay": "replay_011",
+  "preferredReplayReason": "replay_011 has the stronger compact cursor/index signal: indexDelta 2942 and index_stream_or_cursor_contract_suspected classification",
+  "implementationAuthorizedByThisSpec": false,
+  "replayProcessingAuthorizedByThisSpec": false,
+  "rawDataCaptured": false
+}

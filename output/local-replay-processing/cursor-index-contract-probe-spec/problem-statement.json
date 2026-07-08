@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "problem": "Two human canaries reached fail-closed missing UPDATE boundaries for entity indexes with zero compact prior local-parser target history.",
+  "evidence": {
+    "replay010": {
+      "replayId": "replay_010",
+      "packetOrdinal": 954,
+      "loop": 33,
+      "operation": "UPDATE",
+      "entityIndex": 2905,
+      "previousEntityIndex": 2717,
+      "indexDelta": 187,
+      "payloadBits": 193,
+      "totalCompactEventsTracked": 4852,
+      "totalCompactEventsForTarget": 0,
+      "classification": "never_registered_in_observed_parser_history_candidate"
+    },
+    "replay011": {
+      "replayId": "replay_011",
+      "packetOrdinal": 1052,
+      "loop": 28,
+      "operation": "UPDATE",
+      "entityIndex": 5624,
+      "previousEntityIndex": 2681,
+      "indexDelta": 2942,
+      "payloadBits": 133,
+      "totalCompactEventsTracked": 41408,
+      "totalCompactEventsForTarget": 0,
+      "classification": "index_stream_or_cursor_contract_suspected"
+    }
+  },
+  "currentUncertainty": [
+    "whether local index accumulation is reading the intended indexDelta",
+    "whether command bits are read at the intended position",
+    "whether prior cursor alignment causes high target indexes",
+    "whether payloadBits aligns with observed action deltas or is only auxiliary metadata",
+    "whether remaining ambiguity is Source 2/Deadlock semantics unknown"
+  ],
+  "whyNoFixYet": "indexDelta 2942 is a strong suspicion signal but does not prove a parser bug; no offset comparison or external oracle has validated an alternative contract.",
+  "rawDataCaptured": false
+}

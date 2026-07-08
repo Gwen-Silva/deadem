@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "recommendedNextAction": "design_cursor_index_contract_probe_spec",
+  "selectedExactlyOneOption": true,
+  "nextConcreteTaskAfterThisSpec": "if approved separately, implement or run a fail-closed compact cursor/index contract probe for replay_011 only",
+  "nextReplayRecommendedForFutureProbe": "replay_011",
+  "reason": "replay_011 has the strongest compact cursor/index signal and should be evaluated one replay at a time after this spec is accepted",
+  "notAuthorizedHere": [
+    "implementation",
+    "replay processing",
+    "parser behavior change",
+    "recovery",
+    "skip",
+    "placeholder",
+    "canonical/source/match output"
+  ],
+  "rawDataCaptured": false
+}

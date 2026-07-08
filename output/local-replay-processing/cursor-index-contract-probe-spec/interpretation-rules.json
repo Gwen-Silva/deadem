@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "rules": [
+    "a high indexDelta is a suspicion signal, not proof of a bug",
+    "zero local target history is local parser evidence only, not proof the entity never existed in game",
+    "cursor/index consistency weakens but does not eliminate unknown semantics",
+    "nearby offset alternatives strengthen cursor/command suspicion but do not authorize a fix",
+    "payloadBits divergence strengthens payload contract suspicion but does not authorize skip",
+    "the probe must fail closed and must not continue after missing entity",
+    "all classifications remain diagnostic and must carry explicit limitations"
+  ],
+  "claimsExplicitlyForbidden": [
+    "Source 2 semantics conclusion",
+    "replay corruption conclusion",
+    "local parser correctness conclusion",
+    "entity never existed in game",
+    "death/destruction/reward/objective semantics from registry absence",
+    "permission for recovery, skip, placeholder, parser fix, or canonical output"
+  ],
+  "rawDataCaptured": false
+}

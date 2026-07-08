@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "options": [
+    {
+      "option": "design_cursor_index_contract_probe_spec",
+      "selected": true,
+      "rationale": "matches Task 145 recommendation and keeps this task non-implementing while defining compact evidence requirements"
+    },
+    {
+      "option": "run_replay_011_probe_without_spec",
+      "selected": false,
+      "rationale": "would skip required contract boundaries and risks open-ended diagnostics"
+    },
+    {
+      "option": "prepare_parser_fix_design_now",
+      "selected": false,
+      "rationale": "premature; no proof of parser bug and no cursor/index probe evidence yet"
+    },
+    {
+      "option": "return_to_external_oracle_plan",
+      "selected": false,
+      "rationale": "oracle remains useful but unavailable; local compact spec can progress safely without Java/Clarity"
+    },
+    {
+      "option": "pause_missing_entity_investigation",
+      "selected": false,
+      "rationale": "Task 145 narrowed the next evidence to cursor/index contract, so pausing would lose a bounded route"
+    }
+  ],
+  "selectedOption": "design_cursor_index_contract_probe_spec",
+  "rawDataCaptured": false
+}

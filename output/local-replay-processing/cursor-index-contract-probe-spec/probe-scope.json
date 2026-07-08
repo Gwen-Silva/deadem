@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "futureProbeType": "fail_closed_compact_cursor_index_contract_probe",
+  "oneReplayPerTask": true,
+  "firstReplayRecommended": "replay_011",
+  "startCondition": "normal parser flow with recovery.diagnoseMissingEntityFailClosed true plus separately authorized future cursor/index diagnostics if implemented",
+  "stopCondition": "stop at first missing_entity_fail_closed boundary; do not continue parsing after boundary",
+  "boundaryFocus": true,
+  "nearbyWindowRequired": true,
+  "nearbyWindow": {
+    "loopsBeforeBoundary": 5,
+    "loopsAfterBoundary": 0,
+    "reason": "entries before the boundary can reveal whether afterAction and next beforeIndex remain consistent without continuing after missing entity"
+  },
+  "analyzePreviousEntries": true,
+  "analyzeBoundaryOnly": false,
+  "forbiddenActions": [
+    "apply update",
+    "skip payload",
+    "move cursor to correct",
+    "create entity",
+    "continue after missing entity",
+    "emit facts"
+  ],
+  "rawDataCaptured": false
+}

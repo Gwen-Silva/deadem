@@ -363,6 +363,12 @@
       "notes": "Task 145 consolidated the replay_010 and replay_011 fail-closed lifecycle ledger canaries and statically reviewed the local PacketEntities index/cursor/command/payloadBits contract. It selected design_cursor_index_contract_probe_spec as the next non-implementing route before any replay probe or parser intervention."
     },
     {
+      "id": "cursor_index_contract_probe_spec",
+      "path": "output/local-replay-processing/cursor-index-contract-probe-spec/spec-gate.json",
+      "status": "current",
+      "notes": "Task 146 prepared a non-implementing fail-closed cursor/index/command probe spec for PacketEntities missing_entity_fail_closed boundaries. It selected replay_011 as the first future canary only if separately authorized and does not authorize implementation, replay processing, recovery, skip, placeholders, default changes, raw data, or semantic claims."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

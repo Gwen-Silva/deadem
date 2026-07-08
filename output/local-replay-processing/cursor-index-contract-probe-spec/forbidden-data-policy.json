@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "forbiddenData": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string bytes",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "canonical facts",
+    "source facts",
+    "match facts",
+    "full offset dumps",
+    "full parser trace"
+  ],
+  "reason": "the future probe must collect only compact cursor/accounting evidence and must not create recoverable facts or leak raw replay-derived payloads",
+  "rawDataCaptured": false
+}

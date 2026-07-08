@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "allowedClassifications": [
+    {
+      "classification": "cursor_index_contract_consistent",
+      "meaning": "local formula and compact readCounts/neighbor windows are internally consistent under the current model",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    },
+    {
+      "classification": "cursor_index_contract_suspected",
+      "meaning": "compact index/readCount signals suggest cursor or index accumulation may need review",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    },
+    {
+      "classification": "payloadbits_contract_suspected",
+      "meaning": "payloadBits boundaries diverge from observed action deltas or next-entry starts in compact metadata",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    },
+    {
+      "classification": "command_decode_position_suspected",
+      "meaning": "two-bit command position appears unstable or implausible relative to compact neighboring cursor metadata",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    },
+    {
+      "classification": "index_delta_high_but_internally_consistent",
+      "meaning": "high indexDelta is present but local formula/readCounts remain internally consistent",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    },
+    {
+      "classification": "nearby_offset_alternative_candidate",
+      "meaning": "bounded nearby offset summary finds at least one plausible alternative index/command candidate",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    },
+    {
+      "classification": "not_determined",
+      "meaning": "compact evidence remains insufficient or conflicting",
+      "limitations": [
+        "not proof of parser bug",
+        "not Source 2 semantics",
+        "not replay corruption",
+        "not local parser correctness",
+        "not permission for recovery, skip, placeholder, parser fix, or default behavior change"
+      ]
+    }
+  ],
+  "classificationMustIncludeBasis": true,
+  "classificationMustIncludeLimitations": true,
+  "rawDataCaptured": false
+}

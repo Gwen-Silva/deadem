@@ -1176,6 +1176,24 @@ fail-closed, compact-only, one-replay-per-task cursor/index probe. No replay was
 processed, no parser/engine behavior changed, and no recovery/skip/placeholder
 or canonical/source/match output was produced.
 
+## Task 146
+
+Purpose: prepare a non-implementing spec for a future fail-closed
+cursor/index/command contract probe around PacketEntities
+`missing_entity_fail_closed` boundaries.
+
+Gate: `cursor_index_contract_probe_spec_ready`.
+
+Status: completed. The spec defines the compact evidence a future probe would
+need to collect around `beforeIndex`, `afterIndex`, `afterCommand`,
+`afterAction`, `indexDelta`, accumulated `entityIndex`, command bits,
+payloadBits, and nearby-window consistency. It recommends replay_011 as the
+first future canary only if separately authorized because replay_011 adds the
+stronger high-delta signal. This task did not implement the probe, process
+replays, modify parser/engine behavior, add recovery/skip/placeholder logic,
+create a new opt-in, change default behavior, or emit canonical/source/match
+output.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.
