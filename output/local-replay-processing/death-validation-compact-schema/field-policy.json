@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "requiredFields": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "eventCount",
+    "duplicateKeyCount",
+    "validationStatus",
+    "limitations",
+    "rawDataCaptured",
+    "finalFactsProduced"
+  ],
+  "optionalFields": [
+    "samplingPolicy",
+    "counterSource",
+    "counterTransitionType",
+    "validationWarnings",
+    "blockedFields",
+    "policyVersion",
+    "generatedBy",
+    "generatedAt"
+  ],
+  "fieldLimits": {
+    "eventCount": "integer 0..100000",
+    "duplicateKeyCount": "integer 0..100000",
+    "limitations": "1..8 strings, max 240 chars each",
+    "validationWarnings": "0..12 strings, max 180 chars each"
+  },
+  "noEventRows": true,
+  "noFieldValues": true,
+  "noAttribution": true
+}

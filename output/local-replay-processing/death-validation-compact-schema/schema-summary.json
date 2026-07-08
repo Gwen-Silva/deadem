@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "death_validation",
+  "artifactShape": "single object per replay",
+  "schemaPath": "schemas/death-validation-compact.schema.json",
+  "minimumUsefulSchema": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "eventCount",
+    "duplicateKeyCount",
+    "validationStatus",
+    "limitations",
+    "rawDataCaptured",
+    "finalFactsProduced"
+  ],
+  "summary": "The schema records compact validation metadata only. eventCount is a count of source-observed counter-transition candidates, not proof of death causality or a final death fact.",
+  "realArtifactEmitted": false
+}

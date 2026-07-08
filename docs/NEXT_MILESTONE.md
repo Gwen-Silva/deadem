@@ -1359,3 +1359,20 @@ selected `death_validation` as the first future class for schema design because
 it can remain a compact validation summary. The recommended next milestone is
 `design_death_validation_compact_schema`, which must remain schema-first and
 must not emit event rows or field values without separate authorization.
+
+## Task 157
+
+Purpose: define the compact schema for `death_validation` before any real
+emission of that class.
+
+Success gate: `death_validation_compact_schema_ready`.
+
+Blocked gate: `death_validation_compact_schema_blocked`.
+
+Status: completed with the success gate above. The new schema is
+`schemas/death-validation-compact.schema.json`, with synthetic examples and
+`tests/death-validation-compact-schema.test.mjs`. The schema is a single object
+per replay and forbids event rows, field values, snapshots, attribution, and
+gameplay interpretation. The recommended next milestone is
+`emit_death_validation_compact_artifact_for_replay_010_011`, in a separately
+authorized task.

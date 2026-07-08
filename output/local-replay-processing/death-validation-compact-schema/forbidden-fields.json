@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "forbiddenFields": [
+    "event rows",
+    "entity ids",
+    "player names",
+    "hero names",
+    "team names",
+    "map positions",
+    "timestamps per event",
+    "tick per event",
+    "killer",
+    "victim",
+    "assister",
+    "damage source",
+    "fight id",
+    "objective id",
+    "field values",
+    "raw values",
+    "full entity snapshots",
+    "arrays of events",
+    "arrays of players",
+    "gameplay interpretation strings"
+  ],
+  "schemaEnforcement": "additionalProperties=false plus synthetic tests for forbidden keys and final fact flags"
+}

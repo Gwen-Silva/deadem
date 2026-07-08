@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": ["death_validation"],
+  "validationStatus": [
+    "source_events_available_with_limitations",
+    "no_counter_increments_observed",
+    "source_validation_blocked",
+    "not_evaluated"
+  ],
+  "sourceMethod": [
+    "counter_transition_summary",
+    "manifest_only",
+    "not_evaluated"
+  ],
+  "counterTransitionType": [
+    "death_counter_increment_summary",
+    "not_materialized"
+  ],
+  "samplingPolicy": [
+    "manifest_only",
+    "one_second_source_sampling",
+    "not_evaluated"
+  ]
+}

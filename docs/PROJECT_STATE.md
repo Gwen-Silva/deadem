@@ -758,3 +758,23 @@ default behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow,
 Product Reviewer automation, pull/merge/cherry-pick/rebase, final source facts,
 canonical facts, match facts, gameplay interpretation outputs, or Task 157
 change.
+
+## Task 157 Death Validation Compact Schema Note
+
+Task 157 defined `schemas/death-validation-compact.schema.json` under
+`death_validation_compact_schema_ready`. The schema is single-object-per-replay
+and covers compact validation metadata only: source method, event count,
+duplicate key count, validation status, limitations, and policy flags. It
+explicitly forbids event rows, field values, raw values, player arrays,
+snapshots, killer/victim/fight attribution, objective attribution, and gameplay
+interpretation strings. Synthetic valid and invalid examples plus
+`tests/death-validation-compact-schema.test.mjs` validate the contract. The
+recommended next milestone is
+`emit_death_validation_compact_artifact_for_replay_010_011`, requiring separate
+authorization. Task 157 did not process replay_010, replay_011, replay 005, bot
+fixtures, candidate replays, `samples/**`, or `output/replays/**`, and it made
+no parser/engine behavior, `packages/deadem/**`, extraction implementation,
+real `death_validation` emission, source/canonical/match facts, gameplay
+interpretation output, recovery, skip, placeholder, default behavior, new
+opt-in, Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+pull/merge/cherry-pick/rebase, or Task 158 change.

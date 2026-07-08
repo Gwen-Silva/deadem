@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "invalidExamples": [
+    {
+      "id": "contains_event_rows",
+      "artifact": {
+        "schemaVersion": 1,
+        "replayId": "replay_010",
+        "artifactClass": "death_validation",
+        "sourceMethod": "counter_transition_summary",
+        "eventCount": 1,
+        "duplicateKeyCount": 0,
+        "validationStatus": "source_events_available_with_limitations",
+        "limitations": ["invalid because event rows are present"],
+        "rawDataCaptured": false,
+        "finalFactsProduced": false,
+        "events": [{"tick": 100, "player": "p0"}]
+      },
+      "expectedFailure": "additional property events is forbidden"
+    },
+    {
+      "id": "contains_attribution",
+      "artifact": {
+        "schemaVersion": 1,
+        "replayId": "replay_010",
+        "artifactClass": "death_validation",
+        "sourceMethod": "counter_transition_summary",
+        "eventCount": 1,
+        "duplicateKeyCount": 0,
+        "validationStatus": "source_events_available_with_limitations",
+        "limitations": ["invalid because killer attribution is present"],
+        "rawDataCaptured": false,
+        "finalFactsProduced": false,
+        "killer": "player_a"
+      },
+      "expectedFailure": "additional property killer is forbidden"
+    },
+    {
+      "id": "claims_final_facts",
+      "artifact": {
+        "schemaVersion": 1,
+        "replayId": "replay_010",
+        "artifactClass": "death_validation",
+        "sourceMethod": "counter_transition_summary",
+        "eventCount": 1,
+        "duplicateKeyCount": 0,
+        "validationStatus": "source_events_available_with_limitations",
+        "limitations": ["invalid because final facts are claimed"],
+        "rawDataCaptured": false,
+        "finalFactsProduced": true
+      },
+      "expectedFailure": "finalFactsProduced must be false"
+    },
+    {
+      "id": "raw_data_captured",
+      "artifact": {
+        "schemaVersion": 1,
+        "replayId": "replay_010",
+        "artifactClass": "death_validation",
+        "sourceMethod": "counter_transition_summary",
+        "eventCount": 1,
+        "duplicateKeyCount": 0,
+        "validationStatus": "source_events_available_with_limitations",
+        "limitations": ["invalid because raw data is claimed"],
+        "rawDataCaptured": true,
+        "finalFactsProduced": false
+      },
+      "expectedFailure": "rawDataCaptured must be false"
+    }
+  ]
+}

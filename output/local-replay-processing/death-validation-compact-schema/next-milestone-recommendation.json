@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "recommendedMilestone": "emit_death_validation_compact_artifact_for_replay_010_011",
+  "recommendedAction": "future_controlled_emission_task",
+  "rationale": "The compact schema is now explicit and tested with synthetic examples. A future task may emit real death_validation summaries for replay_010 and replay_011 only if separately authorized and if it preserves the schema, no-row policy, and pre/post output audit.",
+  "futureTaskCanEmitRealDeathValidation": true,
+  "requiredFutureGuards": [
+    "process only explicitly authorized replays",
+    "emit one object per replay",
+    "no event rows",
+    "no field values",
+    "no killer/victim/fight attribution",
+    "pre/post output policy audit",
+    "schema validation before commit"
+  ]
+}
