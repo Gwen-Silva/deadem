@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "authorizedReplays": [
+    "replay_010",
+    "replay_011"
+  ],
+  "steps": [
+    {
+      "step": "parser_load",
+      "replay010": "passed",
+      "replay011": "passed"
+    },
+    {
+      "step": "parse_completion",
+      "replay010": "passed",
+      "replay011": "passed"
+    },
+    {
+      "step": "event_stream_availability",
+      "replay010": "available",
+      "replay011": "available"
+    },
+    {
+      "step": "entity_history_availability",
+      "replay010": "available_in_parser_runtime_not_versioned",
+      "replay011": "available_in_parser_runtime_not_versioned"
+    },
+    {
+      "step": "local_pipeline_readiness",
+      "replay010": "ready_for_separately_scoped_controlled_pipeline_task",
+      "replay011": "ready_for_separately_scoped_controlled_pipeline_task"
+    },
+    {
+      "step": "canonicalization_readiness",
+      "replay010": "not_executed_ready_for_future_controlled_dry_run_scope",
+      "replay011": "not_executed_ready_for_future_controlled_dry_run_scope"
+    }
+  ],
+  "allParserStagesPassed": true,
+  "firstBlockedStep": null,
+  "finalClassification": "post_parser_fix_pipeline_ready_for_controlled_canonical_task",
+  "canonicalSourceMatchFactsEmitted": false
+}

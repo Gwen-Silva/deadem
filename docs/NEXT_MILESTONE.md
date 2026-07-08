@@ -1252,3 +1252,21 @@ Success gate: `upstream_char_decoder_fix_resolution_consolidated`.
 Blocked gate: `upstream_char_decoder_fix_resolution_blocked`.
 
 Status: completed with the success gate above. The next recommended milestone is `resume_generic_local_replay_pipeline_validation_post_parser_fix`; do not continue the old multi-hypothesis missing-entity route for the resolved boundaries.
+
+## Task 151
+
+Purpose: resume local replay pipeline validation after the upstream scalar
+`char` decoder fix resolved the old parser blocker for replay_010 and
+replay_011.
+
+Success gate: `post_parser_fix_pipeline_validation_ready`.
+
+Blocked gate: `post_parser_fix_pipeline_validation_blocked`.
+
+Status: completed with the success gate above. Only replay_010 and replay_011
+were processed. Both completed default parser advancement to the end, and no
+post-parser blocker was found at the parser completion stage. The next
+recommended milestone is
+`controlled_canonical_source_readiness_task_for_replay_010_and_011`, which
+requires separate authorization before any canonical/source/match artifacts or
+facts are emitted.

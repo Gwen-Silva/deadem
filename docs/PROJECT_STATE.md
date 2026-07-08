@@ -647,3 +647,19 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
 ## Task 150 Upstream Fix Resolution Consolidation Note
 
 Task 150 consolidated the closure of the old `missing_entity_fail_closed` investigation route under `upstream_char_decoder_fix_resolution_consolidated`. The prior replay_010 entity 2905 and replay_011 entity 5624 blockers are treated as resolved for those canaries after Task 149 applied the upstream scalar `char` decoder fix. The probable corrected cause is scalar `char` without `count` being decoded as string, producing overconsumption/desynchronization symptoms. The earlier payloadBits/actionDelta mismatch is now interpreted as a symptom compatible with wrong field decoding, not an independent final cause. This does not prove total parser correctness, Source 2 semantics, replay corruption status, game facts, or recovery/skip safety. The recommended next milestone is `resume_generic_local_replay_pipeline_validation_post_parser_fix`.
+
+## Task 151 Post-Parser Fix Pipeline Validation Note
+
+Task 151 resumed the local replay pipeline validation after the parser fix under
+`post_parser_fix_pipeline_validation_ready`. Only replay_010 and replay_011 were
+processed. Both canaries completed default parser advancement to the end, the old
+missing-entity blockers did not reopen, and no post-parser blocker was found at
+the parser completion stage. The classification is
+`post_parser_fix_pipeline_ready_for_controlled_canonical_task`. This validates
+the parser prerequisite for a separately scoped controlled canonical/source
+readiness task, but it does not emit canonical/source/match facts or prove total
+parser correctness, Source 2 semantics, replay corruption status, or game facts.
+No parser/engine behavior, `packages/deadem/**` behavior, recovery, skip mode,
+placeholder, default behavior, new opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, protected replay access, bot replay
+processing, candidate replay processing, or Task 152 was created.

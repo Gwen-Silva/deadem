@@ -393,6 +393,12 @@
       "notes": "Task 150 consolidated that Task 149 resolved the old replay_010/replay_011 missing_entity_fail_closed blockers via the upstream scalar char-without-count decoder fix. The next recommended milestone is resume_generic_local_replay_pipeline_validation_post_parser_fix."
     },
     {
+      "id": "post_parser_fix_pipeline_validation",
+      "path": "output/local-replay-processing/post-parser-fix-pipeline-validation/validation-gate.json",
+      "status": "current",
+      "notes": "Task 151 validated the next safe local pipeline stage after the parser fix. replay_010 and replay_011 both completed default parser advancement to the end; no post-parser blocker was found at parser completion, and the next milestone is a separately scoped controlled canonical/source readiness task."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

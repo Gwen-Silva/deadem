@@ -1,0 +1,184 @@
+{
+  "taskId": "151",
+  "title": "Resume Local Replay Pipeline Validation After Parser Fix",
+  "status": "completed",
+  "objective": "Validate the next safe local replay pipeline stage after the upstream scalar char decoder fix resolved the old missing_entity_fail_closed parser blockers for replay_010 and replay_011.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "package.json",
+    "packages/deadem/index.js",
+    "packages/engine/src/Player.js",
+    "tasks/specs/149.json",
+    "tasks/specs/150.json",
+    "tasks/completed/149-upstream-char-decoder-fix.md",
+    "tasks/completed/150-upstream-char-decoder-fix-resolution.md",
+    "reports/upstream-char-decoder-fix.md",
+    "reports/upstream-char-decoder-fix-resolution.md",
+    "output/local-replay-processing/upstream-char-decoder-fix/final-classification.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-010-validation-result.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-011-validation-result.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/next-milestone-recommendation.json",
+    "tools/process-local-replay-input.mjs",
+    "tools/generate-local-replay-source-artifacts.mjs",
+    "tools/generate-local-replay-forward-source-artifacts.mjs"
+  ],
+  "optionalReadPaths": [
+    "tools/**",
+    "scripts/**"
+  ],
+  "writePaths": [
+    "tools/validate-post-parser-fix-local-replay-pipeline.mjs",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/**",
+    "reports/post-parser-fix-pipeline-validation.md",
+    "tasks/specs/151.json",
+    "tasks/completed/151-post-parser-fix-pipeline-validation.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/engine/**",
+    "packages/deadem/**",
+    "tasks/specs/152.json",
+    "tasks/completed/152-*",
+    "tasks/blocked/152-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "fieldfactory-char-decoder-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ]
+    },
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/validation-gate.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/scope-summary.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/replay-010-pipeline-status.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/replay-011-pipeline-status.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/parser-post-fix-confirmation.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/pipeline-step-status.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/first-post-parser-blocker.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/canonicalization-readiness.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/rejected-actions.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/next-milestone-recommendation.json",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/protection-audit.json",
+    "reports/post-parser-fix-pipeline-validation.md",
+    "tasks/completed/151-post-parser-fix-pipeline-validation.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": [
+    "replay_010",
+    "replay_011"
+  ],
+  "authorizedReplayPaths": [
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Process only replay_010 and replay_011",
+    "Do not process replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify parser/engine behavior or packages/deadem",
+    "Do not implement parser fixes, recovery, skip, placeholders, fake fields, synthetic registry state, continuation by recovery, default behavior changes, or new opt-in options",
+    "Do not emit final canonical/source/match facts or spatial/macro/mechanics/fight/decision/ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payload",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not create Task 152"
+  ],
+  "successGate": "post_parser_fix_pipeline_validation_ready",
+  "blockedGate": "post_parser_fix_pipeline_validation_blocked",
+  "allowedAlternateGates": [
+    "post_parser_fix_pipeline_validation_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/post-parser-fix-pipeline-validation/validation-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "regenerate"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}
