@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "id": "per_replay_safe_count_table",
+      "description": "Show one row per replay with label Source-observed counter transition candidates, replayId, validationStatus, and artifactPath.",
+      "allowed": true
+    },
+    {
+      "id": "aggregate_safe_count_card",
+      "description": "Show sourceObservedCounterTransitionCandidateTotal as Total source-observed counter transition candidates with a non-final-fact warning.",
+      "allowed": true
+    },
+    {
+      "id": "min_max_candidate_range",
+      "description": "Show minEventCount and maxEventCount as a range of observed counter transition candidate counts.",
+      "allowed": true
+    },
+    {
+      "id": "validation_status_summary",
+      "description": "Show allValidationStatuses or per-replay validationStatus as Compact source validation status.",
+      "allowed": true
+    },
+    {
+      "id": "duplicate_key_total",
+      "description": "Show duplicateKeyTotal as Total duplicate transition-key count.",
+      "allowed": true
+    },
+    {
+      "id": "artifact_path_links",
+      "description": "Link artifactPath values to compact death_validation source metadata artifacts.",
+      "allowed": true
+    },
+    {
+      "id": "limits_notice",
+      "description": "Present a limits notice: counts are not deaths, final facts, attribution, timelines, or gameplay truth.",
+      "allowed": true
+    }
+  ],
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}

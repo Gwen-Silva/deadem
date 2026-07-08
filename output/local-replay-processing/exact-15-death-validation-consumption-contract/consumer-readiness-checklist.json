@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "exact_15_death_validation_consumer_readiness_v1",
+  "requiredChecks": [
+    {
+      "id": "uses_safe_labels",
+      "description": "Consumer uses safe labels from safe-label-mapping.json.",
+      "required": true
+    },
+    {
+      "id": "keeps_non_final_fact_warning",
+      "description": "Consumer keeps a visible warning that counts are not final facts.",
+      "required": true
+    },
+    {
+      "id": "does_not_rename_to_deaths_or_kills",
+      "description": "Consumer does not rename eventCount or aggregate total to deaths, kills, confirmed deaths, death events, or final deaths.",
+      "required": true
+    },
+    {
+      "id": "does_not_join_with_player_identity",
+      "description": "Consumer does not join these fields with player identity rows or inferred identities.",
+      "required": true
+    },
+    {
+      "id": "does_not_create_timeline",
+      "description": "Consumer does not create per-event or match timeline outputs from these counts.",
+      "required": true
+    },
+    {
+      "id": "does_not_create_attribution",
+      "description": "Consumer does not create killer/victim/assist or objective attribution.",
+      "required": true
+    },
+    {
+      "id": "does_not_use_as_canonical_or_match_fact",
+      "description": "Consumer does not use these outputs as canonical facts, match facts, or final source facts.",
+      "required": true
+    },
+    {
+      "id": "does_not_access_replay_files",
+      "description": "Consumer reads only committed compact summary/artifact JSON, not .dem files.",
+      "required": true
+    },
+    {
+      "id": "does_not_execute_parser",
+      "description": "Consumer does not execute parser, emission runner, recovery, skip, or diagnostics.",
+      "required": true
+    },
+    {
+      "id": "does_not_emit_real_artifact",
+      "description": "Consumer does not emit new death_validation.json or other replay artifact classes.",
+      "required": true
+    }
+  ],
+  "allChecksRequiredBeforeConsumption": true,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}

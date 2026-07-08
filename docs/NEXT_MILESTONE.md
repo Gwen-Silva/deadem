@@ -1601,3 +1601,22 @@ aggregate field is `sourceObservedCounterTransitionCandidateTotal` with value
 1199; min `eventCount` is 45 and max `eventCount` is 117. These are not final
 death facts or gameplay truth. The next milestone should decide how, if at all,
 to present or consume the compact summary while preserving the same boundaries.
+
+## Task 170
+
+Purpose: define a safe consumption contract for Task 169 exact-15 compact
+summary fields before any future dashboard, report, script, or documentation
+uses those fields.
+
+Success gate: `exact_15_death_validation_consumption_contract_ready`.
+
+Blocked gate: `exact_15_death_validation_consumption_contract_blocked`.
+
+Status: completed with the success gate above. The contract defines safe field
+usage, safe labels, forbidden labels, forbidden interpretation policy,
+consumer-readiness checklist, allowed examples, and rejected examples. Future
+consumers must preserve the labels `Source-observed counter transition
+candidates` and `Total source-observed counter transition candidates`, and must
+not present those counts as deaths, kills, death events, attribution, final
+facts, canonical truth, Source 2 semantics, parser correctness, replay
+corruption status, or gameplay interpretation.

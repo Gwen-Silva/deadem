@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "id": "total_deaths_equals_1199",
+      "example": "total deaths = 1199",
+      "reason": "sourceObservedCounterTransitionCandidateTotal is not total deaths."
+    },
+    {
+      "id": "match_had_1199_deaths",
+      "example": "match had 1199 deaths",
+      "reason": "aggregate candidate count is not match death truth."
+    },
+    {
+      "id": "player_x_died_n_times",
+      "example": "player X died N times",
+      "reason": "artifacts contain no player identity or per-player death facts."
+    },
+    {
+      "id": "killer_victim_attribution",
+      "example": "killer/victim attribution",
+      "reason": "artifacts contain no attribution rows."
+    },
+    {
+      "id": "death_timeline",
+      "example": "death timeline",
+      "reason": "artifacts contain no event rows or timeline."
+    },
+    {
+      "id": "death_events",
+      "example": "death events",
+      "reason": "event rows are forbidden and were not emitted."
+    },
+    {
+      "id": "parser_fully_correct",
+      "example": "parser fully correct",
+      "reason": "compact validation status does not prove total parser correctness."
+    },
+    {
+      "id": "source2_semantics_proven",
+      "example": "Source 2 semantics proven",
+      "reason": "summary artifacts do not validate Source 2 semantics."
+    },
+    {
+      "id": "gameplay_truth_summary",
+      "example": "gameplay truth summary",
+      "reason": "gameplay interpretation is explicitly not produced."
+    }
+  ],
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}

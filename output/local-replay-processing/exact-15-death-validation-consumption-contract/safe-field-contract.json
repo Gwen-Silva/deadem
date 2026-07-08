@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "contractId": "exact_15_death_validation_safe_field_contract_v1",
+  "source": "Task 169 compact summary outputs",
+  "globalRules": [
+    "Fields may be used only as compact source-observed counter transition metadata.",
+    "Fields must not be renamed to deaths, kills, confirmed deaths, death events, final deaths, or match deaths.",
+    "Fields must not be joined with player identity, attribution, timeline, objective, spatial, macro, mechanics, fight, decision, or ML outputs.",
+    "Consumers must preserve finalFactsProduced=false and gameplayInterpretationProduced=false."
+  ],
+  "fields": [
+    {
+      "field": "artifactCount",
+      "expectedType": "integer",
+      "origin": "aggregate-counter-transition-summary.json",
+      "allowedUse": "Display count of compact Task 168 artifacts summarized.",
+      "forbiddenUse": "Do not treat as replay quality, match count beyond the summary scope, or factual gameplay evidence.",
+      "safeLabel": "Compact artifact count",
+      "canBeAggregated": false
+    },
+    {
+      "field": "replayId",
+      "expectedType": "string",
+      "origin": "replay-event-count-index.json",
+      "allowedUse": "Identify which compact artifact row is being referenced.",
+      "forbiddenUse": "Do not infer player identity, match outcome, replay quality, or gameplay facts.",
+      "safeLabel": "Replay ID",
+      "canBeAggregated": false
+    },
+    {
+      "field": "artifactPath",
+      "expectedType": "string",
+      "origin": "replay-event-count-index.json",
+      "allowedUse": "Link to the compact death_validation artifact used as source metadata.",
+      "forbiddenUse": "Do not imply the linked artifact contains event rows, attribution, or final facts.",
+      "safeLabel": "Compact artifact path",
+      "canBeAggregated": false
+    },
+    {
+      "field": "eventCount",
+      "expectedType": "integer",
+      "origin": "death_validation.json and replay-event-count-index.json",
+      "allowedUse": "Display per-replay source-observed counter transition candidate count.",
+      "forbiddenUse": "Do not call this deaths, kills, death events, confirmed deaths, player deaths, final deaths, or match deaths.",
+      "safeLabel": "Source-observed counter transition candidates",
+      "canBeAggregated": true
+    },
+    {
+      "field": "duplicateKeyCount",
+      "expectedType": "integer",
+      "origin": "death_validation.json and replay-event-count-index.json",
+      "allowedUse": "Display compact duplicate transition-key count for source metadata quality.",
+      "forbiddenUse": "Do not treat as duplicated deaths, duplicated kills, or event-row deduplication.",
+      "safeLabel": "Duplicate transition-key count",
+      "canBeAggregated": true
+    },
+    {
+      "field": "validationStatus",
+      "expectedType": "string",
+      "origin": "death_validation.json and replay-event-count-index.json",
+      "allowedUse": "Display compact source validation status for each artifact.",
+      "forbiddenUse": "Do not treat as parser correctness proof, Source 2 semantic proof, or factual match truth status.",
+      "safeLabel": "Compact source validation status",
+      "canBeAggregated": false
+    },
+    {
+      "field": "sourceObservedCounterTransitionCandidateTotal",
+      "expectedType": "integer",
+      "origin": "aggregate-counter-transition-summary.json",
+      "allowedUse": "Display aggregate count of source-observed counter transition candidates across the 15 compact artifacts.",
+      "forbiddenUse": "Do not call this total deaths, total kills, final deaths, match deaths, confirmed deaths, or combat deaths.",
+      "safeLabel": "Total source-observed counter transition candidates",
+      "canBeAggregated": true
+    },
+    {
+      "field": "minEventCount",
+      "expectedType": "integer",
+      "origin": "aggregate-counter-transition-summary.json",
+      "allowedUse": "Display minimum per-replay source-observed counter transition candidate count in the summarized set.",
+      "forbiddenUse": "Do not treat as minimum deaths, minimum kills, or gameplay performance signal.",
+      "safeLabel": "Minimum source-observed counter transition candidates",
+      "canBeAggregated": false
+    },
+    {
+      "field": "maxEventCount",
+      "expectedType": "integer",
+      "origin": "aggregate-counter-transition-summary.json",
+      "allowedUse": "Display maximum per-replay source-observed counter transition candidate count in the summarized set.",
+      "forbiddenUse": "Do not treat as maximum deaths, maximum kills, or gameplay performance signal.",
+      "safeLabel": "Maximum source-observed counter transition candidates",
+      "canBeAggregated": false
+    },
+    {
+      "field": "duplicateKeyTotal",
+      "expectedType": "integer",
+      "origin": "aggregate-counter-transition-summary.json",
+      "allowedUse": "Display aggregate duplicate transition-key count across compact artifacts.",
+      "forbiddenUse": "Do not treat as duplicated final facts or duplicated death events.",
+      "safeLabel": "Total duplicate transition-key count",
+      "canBeAggregated": true
+    },
+    {
+      "field": "eventCountMeaning",
+      "expectedType": "string",
+      "origin": "replay-event-count-index.json and aggregate-counter-transition-summary.json",
+      "allowedUse": "Preserve the explicit meaning string next to any count display.",
+      "forbiddenUse": "Do not omit or replace with deaths, kills, confirmed deaths, or final facts wording.",
+      "safeLabel": "Event count meaning",
+      "canBeAggregated": false
+    },
+    {
+      "field": "finalFactsProduced",
+      "expectedType": "boolean",
+      "origin": "Task 169 outputs",
+      "allowedUse": "Display or enforce that no final facts were produced.",
+      "forbiddenUse": "Do not override to true or infer final facts from other fields.",
+      "safeLabel": "Final facts produced",
+      "canBeAggregated": false
+    },
+    {
+      "field": "gameplayInterpretationProduced",
+      "expectedType": "boolean",
+      "origin": "Task 169 outputs",
+      "allowedUse": "Display or enforce that no gameplay interpretation was produced.",
+      "forbiddenUse": "Do not override to true or infer gameplay interpretation from counts.",
+      "safeLabel": "Gameplay interpretation produced",
+      "canBeAggregated": false
+    }
+  ]
+}

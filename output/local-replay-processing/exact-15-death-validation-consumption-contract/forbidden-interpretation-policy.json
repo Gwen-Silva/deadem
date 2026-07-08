@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "policyId": "exact_15_death_validation_forbidden_interpretation_policy_v1",
+  "forbiddenInterpretations": [
+    "treat eventCount as a death",
+    "treat sourceObservedCounterTransitionCandidateTotal as total deaths",
+    "create killer/victim/assist attribution",
+    "create timeline",
+    "infer player identity",
+    "infer objective involvement",
+    "infer fight causality",
+    "infer gameplay truth",
+    "infer Source 2 semantics",
+    "declare total parser correctness",
+    "declare replay corruption or non-corruption",
+    "use these artifacts as final source/canonical/match facts"
+  ],
+  "forbiddenOutputSurfaces": [
+    "death_events",
+    "respawn_events",
+    "timelines",
+    "objective_lifecycle",
+    "player_identity_rows",
+    "killer_victim_assist_attribution",
+    "field_values",
+    "raw_replay_bytes",
+    "raw_payloads",
+    "raw_entityData",
+    "raw_serializedEntities",
+    "string_values",
+    "snapshots",
+    "full_entity_histories",
+    "source_canonical_match_final_facts",
+    "gameplay_interpretation",
+    "spatial_macro_mechanics_fight_decision_ml"
+  ],
+  "sourceObservedCounterTransitionCandidateTotalIsNotDeaths": true,
+  "eventCountIsNotDeaths": true,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}

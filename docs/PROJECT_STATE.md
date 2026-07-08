@@ -1015,3 +1015,22 @@ final facts, parser/engine behavior change, `packages/deadem/**` change,
 recovery, skip, placeholder, default behavior change, parser opt-in,
 Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 pull/merge/cherry-pick/rebase, or Task 170 was produced.
+
+## Task 170 Exact 15 Death Validation Consumption Contract Note
+
+Task 170 defined the safe consumption contract for the Task 169 exact-15 compact
+summary under `exact_15_death_validation_consumption_contract_ready`. The
+contract permits only compact metadata consumption with safe labels such as
+`Source-observed counter transition candidates`, `Total source-observed counter
+transition candidates`, `Duplicate transition-key count`, and `Compact source
+validation status`. It explicitly forbids labels and claims such as deaths,
+total deaths, kills, total kills, death events, confirmed deaths, final deaths,
+player deaths, match deaths, attribution, timelines, player identity, objective
+involvement, fight causality, Source 2 semantics, parser correctness, replay
+corruption/non-corruption, final source/canonical/match facts, or gameplay
+truth. No replay was accessed or processed; no parser, emission runner, summary
+runner, new `death_validation.json`, real replay artifact, final fact,
+gameplay interpretation, parser/engine behavior change, `packages/deadem/**`
+change, recovery, skip, placeholder, default behavior change, parser opt-in,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+pull/merge/cherry-pick/rebase, or Task 171 was produced.

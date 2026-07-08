@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "safeLabels": {
+    "eventCount": "Source-observed counter transition candidates",
+    "sourceObservedCounterTransitionCandidateTotal": "Total source-observed counter transition candidates",
+    "duplicateKeyCount": "Duplicate transition-key count",
+    "validationStatus": "Compact source validation status"
+  },
+  "additionalSafeLabels": {
+    "minEventCount": "Minimum source-observed counter transition candidates",
+    "maxEventCount": "Maximum source-observed counter transition candidates",
+    "duplicateKeyTotal": "Total duplicate transition-key count",
+    "artifactCount": "Compact artifact count"
+  },
+  "forbiddenLabels": [
+    "Deaths",
+    "Total deaths",
+    "Kills",
+    "Total kills",
+    "Death events",
+    "Player deaths",
+    "Match deaths",
+    "Combat deaths",
+    "Confirmed deaths",
+    "Final deaths"
+  ],
+  "labelPolicy": "Consumers must use safeLabels or equally explicit candidate-count wording. Forbidden labels must not appear as column headers, chart labels, report prose, dashboard cards, or API field aliases.",
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}
