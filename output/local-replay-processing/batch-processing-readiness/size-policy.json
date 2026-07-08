@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "perReplayArtifactLimitBytes": 32768,
+  "perReplayAllArtifactsLimitBytes": 262144,
+  "batchSummaryLimitBytes": 262144,
+  "batchTotalVersionedOutputLimitBytes": 1048576,
+  "basis": [
+    "Task 158 death_validation artifacts were 1361 bytes per replay.",
+    "The current compact schema is summary-only and should remain far below 32 KiB per replay.",
+    "The first batch should fail closed on size instead of truncating value-bearing output."
+  ],
+  "onLimitExceeded": "block offending artifact class and report size_failed",
+  "noLargeOutputExceptionWithoutSeparateTask": true
+}

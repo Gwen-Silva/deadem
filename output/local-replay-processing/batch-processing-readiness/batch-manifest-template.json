@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "manifestType": "batch_processing_readiness_template",
+  "batchId": "batch_manual_explicit_allowlist_YYYYMMDD",
+  "mode": "dry_run_readiness",
+  "allowlist": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "authorizationSource": "future task prompt",
+      "requestedMode": "dry_run_readiness"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "authorizationSource": "future task prompt",
+      "requestedMode": "dry_run_readiness"
+    }
+  ],
+  "blockedReplayRules": [
+    "replay_005 final holdout",
+    "replay_006..replay_008 unsupported bot fixtures",
+    "replay_012..replay_020 require separate authorization",
+    "samples/** forbidden",
+    "output/replays/** forbidden"
+  ],
+  "plannedOutputs": [
+    "batch-summary.json",
+    "per-replay-status.json",
+    "blocked-replay-audit.json",
+    "size-summary.json",
+    "policy-summary.json"
+  ],
+  "templateOnly": true,
+  "replayProcessingPerformed": false,
+  "realArtifactsEmitted": false
+}

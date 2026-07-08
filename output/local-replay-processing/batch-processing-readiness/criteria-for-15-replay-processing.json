@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "notReadyYet": true,
+  "minimumCriteriaBefore15ReplayProcessing": [
+    "Batch dry-run runner implemented and validated without real source emission.",
+    "Explicit allowlist policy enforces blocked replay rules before filesystem access.",
+    "Mini-pilot dry-run passes for reauthorized seed replays.",
+    "Batch-level blocked replay audit, policy summary, and size summary validate.",
+    "Death_validation compact batch emission is separately authorized after dry-run success.",
+    "First real batch emission remains summary-only and schema-backed.",
+    "No replay 005 access; no bot fixture processing; no candidate replay processing without separate authorization.",
+    "Upstream update check is run or documented as unavailable before parser debugging if a parser failure appears.",
+    "Output size budgets and post-emission policy audits pass."
+  ],
+  "criteriaForExpandingBeyondSeedReplays": [
+    "human explicitly authorizes each new replay id and local path",
+    "parse_only or dry_run_readiness passes for the expanded allowlist",
+    "no output policy or schema regressions",
+    "no replay-specific branch in parser/engine",
+    "no gameplay interpretation layer introduced"
+  ],
+  "fifteenReplayModeRecommendation": "dry_run_readiness first, then death_validation_compact_emission only after separate approval"
+}

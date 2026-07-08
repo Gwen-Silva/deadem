@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "minimumGoal": "Validate a generic batch runner can accept an explicit allowlist and produce compact batch readiness manifests without processing unauthorized replays.",
+  "recommendedMode": "dry_run_readiness",
+  "recommendedTask160Action": "implement_batch_dry_run_runner",
+  "eligibleSeedReplaysIfReauthorized": [
+    "replay_010",
+    "replay_011"
+  ],
+  "whyNotDeathValidationBatchFirst": "Task 158 proved single-command two-replay emission, but batch behavior still needs allowlist, blocked replay audit, per-replay failure isolation, and batch-level size/policy summaries before real batch emission.",
+  "successCriteria": [
+    "explicit allowlist accepted",
+    "unallowlisted replay rejected without filesystem access",
+    "protected replay policy represented in audit",
+    "per replay dry-run status generated",
+    "batch summary generated",
+    "no real source/canonical/match facts emitted"
+  ],
+  "notAuthorizedInThisTask": [
+    "running the mini-pilot",
+    "processing replay_010",
+    "processing replay_011",
+    "processing any additional replay"
+  ]
+}

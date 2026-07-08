@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "policy": "explicit_allowlist_required",
+  "rules": [
+    "Every batch must provide an explicit replay allowlist.",
+    "Every replay outside the allowlist must be refused before reading, hashing, opening, copying, or parsing.",
+    "Allowlist entries must include replayId, expected local path, intended mode, and authorization source.",
+    "A replay authorized for dry_run_readiness is not automatically authorized for death_validation_compact_emission.",
+    "A replay authorized in one task is not automatically authorized in later tasks."
+  ],
+  "minimumAllowlistEntry": {
+    "replayId": "replay_XXX",
+    "localPath": ".local/deadem/replays/inbox/partida_XXX.dem",
+    "mode": "dry_run_readiness",
+    "authorizationSource": "task-specific user prompt",
+    "expectedArtifactClasses": [],
+    "rawDataCaptured": false
+  },
+  "firstMiniPilotEligibleReplays": [
+    "replay_010",
+    "replay_011"
+  ],
+  "firstMiniPilotEligibilityBasis": "already validated through parser completion and compact death_validation emission in prior accepted tasks; must still be explicitly reauthorized in the future task",
+  "unallowlistedDefaultAction": "blocked"
+}

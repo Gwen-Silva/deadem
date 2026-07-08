@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "protectedHoldout": {
+    "replayId": "replay_005",
+    "status": "final_holdout_protected",
+    "defaultAction": "blocked_before_filesystem_access",
+    "cannotReadHashCopyOpenInspectOrProcess": true
+  },
+  "unsupportedBotFixtures": {
+    "replayIds": [
+      "replay_006",
+      "replay_007",
+      "replay_008"
+    ],
+    "defaultAction": "blocked_before_processing",
+    "separateAuthorizationRequired": true
+  },
+  "candidateReplaysBlockedUntilSeparateAuthorization": {
+    "range": "replay_012..replay_020",
+    "defaultAction": "blocked_before_filesystem_access",
+    "separateAuthorizationRequired": true
+  },
+  "blockedPathRoots": [
+    "samples/**",
+    "output/replays/**"
+  ],
+  "batchRunnerRequirement": "Protection checks must run before stat, hash, read stream, copy, parse, or output planning."
+}

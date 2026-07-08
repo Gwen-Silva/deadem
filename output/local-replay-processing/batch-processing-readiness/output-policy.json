@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "allowedPerReplayArtifactsByMode": {
+    "parse_only": [
+      "parser_completion_status"
+    ],
+    "dry_run_readiness": [
+      "readiness_status",
+      "planned_artifact_summary",
+      "schema_readiness_summary",
+      "output_policy_audit"
+    ],
+    "death_validation_compact_emission": [
+      "death_validation",
+      "schema_validation_summary",
+      "output_policy_audit",
+      "size_audit"
+    ]
+  },
+  "batchLevelArtifacts": [
+    "batch summary",
+    "per replay status",
+    "blocked replay audit",
+    "size summary",
+    "policy summary",
+    "next recommendation"
+  ],
+  "forbiddenData": [
+    "raw replay bytes",
+    "raw payloads",
+    "raw entityData",
+    "raw serializedEntities",
+    "string values",
+    "field values",
+    "full send-table payload",
+    "complete snapshots",
+    "full entity histories",
+    "event rows",
+    "player identity rows",
+    "killer/victim/assist attribution",
+    "gameplay interpretation outputs",
+    "spatial/macro/mechanics/fight/decision/ML outputs"
+  ],
+  "postEmissionAuditRequiredForRealArtifacts": true
+}

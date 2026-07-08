@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "selectedRecommendationForTask160": "implement_batch_dry_run_runner",
+  "rationale": "A dry-run batch runner tests allowlist enforcement, protected replay blocking, per-replay isolation, manifests, schema readiness, policy readiness, and size summaries before any real batch emission.",
+  "whyNotDeathValidationBatchImmediately": "Task 158 validated two-replay compact emission, but batch-level blocked replay audits and failure semantics have not been implemented yet.",
+  "nextMilestone": "implement a generic batch dry-run runner with no real source/canonical/match artifact emission"
+}

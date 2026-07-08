@@ -797,3 +797,24 @@ default behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow,
 Product Reviewer automation, pull/merge/cherry-pick/rebase, protected replay,
 bot replay, candidate replay, `samples/**`, `output/replays/**`, or Task 159
 change.
+
+## Task 159 Batch Processing Readiness Note
+
+Task 159 designed compact batch replay processing readiness under
+`batch_processing_readiness_designed`. It processed no replays and emitted no
+real source/canonical/match facts. The policy requires every future batch to use
+an explicit allowlist, blocks every non-allowlisted replay before filesystem
+access, preserves replay_005 as final holdout, keeps replays 006-008 blocked as
+unsupported bot fixtures, and keeps candidates 012-020 blocked unless separately
+authorized. The defined modes are `parse_only`, `dry_run_readiness`,
+`death_validation_compact_emission`, and `blocked`. The selected next milestone
+is `implement_batch_dry_run_runner`, because batch-level allowlist enforcement,
+blocked replay audits, failure isolation, schema readiness, policy readiness,
+and size summaries should be validated before any real batch emission. Task 159
+made no parser/engine behavior, `packages/deadem/**`, batch runner,
+real `death_validation`, death event, respawn event, source/canonical/match
+final fact, gameplay interpretation, recovery, skip, placeholder, default
+behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow, Product
+Reviewer automation, pull/merge/cherry-pick/rebase, protected replay, bot
+replay, candidate replay, `samples/**`, `output/replays/**`, or Task 160
+change.

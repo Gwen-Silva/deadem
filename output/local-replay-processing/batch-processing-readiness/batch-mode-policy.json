@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "modes": [
+    {
+      "mode": "parse_only",
+      "purpose": "Confirm parser completion for explicitly allowlisted replays.",
+      "emitsSourceArtifacts": false,
+      "emitsDeathValidation": false,
+      "requiresPrePolicyAudit": true,
+      "allowedOutputs": [
+        "batch summary",
+        "per replay parser status",
+        "blocked replay audit",
+        "size summary"
+      ],
+      "mustNotDo": [
+        "recovery",
+        "skip",
+        "placeholder",
+        "canonical facts",
+        "gameplay interpretation"
+      ]
+    },
+    {
+      "mode": "dry_run_readiness",
+      "purpose": "Plan compact artifact emission and validate policy/schema readiness without writing real source content.",
+      "emitsSourceArtifacts": false,
+      "emitsDeathValidation": false,
+      "requiresPrePolicyAudit": true,
+      "allowedOutputs": [
+        "planned artifact classes",
+        "schema readiness",
+        "policy readiness",
+        "per replay readiness status"
+      ],
+      "mustNotDo": [
+        "write real death_validation",
+        "write event rows",
+        "write field values",
+        "write final source/canonical/match facts"
+      ]
+    },
+    {
+      "mode": "death_validation_compact_emission",
+      "purpose": "Emit exactly one schema-backed death_validation compact artifact per explicitly allowlisted replay.",
+      "emitsSourceArtifacts": true,
+      "emitsDeathValidation": true,
+      "requiresPrePolicyAudit": true,
+      "requiresPostPolicyAudit": true,
+      "requiresSchemaValidation": true,
+      "allowedOutputs": [
+        "one death_validation.json per replay",
+        "schema validation summary",
+        "output policy audit",
+        "size audit",
+        "batch manifest"
+      ],
+      "mustNotDo": [
+        "write event rows",
+        "write player identities",
+        "write attribution",
+        "write field values",
+        "write final death facts"
+      ]
+    },
+    {
+      "mode": "blocked",
+      "purpose": "Refuse protected, unsupported, unallowlisted, or separately gated replays.",
+      "emitsSourceArtifacts": false,
+      "emitsDeathValidation": false,
+      "allowedOutputs": [
+        "blocked replay audit entry",
+        "reason code",
+        "manual authorization requirement"
+      ],
+      "mustNotDo": [
+        "open replay bytes",
+        "hash replay bytes",
+        "parse replay",
+        "copy replay"
+      ]
+    }
+  ],
+  "defaultMode": "dry_run_readiness",
+  "recommendedFirstImplementedMode": "dry_run_readiness"
+}

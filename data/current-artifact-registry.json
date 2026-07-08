@@ -441,6 +441,12 @@
       "notes": "Task 158 emitted one compact schema-backed death_validation summary per authorized replay. replay_010 produced eventCount 45 and duplicateKeyCount 0; replay_011 produced eventCount 80 and duplicateKeyCount 0. These are counter-transition candidate summaries only, not final death facts or gameplay interpretation."
     },
     {
+      "id": "batch_processing_readiness",
+      "path": "output/local-replay-processing/batch-processing-readiness/batch-readiness-gate.json",
+      "status": "current",
+      "notes": "Task 159 designed compact batch replay processing readiness without replay processing or real artifact emission. It requires explicit allowlists, protected replay blocking, dry-run readiness before real batch emission, failure isolation, and size/policy/schema summaries."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

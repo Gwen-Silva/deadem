@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "partialFailurePolicy": "isolate_and_report_without_silent_success",
+  "rules": [
+    "Each replay receives an independent status: ready, blocked, failed, or skipped_by_policy.",
+    "A blocked replay must not be opened, hashed, copied, or parsed.",
+    "A parse failure must stop that replay without recovery, skip, placeholder, or continuation.",
+    "A schema or policy failure blocks that artifact class for that replay.",
+    "Batch-level success requires all required replay entries to pass their requested mode.",
+    "Partial success is allowed only if explicitly reported as partial and no failed replay emits silent artifacts.",
+    "Failure of one replay must not force real emission for another replay unless the batch manifest declares independent-safe emission."
+  ],
+  "batchStatusValues": [
+    "batch_ready",
+    "batch_partial",
+    "batch_blocked",
+    "batch_inconclusive"
+  ],
+  "perReplayStatusValues": [
+    "ready",
+    "blocked_by_policy",
+    "parse_failed",
+    "schema_failed",
+    "output_policy_failed",
+    "size_failed",
+    "not_evaluated"
+  ]
+}

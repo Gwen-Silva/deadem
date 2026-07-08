@@ -1395,3 +1395,22 @@ transition candidate counts only, not final death facts or gameplay
 interpretation. Schema validation, output policy audit, and size audit passed.
 The recommended next milestone is to review or design the next compact
 schema-backed source class before emitting any richer value-bearing content.
+
+## Task 159
+
+Purpose: design compact batch replay processing readiness before scaling replay
+processing beyond individually authorized canaries.
+
+Success gate: `batch_processing_readiness_designed`.
+
+Blocked gate: `batch_processing_readiness_blocked`.
+
+Status: completed with the success gate above. No replay was processed and no
+real source/canonical/match artifact was emitted. The batch policy requires an
+explicit allowlist, blocks replay_005 as final holdout, blocks replays 006-008
+as unsupported bot fixtures, and blocks candidates 012-020 unless separately
+authorized. The supported batch modes are `parse_only`, `dry_run_readiness`,
+`death_validation_compact_emission`, and `blocked`. The recommended next
+milestone is `implement_batch_dry_run_runner`, which should validate allowlist
+enforcement, blocked replay audit, failure isolation, policy readiness, schema
+readiness, and size summaries before any real batch emission.
