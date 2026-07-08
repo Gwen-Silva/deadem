@@ -447,6 +447,12 @@
       "notes": "Task 159 designed compact batch replay processing readiness without replay processing or real artifact emission. It requires explicit allowlists, protected replay blocking, dry-run readiness before real batch emission, failure isolation, and size/policy/schema summaries."
     },
     {
+      "id": "batch_dry_run_readiness_runner",
+      "path": "output/local-replay-processing/batch-dry-run-readiness/batch-dry-run-gate.json",
+      "status": "current",
+      "notes": "Task 160 added npm run dry-run:batch-replay-readiness. The seed dry-run marked replay_010 and replay_011 ready for policy/readiness without replay filesystem access, parsing, real artifact emission, or death_validation_compact_emission."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

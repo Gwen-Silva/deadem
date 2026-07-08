@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "manifestType": "batch_dry_run_readiness_manifest",
+  "batchId": "task_160_seed_dry_run",
+  "mode": "dry_run_readiness",
+  "allowlist": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "authorizationSource": "Task 160 dry-run seed manifest; no replay filesystem access",
+      "requestedMode": "dry_run_readiness"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "authorizationSource": "Task 160 dry-run seed manifest; no replay filesystem access",
+      "requestedMode": "dry_run_readiness"
+    }
+  ],
+  "requestedReplays": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "requestedMode": "dry_run_readiness"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "requestedMode": "dry_run_readiness"
+    }
+  ],
+  "templateOnly": false,
+  "replayFilesystemAccessAuthorized": false,
+  "realArtifactsAuthorized": false
+}

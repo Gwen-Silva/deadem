@@ -1414,3 +1414,21 @@ authorized. The supported batch modes are `parse_only`, `dry_run_readiness`,
 milestone is `implement_batch_dry_run_runner`, which should validate allowlist
 enforcement, blocked replay audit, failure isolation, policy readiness, schema
 readiness, and size summaries before any real batch emission.
+
+## Task 160
+
+Purpose: implement a generic batch dry-run runner with explicit allowlist and
+pre-filesystem-access replay protections.
+
+Success gate: `batch_dry_run_runner_implemented`.
+
+Blocked gate: `batch_dry_run_runner_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run dry-run:batch-replay-readiness`. It accepts a manifest and writes only
+compact dry-run readiness outputs. The Task 160 seed manifest covered replay_010
+and replay_011 in `dry_run_readiness` mode, and both were marked `ready` without
+stat, hash, read stream, copy, parse, real artifact emission, or
+`death_validation_compact_emission`. The next milestone should be a separately
+authorized mini-pilot task that decides whether to run this batch dry-run against
+an explicitly approved replay set before any real batch source emission.

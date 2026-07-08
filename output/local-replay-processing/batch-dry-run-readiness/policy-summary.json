@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "policyStatus": "passed",
+  "explicitAllowlistRequired": true,
+  "protectionBeforeFilesystemAccess": true,
+  "mode": "dry_run_readiness",
+  "supportedReplayStatuses": [
+    "ready",
+    "blocked_by_policy",
+    "parse_failed",
+    "schema_failed",
+    "output_policy_failed",
+    "size_failed",
+    "not_evaluated"
+  ],
+  "forbiddenOutputSurfaces": [
+    "death_validation_compact_emission",
+    "death_events",
+    "respawn_events",
+    "source_facts_final",
+    "canonical_facts_final",
+    "match_facts_final",
+    "event_rows",
+    "field_values",
+    "raw_payloads",
+    "snapshots",
+    "identities",
+    "attribution",
+    "gameplay_interpretation"
+  ],
+  "deathValidationCompactEmissionExecuted": false,
+  "realArtifactsEmitted": false
+}

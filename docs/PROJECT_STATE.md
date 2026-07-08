@@ -818,3 +818,23 @@ behavior, new opt-in, Java/Clarity/external parser, WSL, iaflow, Product
 Reviewer automation, pull/merge/cherry-pick/rebase, protected replay, bot
 replay, candidate replay, `samples/**`, `output/replays/**`, or Task 160
 change.
+
+## Task 160 Batch Dry-Run Runner Note
+
+Task 160 implemented `npm run dry-run:batch-replay-readiness` under
+`batch_dry_run_runner_implemented`. The runner requires an explicit manifest
+allowlist and supports only `dry_run_readiness` in this task. It evaluates replay
+protection before replay filesystem access and writes compact readiness manifests
+only: batch summary, per-replay status, blocked replay audit, policy summary,
+schema readiness summary, size summary, gate, sample manifest, and protection
+audit. The Task 160 seed dry-run marked replay_010 and replay_011 as `ready`
+for dry-run policy/readiness with `filesystemAccessAttempted: false`,
+`statAttempted: false`, `hashAttempted: false`, `openReadStreamAttempted:
+false`, `copyAttempted: false`, and `parseAttempted: false`. No replay was
+processed. `death_validation_compact_emission` was not executed. No real
+source/canonical/match facts, gameplay interpretation output, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, protected
+replay access, bot replay processing, candidate replay processing, or Task 161
+was produced.
