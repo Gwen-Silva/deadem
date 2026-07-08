@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "rejectedActions": [
+    {
+      "action": "process_15_replays_now",
+      "reason": "No 15-replay allowlist or task-specific authorization exists."
+    },
+    {
+      "action": "emit_death_validation_for_new_replays_now",
+      "reason": "Task 163 forbids replay processing and new real artifact emission."
+    },
+    {
+      "action": "emit_death_events_or_attribution",
+      "reason": "Those classes remain value-bearing and were not authorized by the compact death_validation policy."
+    },
+    {
+      "action": "design_next_compact_source_class_first",
+      "reason": "Valid later, but lower priority than defining safe authorization for expanding the already proven compact class."
+    },
+    {
+      "action": "pause_batch_expansion",
+      "reason": "Unnecessary because the next recommended step is a no-replay authorization manifest, not replay processing."
+    }
+  ],
+  "newDeathValidationArtifactsEmitted": false,
+  "finalFactsProduced": false
+}

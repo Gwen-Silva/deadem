@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "replay005": {
+    "status": "protected_final_holdout",
+    "policy": "Do not read, open, hash, copy, inspect, parse, or process unless a future task explicitly authorizes final-holdout release."
+  },
+  "replays006To008": {
+    "status": "blocked_unsupported_bot_fixtures",
+    "policy": "Do not process as supported human fixtures."
+  },
+  "replays012To020": {
+    "status": "not_authorized_in_task_163",
+    "policy": "May be considered only in a future task that explicitly authorizes each replay one by one with replayId and localPath."
+  },
+  "samples": {
+    "status": "blocked",
+    "policy": "samples/** must not be accessed for this route."
+  },
+  "outputReplays": {
+    "status": "blocked",
+    "policy": "output/replays/** must not be accessed for this route."
+  },
+  "task163ReplayProcessing": "none"
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "futureAuthorizationRequired": true,
+  "requiredFieldsPerReplay": [
+    "replayId",
+    "localPath",
+    "authorizedMode",
+    "authorizedArtifactClass",
+    "taskSpecificAuthorization",
+    "explicitReplayAllowlistMembership"
+  ],
+  "requiredBatchFields": [
+    "authorization",
+    "realArtifactsAuthorized",
+    "allowedArtifactClass",
+    "rawDataCaptured",
+    "finalFactsProduced",
+    "protectedReplay005RemainsHoldout",
+    "bots006To008RemainBlocked",
+    "candidates012To020ExplicitOneByOneAuthorizationRequired",
+    "eventCountNotFinalFact"
+  ],
+  "requiredValues": {
+    "authorizedMode": "death_validation_compact_emission",
+    "authorizedArtifactClass": "death_validation",
+    "rawDataCaptured": false,
+    "finalFactsProduced": false,
+    "eventCountNotFinalFact": true
+  },
+  "minimumAuthorizationStatement": "Task-specific authorization must name every replayId and localPath, state that real emission is allowed only for compact death_validation, preserve replay_005 as holdout, keep replays 006-008 blocked, require candidates 012-020 to be authorized one by one, and state that eventCount is not a final death fact.",
+  "authorizationMissingConsequence": "No dry-run against new replay paths and no real emission should occur."
+}

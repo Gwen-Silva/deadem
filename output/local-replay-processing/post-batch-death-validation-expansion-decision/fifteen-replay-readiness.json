@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "fifteenReplayProcessingAuthorized": false,
+  "status": "not_authorized",
+  "reason": "Task 162 proved only a two-replay mini-pilot for replay_010 and replay_011. Task 163 is a design decision and does not authorize processing any additional replay or a 15-replay batch.",
+  "requirementsBeforeFifteenReplayConsideration": [
+    "A future task must provide an explicit allowlist of replayId/localPath pairs.",
+    "Replay 005 must remain excluded unless final-holdout release is explicitly authorized.",
+    "Replays 006-008 must remain excluded as unsupported bot fixtures.",
+    "Candidates 012-020 must be authorized one by one before any filesystem access.",
+    "An expanded dry-run should run before real compact death_validation emission.",
+    "Real emission must remain limited to compact death_validation unless a separate class-specific task authorizes another schema-backed artifact."
+  ],
+  "recommendedPrecondition": "prepare_expanded_death_validation_authorization_manifest"
+}

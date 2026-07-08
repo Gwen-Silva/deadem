@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "options": [
+    {
+      "id": "expand_death_validation_to_explicitly_authorized_replays",
+      "status": "viable_after_authorization",
+      "benefit": "Extends the already schema-backed compact class while preserving a narrow artifact surface.",
+      "risk": "Would process additional replay files and emit real artifacts, so it requires a new explicit per-replay authorization manifest before execution.",
+      "decision": "defer_until_manifest_prepared"
+    },
+    {
+      "id": "run_expanded_dry_run_before_real_emission",
+      "status": "viable_as_preflight",
+      "benefit": "Confirms allowlist, protection, path, and policy readiness before real death_validation emission.",
+      "risk": "Still needs explicit replay identifiers and local paths; it must not be treated as authorization to emit real artifacts.",
+      "decision": "recommended_after_manifest_exists"
+    },
+    {
+      "id": "design_next_compact_source_class",
+      "status": "valid_but_lower_priority_now",
+      "benefit": "Could broaden source/canonical coverage without richer value-bearing death rows.",
+      "risk": "Adds a second class before validating controlled scale-up of the first safe class.",
+      "decision": "defer"
+    },
+    {
+      "id": "pause_batch_expansion",
+      "status": "available",
+      "benefit": "Avoids any risk of broader replay access or artifact emission.",
+      "risk": "Does not advance the proven compact batch path after Task 162.",
+      "decision": "not_selected"
+    }
+  ],
+  "selectedNextAction": "prepare_expanded_death_validation_authorization_manifest",
+  "selectionReason": "The mini-pilot proved the compact death_validation class for two authorized replays, but no further replay set is authorized yet. The next useful step is to prepare the authorization manifest requirements before any dry-run or real emission."
+}

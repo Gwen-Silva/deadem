@@ -881,3 +881,21 @@ interpretation output, parser/engine behavior change, `packages/deadem/**`
 change, recovery, skip, placeholder, default behavior change, parser opt-in,
 Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 pull/merge/cherry-pick/rebase, or Task 163 was produced.
+
+## Task 163 Post Batch Death Validation Expansion Decision Note
+
+Task 163 produced a no-replay expansion decision under
+`post_batch_death_validation_expansion_decision_ready`. It preserved Task 162's
+result without overclaim: replay_010 had `eventCount: 45` and replay_011 had
+`eventCount: 80`, both as source-observed death counter transition candidate
+counts only, not final death facts or gameplay truth. The selected next action
+is `prepare_expanded_death_validation_authorization_manifest`. Processing 15
+replays is not authorized yet; any future expansion must explicitly name every
+replayId and localPath, authorize the mode and artifact class, preserve
+replay_005 as holdout, keep replays 006-008 blocked, and authorize candidates
+012-020 only one by one. No replay was processed, opened, hashed, copied,
+inspected, or parsed. No new real artifact, final fact, gameplay interpretation,
+parser/engine behavior change, `packages/deadem/**` change, recovery, skip,
+placeholder, default behavior change, parser opt-in, Java/Clarity/external
+parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase,
+or Task 164 was produced.

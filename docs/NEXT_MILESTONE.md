@@ -1469,3 +1469,23 @@ interpretation. Schema validation, output policy audit, and size audit passed.
 The next milestone should decide whether to keep batch expansion limited to this
 class or design the next schema-backed compact source class before any richer
 artifact emission.
+
+## Task 163
+
+Purpose: decide the next step after the controlled batch `death_validation`
+compact mini-pilot without processing any replay.
+
+Success gate: `post_batch_death_validation_expansion_decision_ready`.
+
+Blocked gate: `post_batch_death_validation_expansion_decision_blocked`.
+
+Status: completed with the success gate above. Task 163 selected
+`prepare_expanded_death_validation_authorization_manifest` as the next action.
+Task 162's replay_010 `eventCount: 45` and replay_011 `eventCount: 80` remain
+source-observed counter transition candidate counts only, not final death facts.
+Processing 15 replays is not authorized yet. A future expansion must first
+define a task-specific explicit allowlist with replayId, localPath, authorized
+mode, authorized artifact class, and protections preserving replay_005 as
+holdout, replays 006-008 as blocked bot fixtures, and candidates 012-020 as
+individually authorized only. No replay was processed and no new real artifact
+or gameplay interpretation was emitted in Task 163.

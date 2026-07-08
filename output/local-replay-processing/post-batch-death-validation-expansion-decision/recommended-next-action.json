@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "selectedNextAction": "prepare_expanded_death_validation_authorization_manifest",
+  "singleRecommendation": true,
+  "rationale": "Task 162 established that compact death_validation batch emission works for replay_010 and replay_011, but no additional replay set is authorized. Preparing the manifest is the smallest next step that reduces ambiguity without processing any replay.",
+  "nextTaskShould": [
+    "Define the exact replayId/localPath allowlist for any expansion.",
+    "Keep replay_005 protected and replays 006-008 blocked.",
+    "State whether candidates 012-020 are individually authorized or still blocked.",
+    "Authorize only death_validation_compact_emission if real artifacts are intended.",
+    "Require an expanded dry-run before real emission unless the task explicitly justifies otherwise.",
+    "Preserve that eventCount is not a final death fact."
+  ],
+  "nextTaskShouldNot": [
+    "Process 15 replays without explicit authorization.",
+    "Emit richer death_events or attribution.",
+    "Treat source-observed counter transition candidates as gameplay truth."
+  ]
+}
