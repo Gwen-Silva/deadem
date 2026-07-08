@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "upstreamCommit": "dba298dbed2b7978f9569e6e5e5c0bd787f36b4a",
+  "upstreamSummary": "FieldFactory: resolved char fields without count as varint, not string",
+  "adaptedPatch": "FieldFactory now passes FieldDefinition objects into decoder resolution and resolves baseType char with count null to VAR_UINT_32_DECODER before overrides/type registry.",
+  "externalCodeCopied": false
+}

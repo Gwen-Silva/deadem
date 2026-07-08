@@ -1234,34 +1234,11 @@ or canonical/source/match output was produced.
 
 ## Task 149
 
-Purpose: run a compact fail-closed multi-hypothesis PacketEntities diagnostic
-battery combining synthetic comparison scenarios with authorized replay_010 and
-replay_011 first missing-entity boundaries.
+Purpose: apply the upstream scalar `char` decoder fix so `char` fields without `count` resolve as `VAR_UINT_32_DECODER` instead of string, then validate authorized replay_010 and replay_011 post-fix with compact metadata only.
 
-Gate: `multi_hypothesis_packetentities_diagnostic_battery_ready`.
+Success gate: `upstream_char_decoder_fix_validated`.
 
-Status: completed. The battery processed only replay_010 and replay_011, and
-only until their first `missing_entity_fail_closed` boundaries. Both boundaries
-kept local index formula and two-bit UPDATE command decode internally
-consistent. replay_010 had zero nearby payloadBits/action-delta mismatches in
-the five-entry window; replay_011 retained one mismatch at loop 27
-(`payloadBits: 221`, `actionDelta: 373`) plus the high indexDelta signal.
-Synthetic scenarios showed exact matches, divergence in both directions, and
-non-comparable fail-closed boundaries are possible under compact local
-metadata. Consolidated classification:
-`payloadbits_action_delta_contract_conditional`. Strongest hypothesis:
-`probe_metric_mismatch_candidate`. Root-cause readiness:
-`not_ready_for_parser_fix`. Recommended next action:
-`design_compact_payloadbits_segment_attribution_probe`. No parser/engine
-behavior changed, and no recovery/skip/placeholder/continuation/default change
-or canonical/source/match output was produced.
+Blocked gate: `upstream_char_decoder_fix_blocked`.
 
-## Non-Goals
+Status: completed with the success gate above. The old replay_010 and replay_011 missing-entity blockers are resolved in default post-fix validation. This is a decoder correctness fix, not recovery, skip, placeholder, canonicalization, Source 2 semantics, replay-corruption evidence, or proof of total parser correctness.
 
-- Do not inspect or process replay 005.
-- Do not process bot fixtures 006-008.
-- Do not start spatial, mechanic-effect, ML, macro, fight, rotation, pressure,
-  role, or decision analysis.
-- Do not treat replay 002 v8 as accepted.
-- Do not create another workflow, cleanup, documentation, or repository
-  refactoring task before the pilot finishes.

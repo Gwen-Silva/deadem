@@ -381,10 +381,10 @@
       "notes": "Task 148 statically reviewed payloadBits versus actionDelta accounting and found the comparison is conditional rather than a universal direct-equality contract. It selected treat_payloadbits_action_delta_comparison_as_conditional and produced no replay processing, parser behavior change, recovery, skip, placeholder, raw data, or canonical/source/match output."
     },
     {
-      "id": "multi_hypothesis_packetentities_diagnostic_battery",
-      "path": "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/battery-gate.json",
+      "id": "upstream_char_decoder_fix",
+      "path": "output/local-replay-processing/upstream-char-decoder-fix/fix-gate.json",
       "status": "current",
-      "notes": "Task 149 ran a compact fail-closed multi-hypothesis battery on authorized replay_010 and replay_011 only plus synthetic scenarios. It classified payloadBits/actionDelta as conditional, kept probe_metric_mismatch_candidate strongest, marked not_ready_for_parser_fix, and produced no recovery, skip, placeholder, continuation, default behavior change, raw data, or canonical/source/match output."
+      "notes": "Task 149 applied the upstream scalar char-without-count decoder fix. Default post-fix validation reached end for replay_010 and replay_011, resolving the previous missing-entity blockers 2905 and 5624 with compact metadata only. No recovery, skip, placeholder, canonical/source/match output, raw data, or semantic conclusion was produced."
     },
     {
       "id": "spatial_resume_contract",

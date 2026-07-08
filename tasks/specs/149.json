@@ -1,8 +1,10 @@
 {
   "taskId": "149",
-  "title": "Run Multi-Hypothesis PacketEntities Diagnostic Battery",
+  "title": "Apply Upstream Char Field Decoder Fix",
   "status": "completed",
-  "objective": "Implement and run a compact fail-closed diagnostic battery combining synthetic contract scenarios and authorized replay_010/replay_011 first missing-entity boundaries to classify PacketEntities missing_entity_fail_closed hypotheses.",
+  "objective": "Adapt upstream commit dba298dbed2b7978f9569e6e5e5c0bd787f36b4a so scalar char fields without count resolve as VAR_UINT_32 instead of string, then validate replay_010 and replay_011 post-fix with compact metadata only.",
+  "baseCommitExpected": "2b4037474e9eba7587aa7c22505acf654b2a4a3f",
+  "baseCommitNote": "The previous Task 149 battery commit already existed locally; this task replaces the final Task 149 tree artifacts without rewriting history.",
   "readPaths": [
     "AGENTS.md",
     "docs/PROJECT_STATE.md",
@@ -13,43 +15,44 @@
     "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
     "data/current-artifact-registry.json",
     "package.json",
-    "packages/engine/src/ParserConfiguration.js",
-    "packages/engine/src/handlers/DemoMessageHandler.js",
-    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
-    "packages/engine/src/extractors/EntityMutationExtractor.js",
-    "packages/engine/src/core/BitBuffer.js",
-    "packages/engine/src/data/enums/EntityOperation.js",
+    "packages/engine/src/data/fields/FieldFactory.js",
+    "packages/engine/src/data/fields/FieldDefinition.js",
+    "packages/engine/src/data/fields/FieldRuleRegistry.js",
+    "packages/engine/src/data/fields/decoding/FieldDecoderDescriptor.js",
+    "packages/engine/src/data/fields/decoding/FieldDecoderCatalog.js",
+    "packages/engine/src/data/fields/decoding/FieldDecoderFactory.js",
     "packages/deadem/index.js",
-    "tools/run-cursor-index-contract-probe-replay-011.mjs",
+    "packages/engine/src/Player.js",
     "tests/diagnostic-fail-closed-missing-entity.test.mjs",
     "tests/replay-parser-prior-art-and-second-canary.test.mjs",
     "tests/external-parser-oracle-canaries.test.mjs",
     "tests/clarity-oracle-viability.test.mjs",
-    "tasks/specs/143.json",
     "tasks/specs/147.json",
     "tasks/specs/148.json",
-    "tasks/completed/143-replay-wide-lifecycle-diagnostic-replay-010-canary.md",
     "tasks/completed/147-cursor-index-contract-probe-replay-011.md",
-    "tasks/completed/148-payloadbits-action-delta-contract-review.md",
-    "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-010-canary/**",
-    "output/local-replay-processing/cursor-index-contract-probe-replay-011/**",
-    "output/local-replay-processing/payloadbits-action-delta-contract-review/**",
-    "reports/cursor-index-contract-probe-replay-011.md",
-    "reports/payloadbits-action-delta-contract-review.md"
-  ],
-  "optionalReadPaths": [
-    "tools/**",
-    "tests/**"
+    "tasks/completed/148-payloadbits-action-delta-contract-review.md"
   ],
   "writePaths": [
+    "packages/engine/src/data/fields/FieldFactory.js",
+    "tests/fieldfactory-char-decoder.test.mjs",
+    "tools/validate-upstream-char-decoder-fix.mjs",
+    "output/local-replay-processing/upstream-char-decoder-fix/**",
+    "reports/upstream-char-decoder-fix.md",
+    "tasks/specs/149.json",
+    "tasks/completed/149-upstream-char-decoder-fix.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
     "tools/run-multi-hypothesis-packetentities-diagnostic-battery.mjs",
     "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/**",
     "reports/multi-hypothesis-packetentities-diagnostic-battery.md",
-    "tasks/specs/149.json",
-    "tasks/completed/149-multi-hypothesis-packetentities-diagnostic-battery.md",
-    "docs/PROJECT_STATE.md",
-    "docs/NEXT_MILESTONE.md",
-    "data/current-artifact-registry.json"
+    "tasks/completed/149-multi-hypothesis-packetentities-diagnostic-battery.md"
+  ],
+  "removedOrReplacedPaths": [
+    "tools/run-multi-hypothesis-packetentities-diagnostic-battery.mjs",
+    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/**",
+    "reports/multi-hypothesis-packetentities-diagnostic-battery.md",
+    "tasks/completed/149-multi-hypothesis-packetentities-diagnostic-battery.md"
   ],
   "forbiddenPaths": [
     "samples/**",
@@ -68,19 +71,18 @@
     ".local/deadem/replays/inbox/partida_019.dem",
     ".local/deadem/replays/inbox/partida_020.dem",
     "packages/deadem/**",
-    "packages/engine/src/**",
-    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
     "tasks/specs/150.json",
     "tasks/completed/150-*",
     "tasks/blocked/150-*"
   ],
-  "requiredPolicies": [
-    "docs/codex/REPLAY_PROTECTION.md",
-    "docs/codex/EPISTEMIC_SAFETY.md",
-    "docs/codex/TASK_EXECUTION.md",
-    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
-  ],
   "requiredCommands": [
+    {
+      "id": "fieldfactory-char-decoder-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ]
+    },
     {
       "id": "diagnostic-fail-closed-missing-entity-tests",
       "type": "node-test",
@@ -128,26 +130,21 @@
     }
   ],
   "expectedOutputs": [
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/battery-gate.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/implementation-summary.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/synthetic-contract-results.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/synthetic-scenario-matrix.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/replay-010-contract-result.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/replay-011-contract-result.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/replay-comparison.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/payloadbits-actiondelta-analysis.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/cursor-index-command-analysis.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/nearby-offset-analysis.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/hypothesis-matrix.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/root-cause-readiness.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/rejected-fixes.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/recommended-next-action.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/no-continuation-proof.json",
-    "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/protection-audit.json",
-    "reports/multi-hypothesis-packetentities-diagnostic-battery.md",
-    "tasks/completed/149-multi-hypothesis-packetentities-diagnostic-battery.md"
+    "output/local-replay-processing/upstream-char-decoder-fix/application-summary.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/upstream-commit-summary.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/fieldfactory-change-summary.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/synthetic-char-decoder-test-result.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-010-validation-result.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-011-validation-result.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-comparison-before-after.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/failure-boundary-comparison.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/final-classification.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/rejected-risky-actions.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/protection-audit.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/fix-gate.json",
+    "reports/upstream-char-decoder-fix.md",
+    "tasks/completed/149-upstream-char-decoder-fix.md"
   ],
-  "largeOutputsAllowed": [],
   "replayProcessingAllowed": true,
   "authorizedReplayIds": [
     "replay_010",
@@ -159,24 +156,22 @@
   ],
   "followUpTask": "none",
   "stopConditions": [
-    "Process only replay_010 and replay_011, and only until first missing_entity_fail_closed",
+    "Process only replay_010 and replay_011 for post-fix validation",
     "Do not process replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
-    "Do not modify parser, engine, packages/deadem, tests, or default behavior",
-    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, parser fixes, continuation after missing entity, or new opt-in options",
-    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
-    "Do not create canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not implement recovery, skip mode, placeholders, fake fields, synthetic registry state, continuation after missing entity, or new opt-in options",
+    "Do not generate canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
     "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
-    "Do not conclude Source 2 semantics, replay corruption, local parser correctness, entity never existed in game, or parser bug without proof",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
     "Do not create Task 150"
   ],
-  "successGate": "multi_hypothesis_packetentities_diagnostic_battery_ready",
-  "blockedGate": "multi_hypothesis_packetentities_diagnostic_battery_blocked",
+  "successGate": "upstream_char_decoder_fix_validated",
+  "blockedGate": "upstream_char_decoder_fix_blocked",
   "allowedAlternateGates": [
-    "multi_hypothesis_packetentities_diagnostic_battery_partial"
+    "upstream_char_decoder_fix_partial"
   ],
   "gateSource": {
     "type": "json-file",
-    "path": "output/local-replay-processing/multi-hypothesis-packetentities-diagnostic-battery/battery-gate.json",
+    "path": "output/local-replay-processing/upstream-char-decoder-fix/fix-gate.json",
     "jsonField": "gate"
   },
   "regenerationPolicy": {
@@ -188,5 +183,13 @@
   "lifecycle": {
     "allowFinalValidation": true,
     "finalStatus": "completed"
-  }
+  },
+  "optionalReadPaths": [],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "largeOutputsAllowed": []
 }

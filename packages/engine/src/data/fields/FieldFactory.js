@@ -65,12 +65,12 @@ class FieldFactory {
 
         switch (model) {
             case FieldModel.SIMPLE: {
-                decoderResolution = this._resolveDecoderWithMetadata(name, definition.baseType, decoderInstructions);
+                decoderResolution = this._resolveDecoderWithMetadata(name, definition, decoderInstructions);
                 field = new FieldSimple(name, sendNode, decoderResolution.decoder);
                 break;
             }
             case FieldModel.ARRAY_FIXED: {
-                decoderResolution = this._resolveDecoderWithMetadata(name, definition.baseType, decoderInstructions);
+                decoderResolution = this._resolveDecoderWithMetadata(name, definition, decoderInstructions);
                 field = new FieldArrayFixed(name, sendNode, decoderResolution.decoder);
                 break;
             }
@@ -79,7 +79,7 @@ class FieldFactory {
 
                 decoderResolution = {
                     base: describeStaticDecoder(VAR_UINT_32_DECODER, 'array_variable_base_default', definition.baseType),
-                    child: this._resolveDecoderWithMetadata(name, definition.generic.baseType, decoderInstructions)
+                    child: this._resolveDecoderWithMetadata(name, definition.generic, decoderInstructions)
                 };
                 field = new FieldArrayVariable(name, sendNode, VAR_UINT_32_DECODER, decoderResolution.child.decoder);
                 break;
@@ -145,22 +145,30 @@ class FieldFactory {
     /**
      * @protected
      * @param {String} name
-     * @param {String} baseType
+     * @param {FieldDefinition} definition
      * @param {FieldDecoderInstructions} decoderInstructions
      * @returns {FieldDecoder}
      */
-    _resolveDecoder(name, baseType, decoderInstructions) {
-        return this._resolveDecoderWithMetadata(name, baseType, decoderInstructions).decoder;
+    _resolveDecoder(name, definition, decoderInstructions) {
+        return this._resolveDecoderWithMetadata(name, definition, decoderInstructions).decoder;
     }
 
     /**
      * @protected
      * @param {String} name
-     * @param {String} baseType
+     * @param {FieldDefinition} definition
      * @param {FieldDecoderInstructions} decoderInstructions
      * @returns {{decoder: FieldDecoder, source: string, baseType: string, descriptorType: string|null, descriptorOptions: object|null}}
      */
-    _resolveDecoderWithMetadata(name, baseType, decoderInstructions) {
+    _resolveDecoderWithMetadata(name, definition, decoderInstructions) {
+        Assert.isTrue(definition instanceof FieldDefinition);
+
+        const baseType = definition.baseType;
+
+        if (baseType === 'char' && definition.count === null) {
+            return describeStaticDecoder(VAR_UINT_32_DECODER, 'char_without_count_var_uint_32', baseType);
+        }
+
         const override = this._resolveDecoderOverrideWithMetadata(name, decoderInstructions);
 
         if (override !== null) {

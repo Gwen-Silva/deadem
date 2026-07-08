@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "testFile": "tests/fieldfactory-char-decoder.test.mjs",
+  "scenarios": [
+    "scalar char without count resolves to decodeUVarInt32",
+    "counted char does not apply scalar special-case and remains decodeString",
+    "variable array generic char child resolves to decodeUVarInt32",
+    "scalar char special-case has upstream precedence over name override"
+  ],
+  "rawDataCaptured": false
+}

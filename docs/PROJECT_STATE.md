@@ -641,13 +641,4 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   corruption, recovery safety, or skip safety. The selected recommendation is
   `treat_payloadbits_action_delta_comparison_as_conditional`, with future
   synthetic contract evidence as the safest next clarification path if separately
-  authorized. Task 149 then ran a compact fail-closed multi-hypothesis battery
-  on authorized replay_010 and replay_011 only, plus synthetic comparison
-  scenarios. Both canaries still failed closed at their first missing UPDATE
-  boundaries and preserved internal local index formula and UPDATE command
-  consistency. replay_010's five-entry nearby window matched payloadBits/action
-  delta throughout, while replay_011 retained one pre-boundary mismatch at loop
-  27. The consolidated classification is
-  `payloadbits_action_delta_contract_conditional`, strongest hypothesis is
-  `probe_metric_mismatch_candidate`, and root-cause readiness remains
-  `not_ready_for_parser_fix`.
+  authorized. Task 149 then applied upstream commit `dba298dbed2b7978f9569e6e5e5c0bd787f36b4a`, resolving scalar `char` fields without `count` as `VAR_UINT_32_DECODER` instead of the registered string decoder. This directly targets the earlier char/string overconsumption hypothesis. Post-fix default validation was limited to authorized replay_010 and replay_011 with compact metadata only; both replays reached end without the previous missing-entity blockers (`2905` and `5624`). The classification is `upstream_fix_resolved_replay_010_and_011`. No recovery, skip, placeholder, continuation, raw data, canonical/source/match output, Source 2 semantic conclusion, replay corruption conclusion, or total parser-correctness conclusion was produced.
