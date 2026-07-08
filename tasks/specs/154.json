@@ -1,0 +1,209 @@
+{
+  "taskId": "154",
+  "title": "Add Generic Compact Source Canonical Dry Run Entrypoint",
+  "status": "completed",
+  "objective": "Add a generic compact dry-run/readiness entrypoint for source/canonical pipeline planning after parser completion, using only replay_010 and replay_011, without emitting final source/canonical/match facts.",
+  "baseCommitExpected": "6c84f5da1cb3d590d46e00e918d2bc9f7f3fe2f9",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/149.json",
+    "tasks/specs/150.json",
+    "tasks/specs/151.json",
+    "tasks/specs/152.json",
+    "tasks/specs/153.json",
+    "tasks/completed/149-upstream-char-decoder-fix.md",
+    "tasks/completed/150-upstream-char-decoder-fix-resolution.md",
+    "tasks/completed/151-post-parser-fix-pipeline-validation.md",
+    "tasks/completed/152-controlled-canonical-source-readiness.md",
+    "tasks/completed/153-upstream-deadem-update-check.md",
+    "reports/post-parser-fix-pipeline-validation.md",
+    "reports/controlled-canonical-source-readiness.md",
+    "reports/upstream-update-check.md",
+    "output/local-replay-processing/post-parser-fix-pipeline-validation/validation-gate.json",
+    "output/local-replay-processing/controlled-canonical-source-readiness/readiness-gate.json",
+    "output/local-replay-processing/controlled-canonical-source-readiness/first-readiness-blocker.json",
+    "output/local-replay-processing/controlled-canonical-source-readiness/source-readiness-summary.json",
+    "output/local-replay-processing/controlled-canonical-source-readiness/canonical-readiness-summary.json",
+    "tools/generate-local-replay-source-artifacts.mjs",
+    "tools/generate-local-replay-forward-source-artifacts.mjs",
+    "tools/process-local-replay-input.mjs",
+    "packages/deadem/index.js"
+  ],
+  "optionalReadPaths": [
+    "tools/**",
+    "tests/**",
+    "scripts/**"
+  ],
+  "writePaths": [
+    "tools/dry-run-generic-source-canonical-readiness.mjs",
+    "tests/generic-source-canonical-dry-run-readiness.test.mjs",
+    "package.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/**",
+    "reports/generic-source-canonical-dry-run-entrypoint.md",
+    "tasks/specs/154.json",
+    "tasks/completed/154-generic-source-canonical-dry-run-entrypoint.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/engine/**",
+    "packages/deadem/**",
+    "tasks/specs/155.json",
+    "tasks/completed/155-*",
+    "tasks/blocked/155-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "fieldfactory-char-decoder-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ]
+    },
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "upstream-deadem-update-check-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/upstream-deadem-update-check.test.mjs"
+      ]
+    },
+    {
+      "id": "generic-source-canonical-dry-run-readiness-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/generic-source-canonical-dry-run-readiness.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/dry-run-gate.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/implementation-summary.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/scope-summary.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/replay-010-dry-run-status.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/replay-011-dry-run-status.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/planned-artifact-summary.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/schema-readiness-summary.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/output-policy-audit.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/first-dry-run-blocker.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/next-milestone-recommendation.json",
+    "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/protection-audit.json",
+    "reports/generic-source-canonical-dry-run-entrypoint.md",
+    "tasks/completed/154-generic-source-canonical-dry-run-entrypoint.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": [
+    "replay_010",
+    "replay_011"
+  ],
+  "authorizedReplayPaths": [
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_011.dem"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Process only replay_010 and replay_011",
+    "Do not read, hash, copy, open, inspect, or process replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify parser/engine behavior or packages/deadem",
+    "Do not emit source/canonical/match facts or spatial/macro/mechanics/fight/decision/ML outputs",
+    "Do not implement recovery, skip, placeholder, parser fix, default behavior change, or new opt-in",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not pull, merge, cherry-pick, or rebase upstream",
+    "Do not create Task 155"
+  ],
+  "successGate": "generic_source_canonical_dry_run_entrypoint_added",
+  "blockedGate": "generic_source_canonical_dry_run_entrypoint_blocked",
+  "allowedAlternateGates": [
+    "generic_source_canonical_dry_run_entrypoint_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint/dry-run-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "allowed-authorized-only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

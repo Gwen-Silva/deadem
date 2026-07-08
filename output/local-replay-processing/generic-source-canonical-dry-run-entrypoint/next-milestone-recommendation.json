@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "recommendedMilestone": "emit_controlled_source_canonical_artifacts_for_replay_010_011",
+  "rationale": "Generic dry-run readiness is available for both authorized canaries and produced compact manifests only.",
+  "futureTaskRequirements": [
+    "separate explicit authorization before final source/canonical artifact emission",
+    "process only authorized replays in that future task",
+    "validate output policy before writing final artifacts",
+    "no gameplay interpretation outputs"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "dryRunEntrypointArtifactClasses": [
+    {
+      "artifactClass": "parser_source_summary",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    },
+    {
+      "artifactClass": "source_readiness_manifest",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    },
+    {
+      "artifactClass": "canonical_readiness_manifest",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    },
+    {
+      "artifactClass": "source_artifact_manifest_plan",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    },
+    {
+      "artifactClass": "canonical_artifact_manifest_plan",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    },
+    {
+      "artifactClass": "schema_validation_summary",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    },
+    {
+      "artifactClass": "output_policy_audit",
+      "mode": "compact_readiness_metadata",
+      "finalFactArtifact": false
+    }
+  ],
+  "existingSourceArtifactClassesPlannedForFutureEmission": [
+    {
+      "artifactClass": "death_events",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "death_validation",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "match_state_quality",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "match_state_timeline",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "objective_entity_inventory",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "objective_lifecycle_events",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "one_second_player_reconciliation_or_equivalent",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "parser_source_summary",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    },
+    {
+      "artifactClass": "respawn_events",
+      "mode": "future_controlled_emission_only",
+      "finalFactArtifact": true
+    }
+  ],
+  "plannedArtifactCount": 7,
+  "existingSourceArtifactClassCount": 9,
+  "finalArtifactsWrittenByDryRun": false
+}

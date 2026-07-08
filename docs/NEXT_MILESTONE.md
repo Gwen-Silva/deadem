@@ -1306,3 +1306,21 @@ environment, with recommended action `manual_upstream_check_required`. This is
 not evidence that upstream has no update. Future parser debugging should run the
 upstream check before starting deep local diagnosis, and any pull, merge,
 cherry-pick, rebase, or update must remain a separate explicit task.
+
+## Task 154
+
+Purpose: add a generic compact source/canonical dry-run readiness entrypoint for
+replay_010 and replay_011, resolving the Task 152 pipeline-wiring blocker
+without emitting final facts.
+
+Success gate: `generic_source_canonical_dry_run_entrypoint_added`.
+
+Blocked gate: `generic_source_canonical_dry_run_entrypoint_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run dry-run:source-canonical-readiness`. Both replay_010 and replay_011
+completed parser advancement in dry-run/readiness mode, output policy passed,
+and no first blocker remains. The next recommended milestone is
+`emit_controlled_source_canonical_artifacts_for_replay_010_011`, requiring a
+separate explicit task before any final source/canonical/match facts are
+written.

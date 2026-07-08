@@ -697,3 +697,19 @@ changes, `packages/deadem/**` changes, pull/merge/cherry-pick/rebase,
 Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 recovery, skip, placeholder, new opt-in, or canonical/source/match output
 occurred.
+
+## Task 154 Generic Source/Canonical Dry-Run Entrypoint Note
+
+Task 154 added `npm run dry-run:source-canonical-readiness` under
+`generic_source_canonical_dry_run_entrypoint_added`. Only replay_010 and
+replay_011 were processed. Both completed parser advancement to the end, and the
+dry-run produced compact readiness manifests only. The classification is
+`generic_source_canonical_dry_run_ready`, with no first blocker. The next
+recommended milestone is `emit_controlled_source_canonical_artifacts_for_replay_010_011`
+in a separately authorized task. No final source/canonical/match facts, raw
+replay bytes, payloads, entityData, serializedEntities, string values, field
+values, full entity histories, parser/engine behavior changes,
+`packages/deadem/**` changes, recovery, skip, placeholder, default behavior
+change, new opt-in, pull/merge/cherry-pick/rebase, Java/Clarity/external parser,
+WSL, iaflow, Product Reviewer automation, protected replay access, bot replay
+processing, candidate replay processing, or Task 155 was created.
