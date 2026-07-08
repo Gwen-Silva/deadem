@@ -1242,3 +1242,13 @@ Blocked gate: `upstream_char_decoder_fix_blocked`.
 
 Status: completed with the success gate above. The old replay_010 and replay_011 missing-entity blockers are resolved in default post-fix validation. This is a decoder correctness fix, not recovery, skip, placeholder, canonicalization, Source 2 semantics, replay-corruption evidence, or proof of total parser correctness.
 
+
+## Task 150
+
+Purpose: consolidate the Task 149 upstream scalar `char` decoder fix resolution and close the old replay_010/replay_011 `missing_entity_fail_closed` diagnostic route without processing replays or changing parser behavior.
+
+Success gate: `upstream_char_decoder_fix_resolution_consolidated`.
+
+Blocked gate: `upstream_char_decoder_fix_resolution_blocked`.
+
+Status: completed with the success gate above. The next recommended milestone is `resume_generic_local_replay_pipeline_validation_post_parser_fix`; do not continue the old multi-hypothesis missing-entity route for the resolved boundaries.

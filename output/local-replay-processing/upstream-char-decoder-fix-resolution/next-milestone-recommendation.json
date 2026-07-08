@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "recommendation": "resume_generic_local_replay_pipeline_validation_post_parser_fix",
+  "rationale": "The old parser advancement blocker is resolved for replay_010 and replay_011 in default mode. The next useful milestone is to validate the previously blocked generic local replay processing/canonicalization path from the last safe point, still respecting replay protections and without expanding to protected or unsupported fixtures.",
+  "allowedShapeForFutureTask": [
+    "one explicit task",
+    "authorized replay scope only",
+    "start from existing local-input/canonicalization blockers after Task 102-104",
+    "compact validation first",
+    "no protected replay 005",
+    "no bot fixtures 006-008 unless separately authorized",
+    "no candidates 012-020 unless separately authorized"
+  ],
+  "notRecommendedNow": [
+    "continue old multi-hypothesis missing_entity_fail_closed route",
+    "design recovery/skip/placeholder around old blockers",
+    "claim parser-wide correctness",
+    "emit canonical/source/match facts without a separately scoped task"
+  ]
+}

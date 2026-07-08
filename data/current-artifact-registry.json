@@ -387,6 +387,12 @@
       "notes": "Task 149 applied the upstream scalar char-without-count decoder fix. Default post-fix validation reached end for replay_010 and replay_011, resolving the previous missing-entity blockers 2905 and 5624 with compact metadata only. No recovery, skip, placeholder, canonical/source/match output, raw data, or semantic conclusion was produced."
     },
     {
+      "id": "upstream_char_decoder_fix_resolution",
+      "path": "output/local-replay-processing/upstream-char-decoder-fix-resolution/consolidation-gate.json",
+      "status": "current",
+      "notes": "Task 150 consolidated that Task 149 resolved the old replay_010/replay_011 missing_entity_fail_closed blockers via the upstream scalar char-without-count decoder fix. The next recommended milestone is resume_generic_local_replay_pipeline_validation_post_parser_fix."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

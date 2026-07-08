@@ -1,0 +1,169 @@
+{
+  "taskId": "150",
+  "title": "Consolidate Upstream Fix Resolution",
+  "status": "completed",
+  "objective": "Consolidate the missing_entity_fail_closed investigation closure after Task 149 applied the upstream scalar char decoder fix and validated replay_010/replay_011 through default parser completion.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "tasks/specs/149.json",
+    "tasks/completed/149-upstream-char-decoder-fix.md",
+    "reports/upstream-char-decoder-fix.md",
+    "output/local-replay-processing/upstream-char-decoder-fix/final-classification.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-comparison-before-after.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/fieldfactory-change-summary.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-010-validation-result.json",
+    "output/local-replay-processing/upstream-char-decoder-fix/replay-011-validation-result.json",
+    "tasks/specs/131.json",
+    "tasks/specs/132.json",
+    "tasks/specs/143.json",
+    "tasks/specs/144.json",
+    "tasks/specs/147.json",
+    "tasks/specs/148.json",
+    "tasks/completed/147-cursor-index-contract-probe-replay-011.md",
+    "tasks/completed/148-payloadbits-action-delta-contract-review.md"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/**",
+    "reports/upstream-char-decoder-fix-resolution.md",
+    "tasks/specs/150.json",
+    "tasks/completed/150-upstream-char-decoder-fix-resolution.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/engine/**",
+    "packages/deadem/**",
+    "tasks/specs/151.json",
+    "tasks/completed/151-*",
+    "tasks/blocked/151-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "fieldfactory-char-decoder-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ]
+    },
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/root-cause-summary.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/investigation-retrospective.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/hypothesis-reclassification.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/replay-validation-summary.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/remaining-limitations.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/next-milestone-recommendation.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/protection-audit.json",
+    "output/local-replay-processing/upstream-char-decoder-fix-resolution/consolidation-gate.json",
+    "reports/upstream-char-decoder-fix-resolution.md",
+    "tasks/completed/150-upstream-char-decoder-fix-resolution.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "authorizedReplayIds": [],
+  "authorizedReplayPaths": [],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process replay_010 or replay_011 in this consolidation task",
+    "Do not process replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify parser/engine behavior, packages/deadem, recovery, skip, placeholders, defaults, or opt-in options",
+    "Do not generate canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not create Task 151"
+  ],
+  "successGate": "upstream_char_decoder_fix_resolution_consolidated",
+  "blockedGate": "upstream_char_decoder_fix_resolution_blocked",
+  "allowedAlternateGates": [
+    "upstream_char_decoder_fix_resolution_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/upstream-char-decoder-fix-resolution/consolidation-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

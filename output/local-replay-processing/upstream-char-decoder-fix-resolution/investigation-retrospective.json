@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "investigationRouteClosed": "missing_entity_fail_closed diagnostic route for replay_010/replay_011 old blockers",
+  "keyFindingsBeforeFix": [
+    "replay_010 reached missing UPDATE entity 2905 at packet 954 loop 33",
+    "replay_011 reached missing UPDATE entity 5624 at packet 1052 loop 28",
+    "replay_011 index formula and command decode were internally consistent before the fix",
+    "payloadBits/actionDelta mismatch was a compact symptom around field extraction rather than a standalone root cause proof",
+    "loop-26/fieldpath char/string evidence in earlier tasks made char decoder assignment a plausible contributor"
+  ],
+  "whatTask149Changed": [
+    "FieldFactory now resolves scalar char without count to VAR_UINT_32_DECODER",
+    "counted char remains on the registered char string decoder",
+    "replay_010 and replay_011 default parser validation reached end with no old missing entity error"
+  ],
+  "routeToStopContinuing": [
+    "multi-hypothesis missing_entity_fail_closed diagnosis for the old replay_010/replay_011 boundaries",
+    "cursor/index suspicion as primary route for those old boundaries",
+    "payloadBits/actionDelta mismatch as independent root-cause route for those old boundaries"
+  ],
+  "noNewReplayProcessingInTask150": true
+}

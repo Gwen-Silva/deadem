@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "symptomObserved": {
+    "class": "missing_entity_fail_closed",
+    "replay010": {
+      "error": "Unable to find an entity with index [ 2905 ]",
+      "packetOrdinal": 954,
+      "loop": 33,
+      "entityIndex": 2905
+    },
+    "replay011": {
+      "error": "Unable to find an entity with index [ 5624 ]",
+      "packetOrdinal": 1052,
+      "loop": 28,
+      "entityIndex": 5624
+    },
+    "sharedPattern": "PacketEntities UPDATE referenced an entity index with no observed local parser registry history before the fail-closed boundary."
+  },
+  "upstreamFixApplied": {
+    "commit": "dba298dbed2b7978f9569e6e5e5c0bd787f36b4a",
+    "summary": "FieldFactory resolved char fields without count as varint, not string.",
+    "localAdaptation": {
+      "schemaVersion": 1,
+      "file": "packages/engine/src/data/fields/FieldFactory.js",
+      "changedCallsToPassDefinition": true,
+      "scalarCharWithoutCountResolution": "char_without_count_var_uint_32",
+      "precedence": "upstream_precedence_before_name_override_and_type_registry",
+      "countedCharStillUsesRegisteredCharDecoder": true,
+      "variableArrayGenericUsesGenericDefinition": true
+    }
+  },
+  "probableCauseCorrected": "Scalar char fields without count were decoded as null-terminated strings locally, causing excessive field extraction consumption and downstream entityData cursor desynchronization. Resolving scalar char as VAR_UINT_32_DECODER is the probable corrected cause for the observed missing-entity blockers.",
+  "confidence": "high_for_replay_010_and_replay_011_blockers_after_post_fix_default_completion",
+  "limits": [
+    "not proof of total parser correctness",
+    "not Source 2 semantics",
+    "not replay corruption conclusion",
+    "not game facts"
+  ]
+}

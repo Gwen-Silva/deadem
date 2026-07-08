@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "hypotheses": [
+    {
+      "hypothesis": "char_without_count_decoder_bug",
+      "previousStatus": "implicit_or_partial_candidate_from_char_string_overconsumption_evidence",
+      "currentStatus": "probable_corrected_cause_for_replay_010_and_replay_011_old_blockers",
+      "basis": "Applying upstream scalar char decoder fix made both replays pass default parsing to end."
+    },
+    {
+      "hypothesis": "payloadbits_action_delta_primary_contract_bug",
+      "previousStatus": "suspected_or_conditional_signal",
+      "currentStatus": "reclassified_as_symptom_compatible_with_wrong_field_decoder",
+      "basis": "The mismatch aligns with excessive field extraction from decoding scalar char as string; it is no longer the primary standalone route for the old blockers."
+    },
+    {
+      "hypothesis": "cursor_index_contract_suspected",
+      "previousStatus": "viable_due_to_high_delta_and_missing_history",
+      "currentStatus": "weakened_for_old_replay_010_replay_011_boundaries",
+      "basis": "Post-fix default completion without cursor/index behavior changes indicates the old missing-entity failures were more likely downstream of decoder-induced desynchronization."
+    },
+    {
+      "hypothesis": "command_decode_position_suspected",
+      "previousStatus": "weakened_by_task147_internal_consistency",
+      "currentStatus": "further_weakened_for_old_boundaries",
+      "basis": "No command decode change was needed for replay_010/replay_011 to pass."
+    },
+    {
+      "hypothesis": "source_semantics_unknown_candidate",
+      "previousStatus": "open_due_to_no_external_runtime_oracle",
+      "currentStatus": "still_open_generally_but_not_needed_to_explain_old_blockers",
+      "basis": "Local correction resolved the canaries; external semantics remain unproved and should not be inferred."
+    },
+    {
+      "hypothesis": "never_registered_in_observed_parser_history_pattern",
+      "previousStatus": "observed_pattern",
+      "currentStatus": "downstream_symptom_of_parser_desynchronization_for_old_boundaries",
+      "basis": "The missing UPDATE pattern disappeared after decoder correction."
+    }
+  ],
+  "conclusionsStillProhibited": [
+    "total parser correctness",
+    "Source 2 semantics",
+    "replay corruption",
+    "game facts",
+    "death/destruction/remove conclusions from registry absence"
+  ]
+}

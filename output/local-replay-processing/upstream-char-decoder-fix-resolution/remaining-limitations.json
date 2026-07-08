@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "limitations": [
+    "Task 149 validated replay_010 and replay_011 parser completion only; no canonical/source/match facts were generated.",
+    "The fix resolves the observed blockers but does not prove all PacketEntities decoding paths are correct.",
+    "No external parser oracle was run; Source 2/Deadlock semantics are not concluded.",
+    "Replay 005 remains protected and untouched.",
+    "Replays 006-008 remain unsupported bot fixtures.",
+    "Candidates 012-020 remain outside this task scope.",
+    "The former diagnostic outputs remain historical evidence but should not drive continued missing-entity diagnosis for the resolved boundaries."
+  ],
+  "prohibitedConclusions": [
+    "total parser correctness",
+    "Source 2 semantics",
+    "replay corruption or non-corruption",
+    "match/game facts",
+    "safety of recovery, skip, placeholders, or continuation as a general approach"
+  ]
+}
