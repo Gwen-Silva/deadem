@@ -937,3 +937,22 @@ final fact, gameplay interpretation, parser/engine behavior change,
 `packages/deadem/**` change, recovery, skip, placeholder, default behavior
 change, parser opt-in, Java/Clarity/external parser, WSL, iaflow, Product
 Reviewer automation, pull/merge/cherry-pick/rebase, or Task 166 was produced.
+
+## Task 166 Expanded Death Validation Dry-Run Note
+
+Task 166 ran the expanded death validation dry-run against the Task 165
+materialized authorization manifest under
+`expanded_death_validation_dry_run_ready`. The dry-run evaluated 16 eligible
+authorization entries as `dry_run_ready`: replay_001, replay_002, replay_003,
+replay_004, replay_009, replay_010, replay_011, and replay_012 through
+replay_020. replay_005 remains the protected final holdout, and replay_006
+through replay_008 remain blocked unsupported bot fixtures. Real emission
+remains unauthorized, no automatic 15-replay exclusion was selected, and the
+next recommended action is
+`decide_exact_15_replay_selection_or_authorize_16_replay_real_emission`. No
+replay was accessed, opened, hashed, copied, inspected, parsed, or processed;
+no new real artifact, final fact, gameplay interpretation, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 167
+was produced.

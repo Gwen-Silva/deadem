@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "policyReadinessStatus": "passed",
+  "materializedAuthorizationRequired": true,
+  "expandedDryRunOnly": true,
+  "realEmissionAuthorizedForExpansion": false,
+  "replay005Blocked": true,
+  "bots006To008Blocked": true,
+  "candidates012To020EvaluatedAsAuthorizationEntriesOnly": true,
+  "samplesPathsEvaluatedAsAuthorizationStringsOnly": true,
+  "replayFilesystemAccessForbidden": true,
+  "replayFilesystemAccessPerformed": false,
+  "prohibitedEmissionSurfaces": [
+    "death_validation_json_real_artifacts",
+    "death_events",
+    "respawn_events",
+    "timelines",
+    "objective_lifecycle",
+    "player_identity_rows",
+    "killer_victim_assist_attribution",
+    "field_values",
+    "raw_replay_bytes",
+    "raw_payloads",
+    "raw_entityData",
+    "raw_serializedEntities",
+    "snapshots",
+    "full_entity_histories",
+    "source_canonical_match_final_facts",
+    "gameplay_interpretation"
+  ]
+}

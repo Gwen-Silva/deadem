@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "eligibleReplayCount": 16,
+  "operationalFifteenReplayTargetStillRequiresSelection": true,
+  "selectionMadeInTask166": false,
+  "automaticExclusionPerformed": false,
+  "automaticExclusionForbidden": true,
+  "note": "Task 166 evaluates all 16 materialized eligible replay authorization entries. If the operational target remains exactly 15 replays, a future task must explicitly choose which eligible replay is excluded.",
+  "nextDecisionNeeded": "select_exclusion_if_exactly_15_replays_required"
+}

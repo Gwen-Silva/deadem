@@ -1527,3 +1527,21 @@ unsupported bot fixtures. If the operational target remains exactly 15 replays,
 a future task must explicitly choose one eligible replay to exclude. The next
 recommended milestone is `run_expanded_death_validation_dry_run`; no replay was
 accessed or processed in Task 165.
+
+## Task 166
+
+Purpose: run the expanded `death_validation_compact_emission` dry-run against
+the Task 165 materialized authorization manifest without replay filesystem
+access or real artifact emission.
+
+Success gate: `expanded_death_validation_dry_run_ready`.
+
+Blocked gate: `expanded_death_validation_dry_run_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run dry-run:expanded-death-validation-batch`. It marked all 16 materialized
+eligible entries as `dry_run_ready` and preserved replay_005 as holdout plus
+replay_006 through replay_008 as blocked bot fixtures. Real emission remains
+unauthorized and no 15-replay exclusion was selected automatically. The next
+recommended milestone is
+`decide_exact_15_replay_selection_or_authorize_16_replay_real_emission`.
