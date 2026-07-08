@@ -459,6 +459,12 @@
       "notes": "Task 161 ran the batch dry-run runner against a task-specific replay_010/replay_011 allowlist. Both entries were ready for dry-run readiness only, with no replay filesystem access, parsing, real artifact emission, or death_validation_compact_emission."
     },
     {
+      "id": "batch_death_validation_compact_mini_pilot",
+      "path": "output/local-replay-processing/batch-death-validation-compact-mini-pilot/batch-death-validation-gate.json",
+      "status": "current",
+      "notes": "Task 162 emitted exactly one compact schema-backed death_validation artifact for replay_010 and replay_011 through the batch runner. eventCount remains a source-observed counter transition candidate summary, not final death facts or gameplay interpretation."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

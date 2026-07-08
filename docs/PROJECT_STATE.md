@@ -859,3 +859,25 @@ default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, protected
 replay access, bot replay processing, candidate replay processing, or Task 162
 was produced.
+
+## Task 162 Batch Death Validation Compact Mini-Pilot Note
+
+Task 162 implemented `npm run emit:batch-death-validation-compact` and ran the
+controlled batch mini-pilot under
+`batch_death_validation_compact_mini_pilot_emitted`. The task-specific manifest
+authorized only replay_010 and replay_011 for
+`death_validation_compact_emission`, and exactly one schema-backed compact
+`death_validation.json` artifact was emitted per replay. replay_010 recorded
+`eventCount: 45` and `duplicateKeyCount: 0`; replay_011 recorded `eventCount:
+80` and `duplicateKeyCount: 0`. These counts remain source-observed death
+counter transition candidate summaries only, not final death facts or gameplay
+truth. Schema validation, output policy audit, and size audit passed. No replay
+beyond replay_010 and replay_011 was processed. replay 005, replays 006-008,
+candidates 012-020, `samples/**`, and `output/replays/**` were not accessed or
+processed. No `death_events`, `respawn_events`, timeline, objective lifecycle,
+player identity rows, killer/victim/assist attribution, field values, raw data,
+snapshots, full entity histories, source/canonical/match final facts, gameplay
+interpretation output, parser/engine behavior change, `packages/deadem/**`
+change, recovery, skip, placeholder, default behavior change, parser opt-in,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+pull/merge/cherry-pick/rebase, or Task 163 was produced.

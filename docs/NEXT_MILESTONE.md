@@ -1449,3 +1449,23 @@ stream, copy, parse, real source/canonical/match artifact emission, or
 `death_validation_compact_emission`. The next milestone should remain a
 separately authorized batch step; this task does not authorize real batch
 emission or 15-replay processing.
+
+## Task 162
+
+Purpose: run a controlled batch mini-pilot for compact `death_validation`
+emission on replay_010 and replay_011 only.
+
+Success gate: `batch_death_validation_compact_mini_pilot_emitted`.
+
+Blocked gate: `batch_death_validation_compact_mini_pilot_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run emit:batch-death-validation-compact`. It emitted exactly one compact
+`death_validation.json` artifact for each authorized replay. replay_010 has
+`eventCount: 45` and `duplicateKeyCount: 0`; replay_011 has `eventCount: 80`
+and `duplicateKeyCount: 0`. These are source-observed counter transition
+candidate summaries only, not final death facts, attribution, or gameplay
+interpretation. Schema validation, output policy audit, and size audit passed.
+The next milestone should decide whether to keep batch expansion limited to this
+class or design the next schema-backed compact source class before any richer
+artifact emission.
