@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "readinessStatus": "passed",
+  "batchArtifactsPlanned": [
+    "batch-summary.json",
+    "per-replay-status.json",
+    "blocked-replay-audit.json",
+    "policy-summary.json",
+    "schema-readiness-summary.json",
+    "size-summary.json",
+    "batch-dry-run-gate.json"
+  ],
+  "realSourceSchemasEvaluated": false,
+  "deathValidationSchemaEmissionExecuted": false,
+  "notes": [
+    "Dry-run validates batch manifest shape and policy readiness only.",
+    "No source/canonical/match artifact schema is used to emit real content."
+  ]
+}

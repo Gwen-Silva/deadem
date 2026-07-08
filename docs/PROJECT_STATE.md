@@ -838,3 +838,24 @@ default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, protected
 replay access, bot replay processing, candidate replay processing, or Task 161
 was produced.
+
+## Task 161 Batch Dry-Run Mini-Pilot Note
+
+Task 161 ran the controlled mini-pilot for
+`npm run dry-run:batch-replay-readiness` under
+`batch_dry_run_mini_pilot_passed`. The task-specific manifest allowlisted only
+replay_010 and replay_011 in `dry_run_readiness` mode and wrote compact
+readiness metadata under
+`output/local-replay-processing/batch-dry-run-mini-pilot/`. Both entries were
+marked `ready` with `filesystemAccessAttempted: false`, `statAttempted: false`,
+`hashAttempted: false`, `openReadStreamAttempted: false`, `copyAttempted:
+false`, `parseAttempted: false`, `realArtifactsEmitted: false`,
+`sourceCanonicalMatchFactsProduced: false`, and `rawDataCaptured: false`. No
+replay was processed. `death_validation_compact_emission` was not executed. No
+real `death_validation`, `death_events`, `respawn_events`,
+source/canonical/match facts, gameplay interpretation output, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, protected
+replay access, bot replay processing, candidate replay processing, or Task 162
+was produced.

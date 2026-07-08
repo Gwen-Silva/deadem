@@ -5,9 +5,17 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const THIS_FILE = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(THIS_FILE), '..');
-const REQUIRED_SUMMARY_ROOT = 'output/local-replay-processing/batch-dry-run-readiness/';
+const DEFAULT_SUMMARY_ROOT = 'output/local-replay-processing/batch-dry-run-readiness/';
+const MINI_PILOT_SUMMARY_ROOT = 'output/local-replay-processing/batch-dry-run-mini-pilot/';
 const SUCCESS_GATE = 'batch_dry_run_runner_implemented';
 const BLOCKED_GATE = 'batch_dry_run_runner_blocked';
+const MINI_PILOT_SUCCESS_GATE = 'batch_dry_run_mini_pilot_passed';
+const MINI_PILOT_BLOCKED_GATE = 'batch_dry_run_mini_pilot_blocked';
+
+const SUMMARY_OUTPUT_ROOTS = new Map([
+    [DEFAULT_SUMMARY_ROOT, { reportPath: 'reports/batch-dry-run-readiness.md' }],
+    [MINI_PILOT_SUMMARY_ROOT, { reportPath: 'reports/batch-dry-run-mini-pilot.md' }]
+]);
 
 export const SUPPORTED_DRY_RUN_MODE = 'dry_run_readiness';
 export const SUPPORTED_REPLAY_STATUSES = [
@@ -36,6 +44,8 @@ export const FORBIDDEN_OUTPUT_SURFACES = [
     'gameplay_interpretation'
 ];
 
+export const SUPPORTED_SUMMARY_OUTPUT_ROOTS = [...SUMMARY_OUTPUT_ROOTS.keys()];
+
 function slash(value) {
     return String(value).replaceAll(path.sep, '/');
 }
@@ -51,8 +61,11 @@ function assertRelativeRepositoryPath(value, label) {
 
 export function validateSummaryOutputRoot(summaryOutput) {
     const normalized = assertRelativeRepositoryPath(summaryOutput, 'summary output').replace(/\/?$/u, '/');
-    if (normalized !== REQUIRED_SUMMARY_ROOT) throw new Error(`summary output root must be exactly ${REQUIRED_SUMMARY_ROOT}`);
-    return { normalized, absolutePath: path.resolve(REPO_ROOT, normalized) };
+    const config = SUMMARY_OUTPUT_ROOTS.get(normalized);
+    if (!config) {
+        throw new Error(`summary output root must be one of: ${SUPPORTED_SUMMARY_OUTPUT_ROOTS.join(', ')}`);
+    }
+    return { normalized, absolutePath: path.resolve(REPO_ROOT, normalized), ...config };
 }
 
 export function classifyReplayProtection(replay) {
@@ -116,6 +129,9 @@ function compactReplayStatus(replay, status, reasons) {
 
 export function evaluateBatchDryRun(manifest) {
     validateManifestShape(manifest);
+    const batchId = manifest.batchId ?? 'batch_dry_run_readiness';
+    const successGate = batchId === 'batch_dry_run_mini_pilot' ? MINI_PILOT_SUCCESS_GATE : SUCCESS_GATE;
+    const blockedGate = batchId === 'batch_dry_run_mini_pilot' ? MINI_PILOT_BLOCKED_GATE : BLOCKED_GATE;
     const requested = Array.isArray(manifest.requestedReplays) && manifest.requestedReplays.length > 0
         ? manifest.requestedReplays
         : manifest.allowlist;
@@ -148,19 +164,19 @@ export function evaluateBatchDryRun(manifest) {
 
     const readyCount = perReplayStatus.filter(row => row.status === 'ready').length;
     const blockedCount = perReplayStatus.filter(row => row.status === 'blocked_by_policy').length;
-    const gate = readyCount > 0 && blockedCount === 0 ? SUCCESS_GATE : BLOCKED_GATE;
+    const gate = readyCount > 0 && blockedCount === 0 ? successGate : blockedGate;
 
     return {
         schemaVersion: 1,
-        batchId: manifest.batchId ?? 'batch_dry_run_readiness',
+        batchId,
         mode: manifest.mode,
         gate,
-        status: gate === SUCCESS_GATE ? 'ready' : 'blocked',
+        status: gate === successGate ? 'ready' : 'blocked',
         perReplayStatus,
         blockedReplayAudit,
         summary: {
             schemaVersion: 1,
-            batchId: manifest.batchId ?? 'batch_dry_run_readiness',
+            batchId,
             mode: manifest.mode,
             requestedReplayCount: requested.length,
             readyCount,
@@ -177,7 +193,7 @@ export function evaluateBatchDryRun(manifest) {
 export function buildPolicySummary(evaluation) {
     return {
         schemaVersion: 1,
-        policyStatus: evaluation.gate === SUCCESS_GATE ? 'passed' : 'blocked',
+        policyStatus: evaluation.status === 'ready' ? 'passed' : 'blocked',
         explicitAllowlistRequired: true,
         protectionBeforeFilesystemAccess: true,
         mode: evaluation.mode,
@@ -191,7 +207,7 @@ export function buildPolicySummary(evaluation) {
 export function buildSchemaReadinessSummary(evaluation) {
     return {
         schemaVersion: 1,
-        readinessStatus: evaluation.gate === SUCCESS_GATE ? 'passed' : 'blocked_by_policy',
+        readinessStatus: evaluation.status === 'ready' ? 'passed' : 'blocked_by_policy',
         batchArtifactsPlanned: [
             'batch-summary.json',
             'per-replay-status.json',
@@ -293,7 +309,9 @@ async function main() {
         iaflowUsed: false,
         productReviewerAutomationUsed: false,
         pullMergeCherryPickRebaseUsed: false,
-        task161Created: false
+        ...(summaryRoot.normalized === DEFAULT_SUMMARY_ROOT
+            ? { task161Created: false }
+            : { task162Created: false })
     };
 
     await writeJson(path.join(summaryRoot.absolutePath, 'batch-summary.json'), evaluation.summary);
@@ -310,12 +328,14 @@ async function main() {
     await writeJson(path.join(summaryRoot.absolutePath, 'size-summary.json'), sizeSummary);
     await writeJson(path.join(summaryRoot.absolutePath, 'batch-dry-run-gate.json'), gate);
     await writeJson(path.join(summaryRoot.absolutePath, 'protection-audit.json'), protectionAudit);
-    await writeMarkdown(path.resolve(REPO_ROOT, 'reports/batch-dry-run-readiness.md'), [
-        '# Batch Dry-Run Readiness',
+    await writeMarkdown(path.resolve(REPO_ROOT, summaryRoot.reportPath), [
+        summaryRoot.normalized === MINI_PILOT_SUMMARY_ROOT ? '# Batch Dry-Run Mini-Pilot' : '# Batch Dry-Run Readiness',
         '',
         `Gate: \`${gate.gate}\``,
         '',
-        'Task 160 implemented a generic batch runner for `dry_run_readiness`.',
+        summaryRoot.normalized === MINI_PILOT_SUMMARY_ROOT
+            ? 'Task 161 ran a controlled mini-pilot for `dry_run_readiness`.'
+            : 'Task 160 implemented a generic batch runner for `dry_run_readiness`.',
         '',
         'The runner requires an explicit allowlist, evaluates replay protection before any replay filesystem access, and writes only compact readiness manifests.',
         '',

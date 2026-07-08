@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch_dry_run_mini_pilot",
+  "mode": "dry_run_readiness",
+  "authorization": "Task 161 mini-pilot dry-run only",
+  "replayFilesystemAccessAuthorized": false,
+  "realArtifactsAuthorized": false,
+  "allowlist": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "requestedMode": "dry_run_readiness"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "requestedMode": "dry_run_readiness"
+    }
+  ],
+  "requestedReplays": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "requestedMode": "dry_run_readiness"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "requestedMode": "dry_run_readiness"
+    }
+  ]
+}

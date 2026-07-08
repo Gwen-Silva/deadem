@@ -1432,3 +1432,20 @@ stat, hash, read stream, copy, parse, real artifact emission, or
 `death_validation_compact_emission`. The next milestone should be a separately
 authorized mini-pilot task that decides whether to run this batch dry-run against
 an explicitly approved replay set before any real batch source emission.
+
+## Task 161
+
+Purpose: run a controlled mini-pilot of the batch dry-run readiness runner using
+a task-specific explicit allowlist.
+
+Success gate: `batch_dry_run_mini_pilot_passed`.
+
+Blocked gate: `batch_dry_run_mini_pilot_blocked`.
+
+Status: completed with the success gate above. The mini-pilot manifest
+allowlisted only replay_010 and replay_011 in `dry_run_readiness` mode. Both
+were marked `ready` without replay filesystem access, stat, hash, open read
+stream, copy, parse, real source/canonical/match artifact emission, or
+`death_validation_compact_emission`. The next milestone should remain a
+separately authorized batch step; this task does not authorize real batch
+emission or 15-replay processing.

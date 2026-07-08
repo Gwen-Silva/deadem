@@ -6,6 +6,7 @@ import {
     FORBIDDEN_OUTPUT_SURFACES,
     SUPPORTED_DRY_RUN_MODE,
     SUPPORTED_REPLAY_STATUSES,
+    SUPPORTED_SUMMARY_OUTPUT_ROOTS,
     buildPolicySummary,
     buildSchemaReadinessSummary,
     buildSizeSummary,
@@ -49,6 +50,17 @@ test('batch dry-run marks allowlisted replay as ready without filesystem access'
     assert.equal(result.perReplayStatus.every(row => row.status === 'ready'), true);
     assert.equal(result.perReplayStatus.every(row => row.filesystemAccessAttempted === false), true);
     assert.equal(result.perReplayStatus.every(row => row.statAttempted === false), true);
+    assert.equal(result.perReplayStatus.every(row => row.parseAttempted === false), true);
+});
+
+test('mini-pilot batch dry-run uses task-specific success gate without filesystem access', () => {
+    const result = evaluateBatchDryRun(manifest({ batchId: 'batch_dry_run_mini_pilot' }));
+    assert.equal(result.gate, 'batch_dry_run_mini_pilot_passed');
+    assert.equal(result.summary.readyCount, 2);
+    assert.equal(result.summary.deathValidationCompactEmissionExecuted, false);
+    assert.equal(result.perReplayStatus.every(row => row.filesystemAccessAttempted === false), true);
+    assert.equal(result.perReplayStatus.every(row => row.openReadStreamAttempted === false), true);
+    assert.equal(result.perReplayStatus.every(row => row.copyAttempted === false), true);
     assert.equal(result.perReplayStatus.every(row => row.parseAttempted === false), true);
 });
 
@@ -143,12 +155,20 @@ test('status and forbidden output surfaces include required policy values', () =
     }
 });
 
-test('summary output root is fixed to Task 160 output path', () => {
+test('summary output root is fixed to authorized batch dry-run output paths', () => {
     const root = validateSummaryOutputRoot('output/local-replay-processing/batch-dry-run-readiness/');
     assert.equal(root.normalized, 'output/local-replay-processing/batch-dry-run-readiness/');
+    const miniPilotRoot = validateSummaryOutputRoot('output/local-replay-processing/batch-dry-run-mini-pilot/');
+    assert.equal(miniPilotRoot.normalized, 'output/local-replay-processing/batch-dry-run-mini-pilot/');
+    assert.ok(SUPPORTED_SUMMARY_OUTPUT_ROOTS.includes('output/local-replay-processing/batch-dry-run-readiness/'));
+    assert.ok(SUPPORTED_SUMMARY_OUTPUT_ROOTS.includes('output/local-replay-processing/batch-dry-run-mini-pilot/'));
     assert.throws(
         () => validateSummaryOutputRoot('output/replays/batch-dry-run-readiness/'),
-        /summary output root must be exactly/u
+        /summary output root must be one of/u
+    );
+    assert.throws(
+        () => validateSummaryOutputRoot('output/local-replay-processing/other-batch/'),
+        /summary output root must be one of/u
     );
 });
 
