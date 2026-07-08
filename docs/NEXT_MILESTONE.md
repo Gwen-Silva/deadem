@@ -1563,3 +1563,21 @@ excess entry from the 16 dry-run-ready entries, not because of any quality,
 parser, corruption, semantics, factual, or gameplay conclusion. Real emission
 remains unauthorized. The next recommended milestone is
 `authorize_exact_15_death_validation_compact_emission`.
+
+## Task 168
+
+Purpose: emit exactly one compact schema-backed `death_validation.json` artifact
+for each replay in the Task 167 exact-15 set.
+
+Success gate: `exact_15_death_validation_compact_emitted`.
+
+Blocked gate: `exact_15_death_validation_compact_blocked`.
+
+Status: completed with the success gate above. The new command is
+`npm run emit:exact-15-death-validation-compact`. It processed replay_001,
+replay_002, replay_003, replay_004, replay_009, and replay_010 through
+replay_019 only, emitted 15 compact `death_validation` artifacts, and passed
+schema, output-policy, and size audits. `eventCount` remains a source-observed
+counter transition candidate summary, not final death facts. The next milestone
+should review how these compact artifacts are consumed or summarized without
+creating gameplay interpretation or broader source/canonical/match facts.

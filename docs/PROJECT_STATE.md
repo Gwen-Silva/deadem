@@ -975,3 +975,23 @@ fact, gameplay interpretation, parser/engine behavior change,
 `packages/deadem/**` change, recovery, skip, placeholder, default behavior
 change, parser opt-in, Java/Clarity/external parser, WSL, iaflow, Product
 Reviewer automation, pull/merge/cherry-pick/rebase, or Task 168 was produced.
+
+## Task 168 Exact 15 Death Validation Compact Emission Note
+
+Task 168 emitted exactly one schema-backed compact `death_validation.json`
+artifact for each selected replay under
+`exact_15_death_validation_compact_emitted`: replay_001, replay_002,
+replay_003, replay_004, replay_009, and replay_010 through replay_019. The
+runner validates the exact Task 167 selection before filesystem access and
+writes real artifacts only after all 15 replays pass parser completion, schema
+validation, output policy, and size audit. `eventCount` remains a
+source-observed counter transition candidate summary, not final death facts.
+No death event rows, respawn events, timelines, objective lifecycle rows,
+identity rows, attribution, field values, raw data, snapshots, full histories,
+source/canonical/match final facts, gameplay interpretation, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task
+169 was produced. replay_005 remains the protected final holdout, replay_006
+through replay_008 remain blocked unsupported bot fixtures, and replay_020 was
+not accessed or processed.

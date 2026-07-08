@@ -22,6 +22,7 @@
     "emit:controlled-source-canonical": "node tools/emit-controlled-source-canonical-artifacts.mjs",
     "emit:batch-death-validation-compact": "node tools/emit-batch-death-validation-compact-artifacts.mjs",
     "emit:death-validation-compact": "node tools/emit-death-validation-compact-artifacts.mjs",
+    "emit:exact-15-death-validation-compact": "node tools/emit-exact-15-death-validation-compact-artifacts.mjs --selection output/local-replay-processing/exact-15-death-validation-selection/selected-replay-set.json --summary-output output/local-replay-processing/exact-15-death-validation-compact-emission/",
     "lint": "npm run lint --workspaces --if-present --",
     "preview": "npm run preview --workspace=@deademx/ui",
     "proto:json": "npm run proto:json --workspaces --if-present",
