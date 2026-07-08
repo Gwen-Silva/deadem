@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "148",
+  "reviewType": "static_contract_review",
+  "gate": "payloadbits_action_delta_contract_reviewed",
+  "conclusion": "payloadBits and actionDelta are conditionally comparable, not a universal direct-equality contract",
+  "observedFacts": [
+    "EntityPayloadSizeExtractor decodes integer values from CSVCMsg_PacketEntities.serializedEntities.",
+    "DemoMessageHandler uses payloadSizes when filtering or recovery/diagnostics are active.",
+    "For UPDATE and CREATE, DemoMessageHandler consumes one payloadBits item from the iterator.",
+    "afterCommand and afterAction are BitBuffer read counts on message.entityData, not read counts on serializedEntities.",
+    "EntityMutationExtractor consumes field path data and field decoder data from entityData between afterCommand and afterAction for normal UPDATE extraction."
+  ],
+  "inferences": [
+    "payloadBits can be compared to afterAction - afterCommand only when the payload-size iterator is aligned with the entry and the action read interval represents the same semantic span.",
+    "A mismatch is useful diagnostic evidence, but it is not sufficient by itself to identify parser overconsumption, cursor misalignment, or Source 2 semantics."
+  ],
+  "forbiddenConclusions": [
+    "parser bug proven",
+    "Source 2 semantics proven",
+    "replay corruption proven",
+    "local parser correctness proven",
+    "payloadBits is authorized as a recovery or skip contract",
+    "missing UPDATE may be recovered, skipped, or represented by a placeholder"
+  ],
+  "recommendedNextAction": "treat_payloadbits_action_delta_comparison_as_conditional",
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

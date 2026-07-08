@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "hypotheses": [
+    {
+      "id": "payloadbits_equals_action_delta_candidate",
+      "description": "payloadBits directly equals afterAction - afterCommand for normal UPDATE entries.",
+      "evidenceFor": ["Task 147 loops 23-26 in the nearby window matched this equality."],
+      "evidenceAgainst": ["Task 147 loop 27 diverged: payloadBits 221 versus actionDelta 373.", "Static code review shows payloadBits comes from serializedEntities while actionDelta comes from entityData read counts."],
+      "filesOrFunctions": ["EntityPayloadSizeExtractor.retrieve", "DemoMessageHandler.handleSvcPacketEntities", "EntityMutationExtractor.applyTo"],
+      "wouldConfirm": "A bounded synthetic or documented contract showing payloadBits spans exactly the post-command mutation action for the relevant command path.",
+      "wouldRefute": "A documented or synthetic case where payloadBits intentionally excludes reads included in actionDelta.",
+      "prematureFixRisk": "Treating equality as universal could turn a diagnostic metric into an unsafe skip/recovery cursor contract.",
+      "nextSafeEvidence": "Synthetic payloadBits/actionDelta contract tests with no replay data."
+    },
+    {
+      "id": "payloadbits_excludes_field_path_or_overhead_candidate",
+      "description": "payloadBits may exclude some field-path, field-reader, or extractor reads included in actionDelta.",
+      "evidenceFor": ["EntityMutationExtractor actionDelta includes FieldPathExtractor and decoder reads.", "Loop 27 actionDelta exceeds payloadBits by 152 bits."],
+      "evidenceAgainst": ["Loops 23-26 matched payloadBits exactly, which weakens a simple always-excludes explanation."],
+      "filesOrFunctions": ["FieldPathExtractor.allIds", "EntityMutationExtractor._recordFieldPathDiagnostic", "EntityMutationExtractor._decodeWithDiagnostic"],
+      "wouldConfirm": "A contract or synthetic fixture where a known field path/value sequence produces actionDelta greater than payloadBits by expected non-payload overhead.",
+      "wouldRefute": "Evidence that payloadBits is formally defined to include all field path and field value reads for the action span.",
+      "prematureFixRisk": "Subtracting guessed overhead could corrupt cursor accounting.",
+      "nextSafeEvidence": "Static/synthetic tests that compare fieldPathBitsConsumed + fieldReaderBitsConsumed with actionDelta and payloadBits."
+    },
+    {
+      "id": "payloadbits_serialized_entities_alignment_candidate",
+      "description": "The serializedEntities payload-size iterator may be aligned differently from the local entry loop at or before loop 27.",
+      "evidenceFor": ["payloadBits is read from a separate serializedEntities buffer.", "Task 117 previously showed small shifts/grouped sums did not explain replay_010 exactly, leaving alignment semantics unresolved.", "Loop 27 is the only nearby mismatch before the replay_011 boundary."],
+      "evidenceAgainst": ["Task 147 loops 23-26 matched, suggesting local iterator alignment is at least locally plausible before loop 27."],
+      "filesOrFunctions": ["DemoMessageHandler.createPayloadIterator", "DemoMessageHandler.listPayloadSizes", "EntityPayloadSizeExtractor.retrieve"],
+      "wouldConfirm": "A compact future diagnostic showing neighboring payloadSizes better match action deltas under a different offset without raw data.",
+      "wouldRefute": "Synthetic or documented evidence that iterator cardinality and order are one-size-per-entry and loop 27 still mismatches because of action consumption.",
+      "prematureFixRisk": "Changing iterator alignment without proof could break correctly aligned entries.",
+      "nextSafeEvidence": "Synthetic iterator cardinality/alignment tests and compact offset summaries only."
+    },
+    {
+      "id": "entity_mutation_extractor_overconsumption_candidate",
+      "description": "EntityMutationExtractor may consume too many bits for loop 27 relative to the intended action payload.",
+      "evidenceFor": ["Loop 27 actionDelta exceeds payloadBits while read counts remain monotonic and within entityData."],
+      "evidenceAgainst": ["Static review alone cannot identify a specific extractor overread.", "Next entry begins at previous afterAction, so local cursor continuity remains internally coherent."],
+      "filesOrFunctions": ["EntityMutationExtractor.applyTo", "FieldPathExtractor.allIds", "serializer.getDecoderForFieldPathId"],
+      "wouldConfirm": "A compact segment diagnostic showing a specific field-path or decoder read crosses the intended payload boundary under a validated boundary definition.",
+      "wouldRefute": "Evidence that payloadBits is not meant to bound EntityMutationExtractor actionDelta for this entry.",
+      "prematureFixRisk": "Changing decoder or field path extraction from one mismatch would be a parser fix without sufficient proof.",
+      "nextSafeEvidence": "Non-replay synthetic extractor boundary tests or a separately authorized compact segment probe."
+    },
+    {
+      "id": "probe_metric_mismatch_candidate",
+      "description": "Task 147 may have compared two metrics that are only conditionally compatible.",
+      "evidenceFor": ["payloadBits and actionDelta are measured from different buffers.", "The boundary entry itself is explicitly not comparable because the parser stops before applying the payload."],
+      "evidenceAgainst": ["Loops 23-26 matching suggests the comparison can still be diagnostically meaningful under some conditions."],
+      "filesOrFunctions": ["DemoMessageHandler.handleSvcPacketEntities", "EntityPayloadSizeExtractor.retrieve", "BitBuffer.getReadCount"],
+      "wouldConfirm": "A documented rule or synthetic case proving payloadBits and actionDelta have different domains for some command/action paths.",
+      "wouldRefute": "A documented rule that payloadBits must always equal post-command action consumption for normal UPDATE entries.",
+      "prematureFixRisk": "Overweighting the loop 27 mismatch could direct the next task toward a false parser intervention.",
+      "nextSafeEvidence": "Treat comparison as conditional and design synthetic contract tests before replay-based intervention."
+    },
+    {
+      "id": "cursor_alignment_prior_to_payload_candidate",
+      "description": "Cursor/index alignment before loop 27 may affect both actionDelta and the following high indexDelta boundary.",
+      "evidenceFor": ["Task 147 retained highDeltaSignal and nearbyOffsetAlternativeFound.", "Loop 27 is immediately before the high-delta missing UPDATE boundary."],
+      "evidenceAgainst": ["Loop 27 and the boundary have monotonic read counts within entityData; the boundary command decode and index formula are internally consistent under the local model."],
+      "filesOrFunctions": ["BitBuffer.readUVarInt", "DemoMessageHandler.handleSvcPacketEntities", "EntityOperation.parseById"],
+      "wouldConfirm": "A compact cursor probe showing command/index plausibility improves at a nearby offset without raw data.",
+      "wouldRefute": "Repeated synthetic and compact checks showing local cursor continuity remains coherent and payloadBits mismatch has an independent explanation.",
+      "prematureFixRisk": "Moving the cursor based on plausible alternatives would be an unauthorized parser fix.",
+      "nextSafeEvidence": "Keep nearby offsets as candidates only; do not choose a replacement cursor."
+    },
+    {
+      "id": "source_semantics_unknown_candidate",
+      "description": "The mismatch may reflect Source 2/Deadlock semantics not represented by the local parser contract.",
+      "evidenceFor": ["No executable external oracle is currently available.", "serializedEntities semantics remain incompletely proven by local evidence."],
+      "evidenceAgainst": ["Local code can still be statically mapped, and Task 147 produced a specific compact mismatch signal."],
+      "filesOrFunctions": ["CSVCMsg_PacketEntities local handling", "EntityPayloadSizeExtractor", "EntityMutationExtractor"],
+      "wouldConfirm": "External documented/runtime evidence showing payloadBits semantics differ from local actionDelta expectations.",
+      "wouldRefute": "A local synthetic/documented contract sufficient to explain the mismatch without external semantics.",
+      "prematureFixRisk": "Encoding guessed external semantics locally without oracle evidence.",
+      "nextSafeEvidence": "Manual external oracle later, or local synthetic contract tests while oracle is unavailable."
+    },
+    {
+      "id": "not_enough_evidence",
+      "description": "Current compact/static evidence cannot determine the root cause.",
+      "evidenceFor": ["No raw data may be inspected.", "No external parser is executable.", "Static review cannot prove serializedEntities semantics beyond local code behavior."],
+      "evidenceAgainst": ["There is enough evidence to classify direct equality as conditional rather than guaranteed."],
+      "filesOrFunctions": ["Task 147 compact outputs", "DemoMessageHandler", "EntityPayloadSizeExtractor", "EntityMutationExtractor"],
+      "wouldConfirm": "Future review still cannot link payloadBits to actionDelta after synthetic tests.",
+      "wouldRefute": "Synthetic or documented contract evidence resolving whether the two metrics should match.",
+      "prematureFixRisk": "Proceeding to parser behavior changes before resolving the metric contract.",
+      "nextSafeEvidence": "Synthetic contract tests or a future narrowly scoped spec, not replay processing in this task."
+    }
+  ]
+}

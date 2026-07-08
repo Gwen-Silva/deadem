@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "knownCompactEvidence": [
+    "Task 147 boundary loop 28 reached expected missing UPDATE and failed closed.",
+    "Task 147 boundary loop 28 payloadBits is not comparable with actionDelta because no payload action was applied.",
+    "Task 147 nearby loop 27 measured payloadBits 221 and actionDelta 373 with monotonic in-bounds read counts.",
+    "Static code review shows payloadBits is decoded from serializedEntities while actionDelta is measured on entityData."
+  ],
+  "missingEvidence": [
+    {
+      "gap": "Formal payloadBits span",
+      "needed": "Evidence whether payloadBits is defined to include field path and field value reads after the two command bits.",
+      "safeNextEvidence": "synthetic tests or external documentation/runtime later"
+    },
+    {
+      "gap": "Iterator alignment around loop 27",
+      "needed": "Evidence whether the serializedEntities value consumed for loop 27 belongs to the same local entry under all packet semantics.",
+      "safeNextEvidence": "compact synthetic iterator tests and offset-summary-only diagnostics"
+    },
+    {
+      "gap": "Extractor segment attribution",
+      "needed": "Evidence whether loop 27's extra 152 bits came from field path reads, field value reads, or a metric mismatch.",
+      "safeNextEvidence": "synthetic extractor accounting tests without replay bytes or field values"
+    },
+    {
+      "gap": "External semantics",
+      "needed": "A working external oracle or documented Source 2/Deadlock PacketEntities contract.",
+      "safeNextEvidence": "manual external oracle only if environment changes"
+    }
+  ],
+  "blockedEvidenceInThisTask": [
+    "raw replay bytes",
+    "raw entityData",
+    "raw serializedEntities",
+    "raw payloads",
+    "field values",
+    "new replay processing",
+    "external parser execution"
+  ],
+  "rootCauseStatus": "not_determined",
+  "safeConclusion": "Loop 27 is a compact mismatch signal; direct payloadBits/actionDelta equality is not established as a universal contract."
+}

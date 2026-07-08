@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "taskId": "148",
+  "gate": "payloadbits_action_delta_contract_reviewed",
+  "status": "ready",
+  "selectedRecommendation": "treat_payloadbits_action_delta_comparison_as_conditional",
+  "summary": "Static review found payloadBits/actionDelta direct equality is conditional, not a universal contract. Task 147 loop 27 remains a compact mismatch signal but does not prove parser bug, recovery safety, skip safety, Source 2 semantics, or replay corruption.",
+  "blockers": [],
+  "rawDataCaptured": false,
+  "replayProcessed": false
+}

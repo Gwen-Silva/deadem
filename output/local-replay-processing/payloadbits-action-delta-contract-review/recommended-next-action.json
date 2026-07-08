@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "selectedRecommendation": "treat_payloadbits_action_delta_comparison_as_conditional",
+  "decisionMatrix": [
+    {
+      "option": "treat_payloadbits_mismatch_as_primary_signal",
+      "decision": "rejected",
+      "reason": "loop 27 is a real compact mismatch, but static review does not prove the metrics are universally equivalent or that the mismatch is causal"
+    },
+    {
+      "option": "treat_payloadbits_action_delta_comparison_as_conditional",
+      "decision": "selected",
+      "reason": "best fits the code split between serializedEntities payload sizes and entityData read-count deltas while preserving the diagnostic value of matching and mismatching entries"
+    },
+    {
+      "option": "run_replay_010_cursor_probe_now",
+      "decision": "rejected",
+      "reason": "this task forbids replay processing and the payloadBits/actionDelta contract should be clarified before more replay probing"
+    },
+    {
+      "option": "design_synthetic_payloadbits_contract_tests",
+      "decision": "deferred_as_next_safe_evidence",
+      "reason": "synthetic tests are useful next evidence, but the immediate decision is to downgrade direct comparison to conditional"
+    },
+    {
+      "option": "return_to_external_oracle_plan",
+      "decision": "deferred",
+      "reason": "external oracle remains unavailable in the current environment"
+    }
+  ],
+  "nextSafeEvidence": "A future task may design or implement synthetic payloadBits/actionDelta contract tests using no replay bytes, no parser behavior change, and no recovery or skip.",
+  "notAuthorized": [
+    "parser fix",
+    "recovery",
+    "skip mode",
+    "placeholder entity",
+    "continuation after missing entity",
+    "default behavior change",
+    "new replay processing"
+  ]
+}

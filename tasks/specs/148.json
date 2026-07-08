@@ -1,0 +1,183 @@
+{
+  "taskId": "148",
+  "title": "Review PayloadBits Action Delta Contract",
+  "status": "completed",
+  "objective": "Statically review the contract between serializedEntities payloadBits and measured EntityMutationExtractor action deltas without processing replays or changing parser behavior.",
+  "readPaths": [
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "packages/engine/src/handlers/DemoMessageHandler.js",
+    "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+    "packages/engine/src/extractors/EntityMutationExtractor.js",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/extractors/FieldPathExtractor.js",
+    "packages/engine/src/data/enums/EntityOperation.js",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "tests/external-parser-oracle-canaries.test.mjs",
+    "tests/clarity-oracle-viability.test.mjs",
+    "tasks/specs/142.json",
+    "tasks/specs/145.json",
+    "tasks/specs/146.json",
+    "tasks/specs/147.json",
+    "tasks/completed/142-packetentities-missing-entity-parser-mechanism-review.md",
+    "tasks/completed/145-high-index-missing-update-cursor-contract-review.md",
+    "tasks/completed/146-cursor-index-contract-probe-spec.md",
+    "tasks/completed/147-cursor-index-contract-probe-replay-011.md",
+    "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review/**",
+    "output/local-replay-processing/high-index-missing-update-cursor-contract-review/**",
+    "output/local-replay-processing/cursor-index-contract-probe-spec/**",
+    "output/local-replay-processing/cursor-index-contract-probe-replay-011/**",
+    "reports/packetentities-missing-entity-parser-mechanism-review.md",
+    "reports/high-index-missing-update-cursor-contract-review.md",
+    "reports/cursor-index-contract-probe-spec.md",
+    "reports/cursor-index-contract-probe-replay-011.md"
+  ],
+  "optionalReadPaths": [
+    "packages/engine/src/data/fields/**",
+    "packages/engine/src/extractors/**"
+  ],
+  "writePaths": [
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/**",
+    "reports/payloadbits-action-delta-contract-review.md",
+    "tasks/specs/148.json",
+    "tasks/completed/148-payloadbits-action-delta-contract-review.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "samples/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    ".local/deadem/replays/inbox/partida_010.dem",
+    ".local/deadem/replays/inbox/partida_011.dem",
+    ".local/deadem/replays/inbox/partida_012.dem",
+    ".local/deadem/replays/inbox/partida_013.dem",
+    ".local/deadem/replays/inbox/partida_014.dem",
+    ".local/deadem/replays/inbox/partida_015.dem",
+    ".local/deadem/replays/inbox/partida_016.dem",
+    ".local/deadem/replays/inbox/partida_017.dem",
+    ".local/deadem/replays/inbox/partida_018.dem",
+    ".local/deadem/replays/inbox/partida_019.dem",
+    ".local/deadem/replays/inbox/partida_020.dem",
+    "packages/deadem/**",
+    "packages/engine/src/**",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tasks/specs/149.json",
+    "tasks/completed/149-*",
+    "tasks/blocked/149-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/contract-summary.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/payload-size-extractor-map.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/entity-mutation-extractor-map.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/comparison-validity-analysis.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/replay-011-loop-27-interpretation.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/hypothesis-matrix.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/evidence-gap-analysis.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/rejected-fixes.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/recommended-next-action.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/protection-audit.json",
+    "output/local-replay-processing/payloadbits-action-delta-contract-review/review-gate.json",
+    "reports/payloadbits-action-delta-contract-review.md",
+    "tasks/completed/148-payloadbits-action-delta-contract-review.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "authorizedReplayIds": [],
+  "authorizedReplayPaths": [],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not process replay_010, replay_011, replay 005, bot fixtures 006-008, candidates 012-020, samples, or output/replays",
+    "Do not modify parser, engine, packages/deadem, tests, or default behavior",
+    "Do not implement probes, recovery, skip mode, placeholders, fake fields, parser fixes, continuation after missing entity, or new opt-in options",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not create canonical, source, match, factual, spatial, macro, mechanics, fight, decision, or ML outputs",
+    "Do not version raw replay bytes, raw payloads, raw entityData, raw serializedEntities, string bytes, string values, field values, or full send-table payloads",
+    "Do not conclude Source 2 semantics, replay corruption, local parser correctness, entity never existed in game, or parser bug without proof",
+    "Do not create Task 149"
+  ],
+  "successGate": "payloadbits_action_delta_contract_reviewed",
+  "blockedGate": "payloadbits_action_delta_contract_blocked",
+  "allowedAlternateGates": [
+    "payloadbits_action_delta_contract_partial"
+  ],
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/payloadbits-action-delta-contract-review/review-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  }
+}

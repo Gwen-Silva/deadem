@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "comparison": "payloadBits versus afterAction - afterCommand",
+  "validity": "conditional",
+  "directlyComparableWhen": [
+    "the payloadSizes iterator is present and known to be aligned one-to-one with the PacketEntities entry",
+    "the entry action actually consumed its payload region between afterCommand and afterAction",
+    "afterCommand is the intended start of the payload span for that command/action path",
+    "afterAction was recorded after the same action span without early fail-closed termination",
+    "the command path has no separately-accounted reads that should be excluded from payloadBits"
+  ],
+  "notComparableWhen": [
+    "the parser fails closed before applying or extracting the payload",
+    "payloadBits is null or the payload-size iterator is unavailable",
+    "the entry is LEAVE or DELETE and local handler records payloadBits as 0",
+    "the entry uses a filtered skip path whose cursor movement intentionally relies on payloadBits rather than independent extraction",
+    "iterator alignment, command semantics, or payload span semantics are under investigation"
+  ],
+  "conditionalOrWeakWhen": [
+    "previous neighboring entries compare cleanly but one entry diverges",
+    "read counts are monotonic and within entityData but the action span exceeds payloadBits",
+    "nearby offset alternatives exist but are only compact candidates",
+    "no raw payload/entityData inspection is permitted"
+  ],
+  "afterCommandAssessment": {
+    "isCorrectMeasurementPointForLocalActionDelta": true,
+    "isProvenPayloadBitsStartPoint": "not_proven_for_all_cases",
+    "reason": "afterCommand is immediately after the two command bits in local code; static evidence does not prove serializedEntities payloadBits is defined from that exact point for every command."
+  },
+  "afterActionAssessment": {
+    "isCorrectMeasurementPointForLocalConsumption": true,
+    "includesExtractorReads": true,
+    "canIncludeFieldPathAndFieldValueReads": true,
+    "provenEqualToPayloadBits": false
+  },
+  "reviewConclusion": "Task 147's comparison is a useful compact diagnostic signal only under stated conditions; it should not be treated as a primary parser bug proof or a skip/recovery contract."
+}

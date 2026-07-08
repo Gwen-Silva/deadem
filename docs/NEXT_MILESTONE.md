@@ -1213,6 +1213,25 @@ were recorded only as compact candidates, not as a replacement cursor. No
 recovery, skip, placeholder, continuation, parser fix, default behavior change,
 canonical/source/match output, raw data, or semantic claim was produced.
 
+## Task 148
+
+Purpose: statically review whether `serializedEntities` `payloadBits` and
+measured `afterAction - afterCommand` action deltas form a direct cursor
+contract.
+
+Gate: `payloadbits_action_delta_contract_reviewed`.
+
+Status: completed. The review found that the comparison is conditional, not a
+universal direct-equality contract. `payloadBits` is decoded from
+`serializedEntities`, while `actionDelta` is measured on `entityData` and can
+include field-path and field-decoder reads. Task 147 loop 27 remains a compact
+mismatch signal (`payloadBits: 221`, `actionDelta: 373`), but it does not prove
+parser bug, Source 2 semantics, replay corruption, local parser correctness, or
+recovery/skip safety. The selected recommendation is
+`treat_payloadbits_action_delta_comparison_as_conditional`. No replay was
+processed, no parser/engine behavior changed, and no recovery/skip/placeholder
+or canonical/source/match output was produced.
+
 ## Non-Goals
 
 - Do not inspect or process replay 005.

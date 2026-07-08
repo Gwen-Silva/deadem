@@ -375,6 +375,12 @@
       "notes": "Task 147 implemented and ran the compact fail-closed cursor/index/command contract probe on authorized replay_011 only. The expected packet 1052 loop 28 boundary was reached; local index formula and command position were internally consistent, while the nearby pre-boundary window produced payloadbits_contract_suspected. No recovery, skip, placeholder, continuation, default behavior change, raw data, or canonical/source/match output was produced."
     },
     {
+      "id": "payloadbits_action_delta_contract_review",
+      "path": "output/local-replay-processing/payloadbits-action-delta-contract-review/review-gate.json",
+      "status": "current",
+      "notes": "Task 148 statically reviewed payloadBits versus actionDelta accounting and found the comparison is conditional rather than a universal direct-equality contract. It selected treat_payloadbits_action_delta_comparison_as_conditional and produced no replay processing, parser behavior change, recovery, skip, placeholder, raw data, or canonical/source/match output."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

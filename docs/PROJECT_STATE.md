@@ -634,3 +634,11 @@ diagnosis for packet 953. Task 119 is complete with bounded opt-in
   alternatives retained as investigation signals only. The parser still failed
   closed with no recovery, skip, placeholder, continuation, default behavior
   change, raw data, canonical/source/match output, or semantic conclusion.
+  Task 148 then statically reviewed the payloadBits/action-delta contract and
+  found the comparison is conditional rather than a universal direct-equality
+  contract. The replay_011 loop 27 mismatch remains a compact diagnostic signal,
+  but it does not prove parser bug, overconsumption, Source 2 semantics, replay
+  corruption, recovery safety, or skip safety. The selected recommendation is
+  `treat_payloadbits_action_delta_comparison_as_conditional`, with future
+  synthetic contract evidence as the safest next clarification path if separately
+  authorized.

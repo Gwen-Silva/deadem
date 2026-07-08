@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "sourceFile": "packages/engine/src/extractors/EntityPayloadSizeExtractor.js",
+  "consumerFile": "packages/engine/src/handlers/DemoMessageHandler.js",
+  "extractor": {
+    "className": "EntityPayloadSizeExtractor",
+    "input": "Uint8Array buffer from CSVCMsg_PacketEntities.serializedEntities",
+    "method": "retrieve()",
+    "formatObservedLocally": "byte varint-style values using low 7 bits per byte and high-bit continuation",
+    "yieldedUnit": "number values documented locally as per-entity payload sizes in bits",
+    "rawBytesCaptured": false,
+    "rawSerializedEntitiesCaptured": false
+  },
+  "handlerUse": {
+    "createPayloadIterator": "builds EntityPayloadSizeExtractor(message.serializedEntities).retrieve() and advances it by startLoop",
+    "listPayloadSizes": "materializes all payload sizes for compact diagnostics and packet metrics",
+    "availability": "payloadSizes iterator is created when entity class filtering or recovery/diagnostics are active",
+    "updateUse": "UPDATE consumes one payloadBits item before entity extraction or missing-entity fail-closed handling",
+    "createUse": "CREATE consumes one payloadBits item before class/serial/baseline/extraction handling",
+    "leaveDeleteUse": "LEAVE and DELETE are recorded with payloadBits 0 by local handler logic",
+    "normalCursorAdvance": "normal parsing advances through EntityMutationExtractor or command-specific reads, not by universally moving payloadBits"
+  },
+  "contractLimitations": [
+    "serializedEntities and entityData are distinct message fields.",
+    "The extractor does not validate entry alignment against updatedEntries by itself.",
+    "The extractor does not prove payloadBits is equal to afterAction - afterCommand for every command/action path.",
+    "The extractor does not authorize using payloadBits as a recovery skip length."
+  ]
+}

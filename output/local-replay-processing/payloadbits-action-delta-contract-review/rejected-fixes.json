@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "rejectedFixes": [
+    {
+      "id": "use_payloadbits_to_skip_missing_update",
+      "status": "rejected_for_this_task",
+      "reason": "payloadBits/actionDelta comparability is conditional and not an authorized recovery contract"
+    },
+    {
+      "id": "change_entity_mutation_extractor_consumption",
+      "status": "rejected_for_this_task",
+      "reason": "no specific extractor overconsumption bug is proven"
+    },
+    {
+      "id": "adjust_serialized_entities_iterator_alignment",
+      "status": "rejected_for_this_task",
+      "reason": "iterator misalignment is only a hypothesis"
+    },
+    {
+      "id": "move_cursor_to_nearby_offset_candidate",
+      "status": "rejected_for_this_task",
+      "reason": "nearby offset alternatives are investigation candidates only"
+    },
+    {
+      "id": "recover_or_placeholder_missing_entity",
+      "status": "rejected_for_this_task",
+      "reason": "task does not authorize recovery, placeholders, fake fields, synthetic registry state, or continuation"
+    },
+    {
+      "id": "default_behavior_change",
+      "status": "rejected_for_this_task",
+      "reason": "task is review/spec only"
+    }
+  ],
+  "parserBehaviorChanged": false,
+  "recoveryAdded": false,
+  "skipModeAdded": false,
+  "placeholderAdded": false,
+  "newOptInAdded": false
+}

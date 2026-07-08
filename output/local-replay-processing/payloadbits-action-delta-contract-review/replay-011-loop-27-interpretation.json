@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "source": "Task 147 compact outputs only",
+  "replayProcessedInThisTask": false,
+  "entry": {
+    "replayId": "replay_011",
+    "packetOrdinal": 1052,
+    "loop": 27,
+    "operation": "UPDATE",
+    "entityIndex": 2681,
+    "previousEntityIndex": 2666,
+    "indexDelta": 14,
+    "payloadBits": 221,
+    "afterCommand": 4839,
+    "afterAction": 5212,
+    "actionDelta": 373,
+    "difference": 152,
+    "readCountsMonotonic": true,
+    "readCountsWithinEntityData": true,
+    "nextEntryStartsAtPreviousAfterAction": true
+  },
+  "allowedInterpretation": {
+    "fact": "The compact Task 147 ledger measured actionDelta greater than payloadBits by 152 bits for loop 27.",
+    "strongestSafeConclusion": "This is a local diagnostic mismatch between two compact metrics under a conditionally valid comparison.",
+    "strengthens": [
+      "payloadbits_action_delta_comparison_conditional",
+      "probe_metric_mismatch_candidate",
+      "payloadbits_serialized_entities_alignment_candidate"
+    ],
+    "doesNotProve": [
+      "entity mutation extractor overconsumption",
+      "cursor misalignment",
+      "payloadBits semantics",
+      "parser bug",
+      "Source 2 semantics",
+      "replay corruption"
+    ]
+  },
+  "boundaryContext": {
+    "boundaryLoop": 28,
+    "boundaryPayloadBitsComparable": false,
+    "reason": "loop 28 failed closed before a payload action was applied, so its payloadBits 133 cannot be compared to actionDelta 0 as a payload-consumption equality test"
+  },
+  "rawDataCaptured": false
+}

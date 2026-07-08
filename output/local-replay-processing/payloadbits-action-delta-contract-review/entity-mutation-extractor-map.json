@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "sourceFile": "packages/engine/src/extractors/EntityMutationExtractor.js",
+  "relatedFiles": [
+    "packages/engine/src/extractors/FieldPathExtractor.js",
+    "packages/engine/src/core/BitBuffer.js",
+    "packages/engine/src/handlers/DemoMessageHandler.js"
+  ],
+  "normalUpdatePath": {
+    "entryStart": "DemoMessageHandler reads indexDelta, accumulates entityIndex, then reads a two-bit command.",
+    "comparisonStart": "afterCommandReadCount is recorded immediately after bitBuffer.readBitsAsUInt(2).",
+    "extractorEntry": "For normal UPDATE with an existing entity, EntityMutationExtractor.applyTo(entity) or all() consumes entityData after afterCommand.",
+    "fieldPathConsumption": "EntityMutationExtractor calls FieldPathExtractor.allIds() or all(), which consumes field-path huffman operations until FINISH or unread end.",
+    "fieldValueConsumption": "For each field path, EntityMutationExtractor obtains a serializer decoder and calls it with the same BitBuffer.",
+    "comparisonEnd": "afterActionReadCount is recorded after extraction, skip, missing-fail handling, or command-specific action completion."
+  },
+  "measuredActionDelta": {
+    "formula": "afterActionReadCount - afterCommandReadCount",
+    "bufferMeasured": "message.entityData BitBuffer",
+    "includes": [
+      "field path reads",
+      "field decoder/value reads",
+      "any extractor-level reads needed to reach FINISH",
+      "command-action reads for CREATE paths when measured there"
+    ],
+    "excludes": [
+      "indexDelta read bits",
+      "two command bits before afterCommand",
+      "serializedEntities iterator bytes because those are read from a separate buffer"
+    ]
+  },
+  "diagnosticImplication": "actionDelta is a real local cursor-span metric, but static code review alone does not prove it is always the same metric as payloadBits.",
+  "rawDataCaptured": false
+}
