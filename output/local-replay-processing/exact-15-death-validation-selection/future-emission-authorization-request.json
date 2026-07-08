@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "requestType": "future_authorization_request",
+  "selectedReplayCount": 15,
+  "selectedReplaySetReady": true,
+  "realEmissionAuthorizedInTask167": false,
+  "recommendedNextAction": "authorize_exact_15_death_validation_compact_emission",
+  "futureTaskMayRequest": {
+    "mode": "death_validation_compact_emission",
+    "artifactClass": "death_validation",
+    "replaySet": "exact_15_death_validation_selection"
+  },
+  "mandatoryFutureLimits": {
+    "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+    "deathEventsForbidden": true,
+    "respawnEventsForbidden": true,
+    "killerVictimAssistAttributionForbidden": true,
+    "fieldValuesForbidden": true,
+    "finalFactsForbidden": true,
+    "gameplayInterpretationForbidden": true,
+    "rawDataForbidden": true,
+    "spatialMacroMechanicsFightDecisionMlForbidden": true
+  },
+  "realEmissionRequiresSeparateTask": true,
+  "replayProcessingPerformed": false,
+  "newRealArtifactsEmitted": false
+}

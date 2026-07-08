@@ -1545,3 +1545,21 @@ replay_006 through replay_008 as blocked bot fixtures. Real emission remains
 unauthorized and no 15-replay exclusion was selected automatically. The next
 recommended milestone is
 `decide_exact_15_replay_selection_or_authorize_16_replay_real_emission`.
+
+## Task 167
+
+Purpose: select the exact 15 replay set for future
+`death_validation_compact_emission` expansion without replay access, runner
+execution, or real artifact emission.
+
+Success gate: `exact_15_death_validation_selection_ready`.
+
+Blocked gate: `exact_15_death_validation_selection_blocked`.
+
+Status: completed with the success gate above. The selected set is replay_001,
+replay_002, replay_003, replay_004, replay_009, and replay_010 through
+replay_019. replay_020 is excluded only as the highest-numbered administrative
+excess entry from the 16 dry-run-ready entries, not because of any quality,
+parser, corruption, semantics, factual, or gameplay conclusion. Real emission
+remains unauthorized. The next recommended milestone is
+`authorize_exact_15_death_validation_compact_emission`.

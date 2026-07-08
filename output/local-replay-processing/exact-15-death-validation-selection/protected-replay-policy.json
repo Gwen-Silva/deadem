@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "replay005Policy": {
+    "replayId": "replay_005",
+    "localPath": "samples/partida_005.dem",
+    "status": "protected_final_holdout",
+    "accessed": false,
+    "processed": false,
+    "futureUseRequires": "explicit_final_holdout_release_authorization"
+  },
+  "botFixturePolicy": [
+    {
+      "replayId": "replay_006",
+      "localPath": "samples/partida_006.dem",
+      "status": "blocked_unsupported_bot_fixture"
+    },
+    {
+      "replayId": "replay_007",
+      "localPath": "samples/replay_007_bots01.dem",
+      "status": "blocked_unsupported_bot_fixture"
+    },
+    {
+      "replayId": "replay_008",
+      "localPath": "samples/replay_008_bots02_short.dem",
+      "status": "blocked_unsupported_bot_fixture"
+    }
+  ],
+  "excludedReplayPolicy": {
+    "replayId": "replay_020",
+    "localPath": ".local/deadem/replays/inbox/partida_020.dem",
+    "status": "excluded_from_exact_15_selection_by_administrative_criterion",
+    "notAQualityJudgment": true,
+    "futureUseRequiresSeparateExplicitAuthorization": true
+  },
+  "pathPolicy": {
+    "samplesPaths": "strings_only_in_this_task_future_use_requires_explicit_authorization",
+    "localInboxPaths": "strings_only_in_this_task_future_use_requires_explicit_authorization",
+    "outputReplaysForbidden": true
+  },
+  "replayProcessingPerformed": false,
+  "filesystemAccessPerformed": false
+}

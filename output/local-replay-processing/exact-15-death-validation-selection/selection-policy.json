@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "selectionType": "administrative_exact_15_selection",
+  "sourceGate": "expanded_death_validation_dry_run_ready",
+  "sourceEligibleReplayCount": 16,
+  "targetReplayCount": 15,
+  "technicalQualityCriterionAvailableWithoutReplayAccess": false,
+  "selectionCriterion": {
+    "keepHistoricalEligibleReplays": [
+      "replay_001",
+      "replay_002",
+      "replay_003",
+      "replay_004",
+      "replay_009"
+    ],
+    "keepFirstTenLocalCandidateSequence": [
+      "replay_010",
+      "replay_011",
+      "replay_012",
+      "replay_013",
+      "replay_014",
+      "replay_015",
+      "replay_016",
+      "replay_017",
+      "replay_018",
+      "replay_019"
+    ],
+    "excludeAdministrativeExcessEntry": "replay_020"
+  },
+  "notAQualityJudgment": true,
+  "notAParserRiskJudgment": true,
+  "notAReplayCorruptionConclusion": true,
+  "notASource2SemanticsConclusion": true,
+  "notAGameplayConclusion": true,
+  "realEmissionAuthorized": false,
+  "replayProcessingPerformed": false
+}

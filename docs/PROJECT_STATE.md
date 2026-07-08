@@ -956,3 +956,22 @@ behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
 default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 167
 was produced.
+
+## Task 167 Exact 15 Death Validation Selection Note
+
+Task 167 materialized the exact 15 replay set under
+`exact_15_death_validation_selection_ready`. The selected set keeps replay_001,
+replay_002, replay_003, replay_004, replay_009, and replay_010 through
+replay_019. replay_020 was excluded only by the administrative criterion
+`administrative_excess_candidate_highest_numbered`, not by replay quality,
+parser risk, replay corruption, Source 2 semantics, factual correctness, or
+gameplay judgment. Real `death_validation_compact_emission` remains
+unauthorized; the selected next action is
+`authorize_exact_15_death_validation_compact_emission`. replay_005 remains the
+protected final holdout, and replay_006 through replay_008 remain blocked
+unsupported bot fixtures. No replay was accessed, opened, hashed, copied,
+inspected, parsed, or processed; no runner executed; no new real artifact, final
+fact, gameplay interpretation, parser/engine behavior change,
+`packages/deadem/**` change, recovery, skip, placeholder, default behavior
+change, parser opt-in, Java/Clarity/external parser, WSL, iaflow, Product
+Reviewer automation, pull/merge/cherry-pick/rebase, or Task 168 was produced.
