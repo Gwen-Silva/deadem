@@ -561,6 +561,18 @@
       "notes": "Task 174 emitted 16 compact death_validation artifacts in batch mode for replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020. These remain compact counter-transition candidate summaries, not final death facts or gameplay interpretation."
     },
     {
+      "id": "allowlisted_death_validation_batch_provenance_fix",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-gate.json",
+      "status": "current",
+      "notes": "Task 175 fixes manifest-driven death_validation batch provenance by replacing the hardcoded task_171 generatedAt with manifest-controlled generation metadata. The gate is allowlisted_death_validation_batch_provenance_fixed."
+    },
+    {
+      "id": "allowlisted_death_validation_expanded_16_provenance_fixed_artifacts",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/allowlisted-batch-gate.json",
+      "status": "current",
+      "notes": "Task 175 regenerated the expanded 16 compact death_validation artifacts with generatedAt task_175 and stability against Task 174. These remain compact counter-transition candidate summaries, not final death facts or gameplay interpretation."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

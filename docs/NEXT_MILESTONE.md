@@ -1693,3 +1693,13 @@ Success gate: `allowlisted_death_validation_expanded_16_batch_pilot_ready`.
 Blocked gate: `allowlisted_death_validation_expanded_16_batch_pilot_blocked`.
 
 Status: completed with the success gate above. The runner now keeps replay_005 and replay_006 through replay_008 globally blocked while allowing `replay_020` only from the explicit manifest path `.local/deadem/replays/inbox/partida_020.dem`. The expanded batch processed replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020, emitted 16 compact `death_validation` artifacts, recorded `parityStatus: not_required`, and matched Task 173 on the 15 overlapping replays. The next milestone can review whether the expanded 16 compact batch is sufficient for the next bounded source/canonical step, while preserving the source-observed candidate-count interpretation.
+
+## Task 175
+
+Purpose: fix manifest-driven batch artifact provenance and regenerate the expanded 16 `death_validation` batch with correct generation metadata.
+
+Success gate: `allowlisted_death_validation_batch_provenance_fixed`.
+
+Blocked gate: `allowlisted_death_validation_batch_provenance_fix_blocked`.
+
+Status: completed with the success gate above. The runner no longer hardcodes `generatedAt: task_171`; real batch emission now requires manifest `generationLabel`, `taskId`, and `runId`. The provenance-fix batch regenerated replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020 with `generatedAt: task_175`, kept `parityStatus: not_required`, and matched Task 174 on replay IDs, `eventCount`, `duplicateKeyCount`, and `validationStatus`. The next milestone should use the provenance-fixed batch outputs as the current expanded 16 compact `death_validation` baseline.

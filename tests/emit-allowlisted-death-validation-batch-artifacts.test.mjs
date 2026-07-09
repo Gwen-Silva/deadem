@@ -4,9 +4,11 @@ import test from 'node:test';
 
 import {
     FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES,
+    attachArtifactProvenance,
     buildAllowlistedBatchPlan,
     compareParityWithReference,
     runAllowlistedDeathValidationBatchEmission,
+    validateGenerationMetadata,
     validateAllowlistedBatchManifestShape,
     validateAllowlistedRunnerOutputRoot,
     validateAllowlistedSummaryOutputRoot
@@ -64,6 +66,9 @@ function batchManifest(overrides = {}) {
         manifestId: 'future_batch_contract',
         runnerMode: 'batch',
         parityComparisonRequired: false,
+        generationLabel: 'task_175',
+        taskId: '175',
+        runId: 'future_batch_contract',
         allowedReplays: [
             { replayId: 'replay_010', localPath: '.local/deadem/replays/inbox/partida_010.dem', requestedMode: 'death_validation_compact_emission' }
         ],
@@ -83,6 +88,22 @@ test('allowlisted batch manifest requires compact death_validation emission cont
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), realArtifactEmissionAllowed: false }), /real artifact/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), rawDataCaptured: true }), /rawDataCaptured/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), finalFactsProduced: true }), /finalFactsProduced/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({
+        ...batchManifest(),
+        generationLabel: undefined
+    }), /generationLabel/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({
+        ...batchManifest(),
+        generationLabel: 'task_171'
+    }), /task_171/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({
+        ...batchManifest(),
+        taskId: ''
+    }), /taskId/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({
+        ...batchManifest(),
+        runId: ''
+    }), /runId/u);
     assert.throws(
         () => validateAllowlistedBatchManifestShape({
             ...manifest(),
@@ -271,6 +292,25 @@ test('parity comparison requires same replay ids, eventCount, duplicateKeyCount,
     }).parityStatus, 'blocked');
 });
 
+test('manifest generation metadata drives artifact provenance without task 171 hardcode', () => {
+    const generationMetadata = validateGenerationMetadata(batchManifest(), { requireForBatchEmission: true });
+    const artifact = attachArtifactProvenance({
+        schemaVersion: 1,
+        replayId: 'replay_020',
+        artifactClass: 'death_validation',
+        eventCount: 83,
+        duplicateKeyCount: 0,
+        validationStatus: 'source_events_available_with_limitations',
+        warnings: [],
+        rawDataCaptured: false,
+        finalFactsProduced: false,
+        gameplayInterpretationProduced: false
+    }, generationMetadata);
+    assert.equal(artifact.generatedBy, 'tools/emit-allowlisted-death-validation-batch-artifacts.mjs');
+    assert.equal(artifact.generatedAt, 'task_175');
+    assert.notEqual(artifact.generatedAt, 'task_171');
+});
+
 test('allowlisted runner policy allows only death_validation and forbidden surfaces stay explicit', () => {
     assert.ok(FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES.includes('death_events'));
     assert.ok(FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES.includes('respawn_events'));
@@ -284,6 +324,7 @@ test('allowlisted runner source preserves all-or-nothing writes and avoids unsaf
     assert.match(source, /const allEmitted =/u);
     assert.match(source, /if \(allEmitted\) \{/u);
     assert.match(source, /realArtifactsWrittenOnlyAfterAllReplaysPassed: true/u);
+    assert.equal(/generatedAt:\s*['"]task_171['"]/u.test(source), false);
     assert.equal(/\bgit\s+(pull|merge|cherry-pick|rebase)\b/iu.test(source), false);
     assert.equal(/\b(createHash|copyFile)\b/u.test(source), false);
     assert.equal(/replay_020_not_authorized|replay_020_globally_blocked/u.test(source), false);

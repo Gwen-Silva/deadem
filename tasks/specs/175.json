@@ -1,0 +1,291 @@
+{
+  "taskId": "175",
+  "title": "Fix Manifest Batch Artifact Provenance And Regenerate Expanded 16",
+  "status": "completed",
+  "objective": "Replace hardcoded generatedAt provenance in the manifest-driven death_validation batch runner with manifest-controlled generation metadata, regenerate the expanded 16 batch outputs with generatedAt task_175, and verify stability against Task 174.",
+  "baseCommitExpected": "113c1665ad75103bb3c7d269183976eb85896b00",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/current-artifact-registry.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-mode-pilot-manifest.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-pilot-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-pilot-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-pilot-protection-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-overlap-stability-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot/**",
+    "reports/allowlisted-death-validation-expanded-16-batch-pilot.md",
+    "tasks/specs/174.json",
+    "tasks/completed/174-allowlisted-death-validation-expanded-16-batch-pilot.md",
+    "tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+    "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs",
+    "schemas/death-validation-compact.schema.json"
+  ],
+  "optionalReadPaths": [
+    "tests/summarize-exact-15-death-validation-compact-artifacts.test.mjs",
+    "tests/emit-exact-15-death-validation-compact-artifacts.test.mjs",
+    "tests/emit-batch-death-validation-compact-artifacts.test.mjs",
+    "tests/emit-death-validation-compact-artifacts.test.mjs",
+    "tests/death-validation-compact-schema.test.mjs",
+    "tests/dry-run-expanded-death-validation-batch.test.mjs",
+    "tests/dry-run-batch-replay-readiness.test.mjs",
+    "tests/fieldfactory-char-decoder.test.mjs",
+    "tests/diagnostic-fail-closed-missing-entity.test.mjs",
+    "tests/replay-parser-prior-art-and-second-canary.test.mjs",
+    "tests/external-parser-oracle-canaries.test.mjs",
+    "tests/clarity-oracle-viability.test.mjs",
+    "tests/upstream-deadem-update-check.test.mjs",
+    "tests/generic-source-canonical-dry-run-readiness.test.mjs",
+    "tests/controlled-source-canonical-artifacts.test.mjs"
+  ],
+  "writePaths": [
+    "tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+    "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-mode-pilot-provenance-fix-manifest.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-artifact-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-stability-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-protection-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/**",
+    "reports/allowlisted-death-validation-batch-provenance-fix.md",
+    "tasks/specs/175.json",
+    "tasks/completed/175-allowlisted-death-validation-batch-provenance-fix.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "output/replays/**",
+    "tasks/specs/176.json",
+    "tasks/completed/176-*",
+    "tasks/blocked/176-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "allowlisted-death-validation-batch-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "exact-15-summary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/summarize-exact-15-death-validation-compact-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "exact-15-emission-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-exact-15-death-validation-compact-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "batch-death-validation-compact-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-batch-death-validation-compact-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "death-validation-compact-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-death-validation-compact-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "death-validation-schema-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/death-validation-compact-schema.test.mjs"
+      ]
+    },
+    {
+      "id": "expanded-death-validation-dry-run-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/dry-run-expanded-death-validation-batch.test.mjs"
+      ]
+    },
+    {
+      "id": "batch-dry-run-readiness-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/dry-run-batch-replay-readiness.test.mjs"
+      ]
+    },
+    {
+      "id": "fieldfactory-char-decoder-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ]
+    },
+    {
+      "id": "diagnostic-fail-closed-missing-entity-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/diagnostic-fail-closed-missing-entity.test.mjs"
+      ]
+    },
+    {
+      "id": "prior-art-second-canary-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/replay-parser-prior-art-and-second-canary.test.mjs"
+      ]
+    },
+    {
+      "id": "external-parser-oracle-canaries-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/external-parser-oracle-canaries.test.mjs"
+      ]
+    },
+    {
+      "id": "clarity-oracle-viability-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/clarity-oracle-viability.test.mjs"
+      ]
+    },
+    {
+      "id": "upstream-deadem-update-check-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/upstream-deadem-update-check.test.mjs"
+      ]
+    },
+    {
+      "id": "generic-source-canonical-dry-run-readiness-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/generic-source-canonical-dry-run-readiness.test.mjs"
+      ]
+    },
+    {
+      "id": "controlled-source-canonical-artifacts-tests",
+      "type": "node-test",
+      "paths": [
+        "tests/controlled-source-canonical-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-mode-pilot-provenance-fix-manifest.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-artifact-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-stability-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-protection-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/allowlisted-batch-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/allowlisted-batch-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/per-replay-emission-status.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/schema-validation-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/output-policy-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/size-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/protection-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/blocked-replay-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/parity-comparison-summary.json",
+    "reports/allowlisted-death-validation-batch-provenance-fix.md",
+    "tasks/completed/175-allowlisted-death-validation-batch-provenance-fix.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": [
+    "replay_001",
+    "replay_002",
+    "replay_003",
+    "replay_004",
+    "replay_009",
+    "replay_010",
+    "replay_011",
+    "replay_012",
+    "replay_013",
+    "replay_014",
+    "replay_015",
+    "replay_016",
+    "replay_017",
+    "replay_018",
+    "replay_019",
+    "replay_020"
+  ],
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not execute parity mode",
+    "Do not pass --reference-status",
+    "Do not process any replay outside the expanded 16 provenance-fix manifest",
+    "Do not access or process replay_005",
+    "Do not process replay_006, replay_007, or replay_008",
+    "Do not emit artifacts outside death_validation",
+    "Do not emit death_events, respawn_events, timelines, objective lifecycle, identity rows, attribution, field values, raw data, snapshots, full histories, final facts, or gameplay interpretation",
+    "Do not modify parser/engine behavior or packages/deadem",
+    "Do not implement recovery, skip, placeholder, default behavior change, or parser opt-in",
+    "Do not execute Java, Clarity, external parsers, WSL, iaflow, or Product Reviewer automation",
+    "Do not pull, merge, cherry-pick, or rebase",
+    "Do not create Task 176"
+  ],
+  "successGate": "allowlisted_death_validation_batch_provenance_fixed",
+  "blockedGate": "allowlisted_death_validation_batch_provenance_fix_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "allowed"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed"
+  },
+  "actualGate": "allowlisted_death_validation_batch_provenance_fixed",
+  "completedArtifacts": [
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-artifact-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-stability-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-protection-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/allowlisted-batch-gate.json",
+    "reports/allowlisted-death-validation-batch-provenance-fix.md",
+    "tasks/completed/175-allowlisted-death-validation-batch-provenance-fix.md"
+  ]
+}

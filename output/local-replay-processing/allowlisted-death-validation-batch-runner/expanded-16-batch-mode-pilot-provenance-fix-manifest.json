@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "expanded_16_batch_mode_pilot_provenance_fix",
+  "runnerMode": "batch",
+  "parityComparisonRequired": false,
+  "mode": "death_validation_compact_emission",
+  "artifactClass": "death_validation",
+  "replayProcessingAllowed": true,
+  "realArtifactEmissionAllowed": true,
+  "rawDataCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+  "allowedReplays": [
+    {
+      "replayId": "replay_001",
+      "localPath": "samples/partida_001.dem",
+      "selectionGroup": "historical_eligible",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_002",
+      "localPath": "samples/partida_002.dem",
+      "selectionGroup": "historical_eligible",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_003",
+      "localPath": "samples/partida_003.dem",
+      "selectionGroup": "historical_eligible",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_004",
+      "localPath": "samples/partida_004.dem",
+      "selectionGroup": "historical_eligible",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_009",
+      "localPath": "samples/replay_009_normal.dem",
+      "selectionGroup": "historical_eligible",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_012",
+      "localPath": ".local/deadem/replays/inbox/partida_012.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_013",
+      "localPath": ".local/deadem/replays/inbox/partida_013.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_014",
+      "localPath": ".local/deadem/replays/inbox/partida_014.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_015",
+      "localPath": ".local/deadem/replays/inbox/partida_015.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_016",
+      "localPath": ".local/deadem/replays/inbox/partida_016.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_017",
+      "localPath": ".local/deadem/replays/inbox/partida_017.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_018",
+      "localPath": ".local/deadem/replays/inbox/partida_018.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_019",
+      "localPath": ".local/deadem/replays/inbox/partida_019.dem",
+      "selectionGroup": "first_10_local_candidate_sequence",
+      "requestedMode": "death_validation_compact_emission"
+    },
+    {
+      "replayId": "replay_020",
+      "localPath": ".local/deadem/replays/inbox/partida_020.dem",
+      "selectionGroup": "manifest_authorized_expansion",
+      "requestedMode": "death_validation_compact_emission"
+    }
+  ],
+  "blockedReplays": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008"
+  ],
+  "forbiddenOutputSurfaces": [
+    "death_events",
+    "respawn_events",
+    "timelines",
+    "objective_lifecycle",
+    "player_identity_rows",
+    "attribution",
+    "field_values",
+    "raw_data",
+    "snapshots",
+    "final_facts",
+    "gameplay_interpretation"
+  ],
+  "generationLabel": "task_175",
+  "taskId": "175",
+  "runId": "expanded_16_batch_mode_pilot_provenance_fix"
+}

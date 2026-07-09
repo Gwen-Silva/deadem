@@ -31,6 +31,7 @@ const BATCH_SUMMARY_ROOT_PREFIX = 'output/local-replay-processing/allowlisted-de
 
 export const FORBIDDEN_REPLAY_IDS = new Set(['replay_005', 'replay_006', 'replay_007', 'replay_008']);
 const MANIFEST_AUTHORIZED_REPLAY_020_PATH = '.local/deadem/replays/inbox/partida_020.dem';
+const GENERATION_LABEL_PATTERN = /^task_\d+$/u;
 
 export const FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES = [
     'death_events',
@@ -144,6 +145,42 @@ function normalizeAllowedReplay(replay) {
     };
 }
 
+function isSafeGenerationValue(value) {
+    return typeof value === 'string' && value.trim() === value && value.length > 0;
+}
+
+export function validateGenerationMetadata(manifest, { requireForBatchEmission = false } = {}) {
+    const hasAnyGenerationMetadata = ['generationLabel', 'taskId', 'runId'].some(key => Object.hasOwn(manifest, key));
+    if (!hasAnyGenerationMetadata) {
+        if (requireForBatchEmission) throw new Error('batch real artifact emission requires generationLabel, taskId, and runId');
+        return null;
+    }
+
+    if (!isSafeGenerationValue(manifest.generationLabel)) throw new Error('manifest generationLabel is required and must be non-empty');
+    if (!GENERATION_LABEL_PATTERN.test(manifest.generationLabel)) throw new Error('manifest generationLabel must use task_<id> format');
+    if (manifest.generationLabel === 'task_171') throw new Error('manifest generationLabel must not reuse task_171 provenance');
+    if (manifest.generationLabel === 'task_current' || manifest.generationLabel === 'task_latest') {
+        throw new Error('manifest generationLabel must not be generic');
+    }
+    if (!isSafeGenerationValue(manifest.taskId)) throw new Error('manifest taskId is required and must be non-empty');
+    if (!isSafeGenerationValue(manifest.runId)) throw new Error('manifest runId is required and must be non-empty');
+
+    return {
+        generationLabel: manifest.generationLabel,
+        taskId: manifest.taskId,
+        runId: manifest.runId
+    };
+}
+
+export function attachArtifactProvenance(artifact, generationMetadata) {
+    if (!generationMetadata?.generationLabel) throw new Error('artifact provenance requires generation metadata');
+    return {
+        ...artifact,
+        generatedBy: 'tools/emit-allowlisted-death-validation-batch-artifacts.mjs',
+        generatedAt: generationMetadata.generationLabel
+    };
+}
+
 export function validateAllowlistedBatchManifestShape(manifest, { contractOnly = false } = {}) {
     if (typeof manifest !== 'object' || manifest === null || Array.isArray(manifest)) {
         throw new Error('manifest must be an object');
@@ -157,6 +194,9 @@ export function validateAllowlistedBatchManifestShape(manifest, { contractOnly =
     if (manifest.runnerMode === 'batch' && manifest.parityComparisonRequired !== false) {
         throw new Error('batch runnerMode requires parityComparisonRequired false');
     }
+    validateGenerationMetadata(manifest, {
+        requireForBatchEmission: !contractOnly && manifest.runnerMode === 'batch' && manifest.realArtifactEmissionAllowed === true
+    });
     if (manifest.mode !== SUPPORTED_MODE) throw new Error(`manifest mode must be ${SUPPORTED_MODE}`);
     if (manifest.artifactClass !== ALLOWED_ARTIFACT_CLASS) throw new Error('manifest artifactClass must be death_validation');
     if (!contractOnly && manifest.replayProcessingAllowed !== true) throw new Error('manifest must explicitly allow replay processing');
@@ -346,7 +386,7 @@ function observeDeathCounters(player) {
         .filter(row => row.deaths !== null);
 }
 
-async function runDeathValidationEmission(input) {
+async function runDeathValidationEmission(input, generationMetadata) {
     const player = new Player(undefined, Logger.NOOP);
     const started = performance.now();
     const previousByController = new Map();
@@ -433,17 +473,16 @@ async function runDeathValidationEmission(input) {
         await player.dispose?.().catch(() => {});
     }
 
-    const artifact = {
-        ...createDeathValidationArtifact({
+    const artifact = attachArtifactProvenance(
+        createDeathValidationArtifact({
             replayId: input.replayId,
             eventCount: summary.eventCount,
             duplicateKeyCount: summary.duplicateKeyCount,
             validationStatus: summary.validationStatus,
             warnings
         }),
-        generatedBy: 'tools/emit-allowlisted-death-validation-batch-artifacts.mjs',
-        generatedAt: 'task_171'
-    };
+        generationMetadata
+    );
 
     return { summary, artifact };
 }
@@ -545,11 +584,17 @@ function blockedIdsFromManifest(manifest) {
 
 export async function runAllowlistedDeathValidationBatchEmission({ manifest, summaryOutput, referenceStatus }) {
     validateAllowlistedBatchManifestShape(manifest);
+    const generationMetadata = validateGenerationMetadata(manifest, {
+        requireForBatchEmission: manifest.runnerMode === 'batch' && manifest.realArtifactEmissionAllowed === true
+    });
     if (manifest.runnerMode === 'parity' && !referenceStatus) {
         throw new Error('parity runnerMode requires referenceStatus');
     }
     if (manifest.runnerMode === 'batch' && referenceStatus) {
         throw new Error('batch runnerMode must not receive referenceStatus');
+    }
+    if (!generationMetadata) {
+        throw new Error('real artifact emission requires generationLabel, taskId, and runId');
     }
     const summaryRoot = validateAllowlistedRunnerOutputRoot(summaryOutput, manifest);
     const plan = buildAllowlistedBatchPlan(manifest);
@@ -561,7 +606,7 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
 
     if (!blockedByPlan) {
         for (const input of plan.readyInputs) {
-            const emission = await runDeathValidationEmission(input);
+            const emission = await runDeathValidationEmission(input, generationMetadata);
             const artifactPath = `${summaryRoot.normalized}artifacts/${input.replayId}/death_validation.json`;
             const schemaErrors = validateDeathValidationArtifact(emission.artifact, schema);
             const sizeBytes = artifactSizeBytes(emission.artifact);
