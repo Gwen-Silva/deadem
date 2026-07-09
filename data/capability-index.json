@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "179",
-  "activeBaseline": "semantic_foundation_compact_bounded32_task179",
+  "generatedAtTask": "180",
+  "activeBaseline": "participant_identity_compact_bounded32_task180",
   "capabilities": [
     {
       "capabilityId": "parser_char_without_count_fix",
@@ -355,6 +355,30 @@
         "Does not make canonical death-event design ready by itself."
       ],
       "nextUsefulStep": "Design the first policy-safe identity mapping artifact."
+    },
+    {
+      "capabilityId": "participant_identity_compact",
+      "plainName": "Participant identity compact artifacts",
+      "introducedInTask": "180",
+      "stabilizedInTask": "180",
+      "currentStatus": "active",
+      "currentBaseline": "participant_identity_compact_bounded32_task180",
+      "whyItMatters": "Provides synthetic replay-local participant/controller/pawn/team/hero refs as a safe identity foundation before life-state and canonical death-event layers.",
+      "mainFiles": [
+        "tools/emit-participant-identity-compact-artifacts.mjs",
+        "schemas/participant-identity-compact.schema.json",
+        "tests/participant-identity-compact-schema.test.mjs",
+        "tests/emit-participant-identity-compact-artifacts.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/participant-identity-compact/task180-gate.json",
+        "output/local-replay-processing/participant-identity-compact/task180-bounded32/"
+      ],
+      "knownLimits": [
+        "Refs are synthetic and replay-local, not player names, hero names, team names, raw IDs, handles, or canonical identity truth.",
+        "Does not emit death events, attribution, final facts, positions, event rows, or gameplay interpretation."
+      ],
+      "nextUsefulStep": "Build the first policy-safe alive/dead/respawn artifact."
     }
   ]
 }

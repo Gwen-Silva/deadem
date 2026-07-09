@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "179",
+  "generatedAtTask": "180",
   "baseCommit": "ffabea3d19280f901685d3a3e7a6a66e3c8a2bf8",
-  "taskRange": "001-179",
+  "taskRange": "001-180",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5411,6 +5411,43 @@
         "tasks/specs/179.json",
         "tasks/completed/179-semantic-foundation-compact-pilot.md",
         "output/local-replay-processing/semantic-foundation-compact/task179-summary.json"
+      ]
+    },
+    {
+      "taskId": "180",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Policy-Safe Participant Identity And Time Foundation",
+      "phase": "participant_identity_foundation",
+      "primaryContribution": "Introduced and ran compact participant_identity artifacts for the active 32-replay baseline using replay-local synthetic refs.",
+      "introducedCapabilities": [
+        "participant_identity_compact"
+      ],
+      "stabilizedCapabilities": [
+        "participant_identity_compact"
+      ],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "schemas/participant-identity-compact.schema.json",
+        "output/local-replay-processing/participant-identity-compact/task180-gate.json",
+        "output/local-replay-processing/participant-identity-compact/task180-bounded32/participant-identity-bounded32-gate.json",
+        "reports/participant-identity-compact-task180.md"
+      ],
+      "gate": "participant_identity_compact_bounded32_ready",
+      "currentRelevance": "active_baseline",
+      "dependsOn": [
+        "179",
+        "177"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "participant_identity refs are synthetic and replay-local; do not treat them as names, raw IDs, canonical death events, attribution, or gameplay truth."
+      ],
+      "evidenceStatus": "sufficient",
+      "evidencePaths": [
+        "tasks/specs/180.json",
+        "tasks/completed/180-participant-identity-compact.md",
+        "output/local-replay-processing/participant-identity-compact/task180-summary.json"
       ]
     }
   ]

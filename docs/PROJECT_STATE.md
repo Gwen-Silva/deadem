@@ -1205,3 +1205,27 @@ interpretation, parser/engine behavior change, `packages/deadem/**` change,
 recovery, skip, placeholder, default behavior change, parser opt-in,
 Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
 pull/merge/cherry-pick/rebase, or Task 180 was produced.
+
+## Task 180 Participant Identity Compact Note
+
+Task 180 created the compact `participant_identity` artifact class and ran it
+under `participant_identity_compact_bounded32_ready`. The runner uses explicit
+manifests, blocks replay_005 and replay_006 through replay_008, rejects
+traversal/absolute and `output/replays/**` paths, uses all-or-nothing writes
+per run, and validates schema, output policy, size, and protection audits.
+
+The mini-pilot processed exactly replay_010, replay_011, replay_021, and
+replay_036. Because the pilot passed, the bounded-32 manifest processed the Task
+177 active baseline: replay_001 through replay_004, replay_009, and replay_010
+through replay_036. It emitted 32 compact `participant_identity` artifacts with
+`generatedAt: task_180`.
+
+The artifacts use replay-local synthetic refs such as `participant_##`,
+`controller_ref_##`, `pawn_ref_##`, `team_ref_##`, and `hero_ref_##`.
+They do not persist player names, hero names, team names, raw IDs, handles,
+slots, field values, positions, event rows, attribution, final facts, or
+gameplay interpretation. The bounded-32 run reports participant identity,
+hero/team, time foundation, and life-state foundation coverage as available for
+32/32 replays. Alive/dead/respawn artifact work is now the next appropriate
+semantic layer; canonical death events, attribution, and teamfight detection
+remain intentionally not ready.

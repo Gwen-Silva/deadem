@@ -228,3 +228,15 @@ The next product value layer should not skip identity mapping and canonical deat
 - Main outputs: `output/local-replay-processing/semantic-foundation-compact/task179-gate.json`, `output/local-replay-processing/semantic-foundation-compact/task179-bounded32/`
 - Known limits: Does not include player names, hero names, team names, entity IDs, field values, event rows, positions, attribution, canonical death events, or gameplay semantics.
 - Next dependency: Design the first real identity mapping artifact before canonical death-event or teamfight work.
+
+## Participant Identity Compact Layer
+
+- Capability id: `participant_identity_compact`
+- Introduced in Task 180; stabilized in Task 180.
+- Current status: `active`
+- Current baseline: participant_identity_compact_bounded32_task180
+- Why it matters: Provides replay-local synthetic participant, controller, pawn, team, and hero refs without exposing names, raw IDs, handles, slots, field values, event rows, attribution, or final facts.
+- Main files: `tools/emit-participant-identity-compact-artifacts.mjs`, `schemas/participant-identity-compact.schema.json`, `tests/participant-identity-compact-schema.test.mjs`, `tests/emit-participant-identity-compact-artifacts.test.mjs`
+- Main outputs: `output/local-replay-processing/participant-identity-compact/task180-gate.json`, `output/local-replay-processing/participant-identity-compact/task180-bounded32/`
+- Known limits: Refs are replay-local and synthetic; they are not names, raw IDs, final identity truth, death events, attribution, or gameplay interpretation.
+- Next dependency: Build a policy-safe alive/dead/respawn artifact before canonical death-event design.

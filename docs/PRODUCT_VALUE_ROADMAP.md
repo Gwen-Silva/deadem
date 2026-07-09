@@ -56,3 +56,16 @@ Recommended next product-value step: build the first identity mapping artifact
 with strict policy boundaries. Canonical death events should wait until identity,
 hero/team, time normalization, and life-state artifacts have explicit schemas and
 safe consumption contracts.
+
+## Task 180 Participant Identity Result
+
+The project now has a bounded-32 `participant_identity` baseline with synthetic
+participant/controller/pawn/team/hero refs and compact time/life-state readiness.
+This is the first usable semantic foundation above readiness-only artifacts, but
+it still does not expose names, raw IDs, event rows, attribution, positions, or
+final gameplay facts.
+
+Recommended next product-value step: build `alive_dead_respawn` as a compact,
+policy-safe state artifact. Canonical death events should wait until life-state
+state transitions are explicit and safely consumable. Killer/victim attribution
+and teamfight detection remain later layers.

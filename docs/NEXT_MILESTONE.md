@@ -1784,3 +1784,21 @@ artifacts and the bounded-32 run emitted 32 compact artifacts, all with
 real identity mapping artifact using these availability signals. Canonical death
 event design is still intentionally blocked until identity mapping, hero/team
 mapping, time normalization, and life-state contracts become explicit.
+
+## Task 180
+
+Purpose: create and run a compact `participant_identity` layer that converts
+semantic readiness into replay-local synthetic participant/controller/pawn/team/hero
+refs plus time/life-state foundation status.
+
+Success gate: `participant_identity_compact_bounded32_ready`.
+
+Blocked gates: `participant_identity_compact_pilot_blocked` and
+`participant_identity_compact_pilot_ready_bounded32_blocked`.
+
+Status: completed with the success gate above. The mini-pilot emitted 4 compact
+artifacts and the bounded-32 run emitted 32 compact artifacts, all with
+`generatedAt: task_180`. The next milestone should build the first
+policy-safe `alive_dead_respawn` artifact on top of `participant_identity`.
+Canonical death events, attribution, and teamfight detection remain out of scope
+until life-state and event contracts exist.
