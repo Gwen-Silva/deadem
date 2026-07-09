@@ -1662,3 +1662,24 @@ The Task 172 run reexecuted only the exact-15 parity set and processed no new
 replay outside that set. The next milestone can authorize a concrete
 non-parity batch manifest only if its allowlist, output root, and artifact
 policy are explicit.
+
+## Task 173
+
+Purpose: run the first real `runnerMode: batch` exact-15 smoke without
+`--reference-status` or required parity comparison.
+
+Success gate: `allowlisted_death_validation_batch_mode_smoke_ready`.
+
+Blocked gate: `allowlisted_death_validation_batch_mode_smoke_blocked`.
+
+Status: completed with the success gate above. The batch smoke command used the
+generic `npm run emit:allowlisted-death-validation-batch -- --manifest ...`
+entrypoint with the manifest
+`output/local-replay-processing/allowlisted-death-validation-batch-runner/exact-15-batch-mode-smoke-manifest.json`
+and summary root
+`output/local-replay-processing/allowlisted-death-validation-batches/exact_15_batch_mode_smoke/`.
+It processed only the exact-15 set, emitted 15 compact `death_validation`
+artifacts, passed schema/output/size checks, and recorded `parityStatus:
+not_required`. The next milestone can decide whether to authorize a new
+allowlisted batch manifest or keep exact-15 as the current compact validation
+ceiling.

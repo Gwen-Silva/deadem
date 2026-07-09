@@ -1084,3 +1084,28 @@ behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
 default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 173
 was produced.
+
+## Task 173 Allowlisted Death Validation Batch Mode Smoke Note
+
+Task 173 executed the first real `runnerMode: batch` smoke for the already
+authorized exact-15 `death_validation` set under
+`allowlisted_death_validation_batch_mode_smoke_ready`. The batch smoke used
+`exact_15_batch_mode_smoke`, ran without `--reference-status`, did not execute
+parity mode, and produced runner gate
+`allowlisted_death_validation_batch_emitted` with `parityStatus:
+not_required`.
+
+The batch smoke processed only replay_001, replay_002, replay_003, replay_004,
+replay_009, and replay_010 through replay_019. It emitted 15 compact
+`death_validation` artifacts and passed schema validation, output policy, and
+size audit. `eventCount` remains a source-observed counter transition candidate
+count, not a final death fact, and `sourceObservedCounterTransitionCandidateTotal`
+is not a total death count. No replay outside exact-15, replay_005, replay_006
+through replay_008, replay_020, artifact outside `death_validation`, death
+events, respawn events, timelines, objective lifecycle, identity rows,
+attribution, field values, raw data, snapshots, full histories,
+source/canonical/match final facts, gameplay interpretation, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 174
+was produced.

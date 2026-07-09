@@ -537,6 +537,18 @@
       "notes": "Task 172 batch-mode contract template for future explicitly authorized allowlisted death_validation batches. It is not a real emission manifest and processed no replays in Task 172."
     },
     {
+      "id": "allowlisted_death_validation_batch_mode_smoke",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/batch-mode-smoke-gate.json",
+      "status": "current",
+      "notes": "Task 173 ran runnerMode=batch against the already authorized exact-15 death_validation set without reference-status or parity comparison. The batch runner gate was allowlisted_death_validation_batch_emitted with parityStatus not_required."
+    },
+    {
+      "id": "allowlisted_death_validation_exact_15_batch_smoke_artifacts",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batches/exact_15_batch_mode_smoke/allowlisted-batch-gate.json",
+      "status": "current",
+      "notes": "Task 173 emitted 15 compact death_validation artifacts in reusable batch mode for replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_019. These remain compact counter-transition candidate summaries, not final death facts or gameplay interpretation."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",
