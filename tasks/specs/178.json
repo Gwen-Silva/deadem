@@ -1,0 +1,95 @@
+{
+  "taskId": "178",
+  "title": "Consolidate Project Task History And Capability Map",
+  "status": "authorized",
+  "objective": "Document the project history from Task 001 through Task 177, mapping task contributions, phases, active capabilities, superseded decisions, current baselines, and next product milestones without processing replays or emitting gameplay artifacts.",
+  "baseCommitExpected": "ffabea3d19280f901685d3a3e7a6a66e3c8a2bf8",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/**",
+    "tasks/specs/**",
+    "tasks/completed/**",
+    "tasks/blocked/**",
+    "reports/**",
+    "data/current-artifact-registry.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "docs/PROJECT_TASK_HISTORY.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "reports/project-task-history-and-capability-map.md",
+    "output/local-replay-processing/project-history/task-history-audit.json",
+    "output/local-replay-processing/project-history/project-history-gate.json",
+    "tasks/specs/178.json",
+    "tasks/completed/178-project-task-history-and-capability-map.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    ".local/deadem/replays/**/*.dem",
+    "**/*.dem",
+    "packages/deadem/**",
+    "packages/engine/**",
+    "output/replays/**",
+    "tasks/specs/179.json",
+    "tasks/completed/179-*",
+    "tasks/blocked/179-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json" }
+  ],
+  "expectedOutputs": [
+    "docs/PROJECT_TASK_HISTORY.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "reports/project-task-history-and-capability-map.md",
+    "output/local-replay-processing/project-history/task-history-audit.json",
+    "output/local-replay-processing/project-history/project-history-gate.json"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not open, hash, copy, inspect, or process any .dem replay file.",
+    "Do not execute parser, batch runner, replay processing, artifact emission, Java, Clarity, external parser, WSL, iaflow, or Product Reviewer automation.",
+    "Do not create gameplay facts, attribution, source/canonical/match artifacts, or interpretation outputs.",
+    "Do not modify parser/engine behavior, packages/deadem, packages/engine, or Task 179.",
+    "Mark old tasks as partial when evidence is insufficient rather than inventing details."
+  ],
+  "successGate": "project_task_history_and_capability_map_ready",
+  "blockedGate": "project_task_history_and_capability_map_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/project-history/project-history-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "forbidden"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed_or_blocked"
+  }
+}

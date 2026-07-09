@@ -1159,3 +1159,25 @@ behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
 default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 178
 was produced.
+
+## Task 178 Project Task History And Capability Map Note
+
+Task 178 consolidated the project history from Task 001 through Task 177 under
+`project_task_history_and_capability_map_ready`. The consolidation created a
+versioned task contribution index, capability index, phase history, and product
+value roadmap without accessing replay files, reading replay bytes, executing
+the parser, executing the batch runner, or emitting new artifacts.
+
+The current active technical baseline remains
+`bounded_inbox_batch_pilot_32_task177`: a protected 32-replay compact
+`death_validation` batch. The Task 178 docs explicitly separate infrastructure,
+compact validation artifacts, and future semantic gameplay layers. They also
+record that some early tasks have partial historical evidence and must not be
+treated as fully reconstructed without inspecting their commits/reports.
+
+The recommended next product milestone is to move from compact
+counter-transition validation toward identity mapping, hero/team mapping,
+time/tick normalization, alive/dead/respawn state, and a canonical death-event
+schema. `eventCount` remains a source-observed counter-transition candidate
+count, not a final death fact, and the project has not yet started the gameplay
+semantic layer.

@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "generatedAtTask": "178",
+  "activeBaseline": "bounded_inbox_batch_pilot_32_task177",
+  "capabilities": [
+    {
+      "capabilityId": "parser_char_without_count_fix",
+      "plainName": "Upstream char field decoder fix",
+      "introducedInTask": "149",
+      "stabilizedInTask": "150",
+      "currentStatus": "active",
+      "currentBaseline": "parser default completion for replay_010 and replay_011",
+      "whyItMatters": "Resolved the missing_entity_fail_closed blockers by decoding scalar char fields as VAR_UINT_32 instead of null-terminated strings.",
+      "mainFiles": [
+        "packages/engine/src/data/fields/FieldFactory.js",
+        "tests/fieldfactory-char-decoder.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/upstream-char-decoder-fix-resolution/root-cause-summary.json"
+      ],
+      "knownLimits": [
+        "Does not prove total parser correctness or Source 2 semantics."
+      ],
+      "nextUsefulStep": "Keep upstream update check before deep parser investigations."
+    },
+    {
+      "capabilityId": "replay_protection",
+      "plainName": "Replay protection policy",
+      "introducedInTask": "016",
+      "stabilizedInTask": "090",
+      "currentStatus": "active",
+      "currentBaseline": "docs/codex/REPLAY_PROTECTION.md",
+      "whyItMatters": "Prevents accidental use of replay_005 and unsupported bot fixtures.",
+      "mainFiles": [
+        "docs/codex/REPLAY_PROTECTION.md",
+        "AGENTS.md"
+      ],
+      "mainOutputs": [],
+      "knownLimits": [
+        "Requires every task to restate explicit replay authorization."
+      ],
+      "nextUsefulStep": "Maintain manifest-only authorization for expansion."
+    },
+    {
+      "capabilityId": "output_artifact_policy",
+      "plainName": "Output and artifact policy",
+      "introducedInTask": "090",
+      "stabilizedInTask": "155",
+      "currentStatus": "active",
+      "currentBaseline": "compact audited local-replay-processing outputs",
+      "whyItMatters": "Separates compact validation artifacts from final facts and raw/value-bearing data.",
+      "mainFiles": [
+        "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/controlled-source-canonical-artifacts/output-policy-audit.json"
+      ],
+      "knownLimits": [
+        "Policy permits compact death_validation only under current scope."
+      ],
+      "nextUsefulStep": "Add schema-specific policies before richer source classes."
+    },
+    {
+      "capabilityId": "task_validation_gates",
+      "plainName": "Codex task validation gates",
+      "introducedInTask": "090",
+      "stabilizedInTask": "092",
+      "currentStatus": "active",
+      "currentBaseline": "codex workflow validate/review scripts",
+      "whyItMatters": "Enforces one-task scoped changes and review packets.",
+      "mainFiles": [
+        "scripts/codex-workflow.js",
+        "tasks/specs/task-spec.schema.json"
+      ],
+      "mainOutputs": [
+        ".local/codex/<task>/review-packet.json"
+      ],
+      "knownLimits": [
+        "Context packets can be sensitive to large git status before commit."
+      ],
+      "nextUsefulStep": "Keep specs compact for large output tasks."
+    },
+    {
+      "capabilityId": "death_validation_compact_schema",
+      "plainName": "death_validation compact schema",
+      "introducedInTask": "157",
+      "stabilizedInTask": "158",
+      "currentStatus": "active",
+      "currentBaseline": "death_validation compact artifact schema",
+      "whyItMatters": "Provides compact counter-transition candidate validation without claiming deaths.",
+      "mainFiles": [
+        "tools/emit-death-validation-compact-artifacts.mjs",
+        "tests/death-validation-compact-schema.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-validation-compact-emission/artifacts/replay_010/death_validation.json"
+      ],
+      "knownLimits": [
+        "eventCount is not a final death count; no attribution."
+      ],
+      "nextUsefulStep": "Design identity and canonical death-event schemas before customer-facing death answers."
+    },
+    {
+      "capabilityId": "manifest_driven_batch_runner",
+      "plainName": "Manifest-driven batch runner",
+      "introducedInTask": "171",
+      "stabilizedInTask": "175",
+      "currentStatus": "active",
+      "currentBaseline": "bounded_inbox_batch_pilot_32_task177",
+      "whyItMatters": "Allows replay processing only through explicit allowlists.",
+      "mainFiles": [
+        "tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+        "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/allowlisted-batch-gate.json"
+      ],
+      "knownLimits": [
+        "Current emission class is death_validation only."
+      ],
+      "nextUsefulStep": "Use it for next semantic artifact classes after identity/death-event schema exists."
+    },
+    {
+      "capabilityId": "parity_mode",
+      "plainName": "Exact-15 parity mode",
+      "introducedInTask": "171",
+      "stabilizedInTask": "171",
+      "currentStatus": "active",
+      "currentBaseline": "exact-15 parity manifest",
+      "whyItMatters": "Compares regenerated compact artifacts to an existing exact-15 baseline when parity is required.",
+      "mainFiles": [
+        "tools/emit-allowlisted-death-validation-batch-artifacts.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batch-runner/exact-15-parity-manifest.json"
+      ],
+      "knownLimits": [
+        "Not required for batch mode expansion tasks."
+      ],
+      "nextUsefulStep": "Use only when a fixed reference baseline must be preserved."
+    },
+    {
+      "capabilityId": "batch_mode",
+      "plainName": "Batch mode without parity reference",
+      "introducedInTask": "172",
+      "stabilizedInTask": "173",
+      "currentStatus": "active",
+      "currentBaseline": "runnerMode=batch",
+      "whyItMatters": "Runs authorized batches without requiring exact-15 reference status.",
+      "mainFiles": [
+        "tools/emit-allowlisted-death-validation-batch-artifacts.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batches/exact_15_batch_mode_smoke/allowlisted-batch-gate.json"
+      ],
+      "knownLimits": [
+        "Requires explicit manifest and protection audit."
+      ],
+      "nextUsefulStep": "Use for future allowlisted expansion after policy review."
+    },
+    {
+      "capabilityId": "manifest_generation_provenance",
+      "plainName": "Manifest generation provenance",
+      "introducedInTask": "175",
+      "stabilizedInTask": "175",
+      "currentStatus": "active",
+      "currentBaseline": "generatedAt task_177 for bounded 32",
+      "whyItMatters": "Prevents misleading hardcoded task provenance in emitted artifacts.",
+      "mainFiles": [
+        "tools/emit-allowlisted-death-validation-batch-artifacts.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-summary.json"
+      ],
+      "knownLimits": [
+        "Relies on manifest metadata accuracy."
+      ],
+      "nextUsefulStep": "Keep provenance checks in every batch expansion."
+    },
+    {
+      "capabilityId": "exact_15_baseline",
+      "plainName": "Exact-15 death_validation baseline",
+      "introducedInTask": "168",
+      "stabilizedInTask": "171",
+      "currentStatus": "superseded",
+      "currentBaseline": "bounded_inbox_batch_pilot_32_task177",
+      "whyItMatters": "First broader compact death_validation replay set.",
+      "mainFiles": [
+        "tools/emit-exact-15-death-validation-compact-artifacts.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/exact-15-death-validation-compact-emission/"
+      ],
+      "knownLimits": [
+        "Superseded as active coverage by expanded 16 and bounded 32."
+      ],
+      "nextUsefulStep": "Use as historical reference only."
+    },
+    {
+      "capabilityId": "expanded_16_baseline",
+      "plainName": "Expanded-16 death_validation baseline",
+      "introducedInTask": "174",
+      "stabilizedInTask": "175",
+      "currentStatus": "superseded",
+      "currentBaseline": "bounded_inbox_batch_pilot_32_task177",
+      "whyItMatters": "Added replay_020 with explicit authorization and fixed provenance.",
+      "mainFiles": [
+        "tools/emit-allowlisted-death-validation-batch-artifacts.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/"
+      ],
+      "knownLimits": [
+        "No longer active ceiling after Task 177."
+      ],
+      "nextUsefulStep": "Use for overlap stability checks."
+    },
+    {
+      "capabilityId": "bounded_32_active_baseline",
+      "plainName": "Bounded-32 active death_validation baseline",
+      "introducedInTask": "177",
+      "stabilizedInTask": "177",
+      "currentStatus": "active",
+      "currentBaseline": "bounded_inbox_batch_pilot_32_task177",
+      "whyItMatters": "Current largest protected compact death_validation batch.",
+      "mainFiles": [
+        "tools/emit-allowlisted-death-validation-batch-artifacts.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/"
+      ],
+      "knownLimits": [
+        "Still compact counter-transition validation, not final death facts or attribution."
+      ],
+      "nextUsefulStep": "Build bounded summary or identity/death-event schema on top of compact outputs."
+    },
+    {
+      "capabilityId": "filename_only_inventory_flow",
+      "plainName": "Filename-only inbox inventory flow",
+      "introducedInTask": "176",
+      "stabilizedInTask": "177",
+      "currentStatus": "active",
+      "currentBaseline": "inbox-inventory-task177",
+      "whyItMatters": "Discovers candidates without reading replay bytes.",
+      "mainFiles": [
+        "tasks/specs/176.json",
+        "tasks/specs/177.json"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batch-runner/inbox-inventory-task177/inbox-replay-inventory.json"
+      ],
+      "knownLimits": [
+        "Only maps filenames; it does not validate replay contents."
+      ],
+      "nextUsefulStep": "Continue using before any new replay authorization."
+    },
+    {
+      "capabilityId": "protection_audits",
+      "plainName": "Protection audits",
+      "introducedInTask": "090",
+      "stabilizedInTask": "177",
+      "currentStatus": "active",
+      "currentBaseline": "per-task protection-audit.json outputs",
+      "whyItMatters": "Records replay and output-safety compliance for each task.",
+      "mainFiles": [
+        "docs/codex/REPLAY_PROTECTION.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-protection-audit.json"
+      ],
+      "knownLimits": [
+        "Audit is only as complete as the task instrumentation."
+      ],
+      "nextUsefulStep": "Keep audits mandatory for all processing tasks."
+    },
+    {
+      "capabilityId": "schema_output_size_audits",
+      "plainName": "Schema/output/size audits",
+      "introducedInTask": "155",
+      "stabilizedInTask": "177",
+      "currentStatus": "active",
+      "currentBaseline": "bounded 32 batch schema/output/size audits",
+      "whyItMatters": "Prevents unsafe, oversized, or schema-invalid artifacts from becoming baselines.",
+      "mainFiles": [
+        "scripts/check-output-sizes.js"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/schema-validation-summary.json",
+        "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/size-audit.json"
+      ],
+      "knownLimits": [
+        "Known pre-existing oversized output/04-controller-pawn-lifecycle.json remains outside current task output."
+      ],
+      "nextUsefulStep": "Keep artifact class limits explicit."
+    },
+    {
+      "capabilityId": "death_validation_consumption_contract",
+      "plainName": "Death validation consumption contract",
+      "introducedInTask": "170",
+      "stabilizedInTask": "170",
+      "currentStatus": "active",
+      "currentBaseline": "exact-15 death_validation consumption contract",
+      "whyItMatters": "Defines safe use of compact counter-transition outputs without treating them as final death facts.",
+      "mainFiles": [
+        "reports/exact-15-death-validation-consumption-contract.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/exact-15-death-validation-consumption-contract/safe-field-contract.json"
+      ],
+      "knownLimits": [
+        "Does not authorize attribution, alive/dead state, or gameplay semantics."
+      ],
+      "nextUsefulStep": "Extend only after identity/death-event schemas are designed."
+    },
+    {
+      "capabilityId": "upstream_deadem_update_check",
+      "plainName": "Upstream deadem update check",
+      "introducedInTask": "153",
+      "stabilizedInTask": "153",
+      "currentStatus": "active",
+      "currentBaseline": "npm run check:upstream-deadem",
+      "whyItMatters": "Reduces risk of long local parser investigations when upstream already fixed the issue.",
+      "mainFiles": [
+        "tools/check-upstream-deadem-updates.mjs",
+        "tests/upstream-deadem-update-check.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/upstream-update-check/update-decision.json"
+      ],
+      "knownLimits": [
+        "Network failures require manual review."
+      ],
+      "nextUsefulStep": "Run before deep parser debugging."
+    }
+  ]
+}

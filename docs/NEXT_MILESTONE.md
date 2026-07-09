@@ -1743,3 +1743,27 @@ with `generatedAt: task_177`, and preserved overlap stability against the Task
 `validationStatus`. The next milestone can review the 32-replay compact
 `death_validation` batch for bounded summary or policy-controlled consumption,
 while preserving that `eventCount` is not a final death fact.
+
+## Task 178
+
+Purpose: consolidate the full project task history and capability map from Task
+001 through Task 177.
+
+Success gate: `project_task_history_and_capability_map_ready`.
+
+Blocked gate: `project_task_history_and_capability_map_blocked`.
+
+Status: completed with the success gate above. The consolidation created
+`docs/PROJECT_TASK_HISTORY.md`, `docs/CAPABILITY_MAP.md`,
+`docs/PRODUCT_VALUE_ROADMAP.md`, `data/task-contribution-index.json`, and
+`data/capability-index.json`. It reviewed versioned task files, reports, docs,
+registry entries, package scripts, and git history only; no replay file was
+accessed, no parser or batch runner was executed, and no new
+`death_validation` artifact or gameplay interpretation was emitted.
+
+The active baseline remains `bounded_inbox_batch_pilot_32_task177`. The next
+milestone should use the new capability map to avoid retracing superseded
+diagnostic work and should focus on the first product-value prerequisites after
+compact validation: identity mapping, hero/team mapping, time/tick
+normalization, alive/dead/respawn state, and canonical death-event schema
+design.
