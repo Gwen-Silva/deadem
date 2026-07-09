@@ -1109,3 +1109,9 @@ behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
 default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
 iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 174
 was produced.
+
+## Task 174 Allowlisted Death Validation Expanded 16 Batch Pilot Note
+
+Task 174 enabled `replay_020` only through an explicit allowlisted batch manifest while preserving global blocks for replay_005 and replay_006 through replay_008. The expanded manifest `expanded_16_batch_mode_pilot` ran `runnerMode: batch` without `--reference-status`, processed replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020, and completed under `allowlisted_death_validation_expanded_16_batch_pilot_ready`.
+
+The batch runner gate was `allowlisted_death_validation_batch_emitted` with `parityStatus: not_required`. It emitted 16 compact `death_validation` artifacts; `replay_020` produced eventCount 83 and duplicateKeyCount 0. The 15 overlapping replays matched Task 173 on `eventCount`, `duplicateKeyCount`, and `validationStatus`. `eventCount` remains a source-observed counter transition candidate count, not a final death fact. No artifact outside `death_validation`, death events, respawn events, timelines, objective lifecycle, identity rows, attribution, field values, raw data, snapshots, full histories, source/canonical/match final facts, gameplay interpretation, parser/engine behavior change, `packages/deadem/**` change, recovery, skip, placeholder, default behavior change, parser opt-in, Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 175 was produced.

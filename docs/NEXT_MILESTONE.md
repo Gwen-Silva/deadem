@@ -1683,3 +1683,13 @@ artifacts, passed schema/output/size checks, and recorded `parityStatus:
 not_required`. The next milestone can decide whether to authorize a new
 allowlisted batch manifest or keep exact-15 as the current compact validation
 ceiling.
+
+## Task 174
+
+Purpose: authorize `replay_020` only through an explicit allowlisted manifest and run an expanded 16-replay `death_validation` batch pilot without parity reference.
+
+Success gate: `allowlisted_death_validation_expanded_16_batch_pilot_ready`.
+
+Blocked gate: `allowlisted_death_validation_expanded_16_batch_pilot_blocked`.
+
+Status: completed with the success gate above. The runner now keeps replay_005 and replay_006 through replay_008 globally blocked while allowing `replay_020` only from the explicit manifest path `.local/deadem/replays/inbox/partida_020.dem`. The expanded batch processed replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020, emitted 16 compact `death_validation` artifacts, recorded `parityStatus: not_required`, and matched Task 173 on the 15 overlapping replays. The next milestone can review whether the expanded 16 compact batch is sufficient for the next bounded source/canonical step, while preserving the source-observed candidate-count interpretation.

@@ -29,7 +29,8 @@ const CONTROLLER_CLASS = 'CCitadelPlayerController';
 const PARITY_SUMMARY_ROOT = 'output/local-replay-processing/allowlisted-death-validation-batch-parity/';
 const BATCH_SUMMARY_ROOT_PREFIX = 'output/local-replay-processing/allowlisted-death-validation-batches/';
 
-export const FORBIDDEN_REPLAY_IDS = new Set(['replay_005', 'replay_006', 'replay_007', 'replay_008', 'replay_020']);
+export const FORBIDDEN_REPLAY_IDS = new Set(['replay_005', 'replay_006', 'replay_007', 'replay_008']);
+const MANIFEST_AUTHORIZED_REPLAY_020_PATH = '.local/deadem/replays/inbox/partida_020.dem';
 
 export const FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES = [
     'death_events',
@@ -125,9 +126,6 @@ function forbiddenReplayReasons(replay) {
     if (/(?:^|\/)(?:partida|replay|match)[_-]?00?[6-8](?:\.dem)?$/iu.test(lowerPath)) {
         reasons.push('unsupported_bot_fixture_006_008');
     }
-    if (/(?:^|\/)(?:partida|replay|match)[_-]?0?20(?:\.dem)?$/iu.test(lowerPath)) {
-        reasons.push('replay_020_not_authorized');
-    }
     if (path.isAbsolute(localPath)) reasons.push('absolute_path_forbidden');
     if (lowerPath === '..' || lowerPath.startsWith('../') || lowerPath.includes('/../')) reasons.push('path_traversal_forbidden');
     if (lowerPath.startsWith('output/replays/')) reasons.push('output_replays_path_forbidden');
@@ -215,6 +213,9 @@ export function buildAllowlistedBatchPlan(manifest) {
 
     for (const replay of allowlist) {
         if (!replay.replayId || !replay.localPath) throw new Error('allowedReplays entries require replayId and localPath');
+        if (replay.replayId === 'replay_020' && replay.localPath !== MANIFEST_AUTHORIZED_REPLAY_020_PATH) {
+            throw new Error(`replay_020 must use ${MANIFEST_AUTHORIZED_REPLAY_020_PATH}`);
+        }
         if (allowlistById.has(replay.replayId)) duplicateAllowlistIds.add(replay.replayId);
         allowlistById.set(replay.replayId, replay);
         allowlistKeys.add(replayKey(replay));
@@ -237,6 +238,7 @@ export function buildAllowlistedBatchPlan(manifest) {
         const allowlistedById = replay.replayId ? allowlistById.get(replay.replayId) : null;
 
         if (!allowlisted) reasons.push('not_in_manifest_allowlist');
+        if (manifest.blockedReplays.includes(replay.replayId)) reasons.push('manifest_blocked_replay');
         if (allowlistedById && normalizedPath !== slash(allowlistedById.localPath)) reasons.push('manifest_replay_path_mismatch');
         if (seenRequestedKeys.has(key)) reasons.push('duplicate_requested_replay');
         if (replay.requestedMode !== SUPPORTED_MODE) reasons.push('requested_mode_not_supported');
@@ -679,7 +681,9 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
         blockedReplayAudit: plan.blockedReplayAudit,
         replay005Accessed: false,
         bots006To008Processed: false,
-        replay020Accessed: false,
+        replay020ManifestAuthorized: manifest.allowedReplays.some(replay => normalizeAllowedReplay(replay).replayId === 'replay_020')
+            && !blockedIdsFromManifest(manifest).includes('replay_020'),
+        replay020Processed: emittedReplayStatus.some(row => row.replayId === 'replay_020'),
         blockedBeforeFilesystemAccess: true
     };
     const protectionAudit = {
@@ -689,7 +693,9 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
         processedOnlyManifestAllowlist: emittedReplayStatus.every(row => manifest.allowedReplays.some(replay => normalizeAllowedReplay(replay).replayId === row.replayId)),
         replay005Accessed: false,
         bots006To008Processed: false,
-        replay020Accessed: false,
+        replay020ManifestAuthorized: manifest.allowedReplays.some(replay => normalizeAllowedReplay(replay).replayId === 'replay_020')
+            && !blockedIdsFromManifest(manifest).includes('replay_020'),
+        replay020Processed: emittedReplayStatus.some(row => row.replayId === 'replay_020'),
         outputReplaysUsed: false,
         parserEngineBehaviorModified: false,
         packagesDeademModified: false,
@@ -717,7 +723,8 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
         iaflowUsed: false,
         productReviewerAutomationUsed: false,
         pullMergeCherryPickRebaseUsed: false,
-        task172Created: false
+        task172Created: false,
+        task175Created: false
     };
 
     await writeJson(path.join(summaryRoot.absolutePath, 'allowlisted-batch-gate.json'), gate);
@@ -732,26 +739,28 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
     await writeJson(path.join(summaryRoot.absolutePath, 'protection-audit.json'), protectionAudit);
     await writeJson(path.join(summaryRoot.absolutePath, 'blocked-replay-audit.json'), blockedReplayAudit);
     await writeJson(path.join(summaryRoot.absolutePath, 'parity-comparison-summary.json'), parityComparisonSummary);
-    await writeMarkdown(path.resolve(REPO_ROOT, 'reports/allowlisted-death-validation-batch-parity.md'), [
-        '# Allowlisted Death Validation Batch Parity',
-        '',
-        `Gate: \`${gate.gate}\``,
-        '',
-        'Task 171 emitted compact `death_validation` artifacts through a manifest-driven allowlisted runner and compared them against Task 168.',
-        '',
-        '## Results',
-        '',
-        ...emittedReplayStatus.map(row => `- ${row.replayId}: ${row.validationStatus}; eventCount=${row.eventCount}; duplicateKeyCount=${row.duplicateKeyCount}`),
-        `- schema validation: ${schemaValidationSummary.schemaValidationStatus}`,
-        `- output policy: ${outputPolicyAudit.policyStatus}`,
-        `- size audit: ${sizeAudit.sizeAuditStatus}`,
-        `- parity: ${parityComparisonSummary.parityStatus}`,
-        '',
-        '## Limits',
-        '',
-        '`eventCount` remains a compact count of source-observed counter transition candidates, not final death facts.',
-        'No event rows, field values, identities, attribution, timelines, snapshots, final facts, source/canonical/match facts, or gameplay interpretation were emitted.'
-    ]);
+    if (manifest.runnerMode === 'parity') {
+        await writeMarkdown(path.resolve(REPO_ROOT, 'reports/allowlisted-death-validation-batch-parity.md'), [
+            '# Allowlisted Death Validation Batch Parity',
+            '',
+            `Gate: \`${gate.gate}\``,
+            '',
+            'Task 171 emitted compact `death_validation` artifacts through a manifest-driven allowlisted runner and compared them against Task 168.',
+            '',
+            '## Results',
+            '',
+            ...emittedReplayStatus.map(row => `- ${row.replayId}: ${row.validationStatus}; eventCount=${row.eventCount}; duplicateKeyCount=${row.duplicateKeyCount}`),
+            `- schema validation: ${schemaValidationSummary.schemaValidationStatus}`,
+            `- output policy: ${outputPolicyAudit.policyStatus}`,
+            `- size audit: ${sizeAudit.sizeAuditStatus}`,
+            `- parity: ${parityComparisonSummary.parityStatus}`,
+            '',
+            '## Limits',
+            '',
+            '`eventCount` remains a compact count of source-observed counter transition candidates, not final death facts.',
+            'No event rows, field values, identities, attribution, timelines, snapshots, final facts, source/canonical/match facts, or gameplay interpretation were emitted.'
+        ]);
+    }
 
     return {
         gate,

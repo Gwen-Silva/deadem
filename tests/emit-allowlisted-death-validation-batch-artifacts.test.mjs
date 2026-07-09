@@ -30,6 +30,14 @@ const allowedReplays = [
     { replayId: 'replay_019', localPath: '.local/deadem/replays/inbox/partida_019.dem', requestedMode: 'death_validation_compact_emission' }
 ];
 
+const replay020 = {
+    replayId: 'replay_020',
+    localPath: '.local/deadem/replays/inbox/partida_020.dem',
+    requestedMode: 'death_validation_compact_emission'
+};
+
+const globallyBlockedReplays = ['replay_005', 'replay_006', 'replay_007', 'replay_008'];
+
 function manifest(overrides = {}) {
     return {
         schemaVersion: 1,
@@ -45,7 +53,7 @@ function manifest(overrides = {}) {
         gameplayInterpretationProduced: false,
         eventCountMeaning: 'source_observed_counter_transition_candidate_count_not_final_death_fact',
         allowedReplays,
-        blockedReplays: ['replay_005', 'replay_006', 'replay_007', 'replay_008', 'replay_020'],
+        blockedReplays: [...globallyBlockedReplays, 'replay_020'],
         forbiddenOutputSurfaces: FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES,
         ...overrides
     };
@@ -65,6 +73,7 @@ function batchManifest(overrides = {}) {
 
 test('allowlisted batch manifest requires compact death_validation emission contract', () => {
     assert.equal(validateAllowlistedBatchManifestShape(manifest()).artifactClass, 'death_validation');
+    assert.equal(validateAllowlistedBatchManifestShape(manifest({ blockedReplays: globallyBlockedReplays })).runnerMode, 'parity');
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), mode: 'dry_run' }), /manifest mode/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), runnerMode: 'other' }), /runnerMode/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), parityComparisonRequired: false }), /parityComparisonRequired/u);
@@ -96,12 +105,12 @@ test('allowlisted batch plan accepts all 15 manifest replays before filesystem a
     assert.equal(plan.perReplayStatus.every(row => row.parseAttempted === false), true);
 });
 
-test('allowlisted batch plan blocks protected and non-manifest replays before filesystem access', () => {
+test('allowlisted batch plan blocks protected globally and non-manifest replays before filesystem access', () => {
     const plan = buildAllowlistedBatchPlan(manifest({
         requestedReplays: [
             { replayId: 'replay_005', localPath: '.local/deadem/replays/inbox/partida_005.dem', requestedMode: 'death_validation_compact_emission' },
             { replayId: 'replay_006', localPath: '.local/deadem/replays/inbox/partida_006.dem', requestedMode: 'death_validation_compact_emission' },
-            { replayId: 'replay_020', localPath: '.local/deadem/replays/inbox/partida_020.dem', requestedMode: 'death_validation_compact_emission' },
+            replay020,
             { replayId: 'replay_099', localPath: '.local/deadem/replays/inbox/partida_099.dem', requestedMode: 'death_validation_compact_emission' }
         ]
     }));
@@ -111,8 +120,62 @@ test('allowlisted batch plan blocks protected and non-manifest replays before fi
     assert.equal(plan.perReplayStatus.every(row => row.openReadStreamAttempted === false), true);
     assert.ok(plan.blockedReplayAudit.some(row => row.replayId === 'replay_005' && row.reasons.includes('replay_005_globally_blocked')));
     assert.ok(plan.blockedReplayAudit.some(row => row.replayId === 'replay_006' && row.reasons.includes('replay_006_globally_blocked')));
-    assert.ok(plan.blockedReplayAudit.some(row => row.replayId === 'replay_020' && row.reasons.includes('replay_020_globally_blocked')));
+    assert.ok(plan.blockedReplayAudit.some(row => row.replayId === 'replay_020' && row.reasons.includes('not_in_manifest_allowlist')));
+    assert.ok(plan.blockedReplayAudit.some(row => row.replayId === 'replay_020' && row.reasons.includes('manifest_blocked_replay')));
     assert.ok(plan.blockedReplayAudit.some(row => row.replayId === 'replay_099' && row.reasons.includes('not_in_manifest_allowlist')));
+});
+
+test('allowlisted batch plan keeps replay 005 and bot fixtures globally blocked even when allowlisted', () => {
+    const plan = buildAllowlistedBatchPlan(batchManifest({
+        allowedReplays: [
+            { replayId: 'replay_005', localPath: '.local/deadem/replays/inbox/partida_005.dem', requestedMode: 'death_validation_compact_emission' },
+            { replayId: 'replay_006', localPath: '.local/deadem/replays/inbox/partida_006.dem', requestedMode: 'death_validation_compact_emission' },
+            { replayId: 'replay_007', localPath: '.local/deadem/replays/inbox/partida_007.dem', requestedMode: 'death_validation_compact_emission' },
+            { replayId: 'replay_008', localPath: '.local/deadem/replays/inbox/partida_008.dem', requestedMode: 'death_validation_compact_emission' }
+        ],
+        blockedReplays: globallyBlockedReplays
+    }));
+    assert.equal(plan.readyInputs.length, 0);
+    assert.equal(plan.blockedReplayAudit.length, 4);
+    assert.ok(plan.blockedReplayAudit.every(row => row.reasons.some(reason => reason.endsWith('_globally_blocked'))));
+    assert.ok(plan.perReplayStatus.every(row => row.openReadStreamAttempted === false));
+});
+
+test('replay 020 is manifest-authorized, not globally blocked', () => {
+    const accepted = buildAllowlistedBatchPlan(batchManifest({
+        allowedReplays: [replay020],
+        blockedReplays: globallyBlockedReplays
+    }));
+    assert.equal(accepted.readyInputs.length, 1);
+    assert.equal(accepted.readyInputs[0].replayId, 'replay_020');
+    assert.equal(accepted.blockedReplayAudit.length, 0);
+
+    const blockedByManifest = buildAllowlistedBatchPlan(batchManifest({
+        allowedReplays: [replay020],
+        blockedReplays: [...globallyBlockedReplays, 'replay_020']
+    }));
+    assert.equal(blockedByManifest.readyInputs.length, 0);
+    assert.equal(blockedByManifest.blockedReplayAudit.length, 1);
+    assert.ok(blockedByManifest.blockedReplayAudit[0].reasons.includes('manifest_blocked_replay'));
+    assert.equal(blockedByManifest.blockedReplayAudit[0].reasons.includes('replay_020_globally_blocked'), false);
+
+    const absent = buildAllowlistedBatchPlan(batchManifest({
+        allowedReplays: [{ replayId: 'replay_010', localPath: '.local/deadem/replays/inbox/partida_010.dem', requestedMode: 'death_validation_compact_emission' }],
+        blockedReplays: globallyBlockedReplays,
+        requestedReplays: [replay020]
+    }));
+    assert.equal(absent.readyInputs.length, 0);
+    assert.ok(absent.blockedReplayAudit[0].reasons.includes('not_in_manifest_allowlist'));
+
+    assert.throws(
+        () => buildAllowlistedBatchPlan(batchManifest({
+            allowedReplays: [
+                { ...replay020, localPath: '.local/deadem/replays/inbox/not_partida_020.dem' }
+            ],
+            blockedReplays: globallyBlockedReplays
+        })),
+        /replay_020 must use/u
+    );
 });
 
 test('allowlisted batch plan blocks output/replays, absolute, traversal, and path mismatch before filesystem access', () => {
@@ -223,5 +286,6 @@ test('allowlisted runner source preserves all-or-nothing writes and avoids unsaf
     assert.match(source, /realArtifactsWrittenOnlyAfterAllReplaysPassed: true/u);
     assert.equal(/\bgit\s+(pull|merge|cherry-pick|rebase)\b/iu.test(source), false);
     assert.equal(/\b(createHash|copyFile)\b/u.test(source), false);
+    assert.equal(/replay_020_not_authorized|replay_020_globally_blocked/u.test(source), false);
     assert.equal(/rawDataCaptured:\s*true|finalFactsProduced:\s*true|gameplayInterpretationProduced:\s*true/u.test(source), false);
 });
