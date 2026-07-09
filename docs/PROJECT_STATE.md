@@ -1121,3 +1121,19 @@ The batch runner gate was `allowlisted_death_validation_batch_emitted` with `par
 Task 175 corrected manifest-driven `death_validation` batch artifact provenance under `allowlisted_death_validation_batch_provenance_fixed`. The runner no longer hardcodes `generatedAt: task_171`; real batch emission now requires manifest generation metadata. The regenerated `expanded_16_batch_mode_pilot_provenance_fix` batch processed replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020 without `--reference-status`, emitted 16 compact `death_validation` artifacts with `generatedAt: task_175`, and preserved stability against Task 174 on replay IDs, `eventCount`, `duplicateKeyCount`, and `validationStatus`.
 
 This was a provenance fix only. `eventCount` remains a source-observed counter transition candidate count, not a final death fact. No artifact outside `death_validation`, death events, respawn events, timelines, objective lifecycle, identity rows, attribution, field values, raw data, snapshots, full histories, source/canonical/match final facts, gameplay interpretation, parser/engine behavior change, `packages/deadem/**` change, recovery, skip, placeholder, default behavior change, parser opt-in, Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 176 was produced.
+
+## Task 176 Bounded Inbox Batch Pilot Inventory Note
+
+Task 176 performed the authorized inbox inventory by filename listing only and
+ended under `allowlisted_death_validation_bounded_batch_no_new_candidates`. The
+inbox contained `partida_010.dem` through `partida_020.dem`; every discovered
+candidate maps to a replay already included in the Task 175 expanded 16
+provenance-fixed baseline.
+
+No bounded batch was executed, no replay was opened, hashed, copied, byte-read,
+parsed, or processed, and no new `death_validation` artifacts were emitted. The
+Task 176 manifest `bounded_inbox_batch_pilot_32` was materialized with Task 176
+provenance metadata for auditability only; it was not run because it would add
+no new replay coverage. The current active batch baseline remains the Task 175
+expanded 16 provenance-fixed output until new eligible inbox candidates are
+added or explicitly authorized.

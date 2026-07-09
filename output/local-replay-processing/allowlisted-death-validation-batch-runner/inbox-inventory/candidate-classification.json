@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "176",
+  "classificationId": "bounded_inbox_batch_pilot_candidate_classification",
+  "acceptedFilenamePatterns": [
+    "partida_###.dem",
+    "replay_###.dem",
+    "replay_###_*.dem"
+  ],
+  "classificationRules": {
+    "mappedReplayIdFormat": "replay_###",
+    "numericOrdering": true,
+    "baselineReplayIdsAreKeptButNotNewCandidates": true,
+    "protectedReplay005Blocked": true,
+    "unsupportedBotFixtures006To008Blocked": true,
+    "unmappedFilenamesRequireManualReview": true
+  },
+  "candidateCount": 11,
+  "mappedCandidates": [
+    { "filename": "partida_010.dem", "replayId": "replay_010", "classification": "baseline_already_included" },
+    { "filename": "partida_011.dem", "replayId": "replay_011", "classification": "baseline_already_included" },
+    { "filename": "partida_012.dem", "replayId": "replay_012", "classification": "baseline_already_included" },
+    { "filename": "partida_013.dem", "replayId": "replay_013", "classification": "baseline_already_included" },
+    { "filename": "partida_014.dem", "replayId": "replay_014", "classification": "baseline_already_included" },
+    { "filename": "partida_015.dem", "replayId": "replay_015", "classification": "baseline_already_included" },
+    { "filename": "partida_016.dem", "replayId": "replay_016", "classification": "baseline_already_included" },
+    { "filename": "partida_017.dem", "replayId": "replay_017", "classification": "baseline_already_included" },
+    { "filename": "partida_018.dem", "replayId": "replay_018", "classification": "baseline_already_included" },
+    { "filename": "partida_019.dem", "replayId": "replay_019", "classification": "baseline_already_included" },
+    { "filename": "partida_020.dem", "replayId": "replay_020", "classification": "baseline_already_included" }
+  ],
+  "newEligibleCandidates": [],
+  "manualReviewCandidates": [],
+  "rawDataCaptured": false
+}

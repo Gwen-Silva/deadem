@@ -1703,3 +1703,20 @@ Success gate: `allowlisted_death_validation_batch_provenance_fixed`.
 Blocked gate: `allowlisted_death_validation_batch_provenance_fix_blocked`.
 
 Status: completed with the success gate above. The runner no longer hardcodes `generatedAt: task_171`; real batch emission now requires manifest `generationLabel`, `taskId`, and `runId`. The provenance-fix batch regenerated replay_001, replay_002, replay_003, replay_004, replay_009, and replay_010 through replay_020 with `generatedAt: task_175`, kept `parityStatus: not_required`, and matched Task 174 on replay IDs, `eventCount`, `duplicateKeyCount`, and `validationStatus`. The next milestone should use the provenance-fixed batch outputs as the current expanded 16 compact `death_validation` baseline.
+
+## Task 176
+
+Purpose: discover inbox candidates by filename listing only and run a bounded
+larger `death_validation` batch pilot only if new eligible replays exist.
+
+Success gate: `allowlisted_death_validation_bounded_inbox_batch_pilot_ready`.
+
+No-new-candidates gate:
+`allowlisted_death_validation_bounded_batch_no_new_candidates`.
+
+Status: blocked by the no-new-candidates gate. The inbox listing found only
+`partida_010.dem` through `partida_020.dem`, which are already covered by the
+Task 175 expanded 16 baseline. No replay was opened, hashed, copied, byte-read,
+parsed, or processed, and no batch was executed. The next milestone requires new
+eligible inbox replay files or a separately authorized bounded manifest before a
+larger batch pilot can add coverage.

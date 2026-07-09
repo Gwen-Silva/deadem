@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "taskId": "176",
+  "summaryId": "bounded_inbox_batch_pilot_summary",
+  "gate": "allowlisted_death_validation_bounded_batch_no_new_candidates",
+  "inventoryMethod": "filename_listing_only",
+  "discoveredDemFileCount": 11,
+  "mappedCandidateCount": 11,
+  "baselineReplayCount": 16,
+  "newEligibleCandidateCount": 0,
+  "selectedNewCandidateCount": 0,
+  "batchExecuted": false,
+  "processedReplayIds": [],
+  "artifactClass": "death_validation",
+  "artifactsEmitted": false,
+  "reason": "No inbox candidate remained after excluding the Task 175 baseline and protected/bot replay ids.",
+  "nextRecommendedAction": "request_more_inbox_candidates_or_authorize_next_bounded_manifest_after_new_files_exist",
+  "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+  "rawDataCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}
