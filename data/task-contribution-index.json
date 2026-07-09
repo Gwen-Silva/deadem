@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "178",
+  "generatedAtTask": "179",
   "baseCommit": "ffabea3d19280f901685d3a3e7a6a66e3c8a2bf8",
-  "taskRange": "001-177",
+  "taskRange": "001-179",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5374,6 +5374,43 @@
       "evidencePaths": [
         "tasks/specs/177.json",
         "tasks/completed/177-allowlisted-death-validation-bounded-inbox-batch-pilot.md"
+      ]
+    },
+    {
+      "taskId": "179",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Semantic Foundation Compact Schema And Pilot",
+      "phase": "semantic_foundation_readiness",
+      "primaryContribution": "Introduced and ran compact semantic_foundation readiness artifacts for the active 32-replay baseline.",
+      "introducedCapabilities": [
+        "semantic_foundation_compact"
+      ],
+      "stabilizedCapabilities": [
+        "semantic_foundation_compact"
+      ],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "schemas/semantic-foundation-compact.schema.json",
+        "output/local-replay-processing/semantic-foundation-compact/task179-gate.json",
+        "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/semantic-foundation-bounded32-gate.json",
+        "reports/semantic-foundation-compact-pilot-task179.md"
+      ],
+      "gate": "semantic_foundation_compact_bounded32_ready",
+      "currentRelevance": "active_baseline",
+      "dependsOn": [
+        "178",
+        "177"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "semantic_foundation artifacts are readiness summaries only; do not treat them as identity rows, death events, attribution, or gameplay facts."
+      ],
+      "evidenceStatus": "sufficient",
+      "evidencePaths": [
+        "tasks/specs/179.json",
+        "tasks/completed/179-semantic-foundation-compact-pilot.md",
+        "output/local-replay-processing/semantic-foundation-compact/task179-summary.json"
       ]
     }
   ]

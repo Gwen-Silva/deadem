@@ -1767,3 +1767,20 @@ diagnostic work and should focus on the first product-value prerequisites after
 compact validation: identity mapping, hero/team mapping, time/tick
 normalization, alive/dead/respawn state, and canonical death-event schema
 design.
+
+## Task 179
+
+Purpose: create and run a compact `semantic_foundation` layer for identity,
+hero/team, time/tick, and alive/dead/respawn readiness before gameplay semantics.
+
+Success gate: `semantic_foundation_compact_bounded32_ready`.
+
+Blocked gates: `semantic_foundation_compact_pilot_blocked` and
+`semantic_foundation_compact_pilot_ready_bounded32_blocked`.
+
+Status: completed with the success gate above. The mini-pilot emitted 4 compact
+artifacts and the bounded-32 run emitted 32 compact artifacts, all with
+`generatedAt: task_179`. The next milestone should design or emit the first
+real identity mapping artifact using these availability signals. Canonical death
+event design is still intentionally blocked until identity mapping, hero/team
+mapping, time normalization, and life-state contracts become explicit.

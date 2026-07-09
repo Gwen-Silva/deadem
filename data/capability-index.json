@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "178",
-  "activeBaseline": "bounded_inbox_batch_pilot_32_task177",
+  "generatedAtTask": "179",
+  "activeBaseline": "semantic_foundation_compact_bounded32_task179",
   "capabilities": [
     {
       "capabilityId": "parser_char_without_count_fix",
@@ -331,6 +331,30 @@
         "Network failures require manual review."
       ],
       "nextUsefulStep": "Run before deep parser debugging."
+    },
+    {
+      "capabilityId": "semantic_foundation_compact",
+      "plainName": "Semantic foundation compact readiness artifacts",
+      "introducedInTask": "179",
+      "stabilizedInTask": "179",
+      "currentStatus": "active",
+      "currentBaseline": "semantic_foundation_compact_bounded32_task179",
+      "whyItMatters": "Summarizes whether identity, hero/team, time/tick, and life-state signals are available before gameplay semantics or final facts are attempted.",
+      "mainFiles": [
+        "tools/emit-semantic-foundation-compact-artifacts.mjs",
+        "schemas/semantic-foundation-compact.schema.json",
+        "tests/semantic-foundation-compact-schema.test.mjs",
+        "tests/emit-semantic-foundation-compact-artifacts.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/semantic-foundation-compact/task179-gate.json",
+        "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/"
+      ],
+      "knownLimits": [
+        "Does not emit player, hero, team, entity, field value, event row, position, attribution, final fact, or gameplay interpretation data.",
+        "Does not make canonical death-event design ready by itself."
+      ],
+      "nextUsefulStep": "Design the first policy-safe identity mapping artifact."
     }
   ]
 }

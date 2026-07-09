@@ -1,0 +1,159 @@
+{
+  "taskId": "179",
+  "title": "Build Semantic Foundation Compact Schema And Pilot",
+  "status": "authorized",
+  "objective": "Create a compact semantic_foundation artifact class, schema, runner, tests, mini-pilot, and conditional bounded-32 run to validate safe prerequisite signals for identity, hero/team, time, life-state, and future death_validation bridging without final facts or gameplay interpretation.",
+  "baseCommitExpected": "7c7d723036efd3a2e5b54a3b065815e051324b32",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "docs/PROJECT_TASK_HISTORY.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "tasks/specs/177.json",
+    "tasks/completed/177-allowlisted-death-validation-bounded-inbox-batch-pilot.md",
+    "tasks/specs/178.json",
+    "tasks/completed/178-project-task-history-and-capability-map.md",
+    "output/local-replay-processing/project-history/project-history-gate.json",
+    "output/local-replay-processing/project-history/task-history-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-manifest.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/**",
+    "tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+    "tools/emit-death-validation-compact-artifacts.mjs"
+  ],
+  "optionalReadPaths": [
+    "tools/dry-run-generic-source-canonical-readiness.mjs",
+    "tools/emit-controlled-source-canonical-artifacts.mjs",
+    "tests/death-validation-compact-schema.test.mjs",
+    "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"
+  ],
+  "writePaths": [
+    "schemas/semantic-foundation-compact.schema.json",
+    "tools/emit-semantic-foundation-compact-artifacts.mjs",
+    "tests/semantic-foundation-compact-schema.test.mjs",
+    "tests/emit-semantic-foundation-compact-artifacts.test.mjs",
+    "package.json",
+    "output/local-replay-processing/semantic-foundation-compact/**",
+    "reports/semantic-foundation-compact-pilot-task179.md",
+    "tasks/specs/179.json",
+    "tasks/completed/179-semantic-foundation-compact-pilot.md",
+    "tasks/blocked/179-semantic-foundation-compact-pilot.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/current-artifact-registry.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    "tasks/specs/180.json",
+    "tasks/completed/180-*",
+    "tasks/blocked/180-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "semantic-foundation-schema",
+      "type": "node-test",
+      "paths": [
+        "tests/semantic-foundation-compact-schema.test.mjs"
+      ]
+    },
+    {
+      "id": "semantic-foundation-runner",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-semantic-foundation-compact-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "death-validation-schema",
+      "type": "node-test",
+      "paths": [
+        "tests/death-validation-compact-schema.test.mjs"
+      ]
+    },
+    {
+      "id": "allowlisted-batch-runner",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"
+      ]
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"
+    }
+  ],
+  "expectedOutputs": [
+    "schemas/semantic-foundation-compact.schema.json",
+    "tools/emit-semantic-foundation-compact-artifacts.mjs",
+    "output/local-replay-processing/semantic-foundation-compact/task179-gate.json",
+    "output/local-replay-processing/semantic-foundation-compact/task179-summary.json",
+    "reports/semantic-foundation-compact-pilot-task179.md",
+    "tasks/completed/179-semantic-foundation-compact-pilot.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json"
+  ],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": "pilot: replay_010, replay_011, replay_021, replay_036; bounded32: replay_001, replay_002, replay_003, replay_004, replay_009, replay_010 through replay_036 except replay_005 through replay_008",
+  "followUpTask": "none",
+  "stopConditions": [
+    "Process only explicit manifests; block replay_005, replay_006 through replay_008, absolute paths, traversal, output/replays, and any replay outside the manifest.",
+    "Do not emit death_validation, death_events, respawn_events, timelines, objective lifecycle, names, raw entity IDs, field values, positions, attribution, final facts, or gameplay interpretation.",
+    "Do not modify packages/deadem, packages/engine, parser behavior, recovery, skip, placeholders, default behavior, parser opt-ins, Java, Clarity, external parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 180.",
+    "Use all-or-nothing writes per run; if any replay fails, do not write partial artifacts for that run."
+  ],
+  "successGate": "semantic_foundation_compact_bounded32_ready",
+  "blockedGate": "semantic_foundation_compact_pilot_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/semantic-foundation-compact/task179-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "explicit task179 manifests only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed_or_blocked"
+  }
+}

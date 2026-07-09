@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "artifactClass": "semantic_foundation",
+  "sourceMethod": "compact_semantic_signal_observation",
+  "generatedBy": "tools/emit-semantic-foundation-compact-artifacts.mjs",
+  "generatedAt": "task_179",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "playerNamesIncluded": false,
+  "heroNamesIncluded": false,
+  "teamNamesIncluded": false,
+  "entityIdsIncluded": false,
+  "mapPositionsIncluded": false,
+  "eventRowsIncluded": false,
+  "identitySignals": {
+    "controllerCandidatesObserved": 13,
+    "participantSlotCandidatesObserved": 12,
+    "controllerToPawnLinkSignalAvailable": true,
+    "stableParticipantKeyPossible": true,
+    "identityMappingStatus": "available"
+  },
+  "heroTeamSignals": {
+    "heroSignalAvailable": true,
+    "teamSignalAvailable": true,
+    "heroTeamMappingStatus": "available"
+  },
+  "timeSignals": {
+    "tickProgressionObserved": true,
+    "tickRateSignalAvailable": true,
+    "durationSignalAvailable": true,
+    "timeNormalizationStatus": "available"
+  },
+  "lifeStateSignals": {
+    "deathCounterSignalAvailable": true,
+    "aliveDeadSignalAvailable": true,
+    "respawnSignalAvailable": true,
+    "lifeStateReadinessStatus": "available"
+  },
+  "deathValidationBridge": {
+    "deathValidationArtifactFound": true,
+    "eventCount": 45,
+    "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+    "canUseAsDeathEventSourceAlone": false
+  },
+  "readiness": {
+    "readyForIdentityMappingArtifact": true,
+    "readyForHeroTeamMappingArtifact": true,
+    "readyForTimeNormalizationArtifact": true,
+    "readyForAliveDeadRespawnArtifact": true,
+    "readyForCanonicalDeathEventDesign": false
+  },
+  "limitations": [
+    "Compact signal availability only; no player, hero, team, entity, tick, position, or event rows are emitted.",
+    "deathValidationBridge.eventCount is a source-observed counter-transition candidate count, not a final death fact.",
+    "This artifact does not authorize killer, victim, assist, damage, objective, fight, decision, or gameplay interpretation.",
+    "Canonical death-event design still requires explicit identity, time, life-state, and attribution contracts."
+  ]
+}

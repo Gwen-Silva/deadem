@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "task179_semantic_foundation_pilot",
+  "runKind": "task179-pilot",
+  "mode": "semantic_foundation_compact_emission",
+  "artifactClass": "semantic_foundation",
+  "replayProcessingAllowed": true,
+  "realArtifactEmissionAllowed": true,
+  "generationLabel": "task_179",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "allowedReplays": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "selectionGroup": "task179_representative_pilot",
+      "requestedMode": "semantic_foundation_compact_emission",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_010/death_validation.json"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "selectionGroup": "task179_representative_pilot",
+      "requestedMode": "semantic_foundation_compact_emission",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_011/death_validation.json"
+    },
+    {
+      "replayId": "replay_021",
+      "localPath": ".local/deadem/replays/inbox/partida_021.dem",
+      "selectionGroup": "task179_representative_pilot",
+      "requestedMode": "semantic_foundation_compact_emission",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_021/death_validation.json"
+    },
+    {
+      "replayId": "replay_036",
+      "localPath": ".local/deadem/replays/inbox/partida_036.dem",
+      "selectionGroup": "task179_representative_pilot",
+      "requestedMode": "semantic_foundation_compact_emission",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_036/death_validation.json"
+    }
+  ],
+  "blockedReplays": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008"
+  ],
+  "forbiddenOutputSurfaces": [
+    "death_validation_emission",
+    "death_events",
+    "respawn_events",
+    "timelines",
+    "objective_lifecycle",
+    "player_identity_rows_with_names",
+    "hero_names",
+    "team_names",
+    "raw_entity_ids",
+    "field_values",
+    "map_positions",
+    "attribution",
+    "final_facts",
+    "gameplay_interpretation"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/semantic-foundation-compact.schema.json",
+  "title": "Semantic Foundation Compact Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "generatedBy",
+    "generatedAt",
+    "rawDataCaptured",
+    "fieldValuesCaptured",
+    "finalFactsProduced",
+    "gameplayInterpretationProduced",
+    "playerNamesIncluded",
+    "heroNamesIncluded",
+    "teamNamesIncluded",
+    "entityIdsIncluded",
+    "mapPositionsIncluded",
+    "eventRowsIncluded",
+    "identitySignals",
+    "heroTeamSignals",
+    "timeSignals",
+    "lifeStateSignals",
+    "deathValidationBridge",
+    "readiness",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "semantic_foundation" },
+    "sourceMethod": { "const": "compact_semantic_signal_observation" },
+    "generatedBy": { "const": "tools/emit-semantic-foundation-compact-artifacts.mjs" },
+    "generatedAt": { "const": "task_179" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "playerNamesIncluded": { "const": false },
+    "heroNamesIncluded": { "const": false },
+    "teamNamesIncluded": { "const": false },
+    "entityIdsIncluded": { "const": false },
+    "mapPositionsIncluded": { "const": false },
+    "eventRowsIncluded": { "const": false },
+    "identitySignals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "controllerCandidatesObserved",
+        "participantSlotCandidatesObserved",
+        "controllerToPawnLinkSignalAvailable",
+        "stableParticipantKeyPossible",
+        "identityMappingStatus"
+      ],
+      "properties": {
+        "controllerCandidatesObserved": { "type": "integer", "minimum": 0 },
+        "participantSlotCandidatesObserved": { "type": "integer", "minimum": 0 },
+        "controllerToPawnLinkSignalAvailable": { "type": "boolean" },
+        "stableParticipantKeyPossible": { "type": "boolean" },
+        "identityMappingStatus": { "$ref": "#/$defs/readinessStatus" }
+      }
+    },
+    "heroTeamSignals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heroSignalAvailable",
+        "teamSignalAvailable",
+        "heroTeamMappingStatus"
+      ],
+      "properties": {
+        "heroSignalAvailable": { "type": "boolean" },
+        "teamSignalAvailable": { "type": "boolean" },
+        "heroTeamMappingStatus": { "$ref": "#/$defs/readinessStatus" }
+      }
+    },
+    "timeSignals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tickProgressionObserved",
+        "tickRateSignalAvailable",
+        "durationSignalAvailable",
+        "timeNormalizationStatus"
+      ],
+      "properties": {
+        "tickProgressionObserved": { "type": "boolean" },
+        "tickRateSignalAvailable": { "type": "boolean" },
+        "durationSignalAvailable": { "type": "boolean" },
+        "timeNormalizationStatus": { "$ref": "#/$defs/readinessStatus" }
+      }
+    },
+    "lifeStateSignals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deathCounterSignalAvailable",
+        "aliveDeadSignalAvailable",
+        "respawnSignalAvailable",
+        "lifeStateReadinessStatus"
+      ],
+      "properties": {
+        "deathCounterSignalAvailable": { "type": "boolean" },
+        "aliveDeadSignalAvailable": { "type": "boolean" },
+        "respawnSignalAvailable": { "type": "boolean" },
+        "lifeStateReadinessStatus": { "$ref": "#/$defs/readinessStatus" }
+      }
+    },
+    "deathValidationBridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deathValidationArtifactFound",
+        "eventCount",
+        "eventCountMeaning",
+        "canUseAsDeathEventSourceAlone"
+      ],
+      "properties": {
+        "deathValidationArtifactFound": { "type": "boolean" },
+        "eventCount": { "type": "integer", "minimum": 0 },
+        "eventCountMeaning": { "const": "source_observed_counter_transition_candidate_count_not_final_death_fact" },
+        "canUseAsDeathEventSourceAlone": { "const": false }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readyForIdentityMappingArtifact",
+        "readyForHeroTeamMappingArtifact",
+        "readyForTimeNormalizationArtifact",
+        "readyForAliveDeadRespawnArtifact",
+        "readyForCanonicalDeathEventDesign"
+      ],
+      "properties": {
+        "readyForIdentityMappingArtifact": { "type": "boolean" },
+        "readyForHeroTeamMappingArtifact": { "type": "boolean" },
+        "readyForTimeNormalizationArtifact": { "type": "boolean" },
+        "readyForAliveDeadRespawnArtifact": { "type": "boolean" },
+        "readyForCanonicalDeathEventDesign": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+    }
+  },
+  "$defs": {
+    "readinessStatus": {
+      "type": "string",
+      "enum": ["available", "partial", "blocked", "unknown"]
+    }
+  }
+}

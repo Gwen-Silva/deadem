@@ -216,3 +216,15 @@ Task 178 maps current Deadem capabilities from versioned evidence. Status values
 6. Bounded 32-replay compact death_validation baseline.
 
 The next product value layer should not skip identity mapping and canonical death-event schema work.
+
+## Semantic Foundation Compact Layer
+
+- Capability id: `semantic_foundation_compact`
+- Introduced in Task 179; stabilized in Task 179.
+- Current status: `active`
+- Current baseline: semantic_foundation_compact_bounded32_task179
+- Why it matters: Provides compact, policy-safe readiness signals for identity mapping, hero/team mapping, time/tick normalization, and alive/dead/respawn prerequisites without emitting final facts or gameplay interpretation.
+- Main files: `tools/emit-semantic-foundation-compact-artifacts.mjs`, `schemas/semantic-foundation-compact.schema.json`, `tests/emit-semantic-foundation-compact-artifacts.test.mjs`, `tests/semantic-foundation-compact-schema.test.mjs`
+- Main outputs: `output/local-replay-processing/semantic-foundation-compact/task179-gate.json`, `output/local-replay-processing/semantic-foundation-compact/task179-bounded32/`
+- Known limits: Does not include player names, hero names, team names, entity IDs, field values, event rows, positions, attribution, canonical death events, or gameplay semantics.
+- Next dependency: Design the first real identity mapping artifact before canonical death-event or teamfight work.

@@ -1181,3 +1181,27 @@ time/tick normalization, alive/dead/respawn state, and a canonical death-event
 schema. `eventCount` remains a source-observed counter-transition candidate
 count, not a final death fact, and the project has not yet started the gameplay
 semantic layer.
+
+## Task 179 Semantic Foundation Compact Pilot Note
+
+Task 179 created the compact `semantic_foundation` artifact class and ran it under
+`semantic_foundation_compact_bounded32_ready`. The runner uses explicit manifests,
+blocks replay_005 and replay_006 through replay_008, rejects traversal/absolute and
+`output/replays/**` paths, writes artifacts all-or-nothing per run, and preserves
+schema, output policy, size, and protection audits.
+
+The mini-pilot processed exactly replay_010, replay_011, replay_021, and
+replay_036. Because the pilot passed, the bounded-32 manifest then processed the
+Task 177 active baseline: replay_001 through replay_004, replay_009, and
+replay_010 through replay_036. It emitted 32 compact `semantic_foundation`
+artifacts with `generatedAt: task_179`. All bounded-32 artifacts report
+identity, hero/team, time/tick, and life-state signal availability as available;
+canonical death-event design remains not ready by contract.
+
+No new `death_validation.json`, death events, respawn events, timelines,
+objective lifecycle, names, raw entity IDs, field values, map positions,
+per-event rows, attribution, source/canonical/match final facts, gameplay
+interpretation, parser/engine behavior change, `packages/deadem/**` change,
+recovery, skip, placeholder, default behavior change, parser opt-in,
+Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation,
+pull/merge/cherry-pick/rebase, or Task 180 was produced.
