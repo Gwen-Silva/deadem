@@ -1059,3 +1059,28 @@ parser/engine behavior change, `packages/deadem/**` change, recovery, skip,
 placeholder, default behavior change, parser opt-in, Java/Clarity/external
 parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase,
 or Task 172 was produced.
+
+## Task 172 Allowlisted Death Validation Runner Mode Contract Note
+
+Task 172 decoupled the allowlisted `death_validation` runner into explicit
+`parity` and `batch` modes under
+`allowlisted_death_validation_runner_mode_contract_ready`. Parity mode remains
+the exact-15 reproduction path and requires `--reference-status`; batch mode
+forbids `--reference-status` and uses a future manifest-specific output root
+under `allowlisted-death-validation-batches/<manifestId>/`.
+
+The exact-15 parity path was reexecuted only for replay_001, replay_002,
+replay_003, replay_004, replay_009, and replay_010 through replay_019. It
+again emitted 15 compact `death_validation` artifacts and passed schema
+validation, output policy, size audit, and parity comparison. Batch mode was
+validated by contract only; it did not process replays and did not emit real
+batch artifacts. `eventCount` remains a source-observed counter transition
+candidate count, not a final death fact. No new replay outside exact-15,
+replay_005, replay_006 through replay_008, replay_020, artifact outside
+`death_validation`, death events, respawn events, timelines, objective
+lifecycle, identity rows, attribution, field values, raw data, snapshots,
+source/canonical/match final facts, gameplay interpretation, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 173
+was produced.

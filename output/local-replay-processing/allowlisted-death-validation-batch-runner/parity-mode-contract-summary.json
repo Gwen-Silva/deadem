@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "runnerMode": "parity",
+  "manifestPath": "output/local-replay-processing/allowlisted-death-validation-batch-runner/exact-15-parity-manifest.json",
+  "summaryOutput": "output/local-replay-processing/allowlisted-death-validation-batch-parity/",
+  "referenceStatus": "output/local-replay-processing/exact-15-death-validation-compact-emission/per-replay-emission-status.json",
+  "gate": "allowlisted_death_validation_batch_parity_emitted",
+  "parityStatus": "passed",
+  "processedReplayCount": 15,
+  "emittedArtifactCount": 15,
+  "schemaValidationStatus": "passed",
+  "outputPolicyStatus": "passed",
+  "sizeAuditStatus": "passed",
+  "sameReplayIdsAsTask168": true,
+  "comparedFields": [
+    "eventCount",
+    "duplicateKeyCount",
+    "validationStatus"
+  ],
+  "newReplayOutsideExact15Processed": false,
+  "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}

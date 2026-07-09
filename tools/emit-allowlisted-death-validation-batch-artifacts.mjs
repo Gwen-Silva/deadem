@@ -16,14 +16,18 @@ import {
 const THIS_FILE = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(THIS_FILE), '..');
 const SCHEMA_PATH = path.resolve(REPO_ROOT, 'schemas/death-validation-compact.schema.json');
-const REFERENCE_STATUS_PATH = 'output/local-replay-processing/exact-15-death-validation-compact-emission/per-replay-emission-status.json';
-const SUCCESS_GATE = 'allowlisted_death_validation_batch_parity_emitted';
-const BLOCKED_GATE = 'allowlisted_death_validation_batch_parity_blocked';
-const PARTIAL_BLOCKED_GATE = 'allowlisted_death_validation_batch_parity_partial_blocked';
+const PARITY_SUCCESS_GATE = 'allowlisted_death_validation_batch_parity_emitted';
+const PARITY_BLOCKED_GATE = 'allowlisted_death_validation_batch_parity_blocked';
+const PARITY_PARTIAL_BLOCKED_GATE = 'allowlisted_death_validation_batch_parity_partial_blocked';
+const BATCH_SUCCESS_GATE = 'allowlisted_death_validation_batch_emitted';
+const BATCH_BLOCKED_GATE = 'allowlisted_death_validation_batch_blocked';
+const BATCH_PARTIAL_BLOCKED_GATE = 'allowlisted_death_validation_batch_partial_blocked';
 const SUPPORTED_MODE = 'death_validation_compact_emission';
 const ALLOWED_ARTIFACT_CLASS = 'death_validation';
 const MAX_ARTIFACT_BYTES = 32 * 1024;
 const CONTROLLER_CLASS = 'CCitadelPlayerController';
+const PARITY_SUMMARY_ROOT = 'output/local-replay-processing/allowlisted-death-validation-batch-parity/';
+const BATCH_SUMMARY_ROOT_PREFIX = 'output/local-replay-processing/allowlisted-death-validation-batches/';
 
 export const FORBIDDEN_REPLAY_IDS = new Set(['replay_005', 'replay_006', 'replay_007', 'replay_008', 'replay_020']);
 
@@ -142,23 +146,30 @@ function normalizeAllowedReplay(replay) {
     };
 }
 
-export function validateAllowlistedBatchManifestShape(manifest) {
+export function validateAllowlistedBatchManifestShape(manifest, { contractOnly = false } = {}) {
     if (typeof manifest !== 'object' || manifest === null || Array.isArray(manifest)) {
         throw new Error('manifest must be an object');
     }
     if (manifest.schemaVersion !== 1) throw new Error('manifest schemaVersion must be 1');
     if (!manifest.manifestId) throw new Error('manifestId is required');
+    if (!['parity', 'batch'].includes(manifest.runnerMode)) throw new Error('manifest runnerMode must be parity or batch');
+    if (manifest.runnerMode === 'parity' && manifest.parityComparisonRequired !== true) {
+        throw new Error('parity runnerMode requires parityComparisonRequired true');
+    }
+    if (manifest.runnerMode === 'batch' && manifest.parityComparisonRequired !== false) {
+        throw new Error('batch runnerMode requires parityComparisonRequired false');
+    }
     if (manifest.mode !== SUPPORTED_MODE) throw new Error(`manifest mode must be ${SUPPORTED_MODE}`);
     if (manifest.artifactClass !== ALLOWED_ARTIFACT_CLASS) throw new Error('manifest artifactClass must be death_validation');
-    if (manifest.replayProcessingAllowed !== true) throw new Error('manifest must explicitly allow replay processing');
-    if (manifest.realArtifactEmissionAllowed !== true) throw new Error('manifest must explicitly allow real artifact emission');
+    if (!contractOnly && manifest.replayProcessingAllowed !== true) throw new Error('manifest must explicitly allow replay processing');
+    if (!contractOnly && manifest.realArtifactEmissionAllowed !== true) throw new Error('manifest must explicitly allow real artifact emission');
     if (manifest.rawDataCaptured !== false) throw new Error('manifest rawDataCaptured must be false');
     if (manifest.finalFactsProduced !== false) throw new Error('manifest finalFactsProduced must be false');
     if (manifest.gameplayInterpretationProduced !== false) throw new Error('manifest gameplayInterpretationProduced must be false');
     if (manifest.eventCountMeaning !== 'source_observed_counter_transition_candidate_count_not_final_death_fact') {
         throw new Error('manifest eventCountMeaning must preserve the Task 170 consumption contract');
     }
-    if (!Array.isArray(manifest.allowedReplays) || manifest.allowedReplays.length === 0) {
+    if (!Array.isArray(manifest.allowedReplays) || (!contractOnly && manifest.allowedReplays.length === 0)) {
         throw new Error('manifest requires non-empty allowedReplays');
     }
     if (!Array.isArray(manifest.blockedReplays)) throw new Error('manifest blockedReplays must be an array');
@@ -174,9 +185,21 @@ export function validateAllowlistedBatchManifestShape(manifest) {
 
 export function validateAllowlistedSummaryOutputRoot(summaryOutput) {
     const normalized = assertRelativeRepositoryPath(summaryOutput, 'summary output').replace(/\/?$/u, '/');
-    if (normalized !== 'output/local-replay-processing/allowlisted-death-validation-batch-parity/') {
-        throw new Error('summary output root must be exactly output/local-replay-processing/allowlisted-death-validation-batch-parity/');
+    if (normalized !== PARITY_SUMMARY_ROOT) {
+        throw new Error(`summary output root must be exactly ${PARITY_SUMMARY_ROOT}`);
     }
+    return { normalized, absolutePath: path.resolve(REPO_ROOT, normalized) };
+}
+
+export function validateAllowlistedRunnerOutputRoot(summaryOutput, manifest) {
+    const normalized = assertRelativeRepositoryPath(summaryOutput, 'summary output').replace(/\/?$/u, '/');
+    if (manifest.runnerMode === 'parity') {
+        if (normalized !== PARITY_SUMMARY_ROOT) throw new Error(`parity summary output root must be exactly ${PARITY_SUMMARY_ROOT}`);
+        return { normalized, absolutePath: path.resolve(REPO_ROOT, normalized) };
+    }
+
+    const expected = `${BATCH_SUMMARY_ROOT_PREFIX}${manifest.manifestId}/`;
+    if (normalized !== expected) throw new Error(`batch summary output root must be exactly ${expected}`);
     return { normalized, absolutePath: path.resolve(REPO_ROOT, normalized) };
 }
 
@@ -265,6 +288,8 @@ export function buildAllowlistedBatchPlan(manifest) {
     return {
         schemaVersion: 1,
         manifestId: manifest.manifestId,
+        runnerMode: manifest.runnerMode,
+        parityComparisonRequired: manifest.parityComparisonRequired,
         mode: manifest.mode,
         artifactClass: manifest.artifactClass,
         readyInputs,
@@ -517,7 +542,14 @@ function blockedIdsFromManifest(manifest) {
 }
 
 export async function runAllowlistedDeathValidationBatchEmission({ manifest, summaryOutput, referenceStatus }) {
-    const summaryRoot = validateAllowlistedSummaryOutputRoot(summaryOutput);
+    validateAllowlistedBatchManifestShape(manifest);
+    if (manifest.runnerMode === 'parity' && !referenceStatus) {
+        throw new Error('parity runnerMode requires referenceStatus');
+    }
+    if (manifest.runnerMode === 'batch' && referenceStatus) {
+        throw new Error('batch runnerMode must not receive referenceStatus');
+    }
+    const summaryRoot = validateAllowlistedRunnerOutputRoot(summaryOutput, manifest);
     const plan = buildAllowlistedBatchPlan(manifest);
     const schema = JSON.parse(await readFile(SCHEMA_PATH, 'utf8'));
     const blockedByPlan = plan.blockedReplayAudit.length > 0 || plan.readyInputs.length !== plan.expectedReplayCount;
@@ -578,13 +610,23 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
             withinLimit: row.sizeBytes <= MAX_ARTIFACT_BYTES
         }))
     };
-    const parityComparisonSummary = compareParityWithReference({ emittedReplayStatus, referenceStatus });
+    const parityComparisonSummary = manifest.runnerMode === 'parity'
+        ? compareParityWithReference({ emittedReplayStatus, referenceStatus })
+        : {
+            schemaVersion: 1,
+            parityStatus: 'not_required',
+            parityComparisonRequired: false,
+            referenceStatusRequired: false,
+            comparedFields: [],
+            finalFactsProduced: false,
+            gameplayInterpretationProduced: false
+        };
     const allEmitted = emittedReplayStatus.length === plan.expectedReplayCount
         && emittedReplayStatus.every(row => row.status === 'emitted')
         && schemaValidationSummary.schemaValidationStatus === 'passed'
         && outputPolicyAudit.policyStatus === 'passed'
         && sizeAudit.sizeAuditStatus === 'passed'
-        && parityComparisonSummary.parityStatus === 'passed';
+        && (manifest.runnerMode === 'parity' ? parityComparisonSummary.parityStatus === 'passed' : parityComparisonSummary.parityStatus === 'not_required');
 
     if (allEmitted) {
         for (const write of artifactWrites) {
@@ -594,8 +636,14 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
 
     const gate = {
         schemaVersion: 1,
-        gate: allEmitted ? SUCCESS_GATE : (emittedReplayStatus.length > 0 ? PARTIAL_BLOCKED_GATE : BLOCKED_GATE),
+        gate: allEmitted
+            ? (manifest.runnerMode === 'parity' ? PARITY_SUCCESS_GATE : BATCH_SUCCESS_GATE)
+            : (emittedReplayStatus.length > 0
+                ? (manifest.runnerMode === 'parity' ? PARITY_PARTIAL_BLOCKED_GATE : BATCH_PARTIAL_BLOCKED_GATE)
+                : (manifest.runnerMode === 'parity' ? PARITY_BLOCKED_GATE : BATCH_BLOCKED_GATE)),
         status: allEmitted ? 'ready' : 'blocked',
+        runnerMode: manifest.runnerMode,
+        parityComparisonRequired: manifest.parityComparisonRequired,
         mode: SUPPORTED_MODE,
         artifactClass: ALLOWED_ARTIFACT_CLASS,
         processedReplayCount: emittedReplayStatus.length,
@@ -612,6 +660,8 @@ export async function runAllowlistedDeathValidationBatchEmission({ manifest, sum
     const summary = {
         schemaVersion: 1,
         manifestId: manifest.manifestId,
+        runnerMode: manifest.runnerMode,
+        parityComparisonRequired: manifest.parityComparisonRequired,
         mode: SUPPORTED_MODE,
         requestedReplayCount: plan.requestedReplayCount,
         processedReplayCount: emittedReplayStatus.length,
@@ -720,7 +770,15 @@ async function main() {
     const args = parseArgs(process.argv.slice(2));
     const manifestPath = path.resolve(REPO_ROOT, assertRelativeRepositoryPath(args.get('manifest'), 'manifest'));
     const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-    const referenceStatus = JSON.parse(await readFile(path.resolve(REPO_ROOT, REFERENCE_STATUS_PATH), 'utf8'));
+    if (manifest.runnerMode === 'parity' && !args.has('reference-status')) {
+        throw new Error('missing --reference-status for parity runnerMode');
+    }
+    if (manifest.runnerMode === 'batch' && args.has('reference-status')) {
+        throw new Error('--reference-status is forbidden for batch runnerMode');
+    }
+    const referenceStatus = args.has('reference-status')
+        ? JSON.parse(await readFile(path.resolve(REPO_ROOT, assertRelativeRepositoryPath(args.get('reference-status'), 'reference status')), 'utf8'))
+        : null;
     const result = await runAllowlistedDeathValidationBatchEmission({
         manifest,
         summaryOutput: args.get('summary-output'),

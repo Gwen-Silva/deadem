@@ -1641,3 +1641,24 @@ access. The next milestone can use the manifest-driven runner as the standard
 safe path for future explicitly allowlisted compact `death_validation` batches;
 `eventCount` remains a source-observed counter transition candidate count, not
 a final death fact.
+
+## Task 172
+
+Purpose: decouple the allowlisted `death_validation` runner into explicit
+`parity` and `batch` modes while preserving exact-15 parity and validating batch
+mode by contract only.
+
+Success gate: `allowlisted_death_validation_runner_mode_contract_ready`.
+
+Blocked gate: `allowlisted_death_validation_runner_mode_contract_blocked`.
+
+Status: completed with the success gate above. Parity mode requires
+`--reference-status` and uses
+`output/local-replay-processing/allowlisted-death-validation-batch-parity/`.
+Batch mode rejects `--reference-status` and is reserved for future explicitly
+authorized manifests under
+`output/local-replay-processing/allowlisted-death-validation-batches/<manifestId>/`.
+The Task 172 run reexecuted only the exact-15 parity set and processed no new
+replay outside that set. The next milestone can authorize a concrete
+non-parity batch manifest only if its allowlist, output root, and artifact
+policy are explicit.

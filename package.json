@@ -20,7 +20,7 @@
     "dry-run:batch-replay-readiness": "node tools/dry-run-batch-replay-readiness.mjs",
     "dry-run:expanded-death-validation-batch": "node tools/dry-run-expanded-death-validation-batch.mjs",
     "emit:controlled-source-canonical": "node tools/emit-controlled-source-canonical-artifacts.mjs",
-    "emit:allowlisted-death-validation-batch": "node tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+    "emit:allowlisted-death-validation-batch": "node tools/emit-allowlisted-death-validation-batch-artifacts.mjs --manifest output/local-replay-processing/allowlisted-death-validation-batch-runner/exact-15-parity-manifest.json --summary-output output/local-replay-processing/allowlisted-death-validation-batch-parity/ --reference-status output/local-replay-processing/exact-15-death-validation-compact-emission/per-replay-emission-status.json",
     "emit:batch-death-validation-compact": "node tools/emit-batch-death-validation-compact-artifacts.mjs",
     "emit:death-validation-compact": "node tools/emit-death-validation-compact-artifacts.mjs",
     "emit:exact-15-death-validation-compact": "node tools/emit-exact-15-death-validation-compact-artifacts.mjs --selection output/local-replay-processing/exact-15-death-validation-selection/selected-replay-set.json --summary-output output/local-replay-processing/exact-15-death-validation-compact-emission/",

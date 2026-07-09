@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "runner": "tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+  "modeContract": {
+    "parity": {
+      "runnerMode": "parity",
+      "parityComparisonRequired": true,
+      "referenceStatusRequired": true,
+      "referenceStatusArgument": "--reference-status",
+      "allowedOutputRoot": "output/local-replay-processing/allowlisted-death-validation-batch-parity/",
+      "purpose": "reproduce exact-15 parity and compare against Task 168",
+      "realArtifactEmissionAllowedByMode": true
+    },
+    "batch": {
+      "runnerMode": "batch",
+      "parityComparisonRequired": false,
+      "referenceStatusRequired": false,
+      "referenceStatusArgumentAllowed": false,
+      "allowedOutputRootPattern": "output/local-replay-processing/allowlisted-death-validation-batches/<manifestId>/",
+      "purpose": "future explicitly authorized allowlisted death_validation batches",
+      "realArtifactEmissionAllowedByMode": "future_manifest_dependent",
+      "task172BatchModeReplayProcessingPerformed": false,
+      "task172BatchModeRealArtifactsEmitted": false
+    }
+  },
+  "sharedProtections": [
+    "manifest allowlist validation before filesystem access",
+    "replay_005 blocked",
+    "replay_006 through replay_008 blocked",
+    "replay_020 blocked",
+    "absolute paths blocked",
+    "path traversal blocked",
+    "output/replays paths blocked",
+    "death_validation only",
+    "raw data and final facts forbidden",
+    "gameplay interpretation forbidden"
+  ],
+  "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false
+}

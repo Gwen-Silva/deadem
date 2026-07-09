@@ -6,7 +6,9 @@ import {
     FORBIDDEN_ALLOWLISTED_BATCH_OUTPUT_SURFACES,
     buildAllowlistedBatchPlan,
     compareParityWithReference,
+    runAllowlistedDeathValidationBatchEmission,
     validateAllowlistedBatchManifestShape,
+    validateAllowlistedRunnerOutputRoot,
     validateAllowlistedSummaryOutputRoot
 } from '../tools/emit-allowlisted-death-validation-batch-artifacts.mjs';
 
@@ -32,6 +34,8 @@ function manifest(overrides = {}) {
     return {
         schemaVersion: 1,
         manifestId: 'exact_15_parity_allowlisted_death_validation_batch',
+        runnerMode: 'parity',
+        parityComparisonRequired: true,
         mode: 'death_validation_compact_emission',
         artifactClass: 'death_validation',
         replayProcessingAllowed: true,
@@ -47,9 +51,24 @@ function manifest(overrides = {}) {
     };
 }
 
+function batchManifest(overrides = {}) {
+    return manifest({
+        manifestId: 'future_batch_contract',
+        runnerMode: 'batch',
+        parityComparisonRequired: false,
+        allowedReplays: [
+            { replayId: 'replay_010', localPath: '.local/deadem/replays/inbox/partida_010.dem', requestedMode: 'death_validation_compact_emission' }
+        ],
+        ...overrides
+    });
+}
+
 test('allowlisted batch manifest requires compact death_validation emission contract', () => {
     assert.equal(validateAllowlistedBatchManifestShape(manifest()).artifactClass, 'death_validation');
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), mode: 'dry_run' }), /manifest mode/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), runnerMode: 'other' }), /runnerMode/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), parityComparisonRequired: false }), /parityComparisonRequired/u);
+    assert.throws(() => validateAllowlistedBatchManifestShape({ ...batchManifest(), parityComparisonRequired: true }), /parityComparisonRequired/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), artifactClass: 'death_events' }), /death_validation/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), replayProcessingAllowed: false }), /replay processing/u);
     assert.throws(() => validateAllowlistedBatchManifestShape({ ...manifest(), realArtifactEmissionAllowed: false }), /real artifact/u);
@@ -115,6 +134,10 @@ test('allowlisted batch plan blocks output/replays, absolute, traversal, and pat
 test('allowlisted batch output root is fixed to Task 171 parity path', () => {
     const root = validateAllowlistedSummaryOutputRoot('output/local-replay-processing/allowlisted-death-validation-batch-parity/');
     assert.equal(root.normalized, 'output/local-replay-processing/allowlisted-death-validation-batch-parity/');
+    assert.equal(
+        validateAllowlistedRunnerOutputRoot('output/local-replay-processing/allowlisted-death-validation-batch-parity/', manifest()).normalized,
+        'output/local-replay-processing/allowlisted-death-validation-batch-parity/'
+    );
     assert.throws(
         () => validateAllowlistedSummaryOutputRoot('output/local-replay-processing/exact-15-death-validation-compact-emission/'),
         /summary output root must be exactly/u
@@ -122,6 +145,48 @@ test('allowlisted batch output root is fixed to Task 171 parity path', () => {
     assert.throws(
         () => validateAllowlistedSummaryOutputRoot('output/replays/death-validation/'),
         /summary output root must be exactly/u
+    );
+});
+
+test('batch runner mode uses manifestId output root and does not require reference status', () => {
+    const root = validateAllowlistedRunnerOutputRoot(
+        'output/local-replay-processing/allowlisted-death-validation-batches/future_batch_contract/',
+        batchManifest()
+    );
+    assert.equal(root.normalized, 'output/local-replay-processing/allowlisted-death-validation-batches/future_batch_contract/');
+    assert.throws(
+        () => validateAllowlistedRunnerOutputRoot('output/local-replay-processing/allowlisted-death-validation-batch-parity/', batchManifest()),
+        /batch summary output root/u
+    );
+});
+
+test('batch mode contract template can be validated without processing authorization', () => {
+    const template = {
+        ...batchManifest({
+            replayProcessingAllowed: false,
+            realArtifactEmissionAllowed: false,
+            allowedReplays: []
+        })
+    };
+    assert.equal(validateAllowlistedBatchManifestShape(template, { contractOnly: true }).runnerMode, 'batch');
+    assert.throws(() => validateAllowlistedBatchManifestShape(template), /replay processing/u);
+});
+
+test('runner rejects missing parity reference and forbids reference for batch mode before processing', async () => {
+    await assert.rejects(
+        () => runAllowlistedDeathValidationBatchEmission({
+            manifest: manifest(),
+            summaryOutput: 'output/local-replay-processing/allowlisted-death-validation-batch-parity/'
+        }),
+        /requires referenceStatus/u
+    );
+    await assert.rejects(
+        () => runAllowlistedDeathValidationBatchEmission({
+            manifest: batchManifest(),
+            summaryOutput: 'output/local-replay-processing/allowlisted-death-validation-batches/future_batch_contract/',
+            referenceStatus: { perReplayStatus: [] }
+        }),
+        /must not receive referenceStatus/u
     );
 });
 

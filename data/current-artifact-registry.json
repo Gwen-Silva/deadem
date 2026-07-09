@@ -525,6 +525,18 @@
       "notes": "Task 171 emitted 15 compact death_validation artifacts through the new manifest-driven runner and matched Task 168 on replay ids, eventCount, duplicateKeyCount, and validationStatus. The artifacts remain compact counter-transition candidate summaries, not final death facts or gameplay interpretation."
     },
     {
+      "id": "allowlisted_death_validation_runner_mode_contract",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/runner-mode-contract-gate.json",
+      "status": "current",
+      "notes": "Task 172 decouples the allowlisted death_validation runner into explicit parity and batch modes. Parity mode requires reference-status comparison; batch mode rejects reference-status and is validated by contract only until a future authorized manifest processes replays."
+    },
+    {
+      "id": "allowlisted_death_validation_batch_mode_template",
+      "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/batch-mode-contract-manifest-template.json",
+      "status": "template",
+      "notes": "Task 172 batch-mode contract template for future explicitly authorized allowlisted death_validation batches. It is not a real emission manifest and processed no replays in Task 172."
+    },
+    {
       "id": "spatial_resume_contract",
       "path": "output/spatial-milestone-reassessment/spatial-resume-contract.json",
       "status": "blocked",

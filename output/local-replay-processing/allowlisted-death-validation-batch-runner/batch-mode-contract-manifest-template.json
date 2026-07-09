@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "future_allowlisted_death_validation_batch",
+  "runnerMode": "batch",
+  "parityComparisonRequired": false,
+  "mode": "death_validation_compact_emission",
+  "artifactClass": "death_validation",
+  "replayProcessingAllowed": false,
+  "realArtifactEmissionAllowed": false,
+  "rawDataCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+  "allowedReplays": [],
+  "blockedReplays": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008",
+    "replay_020"
+  ],
+  "forbiddenOutputSurfaces": [
+    "death_events",
+    "respawn_events",
+    "timelines",
+    "objective_lifecycle",
+    "player_identity_rows",
+    "attribution",
+    "field_values",
+    "raw_data",
+    "snapshots",
+    "final_facts",
+    "gameplay_interpretation"
+  ],
+  "templateUsage": "Fill manifestId and allowedReplays in a future explicitly authorized task before any batch processing.",
+  "outputRootPattern": "output/local-replay-processing/allowlisted-death-validation-batches/<manifestId>/"
+}
