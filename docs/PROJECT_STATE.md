@@ -1229,3 +1229,27 @@ hero/team, time foundation, and life-state foundation coverage as available for
 32/32 replays. Alive/dead/respawn artifact work is now the next appropriate
 semantic layer; canonical death events, attribution, and teamfight detection
 remain intentionally not ready.
+
+## Task 181 Alive Dead Respawn Compact Note
+
+Task 181 created the compact `alive_dead_respawn` artifact class and ran it
+under `alive_dead_respawn_compact_bounded32_ready`. The runner consumes the
+Task 180 `participant_identity` artifacts, Task 179 `semantic_foundation`
+readiness, and Task 177 `death_validation.eventCount` bridge through explicit
+manifests only. It does not open replay files, execute the parser, emit new
+`death_validation`, `semantic_foundation`, or `participant_identity` artifacts,
+or materialize gameplay facts.
+
+The mini-pilot covered exactly replay_010, replay_011, replay_021, and
+replay_036. Because the pilot passed, the bounded-32 run covered the Task 177
+active baseline and emitted 32 compact `alive_dead_respawn` artifacts with
+`generatedAt: task_181`. The bounded-32 bridge matched 2,552 source-observed
+death-counter increment candidates from `death_validation.eventCount`.
+
+No per-participant transition rows were materialized because the current safe
+inputs provide aggregate counts but no policy-safe per-participant normalized
+transition timing rows. The artifacts therefore make alive/dead/respawn
+consumption available as a compact state summary, but canonical death-event
+design, killer/victim attribution, teamfight detection, raw ticks/timestamps,
+positions, names, raw IDs, field values, final facts, and gameplay
+interpretation remain intentionally not ready.

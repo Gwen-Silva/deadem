@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/alive-dead-respawn-compact.schema.json",
+  "title": "Alive Dead Respawn Compact Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "generatedBy",
+    "generatedAt",
+    "rawDataCaptured",
+    "fieldValuesCaptured",
+    "finalFactsProduced",
+    "gameplayInterpretationProduced",
+    "playerNamesIncluded",
+    "heroNamesIncluded",
+    "teamNamesIncluded",
+    "entityIdsIncluded",
+    "mapPositionsIncluded",
+    "rawTicksIncluded",
+    "rawTimestampsIncluded",
+    "deathEventsEmitted",
+    "respawnEventsEmitted",
+    "attributionEmitted",
+    "participantIdentityArtifactFound",
+    "participantCount",
+    "activeParticipantCandidateCount",
+    "participantFilterStatus",
+    "lifeStateSignalCoverage",
+    "transitionCandidateSummary",
+    "transitionCandidates",
+    "deathValidationBridge",
+    "readiness",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "alive_dead_respawn" },
+    "sourceMethod": { "const": "compact_life_state_transition_observation" },
+    "generatedBy": { "const": "tools/emit-alive-dead-respawn-compact-artifacts.mjs" },
+    "generatedAt": { "const": "task_181" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "playerNamesIncluded": { "const": false },
+    "heroNamesIncluded": { "const": false },
+    "teamNamesIncluded": { "const": false },
+    "entityIdsIncluded": { "const": false },
+    "mapPositionsIncluded": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "deathEventsEmitted": { "const": false },
+    "respawnEventsEmitted": { "const": false },
+    "attributionEmitted": { "const": false },
+    "participantIdentityArtifactFound": { "type": "boolean" },
+    "participantCount": { "type": "integer", "minimum": 0, "maximum": 24 },
+    "activeParticipantCandidateCount": { "type": "integer", "minimum": 0, "maximum": 24 },
+    "participantFilterStatus": { "$ref": "#/$defs/status" },
+    "lifeStateSignalCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "participantsWithDeathCounter",
+        "participantsWithAliveDeadSignal",
+        "participantsWithRespawnSignal",
+        "coverageStatus"
+      ],
+      "properties": {
+        "participantsWithDeathCounter": { "type": "integer", "minimum": 0, "maximum": 24 },
+        "participantsWithAliveDeadSignal": { "type": "integer", "minimum": 0, "maximum": 24 },
+        "participantsWithRespawnSignal": { "type": "integer", "minimum": 0, "maximum": 24 },
+        "coverageStatus": { "$ref": "#/$defs/status" }
+      }
+    },
+    "transitionCandidateSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deathCounterIncrementCandidates",
+        "aliveToDeadTransitionCandidates",
+        "deadToAliveTransitionCandidates",
+        "respawnSignalCandidates",
+        "ambiguousTransitionCandidates",
+        "duplicateTransitionCandidateCount"
+      ],
+      "properties": {
+        "deathCounterIncrementCandidates": { "type": "integer", "minimum": 0 },
+        "aliveToDeadTransitionCandidates": { "type": "integer", "minimum": 0 },
+        "deadToAliveTransitionCandidates": { "type": "integer", "minimum": 0 },
+        "respawnSignalCandidates": { "type": "integer", "minimum": 0 },
+        "ambiguousTransitionCandidates": { "type": "integer", "minimum": 0 },
+        "duplicateTransitionCandidateCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "transitionCandidates": {
+      "type": "array",
+      "maxItems": 512,
+      "items": { "$ref": "#/$defs/transitionCandidate" }
+    },
+    "deathValidationBridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deathValidationArtifactFound",
+        "eventCount",
+        "eventCountMeaning",
+        "deathCounterIncrementCandidatesMatchDeathValidation",
+        "canUseAsDeathEventSourceAlone"
+      ],
+      "properties": {
+        "deathValidationArtifactFound": { "type": "boolean" },
+        "eventCount": { "type": "integer", "minimum": 0 },
+        "eventCountMeaning": { "const": "source_observed_counter_transition_candidate_count_not_final_death_fact" },
+        "deathCounterIncrementCandidatesMatchDeathValidation": { "type": "boolean" },
+        "canUseAsDeathEventSourceAlone": { "const": false }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readyForAliveDeadRespawnConsumption",
+        "readyForCanonicalDeathEventDesign",
+        "readyForAttribution",
+        "readyForTeamfightDetection"
+      ],
+      "properties": {
+        "readyForAliveDeadRespawnConsumption": { "type": "boolean" },
+        "readyForCanonicalDeathEventDesign": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForTeamfightDetection": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 280 }
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": ["available", "partial", "blocked"]
+    },
+    "transitionCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transitionKey",
+        "participantKey",
+        "transitionType",
+        "timeRefKey",
+        "normalizedElapsedSecond",
+        "sourceSignalStatus",
+        "candidateConfidence",
+        "finalFact"
+      ],
+      "properties": {
+        "transitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "transitionType": {
+          "type": "string",
+          "enum": [
+            "death_counter_increment_candidate",
+            "alive_to_dead_candidate",
+            "dead_to_alive_candidate",
+            "respawn_signal_candidate",
+            "ambiguous_life_state_candidate"
+          ]
+        },
+        "timeRefKey": { "type": "string", "pattern": "^time_ref_[0-9]{6}$" },
+        "normalizedElapsedSecond": { "type": "integer", "minimum": 0 },
+        "sourceSignalStatus": { "type": "string", "enum": ["available", "partial", "ambiguous"] },
+        "candidateConfidence": { "type": "string", "enum": ["high", "medium", "low", "blocked"] },
+        "finalFact": { "const": false }
+      }
+    }
+  }
+}

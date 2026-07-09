@@ -240,3 +240,15 @@ The next product value layer should not skip identity mapping and canonical deat
 - Main outputs: `output/local-replay-processing/participant-identity-compact/task180-gate.json`, `output/local-replay-processing/participant-identity-compact/task180-bounded32/`
 - Known limits: Refs are replay-local and synthetic; they are not names, raw IDs, final identity truth, death events, attribution, or gameplay interpretation.
 - Next dependency: Build a policy-safe alive/dead/respawn artifact before canonical death-event design.
+
+## Alive Dead Respawn Compact Layer
+
+- Capability id: `alive_dead_respawn_compact`
+- Introduced in Task 181; stabilized in Task 181.
+- Current status: `active`
+- Current baseline: alive_dead_respawn_compact_bounded32_task181
+- Why it matters: Converts participant identity and compact death-counter bridge data into a policy-safe life-state summary layer before canonical death events.
+- Main files: `tools/emit-alive-dead-respawn-compact-artifacts.mjs`, `schemas/alive-dead-respawn-compact.schema.json`, `tests/alive-dead-respawn-compact-schema.test.mjs`, `tests/emit-alive-dead-respawn-compact-artifacts.test.mjs`
+- Main outputs: `output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json`, `output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/`
+- Known limits: Current safe inputs support aggregate transition candidate counts, not per-participant transition rows, final death facts, respawn events, attribution, raw ticks/timestamps, positions, or gameplay interpretation.
+- Next dependency: Design the canonical death-event input contract or a policy-safe transition-row contract before attribution or teamfight work.

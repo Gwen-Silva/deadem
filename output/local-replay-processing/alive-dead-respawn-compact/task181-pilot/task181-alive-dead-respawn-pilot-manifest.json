@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "task181_alive_dead_respawn_pilot",
+  "runKind": "task181-pilot",
+  "mode": "alive_dead_respawn_compact_emission",
+  "artifactClass": "alive_dead_respawn",
+  "replayProcessingAllowed": true,
+  "realArtifactEmissionAllowed": true,
+  "generationLabel": "task_181",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "allowedReplays": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "selectionGroup": "task181_representative_pilot",
+      "requestedMode": "alive_dead_respawn_compact_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-pilot/artifacts/replay_010/participant_identity.json",
+      "semanticFoundationArtifactPath": "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/artifacts/replay_010/semantic_foundation.json",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_010/death_validation.json"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "selectionGroup": "task181_representative_pilot",
+      "requestedMode": "alive_dead_respawn_compact_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-pilot/artifacts/replay_011/participant_identity.json",
+      "semanticFoundationArtifactPath": "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/artifacts/replay_011/semantic_foundation.json",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_011/death_validation.json"
+    },
+    {
+      "replayId": "replay_021",
+      "localPath": ".local/deadem/replays/inbox/partida_021.dem",
+      "selectionGroup": "task181_representative_pilot",
+      "requestedMode": "alive_dead_respawn_compact_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-pilot/artifacts/replay_021/participant_identity.json",
+      "semanticFoundationArtifactPath": "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/artifacts/replay_021/semantic_foundation.json",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_021/death_validation.json"
+    },
+    {
+      "replayId": "replay_036",
+      "localPath": ".local/deadem/replays/inbox/partida_036.dem",
+      "selectionGroup": "task181_representative_pilot",
+      "requestedMode": "alive_dead_respawn_compact_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-pilot/artifacts/replay_036/participant_identity.json",
+      "semanticFoundationArtifactPath": "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/artifacts/replay_036/semantic_foundation.json",
+      "deathValidationArtifactPath": "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/replay_036/death_validation.json"
+    }
+  ],
+  "blockedReplays": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008"
+  ],
+  "forbiddenOutputSurfaces": [
+    "death_validation_emission",
+    "semantic_foundation_emission",
+    "participant_identity_emission",
+    "death_events",
+    "respawn_events",
+    "general_timelines",
+    "objective_lifecycle",
+    "player_names",
+    "hero_names",
+    "team_names",
+    "raw_entity_ids",
+    "raw_handles",
+    "account_ids",
+    "steam_ids",
+    "raw_player_slots",
+    "raw_hero_ids",
+    "raw_team_numbers",
+    "field_values",
+    "raw_ticks",
+    "raw_timestamps",
+    "map_positions",
+    "attribution",
+    "final_facts",
+    "gameplay_interpretation"
+  ]
+}

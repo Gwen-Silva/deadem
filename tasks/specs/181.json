@@ -1,0 +1,130 @@
+{
+  "taskId": "181",
+  "title": "Build Alive Dead Respawn Compact State Artifact",
+  "status": "authorized",
+  "objective": "Create a compact alive_dead_respawn artifact class, schema, runner, tests, mini-pilot, and conditional bounded-32 run that emits synthetic participant/time transition candidates without names, raw IDs, raw ticks, raw timestamps, field values, attribution, final facts, or gameplay interpretation.",
+  "baseCommitExpected": "3f20968338d99512572a185387ae126456e0b2ea",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "docs/PROJECT_TASK_HISTORY.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "schemas/participant-identity-compact.schema.json",
+    "tools/emit-participant-identity-compact-artifacts.mjs",
+    "tests/participant-identity-compact-schema.test.mjs",
+    "tests/emit-participant-identity-compact-artifacts.test.mjs",
+    "reports/participant-identity-compact-task180.md",
+    "tasks/specs/180.json",
+    "tasks/completed/180-participant-identity-compact.md",
+    "output/local-replay-processing/participant-identity-compact/task180-gate.json",
+    "output/local-replay-processing/participant-identity-compact/task180-summary.json",
+    "output/local-replay-processing/participant-identity-compact/task180-pilot/**",
+    "output/local-replay-processing/participant-identity-compact/task180-bounded32/**",
+    "output/local-replay-processing/semantic-foundation-compact/task179-bounded32/**",
+    "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/artifacts/*/death_validation.json"
+  ],
+  "optionalReadPaths": [
+    "schemas/semantic-foundation-compact.schema.json",
+    "tools/emit-semantic-foundation-compact-artifacts.mjs",
+    "tests/semantic-foundation-compact-schema.test.mjs",
+    "tests/emit-semantic-foundation-compact-artifacts.test.mjs",
+    "tests/death-validation-compact-schema.test.mjs",
+    "tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"
+  ],
+  "writePaths": [
+    "schemas/alive-dead-respawn-compact.schema.json",
+    "tools/emit-alive-dead-respawn-compact-artifacts.mjs",
+    "tests/alive-dead-respawn-compact-schema.test.mjs",
+    "tests/emit-alive-dead-respawn-compact-artifacts.test.mjs",
+    "package.json",
+    "output/local-replay-processing/alive-dead-respawn-compact/**",
+    "reports/alive-dead-respawn-compact-task181.md",
+    "tasks/specs/181.json",
+    "tasks/completed/181-alive-dead-respawn-compact.md",
+    "tasks/blocked/181-alive-dead-respawn-compact.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/current-artifact-registry.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    "tasks/specs/182.json",
+    "tasks/completed/182-*",
+    "tasks/blocked/182-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md"
+  ],
+  "requiredCommands": [
+    { "id": "alive-dead-respawn-schema", "type": "node-test", "paths": ["tests/alive-dead-respawn-compact-schema.test.mjs"] },
+    { "id": "alive-dead-respawn-runner", "type": "node-test", "paths": ["tests/emit-alive-dead-respawn-compact-artifacts.test.mjs"] },
+    { "id": "participant-identity-schema", "type": "node-test", "paths": ["tests/participant-identity-compact-schema.test.mjs"] },
+    { "id": "participant-identity-runner", "type": "node-test", "paths": ["tests/emit-participant-identity-compact-artifacts.test.mjs"] },
+    { "id": "semantic-foundation-schema", "type": "node-test", "paths": ["tests/semantic-foundation-compact-schema.test.mjs"] },
+    { "id": "semantic-foundation-runner", "type": "node-test", "paths": ["tests/emit-semantic-foundation-compact-artifacts.test.mjs"] },
+    { "id": "death-validation-schema", "type": "node-test", "paths": ["tests/death-validation-compact-schema.test.mjs"] },
+    { "id": "allowlisted-batch-runner", "type": "node-test", "paths": ["tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"] },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json" }
+  ],
+  "expectedOutputs": [
+    "schemas/alive-dead-respawn-compact.schema.json",
+    "tools/emit-alive-dead-respawn-compact-artifacts.mjs",
+    "output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json",
+    "output/local-replay-processing/alive-dead-respawn-compact/task181-summary.json",
+    "reports/alive-dead-respawn-compact-task181.md",
+    "tasks/completed/181-alive-dead-respawn-compact.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json"
+  ],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": "pilot: replay_010, replay_011, replay_021, replay_036; bounded32: replay_001, replay_002, replay_003, replay_004, replay_009, replay_010 through replay_036 except replay_005 through replay_008",
+  "followUpTask": "none",
+  "stopConditions": [
+    "Process only explicit manifests; block replay_005, replay_006 through replay_008, absolute paths, traversal, output/replays, and any replay outside the manifest.",
+    "Do not emit new death_validation, semantic_foundation, participant_identity, final death_events, final respawn_events, names, raw IDs, raw handles, field values, raw ticks, raw timestamps, positions, attribution, final facts, or gameplay interpretation.",
+    "Do not modify packages/deadem, packages/engine, parser behavior, recovery, skip, placeholders, default behavior, parser opt-ins, Java, Clarity, external parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 182.",
+    "Use all-or-nothing writes per run; if any replay fails, do not write partial artifacts for that run."
+  ],
+  "successGate": "alive_dead_respawn_compact_bounded32_ready",
+  "blockedGate": "alive_dead_respawn_compact_pilot_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "explicit task181 manifests only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed_or_blocked"
+  }
+}

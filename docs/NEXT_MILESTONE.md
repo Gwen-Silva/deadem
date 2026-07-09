@@ -1802,3 +1802,24 @@ artifacts and the bounded-32 run emitted 32 compact artifacts, all with
 policy-safe `alive_dead_respawn` artifact on top of `participant_identity`.
 Canonical death events, attribution, and teamfight detection remain out of scope
 until life-state and event contracts exist.
+
+## Task 181
+
+Purpose: create and run a compact `alive_dead_respawn` layer on top of
+`participant_identity`, `semantic_foundation`, and the compact
+`death_validation.eventCount` bridge.
+
+Success gate: `alive_dead_respawn_compact_bounded32_ready`.
+
+Blocked gates: `alive_dead_respawn_compact_pilot_blocked` and
+`alive_dead_respawn_compact_pilot_ready_bounded32_blocked`.
+
+Status: completed with the success gate above. The mini-pilot emitted 4 compact
+artifacts and the bounded-32 run emitted 32 compact artifacts, all with
+`generatedAt: task_181`. The bounded-32 summary matched 2,552
+source-observed death-counter increment candidates against
+`death_validation.eventCount`, but materialized zero per-participant transition
+rows because the current safe inputs do not provide policy-safe timing rows.
+The next milestone should design canonical death-event inputs or a transition
+row contract before any killer/victim attribution, teamfight detection, or
+gameplay interpretation.

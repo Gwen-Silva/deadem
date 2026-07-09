@@ -5449,6 +5449,45 @@
         "tasks/completed/180-participant-identity-compact.md",
         "output/local-replay-processing/participant-identity-compact/task180-summary.json"
       ]
+    },
+    {
+      "taskId": "181",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Alive Dead Respawn Compact State Artifact",
+      "phase": "alive_dead_respawn_foundation",
+      "primaryContribution": "Introduced and ran compact alive_dead_respawn artifacts for the active 32-replay baseline using participant_identity refs and death_validation eventCount bridge.",
+      "introducedCapabilities": [
+        "alive_dead_respawn_compact"
+      ],
+      "stabilizedCapabilities": [
+        "alive_dead_respawn_compact"
+      ],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "schemas/alive-dead-respawn-compact.schema.json",
+        "output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json",
+        "output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/alive-dead-respawn-bounded32-gate.json",
+        "reports/alive-dead-respawn-compact-task181.md"
+      ],
+      "gate": "alive_dead_respawn_compact_bounded32_ready",
+      "currentRelevance": "active_baseline",
+      "dependsOn": [
+        "180",
+        "179",
+        "177"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "alive_dead_respawn artifacts contain candidate-count summaries only; do not treat them as final deaths, respawn events, attribution, or gameplay truth.",
+        "No per-participant transition rows were materialized in Task 181 because safe inputs do not provide that granularity."
+      ],
+      "evidenceStatus": "sufficient",
+      "evidencePaths": [
+        "tasks/specs/181.json",
+        "tasks/completed/181-alive-dead-respawn-compact.md",
+        "output/local-replay-processing/alive-dead-respawn-compact/task181-summary.json"
+      ]
     }
   ]
 }

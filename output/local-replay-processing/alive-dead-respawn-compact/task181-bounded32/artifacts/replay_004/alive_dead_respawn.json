@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_004",
+  "artifactClass": "alive_dead_respawn",
+  "sourceMethod": "compact_life_state_transition_observation",
+  "generatedBy": "tools/emit-alive-dead-respawn-compact-artifacts.mjs",
+  "generatedAt": "task_181",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "playerNamesIncluded": false,
+  "heroNamesIncluded": false,
+  "teamNamesIncluded": false,
+  "entityIdsIncluded": false,
+  "mapPositionsIncluded": false,
+  "rawTicksIncluded": false,
+  "rawTimestampsIncluded": false,
+  "deathEventsEmitted": false,
+  "respawnEventsEmitted": false,
+  "attributionEmitted": false,
+  "participantIdentityArtifactFound": true,
+  "participantCount": 13,
+  "activeParticipantCandidateCount": 13,
+  "participantFilterStatus": "available",
+  "lifeStateSignalCoverage": {
+    "participantsWithDeathCounter": 13,
+    "participantsWithAliveDeadSignal": 13,
+    "participantsWithRespawnSignal": 13,
+    "coverageStatus": "available"
+  },
+  "transitionCandidateSummary": {
+    "deathCounterIncrementCandidates": 58,
+    "aliveToDeadTransitionCandidates": 0,
+    "deadToAliveTransitionCandidates": 0,
+    "respawnSignalCandidates": 0,
+    "ambiguousTransitionCandidates": 0,
+    "duplicateTransitionCandidateCount": 0
+  },
+  "transitionCandidates": [],
+  "deathValidationBridge": {
+    "deathValidationArtifactFound": true,
+    "eventCount": 58,
+    "eventCountMeaning": "source_observed_counter_transition_candidate_count_not_final_death_fact",
+    "deathCounterIncrementCandidatesMatchDeathValidation": true,
+    "canUseAsDeathEventSourceAlone": false
+  },
+  "readiness": {
+    "readyForAliveDeadRespawnConsumption": true,
+    "readyForCanonicalDeathEventDesign": false,
+    "readyForAttribution": false,
+    "readyForTeamfightDetection": false
+  },
+  "limitations": [
+    "transitionCandidateSummary uses compact counts only; no per-participant transition rows are materialized in this baseline.",
+    "deathValidationBridge.eventCount is a source-observed counter-transition candidate count, not a final death fact.",
+    "participant keys are synthetic replay-local refs inherited from participant_identity; raw source IDs and names are not persisted.",
+    "Canonical death events, attribution, teamfight detection, raw ticks, raw timestamps, and gameplay interpretation remain unauthorized."
+  ]
+}

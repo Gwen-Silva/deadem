@@ -69,3 +69,19 @@ Recommended next product-value step: build `alive_dead_respawn` as a compact,
 policy-safe state artifact. Canonical death events should wait until life-state
 state transitions are explicit and safely consumable. Killer/victim attribution
 and teamfight detection remain later layers.
+
+## Task 181 Alive Dead Respawn Result
+
+The project now has a bounded-32 `alive_dead_respawn` compact baseline. It can
+state that participant refs and life-state coverage are available and that
+2,552 source-observed death-counter increment candidates match the existing
+`death_validation.eventCount` bridge across the bounded-32 set.
+
+This still does not answer "who died", "who killed whom", or "was it a
+teamfight". The current safe inputs do not include per-participant transition
+rows or policy-safe transition timing, so canonical death-event design remains
+blocked until that contract is designed explicitly.
+
+Recommended next product-value step: design the canonical death-event input
+contract, including whether a future policy-safe transition row layer is needed
+before any attribution or fight detection.

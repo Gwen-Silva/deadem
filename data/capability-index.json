@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAtTask": "180",
-  "activeBaseline": "participant_identity_compact_bounded32_task180",
+  "activeBaseline": "alive_dead_respawn_compact_bounded32_task181",
   "capabilities": [
     {
       "capabilityId": "parser_char_without_count_fix",
@@ -379,6 +379,30 @@
         "Does not emit death events, attribution, final facts, positions, event rows, or gameplay interpretation."
       ],
       "nextUsefulStep": "Build the first policy-safe alive/dead/respawn artifact."
+    },
+    {
+      "capabilityId": "alive_dead_respawn_compact",
+      "plainName": "Alive dead respawn compact artifacts",
+      "introducedInTask": "181",
+      "stabilizedInTask": "181",
+      "currentStatus": "active",
+      "currentBaseline": "alive_dead_respawn_compact_bounded32_task181",
+      "whyItMatters": "Provides a policy-safe compact life-state summary layer using synthetic participant refs and death_validation eventCount bridge before canonical death events.",
+      "mainFiles": [
+        "tools/emit-alive-dead-respawn-compact-artifacts.mjs",
+        "schemas/alive-dead-respawn-compact.schema.json",
+        "tests/alive-dead-respawn-compact-schema.test.mjs",
+        "tests/emit-alive-dead-respawn-compact-artifacts.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json",
+        "output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/"
+      ],
+      "knownLimits": [
+        "Current safe inputs support aggregate transition candidate counts only, not per-participant transition rows.",
+        "Does not emit final death facts, respawn events, attribution, raw ticks, raw timestamps, positions, names, raw IDs, field values, or gameplay interpretation."
+      ],
+      "nextUsefulStep": "Design the canonical death-event input contract or a policy-safe transition-row contract before attribution or teamfight work."
     }
   ]
 }
