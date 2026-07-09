@@ -1720,3 +1720,26 @@ Task 175 expanded 16 baseline. No replay was opened, hashed, copied, byte-read,
 parsed, or processed, and no batch was executed. The next milestone requires new
 eligible inbox replay files or a separately authorized bounded manifest before a
 larger batch pilot can add coverage.
+
+## Task 177
+
+Purpose: run the bounded inbox batch pilot with 16 newly authorized inbox
+replays, preserving Task 175 baseline stability and Task 177 artifact
+provenance.
+
+Success gate:
+`allowlisted_death_validation_bounded_inbox_batch_pilot_ready`.
+
+Blocked gate:
+`allowlisted_death_validation_bounded_inbox_batch_pilot_blocked`.
+
+Status: completed with the success gate above. The new inbox candidates used
+the renamed filenames `partida_021.dem` through `partida_036.dem`, mapped to
+`replay_021` through `replay_036`. The manifest
+`bounded_inbox_batch_pilot_32_task177` processed 32 replays in batch mode
+without `--reference-status`, emitted 32 compact `death_validation` artifacts
+with `generatedAt: task_177`, and preserved overlap stability against the Task
+175 baseline on replay IDs, `eventCount`, `duplicateKeyCount`, and
+`validationStatus`. The next milestone can review the 32-replay compact
+`death_validation` batch for bounded summary or policy-controlled consumption,
+while preserving that `eventCount` is not a final death fact.

@@ -1137,3 +1137,25 @@ provenance metadata for auditability only; it was not run because it would add
 no new replay coverage. The current active batch baseline remains the Task 175
 expanded 16 provenance-fixed output until new eligible inbox candidates are
 added or explicitly authorized.
+
+## Task 177 Bounded Inbox Batch Pilot With New Replays Note
+
+Task 177 ran the bounded inbox `death_validation` batch pilot under
+`allowlisted_death_validation_bounded_inbox_batch_pilot_ready`. Inventory was
+performed by filename listing only and found the 16 new authorized files already
+renamed as `partida_021.dem` through `partida_036.dem`; no numeric-name mapping
+was needed and no duplicate filename variants were present.
+
+The manifest `bounded_inbox_batch_pilot_32_task177` processed the Task 175
+expanded 16 baseline plus `replay_021` through `replay_036` in `runnerMode:
+batch` without `--reference-status`. The runner emitted 32 compact
+`death_validation` artifacts with `generatedAt: task_177`; schema validation,
+output policy, size audit, protection audit, and baseline overlap stability all
+passed. `parityStatus` is `not_required`. `eventCount` remains a
+source-observed counter transition candidate count, not a final death fact.
+No artifact outside `death_validation`, final facts, attribution, field values,
+raw data, snapshots, full histories, gameplay interpretation, parser/engine
+behavior change, `packages/deadem/**` change, recovery, skip, placeholder,
+default behavior change, parser opt-in, Java/Clarity/external parser, WSL,
+iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 178
+was produced.

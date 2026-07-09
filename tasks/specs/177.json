@@ -1,0 +1,110 @@
+{
+  "taskId": "177",
+  "title": "Run Bounded Inbox Batch Pilot With 16 New Authorized Replays",
+  "status": "authorized",
+  "objective": "Map exactly 16 newly authorized inbox replay filenames to replay_021 through replay_036, run the manifest-driven batch death_validation pilot with the Task 175 baseline plus those 16 replays, and emit compact task_177 provenance artifacts only.",
+  "baseCommitExpected": "1a08319b4b2c8a1819c5ce8f75d37085401dc14c",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/current-artifact-registry.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/expanded-16-batch-mode-pilot-provenance-fix-manifest.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/provenance-fix-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/per-replay-emission-status.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-summary.json",
+    "tools/emit-allowlisted-death-validation-batch-artifacts.mjs",
+    ".local/deadem/replays/inbox/"
+  ],
+  "optionalReadPaths": [
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/allowlisted-batch-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/allowlisted-batch-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/expanded_16_batch_mode_pilot_provenance_fix/parity-comparison-summary.json",
+    "tasks/specs/175.json",
+    "tasks/completed/175-allowlisted-death-validation-batch-provenance-fix.md",
+    "tasks/specs/176.json",
+    "tasks/blocked/176-allowlisted-death-validation-bounded-inbox-batch-pilot.md"
+  ],
+  "writePaths": [
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/inbox-inventory-task177/inbox-replay-inventory.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/inbox-inventory-task177/candidate-classification.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/inbox-inventory-task177/authorized-new-candidate-mapping.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/inbox-inventory-task177/blocked-candidate-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/inbox-inventory-task177/bounded-batch-selection.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-manifest.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-protection-audit.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-overlap-stability-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-new-candidate-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batches/bounded_inbox_batch_pilot_32_task177/**",
+    "reports/allowlisted-death-validation-bounded-inbox-batch-pilot-task177.md",
+    "tasks/specs/177.json",
+    "tasks/completed/177-allowlisted-death-validation-bounded-inbox-batch-pilot.md",
+    "tasks/blocked/177-allowlisted-death-validation-bounded-inbox-batch-pilot.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "data/current-artifact-registry.json"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "output/replays/**",
+    "tasks/specs/178.json",
+    "tasks/completed/178-*",
+    "tasks/blocked/178-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "allowlisted-death-validation-batch-tests", "type": "node-test", "paths": ["tests/emit-allowlisted-death-validation-batch-artifacts.test.mjs"] },
+    { "id": "death-validation-schema-tests", "type": "node-test", "paths": ["tests/death-validation-compact-schema.test.mjs"] },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-gate.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-summary.json",
+    "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-new-candidate-summary.json",
+    "reports/allowlisted-death-validation-bounded-inbox-batch-pilot-task177.md"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": "bounded manifest only: replay_001, replay_002, replay_003, replay_004, replay_009, replay_010 through replay_036 except replay_005 through replay_008",
+  "followUpTask": "none",
+  "stopConditions": [
+    "Inventory is filename listing only; do not open/hash/copy/read/parse replay files during discovery.",
+    "Block before processing if numeric and partida variants both exist for a new replay id.",
+    "Run batch mode only without --reference-status and process no replay outside the manifest.",
+    "Do not access/process replay_005 or process replay_006 through replay_008.",
+    "Emit only compact death_validation artifacts; no final facts, attribution, field values, raw data, snapshots, histories, or gameplay interpretation.",
+    "Do not modify parser/engine behavior, packages/deadem, recovery, skip, placeholder, default behavior, opt-in, Java/Clarity/external parser, WSL, iaflow, Product Reviewer automation, pull/merge/cherry-pick/rebase, or Task 178."
+  ],
+  "successGate": "allowlisted_death_validation_bounded_inbox_batch_pilot_ready",
+  "blockedGate": "allowlisted_death_validation_bounded_inbox_batch_pilot_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/allowlisted-death-validation-batch-runner/bounded-inbox-batch-pilot-32-task177-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "bounded manifest only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed_or_blocked"
+  }
+}
