@@ -76,8 +76,10 @@ Bounded-32 coverage:
 - team refs: available for 32/32
 - time foundation: available for 32/32
 - life-state foundation: available for 32/32
-- alive/dead/respawn artifact: ready
-- canonical death-event design: not ready
+- active replay-sourced transition baseline: Task 182
+- normalized death-event candidate baseline: Task 183
+- replay-sourced corroboration evidence consumer: Task 184
+- final death facts and attribution: not ready
 - attribution: not ready
 
 ## Next Step

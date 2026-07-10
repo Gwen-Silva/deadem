@@ -54,3 +54,8 @@ gameplay interpretation.
 The layer is ready for policy-safe death-event candidate consumption. It is not
 ready for final death-event emission, attribution, teamfight detection, or
 gameplay interpretation.
+
+Task 184 may use each row as a temporal anchor and may carry its synthetic refs
+and `sourceTransitionKey` into `death_event_corroboration_evidence`. The Task 183
+row itself never counts as independent corroboration. Only separately observed
+replay signal changes may set Task 184 corroboration booleans.

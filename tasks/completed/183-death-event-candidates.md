@@ -4,7 +4,7 @@ Status: completed
 
 Gate: `task181_docs_corrected_death_event_candidates_bounded32_ready`
 
-Commit: pending
+Commit: c20c7d1035b5e1061a9cb2e76a06f77929f48cba
 
 ## What Changed
 
@@ -55,10 +55,11 @@ Commit: pending
 - No parser/engine behavior or `packages/deadem/**` files were modified.
 - No recovery, skip, placeholder, default behavior change, or parser opt-in was
   added.
-- Task 184 was not created.
+- Task 184 had not yet been created at the Task 183 handoff.
 
 ## Next Step
 
-Build a candidate-safe consumption surface or design final death-event
-confirmation criteria in a separate task. Do not use this artifact for final
-death, attribution, teamfight, or gameplay claims.
+Task 184 now consumes this layer only as a temporal anchor while testing
+independent replay-sourced signal changes. Task 183 remains the active normalized
+candidate baseline and must not be used for final death, attribution, teamfight,
+or gameplay claims.

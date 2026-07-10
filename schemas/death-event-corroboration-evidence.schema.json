@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-corroboration-evidence.schema.json",
+  "title": "Death Event Corroboration Evidence Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "generatedBy",
+    "generatedAt",
+    "rawDataCaptured",
+    "fieldValuesCaptured",
+    "rawIdsIncluded",
+    "rawTicksIncluded",
+    "rawTimestampsIncluded",
+    "finalFactsProduced",
+    "gameplayInterpretationProduced",
+    "attributionEmitted",
+    "participantIdentityArtifactFound",
+    "lifeStateTransitionArtifactFound",
+    "deathEventCandidateArtifactFound",
+    "anchorCount",
+    "evidenceRowCount",
+    "evidenceRows",
+    "summary",
+    "temporalPolicy",
+    "independence",
+    "readiness",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "death_event_corroboration_evidence" },
+    "sourceMethod": { "const": "temporal_multi_signal_candidate_association" },
+    "generatedBy": { "const": "tools/emit-death-event-corroboration-evidence.mjs" },
+    "generatedAt": { "const": "task_184" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "rawIdsIncluded": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "participantIdentityArtifactFound": { "const": true },
+    "lifeStateTransitionArtifactFound": { "const": true },
+    "deathEventCandidateArtifactFound": { "const": true },
+    "anchorCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "evidenceRowCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "evidenceRows": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/corroborationEvidenceRow" }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "counterOnlyRows",
+        "rowsWithOneIndependentSignal",
+        "rowsWithMultipleIndependentSignals",
+        "ambiguousRows",
+        "candidateAnchorsWithoutCorroboration",
+        "unmatchedSignalChanges",
+        "duplicateEvidenceKeyCount",
+        "unmappedParticipantAnchors",
+        "confirmationEvidenceLevel"
+      ],
+      "properties": {
+        "counterOnlyRows": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "rowsWithOneIndependentSignal": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "rowsWithMultipleIndependentSignals": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "ambiguousRows": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "candidateAnchorsWithoutCorroboration": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "unmatchedSignalChanges": { "type": "integer", "minimum": 0, "maximum": 100000 },
+        "duplicateEvidenceKeyCount": { "const": 0 },
+        "unmappedParticipantAnchors": { "const": 0 },
+        "confirmationEvidenceLevel": { "enum": ["insufficient", "partial", "strong"] }
+      }
+    },
+    "temporalPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nearEventBeforeSeconds", "nearEventAfterSeconds", "laterCycleAfterSecondsExclusive", "laterCycleMaxSecondsInclusive"],
+      "properties": {
+        "nearEventBeforeSeconds": { "const": 2 },
+        "nearEventAfterSeconds": { "const": 2 },
+        "laterCycleAfterSecondsExclusive": { "const": 0 },
+        "laterCycleMaxSecondsInclusive": { "const": 180 }
+      }
+    },
+    "independence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task183AnchorUsedOnlyAsTemporalReference",
+        "corroborationDerivedFromReplaySignals",
+        "task182OrTask183CountsUsedAsCorroboration",
+        "task181BridgeCountUsed",
+        "syntheticEvidenceGenerated",
+        "absenceConvertedToPositiveCandidate"
+      ],
+      "properties": {
+        "task183AnchorUsedOnlyAsTemporalReference": { "const": true },
+        "corroborationDerivedFromReplaySignals": { "const": true },
+        "task182OrTask183CountsUsedAsCorroboration": { "const": false },
+        "task181BridgeCountUsed": { "const": false },
+        "syntheticEvidenceGenerated": { "const": false },
+        "absenceConvertedToPositiveCandidate": { "const": false }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "replaySourcedCorroborationEvidenceAvailable",
+        "boundedCandidateEvidenceConsumptionAvailable",
+        "multiSignalCoverageMeasurable",
+        "readyForFinalDeathPromotionDesign",
+        "readyForFinalDeathFacts",
+        "readyForConfirmedWhoDied",
+        "readyForAttribution",
+        "readyForKillerVictim",
+        "readyForTeamfightDetection",
+        "readyForGameplayInterpretation"
+      ],
+      "properties": {
+        "replaySourcedCorroborationEvidenceAvailable": { "const": true },
+        "boundedCandidateEvidenceConsumptionAvailable": { "const": true },
+        "multiSignalCoverageMeasurable": { "const": true },
+        "readyForFinalDeathPromotionDesign": { "type": "boolean" },
+        "readyForFinalDeathFacts": { "const": false },
+        "readyForConfirmedWhoDied": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForKillerVictim": { "const": false },
+        "readyForTeamfightDetection": { "const": false },
+        "readyForGameplayInterpretation": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 300 }
+    }
+  },
+  "$defs": {
+    "corroborationEvidenceRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corroborationKey",
+        "eventCandidateKey",
+        "sourceTransitionKey",
+        "participantKey",
+        "heroRefKey",
+        "teamRefKey",
+        "normalizedElapsedSecond",
+        "lifeSignalChangeCandidateObserved",
+        "normalizedLifeSignalDeltaSecond",
+        "pawnLinkChangeCandidateObserved",
+        "normalizedPawnLinkDeltaSecond",
+        "respawnSignalChangeCandidateObserved",
+        "normalizedRespawnSignalDeltaSecond",
+        "evidenceClass",
+        "confirmationStatus",
+        "finalFact"
+      ],
+      "properties": {
+        "corroborationKey": { "type": "string", "pattern": "^corroboration_[0-9]{6}$" },
+        "eventCandidateKey": { "type": "string", "pattern": "^death_event_candidate_[0-9]{6}$" },
+        "sourceTransitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "heroRefKey": { "type": "string", "pattern": "^hero_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "teamRefKey": { "type": "string", "pattern": "^team_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "normalizedElapsedSecond": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+        "lifeSignalChangeCandidateObserved": { "type": "boolean" },
+        "normalizedLifeSignalDeltaSecond": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "pawnLinkChangeCandidateObserved": { "type": "boolean" },
+        "normalizedPawnLinkDeltaSecond": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "respawnSignalChangeCandidateObserved": { "type": "boolean" },
+        "normalizedRespawnSignalDeltaSecond": { "type": ["integer", "null"], "minimum": -2, "maximum": 180 },
+        "evidenceClass": {
+          "enum": [
+            "counter_only",
+            "counter_plus_life_signal",
+            "counter_plus_pawn_link_signal",
+            "counter_plus_respawn_signal",
+            "counter_plus_multiple_independent_signals",
+            "ambiguous"
+          ]
+        },
+        "confirmationStatus": { "const": "unconfirmed" },
+        "finalFact": { "const": false }
+      }
+    }
+  }
+}

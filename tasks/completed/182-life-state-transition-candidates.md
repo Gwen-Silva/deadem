@@ -44,8 +44,11 @@ Commit: 5f0a07c03938eef513d0c7288344d93b55393155
 - No replay outside the explicit manifests was processed.
 - No parser/engine behavior or `packages/deadem/**` files were modified.
 - No recovery, skip, placeholder, default behavior change, or parser opt-in was added.
-- Task 183 was not created.
+- Task 183 had not yet been created at the Task 182 handoff.
 
 ## Next Step
 
-Design a canonical death-event candidate contract that consumes `life_state_transition_candidates` without attribution or final fact emission.
+Task 182 remains the active replay-sourced transition baseline consumed by Task
+183 normalization and Task 184 anchor-bridge validation. It is not superseded by
+either downstream consumption layer and still does not authorize attribution or
+final fact emission.

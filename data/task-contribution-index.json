@@ -5480,7 +5480,7 @@
         "Do not treat Task 181 as active life-state transition coverage.",
         "Use Task 182 for replay-sourced transition candidate rows."
       ],
-      "evidenceStatus": "sufficient",
+      "evidenceStatus": "needs-validation",
       "evidencePaths": [
         "tasks/specs/181.json",
         "tasks/completed/181-alive-dead-respawn-compact.md",
@@ -5511,13 +5511,13 @@
         "reports/life-state-transition-candidates-task182.md"
       ],
       "gate": "task181_reclassified_life_state_transition_candidates_bounded32_ready",
-      "currentRelevance": "active_source_baseline_for_task183",
+      "currentRelevance": "active_source_baseline_for_task183_and_task184",
       "dependsOn": [
         "177",
         "180",
         "181"
       ],
-      "supersededBy": "183",
+      "supersededBy": null,
       "reworkRiskNotes": [
         "Rows are candidates only and must not be consumed as final deaths.",
         "Do not infer attribution, teamfight, position, respawn, or gameplay causality from this artifact."
@@ -5531,7 +5531,7 @@
     {
       "taskId": "183",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "c20c7d1035b5e1061a9cb2e76a06f77929f48cba",
       "title": "Build Canonical Death Event Candidate Baseline And Consumption Contract",
       "phase": "death_event_candidate_foundation",
       "primaryContribution": "Corrected remaining Task 181/182 documentation inconsistencies and emitted death_event_candidates by transforming Task 182 life-state transition candidates plus Task 180 participant identity artifacts.",
@@ -5569,6 +5569,47 @@
         "tasks/specs/183.json",
         "tasks/completed/183-death-event-candidates.md",
         "output/local-replay-processing/death-event-candidates/task183-summary.json"
+      ]
+    },
+    {
+      "taskId": "184",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Repair Validation Integrity And Build Multi-Signal Death Corroboration Evidence",
+      "phase": "death_event_corroboration_candidate_evidence",
+      "primaryContribution": "Repaired Task 183 validation integrity and emitted replay-sourced death_event_corroboration_evidence while preserving unconfirmed candidate boundaries.",
+      "introducedCapabilities": [
+        "death_event_corroboration_evidence"
+      ],
+      "stabilizedCapabilities": [
+        "death_event_candidate_json_schema_validation",
+        "death_event_corroboration_evidence"
+      ],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "schemas/death-event-corroboration-evidence.schema.json",
+        "tools/emit-death-event-corroboration-evidence.mjs",
+        "docs/codex/DEATH_EVENT_CORROBORATION_EVIDENCE_CONTRACT.md",
+        "output/local-replay-processing/death-event-corroboration-evidence/task184-gate.json",
+        "reports/death-event-corroboration-evidence-task184.md"
+      ],
+      "gate": "task183_validation_corrected_death_event_corroboration_evidence_bounded32_ready",
+      "currentRelevance": "active_evidence_layer",
+      "dependsOn": [
+        "180",
+        "182",
+        "183"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Task 183 rows are temporal anchors only and do not count as independent corroboration.",
+        "Signal changes are unconfirmed candidates; do not infer final death, respawn, attribution, or gameplay truth."
+      ],
+      "evidenceStatus": "sufficient",
+      "evidencePaths": [
+        "tasks/specs/184.json",
+        "tasks/completed/184-death-event-corroboration-evidence.md",
+        "output/local-replay-processing/death-event-corroboration-evidence/task184-summary.json"
       ]
     }
   ]

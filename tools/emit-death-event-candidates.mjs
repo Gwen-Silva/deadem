@@ -1,7 +1,9 @@
 #!/usr/bin/env node
+import { createHash } from 'node:crypto';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { validateJsonSchema } from './lib/json-schema-validator.mjs';
 
 const THIS_FILE = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(THIS_FILE), '..');
@@ -135,6 +137,45 @@ async function writeJson(filePath, value) {
 
 function artifactSizeBytes(value) {
     return Buffer.byteLength(`${JSON.stringify(value, null, 2)}\n`, 'utf8');
+}
+
+function canonicalHash(value) {
+    return createHash('sha256').update(JSON.stringify(value)).digest('hex');
+}
+
+async function buildArtifactEquivalenceAudit(artifactWrites) {
+    const rows = [];
+    for (const write of artifactWrites) {
+        let previous = null;
+        try {
+            previous = JSON.parse(await readFile(path.resolve(REPO_ROOT, write.artifactPath), 'utf8'));
+        } catch (error) {
+            if (error?.code !== 'ENOENT') throw error;
+        }
+        const beforeCandidates = previous?.candidates ?? null;
+        const afterCandidates = write.artifact.candidates;
+        const beforeHash = beforeCandidates ? canonicalHash(beforeCandidates) : null;
+        const afterHash = canonicalHash(afterCandidates);
+        rows.push({
+            replayId: write.artifact.replayId,
+            previousArtifactFound: previous !== null,
+            previousCandidateCount: beforeCandidates?.length ?? 0,
+            regeneratedCandidateCount: afterCandidates.length,
+            previousCandidateRowsSha256: beforeHash,
+            regeneratedCandidateRowsSha256: afterHash,
+            candidateRowsSemanticallyIdentical: beforeHash !== null && beforeHash === afterHash
+        });
+    }
+    return {
+        schemaVersion: 1,
+        artifactEquivalenceStatus: rows.length > 0
+            && rows.every(row => row.previousArtifactFound && row.candidateRowsSemanticallyIdentical)
+            ? 'passed'
+            : 'failed',
+        comparisonScope: 'task183_candidate_rows_only',
+        validationRepairChangedCandidateRows: rows.some(row => !row.candidateRowsSemanticallyIdentical),
+        rows
+    };
 }
 
 function sixDigit(index) {
@@ -413,8 +454,10 @@ export function createDeathEventCandidateArtifact({ replayId, participantIdentit
     };
 }
 
-export function validateDeathEventCandidateArtifact(artifact, _schema = null) {
-    const errors = [];
+export function validateDeathEventCandidateArtifact(artifact, schema) {
+    if (!schema) throw new Error('death-event candidate JSON Schema is required');
+    const schemaResult = validateJsonSchema(schema, artifact);
+    const errors = schemaResult.errors.map(error => `JSON Schema: ${error}`);
     if (artifact.schemaVersion !== 1) errors.push('schemaVersion must be 1');
     if (!/^replay_[0-9]{3}$/u.test(String(artifact.replayId ?? ''))) errors.push('replayId pattern violation');
     if (artifact.artifactClass !== ARTIFACT_CLASS) errors.push(`artifactClass must be ${ARTIFACT_CLASS}`);
@@ -630,7 +673,13 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
     const artifacts = replayResults.map(result => result.artifact).filter(Boolean);
     const schemaRows = artifacts.map(artifact => {
         const errors = validateDeathEventCandidateArtifact(artifact, schema);
-        return { replayId: artifact.replayId, schemaValidationStatus: errors.length === 0 ? 'passed' : 'failed', errors };
+        return {
+            replayId: artifact.replayId,
+            schemaValidationStatus: errors.length === 0 ? 'passed' : 'failed',
+            validationMethod: 'json_schema_draft_2020_12_plus_semantic_invariants',
+            jsonSchemaRuntime: 'ajv/dist/2020.js',
+            errors
+        };
     });
     const policyRows = artifacts.map(auditDeathEventPolicy);
     const sizeRows = artifacts.map(artifact => ({
@@ -639,9 +688,25 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
         maxArtifactBytes: MAX_ARTIFACT_BYTES,
         sizeStatus: artifactSizeBytes(artifact) <= MAX_ARTIFACT_BYTES ? 'passed' : 'failed'
     }));
+    const totalArtifactBytes = sizeRows.reduce((sum, row) => sum + row.artifactBytes, 0);
+    const totalRunSizeStatus = totalArtifactBytes <= MAX_RUN_BYTES ? 'passed' : 'failed';
     const sourceBridgeComparison = buildSourceBridgeComparison(artifacts);
     const identityEnrichmentAudit = buildIdentityEnrichmentAudit(artifacts);
     const readinessSummary = buildReadinessSummary(artifacts);
+    const artifactEquivalenceAudit = await buildArtifactEquivalenceAudit(artifactWrites);
+    const realSchemaValidationRepairAudit = {
+        schemaVersion: 1,
+        repairAuditStatus: schemaRows.length > 0 && schemaRows.every(row => row.schemaValidationStatus === 'passed') ? 'passed' : 'failed',
+        schemaPath: SCHEMA_PATH,
+        schemaDraft: '2020-12',
+        jsonSchemaRuntime: 'ajv/dist/2020.js',
+        schemaActuallyExecuted: true,
+        manualSemanticInvariantsReportedSeparately: true,
+        additionalPropertiesEnforcedByRuntime: true,
+        replayFilesOpenedForRepair: false,
+        candidateCount: artifacts.reduce((sum, artifact) => sum + artifact.candidateCount, 0),
+        rows: schemaRows
+    };
 
     const allReady = plan.blockedReplayAudit.length === 0
         && replayResults.length === plan.readyInputs.length
@@ -653,7 +718,9 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
         && schemaRows.every(row => row.schemaValidationStatus === 'passed')
         && policyRows.every(row => row.outputPolicyStatus === 'passed')
         && sizeRows.every(row => row.sizeStatus === 'passed')
-        && identityEnrichmentAudit.identityEnrichmentStatus === 'passed';
+        && totalRunSizeStatus === 'passed'
+        && identityEnrichmentAudit.identityEnrichmentStatus === 'passed'
+        && artifactEquivalenceAudit.artifactEquivalenceStatus === 'passed';
     const gateName = allReady
         ? (manifest.runKind === 'task183-pilot' ? PILOT_READY_GATE : BOUNDED32_READY_GATE)
         : (manifest.runKind === 'task183-pilot' ? PILOT_BLOCKED_GATE : BOUNDED32_BLOCKED_GATE);
@@ -706,7 +773,7 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
         readyForTeamfightDetection: false,
         schemaValidationStatus: schemaRows.every(row => row.schemaValidationStatus === 'passed') ? 'passed' : 'failed',
         outputPolicyStatus: policyRows.every(row => row.outputPolicyStatus === 'passed') ? 'passed' : 'failed',
-        sizeAuditStatus: sizeRows.every(row => row.sizeStatus === 'passed') ? 'passed' : 'failed',
+        sizeAuditStatus: sizeRows.every(row => row.sizeStatus === 'passed') && totalRunSizeStatus === 'passed' ? 'passed' : 'failed',
         protectionAuditStatus: plan.blockedReplayAudit.length === 0 ? 'passed' : 'blocked',
         replayFileAccessed: false,
         parserExecuted: false,
@@ -737,7 +804,9 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
         sizeAuditStatus: summary.sizeAuditStatus,
         maxArtifactBytes: MAX_ARTIFACT_BYTES,
         maxRunBytes: MAX_RUN_BYTES,
-        totalArtifactBytes: sizeRows.reduce((sum, row) => sum + row.artifactBytes, 0),
+        totalArtifactBytes,
+        perArtifactSizeStatus: sizeRows.every(row => row.sizeStatus === 'passed') ? 'passed' : 'failed',
+        totalRunSizeStatus,
         rows: sizeRows
     };
     const protectionAudit = {
@@ -778,6 +847,8 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
     await writeJson(path.join(summaryRoot.absolutePath, `${gatePrefix}-source-bridge-comparison.json`), sourceBridgeComparison);
     await writeJson(path.join(summaryRoot.absolutePath, `${gatePrefix}-identity-enrichment-audit.json`), identityEnrichmentAudit);
     await writeJson(path.join(summaryRoot.absolutePath, `${gatePrefix}-readiness-summary.json`), readinessSummary);
+    await writeJson(path.join(summaryRoot.absolutePath, `${gatePrefix}-real-schema-validation-repair-audit.json`), realSchemaValidationRepairAudit);
+    await writeJson(path.join(summaryRoot.absolutePath, `${gatePrefix}-artifact-equivalence-audit.json`), artifactEquivalenceAudit);
 
     return {
         gate,
@@ -785,6 +856,8 @@ export async function runDeathEventCandidateEmission({ manifest, summaryOutput }
         sourceBridgeComparison,
         identityEnrichmentAudit,
         readinessSummary,
+        realSchemaValidationRepairAudit,
+        artifactEquivalenceAudit,
         artifacts,
         perReplayStatus,
         blockedReplayAudit: plan.blockedReplayAudit

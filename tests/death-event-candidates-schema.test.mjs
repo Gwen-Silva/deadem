@@ -1,8 +1,27 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { validateJsonSchema } from '../tools/lib/json-schema-validator.mjs';
+import { createDeathEventCandidateArtifact } from '../tools/emit-death-event-candidates.mjs';
 
 const schema = JSON.parse(await readFile('schemas/death-event-candidates.schema.json', 'utf8'));
+
+function validArtifact() {
+    return createDeathEventCandidateArtifact({
+        replayId: 'replay_010',
+        participantIdentity: {
+            participants: [{ participantKey: 'participant_01', heroRefKey: 'hero_ref_01', teamRefKey: 'team_ref_01' }]
+        },
+        lifeStateTransitions: {
+            transitionCandidates: [{
+                transitionKey: 'life_transition_000001',
+                participantKey: 'participant_01',
+                normalizedElapsedSecond: 10,
+                candidateConfidence: 'high'
+            }]
+        }
+    });
+}
 
 test('death-event candidate schema is strict and policy-safe', () => {
     assert.equal(schema.additionalProperties, false);
@@ -39,4 +58,30 @@ test('schema blocks final death, attribution, and teamfight readiness', () => {
     assert.equal(schema.properties.readiness.properties.readyForFinalDeathEventEmission.const, false);
     assert.equal(schema.properties.readiness.properties.readyForAttribution.const, false);
     assert.equal(schema.properties.readiness.properties.readyForTeamfightDetection.const, false);
+});
+
+test('Draft 2020-12 validation enforces additionalProperties at artifact and row levels', () => {
+    const artifactExtra = structuredClone(validArtifact());
+    artifactExtra.unexpected = true;
+    assert.equal(validateJsonSchema(schema, artifactExtra).valid, false);
+
+    const rowExtra = structuredClone(validArtifact());
+    rowExtra.candidates[0].killer = 'participant_02';
+    assert.equal(validateJsonSchema(schema, rowExtra).valid, false);
+});
+
+test('Draft 2020-12 validation rejects required, const, pattern, attribution, and time violations', () => {
+    const mutations = [
+        artifact => { delete artifact.candidates[0].participantKey; },
+        artifact => { artifact.candidates[0].finalFact = true; },
+        artifact => { artifact.candidates[0].eventCandidateKey = 'raw-id'; },
+        artifact => { artifact.candidates[0].victim = 'participant_01'; },
+        artifact => { artifact.candidates[0].tick = 123; },
+        artifact => { artifact.timestamp = 456; }
+    ];
+    for (const mutate of mutations) {
+        const artifact = structuredClone(validArtifact());
+        mutate(artifact);
+        assert.equal(validateJsonSchema(schema, artifact).valid, false);
+    }
 });

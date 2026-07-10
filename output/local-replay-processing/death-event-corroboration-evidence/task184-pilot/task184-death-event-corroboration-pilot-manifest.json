@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "task184_death_event_corroboration_pilot",
+  "runKind": "task184-pilot",
+  "mode": "death_event_corroboration_evidence_emission",
+  "artifactClass": "death_event_corroboration_evidence",
+  "replayProcessingAllowed": true,
+  "realArtifactEmissionAllowed": true,
+  "generationLabel": "task_184",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "rawIdsIncluded": false,
+  "rawTicksIncluded": false,
+  "rawTimestampsIncluded": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "attributionEmitted": false,
+  "temporalWindows": {
+    "nearEventBeforeSeconds": 2,
+    "nearEventAfterSeconds": 2,
+    "laterCycleAfterSecondsExclusive": 0,
+    "laterCycleMaxSecondsInclusive": 180
+  },
+  "allowedReplays": [
+    {
+      "replayId": "replay_010",
+      "localPath": ".local/deadem/replays/inbox/partida_010.dem",
+      "requestedMode": "death_event_corroboration_evidence_emission"
+    },
+    {
+      "replayId": "replay_011",
+      "localPath": ".local/deadem/replays/inbox/partida_011.dem",
+      "requestedMode": "death_event_corroboration_evidence_emission"
+    },
+    {
+      "replayId": "replay_021",
+      "localPath": ".local/deadem/replays/inbox/partida_021.dem",
+      "requestedMode": "death_event_corroboration_evidence_emission"
+    },
+    {
+      "replayId": "replay_036",
+      "localPath": ".local/deadem/replays/inbox/partida_036.dem",
+      "requestedMode": "death_event_corroboration_evidence_emission"
+    }
+  ],
+  "blockedReplays": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008"
+  ],
+  "forbiddenOutputSurfaces": [
+    "player_names",
+    "hero_names",
+    "team_names",
+    "raw_entity_ids",
+    "raw_handles",
+    "account_ids",
+    "steam_ids",
+    "raw_player_slots",
+    "raw_hero_ids",
+    "raw_team_numbers",
+    "raw_values",
+    "raw_ticks",
+    "raw_timestamps",
+    "field_values",
+    "map_positions",
+    "damage",
+    "objectives",
+    "attribution",
+    "final_facts",
+    "final_death_events",
+    "final_respawn_events",
+    "teamfights",
+    "gameplay_interpretation"
+  ]
+}

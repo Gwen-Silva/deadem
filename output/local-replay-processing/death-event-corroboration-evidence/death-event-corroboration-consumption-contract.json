@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "death_event_corroboration_evidence",
+  "activeSourceBaselines": [
+    "participant_identity_compact_bounded32_task180",
+    "life_state_transition_candidates_bounded32_task182",
+    "death_event_candidates_bounded32_task183"
+  ],
+  "introducedBaseline": "death_event_corroboration_evidence_bounded32_task184",
+  "task183Role": "temporal_anchor_only",
+  "acceptedEvidenceClasses": [
+    "counter_only",
+    "counter_plus_life_signal",
+    "counter_plus_pawn_link_signal",
+    "counter_plus_respawn_signal",
+    "counter_plus_multiple_independent_signals",
+    "ambiguous"
+  ],
+  "confirmationStatus": "unconfirmed",
+  "finalDeathEmissionAllowed": false,
+  "attributionAllowed": false,
+  "gameplayInterpretationAllowed": false
+}

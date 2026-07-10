@@ -1226,9 +1226,9 @@ They do not persist player names, hero names, team names, raw IDs, handles,
 slots, field values, positions, event rows, attribution, final facts, or
 gameplay interpretation. The bounded-32 run reports participant identity,
 hero/team, time foundation, and life-state foundation coverage as available for
-32/32 replays. Alive/dead/respawn artifact work is now the next appropriate
-semantic layer; canonical death events, attribution, and teamfight detection
-remain intentionally not ready.
+32/32 replays. Task 180 remains the active identity baseline consumed by Tasks
+182, 183, and 184; the former next-step wording is historical. Final death facts,
+attribution, and teamfight detection remain intentionally not ready.
 
 ## Task 181 Alive Dead Respawn Compact Note
 
@@ -1265,9 +1265,11 @@ rows to synthetic `participantKey` values, normalized time as
 `normalizedElapsedSecond`, and matched the existing `death_validation.eventCount`
 bridge. These rows are candidates only, not final death events.
 
-Canonical death-event candidate design is now ready. Canonical death-event
-emission, killer/victim/assist attribution, respawn final events, teamfight
-detection, and gameplay interpretation remain blocked.
+Task 182 remains the active replay-sourced transition baseline consumed by Tasks
+183 and 184. Task 183 adds normalized candidate consumption and Task 184 adds
+corroboration evidence; neither supersedes Task 182. Final death-event emission,
+killer/victim/assist attribution, respawn final events, teamfight detection,
+and gameplay interpretation remain blocked.
 
 ## Task 183 - Death Event Candidate Baseline
 
@@ -1286,3 +1288,17 @@ have synthetic participant, hero, and team refs plus normalized elapsed seconds.
 `death_event_candidates` are unconfirmed candidates only. They do not authorize
 claims that a player died, who killed whom, respawn, teamfight, position,
 damage, objective relation, final facts, or gameplay interpretation.
+
+## Task 184 - Death Event Corroboration Evidence
+
+Task 184 repaired Task 183 validation so the Draft 2020-12 schema is executed by
+Ajv, enforced both per-artifact and total-run size limits, and regenerated the
+pilot and bounded-32 validation evidence without opening replay files. Candidate
+rows remained semantically identical.
+
+Task 184 then added replay-sourced `death_event_corroboration_evidence`. Task 183
+rows are temporal anchors only; independently observed life-signal, pawn-link,
+and respawn-related signal changes are associated through fixed normalized-time
+windows. All evidence remains unconfirmed candidate evidence. Final death facts,
+confirmed "who died", attribution, killer/victim, teamfight detection, and
+gameplay interpretation remain false.

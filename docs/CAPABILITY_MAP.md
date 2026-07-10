@@ -239,7 +239,7 @@ The next product value layer should not skip identity mapping and canonical deat
 - Main files: `tools/emit-participant-identity-compact-artifacts.mjs`, `schemas/participant-identity-compact.schema.json`, `tests/participant-identity-compact-schema.test.mjs`, `tests/emit-participant-identity-compact-artifacts.test.mjs`
 - Main outputs: `output/local-replay-processing/participant-identity-compact/task180-gate.json`, `output/local-replay-processing/participant-identity-compact/task180-bounded32/`
 - Known limits: Refs are replay-local and synthetic; they are not names, raw IDs, final identity truth, death events, attribution, or gameplay interpretation.
-- Next dependency: Build a policy-safe alive/dead/respawn artifact before canonical death-event design.
+- Next dependency: Continue supplying synthetic identity refs to the active Task 182, Task 183, and Task 184 layers.
 
 ## Alive Dead Respawn Compact Layer
 
@@ -274,6 +274,10 @@ emit final death facts, raw IDs, raw ticks, raw timestamps, attribution,
 positions, respawn final events, teamfight detection, or gameplay
 interpretation.
 
+Task 182 remains the active replay-sourced transition baseline consumed by Task
+183 normalization and Task 184 anchor-bridge validation. It is not superseded by
+either downstream layer.
+
 ## Death Event Candidates
 
 - Capability id: `death_event_candidates`
@@ -295,3 +299,22 @@ questions about synthetic participant/hero/team refs and normalized seconds,
 but still forbids killer/victim attribution, final death facts, respawn facts,
 teamfight detection, raw IDs, raw ticks, raw timestamps, positions, names, and
 gameplay interpretation.
+
+## Death Event Corroboration Evidence
+
+- Capability id: `death_event_corroboration_evidence`
+- Introduced: Task 184
+- Status: active
+- Current baseline: `death_event_corroboration_evidence_bounded32_task184`
+- Main files: `tools/emit-death-event-corroboration-evidence.mjs`,
+  `schemas/death-event-corroboration-evidence.schema.json`,
+  `docs/codex/DEATH_EVENT_CORROBORATION_EVIDENCE_CONTRACT.md`
+- Main outputs:
+  `output/local-replay-processing/death-event-corroboration-evidence/task184-gate.json`
+  and `task184-bounded32/`
+
+Task 184 uses Task 183 rows only as temporal anchors and measures independent
+replay signal-change candidate coverage. It persists normalized deltas and
+unconfirmed evidence classes only. It does not authorize final deaths,
+confirmed "who died", attribution, killer/victim, teamfight detection, raw
+values, raw IDs, raw time, positions, or gameplay interpretation.

@@ -1,5 +1,14 @@
 # Task 183 - Death Event Candidates
 
+## Task 184 Validation Repair
+
+Task 184 replaced the former manual pseudo-schema check with actual JSON Schema
+Draft 2020-12 validation through Ajv. Pilot and bounded-32 artifacts were
+regenerated from versioned Task 180/182/183 inputs only; no replay file was
+opened. Candidate-row equivalence passed with 341 pilot rows and 2,552
+bounded-32 rows unchanged. The size gate now enforces both the 512 KiB
+per-artifact limit and the 16 MiB total-run limit.
+
 Gate: `task181_docs_corrected_death_event_candidates_bounded32_ready`
 
 Task 183 corrected the remaining Task 181/182 documentation consistency issues

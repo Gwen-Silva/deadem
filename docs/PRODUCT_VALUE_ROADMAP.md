@@ -65,10 +65,10 @@ This is the first usable semantic foundation above readiness-only artifacts, but
 it still does not expose names, raw IDs, event rows, attribution, positions, or
 final gameplay facts.
 
-Recommended next product-value step: build `alive_dead_respawn` as a compact,
-policy-safe state artifact. Canonical death events should wait until life-state
-state transitions are explicit and safely consumable. Killer/victim attribution
-and teamfight detection remain later layers.
+Task 180 now serves as the active synthetic identity input for Task 182
+transitions, Task 183 candidates, and Task 184 corroboration evidence. Its former
+next-step recommendation is historical. Killer/victim attribution and teamfight
+detection remain later layers.
 
 ## Task 181 Alive Dead Respawn Result
 
@@ -106,6 +106,9 @@ What is still not possible:
 - assert final death or respawn events;
 - interpret gameplay decisions.
 
+Task 182 remains active after Tasks 183 and 184. Those tasks consume and enrich
+its replay-sourced transition baseline; they do not supersede it.
+
 ## Task 183 Product Implication
 
 Task 183 creates the first policy-safe death-event candidate layer. The project
@@ -114,3 +117,11 @@ normalized seconds for counter-increment candidates. It still cannot answer
 "who died", "who killed whom", "was this a teamfight", or any gameplay
 interpretation question. The next product step is a candidate-safe consumption
 surface or a separately reviewed final death-event confirmation contract.
+
+## Task 184 Product Implication
+
+Task 184 measures whether Task 183 anchors have nearby independently observed
+life-signal or pawn-link changes, or bounded later respawn-related signal
+changes. This increases semantic evidence without confirming deaths. Coverage,
+ambiguity, and absence are reportable; "who died", attribution, killer/victim,
+teamfights, and gameplay interpretation remain unavailable.

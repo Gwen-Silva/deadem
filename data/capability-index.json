@@ -378,7 +378,7 @@
         "Refs are synthetic and replay-local, not player names, hero names, team names, raw IDs, handles, or canonical identity truth.",
         "Does not emit death events, attribution, final facts, positions, event rows, or gameplay interpretation."
       ],
-      "nextUsefulStep": "Build the first policy-safe alive/dead/respawn artifact."
+      "nextUsefulStep": "Continue supplying synthetic identity refs to Task 182 transitions, Task 183 candidates, and Task 184 corroboration evidence."
     },
     {
       "capabilityId": "alive_dead_respawn_compact",
@@ -428,7 +428,7 @@
         "No killer, victim, assist, damage, teamfight, position, raw ID, raw tick, raw timestamp, or gameplay interpretation is emitted.",
         "Canonical death-event emission, attribution, and teamfight detection remain blocked until separate designs authorize them."
       ],
-      "nextUsefulStep": "Use Task 183 death_event_candidates as the normalized candidate consumption layer."
+      "nextUsefulStep": "Remain the active replay-sourced transition baseline consumed by Task 183 normalization and Task 184 anchor-bridge validation."
     },
     {
       "capabilityId": "death_event_candidates",
@@ -454,7 +454,33 @@
         "No killer, victim, assist, respawn, damage, position, teamfight, raw ID, raw tick, raw timestamp, or gameplay interpretation is emitted.",
         "Final death-event emission, attribution, and teamfight detection remain blocked."
       ],
-      "nextUsefulStep": "Design a controlled consumer or presentation layer that preserves candidate wording, or separately design final death-event confirmation criteria."
+      "nextUsefulStep": "Use Task 184 corroboration evidence as an unconfirmed candidate-evidence layer; final death confirmation remains separately gated."
+    },
+    {
+      "capabilityId": "death_event_corroboration_evidence",
+      "plainName": "Death event corroboration evidence",
+      "introducedInTask": "184",
+      "stabilizedInTask": "184",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_corroboration_evidence_bounded32_task184",
+      "whyItMatters": "Measures independently observed replay signal-change coverage around unconfirmed Task 183 temporal anchors without promoting them to final deaths.",
+      "mainFiles": [
+        "tools/emit-death-event-corroboration-evidence.mjs",
+        "schemas/death-event-corroboration-evidence.schema.json",
+        "docs/codex/DEATH_EVENT_CORROBORATION_EVIDENCE_CONTRACT.md",
+        "tests/death-event-corroboration-evidence-schema.test.mjs",
+        "tests/emit-death-event-corroboration-evidence.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-corroboration-evidence/task184-gate.json",
+        "output/local-replay-processing/death-event-corroboration-evidence/task184-bounded32/"
+      ],
+      "knownLimits": [
+        "Task 183 rows are temporal anchors only and do not count as independent corroboration.",
+        "Signal field names do not prove Source 2 gameplay semantics.",
+        "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw ID, raw time, position, or gameplay interpretation is emitted."
+      ],
+      "nextUsefulStep": "Keep final death promotion and attribution blocked pending a separate explicitly authorized evidence review."
     }
   ]
 }

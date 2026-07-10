@@ -1798,10 +1798,10 @@ Blocked gates: `participant_identity_compact_pilot_blocked` and
 
 Status: completed with the success gate above. The mini-pilot emitted 4 compact
 artifacts and the bounded-32 run emitted 32 compact artifacts, all with
-`generatedAt: task_180`. The next milestone should build the first
-policy-safe `alive_dead_respawn` artifact on top of `participant_identity`.
-Canonical death events, attribution, and teamfight detection remain out of scope
-until life-state and event contracts exist.
+`generatedAt: task_180`. Task 180 is now the active identity baseline consumed
+by Task 182 transitions, Task 183 candidates, and Task 184 corroboration
+evidence. Final death facts, attribution, and teamfight detection remain out of
+scope.
 
 ## Task 181
 
@@ -1823,10 +1823,11 @@ rows because the current safe inputs do not provide policy-safe timing rows.
 The next milestone should design canonical death-event inputs or a transition
 row contract before any killer/victim attribution, teamfight detection, or
 gameplay interpretation.
-## After Task 182
+## Task 182 Downstream Dependency
 
-The next milestone is to design a canonical death-event candidate contract that
-consumes Task 182 `life_state_transition_candidates`.
+Task 182 remains the active replay-sourced `life_state_transition_candidates`
+baseline. Task 183 consumes it as the normalized candidate layer and Task 184
+uses it to verify each anchor bridge; neither downstream task supersedes it.
 
 Inputs now available:
 
@@ -1859,3 +1860,19 @@ matched Task 182 transition rows exactly. The next milestone may design a
 controlled candidate consumer or separately define confirmation criteria for
 final death events, but attribution, teamfight detection, final facts, and
 gameplay interpretation remain out of scope.
+
+## Task 184
+
+Purpose: repair Task 183 validation integrity and measure whether its unconfirmed
+anchors have independently observed replay signal changes within predeclared
+normalized-time windows.
+
+Success gate:
+`task183_validation_corrected_death_event_corroboration_evidence_bounded32_ready`.
+
+Task 184 adds candidate evidence only. The active baselines remain Task 180
+`participant_identity`, Task 182 `life_state_transition_candidates`, and Task
+183 `death_event_candidates`, with Task 184 adding
+`death_event_corroboration_evidence`. Final death facts, confirmed "who died",
+attribution, killer/victim, teamfight detection, and gameplay interpretation
+remain blocked.
