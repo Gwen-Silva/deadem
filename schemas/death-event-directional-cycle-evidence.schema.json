@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-directional-cycle-evidence.schema.json",
+  "title": "Death Event Directional Cycle Evidence Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "generatedBy",
+    "generatedAt",
+    "rawDataCaptured",
+    "fieldValuesCaptured",
+    "rawFieldNamesIncludedInRows",
+    "rawIdsIncluded",
+    "rawTicksIncluded",
+    "rawTimestampsIncluded",
+    "finalFactsProduced",
+    "gameplayInterpretationProduced",
+    "attributionEmitted",
+    "participantIdentityArtifactFound",
+    "lifeStateTransitionArtifactFound",
+    "deathEventCandidateArtifactFound",
+    "corroborationEvidenceArtifactFound",
+    "anchorCount",
+    "evidenceRowCount",
+    "evidenceRows",
+    "summary",
+    "task184Context",
+    "temporalPolicy",
+    "readiness",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "death_event_directional_cycle_evidence" },
+    "sourceMethod": { "const": "replay_sourced_directional_cycle_and_negative_control_observation" },
+    "generatedBy": { "const": "tools/emit-death-event-directional-cycle-evidence.mjs" },
+    "generatedAt": { "const": "task_185" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "rawFieldNamesIncludedInRows": { "const": false },
+    "rawIdsIncluded": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "participantIdentityArtifactFound": { "const": true },
+    "lifeStateTransitionArtifactFound": { "const": true },
+    "deathEventCandidateArtifactFound": { "const": true },
+    "corroborationEvidenceArtifactFound": { "const": true },
+    "anchorCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "evidenceRowCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "evidenceRows": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/cycleEvidenceRow" }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anchorsWithDirectionalEvidence",
+        "anchorsWithMultipleDirectionalFamilies",
+        "anchorsWithCompleteCycle",
+        "anchorsWithoutDirectionalEvidence",
+        "ambiguousAnchors",
+        "censoredAnchors",
+        "unanchoredDirectionalPatterns",
+        "unanchoredCompleteCycles",
+        "unmatchedDirectionalTransitions",
+        "duplicateEvidenceKeyCount",
+        "unmappedParticipantAnchors",
+        "sourceTransitionReuseCount",
+        "anchorAlignmentRate",
+        "unanchoredPatternRate",
+        "completeCycleCoverageRate",
+        "uncensoredCompleteCycleCoverageRate",
+        "directionalCycleCoverageLevel"
+      ],
+      "properties": {
+        "anchorsWithDirectionalEvidence": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "anchorsWithMultipleDirectionalFamilies": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "anchorsWithCompleteCycle": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "anchorsWithoutDirectionalEvidence": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "ambiguousAnchors": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "censoredAnchors": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "unanchoredDirectionalPatterns": { "type": "integer", "minimum": 0, "maximum": 100000 },
+        "unanchoredCompleteCycles": { "type": "integer", "minimum": 0, "maximum": 100000 },
+        "unmatchedDirectionalTransitions": { "type": "integer", "minimum": 0, "maximum": 100000 },
+        "duplicateEvidenceKeyCount": { "const": 0 },
+        "unmappedParticipantAnchors": { "const": 0 },
+        "sourceTransitionReuseCount": { "const": 0 },
+        "anchorAlignmentRate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "unanchoredPatternRate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "completeCycleCoverageRate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "uncensoredCompleteCycleCoverageRate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "directionalCycleCoverageLevel": { "enum": ["insufficient", "partial", "strong"] }
+      }
+    },
+    "task184Context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["corroborationCoverageLevel", "contextOnly", "booleansOrCountsCopiedAsDirectionalEvidence"],
+      "properties": {
+        "corroborationCoverageLevel": { "enum": ["insufficient", "partial", "strong"] },
+        "contextOnly": { "const": true },
+        "booleansOrCountsCopiedAsDirectionalEvidence": { "const": false }
+      }
+    },
+    "temporalPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["anchorWindowBeforeSeconds", "anchorWindowAfterSeconds", "laterCycleAfterSecondsExclusive", "laterCycleMaxSecondsInclusive"],
+      "properties": {
+        "anchorWindowBeforeSeconds": { "const": 2 },
+        "anchorWindowAfterSeconds": { "const": 2 },
+        "laterCycleAfterSecondsExclusive": { "const": 0 },
+        "laterCycleMaxSecondsInclusive": { "const": 180 }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "directionalSignalEvidenceAvailable",
+        "cycleEvidenceMeasurable",
+        "negativeControlEvidenceAvailable",
+        "candidateLevelDirectionalCycleConsumptionAvailable",
+        "readyForFinalDeathSemanticContractDesign",
+        "readyForFinalDeathFacts",
+        "readyForConfirmedWhoDied",
+        "readyForAttribution",
+        "readyForKillerVictim",
+        "readyForTeamfightDetection",
+        "readyForGameplayInterpretation"
+      ],
+      "properties": {
+        "directionalSignalEvidenceAvailable": { "const": true },
+        "cycleEvidenceMeasurable": { "const": true },
+        "negativeControlEvidenceAvailable": { "const": true },
+        "candidateLevelDirectionalCycleConsumptionAvailable": { "const": true },
+        "readyForFinalDeathSemanticContractDesign": { "type": "boolean" },
+        "readyForFinalDeathFacts": { "const": false },
+        "readyForConfirmedWhoDied": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForKillerVictim": { "const": false },
+        "readyForTeamfightDetection": { "const": false },
+        "readyForGameplayInterpretation": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 320 }
+    }
+  },
+  "$defs": {
+    "healthTransition": {
+      "enum": [
+        "positive_to_non_positive_boundary_candidate",
+        "non_positive_to_positive_boundary_candidate",
+        "no_boundary_transition_observed",
+        "boundary_transition_ambiguous"
+      ]
+    },
+    "booleanTransition": {
+      "enum": [
+        "boolean_true_to_false_candidate",
+        "boolean_false_to_true_candidate",
+        "boolean_change_candidate_unknown_direction",
+        "no_boolean_transition_observed"
+      ]
+    },
+    "lifeStateTransition": {
+      "enum": [
+        "life_state_signature_change_candidate",
+        "no_life_state_signature_change_observed"
+      ]
+    },
+    "respawnTransition": {
+      "enum": [
+        "non_positive_to_positive_respawn_boundary_candidate",
+        "positive_to_non_positive_respawn_boundary_candidate",
+        "respawn_signature_change_candidate_unknown_direction",
+        "no_respawn_transition_observed"
+      ]
+    },
+    "pawnLinkTransition": {
+      "enum": [
+        "pawn_link_present_to_absent_candidate",
+        "pawn_link_absent_to_present_candidate",
+        "pawn_link_changed_candidate",
+        "no_pawn_link_transition_observed"
+      ]
+    },
+    "familyTransitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "lifeStateSignature", "respawnBoundary", "pawnLink"],
+      "properties": {
+        "healthBoundary": { "$ref": "#/$defs/healthTransition" },
+        "booleanAlive": { "$ref": "#/$defs/booleanTransition" },
+        "lifeStateSignature": { "$ref": "#/$defs/lifeStateTransition" },
+        "respawnBoundary": { "$ref": "#/$defs/respawnTransition" },
+        "pawnLink": { "$ref": "#/$defs/pawnLinkTransition" }
+      }
+    },
+    "anchorDeltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "lifeStateSignature", "respawnBoundary", "pawnLink"],
+      "properties": {
+        "healthBoundary": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "booleanAlive": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "lifeStateSignature": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "respawnBoundary": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "pawnLink": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 }
+      }
+    },
+    "laterDeltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "lifeStateSignature", "respawnBoundary", "pawnLink"],
+      "properties": {
+        "healthBoundary": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "booleanAlive": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "lifeStateSignature": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "respawnBoundary": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "pawnLink": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 }
+      }
+    },
+    "cycleEvidenceRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cycleEvidenceKey",
+        "eventCandidateKey",
+        "sourceTransitionKey",
+        "participantKey",
+        "heroRefKey",
+        "teamRefKey",
+        "normalizedElapsedSecond",
+        "anchorSideTransitions",
+        "anchorSideNormalizedDeltaSeconds",
+        "laterCycleTransitions",
+        "laterCycleNormalizedDeltaSeconds",
+        "distinctAnchorSideSourceFamilyCount",
+        "distinctCompleteCycleFamilyCount",
+        "anchorAssociationAmbiguous",
+        "laterCycleWindowCensoredByReplayEnd",
+        "evidenceClass",
+        "truthStatus",
+        "finalFact"
+      ],
+      "properties": {
+        "cycleEvidenceKey": { "type": "string", "pattern": "^directional_cycle_evidence_[0-9]{6}$" },
+        "eventCandidateKey": { "type": "string", "pattern": "^death_event_candidate_[0-9]{6}$" },
+        "sourceTransitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "heroRefKey": { "type": "string", "pattern": "^hero_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "teamRefKey": { "type": "string", "pattern": "^team_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "normalizedElapsedSecond": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+        "anchorSideTransitions": { "$ref": "#/$defs/familyTransitions" },
+        "anchorSideNormalizedDeltaSeconds": { "$ref": "#/$defs/anchorDeltas" },
+        "laterCycleTransitions": { "$ref": "#/$defs/familyTransitions" },
+        "laterCycleNormalizedDeltaSeconds": { "$ref": "#/$defs/laterDeltas" },
+        "distinctAnchorSideSourceFamilyCount": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "distinctCompleteCycleFamilyCount": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "anchorAssociationAmbiguous": { "type": "boolean" },
+        "laterCycleWindowCensoredByReplayEnd": { "type": "boolean" },
+        "evidenceClass": {
+          "enum": [
+            "counter_anchor_only",
+            "anchor_with_single_directional_family",
+            "anchor_with_multiple_directional_families",
+            "anchor_with_single_complete_cycle_family",
+            "anchor_with_multiple_complete_cycle_families",
+            "anchor_with_censored_later_window",
+            "ambiguous"
+          ]
+        },
+        "truthStatus": { "const": "unconfirmed_candidate" },
+        "finalFact": { "const": false }
+      }
+    }
+  }
+}

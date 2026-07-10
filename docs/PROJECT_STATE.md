@@ -1302,3 +1302,40 @@ and respawn-related signal changes are associated through fixed normalized-time
 windows. All evidence remains unconfirmed candidate evidence. Final death facts,
 confirmed "who died", attribution, killer/victim, teamfight detection, and
 gameplay interpretation remain false.
+
+Task 184 commit: `065d0fa0a1d422b3dcf342078100386e2ca7d793`.
+Its independence claim is observation/probe-family separation only, not
+statistical independence, causal independence, or proven Source 2 semantics.
+Its historical `confirmationEvidenceLevel` is a coverage-strength label, not a
+confirmation-strength claim.
+
+## Task 185 - Directional Cycles And Negative Controls
+
+Task 185 introduced `death_event_directional_cycle_evidence` without replacing
+the active Task 180, Task 182, Task 183, or Task 184 baselines. It reproduced
+abstract directional transitions directly from the four pilot and 32 bounded
+authorized human replays, associated them with Task 183 temporal anchors, and
+measured later inverse cycles, replay-end censoring, unanchored patterns, and
+unanchored cycles.
+
+The pilot passed with 341 anchors and the bounded-32 run passed with exactly
+2,552 anchors and evidence rows. Both runs had zero parser, mapping, bridge,
+source-reuse, schema, output-policy, size, or replay-protection failures, and
+emitted zero final facts and zero attribution. The final technical gate is
+`task184_commit_recorded_directional_cycle_evidence_bounded32_ready`.
+
+The bounded `directionalCycleCoverageLevel` is `partial`. Anchor alignment,
+multiple-family coverage, and uncensored complete-cycle coverage are all 1.0,
+but the unanchored equivalent directional-pattern rate is 0.24067, exceeding
+the predeclared strong threshold of 0.05. Consequently
+`readyForFinalDeathSemanticContractDesign` is false. Deaths, who-died claims,
+attribution, killer/victim, teamfight detection, and gameplay interpretation
+remain unconfirmed and unavailable.
+
+Active baselines after Task 185:
+
+- `participant_identity_compact_bounded32_task180`
+- `life_state_transition_candidates_bounded32_task182`
+- `death_event_candidates_bounded32_task183`
+- `death_event_corroboration_evidence_bounded32_task184`
+- `death_event_directional_cycle_evidence_bounded32_task185`

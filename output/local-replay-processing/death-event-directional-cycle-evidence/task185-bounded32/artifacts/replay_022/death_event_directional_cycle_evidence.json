@@ -1,0 +1,3990 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_022",
+  "artifactClass": "death_event_directional_cycle_evidence",
+  "sourceMethod": "replay_sourced_directional_cycle_and_negative_control_observation",
+  "generatedBy": "tools/emit-death-event-directional-cycle-evidence.mjs",
+  "generatedAt": "task_185",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "rawFieldNamesIncludedInRows": false,
+  "rawIdsIncluded": false,
+  "rawTicksIncluded": false,
+  "rawTimestampsIncluded": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "attributionEmitted": false,
+  "participantIdentityArtifactFound": true,
+  "lifeStateTransitionArtifactFound": true,
+  "deathEventCandidateArtifactFound": true,
+  "corroborationEvidenceArtifactFound": true,
+  "anchorCount": 89,
+  "evidenceRowCount": 89,
+  "evidenceRows": [
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000001",
+      "eventCandidateKey": "death_event_candidate_000001",
+      "sourceTransitionKey": "life_transition_000001",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 86,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000002",
+      "eventCandidateKey": "death_event_candidate_000002",
+      "sourceTransitionKey": "life_transition_000002",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 100,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000003",
+      "eventCandidateKey": "death_event_candidate_000003",
+      "sourceTransitionKey": "life_transition_000003",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 102,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000004",
+      "eventCandidateKey": "death_event_candidate_000004",
+      "sourceTransitionKey": "life_transition_000004",
+      "participantKey": "participant_11",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 132,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000005",
+      "eventCandidateKey": "death_event_candidate_000005",
+      "sourceTransitionKey": "life_transition_000005",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 142,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000006",
+      "eventCandidateKey": "death_event_candidate_000006",
+      "sourceTransitionKey": "life_transition_000006",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 170,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000007",
+      "eventCandidateKey": "death_event_candidate_000007",
+      "sourceTransitionKey": "life_transition_000007",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 205,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 9,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 9,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000008",
+      "eventCandidateKey": "death_event_candidate_000008",
+      "sourceTransitionKey": "life_transition_000008",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 228,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000009",
+      "eventCandidateKey": "death_event_candidate_000009",
+      "sourceTransitionKey": "life_transition_000009",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 266,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000010",
+      "eventCandidateKey": "death_event_candidate_000010",
+      "sourceTransitionKey": "life_transition_000010",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 273,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 8,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 8,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000011",
+      "eventCandidateKey": "death_event_candidate_000011",
+      "sourceTransitionKey": "life_transition_000011",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 358,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 10,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 10,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000012",
+      "eventCandidateKey": "death_event_candidate_000012",
+      "sourceTransitionKey": "life_transition_000012",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 365,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 10,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 10,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000013",
+      "eventCandidateKey": "death_event_candidate_000013",
+      "sourceTransitionKey": "life_transition_000013",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 393,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 10,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 10,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000014",
+      "eventCandidateKey": "death_event_candidate_000014",
+      "sourceTransitionKey": "life_transition_000014",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 419,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 12,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 12,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000015",
+      "eventCandidateKey": "death_event_candidate_000015",
+      "sourceTransitionKey": "life_transition_000015",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 443,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 12,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 12,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000016",
+      "eventCandidateKey": "death_event_candidate_000016",
+      "sourceTransitionKey": "life_transition_000016",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 446,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 12,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 12,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000017",
+      "eventCandidateKey": "death_event_candidate_000017",
+      "sourceTransitionKey": "life_transition_000017",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 453,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 13,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 13,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000018",
+      "eventCandidateKey": "death_event_candidate_000018",
+      "sourceTransitionKey": "life_transition_000018",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 478,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 13,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 13,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000019",
+      "eventCandidateKey": "death_event_candidate_000019",
+      "sourceTransitionKey": "life_transition_000019",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 480,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 1,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 14,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 14,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000020",
+      "eventCandidateKey": "death_event_candidate_000020",
+      "sourceTransitionKey": "life_transition_000020",
+      "participantKey": "participant_11",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 484,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 14,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 14,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000021",
+      "eventCandidateKey": "death_event_candidate_000021",
+      "sourceTransitionKey": "life_transition_000021",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 596,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 17,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 17,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000022",
+      "eventCandidateKey": "death_event_candidate_000022",
+      "sourceTransitionKey": "life_transition_000022",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 612,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 31,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 31,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000023",
+      "eventCandidateKey": "death_event_candidate_000023",
+      "sourceTransitionKey": "life_transition_000023",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 614,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 1,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 18,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 18,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000024",
+      "eventCandidateKey": "death_event_candidate_000024",
+      "sourceTransitionKey": "life_transition_000024",
+      "participantKey": "participant_11",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 623,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 18,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 18,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000025",
+      "eventCandidateKey": "death_event_candidate_000025",
+      "sourceTransitionKey": "life_transition_000025",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 695,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 28,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 28,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000026",
+      "eventCandidateKey": "death_event_candidate_000026",
+      "sourceTransitionKey": "life_transition_000026",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 706,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 20,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 20,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000027",
+      "eventCandidateKey": "death_event_candidate_000027",
+      "sourceTransitionKey": "life_transition_000027",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 717,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 35,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 35,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000028",
+      "eventCandidateKey": "death_event_candidate_000028",
+      "sourceTransitionKey": "life_transition_000028",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 721,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 21,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 21,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000029",
+      "eventCandidateKey": "death_event_candidate_000029",
+      "sourceTransitionKey": "life_transition_000029",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 777,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 23,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 23,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000030",
+      "eventCandidateKey": "death_event_candidate_000030",
+      "sourceTransitionKey": "life_transition_000030",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 787,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 22,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 22,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000031",
+      "eventCandidateKey": "death_event_candidate_000031",
+      "sourceTransitionKey": "life_transition_000031",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 838,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 25,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 25,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000032",
+      "eventCandidateKey": "death_event_candidate_000032",
+      "sourceTransitionKey": "life_transition_000032",
+      "participantKey": "participant_11",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 977,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 28,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 28,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000033",
+      "eventCandidateKey": "death_event_candidate_000033",
+      "sourceTransitionKey": "life_transition_000033",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 998,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 29,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 29,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000034",
+      "eventCandidateKey": "death_event_candidate_000034",
+      "sourceTransitionKey": "life_transition_000034",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1008,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 44,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 44,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000035",
+      "eventCandidateKey": "death_event_candidate_000035",
+      "sourceTransitionKey": "life_transition_000035",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1014,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 1,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 30,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 30,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000036",
+      "eventCandidateKey": "death_event_candidate_000036",
+      "sourceTransitionKey": "life_transition_000036",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1015,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 29,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 29,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000037",
+      "eventCandidateKey": "death_event_candidate_000037",
+      "sourceTransitionKey": "life_transition_000037",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1049,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 44,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 44,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000038",
+      "eventCandidateKey": "death_event_candidate_000038",
+      "sourceTransitionKey": "life_transition_000038",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1050,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 30,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 30,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000039",
+      "eventCandidateKey": "death_event_candidate_000039",
+      "sourceTransitionKey": "life_transition_000039",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1087,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 32,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 32,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000040",
+      "eventCandidateKey": "death_event_candidate_000040",
+      "sourceTransitionKey": "life_transition_000040",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1097,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 3,
+        "booleanAlive": 47,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 47,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000041",
+      "eventCandidateKey": "death_event_candidate_000041",
+      "sourceTransitionKey": "life_transition_000041",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1100,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 5,
+        "booleanAlive": 50,
+        "lifeStateSignature": 5,
+        "respawnBoundary": 50,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000042",
+      "eventCandidateKey": "death_event_candidate_000042",
+      "sourceTransitionKey": "life_transition_000042",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1218,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 36,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 36,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000043",
+      "eventCandidateKey": "death_event_candidate_000043",
+      "sourceTransitionKey": "life_transition_000043",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1230,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 2,
+        "booleanAlive": 37,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 37,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000044",
+      "eventCandidateKey": "death_event_candidate_000044",
+      "sourceTransitionKey": "life_transition_000044",
+      "participantKey": "participant_11",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1232,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 37,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 37,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000045",
+      "eventCandidateKey": "death_event_candidate_000045",
+      "sourceTransitionKey": "life_transition_000045",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1249,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 38,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 38,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000046",
+      "eventCandidateKey": "death_event_candidate_000046",
+      "sourceTransitionKey": "life_transition_000046",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1271,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 39,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 39,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000047",
+      "eventCandidateKey": "death_event_candidate_000047",
+      "sourceTransitionKey": "life_transition_000047",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1290,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 61,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 61,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000048",
+      "eventCandidateKey": "death_event_candidate_000048",
+      "sourceTransitionKey": "life_transition_000048",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1338,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 43,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 43,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000049",
+      "eventCandidateKey": "death_event_candidate_000049",
+      "sourceTransitionKey": "life_transition_000049",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1345,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 1,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 44,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 44,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000050",
+      "eventCandidateKey": "death_event_candidate_000050",
+      "sourceTransitionKey": "life_transition_000050",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1361,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 44,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 44,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000051",
+      "eventCandidateKey": "death_event_candidate_000051",
+      "sourceTransitionKey": "life_transition_000051",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1363,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 45,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 45,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000052",
+      "eventCandidateKey": "death_event_candidate_000052",
+      "sourceTransitionKey": "life_transition_000052",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1404,
+      "anchorSideTransitions": {
+        "healthBoundary": "no_boundary_transition_observed",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": null,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "no_boundary_transition_observed",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": null,
+        "booleanAlive": 47,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 47,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 3,
+      "distinctCompleteCycleFamilyCount": 3,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000053",
+      "eventCandidateKey": "death_event_candidate_000053",
+      "sourceTransitionKey": "life_transition_000053",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1431,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 4,
+        "booleanAlive": 48,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 48,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000054",
+      "eventCandidateKey": "death_event_candidate_000054",
+      "sourceTransitionKey": "life_transition_000054",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1435,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 67,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 67,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000055",
+      "eventCandidateKey": "death_event_candidate_000055",
+      "sourceTransitionKey": "life_transition_000055",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1570,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 57,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 57,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000056",
+      "eventCandidateKey": "death_event_candidate_000056",
+      "sourceTransitionKey": "life_transition_000056",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1584,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 58,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 58,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000057",
+      "eventCandidateKey": "death_event_candidate_000057",
+      "sourceTransitionKey": "life_transition_000057",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1604,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 59,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 59,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000058",
+      "eventCandidateKey": "death_event_candidate_000058",
+      "sourceTransitionKey": "life_transition_000058",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1607,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 59,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 59,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000059",
+      "eventCandidateKey": "death_event_candidate_000059",
+      "sourceTransitionKey": "life_transition_000059",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1615,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 59,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 59,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000060",
+      "eventCandidateKey": "death_event_candidate_000060",
+      "sourceTransitionKey": "life_transition_000060",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1665,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 63,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 63,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000061",
+      "eventCandidateKey": "death_event_candidate_000061",
+      "sourceTransitionKey": "life_transition_000061",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1673,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 84,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 84,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000062",
+      "eventCandidateKey": "death_event_candidate_000062",
+      "sourceTransitionKey": "life_transition_000062",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1700,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 5,
+        "booleanAlive": 80,
+        "lifeStateSignature": 5,
+        "respawnBoundary": 80,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000063",
+      "eventCandidateKey": "death_event_candidate_000063",
+      "sourceTransitionKey": "life_transition_000063",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1707,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 64,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 64,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000064",
+      "eventCandidateKey": "death_event_candidate_000064",
+      "sourceTransitionKey": "life_transition_000064",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1711,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 65,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 65,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000065",
+      "eventCandidateKey": "death_event_candidate_000065",
+      "sourceTransitionKey": "life_transition_000065",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1776,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 68,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 68,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000066",
+      "eventCandidateKey": "death_event_candidate_000066",
+      "sourceTransitionKey": "life_transition_000066",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1804,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 70,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 70,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000067",
+      "eventCandidateKey": "death_event_candidate_000067",
+      "sourceTransitionKey": "life_transition_000067",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1813,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 70,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 70,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000068",
+      "eventCandidateKey": "death_event_candidate_000068",
+      "sourceTransitionKey": "life_transition_000068",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1820,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 70,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 70,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000069",
+      "eventCandidateKey": "death_event_candidate_000069",
+      "sourceTransitionKey": "life_transition_000069",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1835,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 71,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 71,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000070",
+      "eventCandidateKey": "death_event_candidate_000070",
+      "sourceTransitionKey": "life_transition_000070",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1841,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 71,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 71,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000071",
+      "eventCandidateKey": "death_event_candidate_000071",
+      "sourceTransitionKey": "life_transition_000071",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 1879,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 72,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 72,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000072",
+      "eventCandidateKey": "death_event_candidate_000072",
+      "sourceTransitionKey": "life_transition_000072",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 1897,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 72,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 72,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000073",
+      "eventCandidateKey": "death_event_candidate_000073",
+      "sourceTransitionKey": "life_transition_000073",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 2052,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 90,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 90,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000074",
+      "eventCandidateKey": "death_event_candidate_000074",
+      "sourceTransitionKey": "life_transition_000074",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 2053,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 77,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 77,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000075",
+      "eventCandidateKey": "death_event_candidate_000075",
+      "sourceTransitionKey": "life_transition_000075",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 2073,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 2,
+        "booleanAlive": 77,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 77,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000076",
+      "eventCandidateKey": "death_event_candidate_000076",
+      "sourceTransitionKey": "life_transition_000076",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2075,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 77,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 77,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000077",
+      "eventCandidateKey": "death_event_candidate_000077",
+      "sourceTransitionKey": "life_transition_000077",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 2080,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 90,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 90,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000078",
+      "eventCandidateKey": "death_event_candidate_000078",
+      "sourceTransitionKey": "life_transition_000078",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2137,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 79,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 79,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000079",
+      "eventCandidateKey": "death_event_candidate_000079",
+      "sourceTransitionKey": "life_transition_000079",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2150,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 79,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 79,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000080",
+      "eventCandidateKey": "death_event_candidate_000080",
+      "sourceTransitionKey": "life_transition_000080",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2198,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 80,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 80,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000081",
+      "eventCandidateKey": "death_event_candidate_000081",
+      "sourceTransitionKey": "life_transition_000081",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2200,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 80,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 80,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000082",
+      "eventCandidateKey": "death_event_candidate_000082",
+      "sourceTransitionKey": "life_transition_000082",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2230,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 81,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 81,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": false,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000083",
+      "eventCandidateKey": "death_event_candidate_000083",
+      "sourceTransitionKey": "life_transition_000083",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2306,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 76,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 76,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000084",
+      "eventCandidateKey": "death_event_candidate_000084",
+      "sourceTransitionKey": "life_transition_000084",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_01",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 2335,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "no_boolean_transition_observed",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "no_respawn_transition_observed",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": null,
+        "lifeStateSignature": 6,
+        "respawnBoundary": null,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 2,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000085",
+      "eventCandidateKey": "death_event_candidate_000085",
+      "sourceTransitionKey": "life_transition_000085",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2336,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 64,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 64,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000086",
+      "eventCandidateKey": "death_event_candidate_000086",
+      "sourceTransitionKey": "life_transition_000086",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2337,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "boolean_false_to_true_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": 63,
+        "lifeStateSignature": 6,
+        "respawnBoundary": 63,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 4,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000087",
+      "eventCandidateKey": "death_event_candidate_000087",
+      "sourceTransitionKey": "life_transition_000087",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_07",
+      "normalizedElapsedSecond": 2381,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "no_boolean_transition_observed",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "no_respawn_transition_observed",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": null,
+        "lifeStateSignature": 6,
+        "respawnBoundary": null,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 2,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000088",
+      "eventCandidateKey": "death_event_candidate_000088",
+      "sourceTransitionKey": "life_transition_000088",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_06",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2393,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "no_boolean_transition_observed",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "no_respawn_transition_observed",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": null,
+        "lifeStateSignature": 6,
+        "respawnBoundary": null,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 2,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "cycleEvidenceKey": "directional_cycle_evidence_000089",
+      "eventCandidateKey": "death_event_candidate_000089",
+      "sourceTransitionKey": "life_transition_000089",
+      "participantKey": "participant_02",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_13",
+      "normalizedElapsedSecond": 2397,
+      "anchorSideTransitions": {
+        "healthBoundary": "positive_to_non_positive_boundary_candidate",
+        "booleanAlive": "boolean_true_to_false_candidate",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "anchorSideNormalizedDeltaSeconds": {
+        "healthBoundary": 0,
+        "booleanAlive": 0,
+        "lifeStateSignature": 0,
+        "respawnBoundary": 0,
+        "pawnLink": null
+      },
+      "laterCycleTransitions": {
+        "healthBoundary": "non_positive_to_positive_boundary_candidate",
+        "booleanAlive": "no_boolean_transition_observed",
+        "lifeStateSignature": "life_state_signature_change_candidate",
+        "respawnBoundary": "no_respawn_transition_observed",
+        "pawnLink": "no_pawn_link_transition_observed"
+      },
+      "laterCycleNormalizedDeltaSeconds": {
+        "healthBoundary": 6,
+        "booleanAlive": null,
+        "lifeStateSignature": 6,
+        "respawnBoundary": null,
+        "pawnLink": null
+      },
+      "distinctAnchorSideSourceFamilyCount": 4,
+      "distinctCompleteCycleFamilyCount": 2,
+      "anchorAssociationAmbiguous": false,
+      "laterCycleWindowCensoredByReplayEnd": true,
+      "evidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    }
+  ],
+  "summary": {
+    "anchorsWithDirectionalEvidence": 89,
+    "anchorsWithMultipleDirectionalFamilies": 89,
+    "anchorsWithCompleteCycle": 89,
+    "anchorsWithoutDirectionalEvidence": 0,
+    "ambiguousAnchors": 0,
+    "censoredAnchors": 7,
+    "unanchoredDirectionalPatterns": 123,
+    "unanchoredCompleteCycles": 25,
+    "unmatchedDirectionalTransitions": 269,
+    "duplicateEvidenceKeyCount": 0,
+    "unmappedParticipantAnchors": 0,
+    "sourceTransitionReuseCount": 0,
+    "anchorAlignmentRate": 1,
+    "unanchoredPatternRate": 0.257322,
+    "completeCycleCoverageRate": 1,
+    "uncensoredCompleteCycleCoverageRate": 1,
+    "directionalCycleCoverageLevel": "partial"
+  },
+  "task184Context": {
+    "corroborationCoverageLevel": "strong",
+    "contextOnly": true,
+    "booleansOrCountsCopiedAsDirectionalEvidence": false
+  },
+  "temporalPolicy": {
+    "anchorWindowBeforeSeconds": 2,
+    "anchorWindowAfterSeconds": 2,
+    "laterCycleAfterSecondsExclusive": 0,
+    "laterCycleMaxSecondsInclusive": 180
+  },
+  "readiness": {
+    "directionalSignalEvidenceAvailable": true,
+    "cycleEvidenceMeasurable": true,
+    "negativeControlEvidenceAvailable": true,
+    "candidateLevelDirectionalCycleConsumptionAvailable": true,
+    "readyForFinalDeathSemanticContractDesign": false,
+    "readyForFinalDeathFacts": false,
+    "readyForConfirmedWhoDied": false,
+    "readyForAttribution": false,
+    "readyForKillerVictim": false,
+    "readyForTeamfightDetection": false,
+    "readyForGameplayInterpretation": false
+  },
+  "limitations": [
+    "Directional transitions are abstract replay observations, not proven death or respawn semantics.",
+    "Task 183 counters remain temporal anchors and Task 184 remains contextual coverage evidence only.",
+    "No row identifies who died, a killer, a victim, an assist, attribution, or a final gameplay fact.",
+    "Replay-end-censored windows are not treated as failed semantic cycles."
+  ]
+}

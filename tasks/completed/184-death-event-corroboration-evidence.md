@@ -5,7 +5,7 @@ Status: completed
 Gate:
 `task183_validation_corrected_death_event_corroboration_evidence_bounded32_ready`
 
-Commit: single Task 184 commit
+Commit: 065d0fa0a1d422b3dcf342078100386e2ca7d793
 
 ## Result
 
@@ -22,6 +22,13 @@ Commit: single Task 184 commit
 - Recorded 2,552 bounded rows with multiple independent signal-change candidate
   categories, zero ambiguous rows, zero mapping failures, zero parser failures,
   zero final facts, and zero attribution.
+
+Here, "independent" means independently observed from the Task 183
+death-counter anchor and obtained from distinct probe families. It does not mean
+statistical independence, causal independence, or proven Source 2 gameplay
+semantics. The historical `confirmationEvidenceLevel` field represents coverage
+strength only; Task 185 uses the clearer term `corroborationCoverageLevel` when
+referencing this baseline.
 
 ## Active Baselines
 

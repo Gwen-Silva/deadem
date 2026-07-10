@@ -318,3 +318,33 @@ replay signal-change candidate coverage. It persists normalized deltas and
 unconfirmed evidence classes only. It does not authorize final deaths,
 confirmed "who died", attribution, killer/victim, teamfight detection, raw
 values, raw IDs, raw time, positions, or gameplay interpretation.
+
+Here, independence means observation separate from the death-counter anchor and
+distinct probe families only. It does not mean statistical independence, causal
+independence, or proven Source 2 semantics. Historical
+`confirmationEvidenceLevel` values measure coverage strength only.
+
+## Death Event Directional-Cycle Evidence
+
+- Capability id: `death_event_directional_cycle_evidence`
+- Introduced: Task 185
+- Status: active
+- Current baseline: `death_event_directional_cycle_evidence_bounded32_task185`
+- Main files: `tools/emit-death-event-directional-cycle-evidence.mjs`,
+  `schemas/death-event-directional-cycle-evidence.schema.json`,
+  `docs/codex/DEATH_EVENT_DIRECTIONAL_CYCLE_EVIDENCE_CONTRACT.md`
+- Main outputs:
+  `output/local-replay-processing/death-event-directional-cycle-evidence/task185-gate.json`
+  and `task185-bounded32/`
+
+Task 185 reproduces abstract health-boundary, safely boolean-like alive,
+life-state-signature, respawn-boundary, and pawn-link directions directly from
+authorized replay processing. It associates at most one transition per source
+family around each Task 183 anchor, measures later inverse cycles, distinguishes
+replay-end censoring, and reports replay-wide negative controls.
+
+The bounded-32 baseline passed technically with 2,552 rows, but its
+`directionalCycleCoverageLevel` is `partial`: the unanchored equivalent-pattern
+rate is 0.24067, above the predeclared strong limit of 0.05. Final death semantic
+contract design therefore remains not ready. Tasks 180, 182, 183, and 184 remain
+active and are not superseded.

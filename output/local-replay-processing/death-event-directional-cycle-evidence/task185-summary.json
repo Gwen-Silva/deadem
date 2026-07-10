@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "gate": "task184_commit_recorded_directional_cycle_evidence_bounded32_ready",
+  "technicalEvidenceBaselinePassed": true,
+  "pilot": {
+    "gate": "death_event_directional_cycle_evidence_pilot_ready",
+    "anchorCount": 341,
+    "directionalCycleCoverageLevel": "partial"
+  },
+  "bounded32": {
+    "gate": "task184_commit_recorded_directional_cycle_evidence_bounded32_ready",
+    "anchorCount": 2552,
+    "directionalCycleCoverageLevel": "partial",
+    "coverage": {
+      "anchorCount": 2552,
+      "anchorsWithDirectionalEvidence": 2552,
+      "anchorsWithMultipleDirectionalFamilies": 2552,
+      "anchorsWithCompleteCycle": 2552,
+      "anchorsWithoutDirectionalEvidence": 0,
+      "ambiguousAnchors": 0,
+      "censoredAnchors": 255,
+      "unanchoredDirectionalPatterns": 3218,
+      "unanchoredCompleteCycles": 477,
+      "unmatchedDirectionalTransitions": 7766,
+      "anchorFamilyOccurrences": 10153,
+      "uncensoredAnchorCount": 2297,
+      "uncensoredCompleteCycleAnchorCount": 2297,
+      "anchorAlignmentRate": 1,
+      "multiFamilyAnchorRate": 1,
+      "completeCycleCoverageRate": 1,
+      "uncensoredCompleteCycleCoverageRate": 1,
+      "unanchoredPatternRate": 0.24067
+    }
+  },
+  "finalFactsProduced": 0,
+  "attributionProduced": 0,
+  "activeBaseline": "death_event_directional_cycle_evidence_bounded32_task185"
+}

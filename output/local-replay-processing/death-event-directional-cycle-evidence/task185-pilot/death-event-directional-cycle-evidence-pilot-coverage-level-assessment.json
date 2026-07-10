@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "directionalCycleCoverageLevel": "partial",
+  "operationalThresholdsAreGameplayTruthProof": false,
+  "measurements": {
+    "anchorCount": 341,
+    "anchorsWithDirectionalEvidence": 341,
+    "anchorsWithMultipleDirectionalFamilies": 341,
+    "anchorsWithCompleteCycle": 341,
+    "anchorsWithoutDirectionalEvidence": 0,
+    "ambiguousAnchors": 0,
+    "censoredAnchors": 34,
+    "unanchoredDirectionalPatterns": 417,
+    "unanchoredCompleteCycles": 59,
+    "unmatchedDirectionalTransitions": 1012,
+    "anchorFamilyOccurrences": 1358,
+    "uncensoredAnchorCount": 307,
+    "uncensoredCompleteCycleAnchorCount": 307,
+    "anchorAlignmentRate": 1,
+    "multiFamilyAnchorRate": 1,
+    "completeCycleCoverageRate": 1,
+    "uncensoredCompleteCycleCoverageRate": 1,
+    "unanchoredPatternRate": 0.23493
+  },
+  "thresholds": {
+    "strong": {
+      "anchorsWithAtLeastTwoFamiliesRateAtLeast": 0.95,
+      "uncensoredCompleteCycleCoverageRateAtLeast": 0.9,
+      "unanchoredPatternRateAtMost": 0.05,
+      "technicalFailures": 0
+    },
+    "partial": {
+      "anchorAlignmentRateAtLeast": 0.75,
+      "orUncensoredCompleteCycleCoverageRateAtLeast": 0.6
+    },
+    "insufficient": "below partial thresholds or dominated by ambiguous or unanchored patterns"
+  }
+}

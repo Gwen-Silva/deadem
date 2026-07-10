@@ -125,3 +125,17 @@ life-signal or pawn-link changes, or bounded later respawn-related signal
 changes. This increases semantic evidence without confirming deaths. Coverage,
 ambiguity, and absence are reportable; "who died", attribution, killer/victim,
 teamfights, and gameplay interpretation remain unavailable.
+
+## Task 185 Product Implication
+
+Task 185 makes direction, later inverse-cycle coverage, replay-end censoring,
+and negative controls measurable at the candidate level. The bounded-32 run
+aligned directional families and complete cycles with every Task 183 anchor,
+but also found an unanchored equivalent-pattern rate of 0.24067. Under the
+predeclared thresholds this is `partial`, not `strong`.
+
+The useful product conclusion is negative but concrete: the existing 100%
+same-second correlation is not specific enough to justify final death semantic
+contract design. The new baseline is consumable for bounded evidence questions,
+while final deaths, confirmed who-died claims, attribution, killer/victim,
+teamfight detection, and gameplay interpretation remain unavailable.

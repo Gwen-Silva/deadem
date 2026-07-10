@@ -480,7 +480,33 @@
         "Signal field names do not prove Source 2 gameplay semantics.",
         "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw ID, raw time, position, or gameplay interpretation is emitted."
       ],
-      "nextUsefulStep": "Keep final death promotion and attribution blocked pending a separate explicitly authorized evidence review."
+      "nextUsefulStep": "Consume Task 185 directional-cycle and negative-control evidence while keeping final death promotion and attribution blocked."
+    },
+    {
+      "capabilityId": "death_event_directional_cycle_evidence",
+      "plainName": "Death event directional-cycle evidence",
+      "introducedInTask": "185",
+      "stabilizedInTask": "185",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_directional_cycle_evidence_bounded32_task185",
+      "whyItMatters": "Reproduces abstract signal directions from replay processing, measures later inverse cycles and replay-wide negative controls around Task 183 anchors, and exposes candidate-level evidence without confirming death semantics.",
+      "mainFiles": [
+        "tools/emit-death-event-directional-cycle-evidence.mjs",
+        "schemas/death-event-directional-cycle-evidence.schema.json",
+        "docs/codex/DEATH_EVENT_DIRECTIONAL_CYCLE_EVIDENCE_CONTRACT.md",
+        "tests/death-event-directional-cycle-evidence-schema.test.mjs",
+        "tests/emit-death-event-directional-cycle-evidence.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-directional-cycle-evidence/task185-gate.json",
+        "output/local-replay-processing/death-event-directional-cycle-evidence/task185-bounded32/"
+      ],
+      "knownLimits": [
+        "The bounded-32 directionalCycleCoverageLevel is partial because the unanchored equivalent-pattern rate is 0.24067, above the predeclared strong threshold of 0.05.",
+        "Directions and inverse cycles are abstract probe-family observations, not confirmed death or respawn semantics.",
+        "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw field name, raw ID, raw time, position, or gameplay interpretation is emitted."
+      ],
+      "nextUsefulStep": "Keep final death semantic contract design blocked until separately authorized evidence improves or explains negative-control discrimination."
     }
   ]
 }

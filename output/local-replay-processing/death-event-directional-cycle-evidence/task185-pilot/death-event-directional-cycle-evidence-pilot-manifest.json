@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "runKind": "task185-pilot",
+  "mode": "death_event_directional_cycle_evidence_emission",
+  "artifactClass": "death_event_directional_cycle_evidence",
+  "samplingPolicy": {
+    "normalizedIntervalSeconds": 1
+  },
+  "temporalPolicy": {
+    "anchorWindowBeforeSeconds": 2,
+    "anchorWindowAfterSeconds": 2,
+    "laterCycleAfterSecondsExclusive": 0,
+    "laterCycleMaxSecondsInclusive": 180
+  },
+  "replayIds": [
+    "replay_010",
+    "replay_011",
+    "replay_021",
+    "replay_036"
+  ]
+}

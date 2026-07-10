@@ -618,25 +618,25 @@
       "id": "project_capability_map",
       "path": "docs/CAPABILITY_MAP.md",
       "status": "current",
-      "notes": "Capability map updated through Task 184 with Task 180, Task 182, Task 183, and Task 184 baselines active."
+      "notes": "Capability map updated through Task 185 with Task 180, Task 182, Task 183, Task 184, and Task 185 baselines active."
     },
     {
       "id": "product_value_roadmap",
       "path": "docs/PRODUCT_VALUE_ROADMAP.md",
       "status": "current",
-      "notes": "Product-facing roadmap updated through Task 184 corroboration evidence baseline."
+      "notes": "Product-facing roadmap updated through Task 185 directional-cycle and negative-control evidence baseline."
     },
     {
       "id": "task_contribution_index",
       "path": "data/task-contribution-index.json",
       "status": "current",
-      "notes": "Machine-readable Task 001-184 contribution index with partial-evidence markers."
+      "notes": "Machine-readable Task 001-185 contribution index with partial-evidence markers."
     },
     {
       "id": "capability_index",
       "path": "data/capability-index.json",
       "status": "current",
-      "notes": "Machine-readable capability index updated through Task 184."
+      "notes": "Machine-readable capability index updated through Task 185."
     },
     {
       "id": "semantic_foundation_compact_task179_gate",
@@ -715,6 +715,24 @@
       "path": "docs/codex/DEATH_EVENT_CORROBORATION_EVIDENCE_CONTRACT.md",
       "status": "current",
       "notes": "Policy contract for unconfirmed temporal association of independent replay signal-change candidates."
+    },
+    {
+      "id": "death_event_directional_cycle_evidence_task185_gate",
+      "path": "output/local-replay-processing/death-event-directional-cycle-evidence/task185-gate.json",
+      "status": "current",
+      "notes": "Task 185 final technical gate for reproducible directional-cycle and negative-control candidate evidence; no confirmed deaths."
+    },
+    {
+      "id": "death_event_directional_cycle_evidence_bounded32_task185_artifacts",
+      "path": "output/local-replay-processing/death-event-directional-cycle-evidence/task185-bounded32/death-event-directional-cycle-evidence-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 185 bounded-32 abstract directional-cycle evidence with partial coverage and no final death facts or attribution."
+    },
+    {
+      "id": "death_event_directional_cycle_evidence_contract_task185",
+      "path": "docs/codex/DEATH_EVENT_DIRECTIONAL_CYCLE_EVIDENCE_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for abstract directionality, inverse-cycle matching, replay-end censoring, and negative controls."
     }
   ],
   "artifacts": [
@@ -741,6 +759,12 @@
       "path": "output/local-replay-processing/death-event-corroboration-evidence/task184-bounded32/death-event-corroboration-bounded32-gate.json",
       "status": "current",
       "notes": "Task 184 active bounded-32 unconfirmed corroboration-evidence baseline."
+    },
+    {
+      "id": "death_event_directional_cycle_evidence_bounded32_task185_artifacts",
+      "path": "output/local-replay-processing/death-event-directional-cycle-evidence/task185-bounded32/death-event-directional-cycle-evidence-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 185 active bounded-32 directional-cycle and negative-control evidence baseline; coverage is partial and semantic truth remains unconfirmed."
     }
   ]
 }

@@ -1876,3 +1876,24 @@ Task 184 adds candidate evidence only. The active baselines remain Task 180
 `death_event_corroboration_evidence`. Final death facts, confirmed "who died",
 attribution, killer/victim, teamfight detection, and gameplay interpretation
 remain blocked.
+
+## Task 185
+
+Purpose: reproduce directional signal transitions around Task 183 anchors,
+measure later inverse cycles and replay-end censoring, and compare them with
+replay-wide unanchored negative controls.
+
+Success gate:
+`task184_commit_recorded_directional_cycle_evidence_bounded32_ready`.
+
+Status: completed technically with the success gate above. The pilot emitted
+341 rows and the bounded-32 run emitted 2,552 rows, one per Task 183 anchor,
+with zero mapping, parser, schema, policy, size, protection, or source-reuse
+failures. The bounded coverage level is `partial` because the unanchored
+equivalent-pattern rate is 0.24067, despite complete anchor and uncensored-cycle
+coverage. This is evidence that the existing same-second correlation is not
+specific enough under the predeclared design criteria.
+
+Final death semantic contract design remains not ready. The next milestone must
+not promote death facts or attribution without separate authorization and a
+stronger or better-explained negative-control result.

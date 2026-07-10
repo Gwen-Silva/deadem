@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "runKind": "task185-pilot",
+  "artifactClass": "death_event_directional_cycle_evidence",
+  "technicalEvidenceBaselineStatus": "ready",
+  "expectedAnchorCount": 341,
+  "actualAnchorCount": 341,
+  "evidenceRowCount": 341,
+  "directionalCycleCoverageLevel": "partial",
+  "coverage": {
+    "anchorCount": 341,
+    "anchorsWithDirectionalEvidence": 341,
+    "anchorsWithMultipleDirectionalFamilies": 341,
+    "anchorsWithCompleteCycle": 341,
+    "anchorsWithoutDirectionalEvidence": 0,
+    "ambiguousAnchors": 0,
+    "censoredAnchors": 34,
+    "unanchoredDirectionalPatterns": 417,
+    "unanchoredCompleteCycles": 59,
+    "unmatchedDirectionalTransitions": 1012,
+    "anchorFamilyOccurrences": 1358,
+    "uncensoredAnchorCount": 307,
+    "uncensoredCompleteCycleAnchorCount": 307,
+    "anchorAlignmentRate": 1,
+    "multiFamilyAnchorRate": 1,
+    "completeCycleCoverageRate": 1,
+    "uncensoredCompleteCycleCoverageRate": 1,
+    "unanchoredPatternRate": 0.23493
+  },
+  "rows": [
+    {
+      "replayId": "replay_010",
+      "anchorCount": 45,
+      "anchorSideFamilyCoverageCount": 45,
+      "completeCycleCoverageCount": 45,
+      "censoredAnchorCount": 9,
+      "ambiguousAnchorCount": 0,
+      "unanchoredDirectionalPatternCount": 50,
+      "unanchoredCompleteCycleCount": 2,
+      "unmatchedDirectionalTransitionCount": 136,
+      "mappingStatus": "passed",
+      "parserStatus": "completed",
+      "directionalCycleCoverageLevel": "partial"
+    },
+    {
+      "replayId": "replay_011",
+      "anchorCount": 80,
+      "anchorSideFamilyCoverageCount": 80,
+      "completeCycleCoverageCount": 80,
+      "censoredAnchorCount": 6,
+      "ambiguousAnchorCount": 0,
+      "unanchoredDirectionalPatternCount": 106,
+      "unanchoredCompleteCycleCount": 21,
+      "unmatchedDirectionalTransitionCount": 237,
+      "mappingStatus": "passed",
+      "parserStatus": "completed",
+      "directionalCycleCoverageLevel": "partial"
+    },
+    {
+      "replayId": "replay_021",
+      "anchorCount": 99,
+      "anchorSideFamilyCoverageCount": 99,
+      "completeCycleCoverageCount": 99,
+      "censoredAnchorCount": 8,
+      "ambiguousAnchorCount": 0,
+      "unanchoredDirectionalPatternCount": 114,
+      "unanchoredCompleteCycleCount": 12,
+      "unmatchedDirectionalTransitionCount": 296,
+      "mappingStatus": "passed",
+      "parserStatus": "completed",
+      "directionalCycleCoverageLevel": "partial"
+    },
+    {
+      "replayId": "replay_036",
+      "anchorCount": 117,
+      "anchorSideFamilyCoverageCount": 117,
+      "completeCycleCoverageCount": 117,
+      "censoredAnchorCount": 11,
+      "ambiguousAnchorCount": 0,
+      "unanchoredDirectionalPatternCount": 147,
+      "unanchoredCompleteCycleCount": 24,
+      "unmatchedDirectionalTransitionCount": 343,
+      "mappingStatus": "passed",
+      "parserStatus": "completed",
+      "directionalCycleCoverageLevel": "partial"
+    }
+  ],
+  "limitations": [
+    "Technical readiness does not confirm deaths or respawns.",
+    "Coverage thresholds are operational design criteria, not gameplay truth metrics."
+  ],
+  "gate": "death_event_directional_cycle_evidence_pilot_ready"
+}

@@ -43,6 +43,12 @@ and independence audits passed.
 - Final facts: 0; attribution: 0.
 - Evidence assessment: `strong`.
 
+The historical `confirmationEvidenceLevel: strong` label means strong coverage,
+not strong confirmation. Task 185 refers to this meaning as
+`corroborationCoverageLevel`. "Independent" means observed separately from the
+counter anchor and from distinct probe families; it does not mean statistical
+or causal independence and does not prove Source 2 gameplay semantics.
+
 Every anchor had a life-signal change candidate and a respawn-related
 flag/boundary change candidate at normalized delta 0. No pawn-link change was
 associated, and no later-cycle delta was used. These are independent observed

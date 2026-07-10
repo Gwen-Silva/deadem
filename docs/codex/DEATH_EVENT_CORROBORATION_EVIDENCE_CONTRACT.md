@@ -5,6 +5,12 @@ Task 183 row only as a temporal anchor, verifies its Task 182 source bridge, and
 associates independently observed replay signal changes through fixed normalized
 time windows. It never promotes an anchor to a confirmed death.
 
+"Independent" in this contract has a narrow operational meaning: the signal is
+observed separately from the Task 183 death-counter anchor and comes from a
+distinct probe family. It does not assert statistical independence, causal
+independence, or proven Source 2 gameplay semantics. Different probe families
+may still be correlated or derive from related underlying state.
+
 ## Independent Signal Candidates
 
 The runner observes three bounded categories in memory:
@@ -50,3 +56,9 @@ candidate-evidence consumption available, and multi-signal coverage measurable.
 Final death facts, confirmed identity claims, attribution, killer/victim,
 teamfight detection, and gameplay interpretation remain false and require a
 separate future authorization.
+
+Historical Task 184 artifacts retain `confirmationEvidenceLevel` for schema
+stability. That field represents corroboration coverage strength only, not
+confirmation strength. New Task 185 outputs refer to this contextual value as
+`corroborationCoverageLevel` and use `directionalCycleCoverageLevel` for the new
+direction/cycle assessment.

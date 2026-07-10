@@ -5574,7 +5574,7 @@
     {
       "taskId": "184",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "065d0fa0a1d422b3dcf342078100386e2ca7d793",
       "title": "Repair Validation Integrity And Build Multi-Signal Death Corroboration Evidence",
       "phase": "death_event_corroboration_candidate_evidence",
       "primaryContribution": "Repaired Task 183 validation integrity and emitted replay-sourced death_event_corroboration_evidence while preserving unconfirmed candidate boundaries.",
@@ -5603,13 +5603,57 @@
       "supersededBy": null,
       "reworkRiskNotes": [
         "Task 183 rows are temporal anchors only and do not count as independent corroboration.",
-        "Signal changes are unconfirmed candidates; do not infer final death, respawn, attribution, or gameplay truth."
+        "Signal changes are unconfirmed candidates; do not infer final death, respawn, attribution, or gameplay truth.",
+        "Task 184 independence means separate observation and distinct probe families, not statistical independence, causal independence, or proven Source 2 semantics.",
+        "Historical confirmationEvidenceLevel is a coverage-strength label only."
       ],
       "evidenceStatus": "sufficient",
       "evidencePaths": [
         "tasks/specs/184.json",
         "tasks/completed/184-death-event-corroboration-evidence.md",
         "output/local-replay-processing/death-event-corroboration-evidence/task184-summary.json"
+      ]
+    },
+    {
+      "taskId": "185",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Validate Directional Signal Cycles And Negative Controls For Death Semantics",
+      "phase": "death_event_directional_cycle_candidate_evidence",
+      "primaryContribution": "Emitted replay-sourced abstract directional transitions, later inverse-cycle evidence, replay-end censoring, and negative controls around Task 183 anchors without confirming deaths.",
+      "introducedCapabilities": [
+        "death_event_directional_cycle_evidence"
+      ],
+      "stabilizedCapabilities": [
+        "death_event_directional_cycle_evidence"
+      ],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "schemas/death-event-directional-cycle-evidence.schema.json",
+        "tools/emit-death-event-directional-cycle-evidence.mjs",
+        "docs/codex/DEATH_EVENT_DIRECTIONAL_CYCLE_EVIDENCE_CONTRACT.md",
+        "output/local-replay-processing/death-event-directional-cycle-evidence/task185-gate.json",
+        "reports/death-event-directional-cycle-evidence-task185.md"
+      ],
+      "gate": "task184_commit_recorded_directional_cycle_evidence_bounded32_ready",
+      "currentRelevance": "active_evidence_layer",
+      "dependsOn": [
+        "180",
+        "182",
+        "183",
+        "184"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Directional transitions and inverse cycles are abstract candidates, not final death or respawn facts.",
+        "The partial coverage level is an operational assessment driven by negative controls, not a truth metric.",
+        "Task 185 does not supersede Tasks 180, 182, 183, or 184 and does not authorize final semantic contract design."
+      ],
+      "evidenceStatus": "sufficient_technical_partial_semantic_coverage",
+      "evidencePaths": [
+        "tasks/specs/185.json",
+        "tasks/completed/185-death-event-directional-cycle-evidence.md",
+        "output/local-replay-processing/death-event-directional-cycle-evidence/task185-summary.json"
       ]
     }
   ]
