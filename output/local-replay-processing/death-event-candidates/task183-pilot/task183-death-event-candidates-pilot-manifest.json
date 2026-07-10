@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "task183_death_event_candidates_pilot",
+  "runKind": "task183-pilot",
+  "mode": "death_event_candidates_emission",
+  "artifactClass": "death_event_candidates",
+  "replayProcessingAllowed": false,
+  "replayFileAccessAllowed": false,
+  "realArtifactEmissionAllowed": true,
+  "generationLabel": "task_183",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "rawTicksIncluded": false,
+  "rawTimestampsIncluded": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "attributionEmitted": false,
+  "sourceManifests": [
+    "output/local-replay-processing/life-state-transition-candidates/task182-pilot/task182-life-state-transition-pilot-manifest.json"
+  ],
+  "allowedReplays": [
+    {
+      "replayId": "replay_010",
+      "selectionGroup": "task177_bounded_inbox_batch_pilot_32",
+      "requestedMode": "death_event_candidates_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-bounded32/artifacts/replay_010/participant_identity.json",
+      "lifeStateTransitionArtifactPath": "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/artifacts/replay_010/life_state_transition_candidates.json"
+    },
+    {
+      "replayId": "replay_011",
+      "selectionGroup": "task177_bounded_inbox_batch_pilot_32",
+      "requestedMode": "death_event_candidates_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-bounded32/artifacts/replay_011/participant_identity.json",
+      "lifeStateTransitionArtifactPath": "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/artifacts/replay_011/life_state_transition_candidates.json"
+    },
+    {
+      "replayId": "replay_021",
+      "selectionGroup": "task177_bounded_inbox_batch_pilot_32",
+      "requestedMode": "death_event_candidates_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-bounded32/artifacts/replay_021/participant_identity.json",
+      "lifeStateTransitionArtifactPath": "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/artifacts/replay_021/life_state_transition_candidates.json"
+    },
+    {
+      "replayId": "replay_036",
+      "selectionGroup": "task177_bounded_inbox_batch_pilot_32",
+      "requestedMode": "death_event_candidates_emission",
+      "participantIdentityArtifactPath": "output/local-replay-processing/participant-identity-compact/task180-bounded32/artifacts/replay_036/participant_identity.json",
+      "lifeStateTransitionArtifactPath": "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/artifacts/replay_036/life_state_transition_candidates.json"
+    }
+  ],
+  "blockedReplays": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008"
+  ],
+  "forbiddenOutputSurfaces": [
+    "player_names",
+    "hero_names",
+    "team_names",
+    "raw_entity_ids",
+    "raw_values",
+    "raw_ticks",
+    "raw_timestamps",
+    "field_values",
+    "map_positions",
+    "attribution",
+    "final_facts",
+    "final_death_events",
+    "final_respawn_events",
+    "gameplay_interpretation"
+  ]
+}

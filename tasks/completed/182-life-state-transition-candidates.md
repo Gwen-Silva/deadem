@@ -4,7 +4,7 @@ Status: completed
 
 Gate: `task181_reclassified_life_state_transition_candidates_bounded32_ready`
 
-Commit: pending
+Commit: 5f0a07c03938eef513d0c7288344d93b55393155
 
 ## What Changed
 

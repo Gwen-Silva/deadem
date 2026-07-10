@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "death_event_candidates",
+  "allowedAnswers": [
+    "Synthetic participant participant_## has a death-counter increment candidate at normalized second N.",
+    "Synthetic hero ref hero_ref_## has a death-counter increment candidate at normalized second N.",
+    "Synthetic team ref team_ref_## has a death-counter increment candidate at normalized second N."
+  ],
+  "prohibitedClaims": [
+    "X died.",
+    "X was killed by Y.",
+    "This is a confirmed death.",
+    "This death happened in a teamfight.",
+    "This candidate proves respawn, attribution, damage, objective relation, or gameplay causality."
+  ],
+  "requiredQualifiers": [
+    "candidate",
+    "unconfirmed_candidate",
+    "synthetic replay-local reference",
+    "normalized elapsed second, not raw tick or timestamp"
+  ],
+  "readyForDeathEventCandidateConsumption": true,
+  "readyForFinalDeathEventEmission": false,
+  "readyForAttribution": false,
+  "readyForTeamfightDetection": false,
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "attributionEmitted": false
+}

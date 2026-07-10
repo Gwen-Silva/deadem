@@ -244,14 +244,15 @@ The next product value layer should not skip identity mapping and canonical deat
 ## Alive Dead Respawn Compact Layer
 
 - Capability id: `alive_dead_respawn_compact`
-- Introduced in Task 181; stabilized in Task 181.
-- Current status: `active`
-- Current baseline: alive_dead_respawn_compact_bounded32_task181
+- Introduced in Task 181; stabilized in: none.
+- Current status: `needs-validation`
+- Current baseline: bridge-only Task 181.
+- Superseded for active transition coverage by Task 182.
 - Why it matters: Converts participant identity and compact death-counter bridge data into a policy-safe life-state summary layer before canonical death events.
 - Main files: `tools/emit-alive-dead-respawn-compact-artifacts.mjs`, `schemas/alive-dead-respawn-compact.schema.json`, `tests/alive-dead-respawn-compact-schema.test.mjs`, `tests/emit-alive-dead-respawn-compact-artifacts.test.mjs`
 - Main outputs: `output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json`, `output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/`
 - Known limits: Current safe inputs support aggregate transition candidate counts, not per-participant transition rows, final death facts, respawn events, attribution, raw ticks/timestamps, positions, or gameplay interpretation.
-- Next dependency: Design the canonical death-event input contract or a policy-safe transition-row contract before attribution or teamfight work.
+- Next dependency: Consume the Task 182 replay-sourced transition rows rather than the Task 181 bridge-only counts.
 ## Life-State Transition Candidates
 
 - Introduced: Task 182
@@ -272,3 +273,25 @@ rows with synthetic participant keys and normalized elapsed seconds. It does not
 emit final death facts, raw IDs, raw ticks, raw timestamps, attribution,
 positions, respawn final events, teamfight detection, or gameplay
 interpretation.
+
+## Death Event Candidates
+
+- Capability id: `death_event_candidates`
+- Introduced: Task 183
+- Status: active
+- Current baseline: `death_event_candidates_bounded32_task183`
+- Main files: `tools/emit-death-event-candidates.mjs`,
+  `schemas/death-event-candidates.schema.json`,
+  `docs/codex/DEATH_EVENT_CANDIDATE_CONSUMPTION_CONTRACT.md`
+- Main outputs:
+  `output/local-replay-processing/death-event-candidates/task183-gate.json`
+  and `task183-bounded32/`
+
+Task 183 converts Task 182 replay-sourced life-state transition candidates into
+normalized `death_event_candidates` using only versioned artifacts and Task 180
+synthetic participant identity refs. Each candidate remains an unconfirmed
+counter-increment candidate, not a final death fact. The layer supports bounded
+questions about synthetic participant/hero/team refs and normalized seconds,
+but still forbids killer/victim attribution, final death facts, respawn facts,
+teamfight detection, raw IDs, raw ticks, raw timestamps, positions, names, and
+gameplay interpretation.

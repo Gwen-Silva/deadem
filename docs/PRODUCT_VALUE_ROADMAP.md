@@ -105,3 +105,12 @@ What is still not possible:
 - identify teamfights;
 - assert final death or respawn events;
 - interpret gameplay decisions.
+
+## Task 183 Product Implication
+
+Task 183 creates the first policy-safe death-event candidate layer. The project
+can now answer bounded questions about synthetic participant/hero/team refs and
+normalized seconds for counter-increment candidates. It still cannot answer
+"who died", "who killed whom", "was this a teamfight", or any gameplay
+interpretation question. The next product step is a candidate-safe consumption
+surface or a separately reviewed final death-event confirmation contract.

@@ -1843,3 +1843,19 @@ Still blocked:
 - teamfight detection;
 - position/map context;
 - gameplay interpretation.
+
+## Task 183
+
+Purpose: correct remaining Task 181/182 documentation inconsistencies and build
+the first normalized `death_event_candidates` baseline from versioned Task 180
+and Task 182 artifacts only.
+
+Success gate: `task181_docs_corrected_death_event_candidates_bounded32_ready`.
+
+Status: completed with the success gate above. The pilot emitted 341 candidates
+for replay_010, replay_011, replay_021, and replay_036. The bounded-32 run
+emitted 2,552 candidates across the active 32-replay baseline. The source bridge
+matched Task 182 transition rows exactly. The next milestone may design a
+controlled candidate consumer or separately define confirmation criteria for
+final death events, but attribution, teamfight detection, final facts, and
+gameplay interpretation remain out of scope.

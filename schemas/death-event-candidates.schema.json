@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-candidates.schema.json",
+  "title": "Death Event Candidates Compact Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "generatedBy",
+    "generatedAt",
+    "rawDataCaptured",
+    "fieldValuesCaptured",
+    "rawTicksIncluded",
+    "rawTimestampsIncluded",
+    "finalFactsProduced",
+    "gameplayInterpretationProduced",
+    "attributionEmitted",
+    "participantIdentityArtifactFound",
+    "lifeStateTransitionArtifactFound",
+    "candidateCount",
+    "candidates",
+    "summary",
+    "sourceBridge",
+    "readiness",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "death_event_candidates" },
+    "sourceMethod": { "const": "normalized_death_counter_candidate_canonicalization" },
+    "generatedBy": { "const": "tools/emit-death-event-candidates.mjs" },
+    "generatedAt": { "const": "task_183" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "participantIdentityArtifactFound": { "const": true },
+    "lifeStateTransitionArtifactFound": { "const": true },
+    "candidateCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/deathEventCandidate" }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalCandidates",
+        "candidatesWithParticipantRef",
+        "candidatesWithHeroRef",
+        "candidatesWithTeamRef",
+        "candidatesWithNormalizedTime",
+        "unmappedCandidates",
+        "duplicateCandidateCount"
+      ],
+      "properties": {
+        "totalCandidates": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "candidatesWithParticipantRef": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "candidatesWithHeroRef": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "candidatesWithTeamRef": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "candidatesWithNormalizedTime": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "unmappedCandidates": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "duplicateCandidateCount": { "type": "integer", "minimum": 0, "maximum": 10000 }
+      }
+    },
+    "sourceBridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lifeStateTransitionCandidateCount",
+        "deathEventCandidateCount",
+        "matchStatus"
+      ],
+      "properties": {
+        "lifeStateTransitionCandidateCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "deathEventCandidateCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "matchStatus": { "enum": ["matched", "mismatch"] }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readyForDeathEventCandidateConsumption",
+        "readyForFinalDeathEventEmission",
+        "readyForAttribution",
+        "readyForTeamfightDetection"
+      ],
+      "properties": {
+        "readyForDeathEventCandidateConsumption": { "const": true },
+        "readyForFinalDeathEventEmission": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForTeamfightDetection": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 260 }
+    }
+  },
+  "$defs": {
+    "deathEventCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventCandidateKey",
+        "participantKey",
+        "heroRefKey",
+        "teamRefKey",
+        "normalizedElapsedSecond",
+        "sourceTransitionKey",
+        "sourceEvidenceType",
+        "sourceObservationConfidence",
+        "confidenceMeaning",
+        "deathTruthStatus",
+        "finalFact"
+      ],
+      "properties": {
+        "eventCandidateKey": { "type": "string", "pattern": "^death_event_candidate_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "heroRefKey": { "type": "string", "pattern": "^hero_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "teamRefKey": { "type": "string", "pattern": "^team_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "normalizedElapsedSecond": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+        "sourceTransitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "sourceEvidenceType": { "const": "controller_death_counter_increment_candidate" },
+        "sourceObservationConfidence": { "const": "high" },
+        "confidenceMeaning": { "const": "confidence_in_source_counter_increment_observation_not_death_truth" },
+        "deathTruthStatus": { "const": "unconfirmed_candidate" },
+        "finalFact": { "const": false }
+      }
+    }
+  }
+}

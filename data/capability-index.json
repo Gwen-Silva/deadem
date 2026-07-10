@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "182",
-  "activeBaseline": "life_state_transition_candidates_bounded32_task182",
+  "generatedAtTask": "183",
+  "activeBaseline": "death_event_candidates_bounded32_task183",
   "capabilities": [
     {
       "capabilityId": "parser_char_without_count_fix",
@@ -403,7 +403,7 @@
         "Task 181 copied death_validation eventCount as a bridge count and should not be treated as active life-state transition coverage.",
         "Use life_state_transition_candidates from Task 182 for replay-sourced transition rows."
       ],
-      "nextUsefulStep": "Treat as historical scaffolding; consume Task 182 life_state_transition_candidates for canonical death-event candidate design."
+      "nextUsefulStep": "Treat as historical scaffolding; consume Task 182 life_state_transition_candidates and Task 183 death_event_candidates for candidate-level death-event work."
     },
     {
       "capabilityId": "life_state_transition_candidates",
@@ -428,7 +428,33 @@
         "No killer, victim, assist, damage, teamfight, position, raw ID, raw tick, raw timestamp, or gameplay interpretation is emitted.",
         "Canonical death-event emission, attribution, and teamfight detection remain blocked until separate designs authorize them."
       ],
-      "nextUsefulStep": "Design a canonical death-event candidate contract that consumes participantKey plus normalized time transition candidates without attribution."
+      "nextUsefulStep": "Use Task 183 death_event_candidates as the normalized candidate consumption layer."
+    },
+    {
+      "capabilityId": "death_event_candidates",
+      "plainName": "Death event candidates compact artifacts",
+      "introducedInTask": "183",
+      "stabilizedInTask": "183",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_candidates_bounded32_task183",
+      "whyItMatters": "Normalizes replay-sourced life-state transition candidates into policy-safe death-event candidates with synthetic participant, hero, team, and normalized time refs, without final death truth or attribution.",
+      "mainFiles": [
+        "tools/emit-death-event-candidates.mjs",
+        "schemas/death-event-candidates.schema.json",
+        "docs/codex/DEATH_EVENT_CANDIDATE_CONSUMPTION_CONTRACT.md",
+        "tests/death-event-candidates-schema.test.mjs",
+        "tests/emit-death-event-candidates.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-candidates/task183-gate.json",
+        "output/local-replay-processing/death-event-candidates/task183-bounded32/"
+      ],
+      "knownLimits": [
+        "Candidates are unconfirmed counter-increment candidates, not final deaths.",
+        "No killer, victim, assist, respawn, damage, position, teamfight, raw ID, raw tick, raw timestamp, or gameplay interpretation is emitted.",
+        "Final death-event emission, attribution, and teamfight detection remain blocked."
+      ],
+      "nextUsefulStep": "Design a controlled consumer or presentation layer that preserves candidate wording, or separately design final death-event confirmation criteria."
     }
   ]
 }

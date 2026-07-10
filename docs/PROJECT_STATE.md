@@ -1268,3 +1268,21 @@ bridge. These rows are candidates only, not final death events.
 Canonical death-event candidate design is now ready. Canonical death-event
 emission, killer/victim/assist attribution, respawn final events, teamfight
 detection, and gameplay interpretation remain blocked.
+
+## Task 183 - Death Event Candidate Baseline
+
+Task 183 corrected the remaining Task 181/182 documentation consistency issues
+and created the `death_event_candidates` compact layer. Task 181 is bridge-only
+scaffolding with `needs-validation` active status; Task 182 remains the active
+replay-sourced transition baseline feeding Task 183.
+
+The Task 183 runner does not open replay files or execute the parser. It
+transforms only versioned Task 180 `participant_identity` artifacts and Task 182
+`life_state_transition_candidates` artifacts. The pilot emitted 4 artifacts with
+341 candidates. The bounded-32 run emitted 32 artifacts with 2,552 candidates,
+all matched one-to-one against Task 182 transition candidates. All candidates
+have synthetic participant, hero, and team refs plus normalized elapsed seconds.
+
+`death_event_candidates` are unconfirmed candidates only. They do not authorize
+claims that a player died, who killed whom, respawn, teamfight, position,
+damage, objective relation, final facts, or gameplay interpretation.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "182",
+  "generatedAtTask": "183",
   "baseCommit": "ffabea3d19280f901685d3a3e7a6a66e3c8a2bf8",
   "taskRange": "001-182",
   "evidenceRules": [
@@ -5490,7 +5490,7 @@
     {
       "taskId": "182",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "5f0a07c03938eef513d0c7288344d93b55393155",
       "title": "Correct Task 181 Classification And Materialize Replay-Sourced Life-State Transition Candidates",
       "phase": "life_state_transition_candidate_foundation",
       "primaryContribution": "Reclassified Task 181 as bridge-only and emitted replay-sourced life_state_transition_candidates for pilot and bounded-32 manifests.",
@@ -5511,13 +5511,13 @@
         "reports/life-state-transition-candidates-task182.md"
       ],
       "gate": "task181_reclassified_life_state_transition_candidates_bounded32_ready",
-      "currentRelevance": "active_baseline",
+      "currentRelevance": "active_source_baseline_for_task183",
       "dependsOn": [
         "177",
         "180",
         "181"
       ],
-      "supersededBy": null,
+      "supersededBy": "183",
       "reworkRiskNotes": [
         "Rows are candidates only and must not be consumed as final deaths.",
         "Do not infer attribution, teamfight, position, respawn, or gameplay causality from this artifact."
@@ -5526,6 +5526,49 @@
         "tasks/specs/182.json",
         "tasks/completed/182-life-state-transition-candidates.md",
         "output/local-replay-processing/life-state-transition-candidates/task182-summary.json"
+      ]
+    },
+    {
+      "taskId": "183",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Canonical Death Event Candidate Baseline And Consumption Contract",
+      "phase": "death_event_candidate_foundation",
+      "primaryContribution": "Corrected remaining Task 181/182 documentation inconsistencies and emitted death_event_candidates by transforming Task 182 life-state transition candidates plus Task 180 participant identity artifacts.",
+      "introducedCapabilities": [
+        "death_event_candidates"
+      ],
+      "stabilizedCapabilities": [
+        "death_event_candidates"
+      ],
+      "supersededCapabilities": [
+        "alive_dead_respawn_compact_active_claim"
+      ],
+      "importantOutputs": [
+        "schemas/death-event-candidates.schema.json",
+        "tools/emit-death-event-candidates.mjs",
+        "docs/codex/DEATH_EVENT_CANDIDATE_CONSUMPTION_CONTRACT.md",
+        "output/local-replay-processing/death-event-candidates/task183-gate.json",
+        "output/local-replay-processing/death-event-candidates/task183-bounded32/death-event-candidates-bounded32-gate.json",
+        "reports/death-event-candidates-task183.md"
+      ],
+      "gate": "task181_docs_corrected_death_event_candidates_bounded32_ready",
+      "currentRelevance": "active_baseline",
+      "dependsOn": [
+        "180",
+        "182"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Rows are candidates only and must not be consumed as final deaths.",
+        "Do not infer killer, victim, assist, respawn, teamfight, position, or gameplay causality from this artifact.",
+        "The runner transforms versioned artifacts only and must not be changed to open replay files for this layer."
+      ],
+      "evidenceStatus": "sufficient",
+      "evidencePaths": [
+        "tasks/specs/183.json",
+        "tasks/completed/183-death-event-candidates.md",
+        "output/local-replay-processing/death-event-candidates/task183-summary.json"
       ]
     }
   ]

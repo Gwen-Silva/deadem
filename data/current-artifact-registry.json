@@ -679,20 +679,44 @@
       "path": "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/life-state-transition-bounded32-gate.json",
       "status": "current",
       "notes": "Task 182 bounded-32 replay-sourced transition candidate artifacts with participantKey and normalizedElapsedSecond; no raw values, raw IDs, raw ticks, attribution, final facts, or gameplay interpretation."
+    },
+    {
+      "id": "death_event_candidates_task183_gate",
+      "path": "output/local-replay-processing/death-event-candidates/task183-gate.json",
+      "status": "current",
+      "notes": "Task 183 final gate for documentation correction, pilot, and bounded-32 death_event_candidates emission."
+    },
+    {
+      "id": "death_event_candidates_bounded32_task183_artifacts",
+      "path": "output/local-replay-processing/death-event-candidates/task183-bounded32/death-event-candidates-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 183 bounded-32 death_event_candidates artifacts. These contain synthetic participant/hero/team refs and normalized elapsed seconds only; no final death facts, attribution, raw IDs, raw ticks, raw timestamps, positions, or gameplay interpretation."
+    },
+    {
+      "id": "death_event_candidate_consumption_contract_task183",
+      "path": "docs/codex/DEATH_EVENT_CANDIDATE_CONSUMPTION_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for consuming death_event_candidates without final death, attribution, teamfight, or gameplay interpretation claims."
     }
   ],
   "artifacts": [
     {
       "id": "alive_dead_respawn_compact_task181_gate",
       "path": "output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json",
-      "status": "current",
-      "notes": "Task 181 final gate for the alive_dead_respawn compact pilot and bounded-32 run."
+      "status": "historical_bridge_only_needs_validation",
+      "notes": "Task 181 final gate for the alive_dead_respawn compact pilot and bounded-32 run. Historical bridge-only artifact; Task 182 supersedes it for active replay-sourced transition coverage."
     },
     {
       "id": "alive_dead_respawn_compact_bounded32_task181_artifacts",
       "path": "output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/alive-dead-respawn-bounded32-gate.json",
+      "status": "historical_bridge_only_needs_validation",
+      "notes": "Task 181 bounded-32 alive_dead_respawn compact artifacts. These contain candidate-count summaries and synthetic refs only, not transition rows, raw ticks, raw timestamps, attribution, final facts, or gameplay interpretation. Historical bridge-only artifact; Task 182 supersedes it for active replay-sourced transition coverage."
+    },
+    {
+      "id": "death_event_candidates_bounded32_task183_artifacts",
+      "path": "output/local-replay-processing/death-event-candidates/task183-bounded32/death-event-candidates-bounded32-gate.json",
       "status": "current",
-      "notes": "Task 181 bounded-32 alive_dead_respawn compact artifacts. These contain candidate-count summaries and synthetic refs only, not transition rows, raw ticks, raw timestamps, attribution, final facts, or gameplay interpretation."
+      "notes": "Task 183 active bounded-32 death_event_candidates baseline."
     }
   ]
 }

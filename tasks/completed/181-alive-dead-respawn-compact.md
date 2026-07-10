@@ -2,9 +2,9 @@
 
 Status: completed
 
-Gate: `alive_dead_respawn_compact_bounded32_ready`
+Gate: `alive_dead_respawn_compact_bounded32_ready` (historical; reclassified by Task 182/183)
 
-Commit: pending
+Commit: 15f276cc1859045f96c2d4a75ba9f5d1d1d61f80
 
 ## What Changed
 
@@ -63,3 +63,9 @@ supported as active life-state coverage.
 
 The active replay-sourced transition row baseline is now Task 182
 `life_state_transition_candidates`.
+
+## Task 183 Consistency Note
+
+Task 183 preserves the Task 182 correction: Task 181 is bridge-only
+scaffolding and remains `needs-validation` for active transition coverage. It
+does not provide replay-sourced per-participant life-state transition rows.
