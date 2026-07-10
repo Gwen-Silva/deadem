@@ -51,3 +51,15 @@ but no policy-safe normalized transition timing rows.
 Design the canonical death-event input contract, including whether a future
 policy-safe transition row layer is required before canonical death events,
 attribution, or teamfight detection.
+
+## Task 182 Correction
+
+Task 182 reclassified this task as `bridge_only_scaffolding`.
+
+The Task 181 runner did not open or parse replays, did not materialize
+transition rows, and copied `death_validation.eventCount` only as a bridge
+count. Its previous `readyForAliveDeadRespawnConsumption` claim is not
+supported as active life-state coverage.
+
+The active replay-sourced transition row baseline is now Task 182
+`life_state_transition_candidates`.

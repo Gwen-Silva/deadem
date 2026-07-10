@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "180",
+  "generatedAtTask": "182",
   "baseCommit": "ffabea3d19280f901685d3a3e7a6a66e3c8a2bf8",
-  "taskRange": "001-180",
+  "taskRange": "001-182",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5453,16 +5453,14 @@
     {
       "taskId": "181",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "15f276cc1859045f96c2d4a75ba9f5d1d1d61f80",
       "title": "Build Alive Dead Respawn Compact State Artifact",
       "phase": "alive_dead_respawn_foundation",
-      "primaryContribution": "Introduced and ran compact alive_dead_respawn artifacts for the active 32-replay baseline using participant_identity refs and death_validation eventCount bridge.",
+      "primaryContribution": "Introduced bridge-only alive_dead_respawn scaffolding; Task 182 reclassified it because no replay-sourced transition rows were materialized.",
       "introducedCapabilities": [
         "alive_dead_respawn_compact"
       ],
-      "stabilizedCapabilities": [
-        "alive_dead_respawn_compact"
-      ],
+      "stabilizedCapabilities": [],
       "supersededCapabilities": [],
       "importantOutputs": [
         "schemas/alive-dead-respawn-compact.schema.json",
@@ -5471,22 +5469,63 @@
         "reports/alive-dead-respawn-compact-task181.md"
       ],
       "gate": "alive_dead_respawn_compact_bounded32_ready",
-      "currentRelevance": "active_baseline",
+      "currentRelevance": "historical_bridge_only_needs_validation",
       "dependsOn": [
         "180",
         "179",
         "177"
       ],
-      "supersededBy": null,
+      "supersededBy": "182",
       "reworkRiskNotes": [
-        "alive_dead_respawn artifacts contain candidate-count summaries only; do not treat them as final deaths, respawn events, attribution, or gameplay truth.",
-        "No per-participant transition rows were materialized in Task 181 because safe inputs do not provide that granularity."
+        "Do not treat Task 181 as active life-state transition coverage.",
+        "Use Task 182 for replay-sourced transition candidate rows."
       ],
       "evidenceStatus": "sufficient",
       "evidencePaths": [
         "tasks/specs/181.json",
         "tasks/completed/181-alive-dead-respawn-compact.md",
         "output/local-replay-processing/alive-dead-respawn-compact/task181-summary.json"
+      ]
+    },
+    {
+      "taskId": "182",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Correct Task 181 Classification And Materialize Replay-Sourced Life-State Transition Candidates",
+      "phase": "life_state_transition_candidate_foundation",
+      "primaryContribution": "Reclassified Task 181 as bridge-only and emitted replay-sourced life_state_transition_candidates for pilot and bounded-32 manifests.",
+      "introducedCapabilities": [
+        "life_state_transition_candidates"
+      ],
+      "stabilizedCapabilities": [
+        "life_state_transition_candidates"
+      ],
+      "supersededCapabilities": [
+        "alive_dead_respawn_compact_active_claim"
+      ],
+      "importantOutputs": [
+        "schemas/life-state-transition-candidates.schema.json",
+        "output/local-replay-processing/alive-dead-respawn-compact/task182-task181-review.json",
+        "output/local-replay-processing/life-state-transition-candidates/task182-gate.json",
+        "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/life-state-transition-bounded32-gate.json",
+        "reports/life-state-transition-candidates-task182.md"
+      ],
+      "gate": "task181_reclassified_life_state_transition_candidates_bounded32_ready",
+      "currentRelevance": "active_baseline",
+      "dependsOn": [
+        "177",
+        "180",
+        "181"
+      ],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Rows are candidates only and must not be consumed as final deaths.",
+        "Do not infer attribution, teamfight, position, respawn, or gameplay causality from this artifact."
+      ],
+      "evidencePaths": [
+        "tasks/specs/182.json",
+        "tasks/completed/182-life-state-transition-candidates.md",
+        "output/local-replay-processing/life-state-transition-candidates/task182-summary.json"
       ]
     }
   ]

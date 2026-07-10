@@ -85,3 +85,23 @@ blocked until that contract is designed explicitly.
 Recommended next product-value step: design the canonical death-event input
 contract, including whether a future policy-safe transition row layer is needed
 before any attribution or fight detection.
+## Task 182 Product Impact
+
+The project now has the first replay-sourced compact life-state transition row
+layer. This moves the roadmap from aggregate readiness into candidate rows that
+can support canonical death-event candidate design.
+
+What is now possible:
+
+- reason over candidate death-counter increments per synthetic participant;
+- use normalized elapsed seconds without raw ticks or timestamps;
+- compare materialized candidate rows against the previous `death_validation`
+  aggregate count.
+
+What is still not possible:
+
+- answer who killed whom;
+- attribute assists or damage;
+- identify teamfights;
+- assert final death or respawn events;
+- interpret gameplay decisions.

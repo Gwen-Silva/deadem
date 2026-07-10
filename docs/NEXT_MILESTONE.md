@@ -1823,3 +1823,23 @@ rows because the current safe inputs do not provide policy-safe timing rows.
 The next milestone should design canonical death-event inputs or a transition
 row contract before any killer/victim attribution, teamfight detection, or
 gameplay interpretation.
+## After Task 182
+
+The next milestone is to design a canonical death-event candidate contract that
+consumes Task 182 `life_state_transition_candidates`.
+
+Inputs now available:
+
+- synthetic `participantKey` from Task 180;
+- replay-sourced `death_counter_increment_candidate` rows from Task 182;
+- `normalizedElapsedSecond` without raw ticks or timestamps;
+- bridge match to `death_validation.eventCount`.
+
+Still blocked:
+
+- final death-event emission;
+- killer/victim/assist attribution;
+- respawn final facts;
+- teamfight detection;
+- position/map context;
+- gameplay interpretation.

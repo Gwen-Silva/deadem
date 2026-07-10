@@ -1253,3 +1253,18 @@ consumption available as a compact state summary, but canonical death-event
 design, killer/victim attribution, teamfight detection, raw ticks/timestamps,
 positions, names, raw IDs, field values, final facts, and gameplay
 interpretation remain intentionally not ready.
+## Task 182 - Life-State Transition Candidate Baseline
+
+Task 182 corrected the Task 181 classification: Task 181 remains useful as
+bridge-only scaffolding, but it is not active life-state transition coverage.
+The active baseline is now `life_state_transition_candidates` from Task 182.
+
+Task 182 opened and parsed only the explicit pilot and bounded-32 manifests,
+materialized 2552 bounded-32 death-counter increment candidate rows, mapped all
+rows to synthetic `participantKey` values, normalized time as
+`normalizedElapsedSecond`, and matched the existing `death_validation.eventCount`
+bridge. These rows are candidates only, not final death events.
+
+Canonical death-event candidate design is now ready. Canonical death-event
+emission, killer/victim/assist attribution, respawn final events, teamfight
+detection, and gameplay interpretation remain blocked.

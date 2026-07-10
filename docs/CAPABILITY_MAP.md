@@ -252,3 +252,23 @@ The next product value layer should not skip identity mapping and canonical deat
 - Main outputs: `output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json`, `output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/`
 - Known limits: Current safe inputs support aggregate transition candidate counts, not per-participant transition rows, final death facts, respawn events, attribution, raw ticks/timestamps, positions, or gameplay interpretation.
 - Next dependency: Design the canonical death-event input contract or a policy-safe transition-row contract before attribution or teamfight work.
+## Life-State Transition Candidates
+
+- Introduced: Task 182
+- Status: active
+- Current baseline: `life_state_transition_candidates_bounded32_task182`
+- Main files: `tools/emit-life-state-transition-candidates.mjs`,
+  `schemas/life-state-transition-candidates.schema.json`
+- Main outputs:
+  `output/local-replay-processing/life-state-transition-candidates/task182-gate.json`
+  and `task182-bounded32/`
+
+Task 182 supersedes the active-coverage claim from Task 181. Task 181 remains
+bridge-only scaffolding because it did not parse replays or materialize
+transition rows.
+
+The Task 182 capability emits replay-sourced death-counter increment candidate
+rows with synthetic participant keys and normalized elapsed seconds. It does not
+emit final death facts, raw IDs, raw ticks, raw timestamps, attribution,
+positions, respawn final events, teamfight detection, or gameplay
+interpretation.

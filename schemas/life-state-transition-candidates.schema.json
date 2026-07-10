@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/life-state-transition-candidates.schema.json",
+  "title": "Life-State Transition Candidates Compact Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "replayId",
+    "artifactClass",
+    "sourceMethod",
+    "generatedBy",
+    "generatedAt",
+    "rawDataCaptured",
+    "fieldValuesCaptured",
+    "rawTicksIncluded",
+    "rawTimestampsIncluded",
+    "finalFactsProduced",
+    "gameplayInterpretationProduced",
+    "participantIdentityArtifactFound",
+    "participantMappingStatus",
+    "samplingPolicy",
+    "normalizedTimeBaseStatus",
+    "transitionCandidates",
+    "transitionCandidateSummary",
+    "deathValidationBridge",
+    "readiness",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "life_state_transition_candidates" },
+    "sourceMethod": { "const": "replay_sourced_compact_transition_observation" },
+    "generatedBy": { "const": "tools/emit-life-state-transition-candidates.mjs" },
+    "generatedAt": { "const": "task_182" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "participantIdentityArtifactFound": { "const": true },
+    "participantMappingStatus": {
+      "type": "string",
+      "enum": ["available", "blocked"]
+    },
+    "samplingPolicy": { "const": "one_second_source_sampling" },
+    "normalizedTimeBaseStatus": {
+      "type": "string",
+      "enum": ["available", "blocked"]
+    },
+    "transitionCandidates": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/transitionCandidate" }
+    },
+    "transitionCandidateSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalTransitionCandidates",
+        "deathCounterIncrementCandidates",
+        "lifeSignalChangeCandidates",
+        "respawnSignalChangeCandidates",
+        "ambiguousTransitionCandidates",
+        "unmappedParticipantCandidates",
+        "duplicateTransitionCandidateCount"
+      ],
+      "properties": {
+        "totalTransitionCandidates": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "deathCounterIncrementCandidates": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "lifeSignalChangeCandidates": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "respawnSignalChangeCandidates": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "ambiguousTransitionCandidates": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "unmappedParticipantCandidates": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "duplicateTransitionCandidateCount": { "type": "integer", "minimum": 0, "maximum": 10000 }
+      }
+    },
+    "deathValidationBridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deathValidationArtifactFound",
+        "eventCount",
+        "eventCountMeaning",
+        "materializedDeathCounterCandidateCount",
+        "bridgeMatchStatus",
+        "canUseAsFinalDeathEventSource"
+      ],
+      "properties": {
+        "deathValidationArtifactFound": { "const": true },
+        "eventCount": { "type": "integer", "minimum": 0, "maximum": 100000 },
+        "eventCountMeaning": { "const": "source_observed_counter_transition_candidate_count_not_final_death_fact" },
+        "materializedDeathCounterCandidateCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "bridgeMatchStatus": {
+          "type": "string",
+          "enum": ["matched", "mismatch"]
+        },
+        "canUseAsFinalDeathEventSource": { "const": false }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readyForTransitionCandidateConsumption",
+        "readyForCanonicalDeathEventCandidateDesign",
+        "readyForCanonicalDeathEventEmission",
+        "readyForAttribution",
+        "readyForTeamfightDetection"
+      ],
+      "properties": {
+        "readyForTransitionCandidateConsumption": { "const": true },
+        "readyForCanonicalDeathEventCandidateDesign": { "type": "boolean" },
+        "readyForCanonicalDeathEventEmission": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForTeamfightDetection": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 260 }
+    }
+  },
+  "$defs": {
+    "transitionCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transitionKey",
+        "participantKey",
+        "transitionType",
+        "timeRefKey",
+        "normalizedElapsedSecond",
+        "sourceSignal",
+        "sourceSignalStatus",
+        "candidateConfidence",
+        "finalFact"
+      ],
+      "properties": {
+        "transitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "transitionType": { "const": "death_counter_increment_candidate" },
+        "timeRefKey": { "type": "string", "pattern": "^time_ref_[0-9]{6}$" },
+        "normalizedElapsedSecond": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+        "sourceSignal": { "const": "controller_death_counter_increment" },
+        "sourceSignalStatus": { "const": "available" },
+        "candidateConfidence": { "const": "high" },
+        "finalFact": { "const": false }
+      }
+    }
+  }
+}
