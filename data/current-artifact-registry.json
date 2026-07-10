@@ -618,25 +618,25 @@
       "id": "project_capability_map",
       "path": "docs/CAPABILITY_MAP.md",
       "status": "current",
-      "notes": "Capability map updated through Task 185 with Task 180, Task 182, Task 183, Task 184, and Task 185 baselines active."
+      "notes": "Capability map updated through Task 186 with source baselines active and Task 186 providing corrected directional discrimination."
     },
     {
       "id": "product_value_roadmap",
       "path": "docs/PRODUCT_VALUE_ROADMAP.md",
       "status": "current",
-      "notes": "Product-facing roadmap updated through Task 185 directional-cycle and negative-control evidence baseline."
+      "notes": "Product-facing roadmap updated through Task 186 matched directional discrimination baseline."
     },
     {
       "id": "task_contribution_index",
       "path": "data/task-contribution-index.json",
       "status": "current",
-      "notes": "Machine-readable Task 001-185 contribution index with partial-evidence markers."
+      "notes": "Machine-readable Task 001-186 contribution index with evidence-boundary markers."
     },
     {
       "id": "capability_index",
       "path": "data/capability-index.json",
       "status": "current",
-      "notes": "Machine-readable capability index updated through Task 185."
+      "notes": "Machine-readable capability index updated through Task 186."
     },
     {
       "id": "semantic_foundation_compact_task179_gate",
@@ -733,6 +733,18 @@
       "path": "docs/codex/DEATH_EVENT_DIRECTIONAL_CYCLE_EVIDENCE_CONTRACT.md",
       "status": "current",
       "notes": "Policy contract for abstract directionality, inverse-cycle matching, replay-end censoring, and negative controls."
+    },
+    {
+      "id": "death_event_directional_discrimination_evidence_task186_gate",
+      "path": "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-gate.json",
+      "status": "current",
+      "notes": "Task 186 final technical gate for corrected matched anchor-versus-control discrimination evidence; no confirmed deaths."
+    },
+    {
+      "id": "death_event_directional_discrimination_evidence_contract_task186",
+      "path": "docs/codex/DEATH_EVENT_DIRECTIONAL_DISCRIMINATION_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for explicit direction, recurrence separation, deterministic controls, and discrimination thresholds."
     }
   ],
   "artifacts": [
@@ -764,7 +776,13 @@
       "id": "death_event_directional_cycle_evidence_bounded32_task185_artifacts",
       "path": "output/local-replay-processing/death-event-directional-cycle-evidence/task185-bounded32/death-event-directional-cycle-evidence-bounded32-gate.json",
       "status": "current",
-      "notes": "Task 185 active bounded-32 directional-cycle and negative-control evidence baseline; coverage is partial and semantic truth remains unconfirmed."
+      "notes": "Task 185 active observation baseline; Task 186 corrects its complete-cycle aggregates and supersedes it only for directional discrimination. Semantic truth remains unconfirmed."
+    },
+    {
+      "id": "death_event_directional_discrimination_evidence_bounded32_task186_artifacts",
+      "path": "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-bounded32/directional-discrimination-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 186 active bounded-32 matched directional discrimination baseline; strong operational discrimination does not confirm death truth."
     }
   ]
 }

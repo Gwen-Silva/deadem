@@ -270,7 +270,7 @@
     {
       "taskId": "011",
       "status": "evidence_partial",
-      "commitSha": null,
+      "commitSha": "8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e",
       "title": "Task 011",
       "phase": "foundation_policy_diagnostics_protection",
       "primaryContribution": "Completed or documented: Task 011.",
@@ -5647,13 +5647,47 @@
       "reworkRiskNotes": [
         "Directional transitions and inverse cycles are abstract candidates, not final death or respawn facts.",
         "The partial coverage level is an operational assessment driven by negative controls, not a truth metric.",
-        "Task 185 does not supersede Tasks 180, 182, 183, or 184 and does not authorize final semantic contract design."
+        "Task 185 does not supersede Tasks 180, 182, 183, or 184 and does not authorize final semantic contract design.",
+        "Task 185 complete-cycle aggregates require Task 186 correction because non-directional recurrence was counted as inversion; historical artifacts remain unchanged."
       ],
       "evidenceStatus": "sufficient_technical_partial_semantic_coverage",
       "evidencePaths": [
         "tasks/specs/185.json",
         "tasks/completed/185-death-event-directional-cycle-evidence.md",
         "output/local-replay-processing/death-event-directional-cycle-evidence/task185-summary.json"
+      ]
+    },
+    {
+      "taskId": "186",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Repair Directional-Cycle Integrity And Build Matched Negative-Control Discrimination Baseline",
+      "phase": "death_event_directional_discrimination_candidate_evidence",
+      "primaryContribution": "Corrected explicit inverse-cycle classification and emitted deterministic matched anchor-versus-control directional discrimination evidence without final facts.",
+      "introducedCapabilities": ["death_event_directional_discrimination_evidence"],
+      "stabilizedCapabilities": ["death_event_directional_discrimination_evidence"],
+      "supersededCapabilities": ["task185_complete_cycle_aggregate_interpretation"],
+      "importantOutputs": [
+        "schemas/death-event-directional-discrimination-evidence.schema.json",
+        "tools/emit-death-event-directional-discrimination-evidence.mjs",
+        "docs/codex/DEATH_EVENT_DIRECTIONAL_DISCRIMINATION_CONTRACT.md",
+        "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-gate.json",
+        "reports/death-event-directional-discrimination-evidence-task186.md"
+      ],
+      "gate": "task185_corrected_directional_discrimination_bounded32_ready",
+      "currentRelevance": "active_evidence_layer",
+      "dependsOn": ["180", "182", "183", "184", "185"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Strong discrimination is an operational association result, not proof of death truth.",
+        "Task 185 remains active for observations; Task 186 supersedes only its cycle aggregates and directional discrimination interpretation.",
+        "Final facts, attribution, killer/victim, teamfight, and gameplay interpretation remain unavailable."
+      ],
+      "evidenceStatus": "sufficient_technical_strong_operational_discrimination",
+      "evidencePaths": [
+        "tasks/specs/186.json",
+        "tasks/completed/186-death-event-directional-discrimination-evidence.md",
+        "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-summary.json"
       ]
     }
   ]

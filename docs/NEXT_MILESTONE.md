@@ -1897,3 +1897,20 @@ specific enough under the predeclared design criteria.
 Final death semantic contract design remains not ready. The next milestone must
 not promote death facts or attribution without separate authorization and a
 stronger or better-explained negative-control result.
+
+## Task 186
+
+Purpose: correct Task 185 cycle integrity and compare explicit directional
+patterns around Task 183 anchors with deterministic matched non-anchor controls.
+
+Success gate: `task185_corrected_directional_discrimination_bounded32_ready`.
+
+Status: completed technically. The pilot emitted 341 anchor rows and selected
+341 controls. Bounded-32 emitted 2,552 anchor rows and selected 2,552 controls.
+Both multi-family direction and uncensored inverse association had an
+anchor-minus-control difference of 0.978448, producing a predeclared `strong`
+operational assessment.
+
+A separately authorized milestone may design further final-death semantic
+validation. Discrimination alone must not be promoted to death truth,
+attribution, killer/victim, teamfight, or interpretation.

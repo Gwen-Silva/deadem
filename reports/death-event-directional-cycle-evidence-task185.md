@@ -75,3 +75,12 @@ consumption, but not final death semantic contract design.
 The active Task 180, Task 182, Task 183, and Task 184 baselines remain in force.
 Task 185 adds `death_event_directional_cycle_evidence_bounded32_task185`; it
 does not replace or reinterpret its sources.
+
+## Task 186 Correction Notice
+
+Task 185 commit: `8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`.
+The Task 185 matcher allowed non-directional signature recurrence to satisfy an
+inverse relation. Its historical complete-cycle counts, family counts, coverage
+rates, and cycle-derived evidence classes therefore require Task 186 corrected
+recalculation. The artifacts and technical gate are preserved as historical
+observation evidence and are not silently rewritten.

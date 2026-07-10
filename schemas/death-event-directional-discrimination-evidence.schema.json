@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-directional-discrimination-evidence.schema.json",
+  "title": "Death Event Directional Discrimination Evidence Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "replayId", "artifactClass", "sourceMethod", "generatedBy", "generatedAt",
+    "rawDataCaptured", "fieldValuesCaptured", "rawFieldNamesIncludedInRows", "rawIdsIncluded",
+    "rawTicksIncluded", "rawTimestampsIncluded", "finalFactsProduced", "gameplayInterpretationProduced",
+    "attributionEmitted", "anchorCount", "matchedControlCount", "evidenceRowCount", "evidenceRows",
+    "summary", "temporalPolicy", "cohortReusePolicy", "readiness", "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "death_event_directional_discrimination_evidence" },
+    "sourceMethod": { "const": "replay_sourced_matched_anchor_control_directional_discrimination" },
+    "generatedBy": { "const": "tools/emit-death-event-directional-discrimination-evidence.mjs" },
+    "generatedAt": { "const": "task_186" },
+    "rawDataCaptured": { "const": false },
+    "fieldValuesCaptured": { "const": false },
+    "rawFieldNamesIncludedInRows": { "const": false },
+    "rawIdsIncluded": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "gameplayInterpretationProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "anchorCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "matchedControlCount": { "type": "integer", "minimum": 0, "maximum": 10000 },
+    "evidenceRowCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "evidenceRows": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/evidenceRow" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "temporalPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["associationWindowBeforeSeconds", "associationWindowAfterSeconds", "inverseAfterSecondsExclusive", "inverseMaxSecondsInclusive", "controlTimeStrata"],
+      "properties": {
+        "associationWindowBeforeSeconds": { "const": 2 },
+        "associationWindowAfterSeconds": { "const": 2 },
+        "inverseAfterSecondsExclusive": { "const": 0 },
+        "inverseMaxSecondsInclusive": { "const": 180 },
+        "controlTimeStrata": { "const": "match_time_quartile" }
+      }
+    },
+    "cohortReusePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reuseWithinAnchorCohort", "reuseWithinControlCohort", "crossCohortReuseForComparativeMeasurement", "anchorPriorityReducesControlEvidence"],
+      "properties": {
+        "reuseWithinAnchorCohort": { "const": false },
+        "reuseWithinControlCohort": { "const": false },
+        "crossCohortReuseForComparativeMeasurement": { "const": true },
+        "anchorPriorityReducesControlEvidence": { "const": false }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "correctedExplicitDirectionalEvidenceAvailable", "recurrenceEvidenceAvailable",
+        "matchedNegativeControlEvidenceAvailable", "anchorControlDiscriminationMeasurable",
+        "candidateLevelDiscriminationConsumptionAvailable", "readyForFinalDeathSemanticContractDesign",
+        "readyForFinalDeathFacts", "readyForConfirmedWhoDied", "readyForAttribution",
+        "readyForKillerVictim", "readyForTeamfightDetection", "readyForGameplayInterpretation"
+      ],
+      "properties": {
+        "correctedExplicitDirectionalEvidenceAvailable": { "const": true },
+        "recurrenceEvidenceAvailable": { "const": true },
+        "matchedNegativeControlEvidenceAvailable": { "const": true },
+        "anchorControlDiscriminationMeasurable": { "const": true },
+        "candidateLevelDiscriminationConsumptionAvailable": { "const": true },
+        "readyForFinalDeathSemanticContractDesign": { "type": "boolean" },
+        "readyForFinalDeathFacts": { "const": false },
+        "readyForConfirmedWhoDied": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForKillerVictim": { "const": false },
+        "readyForTeamfightDetection": { "const": false },
+        "readyForGameplayInterpretation": { "const": false }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": { "type": "string", "minLength": 1, "maxLength": 320 }
+    }
+  },
+  "$defs": {
+    "healthDirection": {
+      "enum": ["positive_to_non_positive_boundary_candidate", "non_positive_to_positive_boundary_candidate", "no_explicit_direction_observed"]
+    },
+    "booleanDirection": {
+      "enum": ["boolean_true_to_false_candidate", "boolean_false_to_true_candidate", "no_explicit_direction_observed"]
+    },
+    "respawnDirection": {
+      "enum": ["non_positive_to_positive_respawn_boundary_candidate", "positive_to_non_positive_respawn_boundary_candidate", "no_explicit_direction_observed"]
+    },
+    "pawnDirection": {
+      "enum": ["pawn_link_present_to_absent_candidate", "pawn_link_absent_to_present_candidate", "no_explicit_direction_observed"]
+    },
+    "directionalTransitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+      "properties": {
+        "healthBoundary": { "$ref": "#/$defs/healthDirection" },
+        "booleanAlive": { "$ref": "#/$defs/booleanDirection" },
+        "respawnBoundary": { "$ref": "#/$defs/respawnDirection" },
+        "pawnLinkPresence": { "$ref": "#/$defs/pawnDirection" }
+      }
+    },
+    "associationDeltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+      "properties": {
+        "healthBoundary": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "booleanAlive": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "respawnBoundary": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "pawnLinkPresence": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 }
+      }
+    },
+    "inverseDeltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+      "properties": {
+        "healthBoundary": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "booleanAlive": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "respawnBoundary": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "pawnLinkPresence": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 }
+      }
+    },
+    "recurrenceFamilies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "lifeStateSignature", "respawnBoundary", "pawnLink"],
+      "properties": {
+        "healthBoundary": { "type": "boolean" },
+        "booleanAlive": { "type": "boolean" },
+        "lifeStateSignature": { "type": "boolean" },
+        "respawnBoundary": { "type": "boolean" },
+        "pawnLink": { "type": "boolean" }
+      }
+    },
+    "cohortEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "explicitDirectionalTransitions", "associationDeltaSeconds", "explicitInverseTransitions",
+        "inverseDeltaSeconds", "nondirectionalRecurrenceObserved", "distinctDirectionalFamilyCount",
+        "distinctInverseCycleFamilyCount", "recurrenceFamilyCount", "laterWindowCensoredByReplayEnd",
+        "ambiguousAssociation"
+      ],
+      "properties": {
+        "explicitDirectionalTransitions": { "$ref": "#/$defs/directionalTransitions" },
+        "associationDeltaSeconds": { "$ref": "#/$defs/associationDeltas" },
+        "explicitInverseTransitions": { "$ref": "#/$defs/directionalTransitions" },
+        "inverseDeltaSeconds": { "$ref": "#/$defs/inverseDeltas" },
+        "nondirectionalRecurrenceObserved": { "$ref": "#/$defs/recurrenceFamilies" },
+        "distinctDirectionalFamilyCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "distinctInverseCycleFamilyCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "recurrenceFamilyCount": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "laterWindowCensoredByReplayEnd": { "type": "boolean" },
+        "ambiguousAssociation": { "type": "boolean" }
+      }
+    },
+    "evidenceRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "discriminationEvidenceKey", "eventCandidateKey", "sourceTransitionKey", "participantKey",
+        "heroRefKey", "teamRefKey", "anchorNormalizedElapsedSecond", "timeStratum",
+        "controlSelectionStatus", "controlNormalizedElapsedSecond", "controlUnavailableReason",
+        "anchorCohort", "controlCohort", "truthStatus", "finalFact"
+      ],
+      "properties": {
+        "discriminationEvidenceKey": { "type": "string", "pattern": "^directional_discrimination_[0-9]{6}$" },
+        "eventCandidateKey": { "type": "string", "pattern": "^death_event_candidate_[0-9]{6}$" },
+        "sourceTransitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "heroRefKey": { "type": "string", "pattern": "^hero_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "teamRefKey": { "type": "string", "pattern": "^team_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "anchorNormalizedElapsedSecond": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+        "timeStratum": { "enum": ["quartile_1", "quartile_2", "quartile_3", "quartile_4"] },
+        "controlSelectionStatus": { "enum": ["selected", "unavailable"] },
+        "controlNormalizedElapsedSecond": { "type": ["integer", "null"], "minimum": 0, "maximum": 1000000 },
+        "controlUnavailableReason": { "type": ["string", "null"], "enum": [null, "no_observed_second_satisfies_matching_rules"] },
+        "anchorCohort": { "$ref": "#/$defs/cohortEvidence" },
+        "controlCohort": { "anyOf": [{ "$ref": "#/$defs/cohortEvidence" }, { "type": "null" }] },
+        "truthStatus": { "const": "unconfirmed_candidate" },
+        "finalFact": { "const": false }
+      }
+    },
+    "rate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "ratio": { "type": ["number", "null"], "minimum": 0 },
+    "familyRate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["anchorDirectionalRate", "controlDirectionalRate", "directionalDifference", "directionalRatio", "anchorInverseRate", "controlInverseRate", "inverseDifference", "inverseRatio"],
+      "properties": {
+        "anchorDirectionalRate": { "$ref": "#/$defs/rate" },
+        "controlDirectionalRate": { "$ref": "#/$defs/rate" },
+        "directionalDifference": { "type": "number", "minimum": -1, "maximum": 1 },
+        "directionalRatio": { "$ref": "#/$defs/ratio" },
+        "anchorInverseRate": { "$ref": "#/$defs/rate" },
+        "controlInverseRate": { "$ref": "#/$defs/rate" },
+        "inverseDifference": { "type": "number", "minimum": -1, "maximum": 1 },
+        "inverseRatio": { "$ref": "#/$defs/ratio" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalAnchors", "totalMatchedControls", "unmatchedControls", "controlSelectionCoverage",
+        "anchorExplicitDirectionRate", "controlExplicitDirectionRate", "anchorMultiFamilyDirectionRate",
+        "controlMultiFamilyDirectionRate", "anchorExplicitInverseCycleRate", "controlExplicitInverseCycleRate",
+        "multiFamilyDirectionDifference", "multiFamilyDirectionRatio", "explicitInverseDifference",
+        "explicitInverseRatio", "anchorRecurrenceOnlyRate", "controlRecurrenceOnlyRate",
+        "anchorCensoredCount", "controlCensoredCount", "anchorAmbiguousCount", "controlAmbiguousCount",
+        "familyRates", "discriminationAssessmentLevel"
+      ],
+      "properties": {
+        "totalAnchors": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "totalMatchedControls": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "unmatchedControls": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "controlSelectionCoverage": { "$ref": "#/$defs/rate" },
+        "anchorExplicitDirectionRate": { "$ref": "#/$defs/rate" },
+        "controlExplicitDirectionRate": { "$ref": "#/$defs/rate" },
+        "anchorMultiFamilyDirectionRate": { "$ref": "#/$defs/rate" },
+        "controlMultiFamilyDirectionRate": { "$ref": "#/$defs/rate" },
+        "anchorExplicitInverseCycleRate": { "$ref": "#/$defs/rate" },
+        "controlExplicitInverseCycleRate": { "$ref": "#/$defs/rate" },
+        "multiFamilyDirectionDifference": { "type": "number", "minimum": -1, "maximum": 1 },
+        "multiFamilyDirectionRatio": { "$ref": "#/$defs/ratio" },
+        "explicitInverseDifference": { "type": "number", "minimum": -1, "maximum": 1 },
+        "explicitInverseRatio": { "$ref": "#/$defs/ratio" },
+        "anchorRecurrenceOnlyRate": { "$ref": "#/$defs/rate" },
+        "controlRecurrenceOnlyRate": { "$ref": "#/$defs/rate" },
+        "anchorCensoredCount": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "controlCensoredCount": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "anchorAmbiguousCount": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "controlAmbiguousCount": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "familyRates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+          "properties": {
+            "healthBoundary": { "$ref": "#/$defs/familyRate" },
+            "booleanAlive": { "$ref": "#/$defs/familyRate" },
+            "respawnBoundary": { "$ref": "#/$defs/familyRate" },
+            "pawnLinkPresence": { "$ref": "#/$defs/familyRate" }
+          }
+        },
+        "discriminationAssessmentLevel": { "enum": ["insufficient", "partial", "strong"] }
+      }
+    }
+  }
+}

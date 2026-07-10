@@ -5,7 +5,7 @@ Status: completed
 Gate:
 `task184_commit_recorded_directional_cycle_evidence_bounded32_ready`
 
-Commit: pending (this task commit)
+Commit: 8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e
 
 ## Result
 
@@ -60,6 +60,12 @@ unanchored equivalent-pattern rate exceeds the predeclared strong limit of
 0.05. Therefore `readyForFinalDeathSemanticContractDesign` remains false. The
 technical baseline passes because low semantic coverage is not a parser,
 mapping, protection, schema, policy, size, or reuse failure.
+
+Task 186 correction note: Task 185 treated non-directional signature recurrence
+as inversion for complete-cycle aggregation. Its historical complete-cycle
+counts, family counts, coverage rates, and cycle-derived evidence classes
+require corrected recalculation. The Task 185 gate remains a valid technical
+observation-baseline gate; historical artifacts are preserved unchanged.
 
 ## Active Baselines
 

@@ -504,9 +504,36 @@
       "knownLimits": [
         "The bounded-32 directionalCycleCoverageLevel is partial because the unanchored equivalent-pattern rate is 0.24067, above the predeclared strong threshold of 0.05.",
         "Directions and inverse cycles are abstract probe-family observations, not confirmed death or respawn semantics.",
+        "Task 185 remains an active observation baseline, but its complete-cycle aggregates require Task 186 corrected explicit-inverse recalculation.",
         "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw field name, raw ID, raw time, position, or gameplay interpretation is emitted."
       ],
-      "nextUsefulStep": "Keep final death semantic contract design blocked until separately authorized evidence improves or explains negative-control discrimination."
+      "nextUsefulStep": "Use Task 186 for corrected cycle metrics and matched directional discrimination; preserve Task 185 as the historical observation baseline."
+    },
+    {
+      "capabilityId": "death_event_directional_discrimination_evidence",
+      "plainName": "Matched death-event directional discrimination evidence",
+      "introducedInTask": "186",
+      "stabilizedInTask": "186",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_directional_discrimination_evidence_bounded32_task186",
+      "whyItMatters": "Compares corrected explicit directional and inverse patterns around Task 183 anchors with deterministic same-participant matched non-anchor controls.",
+      "mainFiles": [
+        "tools/emit-death-event-directional-discrimination-evidence.mjs",
+        "schemas/death-event-directional-discrimination-evidence.schema.json",
+        "docs/codex/DEATH_EVENT_DIRECTIONAL_DISCRIMINATION_CONTRACT.md",
+        "tests/death-event-directional-discrimination-evidence-schema.test.mjs",
+        "tests/emit-death-event-directional-discrimination-evidence.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-gate.json",
+        "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-bounded32/"
+      ],
+      "knownLimits": [
+        "Strong operational discrimination is not proof that an anchor is a death or respawn.",
+        "Pawn-link presence had zero explicit-direction coverage in both cohorts.",
+        "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw field name, raw ID, raw time, position, or gameplay interpretation is emitted."
+      ],
+      "nextUsefulStep": "A separately authorized task may design further final-death semantic validation; it must not treat discrimination alone as truth."
     }
   ]
 }

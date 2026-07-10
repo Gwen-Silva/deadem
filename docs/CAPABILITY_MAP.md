@@ -348,3 +348,23 @@ The bounded-32 baseline passed technically with 2,552 rows, but its
 rate is 0.24067, above the predeclared strong limit of 0.05. Final death semantic
 contract design therefore remains not ready. Tasks 180, 182, 183, and 184 remain
 active and are not superseded.
+
+## Matched Death-Event Directional Discrimination Evidence
+
+- Capability id: `death_event_directional_discrimination_evidence`
+- Introduced: Task 186
+- Status: active
+- Current baseline: `death_event_directional_discrimination_evidence_bounded32_task186`
+- Main files: `tools/emit-death-event-directional-discrimination-evidence.mjs`,
+  `schemas/death-event-directional-discrimination-evidence.schema.json`,
+  `docs/codex/DEATH_EVENT_DIRECTIONAL_DISCRIMINATION_CONTRACT.md`
+
+Task 186 restricts inversions to exact directional pairs, keeps recurrence
+separate, and compares every Task 183 anchor with one deterministic
+same-participant, same-quartile control where available. Bounded-32 selected
+2,552/2,552 controls and achieved operational `strong` discrimination: both
+multi-family direction and uncensored inverse association differed by 0.978448.
+
+Task 185 remains active for observations. Task 186 supersedes it only for
+corrected cycle aggregates and directional discrimination. Strong
+discrimination does not confirm death truth; final facts remain unavailable.

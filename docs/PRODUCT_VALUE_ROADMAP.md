@@ -139,3 +139,15 @@ same-second correlation is not specific enough to justify final death semantic
 contract design. The new baseline is consumable for bounded evidence questions,
 while final deaths, confirmed who-died claims, attribution, killer/victim,
 teamfight detection, and gameplay interpretation remain unavailable.
+
+## Task 186 Product Implication
+
+Task 186 replaces broad unanchored-pattern counting with deterministic matched
+controls and restricts inversion to exact directional pairs. Across 2,552
+anchors and 2,552 controls, anchor multi-family direction was 1.0 versus
+0.021552 and uncensored explicit inversion was 1.0 versus 0.021552. This passes
+the predeclared `strong` discrimination criteria.
+
+A separate final-death semantic contract design is now eligible. This is not a
+final death capability: confirmed who-died claims, attribution, killer/victim,
+teamfight detection, and gameplay interpretation remain unavailable.

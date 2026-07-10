@@ -1,0 +1,4215 @@
+{
+  "schemaVersion": 1,
+  "replayId": "replay_010",
+  "artifactClass": "death_event_directional_discrimination_evidence",
+  "sourceMethod": "replay_sourced_matched_anchor_control_directional_discrimination",
+  "generatedBy": "tools/emit-death-event-directional-discrimination-evidence.mjs",
+  "generatedAt": "task_186",
+  "rawDataCaptured": false,
+  "fieldValuesCaptured": false,
+  "rawFieldNamesIncludedInRows": false,
+  "rawIdsIncluded": false,
+  "rawTicksIncluded": false,
+  "rawTimestampsIncluded": false,
+  "finalFactsProduced": false,
+  "gameplayInterpretationProduced": false,
+  "attributionEmitted": false,
+  "anchorCount": 45,
+  "matchedControlCount": 45,
+  "evidenceRowCount": 45,
+  "evidenceRows": [
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000001",
+      "eventCandidateKey": "death_event_candidate_000001",
+      "sourceTransitionKey": "life_transition_000001",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 86,
+      "timeStratum": "quartile_1",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 117,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 8,
+          "respawnBoundary": 8,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000002",
+      "eventCandidateKey": "death_event_candidate_000002",
+      "sourceTransitionKey": "life_transition_000002",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 140,
+      "timeStratum": "quartile_1",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 254,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 8,
+          "respawnBoundary": 8,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000003",
+      "eventCandidateKey": "death_event_candidate_000003",
+      "sourceTransitionKey": "life_transition_000003",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 243,
+      "timeStratum": "quartile_1",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 314,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 8,
+          "respawnBoundary": 8,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000004",
+      "eventCandidateKey": "death_event_candidate_000004",
+      "sourceTransitionKey": "life_transition_000004",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 279,
+      "timeStratum": "quartile_1",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 210,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 8,
+          "respawnBoundary": 8,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000005",
+      "eventCandidateKey": "death_event_candidate_000005",
+      "sourceTransitionKey": "life_transition_000005",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 346,
+      "timeStratum": "quartile_1",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 40,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 9,
+          "respawnBoundary": 9,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000006",
+      "eventCandidateKey": "death_event_candidate_000006",
+      "sourceTransitionKey": "life_transition_000006",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 393,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 669,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 10,
+          "respawnBoundary": 10,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000007",
+      "eventCandidateKey": "death_event_candidate_000007",
+      "sourceTransitionKey": "life_transition_000007",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 408,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 467,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 11,
+          "respawnBoundary": 11,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000008",
+      "eventCandidateKey": "death_event_candidate_000008",
+      "sourceTransitionKey": "life_transition_000008",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 413,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 489,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 12,
+          "respawnBoundary": 12,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000009",
+      "eventCandidateKey": "death_event_candidate_000009",
+      "sourceTransitionKey": "life_transition_000009",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 447,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 373,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 1,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 13,
+          "respawnBoundary": 13,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000010",
+      "eventCandidateKey": "death_event_candidate_000010",
+      "sourceTransitionKey": "life_transition_000010",
+      "participantKey": "participant_03",
+      "heroRefKey": "hero_ref_05",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 559,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 534,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 16,
+          "respawnBoundary": 16,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000011",
+      "eventCandidateKey": "death_event_candidate_000011",
+      "sourceTransitionKey": "life_transition_000011",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 559,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 588,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 15,
+          "respawnBoundary": 15,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000012",
+      "eventCandidateKey": "death_event_candidate_000012",
+      "sourceTransitionKey": "life_transition_000012",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 615,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 566,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 17,
+          "respawnBoundary": 17,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000013",
+      "eventCandidateKey": "death_event_candidate_000013",
+      "sourceTransitionKey": "life_transition_000013",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 630,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 442,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 18,
+          "respawnBoundary": 18,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000014",
+      "eventCandidateKey": "death_event_candidate_000014",
+      "sourceTransitionKey": "life_transition_000014",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 631,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 435,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 18,
+          "respawnBoundary": 18,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000015",
+      "eventCandidateKey": "death_event_candidate_000015",
+      "sourceTransitionKey": "life_transition_000015",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 638,
+      "timeStratum": "quartile_2",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 513,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 19,
+          "respawnBoundary": 19,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000016",
+      "eventCandidateKey": "death_event_candidate_000016",
+      "sourceTransitionKey": "life_transition_000016",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 720,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 924,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 21,
+          "respawnBoundary": 21,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000017",
+      "eventCandidateKey": "death_event_candidate_000017",
+      "sourceTransitionKey": "life_transition_000017",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 723,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 745,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 1,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 21,
+          "respawnBoundary": 21,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": -1,
+          "booleanAlive": -1,
+          "respawnBoundary": -1,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 61,
+          "booleanAlive": 61,
+          "respawnBoundary": 61,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": true
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000018",
+      "eventCandidateKey": "death_event_candidate_000018",
+      "sourceTransitionKey": "life_transition_000018",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 806,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 763,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 23,
+          "respawnBoundary": 23,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000019",
+      "eventCandidateKey": "death_event_candidate_000019",
+      "sourceTransitionKey": "life_transition_000019",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 820,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 892,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 23,
+          "respawnBoundary": 23,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000020",
+      "eventCandidateKey": "death_event_candidate_000020",
+      "sourceTransitionKey": "life_transition_000020",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 833,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 937,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 24,
+          "respawnBoundary": 24,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000021",
+      "eventCandidateKey": "death_event_candidate_000021",
+      "sourceTransitionKey": "life_transition_000021",
+      "participantKey": "participant_10",
+      "heroRefKey": "hero_ref_13",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 833,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 709,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 40,
+          "respawnBoundary": 40,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000022",
+      "eventCandidateKey": "death_event_candidate_000022",
+      "sourceTransitionKey": "life_transition_000022",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 842,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 949,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 25,
+          "respawnBoundary": 25,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000023",
+      "eventCandidateKey": "death_event_candidate_000023",
+      "sourceTransitionKey": "life_transition_000023",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 863,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 992,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 1,
+          "booleanAlive": 25,
+          "respawnBoundary": 25,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000024",
+      "eventCandidateKey": "death_event_candidate_000024",
+      "sourceTransitionKey": "life_transition_000024",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 871,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1008,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 25,
+          "respawnBoundary": 25,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000025",
+      "eventCandidateKey": "death_event_candidate_000025",
+      "sourceTransitionKey": "life_transition_000025",
+      "participantKey": "participant_11",
+      "heroRefKey": "hero_ref_09",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 877,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 799,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 42,
+          "respawnBoundary": 42,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000026",
+      "eventCandidateKey": "death_event_candidate_000026",
+      "sourceTransitionKey": "life_transition_000026",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 898,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 851,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 26,
+          "respawnBoundary": 26,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000027",
+      "eventCandidateKey": "death_event_candidate_000027",
+      "sourceTransitionKey": "life_transition_000027",
+      "participantKey": "participant_04",
+      "heroRefKey": "hero_ref_08",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 908,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 698,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 26,
+          "respawnBoundary": 26,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000028",
+      "eventCandidateKey": "death_event_candidate_000028",
+      "sourceTransitionKey": "life_transition_000028",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 957,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 917,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 27,
+          "respawnBoundary": 27,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000029",
+      "eventCandidateKey": "death_event_candidate_000029",
+      "sourceTransitionKey": "life_transition_000029",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 982,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 740,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 29,
+          "respawnBoundary": 29,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000030",
+      "eventCandidateKey": "death_event_candidate_000030",
+      "sourceTransitionKey": "life_transition_000030",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1001,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 715,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 29,
+          "respawnBoundary": 29,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000031",
+      "eventCandidateKey": "death_event_candidate_000031",
+      "sourceTransitionKey": "life_transition_000031",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1027,
+      "timeStratum": "quartile_3",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 793,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 30,
+          "respawnBoundary": 30,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000032",
+      "eventCandidateKey": "death_event_candidate_000032",
+      "sourceTransitionKey": "life_transition_000032",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1071,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1098,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 31,
+          "respawnBoundary": 31,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000033",
+      "eventCandidateKey": "death_event_candidate_000033",
+      "sourceTransitionKey": "life_transition_000033",
+      "participantKey": "participant_07",
+      "heroRefKey": "hero_ref_11",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1075,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1175,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 32,
+          "respawnBoundary": 32,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000034",
+      "eventCandidateKey": "death_event_candidate_000034",
+      "sourceTransitionKey": "life_transition_000034",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1130,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1146,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 33,
+          "respawnBoundary": 33,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000035",
+      "eventCandidateKey": "death_event_candidate_000035",
+      "sourceTransitionKey": "life_transition_000035",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1140,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1184,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 34,
+          "respawnBoundary": 34,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000036",
+      "eventCandidateKey": "death_event_candidate_000036",
+      "sourceTransitionKey": "life_transition_000036",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1208,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1085,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 36,
+          "respawnBoundary": 36,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000037",
+      "eventCandidateKey": "death_event_candidate_000037",
+      "sourceTransitionKey": "life_transition_000037",
+      "participantKey": "participant_09",
+      "heroRefKey": "hero_ref_02",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 1217,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1044,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 1,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 55,
+          "respawnBoundary": 55,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000038",
+      "eventCandidateKey": "death_event_candidate_000038",
+      "sourceTransitionKey": "life_transition_000038",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1255,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1192,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 38,
+          "respawnBoundary": 38,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000039",
+      "eventCandidateKey": "death_event_candidate_000039",
+      "sourceTransitionKey": "life_transition_000039",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1258,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1159,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 39,
+          "respawnBoundary": 39,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000040",
+      "eventCandidateKey": "death_event_candidate_000040",
+      "sourceTransitionKey": "life_transition_000040",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1284,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1111,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "boolean_false_to_true_candidate",
+          "respawnBoundary": "positive_to_non_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": 39,
+          "respawnBoundary": 39,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 3,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000041",
+      "eventCandidateKey": "death_event_candidate_000041",
+      "sourceTransitionKey": "life_transition_000041",
+      "participantKey": "participant_06",
+      "heroRefKey": "hero_ref_12",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1333,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1063,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 1,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000042",
+      "eventCandidateKey": "death_event_candidate_000042",
+      "sourceTransitionKey": "life_transition_000042",
+      "participantKey": "participant_08",
+      "heroRefKey": "hero_ref_10",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1333,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1116,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 1,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000043",
+      "eventCandidateKey": "death_event_candidate_000043",
+      "sourceTransitionKey": "life_transition_000043",
+      "participantKey": "participant_12",
+      "heroRefKey": "hero_ref_07",
+      "teamRefKey": "team_ref_13",
+      "anchorNormalizedElapsedSecond": 1336,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1090,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 1,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000044",
+      "eventCandidateKey": "death_event_candidate_000044",
+      "sourceTransitionKey": "life_transition_000044",
+      "participantKey": "participant_05",
+      "heroRefKey": "hero_ref_03",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1345,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1152,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 1,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    },
+    {
+      "discriminationEvidenceKey": "directional_discrimination_000045",
+      "eventCandidateKey": "death_event_candidate_000045",
+      "sourceTransitionKey": "life_transition_000045",
+      "participantKey": "participant_13",
+      "heroRefKey": "hero_ref_04",
+      "teamRefKey": "team_ref_07",
+      "anchorNormalizedElapsedSecond": 1348,
+      "timeStratum": "quartile_4",
+      "controlSelectionStatus": "selected",
+      "controlNormalizedElapsedSecond": 1105,
+      "controlUnavailableReason": null,
+      "anchorCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "positive_to_non_positive_boundary_candidate",
+          "booleanAlive": "boolean_true_to_false_candidate",
+          "respawnBoundary": "non_positive_to_positive_respawn_boundary_candidate",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": 0,
+          "booleanAlive": 0,
+          "respawnBoundary": 0,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "non_positive_to_positive_boundary_candidate",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": 6,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": true,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 3,
+        "distinctInverseCycleFamilyCount": 1,
+        "recurrenceFamilyCount": 1,
+        "laterWindowCensoredByReplayEnd": true,
+        "ambiguousAssociation": false
+      },
+      "controlCohort": {
+        "explicitDirectionalTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "associationDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "explicitInverseTransitions": {
+          "healthBoundary": "no_explicit_direction_observed",
+          "booleanAlive": "no_explicit_direction_observed",
+          "respawnBoundary": "no_explicit_direction_observed",
+          "pawnLinkPresence": "no_explicit_direction_observed"
+        },
+        "inverseDeltaSeconds": {
+          "healthBoundary": null,
+          "booleanAlive": null,
+          "respawnBoundary": null,
+          "pawnLinkPresence": null
+        },
+        "nondirectionalRecurrenceObserved": {
+          "healthBoundary": false,
+          "booleanAlive": false,
+          "lifeStateSignature": false,
+          "respawnBoundary": false,
+          "pawnLink": false
+        },
+        "distinctDirectionalFamilyCount": 0,
+        "distinctInverseCycleFamilyCount": 0,
+        "recurrenceFamilyCount": 0,
+        "laterWindowCensoredByReplayEnd": false,
+        "ambiguousAssociation": false
+      },
+      "truthStatus": "unconfirmed_candidate",
+      "finalFact": false
+    }
+  ],
+  "summary": {
+    "totalAnchors": 45,
+    "totalMatchedControls": 45,
+    "unmatchedControls": 0,
+    "controlSelectionCoverage": 1,
+    "anchorExplicitDirectionRate": 1,
+    "controlExplicitDirectionRate": 0.022222,
+    "anchorMultiFamilyDirectionRate": 1,
+    "controlMultiFamilyDirectionRate": 0.022222,
+    "anchorExplicitInverseCycleRate": 1,
+    "controlExplicitInverseCycleRate": 0.022222,
+    "multiFamilyDirectionDifference": 0.977778,
+    "multiFamilyDirectionRatio": 45.00045,
+    "explicitInverseDifference": 0.977778,
+    "explicitInverseRatio": 45.00045,
+    "anchorRecurrenceOnlyRate": 0,
+    "controlRecurrenceOnlyRate": 0,
+    "anchorCensoredCount": 9,
+    "controlCensoredCount": 0,
+    "anchorAmbiguousCount": 0,
+    "controlAmbiguousCount": 0,
+    "familyRates": {
+      "healthBoundary": {
+        "anchorDirectionalRate": 1,
+        "controlDirectionalRate": 0.022222,
+        "directionalDifference": 0.977778,
+        "directionalRatio": 45.00045,
+        "anchorInverseRate": 1,
+        "controlInverseRate": 0.022222,
+        "inverseDifference": 0.977778,
+        "inverseRatio": 45.00045
+      },
+      "booleanAlive": {
+        "anchorDirectionalRate": 1,
+        "controlDirectionalRate": 0.022222,
+        "directionalDifference": 0.977778,
+        "directionalRatio": 45.00045,
+        "anchorInverseRate": 1,
+        "controlInverseRate": 0.022222,
+        "inverseDifference": 0.977778,
+        "inverseRatio": 45.00045
+      },
+      "respawnBoundary": {
+        "anchorDirectionalRate": 1,
+        "controlDirectionalRate": 0.022222,
+        "directionalDifference": 0.977778,
+        "directionalRatio": 45.00045,
+        "anchorInverseRate": 1,
+        "controlInverseRate": 0.022222,
+        "inverseDifference": 0.977778,
+        "inverseRatio": 45.00045
+      },
+      "pawnLinkPresence": {
+        "anchorDirectionalRate": 0,
+        "controlDirectionalRate": 0,
+        "directionalDifference": 0,
+        "directionalRatio": null,
+        "anchorInverseRate": 0,
+        "controlInverseRate": 0,
+        "inverseDifference": 0,
+        "inverseRatio": null
+      }
+    },
+    "discriminationAssessmentLevel": "strong"
+  },
+  "temporalPolicy": {
+    "associationWindowBeforeSeconds": 2,
+    "associationWindowAfterSeconds": 2,
+    "inverseAfterSecondsExclusive": 0,
+    "inverseMaxSecondsInclusive": 180,
+    "controlTimeStrata": "match_time_quartile"
+  },
+  "cohortReusePolicy": {
+    "reuseWithinAnchorCohort": false,
+    "reuseWithinControlCohort": false,
+    "crossCohortReuseForComparativeMeasurement": true,
+    "anchorPriorityReducesControlEvidence": false
+  },
+  "readiness": {
+    "correctedExplicitDirectionalEvidenceAvailable": true,
+    "recurrenceEvidenceAvailable": true,
+    "matchedNegativeControlEvidenceAvailable": true,
+    "anchorControlDiscriminationMeasurable": true,
+    "candidateLevelDiscriminationConsumptionAvailable": true,
+    "readyForFinalDeathSemanticContractDesign": true,
+    "readyForFinalDeathFacts": false,
+    "readyForConfirmedWhoDied": false,
+    "readyForAttribution": false,
+    "readyForKillerVictim": false,
+    "readyForTeamfightDetection": false,
+    "readyForGameplayInterpretation": false
+  },
+  "limitations": [
+    "Anchor-versus-control discrimination is not proof of death or respawn truth.",
+    "Only explicit directional pairs can form inverse cycles; recurrence remains separate.",
+    "Unavailable controls are retained as unavailable and are never synthesized.",
+    "No final facts, attribution, killer/victim, teamfight, or gameplay interpretation is emitted."
+  ]
+}

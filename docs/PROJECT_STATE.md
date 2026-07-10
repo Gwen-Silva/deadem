@@ -1311,6 +1311,8 @@ confirmation-strength claim.
 
 ## Task 185 - Directional Cycles And Negative Controls
 
+Task 185 commit: `8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`.
+
 Task 185 introduced `death_event_directional_cycle_evidence` without replacing
 the active Task 180, Task 182, Task 183, or Task 184 baselines. It reproduced
 abstract directional transitions directly from the four pilot and 32 bounded
@@ -1332,6 +1334,12 @@ the predeclared strong threshold of 0.05. Consequently
 attribution, killer/victim, teamfight detection, and gameplay interpretation
 remain unconfirmed and unavailable.
 
+Task 186 correction notice: the Task 185 matcher counted non-directional
+signature recurrence as inversion. Task 185 remains a technically valid active
+observation baseline, but its complete-cycle counts, complete-cycle family
+counts, cycle coverage rates, and cycle-derived evidence classes require Task
+186 corrected recalculation. Historical Task 185 artifacts remain unchanged.
+
 Active baselines after Task 185:
 
 - `participant_identity_compact_bounded32_task180`
@@ -1339,3 +1347,30 @@ Active baselines after Task 185:
 - `death_event_candidates_bounded32_task183`
 - `death_event_corroboration_evidence_bounded32_task184`
 - `death_event_directional_cycle_evidence_bounded32_task185`
+
+## Task 186 - Matched Directional Discrimination
+
+Task 186 recorded Task 185 commit
+`8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`, preserved its historical
+artifacts, and corrected its cycle interpretation. The historical 2,552
+complete-cycle anchors become 2,548 anchors with at least one exact explicit
+inverse pair; 137 cycle-derived evidence classes change. All 2,297 uncensored
+anchors retain at least one corrected inverse pair, so Task 185 remains
+`partial` as an observation baseline.
+
+The new runner validates the exact successful pilot before bounded replay path
+resolution, publishes all-or-nothing, and analyzes anchor/control cohorts
+independently. The pilot passed with 341 anchors and controls. Bounded-32 passed
+with 2,552 anchors, 2,552 controls, 32/32 parser completion, and gate
+`task185_corrected_directional_discrimination_bounded32_ready`.
+
+Anchor multi-family direction and uncensored explicit-inverse rates are 1.0;
+matched-control rates are both 0.021552. Both absolute discrimination
+differences are 0.978448, producing an operational `strong` result. Pawn-link
+presence contributes zero explicit direction in both cohorts.
+
+`readyForFinalDeathSemanticContractDesign` is true only for a future separately
+authorized design. Final death, confirmed who-died, attribution, killer/victim,
+teamfight, and gameplay-interpretation readiness remain false. Task 185 remains
+the observation baseline; Task 186 supplies corrected cycle metrics and
+`death_event_directional_discrimination_evidence_bounded32_task186`.
