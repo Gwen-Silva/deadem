@@ -1989,3 +1989,11 @@ Task 192 is technically complete with gate
 specificity assessment `insufficient`. Final acceptance is pending Work. No
 Task 193 is authorized; the two-challenger limitation must be addressed or
 accepted before another technical unit is selected.
+
+## Task 193
+
+Task 193 is authorized and its replay-wide census implementation is complete,
+but the pilot measurement is blocked at the first replay open because the
+authorized replay files are unavailable locally. The smallest next action is
+to restore the exact Task 190 pilot and bounded-32 replay membership at the
+documented paths and rerun the unchanged emitter. No Task 194 is authorized.

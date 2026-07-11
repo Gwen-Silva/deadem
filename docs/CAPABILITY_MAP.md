@@ -477,3 +477,16 @@ The layer independently compares Task 183 anchors with replay-sourced
 structural challengers outside participant anchor windows. Its bounded result
 is `insufficient` because only two challengers survive. It does not label them
 as non-deaths and does not enable any final-fact or attribution capability.
+
+## Replay-Wide Structural Hard-Challenger Census
+
+- Capability id: `replay_wide_structural_hard_challenger_census`
+- Introduced: Task 193
+- Status: blocked by authorized replay-file availability
+- Current baseline: `task193_replay_wide_census_blocked`
+
+The layer reuses Task 190 one-second observation semantics to count persistent
+actual-second transition clusters outside every participant anchor window. It
+defines feasibility only; it performs no specificity comparison. The current
+surface lacks the authorized replay files, so no census count or feasibility
+classification is available.

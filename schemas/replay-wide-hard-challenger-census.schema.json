@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/replay-wide-hard-challenger-census.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "runKind", "artifactClass", "manifestIdentity", "replayIds", "sourceBaselines",
+    "primaryExclusionWindowSeconds", "exclusionWindowsSeconds", "horizonResults", "replayCount", "parserCompleted",
+    "parserExpected", "participantMappingFailures", "protectedReplayAccessCount", "preOpenBridgeFailures", "anchorCount",
+    "forwardObservationCount", "persistentObservationCount", "immediatePersistenceFailureCount", "clusterCount",
+    "eligibleClusterCount", "excludedClusterCount", "deduplicatedObservationCount", "sourceReuseCount", "clusterReuseCount",
+    "ambiguityCount", "familyComposition", "surfaceOpportunityComposition", "feasibility", "technicalStatus",
+    "specificityComparisonPerformed", "finalFactsProduced", "attributionEmitted", "readiness", "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "runKind": { "enum": ["task193-pilot", "task193-bounded32"] },
+    "artifactClass": { "const": "replay_wide_structural_hard_challenger_census" },
+    "manifestIdentity": { "type": "string", "minLength": 1 },
+    "replayIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^replay_[0-9]{3}$" } },
+    "sourceBaselines": { "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "primaryExclusionWindowSeconds": { "const": 5 },
+    "exclusionWindowsSeconds": { "const": [3, 5, 10] },
+    "horizonResults": { "type": "array", "minItems": 6, "maxItems": 6, "items": { "$ref": "#/$defs/horizon" } },
+    "replayCount": { "type": "integer", "minimum": 1 },
+    "parserCompleted": { "type": "integer", "minimum": 1 },
+    "parserExpected": { "type": "integer", "minimum": 1 },
+    "participantMappingFailures": { "const": 0 },
+    "protectedReplayAccessCount": { "const": 0 },
+    "preOpenBridgeFailures": { "const": 0 },
+    "anchorCount": { "type": "integer", "minimum": 0 },
+    "forwardObservationCount": { "type": "integer", "minimum": 0 },
+    "persistentObservationCount": { "type": "integer", "minimum": 0 },
+    "immediatePersistenceFailureCount": { "type": "integer", "minimum": 0 },
+    "clusterCount": { "type": "integer", "minimum": 0 },
+    "eligibleClusterCount": { "type": "integer", "minimum": 0 },
+    "excludedClusterCount": { "type": "integer", "minimum": 0 },
+    "deduplicatedObservationCount": { "type": "integer", "minimum": 0 },
+    "sourceReuseCount": { "const": 0 },
+    "clusterReuseCount": { "const": 0 },
+    "ambiguityCount": { "type": "integer", "minimum": 0 },
+    "familyComposition": { "$ref": "#/$defs/familyComposition" },
+    "surfaceOpportunityComposition": { "$ref": "#/$defs/surfaceComposition" },
+    "feasibility": { "$ref": "#/$defs/feasibility" },
+    "technicalStatus": { "const": "passed" },
+    "specificityComparisonPerformed": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "readiness": { "$ref": "#/$defs/readiness" },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "count": { "type": "integer", "minimum": 0 },
+    "horizon": {
+      "type": "object", "additionalProperties": false,
+      "required": ["horizonSeconds", "eligibleClusterCount", "replayCoverageCount"],
+      "properties": {
+        "horizonSeconds": { "enum": [10, 20, 30, 60, 120, 180] },
+        "eligibleClusterCount": { "$ref": "#/$defs/count" },
+        "replayCoverageCount": { "$ref": "#/$defs/count" }
+      }
+    },
+    "familyComposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+      "properties": {
+        "healthBoundary": { "$ref": "#/$defs/count" },
+        "booleanAlive": { "$ref": "#/$defs/count" },
+        "respawnBoundary": { "$ref": "#/$defs/count" },
+        "pawnLinkPresence": { "$ref": "#/$defs/count" }
+      }
+    },
+    "surfaceComposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["zero", "one", "two"],
+      "properties": {
+        "zero": { "const": 0 },
+        "one": { "$ref": "#/$defs/count" },
+        "two": { "$ref": "#/$defs/count" }
+      }
+    },
+    "feasibility": {
+      "type": "object", "additionalProperties": false,
+      "required": ["assessment", "primaryHorizonSeconds", "primaryEligibleClusterCount", "thresholds"],
+      "properties": {
+        "assessment": { "enum": ["sufficient", "limited", "insufficient"] },
+        "primaryHorizonSeconds": { "const": 30 },
+        "primaryEligibleClusterCount": { "$ref": "#/$defs/count" },
+        "thresholds": {
+          "type": "object", "additionalProperties": false,
+          "required": ["limitedMinimum", "sufficientMinimum"],
+          "properties": { "limitedMinimum": { "const": 30 }, "sufficientMinimum": { "const": 100 } }
+        }
+      }
+    },
+    "readiness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["replayWideCensusAvailable", "readyForSpecificityComparison", "readyForFinalDeathFacts", "readyForConfirmedWhoDied", "readyForAttribution", "readyForKillerVictim", "readyForTeamfight", "readyForGameplayInterpretation"],
+      "properties": {
+        "replayWideCensusAvailable": { "const": true },
+        "readyForSpecificityComparison": { "const": false },
+        "readyForFinalDeathFacts": { "const": false },
+        "readyForConfirmedWhoDied": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForKillerVictim": { "const": false },
+        "readyForTeamfight": { "const": false },
+        "readyForGameplayInterpretation": { "const": false }
+      }
+    }
+  }
+}

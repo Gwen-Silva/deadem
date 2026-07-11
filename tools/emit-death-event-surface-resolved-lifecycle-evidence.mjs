@@ -290,6 +290,11 @@ function mapObserved(aggregate, identity) {
   };
 }
 
+export {
+  mapObserved as mapReplayWideSurfaceObservations,
+  observe as observeReplayWideSurfaceSample,
+};
+
 function surfaceStatus(events) {
   const surfaces = new Set(events.map((event) => event.surface));
   if (surfaces.has("link_relation")) return "controller_link_relation";

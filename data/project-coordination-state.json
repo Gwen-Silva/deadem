@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Test whether the Task 190 lifecycle signature is specific to Task 183 anchors when compared with replay-sourced structural hard challengers.",
-  "phase": "death_event_hard_challenger_lifecycle_specificity",
-  "lastAcceptedTaskId": "191",
-  "lastAcceptedCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
-  "activeBaseCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
+  "objective": "Determine whether the existing replay-wide observation surface contains enough non-anchor structural transition clusters for a statistically useful hard-challenger lifecycle comparison.",
+  "phase": "replay_wide_hard_challenger_census",
+  "lastAcceptedTaskId": "192",
+  "lastAcceptedCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
+  "activeBaseCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
   "branch": "task191-correction",
-  "activeTaskId": "192",
+  "activeTaskId": "193",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "task191-correction",
-    "reviewArtifact": ".local/codex/192/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/193/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -48,20 +48,18 @@
     "npm run check:outputs"
   ],
   "activeBlockers": [
-    "Task 191 is accepted locally with publication blocked because Git CLI authentication and GitHub Git-data write permission are unavailable; origin/main remains on the rejected candidate.",
-    "Task 192 candidate 16be50449050230077e99e8329084dd7a5b7b7af was rejected because it reused the 30-second lifecycle result across all horizons; a bounded correction is authorized.",
-    "Task 192 correction 77197ab0f6ac3d5458d5964083e1a988f89b8194 was rejected because source reuse keyed the associated anchor rather than the structural transition; a narrower identity correction is authorized.",
-    "Task 192 correction bd429179f2cc04dfc45d2301108047c59e890dde was rejected because cluster identity and exclusion used the control reference second rather than the observed transition second; a temporal-identity correction is authorized.",
-    "Task 192 correction 5a41a4944fe6dc4d85e504616c0d959c212e9cf9 was rejected because challenger surface opportunity counted distinct status labels while anchors counted observable surfaces; a metric-alignment correction is authorized.",
-    "Death-fact promotion remains blocked by the Task 190 partial operational assessment."
+    "Tasks 191 and 192 are accepted locally with publication blocked because Git CLI authentication and GitHub Git-data write permission are unavailable; origin/main remains on the rejected original Task 191 candidate.",
+    "Task 192 found only two eligible hard challengers in the Task 190 matched-control surface, so operational specificity remains insufficient.",
+    "Task 193 replay-wide measurement is blocked because the authorized replay files are absent from this execution surface; Task 190 did not persist replay-wide one-second observations.",
+    "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
   "knownRisks": [
     "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work must independently validate the surface-opportunity-aligned Task 192 candidate.",
-  "completedTasks": ["190", "191"],
-  "pendingTasks": ["192"],
+  "nextAction": "ChatGPT Work must validate the blocked Task 193 handoff; the smallest unblock is to provide the authorized Task 190 pilot and bounded-32 replay files on the documented local paths.",
+  "completedTasks": ["190", "191", "192"],
+  "pendingTasks": ["193"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

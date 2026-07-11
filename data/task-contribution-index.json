@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "192",
-  "baseCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
-  "taskRange": "001-192",
+  "generatedAtTask": "193",
+  "baseCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
+  "taskRange": "001-193",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5857,7 +5857,7 @@
     {
       "taskId": "192",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "95248e632b5fc0b1bdcde796cc3646444da8c174",
       "title": "Build Hard-Challenger Lifecycle Specificity Evidence",
       "phase": "death_event_hard_challenger_lifecycle_specificity",
       "primaryContribution": "Compared Task 183 anchors with replay-sourced unconfirmed structural challengers using exclusion windows and independent per-horizon ledgers.",
@@ -5870,7 +5870,7 @@
         "reports/death-event-hard-challenger-lifecycle-specificity-task192.md"
       ],
       "gate": "task190_hard_challenger_lifecycle_specificity_bounded32_ready",
-      "currentRelevance": "candidate_pending_independent_work_validation",
+      "currentRelevance": "accepted_insufficient_specificity_baseline",
       "dependsOn": ["183", "190", "191"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -5878,11 +5878,42 @@
         "Structural challengers are not ground-truth non-deaths or confirmed negatives.",
         "Final facts and attribution remain unavailable."
       ],
-      "evidenceStatus": "technical_candidate_insufficient_specificity",
+      "evidenceStatus": "accepted_with_publication_blocker_and_insufficient_specificity",
       "evidencePaths": [
         "tasks/specs/192.json",
         "tasks/completed/192-death-event-hard-challenger-lifecycle-specificity.md",
         "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-summary.json"
+      ]
+    },
+    {
+      "taskId": "193",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Replay-Wide Structural Hard-Challenger Census",
+      "phase": "replay_wide_hard_challenger_census",
+      "primaryContribution": "Implemented a replay-wide one-second persistent structural-transition census with fail-closed bridges and declared feasibility thresholds; measurement is blocked by absent authorized replay files.",
+      "introducedCapabilities": ["replay_wide_structural_hard_challenger_census"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "docs/codex/REPLAY_WIDE_HARD_CHALLENGER_CENSUS_CONTRACT.md",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
+        "reports/replay-wide-hard-challenger-census-task193.md"
+      ],
+      "gate": "replay_wide_hard_challenger_census_blocked",
+      "currentRelevance": "blocked_candidate_pending_independent_work_validation",
+      "dependsOn": ["180", "183", "190", "192"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Authorized replay files are absent from the execution surface.",
+        "Accepted Task 190 matched-control artifacts cannot reproduce replay-wide observations.",
+        "No specificity comparison, final facts, or attribution were produced."
+      ],
+      "evidenceStatus": "technical_implementation_measurement_blocked",
+      "evidencePaths": [
+        "tasks/specs/193.json",
+        "tasks/completed/193-replay-wide-hard-challenger-census.md",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json"
       ]
     }
   ]

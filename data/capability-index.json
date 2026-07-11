@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "192",
+  "generatedAtTask": "193",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -671,9 +671,9 @@
       "capabilityId": "death_event_hard_challenger_lifecycle_specificity",
       "plainName": "Hard-challenger lifecycle specificity evidence",
       "introducedInTask": "192",
-      "stabilizedInTask": null,
-      "currentStatus": "needs-validation",
-      "currentBaseline": "task192_bounded32_candidate",
+      "stabilizedInTask": "192",
+      "currentStatus": "active",
+      "currentBaseline": "task192_bounded32_accepted_local",
       "whyItMatters": "Tests whether Task 190 lifecycle association is specific to Task 183 anchors against structurally similar replay-sourced clusters.",
       "mainFiles": [
         "tools/emit-death-event-hard-challenger-lifecycle-specificity.mjs",
@@ -689,7 +689,31 @@
         "Challengers are unconfirmed structural comparisons, not known non-deaths.",
         "No final fact or attribution capability is enabled."
       ],
-      "nextUsefulStep": "Work must decide whether the two-challenger limitation warrants a new measurement design; no Task 193 is authorized."
+      "nextUsefulStep": "Use the authorized Task 193 census only after its required replay-wide source files are available."
+    },
+    {
+      "capabilityId": "replay_wide_structural_hard_challenger_census",
+      "plainName": "Replay-wide structural hard-challenger census",
+      "introducedInTask": "193",
+      "stabilizedInTask": null,
+      "currentStatus": "blocked",
+      "currentBaseline": "task193_replay_wide_census_blocked",
+      "whyItMatters": "Determines whether the full one-second observation surface contains enough persistent non-anchor structural clusters for a later specificity experiment.",
+      "mainFiles": [
+        "tools/emit-replay-wide-hard-challenger-census.mjs",
+        "schemas/replay-wide-hard-challenger-census.schema.json",
+        "docs/codex/REPLAY_WIDE_HARD_CHALLENGER_CENSUS_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-pilot-blocked/"
+      ],
+      "knownLimits": [
+        "Authorized replay files are absent from the execution surface.",
+        "Task 190 did not persist replay-wide observations, so accepted matched-control outputs cannot substitute for the census.",
+        "No specificity comparison, final fact, or attribution capability is enabled."
+      ],
+      "nextUsefulStep": "Restore the exact authorized Task 190 pilot and bounded-32 replay files and rerun the unchanged Task 193 emitter."
     }
   ]
 }

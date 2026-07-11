@@ -1,0 +1,184 @@
+{
+  "taskId": "193",
+  "title": "Build Replay-Wide Structural Hard-Challenger Census",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Measure whether replay-wide one-second surface observations contain enough non-anchor structural transition clusters to support a later hard-challenger lifecycle comparison, without emitting final death facts or attribution.",
+  "baseCommitExpected": "95248e632b5fc0b1bdcde796cc3646444da8c174",
+  "executionReportPath": "reports/replay-wide-hard-challenger-census-task193.md",
+  "executionContract": {
+    "reasoningComplexity": "High: the task must reuse the accepted Task 190 observation semantics across complete replay timelines, separate transition-cluster census from death truth, and preserve exact provenance, replay protection and denominator integrity.",
+    "objective": "Build pilot and bounded-32 replay-wide censuses of forward structural transition clusters outside Task 183 anchor windows, establishing only whether enough eligible challengers exist for a future specificity experiment.",
+    "technicalContext": [
+      "Accepted Task 192 found only two eligible 30-second hard challengers because it was intentionally limited to the Task 190 matched-control observation surface.",
+      "Task 190 already samples controller and linked-pawn surfaces once per second across each replay before selecting anchor/control windows; those replay-wide mapped observations are not emitted as raw values.",
+      "A census of replay-wide structural clusters is the smallest useful next unit: it can determine feasibility before another lifecycle comparison is authorized."
+    ],
+    "confirmedState": [
+      "Tasks 191 and 192 are accepted locally; the accepted Task 192 commit is 95248e632b5fc0b1bdcde796cc3646444da8c174.",
+      "Task 192 technical evidence is valid but its operational specificity assessment is insufficient, with two 30-second challenger pairs.",
+      "Origin publication remains externally blocked; origin/main still points to the rejected original Task 191 candidate and cannot be used as accepted state.",
+      "Final deaths, confirmed who-died claims, attribution, killer/victim, teamfight and gameplay interpretation remain unavailable."
+    ],
+    "expectedBaseCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
+    "branchEnvironment": [
+      "Repository Gwen-Silva/deadem on local branch task191-correction.",
+      "Create exactly one Task 193 commit over the accepted local base; push only if a live remote ref can be verified, never modify origin/main or force-push."
+    ],
+    "allowedScope": [
+      "Add a Task 193 census contract, strict schema, emitter, focused tests, pilot/bounded-32 artifacts, task/report and required navigation/state/index updates.",
+      "Perform a bounded no-behavior-change export/refactor in the Task 190 evidence tool only when necessary to reuse its one-second observation and participant-mapping semantics; all Task 190 regressions must remain exact.",
+      "Process only the accepted Task 190 pilot and bounded-32 manifests and their already authorized replay membership."
+    ],
+    "protectedAreas": [
+      "Do not modify packages/deadem, packages/engine, samples, parser behavior, Task 180-192 historical outputs or accepted baselines.",
+      "Do not read, hash, copy, inspect, open or process replay_005, replay_006, replay_007 or replay_008.",
+      "Do not label any non-anchor cluster as a death, non-death, false death, confirmed negative or ground truth, and do not create Task 194."
+    ],
+    "expectedChanges": [
+      "Derive replay-wide forward transition clusters from the same one-second controller/linked-pawn/link-relation surface observations used by Task 190, keyed by replay, synthetic participant and observed transition second.",
+      "Require immediate persistence, deduplicate family/surface observations into one structural cluster, exclude every Task 183 anchor window for the same participant, and emit 3/5/10-second exclusion sensitivity.",
+      "Emit replay and aggregate counts by follow-up horizon, family/surface opportunity, ambiguity, exclusion, provenance and reuse, plus a feasibility assessment separate from any lifecycle specificity or death claim."
+    ],
+    "acceptanceCriteria": [
+      "Every census cluster is replay-sourced, uses the actual observed transition second, has immediate persistence, is outside every primary Task 183 anchor window and has unique replay/participant/second identity.",
+      "Pilot and bounded-32 membership, pre-open bridges, parser completion, participant mapping, protected replay count, source reuse, cluster reuse and denominators are independently auditable and fail closed.",
+      "The census reports 10/20/30/60/120/180-second eligibility and classifies feasibility as sufficient, limited or insufficient using declared count thresholds; it does not run or claim a new specificity comparison.",
+      "All final-fact, attribution and gameplay readiness fields remain false and the accepted Task 190/192 artifacts remain byte-identical."
+    ],
+    "mandatoryTests": [
+      "node --test tests/replay-wide-hard-challenger-census-schema.test.mjs",
+      "node --test tests/emit-replay-wide-hard-challenger-census.test.mjs",
+      "node --test tests/emit-death-event-hard-challenger-lifecycle-specificity.test.mjs",
+      "node --test tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs",
+      "npm run validate:coordination",
+      "npm run validate:tasks",
+      "npm run codex:prepare -- --task 193",
+      "npm run codex:preflight -- --task 193",
+      "npm run lint",
+      "npm run check:outputs",
+      "npm run codex:validate -- --task 193 --base 95248e632b5fc0b1bdcde796cc3646444da8c174",
+      "npm run codex:review -- --task 193 --base 95248e632b5fc0b1bdcde796cc3646444da8c174"
+    ],
+    "requiredEvidence": [
+      "Exact source manifest and accepted-gate bridges to Tasks 180, 183, 190 and 192 before replay-path resolution; parser completion and protected-access audits.",
+      "Per-replay and aggregate structural cluster counts, actual-second exclusion audit, immediate-persistence audit, family/surface composition, horizon eligibility, deduplication/reuse ledgers and feasibility thresholds.",
+      "Post-commit attestation with real SHA, base, branch, commit list, changed files, commands, tests, artifacts, limitations, push evidence and final VALIDATING status."
+    ],
+    "commitPolicy": [
+      "Preserve the Work-authored accepted-state and Task 193 spec changes, stage only authorized Task 193 files and create exactly one commit.",
+      "Do not amend accepted Task 192, use any rejected candidate as a base, modify origin/main or claim a push without live remote SHA verification."
+    ],
+    "stopConditions": [
+      "Stop before replay access on any base, branch, accepted-state, manifest, membership, provenance, bridge or protection mismatch.",
+      "Stop if replay-wide clusters cannot be derived from existing observation semantics without parser behavior changes, raw-value output, semantic guessing or weakening immediate persistence.",
+      "Stop on protected replay access, historical output mutation, source/cluster reuse, denominator mismatch, unexpected output warning, more than one commit or any final-fact/attribution claim."
+    ],
+    "returnReportFormat": [
+      "Use every section in docs/codex/CODEX_REPORT_TEMPLATE.md and attach the post-commit attestation.",
+      "Report technical gate, census feasibility and publication status separately; final acceptance remains pending independent ChatGPT Work validation."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tasks/specs/192.json",
+    "reports/death-event-hard-challenger-lifecycle-specificity-task192.md",
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/DEATH_EVENT_HARD_CHALLENGER_LIFECYCLE_SPECIFICITY_CONTRACT.md",
+    "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+    "tools/emit-death-event-hard-challenger-lifecycle-specificity.mjs",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "tests/emit-death-event-hard-challenger-lifecycle-specificity.test.mjs",
+    "tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-gate.json",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-summary.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json"
+  ],
+  "optionalReadPaths": [
+    "output/local-replay-processing/death-event-candidates/task183-bounded32/**",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/**"
+  ],
+  "writePaths": [
+    "package.json",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/codex/REPLAY_WIDE_HARD_CHALLENGER_CENSUS_CONTRACT.md",
+    "schemas/replay-wide-hard-challenger-census.schema.json",
+    "tools/emit-replay-wide-hard-challenger-census.mjs",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "tests/replay-wide-hard-challenger-census-schema.test.mjs",
+    "tests/emit-replay-wide-hard-challenger-census.test.mjs",
+    "tasks/specs/193.json",
+    "tasks/completed/193-replay-wide-hard-challenger-census.md",
+    "reports/replay-wide-hard-challenger-census-task193.md",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tasks/specs/194.json",
+    "tasks/*/194-*",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/**",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/**",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "census-schema", "type": "node-test", "paths": ["tests/replay-wide-hard-challenger-census-schema.test.mjs"] },
+    { "id": "census-runner", "type": "node-test", "paths": ["tests/emit-replay-wide-hard-challenger-census.test.mjs"] },
+    { "id": "task192-regression", "type": "node-test", "paths": ["tests/emit-death-event-hard-challenger-lifecycle-specificity.test.mjs"] },
+    { "id": "task190-regression", "type": "node-test", "paths": ["tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs" }
+  ],
+  "expectedOutputs": [
+    "docs/codex/REPLAY_WIDE_HARD_CHALLENGER_CENSUS_CONTRACT.md",
+    "schemas/replay-wide-hard-challenger-census.schema.json",
+    "tools/emit-replay-wide-hard-challenger-census.mjs",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json",
+    "reports/replay-wide-hard-challenger-census-task193.md",
+    "tasks/completed/193-replay-wide-hard-challenger-census.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/**"
+  ],
+  "replayProcessingAllowed": true,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay_005 through replay_008.",
+    "Never emit raw values, final death facts, negative ground truth or attribution.",
+    "Do not modify parser packages, accepted Task 190/192 outputs, origin/main or create Task 194.",
+    "Stop after the Task 193 handoff in VALIDATING."
+  ],
+  "successGate": "replay_wide_hard_challenger_census_bounded32_ready",
+  "blockedGate": "replay_wide_hard_challenger_census_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

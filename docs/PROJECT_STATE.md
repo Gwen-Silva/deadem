@@ -1514,3 +1514,16 @@ eligibility rules; both completed the observed lifecycle, producing zero
 are not ground-truth negatives. Final facts and attribution remain unavailable.
 Every horizon uses its own Task 190 eligibility and lifecycle result; at 10
 seconds the two matched pairs measure anchor/challenger rates of 0.5/1.0.
+
+## Task 193 - Replay-Wide Structural Hard-Challenger Census
+
+Task 192 is accepted locally at
+`95248e632b5fc0b1bdcde796cc3646444da8c174`. Task 193 implements a census of
+replay-wide one-second structural transition clusters with actual-second
+identity, immediate persistence, 3/5/10-second anchor exclusion, follow-up
+horizons, derived reuse accounting, and declared feasibility thresholds.
+
+The measurement is blocked because the authorized replay files are absent from
+this execution surface and Task 190 did not persist replay-wide observations.
+No matched-control substitute, protected replay, specificity comparison, final
+fact, or attribution was used.

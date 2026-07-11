@@ -877,8 +877,8 @@
     {
       "id": "autonomous_coordination_policy_task191_gate",
       "path": "output/project-coordination/task191-gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Codex technical gate claim only; final acceptance remains pending independent ChatGPT Work validation."
+      "status": "accepted_local_publication_blocked",
+      "notes": "Task 191 is accepted locally; remote publication remains externally blocked."
     },
     {
       "id": "autonomous_coordination_policy_task191_summary",
@@ -889,14 +889,26 @@
     {
       "id": "death_event_hard_challenger_lifecycle_specificity_task192_gate",
       "path": "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-gate.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_local_publication_blocked",
       "notes": "Task 192 technical gate passed with insufficient specificity; challengers are unconfirmed structural comparisons and final facts remain unavailable."
     },
     {
       "id": "death_event_hard_challenger_lifecycle_specificity_task192_summary",
       "path": "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-summary.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_local_publication_blocked",
       "notes": "Bounded-32 exact membership, two challengers, zero source reuse, insufficient operational specificity."
+    },
+    {
+      "id": "replay_wide_hard_challenger_census_task193_gate",
+      "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
+      "status": "candidate_blocked_pending_work_validation",
+      "notes": "Task 193 implementation is ready, but replay-wide measurement is blocked because authorized replay files are absent."
+    },
+    {
+      "id": "replay_wide_hard_challenger_census_task193_summary",
+      "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json",
+      "status": "candidate_blocked_pending_work_validation",
+      "notes": "Pilot parser completed 0/4; no census count, specificity comparison, final fact, or attribution was emitted."
     }
   ]
 }
