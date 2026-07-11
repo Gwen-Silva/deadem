@@ -1404,6 +1404,8 @@ who-died, attribution, killer/victim, teamfight, and interpretation remain false
 
 ## Task 188 - Segmented Death Lifecycle Evidence
 
+Task 188 commit: `58af2f44016e061fcbda140bc6928e0c4dc4970d`.
+
 Task 188 recorded Task 187 commit
 `f5825e4ffc537e5986de699fd34d1a3df1a91b0f` only on Task 187. Its durable
 integrity audit compared exactly 32 Task 185 artifact paths and contents with
@@ -1431,3 +1433,26 @@ Task 188 introduces
 historical sequence-v1 evidence. Operational promotion review, final deaths,
 confirmed who-died, attribution, killer/victim, teamfight, and gameplay
 interpretation remain false.
+
+## Task 189 - Exposure-Matched Death Lifecycle Evidence
+
+Task 189 records Task 188 commit
+`58af2f44016e061fcbda140bc6928e0c4dc4970d` and introduces the active
+`death_event_exposure_matched_lifecycle_evidence_bounded32_task189` baseline.
+Every Task 180/182/183/186/188 provenance, membership, row-count, and full-row
+bridge check runs before replay-path resolution, `Player` construction, or
+stream creation.
+
+Pilot completed 4/4 parsers with 341 exact anchor-control pairs. Bounded-32
+completed 32/32 parsers with 2,552 exact pairs and gate
+`task188_corrected_exposure_matched_lifecycle_bounded32_ready`. The bounded
+assessment is `partial`: 2,501 pairs have at least 10 seconds of common
+follow-up, anchor coherence is 0.715714, control coherence is 0, and the paired
+difference is 0.715714. Boolean/respawn-only support accounts for 0.992179 of
+coherent anchors, while cross-surface support is 0.007821.
+
+Task 189 supersedes Task 188 only for pre-state origin continuity,
+exposure-matched control comparison, and corrected promotion readiness. Tasks
+180, 182, 183, 184, 185, and 186 remain active; Tasks 187 and 188 remain
+historical sequence-v1 and segmented-lifecycle-v1 evidence. Operational
+promotion review and every final-fact or attribution capability remain false.

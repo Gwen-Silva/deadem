@@ -1947,3 +1947,13 @@ failures, and atomic publication. Bounded coherent lifecycle coverage is
 excluded from prior-segment coherence. The assessment is `partial`, with 0/32
 replays meeting all strong independent thresholds. Operational promotion
 review, final facts, and attribution remain not ready.
+
+## Task 189
+
+Task 189 is complete with gate
+`task188_corrected_exposure_matched_lifecycle_bounded32_ready`. The next
+milestone is intentionally not pre-created. Any separately authorized work
+should explain or improve cross-surface support of 0.007821 and the `partial`
+equal-exposure result before proposing operational death-fact promotion. Final
+facts, attribution, killer/victim, teamfight detection, and gameplay
+interpretation remain blocked.

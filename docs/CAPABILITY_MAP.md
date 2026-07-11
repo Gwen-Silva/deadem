@@ -402,3 +402,25 @@ Bounded-32 emitted 2,552 rows and exact controls. Coherent segmented lifecycle
 coverage is 0.846787 versus 0 for controls, yielding a `partial` assessment.
 Task 188 supersedes Task 187 only for corrected segmented coherence; neither
 layer confirms deaths or authorizes operational promotion review.
+
+## Exposure-Matched Death-Event Lifecycle Evidence
+
+- Capability id: `death_event_exposure_matched_lifecycle_evidence`
+- Introduced: Task 189
+- Status: active
+- Current baseline:
+  `death_event_exposure_matched_lifecycle_evidence_bounded32_task189`
+- Main files: `tools/emit-death-event-exposure-matched-lifecycle-evidence.mjs`,
+  `schemas/death-event-exposure-matched-lifecycle-evidence.schema.json`, and
+  `docs/codex/DEATH_EVENT_EXPOSURE_MATCHED_LIFECYCLE_CONTRACT.md`
+
+Task 189 validates all source bridges before replay access, requires the
+stable pre-state to match the selected forward transition's origin, and limits
+each anchor and exact Task 186 control to their shared observable follow-up.
+Its bounded-32 assessment is `partial`: anchor/control coherence is
+0.715714/0 among eligible pairs, while 0.992179 of coherent rows depend only on
+the boolean/respawn pair and cross-surface support is 0.007821.
+
+The capability supersedes Task 188 only for origin continuity, equal-exposure
+comparison, and promotion readiness. It does not establish final death or
+respawn truth, attribution, killer/victim, teamfight, or gameplay meaning.

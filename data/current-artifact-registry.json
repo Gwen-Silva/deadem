@@ -762,13 +762,25 @@
       "id": "death_event_segmented_lifecycle_evidence_task188_gate",
       "path": "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-gate.json",
       "status": "current",
-      "notes": "Task 188 final technical gate for same-family segmented lifecycle evidence; partial assessment and no confirmed deaths."
+      "notes": "Task 188 commit 58af2f44016e061fcbda140bc6928e0c4dc4970d final technical gate for historical segmented lifecycle-v1 evidence; partial assessment and no confirmed deaths."
     },
     {
       "id": "death_event_segmented_lifecycle_evidence_contract_task188",
       "path": "docs/codex/DEATH_EVENT_SEGMENTED_LIFECYCLE_CONTRACT.md",
       "status": "current",
       "notes": "Policy contract for same-family lifecycle chains, participant segments, recovery persistence, and exact matched controls."
+    },
+    {
+      "id": "death_event_exposure_matched_lifecycle_evidence_task189_gate",
+      "path": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-gate.json",
+      "status": "current",
+      "notes": "Task 189 final technical gate for corrected origin continuity and equal-follow-up anchor/control lifecycle evidence; partial assessment and no confirmed deaths."
+    },
+    {
+      "id": "death_event_exposure_matched_lifecycle_evidence_contract_task189",
+      "path": "docs/codex/DEATH_EVENT_EXPOSURE_MATCHED_LIFECYCLE_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for replay-sourced origin continuity, paired common follow-up, horizon-specific denominators, same-family chains, and source tiers."
     }
   ],
   "artifacts": [
@@ -818,7 +830,13 @@
       "id": "death_event_segmented_lifecycle_evidence_bounded32_task188_artifacts",
       "path": "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-bounded32/segmented-lifecycle-bounded32-gate.json",
       "status": "current",
-      "notes": "Task 188 active bounded-32 segmented lifecycle baseline; partial operational evidence does not confirm death truth or authorize promotion review."
+      "notes": "Task 188 commit 58af2f44016e061fcbda140bc6928e0c4dc4970d historical bounded-32 segmented lifecycle-v1 baseline; Task 189 supersedes it only for origin continuity, exposure matching, and promotion readiness."
+    },
+    {
+      "id": "death_event_exposure_matched_lifecycle_evidence_bounded32_task189_artifacts",
+      "path": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-bounded32/exposure-matched-lifecycle-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 189 active bounded-32 exposure-matched lifecycle evidence; partial operational evidence, low cross-surface support, and no final death facts."
     }
   ]
 }

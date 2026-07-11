@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "integrityStatus": "passed",
+  "measurementStatus": "completed",
+  "thresholdStatus": "not_met",
+  "assessment": "partial",
+  "summary": {
+    "totalAnchors": 2552,
+    "totalExactControls": 2552,
+    "exactPairCount": 2552,
+    "originConsistentPreStateCoverage": 0.999216,
+    "commonFollowUpDistribution": {
+      "lessThan10": 51,
+      "seconds10To19": 129,
+      "seconds20To29": 116,
+      "seconds30To59": 450,
+      "seconds60To119": 835,
+      "seconds120To179": 407,
+      "seconds180": 564
+    },
+    "perFamilyChainRates": {
+      "healthBoundary": {
+        "anchorCompleteRate": 0.006661,
+        "controlCompleteRate": 0
+      },
+      "booleanAlive": {
+        "anchorCompleteRate": 0.782915,
+        "controlCompleteRate": 0
+      },
+      "respawnBoundary": {
+        "anchorCompleteRate": 0.710031,
+        "controlCompleteRate": 0
+      },
+      "pawnLinkPresence": {
+        "anchorCompleteRate": 0,
+        "controlCompleteRate": 0
+      }
+    },
+    "analyzablePairCount": 2501,
+    "anchorCoherentLifecycleRate": 0.715714,
+    "controlCoherentLifecycleRate": 0,
+    "pairedDifference": 0.715714,
+    "insufficientFollowUpPairs": 51,
+    "controlsTruncatedByRealAnchors": 1688,
+    "anchorsTruncatedByNextAnchors": 1194,
+    "booleanRespawnOnlyCoherentRate": 0.992179,
+    "crossSurfaceSupportRate": 0.007821,
+    "crossAnchorRecoveryCount": 122,
+    "contradictionCount": 17,
+    "ambiguityCount": 0,
+    "sourceReuseCount": 0,
+    "horizonResults": [
+      {
+        "horizonSeconds": 10,
+        "eligiblePairCount": 2501,
+        "anchorCoherentLifecycleRate": 0.086765,
+        "controlCoherentLifecycleRate": 0,
+        "pairedDifference": 0.086765,
+        "pairedCensoringCount": 51
+      },
+      {
+        "horizonSeconds": 20,
+        "eligiblePairCount": 2372,
+        "anchorCoherentLifecycleRate": 0.225548,
+        "controlCoherentLifecycleRate": 0,
+        "pairedDifference": 0.225548,
+        "pairedCensoringCount": 180
+      },
+      {
+        "horizonSeconds": 30,
+        "eligiblePairCount": 2256,
+        "anchorCoherentLifecycleRate": 0.345301,
+        "controlCoherentLifecycleRate": 0,
+        "pairedDifference": 0.345301,
+        "pairedCensoringCount": 296
+      },
+      {
+        "horizonSeconds": 60,
+        "eligiblePairCount": 1806,
+        "anchorCoherentLifecycleRate": 0.594131,
+        "controlCoherentLifecycleRate": 0,
+        "pairedDifference": 0.594131,
+        "pairedCensoringCount": 746
+      },
+      {
+        "horizonSeconds": 120,
+        "eligiblePairCount": 971,
+        "anchorCoherentLifecycleRate": 0.897013,
+        "controlCoherentLifecycleRate": 0,
+        "pairedDifference": 0.897013,
+        "pairedCensoringCount": 1581
+      },
+      {
+        "horizonSeconds": 180,
+        "eligiblePairCount": 564,
+        "anchorCoherentLifecycleRate": 0.890071,
+        "controlCoherentLifecycleRate": 0,
+        "pairedDifference": 0.890071,
+        "pairedCensoringCount": 1988
+      }
+    ],
+    "exposureMatchedAssessmentLevel": "partial"
+  },
+  "stableReplayCount": 12
+}

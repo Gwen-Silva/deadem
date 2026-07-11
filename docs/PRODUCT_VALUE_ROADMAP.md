@@ -179,3 +179,17 @@ ready. Task 187 remains historical sequence-v1 evidence, while Task 188 is the
 active corrected segmented-coherence layer. Confirmed deaths, who-died claims,
 attribution, killer/victim, teamfight, and gameplay interpretation remain
 unavailable.
+
+## Task 189 Product Implication
+
+Task 189 removes exposure bias from the matched-control comparison and requires
+pre-state continuity to originate on the correct side of each selected forward
+transition. Across 2,552 exact pairs, 2,501 have at least 10 seconds of shared
+follow-up. Eligible anchor lifecycle coherence is 0.715714 versus 0 for
+controls, producing a `partial` assessment.
+
+The result is useful but not promotion-ready: 0.992179 of coherent anchors rely
+only on the boolean/respawn pair and cross-surface support is 0.007821. The
+project can consume origin-corrected, exposure-matched candidate evidence, but
+cannot answer final who-died, attribution, killer/victim, teamfight, or
+gameplay-interpretation questions.

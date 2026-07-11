@@ -59,3 +59,14 @@ discrimination, cross-anchor measurement, and candidate-level consumption are
 available. The `partial` assessment keeps operational promotion review false.
 Final deaths, confirmed who-died, attribution, killer/victim, teamfight, and
 gameplay interpretation remain unavailable.
+
+## Task 189 correction notice
+
+Task 189 reprocessed the authorized replays and checked the Task 188 pre-state
+against the expected origin of each selected forward family transition. Task
+188 remains unchanged as historical segmented-lifecycle-v1 evidence. Its 2,161
+prior coherent rows remain 2,161 after the isolated origin-continuity
+correction; zero rows were invalidated by a wrong origin or intervening
+transition, and lifecycle class/recovery-time changes from this isolated
+correction are zero. Task 189 separately supersedes Task 188 for equal-exposure
+control comparison and corrected promotion readiness.

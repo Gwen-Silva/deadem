@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "183",
-  "activeBaseline": "death_event_candidates_bounded32_task183",
+  "generatedAtTask": "189",
+  "activeBaseline": "death_event_exposure_matched_lifecycle_evidence_bounded32_task189",
   "capabilities": [
     {
       "capabilityId": "parser_char_without_count_fix",
@@ -586,7 +586,34 @@
         "Forty-two cross-anchor recovery candidates are measured and never counted as coherent prior-segment evidence.",
         "Operational lifecycle classes do not establish Source 2 death or respawn truth, attribution, or gameplay meaning."
       ],
-      "nextUsefulStep": "Investigate recovery persistence and segment-boundary failures under separate authorization; operational promotion review remains not ready."
+      "nextUsefulStep": "Use Task 189 for corrected origin continuity and exposure-matched controls while preserving this historical segmented lifecycle-v1 baseline."
+    },
+    {
+      "capabilityId": "death_event_exposure_matched_lifecycle_evidence",
+      "plainName": "Exposure-matched death-event lifecycle evidence",
+      "introducedInTask": "189",
+      "stabilizedInTask": "189",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_exposure_matched_lifecycle_evidence_bounded32_task189",
+      "whyItMatters": "Requires replay-sourced pre-state continuity to match the selected forward origin and compares every Task 183 anchor with its exact Task 186 control under equal observable follow-up.",
+      "mainFiles": [
+        "tools/emit-death-event-exposure-matched-lifecycle-evidence.mjs",
+        "tools/validate-task188-lifecycle-integrity.mjs",
+        "schemas/death-event-exposure-matched-lifecycle-evidence.schema.json",
+        "docs/codex/DEATH_EVENT_EXPOSURE_MATCHED_LIFECYCLE_CONTRACT.md",
+        "tests/emit-death-event-exposure-matched-lifecycle-evidence.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-gate.json",
+        "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-bounded32/"
+      ],
+      "knownLimits": [
+        "The bounded-32 assessment is partial: eligible anchor coherence is 0.715714 and only 12/32 replays meet the declared local stability criteria.",
+        "Boolean/respawn-only evidence accounts for 0.992179 of coherent anchors; cross-surface support is only 0.007821.",
+        "Task 189 supersedes Task 188 only for pre-state origin continuity, exposure-matched control comparison, and corrected promotion readiness.",
+        "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw identity, raw time, position, or gameplay interpretation is emitted."
+      ],
+      "nextUsefulStep": "Keep operational promotion review false unless a separately authorized milestone resolves the low cross-surface support and partial exposure-matched result."
     }
   ]
 }
