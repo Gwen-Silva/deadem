@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/project-coordination-state.schema.json",
+  "title": "Deadem project coordination state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "coordinationPolicyVersion",
+    "objective",
+    "phase",
+    "lastAcceptedTaskId",
+    "lastAcceptedCommit",
+    "activeBaseCommit",
+    "branch",
+    "activeTaskId",
+    "status",
+    "candidateCommit",
+    "candidateResolution",
+    "rejectedCommits",
+    "protectedPaths",
+    "architecturalDecisions",
+    "requiredTests",
+    "activeBlockers",
+    "knownRisks",
+    "nextAction",
+    "completedTasks",
+    "pendingTasks",
+    "acceptanceAuthority",
+    "updatedBy"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "coordinationPolicyVersion": { "const": 1 },
+    "objective": { "type": "string", "minLength": 1 },
+    "phase": { "type": "string", "minLength": 1 },
+    "lastAcceptedTaskId": { "type": "string", "pattern": "^[0-9]{3}$" },
+    "lastAcceptedCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "activeBaseCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "branch": { "type": "string", "minLength": 1 },
+    "activeTaskId": { "type": ["string", "null"], "pattern": "^[0-9]{3}$" },
+    "status": {
+      "enum": [
+        "DISCOVERY",
+        "WORK_ANALYSIS",
+        "READY_FOR_CODEX",
+        "CODEX_RUNNING",
+        "VALIDATING",
+        "ACCEPTED",
+        "ACCEPTED_WITH_BLOCKER",
+        "REJECTED",
+        "BLOCKED",
+        "BLOCKED_BY_SURFACE",
+        "COMPLETED"
+      ]
+    },
+    "candidateCommit": { "type": ["string", "null"], "pattern": "^[0-9a-f]{40}$" },
+    "candidateResolution": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["strategy", "requiredCommitCount", "branch", "reviewArtifact"],
+          "properties": {
+            "strategy": { "const": "git_head_exactly_one_commit_from_active_base" },
+            "requiredCommitCount": { "const": 1 },
+            "branch": { "type": "string", "minLength": 1 },
+            "reviewArtifact": { "type": "string", "pattern": "^\\.local/codex/[0-9]{3}/post-commit-attestation\\.json$" }
+          }
+        }
+      ]
+    },
+    "rejectedCommits": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+      "uniqueItems": true
+    },
+    "protectedPaths": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "architecturalDecisions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "requiredTests": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "activeBlockers": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "knownRisks": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "nextAction": { "type": "string", "minLength": 1 },
+    "completedTasks": { "type": "array", "items": { "type": "string", "pattern": "^[0-9]{3}$" }, "uniqueItems": true },
+    "pendingTasks": { "type": "array", "items": { "type": "string", "pattern": "^[0-9]{3}$" }, "uniqueItems": true },
+    "acceptanceAuthority": { "const": "ChatGPT Work" },
+    "updatedBy": { "enum": ["ChatGPT Work", "Codex"] }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "VALIDATING" } }, "required": ["status"] },
+      "then": { "properties": { "candidateResolution": { "type": "object" } } }
+    }
+  ]
+}

@@ -1,5 +1,14 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
+## Coordination Gate Before Further Execution
+
+Task 191 is a governance candidate in `VALIDATING`. Task 190 at commit
+`13a3da64bcf0ba839a752038f07f40e3eeeed890` remains the accepted base until
+independent ChatGPT Work validation. Codex must stop after its Task 191 handoff;
+Work may start a separately authorized execution only after an accepted gate.
+No Task 192 has been created. The coordination policy does not unblock
+death-fact promotion or protected replays.
+
 ## Current State
 
 The accepted Codex workflow gate is

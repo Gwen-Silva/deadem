@@ -1,44 +1,72 @@
 # Codex Task Workflow
 
-Start each task in a new session when possible. Do not paste full conversation history, large outputs, or logs into the prompt. Use `docs/codex/CURRENT_STATE.md`, the task spec, and the generated context packet.
+The normative authority is
+`docs/codex/AUTONOMOUS_COORDINATION_POLICY.md`; machine-readable continuity is
+`data/project-coordination-state.json`. Start each separately authorized Codex
+task in a new execution when possible.
 
-Recommended start prompt:
+## Routing
 
-```text
-Execute Task <id> using tasks/specs/<id>.json.
-Run codex:prepare first.
-Read only the context packet and required paths.
-Do not execute the follow-up task.
-```
+ChatGPT Work performs discovery, research, planning, independent validation,
+gate decisions, state maintenance and next-task selection. Pure research,
+reading, comparison, review or report work remains in Work. Hybrid work starts
+with Work analysis; Codex receives only the smallest technical unit.
+
+Codex implements and reports. It does not execute a follow-up inside the same
+execution. After Work validates an accepted gate, Work may automatically start
+a new, separately authorized Codex execution without an intermediate routing
+choice by Gwen.
+
+Chat presents results and material blockers. When an actual integration exists,
+Chat does not ask Gwen to copy instructions between surfaces. When the surface
+cannot start Codex, record `BLOCKED_BY_SURFACE` and preserve the prepared
+instruction and state. Never describe a prepared instruction as sent or an
+unavailable integration as invoked.
 
 ## Steps
 
-1. Run `npm run codex:prepare -- --task <id>` or `--dry-run` for a blocked future task.
-2. Read `.local/codex/<id>/context-packet.md`.
-3. Open only required paths. Use optional paths only with a recorded reason.
-4. Implement scoped changes.
-5. Run `npm run codex:preflight -- --task <id>` and task-required checks.
-6. Run `npm run codex:validate -- --task <id> --base <commit>` when changes exist.
-7. Run `npm run codex:review -- --task <id> --base <commit>`.
-8. Stage explicitly, commit once, push only when requested.
-9. Handoff using the compact format from the review packet.
+1. Read coordination state; verify branch and expected base equal the last
+   accepted commit.
+2. Run `npm run codex:prepare -- --task <id>`.
+3. Read `.local/codex/<id>/context-packet.md` and required paths only.
+4. Implement within `writePaths`; forbidden paths always override scope.
+5. Run `npm run codex:preflight -- --task <id> --base <accepted-commit>` and
+   mandatory checks.
+6. Freeze the versioned report, stage explicitly and create exactly one commit.
+7. Run `npm run codex:validate -- --task <id> --base <accepted-commit>` against
+   the clean committed candidate. A failed result exits non-zero.
+8. Run `npm run codex:review -- --task <id> --base <accepted-commit>` to resolve
+   the full candidate SHA and write the post-commit attestation. Push only the
+   authorized branch, if requested, then rerun review to record the remote.
+9. Report execution using `docs/codex/CODEX_REPORT_TEMPLATE.md`, leave the task
+   `VALIDATING`, and stop.
 
-Execution without `--dry-run` is limited to tasks whose spec status is `authorized` or `active`. Blocked, pending, and completed tasks can be inspected only with `prepare --dry-run` or `preflight --dry-run`, except for a declared final validation transition that marks the current task completed.
+For `coordinationPolicyVersion: 1`, the context packet begins with the fifteen
+ordered contract blocks from `TASK_INSTRUCTION_TEMPLATE.md`. It separately
+shows the Work-accepted commit, task base, coordination status, acceptance
+authority, Codex execution claim and pending Work validation.
 
-`validate` records a fingerprint of the base commit, head commit, task spec, workflow script, Git status, changed files, file hashes, removals, renames, staged files, unstaged files, and untracked files. `review` recomputes that fingerprint and fails closed if anything changed.
+Execution without `--dry-run` remains limited to executable spec lifecycle
+states. The compatibility gate structurally validates all 100 historical specs
+091–190; earlier specs remain readable. Executable
+specs 191+ require contract v1.
 
-Task checks are structured records, not shell command strings. Supported check types are `npm-script`, `node-test`, `eslint`, and workflow dry-runs. Logs stay under `.local/codex/<task>/logs/`.
+## Evidence And Review
+
+`validate` fingerprints base, full HEAD, spec, workflow, Git status and changed
+files and exits non-zero when `passed` is false. `review` recomputes the
+fingerprint, requires a clean tree and exactly one commit from the accepted
+base, verifies structural report fields and emits both the review packet and a
+post-commit attestation with the real candidate SHA. A technical gate is a
+Codex claim; it does not mutate `lastAcceptedCommit` or replace Work validation.
+
+Logs stay under `.local/codex/<task>/logs/`. The workflow validates declared
+paths and checks but cannot intercept arbitrary commands or create cross-surface
+integration.
 
 ## Stop Conditions
 
-Stop when no authorized pending task remains, the next task is blocked, a human/research gate is missing, a task requires semantic ground truth unavailable from current evidence, or validation fails in a way outside the authorized scope.
-
-Do not use multiple agents for small related changes. Do not run tasks in parallel when they touch related files.
-
-## Enforcement Limits
-
-The workflow tool validates task specs, declared paths, command checks, generated packets, and changed files that pass through `scripts/codex-workflow.js`. It does not intercept arbitrary commands run directly outside the workflow.
-
-`AGENTS.md` remains the behavioral rule for the agent. The workflow checks are guardrails and review evidence, not an absolute sandbox for unregistered shell activity.
-
-Search guidance is operational policy unless a command is executed through the workflow. Prefer targeted `rg` and file reads over broad repository scans, and keep excluded directories out of manual searches.
+Stop on base or branch divergence, invalid state, rejected/blocked gate,
+protected scope, unexpected historical regression, missing authority, or
+validation failure outside scope. Do not self-authorize an alternative or a
+follow-up.

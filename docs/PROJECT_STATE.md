@@ -1,6 +1,21 @@
 # Project State
 
-Last updated: 2026-07-06
+Last updated: 2026-07-11
+
+## Coordination Governance Candidate
+
+Task 190 at commit `13a3da64bcf0ba839a752038f07f40e3eeeed890`
+remains the last state independently accepted by ChatGPT Work. Task 191 adds
+the autonomous Work–Codex–Chat coordination policy, persistent state, task
+contract and validators as a technical candidate. Its status is `VALIDATING`;
+its technical gate is not final acceptance and no Task 191 commit is recorded
+as accepted. Work is the acceptance authority and must independently validate
+the candidate. No Task 192 exists.
+
+The repository does not provide or simulate a cross-surface launch integration.
+An unavailable surface is represented by `BLOCKED_BY_SURFACE` with preserved
+state and instruction. Death-fact promotion remains blocked by Task 190's
+`partial` operational assessment. Replays 005–008 remain protected.
 
 ## Authoritative Current State
 

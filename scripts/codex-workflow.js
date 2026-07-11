@@ -5,6 +5,15 @@ import { existsSync, lstatSync, readFileSync, statSync } from 'node:fs';
 import { mkdir, readFile, realpath, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+    CONTRACT_KEYS,
+    REPORT_CHECKS,
+    validateCoordinationInvariants,
+    validatePostCommitAttestation,
+    validateReportText,
+    validateStateData,
+    validateTaskContractData
+} from './validate-project-coordination.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LOCAL_ROOT = '.local/codex';
@@ -36,6 +45,24 @@ const REQUIRED_SPEC_FIELDS = [
     'gateSource'
 ];
 const PROTECTED_PATTERNS = [/partida_005\.dem/iu, /replay_005/iu, /replay_006/iu, /replay_007/iu, /replay_008/iu];
+const COORDINATION_EXECUTION_STATUSES = new Set(['READY_FOR_CODEX', 'CODEX_RUNNING', 'VALIDATING']);
+const CONTRACT_HEADINGS = Object.freeze([
+    '1. Reasoning complexity',
+    '2. Objective',
+    '3. Technical context',
+    '4. Confirmed state',
+    '5. Expected base commit',
+    '6. Branch/environment',
+    '7. Allowed scope',
+    '8. Protected areas',
+    '9. Expected changes',
+    '10. Acceptance criteria',
+    '11. Mandatory tests',
+    '12. Required evidence',
+    '13. Commit policy',
+    '14. Stop conditions',
+    '15. Return-report format'
+]);
 
 function rel(file) {
     return path.relative(ROOT, path.resolve(file)).replaceAll(path.sep, '/');
@@ -141,6 +168,7 @@ function safeSpecPath(value) {
 }
 
 async function loadSpec(taskId, options = {}) {
+    if (options.specOverride) return { spec: options.specOverride, specPath: `tasks/specs/${taskId}.json` };
     const specDir = options.specDir ?? 'tasks/specs';
     const specPath = `${specDir}/${taskId}.json`;
     const resolved = await resolveRepoPath(specPath);
@@ -189,6 +217,18 @@ function validateSpecObject(spec, specPath = '') {
         if (hasProtectedReplayReference(gatePath)) errors.push(`gateSource references protected replay path: ${gatePath}`);
     }
     if (spec.replayProcessingAllowed === true) warnings.push('replay processing explicitly allowed');
+    const numericTaskId = Number.parseInt(spec.taskId, 10);
+    const executable = ['authorized', 'active'].includes(spec.status);
+    if (numericTaskId >= 191 && executable && spec.coordinationPolicyVersion !== 1) {
+        errors.push('executable Task 191+ requires coordinationPolicyVersion: 1');
+    }
+    if (spec.coordinationPolicyVersion === 1) {
+        const contractValidation = validateTaskContractData(spec.executionContract);
+        errors.push(...contractValidation.errors);
+        if (spec.executionMode !== 'codex') errors.push('coordination policy v1 technical task requires executionMode: codex');
+        if (!spec.executionReportPath) errors.push('coordination policy v1 requires executionReportPath');
+        if (spec.baseCommitExpected !== spec.executionContract?.expectedBaseCommit) errors.push('baseCommitExpected must equal executionContract.expectedBaseCommit');
+    }
     return { valid: errors.length === 0, errors, warnings };
 }
 
@@ -209,6 +249,71 @@ function git(args) {
 
 function gitStatusShort() {
     return git(['status', '--short']);
+}
+
+function evaluatePushEvidence({ candidateCommit, branch, remoteEvidence, requestedStatus }) {
+    const verified = remoteEvidence?.external === true && remoteEvidence?.exitCode === 0 && remoteEvidence?.sha === candidateCommit;
+    if (verified) return { pushStatus: `pushed:origin/${branch}`, originRef: `origin/${branch}`, verified: true };
+    const reason = remoteEvidence?.reason ?? 'remote_verification_unavailable';
+    if (requestedStatus?.startsWith('pushed:')) {
+        return { pushStatus: `blocked:unverified_push_claim_${reason}`, originRef: `not_available:${reason}`, verified: false };
+    }
+    if (/^(?:blocked|not_attempted):.+/u.test(requestedStatus ?? '')) {
+        return { pushStatus: requestedStatus, originRef: `not_available:${reason}`, verified: false };
+    }
+    const prefix = remoteEvidence?.exitCode === 0 ? 'not_attempted' : 'blocked';
+    return { pushStatus: `${prefix}:${reason}`, originRef: `not_available:${reason}`, verified: false };
+}
+
+function verifyRemotePush(branch, candidateCommit, requestedStatus) {
+    let remoteUrl = '';
+    try {
+        remoteUrl = git(['remote', 'get-url', 'origin']);
+    } catch {
+        return evaluatePushEvidence({ candidateCommit, branch, requestedStatus, remoteEvidence: { external: false, exitCode: 1, reason: 'origin_missing' } });
+    }
+    const external = /^(?:https?:\/\/|ssh:\/\/|git@)/u.test(remoteUrl);
+    if (!external) return evaluatePushEvidence({ candidateCommit, branch, requestedStatus, remoteEvidence: { external: false, exitCode: 1, reason: 'origin_not_external' } });
+    const ref = `refs/heads/${branch}`;
+    const run = spawnSync('git', ['ls-remote', '--heads', 'origin', ref], {
+        cwd: ROOT,
+        encoding: 'utf8',
+        shell: false,
+        timeout: 15000,
+        env: { ...process.env, GIT_TERMINAL_PROMPT: '0' }
+    });
+    const line = (run.stdout ?? '').split(/\r?\n/u).find(value => value.endsWith(`\t${ref}`));
+    const sha = line?.split(/\s+/u)[0] ?? null;
+    const reason = run.status === 0 ? (sha ? 'remote_sha_differs' : 'remote_branch_absent') : (run.error?.code === 'ETIMEDOUT' ? 'remote_verification_timeout' : 'remote_verification_failed');
+    return evaluatePushEvidence({ candidateCommit, branch, requestedStatus, remoteEvidence: { external, exitCode: run.status ?? 1, sha, reason } });
+}
+
+function resolveCandidateFromGit(state, baseCommit, options = {}) {
+    const errors = [];
+    let base = null;
+    let head = null;
+    let mergeBase = null;
+    let commitCount = null;
+    let commitList = [];
+    const branch = git(['branch', '--show-current']);
+    try {
+        base = git(['rev-parse', '--verify', `${baseCommit}^{commit}`]);
+        head = git(['rev-parse', '--verify', 'HEAD^{commit}']);
+        mergeBase = git(['merge-base', base, head]);
+        commitCount = Number.parseInt(git(['rev-list', '--count', `${base}..${head}`]), 10);
+        commitList = git(['rev-list', '--reverse', `${base}..${head}`]).split(/\r?\n/u).filter(Boolean);
+    } catch (error) {
+        errors.push(`candidate Git resolution failed: ${error.message}`);
+    }
+    if (base && mergeBase !== base) errors.push('candidate is not based directly on the accepted base');
+    if (branch !== state.branch) errors.push(`candidate branch diverges from coordination state: expected ${state.branch}`);
+    if (state.candidateResolution?.branch !== branch) errors.push('candidate resolution branch does not match Git branch');
+    if (options.requireCandidate === true && commitCount !== state.candidateResolution?.requiredCommitCount) {
+        errors.push(`candidate commit count must be ${state.candidateResolution?.requiredCommitCount}, found ${commitCount}`);
+    }
+    if (commitCount !== null && commitCount > 1) errors.push(`candidate has additional commits: ${commitCount}`);
+    if (head && state.rejectedCommits?.includes(head)) errors.push('Git-resolved candidate is rejected');
+    return { valid: errors.length === 0, errors, baseCommit: base, candidateCommit: head, branch, mergeBase, commitCount, commitList };
 }
 
 function changedFilesSince(base) {
@@ -310,13 +415,143 @@ function formatFileInfo(info) {
     return `- ${info.path} | ${info.purpose} | exists=${info.exists} | size=${info.sizeBytes ?? 'missing'} | lines=${info.lineCount ?? 'n/a'} | sha256=${info.sha256 ?? 'n/a'}${info.large ? ' | large-not-included' : ''}`;
 }
 
-async function buildContextText(spec, specPath) {
+async function loadCoordinationState() {
+    const policyPath = await resolveRepoPath('docs/codex/AUTONOMOUS_COORDINATION_POLICY.md');
+    if (!existsSync(policyPath)) throw new Error('coordination policy file is missing');
+    const statePath = await resolveRepoPath('data/project-coordination-state.json');
+    if (!existsSync(statePath)) throw new Error('coordination state is missing');
+    let state;
+    try {
+        state = JSON.parse(await readFile(statePath, 'utf8'));
+    } catch (error) {
+        throw new Error(`coordination state is invalid JSON: ${error.message}`);
+    }
+    const validation = validateStateData(state);
+    if (!validation.valid) throw new Error(`coordination state is invalid: ${validation.errors.join('; ')}`);
+    return state;
+}
+
+function validatePreflightInputs({ state, spec, expectedBaseCommit, actualBranch, headCommit, policyExists, agentsBytes, currentStateBytes }) {
+    const failures = [];
+    if (!policyExists) failures.push('coordination policy file is missing');
+    if (!state) failures.push('coordination state is missing');
+    else {
+        const stateValidation = validateStateData(state);
+        failures.push(...stateValidation.errors.map(error => `coordination state is invalid: ${error}`));
+    }
+    if (!spec) failures.push('task spec is missing');
+    else {
+        const specValidation = validateSpecObject(spec, `tasks/specs/${spec.taskId ?? 'unknown'}.json`);
+        failures.push(...specValidation.errors.map(error => `task spec is invalid: ${error}`));
+    }
+    if (state && spec) {
+        failures.push(...validateCoordinationInvariants(state, spec, { expectedBaseCommit, actualBranch }).errors);
+        if (spec.executionContract?.expectedBaseCommit !== state.lastAcceptedCommit) failures.push('contract base diverges from last accepted commit');
+        if (state.status === 'READY_FOR_CODEX' && headCommit && headCommit !== state.lastAcceptedCommit) failures.push('READY_FOR_CODEX requires HEAD to equal lastAcceptedCommit');
+    }
+    if (agentsBytes > AGENTS_LIMIT) failures.push(`AGENTS.md exceeds ${AGENTS_LIMIT}`);
+    if (currentStateBytes > CURRENT_STATE_LIMIT) failures.push(`CURRENT_STATE.md exceeds ${CURRENT_STATE_LIMIT}`);
+    return { passed: failures.length === 0, failures };
+}
+
+function validateSurfaceHandoff({ integrationAvailable, invocationClaimed, status, instructionPreserved }) {
+    const failures = [];
+    if (!integrationAvailable) {
+        if (invocationClaimed) failures.push('unavailable integration cannot be claimed as invoked');
+        if (status !== 'BLOCKED_BY_SURFACE') failures.push('unavailable integration must use BLOCKED_BY_SURFACE');
+        if (!instructionPreserved) failures.push('BLOCKED_BY_SURFACE must preserve the instruction');
+    }
+    return { passed: failures.length === 0, failures };
+}
+
+function contractLines(value) {
+    if (Array.isArray(value)) return value.map(item => `- ${item}`);
+    return [String(value)];
+}
+
+function orderedContractSections(spec, state) {
+    const contract = spec.executionContract;
+    const values = {
+        reasoningComplexity: contract.reasoningComplexity,
+        objective: contract.objective,
+        technicalContext: contract.technicalContext,
+        confirmedState: [
+            ...contract.confirmedState,
+            `Coordination status: ${state.status}`,
+            `Active task: ${state.activeTaskId}`,
+            `Coordination branch: ${state.branch}`,
+            `Last accepted task: ${state.lastAcceptedTaskId}`,
+            `Last accepted commit (Work-accepted): ${state.lastAcceptedCommit}`,
+            `Acceptance authority: ${state.acceptanceAuthority}`,
+            'Codex execution claim: technical implementation and validation evidence only.',
+            'Work validation: independently pending; no Codex field is acceptance.'
+        ],
+        expectedBaseCommit: [
+            `Task expected base: ${contract.expectedBaseCommit}`,
+            `Coordination active base: ${state.activeBaseCommit}`
+        ],
+        branchEnvironment: contract.branchEnvironment,
+        allowedScope: contract.allowedScope,
+        protectedAreas: contract.protectedAreas,
+        expectedChanges: contract.expectedChanges,
+        acceptanceCriteria: contract.acceptanceCriteria,
+        mandatoryTests: contract.mandatoryTests,
+        requiredEvidence: contract.requiredEvidence,
+        commitPolicy: contract.commitPolicy,
+        stopConditions: contract.stopConditions,
+        returnReportFormat: contract.returnReportFormat
+    };
+    return CONTRACT_KEYS.flatMap((key, index) => [
+        `## ${CONTRACT_HEADINGS[index]}`,
+        '',
+        ...contractLines(values[key]),
+        ''
+    ]);
+}
+
+async function buildContextText(spec, specPath, options = {}) {
     const files = [];
     for (const readPath of spec.readPaths) files.push(await fileInfo(readPath, 'required read'));
     for (const optionalPath of spec.optionalReadPaths) files.push(await fileInfo(optionalPath, 'optional read'));
     const policies = [];
     for (const policy of spec.requiredPolicies) policies.push(await fileInfo(policy, 'required policy'));
-    const lines = [
+    const state = spec.coordinationPolicyVersion === 1 ? (options.stateOverride ?? await loadCoordinationState()) : null;
+    const lines = spec.coordinationPolicyVersion === 1 ? [
+        `# Codex Context Packet ${spec.taskId}`,
+        '',
+        ...orderedContractSections(spec, state),
+        '## Execution metadata',
+        '',
+        `Task: ${spec.taskId} - ${spec.title}`,
+        `Spec status: ${spec.status}`,
+        `Spec: ${specPath}`,
+        `Repository HEAD (not acceptance): ${git(['rev-parse', 'HEAD'])}`,
+        `Branch: ${git(['branch', '--show-current'])}`,
+        'Git status:',
+        '```text',
+        gitStatusShort() || 'clean',
+        '```',
+        '',
+        '## Required Read Paths',
+        ...files.filter(item => item.purpose === 'required read').map(formatFileInfo),
+        '',
+        '## Optional Read Paths',
+        ...files.filter(item => item.purpose === 'optional read').map(formatFileInfo),
+        '',
+        '## Write Paths',
+        ...spec.writePaths.map(item => `- ${item}`),
+        '',
+        '## Forbidden Paths',
+        ...spec.forbiddenPaths.map(item => `- ${item}`),
+        '',
+        '## Policies',
+        ...policies.map(formatFileInfo),
+        '',
+        '## Required Checks',
+        ...spec.requiredCommands.map(item => `- ${normalizeCheck(item).id}: ${checkDisplay(normalizeCheck(item))}`),
+        '',
+        `Excluded directories: ${EXCLUDED_DIRS.join(', ')}`
+    ] : [
         `# Codex Context Packet ${spec.taskId}`,
         '',
         `Task: ${spec.taskId} - ${spec.title}`,
@@ -377,7 +612,7 @@ function enforceLifecycle(spec, phase, options = {}) {
 async function buildContextPacket(taskId, options = {}) {
     const { spec, specPath } = await ensureSpec(taskId, options);
     enforceLifecycle(spec, 'prepare', options);
-    const text = await buildContextText(spec, specPath);
+    const text = await buildContextText(spec, specPath, options);
     const sizeBytes = Buffer.byteLength(text, 'utf8');
     if (sizeBytes > CONTEXT_LIMIT) throw new Error(`context packet exceeds ${CONTEXT_LIMIT} bytes`);
     const target = `${LOCAL_ROOT}/${taskId}/context-packet.md`;
@@ -414,8 +649,36 @@ async function preflight(taskId, options = {}) {
     for (const policy of spec.requiredPolicies) if (!existsSync(await resolveRepoPath(policy))) failures.push(`required policy not found: ${policy}`);
     if (statSync(await resolveRepoPath('AGENTS.md')).size > AGENTS_LIMIT) failures.push(`AGENTS.md exceeds ${AGENTS_LIMIT}`);
     if (statSync(await resolveRepoPath('docs/codex/CURRENT_STATE.md')).size > CURRENT_STATE_LIMIT) failures.push(`CURRENT_STATE.md exceeds ${CURRENT_STATE_LIMIT}`);
+    if (spec.coordinationPolicyVersion === 1) {
+        try {
+            const state = options.stateOverride ?? await loadCoordinationState();
+            const authorizedBase = options.base ?? spec.baseCommitExpected;
+            const inputValidation = validatePreflightInputs({
+                state,
+                spec,
+                expectedBaseCommit: authorizedBase,
+                actualBranch: options.actualBranchOverride ?? git(['branch', '--show-current']),
+                headCommit: options.headCommitOverride ?? git(['rev-parse', 'HEAD']),
+                policyExists: existsSync(await resolveRepoPath('docs/codex/AUTONOMOUS_COORDINATION_POLICY.md')),
+                agentsBytes: statSync(await resolveRepoPath('AGENTS.md')).size,
+                currentStateBytes: statSync(await resolveRepoPath('docs/codex/CURRENT_STATE.md')).size
+            });
+            failures.push(...inputValidation.failures);
+            if (COORDINATION_EXECUTION_STATUSES.has(state.status) && state.activeTaskId !== spec.taskId) failures.push('coordination state active task diverges from executable spec');
+            if (state.lastAcceptedTaskId === spec.taskId || state.lastAcceptedCommit === state.candidateCommit) failures.push('task attempts to mark its own commit accepted');
+            if (state.acceptanceAuthority !== 'ChatGPT Work') failures.push('acceptance authority must be ChatGPT Work');
+            if (state.status === 'VALIDATING') {
+                const candidate = resolveCandidateFromGit(state, authorizedBase, { requireCandidate: false });
+                failures.push(...candidate.errors);
+            }
+        } catch (error) {
+            failures.push(error.message);
+        }
+    }
     if (gitStatusShort()) warnings.push('working tree has changes; ensure they belong to the current task');
-    return { taskId, dryRun: options.dryRun === true, failures, warnings, passed: failures.length === 0 };
+    const result = { taskId, dryRun: options.dryRun === true, failures, warnings, passed: failures.length === 0 };
+    if (!options.dryRun) await writeLocalJson(taskId, 'preflight-result.json', result);
+    return result;
 }
 
 function isAllowedWrite(spec, file) {
@@ -535,6 +798,20 @@ async function validateTask(taskId, options = {}) {
     enforceLifecycle(spec, 'validate', options);
     const base = options.base;
     const failures = [];
+    let state = null;
+    if (spec.coordinationPolicyVersion === 1) {
+        try {
+            state = await loadCoordinationState();
+            const invariant = validateCoordinationInvariants(state, spec, {
+                expectedBaseCommit: base,
+                actualBranch: git(['branch', '--show-current'])
+            });
+            failures.push(...invariant.errors);
+            if (base) failures.push(...resolveCandidateFromGit(state, base, { requireCandidate: false }).errors);
+        } catch (error) {
+            failures.push(error.message);
+        }
+    }
     if (!base) failures.push('base commit is required');
     else {
         try {
@@ -645,6 +922,23 @@ async function review(taskId, options = {}) {
     let validationStatus = 'missing';
     const staleReasons = [];
     const failures = [];
+    let state = null;
+    let candidateResolution = null;
+    if (spec.coordinationPolicyVersion === 1) {
+        try {
+            state = await loadCoordinationState();
+            candidateResolution = resolveCandidateFromGit(state, base, { requireCandidate: true });
+            failures.push(...candidateResolution.errors);
+            failures.push(...validateCoordinationInvariants(state, spec, {
+                expectedBaseCommit: base,
+                actualBranch: candidateResolution.branch,
+                resolvedCandidateCommit: candidateResolution.candidateCommit
+            }).errors);
+            if (gitStatusShort()) failures.push('post-commit review requires a clean working tree');
+        } catch (error) {
+            failures.push(error.message);
+        }
+    }
     if (!validation) failures.push('validate-result.json missing');
     else {
         if (validation.base !== base) failures.push('validate result base commit is stale or different');
@@ -660,6 +954,19 @@ async function review(taskId, options = {}) {
         validationStatus = validation.passed ? 'passed' : 'failed';
         if (validation.base !== base || validation.current !== current || staleReasons.length > 0) validationStatus = 'stale';
     }
+    let reportChecklist = [];
+    if (spec.coordinationPolicyVersion === 1) {
+        const reportPath = await resolveRepoPath(spec.executionReportPath);
+        if (!existsSync(reportPath)) {
+            failures.push(`execution report missing: ${spec.executionReportPath}`);
+            reportChecklist = REPORT_CHECKS.map(([field]) => ({ field, present: false }));
+        } else {
+            const reportText = await readFile(reportPath, 'utf8');
+            const reportValidation = validateReportText(reportText);
+            failures.push(...reportValidation.errors);
+            reportChecklist = REPORT_CHECKS.map(([field]) => ({ field, present: !reportValidation.missingFields.includes(field) }));
+        }
+    }
     const reviewReady = failures.length === 0;
     const gate = await gateForSpec(spec, reviewReady);
     if (gate === spec.successGate && !reviewReady) failures.push('success gate cannot be used with failed validation');
@@ -670,12 +977,18 @@ async function review(taskId, options = {}) {
         task: taskId,
         title: spec.title,
         commitBase: base,
-        commitCurrent: current,
+        commitCurrent: candidateResolution?.candidateCommit ?? current,
+        candidateResolution,
         validationStatus,
         staleReasons,
         validatedFingerprint: validation?.workingTreeFingerprint ?? null,
         currentFingerprint: currentFingerprint?.workingTreeFingerprint ?? null,
         reviewReady,
+        executionClaim: spec.coordinationPolicyVersion === 1 ? 'Codex reports technical execution evidence only.' : null,
+        workValidation: spec.coordinationPolicyVersion === 1 ? 'Final acceptance remains pending independent ChatGPT Work validation.' : null,
+        coordinationStatus: spec.coordinationPolicyVersion === 1 ? 'VALIDATING' : null,
+        finalAcceptanceStatus: spec.coordinationPolicyVersion === 1 ? 'pending_work_validation' : null,
+        reportChecklist,
         changedFiles: changed,
         testsExecuted: validation?.checks?.map(({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs }) => ({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs })) ?? [],
         unexpectedFiles: validation?.changedFiles?.filter(item => !item.allowed).map(item => item.file) ?? [],
@@ -691,7 +1004,7 @@ async function review(taskId, options = {}) {
         '',
         `Task: ${taskId} - ${spec.title}`,
         `Commit base: ${base}`,
-        `Commit current: ${current}`,
+        `Commit current: ${candidateResolution?.candidateCommit ?? current}`,
         `Validation status: ${validationStatus}`,
         `Review ready: ${reviewReady}`,
         `Gate: ${reviewJson.gate}`,
@@ -702,6 +1015,16 @@ async function review(taskId, options = {}) {
         '',
         '## Checks',
         ...reviewJson.testsExecuted.map(item => `- ${item.id}: ${item.passed ? 'passed' : 'failed'} (${item.exitCode}) ${item.logPath}`),
+        ...(spec.coordinationPolicyVersion === 1 ? [
+            '',
+            '## Codex report checklist',
+            ...reportChecklist.map(item => `- [${item.present ? 'x' : ' '}] ${item.field}`),
+            '',
+            'Codex execution claim: technical evidence only.',
+            'Coordination status: VALIDATING.',
+            'Work validation: Final acceptance remains pending independent ChatGPT Work validation.',
+            'No report field represents self-approval.'
+        ] : []),
         '',
         'Stop reason: ' + stopReason
     ].join('\n');
@@ -710,6 +1033,43 @@ async function review(taskId, options = {}) {
     if (Buffer.byteLength(jsonText, 'utf8') > REVIEW_JSON_LIMIT) throw new Error('review JSON packet exceeds limit');
     if (!reviewReady) throw new Error(`review is not ready: ${failures.join('; ')}`);
     const dir = await localTaskDir(taskId);
+    if (spec.coordinationPolicyVersion === 1) {
+        const pushEvidence = verifyRemotePush(candidateResolution.branch, candidateResolution.candidateCommit, options.pushStatus);
+        const attestation = {
+            taskId,
+            candidateCommit: candidateResolution.candidateCommit,
+            baseCommit: candidateResolution.baseCommit,
+            branch: candidateResolution.branch,
+            commitCount: candidateResolution.commitCount,
+            commitList: candidateResolution.commitList,
+            files: changed,
+            commands: validation.checks.map(check => ({ command: check.display, exitCode: check.exitCode, passed: check.passed, logPath: check.logPath, logSha256: check.logSha256 })),
+            tests: Object.fromEntries(validation.checks.map(check => [check.id, { exitCode: check.exitCode, passed: check.passed }])),
+            build: 'not_applicable:governance-only change',
+            lint: validation.checks.find(check => check.id === 'lint')?.passed ? 'passed' : 'failed',
+            typecheck: 'not_applicable:no repository typecheck command',
+            artifacts: [
+                `.local/codex/${taskId}/validate-result.json`,
+                `.local/codex/${taskId}/review-packet.json`,
+                state.candidateResolution.reviewArtifact
+            ],
+            limitations: ['Repository workflow cannot prove an external Work or Codex surface invocation.'],
+            risks: ['Direct commands outside this workflow remain outside script interception.'],
+            deviations: [],
+            unvalidated: ['Independent ChatGPT Work acceptance.'],
+            technicalGateClaim: gate,
+            pushStatus: pushEvidence.pushStatus,
+            head: candidateResolution.candidateCommit,
+            originRef: pushEvidence.originRef,
+            finalStatus: 'VALIDATING',
+            coordinationStatus: state.status,
+            finalAcceptanceStatus: 'pending_work_validation',
+            generatedAt: new Date().toISOString()
+        };
+        const attestationValidation = validatePostCommitAttestation(attestation);
+        if (!attestationValidation.valid) throw new Error(`post-commit attestation invalid: ${attestationValidation.errors.join('; ')}`);
+        await writeFile(path.join(dir, 'post-commit-attestation.json'), `${JSON.stringify(attestation, null, 2)}\n`);
+    }
     await writeFile(path.join(dir, 'review-packet.md'), `${md}\n`);
     await writeFile(path.join(dir, 'review-packet.json'), jsonText);
     return { markdownPath: rel(path.join(dir, 'review-packet.md')), jsonPath: rel(path.join(dir, 'review-packet.json')), markdownBytes: Buffer.byteLength(md, 'utf8'), jsonBytes: Buffer.byteLength(jsonText, 'utf8'), reviewJson };
@@ -717,11 +1077,19 @@ async function review(taskId, options = {}) {
 
 async function status() {
     const state = readFileSync(await resolveRepoPath('docs/codex/CURRENT_STATE.md'), 'utf8');
+    const coordination = await loadCoordinationState();
     const lines = [
         'Codex workflow status',
-        state.split(/\r?\n/u).find(line => line.startsWith('Authorized task:')) ?? 'Authorized task: unknown',
-        state.split(/\r?\n/u).find(line => line.startsWith('Latest rejected gate:')) ?? 'Latest rejected gate: unknown',
-        state.split(/\r?\n/u).find(line => line.startsWith('Blocked follow-up:')) ?? 'Blocked follow-up: unknown',
+        `Coordination policy version: ${coordination.coordinationPolicyVersion}`,
+        `Coordination status: ${coordination.status}`,
+        `Active task: ${coordination.activeTaskId ?? 'none'}`,
+        `Last accepted task: ${coordination.lastAcceptedTaskId}`,
+        `Last accepted commit: ${coordination.lastAcceptedCommit}`,
+        `Active base commit: ${coordination.activeBaseCommit}`,
+        `Branch: ${coordination.branch}`,
+        `Acceptance authority: ${coordination.acceptanceAuthority}`,
+        `Next action: ${coordination.nextAction}`,
+        state.split(/\r?\n/u).find(line => line.startsWith('Task 192:')) ?? 'Task 192: unknown',
         `Working tree: ${gitStatusShort() ? 'dirty' : 'clean'}`
     ];
     console.log(lines.join('\n'));
@@ -736,8 +1104,13 @@ function parseArgs(argv) {
         else if (arg === '--base') options.base = argv[++index];
         else if (arg === '--dry-run') options.dryRun = true;
         else if (arg === '--spec-dir') options.specDir = argv[++index];
+        else if (arg === '--push-status') options.pushStatus = argv[++index];
     }
     return options;
+}
+
+function validationExitCode(result) {
+    return result?.passed === true ? 0 : 1;
 }
 
 async function main() {
@@ -746,7 +1119,11 @@ async function main() {
     try {
         if (command === 'prepare') console.log(JSON.stringify(await buildContextPacket(options.task, options), null, 2));
         else if (command === 'preflight') console.log(JSON.stringify(await preflight(options.task, options), null, 2));
-        else if (command === 'validate') console.log(JSON.stringify(await validateTask(options.task, options), null, 2));
+        else if (command === 'validate') {
+            const result = await validateTask(options.task, options);
+            console.log(JSON.stringify(result, null, 2));
+            process.exitCode = validationExitCode(result);
+        }
         else if (command === 'review') console.log(JSON.stringify(await review(options.task, options), null, 2));
         else if (command === 'status') await status();
         else throw new Error(`unknown command: ${command}`);
@@ -767,10 +1144,12 @@ export {
     REVIEW_JSON_LIMIT,
     REVIEW_MD_LIMIT,
     buildContextPacket,
+    buildContextText,
     changedFilesSince,
     checkAllowed,
     checkInvocation,
     gateForSpec,
+    evaluatePushEvidence,
     hasProtectedReplayReference,
     isAllowedWrite,
     isForbidden,
@@ -779,9 +1158,14 @@ export {
     matchesAny,
     pathMatches,
     preflight,
+    resolveCandidateFromGit,
     resolveRepoPath,
     review,
     safePathResult,
     validateSpecObject,
-    validateTask
+    validatePreflightInputs,
+    validateSurfaceHandoff,
+    validateTask,
+    validationExitCode,
+    verifyRemotePush
 };
