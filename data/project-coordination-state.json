@@ -1,23 +1,27 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Implement and independently validate the autonomous ChatGPT Work, Codex, and Chat coordination policy.",
-  "phase": "autonomous_coordination_policy_validation",
-  "lastAcceptedTaskId": "190",
-  "lastAcceptedCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
-  "activeBaseCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
+  "objective": "Test whether the Task 190 lifecycle signature is specific to Task 183 anchors when compared with replay-sourced structural hard challengers.",
+  "phase": "death_event_hard_challenger_lifecycle_specificity",
+  "lastAcceptedTaskId": "191",
+  "lastAcceptedCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
+  "activeBaseCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
   "branch": "task191-correction",
-  "activeTaskId": "191",
+  "activeTaskId": "192",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "task191-correction",
-    "reviewArtifact": ".local/codex/191/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/192/post-commit-attestation.json"
   },
   "rejectedCommits": [
-    "bf5cdaaa20c41b73523b53ea2855ca41c6223653"
+    "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
+    "16be50449050230077e99e8329084dd7a5b7b7af",
+    "77197ab0f6ac3d5458d5964083e1a988f89b8194",
+    "bd429179f2cc04dfc45d2301108047c59e890dde",
+    "5a41a4944fe6dc4d85e504616c0d959c212e9cf9"
   ],
   "protectedPaths": [
     "replay_005",
@@ -44,16 +48,20 @@
     "npm run check:outputs"
   ],
   "activeBlockers": [
-    "Final acceptance is pending independent ChatGPT Work validation.",
+    "Task 191 is accepted locally with publication blocked because Git CLI authentication and GitHub Git-data write permission are unavailable; origin/main remains on the rejected candidate.",
+    "Task 192 candidate 16be50449050230077e99e8329084dd7a5b7b7af was rejected because it reused the 30-second lifecycle result across all horizons; a bounded correction is authorized.",
+    "Task 192 correction 77197ab0f6ac3d5458d5964083e1a988f89b8194 was rejected because source reuse keyed the associated anchor rather than the structural transition; a narrower identity correction is authorized.",
+    "Task 192 correction bd429179f2cc04dfc45d2301108047c59e890dde was rejected because cluster identity and exclusion used the control reference second rather than the observed transition second; a temporal-identity correction is authorized.",
+    "Task 192 correction 5a41a4944fe6dc4d85e504616c0d959c212e9cf9 was rejected because challenger surface opportunity counted distinct status labels while anchors counted observable surfaces; a metric-alignment correction is authorized.",
     "Death-fact promotion remains blocked by the Task 190 partial operational assessment."
   ],
   "knownRisks": [
     "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work must independently validate the Task 191 commit and decide its gate without treating the Codex report as approval.",
-  "completedTasks": ["190"],
-  "pendingTasks": [],
+  "nextAction": "ChatGPT Work must independently validate the surface-opportunity-aligned Task 192 candidate.",
+  "completedTasks": ["190", "191"],
+  "pendingTasks": ["192"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

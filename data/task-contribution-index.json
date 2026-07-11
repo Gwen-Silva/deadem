@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "191",
-  "baseCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
-  "taskRange": "001-191",
+  "generatedAtTask": "192",
+  "baseCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
+  "taskRange": "001-192",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5839,7 +5839,7 @@
         "reports/autonomous-work-codex-coordination-policy-task191.md"
       ],
       "gate": "autonomous_work_codex_coordination_policy_ready",
-      "currentRelevance": "candidate_pending_independent_work_validation",
+      "currentRelevance": "accepted_coordination_baseline",
       "dependsOn": ["190"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -5847,11 +5847,42 @@
         "The repository cannot create or prove real cross-surface integration.",
         "Death-fact promotion remains blocked and no replay scope changes."
       ],
-      "evidenceStatus": "technical_candidate_pending_work_validation",
+      "evidenceStatus": "accepted_with_publication_blocker",
       "evidencePaths": [
         "tasks/specs/191.json",
         "tasks/completed/191-autonomous-work-codex-coordination-policy.md",
         "output/project-coordination/task191-summary.json"
+      ]
+    },
+    {
+      "taskId": "192",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Hard-Challenger Lifecycle Specificity Evidence",
+      "phase": "death_event_hard_challenger_lifecycle_specificity",
+      "primaryContribution": "Compared Task 183 anchors with replay-sourced unconfirmed structural challengers using exclusion windows and independent per-horizon ledgers.",
+      "introducedCapabilities": ["death_event_hard_challenger_lifecycle_specificity"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "docs/codex/DEATH_EVENT_HARD_CHALLENGER_LIFECYCLE_SPECIFICITY_CONTRACT.md",
+        "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-gate.json",
+        "reports/death-event-hard-challenger-lifecycle-specificity-task192.md"
+      ],
+      "gate": "task190_hard_challenger_lifecycle_specificity_bounded32_ready",
+      "currentRelevance": "candidate_pending_independent_work_validation",
+      "dependsOn": ["183", "190", "191"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Only two bounded primary-window structural challengers survived; specificity is insufficient.",
+        "Structural challengers are not ground-truth non-deaths or confirmed negatives.",
+        "Final facts and attribution remain unavailable."
+      ],
+      "evidenceStatus": "technical_candidate_insufficient_specificity",
+      "evidencePaths": [
+        "tasks/specs/192.json",
+        "tasks/completed/192-death-event-hard-challenger-lifecycle-specificity.md",
+        "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-summary.json"
       ]
     }
   ]

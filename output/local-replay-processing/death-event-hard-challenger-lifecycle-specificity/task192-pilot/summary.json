@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "runKind": "task192-pilot",
+  "artifactClass": "death_event_hard_challenger_lifecycle_specificity",
+  "manifestIdentity": "task192-pilot_hard_challenger_v1",
+  "replayIds": [
+    "replay_010",
+    "replay_011",
+    "replay_021",
+    "replay_036"
+  ],
+  "sourceBaseline": "task190_surface_resolved_lifecycle_evidence",
+  "exclusionWindowSeconds": 5,
+  "horizonResults": [
+    {
+      "horizonSeconds": 10,
+      "eligibleAnchorCount": 336,
+      "eligibleChallengerCount": 0,
+      "matchedPairCount": 0,
+      "anchorLifecycleRate": 0,
+      "challengerLifecycleRate": 0,
+      "pairedDifference": 0,
+      "anchorAssignmentCount": 0,
+      "challengerAssignmentCount": 0,
+      "sourceReuseCount": 0
+    },
+    {
+      "horizonSeconds": 20,
+      "eligibleAnchorCount": 321,
+      "eligibleChallengerCount": 0,
+      "matchedPairCount": 0,
+      "anchorLifecycleRate": 0,
+      "challengerLifecycleRate": 0,
+      "pairedDifference": 0,
+      "anchorAssignmentCount": 0,
+      "challengerAssignmentCount": 0,
+      "sourceReuseCount": 0
+    },
+    {
+      "horizonSeconds": 30,
+      "eligibleAnchorCount": 308,
+      "eligibleChallengerCount": 0,
+      "matchedPairCount": 0,
+      "anchorLifecycleRate": 0,
+      "challengerLifecycleRate": 0,
+      "pairedDifference": 0,
+      "anchorAssignmentCount": 0,
+      "challengerAssignmentCount": 0,
+      "sourceReuseCount": 0
+    },
+    {
+      "horizonSeconds": 60,
+      "eligibleAnchorCount": 229,
+      "eligibleChallengerCount": 0,
+      "matchedPairCount": 0,
+      "anchorLifecycleRate": 0,
+      "challengerLifecycleRate": 0,
+      "pairedDifference": 0,
+      "anchorAssignmentCount": 0,
+      "challengerAssignmentCount": 0,
+      "sourceReuseCount": 0
+    },
+    {
+      "horizonSeconds": 120,
+      "eligibleAnchorCount": 112,
+      "eligibleChallengerCount": 0,
+      "matchedPairCount": 0,
+      "anchorLifecycleRate": 0,
+      "challengerLifecycleRate": 0,
+      "pairedDifference": 0,
+      "anchorAssignmentCount": 0,
+      "challengerAssignmentCount": 0,
+      "sourceReuseCount": 0
+    },
+    {
+      "horizonSeconds": 180,
+      "eligibleAnchorCount": 65,
+      "eligibleChallengerCount": 0,
+      "matchedPairCount": 0,
+      "anchorLifecycleRate": 0,
+      "challengerLifecycleRate": 0,
+      "pairedDifference": 0,
+      "anchorAssignmentCount": 0,
+      "challengerAssignmentCount": 0,
+      "sourceReuseCount": 0
+    }
+  ],
+  "replayCount": 4,
+  "anchorCount": 341,
+  "challengerCount": 0,
+  "sourceReuseCount": 0,
+  "ambiguityCount": 0,
+  "assessment": "insufficient",
+  "technicalStatus": "passed",
+  "finalFactsProduced": false,
+  "attributionEmitted": false,
+  "readiness": {
+    "hardChallengerSpecificityEvidenceAvailable": true,
+    "readyForFinalDeathFacts": false,
+    "readyForConfirmedWhoDied": false,
+    "readyForAttribution": false,
+    "readyForKillerVictim": false,
+    "readyForTeamfight": false,
+    "readyForGameplayInterpretation": false
+  },
+  "limitations": [
+    "Structural challengers are unconfirmed replay-sourced comparison clusters, not ground-truth non-deaths.",
+    "Task 190 accepted artifacts are consumed without modification or parser upgrade."
+  ]
+}

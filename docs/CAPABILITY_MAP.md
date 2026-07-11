@@ -465,3 +465,15 @@ Task 190 supersedes Task 189 only for the explicitly repaired event-window,
 horizon, surface, truncation, audit, and promotion-readiness dimensions. It
 does not establish death or respawn truth, attribution, killer/victim,
 teamfight, or gameplay meaning.
+
+## Hard-Challenger Lifecycle Specificity
+
+- Capability id: `death_event_hard_challenger_lifecycle_specificity`
+- Introduced: Task 192
+- Status: candidate pending Work validation
+- Current baseline: `task192-bounded32_hard_challenger_v1`
+
+The layer independently compares Task 183 anchors with replay-sourced
+structural challengers outside participant anchor windows. Its bounded result
+is `insufficient` because only two challengers survive. It does not label them
+as non-deaths and does not enable any final-fact or attribution capability.

@@ -1503,3 +1503,14 @@ cause-specific truncation, audit semantics, and promotion readiness. Task 189
 remains immutable historical exposure-matched-v1 context. Operational
 promotion review, final deaths, confirmed who-died claims, attribution,
 killer/victim, teamfight detection, and gameplay interpretation remain false.
+
+## Task 192 - Hard-Challenger Lifecycle Specificity
+
+Task 192 consumes the accepted Task 190 replay-sourced observation artifacts
+without modifying them. Pilot and bounded-32 passed technically and atomically.
+Only two bounded structural challengers survived the primary exclusion and
+eligibility rules; both completed the observed lifecycle, producing zero
+30-second difference and an `insufficient` specificity assessment. Challengers
+are not ground-truth negatives. Final facts and attribution remain unavailable.
+Every horizon uses its own Task 190 eligibility and lifecycle result; at 10
+seconds the two matched pairs measure anchor/challenger rates of 0.5/1.0.

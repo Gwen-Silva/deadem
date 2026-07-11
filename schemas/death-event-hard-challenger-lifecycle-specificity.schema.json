@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-hard-challenger-lifecycle-specificity.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runKind", "artifactClass", "manifestIdentity", "replayIds", "sourceBaseline", "exclusionWindowSeconds", "horizonResults", "replayCount", "anchorCount", "challengerCount", "sourceReuseCount", "ambiguityCount", "assessment", "technicalStatus", "finalFactsProduced", "attributionEmitted", "readiness", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "runKind": { "enum": ["task192-pilot", "task192-bounded32"] },
+    "artifactClass": { "const": "death_event_hard_challenger_lifecycle_specificity" },
+    "manifestIdentity": { "type": "string", "minLength": 1 },
+    "replayIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^replay_[0-9]{3}$" } },
+    "sourceBaseline": { "const": "task190_surface_resolved_lifecycle_evidence" },
+    "exclusionWindowSeconds": { "const": 5 },
+    "horizonResults": { "type": "array", "minItems": 6, "maxItems": 6, "items": { "$ref": "#/$defs/horizon" } },
+    "replayCount": { "type": "integer", "minimum": 1 },
+    "anchorCount": { "type": "integer", "minimum": 0 },
+    "challengerCount": { "type": "integer", "minimum": 0 },
+    "sourceReuseCount": { "const": 0 },
+    "ambiguityCount": { "type": "integer", "minimum": 0 },
+    "assessment": { "enum": ["strong", "partial", "insufficient"] },
+    "technicalStatus": { "const": "passed" },
+    "finalFactsProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "readiness": { "$ref": "#/$defs/readiness" },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "rate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "horizon": {
+      "type": "object", "additionalProperties": false,
+      "required": ["horizonSeconds", "eligibleAnchorCount", "eligibleChallengerCount", "matchedPairCount", "anchorLifecycleRate", "challengerLifecycleRate", "pairedDifference", "anchorAssignmentCount", "challengerAssignmentCount", "sourceReuseCount"],
+      "properties": {
+        "horizonSeconds": { "enum": [10, 20, 30, 60, 120, 180] },
+        "eligibleAnchorCount": { "type": "integer", "minimum": 0 },
+        "eligibleChallengerCount": { "type": "integer", "minimum": 0 },
+        "matchedPairCount": { "type": "integer", "minimum": 0 },
+        "anchorLifecycleRate": { "$ref": "#/$defs/rate" },
+        "challengerLifecycleRate": { "$ref": "#/$defs/rate" },
+        "pairedDifference": { "type": "number", "minimum": -1, "maximum": 1 },
+        "anchorAssignmentCount": { "type": "integer", "minimum": 0 },
+        "challengerAssignmentCount": { "type": "integer", "minimum": 0 },
+        "sourceReuseCount": { "const": 0 }
+      }
+    },
+    "readiness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hardChallengerSpecificityEvidenceAvailable", "readyForFinalDeathFacts", "readyForConfirmedWhoDied", "readyForAttribution", "readyForKillerVictim", "readyForTeamfight", "readyForGameplayInterpretation"],
+      "properties": {
+        "hardChallengerSpecificityEvidenceAvailable": { "const": true },
+        "readyForFinalDeathFacts": { "const": false },
+        "readyForConfirmedWhoDied": { "const": false },
+        "readyForAttribution": { "const": false },
+        "readyForKillerVictim": { "const": false },
+        "readyForTeamfight": { "const": false },
+        "readyForGameplayInterpretation": { "const": false }
+      }
+    }
+  }
+}

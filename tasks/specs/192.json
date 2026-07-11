@@ -1,0 +1,184 @@
+{
+  "taskId": "192",
+  "title": "Build Hard-Challenger Lifecycle Specificity Evidence",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Measure whether the Task 190 surface-resolved lifecycle signature is specific to Task 183 counter-increment anchors when compared with replay-sourced structural hard challengers, without final death facts or attribution.",
+  "baseCommitExpected": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
+  "executionReportPath": "reports/death-event-hard-challenger-lifecycle-specificity-task192.md",
+  "executionContract": {
+    "reasoningComplexity": "High: the task must construct replay-sourced structural challengers without labeling them as non-deaths, preserve Task 190 integrity and independently test specificity under matched follow-up.",
+    "objective": "Build pilot and bounded-32 hard-challenger lifecycle specificity evidence that distinguishes Task 183 anchors from structurally similar non-anchor transition clusters without emitting final facts.",
+    "technicalContext": [
+      "Task 190 produced 2,552 exact pairs with a 30-second anchor/control lifecycle difference of 0.906471, but its controls are ordinary matched non-anchor times rather than structural hard challengers.",
+      "Only 12/32 replays met local strong criteria because local eligibility was often below 0.90; anchor rates, control rates and paired differences otherwise remained strong.",
+      "Upstream deadem v3.3.0 adds string-table, modifier and mutation-access APIs but no death confirmation or lifecycle-specificity solution."
+    ],
+    "confirmedState": [
+      "Task 191 and commit aa8e18fa3c912c6d59f3125084e30a520e6b8f77 are Work-accepted locally with an external publication blocker.",
+      "Task 190 remains the active surface-resolved lifecycle evidence baseline with a partial operational assessment.",
+      "Final deaths, confirmed who-died claims, attribution, killer/victim, teamfight and gameplay interpretation remain unavailable.",
+      "The rejected Task 191 commit bf5cdaaa20c41b73523b53ea2855ca41c6223653 cannot be used as a base."
+    ],
+    "expectedBaseCommit": "aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
+    "branchEnvironment": [
+      "Repository Gwen-Silva/deadem on branch task191-correction.",
+      "Create exactly one Task 192 commit locally; push only to origin/task191-correction when externally verified write access exists, never force-push or modify origin/main."
+    ],
+    "allowedScope": [
+      "Add the Task 192 challenger contract, schema, emitter, focused tests, task/report, bounded artifacts and required navigation/state updates.",
+      "Process only the existing Task 190 pilot and bounded-32 human replay manifests through existing parser surfaces."
+    ],
+    "protectedAreas": [
+      "Do not modify packages/deadem, packages/engine, samples, parser internals, Task 180-191 historical outputs or the accepted Task 190 baseline.",
+      "Do not read, hash, copy, inspect, open or process replay_005, replay_006, replay_007 or replay_008.",
+      "Do not call structural challengers non-deaths, false deaths, confirmed negatives or ground truth."
+    ],
+    "expectedChanges": [
+      "Define challenger eligibility from replay-sourced forward-direction transition clusters outside every Task 183 anchor exclusion window.",
+      "Match anchors to challengers by replay, synthetic participant, time stratum, available common follow-up and observable surface opportunity with fresh per-horizon ledgers.",
+      "Emit pilot and bounded-32 specificity, eligibility, truncation, surface, ambiguity, reuse and sensitivity evidence without raw values or final facts."
+    ],
+    "acceptanceCriteria": [
+      "Every challenger is replay-sourced, structurally eligible, outside anchor windows and described only as an unconfirmed structural challenger.",
+      "No anchor, challenger event, observation or assignment is reused within a cohort/horizon; matching and denominators are independently recomputed for 10, 20, 30, 60, 120 and 180 seconds.",
+      "Pilot and bounded-32 publish atomically with strict schema plus semantic invariant validation and explicit insufficient/partial/strong specificity assessment.",
+      "The result distinguishes specificity to Task 183 anchors from death truth and keeps every final-fact and attribution capability false."
+    ],
+    "mandatoryTests": [
+      "node --test tests/death-event-hard-challenger-lifecycle-specificity-schema.test.mjs",
+      "node --test tests/emit-death-event-hard-challenger-lifecycle-specificity.test.mjs",
+      "node --test tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs",
+      "node --test tests/task189-lifecycle-integrity.test.mjs",
+      "npm run validate:coordination",
+      "npm run validate:tasks",
+      "npm run codex:prepare -- --task 192",
+      "npm run codex:preflight -- --task 192",
+      "npm run lint",
+      "npm run check:outputs",
+      "npm run codex:validate -- --task 192 --base aa8e18fa3c912c6d59f3125084e30a520e6b8f77",
+      "npm run codex:review -- --task 192 --base aa8e18fa3c912c6d59f3125084e30a520e6b8f77"
+    ],
+    "requiredEvidence": [
+      "Pre-open bridges to Tasks 180, 182, 183, 186 and 190; exact manifest membership; challenger exclusion-window audit; matching ledgers; per-replay and aggregate assessments.",
+      "Post-commit attestation with real SHA, base, branch, commits, files, tests, artifacts, limitations, push evidence and final VALIDATING status."
+    ],
+    "commitPolicy": [
+      "Preserve the Work-authored coordination-state and Task 192 spec changes, stage only authorized files and create exactly one commit.",
+      "Do not amend Task 191, use the rejected commit as an ancestor, modify origin/main or claim a push without live remote SHA verification."
+    ],
+    "stopConditions": [
+      "Stop before replay access on any provenance, manifest, membership, base, branch, protection or accepted-state mismatch.",
+      "Stop if challengers cannot be separated from Task 183 anchor windows without semantic guessing, if ground-truth negative labels would be required, or if source reuse/denominator integrity cannot be guaranteed.",
+      "Stop on protected replay access, parser/package modification, historical output mutation, unexpected output warning or more than one commit."
+    ],
+    "returnReportFormat": [
+      "Use every section in docs/codex/CODEX_REPORT_TEMPLATE.md and attach the post-commit attestation.",
+      "Report technical gate and operational specificity assessment separately; final acceptance remains pending independent ChatGPT Work validation."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tasks/specs/190.json",
+    "tasks/completed/190-death-event-surface-resolved-lifecycle-evidence.md",
+    "reports/death-event-surface-resolved-lifecycle-evidence-task190.md",
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+    "docs/codex/DEATH_EVENT_DIRECTIONAL_DISCRIMINATION_CONTRACT.md",
+    "schemas/death-event-surface-resolved-lifecycle-evidence.schema.json",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "tools/validate-task189-lifecycle-integrity.mjs",
+    "tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs",
+    "tests/task189-lifecycle-integrity.test.mjs",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-summary.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-lifecycle-bounded32-per-replay-audit.json"
+  ],
+  "optionalReadPaths": [
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-lifecycle-bounded32-event-window-association-audit.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-lifecycle-bounded32-independent-horizon-rematching-audit.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-lifecycle-bounded32-surface-provenance-audit.json"
+  ],
+  "writePaths": [
+    "package.json",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/codex/DEATH_EVENT_HARD_CHALLENGER_LIFECYCLE_SPECIFICITY_CONTRACT.md",
+    "schemas/death-event-hard-challenger-lifecycle-specificity.schema.json",
+    "tools/emit-death-event-hard-challenger-lifecycle-specificity.mjs",
+    "tests/death-event-hard-challenger-lifecycle-specificity-schema.test.mjs",
+    "tests/emit-death-event-hard-challenger-lifecycle-specificity.test.mjs",
+    "tasks/specs/192.json",
+    "tasks/completed/192-death-event-hard-challenger-lifecycle-specificity.md",
+    "reports/death-event-hard-challenger-lifecycle-specificity-task192.md",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tasks/specs/193.json",
+    "tasks/*/193-*",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/**",
+    "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/**",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "hard-challenger-schema", "type": "node-test", "paths": ["tests/death-event-hard-challenger-lifecycle-specificity-schema.test.mjs"] },
+    { "id": "hard-challenger-runner", "type": "node-test", "paths": ["tests/emit-death-event-hard-challenger-lifecycle-specificity.test.mjs"] },
+    { "id": "task190-runner-regression", "type": "node-test", "paths": ["tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs"] },
+    { "id": "task190-integrity-regression", "type": "node-test", "paths": ["tests/task189-lifecycle-integrity.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs" }
+  ],
+  "expectedOutputs": [
+    "docs/codex/DEATH_EVENT_HARD_CHALLENGER_LIFECYCLE_SPECIFICITY_CONTRACT.md",
+    "schemas/death-event-hard-challenger-lifecycle-specificity.schema.json",
+    "tools/emit-death-event-hard-challenger-lifecycle-specificity.mjs",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-gate.json",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-summary.json",
+    "reports/death-event-hard-challenger-lifecycle-specificity-task192.md",
+    "tasks/completed/192-death-event-hard-challenger-lifecycle-specificity.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-bounded32/**"
+  ],
+  "replayProcessingAllowed": true,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay_005 through replay_008.",
+    "Never label a structural challenger as a confirmed non-death or negative ground truth.",
+    "Do not modify parser packages, Task 190 outputs, origin/main or create Task 193.",
+    "Stop after the Task 192 handoff in VALIDATING."
+  ],
+  "successGate": "task190_hard_challenger_lifecycle_specificity_bounded32_ready",
+  "blockedGate": "task190_hard_challenger_lifecycle_specificity_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

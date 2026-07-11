@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "191",
+  "generatedAtTask": "192",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -647,8 +647,8 @@
       "plainName": "Autonomous ChatGPT Work and Codex coordination governance",
       "introducedInTask": "191",
       "stabilizedInTask": null,
-      "currentStatus": "needs-validation",
-      "currentBaseline": "task191_candidate_pending_work_validation",
+      "currentStatus": "active",
+      "currentBaseline": "task191_accepted_local_publication_blocked",
       "whyItMatters": "Makes routing authority, accepted-base continuity, technical execution claims, independent gates and surface limitations persistent and executable.",
       "mainFiles": [
         "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
@@ -666,6 +666,30 @@
         "Direct commands outside the workflow cannot be intercepted."
       ],
       "nextUsefulStep": "ChatGPT Work independently validates the Task 191 commit and updates accepted state only if its gate is accepted."
+    },
+    {
+      "capabilityId": "death_event_hard_challenger_lifecycle_specificity",
+      "plainName": "Hard-challenger lifecycle specificity evidence",
+      "introducedInTask": "192",
+      "stabilizedInTask": null,
+      "currentStatus": "needs-validation",
+      "currentBaseline": "task192_bounded32_candidate",
+      "whyItMatters": "Tests whether Task 190 lifecycle association is specific to Task 183 anchors against structurally similar replay-sourced clusters.",
+      "mainFiles": [
+        "tools/emit-death-event-hard-challenger-lifecycle-specificity.mjs",
+        "schemas/death-event-hard-challenger-lifecycle-specificity.schema.json",
+        "docs/codex/DEATH_EVENT_HARD_CHALLENGER_LIFECYCLE_SPECIFICITY_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-gate.json",
+        "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/task192-bounded32/"
+      ],
+      "knownLimits": [
+        "Only two bounded primary-window challengers survive, so specificity is insufficient.",
+        "Challengers are unconfirmed structural comparisons, not known non-deaths.",
+        "No final fact or attribution capability is enabled."
+      ],
+      "nextUsefulStep": "Work must decide whether the two-challenger limitation warrants a new measurement design; no Task 193 is authorized."
     }
   ]
 }
