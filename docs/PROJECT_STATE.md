@@ -1350,6 +1350,8 @@ Active baselines after Task 185:
 
 ## Task 186 - Matched Directional Discrimination
 
+Task 186 commit: `7696c6375f9a607e365359224996b2bd67fa07b7`.
+
 Task 186 recorded Task 185 commit
 `8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`, preserved its historical
 artifacts, and corrected its cycle interpretation. The historical 2,552
@@ -1374,3 +1376,26 @@ authorized design. Final death, confirmed who-died, attribution, killer/victim,
 teamfight, and gameplay-interpretation readiness remain false. Task 185 remains
 the observation baseline; Task 186 supplies corrected cycle metrics and
 `death_event_directional_discrimination_evidence_bounded32_task186`.
+
+## Task 187 - Death Semantic Sequences
+
+Task 187 first repaired audit integrity without resolving replay paths: Task 011
+was restored to a null commit, Task 185 is owned only by commit
+`8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`, and Task 186 is owned only by
+commit `7696c6375f9a607e365359224996b2bd67fa07b7`. The evidence-based Task 185
+correction audit preserved all historical artifacts, identified 137 affected
+rows, and recalculated 2,548 anchors with an exact explicit inverse pair.
+
+After gate `task185_186_audit_integrity_repaired`, the pilot passed with 341
+anchors and exact matched controls. Bounded-32 passed technically with 32/32
+parser completion, 2,552 anchors, 2,552 rows, and 2,552 exact Task 186 controls.
+The final gate is
+`task186_audits_corrected_death_semantic_sequence_bounded32_ready`.
+
+The bounded assessment is `partial`: coherent forward rate 0.944357,
+uncensored recovery rate 0.909016, control coherent-sequence rate 0,
+anchor-minus-control difference 0.852273, and 258 counter-before-recovery
+violations. `readyForOperationalDeathFactPromotionReview` is false. Task 187
+introduces `death_event_semantic_sequence_evidence_bounded32_task187` without
+replacing Tasks 180, 182, 183, 184, 185, or 186. Final death facts, confirmed
+who-died, attribution, killer/victim, teamfight, and interpretation remain false.

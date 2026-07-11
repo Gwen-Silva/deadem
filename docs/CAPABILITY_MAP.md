@@ -368,3 +368,20 @@ multi-family direction and uncensored inverse association differed by 0.978448.
 Task 185 remains active for observations. Task 186 supersedes it only for
 corrected cycle aggregates and directional discrimination. Strong
 discrimination does not confirm death truth; final facts remain unavailable.
+
+## Death Event Semantic-Sequence Evidence
+
+- Capability id: `death_event_semantic_sequence_evidence`
+- Introduced: Task 187
+- Status: active
+- Current baseline: `death_event_semantic_sequence_evidence_bounded32_task187`
+- Main files: `tools/emit-death-event-semantic-sequence-evidence.mjs`,
+  `schemas/death-event-semantic-sequence-evidence.schema.json`,
+  `docs/codex/DEATH_EVENT_SEMANTIC_SEQUENCE_CONTRACT.md`
+
+Task 187 evaluates stable pre-state, explicit forward direction, post-transition
+persistence, exact inverse recovery, counter-cycle uniqueness, and the exact
+Task 186 matched controls. Bounded-32 emitted 2,552 anchor rows and evaluated
+2,552 controls. Its assessment is `partial`, with 258 counter-before-recovery
+violations reported. The layer is operational evidence only; it does not emit
+final deaths or make operational promotion review ready.

@@ -745,6 +745,18 @@
       "path": "docs/codex/DEATH_EVENT_DIRECTIONAL_DISCRIMINATION_CONTRACT.md",
       "status": "current",
       "notes": "Policy contract for explicit direction, recurrence separation, deterministic controls, and discrimination thresholds."
+    },
+    {
+      "id": "death_event_semantic_sequence_evidence_task187_gate",
+      "path": "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-gate.json",
+      "status": "current",
+      "notes": "Task 187 final technical gate for reproducible semantic-sequence evidence; partial operational assessment and no confirmed deaths."
+    },
+    {
+      "id": "death_event_semantic_sequence_evidence_contract_task187",
+      "path": "docs/codex/DEATH_EVENT_SEMANTIC_SEQUENCE_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for pre-state, explicit forward transition, persistence, exact recovery, lifecycle uniqueness, and matched controls."
     }
   ],
   "artifacts": [
@@ -783,6 +795,12 @@
       "path": "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-bounded32/directional-discrimination-bounded32-gate.json",
       "status": "current",
       "notes": "Task 186 active bounded-32 matched directional discrimination baseline; strong operational discrimination does not confirm death truth."
+    },
+    {
+      "id": "death_event_semantic_sequence_evidence_bounded32_task187_artifacts",
+      "path": "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-bounded32/semantic-sequence-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 187 active bounded-32 semantic-sequence baseline; partial operational evidence does not confirm death truth or authorize promotion review."
     }
   ]
 }

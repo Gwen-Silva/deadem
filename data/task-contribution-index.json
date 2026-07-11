@@ -270,7 +270,7 @@
     {
       "taskId": "011",
       "status": "evidence_partial",
-      "commitSha": "8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e",
+      "commitSha": null,
       "title": "Task 011",
       "phase": "foundation_policy_diagnostics_protection",
       "primaryContribution": "Completed or documented: Task 011.",
@@ -5617,7 +5617,7 @@
     {
       "taskId": "185",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e",
       "title": "Validate Directional Signal Cycles And Negative Controls For Death Semantics",
       "phase": "death_event_directional_cycle_candidate_evidence",
       "primaryContribution": "Emitted replay-sourced abstract directional transitions, later inverse-cycle evidence, replay-end censoring, and negative controls around Task 183 anchors without confirming deaths.",
@@ -5660,7 +5660,7 @@
     {
       "taskId": "186",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "7696c6375f9a607e365359224996b2bd67fa07b7",
       "title": "Repair Directional-Cycle Integrity And Build Matched Negative-Control Discrimination Baseline",
       "phase": "death_event_directional_discrimination_candidate_evidence",
       "primaryContribution": "Corrected explicit inverse-cycle classification and emitted deterministic matched anchor-versus-control directional discrimination evidence without final facts.",
@@ -5688,6 +5688,39 @@
         "tasks/specs/186.json",
         "tasks/completed/186-death-event-directional-discrimination-evidence.md",
         "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-summary.json"
+      ]
+    },
+    {
+      "taskId": "187",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Repair Audit Integrity And Validate Death Semantic Sequences",
+      "phase": "death_event_semantic_sequence_candidate_evidence",
+      "primaryContribution": "Repaired exact Task 185/186 audit integrity before replay access and emitted matched-control lifecycle sequence evidence without final facts.",
+      "introducedCapabilities": ["death_event_semantic_sequence_evidence"],
+      "stabilizedCapabilities": ["death_event_semantic_sequence_evidence"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "schemas/death-event-semantic-sequence-evidence.schema.json",
+        "tools/emit-death-event-semantic-sequence-evidence.mjs",
+        "docs/codex/DEATH_EVENT_SEMANTIC_SEQUENCE_CONTRACT.md",
+        "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-gate.json",
+        "reports/death-event-semantic-sequence-evidence-task187.md"
+      ],
+      "gate": "task186_audits_corrected_death_semantic_sequence_bounded32_ready",
+      "currentRelevance": "active_evidence_layer",
+      "dependsOn": ["180", "182", "183", "186"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The partial assessment does not make operational death-fact promotion review ready.",
+        "Counter-before-recovery violations are reported and are not hidden or skipped.",
+        "Final facts, attribution, killer/victim, teamfight, and gameplay interpretation remain unavailable."
+      ],
+      "evidenceStatus": "sufficient_technical_partial_semantic_sequence",
+      "evidencePaths": [
+        "tasks/specs/187.json",
+        "tasks/completed/187-death-event-semantic-sequence-evidence.md",
+        "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-summary.json"
       ]
     }
   ]

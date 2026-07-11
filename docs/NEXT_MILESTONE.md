@@ -1914,3 +1914,20 @@ operational assessment.
 A separately authorized milestone may design further final-death semantic
 validation. Discrimination alone must not be promoted to death truth,
 attribution, killer/victim, teamfight, or interpretation.
+
+## Task 187
+
+Purpose: repair Task 185/186 audit integrity before replay access and validate
+whether Task 183 anchors participate in coherent pre-state, explicit forward,
+persistence, and exact recovery sequences against Task 186 matched controls.
+
+Success gate:
+`task186_audits_corrected_death_semantic_sequence_bounded32_ready`.
+
+Status: completed technically. The pilot emitted 341 rows and the bounded-32
+run emitted 2,552 rows with exact anchor and control bridges. Bounded forward
+coverage was 0.944357, uncensored recovery was 0.909016, control coherent
+sequence coverage was 0, and the anchor-minus-control difference was 0.852273.
+The assessment is `partial`; 258 counter-before-recovery violations prevent a
+strong result. Operational death-fact promotion review and every final-fact or
+attribution capability remain not ready.

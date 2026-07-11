@@ -1,0 +1,97 @@
+{
+  "taskId": "187",
+  "title": "Repair Audit Integrity And Validate Death Semantic Sequences",
+  "status": "authorized",
+  "objective": "Repair Task 185/186 audit integrity before replay access, then emit replay-sourced matched-control semantic-sequence evidence without final death facts.",
+  "baseCommitExpected": "7696c6375f9a607e365359224996b2bd67fa07b7",
+  "readPaths": [
+    "AGENTS.md", "package.json", "package-lock.json", "docs/codex/**",
+    "docs/PROJECT_STATE.md", "docs/NEXT_MILESTONE.md", "docs/CAPABILITY_MAP.md", "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/current-artifact-registry.json", "data/task-contribution-index.json", "data/capability-index.json",
+    "schemas/participant-identity-compact.schema.json", "schemas/life-state-transition-candidates.schema.json",
+    "schemas/death-event-candidates.schema.json", "schemas/death-event-directional-discrimination-evidence.schema.json",
+    "tools/lib/json-schema-validator.mjs", "tools/emit-death-event-directional-discrimination-evidence.mjs",
+    "tests/death-event-directional-discrimination-evidence-schema.test.mjs", "tests/emit-death-event-directional-discrimination-evidence.test.mjs",
+    "tasks/specs/180.json", "tasks/specs/182.json", "tasks/specs/183.json", "tasks/specs/184.json", "tasks/specs/185.json", "tasks/specs/186.json",
+    "tasks/completed/185-death-event-directional-cycle-evidence.md", "tasks/completed/186-death-event-directional-discrimination-evidence.md",
+    "output/local-replay-processing/participant-identity-compact/task180-bounded32/**",
+    "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/**",
+    "output/local-replay-processing/death-event-candidates/task183-bounded32/**",
+    "output/local-replay-processing/death-event-directional-discrimination-evidence/**"
+  ],
+  "optionalReadPaths": ["packages/engine/src/data/Demo.js", "tests/fieldfactory-char-decoder.test.mjs"],
+  "writePaths": [
+    "package.json", "data/current-artifact-registry.json", "data/task-contribution-index.json", "data/capability-index.json",
+    "docs/PROJECT_STATE.md", "docs/NEXT_MILESTONE.md", "docs/CAPABILITY_MAP.md", "docs/PRODUCT_VALUE_ROADMAP.md",
+    "tasks/completed/185-death-event-directional-cycle-evidence.md", "tasks/completed/186-death-event-directional-discrimination-evidence.md",
+    "tasks/completed/187-death-event-semantic-sequence-evidence.md", "tasks/specs/187.json",
+    "tools/validate-task185-186-audit-integrity.mjs", "tests/task185-186-audit-integrity.test.mjs",
+    "schemas/death-event-semantic-sequence-evidence.schema.json", "tools/emit-death-event-semantic-sequence-evidence.mjs",
+    "tests/death-event-semantic-sequence-evidence-schema.test.mjs", "tests/emit-death-event-semantic-sequence-evidence.test.mjs",
+    "docs/codex/DEATH_EVENT_SEMANTIC_SEQUENCE_CONTRACT.md", "reports/death-event-semantic-sequence-evidence-task187.md",
+    "output/local-replay-processing/death-event-semantic-sequence-evidence/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**", "packages/engine/**", "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem", ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem", ".local/deadem/replays/inbox/partida_008.dem",
+    "tasks/specs/188.json", "tasks/completed/188-*", "tasks/blocked/188-*"
+  ],
+  "requiredPolicies": ["docs/codex/REPLAY_PROTECTION.md", "docs/codex/EPISTEMIC_SAFETY.md", "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md", "docs/codex/TASK_EXECUTION.md"],
+  "requiredCommands": [
+    { "id": "integrity", "type": "node-test", "paths": ["tests/task185-186-audit-integrity.test.mjs"] },
+    { "id": "task187-schema", "type": "node-test", "paths": ["tests/death-event-semantic-sequence-evidence-schema.test.mjs"] },
+    { "id": "task187-runner", "type": "node-test", "paths": ["tests/emit-death-event-semantic-sequence-evidence.test.mjs"] },
+    { "id": "task186-schema", "type": "node-test", "paths": ["tests/death-event-directional-discrimination-evidence-schema.test.mjs"] },
+    { "id": "task186-runner", "type": "node-test", "paths": ["tests/emit-death-event-directional-discrimination-evidence.test.mjs"] },
+    { "id": "task185-schema", "type": "node-test", "paths": ["tests/death-event-directional-cycle-evidence-schema.test.mjs"] },
+    { "id": "task185-runner", "type": "node-test", "paths": ["tests/emit-death-event-directional-cycle-evidence.test.mjs"] },
+    { "id": "task184-schema", "type": "node-test", "paths": ["tests/death-event-corroboration-evidence-schema.test.mjs"] },
+    { "id": "task184-runner", "type": "node-test", "paths": ["tests/emit-death-event-corroboration-evidence.test.mjs"] },
+    { "id": "task183-schema", "type": "node-test", "paths": ["tests/death-event-candidates-schema.test.mjs"] },
+    { "id": "task183-runner", "type": "node-test", "paths": ["tests/emit-death-event-candidates.test.mjs"] },
+    { "id": "task182-schema", "type": "node-test", "paths": ["tests/life-state-transition-candidates-schema.test.mjs"] },
+    { "id": "task182-runner", "type": "node-test", "paths": ["tests/emit-life-state-transition-candidates.test.mjs"] },
+    { "id": "task180-schema", "type": "node-test", "paths": ["tests/participant-identity-compact-schema.test.mjs"] },
+    { "id": "task180-runner", "type": "node-test", "paths": ["tests/emit-participant-identity-compact-artifacts.test.mjs"] },
+    { "id": "parser-regression", "type": "node-test", "paths": ["tests/fieldfactory-char-decoder.test.mjs"] },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/death-event-semantic-sequence-evidence/integrity/task185-186-audit-integrity-gate.json",
+    "schemas/death-event-semantic-sequence-evidence.schema.json", "tools/emit-death-event-semantic-sequence-evidence.mjs",
+    "docs/codex/DEATH_EVENT_SEMANTIC_SEQUENCE_CONTRACT.md",
+    "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-gate.json",
+    "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-summary.json",
+    "reports/death-event-semantic-sequence-evidence-task187.md", "tasks/completed/187-death-event-semantic-sequence-evidence.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-pilot/artifacts/**",
+    "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-bounded32/artifacts/**",
+    {
+      "path": "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-bounded32/semantic-sequence-bounded32-per-participant-audit.json",
+      "justification": "Required compact per-participant lifecycle-uniqueness audit across all 2,552 bounded anchors."
+    }
+  ],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": "pilot: replay_010, replay_011, replay_021, replay_036; bounded32: replay_001, replay_002, replay_003, replay_004, replay_009, replay_010 through replay_036 including replay_020; replay_005 through replay_008 forbidden",
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not resolve replay paths or construct Player before task185_186_audit_integrity_repaired passes.",
+    "Do not access replay_005 through replay_008.",
+    "Do not count recurrence as forward direction or recovery.",
+    "Do not select new controls; use exact Task 186 control seconds.",
+    "Failed runs publish no per-replay artifacts and preserve prior successful directories.",
+    "Do not emit final facts, attribution, raw values, raw field names, raw IDs, handles, raw ticks, raw timestamps, positions, damage, objectives, or gameplay interpretation.",
+    "Do not modify parser behavior or packages/deadem or packages/engine.",
+    "Do not create Task 188."
+  ],
+  "successGate": "task186_audits_corrected_death_semantic_sequence_bounded32_ready",
+  "blockedGate": "task186_audits_corrected_death_semantic_sequence_blocked",
+  "gateSource": { "type": "json-file", "path": "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-gate.json", "jsonField": "gate" },
+  "regenerationPolicy": { "canonicalFacts": "forbidden", "validationArtifacts": "regenerate", "reports": "regenerate", "replayParsing": "integrity gate and explicit task187 manifests only" },
+  "lifecycle": { "allowFinalValidation": true, "finalStatus": "completed_or_blocked" }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-semantic-sequence-evidence.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "replayId", "artifactClass", "generatedBy", "generatedAt", "rawDataCaptured", "rawFieldNamesIncludedInRows", "rawIdsIncluded", "rawTicksIncluded", "rawTimestampsIncluded", "finalFactsProduced", "attributionEmitted", "anchorCount", "controlCount", "evidenceRowCount", "evidenceRows", "summary", "readiness", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "death_event_semantic_sequence_evidence" },
+    "generatedBy": { "const": "tools/emit-death-event-semantic-sequence-evidence.mjs" },
+    "generatedAt": { "const": "task_187" },
+    "rawDataCaptured": { "const": false },
+    "rawFieldNamesIncludedInRows": { "const": false },
+    "rawIdsIncluded": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "anchorCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "controlCount": { "type": "integer", "minimum": 0, "maximum": 10000 },
+    "evidenceRowCount": { "type": "integer", "minimum": 1, "maximum": 10000 },
+    "evidenceRows": { "type": "array", "minItems": 1, "maxItems": 10000, "items": { "$ref": "#/$defs/row" } },
+    "summary": { "$ref": "#/$defs/summary" },
+    "readiness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["semanticSequenceEvidenceAvailable", "lifecycleConsistencyMeasurable", "anchorControlSequenceDiscriminationMeasurable", "candidateLevelSequenceConsumptionAvailable", "readyForOperationalDeathFactPromotionReview", "readyForFinalDeathFacts", "readyForConfirmedWhoDied", "readyForAttribution", "readyForKillerVictim", "readyForTeamfight", "readyForGameplayInterpretation"],
+      "properties": {
+        "semanticSequenceEvidenceAvailable": { "const": true }, "lifecycleConsistencyMeasurable": { "const": true },
+        "anchorControlSequenceDiscriminationMeasurable": { "const": true }, "candidateLevelSequenceConsumptionAvailable": { "const": true },
+        "readyForOperationalDeathFactPromotionReview": { "type": "boolean" }, "readyForFinalDeathFacts": { "const": false },
+        "readyForConfirmedWhoDied": { "const": false }, "readyForAttribution": { "const": false },
+        "readyForKillerVictim": { "const": false }, "readyForTeamfight": { "const": false }, "readyForGameplayInterpretation": { "const": false }
+      }
+    },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  },
+  "$defs": {
+    "preStatus": { "enum": ["stable_pre_state_observed", "insufficient_pre_state", "conflicting_pre_state"] },
+    "recoveryStatus": { "enum": ["coherent_recovery_observed", "partial_recovery_observed", "recovery_not_observed", "replay_end_censored"] },
+    "preByFamily": {
+      "type": "object", "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+      "properties": { "healthBoundary": { "$ref": "#/$defs/preStatus" }, "booleanAlive": { "$ref": "#/$defs/preStatus" }, "respawnBoundary": { "$ref": "#/$defs/preStatus" }, "pawnLinkPresence": { "$ref": "#/$defs/preStatus" } }
+    },
+    "sequence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["preStateStabilityByFamily", "stablePreFamilyCount", "explicitForwardFamilyCount", "recurrenceFamilyCount", "opposingExplicitDirectionObserved", "ambiguousAssociation", "persistenceAvailable", "persistenceObserved", "persistenceSampleCount", "persistenceContradictionObserved", "explicitInverseFamilyCount", "recoverySidePersistenceObserved", "timeToFirstInverseSeconds", "timeToCoherentMultiFamilyRecoverySeconds", "recoveryStatus", "coherentSequenceObserved"],
+      "properties": {
+        "preStateStabilityByFamily": { "$ref": "#/$defs/preByFamily" }, "stablePreFamilyCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "explicitForwardFamilyCount": { "type": "integer", "minimum": 0, "maximum": 4 }, "recurrenceFamilyCount": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "opposingExplicitDirectionObserved": { "type": "boolean" }, "ambiguousAssociation": { "type": "boolean" },
+        "persistenceAvailable": { "type": "boolean" }, "persistenceObserved": { "type": "boolean" }, "persistenceSampleCount": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "persistenceContradictionObserved": { "type": "boolean" }, "explicitInverseFamilyCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "recoverySidePersistenceObserved": { "type": "boolean" }, "timeToFirstInverseSeconds": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "timeToCoherentMultiFamilyRecoverySeconds": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "recoveryStatus": { "$ref": "#/$defs/recoveryStatus" }, "coherentSequenceObserved": { "type": "boolean" }
+      }
+    },
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sequenceEvidenceKey", "eventCandidateKey", "sourceTransitionKey", "participantKey", "heroRefKey", "teamRefKey", "anchorNormalizedElapsedSecond", "matchedControlNormalizedElapsedSecond", "anchorSequence", "controlSequence", "counterCycleUniquenessStatus", "matchedControlSequenceStatus", "sequenceEvidenceClass", "semanticStatus", "finalFact"],
+      "properties": {
+        "sequenceEvidenceKey": { "type": "string", "pattern": "^semantic_sequence_[0-9]{6}$" },
+        "eventCandidateKey": { "type": "string", "pattern": "^death_event_candidate_[0-9]{6}$" }, "sourceTransitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" }, "heroRefKey": { "type": "string", "pattern": "^hero_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "teamRefKey": { "type": "string", "pattern": "^team_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" }, "anchorNormalizedElapsedSecond": { "type": "integer", "minimum": 0 },
+        "matchedControlNormalizedElapsedSecond": { "type": ["integer", "null"], "minimum": 0 }, "anchorSequence": { "$ref": "#/$defs/sequence" }, "controlSequence": { "anyOf": [{ "$ref": "#/$defs/sequence" }, { "type": "null" }] },
+        "counterCycleUniquenessStatus": { "enum": ["unique_sequence", "counter_before_recovery_violation", "censored_final_sequence"] },
+        "matchedControlSequenceStatus": { "enum": ["coherent_sequence", "partial_sequence", "no_sequence", "control_unavailable"] },
+        "sequenceEvidenceClass": { "enum": ["coherent_forward_and_recovery_sequence", "coherent_forward_censored_recovery", "partial_forward_sequence", "recurrence_only", "contradictory_sequence", "ambiguous_sequence", "insufficient_observation"] },
+        "semanticStatus": { "const": "unconfirmed_operational_sequence" }, "finalFact": { "const": false }
+      }
+    },
+    "rate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["totalAnchors", "totalControls", "coherentForwardSequenceRate", "coherentUncensoredRecoveryRate", "controlCoherentSequenceRate", "anchorControlSequenceDifference", "preStateStabilityCoverage", "persistenceCoverage", "opposingDirectionCount", "ambiguousCount", "counterBeforeRecoveryViolations", "sequenceCountBridgeMismatches", "censoredAnchors", "semanticSequenceAssessmentLevel"],
+      "properties": {
+        "totalAnchors": { "type": "integer", "minimum": 1 }, "totalControls": { "type": "integer", "minimum": 0 },
+        "coherentForwardSequenceRate": { "$ref": "#/$defs/rate" }, "coherentUncensoredRecoveryRate": { "$ref": "#/$defs/rate" }, "controlCoherentSequenceRate": { "$ref": "#/$defs/rate" },
+        "anchorControlSequenceDifference": { "type": "number", "minimum": -1, "maximum": 1 }, "preStateStabilityCoverage": { "$ref": "#/$defs/rate" }, "persistenceCoverage": { "$ref": "#/$defs/rate" },
+        "opposingDirectionCount": { "type": "integer", "minimum": 0 }, "ambiguousCount": { "type": "integer", "minimum": 0 }, "counterBeforeRecoveryViolations": { "type": "integer", "minimum": 0 },
+        "sequenceCountBridgeMismatches": { "type": "integer", "minimum": 0 }, "censoredAnchors": { "type": "integer", "minimum": 0 },
+        "semanticSequenceAssessmentLevel": { "enum": ["insufficient", "partial", "strong"] }
+      }
+    }
+  }
+}

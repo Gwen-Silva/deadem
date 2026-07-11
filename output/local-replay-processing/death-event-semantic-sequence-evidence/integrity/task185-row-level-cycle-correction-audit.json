@@ -1,0 +1,1141 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "checks": {
+    "exactly32Artifacts": true,
+    "exactly2552Anchors": true,
+    "historicalArtifactsUnchanged": true,
+    "exactPairsOnly": true,
+    "lifeStateRecurrenceExcluded": true,
+    "unknownRespawnExcluded": true,
+    "changedPawnLinkExcluded": true,
+    "familyTotalsInternallyConsistent": true,
+    "uncensoredCountsInternallyConsistent": true,
+    "everyChangedClassIdentified": true,
+    "safeAffectedRowsOnly": true
+  },
+  "artifactCount": 32,
+  "anchorCount": 2552,
+  "previousCompleteCycleCount": 2552,
+  "correctedExplicitInverseCycleCount": 2548,
+  "correctedUncensoredDenominator": 2297,
+  "correctedUncensoredNumerator": 2297,
+  "correctedUncensoredCoverageRate": 1,
+  "familyTotals": {
+    "healthBoundary": {
+      "directionalAnchorCount": 2497,
+      "explicitInverseAnchorCount": 2497
+    },
+    "booleanAlive": {
+      "directionalAnchorCount": 2552,
+      "explicitInverseAnchorCount": 2415
+    },
+    "respawnBoundary": {
+      "directionalAnchorCount": 2552,
+      "explicitInverseAnchorCount": 2415
+    },
+    "pawnLinkPresence": {
+      "directionalAnchorCount": 0,
+      "explicitInverseAnchorCount": 0
+    }
+  },
+  "changedHistoricalClassCount": 137,
+  "affectedRows": [
+    {
+      "replayId": "replay_001",
+      "eventCandidateKey": "death_event_candidate_000106",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_001",
+      "eventCandidateKey": "death_event_candidate_000107",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_001",
+      "eventCandidateKey": "death_event_candidate_000108",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_001",
+      "eventCandidateKey": "death_event_candidate_000109",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_002",
+      "eventCandidateKey": "death_event_candidate_000038",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_002",
+      "eventCandidateKey": "death_event_candidate_000052",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_002",
+      "eventCandidateKey": "death_event_candidate_000053",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_003",
+      "eventCandidateKey": "death_event_candidate_000114",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_003",
+      "eventCandidateKey": "death_event_candidate_000115",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_003",
+      "eventCandidateKey": "death_event_candidate_000116",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_003",
+      "eventCandidateKey": "death_event_candidate_000117",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_004",
+      "eventCandidateKey": "death_event_candidate_000052",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_004",
+      "eventCandidateKey": "death_event_candidate_000053",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_004",
+      "eventCandidateKey": "death_event_candidate_000056",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_004",
+      "eventCandidateKey": "death_event_candidate_000057",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_004",
+      "eventCandidateKey": "death_event_candidate_000058",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_009",
+      "eventCandidateKey": "death_event_candidate_000080",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_009",
+      "eventCandidateKey": "death_event_candidate_000081",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_009",
+      "eventCandidateKey": "death_event_candidate_000082",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_009",
+      "eventCandidateKey": "death_event_candidate_000083",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_009",
+      "eventCandidateKey": "death_event_candidate_000084",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_010",
+      "eventCandidateKey": "death_event_candidate_000041",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_010",
+      "eventCandidateKey": "death_event_candidate_000042",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_010",
+      "eventCandidateKey": "death_event_candidate_000043",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_010",
+      "eventCandidateKey": "death_event_candidate_000044",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_010",
+      "eventCandidateKey": "death_event_candidate_000045",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_011",
+      "eventCandidateKey": "death_event_candidate_000077",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_011",
+      "eventCandidateKey": "death_event_candidate_000078",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_011",
+      "eventCandidateKey": "death_event_candidate_000079",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_011",
+      "eventCandidateKey": "death_event_candidate_000080",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_012",
+      "eventCandidateKey": "death_event_candidate_000077",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_012",
+      "eventCandidateKey": "death_event_candidate_000078",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_012",
+      "eventCandidateKey": "death_event_candidate_000079",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_012",
+      "eventCandidateKey": "death_event_candidate_000080",
+      "previousEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "correctedEvidenceClass": "anchor_with_censored_later_window",
+      "previousCompleteCycleFamilyCount": 1,
+      "correctedExplicitInverseFamilyCount": 0
+    },
+    {
+      "replayId": "replay_012",
+      "eventCandidateKey": "death_event_candidate_000081",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_013",
+      "eventCandidateKey": "death_event_candidate_000064",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_013",
+      "eventCandidateKey": "death_event_candidate_000065",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_013",
+      "eventCandidateKey": "death_event_candidate_000066",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_013",
+      "eventCandidateKey": "death_event_candidate_000067",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_013",
+      "eventCandidateKey": "death_event_candidate_000068",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_014",
+      "eventCandidateKey": "death_event_candidate_000076",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_014",
+      "eventCandidateKey": "death_event_candidate_000077",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_015",
+      "eventCandidateKey": "death_event_candidate_000101",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_015",
+      "eventCandidateKey": "death_event_candidate_000102",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_016",
+      "eventCandidateKey": "death_event_candidate_000068",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_016",
+      "eventCandidateKey": "death_event_candidate_000069",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_016",
+      "eventCandidateKey": "death_event_candidate_000070",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_016",
+      "eventCandidateKey": "death_event_candidate_000071",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_016",
+      "eventCandidateKey": "death_event_candidate_000072",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_016",
+      "eventCandidateKey": "death_event_candidate_000073",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_017",
+      "eventCandidateKey": "death_event_candidate_000085",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_017",
+      "eventCandidateKey": "death_event_candidate_000086",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_017",
+      "eventCandidateKey": "death_event_candidate_000087",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_017",
+      "eventCandidateKey": "death_event_candidate_000088",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_017",
+      "eventCandidateKey": "death_event_candidate_000089",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_018",
+      "eventCandidateKey": "death_event_candidate_000100",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_018",
+      "eventCandidateKey": "death_event_candidate_000101",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_018",
+      "eventCandidateKey": "death_event_candidate_000102",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_018",
+      "eventCandidateKey": "death_event_candidate_000103",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_019",
+      "eventCandidateKey": "death_event_candidate_000059",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_019",
+      "eventCandidateKey": "death_event_candidate_000060",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_020",
+      "eventCandidateKey": "death_event_candidate_000080",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_020",
+      "eventCandidateKey": "death_event_candidate_000081",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_020",
+      "eventCandidateKey": "death_event_candidate_000082",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_020",
+      "eventCandidateKey": "death_event_candidate_000083",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000093",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000094",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000095",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000096",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000097",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000098",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_021",
+      "eventCandidateKey": "death_event_candidate_000099",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_022",
+      "eventCandidateKey": "death_event_candidate_000084",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_022",
+      "eventCandidateKey": "death_event_candidate_000087",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_022",
+      "eventCandidateKey": "death_event_candidate_000088",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_022",
+      "eventCandidateKey": "death_event_candidate_000089",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_023",
+      "eventCandidateKey": "death_event_candidate_000070",
+      "previousEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "correctedEvidenceClass": "anchor_with_censored_later_window",
+      "previousCompleteCycleFamilyCount": 1,
+      "correctedExplicitInverseFamilyCount": 0
+    },
+    {
+      "replayId": "replay_023",
+      "eventCandidateKey": "death_event_candidate_000071",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_023",
+      "eventCandidateKey": "death_event_candidate_000072",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_024",
+      "eventCandidateKey": "death_event_candidate_000086",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_024",
+      "eventCandidateKey": "death_event_candidate_000087",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_024",
+      "eventCandidateKey": "death_event_candidate_000088",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_024",
+      "eventCandidateKey": "death_event_candidate_000089",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_025",
+      "eventCandidateKey": "death_event_candidate_000063",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_025",
+      "eventCandidateKey": "death_event_candidate_000064",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_025",
+      "eventCandidateKey": "death_event_candidate_000065",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_025",
+      "eventCandidateKey": "death_event_candidate_000066",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_025",
+      "eventCandidateKey": "death_event_candidate_000067",
+      "previousEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "correctedEvidenceClass": "anchor_with_censored_later_window",
+      "previousCompleteCycleFamilyCount": 1,
+      "correctedExplicitInverseFamilyCount": 0
+    },
+    {
+      "replayId": "replay_026",
+      "eventCandidateKey": "death_event_candidate_000060",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_026",
+      "eventCandidateKey": "death_event_candidate_000061",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_026",
+      "eventCandidateKey": "death_event_candidate_000062",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_026",
+      "eventCandidateKey": "death_event_candidate_000063",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_026",
+      "eventCandidateKey": "death_event_candidate_000064",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_027",
+      "eventCandidateKey": "death_event_candidate_000093",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_027",
+      "eventCandidateKey": "death_event_candidate_000094",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_027",
+      "eventCandidateKey": "death_event_candidate_000095",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000061",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000062",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000063",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000064",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000065",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000066",
+      "previousEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "correctedEvidenceClass": "anchor_with_censored_later_window",
+      "previousCompleteCycleFamilyCount": 1,
+      "correctedExplicitInverseFamilyCount": 0
+    },
+    {
+      "replayId": "replay_028",
+      "eventCandidateKey": "death_event_candidate_000067",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_029",
+      "eventCandidateKey": "death_event_candidate_000057",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_029",
+      "eventCandidateKey": "death_event_candidate_000058",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_029",
+      "eventCandidateKey": "death_event_candidate_000059",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_029",
+      "eventCandidateKey": "death_event_candidate_000060",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_030",
+      "eventCandidateKey": "death_event_candidate_000059",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_030",
+      "eventCandidateKey": "death_event_candidate_000060",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_030",
+      "eventCandidateKey": "death_event_candidate_000061",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_030",
+      "eventCandidateKey": "death_event_candidate_000062",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_030",
+      "eventCandidateKey": "death_event_candidate_000063",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_031",
+      "eventCandidateKey": "death_event_candidate_000086",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_031",
+      "eventCandidateKey": "death_event_candidate_000087",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_031",
+      "eventCandidateKey": "death_event_candidate_000088",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_031",
+      "eventCandidateKey": "death_event_candidate_000089",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_031",
+      "eventCandidateKey": "death_event_candidate_000090",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_031",
+      "eventCandidateKey": "death_event_candidate_000091",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_032",
+      "eventCandidateKey": "death_event_candidate_000060",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_032",
+      "eventCandidateKey": "death_event_candidate_000061",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_032",
+      "eventCandidateKey": "death_event_candidate_000062",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_033",
+      "eventCandidateKey": "death_event_candidate_000114",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_033",
+      "eventCandidateKey": "death_event_candidate_000115",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_033",
+      "eventCandidateKey": "death_event_candidate_000116",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_033",
+      "eventCandidateKey": "death_event_candidate_000117",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_033",
+      "eventCandidateKey": "death_event_candidate_000118",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_034",
+      "eventCandidateKey": "death_event_candidate_000079",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_034",
+      "eventCandidateKey": "death_event_candidate_000080",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_035",
+      "eventCandidateKey": "death_event_candidate_000025",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_035",
+      "eventCandidateKey": "death_event_candidate_000037",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000111",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000112",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000113",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000114",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000115",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000116",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    },
+    {
+      "replayId": "replay_036",
+      "eventCandidateKey": "death_event_candidate_000117",
+      "previousEvidenceClass": "anchor_with_multiple_complete_cycle_families",
+      "correctedEvidenceClass": "anchor_with_single_complete_cycle_family",
+      "previousCompleteCycleFamilyCount": 2,
+      "correctedExplicitInverseFamilyCount": 1
+    }
+  ]
+}

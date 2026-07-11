@@ -4,7 +4,7 @@ Status: completed
 
 Gate: `task185_corrected_directional_discrimination_bounded32_ready`
 
-Commit: pending (this task commit)
+Commit: 7696c6375f9a607e365359224996b2bd67fa07b7
 
 ## Result
 

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "expected": {
+    "task185": "8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e",
+    "task186": "7696c6375f9a607e365359224996b2bd67fa07b7"
+  },
+  "exactOwners": {
+    "task185": [
+      "185"
+    ],
+    "task186": [
+      "186"
+    ]
+  },
+  "checks": {
+    "task011ContainsNeitherSha": true,
+    "task185ExactCommit": true,
+    "task186ExactCommit": true,
+    "task185ShaOwnedOnlyBy185": true,
+    "task186ShaOwnedOnlyBy186": true,
+    "completed185ExactCommit": true,
+    "completed186ExactCommit": true,
+    "projectState185SectionExact": true,
+    "projectState186SectionExact": true
+  },
+  "status": "passed"
+}

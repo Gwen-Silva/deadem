@@ -151,3 +151,16 @@ the predeclared `strong` discrimination criteria.
 A separate final-death semantic contract design is now eligible. This is not a
 final death capability: confirmed who-died claims, attribution, killer/victim,
 teamfight detection, and gameplay interpretation remain unavailable.
+
+## Task 187 Product Implication
+
+Task 187 tests full abstract lifecycle sequences rather than isolated matched
+directions. Across 2,552 anchors and the exact 2,552 Task 186 controls, coherent
+forward sequences occurred at 0.944357 versus 0 for controls, but uncensored
+recovery was 0.909016 and 258 anchors preceded coherent recovery of the prior
+participant sequence. The predeclared result is therefore `partial`.
+
+The project can consume candidate-level sequence evidence and measure lifecycle
+consistency, but it is not ready for an operational death-fact promotion review.
+Confirmed who-died claims, attribution, killer/victim, teamfight detection, and
+gameplay interpretation remain unavailable.
