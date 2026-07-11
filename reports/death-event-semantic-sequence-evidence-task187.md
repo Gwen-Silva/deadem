@@ -54,3 +54,19 @@ Semantic-sequence evidence, lifecycle consistency measurement, anchor-control
 discrimination measurement, and candidate-level consumption are available.
 Final deaths, confirmed who-died, attribution, killer/victim, teamfight, and
 gameplay interpretation remain unavailable.
+
+## Task 188 correction notice
+
+Task 188 preserved every historical Task 187 artifact and recalculated all
+2,552 rows with same-family stage intersection, recovery-persistence
+confirmation, and `[current anchor, next anchor)` boundaries. Prior coherent
+rows were 2,175; corrected coherent segmented rows are 2,161. Forty-one prior
+coherent rows cross the next anchor, 2,225 recovery times change because
+persistence confirmation is required, and the intersection between the 258
+historical counter-before-recovery violations and prior coherent rows is 59.
+
+The corrected forward rate is 0.944357, corrected uncensored recovery rate is
+0.904337, corrected anchor-minus-control difference is 0.846787, and the
+assessment remains `partial`. Task 188 supersedes Task 187 only for corrected
+same-family segmented coherence; Task 187 remains historical sequence-v1
+evidence from commit `f5825e4ffc537e5986de699fd34d1a3df1a91b0f`.

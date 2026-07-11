@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/death-event-segmented-lifecycle-evidence.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "replayId", "artifactClass", "generatedBy", "generatedAt", "rawDataCaptured", "rawFieldNamesIncludedInRows", "rawIdsIncluded", "rawTicksIncluded", "rawTimestampsIncluded", "finalFactsProduced", "attributionEmitted", "anchorCount", "controlCount", "evidenceRowCount", "evidenceRows", "summary", "readiness", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "replayId": { "type": "string", "pattern": "^replay_[0-9]{3}$" },
+    "artifactClass": { "const": "death_event_segmented_lifecycle_evidence" },
+    "generatedBy": { "const": "tools/emit-death-event-segmented-lifecycle-evidence.mjs" },
+    "generatedAt": { "const": "task_188" },
+    "rawDataCaptured": { "const": false },
+    "rawFieldNamesIncludedInRows": { "const": false },
+    "rawIdsIncluded": { "const": false },
+    "rawTicksIncluded": { "const": false },
+    "rawTimestampsIncluded": { "const": false },
+    "finalFactsProduced": { "const": false },
+    "attributionEmitted": { "const": false },
+    "anchorCount": { "type": "integer", "minimum": 1 },
+    "controlCount": { "type": "integer", "minimum": 0 },
+    "evidenceRowCount": { "type": "integer", "minimum": 1 },
+    "evidenceRows": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/row" } },
+    "summary": { "$ref": "#/$defs/summary" },
+    "readiness": { "$ref": "#/$defs/readiness" },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  },
+  "$defs": {
+    "preStatus": { "enum": ["stable_pre_state_observed", "insufficient_pre_state", "conflicting_pre_state"] },
+    "failureReason": { "enum": ["none", "pre_state_unavailable", "pre_state_conflict", "forward_not_observed", "forward_ambiguous", "forward_persistence_not_observed", "forward_persistence_contradiction", "inverse_not_observed", "inverse_crosses_next_anchor", "recovery_persistence_not_observed", "recovery_persistence_contradiction", "segment_censored"] },
+    "familyLifecycle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["preStateStatus", "forwardObserved", "forwardDeltaSeconds", "forwardPersistenceObserved", "forwardPersistenceSampleCount", "inverseObserved", "inverseDeltaSeconds", "recoveryPersistenceObserved", "recoveryPersistenceSampleCount", "completeSameFamilyLifecycle", "failureReason"],
+      "properties": {
+        "preStateStatus": { "$ref": "#/$defs/preStatus" },
+        "forwardObserved": { "type": "boolean" }, "forwardDeltaSeconds": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "forwardPersistenceObserved": { "type": "boolean" }, "forwardPersistenceSampleCount": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "inverseObserved": { "type": "boolean" }, "inverseDeltaSeconds": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "recoveryPersistenceObserved": { "type": "boolean" }, "recoveryPersistenceSampleCount": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "completeSameFamilyLifecycle": { "type": "boolean" }, "failureReason": { "$ref": "#/$defs/failureReason" }
+      }
+    },
+    "families": {
+      "type": "object", "additionalProperties": false,
+      "required": ["healthBoundary", "booleanAlive", "respawnBoundary", "pawnLinkPresence"],
+      "properties": { "healthBoundary": { "$ref": "#/$defs/familyLifecycle" }, "booleanAlive": { "$ref": "#/$defs/familyLifecycle" }, "respawnBoundary": { "$ref": "#/$defs/familyLifecycle" }, "pawnLinkPresence": { "$ref": "#/$defs/familyLifecycle" } }
+    },
+    "controlResult": {
+      "type": ["object", "null"], "additionalProperties": false,
+      "required": ["families", "completeSameFamilyLifecycleCount", "coherentSegmentedLifecycle", "controlWindowCensoredByRealAnchor", "recoveryCompletionDeltaSeconds", "lifecycleEvidenceClass"],
+      "properties": {
+        "families": { "$ref": "#/$defs/families" }, "completeSameFamilyLifecycleCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "coherentSegmentedLifecycle": { "type": "boolean" }, "controlWindowCensoredByRealAnchor": { "type": "boolean" },
+        "recoveryCompletionDeltaSeconds": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "lifecycleEvidenceClass": { "$ref": "#/$defs/evidenceClass" }
+      }
+    },
+    "evidenceClass": { "enum": ["coherent_segmented_lifecycle", "coherent_forward_censored_final_segment", "partial_same_family_lifecycle", "cross_anchor_recovery_violation", "cross_family_aggregate_only", "contradictory_lifecycle", "ambiguous_lifecycle", "recurrence_only", "insufficient_observation"] },
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["segmentedLifecycleEvidenceKey", "eventCandidateKey", "sourceTransitionKey", "participantKey", "heroRefKey", "teamRefKey", "anchorNormalizedElapsedSecond", "nextAnchorNormalizedElapsedSecond", "matchedControlNormalizedElapsedSecond", "controlSegmentEndNormalizedSecond", "anchorFamilies", "completeSameFamilyLifecycleCount", "opposingExplicitDirectionObserved", "ambiguousAssociation", "persistenceContradictionObserved", "anchorBoundaryViolationStatus", "correctedRecoveryCompletionDeltaSeconds", "matchedControlLifecycleResult", "lifecycleEvidenceClass", "semanticStatus", "finalFact"],
+      "properties": {
+        "segmentedLifecycleEvidenceKey": { "type": "string", "pattern": "^segmented_lifecycle_[0-9]{6}$" },
+        "eventCandidateKey": { "type": "string", "pattern": "^death_event_candidate_[0-9]{6}$" },
+        "sourceTransitionKey": { "type": "string", "pattern": "^life_transition_[0-9]{6}$" },
+        "participantKey": { "type": "string", "pattern": "^participant_[0-9]{2}$" },
+        "heroRefKey": { "type": "string", "pattern": "^hero_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "teamRefKey": { "type": "string", "pattern": "^team_ref_(?:[0-9]{2}|unknown_[0-9]{2})$" },
+        "anchorNormalizedElapsedSecond": { "type": "integer", "minimum": 0 }, "nextAnchorNormalizedElapsedSecond": { "type": ["integer", "null"], "minimum": 0 },
+        "matchedControlNormalizedElapsedSecond": { "type": ["integer", "null"], "minimum": 0 }, "controlSegmentEndNormalizedSecond": { "type": ["integer", "null"], "minimum": 0 },
+        "anchorFamilies": { "$ref": "#/$defs/families" }, "completeSameFamilyLifecycleCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "opposingExplicitDirectionObserved": { "type": "boolean" }, "ambiguousAssociation": { "type": "boolean" }, "persistenceContradictionObserved": { "type": "boolean" },
+        "anchorBoundaryViolationStatus": { "enum": ["none", "recovery_at_or_after_next_anchor"] },
+        "correctedRecoveryCompletionDeltaSeconds": { "type": ["integer", "null"], "minimum": 1, "maximum": 180 },
+        "matchedControlLifecycleResult": { "$ref": "#/$defs/controlResult" }, "lifecycleEvidenceClass": { "$ref": "#/$defs/evidenceClass" },
+        "semanticStatus": { "const": "unconfirmed_segmented_lifecycle" }, "finalFact": { "const": false }
+      }
+    },
+    "rate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["totalAnchors", "totalExactControls", "completeSameFamilyLifecycleRate", "atLeastTwoCompleteFamiliesRate", "coherentSegmentedLifecycleRate", "controlCoherentLifecycleRate", "anchorControlDifference", "crossAnchorRecoveryViolationCount", "crossFamilyAggregateOnlyCount", "opposingDirectionCount", "persistenceContradictionCount", "preStateStabilityCoverage", "forwardPersistenceCoverage", "recoveryPersistenceCoverage", "censoredFinalAnchorCount", "controlsCensoredByRealAnchors", "sequenceCountBridgeMismatches", "sourceReuseCount", "segmentedLifecycleAssessmentLevel"],
+      "properties": {
+        "totalAnchors": { "type": "integer", "minimum": 1 }, "totalExactControls": { "type": "integer", "minimum": 0 },
+        "completeSameFamilyLifecycleRate": { "$ref": "#/$defs/rate" }, "atLeastTwoCompleteFamiliesRate": { "$ref": "#/$defs/rate" },
+        "coherentSegmentedLifecycleRate": { "$ref": "#/$defs/rate" }, "controlCoherentLifecycleRate": { "$ref": "#/$defs/rate" },
+        "anchorControlDifference": { "type": "number", "minimum": -1, "maximum": 1 }, "crossAnchorRecoveryViolationCount": { "type": "integer", "minimum": 0 },
+        "crossFamilyAggregateOnlyCount": { "type": "integer", "minimum": 0 }, "opposingDirectionCount": { "type": "integer", "minimum": 0 },
+        "persistenceContradictionCount": { "type": "integer", "minimum": 0 }, "preStateStabilityCoverage": { "$ref": "#/$defs/rate" },
+        "forwardPersistenceCoverage": { "$ref": "#/$defs/rate" }, "recoveryPersistenceCoverage": { "$ref": "#/$defs/rate" },
+        "censoredFinalAnchorCount": { "type": "integer", "minimum": 0 }, "controlsCensoredByRealAnchors": { "type": "integer", "minimum": 0 },
+        "sequenceCountBridgeMismatches": { "type": "integer", "minimum": 0 }, "sourceReuseCount": { "type": "integer", "minimum": 0 },
+        "segmentedLifecycleAssessmentLevel": { "enum": ["insufficient", "partial", "strong"] }
+      }
+    },
+    "readiness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sameFamilyLifecycleEvidenceAvailable", "segmentedLifecycleConsistencyMeasurable", "matchedControlLifecycleDiscriminationMeasurable", "crossAnchorViolationsMeasurable", "candidateLevelSegmentedLifecycleConsumptionAvailable", "readyForOperationalDeathFactPromotionReview", "readyForFinalDeathFacts", "readyForConfirmedWhoDied", "readyForAttribution", "readyForKillerVictim", "readyForTeamfight", "readyForGameplayInterpretation"],
+      "properties": {
+        "sameFamilyLifecycleEvidenceAvailable": { "const": true }, "segmentedLifecycleConsistencyMeasurable": { "const": true }, "matchedControlLifecycleDiscriminationMeasurable": { "const": true },
+        "crossAnchorViolationsMeasurable": { "const": true }, "candidateLevelSegmentedLifecycleConsumptionAvailable": { "const": true },
+        "readyForOperationalDeathFactPromotionReview": { "type": "boolean" }, "readyForFinalDeathFacts": { "const": false }, "readyForConfirmedWhoDied": { "const": false },
+        "readyForAttribution": { "const": false }, "readyForKillerVictim": { "const": false }, "readyForTeamfight": { "const": false }, "readyForGameplayInterpretation": { "const": false }
+      }
+    }
+  }
+}

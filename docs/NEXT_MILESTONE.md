@@ -1931,3 +1931,19 @@ sequence coverage was 0, and the anchor-minus-control difference was 0.852273.
 The assessment is `partial`; 258 counter-before-recovery violations prevent a
 strong result. Operational death-fact promotion review and every final-fact or
 attribution capability remain not ready.
+
+## Task 188
+
+Purpose: durably validate Task 185/187 integrity and require continuous
+same-family lifecycle chains inside participant anchor segments and exact Task
+186 matched-control windows.
+
+Success gate: `task187_corrected_segmented_lifecycle_bounded32_ready`.
+
+Status: completed technically. Pilot emitted 341 rows and bounded-32 emitted
+2,552 rows with exact controls, strict provenance, zero bridge/reuse/protection
+failures, and atomic publication. Bounded coherent lifecycle coverage is
+0.846787, control coverage is 0, and 42 cross-anchor recovery candidates are
+excluded from prior-segment coherence. The assessment is `partial`, with 0/32
+replays meeting all strong independent thresholds. Operational promotion
+review, final facts, and attribution remain not ready.

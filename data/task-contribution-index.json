@@ -5693,7 +5693,7 @@
     {
       "taskId": "187",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "f5825e4ffc537e5986de699fd34d1a3df1a91b0f",
       "title": "Repair Audit Integrity And Validate Death Semantic Sequences",
       "phase": "death_event_semantic_sequence_candidate_evidence",
       "primaryContribution": "Repaired exact Task 185/186 audit integrity before replay access and emitted matched-control lifecycle sequence evidence without final facts.",
@@ -5721,6 +5721,39 @@
         "tasks/specs/187.json",
         "tasks/completed/187-death-event-semantic-sequence-evidence.md",
         "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-summary.json"
+      ]
+    },
+    {
+      "taskId": "188",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Repair Semantic Sequence Coherence And Validate Segmented Lifecycle Evidence",
+      "phase": "death_event_segmented_lifecycle_candidate_evidence",
+      "primaryContribution": "Durably validated Task 185/187 integrity and emitted replay-sourced same-family segmented lifecycle evidence with exact Task 186 controls and no final facts.",
+      "introducedCapabilities": ["death_event_segmented_lifecycle_evidence"],
+      "stabilizedCapabilities": ["death_event_segmented_lifecycle_evidence"],
+      "supersededCapabilities": ["task187_same_family_segmented_coherence_interpretation"],
+      "importantOutputs": [
+        "schemas/death-event-segmented-lifecycle-evidence.schema.json",
+        "tools/emit-death-event-segmented-lifecycle-evidence.mjs",
+        "docs/codex/DEATH_EVENT_SEGMENTED_LIFECYCLE_CONTRACT.md",
+        "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-gate.json",
+        "reports/death-event-segmented-lifecycle-evidence-task188.md"
+      ],
+      "gate": "task187_corrected_segmented_lifecycle_bounded32_ready",
+      "currentRelevance": "active_evidence_layer",
+      "dependsOn": ["180", "182", "183", "186", "187"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The partial assessment does not make operational death-fact promotion review ready.",
+        "Task 187 remains historical sequence-v1 evidence and is not rewritten.",
+        "Final facts, attribution, killer/victim, teamfight, and gameplay interpretation remain unavailable."
+      ],
+      "evidenceStatus": "sufficient_technical_partial_segmented_lifecycle",
+      "evidencePaths": [
+        "tasks/specs/188.json",
+        "tasks/completed/188-death-event-segmented-lifecycle-evidence.md",
+        "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-summary.json"
       ]
     }
   ]

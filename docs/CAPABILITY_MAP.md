@@ -385,3 +385,20 @@ Task 186 matched controls. Bounded-32 emitted 2,552 anchor rows and evaluated
 2,552 controls. Its assessment is `partial`, with 258 counter-before-recovery
 violations reported. The layer is operational evidence only; it does not emit
 final deaths or make operational promotion review ready.
+
+## Segmented Death-Event Lifecycle Evidence
+
+- Capability id: `death_event_segmented_lifecycle_evidence`
+- Introduced: Task 188
+- Status: active
+- Current baseline: `death_event_segmented_lifecycle_evidence_bounded32_task188`
+- Main files: `tools/emit-death-event-segmented-lifecycle-evidence.mjs`,
+  `schemas/death-event-segmented-lifecycle-evidence.schema.json`,
+  `docs/codex/DEATH_EVENT_SEGMENTED_LIFECYCLE_CONTRACT.md`
+
+Task 188 requires each participating family to supply all five lifecycle stages
+inside `[current anchor, next anchor)`, with controls censored at real anchors.
+Bounded-32 emitted 2,552 rows and exact controls. Coherent segmented lifecycle
+coverage is 0.846787 versus 0 for controls, yielding a `partial` assessment.
+Task 188 supersedes Task 187 only for corrected segmented coherence; neither
+layer confirms deaths or authorizes operational promotion review.

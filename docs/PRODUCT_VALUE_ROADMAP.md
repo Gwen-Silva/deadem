@@ -164,3 +164,18 @@ The project can consume candidate-level sequence evidence and measure lifecycle
 consistency, but it is not ready for an operational death-fact promotion review.
 Confirmed who-died claims, attribution, killer/victim, teamfight detection, and
 gameplay interpretation remain unavailable.
+
+## Task 188 Product Implication
+
+Task 188 replaces aggregate sequence assembly with continuous same-family
+chains bounded by each participant's next Task 183 anchor. It shows coherent
+segmented lifecycle evidence for 0.846787 of 2,552 anchors and none of the exact
+matched controls. Forty-two potential recoveries cross the next anchor and are
+not credited to the prior segment; 1,694 control windows are safely censored by
+real anchors.
+
+The result remains `partial`, so operational death-fact promotion review is not
+ready. Task 187 remains historical sequence-v1 evidence, while Task 188 is the
+active corrected segmented-coherence layer. Confirmed deaths, who-died claims,
+attribution, killer/victim, teamfight, and gameplay interpretation remain
+unavailable.

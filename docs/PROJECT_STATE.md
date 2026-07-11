@@ -1379,6 +1379,8 @@ the observation baseline; Task 186 supplies corrected cycle metrics and
 
 ## Task 187 - Death Semantic Sequences
 
+Task 187 commit: `f5825e4ffc537e5986de699fd34d1a3df1a91b0f`.
+
 Task 187 first repaired audit integrity without resolving replay paths: Task 011
 was restored to a null commit, Task 185 is owned only by commit
 `8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`, and Task 186 is owned only by
@@ -1399,3 +1401,33 @@ violations. `readyForOperationalDeathFactPromotionReview` is false. Task 187
 introduces `death_event_semantic_sequence_evidence_bounded32_task187` without
 replacing Tasks 180, 182, 183, 184, 185, or 186. Final death facts, confirmed
 who-died, attribution, killer/victim, teamfight, and interpretation remain false.
+
+## Task 188 - Segmented Death Lifecycle Evidence
+
+Task 188 recorded Task 187 commit
+`f5825e4ffc537e5986de699fd34d1a3df1a91b0f` only on Task 187. Its durable
+integrity audit compared exactly 32 Task 185 artifact paths and contents with
+commit `8ca6d50fd99fdc6fc4b802ab3af2e74b06f4796e`; all were identical. The gate
+passed before replay paths or parser construction.
+
+The Task 187 row correction preserved historical artifacts. It recalculated
+2,175 prior coherent rows to 2,161 corrected coherent segmented rows, found 41
+prior coherent rows crossing the next anchor, changed 2,225 recovery times by
+requiring persistence confirmation, and measured 59 rows in the intersection
+of prior uniqueness violations and prior coherent rows. Corrected forward,
+recovery, and anchor-control-difference rates are 0.944357, 0.904337, and
+0.846787; the assessment remains `partial`.
+
+Task 188 pilot and bounded-32 passed technically with 4/4 and 32/32 parser
+completion, respectively. Bounded emitted 2,552 anchors, rows, and exact Task
+186 controls with gate `task187_corrected_segmented_lifecycle_bounded32_ready`.
+Coherent lifecycle coverage is 0.846787 versus 0 for controls; 42 cross-anchor
+violations were excluded, source reuse and bridge mismatches were zero, and
+0/32 replays met all strong independent thresholds.
+
+Task 188 introduces
+`death_event_segmented_lifecycle_evidence_bounded32_task188` and supersedes Task
+187 only for corrected same-family segmented coherence. Task 187 remains
+historical sequence-v1 evidence. Operational promotion review, final deaths,
+confirmed who-died, attribution, killer/victim, teamfight, and gameplay
+interpretation remain false.

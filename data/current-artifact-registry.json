@@ -750,13 +750,25 @@
       "id": "death_event_semantic_sequence_evidence_task187_gate",
       "path": "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-gate.json",
       "status": "current",
-      "notes": "Task 187 final technical gate for reproducible semantic-sequence evidence; partial operational assessment and no confirmed deaths."
+      "notes": "Task 187 commit f5825e4ffc537e5986de699fd34d1a3df1a91b0f technical gate; historical sequence-v1 evidence superseded by Task 188 only for corrected segmented coherence."
     },
     {
       "id": "death_event_semantic_sequence_evidence_contract_task187",
       "path": "docs/codex/DEATH_EVENT_SEMANTIC_SEQUENCE_CONTRACT.md",
       "status": "current",
       "notes": "Policy contract for pre-state, explicit forward transition, persistence, exact recovery, lifecycle uniqueness, and matched controls."
+    },
+    {
+      "id": "death_event_segmented_lifecycle_evidence_task188_gate",
+      "path": "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-gate.json",
+      "status": "current",
+      "notes": "Task 188 final technical gate for same-family segmented lifecycle evidence; partial assessment and no confirmed deaths."
+    },
+    {
+      "id": "death_event_segmented_lifecycle_evidence_contract_task188",
+      "path": "docs/codex/DEATH_EVENT_SEGMENTED_LIFECYCLE_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for same-family lifecycle chains, participant segments, recovery persistence, and exact matched controls."
     }
   ],
   "artifacts": [
@@ -800,7 +812,13 @@
       "id": "death_event_semantic_sequence_evidence_bounded32_task187_artifacts",
       "path": "output/local-replay-processing/death-event-semantic-sequence-evidence/task187-bounded32/semantic-sequence-bounded32-gate.json",
       "status": "current",
-      "notes": "Task 187 active bounded-32 semantic-sequence baseline; partial operational evidence does not confirm death truth or authorize promotion review."
+      "notes": "Task 187 historical sequence-v1 baseline from commit f5825e4ffc537e5986de699fd34d1a3df1a91b0f; Task 188 supersedes it only for corrected same-family segmented coherence."
+    },
+    {
+      "id": "death_event_segmented_lifecycle_evidence_bounded32_task188_artifacts",
+      "path": "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-bounded32/segmented-lifecycle-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 188 active bounded-32 segmented lifecycle baseline; partial operational evidence does not confirm death truth or authorize promotion review."
     }
   ]
 }

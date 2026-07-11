@@ -556,10 +556,37 @@
       ],
       "knownLimits": [
         "The bounded-32 semanticSequenceAssessmentLevel is partial: forward and recovery rates missed strong thresholds and 258 counter-before-recovery violations were reported.",
+        "Task 188 supersedes Task 187 only for same-family segmented coherence; Task 187 remains historical sequence-v1 evidence from commit f5825e4ffc537e5986de699fd34d1a3df1a91b0f.",
         "Operational sequence classes do not establish Source 2 death or respawn truth.",
         "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw field name, raw ID, raw time, position, or gameplay interpretation is emitted."
       ],
-      "nextUsefulStep": "A separately authorized review may investigate lifecycle uniqueness and recovery timing; operational promotion review is not ready while the assessment remains partial."
+      "nextUsefulStep": "Use Task 188 for corrected same-family segmented lifecycle coherence while preserving Task 187 as historical sequence-v1 evidence."
+    },
+    {
+      "capabilityId": "death_event_segmented_lifecycle_evidence",
+      "plainName": "Segmented death-event lifecycle evidence",
+      "introducedInTask": "188",
+      "stabilizedInTask": "188",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_segmented_lifecycle_evidence_bounded32_task188",
+      "whyItMatters": "Measures continuous same-family pre-state, forward transition, forward persistence, exact inverse, and recovery persistence inside participant anchor segments and exact matched-control windows.",
+      "mainFiles": [
+        "tools/emit-death-event-segmented-lifecycle-evidence.mjs",
+        "schemas/death-event-segmented-lifecycle-evidence.schema.json",
+        "docs/codex/DEATH_EVENT_SEGMENTED_LIFECYCLE_CONTRACT.md",
+        "tests/death-event-segmented-lifecycle-evidence-schema.test.mjs",
+        "tests/emit-death-event-segmented-lifecycle-evidence.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-gate.json",
+        "output/local-replay-processing/death-event-segmented-lifecycle-evidence/task188-bounded32/"
+      ],
+      "knownLimits": [
+        "The bounded-32 segmentedLifecycleAssessmentLevel is partial: coherent lifecycle rate is 0.846787 and 0 of 32 replays meet all independent strong thresholds.",
+        "Forty-two cross-anchor recovery candidates are measured and never counted as coherent prior-segment evidence.",
+        "Operational lifecycle classes do not establish Source 2 death or respawn truth, attribution, or gameplay meaning."
+      ],
+      "nextUsefulStep": "Investigate recovery persistence and segment-boundary failures under separate authorization; operational promotion review remains not ready."
     }
   ]
 }
