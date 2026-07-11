@@ -2,6 +2,22 @@
 
 Task 178 maps current Deadem capabilities from versioned evidence. Status values are active, superseded, historical, blocked, or needs-validation.
 
+## Autonomous Work–Codex coordination
+
+- Capability id: `autonomous_work_codex_coordination`
+- Introduced in Task 191; current status: `needs-validation`.
+- Current baseline: Task 190 commit
+  `13a3da64bcf0ba839a752038f07f40e3eeeed890` remains accepted; Task 191 is
+  `VALIDATING`.
+- Why it matters: Persists Work/Codex/Chat authority, ordered task contracts,
+  review evidence and fail-closed protection against self-approval, rejected
+  bases and fictitious surface activity.
+- Main files: `docs/codex/AUTONOMOUS_COORDINATION_POLICY.md`,
+  `data/project-coordination-state.json`, `scripts/codex-workflow.js`.
+- Known limits: Repository code cannot launch or prove a real ChatGPT surface
+  integration; `BLOCKED_BY_SURFACE` preserves continuity without simulation.
+- Next dependency: Independent ChatGPT Work validation of the Task 191 commit.
+
 ## Upstream char field decoder fix
 
 - Capability id: `parser_char_without_count_fix`

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "183",
-  "baseCommit": "ffabea3d19280f901685d3a3e7a6a66e3c8a2bf8",
-  "taskRange": "001-182",
+  "generatedAtTask": "191",
+  "baseCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
+  "taskRange": "001-191",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5820,6 +5820,38 @@
         "tasks/specs/190.json",
         "tasks/completed/190-death-event-surface-resolved-lifecycle-evidence.md",
         "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-summary.json"
+      ]
+    },
+    {
+      "taskId": "191",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Implement Autonomous ChatGPT Work And Codex Coordination Policy",
+      "phase": "autonomous_coordination_policy_validation",
+      "primaryContribution": "Added normative Work-Codex-Chat separation, persistent coordination state, contract-v1 task packets, report evidence and fail-closed validators without simulating a surface integration.",
+      "introducedCapabilities": ["autonomous_work_codex_coordination"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": ["manual_work_codex_routing"],
+      "importantOutputs": [
+        "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+        "data/project-coordination-state.json",
+        "output/project-coordination/task191-gate.json",
+        "reports/autonomous-work-codex-coordination-policy-task191.md"
+      ],
+      "gate": "autonomous_work_codex_coordination_policy_ready",
+      "currentRelevance": "candidate_pending_independent_work_validation",
+      "dependsOn": ["190"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The technical gate is a Codex execution claim and does not accept Task 191.",
+        "The repository cannot create or prove real cross-surface integration.",
+        "Death-fact promotion remains blocked and no replay scope changes."
+      ],
+      "evidenceStatus": "technical_candidate_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/191.json",
+        "tasks/completed/191-autonomous-work-codex-coordination-policy.md",
+        "output/project-coordination/task191-summary.json"
       ]
     }
   ]

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "coordinationPolicyVersion": 1,
+  "objective": "Implement and independently validate the autonomous ChatGPT Work, Codex, and Chat coordination policy.",
+  "phase": "autonomous_coordination_policy_validation",
+  "lastAcceptedTaskId": "190",
+  "lastAcceptedCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
+  "activeBaseCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
+  "branch": "main",
+  "activeTaskId": "191",
+  "status": "VALIDATING",
+  "candidateCommit": null,
+  "protectedPaths": [
+    "replay_005",
+    "replay_006",
+    "replay_007",
+    "replay_008",
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**"
+  ],
+  "architecturalDecisions": [
+    "ChatGPT Work is the sole acceptance authority and autonomous coordinator.",
+    "Codex reports technical execution claims and stops after the current handoff.",
+    "HEAD, push, and passing tests do not imply acceptance.",
+    "Unavailable launch integration is represented as BLOCKED_BY_SURFACE without simulated execution."
+  ],
+  "requiredTests": [
+    "node --test tests/project-coordination-policy.test.mjs",
+    "node --test tests/codex-workflow-coordination.test.mjs",
+    "node --test tests/task-execution-contract.test.mjs",
+    "npm run validate:coordination",
+    "npm run validate:tasks",
+    "npm run lint",
+    "npm run check:outputs"
+  ],
+  "activeBlockers": [
+    "Final acceptance is pending independent ChatGPT Work validation.",
+    "Death-fact promotion remains blocked by the Task 190 partial operational assessment."
+  ],
+  "knownRisks": [
+    "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
+    "Direct commands outside the repository workflow remain outside script interception."
+  ],
+  "nextAction": "ChatGPT Work must independently validate the Task 191 commit and decide its gate without treating the Codex report as approval.",
+  "completedTasks": ["190"],
+  "pendingTasks": [],
+  "acceptanceAuthority": "ChatGPT Work",
+  "updatedBy": "Codex"
+}

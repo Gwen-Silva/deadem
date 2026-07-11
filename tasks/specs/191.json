@@ -1,0 +1,180 @@
+{
+  "taskId": "191",
+  "title": "Implement Autonomous ChatGPT Work And Codex Coordination Policy",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Implement persistent, executable and non-fictitious autonomous coordination governance for ChatGPT Work, Codex and Chat.",
+  "baseCommitExpected": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
+  "executionReportPath": "reports/autonomous-work-codex-coordination-policy-task191.md",
+  "executionContract": {
+    "reasoningComplexity": "High: this task changes governance, task contracts, state transitions and fail-closed workflow validators while preserving legacy specs.",
+    "objective": "Implement persistent, executable and non-fictitious autonomous coordination governance for ChatGPT Work, Codex and Chat.",
+    "technicalContext": [
+      "The repository already provides Codex prepare, preflight, validate, review and status commands.",
+      "Specs 000-190 use the legacy shape and must remain valid."
+    ],
+    "confirmedState": [
+      "Task 190 is the last Work-accepted task with a partial operational assessment.",
+      "Task 191 is a candidate and cannot accept its own commit.",
+      "No replay processing is required."
+    ],
+    "expectedBaseCommit": "13a3da64bcf0ba839a752038f07f40e3eeeed890",
+    "branchEnvironment": [
+      "Repository Gwen-Silva/deadem on branch main.",
+      "Create exactly one commit and push to origin/main; do not open a pull request."
+    ],
+    "allowedScope": [
+      "Only policy, workflow, schema/state, validator, test, Task 191 report and Task 191 coordination artifact paths declared in writePaths.",
+      "No dependency is expected."
+    ],
+    "protectedAreas": [
+      "Do not modify packages/deadem, packages/engine, samples, replay runners, historical Task 180-190 outputs or any Task 192 path.",
+      "Do not read, hash, copy, inspect, open or process replay_005 through replay_008 or any .dem file."
+    ],
+    "expectedChanges": [
+      "Normative coordination policy, compact agent rules, state schema and state instance.",
+      "Task contract, ordered context packet, report checklist, coordination and queue validators.",
+      "Focused mutation tests, Task 191 evidence, technical gate and summary."
+    ],
+    "acceptanceCriteria": [
+      "Work/Codex/Chat roles, BLOCKED_BY_SURFACE and self-approval protections are normative and executable.",
+      "Task 191 remains VALIDATING with Task 190 as the accepted base.",
+      "Historical specs remain valid and all mandatory checks pass with only the allowed historical output warning."
+    ],
+    "mandatoryTests": [
+      "node --test tests/project-coordination-policy.test.mjs",
+      "node --test tests/codex-workflow-coordination.test.mjs",
+      "node --test tests/task-execution-contract.test.mjs",
+      "npm run validate:coordination",
+      "npm run validate:tasks",
+      "npm run codex:prepare -- --task 191",
+      "npm run codex:preflight -- --task 191",
+      "npm run lint",
+      "npm run codex:validate -- --task 191 --base 13a3da64bcf0ba839a752038f07f40e3eeeed890",
+      "npm run codex:review -- --task 191 --base 13a3da64bcf0ba839a752038f07f40e3eeeed890",
+      "npm run check:outputs"
+    ],
+    "requiredEvidence": [
+      "Policy, schemas, coordination state, context packet, preflight result, validation result and review packet.",
+      "Mutation tests, command logs, diff evidence, gate, summary, commit, push and clean final status."
+    ],
+    "commitPolicy": [
+      "Stage only authorized changed files; never use git add dot.",
+      "Create exactly one commit named Implement autonomous Work Codex coordination policy and push origin main."
+    ],
+    "stopConditions": [
+      "Stop on base, branch or scope divergence, unrelated changes, historical regression, invalid self-approval protection or new output warning.",
+      "Stop if implementation requires fictional integration, a protected replay access, protected package change, Task 192 or more than one commit."
+    ],
+    "returnReportFormat": [
+      "Use every section in docs/codex/CODEX_REPORT_TEMPLATE.md and include command exit codes, warnings, artifacts, limitations, risks, deviations and unvalidated items.",
+      "State autonomous_work_codex_coordination_policy_ready only as a technical claim pending independent Work validation."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "scripts/codex-workflow.js",
+    "scripts/validate-task-queue.js",
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "AGENTS.md",
+    "package.json",
+    "scripts/codex-workflow.js",
+    "scripts/validate-task-queue.js",
+    "scripts/validate-project-coordination.js",
+    "schemas/project-coordination-state.schema.json",
+    "schemas/task-execution-contract.schema.json",
+    "data/project-coordination-state.json",
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_INSTRUCTION_TEMPLATE.md",
+    "docs/codex/CODEX_REPORT_TEMPLATE.md",
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "tests/project-coordination-policy.test.mjs",
+    "tests/codex-workflow-coordination.test.mjs",
+    "tests/task-execution-contract.test.mjs",
+    "tasks/specs/191.json",
+    "tasks/completed/191-autonomous-work-codex-coordination-policy.md",
+    "reports/autonomous-work-codex-coordination-policy-task191.md",
+    "output/project-coordination/task191-gate.json",
+    "output/project-coordination/task191-summary.json"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "output/local-replay-processing/**",
+    "tasks/specs/192.json",
+    "tasks/*/192-*",
+    "**/*.dem",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "coordination-policy-tests", "type": "node-test", "paths": ["tests/project-coordination-policy.test.mjs"] },
+    { "id": "coordination-workflow-tests", "type": "node-test", "paths": ["tests/codex-workflow-coordination.test.mjs"] },
+    { "id": "task-contract-tests", "type": "node-test", "paths": ["tests/task-execution-contract.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "04-controller-pawn-lifecycle\\.json" }
+  ],
+  "expectedOutputs": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "schemas/project-coordination-state.schema.json",
+    "schemas/task-execution-contract.schema.json",
+    "data/project-coordination-state.json",
+    "scripts/validate-project-coordination.js",
+    "tasks/completed/191-autonomous-work-codex-coordination-policy.md",
+    "reports/autonomous-work-codex-coordination-policy-task191.md",
+    "output/project-coordination/task191-gate.json",
+    "output/project-coordination/task191-summary.json"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Do not access protected replays or .dem files.",
+    "Do not modify protected packages, historical outputs or Task 192.",
+    "Do not create a fictional Work/Codex integration or self-approve Task 191.",
+    "Stop after the Task 191 handoff in VALIDATING."
+  ],
+  "successGate": "autonomous_work_codex_coordination_policy_ready",
+  "blockedGate": "autonomous_work_codex_coordination_policy_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/project-coordination/task191-gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

@@ -5,6 +5,13 @@ import { existsSync, lstatSync, readFileSync, statSync } from 'node:fs';
 import { mkdir, readFile, realpath, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+    CONTRACT_KEYS,
+    REPORT_CHECKS,
+    validateReportText,
+    validateStateData,
+    validateTaskContractData
+} from './validate-project-coordination.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LOCAL_ROOT = '.local/codex';
@@ -36,6 +43,24 @@ const REQUIRED_SPEC_FIELDS = [
     'gateSource'
 ];
 const PROTECTED_PATTERNS = [/partida_005\.dem/iu, /replay_005/iu, /replay_006/iu, /replay_007/iu, /replay_008/iu];
+const COORDINATION_EXECUTION_STATUSES = new Set(['READY_FOR_CODEX', 'CODEX_RUNNING', 'VALIDATING']);
+const CONTRACT_HEADINGS = Object.freeze([
+    '1. Reasoning complexity',
+    '2. Objective',
+    '3. Technical context',
+    '4. Confirmed state',
+    '5. Expected base commit',
+    '6. Branch/environment',
+    '7. Allowed scope',
+    '8. Protected areas',
+    '9. Expected changes',
+    '10. Acceptance criteria',
+    '11. Mandatory tests',
+    '12. Required evidence',
+    '13. Commit policy',
+    '14. Stop conditions',
+    '15. Return-report format'
+]);
 
 function rel(file) {
     return path.relative(ROOT, path.resolve(file)).replaceAll(path.sep, '/');
@@ -189,6 +214,18 @@ function validateSpecObject(spec, specPath = '') {
         if (hasProtectedReplayReference(gatePath)) errors.push(`gateSource references protected replay path: ${gatePath}`);
     }
     if (spec.replayProcessingAllowed === true) warnings.push('replay processing explicitly allowed');
+    const numericTaskId = Number.parseInt(spec.taskId, 10);
+    const executable = ['authorized', 'active'].includes(spec.status);
+    if (numericTaskId >= 191 && executable && spec.coordinationPolicyVersion !== 1) {
+        errors.push('executable Task 191+ requires coordinationPolicyVersion: 1');
+    }
+    if (spec.coordinationPolicyVersion === 1) {
+        const contractValidation = validateTaskContractData(spec.executionContract);
+        errors.push(...contractValidation.errors);
+        if (spec.executionMode !== 'codex') errors.push('coordination policy v1 technical task requires executionMode: codex');
+        if (!spec.executionReportPath) errors.push('coordination policy v1 requires executionReportPath');
+        if (spec.baseCommitExpected !== spec.executionContract?.expectedBaseCommit) errors.push('baseCommitExpected must equal executionContract.expectedBaseCommit');
+    }
     return { valid: errors.length === 0, errors, warnings };
 }
 
@@ -310,13 +347,108 @@ function formatFileInfo(info) {
     return `- ${info.path} | ${info.purpose} | exists=${info.exists} | size=${info.sizeBytes ?? 'missing'} | lines=${info.lineCount ?? 'n/a'} | sha256=${info.sha256 ?? 'n/a'}${info.large ? ' | large-not-included' : ''}`;
 }
 
+async function loadCoordinationState() {
+    const policyPath = await resolveRepoPath('docs/codex/AUTONOMOUS_COORDINATION_POLICY.md');
+    if (!existsSync(policyPath)) throw new Error('coordination policy file is missing');
+    const statePath = await resolveRepoPath('data/project-coordination-state.json');
+    if (!existsSync(statePath)) throw new Error('coordination state is missing');
+    let state;
+    try {
+        state = JSON.parse(await readFile(statePath, 'utf8'));
+    } catch (error) {
+        throw new Error(`coordination state is invalid JSON: ${error.message}`);
+    }
+    const validation = validateStateData(state);
+    if (!validation.valid) throw new Error(`coordination state is invalid: ${validation.errors.join('; ')}`);
+    return state;
+}
+
+function contractLines(value) {
+    if (Array.isArray(value)) return value.map(item => `- ${item}`);
+    return [String(value)];
+}
+
+function orderedContractSections(spec, state) {
+    const contract = spec.executionContract;
+    const values = {
+        reasoningComplexity: contract.reasoningComplexity,
+        objective: contract.objective,
+        technicalContext: contract.technicalContext,
+        confirmedState: [
+            ...contract.confirmedState,
+            `Coordination status: ${state.status}`,
+            `Last accepted task: ${state.lastAcceptedTaskId}`,
+            `Last accepted commit (Work-accepted): ${state.lastAcceptedCommit}`,
+            `Acceptance authority: ${state.acceptanceAuthority}`,
+            'Codex execution claim: technical implementation and validation evidence only.',
+            'Work validation: independently pending; no Codex field is acceptance.'
+        ],
+        expectedBaseCommit: [
+            `Task expected base: ${contract.expectedBaseCommit}`,
+            `Coordination active base: ${state.activeBaseCommit}`
+        ],
+        branchEnvironment: contract.branchEnvironment,
+        allowedScope: contract.allowedScope,
+        protectedAreas: contract.protectedAreas,
+        expectedChanges: contract.expectedChanges,
+        acceptanceCriteria: contract.acceptanceCriteria,
+        mandatoryTests: contract.mandatoryTests,
+        requiredEvidence: contract.requiredEvidence,
+        commitPolicy: contract.commitPolicy,
+        stopConditions: contract.stopConditions,
+        returnReportFormat: contract.returnReportFormat
+    };
+    return CONTRACT_KEYS.flatMap((key, index) => [
+        `## ${CONTRACT_HEADINGS[index]}`,
+        '',
+        ...contractLines(values[key]),
+        ''
+    ]);
+}
+
 async function buildContextText(spec, specPath) {
     const files = [];
     for (const readPath of spec.readPaths) files.push(await fileInfo(readPath, 'required read'));
     for (const optionalPath of spec.optionalReadPaths) files.push(await fileInfo(optionalPath, 'optional read'));
     const policies = [];
     for (const policy of spec.requiredPolicies) policies.push(await fileInfo(policy, 'required policy'));
-    const lines = [
+    const state = spec.coordinationPolicyVersion === 1 ? await loadCoordinationState() : null;
+    const lines = spec.coordinationPolicyVersion === 1 ? [
+        `# Codex Context Packet ${spec.taskId}`,
+        '',
+        ...orderedContractSections(spec, state),
+        '## Execution metadata',
+        '',
+        `Task: ${spec.taskId} - ${spec.title}`,
+        `Spec status: ${spec.status}`,
+        `Spec: ${specPath}`,
+        `Repository HEAD (not acceptance): ${git(['rev-parse', 'HEAD'])}`,
+        `Branch: ${git(['branch', '--show-current'])}`,
+        'Git status:',
+        '```text',
+        gitStatusShort() || 'clean',
+        '```',
+        '',
+        '## Required Read Paths',
+        ...files.filter(item => item.purpose === 'required read').map(formatFileInfo),
+        '',
+        '## Optional Read Paths',
+        ...files.filter(item => item.purpose === 'optional read').map(formatFileInfo),
+        '',
+        '## Write Paths',
+        ...spec.writePaths.map(item => `- ${item}`),
+        '',
+        '## Forbidden Paths',
+        ...spec.forbiddenPaths.map(item => `- ${item}`),
+        '',
+        '## Policies',
+        ...policies.map(formatFileInfo),
+        '',
+        '## Required Checks',
+        ...spec.requiredCommands.map(item => `- ${normalizeCheck(item).id}: ${checkDisplay(normalizeCheck(item))}`),
+        '',
+        `Excluded directories: ${EXCLUDED_DIRS.join(', ')}`
+    ] : [
         `# Codex Context Packet ${spec.taskId}`,
         '',
         `Task: ${spec.taskId} - ${spec.title}`,
@@ -414,8 +546,23 @@ async function preflight(taskId, options = {}) {
     for (const policy of spec.requiredPolicies) if (!existsSync(await resolveRepoPath(policy))) failures.push(`required policy not found: ${policy}`);
     if (statSync(await resolveRepoPath('AGENTS.md')).size > AGENTS_LIMIT) failures.push(`AGENTS.md exceeds ${AGENTS_LIMIT}`);
     if (statSync(await resolveRepoPath('docs/codex/CURRENT_STATE.md')).size > CURRENT_STATE_LIMIT) failures.push(`CURRENT_STATE.md exceeds ${CURRENT_STATE_LIMIT}`);
+    if (spec.coordinationPolicyVersion === 1) {
+        try {
+            const state = await loadCoordinationState();
+            if (spec.baseCommitExpected !== state.lastAcceptedCommit) failures.push('task base diverges from last accepted commit');
+            if (spec.executionContract.expectedBaseCommit !== state.lastAcceptedCommit) failures.push('contract base diverges from last accepted commit');
+            if (git(['branch', '--show-current']) !== state.branch) failures.push(`branch diverges from coordination state: expected ${state.branch}`);
+            if (COORDINATION_EXECUTION_STATUSES.has(state.status) && state.activeTaskId !== spec.taskId) failures.push('coordination state active task diverges from executable spec');
+            if (state.lastAcceptedTaskId === spec.taskId || state.lastAcceptedCommit === state.candidateCommit) failures.push('task attempts to mark its own commit accepted');
+            if (state.acceptanceAuthority !== 'ChatGPT Work') failures.push('acceptance authority must be ChatGPT Work');
+        } catch (error) {
+            failures.push(error.message);
+        }
+    }
     if (gitStatusShort()) warnings.push('working tree has changes; ensure they belong to the current task');
-    return { taskId, dryRun: options.dryRun === true, failures, warnings, passed: failures.length === 0 };
+    const result = { taskId, dryRun: options.dryRun === true, failures, warnings, passed: failures.length === 0 };
+    if (!options.dryRun) await writeLocalJson(taskId, 'preflight-result.json', result);
+    return result;
 }
 
 function isAllowedWrite(spec, file) {
@@ -660,6 +807,19 @@ async function review(taskId, options = {}) {
         validationStatus = validation.passed ? 'passed' : 'failed';
         if (validation.base !== base || validation.current !== current || staleReasons.length > 0) validationStatus = 'stale';
     }
+    let reportChecklist = [];
+    if (spec.coordinationPolicyVersion === 1) {
+        const reportPath = await resolveRepoPath(spec.executionReportPath);
+        if (!existsSync(reportPath)) {
+            failures.push(`execution report missing: ${spec.executionReportPath}`);
+            reportChecklist = REPORT_CHECKS.map(([field]) => ({ field, present: false }));
+        } else {
+            const reportText = await readFile(reportPath, 'utf8');
+            const reportValidation = validateReportText(reportText);
+            failures.push(...reportValidation.errors);
+            reportChecklist = REPORT_CHECKS.map(([field]) => ({ field, present: !reportValidation.missingFields.includes(field) }));
+        }
+    }
     const reviewReady = failures.length === 0;
     const gate = await gateForSpec(spec, reviewReady);
     if (gate === spec.successGate && !reviewReady) failures.push('success gate cannot be used with failed validation');
@@ -676,6 +836,11 @@ async function review(taskId, options = {}) {
         validatedFingerprint: validation?.workingTreeFingerprint ?? null,
         currentFingerprint: currentFingerprint?.workingTreeFingerprint ?? null,
         reviewReady,
+        executionClaim: spec.coordinationPolicyVersion === 1 ? 'Codex reports technical execution evidence only.' : null,
+        workValidation: spec.coordinationPolicyVersion === 1 ? 'Final acceptance remains pending independent ChatGPT Work validation.' : null,
+        coordinationStatus: spec.coordinationPolicyVersion === 1 ? 'VALIDATING' : null,
+        finalAcceptanceStatus: spec.coordinationPolicyVersion === 1 ? 'pending_work_validation' : null,
+        reportChecklist,
         changedFiles: changed,
         testsExecuted: validation?.checks?.map(({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs }) => ({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs })) ?? [],
         unexpectedFiles: validation?.changedFiles?.filter(item => !item.allowed).map(item => item.file) ?? [],
@@ -702,6 +867,16 @@ async function review(taskId, options = {}) {
         '',
         '## Checks',
         ...reviewJson.testsExecuted.map(item => `- ${item.id}: ${item.passed ? 'passed' : 'failed'} (${item.exitCode}) ${item.logPath}`),
+        ...(spec.coordinationPolicyVersion === 1 ? [
+            '',
+            '## Codex report checklist',
+            ...reportChecklist.map(item => `- [${item.present ? 'x' : ' '}] ${item.field}`),
+            '',
+            'Codex execution claim: technical evidence only.',
+            'Coordination status: VALIDATING.',
+            'Work validation: Final acceptance remains pending independent ChatGPT Work validation.',
+            'No report field represents self-approval.'
+        ] : []),
         '',
         'Stop reason: ' + stopReason
     ].join('\n');
@@ -717,11 +892,19 @@ async function review(taskId, options = {}) {
 
 async function status() {
     const state = readFileSync(await resolveRepoPath('docs/codex/CURRENT_STATE.md'), 'utf8');
+    const coordination = await loadCoordinationState();
     const lines = [
         'Codex workflow status',
-        state.split(/\r?\n/u).find(line => line.startsWith('Authorized task:')) ?? 'Authorized task: unknown',
-        state.split(/\r?\n/u).find(line => line.startsWith('Latest rejected gate:')) ?? 'Latest rejected gate: unknown',
-        state.split(/\r?\n/u).find(line => line.startsWith('Blocked follow-up:')) ?? 'Blocked follow-up: unknown',
+        `Coordination policy version: ${coordination.coordinationPolicyVersion}`,
+        `Coordination status: ${coordination.status}`,
+        `Active task: ${coordination.activeTaskId ?? 'none'}`,
+        `Last accepted task: ${coordination.lastAcceptedTaskId}`,
+        `Last accepted commit: ${coordination.lastAcceptedCommit}`,
+        `Active base commit: ${coordination.activeBaseCommit}`,
+        `Branch: ${coordination.branch}`,
+        `Acceptance authority: ${coordination.acceptanceAuthority}`,
+        `Next action: ${coordination.nextAction}`,
+        state.split(/\r?\n/u).find(line => line.startsWith('Task 192:')) ?? 'Task 192: unknown',
         `Working tree: ${gitStatusShort() ? 'dirty' : 'clean'}`
     ];
     console.log(lines.join('\n'));
@@ -767,6 +950,7 @@ export {
     REVIEW_JSON_LIMIT,
     REVIEW_MD_LIMIT,
     buildContextPacket,
+    buildContextText,
     changedFilesSince,
     checkAllowed,
     checkInvocation,

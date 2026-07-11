@@ -1,38 +1,29 @@
 # Current Codex State
 
-Current accepted workflow gate: `codex_task_workflow_optimization_ready_v3`.
+Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`).
 
-Current accepted replay factual gates: replay 009 canonical factual state
-remains accepted with constraints; replay 002 terminal validation v9 is ready
-with constraints after Task 094.
+Branch: `main`.
 
-Latest rejected replay-002 gate:
-`replay_002_canonical_factual_state_ready_with_constraints_v8`.
+Last accepted task: Task 190. Its technical result remains accepted with the
+operational assessment `partial`.
 
-Authorized task: none after Task 095 remaining human controls canonicalization.
+Last accepted commit: `13a3da64bcf0ba839a752038f07f40e3eeeed890`.
 
-Latest completed task: Task 095, canonicalize remaining human pilot replays.
+Active candidate: Task 191, autonomous Work–Codex coordination policy.
 
-Blocked follow-up: Task 096, audit five human replay factual pilot.
+Coordination status: `VALIDATING` after Codex execution. Task 191 has no
+accepted commit and its candidate commit is not recorded as accepted.
 
-Selection follow-up: superseded by the finite pilot plan; no selection-only task
-is executable.
+Acceptance authority: ChatGPT Work.
 
-Last reviewed commit: pending Task 094 commit.
+Next action: independent Work validation of the Task 191 commit and gate. The
+Codex technical report is an execution claim, not approval.
 
-Current milestone: five-human-replay factual pilot.
+Death-fact promotion: blocked by Task 190's partial operational assessment.
 
-Pilot replays: `replay_001`, `replay_002`, `replay_003`, `replay_004`,
-`replay_009`.
+Protected data: replay 005 remains the final holdout; replays 006–008 remain
+unsupported bot fixtures. None is authorized for Task 191.
 
-Execution horizon: Task 096. Do not create Task 097 automatically.
+Task 192: not created.
 
-Active blockers:
-
-- the five-human-replay pilot has not been audited.
-
-Protected replays: replay 005 is protected final holdout. Replays 006-008 are
-unsupported bot fixtures.
-
-Blocked capabilities: spatial semantics, mechanic effects, fight grouping,
-rotations, pressure, macro interpretation, ML, and decision analysis.
+Machine-readable state: `data/project-coordination-state.json`.
