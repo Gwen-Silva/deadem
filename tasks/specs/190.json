@@ -1,0 +1,235 @@
+{
+  "taskId": "190",
+  "title": "Repair Event-Window Symmetry And Validate Surface-Resolved Lifecycle Evidence",
+  "status": "authorized",
+  "objective": "Record Task 189, repair event-relative pre-state, independently rematch every horizon, preserve abstract observation surfaces, enforce semantic artifact invariants, and emit surface-resolved lifecycle evidence without final death facts.",
+  "baseCommitExpected": "ac04dcc5c168da306fada4f6d32f590c39c16721",
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "package-lock.json",
+    "docs/codex/**",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/current-artifact-registry.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "schemas/participant-identity-compact.schema.json",
+    "schemas/life-state-transition-candidates.schema.json",
+    "schemas/death-event-candidates.schema.json",
+    "schemas/death-event-directional-discrimination-evidence.schema.json",
+    "schemas/death-event-exposure-matched-lifecycle-evidence.schema.json",
+    "tools/lib/json-schema-validator.mjs",
+    "tools/emit-death-event-exposure-matched-lifecycle-evidence.mjs",
+    "tools/validate-task188-lifecycle-integrity.mjs",
+    "tests/death-event-exposure-matched-lifecycle-evidence-schema.test.mjs",
+    "tests/emit-death-event-exposure-matched-lifecycle-evidence.test.mjs",
+    "tests/task188-lifecycle-integrity.test.mjs",
+    "tasks/specs/180.json",
+    "tasks/specs/182.json",
+    "tasks/specs/183.json",
+    "tasks/specs/184.json",
+    "tasks/specs/185.json",
+    "tasks/specs/186.json",
+    "tasks/specs/187.json",
+    "tasks/specs/188.json",
+    "tasks/specs/189.json",
+    "tasks/completed/189-death-event-exposure-matched-lifecycle-evidence.md",
+    "reports/death-event-exposure-matched-lifecycle-evidence-task189.md",
+    "output/local-replay-processing/participant-identity-compact/task180-bounded32/**",
+    "output/local-replay-processing/life-state-transition-candidates/task182-bounded32/**",
+    "output/local-replay-processing/death-event-candidates/task183-bounded32/**",
+    "output/local-replay-processing/death-event-directional-discrimination-evidence/task186-bounded32/**",
+    "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/**"
+  ],
+  "optionalReadPaths": ["tests/fieldfactory-char-decoder.test.mjs"],
+  "writePaths": [
+    "package.json",
+    "package-lock.json",
+    "schemas/death-event-surface-resolved-lifecycle-evidence.schema.json",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "tools/validate-task189-lifecycle-integrity.mjs",
+    "tests/death-event-surface-resolved-lifecycle-evidence-schema.test.mjs",
+    "tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs",
+    "tests/task189-lifecycle-integrity.test.mjs",
+    "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+    "docs/codex/DEATH_EVENT_EXPOSURE_MATCHED_LIFECYCLE_CONTRACT.md",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/CAPABILITY_MAP.md",
+    "docs/PRODUCT_VALUE_ROADMAP.md",
+    "data/current-artifact-registry.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "reports/death-event-exposure-matched-lifecycle-evidence-task189.md",
+    "reports/death-event-surface-resolved-lifecycle-evidence-task190.md",
+    "tasks/specs/190.json",
+    "tasks/completed/189-death-event-exposure-matched-lifecycle-evidence.md",
+    "tasks/completed/190-death-event-surface-resolved-lifecycle-evidence.md",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "output/replays/**",
+    ".local/deadem/replays/inbox/partida_005.dem",
+    ".local/deadem/replays/inbox/partida_006.dem",
+    ".local/deadem/replays/inbox/partida_007.dem",
+    ".local/deadem/replays/inbox/partida_008.dem",
+    "tasks/specs/191.json",
+    "tasks/completed/191-*",
+    "tasks/blocked/191-*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "task189-integrity",
+      "type": "node-test",
+      "paths": ["tests/task189-lifecycle-integrity.test.mjs"]
+    },
+    {
+      "id": "task190-schema",
+      "type": "node-test",
+      "paths": [
+        "tests/death-event-surface-resolved-lifecycle-evidence-schema.test.mjs"
+      ]
+    },
+    {
+      "id": "task190-runner",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs"
+      ]
+    },
+    {
+      "id": "task189-schema",
+      "type": "node-test",
+      "paths": [
+        "tests/death-event-exposure-matched-lifecycle-evidence-schema.test.mjs"
+      ]
+    },
+    {
+      "id": "task189-runner",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-death-event-exposure-matched-lifecycle-evidence.test.mjs"
+      ]
+    },
+    {
+      "id": "task188-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-death-event-segmented-lifecycle-evidence.test.mjs"]
+    },
+    {
+      "id": "task187-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-death-event-semantic-sequence-evidence.test.mjs"]
+    },
+    {
+      "id": "task186-runner",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-death-event-directional-discrimination-evidence.test.mjs"
+      ]
+    },
+    {
+      "id": "task185-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-death-event-directional-cycle-evidence.test.mjs"]
+    },
+    {
+      "id": "task184-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-death-event-corroboration-evidence.test.mjs"]
+    },
+    {
+      "id": "task183-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-death-event-candidates.test.mjs"]
+    },
+    {
+      "id": "task182-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-life-state-transition-candidates.test.mjs"]
+    },
+    {
+      "id": "task180-runner",
+      "type": "node-test",
+      "paths": ["tests/emit-participant-identity-compact-artifacts.test.mjs"]
+    },
+    {
+      "id": "parser-regression",
+      "type": "node-test",
+      "paths": ["tests/fieldfactory-char-decoder.test.mjs"]
+    },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "04-controller-pawn-lifecycle\\.json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/integrity/task189-lifecycle-integrity-gate.json",
+    "schemas/death-event-surface-resolved-lifecycle-evidence.schema.json",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-summary.json",
+    "reports/death-event-surface-resolved-lifecycle-evidence-task190.md",
+    "tasks/completed/190-death-event-surface-resolved-lifecycle-evidence.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-pilot/artifacts/**",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/artifacts/**",
+    {
+      "path": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/integrity/task189-event-relative-correction-audit.json",
+      "justification": "Required policy-safe row-level Task 189 correction audit."
+    },
+    {
+      "path": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-bounded32-per-participant-audit.json",
+      "justification": "Required per-participant surface-resolved audit."
+    }
+  ],
+  "replayProcessingAllowed": true,
+  "authorizedReplayIds": "pilot exact: replay_010, replay_011, replay_021, replay_036; bounded32 exact: replay_001, replay_002, replay_003, replay_004, replay_009, replay_010 through replay_036; replay_005 through replay_008 forbidden",
+  "followUpTask": "none",
+  "stopConditions": [
+    "Validate Task 180/182/183/186/189 provenance, counts, membership, bridges, and Task 189 commit before replay path resolution, Player construction, or createReadStream.",
+    "Do not access replay_005 through replay_008.",
+    "Independently rematch every horizon with fresh ledgers and preserve abstract observation surfaces.",
+    "Require event-relative origin continuity and strict artifact semantic invariants.",
+    "Failed runs publish no per-replay artifacts and preserve prior successful directories.",
+    "Do not emit final facts, attribution, raw replay values, raw field names, raw IDs, handles, raw time, positions, damage, objectives, or gameplay interpretation.",
+    "Do not modify parser behavior or packages/deadem or packages/engine.",
+    "Do not create Task 191."
+  ],
+  "successGate": "task189_corrected_surface_resolved_lifecycle_bounded32_ready",
+  "blockedGate": "task189_corrected_surface_resolved_lifecycle_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json",
+    "jsonField": "gate"
+  },
+  "regenerationPolicy": {
+    "canonicalFacts": "forbidden",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate",
+    "replayParsing": "pre-open integrity gate, exact pilot gate, and explicit Task 190 manifests only"
+  },
+  "lifecycle": {
+    "allowFinalValidation": true,
+    "finalStatus": "completed_or_blocked"
+  }
+}

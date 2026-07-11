@@ -5759,10 +5759,10 @@
     {
       "taskId": "189",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "ac04dcc5c168da306fada4f6d32f590c39c16721",
       "title": "Correct Pre-State Continuity And Validate Exposure-Matched Lifecycle Controls",
       "phase": "death_event_exposure_matched_lifecycle_candidate_evidence",
-      "primaryContribution": "Recorded Task 188, moved complete source bridges before replay access, corrected pre-state origin continuity, and emitted equal-follow-up anchor/control lifecycle evidence without final facts.",
+      "primaryContribution": "Recorded Task 188, moved complete source bridges before replay access, corrected pre-state origin continuity, and equalized observable follow-up within each anchor/control pair without final facts.",
       "introducedCapabilities": ["death_event_exposure_matched_lifecycle_evidence"],
       "stabilizedCapabilities": ["death_event_exposure_matched_lifecycle_evidence"],
       "supersededCapabilities": ["task188_pre_state_origin_continuity", "task188_unmatched_control_exposure", "task188_promotion_readiness"],
@@ -5787,6 +5787,39 @@
         "tasks/specs/189.json",
         "tasks/completed/189-death-event-exposure-matched-lifecycle-evidence.md",
         "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-summary.json"
+      ]
+    },
+    {
+      "taskId": "190",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Repair Event-Window Symmetry And Validate Surface-Resolved Lifecycle Evidence",
+      "phase": "death_event_surface_resolved_lifecycle_candidate_evidence",
+      "primaryContribution": "Recorded Task 189, repaired symmetric event-relative association, independently rematched all horizons with fresh ledgers, preserved abstract observation surfaces, and emitted strict surface-resolved lifecycle evidence without final facts.",
+      "introducedCapabilities": ["death_event_surface_resolved_lifecycle_evidence"],
+      "stabilizedCapabilities": ["death_event_surface_resolved_lifecycle_evidence"],
+      "supersededCapabilities": ["task189_event_window_association", "task189_mixed_horizon_matching", "task189_opaque_surface_support", "task189_truncation_accounting", "task189_promotion_readiness"],
+      "importantOutputs": [
+        "schemas/death-event-surface-resolved-lifecycle-evidence.schema.json",
+        "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+        "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+        "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json",
+        "reports/death-event-surface-resolved-lifecycle-evidence-task190.md"
+      ],
+      "gate": "task189_corrected_surface_resolved_lifecycle_bounded32_ready",
+      "currentRelevance": "active_evidence_layer",
+      "dependsOn": ["180", "182", "183", "186", "189"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The operational assessment is partial because 30-second eligibility is 0.884013 and only 12/32 replays meet local strong criteria.",
+        "Task 189 remains immutable historical exposure-matched-v1 context and is superseded only for the explicitly corrected Task 190 dimensions.",
+        "Final facts, attribution, killer/victim, teamfight, and gameplay interpretation remain unavailable."
+      ],
+      "evidenceStatus": "sufficient_technical_partial_surface_resolved_lifecycle",
+      "evidencePaths": [
+        "tasks/specs/190.json",
+        "tasks/completed/190-death-event-surface-resolved-lifecycle-evidence.md",
+        "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-summary.json"
       ]
     }
   ]

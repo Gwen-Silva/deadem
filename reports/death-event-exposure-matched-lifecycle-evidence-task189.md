@@ -7,6 +7,11 @@ gates under `task188_corrected_exposure_matched_lifecycle_bounded32_ready`.
 Its operational assessment is `partial`; it emits no final death facts,
 attribution, identities, raw values, or gameplay interpretation.
 
+Task 189 equalizes observable follow-up within each anchor-control pair. It
+does not remove event-window asymmetry, risk-set differences, reference-time
+selection effects, signal-family coupling, or mixed-horizon interpretation.
+Task 189 is preserved as historical exposure-matched-v1 evidence.
+
 ## Integrity and Task 188 correction
 
 Task 188 commit `58af2f44016e061fcbda140bc6928e0c4dc4970d`

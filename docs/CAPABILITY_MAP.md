@@ -253,6 +253,7 @@ The next product value layer should not skip identity mapping and canonical deat
 - Main outputs: `output/local-replay-processing/alive-dead-respawn-compact/task181-gate.json`, `output/local-replay-processing/alive-dead-respawn-compact/task181-bounded32/`
 - Known limits: Current safe inputs support aggregate transition candidate counts, not per-participant transition rows, final death facts, respawn events, attribution, raw ticks/timestamps, positions, or gameplay interpretation.
 - Next dependency: Consume the Task 182 replay-sourced transition rows rather than the Task 181 bridge-only counts.
+
 ## Life-State Transition Candidates
 
 - Introduced: Task 182
@@ -424,3 +425,27 @@ the boolean/respawn pair and cross-surface support is 0.007821.
 The capability supersedes Task 188 only for origin continuity, equal-exposure
 comparison, and promotion readiness. It does not establish final death or
 respawn truth, attribution, killer/victim, teamfight, or gameplay meaning.
+
+## Surface-Resolved Death-Event Lifecycle Evidence
+
+- Capability id: `death_event_surface_resolved_lifecycle_evidence`
+- Introduced: Task 190
+- Status: active
+- Current baseline:
+  `death_event_surface_resolved_lifecycle_evidence_bounded32_task190`
+- Main files: `tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs`,
+  `schemas/death-event-surface-resolved-lifecycle-evidence.schema.json`, and
+  `docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md`
+
+Task 190 uses symmetric nearest-event association, event-relative pre-state,
+fresh ledgers for every 10/20/30/60/120/180-second horizon, a separately
+rematched fixed-180 cohort curve, and abstract observation-surface provenance.
+Bounded-32 emitted 2,552 exact pairs with zero source reuse. At the primary
+30-second horizon, eligibility is 0.884013 and anchor/control coherence is
+0.907358/0.000887. The result is `partial` because aggregate eligibility is
+below 0.90 and only 12/32 replays meet local strong criteria.
+
+Task 190 supersedes Task 189 only for the explicitly repaired event-window,
+horizon, surface, truncation, audit, and promotion-readiness dimensions. It
+does not establish death or respawn truth, attribution, killer/victim,
+teamfight, or gameplay meaning.

@@ -1957,3 +1957,18 @@ should explain or improve cross-surface support of 0.007821 and the `partial`
 equal-exposure result before proposing operational death-fact promotion. Final
 facts, attribution, killer/victim, teamfight detection, and gameplay
 interpretation remain blocked.
+
+## Task 190
+
+Task 190 is complete with gate
+`task189_corrected_surface_resolved_lifecycle_bounded32_ready`. Pilot and
+bounded-32 completed technically with 341 and 2,552 exact pairs respectively,
+zero parser, mapping, bridge, invariant, source-reuse, policy, protection,
+final-fact, or attribution failures, and atomic publication.
+
+The operational assessment is `partial`: 30-second eligibility is 0.884013,
+anchor/control coherence is 0.907358/0.000887, the paired difference is
+0.906471, and only 12/32 replays meet local strong criteria. The next milestone
+is intentionally not pre-created. Operational promotion review, final facts,
+attribution, killer/victim, teamfight detection, and gameplay interpretation
+remain blocked.

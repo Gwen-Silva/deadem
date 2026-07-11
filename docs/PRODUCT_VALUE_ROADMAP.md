@@ -182,14 +182,33 @@ unavailable.
 
 ## Task 189 Product Implication
 
-Task 189 removes exposure bias from the matched-control comparison and requires
-pre-state continuity to originate on the correct side of each selected forward
-transition. Across 2,552 exact pairs, 2,501 have at least 10 seconds of shared
-follow-up. Eligible anchor lifecycle coherence is 0.715714 versus 0 for
-controls, producing a `partial` assessment.
+Task 189 equalizes observable follow-up within each anchor-control pair and
+requires pre-state continuity to originate on the correct side of each
+selected forward transition. It does not remove event-window asymmetry,
+risk-set differences, reference-time selection effects, signal-family
+coupling, or mixed-horizon interpretation. Across 2,552 exact pairs, 2,501 have
+at least 10 seconds of shared follow-up. Eligible anchor lifecycle coherence is
+0.715714 versus 0 for controls, producing a `partial` assessment.
 
 The result is useful but not promotion-ready: 0.992179 of coherent anchors rely
 only on the boolean/respawn pair and cross-surface support is 0.007821. The
 project can consume origin-corrected, exposure-matched candidate evidence, but
 cannot answer final who-died, attribution, killer/victim, teamfight, or
 gameplay-interpretation questions.
+
+## Task 190 Product Implication
+
+Task 190 repairs symmetric nearest-event association in `[-2,+2]`, evaluates
+pre-state relative to the selected event, independently rematches every
+follow-up horizon, and records abstract controller/linked-pawn/link-relation
+surface provenance. The technical bounded-32 baseline passed with 2,552 exact
+pairs and no parser, mapping, bridge, schema, policy, protection, or source
+reuse failure.
+
+At 30 seconds, 2,256 pairs are eligible (0.884013). Anchor coherence is
+0.907358, control coherence is 0.000887, and the paired difference is 0.906471.
+Actual multi-surface support is 0.9702, but only 12/32 replays meet local strong
+criteria and aggregate eligibility is below 0.90. The operational assessment
+therefore remains `partial`, and operational promotion review remains false.
+These measurements do not establish death truth or authorize who-died,
+attribution, killer/victim, teamfight, or gameplay interpretation.

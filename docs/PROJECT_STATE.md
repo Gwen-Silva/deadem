@@ -1436,8 +1436,11 @@ interpretation remain false.
 
 ## Task 189 - Exposure-Matched Death Lifecycle Evidence
 
+Task 189 commit: `ac04dcc5c168da306fada4f6d32f590c39c16721`.
+
 Task 189 records Task 188 commit
-`58af2f44016e061fcbda140bc6928e0c4dc4970d` and introduces the active
+`58af2f44016e061fcbda140bc6928e0c4dc4970d` and introduces the now-retained
+historical
 `death_event_exposure_matched_lifecycle_evidence_bounded32_task189` baseline.
 Every Task 180/182/183/186/188 provenance, membership, row-count, and full-row
 bridge check runs before replay-path resolution, `Player` construction, or
@@ -1456,3 +1459,32 @@ exposure-matched control comparison, and corrected promotion readiness. Tasks
 180, 182, 183, 184, 185, and 186 remain active; Tasks 187 and 188 remain
 historical sequence-v1 and segmented-lifecycle-v1 evidence. Operational
 promotion review and every final-fact or attribution capability remain false.
+
+Task 189 equalizes observable follow-up within each pair only. It does not
+remove event-window asymmetry, risk-set differences, reference-time selection
+effects, signal-family coupling, or mixed-horizon interpretation.
+
+## Task 190 - Surface-Resolved Death Lifecycle Evidence
+
+Task 190 records Task 189 commit
+`ac04dcc5c168da306fada4f6d32f590c39c16721` and introduces the active
+`death_event_surface_resolved_lifecycle_evidence_bounded32_task190` baseline.
+All Task 180/182/183/186/189 provenance, count, membership, transition,
+control, and full-row bridges passed before replay-path resolution, `Player`
+construction, or stream creation.
+
+Pilot completed 4/4 parsers and emitted 341 exact pairs. Bounded-32 completed
+32/32 parsers and emitted 2,552 exact pairs with gate
+`task189_corrected_surface_resolved_lifecycle_bounded32_ready`. At the primary
+30-second horizon, 2,256 pairs are eligible (0.884013); anchor/control coherent
+lifecycle rates are 0.907358/0.000887 and the paired difference is 0.906471.
+Only 12/32 replays meet the local strong criteria, so the operational
+assessment is `partial`. Actual multi-surface support is 0.9702, its separate
+support threshold is met, and source reuse is zero.
+
+Task 190 supersedes Task 189 only for event-relative pre-state continuity,
+independently rematched horizons, actual abstract surface provenance,
+cause-specific truncation, audit semantics, and promotion readiness. Task 189
+remains immutable historical exposure-matched-v1 context. Operational
+promotion review, final deaths, confirmed who-died claims, attribution,
+killer/victim, teamfight detection, and gameplay interpretation remain false.

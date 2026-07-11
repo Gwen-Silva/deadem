@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "189",
-  "activeBaseline": "death_event_exposure_matched_lifecycle_evidence_bounded32_task189",
+  "generatedAtTask": "190",
+  "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
       "capabilityId": "parser_char_without_count_fix",
@@ -613,7 +613,34 @@
         "Task 189 supersedes Task 188 only for pre-state origin continuity, exposure-matched control comparison, and corrected promotion readiness.",
         "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw value, raw identity, raw time, position, or gameplay interpretation is emitted."
       ],
-      "nextUsefulStep": "Keep operational promotion review false unless a separately authorized milestone resolves the low cross-surface support and partial exposure-matched result."
+      "nextUsefulStep": "Use Task 190 for event-relative symmetry, independently rematched horizons, and actual observation-surface provenance while retaining Task 189 as historical exposure-matched-v1 context."
+    },
+    {
+      "capabilityId": "death_event_surface_resolved_lifecycle_evidence",
+      "plainName": "Surface-resolved death-event lifecycle evidence",
+      "introducedInTask": "190",
+      "stabilizedInTask": "190",
+      "currentStatus": "active",
+      "currentBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
+      "whyItMatters": "Repairs symmetric event-window association, evaluates event-relative pre-state, independently rematches each follow-up horizon, and retains abstract controller, linked-pawn, and link-relation surface provenance.",
+      "mainFiles": [
+        "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+        "tools/validate-task189-lifecycle-integrity.mjs",
+        "schemas/death-event-surface-resolved-lifecycle-evidence.schema.json",
+        "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+        "tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json",
+        "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/"
+      ],
+      "knownLimits": [
+        "The bounded-32 operational assessment is partial: 2,256/2,552 pairs are eligible at 30 seconds (0.884013) and only 12/32 replays meet the local strong criteria.",
+        "At 30 seconds, anchor/control coherent lifecycle rates are 0.907358/0.000887 with a 0.906471 paired difference; these are operational measurements, not death truth.",
+        "Task 190 supersedes Task 189 only for event-relative symmetry, independently rematched horizons, surface provenance, truncation accounting, audit semantics, and promotion readiness.",
+        "No final death, confirmed who-died claim, attribution, killer/victim, teamfight, raw replay value, raw identity, raw time, position, or gameplay interpretation is emitted."
+      ],
+      "nextUsefulStep": "Keep operational promotion review false unless separately authorized work satisfies the predeclared strong eligibility and 30-of-32 local stability thresholds."
     }
   ]
 }

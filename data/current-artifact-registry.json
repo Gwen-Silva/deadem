@@ -774,13 +774,25 @@
       "id": "death_event_exposure_matched_lifecycle_evidence_task189_gate",
       "path": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-gate.json",
       "status": "current",
-      "notes": "Task 189 final technical gate for corrected origin continuity and equal-follow-up anchor/control lifecycle evidence; partial assessment and no confirmed deaths."
+      "notes": "Task 189 commit ac04dcc5c168da306fada4f6d32f590c39c16721 final technical gate for historical exposure-matched-v1 evidence; partial assessment and no confirmed deaths."
     },
     {
       "id": "death_event_exposure_matched_lifecycle_evidence_contract_task189",
       "path": "docs/codex/DEATH_EVENT_EXPOSURE_MATCHED_LIFECYCLE_CONTRACT.md",
       "status": "current",
       "notes": "Policy contract for replay-sourced origin continuity, paired common follow-up, horizon-specific denominators, same-family chains, and source tiers."
+    },
+    {
+      "id": "death_event_surface_resolved_lifecycle_evidence_task190_gate",
+      "path": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-gate.json",
+      "status": "current",
+      "notes": "Task 190 final technical gate for event-relative, independently rematched, surface-resolved lifecycle evidence; partial operational assessment and no confirmed deaths."
+    },
+    {
+      "id": "death_event_surface_resolved_lifecycle_evidence_contract_task190",
+      "path": "docs/codex/DEATH_EVENT_SURFACE_RESOLVED_LIFECYCLE_CONTRACT.md",
+      "status": "current",
+      "notes": "Policy contract for symmetric event association, event-relative pre-state, independent horizon rematching, fixed-cohort curves, abstract surface provenance, and strict semantic invariants."
     }
   ],
   "artifacts": [
@@ -836,7 +848,13 @@
       "id": "death_event_exposure_matched_lifecycle_evidence_bounded32_task189_artifacts",
       "path": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence/task189-bounded32/exposure-matched-lifecycle-bounded32-gate.json",
       "status": "current",
-      "notes": "Task 189 active bounded-32 exposure-matched lifecycle evidence; partial operational evidence, low cross-surface support, and no final death facts."
+      "notes": "Task 189 commit ac04dcc5c168da306fada4f6d32f590c39c16721 historical bounded-32 exposure-matched-v1 evidence; Task 190 supersedes it only for event symmetry, rematched horizons, surfaces, truncation, audit semantics, and promotion readiness."
+    },
+    {
+      "id": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190_artifacts",
+      "path": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-lifecycle-bounded32-gate.json",
+      "status": "current",
+      "notes": "Task 190 active bounded-32 surface-resolved lifecycle baseline; technical gate passed, operational assessment partial, final facts and attribution remain unavailable."
     }
   ]
 }

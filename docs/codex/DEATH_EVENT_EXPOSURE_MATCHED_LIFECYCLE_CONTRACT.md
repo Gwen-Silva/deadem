@@ -26,6 +26,11 @@ by 180 seconds, replay end, and their next real participant anchor. Both sides
 are analyzed only through the smaller common follow-up. Pairs below 10 seconds
 are insufficient and do not fabricate recovery absence.
 
+This equalizes observable follow-up within each pair only. It does not remove
+event-window asymmetry, risk-set differences, reference-time selection
+effects, signal-family coupling, or mixed-horizon interpretation. Task 189
+artifacts remain immutable historical exposure-matched-v1 evidence.
+
 Horizon reports are predeclared at 10, 20, 30, 60, 120, and 180 seconds. Each
 uses only pairs with at least that much common exposure. Same-family lifecycle
 completion still requires origin-continuous pre-state, exact forward, forward
