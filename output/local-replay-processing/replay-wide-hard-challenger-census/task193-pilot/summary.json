@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "runKind": "task193-pilot",
+  "artifactClass": "replay_wide_structural_hard_challenger_census",
+  "manifestIdentity": "task193-pilot_replay_wide_census_v1",
+  "replayIds": [
+    "replay_010",
+    "replay_011",
+    "replay_021",
+    "replay_036"
+  ],
+  "sourceBaselines": [
+    "task180_participant_identity",
+    "task183_death_event_anchors",
+    "task190_one_second_surface_observations",
+    "task192_hard_challenger_contract"
+  ],
+  "primaryExclusionWindowSeconds": 5,
+  "exclusionWindowsSeconds": [
+    3,
+    5,
+    10
+  ],
+  "horizonResults": [
+    {
+      "horizonSeconds": 10,
+      "eligibleClusterCount": 13,
+      "replayCoverageCount": 4
+    },
+    {
+      "horizonSeconds": 20,
+      "eligibleClusterCount": 11,
+      "replayCoverageCount": 4
+    },
+    {
+      "horizonSeconds": 30,
+      "eligibleClusterCount": 11,
+      "replayCoverageCount": 4
+    },
+    {
+      "horizonSeconds": 60,
+      "eligibleClusterCount": 7,
+      "replayCoverageCount": 3
+    },
+    {
+      "horizonSeconds": 120,
+      "eligibleClusterCount": 6,
+      "replayCoverageCount": 3
+    },
+    {
+      "horizonSeconds": 180,
+      "eligibleClusterCount": 6,
+      "replayCoverageCount": 3
+    }
+  ],
+  "replayCount": 4,
+  "parserCompleted": 4,
+  "parserExpected": 4,
+  "participantMappingFailures": 0,
+  "protectedReplayAccessCount": 0,
+  "preOpenBridgeFailures": 0,
+  "anchorCount": 341,
+  "forwardObservationCount": 1768,
+  "persistentObservationCount": 1763,
+  "immediatePersistenceFailureCount": 5,
+  "clusterCount": 369,
+  "eligibleClusterCount": 16,
+  "excludedClusterCount": 353,
+  "deduplicatedObservationCount": 1394,
+  "sourceReuseCount": 0,
+  "clusterReuseCount": 0,
+  "ambiguityCount": 0,
+  "familyComposition": {
+    "healthBoundary": 16,
+    "booleanAlive": 15,
+    "respawnBoundary": 15,
+    "pawnLinkPresence": 0
+  },
+  "surfaceOpportunityComposition": {
+    "zero": 0,
+    "one": 1,
+    "two": 15
+  },
+  "feasibility": {
+    "assessment": "insufficient",
+    "primaryHorizonSeconds": 30,
+    "primaryEligibleClusterCount": 11,
+    "thresholds": {
+      "limitedMinimum": 30,
+      "sufficientMinimum": 100
+    }
+  },
+  "technicalStatus": "passed",
+  "specificityComparisonPerformed": false,
+  "finalFactsProduced": false,
+  "attributionEmitted": false,
+  "readiness": {
+    "replayWideCensusAvailable": true,
+    "readyForSpecificityComparison": false,
+    "readyForFinalDeathFacts": false,
+    "readyForConfirmedWhoDied": false,
+    "readyForAttribution": false,
+    "readyForKillerVictim": false,
+    "readyForTeamfight": false,
+    "readyForGameplayInterpretation": false
+  },
+  "limitations": [
+    "Structural clusters are replay-sourced feasibility observations, not truth-labeled deaths or non-deaths.",
+    "This census does not run a lifecycle specificity comparison."
+  ]
+}

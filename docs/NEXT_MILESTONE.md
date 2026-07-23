@@ -1997,3 +1997,22 @@ but the pilot measurement is blocked at the first replay open because the
 authorized replay files are unavailable locally. The smallest next action is
 to restore the exact Task 190 pilot and bounded-32 replay membership at the
 documented paths and rerun the unchanged emitter. No Task 194 is authorized.
+
+## Task 194
+
+Module: `Replay-Wide Structural Hard-Challenger Census`.
+
+The functional pilot is complete: 4/4 replays processed, 369 structural
+clusters observed, 16 eligible outside the primary anchor window and 11
+eligible at 30 seconds. The pilot gate passed with zero critical integrity
+failures.
+
+The module remains open because bounded-32 exact membership is incomplete.
+Restore only replay_001, replay_002, replay_003, replay_004 and replay_009 at
+their documented local paths, then rerun the unchanged bounded emitter. Do not
+use a 27-replay partial run, historical outputs, controls, fixtures or synthetic
+data. One additional functional execution and Work gate should close the module
+if the exact inputs are restored.
+
+Hardening, performance work, schema redesign and broader generalization remain
+deferred because they do not unblock the bounded measurement.

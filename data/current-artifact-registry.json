@@ -901,14 +901,26 @@
     {
       "id": "replay_wide_hard_challenger_census_task193_gate",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
-      "status": "candidate_blocked_pending_work_validation",
-      "notes": "Task 193 implementation is ready, but replay-wide measurement is blocked because authorized replay files are absent."
+      "status": "accepted_implementation_original_measurement_blocked",
+      "notes": "Task 193 implementation is accepted; this gate preserves the original execution blocker before the Task 194 pilot rerun."
     },
     {
       "id": "replay_wide_hard_challenger_census_task193_summary",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json",
-      "status": "candidate_blocked_pending_work_validation",
-      "notes": "Pilot parser completed 0/4; no census count, specificity comparison, final fact, or attribution was emitted."
+      "status": "accepted_implementation_original_measurement_blocked",
+      "notes": "Historical Task 193 blocked execution summary; Task 194 provides the current completed pilot measurement."
+    },
+    {
+      "id": "replay_wide_hard_challenger_census_task194_gate",
+      "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task194-gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Exact pilot passed 4/4; bounded stopped before replay access because five exact manifest members are absent."
+    },
+    {
+      "id": "replay_wide_hard_challenger_census_task194_summary",
+      "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Pilot emitted 369 structural clusters and 11 eligible clusters at 30 seconds; bounded module conclusion remains unavailable."
     }
   ]
 }

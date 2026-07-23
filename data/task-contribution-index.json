@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "193",
-  "baseCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
-  "taskRange": "001-193",
+  "generatedAtTask": "194",
+  "baseCommit": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
+  "taskRange": "001-194",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -270,7 +270,7 @@
     {
       "taskId": "011",
       "status": "evidence_partial",
-      "commitSha": null,
+      "commitSha": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
       "title": "Task 011",
       "phase": "foundation_policy_diagnostics_protection",
       "primaryContribution": "Completed or documented: Task 011.",
@@ -5888,7 +5888,7 @@
     {
       "taskId": "193",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
       "title": "Build Replay-Wide Structural Hard-Challenger Census",
       "phase": "replay_wide_hard_challenger_census",
       "primaryContribution": "Implemented a replay-wide one-second persistent structural-transition census with fail-closed bridges and declared feasibility thresholds; measurement is blocked by absent authorized replay files.",
@@ -5901,7 +5901,7 @@
         "reports/replay-wide-hard-challenger-census-task193.md"
       ],
       "gate": "replay_wide_hard_challenger_census_blocked",
-      "currentRelevance": "blocked_candidate_pending_independent_work_validation",
+      "currentRelevance": "accepted_implementation_original_measurement_blocked",
       "dependsOn": ["180", "183", "190", "192"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -5909,11 +5909,42 @@
         "Accepted Task 190 matched-control artifacts cannot reproduce replay-wide observations.",
         "No specificity comparison, final facts, or attribution were produced."
       ],
-      "evidenceStatus": "technical_implementation_measurement_blocked",
+      "evidenceStatus": "accepted_with_original_measurement_blocker",
       "evidencePaths": [
         "tasks/specs/193.json",
         "tasks/completed/193-replay-wide-hard-challenger-census.md",
         "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json"
+      ]
+    },
+    {
+      "taskId": "194",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Measure Replay-Wide Structural Hard-Challenger Census Pilot",
+      "phase": "replay_wide_hard_challenger_census",
+      "primaryContribution": "Executed the exact four-replay census pilot, emitted reproducible structural metrics and stopped bounded-32 before replay access when five exact manifest members were absent.",
+      "introducedCapabilities": [],
+      "stabilizedCapabilities": ["replay_wide_structural_hard_challenger_census"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-pilot/gate.json",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task194-gate.json",
+        "reports/replay-wide-hard-challenger-census-task194.md"
+      ],
+      "gate": "replay_wide_hard_challenger_census_pilot_ready_bounded_blocked_missing_inputs",
+      "currentRelevance": "candidate_pilot_complete_bounded_inputs_incomplete",
+      "dependsOn": ["180", "183", "190", "192", "193"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Pilot feasibility is insufficient with 11 eligible clusters at 30 seconds but does not establish the bounded conclusion.",
+        "Five exact bounded manifest members are absent and a 27-replay partial run is forbidden.",
+        "No specificity comparison, final facts or attribution were produced."
+      ],
+      "evidenceStatus": "pilot_measurement_complete_bounded_preopen_blocked",
+      "evidencePaths": [
+        "tasks/specs/194.json",
+        "tasks/completed/194-replay-wide-hard-challenger-census-pilot.md",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json"
       ]
     }
   ]

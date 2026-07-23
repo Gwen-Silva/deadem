@@ -3,18 +3,18 @@
   "coordinationPolicyVersion": 1,
   "objective": "Determine whether the existing replay-wide observation surface contains enough non-anchor structural transition clusters for a statistically useful hard-challenger lifecycle comparison.",
   "phase": "replay_wide_hard_challenger_census",
-  "lastAcceptedTaskId": "192",
-  "lastAcceptedCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
-  "activeBaseCommit": "95248e632b5fc0b1bdcde796cc3646444da8c174",
-  "branch": "task191-correction",
-  "activeTaskId": "193",
+  "lastAcceptedTaskId": "193",
+  "lastAcceptedCommit": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
+  "activeBaseCommit": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
+  "branch": "main",
+  "activeTaskId": "194",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
-    "branch": "task191-correction",
-    "reviewArtifact": ".local/codex/193/post-commit-attestation.json"
+    "branch": "main",
+    "reviewArtifact": ".local/codex/194/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -36,30 +36,31 @@
     "ChatGPT Work is the sole acceptance authority and autonomous coordinator.",
     "Codex reports technical execution claims and stops after the current handoff.",
     "HEAD, push, and passing tests do not imply acceptance; HEAD resolves only the candidate recorded by the post-commit attestation.",
-    "Unavailable launch integration is represented as BLOCKED_BY_SURFACE without simulated execution."
+    "Unavailable launch integration is represented as BLOCKED_BY_SURFACE without simulated execution.",
+    "Delivery prioritizes the smallest complete, testable and measurable functional unit; hardening is deferred unless required for minimum confidence or the next module."
   ],
   "requiredTests": [
     "node --test tests/project-coordination-policy.test.mjs",
     "node --test tests/codex-workflow-coordination.test.mjs",
     "node --test tests/task-execution-contract.test.mjs",
-    "npm run validate:coordination",
-    "npm run validate:tasks",
-    "npm run lint",
-    "npm run check:outputs"
+    "npm.cmd run validate:coordination",
+    "npm.cmd run validate:tasks",
+    "npm.cmd run lint",
+    "npm.cmd run check:outputs"
   ],
   "activeBlockers": [
-    "Tasks 191 and 192 are accepted locally with publication blocked because Git CLI authentication and GitHub Git-data write permission are unavailable; origin/main remains on the rejected original Task 191 candidate.",
     "Task 192 found only two eligible hard challengers in the Task 190 matched-control surface, so operational specificity remains insufficient.",
-    "Task 193 replay-wide measurement is blocked because the authorized replay files are absent from this execution surface; Task 190 did not persist replay-wide one-second observations.",
+    "The replay-wide pilot completed 4/4 parsers, but bounded-32 is blocked before replay access because replay_001, replay_002, replay_003, replay_004 and replay_009 are absent from the exact accepted manifest paths.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
   "knownRisks": [
     "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
+    "The four-replay pilot has only 11 eligible clusters at the primary 30-second horizon and cannot establish bounded replay-wide sufficiency.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work must validate the blocked Task 193 handoff; the smallest unblock is to provide the authorized Task 190 pilot and bounded-32 replay files on the documented local paths.",
-  "completedTasks": ["190", "191", "192"],
-  "pendingTasks": ["193"],
+  "nextAction": "ChatGPT Work must independently validate the Task 194 pilot handoff; bounded execution requires restoring the five missing exact manifest replay files without substituting historical outputs, fixtures or synthetic data.",
+  "completedTasks": ["190", "191", "192", "193"],
+  "pendingTasks": ["194"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

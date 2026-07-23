@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "module": "Replay-Wide Structural Hard-Challenger Census",
+  "status": "partial_success",
+  "pilot": {
+    "replaysPlanned": 4,
+    "replaysProcessed": 4,
+    "replaysFailed": 0,
+    "clusterCount": 369,
+    "eligibleClusterCount": 16,
+    "primaryHorizonSeconds": 30,
+    "primaryEligibleClusterCount": 11,
+    "feasibilityAssessment": "insufficient",
+    "durationSeconds": 100.7,
+    "perReplayClusterCounts": [
+      { "replayId": "replay_010", "clusterCount": 49 },
+      { "replayId": "replay_011", "clusterCount": 87 },
+      { "replayId": "replay_021", "clusterCount": 106 },
+      { "replayId": "replay_036", "clusterCount": 127 }
+    ],
+    "horizonDistribution": [
+      { "horizonSeconds": 10, "eligibleClusterCount": 13, "replayCoverageCount": 4 },
+      { "horizonSeconds": 20, "eligibleClusterCount": 11, "replayCoverageCount": 4 },
+      { "horizonSeconds": 30, "eligibleClusterCount": 11, "replayCoverageCount": 4 },
+      { "horizonSeconds": 60, "eligibleClusterCount": 7, "replayCoverageCount": 3 },
+      { "horizonSeconds": 120, "eligibleClusterCount": 6, "replayCoverageCount": 3 },
+      { "horizonSeconds": 180, "eligibleClusterCount": 6, "replayCoverageCount": 3 }
+    ]
+  },
+  "bounded": {
+    "replaysPlanned": 32,
+    "replaysAvailable": 27,
+    "replaysProcessed": 0,
+    "replaysFailed": 0,
+    "status": "blocked_pre_open_missing_exact_membership",
+    "missingReplayIds": [
+      "replay_001",
+      "replay_002",
+      "replay_003",
+      "replay_004",
+      "replay_009"
+    ],
+    "missingPaths": [
+      ".local/deadem/replays/inbox/partida_001.dem",
+      ".local/deadem/replays/inbox/partida_002.dem",
+      ".local/deadem/replays/inbox/partida_003.dem",
+      ".local/deadem/replays/inbox/partida_004.dem",
+      ".local/deadem/replays/inbox/partida_009.dem"
+    ]
+  },
+  "moduleConclusion": "undetermined_bounded_inputs_incomplete",
+  "remainingModuleGap": "Restore the five missing exact bounded manifest replay files and rerun the unchanged bounded census.",
+  "protectedReplayIsolationConfirmed": true,
+  "specificityComparisonPerformed": false,
+  "finalFactsProduced": false,
+  "attributionEmitted": false
+}

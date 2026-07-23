@@ -1527,3 +1527,21 @@ The measurement is blocked because the authorized replay files are absent from
 this execution surface and Task 190 did not persist replay-wide observations.
 No matched-control substitute, protected replay, specificity comparison, final
 fact, or attribution was used.
+
+## Task 194 - Functional Replay-Wide Census Pilot
+
+Task 193 implementation is accepted by ChatGPT Work at
+`5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929`, preserving its original
+`not_executed_missing_replay_inputs` measurement status. Task 194 reran that
+unchanged implementation on the exact four-replay pilot.
+
+The pilot completed 4/4 parsers in 100.7 seconds and emitted 369 structural
+clusters, 16 primary-window-eligible clusters and 11 eligible clusters at the
+30-second horizon. Integrity, mapping, bridge, protection and reuse counters
+passed. Pilot feasibility is `insufficient`, but this is not the bounded module
+conclusion.
+
+Bounded-32 stopped before replay access because exact manifest members
+replay_001, replay_002, replay_003, replay_004 and replay_009 are absent. The
+remaining 27 members were not used as a substitute. No specificity comparison,
+final fact, victim identity, attribution or gameplay interpretation was emitted.

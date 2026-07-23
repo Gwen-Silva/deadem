@@ -2,35 +2,41 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`).
 
-Branch: `task191-correction`.
+Branch: `main`.
 
-Last accepted task: Task 192. Task 190 remains the accepted technical evidence
-baseline with operational assessment `partial`; Task 192 specificity remains
-`insufficient`.
+Last accepted task: Task 193. ChatGPT Work accepted the Task 193 implementation
+with blocker at commit `5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929`;
+its original measurement status remains `not_executed_missing_replay_inputs`.
 
-Last accepted commit: `95248e632b5fc0b1bdcde796cc3646444da8c174`.
+Active candidate: Task 194, functional replay-wide census pilot.
 
-Active candidate: Task 193, replay-wide structural hard-challenger census.
+Coordination status: `VALIDATING`. The exact four-replay pilot completed 4/4
+parsers in 100.7 seconds, emitted 369 structural clusters, 16 eligible clusters
+outside the primary anchor window and 11 eligible clusters at the primary
+30-second horizon. Pilot feasibility is `insufficient`.
 
-Coordination status: `VALIDATING`. Task 193 implemented the census contract,
-strict schema, replay parser orchestration and fail-closed audits, but the
-measurement is blocked before the first replay open because authorized replay
-files are absent from this execution surface.
+Bounded-32 did not start. Metadata-only pre-open validation found 27/32 exact
+manifest members available; replay_001, replay_002, replay_003, replay_004 and
+replay_009 are absent. No partial membership or substitute source was used.
 
-Rejected candidate excluded from all bases:
-`bf5cdaaa20c41b73523b53ea2855ca41c6223653`.
+Current module: `Replay-Wide Structural Hard-Challenger Census`.
 
-Acceptance authority: ChatGPT Work.
+Module goal: determine whether enough structurally similar non-anchor events
+exist to test whether the current pattern is specific to death candidates.
 
-Next action: independent Work validation of the Task 193 blocked handoff. The
-smallest unblock is restoring the authorized Task 190 replay membership at the
-documented local paths; Task 190 did not persist replay-wide observations.
+Observable outcome: the pilot path now runs reproducibly and emits integrity,
+horizon, composition and feasibility metrics. The remaining module gap is one
+exact bounded run after the five missing inputs are restored. Parser hardening,
+schema redesign, dashboards and generalization are deferred.
 
-Death-fact promotion: blocked by Task 190's partial operational assessment.
+Acceptance authority: ChatGPT Work. Task 194 remains a Codex execution claim,
+not an accepted result.
 
-Protected data: replay 005 remains the final holdout; replays 006–008 remain
-unsupported bot fixtures. None was accessed by Task 193.
+Death-fact promotion remains blocked. Structural clusters are not deaths or
+non-deaths; final death facts, confirmed who-died claims, attribution,
+killer/victim, teamfight and gameplay interpretation remain unavailable.
 
-Task 194: not created.
+Protected data: replay 005 remains the final holdout; replays 006-008 remain
+unsupported bot fixtures. None was resolved or accessed.
 
 Machine-readable state: `data/project-coordination-state.json`.

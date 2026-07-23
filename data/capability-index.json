@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "193",
+  "generatedAtTask": "194",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -696,8 +696,8 @@
       "plainName": "Replay-wide structural hard-challenger census",
       "introducedInTask": "193",
       "stabilizedInTask": null,
-      "currentStatus": "blocked",
-      "currentBaseline": "task193_replay_wide_census_blocked",
+      "currentStatus": "partial",
+      "currentBaseline": "task194_exact_pilot_complete_bounded_inputs_incomplete",
       "whyItMatters": "Determines whether the full one-second observation surface contains enough persistent non-anchor structural clusters for a later specificity experiment.",
       "mainFiles": [
         "tools/emit-replay-wide-hard-challenger-census.mjs",
@@ -705,15 +705,16 @@
         "docs/codex/REPLAY_WIDE_HARD_CHALLENGER_CENSUS_CONTRACT.md"
       ],
       "mainOutputs": [
-        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
-        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-pilot-blocked/"
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-pilot/",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task194-gate.json",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json"
       ],
       "knownLimits": [
-        "Authorized replay files are absent from the execution surface.",
-        "Task 190 did not persist replay-wide observations, so accepted matched-control outputs cannot substitute for the census.",
+        "The exact four-replay pilot completed, but five exact bounded-32 manifest members are absent.",
+        "Pilot feasibility is insufficient with 11 eligible clusters at the primary 30-second horizon and cannot replace the bounded conclusion.",
         "No specificity comparison, final fact, or attribution capability is enabled."
       ],
-      "nextUsefulStep": "Restore the exact authorized Task 190 pilot and bounded-32 replay files and rerun the unchanged Task 193 emitter."
+      "nextUsefulStep": "Restore replay_001, replay_002, replay_003, replay_004 and replay_009 at the exact authorized paths and rerun the unchanged bounded emitter."
     }
   ]
 }
