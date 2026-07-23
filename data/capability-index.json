@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "194",
+  "generatedAtTask": "195",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -695,9 +695,9 @@
       "capabilityId": "replay_wide_structural_hard_challenger_census",
       "plainName": "Replay-wide structural hard-challenger census",
       "introducedInTask": "193",
-      "stabilizedInTask": null,
-      "currentStatus": "partial",
-      "currentBaseline": "task194_exact_pilot_complete_bounded_inputs_incomplete",
+      "stabilizedInTask": "195",
+      "currentStatus": "candidate_complete",
+      "currentBaseline": "task195_exact_bounded32_complete_limited_population",
       "whyItMatters": "Determines whether the full one-second observation surface contains enough persistent non-anchor structural clusters for a later specificity experiment.",
       "mainFiles": [
         "tools/emit-replay-wide-hard-challenger-census.mjs",
@@ -706,15 +706,16 @@
       ],
       "mainOutputs": [
         "output/local-replay-processing/replay-wide-hard-challenger-census/task193-pilot/",
-        "output/local-replay-processing/replay-wide-hard-challenger-census/task194-gate.json",
-        "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json"
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json"
       ],
       "knownLimits": [
-        "The exact four-replay pilot completed, but five exact bounded-32 manifest members are absent.",
-        "Pilot feasibility is insufficient with 11 eligible clusters at the primary 30-second horizon and cannot replace the bounded conclusion.",
+        "The exact bounded-32 population is limited with 91 eligible clusters at the primary 30-second horizon, below the sufficient threshold of 100.",
+        "Thirty of 32 replays contribute primary eligible clusters, with a per-replay range of 0 to 7.",
         "No specificity comparison, final fact, or attribution capability is enabled."
       ],
-      "nextUsefulStep": "Restore replay_001, replay_002, replay_003, replay_004 and replay_009 at the exact authorized paths and rerun the unchanged bounded emitter."
+      "nextUsefulStep": "ChatGPT Work independently validates Task 195; only after acceptance may a separately authorized Functional Death-Candidate Detector module begin."
     }
   ]
 }

@@ -1,12 +1,17 @@
 {
   "schemaVersion": 1,
-  "technicalGateStatus": "replay_wide_hard_challenger_census_bounded32_ready",
-  "runKind": "task193-bounded32",
+  "technicalGateStatus": "replay_wide_hard_challenger_census_bounded32_complete",
+  "underlyingEmitterGate": "replay_wide_hard_challenger_census_bounded32_ready",
   "integrityStatus": "passed",
   "measurementStatus": "completed",
+  "moduleStatus": "completed",
   "censusFeasibilityAssessment": "limited",
   "parserCompleted": 32,
   "parserExpected": 32,
+  "primaryHorizonSeconds": 30,
+  "primaryEligibleClusterCount": 91,
+  "limitedMinimum": 30,
+  "sufficientMinimum": 100,
   "participantMappingFailures": 0,
   "preOpenBridgeFailures": 0,
   "protectedReplayAccessCount": 0,
@@ -15,5 +20,6 @@
   "specificityComparisons": 0,
   "finalFacts": 0,
   "attribution": 0,
-  "atomicPublication": true
+  "atomicPublication": true,
+  "acceptanceStatus": "pending_independent_work_validation"
 }

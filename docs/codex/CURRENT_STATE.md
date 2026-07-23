@@ -4,33 +4,34 @@ Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`).
 
 Branch: `main`.
 
-Last accepted task: Task 193. ChatGPT Work accepted the Task 193 implementation
-with blocker at commit `5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929`;
-its original measurement status remains `not_executed_missing_replay_inputs`.
+Last accepted task: Task 194 at
+`7e7ebeb170d8f93d8b245e6619f4d2a6222004dd`. ChatGPT Work accepted the exact
+four-replay pilot with a bounded-input blocker and separately authorized Task
+195.
 
-Active candidate: Task 194, functional replay-wide census pilot.
+Active candidate: Task 195, exact bounded-32 Replay-Wide Structural
+Hard-Challenger Census.
 
-Coordination status: `VALIDATING`. The exact four-replay pilot completed 4/4
-parsers in 100.7 seconds, emitted 369 structural clusters, 16 eligible clusters
-outside the primary anchor window and 11 eligible clusters at the primary
-30-second horizon. Pilot feasibility is `insufficient`.
+Coordination status: `VALIDATING`. The unchanged emitter completed 32/32
+parsers in 767.417 seconds and published atomically. Mapping, pre-open bridge,
+protection, source-reuse and cluster-reuse failure counters are zero.
 
-Bounded-32 did not start. Metadata-only pre-open validation found 27/32 exact
-manifest members available; replay_001, replay_002, replay_003, replay_004 and
-replay_009 are absent. No partial membership or substitute source was used.
+The bounded census observed 2,815 structural clusters. Of these, 141 survived
+the primary five-second anchor exclusion and 91 remained eligible at the
+primary 30-second horizon across 30 replays. The population is `limited` under
+the declared thresholds: 91 exceeds the minimum 30 and remains below the
+sufficient threshold 100.
 
 Current module: `Replay-Wide Structural Hard-Challenger Census`.
 
-Module goal: determine whether enough structurally similar non-anchor events
-exist to test whether the current pattern is specific to death candidates.
+Module outcome: technically complete with a limited population. Final
+acceptance remains pending independent ChatGPT Work validation. The next named
+module is `Functional Death-Candidate Detector`, but it is not authorized or
+started by this handoff.
 
-Observable outcome: the pilot path now runs reproducibly and emits integrity,
-horizon, composition and feasibility metrics. The remaining module gap is one
-exact bounded run after the five missing inputs are restored. Parser hardening,
-schema redesign, dashboards and generalization are deferred.
-
-Acceptance authority: ChatGPT Work. Task 194 remains a Codex execution claim,
-not an accepted result.
+The Task 194 five-input blocker was an incorrect path assumption. The unchanged
+emitter resolved replay_001 through replay_004 and replay_009 from their
+authorized sample paths; no replay was copied or substituted.
 
 Death-fact promotion remains blocked. Structural clusters are not deaths or
 non-deaths; final death facts, confirmed who-died claims, attribution,

@@ -1,0 +1,182 @@
+{
+  "taskId": "195",
+  "title": "Complete Replay-Wide Structural Hard-Challenger Census Bounded32",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Execute the unchanged replay-wide census on the exact accepted bounded-32 membership, conclude population feasibility using declared thresholds, and close the current module if the technical gate passes.",
+  "module": "Replay-Wide Structural Hard-Challenger Census",
+  "moduleGoal": "Determine whether enough structurally similar non-anchor events exist to test whether the current pattern is specific to death candidates.",
+  "observableOutcome": "A complete bounded-32 census with aggregate, horizon and replay-stability metrics plus an explicit feasibility conclusion.",
+  "metricContribution": "Planned, processed and failed replays; clusters; eligible challengers; horizon distribution; replay coverage and stability; duration; and declared feasibility assessment.",
+  "remainingModuleGap": "None if all 32 exact members complete and the bounded technical gate passes; otherwise retain the concrete failing precondition.",
+  "hardeningDeferred": "No runner refactor, schema redesign, dashboard, performance optimization, generalized membership or next-module implementation.",
+  "baseCommitExpected": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
+  "executionReportPath": "reports/replay-wide-hard-challenger-census-task195.md",
+  "executionContract": {
+    "reasoningComplexity": "High: execute a 32-replay measurement while preserving exact mixed-path provenance, protected replay isolation, declared denominators and the boundary between structural observations and semantic death truth.",
+    "objective": "Complete the accepted replay-wide census with the unchanged runner, exact Task 190 bounded-32 manifest and predeclared feasibility thresholds.",
+    "technicalContext": [
+      "ChatGPT Work accepted Task 194 with blocker at commit 7e7ebeb170d8f93d8b245e6619f4d2a6222004dd and authorized Task 195.",
+      "Task 194 pilot completed 4/4 with 11 primary 30-second eligible clusters but cannot determine bounded feasibility.",
+      "The current runner resolves replay_001 through replay_004 from samples, replay_009 from samples/replay_009_normal.dem and replay_010 through replay_036 from the local inbox."
+    ],
+    "confirmedState": [
+      "HEAD and origin/main equal the accepted Task 194 commit on main and the working tree was clean before Task 195 changes.",
+      "All 32 exact Task 190 bounded manifest members exist, are files and have non-zero size under the current runner path resolver.",
+      "Final deaths, confirmed who-died claims, attribution, killer/victim, teamfight and gameplay interpretation remain unavailable."
+    ],
+    "expectedBaseCommit": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
+    "branchEnvironment": [
+      "Repository Gwen-Silva/deadem on main in C:/Users/gwenm/Documents/deadem.",
+      "Create exactly one Task 195 candidate commit over the accepted Task 194 base and publish it to origin/main after validation."
+    ],
+    "allowedScope": [
+      "Run the unchanged Task 193 census emitter for exact Task 190 bounded-32 membership after pre-open validation.",
+      "Persist bounded artifacts, module conclusion, executive report and minimal state/navigation updates.",
+      "Correct Task 011 commitSha to null, clear Task 194 stabilizedCapabilities and record Task 194 acceptance in the same functional commit."
+    ],
+    "protectedAreas": [
+      "Do not modify packages/deadem, packages/engine, samples, replay files, parser behavior, runner, thresholds, manifest or accepted Task 190/192 outputs.",
+      "Do not read, hash, copy, inspect, open or process replay_005, replay_006, replay_007 or replay_008.",
+      "Do not run partial membership, substitute historical outputs, controls, fixtures or synthetic data, or create Task 196."
+    ],
+    "expectedChanges": [
+      "Atomically publish the exact bounded-32 census and root active gate/summary using the existing emitter.",
+      "Emit required aggregate, horizon and per-replay stability metrics and apply the existing sufficient/limited/insufficient thresholds.",
+      "Close the current module only if all integrity counters and exact parser completion pass, while identifying Functional Death-Candidate Detector as the next module without starting it.",
+      "Repair the two accepted Task 194 metadata blockers without a separate governance task."
+    ],
+    "acceptanceCriteria": [
+      "Parser completion is 32/32 with exact manifest membership and zero mapping, bridge, protection, source-reuse and cluster-reuse failures.",
+      "Feasibility is derived from the existing primary 30-second eligible-cluster threshold without changing code, manifest or thresholds.",
+      "No protected replay, semantic death label, final fact, victim identity, attribution or gameplay interpretation is accessed or emitted.",
+      "Task 011 commitSha is null, Task 194 stabilizedCapabilities is empty, and Task 195 is the only task allowed to claim capability stabilization after a successful bounded result.",
+      "The final candidate contains exactly one commit, only authorized paths, a clean synchronized working tree and a complete report pending Work validation."
+    ],
+    "mandatoryTests": [
+      "node --test tests/replay-wide-hard-challenger-census-schema.test.mjs",
+      "node --test tests/emit-replay-wide-hard-challenger-census.test.mjs",
+      "node --test tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run codex:preflight -- --task 195 --base 7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs",
+      "npm.cmd run codex:validate -- --task 195 --base 7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
+      "npm.cmd run codex:review -- --task 195 --base 7e7ebeb170d8f93d8b245e6619f4d2a6222004dd"
+    ],
+    "requiredEvidence": [
+      "Exact 32-member manifest and mixed-path pre-open validation before bounded replay processing.",
+      "Bounded parser completion, aggregate and per-replay cluster counts, horizon distribution, replay coverage, feasibility thresholds, integrity counters and duration.",
+      "Diff evidence for Task 011 provenance repair, Task 194 stabilization correction and accepted-base transition.",
+      "Post-commit attestation with real SHA, base, branch, commit list, changed files, checks, artifacts, limitations, push evidence and VALIDATING status."
+    ],
+    "commitPolicy": [
+      "Stage only Task 195 authorized files and create exactly one commit with message Complete replay-wide hard-challenger census bounded32.",
+      "Do not amend Task 194, use a rejected commit, use git add dot/all, force-push or claim Task 195 acceptance."
+    ],
+    "stopConditions": [
+      "Stop before replay access on any exact membership, path, file, size, baseline bridge or protection mismatch.",
+      "Stop on protected replay access, parser/runner/manifest/threshold change, historical Task 190/192 mutation, source reuse, denominator mismatch or any semantic death/attribution claim.",
+      "Stop after the Task 195 handoff in VALIDATING and do not start Functional Death-Candidate Detector."
+    ],
+    "returnReportFormat": [
+      "Use every section in docs/codex/CODEX_REPORT_TEMPLATE.md for the technical artifact.",
+      "Lead the user-facing report only with result, functional capability, observable metrics, module impact, next objective and execution/gate forecast.",
+      "Final acceptance remains pending independent ChatGPT Work validation."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tasks/specs/193.json",
+    "tasks/specs/194.json",
+    "reports/replay-wide-hard-challenger-census-task194.md",
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/REPLAY_WIDE_HARD_CHALLENGER_CENSUS_CONTRACT.md",
+    "tools/emit-replay-wide-hard-challenger-census.mjs",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/task190-bounded32/surface-resolved-lifecycle-bounded32-manifest.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/195.json",
+    "tasks/completed/195-replay-wide-hard-challenger-census-bounded32.md",
+    "reports/replay-wide-hard-challenger-census-task195.md",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/**",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32-blocked/**",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tools/emit-replay-wide-hard-challenger-census.mjs",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/**",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/**",
+    "tasks/specs/196.json",
+    "tasks/*/196-*",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "census-schema", "type": "node-test", "paths": ["tests/replay-wide-hard-challenger-census-schema.test.mjs"] },
+    { "id": "census-runner", "type": "node-test", "paths": ["tests/emit-replay-wide-hard-challenger-census.test.mjs"] },
+    { "id": "task190-regression", "type": "node-test", "paths": ["tests/emit-death-event-surface-resolved-lifecycle-evidence.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/gate.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/summary.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json",
+    "reports/replay-wide-hard-challenger-census-task195.md",
+    "tasks/completed/195-replay-wide-hard-challenger-census-bounded32.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/**"
+  ],
+  "replayProcessingAllowed": true,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay_005 through replay_008.",
+    "Never modify runner, thresholds, manifest, parser packages, engine packages, samples or replay inputs.",
+    "Never emit final death facts, victim identity, attribution or gameplay interpretation.",
+    "Do not create Task 196 or start the next module; stop after Task 195 handoff in VALIDATING."
+  ],
+  "successGate": "replay_wide_hard_challenger_census_bounded32_complete",
+  "blockedGate": "replay_wide_hard_challenger_census_bounded32_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "taskId": "195",
+  "module": "Replay-Wide Structural Hard-Challenger Census",
+  "status": "success",
+  "moduleConclusion": "completed_limited_population",
+  "durationSeconds": 767.417,
+  "replays": {
+    "planned": 32,
+    "processed": 32,
+    "failed": 0,
+    "primaryEligibleCoverage": 30
+  },
+  "observations": {
+    "anchors": 2552,
+    "forward": 13290,
+    "persistent": 13250,
+    "immediatePersistenceFailures": 40,
+    "clusters": 2815,
+    "primaryWindowEligibleClusters": 141,
+    "primaryHorizonEligibleClusters": 91,
+    "excludedClusters": 2674,
+    "deduplicatedObservations": 10435,
+    "ambiguities": 0
+  },
+  "feasibility": {
+    "assessment": "limited",
+    "primaryHorizonSeconds": 30,
+    "limitedMinimum": 30,
+    "sufficientMinimum": 100
+  },
+  "horizons": [
+    {"seconds": 10, "eligibleClusters": 125, "replayCoverage": 31},
+    {"seconds": 20, "eligibleClusters": 112, "replayCoverage": 31},
+    {"seconds": 30, "eligibleClusters": 91, "replayCoverage": 30},
+    {"seconds": 60, "eligibleClusters": 62, "replayCoverage": 27},
+    {"seconds": 120, "eligibleClusters": 41, "replayCoverage": 22},
+    {"seconds": 180, "eligibleClusters": 27, "replayCoverage": 18}
+  ],
+  "primaryEligiblePerReplayStability": {
+    "minimum": 0,
+    "maximum": 7,
+    "median": 2,
+    "mean": 2.844,
+    "standardDeviation": 1.922,
+    "coefficientOfVariation": 0.676
+  },
+  "integrity": {
+    "participantMappingFailures": 0,
+    "preOpenBridgeFailures": 0,
+    "protectedReplayAccessCount": 0,
+    "sourceReuseCount": 0,
+    "clusterReuseCount": 0,
+    "atomicPublication": true
+  },
+  "semanticBoundaries": {
+    "specificityComparisonPerformed": false,
+    "finalFactsProduced": false,
+    "attributionEmitted": false
+  },
+  "remainingModuleGap": null,
+  "nextModule": "Functional Death-Candidate Detector",
+  "nextModuleAuthorization": "not_authorized_before_independent_task195_validation"
+}

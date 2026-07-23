@@ -901,26 +901,38 @@
     {
       "id": "replay_wide_hard_challenger_census_task193_gate",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-gate.json",
-      "status": "accepted_implementation_original_measurement_blocked",
-      "notes": "Task 193 implementation is accepted; this gate preserves the original execution blocker before the Task 194 pilot rerun."
+      "status": "candidate_bounded_measurement_complete",
+      "notes": "The unchanged emitter now records the exact bounded-32 gate: 32/32 parsers, zero protected access and limited feasibility."
     },
     {
       "id": "replay_wide_hard_challenger_census_task193_summary",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task193-summary.json",
-      "status": "accepted_implementation_original_measurement_blocked",
-      "notes": "Historical Task 193 blocked execution summary; Task 194 provides the current completed pilot measurement."
+      "status": "candidate_bounded_measurement_complete",
+      "notes": "Current bounded-32 summary: 2,815 clusters, 141 outside the primary window and 91 primary 30-second eligible."
     },
     {
       "id": "replay_wide_hard_challenger_census_task194_gate",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task194-gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Exact pilot passed 4/4; bounded stopped before replay access because five exact manifest members are absent."
+      "status": "accepted_with_blocker_corrected_by_task195",
+      "notes": "Exact pilot passed 4/4. Work accepted Task 194 with blocker; Task 195 corrected the five-input path assumption."
     },
     {
       "id": "replay_wide_hard_challenger_census_task194_summary",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json",
+      "status": "accepted_with_blocker_corrected_by_task195",
+      "notes": "Historical pilot summary: 369 clusters and 11 eligible at 30 seconds; Task 195 supplies the bounded module conclusion."
+    },
+    {
+      "id": "replay_wide_hard_challenger_census_task195_gate",
+      "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Pilot emitted 369 structural clusters and 11 eligible clusters at 30 seconds; bounded module conclusion remains unavailable."
+      "notes": "Exact bounded-32 census completed with integrity passed, limited population, 32/32 parsers and zero protected replay access."
+    },
+    {
+      "id": "replay_wide_hard_challenger_census_task195_summary",
+      "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Module-completion candidate: 2,815 clusters, 141 primary-window eligible, 91 primary 30-second eligible; no final facts or attribution."
     }
   ]
 }

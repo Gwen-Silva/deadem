@@ -2016,3 +2016,16 @@ if the exact inputs are restored.
 
 Hardening, performance work, schema redesign and broader generalization remain
 deferred because they do not unblock the bounded measurement.
+
+## Task 195
+
+Module: `Replay-Wide Structural Hard-Challenger Census`.
+
+The exact bounded-32 measurement is technically complete: 32/32 replays,
+2,815 structural clusters, 141 outside the primary exclusion window and 91
+eligible at 30 seconds. The declared feasibility assessment is `limited`, not
+`sufficient`, and all critical integrity counters passed.
+
+ChatGPT Work must independently validate Task 195. If accepted, the next module
+is `Functional Death-Candidate Detector`. Do not start that module before a
+separate authorization. Final death facts and attribution remain blocked.

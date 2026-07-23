@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "194",
-  "baseCommit": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
-  "taskRange": "001-194",
+  "generatedAtTask": "195",
+  "baseCommit": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
+  "taskRange": "001-195",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -270,7 +270,7 @@
     {
       "taskId": "011",
       "status": "evidence_partial",
-      "commitSha": "5cdcd3b621b5ae3de13b60e4b3bb37ca012cb929",
+      "commitSha": null,
       "title": "Task 011",
       "phase": "foundation_policy_diagnostics_protection",
       "primaryContribution": "Completed or documented: Task 011.",
@@ -5919,12 +5919,12 @@
     {
       "taskId": "194",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
       "title": "Measure Replay-Wide Structural Hard-Challenger Census Pilot",
       "phase": "replay_wide_hard_challenger_census",
       "primaryContribution": "Executed the exact four-replay census pilot, emitted reproducible structural metrics and stopped bounded-32 before replay access when five exact manifest members were absent.",
       "introducedCapabilities": [],
-      "stabilizedCapabilities": ["replay_wide_structural_hard_challenger_census"],
+      "stabilizedCapabilities": [],
       "supersededCapabilities": [],
       "importantOutputs": [
         "output/local-replay-processing/replay-wide-hard-challenger-census/task193-pilot/gate.json",
@@ -5932,19 +5932,50 @@
         "reports/replay-wide-hard-challenger-census-task194.md"
       ],
       "gate": "replay_wide_hard_challenger_census_pilot_ready_bounded_blocked_missing_inputs",
-      "currentRelevance": "candidate_pilot_complete_bounded_inputs_incomplete",
+      "currentRelevance": "accepted_pilot_complete_with_corrected_path_blocker",
       "dependsOn": ["180", "183", "190", "192", "193"],
       "supersededBy": null,
       "reworkRiskNotes": [
         "Pilot feasibility is insufficient with 11 eligible clusters at 30 seconds but does not establish the bounded conclusion.",
-        "Five exact bounded manifest members are absent and a 27-replay partial run is forbidden.",
+        "The five-input blocker was an incorrect path assumption; Task 195 resolved all exact manifest members through the unchanged emitter.",
         "No specificity comparison, final facts or attribution were produced."
       ],
-      "evidenceStatus": "pilot_measurement_complete_bounded_preopen_blocked",
+      "evidenceStatus": "accepted_with_blocker_corrected_by_task195",
       "evidencePaths": [
         "tasks/specs/194.json",
         "tasks/completed/194-replay-wide-hard-challenger-census-pilot.md",
         "output/local-replay-processing/replay-wide-hard-challenger-census/task194-summary.json"
+      ]
+    },
+    {
+      "taskId": "195",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Complete Replay-Wide Structural Hard-Challenger Census Bounded32",
+      "phase": "replay_wide_hard_challenger_census",
+      "primaryContribution": "Executed the unchanged exact bounded-32 census, completed the structural challenger population measurement and classified it as limited under the declared thresholds.",
+      "introducedCapabilities": [],
+      "stabilizedCapabilities": ["replay_wide_structural_hard_challenger_census"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/gate.json",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
+        "reports/replay-wide-hard-challenger-census-task195.md"
+      ],
+      "gate": "replay_wide_hard_challenger_census_bounded32_complete",
+      "currentRelevance": "candidate_module_complete_pending_work_validation",
+      "dependsOn": ["180", "183", "190", "192", "193", "194"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The bounded population is limited: 91 primary 30-second eligible clusters are below the sufficient threshold of 100.",
+        "Structural clusters are not ground-truth non-deaths or confirmed deaths.",
+        "No specificity comparison, final facts or attribution were produced."
+      ],
+      "evidenceStatus": "bounded_measurement_complete_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/195.json",
+        "tasks/completed/195-replay-wide-hard-challenger-census-bounded32.md",
+        "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json"
       ]
     }
   ]

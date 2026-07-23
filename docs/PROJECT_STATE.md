@@ -1545,3 +1545,20 @@ Bounded-32 stopped before replay access because exact manifest members
 replay_001, replay_002, replay_003, replay_004 and replay_009 are absent. The
 remaining 27 members were not used as a substitute. No specificity comparison,
 final fact, victim identity, attribution or gameplay interpretation was emitted.
+
+## Task 195 - Replay-Wide Census Bounded32
+
+Task 194 is accepted by ChatGPT Work at
+`7e7ebeb170d8f93d8b245e6619f4d2a6222004dd`. Task 195 ran the unchanged exact
+bounded-32 emitter and completed 32/32 parsers in 767.417 seconds with zero
+mapping, bridge, protection or reuse failures.
+
+The run observed 2,815 structural clusters, 141 outside the primary five-second
+anchor window and 91 eligible at the primary 30-second horizon across 30
+replays. Under the declared thresholds, the population is `limited`: above the
+minimum 30 and below the sufficient threshold 100. The functional census
+module is technically complete pending independent Work validation.
+
+No specificity comparison, death fact, confirmed who-died claim or attribution
+was produced. The next named module is `Functional Death-Candidate Detector`,
+but it is not started or authorized by this handoff.
