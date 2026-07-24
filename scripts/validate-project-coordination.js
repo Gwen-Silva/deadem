@@ -95,7 +95,7 @@ const REPORT_FIELD_RULES = Object.freeze({
     'Final status': /^VALIDATING$/u
 });
 
-const PLACEHOLDER_PATTERN = /(?:<[^>]+>|\bTBD\b|\bTODO\b|\bplaceholder\b|created after|reported after|will be reported|\bnull\b|\bunknown\b)/iu;
+const PLACEHOLDER_PATTERN = /(?:<[^>]+>|\bTBD\b|\bTODO\b|\bplaceholder\b|created after|reported after|will be reported|\bunknown\b)/iu;
 
 function readJson(root, relativePath) {
     return JSON.parse(readFileSync(path.join(root, relativePath), 'utf8'));

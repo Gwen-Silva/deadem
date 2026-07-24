@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "195",
-  "baseCommit": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
-  "taskRange": "001-195",
+  "generatedAtTask": "196",
+  "baseCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
+  "taskRange": "001-196",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5950,7 +5950,7 @@
     {
       "taskId": "195",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "edf5dd86afae10b976d586e05c4b5016b7556700",
       "title": "Complete Replay-Wide Structural Hard-Challenger Census Bounded32",
       "phase": "replay_wide_hard_challenger_census",
       "primaryContribution": "Executed the unchanged exact bounded-32 census, completed the structural challenger population measurement and classified it as limited under the declared thresholds.",
@@ -5963,19 +5963,52 @@
         "reports/replay-wide-hard-challenger-census-task195.md"
       ],
       "gate": "replay_wide_hard_challenger_census_bounded32_complete",
-      "currentRelevance": "candidate_module_complete_pending_work_validation",
+      "currentRelevance": "accepted_module_complete_limited_population",
       "dependsOn": ["180", "183", "190", "192", "193", "194"],
       "supersededBy": null,
       "reworkRiskNotes": [
         "The bounded population is limited: 91 primary 30-second eligible clusters are below the sufficient threshold of 100.",
+        "Work accepted the result with non-invalidating blocker post_commit_attestation_validator_false_positive_on_valid_null_literal.",
         "Structural clusters are not ground-truth non-deaths or confirmed deaths.",
         "No specificity comparison, final facts or attribution were produced."
       ],
-      "evidenceStatus": "bounded_measurement_complete_pending_work_validation",
+      "evidenceStatus": "accepted_with_noninvalidating_validator_blocker",
       "evidencePaths": [
         "tasks/specs/195.json",
         "tasks/completed/195-replay-wide-hard-challenger-census-bounded32.md",
         "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json"
+      ]
+    },
+    {
+      "taskId": "196",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Functional Death-Candidate Detector MVP",
+      "phase": "functional_death_candidate_detector",
+      "primaryContribution": "Built and executed a deterministic replay-to-candidate detector across the accepted bounded-32 membership and repaired factual-null report validation.",
+      "introducedCapabilities": ["functional_death_candidate_detector"],
+      "stabilizedCapabilities": ["functional_death_candidate_detector"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-functional-death-candidate-detector.mjs",
+        "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json",
+        "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/gate.json",
+        "reports/functional-death-candidate-detector-task196.md"
+      ],
+      "gate": "functional_death_candidate_detector_mvp_bounded32_ready",
+      "currentRelevance": "candidate_mvp_complete_pending_work_validation",
+      "dependsOn": ["180", "183", "190", "192", "195"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The deterministic heuristic is not calibrated against confirmed death ground truth.",
+        "Known-anchor and hard-challenger overlaps are evaluation annotations only.",
+        "No final death fact, victim identity, attribution or gameplay interpretation is produced."
+      ],
+      "evidenceStatus": "functional_mvp_complete_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/196.json",
+        "tasks/completed/196-functional-death-candidate-detector-mvp.md",
+        "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json"
       ]
     }
   ]

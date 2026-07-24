@@ -4,37 +4,36 @@ Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`).
 
 Branch: `main`.
 
-Last accepted task: Task 194 at
-`7e7ebeb170d8f93d8b245e6619f4d2a6222004dd`. ChatGPT Work accepted the exact
-four-replay pilot with a bounded-input blocker and separately authorized Task
-195.
+Last accepted task: Task 195 at
+`edf5dd86afae10b976d586e05c4b5016b7556700`. ChatGPT Work accepted the
+Replay-Wide Structural Hard-Challenger Census as completed with a limited
+population and the non-invalidating blocker
+`post_commit_attestation_validator_false_positive_on_valid_null_literal`.
 
-Active candidate: Task 195, exact bounded-32 Replay-Wide Structural
-Hard-Challenger Census.
+Active candidate: Task 196, `Functional Death-Candidate Detector` MVP.
 
-Coordination status: `VALIDATING`. The unchanged emitter completed 32/32
-parsers in 767.417 seconds and published atomically. Mapping, pre-open bridge,
-protection, source-reuse and cluster-reuse failure counters are zero.
+Coordination status: `VALIDATING`. The detector processed 32/32 accepted
+replays in 1,534.3 seconds, emitted 2,664 candidates and recorded zero replay
+failures. Every replay produced candidates, ranging from 38 to 127.
 
-The bounded census observed 2,815 structural clusters. Of these, 141 survived
-the primary five-second anchor exclusion and 91 remained eligible at the
-primary 30-second horizon across 30 replays. The population is `limited` under
-the declared thresholds: 91 exceeds the minimum 30 and remains below the
-sufficient threshold 100.
+Each candidate contains a replay-relative timestamp, deterministic structural
+score, weighted signals, observed horizon and abstract surface identifier.
+Scores range from 0.853333 to 1.0. The detector output overlaps 2,434 known
+structural anchors and 85 accepted hard challengers; those overlaps are
+evaluation annotations and do not contribute to scoring.
 
-Current module: `Replay-Wide Structural Hard-Challenger Census`.
+Reproducibility: two real executions of replay_010 emitted 46 candidates with
+the same SHA-256
+`1f740818676a8dfe4b6740b329fafef8f278c7e5bddedc98a9b08bea835113b1`.
 
-Module outcome: technically complete with a limited population. Final
-acceptance remains pending independent ChatGPT Work validation. The next named
-module is `Functional Death-Candidate Detector`, but it is not authorized or
-started by this handoff.
+Module outcome: MVP technically complete pending independent ChatGPT Work
+validation. No follow-up module is authorized by this handoff.
 
-The Task 194 five-input blocker was an incorrect path assumption. The unchanged
-emitter resolved replay_001 through replay_004 and replay_009 from their
-authorized sample paths; no replay was copied or substituted.
+The Task 195 factual-null validator false positive is repaired in the Task 196
+candidate, while genuine unresolved report markers remain rejected.
 
-Death-fact promotion remains blocked. Structural clusters are not deaths or
-non-deaths; final death facts, confirmed who-died claims, attribution,
+Death-fact promotion remains blocked. Detector candidates are structural
+hypotheses, not confirmed deaths or non-deaths. Victim identity, attribution,
 killer/victim, teamfight and gameplay interpretation remain unavailable.
 
 Protected data: replay 005 remains the final holdout; replays 006-008 remain

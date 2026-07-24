@@ -1,0 +1,189 @@
+{
+  "taskId": "196",
+  "title": "Build Functional Death-Candidate Detector MVP",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Build the smallest complete replay-to-candidate detector, execute it on the accepted bounded-32 set, measure its output and repair the valid-null report-validator false positive.",
+  "module": "Functional Death-Candidate Detector",
+  "moduleGoal": "Turn an authorized replay into a reproducible, usable list of scored structural death candidates without claiming confirmed death semantics.",
+  "observableOutcome": "An authorized replay enters the detector and a deterministic list of timestamped candidates with scores, contributing signals, observed horizons and abstract surface identifiers exits.",
+  "metricContribution": "Replays processed; candidates emitted and per replay; score distribution; known-anchor and hard-challenger overlap; duration; failures; bounded-32 coverage; reproducibility.",
+  "remainingModuleGap": "None for the functional MVP if exact bounded-32 execution and deterministic rerun pass; accuracy calibration and semantic confirmation remain later work.",
+  "hardeningDeferred": "No statistical model, machine learning, dashboard, schema redesign, broad refactor, optimization, victim identity, killer attribution, teamfight or gameplay interpretation.",
+  "baseCommitExpected": "edf5dd86afae10b976d586e05c4b5016b7556700",
+  "executionReportPath": "reports/functional-death-candidate-detector-task196.md",
+  "executionContract": {
+    "reasoningComplexity": "High: implement and execute a replay-facing detector across 32 real authorized replays while preserving protected replay isolation, deterministic scoring, abstract identity and the boundary between candidate evidence and death truth.",
+    "objective": "Deliver the smallest reproducible replay-to-scored-candidate vertical slice and the minimal valid-null report-validator regression fix.",
+    "technicalContext": [
+      "ChatGPT Work accepted Task 195 with blocker at edf5dd86afae10b976d586e05c4b5016b7556700 and separately authorized Task 196.",
+      "Task 195 stabilized the replay-wide structural census with a limited but usable population of 91 primary 30-second hard challengers.",
+      "The accepted Task 193/195 parser path already derives immediately persistent structural transition clusters from authorized replay bytes."
+    ],
+    "confirmedState": [
+      "HEAD and origin/main equal edf5dd86afae10b976d586e05c4b5016b7556700 on main and the working tree was clean before Task 196.",
+      "Task 195 processed the exact accepted 32-replay membership with zero protected access and zero failures.",
+      "Final deaths, confirmed who-died claims, victim identity, attribution, killer/victim, teamfight and gameplay interpretation remain unavailable."
+    ],
+    "expectedBaseCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
+    "branchEnvironment": [
+      "Repository Gwen-Silva/deadem on main in C:/Users/gwenm/Documents/deadem.",
+      "Create exactly one Task 196 candidate commit and publish it to origin/main only after complete validation."
+    ],
+    "allowedScope": [
+      "Add a thin detector over the accepted replay-wide structural observation path, a strict output schema, focused tests and a bounded-32 functional run.",
+      "Persist candidate lists, aggregate metrics, reproducibility evidence, module state and a complete execution report.",
+      "Remove only the overbroad valid-null alternative from the report placeholder pattern and add a targeted regression test."
+    ],
+    "protectedAreas": [
+      "Do not modify packages/deadem, packages/engine, samples, replay binaries or accepted Task 190-195 factual artifacts.",
+      "Do not read, hash, copy, inspect, open or process replay_005, replay_006, replay_007 or replay_008.",
+      "Do not emit or imply confirmed deaths, non-deaths, victim identity, attribution, killer/victim, teamfight or gameplay interpretation."
+    ],
+    "expectedChanges": [
+      "A replay-facing deterministic heuristic detector with explicit structural score contributions and threshold.",
+      "Exact bounded-32 candidate artifact and summary with required overlap, distribution, coverage, duration and failure metrics.",
+      "A targeted valid-null report validator repair that preserves rejection of genuine placeholders."
+    ],
+    "acceptanceCriteria": [
+      "The detector processes 32/32 authorized replays, emits a non-empty candidate list, records zero failures and reaches 100 percent bounded coverage.",
+      "Every candidate contains timestamp, structural score, contributing signals, observed horizon, abstract surface identifier and an explicit unconfirmed semantic status.",
+      "Known-anchor and hard-challenger overlap are evaluation-only fields and do not change the structural score.",
+      "A real authorized replay rerun produces byte-identical candidate output.",
+      "A factual valid-null explanation passes report validation while TODO, placeholder, angle-bracket token and unknown remain rejected.",
+      "The candidate contains exactly one commit, authorized paths only, a clean synchronized working tree and a complete report pending Work validation."
+    ],
+    "mandatoryTests": [
+      "node --test tests/emit-functional-death-candidate-detector.test.mjs",
+      "node --test tests/functional-death-candidate-detector-schema.test.mjs",
+      "node --test tests/report-placeholder-validation.test.mjs",
+      "node --test tests/emit-replay-wide-hard-challenger-census.test.mjs",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run codex:preflight -- --task 196 --base edf5dd86afae10b976d586e05c4b5016b7556700",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs",
+      "npm.cmd run codex:validate -- --task 196 --base edf5dd86afae10b976d586e05c4b5016b7556700",
+      "npm.cmd run codex:review -- --task 196 --base edf5dd86afae10b976d586e05c4b5016b7556700"
+    ],
+    "requiredEvidence": [
+      "Exact accepted 32-replay membership and protected replay pre-open rejection.",
+      "Candidate count, per-replay counts, score distribution, anchor overlap, hard-challenger overlap, duration, failures and coverage.",
+      "Byte-identical candidate artifact hashes from two executions of the same real authorized replay.",
+      "Regression evidence that valid null prose passes while genuine placeholders fail.",
+      "Post-commit attestation with commit, base, branch, changed files, checks, artifacts, push evidence and VALIDATING status."
+    ],
+    "commitPolicy": [
+      "Stage only exact authorized Task 196 paths and create one commit named Build functional death candidate detector MVP.",
+      "Do not amend Task 195, use git add dot/all, force-push, create a second commit or claim Task 196 acceptance."
+    ],
+    "stopConditions": [
+      "Stop before replay access on membership, source bridge, path, protection or accepted-baseline mismatch.",
+      "Stop on protected replay access, package/sample mutation, accepted factual artifact mutation, non-deterministic candidate output or semantic death/attribution claim.",
+      "Stop after the Task 196 handoff in VALIDATING; do not start another module."
+    ],
+    "returnReportFormat": [
+      "Use every section in docs/codex/CODEX_REPORT_TEMPLATE.md for the technical artifact.",
+      "User-facing report answers only result, functional input/output, observable value, module impact, relevant semantic limitation, next objective and forecast.",
+      "Final acceptance remains pending independent ChatGPT Work validation."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tasks/specs/195.json",
+    "reports/replay-wide-hard-challenger-census-task195.md",
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "tools/emit-replay-wide-hard-challenger-census.mjs",
+    "tools/emit-death-event-surface-resolved-lifecycle-evidence.mjs",
+    "scripts/validate-project-coordination.js",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/summary.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "scripts/validate-project-coordination.js",
+    "tools/emit-functional-death-candidate-detector.mjs",
+    "schemas/functional-death-candidate-detector.schema.json",
+    "tests/emit-functional-death-candidate-detector.test.mjs",
+    "tests/functional-death-candidate-detector-schema.test.mjs",
+    "tests/report-placeholder-validation.test.mjs",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/codex/FUNCTIONAL_DEATH_CANDIDATE_DETECTOR_CONTRACT.md",
+    "tasks/specs/196.json",
+    "tasks/completed/196-functional-death-candidate-detector-mvp.md",
+    "reports/functional-death-candidate-detector-task196.md",
+    "output/local-replay-processing/functional-death-candidate-detector/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence/**",
+    "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity/**",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/**",
+    "tasks/specs/197.json",
+    "tasks/*/197-*",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {"id": "detector-unit", "type": "node-test", "paths": ["tests/emit-functional-death-candidate-detector.test.mjs"]},
+    {"id": "detector-schema", "type": "node-test", "paths": ["tests/functional-death-candidate-detector-schema.test.mjs"]},
+    {"id": "report-null-regression", "type": "node-test", "paths": ["tests/report-placeholder-validation.test.mjs"]},
+    {"id": "census-regression", "type": "node-test", "paths": ["tests/emit-replay-wide-hard-challenger-census.test.mjs"]},
+    {"id": "coordination-validator", "type": "npm-script", "script": "validate:coordination"},
+    {"id": "task-queue", "type": "npm-script", "script": "validate:tasks"},
+    {"id": "lint", "type": "npm-script", "script": "lint"},
+    {"id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"}
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/gate.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-reproducibility-audit.json",
+    "reports/functional-death-candidate-detector-task196.md",
+    "tasks/completed/196-functional-death-candidate-detector-mvp.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json"
+  ],
+  "replayProcessingAllowed": true,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay_005 through replay_008.",
+    "Never modify parser packages, engine packages, samples, replay inputs or accepted Task 190-195 factual artifacts.",
+    "Never emit confirmed death, victim identity, attribution or gameplay interpretation.",
+    "Do not create Task 197 or start another module; stop after Task 196 handoff in VALIDATING."
+  ],
+  "successGate": "functional_death_candidate_detector_mvp_bounded32_ready",
+  "blockedGate": "functional_death_candidate_detector_mvp_blocked",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

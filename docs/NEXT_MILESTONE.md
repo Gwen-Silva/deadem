@@ -2029,3 +2029,15 @@ eligible at 30 seconds. The declared feasibility assessment is `limited`, not
 ChatGPT Work must independently validate Task 195. If accepted, the next module
 is `Functional Death-Candidate Detector`. Do not start that module before a
 separate authorization. Final death facts and attribution remain blocked.
+
+## Task 196
+
+Module: `Functional Death-Candidate Detector`.
+
+The replay-in to candidate-list-out MVP is technically complete: 32/32 replays,
+2,664 candidates, zero failures, 100 percent coverage and byte-identical output
+from two executions of replay_010. The candidate score is a transparent
+structural heuristic and is not a calibrated probability of death.
+
+ChatGPT Work must independently validate Task 196 before selecting any next
+practical capability. No Task 197 or follow-up module is authorized here.

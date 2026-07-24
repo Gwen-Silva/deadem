@@ -1562,3 +1562,24 @@ module is technically complete pending independent Work validation.
 No specificity comparison, death fact, confirmed who-died claim or attribution
 was produced. The next named module is `Functional Death-Candidate Detector`,
 but it is not started or authorized by this handoff.
+
+## Task 196 - Functional Death-Candidate Detector MVP
+
+ChatGPT Work accepted Task 195 at
+`edf5dd86afae10b976d586e05c4b5016b7556700` with a non-invalidating
+report-validator blocker and authorized Task 196. The functional detector now
+accepts a replay from the bounded-32 membership and emits deterministic scored
+structural candidates.
+
+The bounded run processed 32/32 replays in 1,534.3 seconds with zero failures
+and 100 percent coverage. It emitted 2,664 candidates, between 38 and 127 per
+replay. Scores range from 0.853333 to 1.0; 2,434 candidates coincide with known
+structural anchors and 85 occur in the accepted hard-challenger population.
+
+Two executions of replay_010 emitted the same 46-candidate artifact with
+identical SHA-256. The validator now permits factual explanations of valid
+null values while continuing to reject genuine unresolved report markers.
+
+The MVP is technically complete pending Work validation. Candidates remain
+unconfirmed structural hypotheses; no final death, confirmed non-death, victim
+identity, attribution or gameplay interpretation is available.

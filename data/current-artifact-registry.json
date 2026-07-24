@@ -925,14 +925,32 @@
     {
       "id": "replay_wide_hard_challenger_census_task195_gate",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task195-gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Exact bounded-32 census completed with integrity passed, limited population, 32/32 parsers and zero protected replay access."
+      "status": "accepted_with_noninvalidating_validator_blocker",
+      "notes": "Work accepted the exact bounded-32 census with limited population and a non-invalidating report-validator false positive."
     },
     {
       "id": "replay_wide_hard_challenger_census_task195_summary",
       "path": "output/local-replay-processing/replay-wide-hard-challenger-census/task195-summary.json",
+      "status": "accepted_with_noninvalidating_validator_blocker",
+      "notes": "Accepted module conclusion: 2,815 clusters, 141 primary-window eligible and 91 primary 30-second eligible; no final facts or attribution."
+    },
+    {
+      "id": "functional_death_candidate_detector_task196_gate",
+      "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/gate.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Module-completion candidate: 2,815 clusters, 141 primary-window eligible, 91 primary 30-second eligible; no final facts or attribution."
+      "notes": "Functional MVP processed 32/32 replays, emitted 2,664 candidates, recorded zero failures and produced no final facts."
+    },
+    {
+      "id": "functional_death_candidate_detector_task196_summary",
+      "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Bounded summary with candidate distribution, structural scores, 2,434 anchor matches, 85 hard-challenger matches and 100 percent coverage."
+    },
+    {
+      "id": "functional_death_candidate_detector_task196_candidates",
+      "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Deterministic scored candidate list; every row remains an unconfirmed structural hypothesis with finalFact false."
     }
   ]
 }

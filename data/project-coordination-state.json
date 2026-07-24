@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Determine whether the existing replay-wide observation surface contains enough non-anchor structural transition clusters for a statistically useful hard-challenger lifecycle comparison.",
-  "phase": "replay_wide_hard_challenger_census",
-  "lastAcceptedTaskId": "194",
-  "lastAcceptedCommit": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
-  "activeBaseCommit": "7e7ebeb170d8f93d8b245e6619f4d2a6222004dd",
+  "objective": "Build the smallest reproducible functional detector that turns an authorized replay into a usable list of scored structural death candidates without asserting death truth.",
+  "phase": "functional_death_candidate_detector",
+  "lastAcceptedTaskId": "195",
+  "lastAcceptedCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
+  "activeBaseCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
   "branch": "main",
-  "activeTaskId": "195",
+  "activeTaskId": "196",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/195/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/196/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -49,18 +49,18 @@
     "npm.cmd run check:outputs"
   ],
   "activeBlockers": [
-    "Task 192 found only two eligible hard challengers in the Task 190 matched-control surface, so operational specificity remains insufficient.",
-    "The bounded-32 census found 91 primary 30-second eligible clusters: enough for the declared limited population threshold of 30, but below the sufficient threshold of 100.",
+    "Task 195 was accepted with the non-invalidating blocker post_commit_attestation_validator_false_positive_on_valid_null_literal; Task 196 repairs it as a candidate pending Work validation.",
+    "The accepted bounded-32 challenger population is limited at 91 primary 30-second eligible clusters, below the sufficient threshold of 100.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
   "knownRisks": [
     "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
-    "The 91 primary eligible clusters are unevenly distributed across replays (0 to 7 per replay; coefficient of variation 0.676), so the completed census population is limited rather than sufficient.",
+    "The MVP heuristic is uncalibrated against death ground truth; high structural scores measure signal agreement, not factual accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 195. If accepted, the Replay-Wide Structural Hard-Challenger Census module is complete with a limited population; the Functional Death-Candidate Detector is the next module but is not authorized to start here.",
-  "completedTasks": ["190", "191", "192", "193", "194"],
-  "pendingTasks": ["195"],
+  "nextAction": "ChatGPT Work independently validates Task 196 and selects any separately authorized follow-up; no next module is started by this handoff.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195"],
+  "pendingTasks": ["196"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

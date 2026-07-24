@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "195",
+  "generatedAtTask": "196",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -696,8 +696,8 @@
       "plainName": "Replay-wide structural hard-challenger census",
       "introducedInTask": "193",
       "stabilizedInTask": "195",
-      "currentStatus": "candidate_complete",
-      "currentBaseline": "task195_exact_bounded32_complete_limited_population",
+      "currentStatus": "active",
+      "currentBaseline": "task195_exact_bounded32_accepted_limited_population",
       "whyItMatters": "Determines whether the full one-second observation surface contains enough persistent non-anchor structural clusters for a later specificity experiment.",
       "mainFiles": [
         "tools/emit-replay-wide-hard-challenger-census.mjs",
@@ -715,7 +715,32 @@
         "Thirty of 32 replays contribute primary eligible clusters, with a per-replay range of 0 to 7.",
         "No specificity comparison, final fact, or attribution capability is enabled."
       ],
-      "nextUsefulStep": "ChatGPT Work independently validates Task 195; only after acceptance may a separately authorized Functional Death-Candidate Detector module begin."
+      "nextUsefulStep": "Use the accepted limited population as evaluation context for the authorized Task 196 detector without treating it as ground truth."
+    },
+    {
+      "capabilityId": "functional_death_candidate_detector",
+      "plainName": "Functional death-candidate detector MVP",
+      "introducedInTask": "196",
+      "stabilizedInTask": "196",
+      "currentStatus": "candidate_complete",
+      "currentBaseline": "task196_bounded32_deterministic_structural_heuristic_v1",
+      "whyItMatters": "Provides the first complete replay-in to scored-candidate-list-out flow while preserving unconfirmed semantics.",
+      "mainFiles": [
+        "tools/emit-functional-death-candidate-detector.mjs",
+        "schemas/functional-death-candidate-detector.schema.json",
+        "docs/codex/FUNCTIONAL_DEATH_CANDIDATE_DETECTOR_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json",
+        "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json",
+        "output/local-replay-processing/functional-death-candidate-detector/task196-reproducibility-audit.json"
+      ],
+      "knownLimits": [
+        "Scores are transparent structural heuristics, not calibrated death probabilities.",
+        "Anchor and hard-challenger overlaps are evaluation-only annotations.",
+        "No confirmed death, victim identity, attribution or gameplay interpretation is enabled."
+      ],
+      "nextUsefulStep": "ChatGPT Work independently validates Task 196 and selects a separately authorized practical follow-up."
     }
   ]
 }
