@@ -937,20 +937,38 @@
     {
       "id": "functional_death_candidate_detector_task196_gate",
       "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/gate.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_selectivity_blocker",
       "notes": "Functional MVP processed 32/32 replays, emitted 2,664 candidates, recorded zero failures and produced no final facts."
     },
     {
       "id": "functional_death_candidate_detector_task196_summary",
       "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_selectivity_blocker",
       "notes": "Bounded summary with candidate distribution, structural scores, 2,434 anchor matches, 85 hard-challenger matches and 100 percent coverage."
     },
     {
       "id": "functional_death_candidate_detector_task196_candidates",
       "path": "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json",
+      "status": "accepted_with_selectivity_blocker",
+      "notes": "Accepted deterministic V1 baseline; every row remains an unconfirmed structural hypothesis with finalFact false."
+    },
+    {
+      "id": "functional_death_candidate_prioritization_task197_gate",
+      "path": "output/local-replay-processing/functional-death-candidate-detector/task197-gate.json",
+      "status": "candidate_conclusive_negative_pending_work_validation",
+      "notes": "Frozen V2 failed the reserved selectivity criterion with only 4.647 percentage points between anchor and hard-challenger capture."
+    },
+    {
+      "id": "functional_death_candidate_prioritization_task197_summary",
+      "path": "output/local-replay-processing/functional-death-candidate-detector/task197-summary.json",
+      "status": "candidate_conclusive_negative_pending_work_validation",
+      "notes": "Records separate development and reserved-validation metrics, 32/32 representation, deterministic replay_010 and zero final facts."
+    },
+    {
+      "id": "functional_death_candidate_prioritization_task197_candidates",
+      "path": "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/prioritized-candidates.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Deterministic scored candidate list; every row remains an unconfirmed structural hypothesis with finalFact false."
+      "notes": "Reproducible within-replay priority list with high, medium and low tiers; priorities remain unconfirmed structural hypotheses."
     }
   ]
 }

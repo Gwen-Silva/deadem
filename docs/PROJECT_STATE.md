@@ -1583,3 +1583,27 @@ null values while continuing to reject genuine unresolved report markers.
 The MVP is technically complete pending Work validation. Candidates remain
 unconfirmed structural hypotheses; no final death, confirmed non-death, victim
 identity, attribution or gameplay interpretation is available.
+
+## Task 197 - Death-Candidate Selectivity And Ranking V2
+
+ChatGPT Work accepted Task 196 at
+`bf42beee0b22bd921c245ce1b6485a1b617543a8` with the non-rejecting blocker
+`detector_selectivity_not_demonstrated` and authorized a frozen development and
+reserved-validation experiment.
+
+The V2 priority layer used only structural signals, never anchor or
+hard-challenger labels as score inputs. It reduced 2,664 V1 candidates to 2,537,
+populated high/medium/low tiers, and changed overall score p50/p90 from 1.0/1.0
+to 0.884278/0.988167. Replay_010 remained byte-identical across two executions.
+
+Development met the declared separation target: 94.797 percent anchor capture
+versus 84.058 percent hard-challenger capture, a 10.739-point difference. The
+reserved validation did not: 95.556 percent versus 90.909 percent, only 4.647
+points. The technical gate is therefore the useful conclusive negative
+`structural_features_insufficient_for_candidate_selectivity`.
+
+The list is reproducibly prioritized, but the current structural features are
+insufficient for the required selectivity. Further progress requires new
+semantic evidence or ground truth, not more tuning over the same signals. All
+rows remain unconfirmed structural hypotheses; no final facts or attribution
+were produced. Task 197 is `VALIDATING` pending independent Work acceptance.

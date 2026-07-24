@@ -1,42 +1,17 @@
 # Current Codex State
 
-Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`).
+Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Branch: `main`.
+Last accepted task: Task 196 at `bf42beee0b22bd921c245ce1b6485a1b617543a8`. ChatGPT Work accepted the Functional Death-Candidate Detector MVP with blocker `detector_selectivity_not_demonstrated`. The MVP module is completed and preserves 2,664 deterministic unconfirmed structural candidates as the V1 baseline.
 
-Last accepted task: Task 195 at
-`edf5dd86afae10b976d586e05c4b5016b7556700`. ChatGPT Work accepted the
-Replay-Wide Structural Hard-Challenger Census as completed with a limited
-population and the non-invalidating blocker
-`post_commit_attestation_validator_false_positive_on_valid_null_literal`.
+Active candidate: Task 197, `Death-Candidate Selectivity And Ranking V2`. Coordination status: `VALIDATING`.
 
-Active candidate: Task 196, `Functional Death-Candidate Detector` MVP.
+The V2 configuration was selected on 24 development replays and frozen before the eight reserved validation replays were evaluated. It reduced the full list from 2,664 to 2,537 candidates, populated all three priority tiers, and changed p50/p90 from 1.0/1.0 to 0.884278/0.988167. Replay_010 was byte-identical across two executions.
 
-Coordination status: `VALIDATING`. The detector processed 32/32 accepted
-replays in 1,534.3 seconds, emitted 2,664 candidates and recorded zero replay
-failures. Every replay produced candidates, ranging from 38 to 127.
+The reserved-validation result is conclusively negative under `structural_features_insufficient_for_candidate_selectivity`. Anchor capture was 95.556%; hard-challenger capture was 90.909%; the 4.647-point difference is below the required 10 points. The list is ranked, but the existing structural features do not demonstrate adequate selectivity. No further tuning on these same signals is authorized by this handoff.
 
-Each candidate contains a replay-relative timestamp, deterministic structural
-score, weighted signals, observed horizon and abstract surface identifier.
-Scores range from 0.853333 to 1.0. The detector output overlaps 2,434 known
-structural anchors and 85 accepted hard challengers; those overlaps are
-evaluation annotations and do not contribute to scoring.
+All 32 authorized replays were represented with zero failures. Replay 005 remained protected; replays 006-008 remained excluded bot fixtures. No final death fact, confirmed non-death, victim identity, attribution, killer/victim, teamfight or gameplay interpretation was produced.
 
-Reproducibility: two real executions of replay_010 emitted 46 candidates with
-the same SHA-256
-`1f740818676a8dfe4b6740b329fafef8f278c7e5bddedc98a9b08bea835113b1`.
-
-Module outcome: MVP technically complete pending independent ChatGPT Work
-validation. No follow-up module is authorized by this handoff.
-
-The Task 195 factual-null validator false positive is repaired in the Task 196
-candidate, while genuine unresolved report markers remain rejected.
-
-Death-fact promotion remains blocked. Detector candidates are structural
-hypotheses, not confirmed deaths or non-deaths. Victim identity, attribution,
-killer/victim, teamfight and gameplay interpretation remain unavailable.
-
-Protected data: replay 005 remains the final holdout; replays 006-008 remain
-unsupported bot fixtures. None was resolved or accessed.
+ChatGPT Work must independently validate Task 197. Any later capability requires a separate authorization and new semantic evidence or ground truth. No Task 198 exists.
 
 Machine-readable state: `data/project-coordination-state.json`.

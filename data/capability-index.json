@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "196",
+  "generatedAtTask": "197",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -722,7 +722,7 @@
       "plainName": "Functional death-candidate detector MVP",
       "introducedInTask": "196",
       "stabilizedInTask": "196",
-      "currentStatus": "candidate_complete",
+      "currentStatus": "accepted_with_selectivity_blocker",
       "currentBaseline": "task196_bounded32_deterministic_structural_heuristic_v1",
       "whyItMatters": "Provides the first complete replay-in to scored-candidate-list-out flow while preserving unconfirmed semantics.",
       "mainFiles": [
@@ -740,7 +740,32 @@
         "Anchor and hard-challenger overlaps are evaluation-only annotations.",
         "No confirmed death, victim identity, attribution or gameplay interpretation is enabled."
       ],
-      "nextUsefulStep": "ChatGPT Work independently validates Task 196 and selects a separately authorized practical follow-up."
+      "nextUsefulStep": "Retain V1 as the accepted functional baseline; use Task 197 only to evaluate whether its preserved structural signals can improve selectivity."
+    },
+    {
+      "capabilityId": "death_candidate_selectivity_and_ranking",
+      "plainName": "Death-candidate selectivity and ranking V2",
+      "introducedInTask": "197",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_conclusive_negative",
+      "currentBaseline": "task197_frozen_structural_priority_v2",
+      "whyItMatters": "Publishes a deterministic within-replay priority list and tests structural selectivity without using evaluation labels as score inputs.",
+      "mainFiles": [
+        "tools/emit-functional-death-candidate-prioritization.mjs",
+        "schemas/functional-death-candidate-prioritization.schema.json",
+        "docs/codex/FUNCTIONAL_DEATH_CANDIDATE_PRIORITIZATION_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/prioritized-candidates.json",
+        "output/local-replay-processing/functional-death-candidate-detector/task197-summary.json",
+        "output/local-replay-processing/functional-death-candidate-detector/task197-gate.json"
+      ],
+      "knownLimits": [
+        "Reserved-validation anchor capture was 95.556 percent and hard-challenger capture was 90.909 percent, only 4.647 percentage points apart.",
+        "The V2 reduced candidates and score saturation but did not demonstrate the required selectivity.",
+        "Priorities remain unconfirmed structural hypotheses; no final facts or attribution are enabled."
+      ],
+      "nextUsefulStep": "After independent Work validation, any separately authorized evolution must add semantic evidence or ground truth rather than retune the same structural signals."
     }
   ]
 }

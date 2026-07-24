@@ -2039,5 +2039,22 @@ The replay-in to candidate-list-out MVP is technically complete: 32/32 replays,
 from two executions of replay_010. The candidate score is a transparent
 structural heuristic and is not a calibrated probability of death.
 
-ChatGPT Work must independently validate Task 196 before selecting any next
-practical capability. No Task 197 or follow-up module is authorized here.
+ChatGPT Work accepted Task 196 at
+`bf42beee0b22bd921c245ce1b6485a1b617543a8` with blocker
+`detector_selectivity_not_demonstrated` and separately authorized Task 197.
+
+## Task 197
+
+Module: `Death-Candidate Selectivity And Ranking`.
+
+The frozen V2 layer produced a real within-replay ranking with high, medium and
+low tiers and reduced the full list from 2,664 to 2,537. Scores are no longer
+saturated at both p50 and p90. On reserved validation, however, anchor capture
+was 95.556 percent and hard-challenger capture was 90.909 percent, a difference
+of only 4.647 percentage points. The required separation was 10 points.
+
+The technical conclusion is
+`structural_features_insufficient_for_candidate_selectivity`. ChatGPT Work must
+independently validate Task 197. A later evolution requires new semantic
+evidence or ground truth under separate authorization; additional tuning over
+the same signals is not the next milestone. No Task 198 is created here.

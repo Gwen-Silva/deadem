@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Build the smallest reproducible functional detector that turns an authorized replay into a usable list of scored structural death candidates without asserting death truth.",
-  "phase": "functional_death_candidate_detector",
-  "lastAcceptedTaskId": "195",
-  "lastAcceptedCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
-  "activeBaseCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
+  "objective": "Determine whether existing structural candidate features can produce a less saturated, reproducible priority ranking that separates anchors from hard challengers on a reserved validation split.",
+  "phase": "death_candidate_selectivity_and_ranking",
+  "lastAcceptedTaskId": "196",
+  "lastAcceptedCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
+  "activeBaseCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
   "branch": "main",
-  "activeTaskId": "196",
+  "activeTaskId": "197",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/196/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/197/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -49,18 +49,19 @@
     "npm.cmd run check:outputs"
   ],
   "activeBlockers": [
-    "Task 195 was accepted with the non-invalidating blocker post_commit_attestation_validator_false_positive_on_valid_null_literal; Task 196 repairs it as a candidate pending Work validation.",
-    "The accepted bounded-32 challenger population is limited at 91 primary 30-second eligible clusters, below the sufficient threshold of 100.",
+    "Task 196 is accepted with blocker detector_selectivity_not_demonstrated: V1 selects about 95 percent of anchors and 93 percent of hard challengers with scores saturated near 1.0.",
+    "Task 197 reached the conclusive negative gate structural_features_insufficient_for_candidate_selectivity: reserved-validation anchor capture was 95.556 percent and hard-challenger capture was 90.909 percent, a difference of only 4.647 percentage points.",
+    "The accepted bounded-32 challenger population remains limited at 91 primary 30-second eligible clusters.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
   "knownRisks": [
     "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
-    "The MVP heuristic is uncalibrated against death ground truth; high structural scores measure signal agreement, not factual accuracy.",
+    "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 196 and selects any separately authorized follow-up; no next module is started by this handoff.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195"],
-  "pendingTasks": ["196"],
+  "nextAction": "ChatGPT Work independently validates Task 197. Any later selectivity evolution requires separately authorized new semantic evidence or ground truth, not additional tuning over the same structural signals.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196"],
+  "pendingTasks": ["197"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

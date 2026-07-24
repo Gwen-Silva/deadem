@@ -1,0 +1,186 @@
+{
+  "taskId": "197",
+  "title": "Build Death-Candidate Selectivity And Ranking V2",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Build a deterministic V2 priority layer over Task 196 candidates, freeze weights and thresholds on 24 development replays, then evaluate once on eight reserved replays.",
+  "module": "Death-Candidate Selectivity And Ranking",
+  "moduleGoal": "Reduce V1 score saturation and candidate volume while retaining at least 90 percent of anchors and capturing hard challengers at least ten percentage points less often on reserved validation.",
+  "observableOutcome": "A reproducible per-replay ranked candidate list with high, medium and low priorities plus separate development and reserved-validation metrics.",
+  "metricContribution": "V1/V2 candidate counts; anchor and hard-challenger capture; capture gap; priority distribution; p50/p90; split-specific results; determinism; bounded coverage and semantic safety.",
+  "remainingModuleGap": "None if reserved validation meets every declared selectivity criterion; otherwise conclude that current structural features are insufficient and require new evidence rather than further tuning.",
+  "hardeningDeferred": "No semantic confirmation, ground-truth collection, machine learning, dashboard, victim identity, attribution, teamfight analysis, broad refactor or Task 198.",
+  "baseCommitExpected": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
+  "executionReportPath": "reports/functional-death-candidate-selectivity-task197.md",
+  "executionContract": {
+    "reasoningComplexity": "High: tune only on a declared 24-replay development split, freeze a transparent ranking configuration before reserved validation, and preserve strict separation between structural evaluation labels and score inputs.",
+    "objective": "Produce a less saturated, lower-volume deterministic V2 ranking and decide selectivity on a single untouched eight-replay validation split.",
+    "technicalContext": [
+      "ChatGPT Work accepted Task 196 with blocker detector_selectivity_not_demonstrated at commit bf42beee0b22bd921c245ce1b6485a1b617543a8.",
+      "V1 contains 2,664 candidates from 2,815 structural clusters, matching 2,434/2,552 anchors and 85/91 hard challengers with p50 and p90 both 1.0.",
+      "Task 197 consumes versioned Task 196 candidates and accepted census labels; it does not open replay bytes."
+    ],
+    "confirmedState": [
+      "HEAD and origin/main equal bf42beee0b22bd921c245ce1b6485a1b617543a8 on main and the working tree was clean before Task 197.",
+      "Reserved validation membership is replay_004, replay_012, replay_016, replay_020, replay_024, replay_028, replay_032 and replay_036; all other accepted members form development.",
+      "Final deaths, confirmed who-died claims, victim identity and attribution remain unavailable."
+    ],
+    "expectedBaseCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
+    "branchEnvironment": [
+      "Repository Gwen-Silva/deadem on main in C:/Users/gwenm/Documents/deadem.",
+      "Create exactly one Task 197 candidate commit and publish it to origin/main only after complete validation."
+    ],
+    "allowedScope": [
+      "Add a V2 prioritization tool, strict schema, focused tests, contract, split manifest, frozen configuration and compact bounded artifacts.",
+      "Use Task 196 candidate structural fields as score inputs and accepted anchor/challenger labels only for split-specific evaluation.",
+      "Persist either the success gate or the useful negative structural-features-insufficient gate without repeated validation tuning."
+    ],
+    "protectedAreas": [
+      "Do not modify the Task 196 detector or any Task 196 bounded artifact.",
+      "Do not modify packages/deadem, packages/engine, samples or replay inputs; do not access replay_005 through replay_008.",
+      "Do not use anchor or hard-challenger labels as score inputs or emit confirmed death semantics."
+    ],
+    "expectedChanges": [
+      "A transparent V2 score using family diversity, surface support, observed horizon, same-surface recurrence and label-free temporal density.",
+      "Frozen thresholds selected on development before a single reserved-validation evaluation.",
+      "Per-replay ranking and high/medium/low priorities with non-saturated score distribution."
+    ],
+    "acceptanceCriteria": [
+      "Reserved validation captures at least 90 percent of anchors and hard challengers at least ten percentage points less often than anchors.",
+      "V2 emits fewer candidates than V1; p50 and p90 are not both 1.0; all three priority levels are populated.",
+      "Two replay_010 executions are byte-identical; all 32 accepted replay ids are represented with zero protected access.",
+      "No score input contains anchor or hard-challenger labels and no final fact or attribution is emitted.",
+      "If criteria fail, stop with structural_features_insufficient_for_candidate_selectivity and recommend new evidence rather than more tuning.",
+      "The final candidate contains one commit, authorized paths only, synchronized clean Git state and a complete report pending Work validation."
+    ],
+    "mandatoryTests": [
+      "node --test tests/emit-functional-death-candidate-prioritization.test.mjs",
+      "node --test tests/functional-death-candidate-prioritization-schema.test.mjs",
+      "node --test tests/emit-functional-death-candidate-detector.test.mjs",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run codex:preflight -- --task 197 --base bf42beee0b22bd921c245ce1b6485a1b617543a8",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs",
+      "npm.cmd run codex:validate -- --task 197 --base bf42beee0b22bd921c245ce1b6485a1b617543a8",
+      "npm.cmd run codex:review -- --task 197 --base bf42beee0b22bd921c245ce1b6485a1b617543a8"
+    ],
+    "requiredEvidence": [
+      "Versioned split manifest and frozen configuration recorded before reserved-validation metrics.",
+      "Baseline V1 denominators and separate development, reserved-validation and bounded-32 V2 metrics.",
+      "Candidate counts, capture rates/gap, priority distribution, p50/p90, 32-replay coverage and semantic counters.",
+      "Byte-identical replay_010 prioritized output from two executions.",
+      "Post-commit attestation with real commit, base, branch, changed files, checks, artifacts, push evidence and VALIDATING status."
+    ],
+    "commitPolicy": [
+      "Stage only exact authorized Task 197 paths and create one commit named Build death candidate selectivity and ranking v2.",
+      "Do not amend Task 196, use git add dot/all, force-push, create a second commit or claim Task 197 acceptance."
+    ],
+    "stopConditions": [
+      "Stop on split leakage, label use in scoring, Task 196 mutation, protected path access, denominator mismatch or semantic death claim.",
+      "Do not retune after reserved-validation metrics are produced; emit the declared useful negative gate when criteria fail.",
+      "Stop after Task 197 handoff in VALIDATING and do not create Task 198."
+    ],
+    "returnReportFormat": [
+      "Use every section in docs/codex/CODEX_REPORT_TEMPLATE.md for the technical artifact.",
+      "Lead with selectivity result, prioritized functionality, before/after metrics, split results, module conclusion, conditional next objective and one-execution forecast.",
+      "Final acceptance remains pending independent ChatGPT Work validation."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tasks/specs/196.json",
+    "reports/functional-death-candidate-detector-task196.md",
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/functional-death-candidates.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json",
+    "output/local-replay-processing/replay-wide-hard-challenger-census/task193-bounded32/structural-cluster-ledger.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "tools/emit-functional-death-candidate-prioritization.mjs",
+    "schemas/functional-death-candidate-prioritization.schema.json",
+    "tests/emit-functional-death-candidate-prioritization.test.mjs",
+    "tests/functional-death-candidate-prioritization-schema.test.mjs",
+    "docs/codex/FUNCTIONAL_DEATH_CANDIDATE_PRIORITIZATION_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/197.json",
+    "tasks/completed/197-functional-death-candidate-selectivity.md",
+    "reports/functional-death-candidate-selectivity-task197.md",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/**",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-summary.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-gate.json"
+  ],
+  "forbiddenPaths": [
+    "tools/emit-functional-death-candidate-detector.mjs",
+    "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/**",
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tasks/specs/198.json",
+    "tasks/*/198-*",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {"id": "prioritization-unit", "type": "node-test", "paths": ["tests/emit-functional-death-candidate-prioritization.test.mjs"]},
+    {"id": "prioritization-schema", "type": "node-test", "paths": ["tests/functional-death-candidate-prioritization-schema.test.mjs"]},
+    {"id": "v1-regression", "type": "node-test", "paths": ["tests/emit-functional-death-candidate-detector.test.mjs"]},
+    {"id": "coordination-validator", "type": "npm-script", "script": "validate:coordination"},
+    {"id": "task-queue", "type": "npm-script", "script": "validate:tasks"},
+    {"id": "lint", "type": "npm-script", "script": "lint"},
+    {"id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "output\\\\04-controller-pawn-lifecycle.json"}
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/gate.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/summary.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/prioritized-candidates.json",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/frozen-development-config.json",
+    "reports/functional-death-candidate-selectivity-task197.md",
+    "tasks/completed/197-functional-death-candidate-selectivity.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/prioritized-candidates.json"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay_005 through replay_008 or any replay binary.",
+    "Never modify Task 196 detector/output, package implementations, samples or replay inputs.",
+    "Never use evaluation labels as score inputs or emit confirmed death semantics.",
+    "Do not create Task 198; stop after Task 197 handoff in VALIDATING."
+  ],
+  "successGate": "death_candidate_selectivity_and_ranking_v2_ready",
+  "blockedGate": "structural_features_insufficient_for_candidate_selectivity",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

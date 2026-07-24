@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "196",
-  "baseCommit": "edf5dd86afae10b976d586e05c4b5016b7556700",
-  "taskRange": "001-196",
+  "generatedAtTask": "197",
+  "baseCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
+  "taskRange": "001-197",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -5982,7 +5982,7 @@
     {
       "taskId": "196",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
       "title": "Build Functional Death-Candidate Detector MVP",
       "phase": "functional_death_candidate_detector",
       "primaryContribution": "Built and executed a deterministic replay-to-candidate detector across the accepted bounded-32 membership and repaired factual-null report validation.",
@@ -5996,7 +5996,7 @@
         "reports/functional-death-candidate-detector-task196.md"
       ],
       "gate": "functional_death_candidate_detector_mvp_bounded32_ready",
-      "currentRelevance": "candidate_mvp_complete_pending_work_validation",
+      "currentRelevance": "accepted_with_selectivity_blocker",
       "dependsOn": ["180", "183", "190", "192", "195"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6004,11 +6004,43 @@
         "Known-anchor and hard-challenger overlaps are evaluation annotations only.",
         "No final death fact, victim identity, attribution or gameplay interpretation is produced."
       ],
-      "evidenceStatus": "functional_mvp_complete_pending_work_validation",
+      "evidenceStatus": "accepted_with_detector_selectivity_not_demonstrated",
       "evidencePaths": [
         "tasks/specs/196.json",
         "tasks/completed/196-functional-death-candidate-detector-mvp.md",
         "output/local-replay-processing/functional-death-candidate-detector/task196-bounded32/summary.json"
+      ]
+    },
+    {
+      "taskId": "197",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Death-Candidate Selectivity And Ranking V2",
+      "phase": "death_candidate_selectivity_and_ranking",
+      "primaryContribution": "Built a deterministic V2 priority layer, froze its structural configuration on the development split, and demonstrated on reserved validation that the current signals cannot meet the required anchor-versus-hard-challenger separation.",
+      "introducedCapabilities": ["death_candidate_selectivity_and_ranking"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-functional-death-candidate-prioritization.mjs",
+        "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/prioritized-candidates.json",
+        "output/local-replay-processing/functional-death-candidate-detector/task197-gate.json",
+        "reports/functional-death-candidate-selectivity-task197.md"
+      ],
+      "gate": "structural_features_insufficient_for_candidate_selectivity",
+      "currentRelevance": "candidate_conclusive_negative_pending_work_validation",
+      "dependsOn": ["193", "195", "196"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Reserved-validation separation was only 4.647 percentage points, below the required 10 points.",
+        "Priority scores and tiers rank structural hypotheses and are not calibrated death probabilities.",
+        "Further tuning on the same signals is closed; new semantic evidence or ground truth is required."
+      ],
+      "evidenceStatus": "conclusive_negative_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/197.json",
+        "tasks/completed/197-functional-death-candidate-selectivity.md",
+        "output/local-replay-processing/functional-death-candidate-detector/task197-summary.json"
       ]
     }
   ]

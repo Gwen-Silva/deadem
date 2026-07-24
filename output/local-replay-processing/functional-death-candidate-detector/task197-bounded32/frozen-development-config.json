@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "frozenBeforeReservedValidation": true,
+  "selectionBasis": "development_split_only",
+  "developmentReplayIds": [
+    "replay_001",
+    "replay_002",
+    "replay_003",
+    "replay_009",
+    "replay_010",
+    "replay_011",
+    "replay_013",
+    "replay_014",
+    "replay_015",
+    "replay_017",
+    "replay_018",
+    "replay_019",
+    "replay_021",
+    "replay_022",
+    "replay_023",
+    "replay_025",
+    "replay_026",
+    "replay_027",
+    "replay_029",
+    "replay_030",
+    "replay_031",
+    "replay_033",
+    "replay_034",
+    "replay_035"
+  ],
+  "reservedValidationReplayIds": [
+    "replay_004",
+    "replay_012",
+    "replay_016",
+    "replay_020",
+    "replay_024",
+    "replay_028",
+    "replay_032",
+    "replay_036"
+  ],
+  "configuration": {
+    "configurationId": "task197-development-frozen-v2",
+    "weights": {
+      "family_diversity": 0.2,
+      "surface_support": 0.25,
+      "observed_horizon": 0.25,
+      "same_surface_recurrence": 0.2,
+      "temporal_density": 0.1
+    },
+    "normalization": {
+      "maximumFamilies": 3,
+      "maximumSurfaces": 2,
+      "maximumHorizonSeconds": 180,
+      "maximumRecurrence": 10,
+      "maximumNearestGapSeconds": 1800
+    },
+    "selectionThreshold": 0.65,
+    "priorityThresholds": {
+      "high": 0.9,
+      "medium": 0.78,
+      "low": 0.65
+    },
+    "scoreInputs": [
+      "family_count",
+      "surface_count",
+      "observed_horizon_seconds",
+      "same_surface_recurrence",
+      "nearest_same_surface_gap_seconds"
+    ]
+  },
+  "developmentMetricsAtFreeze": {
+    "replayCount": 24,
+    "replayIds": [
+      "replay_001",
+      "replay_002",
+      "replay_003",
+      "replay_009",
+      "replay_010",
+      "replay_011",
+      "replay_013",
+      "replay_014",
+      "replay_015",
+      "replay_017",
+      "replay_018",
+      "replay_019",
+      "replay_021",
+      "replay_022",
+      "replay_023",
+      "replay_025",
+      "replay_026",
+      "replay_027",
+      "replay_029",
+      "replay_030",
+      "replay_031",
+      "replay_033",
+      "replay_034",
+      "replay_035"
+    ],
+    "clusterCount": 2125,
+    "v1CandidateCount": 2005,
+    "v2CandidateCount": 1906,
+    "candidateReduction": 99,
+    "anchorPopulation": 1922,
+    "anchorMatches": 1822,
+    "anchorCapturePercent": 94.797,
+    "hardChallengerPopulation": 69,
+    "hardChallengerMatches": 58,
+    "hardChallengerCapturePercent": 84.058,
+    "captureDifferencePercentagePoints": 10.739,
+    "priorityDistribution": {
+      "high": 831,
+      "medium": 838,
+      "low": 237
+    },
+    "scoreDistribution": {
+      "minimum": 0.651055,
+      "maximum": 0.999222,
+      "mean": 0.87264,
+      "p50": 0.881278,
+      "p90": 0.988222
+    }
+  },
+  "configurationSha256": "82831296ed7561072851b9ffafef29275d744dc20328685563346146b15b1ef7"
+}
