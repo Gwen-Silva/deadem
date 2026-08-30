@@ -2075,3 +2075,18 @@ are ready, while match ID, build, date, players, teams, heroes and result remain
 declared gaps. The next functional objective, only after independent Work
 validation and separate authorization, is `Minimum Factual Review Telemetry`.
 No Task 199 is created here.
+
+## Task 199
+
+Module: `Minimum Factual Review Telemetry`.
+
+Task 198 is Work-accepted at
+`f6bc2d857481738629a50f4dadc05c1eb098e391`. The bounded two-replay execution
+now produces continuous replay-elapsed timelines plus safe replay-local identity,
+team, hero, lifecycle, economy, aggregate damage/healing and objective-like raw
+observations. Positions are unavailable and remain a declared gap.
+
+The candidate gate is `two_match_review_telemetry_ready_with_declared_gaps`.
+After independent Work validation, the next functional objective may be
+replay-to-VOD synchronization under a separate authorization. It is not started
+here, and no Task 200 exists.

@@ -771,8 +771,8 @@
       "capabilityId": "two_match_assisted_review_intake",
       "plainName": "Two-match assisted review intake",
       "introducedInTask": "198",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_with_declared_metadata_gaps",
+      "stabilizedInTask": "198",
+      "currentStatus": "accepted_with_secondary_metadata_blocker",
       "currentBaseline": "task198_two_match_local_replay_vod_intake",
       "whyItMatters": "Creates a factual, reproducible bridge from two player-selected match replay/VOD pairs into later bounded review telemetry.",
       "mainFiles": [
@@ -790,7 +790,32 @@
         "Archmother and Hidden King context is human-supplied/player-reported and not replay-observed.",
         "The intake does not produce telemetry, final facts, attribution or gameplay interpretation."
       ],
-      "nextUsefulStep": "After independent Work validation, separately authorize Minimum Factual Review Telemetry."
+      "nextUsefulStep": "Use the accepted manifest as the identity bridge for Task 199 minimum factual telemetry."
+    },
+    {
+      "capabilityId": "minimum_factual_review_telemetry",
+      "plainName": "Minimum factual review telemetry",
+      "introducedInTask": "199",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_with_declared_gaps",
+      "currentBaseline": "task199_bounded_two_forward_only_replay_observations",
+      "whyItMatters": "Creates safe replay-elapsed timelines and factual observation families for later replay-to-VOD synchronization and assisted visual review.",
+      "mainFiles": [
+        "tools/emit-minimum-factual-review-telemetry.mjs",
+        "schemas/minimum-factual-review-telemetry.schema.json",
+        "docs/codex/MINIMUM_FACTUAL_REVIEW_TELEMETRY_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/manifest.json",
+        "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
+        "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "The normalized axis is replay elapsed time, not the displayed game clock.",
+        "Position is unavailable through the bounded source fields used.",
+        "Aggregate counter deltas have no source-target attribution and no gameplay semantics."
+      ],
+      "nextUsefulStep": "After independent Work validation, separately authorize replay-to-VOD synchronization."
     }
   ]
 }

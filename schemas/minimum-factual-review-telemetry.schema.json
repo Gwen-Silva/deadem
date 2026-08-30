@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/minimum-factual-review-telemetry.schema.json",
+  "title": "Minimum Factual Review Telemetry Availability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "families", "targets"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "families": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": { "enum": ["time", "participants", "teams", "heroes", "lifeState", "netWorth", "damage", "healing", "objectives", "positions"] }
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reviewTargetId", "availability"],
+        "properties": {
+          "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+          "availability": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["time", "participants", "teams", "heroes", "lifeState", "netWorth", "damage", "healing", "objectives", "positions"],
+            "properties": {
+              "time": { "$ref": "#/$defs/family" },
+              "participants": { "$ref": "#/$defs/family" },
+              "teams": { "$ref": "#/$defs/family" },
+              "heroes": { "$ref": "#/$defs/family" },
+              "lifeState": { "$ref": "#/$defs/family" },
+              "netWorth": { "$ref": "#/$defs/family" },
+              "damage": { "$ref": "#/$defs/family" },
+              "healing": { "$ref": "#/$defs/family" },
+              "objectives": { "$ref": "#/$defs/family" },
+              "positions": { "$ref": "#/$defs/family" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "rows", "coverage", "source", "firstTime", "lastTime", "gaps", "semanticLimitations"],
+      "properties": {
+        "status": { "enum": ["available", "partial", "unavailable", "unsafe_to_interpret"] },
+        "rows": { "type": "integer", "minimum": 0 },
+        "coverage": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "source": { "type": ["string", "null"] },
+        "firstTime": { "type": ["number", "null"], "minimum": 0 },
+        "lastTime": { "type": ["number", "null"], "minimum": 0 },
+        "gaps": { "type": "array", "items": { "type": "object" } },
+        "semanticLimitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}

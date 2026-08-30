@@ -1,0 +1,267 @@
+{
+  "families": [
+    "time",
+    "participants",
+    "teams",
+    "heroes",
+    "lifeState",
+    "netWorth",
+    "damage",
+    "healing",
+    "objectives",
+    "positions"
+  ],
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "availability": {
+        "damage": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 4837,
+          "semanticLimitations": [
+            "No source-target attribution or fight semantics."
+          ],
+          "source": "positive deltas of aggregate replay counters",
+          "status": "partial"
+        },
+        "healing": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 10229,
+          "semanticLimitations": [
+            "No source-target attribution or fight semantics."
+          ],
+          "source": "positive deltas of aggregate replay counters",
+          "status": "partial"
+        },
+        "heroes": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 13,
+          "semanticLimitations": [
+            "Hero IDs are not renamed without a validated mapping."
+          ],
+          "source": "controller m_nHeroID observations",
+          "status": "available"
+        },
+        "lifeState": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 63965,
+          "semanticLimitations": [
+            "Observed state only; no killer, victim, assist, or confirmed death fact."
+          ],
+          "source": "explicit lifecycle-related controller/pawn fields",
+          "status": "partial"
+        },
+        "netWorth": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 63965,
+          "semanticLimitations": [
+            "No strategic advantage interpretation."
+          ],
+          "source": "controller m_iGoldNetWorth observations",
+          "status": "available"
+        },
+        "objectives": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 16083,
+          "semanticLimitations": [
+            "No destruction, completion, contest, Rift fight, push, or setup semantics."
+          ],
+          "source": "raw configured structure/objective-like entity observations",
+          "status": "partial"
+        },
+        "participants": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 14,
+          "semanticLimitations": [
+            "No synthetic reference is promoted to a real player name."
+          ],
+          "source": "controller/pawn replay-local references",
+          "status": "available"
+        },
+        "positions": {
+          "coverage": null,
+          "firstTime": null,
+          "gaps": [],
+          "lastTime": null,
+          "rows": 0,
+          "semanticLimitations": [
+            "No lane, region, world-to-map transform, or named area semantics."
+          ],
+          "source": "raw pawn coordinates with mathematical displacement/speed",
+          "status": "unavailable"
+        },
+        "teams": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 3,
+          "semanticLimitations": [
+            "Raw replay team references only."
+          ],
+          "source": "controller m_iTeamNum observations",
+          "status": "available"
+        },
+        "time": {
+          "coverage": 1,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 4570,
+          "rows": 4571,
+          "semanticLimitations": [
+            "Not asserted as displayed in-game clock."
+          ],
+          "source": "replay tick + parser tickRate normalized as replay elapsed seconds",
+          "status": "available"
+        }
+      },
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "availability": {
+        "damage": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 3122,
+          "semanticLimitations": [
+            "No source-target attribution or fight semantics."
+          ],
+          "source": "positive deltas of aggregate replay counters",
+          "status": "partial"
+        },
+        "healing": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 4408,
+          "semanticLimitations": [
+            "No source-target attribution or fight semantics."
+          ],
+          "source": "positive deltas of aggregate replay counters",
+          "status": "partial"
+        },
+        "heroes": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 13,
+          "semanticLimitations": [
+            "Hero IDs are not renamed without a validated mapping."
+          ],
+          "source": "controller m_nHeroID observations",
+          "status": "available"
+        },
+        "lifeState": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 31350,
+          "semanticLimitations": [
+            "Observed state only; no killer, victim, assist, or confirmed death fact."
+          ],
+          "source": "explicit lifecycle-related controller/pawn fields",
+          "status": "partial"
+        },
+        "netWorth": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 31350,
+          "semanticLimitations": [
+            "No strategic advantage interpretation."
+          ],
+          "source": "controller m_iGoldNetWorth observations",
+          "status": "available"
+        },
+        "objectives": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 10484,
+          "semanticLimitations": [
+            "No destruction, completion, contest, Rift fight, push, or setup semantics."
+          ],
+          "source": "raw configured structure/objective-like entity observations",
+          "status": "partial"
+        },
+        "participants": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 15,
+          "semanticLimitations": [
+            "No synthetic reference is promoted to a real player name."
+          ],
+          "source": "controller/pawn replay-local references",
+          "status": "available"
+        },
+        "positions": {
+          "coverage": null,
+          "firstTime": null,
+          "gaps": [],
+          "lastTime": null,
+          "rows": 0,
+          "semanticLimitations": [
+            "No lane, region, world-to-map transform, or named area semantics."
+          ],
+          "source": "raw pawn coordinates with mathematical displacement/speed",
+          "status": "unavailable"
+        },
+        "teams": {
+          "coverage": null,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 3,
+          "semanticLimitations": [
+            "Raw replay team references only."
+          ],
+          "source": "controller m_iTeamNum observations",
+          "status": "available"
+        },
+        "time": {
+          "coverage": 1,
+          "firstTime": 0,
+          "gaps": [],
+          "lastTime": 2093,
+          "rows": 2094,
+          "semanticLimitations": [
+            "Not asserted as displayed in-game clock."
+          ],
+          "source": "replay tick + parser tickRate normalized as replay elapsed seconds",
+          "status": "available"
+        }
+      },
+      "reviewTargetId": "review_match_002"
+    }
+  ]
+}

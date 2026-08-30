@@ -973,20 +973,50 @@
     {
       "id": "two_match_assisted_review_intake_task198_manifest",
       "path": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
-      "status": "candidate_ready_with_declared_metadata_gaps",
+      "status": "accepted_with_secondary_metadata_blocker",
       "notes": "Two resolved review targets and four observed local inputs with hashes, sizes, formats, durations and separated provenance."
     },
     {
       "id": "two_match_assisted_review_intake_task198_summary",
       "path": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/summary.json",
-      "status": "candidate_ready_with_declared_metadata_gaps",
+      "status": "accepted_with_secondary_metadata_blocker",
       "notes": "Functional intake summary: 2/2 targets, 4/4 inputs, zero ambiguity, reuse, protected access, heavy binaries, final facts or attribution."
     },
     {
       "id": "two_match_assisted_review_intake_task198_gate",
       "path": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/gate.json",
+      "status": "accepted_with_secondary_metadata_blocker",
+      "notes": "Work accepted two_match_review_targets_ready_with_declared_metadata_gaps at f6bc2d857481738629a50f4dadc05c1eb098e391."
+    },
+    {
+      "id": "minimum_factual_review_telemetry_task199_manifest",
+      "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/manifest.json",
+      "status": "candidate_ready_with_declared_gaps",
+      "notes": "Two identity-validated replay targets with local-only detailed artifact hashes and parser tick bounds."
+    },
+    {
+      "id": "minimum_factual_review_telemetry_task199_availability",
+      "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
+      "status": "candidate_ready_with_declared_gaps",
+      "notes": "Complete ten-family availability matrix for both targets; position is explicitly unavailable."
+    },
+    {
+      "id": "minimum_factual_review_telemetry_task199_summary",
+      "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/summary.json",
+      "status": "candidate_ready_with_declared_gaps",
+      "notes": "2/2 usable timelines, aggregate factual family counts, zero parser failures and declared gaps."
+    },
+    {
+      "id": "minimum_factual_review_telemetry_task199_gate",
+      "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/gate.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Technical gate two_match_review_targets_ready_with_declared_metadata_gaps pending independent Work validation."
+      "notes": "Technical gate two_match_review_telemetry_ready_with_declared_gaps pending independent Work validation."
+    },
+    {
+      "id": "minimum_factual_review_telemetry_task199_provenance",
+      "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/provenance-audit.json",
+      "status": "candidate_ready_with_declared_gaps",
+      "notes": "Records factual and derived classes, zero protected access, final facts, attribution, interpretation and heavy versioned binaries."
     }
   ]
 }

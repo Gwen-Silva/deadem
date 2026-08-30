@@ -1,0 +1,139 @@
+{
+  "artifactClass": "minimum_factual_review_telemetry",
+  "generatedAtLogical": "task_199",
+  "generatedBy": "tools/emit-minimum-factual-review-telemetry.mjs",
+  "intakeManifest": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "input": {
+        "expectedSha256": "142d84c70a977a12c63a324cddae97f8edd7c1446755263d7b520ecde20521e3",
+        "filename": "partida_scrim_01.dem",
+        "identityValidated": true,
+        "observedSha256": "142d84c70a977a12c63a324cddae97f8edd7c1446755263d7b520ecde20521e3",
+        "sizeBytes": 957801390
+      },
+      "localArtifacts": {
+        "damage": {
+          "path": ".local/deadem/review-telemetry/review_match_001/damage-deltas.jsonl",
+          "sha256": "2dc287296d898941ee6fa7415d49541b1a1fd78c4a5751d9c2d4bdfe9cd4bcdc",
+          "sizeBytes": 1448546
+        },
+        "healing": {
+          "path": ".local/deadem/review-telemetry/review_match_001/healing-deltas.jsonl",
+          "sha256": "2bedc2d368383bf2d89875008ff34ff01c0b1956ed8e3d47e3cbba365cc4a0dc",
+          "sizeBytes": 3064290
+        },
+        "lifeState": {
+          "path": ".local/deadem/review-telemetry/review_match_001/life-state-observations.jsonl",
+          "sha256": "7bd1a156891e1849aac19474b71d2087018fb41dab881bdddd38dcb7f00f0261",
+          "sizeBytes": 17946431
+        },
+        "netWorth": {
+          "path": ".local/deadem/review-telemetry/review_match_001/net-worth-samples.jsonl",
+          "sha256": "0b8915f4ce95c685606ba830aa21b95250bcbbbe87997b794df4395d85296b9c",
+          "sizeBytes": 13759756
+        },
+        "objectives": {
+          "path": ".local/deadem/review-telemetry/review_match_001/objective-observations.jsonl",
+          "sha256": "dcf8a5c10b07429ed4a23687d0574476e09d7d15ce85a640e9a22192905bb843",
+          "sizeBytes": 5080014
+        },
+        "observations": {
+          "path": ".local/deadem/review-telemetry/review_match_001/participant-observations.jsonl",
+          "sha256": "ff8254aad85f9b0a64c55b98a08e2c1a09d14f788fbfb94a93073a589d404734",
+          "sizeBytes": 40617797
+        },
+        "participants": {
+          "path": ".local/deadem/review-telemetry/review_match_001/participants.json",
+          "sha256": "b1d01992abd29d1c3330298bdda419ce6020a633a59a71b0dc26358d5ce1a9d6",
+          "sizeBytes": 4378
+        },
+        "positions": {
+          "path": ".local/deadem/review-telemetry/review_match_001/position-samples.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sizeBytes": 0
+        },
+        "timeline": {
+          "path": ".local/deadem/review-telemetry/review_match_001/timeline.jsonl",
+          "sha256": "f04110562f617c478d076e42d2d0472087d6ae0a384639c7c5b656351a152093",
+          "sizeBytes": 701085
+        }
+      },
+      "parser": {
+        "parser": "deadem.Player.forward_only",
+        "parserEndTick": 292527,
+        "parserStartTick": 0,
+        "sourceFirstTick": -1,
+        "tickRate": 64
+      },
+      "processingStatus": "usable",
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "input": {
+        "expectedSha256": "ce16fc346baf2635c50df08022c7052abe47b6d5b87e633141b9f901d76f806f",
+        "filename": "partida_scrim_02.dem",
+        "identityValidated": true,
+        "observedSha256": "ce16fc346baf2635c50df08022c7052abe47b6d5b87e633141b9f901d76f806f",
+        "sizeBytes": 498881946
+      },
+      "localArtifacts": {
+        "damage": {
+          "path": ".local/deadem/review-telemetry/review_match_002/damage-deltas.jsonl",
+          "sha256": "edd7207450ae2015aacd01db9a7be0e40f8e019455711f4724fa551785469d31",
+          "sizeBytes": 930046
+        },
+        "healing": {
+          "path": ".local/deadem/review-telemetry/review_match_002/healing-deltas.jsonl",
+          "sha256": "7a3fc6b38ad0c3026cfcb34d5e098a3a32bba97499feadc1565a072eafb118a2",
+          "sizeBytes": 1312917
+        },
+        "lifeState": {
+          "path": ".local/deadem/review-telemetry/review_match_002/life-state-observations.jsonl",
+          "sha256": "527cfcae96f8779668f9f63458ca76d207ec803e0a0489ffc3957cd8e66256fe",
+          "sizeBytes": 8760134
+        },
+        "netWorth": {
+          "path": ".local/deadem/review-telemetry/review_match_002/net-worth-samples.jsonl",
+          "sha256": "cd8abe3b381fb4b37c494b1f461170e39e1ef62f436425f7576c97429e03595e",
+          "sizeBytes": 6689929
+        },
+        "objectives": {
+          "path": ".local/deadem/review-telemetry/review_match_002/objective-observations.jsonl",
+          "sha256": "c68a20b6c3afd8979dd8637d543addb467ac53509bed669cb50de3b89fc4c90f",
+          "sizeBytes": 3297040
+        },
+        "observations": {
+          "path": ".local/deadem/review-telemetry/review_match_002/participant-observations.jsonl",
+          "sha256": "e871b6077e14f62997e25240fba25d608a7877b4bd863edfc6a9cf79c259f2ad",
+          "sizeBytes": 19758447
+        },
+        "participants": {
+          "path": ".local/deadem/review-telemetry/review_match_002/participants.json",
+          "sha256": "2851fe3ea529400422588590c06f4a51a62da1e466eb0364b0f5868b78b465a2",
+          "sizeBytes": 4675
+        },
+        "positions": {
+          "path": ".local/deadem/review-telemetry/review_match_002/position-samples.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sizeBytes": 0
+        },
+        "timeline": {
+          "path": ".local/deadem/review-telemetry/review_match_002/timeline.jsonl",
+          "sha256": "1073a57c86ba781711a0f73b858305eef3d52e3f87ce2f43a4432fef937293ce",
+          "sizeBytes": 319627
+        }
+      },
+      "parser": {
+        "parser": "deadem.Player.forward_only",
+        "parserEndTick": 133954,
+        "parserStartTick": 0,
+        "sourceFirstTick": -1,
+        "tickRate": 64
+      },
+      "processingStatus": "usable",
+      "reviewTargetId": "review_match_002"
+    }
+  ]
+}

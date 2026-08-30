@@ -1629,3 +1629,23 @@ replay access, heavy binaries, final facts or attribution were emitted.
 Task 198 is `VALIDATING` pending independent Work acceptance. `Minimum Factual
 Review Telemetry` is the recommended next functional objective, but it is not
 started or authorized by this handoff. No Task 199 exists.
+
+## Task 199 - Minimum Factual Review Telemetry
+
+ChatGPT Work accepted Task 198 at
+`f6bc2d857481738629a50f4dadc05c1eb098e391` with the non-invalidating secondary
+metadata blocker and authorized the two accepted replay inputs as the complete
+bounded scope.
+
+Both replay SHA-256 identities match the Task 198 manifest. Forward-only parser
+sampling produced continuous replay-elapsed timelines covering 0-4,570 seconds
+for `review_match_001` and 0-2,093 seconds for `review_match_002`. Replay-local
+participant/team/hero references, lifecycle state, net worth, aggregate
+damage/healing counter deltas and objective-like raw observations are available
+or partial. Position is explicitly unavailable.
+
+The gate is `two_match_review_telemetry_ready_with_declared_gaps`. Detailed
+telemetry remains local and ignored; five compact artifacts are deterministic.
+There are zero protected replay accesses, heavy versioned binaries, final facts,
+attributions or gameplay interpretations. Task 199 is `VALIDATING` pending Work.
+No Task 200 exists.

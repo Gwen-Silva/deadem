@@ -2,16 +2,16 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 197 at `6b13a6199e0dec752cc54d92d98ec3990e76e1cf`. ChatGPT Work accepted the conclusive negative `structural_features_insufficient_for_candidate_selectivity`; the structural selectivity module is closed without further tuning on the same signals.
+Last accepted task: Task 198 at `f6bc2d857481738629a50f4dadc05c1eb098e391`. ChatGPT Work accepted `two_match_review_targets_ready_with_declared_metadata_gaps` with the non-invalidating blocker `secondary_review_factual_metadata_unavailable`.
 
-Active candidate: Task 198, `Two-Match Assisted Review Intake`. Coordination status: `VALIDATING`.
+Active candidate: Task 199, `Minimum Factual Review Telemetry`. Coordination status: `VALIDATING`.
 
-The Windows desktop executor resolved 2/2 review targets from 4/4 explicit local slots. `review_match_001` associates `partida_scrim_01.dem` with `Scrim_01_SSR.mp4`; `review_match_002` associates `partida_scrim_02.dem` with `Scrim_02_SSR.mp4`. Association is human-supplied by exclusive slot, with zero ambiguity or input reuse.
+Both accepted replay inputs were revalidated against their Task 198 streaming SHA-256 and processed forward-only. `review_match_001` has a continuous replay-elapsed timeline from 0 through 4,570 seconds; `review_match_002` covers 0 through 2,093 seconds. Neither axis is represented as the displayed game clock.
 
-Every input has an observed local path, original filename, byte size, streaming SHA-256 and bounded format identification. Both replays carry the `PBDEMS2` Source 2 demo signature. VOD duration is 6,541.966 seconds for review_match_001 and 2,118.966 seconds for review_match_002.
+Replay-local participant, team and hero references, lifecycle-related raw state, net-worth samples, aggregate damage/healing counter deltas and objective/structure-like raw observations are available or partial for both targets. Position is explicitly unavailable. No killer, victim, assist, fight, strategy, lane, named region, objective completion or gameplay interpretation is emitted.
 
-The technical gate is `two_match_review_targets_ready_with_declared_metadata_gaps`. Match ID, replay build, date, players, teams, heroes and result remain null or empty. Archmother/Hidden King rosters and context remain strictly `human_supplied/player_reported`; no inferred gameplay metadata, final fact or attribution was produced.
+The technical gate is `two_match_review_telemetry_ready_with_declared_gaps`. Detailed telemetry and caches remain ignored under `.local/deadem/review-telemetry`; only five deterministic compact artifacts are versioned. Replays 005-008 were not accessed, heavy binaries remain unversioned, and final-fact/attribution counts are zero.
 
-Replay 005 remains protected; replays 006-008 remain excluded bot fixtures. None was accessed. Heavy replay/video binaries remain local and ignored; zero are versioned. ChatGPT Work must independently validate Task 198. No Task 199 exists.
+ChatGPT Work must independently validate Task 199. No Task 200 exists and replay-to-VOD synchronization has not started.
 
 Machine-readable state: `data/project-coordination-state.json`.
