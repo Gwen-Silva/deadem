@@ -2,16 +2,16 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 196 at `bf42beee0b22bd921c245ce1b6485a1b617543a8`. ChatGPT Work accepted the Functional Death-Candidate Detector MVP with blocker `detector_selectivity_not_demonstrated`. The MVP module is completed and preserves 2,664 deterministic unconfirmed structural candidates as the V1 baseline.
+Last accepted task: Task 197 at `6b13a6199e0dec752cc54d92d98ec3990e76e1cf`. ChatGPT Work accepted the conclusive negative `structural_features_insufficient_for_candidate_selectivity`; the structural selectivity module is closed without further tuning on the same signals.
 
-Active candidate: Task 197, `Death-Candidate Selectivity And Ranking V2`. Coordination status: `VALIDATING`.
+Active candidate: Task 198, `Two-Match Assisted Review Intake`. Coordination status: `VALIDATING`.
 
-The V2 configuration was selected on 24 development replays and frozen before the eight reserved validation replays were evaluated. It reduced the full list from 2,664 to 2,537 candidates, populated all three priority tiers, and changed p50/p90 from 1.0/1.0 to 0.884278/0.988167. Replay_010 was byte-identical across two executions.
+The Windows desktop executor resolved 2/2 review targets from 4/4 explicit local slots. `review_match_001` associates `partida_scrim_01.dem` with `Scrim_01_SSR.mp4`; `review_match_002` associates `partida_scrim_02.dem` with `Scrim_02_SSR.mp4`. Association is human-supplied by exclusive slot, with zero ambiguity or input reuse.
 
-The reserved-validation result is conclusively negative under `structural_features_insufficient_for_candidate_selectivity`. Anchor capture was 95.556%; hard-challenger capture was 90.909%; the 4.647-point difference is below the required 10 points. The list is ranked, but the existing structural features do not demonstrate adequate selectivity. No further tuning on these same signals is authorized by this handoff.
+Every input has an observed local path, original filename, byte size, streaming SHA-256 and bounded format identification. Both replays carry the `PBDEMS2` Source 2 demo signature. VOD duration is 6,541.966 seconds for review_match_001 and 2,118.966 seconds for review_match_002.
 
-All 32 authorized replays were represented with zero failures. Replay 005 remained protected; replays 006-008 remained excluded bot fixtures. No final death fact, confirmed non-death, victim identity, attribution, killer/victim, teamfight or gameplay interpretation was produced.
+The technical gate is `two_match_review_targets_ready_with_declared_metadata_gaps`. Match ID, replay build, date, players, teams, heroes and result remain null or empty. Archmother/Hidden King rosters and context remain strictly `human_supplied/player_reported`; no inferred gameplay metadata, final fact or attribution was produced.
 
-ChatGPT Work must independently validate Task 197. Any later capability requires a separate authorization and new semantic evidence or ground truth. No Task 198 exists.
+Replay 005 remains protected; replays 006-008 remain excluded bot fixtures. None was accessed. Heavy replay/video binaries remain local and ignored; zero are versioned. ChatGPT Work must independently validate Task 198. No Task 199 exists.
 
 Machine-readable state: `data/project-coordination-state.json`.

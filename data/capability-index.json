@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "197",
+  "generatedAtTask": "198",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -747,7 +747,7 @@
       "plainName": "Death-candidate selectivity and ranking V2",
       "introducedInTask": "197",
       "stabilizedInTask": null,
-      "currentStatus": "candidate_conclusive_negative",
+      "currentStatus": "concluded_structural_features_insufficient",
       "currentBaseline": "task197_frozen_structural_priority_v2",
       "whyItMatters": "Publishes a deterministic within-replay priority list and tests structural selectivity without using evaluation labels as score inputs.",
       "mainFiles": [
@@ -765,7 +765,32 @@
         "The V2 reduced candidates and score saturation but did not demonstrate the required selectivity.",
         "Priorities remain unconfirmed structural hypotheses; no final facts or attribution are enabled."
       ],
-      "nextUsefulStep": "After independent Work validation, any separately authorized evolution must add semantic evidence or ground truth rather than retune the same structural signals."
+      "nextUsefulStep": "Retain the V2 as accepted experimental ranking evidence; do not retune the same structural signals."
+    },
+    {
+      "capabilityId": "two_match_assisted_review_intake",
+      "plainName": "Two-match assisted review intake",
+      "introducedInTask": "198",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_with_declared_metadata_gaps",
+      "currentBaseline": "task198_two_match_local_replay_vod_intake",
+      "whyItMatters": "Creates a factual, reproducible bridge from two player-selected match replay/VOD pairs into later bounded review telemetry.",
+      "mainFiles": [
+        "tools/emit-two-match-assisted-review-intake.mjs",
+        "schemas/two-match-assisted-review-intake.schema.json",
+        "docs/codex/TWO_MATCH_ASSISTED_REVIEW_INTAKE_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+        "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/summary.json",
+        "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "Match ID, replay build, date, players, teams, heroes and result remain declared gaps.",
+        "Archmother and Hidden King context is human-supplied/player-reported and not replay-observed.",
+        "The intake does not produce telemetry, final facts, attribution or gameplay interpretation."
+      ],
+      "nextUsefulStep": "After independent Work validation, separately authorize Minimum Factual Review Telemetry."
     }
   ]
 }

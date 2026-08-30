@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "two_match_assisted_review_intake",
+  "generatedBy": "tools/emit-two-match-assisted-review-intake.mjs",
+  "generatedAt": "task_198",
+  "targetNamespace": "assisted_review_target",
+  "associationPolicy": "human_supplied_exclusive_slot",
+  "targetCount": 2,
+  "inputCount": 4,
+  "reviewTargetIds": [
+    "review_match_001",
+    "review_match_002"
+  ],
+  "targets": [
+    {
+      "reviewTargetId": "review_match_001",
+      "association": {
+        "status": "resolved",
+        "method": "human_supplied_exclusive_slot",
+        "ambiguityCount": 0,
+        "reuseCount": 0
+      },
+      "inputs": {
+        "replay": {
+          "filenameOriginal": "partida_scrim_01.dem",
+          "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_001\\replay\\partida_scrim_01.dem",
+          "sourceSlot": ".local/deadem/review-targets/review_match_001/replay",
+          "extension": ".dem",
+          "sizeBytes": 957801390,
+          "sha256": "142d84c70a977a12c63a324cddae97f8edd7c1446755263d7b520ecde20521e3",
+          "format": "source2_demo_pbde_ms2",
+          "signature": "PBDEMS2",
+          "provenanceClass": "factual/local_file_observed"
+        },
+        "video": {
+          "filenameOriginal": "Scrim_01_SSR.mp4",
+          "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_001\\video\\Scrim_01_SSR.mp4",
+          "sourceSlot": ".local/deadem/review-targets/review_match_001/video",
+          "extension": ".mp4",
+          "sizeBytes": 5177515603,
+          "sha256": "b2bc8aa94b94fff12eeb14b3c060578dbdf262ccbf24e76f2de3713c4a8b7f05",
+          "format": "iso_base_media_mp4",
+          "majorBrand": "iso4",
+          "durationSeconds": 6541.966,
+          "probeMethod": "mp4_mvhd_random_access",
+          "provenanceClass": "factual/local_file_observed"
+        }
+      },
+      "factualMetadata": {
+        "provenanceClass": "factual/replay_observed",
+        "matchId": null,
+        "replayBuild": null,
+        "date": null,
+        "players": [],
+        "teams": [],
+        "heroes": [],
+        "result": null,
+        "gaps": [
+          "match_id",
+          "replay_build",
+          "match_date",
+          "players",
+          "teams",
+          "heroes",
+          "result"
+        ]
+      },
+      "humanSuppliedMetadata": {
+        "provenanceClass": "human_supplied/player_reported",
+        "label": "Archmother",
+        "roster": [
+          "Wraith",
+          "Lady Geist",
+          "Bebop",
+          "Mo & Krill",
+          "Rem",
+          "Shiv"
+        ],
+        "context": [
+          "draft adaptado",
+          "plano menos claro",
+          "partida muito disputada",
+          "vantagem relevante em determinados momentos",
+          "percepção de que três grandes lutas de Rift foram decisivas para perder a vantagem",
+          "hipótese de problemas de execução e tomada de decisão"
+        ]
+      },
+      "inferredMetadata": {
+        "provenanceClass": "inferred",
+        "values": [],
+        "gaps": [
+          "No inferred match or gameplay metadata was produced by Task 198."
+        ]
+      }
+    },
+    {
+      "reviewTargetId": "review_match_002",
+      "association": {
+        "status": "resolved",
+        "method": "human_supplied_exclusive_slot",
+        "ambiguityCount": 0,
+        "reuseCount": 0
+      },
+      "inputs": {
+        "replay": {
+          "filenameOriginal": "partida_scrim_02.dem",
+          "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_002\\replay\\partida_scrim_02.dem",
+          "sourceSlot": ".local/deadem/review-targets/review_match_002/replay",
+          "extension": ".dem",
+          "sizeBytes": 498881946,
+          "sha256": "ce16fc346baf2635c50df08022c7052abe47b6d5b87e633141b9f901d76f806f",
+          "format": "source2_demo_pbde_ms2",
+          "signature": "PBDEMS2",
+          "provenanceClass": "factual/local_file_observed"
+        },
+        "video": {
+          "filenameOriginal": "Scrim_02_SSR.mp4",
+          "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_002\\video\\Scrim_02_SSR.mp4",
+          "sourceSlot": ".local/deadem/review-targets/review_match_002/video",
+          "extension": ".mp4",
+          "sizeBytes": 1681066806,
+          "sha256": "852d444c1648bdbe7c35cb234127868bc991dec2d323df1496d4aa89fb8bfaa4",
+          "format": "iso_base_media_mp4",
+          "majorBrand": "iso4",
+          "durationSeconds": 2118.966,
+          "probeMethod": "mp4_mvhd_random_access",
+          "provenanceClass": "factual/local_file_observed"
+        }
+      },
+      "factualMetadata": {
+        "provenanceClass": "factual/replay_observed",
+        "matchId": null,
+        "replayBuild": null,
+        "date": null,
+        "players": [],
+        "teams": [],
+        "heroes": [],
+        "result": null,
+        "gaps": [
+          "match_id",
+          "replay_build",
+          "match_date",
+          "players",
+          "teams",
+          "heroes",
+          "result"
+        ]
+      },
+      "humanSuppliedMetadata": {
+        "provenanceClass": "human_supplied/player_reported",
+        "label": "Hidden King",
+        "roster": [
+          "Lash",
+          "Shiv",
+          "Venator",
+          "Paige",
+          "Graves",
+          "Mo & Krill"
+        ],
+        "context": [
+          "composição baseada em identidade previamente planejada",
+          "Graves substituiu Mirage",
+          "Paige dava shadow na side",
+          "Paige ajudava a evitar pickoffs",
+          "Lash e Shiv navegavam o mapa e capitalizavam oportunidades",
+          "core Venator + Paige + Mo & Krill jogava junto nas fights",
+          "percepção de identidade executada de forma mais clara"
+        ]
+      },
+      "inferredMetadata": {
+        "provenanceClass": "inferred",
+        "values": [],
+        "gaps": [
+          "No inferred match or gameplay metadata was produced by Task 198."
+        ]
+      }
+    }
+  ],
+  "protectedReplayAccessCount": 0,
+  "heavyBinariesVersioned": 0,
+  "finalFactsProduced": false,
+  "attributionEmitted": false
+}

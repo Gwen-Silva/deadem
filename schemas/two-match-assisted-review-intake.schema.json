@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/two-match-assisted-review-intake.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "generatedBy", "generatedAt", "targetNamespace", "associationPolicy", "targetCount", "inputCount", "reviewTargetIds", "targets", "protectedReplayAccessCount", "heavyBinariesVersioned", "finalFactsProduced", "attributionEmitted"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "artifactClass": {"const": "two_match_assisted_review_intake"},
+    "generatedBy": {"const": "tools/emit-two-match-assisted-review-intake.mjs"},
+    "generatedAt": {"const": "task_198"},
+    "targetNamespace": {"const": "assisted_review_target"},
+    "associationPolicy": {"const": "human_supplied_exclusive_slot"},
+    "targetCount": {"const": 2},
+    "inputCount": {"const": 4},
+    "reviewTargetIds": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"enum": ["review_match_001", "review_match_002"]}},
+    "targets": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/target"}},
+    "protectedReplayAccessCount": {"const": 0},
+    "heavyBinariesVersioned": {"const": 0},
+    "finalFactsProduced": {"const": false},
+    "attributionEmitted": {"const": false}
+  },
+  "$defs": {
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["filenameOriginal", "localPath", "sourceSlot", "extension", "sizeBytes", "sha256", "format", "provenanceClass"],
+      "properties": {
+        "filenameOriginal": {"type": "string", "minLength": 1},
+        "localPath": {"type": "string", "pattern": "review_match_00[12]"},
+        "sourceSlot": {"type": "string", "pattern": "^\\.local/deadem/review-targets/review_match_00[12]/(?:replay|video)$"},
+        "extension": {"enum": [".dem", ".mp4", ".mkv", ".mov", ".webm"]},
+        "sizeBytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "format": {"enum": ["source2_demo_pbde_ms2", "iso_base_media_mp4"]},
+        "signature": {"const": "PBDEMS2"},
+        "majorBrand": {"type": "string", "minLength": 4, "maxLength": 4},
+        "durationSeconds": {"type": "number", "exclusiveMinimum": 0},
+        "probeMethod": {"const": "mp4_mvhd_random_access"},
+        "provenanceClass": {"const": "factual/local_file_observed"}
+      }
+    },
+    "factual": {
+      "type": "object", "additionalProperties": false,
+      "required": ["provenanceClass", "matchId", "replayBuild", "date", "players", "teams", "heroes", "result", "gaps"],
+      "properties": {
+        "provenanceClass": {"const": "factual/replay_observed"},
+        "matchId": {"type": ["string", "null"]}, "replayBuild": {"type": ["string", "null"]}, "date": {"type": ["string", "null"]},
+        "players": {"type": "array"}, "teams": {"type": "array"}, "heroes": {"type": "array"}, "result": {"type": ["string", "null"]},
+        "gaps": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "human": {
+      "type": "object", "additionalProperties": false,
+      "required": ["provenanceClass", "label", "roster", "context"],
+      "properties": {
+        "provenanceClass": {"const": "human_supplied/player_reported"},
+        "label": {"type": "string", "minLength": 1},
+        "roster": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 1}},
+        "context": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "inferred": {
+      "type": "object", "additionalProperties": false,
+      "required": ["provenanceClass", "values", "gaps"],
+      "properties": {
+        "provenanceClass": {"const": "inferred"},
+        "values": {"type": "array", "maxItems": 0},
+        "gaps": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "target": {
+      "type": "object", "additionalProperties": false,
+      "required": ["reviewTargetId", "association", "inputs", "factualMetadata", "humanSuppliedMetadata", "inferredMetadata"],
+      "properties": {
+        "reviewTargetId": {"enum": ["review_match_001", "review_match_002"]},
+        "association": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "method", "ambiguityCount", "reuseCount"],
+          "properties": {"status": {"const": "resolved"}, "method": {"const": "human_supplied_exclusive_slot"}, "ambiguityCount": {"const": 0}, "reuseCount": {"const": 0}}
+        },
+        "inputs": {
+          "type": "object", "additionalProperties": false, "required": ["replay", "video"],
+          "properties": {"replay": {"$ref": "#/$defs/input"}, "video": {"$ref": "#/$defs/input"}}
+        },
+        "factualMetadata": {"$ref": "#/$defs/factual"},
+        "humanSuppliedMetadata": {"$ref": "#/$defs/human"},
+        "inferredMetadata": {"$ref": "#/$defs/inferred"}
+      }
+    }
+  }
+}

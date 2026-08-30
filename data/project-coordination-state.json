@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Determine whether existing structural candidate features can produce a less saturated, reproducible priority ranking that separates anchors from hard challengers on a reserved validation split.",
-  "phase": "death_candidate_selectivity_and_ranking",
-  "lastAcceptedTaskId": "196",
-  "lastAcceptedCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
-  "activeBaseCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
+  "objective": "Resolve two human-supplied review matches into a deterministic factual replay/VOD intake while preserving provenance and keeping heavy binaries local.",
+  "phase": "two_match_assisted_review_intake",
+  "lastAcceptedTaskId": "197",
+  "lastAcceptedCommit": "6b13a6199e0dec752cc54d92d98ec3990e76e1cf",
+  "activeBaseCommit": "6b13a6199e0dec752cc54d92d98ec3990e76e1cf",
   "branch": "main",
-  "activeTaskId": "197",
+  "activeTaskId": "198",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/197/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/198/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -50,7 +50,8 @@
   ],
   "activeBlockers": [
     "Task 196 is accepted with blocker detector_selectivity_not_demonstrated: V1 selects about 95 percent of anchors and 93 percent of hard challengers with scores saturated near 1.0.",
-    "Task 197 reached the conclusive negative gate structural_features_insufficient_for_candidate_selectivity: reserved-validation anchor capture was 95.556 percent and hard-challenger capture was 90.909 percent, a difference of only 4.647 percentage points.",
+    "Task 197 is accepted with the conclusive negative gate structural_features_insufficient_for_candidate_selectivity: reserved-validation separation was only 4.647 percentage points.",
+    "Task 198 secondary factual metadata remains unavailable: match IDs, builds, dates, players, teams, heroes and results are declared gaps rather than fabricated values.",
     "The accepted bounded-32 challenger population remains limited at 91 primary 30-second eligible clusters.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
@@ -59,9 +60,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 197. Any later selectivity evolution requires separately authorized new semantic evidence or ground truth, not additional tuning over the same structural signals.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196"],
-  "pendingTasks": ["197"],
+  "nextAction": "ChatGPT Work independently validates Task 198. If accepted, the next separately authorized functional objective is Minimum Factual Review Telemetry.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197"],
+  "pendingTasks": ["198"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

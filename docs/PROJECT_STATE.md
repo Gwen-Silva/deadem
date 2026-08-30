@@ -1607,3 +1607,25 @@ insufficient for the required selectivity. Further progress requires new
 semantic evidence or ground truth, not more tuning over the same signals. All
 rows remain unconfirmed structural hypotheses; no final facts or attribution
 were produced. Task 197 is `VALIDATING` pending independent Work acceptance.
+
+## Task 198 - Two-Match Assisted Review Intake
+
+ChatGPT Work accepted Task 197 at
+`6b13a6199e0dec752cc54d92d98ec3990e76e1cf` with its conclusive negative gate
+and authorized two player-selected review targets in an independent namespace.
+
+The Windows desktop executor found exactly one replay and one VOD in each
+declared slot. `review_match_001` resolves `partida_scrim_01.dem` with
+`Scrim_01_SSR.mp4`; `review_match_002` resolves `partida_scrim_02.dem` with
+`Scrim_02_SSR.mp4`. All four files have streaming SHA-256, byte size and format
+evidence. The VOD durations are 6,541.966 and 2,118.966 seconds.
+
+The gate is `two_match_review_targets_ready_with_declared_metadata_gaps`.
+Secondary replay metadata is deliberately null or empty rather than inferred.
+Archmother/Hidden King labels, rosters and match narratives remain
+`human_supplied/player_reported`. Zero ambiguities, input reuse, protected
+replay access, heavy binaries, final facts or attribution were emitted.
+
+Task 198 is `VALIDATING` pending independent Work acceptance. `Minimum Factual
+Review Telemetry` is the recommended next functional objective, but it is not
+started or authorized by this handoff. No Task 199 exists.

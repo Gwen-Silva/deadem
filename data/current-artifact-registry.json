@@ -955,20 +955,38 @@
     {
       "id": "functional_death_candidate_prioritization_task197_gate",
       "path": "output/local-replay-processing/functional-death-candidate-detector/task197-gate.json",
-      "status": "candidate_conclusive_negative_pending_work_validation",
+      "status": "accepted_conclusive_negative",
       "notes": "Frozen V2 failed the reserved selectivity criterion with only 4.647 percentage points between anchor and hard-challenger capture."
     },
     {
       "id": "functional_death_candidate_prioritization_task197_summary",
       "path": "output/local-replay-processing/functional-death-candidate-detector/task197-summary.json",
-      "status": "candidate_conclusive_negative_pending_work_validation",
+      "status": "accepted_conclusive_negative",
       "notes": "Records separate development and reserved-validation metrics, 32/32 representation, deterministic replay_010 and zero final facts."
     },
     {
       "id": "functional_death_candidate_prioritization_task197_candidates",
       "path": "output/local-replay-processing/functional-death-candidate-detector/task197-bounded32/prioritized-candidates.json",
+      "status": "accepted_experimental_ranking",
+      "notes": "Accepted reproducible experimental ranking; structural features remain insufficient for required selectivity."
+    },
+    {
+      "id": "two_match_assisted_review_intake_task198_manifest",
+      "path": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+      "status": "candidate_ready_with_declared_metadata_gaps",
+      "notes": "Two resolved review targets and four observed local inputs with hashes, sizes, formats, durations and separated provenance."
+    },
+    {
+      "id": "two_match_assisted_review_intake_task198_summary",
+      "path": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/summary.json",
+      "status": "candidate_ready_with_declared_metadata_gaps",
+      "notes": "Functional intake summary: 2/2 targets, 4/4 inputs, zero ambiguity, reuse, protected access, heavy binaries, final facts or attribution."
+    },
+    {
+      "id": "two_match_assisted_review_intake_task198_gate",
+      "path": "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/gate.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Reproducible within-replay priority list with high, medium and low tiers; priorities remain unconfirmed structural hypotheses."
+      "notes": "Technical gate two_match_review_targets_ready_with_declared_metadata_gaps pending independent Work validation."
     }
   ]
 }

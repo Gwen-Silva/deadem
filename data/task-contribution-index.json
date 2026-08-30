@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "197",
-  "baseCommit": "bf42beee0b22bd921c245ce1b6485a1b617543a8",
-  "taskRange": "001-197",
+  "generatedAtTask": "198",
+  "baseCommit": "6b13a6199e0dec752cc54d92d98ec3990e76e1cf",
+  "taskRange": "001-198",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6014,7 +6014,7 @@
     {
       "taskId": "197",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "6b13a6199e0dec752cc54d92d98ec3990e76e1cf",
       "title": "Build Death-Candidate Selectivity And Ranking V2",
       "phase": "death_candidate_selectivity_and_ranking",
       "primaryContribution": "Built a deterministic V2 priority layer, froze its structural configuration on the development split, and demonstrated on reserved validation that the current signals cannot meet the required anchor-versus-hard-challenger separation.",
@@ -6028,7 +6028,7 @@
         "reports/functional-death-candidate-selectivity-task197.md"
       ],
       "gate": "structural_features_insufficient_for_candidate_selectivity",
-      "currentRelevance": "candidate_conclusive_negative_pending_work_validation",
+      "currentRelevance": "accepted_conclusive_negative",
       "dependsOn": ["193", "195", "196"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6036,11 +6036,42 @@
         "Priority scores and tiers rank structural hypotheses and are not calibrated death probabilities.",
         "Further tuning on the same signals is closed; new semantic evidence or ground truth is required."
       ],
-      "evidenceStatus": "conclusive_negative_pending_work_validation",
+      "evidenceStatus": "accepted_structural_features_insufficient",
       "evidencePaths": [
         "tasks/specs/197.json",
         "tasks/completed/197-functional-death-candidate-selectivity.md",
         "output/local-replay-processing/functional-death-candidate-detector/task197-summary.json"
+      ]
+    },
+    {
+      "taskId": "198",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Two-Match Assisted Review Intake",
+      "phase": "two_match_assisted_review_intake",
+      "primaryContribution": "Resolved two human-supplied review targets from four exclusive local Windows slots with streaming hashes, bounded format probes, VOD durations and strict factual/human/inferred provenance separation.",
+      "introducedCapabilities": ["two_match_assisted_review_intake"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+        "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/provenance-audit.json",
+        "reports/two-match-assisted-review-intake-task198.md"
+      ],
+      "gate": "two_match_review_targets_ready_with_declared_metadata_gaps",
+      "currentRelevance": "candidate_functional_intake_pending_work_validation",
+      "dependsOn": ["197"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Secondary replay metadata remains unavailable and explicitly null or empty.",
+        "Human-supplied rosters and context are player-reported, not replay-observed facts.",
+        "Heavy replay and video binaries remain local and ignored."
+      ],
+      "evidenceStatus": "functional_intake_ready_with_declared_metadata_gaps_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/198.json",
+        "tasks/completed/198-two-match-assisted-review-intake.md",
+        "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/summary.json"
       ]
     }
   ]
