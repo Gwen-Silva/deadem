@@ -1,0 +1,72 @@
+{
+  "artifactClass": "two_match_replay_video_mapping",
+  "axisInput": "task199_replay_elapsed_seconds",
+  "axisOutput": "task198_vod_seconds",
+  "displayedGameClockUsedAsGroundTruth": false,
+  "models": [
+    {
+      "coveredReplayRegion": {
+        "endSeconds": 4562,
+        "startSeconds": 0
+      },
+      "equation": "video_seconds = slope * replay_elapsed_seconds + intercept_seconds",
+      "estimatedErrorSeconds": 9,
+      "fitAnchorCount": 3,
+      "modelType": "linear",
+      "rejectionPolicy": "reject_outside_covered_region_without_extrapolation",
+      "reviewTargetId": "review_match_001",
+      "segments": [
+        {
+          "interceptSeconds": 1938,
+          "replayEndSeconds": 4562,
+          "replayStartSeconds": 0,
+          "segmentId": "review_match_001_linear_001",
+          "slope": 1,
+          "videoEndSeconds": 6500,
+          "videoStartSeconds": 1938
+        }
+      ],
+      "uncoveredReplayRegions": [
+        {
+          "afterSecondsExclusive": 4562,
+          "endSecondsInclusive": 4570
+        }
+      ],
+      "validationAnchorCount": 3,
+      "validationMaximumAbsoluteErrorSeconds": 9
+    },
+    {
+      "coveredReplayRegion": {
+        "endSeconds": 2090,
+        "startSeconds": 0
+      },
+      "equation": "video_seconds = slope * replay_elapsed_seconds + intercept_seconds",
+      "estimatedErrorSeconds": 2,
+      "fitAnchorCount": 3,
+      "modelType": "linear",
+      "rejectionPolicy": "reject_outside_covered_region_without_extrapolation",
+      "reviewTargetId": "review_match_002",
+      "segments": [
+        {
+          "interceptSeconds": 0,
+          "replayEndSeconds": 2090,
+          "replayStartSeconds": 0,
+          "segmentId": "review_match_002_linear_001",
+          "slope": 1,
+          "videoEndSeconds": 2090,
+          "videoStartSeconds": 0
+        }
+      ],
+      "uncoveredReplayRegions": [
+        {
+          "afterSecondsExclusive": 2090,
+          "endSecondsInclusive": 2093
+        }
+      ],
+      "validationAnchorCount": 3,
+      "validationMaximumAbsoluteErrorSeconds": 0
+    }
+  ],
+  "schemaVersion": 1,
+  "silentExtrapolationAllowed": false
+}

@@ -1647,5 +1647,25 @@ or partial. Position is explicitly unavailable.
 The gate is `two_match_review_telemetry_ready_with_declared_gaps`. Detailed
 telemetry remains local and ignored; five compact artifacts are deterministic.
 There are zero protected replay accesses, heavy versioned binaries, final facts,
-attributions or gameplay interpretations. Task 199 is `VALIDATING` pending Work.
-No Task 200 exists.
+attributions or gameplay interpretations. ChatGPT Work accepted Task 199 at
+`d5f3973d9ede6bf472f3d4e7e2130476902b0fca`.
+
+## Task 200 - Two-Match Replay-VOD Synchronization
+
+Task 200 revalidated the four accepted Task 198 input identities and used the
+Task 199 replay-elapsed timelines as its only replay axis. Twelve predeclared
+anchors are split equally between fit and validation. Frame evidence remains
+local-only under `.local/deadem/review-sync/`.
+
+Both pairs support a linear model. `review_match_001` maps as
+`video = replay + 1938`, covers replay seconds 0-4562 and has held-out maximum
+residual/declared error of 9 seconds. `review_match_002` maps as
+`video = replay`, covers seconds 0-2090 and retains a declared 2-second error
+despite zero arithmetic validation residual.
+
+The technical gate is `two_match_replay_video_sync_partial`: the last 8 and 3
+replay seconds are outside independently anchored coverage and are rejected
+without extrapolation. Seven compact artifacts were byte-identical across two
+real executions. There are zero protected accesses, final facts, attributions
+or gameplay interpretations. Task 200 is `VALIDATING` pending Work; no Task 201
+exists.

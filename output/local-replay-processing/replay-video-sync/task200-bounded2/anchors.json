@@ -1,0 +1,317 @@
+{
+  "anchorSemantics": "synchronization evidence with declared uncertainty; not gameplay facts",
+  "fitValidationSeparation": "declared_before_model_fit",
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "anchors": [
+        {
+          "anchorId": "m1_fit_origin",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The displayed game clock is not used as ground truth.",
+            "replay": "Task 199 normalized replay-elapsed origin.",
+            "video": "Bounded manual frame review shows the connecting-to-server transition."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 1938000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_001/task200-anchors/frames/frame_000000_0001938000ms.jpg",
+            "requestedTimestampMs": 1938000,
+            "sha256": "87b8034e82081f1595ecefa545cdd1de49e75371d4a46733510706143509ed58",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 0,
+          "reviewTargetId": "review_match_001",
+          "source": "manual_visual_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 1,
+          "usage": "fit",
+          "videoSeconds": 1938
+        },
+        {
+          "anchorId": "m1_fit_mid_state",
+          "confidence": "low",
+          "evidence": {
+            "limitation": "Aggregate-counter stability does not itself prove a pause or any gameplay event.",
+            "replay": "Replay elapsed point selected inside a long aggregate-counter freeze window.",
+            "video": "Bounded manual frame review shows an explicit paused state at this timestamp."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 4800000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_001/task200-anchors/frames/frame_000002_0004800000ms.jpg",
+            "requestedTimestampMs": 4800000,
+            "sha256": "0b6c01d5b16e42796f1e16ba12f3a44caf2180ef8ac3b2e0c8767223d816bbed",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 2862,
+          "reviewTargetId": "review_match_001",
+          "source": "derived_alignment_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 10,
+          "usage": "fit",
+          "videoSeconds": 4800
+        },
+        {
+          "anchorId": "m1_fit_late_state",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "Phase consistency is alignment evidence, not event identity.",
+            "replay": "Late replay-elapsed checkpoint remains inside Task 199 coverage.",
+            "video": "Bounded manual frame review shows active late-match footage."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 6300000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_001/task200-anchors/frames/frame_000004_0006300000ms.jpg",
+            "requestedTimestampMs": 6300000,
+            "sha256": "6dff3bf6b1344a078275684e867c1269b5d7194464008250aa2616bba97f3704",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 4362,
+          "reviewTargetId": "review_match_001",
+          "source": "derived_alignment_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 9,
+          "usage": "fit",
+          "videoSeconds": 6300
+        },
+        {
+          "anchorId": "m1_validation_pause_sample_a",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The visual sample cadence bounds the transition; it is not an exact pause boundary.",
+            "replay": "Start of a Task 199 aggregate-counter freeze run.",
+            "video": "Bounded manual sampling shows the paused overlay by this timestamp."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 4720000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_001/task200-anchors/frames/frame_000001_0004720000ms.jpg",
+            "requestedTimestampMs": 4720000,
+            "sha256": "c92fcba2c717226248d4c752d67aa4b1b99e924bfcd11f2263c8c903b41b711a",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 2791,
+          "reviewTargetId": "review_match_001",
+          "source": "cross_surface_event_match",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 10,
+          "usage": "validation",
+          "videoSeconds": 4720
+        },
+        {
+          "anchorId": "m1_validation_pause_sample_b",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The visual sample cadence bounds the transition; it is not an exact pause boundary.",
+            "replay": "Start of a separate Task 199 aggregate-counter freeze run.",
+            "video": "Bounded manual sampling shows the paused overlay near this timestamp."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 5450000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_001/task200-anchors/frames/frame_000003_0005450000ms.jpg",
+            "requestedTimestampMs": 5450000,
+            "sha256": "ad6a1a35a3c9b230f36109fb8d867d8dfbae69b4e99b1585f361996c60aa3786",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 3517,
+          "reviewTargetId": "review_match_001",
+          "source": "cross_surface_event_match",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 10,
+          "usage": "validation",
+          "videoSeconds": 5450
+        },
+        {
+          "anchorId": "m1_validation_late_boundary",
+          "confidence": "low",
+          "evidence": {
+            "limitation": "The remaining replay tail has no independent anchor and stays uncovered.",
+            "replay": "Late replay-elapsed point eight seconds before Task 199 coverage ends.",
+            "video": "Bounded manual frame review shows active gameplay before VOD post-match footage."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 6500000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_001/task200-anchors/frames/frame_000005_0006500000ms.jpg",
+            "requestedTimestampMs": 6500000,
+            "sha256": "73188c994a04c86c1bdb63bdca4676c00045d0f914e173529ee0d160aef96dbc",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 4562,
+          "reviewTargetId": "review_match_001",
+          "source": "manual_visual_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 9,
+          "usage": "validation",
+          "videoSeconds": 6500
+        }
+      ],
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "anchors": [
+        {
+          "anchorId": "m2_fit_origin",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "Connection state is a synchronization cue, not gameplay ground truth.",
+            "replay": "Task 199 normalized replay-elapsed origin.",
+            "video": "The first decoded VOD frame shows the connecting-to-server state."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 0,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_002/task200-anchors/frames/frame_000000_0000000000ms.jpg",
+            "requestedTimestampMs": 0,
+            "sha256": "0a15726943ff5fbdcdeaa9592359abc0c290c295b245b9ec71baa2b7ef9fc22b",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 0,
+          "reviewTargetId": "review_match_002",
+          "source": "manual_visual_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 1,
+          "usage": "fit",
+          "videoSeconds": 0
+        },
+        {
+          "anchorId": "m2_fit_mid_state",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The displayed game clock is only a visual consistency check.",
+            "replay": "Mid-match replay-elapsed checkpoint inside continuous Task 199 coverage.",
+            "video": "Bounded manual frame review shows corresponding active mid-match footage."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 900000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_002/task200-anchors/frames/frame_000003_0000900000ms.jpg",
+            "requestedTimestampMs": 900000,
+            "sha256": "cbe95311fbe554c5d451c01e230487f968f7f7e579b134b8a718090d3a193584",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 900,
+          "reviewTargetId": "review_match_002",
+          "source": "derived_alignment_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 2,
+          "usage": "fit",
+          "videoSeconds": 900
+        },
+        {
+          "anchorId": "m2_fit_late_state",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "Phase consistency does not identify a semantic gameplay event.",
+            "replay": "Late replay-elapsed checkpoint inside continuous Task 199 coverage.",
+            "video": "Bounded manual frame review shows corresponding active late-match footage."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 1800000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_002/task200-anchors/frames/frame_000004_0001800000ms.jpg",
+            "requestedTimestampMs": 1800000,
+            "sha256": "5a05def5044159799f4b8e39e82a93ff215e0433f16809ae074e0fa220f73349",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 1800,
+          "reviewTargetId": "review_match_002",
+          "source": "derived_alignment_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 2,
+          "usage": "fit",
+          "videoSeconds": 1800
+        },
+        {
+          "anchorId": "m2_validation_freeze_start",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The counter freeze is not promoted to a gameplay event.",
+            "replay": "Start of the Task 199 early aggregate-counter freeze run.",
+            "video": "Bounded review locates the corresponding early timing discontinuity."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 142000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_002/task200-anchors/frames/frame_000001_0000142000ms.jpg",
+            "requestedTimestampMs": 142000,
+            "sha256": "ae8ce51bf82341e31ed9db7d67d8c12e380556027118aac873c2ddd2c2694181",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 142,
+          "reviewTargetId": "review_match_002",
+          "source": "cross_surface_event_match",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 2,
+          "usage": "validation",
+          "videoSeconds": 142
+        },
+        {
+          "anchorId": "m2_validation_freeze_end",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The visual boundary remains approximate.",
+            "replay": "End of the Task 199 early aggregate-counter freeze run.",
+            "video": "Bounded review locates the end of the corresponding early timing discontinuity."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 185000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_002/task200-anchors/frames/frame_000002_0000185000ms.jpg",
+            "requestedTimestampMs": 185000,
+            "sha256": "8fa7bdb967dcb1bbe3b9be6c8e58e04f1293471d6247643fd38ef4c2384ea852",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 185,
+          "reviewTargetId": "review_match_002",
+          "source": "cross_surface_event_match",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 2,
+          "usage": "validation",
+          "videoSeconds": 185
+        },
+        {
+          "anchorId": "m2_validation_late_boundary",
+          "confidence": "medium",
+          "evidence": {
+            "limitation": "The remaining replay tail has no independent anchor and stays uncovered.",
+            "replay": "Late replay-elapsed point three seconds before Task 199 coverage ends.",
+            "video": "Bounded manual frame review still shows active footage."
+          },
+          "frameEvidence": {
+            "decodeStatus": "decoded",
+            "decodedTimestampMs": 2090000,
+            "decoderBackend": "opencv",
+            "localPath": "C:/Users/gwenm/Documents/deadem/.local/deadem/review-sync/review_match_002/task200-anchors/frames/frame_000005_0002090000ms.jpg",
+            "requestedTimestampMs": 2090000,
+            "sha256": "7e74ac79890285323a52b6839d8d30b6ec02ba328a5619b76c29942dbd2f4aa5",
+            "timestampErrorMs": 0
+          },
+          "replayElapsedSeconds": 2090,
+          "reviewTargetId": "review_match_002",
+          "source": "manual_visual_anchor",
+          "status": "usable_with_declared_uncertainty",
+          "uncertaintySeconds": 2,
+          "usage": "validation",
+          "videoSeconds": 2090
+        }
+      ],
+      "reviewTargetId": "review_match_002"
+    }
+  ]
+}

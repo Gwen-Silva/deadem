@@ -991,32 +991,56 @@
     {
       "id": "minimum_factual_review_telemetry_task199_manifest",
       "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/manifest.json",
-      "status": "candidate_ready_with_declared_gaps",
+      "status": "accepted_ready_with_declared_gaps",
       "notes": "Two identity-validated replay targets with local-only detailed artifact hashes and parser tick bounds."
     },
     {
       "id": "minimum_factual_review_telemetry_task199_availability",
       "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
-      "status": "candidate_ready_with_declared_gaps",
+      "status": "accepted_ready_with_declared_gaps",
       "notes": "Complete ten-family availability matrix for both targets; position is explicitly unavailable."
     },
     {
       "id": "minimum_factual_review_telemetry_task199_summary",
       "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/summary.json",
-      "status": "candidate_ready_with_declared_gaps",
+      "status": "accepted_ready_with_declared_gaps",
       "notes": "2/2 usable timelines, aggregate factual family counts, zero parser failures and declared gaps."
     },
     {
       "id": "minimum_factual_review_telemetry_task199_gate",
       "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Technical gate two_match_review_telemetry_ready_with_declared_gaps pending independent Work validation."
+      "status": "accepted_ready_with_declared_gaps",
+      "notes": "Work-accepted technical gate two_match_review_telemetry_ready_with_declared_gaps."
     },
     {
       "id": "minimum_factual_review_telemetry_task199_provenance",
       "path": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/provenance-audit.json",
-      "status": "candidate_ready_with_declared_gaps",
+      "status": "accepted_ready_with_declared_gaps",
       "notes": "Records factual and derived classes, zero protected access, final facts, attribution, interpretation and heavy versioned binaries."
+    },
+    {
+      "id": "two_match_replay_video_sync_task200_mapping",
+      "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+      "status": "candidate_functional_partial",
+      "notes": "Two bounded linear replay-elapsed to VOD mappings with explicit covered regions, error bounds and no silent extrapolation."
+    },
+    {
+      "id": "two_match_replay_video_sync_task200_validation",
+      "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/validation.json",
+      "status": "candidate_functional_partial",
+      "notes": "Separate fit and validation residuals for both targets plus explicit outside-coverage rejection probes."
+    },
+    {
+      "id": "two_match_replay_video_sync_task200_gate",
+      "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical gate two_match_replay_video_sync_partial pending independent Work validation."
+    },
+    {
+      "id": "two_match_replay_video_sync_task200_provenance",
+      "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/provenance-audit.json",
+      "status": "candidate_functional_partial",
+      "notes": "Records four revalidated hashes, local-only frame evidence and zero protected access, final facts, attribution or gameplay interpretation."
     }
   ]
 }

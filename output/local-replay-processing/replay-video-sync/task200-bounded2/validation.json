@@ -1,0 +1,147 @@
+{
+  "criticalFailures": 0,
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "coverageFraction": 0.998249,
+      "declaredEstimatedErrorSeconds": 9,
+      "fit": {
+        "anchorCount": 3,
+        "maximumAbsoluteErrorSeconds": 0,
+        "meanAbsoluteErrorSeconds": 0,
+        "medianAbsoluteErrorSeconds": 0,
+        "residuals": [
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m1_fit_origin",
+            "observedVideoSeconds": 1938,
+            "predictedVideoSeconds": 1938,
+            "residualSeconds": 0
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m1_fit_mid_state",
+            "observedVideoSeconds": 4800,
+            "predictedVideoSeconds": 4800,
+            "residualSeconds": 0
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m1_fit_late_state",
+            "observedVideoSeconds": 6300,
+            "predictedVideoSeconds": 6300,
+            "residualSeconds": 0
+          }
+        ],
+        "usage": "fit"
+      },
+      "outsideCoverageProbe": {
+        "mapped": false,
+        "reason": "outside_covered_region",
+        "replayElapsedSeconds": 4570
+      },
+      "reviewTargetId": "review_match_001",
+      "validation": {
+        "anchorCount": 3,
+        "maximumAbsoluteErrorSeconds": 9,
+        "meanAbsoluteErrorSeconds": 4.667,
+        "medianAbsoluteErrorSeconds": 5,
+        "residuals": [
+          {
+            "absoluteResidualSeconds": 9,
+            "anchorId": "m1_validation_pause_sample_a",
+            "observedVideoSeconds": 4720,
+            "predictedVideoSeconds": 4729,
+            "residualSeconds": -9
+          },
+          {
+            "absoluteResidualSeconds": 5,
+            "anchorId": "m1_validation_pause_sample_b",
+            "observedVideoSeconds": 5450,
+            "predictedVideoSeconds": 5455,
+            "residualSeconds": -5
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m1_validation_late_boundary",
+            "observedVideoSeconds": 6500,
+            "predictedVideoSeconds": 6500,
+            "residualSeconds": 0
+          }
+        ],
+        "usage": "validation"
+      }
+    },
+    {
+      "coverageFraction": 0.998567,
+      "declaredEstimatedErrorSeconds": 2,
+      "fit": {
+        "anchorCount": 3,
+        "maximumAbsoluteErrorSeconds": 0,
+        "meanAbsoluteErrorSeconds": 0,
+        "medianAbsoluteErrorSeconds": 0,
+        "residuals": [
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m2_fit_origin",
+            "observedVideoSeconds": 0,
+            "predictedVideoSeconds": 0,
+            "residualSeconds": 0
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m2_fit_mid_state",
+            "observedVideoSeconds": 900,
+            "predictedVideoSeconds": 900,
+            "residualSeconds": 0
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m2_fit_late_state",
+            "observedVideoSeconds": 1800,
+            "predictedVideoSeconds": 1800,
+            "residualSeconds": 0
+          }
+        ],
+        "usage": "fit"
+      },
+      "outsideCoverageProbe": {
+        "mapped": false,
+        "reason": "outside_covered_region",
+        "replayElapsedSeconds": 2093
+      },
+      "reviewTargetId": "review_match_002",
+      "validation": {
+        "anchorCount": 3,
+        "maximumAbsoluteErrorSeconds": 0,
+        "meanAbsoluteErrorSeconds": 0,
+        "medianAbsoluteErrorSeconds": 0,
+        "residuals": [
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m2_validation_freeze_start",
+            "observedVideoSeconds": 142,
+            "predictedVideoSeconds": 142,
+            "residualSeconds": 0
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m2_validation_freeze_end",
+            "observedVideoSeconds": 185,
+            "predictedVideoSeconds": 185,
+            "residualSeconds": 0
+          },
+          {
+            "absoluteResidualSeconds": 0,
+            "anchorId": "m2_validation_late_boundary",
+            "observedVideoSeconds": 2090,
+            "predictedVideoSeconds": 2090,
+            "residualSeconds": 0
+          }
+        ],
+        "usage": "validation"
+      }
+    }
+  ],
+  "validationPolicy": "validation anchors excluded from fit"
+}

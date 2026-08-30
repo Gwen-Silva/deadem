@@ -796,8 +796,8 @@
       "capabilityId": "minimum_factual_review_telemetry",
       "plainName": "Minimum factual review telemetry",
       "introducedInTask": "199",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_with_declared_gaps",
+      "stabilizedInTask": "199",
+      "currentStatus": "accepted_ready_with_declared_gaps",
       "currentBaseline": "task199_bounded_two_forward_only_replay_observations",
       "whyItMatters": "Creates safe replay-elapsed timelines and factual observation families for later replay-to-VOD synchronization and assisted visual review.",
       "mainFiles": [
@@ -815,7 +815,32 @@
         "Position is unavailable through the bounded source fields used.",
         "Aggregate counter deltas have no source-target attribution and no gameplay semantics."
       ],
-      "nextUsefulStep": "After independent Work validation, separately authorize replay-to-VOD synchronization."
+      "nextUsefulStep": "Use the accepted Task 199 replay-elapsed axis as the exact input for authorized Task 200 synchronization."
+    },
+    {
+      "capabilityId": "two_match_replay_video_synchronization",
+      "plainName": "Two-match replay to VOD synchronization",
+      "introducedInTask": "200",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_functional_partial",
+      "currentBaseline": "task200_bounded_two_linear_sync",
+      "whyItMatters": "Turns safe Task 199 replay-elapsed timestamps into reproducible Task 198 VOD lookup locations for later assisted review.",
+      "mainFiles": [
+        "tools/emit-two-match-replay-video-sync.mjs",
+        "schemas/two-match-replay-video-sync.schema.json",
+        "docs/codex/TWO_MATCH_REPLAY_VIDEO_SYNC_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+        "output/local-replay-processing/replay-video-sync/task200-bounded2/validation.json",
+        "output/local-replay-processing/replay-video-sync/task200-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "The final 8 seconds of review_match_001 and 3 seconds of review_match_002 are outside independently anchored coverage.",
+        "Estimated timing error is 9 seconds and 2 seconds respectively; zero arithmetic residual does not remove manual-anchor uncertainty.",
+        "Synchronization evidence does not establish death, attribution, fight, objective or strategy semantics."
+      ],
+      "nextUsefulStep": "After independent Work validation, separately authorize a bounded semantic review that consumes only covered lookup regions."
     }
   ]
 }

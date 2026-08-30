@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "attributionProduced": 0,
+    "finalFactsProduced": 0,
+    "fitAnchors": 6,
+    "gameplayInterpretationsProduced": 0,
+    "protectedReplayAccessCount": 0,
+    "targetsAttempted": 2,
+    "targetsMapped": 2,
+    "validationAnchors": 6
+  },
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "coveredReplayRegion": {
+        "endSeconds": 4562,
+        "startSeconds": 0
+      },
+      "estimatedErrorSeconds": 9,
+      "fitAnchorCount": 3,
+      "modelType": "linear",
+      "reviewTargetId": "review_match_001",
+      "uncoveredReplayRegions": [
+        {
+          "afterSecondsExclusive": 4562,
+          "endSecondsInclusive": 4570
+        }
+      ],
+      "validationAnchorCount": 3,
+      "validationMaximumAbsoluteErrorSeconds": 9
+    },
+    {
+      "coveredReplayRegion": {
+        "endSeconds": 2090,
+        "startSeconds": 0
+      },
+      "estimatedErrorSeconds": 2,
+      "fitAnchorCount": 3,
+      "modelType": "linear",
+      "reviewTargetId": "review_match_002",
+      "uncoveredReplayRegions": [
+        {
+          "afterSecondsExclusive": 2090,
+          "endSecondsInclusive": 2093
+        }
+      ],
+      "validationAnchorCount": 3,
+      "validationMaximumAbsoluteErrorSeconds": 0
+    }
+  ],
+  "technicalGateStatus": "two_match_replay_video_sync_partial"
+}

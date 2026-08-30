@@ -6077,7 +6077,7 @@
     {
       "taskId": "199",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "d5f3973d9ede6bf472f3d4e7e2130476902b0fca",
       "title": "Build Minimum Factual Review Telemetry",
       "phase": "minimum_factual_review_telemetry",
       "primaryContribution": "Built deterministic forward-only safe factual telemetry and replay-elapsed timelines for both accepted assisted-review targets.",
@@ -6091,7 +6091,7 @@
         "reports/minimum-factual-review-telemetry-task199.md"
       ],
       "gate": "two_match_review_telemetry_ready_with_declared_gaps",
-      "currentRelevance": "candidate_functional_telemetry_pending_work_validation",
+      "currentRelevance": "accepted_functional_telemetry_with_declared_gaps",
       "dependsOn": ["198"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6099,11 +6099,43 @@
         "Position is unavailable and no spatial semantics were reopened.",
         "Lifecycle and aggregate counter observations do not establish confirmed deaths or attribution."
       ],
-      "evidenceStatus": "functional_telemetry_ready_with_declared_gaps_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_review_telemetry_ready_with_declared_gaps",
       "evidencePaths": [
         "tasks/specs/199.json",
         "tasks/completed/199-minimum-factual-review-telemetry.md",
         "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "200",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Two-Match Replay-VOD Synchronization",
+      "phase": "replay_video_synchronization",
+      "primaryContribution": "Built deterministic bounded replay-elapsed to VOD mappings for both accepted assisted-review targets with separate fit/validation anchors and explicit rejection outside coverage.",
+      "introducedCapabilities": ["two_match_replay_video_synchronization"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-two-match-replay-video-sync.mjs",
+        "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+        "output/local-replay-processing/replay-video-sync/task200-bounded2/validation.json",
+        "reports/two-match-replay-video-sync-task200.md"
+      ],
+      "gate": "two_match_replay_video_sync_partial",
+      "currentRelevance": "candidate_functional_partial_pending_work_validation",
+      "dependsOn": ["198", "199"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "The final 8 and 3 replay seconds remain unanchored and are rejected.",
+        "Manual visual states and aggregate-counter freezes are timing cues with declared uncertainty, not gameplay facts.",
+        "No final death fact, attribution, fight, objective or strategy interpretation is produced."
+      ],
+      "evidenceStatus": "functional_replay_video_sync_partial_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/200.json",
+        "tasks/completed/200-two-match-replay-video-sync.md",
+        "output/local-replay-processing/replay-video-sync/task200-bounded2/summary.json"
       ]
     }
   ]

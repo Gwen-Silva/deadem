@@ -2,16 +2,16 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 198 at `f6bc2d857481738629a50f4dadc05c1eb098e391`. ChatGPT Work accepted `two_match_review_targets_ready_with_declared_metadata_gaps` with the non-invalidating blocker `secondary_review_factual_metadata_unavailable`.
+Last accepted task: Task 199 at `d5f3973d9ede6bf472f3d4e7e2130476902b0fca`. ChatGPT Work accepted `two_match_review_telemetry_ready_with_declared_gaps`.
 
-Active candidate: Task 199, `Minimum Factual Review Telemetry`. Coordination status: `VALIDATING`.
+Active candidate: Task 200, `Replay ↔ VOD Synchronization`. Coordination status: `VALIDATING`.
 
-Both accepted replay inputs were revalidated against their Task 198 streaming SHA-256 and processed forward-only. `review_match_001` has a continuous replay-elapsed timeline from 0 through 4,570 seconds; `review_match_002` covers 0 through 2,093 seconds. Neither axis is represented as the displayed game clock.
+All four Task 198 replay/VOD identities were revalidated. Task 199 replay-elapsed seconds now map to VOD seconds for both review targets with separate fit and validation anchors.
 
-Replay-local participant, team and hero references, lifecycle-related raw state, net-worth samples, aggregate damage/healing counter deltas and objective/structure-like raw observations are available or partial for both targets. Position is explicitly unavailable. No killer, victim, assist, fight, strategy, lane, named region, objective completion or gameplay interpretation is emitted.
+`review_match_001` uses `video = replay + 1938` with replay coverage 0-4562 and declared error 9 seconds. `review_match_002` uses `video = replay` with coverage 0-2090 and declared error 2 seconds. The final 8 and 3 replay seconds are rejected without extrapolation.
 
-The technical gate is `two_match_review_telemetry_ready_with_declared_gaps`. Detailed telemetry and caches remain ignored under `.local/deadem/review-telemetry`; only five deterministic compact artifacts are versioned. Replays 005-008 were not accessed, heavy binaries remain unversioned, and final-fact/attribution counts are zero.
+The technical gate is `two_match_replay_video_sync_partial`. Twelve frame-backed anchors remain bounded synchronization evidence, not gameplay facts. Seven compact artifacts are deterministic; frames remain ignored under `.local/deadem/review-sync`. Replays 005-008 were not accessed, heavy binaries remain unversioned, and final-fact/attribution/interpretation counts are zero.
 
-ChatGPT Work must independently validate Task 199. No Task 200 exists and replay-to-VOD synchronization has not started.
+ChatGPT Work must independently validate Task 200. No Task 201 exists and semantic review has not started.
 
 Machine-readable state: `data/project-coordination-state.json`.

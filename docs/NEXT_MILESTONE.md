@@ -2086,7 +2086,20 @@ now produces continuous replay-elapsed timelines plus safe replay-local identity
 team, hero, lifecycle, economy, aggregate damage/healing and objective-like raw
 observations. Positions are unavailable and remain a declared gap.
 
-The candidate gate is `two_match_review_telemetry_ready_with_declared_gaps`.
-After independent Work validation, the next functional objective may be
-replay-to-VOD synchronization under a separate authorization. It is not started
-here, and no Task 200 exists.
+The gate `two_match_review_telemetry_ready_with_declared_gaps` is Work-accepted
+at `d5f3973d9ede6bf472f3d4e7e2130476902b0fca`. Task 200 was separately
+authorized.
+
+## Task 200
+
+Module: `Replay ↔ VOD Synchronization`.
+
+Both accepted review targets now have deterministic bounded linear mappings.
+The first covers replay seconds 0-4562 with a declared 9-second error; the
+second covers 0-2090 with a declared 2-second error. Their final 8-second and
+3-second tails remain uncovered and are rejected, yielding the functional gate
+`two_match_replay_video_sync_partial`.
+
+ChatGPT Work must independently validate Task 200. A later bounded semantic
+review may consume only covered lookup regions after separate authorization.
+No Task 201 is created or started here.
