@@ -2,20 +2,18 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 203 at `36510a099fd93830f80b3a029fad9d05328312bb`. ChatGPT Work accepted `two_match_dense_visual_evidence_ready`; blockers `review_candidate_selectivity_low` and `replay_video_sync_precision_limited` remain active.
+Last accepted task: Task 204 at `225f570a68c3d53ecfa17986e674fe21be7d2dc6`. ChatGPT Work accepted `two_match_assisted_review_bundles_ready` with blocker `contemporaneous_call_evidence_missing_for_intent_and_coordination_review`.
 
-Active candidate: Task 204, `Two-Match Assisted Review Bundles`. Coordination status: `VALIDATING`.
+Active candidate: Task 205, `Timestamped Call Evidence Pipeline`. Coordination status: `VALIDATING`.
 
-Task 204 hash validated all eight required local Task 203 artifact bridges and preserved all 102 Task 202 candidate IDs, priorities and source families. Task 200 mappings and 9/2-second uncertainty remain unchanged.
+Task 205 validated both Task 198 VOD identities and processed only the Task 200 covered regions: 4,562 and 2,090 seconds. The local engine is faster-whisper 1.2.1 with model `small`, CPU/int8, Portuguese hint, VAD and word timestamps.
 
-Layer A contains 18 chronological atlas pages with up to six factual cards each, grouped into six three-image upload packets: 12 pages/four packets for `review_match_001` and six pages/two packets for `review_match_002`. Every card uses exactly the Task 203 first, representative and last frames.
+The execution produced 1,338/538 segments and 8,158/3,585 word timestamps with zero segment failures. All 102 immutable Task 204 candidates have `audioCallEvidenceRefs`, totaling 2,193 segment links. Task 200 uncertainty remains 9 and 2 seconds, separate from ASR boundary uncertainty.
 
-Layer B references rather than copies all 318 existing Task 203 storyboard pages. The emitter validated 306 frame references, 304 unique source frames and 318 storyboard references by hash. The ten compact outputs and the atlas generation were deterministic across two executions. Images remain local-only.
+Speaker remains `unknown/mixed`. The Craig adapter contract passed a synthetic two-track overlap fixture without real Craig data, bot, download or self-hosting.
 
-The per-target gates are `match_001_review_bundle_usable` and `match_002_review_bundle_usable`; the aggregate technical gate claim is `two_match_assisted_review_bundles_ready`. Candidate semantics remain `review_attention_region_not_gameplay_event`. Replay, VOD, protected access, gameplay interpretation, analyst inference, final facts, attribution and versioned images are all zero.
+The technical gate claim is `two_match_audio_call_evidence_ready_with_asr_gaps`. Sixteen distributed validation samples are prepared locally; this surface cannot hear audio, so classifications and usable rate remain null. Audio, complete transcript, real speaker identity, replay/protected access, gameplay interpretation and analyst inference versioned counts are zero.
 
-Human context is stored separately at match level as `human_supplied/player_reported` and `context_to_validate`, without inferred timestamps or candidate labels. All 102 review records are empty.
-
-ChatGPT Work must independently validate Task 204. After acceptance, begin the real two-match review using the six packets. No Task 205 exists.
+ChatGPT Work must independently validate Task 205. After acceptance, complete the bounded audio sample and resume review_match_001 windows 0013, 0015 and 0016. No Task 206 exists.
 
 Machine-readable state: `data/project-coordination-state.json`.

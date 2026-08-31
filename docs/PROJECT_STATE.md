@@ -2,24 +2,24 @@
 
 Last updated: 2026-08-31
 
-## Active Review Bundle Candidate
+## Active Audio Call Evidence Candidate
 
-Task 203 at commit `36510a099fd93830f80b3a029fad9d05328312bb` is
+Task 204 at commit `225f570a68c3d53ecfa17986e674fe21be7d2dc6` is
 the last state independently accepted by ChatGPT Work. Its gate is
-`two_match_dense_visual_evidence_ready`, with inherited blockers
-`review_candidate_selectivity_low` and `replay_video_sync_precision_limited`.
+`two_match_assisted_review_bundles_ready`; the real review exposed missing
+contemporaneous call evidence as the principal uncertainty for intent and
+coordination questions.
 
-Task 204 is the active candidate in `VALIDATING`. It packages all 102 accepted
-review-attention windows into two practical local assisted-review bundles:
-18 chronological screening atlas pages, six three-image upload packets, and
-references to all 318 existing Task 203 storyboard pages. Both per-match gates
-are usable and the aggregate technical gate claim is
-`two_match_assisted_review_bundles_ready`. No semantic review, gameplay label,
-final fact or attribution was produced. Replays 005–008 remain protected.
+Task 205 is the active candidate in `VALIDATING`. It processed the two mixed
+VOD audio regions locally with faster-whisper and linked 1,876 timestamped ASR
+segments to all 102 accepted review windows. Its technical gate claim is
+`two_match_audio_call_evidence_ready_with_asr_gaps`: 16 human-validation rows
+are prepared, but audio classifications and usable rate remain pending.
+Speaker identity is `unknown/mixed`; speech is not intent or a confirmed call.
 
-ChatGPT Work remains the sole acceptance authority. After independent Task 204
-acceptance, the next action is the real two-match review using these packets;
-no Task 205 or additional infrastructure module has been created.
+ChatGPT Work remains the sole acceptance authority. After independent Task 205
+acceptance, resume the real review at `review_match_001_window_0013`, `0015`
+and `0016` with local audio evidence. No Task 206 exists.
 
 ## Authoritative Current State
 

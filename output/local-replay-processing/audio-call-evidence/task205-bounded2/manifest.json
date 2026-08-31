@@ -1,0 +1,95 @@
+{
+  "artifactClass": "timestamped_audio_call_evidence_manifest",
+  "candidateImmutableFingerprint": "2625460f4e19f167b0ba8fcf9767081f1e24cae3d8e65f7366b6de88b21c1d73",
+  "craigSyntheticFixture": {
+    "overlappingCrossSpeakerPairs": 1,
+    "path": "tests/fixtures/audio-call-evidence/craig-multitrack.json",
+    "segmentCount": 4,
+    "speakerCount": 2,
+    "trackCount": 2
+  },
+  "generatedBy": "tools/emit-timestamped-call-evidence.mjs",
+  "localOnlyArtifacts": [
+    {
+      "artifacts": {
+        "callSegments": {
+          "path": ".local/deadem/call-evidence/review_match_001/call-segments.jsonl",
+          "sha256": "1a15f7f739ffec2ebd0eb3184cb35b242b95d623eb731d3693c2482ac6d8a3f0",
+          "sizeBytes": 2777961
+        },
+        "candidateCallIndex": {
+          "path": ".local/deadem/call-evidence/review_match_001/candidate-call-index.json",
+          "sha256": "c0520bb3b62bb989610e90cb0055095092c13f4e92445b7beeda8df1e4c6b915",
+          "sizeBytes": 145992
+        },
+        "extractionMetadata": {
+          "path": ".local/deadem/call-evidence/review_match_001/audio/extraction-metadata.json",
+          "sha256": "1dbec9a9259f29aaa0d2fefaa70e19d5bbe2cfe212ea74446ffd0987a10f224e",
+          "sizeBytes": 690
+        },
+        "transcriptionMetadata": {
+          "path": ".local/deadem/call-evidence/review_match_001/transcript/transcription-metadata.json",
+          "sha256": "577d83304b9f78ea379c2d52cfbc821fd8998859ba5f9fc551f33081d85213df",
+          "sizeBytes": 554
+        },
+        "validationSample": {
+          "path": ".local/deadem/call-evidence/review_match_001/validation-sample.json",
+          "sha256": "09644c90ac13ed5352228dd5aa66a189c081050174cae2cc46c704f8a1828014",
+          "sizeBytes": 3543
+        },
+        "wordTimestamps": {
+          "path": ".local/deadem/call-evidence/review_match_001/word-timestamps.jsonl",
+          "sha256": "2279354def0cebfccc8c6a4ebea1cdfb9ee1ce04751751778a7d94f299be0761",
+          "sizeBytes": 2338700
+        }
+      },
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "artifacts": {
+        "callSegments": {
+          "path": ".local/deadem/call-evidence/review_match_002/call-segments.jsonl",
+          "sha256": "a55dae5c1ca77fd9ed225d7c6d290339a8d61105833ad26962d9bf7c12ca24dd",
+          "sizeBytes": 1160434
+        },
+        "candidateCallIndex": {
+          "path": ".local/deadem/call-evidence/review_match_002/candidate-call-index.json",
+          "sha256": "9b5e2de9657885298afbdebfe2d45a49ece229d308f2839577591603d1b7f57d",
+          "sizeBytes": 68180
+        },
+        "extractionMetadata": {
+          "path": ".local/deadem/call-evidence/review_match_002/audio/extraction-metadata.json",
+          "sha256": "93f5ce95300369c3d1ee865b6bb7be3d06494ed7d441d70db530dec02644ed72",
+          "sizeBytes": 686
+        },
+        "transcriptionMetadata": {
+          "path": ".local/deadem/call-evidence/review_match_002/transcript/transcription-metadata.json",
+          "sha256": "be9265f696efbb1a6535c9276c3a561e85e7717bc8a1822e1fe0edd7008dc3d6",
+          "sizeBytes": 554
+        },
+        "validationSample": {
+          "path": ".local/deadem/call-evidence/review_match_002/validation-sample.json",
+          "sha256": "aa87fc9a2c53451dca021d542112bfa426da0d52c13fe244f2ddc2f54f996c43",
+          "sizeBytes": 3596
+        },
+        "wordTimestamps": {
+          "path": ".local/deadem/call-evidence/review_match_002/word-timestamps.jsonl",
+          "sha256": "3a28bc560346f728a65ba1ca653b82d3fff4e1305b98c6d656a6886190a99a66",
+          "sizeBytes": 1024515
+        }
+      },
+      "reviewTargetId": "review_match_002"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceAdapterContract": [
+    "AudioCallSourceAdapter",
+    "MixedVodAudioAdapter",
+    "CraigMultitrackAdapter"
+  ],
+  "sourceArtifacts": [
+    "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+    "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json"
+  ]
+}

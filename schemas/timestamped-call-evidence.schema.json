@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/timestamped-call-evidence.schema.json",
+  "title": "Timestamped Call Evidence Summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "technicalGateStatus", "targets", "aggregate"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "technicalGateStatus": { "enum": ["two_match_audio_call_evidence_ready", "two_match_audio_call_evidence_ready_with_asr_gaps", "BLOCKED_BY_REVIEW_AUDIO_SPEECH_UNUSABLE"] },
+    "targets": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["reviewTargetId", "status", "metrics"],
+        "properties": {
+          "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+          "status": { "type": "string" },
+          "metrics": {
+            "type": "object",
+            "required": ["audioDurationSeconds", "speechSegments", "wordTimestampCount", "candidateWindows", "candidateWindowsWithCallSegments", "syncEstimatedErrorSeconds"],
+            "properties": {
+              "audioDurationSeconds": { "type": "number", "exclusiveMinimum": 0 },
+              "speechSegments": { "type": "integer", "minimum": 1 },
+              "wordTimestampCount": { "type": "integer", "minimum": 1 },
+              "candidateWindows": { "type": "integer", "minimum": 1 },
+              "candidateWindowsWithCallSegments": { "type": "integer", "minimum": 0 },
+              "syncEstimatedErrorSeconds": { "enum": [2, 9] }
+            }
+          }
+        }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "required": ["targets", "callSegments", "wordTimestamps", "candidateWindows", "replayAccessCount", "protectedAccessCount", "rawAudioVersionedCount", "fullTranscriptVersionedCount", "analystInferenceCount", "gameplayInterpretationCount"],
+      "properties": {
+        "targets": { "const": 2 },
+        "callSegments": { "type": "integer", "minimum": 2 },
+        "wordTimestamps": { "type": "integer", "minimum": 2 },
+        "candidateWindows": { "const": 102 },
+        "replayAccessCount": { "const": 0 },
+        "protectedAccessCount": { "const": 0 },
+        "rawAudioVersionedCount": { "const": 0 },
+        "fullTranscriptVersionedCount": { "const": 0 },
+        "analystInferenceCount": { "const": 0 },
+        "gameplayInterpretationCount": { "const": 0 }
+      }
+    }
+  }
+}

@@ -1,25 +1,22 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 204
+## Coordination Gate Before Further Execution — Task 205
 
-Task 203 at `36510a099fd93830f80b3a029fad9d05328312bb` is the
-accepted base. Task 204 is a technical candidate in `VALIDATING` with gate
-claim `two_match_assisted_review_bundles_ready`. ChatGPT Work must independently
-validate it. Codex stops after this handoff; no Task 205 exists.
+Task 204 at `225f570a68c3d53ecfa17986e674fe21be7d2dc6` is the
+accepted base. Task 205 is a technical candidate in `VALIDATING` with gate
+claim `two_match_audio_call_evidence_ready_with_asr_gaps`. ChatGPT Work must
+independently validate it. Codex stops after this handoff; no Task 206 exists.
 
-If Task 204 is accepted, start the first real two-match review with the six
-generated upload packets. Do not build another infrastructure module first.
-The Task 202 selectivity and Task 200 synchronization blockers remain active,
-and replay protection is unchanged.
+If Task 205 is accepted, complete the bounded 16-segment human audio comparison
+and resume review windows 0013, 0015 and 0016. Do not build another module.
+Task 202 selectivity and Task 200 synchronization blockers remain active.
 
 ## Current State
 
-The current review horizon is the Task 204 bundle: 67 candidates for
-`review_match_001` and 35 for `review_match_002`, represented by 12 and six
-screening atlas pages respectively. Every card uses exactly the existing
-Task 203 first/representative/last frames, while deeper inspection references
-318 existing storyboard pages. Human-supplied context remains match-level
-`context_to_validate`, and analyst inference is empty.
+Task 205 adds a local audio overlay to the accepted Task 204 bundles: 1,338 and
+538 segments, 8,158 and 3,585 word timestamps, and at least one intersecting
+speech segment for every one of the 67 and 35 review windows. Transcripts,
+audio and speaker identity remain local; analyst inference is empty.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

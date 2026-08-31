@@ -1,0 +1,173 @@
+{
+  "taskId": "205",
+  "title": "Build Timestamped Call Evidence Pipeline",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Produce privacy-safe timestamped speech evidence from the two accepted mixed-audio VODs and link it to the existing 102 review windows without strategic interpretation.",
+  "module": "Audio Call Evidence",
+  "moduleGoal": "Reduce uncertainty about contemporaneous speech during real review while preserving speech as observed ASR evidence rather than confirmed intent or team calls.",
+  "observableOutcome": "Two local timestamped transcripts and candidate indexes, compact privacy-safe metrics, a common mixed-VOD/Craig adapter contract, and synthetic Craig overlap evidence.",
+  "metricContribution": "2/2 VOD audio streams processed; segment/word/linkage counts; bounded validation sample; zero transcript/audio/versioned speaker identity, replay access, protected access and analyst interpretation.",
+  "remainingModuleGap": "ASR errors, unknown mixed speakers, lack of diarization, and inherited 9/2-second replay-video synchronization uncertainty.",
+  "hardeningDeferred": "No diarization, emotion or speaker biometrics, call or strategy classification, VLM/OCR, replay parsing, candidate retuning, new frame extraction, Craig download/bot/self-hosting, cloud transcription or Task 206.",
+  "baseCommitExpected": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
+  "executionReportPath": "reports/timestamped-call-evidence-task205.md",
+  "executionContract": {
+    "reasoningComplexity": "High: process long mixed-audio VOD ranges locally, preserve privacy, distinguish ASR and sync uncertainty, and link immutable candidate windows without semantic promotion.",
+    "objective": "Build the smallest complete timestamped call-evidence pipeline needed to resume the real review.",
+    "technicalContext": [
+      "Task 204 is Work-accepted at 225f570a68c3d53ecfa17986e674fe21be7d2dc6 with the newly observed contemporaneous-call evidence blocker.",
+      "Task 198 VODs, Task 200 mappings and Task 204 windows are immutable inputs; replay bytes are unnecessary."
+    ],
+    "confirmedState": [
+      "Both Task 198 VOD identities match their committed size and SHA-256 metadata.",
+      "Task 200 maps review_match_001 with 9-second uncertainty and review_match_002 with 2-second uncertainty.",
+      "Task 204 contains 102 immutable review windows."
+    ],
+    "expectedBaseCommit": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
+    "branchEnvironment": ["Windows desktop executor on main.", "Create and publish exactly one Task 205 commit."],
+    "allowedScope": [
+      "Read only the two Task 198 VODs, compact Task 198/200/204 artifacts, and Task 205 local audio/transcript outputs.",
+      "Write local audio/transcripts below .local/deadem/call-evidence and eight compact privacy-safe outputs."
+    ],
+    "protectedAreas": [
+      "Never open any replay or historical replay_005 through replay_008.",
+      "Never version audio, full real transcripts, real speaker names/IDs or modify accepted candidates, sync, atlas, storyboards, frames or parser packages."
+    ],
+    "expectedChanges": [
+      "Mixed-VOD and Craig adapters, local faster-whisper runner, linkage emitter, schemas, tests, synthetic fixture, contract, compact outputs, report and necessary coordination/navigation updates."
+    ],
+    "acceptanceCriteria": [
+      "Both authorized VODs yield timestamped local speech evidence and candidate linkage, with declared ASR and sync uncertainty.",
+      "Craig synthetic two-track overlap preserves distinct speakers and global order.",
+      "No real transcript/audio/speaker identity or semantic call interpretation is versioned.",
+      "Gate truthfully reflects ASR utility and bounded human-validation availability."
+    ],
+    "mandatoryTests": [
+      "node --test tests/emit-timestamped-call-evidence.test.mjs",
+      "node --test tests/timestamped-call-evidence-schema.test.mjs",
+      ".venv-video\\Scripts\\python.exe -m py_compile tools/transcribe-local-call-audio.py",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs"
+    ],
+    "requiredEvidence": [
+      "VOD identity bridges, ASR configuration/runtime, local segment/word hashes, all 102 linkage rows, Craig overlap fixture, privacy audit, bounded validation sample status, gate and post-commit attestation."
+    ],
+    "commitPolicy": [
+      "Create exactly one commit named Build timestamped call evidence pipeline.",
+      "Stage only authorized compact paths, exclude every audio/transcript/media file and publish main without force."
+    ],
+    "stopConditions": [
+      "Stop on invalid VOD identity, protected/replay access, candidate mutation, real transcript/audio/speaker identity staged, semantic promotion or unusable audio.",
+      "Stop in VALIDATING and do not create Task 206 or another module."
+    ],
+    "returnReportFormat": [
+      "Resultado, O que passou a funcionar, Valor observável, Impacto no módulo, Limitação relevante, Próximo objetivo and Previsão operacional."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+    "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "tools/audio-call-source-adapters.mjs",
+    "tools/emit-timestamped-call-evidence.mjs",
+    "tools/transcribe-local-call-audio.py",
+    "schemas/timestamped-call-evidence.schema.json",
+    "tests/emit-timestamped-call-evidence.test.mjs",
+    "tests/timestamped-call-evidence-schema.test.mjs",
+    "tests/fixtures/audio-call-evidence/craig-multitrack.json",
+    "docs/codex/TIMESTAMPED_CALL_EVIDENCE_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/205.json",
+    "tasks/completed/205-timestamped-call-evidence.md",
+    "reports/timestamped-call-evidence-task205.md",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/**",
+    ".local/deadem/call-evidence/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tasks/specs/206.json",
+    "tasks/*/206-*",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/**",
+    ".local/deadem/review-bundles/**",
+    ".local/deadem/dense-review/**",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**",
+    "**/*.dem",
+    "**/*.wav",
+    "**/*.flac",
+    "**/*.mp3",
+    "**/*.opus",
+    "**/*.m4a",
+    "**/*.mp4",
+    "**/*full-transcript*"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "call-evidence-unit", "type": "node-test", "paths": ["tests/emit-timestamped-call-evidence.test.mjs"] },
+    { "id": "call-evidence-schema", "type": "node-test", "paths": ["tests/timestamped-call-evidence-schema.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "04-controller-pawn-lifecycle[.]json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/manifest.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/availability.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/asr-config.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/coverage.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/candidate-call-summary.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/summary.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/gate.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/provenance-audit.json",
+    "reports/timestamped-call-evidence-task205.md",
+    "tasks/completed/205-timestamped-call-evidence.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay bytes or historical replay_005 through replay_008.",
+    "Never version real speech text, audio, identities, media or semantic call conclusions.",
+    "Do not create Task 206; after acceptance resume the named real-review windows."
+  ],
+  "successGate": "two_match_audio_call_evidence_ready",
+  "gapsGate": "two_match_audio_call_evidence_ready_with_asr_gaps",
+  "blockedGate": "BLOCKED_BY_REVIEW_AUDIO_SPEECH_UNUSABLE",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "204",
-  "baseCommit": "36510a099fd93830f80b3a029fad9d05328312bb",
-  "taskRange": "001-204",
+  "generatedAtTask": "205",
+  "baseCommit": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
+  "taskRange": "001-205",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6237,7 +6237,7 @@
     {
       "taskId": "204",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
       "title": "Build Two-Match Assisted Review Bundles",
       "phase": "review_bundle_export",
       "primaryContribution": "Packaged all 102 accepted review-attention windows into deterministic local screening atlases, upload packets, factual review context and references to existing dense evidence.",
@@ -6251,7 +6251,7 @@
         "reports/two-match-assisted-review-bundle-handoff.md"
       ],
       "gate": "two_match_assisted_review_bundles_ready",
-      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "currentRelevance": "accepted_with_contemporaneous_call_evidence_blocker",
       "dependsOn": ["198", "199", "200", "202", "203"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6259,11 +6259,43 @@
         "Task 200 synchronization uncertainty remains 9 and 2 seconds.",
         "Human context is match-level context to validate and analyst inference remains empty."
       ],
-      "evidenceStatus": "two_match_assisted_review_bundles_ready_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_assisted_review_bundles_ready",
       "evidencePaths": [
         "tasks/specs/204.json",
         "tasks/completed/204-two-match-assisted-review-bundles.md",
         "output/local-replay-processing/assisted-review-bundles/task204-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "205",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Timestamped Call Evidence Pipeline",
+      "phase": "audio_call_evidence",
+      "primaryContribution": "Built local faster-whisper mixed-VOD transcription, Task 200 replay-time mapping, 102-window linkage and a Craig multitrack adapter contract without versioning real speech text.",
+      "introducedCapabilities": ["timestamped_audio_call_evidence"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/transcribe-local-call-audio.py",
+        "tools/emit-timestamped-call-evidence.mjs",
+        "output/local-replay-processing/audio-call-evidence/task205-bounded2/summary.json",
+        "reports/timestamped-call-evidence-task205.md"
+      ],
+      "gate": "two_match_audio_call_evidence_ready_with_asr_gaps",
+      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "dependsOn": ["198", "200", "204"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Manual audio/transcript classifications and usable rate remain pending.",
+        "Mixed VOD speakers remain unknown and Task 200 retains 9/2-second uncertainty.",
+        "ASR evidence must not be promoted to intent, call correctness or strategy."
+      ],
+      "evidenceStatus": "two_match_audio_call_evidence_ready_with_asr_gaps_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/205.json",
+        "tasks/completed/205-timestamped-call-evidence.md",
+        "output/local-replay-processing/audio-call-evidence/task205-bounded2/summary.json"
       ]
     }
   ]

@@ -1,0 +1,82 @@
+{
+  "aggregate": {
+    "analystInferenceCount": 0,
+    "callSegments": 1876,
+    "candidateLinkageCount": 2193,
+    "candidateWindows": 102,
+    "candidateWindowsWithCallSegments": 102,
+    "fullTranscriptVersionedCount": 0,
+    "gameplayInterpretationCount": 0,
+    "manualValidationClassifiedSegments": 0,
+    "manualValidationPreparedSegments": 16,
+    "manualValidationUsableRate": null,
+    "protectedAccessCount": 0,
+    "rawAudioVersionedCount": 0,
+    "realSpeakerIdentityVersionedCount": 0,
+    "replayAccessCount": 0,
+    "targets": 2,
+    "wordTimestamps": 11743
+  },
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "metrics": {
+        "asrProcessingTimeSeconds": 660.88,
+        "audioDurationSeconds": 4562,
+        "candidateLinkageCount": 1557,
+        "candidateWindows": 67,
+        "candidateWindowsWithCallSegments": 67,
+        "candidateWindowsWithoutCalls": 0,
+        "computeType": "int8",
+        "device": "cpu",
+        "failedSegments": 0,
+        "languageDistribution": {
+          "pt": 1338
+        },
+        "manualValidationClassifiedSegments": 0,
+        "manualValidationPreparedSegments": 8,
+        "manualValidationUsableRate": null,
+        "model": "small",
+        "reviewTargetId": "review_match_001",
+        "speechCoverageRatio": 0.551041,
+        "speechCoverageSeconds": 2513.85,
+        "speechSegments": 1338,
+        "syncEstimatedErrorSeconds": 9,
+        "transcribedSegments": 1338,
+        "wordTimestampCount": 8158
+      },
+      "reviewTargetId": "review_match_001",
+      "status": "available_with_asr_gaps"
+    },
+    {
+      "metrics": {
+        "asrProcessingTimeSeconds": 355.314,
+        "audioDurationSeconds": 2090,
+        "candidateLinkageCount": 636,
+        "candidateWindows": 35,
+        "candidateWindowsWithCallSegments": 35,
+        "candidateWindowsWithoutCalls": 0,
+        "computeType": "int8",
+        "device": "cpu",
+        "failedSegments": 0,
+        "languageDistribution": {
+          "pt": 538
+        },
+        "manualValidationClassifiedSegments": 0,
+        "manualValidationPreparedSegments": 8,
+        "manualValidationUsableRate": null,
+        "model": "small",
+        "reviewTargetId": "review_match_002",
+        "speechCoverageRatio": 0.524493,
+        "speechCoverageSeconds": 1096.19,
+        "speechSegments": 538,
+        "syncEstimatedErrorSeconds": 2,
+        "transcribedSegments": 538,
+        "wordTimestampCount": 3585
+      },
+      "reviewTargetId": "review_match_002",
+      "status": "available_with_asr_gaps"
+    }
+  ],
+  "technicalGateStatus": "two_match_audio_call_evidence_ready_with_asr_gaps"
+}

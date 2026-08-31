@@ -1117,26 +1117,50 @@
     {
       "id": "assisted_review_bundles_task204_manifest",
       "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/manifest.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_call_evidence_blocker",
       "notes": "Records validated Task 203 bridges, local-only media policy and complete 102-candidate lineage."
     },
     {
       "id": "assisted_review_bundles_task204_window_index",
       "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_call_evidence_blocker",
       "notes": "All 102 candidates with separated factual, derived, video, human and empty analyst-inference provenance."
     },
     {
       "id": "assisted_review_bundles_task204_upload_packets",
       "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/upload-packet-index.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_call_evidence_blocker",
       "notes": "Six reproducible three-page local upload packets covering 18 chronological screening atlas pages."
     },
     {
       "id": "assisted_review_bundles_task204_gate",
       "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Technical gate claim two_match_assisted_review_bundles_ready pending independent Work validation."
+      "status": "accepted_with_call_evidence_blocker",
+      "notes": "Work accepted two_match_assisted_review_bundles_ready at 225f570a68c3d53ecfa17986e674fe21be7d2dc6; real review exposed missing contemporaneous call evidence."
+    },
+    {
+      "id": "audio_call_evidence_task205_manifest",
+      "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/manifest.json",
+      "status": "candidate_ready_with_asr_gaps",
+      "notes": "Records VOD/local transcript hashes, adapter contracts, immutable candidate fingerprint and synthetic Craig evidence without real speech text."
+    },
+    {
+      "id": "audio_call_evidence_task205_coverage",
+      "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/coverage.json",
+      "status": "candidate_ready_with_asr_gaps",
+      "notes": "2/2 VOD regions, 1,876 segments, 11,743 word timestamps and 102/102 linked candidate windows with 9/2-second sync uncertainty."
+    },
+    {
+      "id": "audio_call_evidence_task205_candidate_summary",
+      "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/candidate-call-summary.json",
+      "status": "candidate_ready_with_asr_gaps",
+      "notes": "Privacy-safe per-candidate call counts for all 102 immutable windows; no transcript text or speaker identity."
+    },
+    {
+      "id": "audio_call_evidence_task205_gate",
+      "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/gate.json",
+      "status": "candidate_ready_with_asr_gaps",
+      "notes": "Technical gate claim two_match_audio_call_evidence_ready_with_asr_gaps; 16-sample manual audio comparison remains pending."
     }
   ]
 }

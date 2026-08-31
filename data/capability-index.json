@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "204",
+  "generatedAtTask": "205",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -925,8 +925,8 @@
       "capabilityId": "two_match_assisted_review_bundles",
       "plainName": "Two-match assisted review bundles",
       "introducedInTask": "204",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_functional_ready_pending_work_validation",
+      "stabilizedInTask": "204",
+      "currentStatus": "accepted_with_contemporaneous_call_evidence_blocker",
       "currentBaseline": "task204_bounded_two_screening_and_dense_reference_bundles",
       "whyItMatters": "Turns 102 structural review-attention windows into practical chronological screening packets with factual context and an on-demand bridge to existing dense evidence.",
       "mainFiles": [
@@ -946,7 +946,33 @@
         "Replay-to-VOD synchronization retains declared errors of 9 and 2 seconds.",
         "Player-reported context remains match-level context to validate; no visual or analyst inference was performed."
       ],
-      "nextUsefulStep": "Await independent Work validation, then begin the real two-match review with the six upload packets."
+      "nextUsefulStep": "Use the accepted bundles with the Task 205 local audio evidence overlay during real review."
+    },
+    {
+      "capabilityId": "timestamped_audio_call_evidence",
+      "plainName": "Timestamped audio call evidence",
+      "introducedInTask": "205",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_with_asr_gaps_pending_work_validation",
+      "currentBaseline": "task205_bounded_two_mixed_vod_asr_linkage",
+      "whyItMatters": "Adds contemporaneous speech evidence to every accepted review window without interpreting intent, coordination or call quality.",
+      "mainFiles": [
+        "tools/transcribe-local-call-audio.py",
+        "tools/audio-call-source-adapters.mjs",
+        "tools/emit-timestamped-call-evidence.mjs",
+        "docs/codex/TIMESTAMPED_CALL_EVIDENCE_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/audio-call-evidence/task205-bounded2/coverage.json",
+        "output/local-replay-processing/audio-call-evidence/task205-bounded2/candidate-call-summary.json",
+        "output/local-replay-processing/audio-call-evidence/task205-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "Mixed speakers remain unknown and ASR word/segment errors are possible.",
+        "The 16-sample human audio comparison is prepared but not classified on this surface.",
+        "Replay mapping retains 9 and 2 second uncertainty; temporal overlap is not semantic relevance."
+      ],
+      "nextUsefulStep": "After Work acceptance, complete the bounded human sample and resume review_match_001 windows 0013, 0015 and 0016."
     }
   ]
 }
