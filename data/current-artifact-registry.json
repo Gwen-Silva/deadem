@@ -1069,26 +1069,50 @@
     {
       "id": "review_candidate_windows_task202_manifest",
       "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/manifest.json",
-      "status": "candidate_functional_ready_with_low_selectivity",
+      "status": "accepted_with_review_candidate_selectivity_low",
       "notes": "Records 18/18 validated Task 199 local artifact bridges, fixed policies and local-only detailed bin/seed hashes."
     },
     {
       "id": "review_candidate_windows_task202_candidates",
       "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json",
-      "status": "candidate_functional_ready_with_low_selectivity",
+      "status": "accepted_with_review_candidate_selectivity_low",
       "notes": "102 deterministic review-attention windows preserving 1,300 mapped seeds, uncertainty-expanded VOD ranges and Task 201 navigation links."
     },
     {
       "id": "review_candidate_windows_task202_coverage",
       "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/coverage.json",
-      "status": "candidate_functional_ready_with_low_selectivity",
+      "status": "accepted_with_review_candidate_selectivity_low",
       "notes": "Records 73.2135 and 90.9569 percent target coverage, 78.7883 percent aggregate coverage and zero unmapped seeds."
     },
     {
       "id": "review_candidate_windows_task202_gate",
       "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/gate.json",
+      "status": "accepted_with_review_candidate_selectivity_low",
+      "notes": "Work accepted two_match_review_candidate_windows_ready_with_low_selectivity at 59ffd6830c3f6edf193b360f36c1dc52943d6893 with review_candidate_selectivity_low."
+    },
+    {
+      "id": "dense_visual_review_task203_manifest",
+      "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/manifest.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Technical gate two_match_review_candidate_windows_ready_with_low_selectivity pending independent Work validation."
+      "notes": "Records two revalidated VOD identities, immutable source lineage, local artifact hashes and local-only media policy."
+    },
+    {
+      "id": "dense_visual_review_task203_extraction_plan",
+      "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/extraction-plan.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Compact global plan with 6,326 raw requests, 4,947 unique timestamps, 1,379 deduplication savings and no density adjustment."
+    },
+    {
+      "id": "dense_visual_review_task203_window_index",
+      "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "102 preserved Task 202 windows with ordered local frame references, boundary evidence and storyboard IDs."
+    },
+    {
+      "id": "dense_visual_review_task203_gate",
+      "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical gate two_match_dense_visual_evidence_ready pending independent Work validation."
     }
   ]
 }

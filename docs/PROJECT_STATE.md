@@ -1712,4 +1712,29 @@ review-attention regions and review priority is a family-count heuristic, never
 a fight/death/error probability. No retuning was performed because recall is
 the declared priority and lifecycle/objective-like seeds are mandatory. There
 are zero protected accesses, gameplay interpretations, final facts or
-attributions. Task 202 is `VALIDATING` pending Work; no Task 203 exists.
+attributions. ChatGPT Work accepted Task 202 at
+`59ffd6830c3f6edf193b360f36c1dc52943d6893` with blocker
+`review_candidate_selectivity_low` and separately authorized Task 203.
+
+## Task 203 - Dense Visual Review Evidence
+
+Task 203 revalidated both Task 198 VOD SHA-256 identities, preserved the Task
+200 errors of 9 and 2 seconds, and consumed all 102 Task 202 windows without
+changing priority, source families, visual ranges or candidate semantics.
+
+The frozen cadence policy is high 1 second, medium 2 seconds and low 5
+seconds. A global per-target plan reduced 6,326 raw requests to 4,947 unique
+timestamps, saving 1,379 physical extractions. The plan stayed below the 6,000
+frame operational threshold, so no density adjustment was applied.
+
+The real execution decoded 4,947/4,947 frames with zero failures. All 102
+windows have local first/representative/last evidence and 318 paginated
+storyboard pages. Local operational media occupies 1,896,139,138 bytes and is
+ignored. Twenty representative reruns matched requested timestamps, decoded
+timestamps and frame hashes; storyboards and all eight compact artifacts are
+deterministic.
+
+The technical gate is `two_match_dense_visual_evidence_ready`. Frames remain
+evidence for review, never gameplay events or conclusions. Replay/protected
+access, interpretation, final facts, attribution and versioned images are all
+zero. Task 203 is `VALIDATING` pending Work; no Task 204 exists.

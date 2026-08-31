@@ -1,0 +1,107 @@
+{
+  "artifactClass": "two_match_dense_visual_review_evidence_manifest",
+  "candidateSemantics": "review_attention_region_not_gameplay_event",
+  "counts": {
+    "attributionProduced": 0,
+    "extractedFrames": 4947,
+    "extractionFailures": 0,
+    "finalFactsProduced": 0,
+    "gameplayInterpretationsProduced": 0,
+    "imagesVersioned": 0,
+    "protectedAccessCount": 0,
+    "replayAccessCount": 0,
+    "storyboardPages": 318,
+    "targets": 2,
+    "totalCandidateWindows": 102,
+    "totalLocalBytes": 1896139138,
+    "totalUniqueFrames": 4947,
+    "windowsWithBoundaryEvidence": 102,
+    "windowsWithEvidence": 102
+  },
+  "generatedAtLogical": "task_203",
+  "generatedBy": "tools/emit-dense-visual-review-evidence.mjs",
+  "localArtifacts": [
+    {
+      "contactSheetManifest": {
+        "path": ".local/deadem/dense-review/review_match_001/contact-sheet-manifest.json",
+        "sha256": "42024af6efc95222e3b190978ec7389ef3742f4ecbcfcf783577549fea766897",
+        "sizeBytes": 711791
+      },
+      "extractionPlan": {
+        "path": ".local/deadem/dense-review/review_match_001/extraction-plan.json",
+        "sha256": "21007dbdc68b030cc962939f64c45d33663dbe17bd46031db51414eafd18ceae",
+        "sizeBytes": 1360144
+      },
+      "frameEvidenceIndex": {
+        "path": ".local/deadem/dense-review/review_match_001/frame-evidence-index.json",
+        "sha256": "d10564376d3d8c9982785413a2e20b472cb6c71e22a82c181a1f286b7942d00e",
+        "sizeBytes": 2840819
+      },
+      "reviewTargetId": "review_match_001",
+      "windowEvidenceIndex": {
+        "path": ".local/deadem/dense-review/review_match_001/window-evidence-index.json",
+        "sha256": "84b1d83f8d304aee25fa701c2151edb73652130f0a968f5d4b1fff2ee0908201",
+        "sizeBytes": 292218
+      }
+    },
+    {
+      "contactSheetManifest": {
+        "path": ".local/deadem/dense-review/review_match_002/contact-sheet-manifest.json",
+        "sha256": "d59a2f9dfd744596045c0c1c9dcacff4fecacc9d5e4bb63418965bd7bab4cdf7",
+        "sizeBytes": 339589
+      },
+      "extractionPlan": {
+        "path": ".local/deadem/dense-review/review_match_002/extraction-plan.json",
+        "sha256": "9efdccf3aa4610297aec8aa898651a608ed985caca96b6800ee76bf3a380759c",
+        "sizeBytes": 741658
+      },
+      "frameEvidenceIndex": {
+        "path": ".local/deadem/dense-review/review_match_002/frame-evidence-index.json",
+        "sha256": "4ae5126e30e95dbf694e6a957a09ddf6f9c63976eb72c2bed74a6f41ec19aa82",
+        "sizeBytes": 1565045
+      },
+      "reviewTargetId": "review_match_002",
+      "windowEvidenceIndex": {
+        "path": ".local/deadem/dense-review/review_match_002/window-evidence-index.json",
+        "sha256": "9b27a88b0645b81ed3947ff515201077d52fe3511c75bfeee6207670c4114aca",
+        "sizeBytes": 144403
+      }
+    }
+  ],
+  "policy": {
+    "boundaryPolicy": "first_center_last_requested_when_inside_valid_visual_range",
+    "densityAdjustmentCount": 0,
+    "densityLimitFrames": 6000,
+    "highCadenceSeconds": 1,
+    "lowCadenceSeconds": 5,
+    "mediaStoragePolicy": "local_untracked_do_not_commit_images",
+    "mediumCadenceSeconds": 2,
+    "overlapPolicy": "highest_density_precedence_then_timestamp_deduplication",
+    "storyboardPageCapacity": 25
+  },
+  "schemaVersion": 1,
+  "sourceArtifacts": [
+    "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+    "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+    "output/local-replay-processing/whole-match-visual-index/task201-bounded2/manifest.json",
+    "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json"
+  ],
+  "vodIdentityBridges": [
+    {
+      "expectedSha256": "b2bc8aa94b94fff12eeb14b3c060578dbdf262ccbf24e76f2de3713c4a8b7f05",
+      "identityStatus": "matched_task198_manifest_before_extraction",
+      "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_001\\video\\Scrim_01_SSR.mp4",
+      "observedSha256": "b2bc8aa94b94fff12eeb14b3c060578dbdf262ccbf24e76f2de3713c4a8b7f05",
+      "reviewTargetId": "review_match_001",
+      "sizeBytes": 5177515603
+    },
+    {
+      "expectedSha256": "852d444c1648bdbe7c35cb234127868bc991dec2d323df1496d4aa89fb8bfaa4",
+      "identityStatus": "matched_task198_manifest_before_extraction",
+      "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_002\\video\\Scrim_02_SSR.mp4",
+      "observedSha256": "852d444c1648bdbe7c35cb234127868bc991dec2d323df1496d4aa89fb8bfaa4",
+      "reviewTargetId": "review_match_002",
+      "sizeBytes": 1681066806
+    }
+  ]
+}

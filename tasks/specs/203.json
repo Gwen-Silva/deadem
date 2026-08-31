@@ -1,0 +1,175 @@
+{
+  "taskId": "203",
+  "title": "Build Dense Visual Review Evidence",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Extract deduplicated local L2 visual evidence and storyboards for all Task 202 candidate windows without semantic classification or replay access.",
+  "module": "Dense Visual Extraction",
+  "moduleGoal": "Make every candidate window navigable as a bounded visual sequence while preserving Task 202 semantics and Task 200 uncertainty.",
+  "observableOutcome": "Two revalidated VODs, 102 preserved candidate windows, a global priority-cadence extraction plan, local frames/storyboards and compact deterministic evidence indexes.",
+  "metricContribution": "2/2 VOD identities, at least 99 percent window coverage, boundary evidence, at most 2 percent extraction failures, overlap savings, zero images/replays/interpretation/final facts/attribution.",
+  "remainingModuleGap": "Task 202 candidate selectivity remains low and replay-video synchronization precision remains limited to 9 and 2 seconds.",
+  "hardeningDeferred": "No OCR, recognition, tracking, VLM, strategy analysis, semantic classification, death confirmation, L3 bursts, Review Bundle Exporter or Task 204.",
+  "baseCommitExpected": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
+  "executionReportPath": "reports/dense-visual-review-evidence-task203.md",
+  "executionContract": {
+    "reasoningComplexity": "High: deduplicate overlapping priority-driven frame plans across two large VODs while preserving candidate semantics, synchronization uncertainty and local-only media.",
+    "objective": "Build the smallest complete L2 visual evidence layer for the accepted Task 202 review windows.",
+    "technicalContext": [
+      "Task 202 is Work-accepted at 59ffd6830c3f6edf193b360f36c1dc52943d6893 with review_candidate_selectivity_low.",
+      "Task 200 synchronization error remains 9 and 2 seconds and is immutable.",
+      "Tasks 036, 037, 200, 201 and python/deadem/video_pipeline are reusable."
+    ],
+    "confirmedState": [
+      "Exactly two Task 198 VODs and 102 Task 202 candidate windows are authorized.",
+      "No replay or protected fixture is needed for this task."
+    ],
+    "expectedBaseCommit": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
+    "branchEnvironment": ["Windows desktop executor on main.", "Create and publish exactly one Task 203 commit."],
+    "allowedScope": [
+      "Read compact Tasks 198, 200, 201 and 202 artifacts and the two Task 198 VODs.",
+      "Write local frames and storyboards below .local/deadem/dense-review and eight compact bounded2 artifacts."
+    ],
+    "protectedAreas": [
+      "Never access replay_005 through replay_008 or open any .dem.",
+      "Never version VODs, frames, storyboards or modify parser packages and samples."
+    ],
+    "expectedChanges": [
+      "Dense evidence emitter, storyboard helper, strict schema, tests, contract, real compact artifacts and necessary state/navigation updates."
+    ],
+    "acceptanceCriteria": [
+      "2/2 VOD identities revalidate and all 102 candidates remain represented without semantic changes.",
+      "At least 99 percent of windows have evidence and every usable window has first/representative/last evidence.",
+      "Failure rate is at most 2 percent, overlaps are deduplicated, storyboards are navigable and determinism is demonstrated.",
+      "No image, replay access, gameplay interpretation, final fact or attribution is produced."
+    ],
+    "mandatoryTests": [
+      "node --test tests/emit-dense-visual-review-evidence.test.mjs",
+      "node --test tests/dense-visual-review-evidence-schema.test.mjs",
+      "node --check tools/emit-dense-visual-review-evidence.mjs",
+      ".venv-video\\Scripts\\python.exe -m py_compile tools/build-dense-review-contact-sheets.py",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs"
+    ],
+    "requiredEvidence": [
+      "Two VOD hash bridges, raw and deduplicated request counts, extraction and coverage metrics, storyboard indexes, seek errors, local storage, determinism, gate and post-commit attestation."
+    ],
+    "commitPolicy": [
+      "Create exactly one commit named Build dense visual review evidence.",
+      "Stage exact authorized paths, exclude every image and publish main without force."
+    ],
+    "stopConditions": [
+      "Stop on protected/replay access, VOD identity mismatch, versioned media, semantic promotion or decode unavailability.",
+      "Stop in VALIDATING and do not create Task 204."
+    ],
+    "returnReportFormat": [
+      "Resultado, O que passou a funcionar, Valor observável, Impacto no módulo, Limitação relevante, Próximo objetivo and Previsão operacional."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+    "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+    "output/local-replay-processing/whole-match-visual-index/task201-bounded2/**",
+    "output/local-replay-processing/review-candidate-windows/task202-bounded2/**",
+    "python/deadem/video_pipeline/**",
+    ".local/deadem/review-targets/review_match_001/video/*",
+    ".local/deadem/review-targets/review_match_002/video/*"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "tools/emit-dense-visual-review-evidence.mjs",
+    "tools/build-dense-review-contact-sheets.py",
+    "schemas/dense-visual-review-evidence.schema.json",
+    "tests/emit-dense-visual-review-evidence.test.mjs",
+    "tests/dense-visual-review-evidence-schema.test.mjs",
+    "docs/codex/DENSE_VISUAL_REVIEW_EVIDENCE_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/203.json",
+    "tasks/completed/203-dense-visual-review-evidence.md",
+    "reports/dense-visual-review-evidence-task203.md",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/**",
+    ".local/deadem/dense-review/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tasks/specs/204.json",
+    "tasks/*/204-*",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**",
+    "**/*.dem",
+    "**/*.mp4",
+    "**/*.mkv",
+    "**/*.mov",
+    "**/*.webm",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.png"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "dense-review-unit", "type": "node-test", "paths": ["tests/emit-dense-visual-review-evidence.test.mjs"] },
+    { "id": "dense-review-schema", "type": "node-test", "paths": ["tests/dense-visual-review-evidence-schema.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "04-controller-pawn-lifecycle[.]json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/manifest.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/extraction-plan.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/frame-evidence-summary.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/coverage.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/summary.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/gate.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/provenance-audit.json",
+    "reports/dense-visual-review-evidence-task203.md",
+    "tasks/completed/203-dense-visual-review-evidence.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access any replay or historical replay_005 through replay_008.",
+    "Never version media or execute semantic visual stages.",
+    "Do not create Task 204 or start Review Bundle Exporter."
+  ],
+  "successGate": "two_match_dense_visual_evidence_ready",
+  "gapsGate": "two_match_dense_visual_evidence_ready_with_gaps",
+  "partialGate": "two_match_dense_visual_evidence_partial",
+  "blockedGate": "BLOCKED_BY_DENSE_REVIEW_VIDEO_DECODE_UNAVAILABLE",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

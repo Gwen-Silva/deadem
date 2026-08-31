@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/dense-visual-review-evidence.schema.json",
+  "title": "Dense Visual Review Window Evidence Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "candidateSemantics", "candidateWindowCount", "windows"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactClass": { "const": "dense_visual_review_window_evidence_index" },
+    "candidateSemantics": { "const": "review_attention_region_not_gameplay_event" },
+    "candidateWindowCount": { "type": "integer", "minimum": 1 },
+    "windows": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/windowEvidence" }
+    }
+  },
+  "$defs": {
+    "windowEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundaryEvidence", "candidateSemantics", "candidateWindowId", "contactSheetIds",
+        "denseFrameIds", "effectiveCadenceSeconds", "firstFrameId", "frameCount", "lastFrameId",
+        "prioritySemantics", "priorityTier", "provenance", "replayEndSeconds", "replayStartSeconds",
+        "representativeFrameId", "reviewTargetId", "sourceFamilies", "storyboardPageCount",
+        "syncEstimatedErrorSeconds", "visualVodEndSeconds", "visualVodStartSeconds"
+      ],
+      "properties": {
+        "boundaryEvidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["complete", "firstRequestedBoundaryPresent", "lastRequestedBoundaryPresent", "representativeRequestedPresent"],
+          "properties": {
+            "complete": { "type": "boolean" },
+            "firstRequestedBoundaryPresent": { "type": "boolean" },
+            "lastRequestedBoundaryPresent": { "type": "boolean" },
+            "representativeRequestedPresent": { "type": "boolean" }
+          }
+        },
+        "candidateSemantics": { "const": "review_attention_region_not_gameplay_event" },
+        "candidateWindowId": { "type": "string", "pattern": "^review_match_00[12]_window_[0-9]{4}$" },
+        "contactSheetIds": { "type": "array", "items": { "type": "string" } },
+        "denseFrameIds": { "type": "array", "items": { "type": "string", "pattern": "^review_match_00[12]_dense_[0-9]{5}$" } },
+        "effectiveCadenceSeconds": { "type": ["number", "null"], "minimum": 0 },
+        "firstFrameId": { "type": ["string", "null"] },
+        "frameCount": { "type": "integer", "minimum": 0 },
+        "lastFrameId": { "type": ["string", "null"] },
+        "prioritySemantics": { "const": "review_priority_heuristic_not_probability" },
+        "priorityTier": { "enum": ["high", "medium", "low"] },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidateWindow", "frames", "syncUncertainty", "visualRange"],
+          "properties": {
+            "candidateWindow": { "const": "Task202_preserved_without_reclassification" },
+            "frames": { "const": "Task203_local_visual_evidence_without_interpretation" },
+            "syncUncertainty": { "const": "Task200_mapping_preserved_without_recalculation" },
+            "visualRange": { "const": "Task202_visualEvidenceStartSeconds_visualEvidenceEndSeconds" }
+          }
+        },
+        "replayEndSeconds": { "type": "number", "minimum": 0 },
+        "replayStartSeconds": { "type": "number", "minimum": 0 },
+        "representativeFrameId": { "type": ["string", "null"] },
+        "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+        "sourceFamilies": { "type": "array", "minItems": 1, "items": { "enum": ["damage", "economy", "healing", "lifecycle", "objective_like"] } },
+        "storyboardPageCount": { "type": "integer", "minimum": 0 },
+        "syncEstimatedErrorSeconds": { "enum": [2, 9] },
+        "visualVodEndSeconds": { "type": "number", "minimum": 0 },
+        "visualVodStartSeconds": { "type": "number", "minimum": 0 }
+      }
+    }
+  }
+}

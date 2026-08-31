@@ -1,0 +1,50 @@
+{
+  "artifactClass": "dense_visual_review_extraction_plan_compact",
+  "deduplicatedRequests": 4947,
+  "deduplicationSavings": 1379,
+  "densityAdjustmentCount": 0,
+  "rawPlannedRequests": 6326,
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "cadenceSeconds": {
+        "high": 1,
+        "low": 5,
+        "medium": 2
+      },
+      "candidateWindowCount": 67,
+      "deduplicatedRequests": 3178,
+      "deduplicationSavings": 1034,
+      "densityAdjustmentCount": 0,
+      "firstRequestedTimestampMs": 1938000,
+      "lastRequestedTimestampMs": 6500000,
+      "localPlan": {
+        "path": ".local/deadem/dense-review/review_match_001/extraction-plan.json",
+        "sha256": "21007dbdc68b030cc962939f64c45d33663dbe17bd46031db51414eafd18ceae",
+        "sizeBytes": 1360144
+      },
+      "rawPlannedRequests": 4212,
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "cadenceSeconds": {
+        "high": 1,
+        "low": 5,
+        "medium": 2
+      },
+      "candidateWindowCount": 35,
+      "deduplicatedRequests": 1769,
+      "deduplicationSavings": 345,
+      "densityAdjustmentCount": 0,
+      "firstRequestedTimestampMs": 66000,
+      "lastRequestedTimestampMs": 2090000,
+      "localPlan": {
+        "path": ".local/deadem/dense-review/review_match_002/extraction-plan.json",
+        "sha256": "9efdccf3aa4610297aec8aa898651a608ed985caca96b6800ee76bf3a380759c",
+        "sizeBytes": 741658
+      },
+      "rawPlannedRequests": 2114,
+      "reviewTargetId": "review_match_002"
+    }
+  ]
+}

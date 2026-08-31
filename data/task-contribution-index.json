@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "202",
-  "baseCommit": "3d1162d6e1d1afea4de98fdd022b91fab6388d2c",
-  "taskRange": "001-202",
+  "generatedAtTask": "203",
+  "baseCommit": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
+  "taskRange": "001-203",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -270,7 +270,7 @@
     {
       "taskId": "011",
       "status": "evidence_partial",
-      "commitSha": null,
+      "commitSha": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
       "title": "Task 011",
       "phase": "foundation_policy_diagnostics_protection",
       "primaryContribution": "Completed or documented: Task 011.",
@@ -6187,7 +6187,7 @@
         "reports/review-candidate-window-generator-task202.md"
       ],
       "gate": "two_match_review_candidate_windows_ready_with_low_selectivity",
-      "currentRelevance": "candidate_functional_ready_with_low_selectivity_pending_work_validation",
+      "currentRelevance": "accepted_with_review_candidate_selectivity_low",
       "dependsOn": ["199", "200", "201"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6195,11 +6195,43 @@
         "Review priority is a source-family heuristic and never a gameplay-event probability.",
         "Task 200 alignment uncertainty remains 9 and 2 seconds; visual ranges expand and clamp accordingly."
       ],
-      "evidenceStatus": "two_match_review_candidate_windows_ready_with_low_selectivity_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_review_candidate_windows_ready_with_low_selectivity",
       "evidencePaths": [
         "tasks/specs/202.json",
         "tasks/completed/202-review-candidate-window-generator.md",
         "output/local-replay-processing/review-candidate-windows/task202-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "203",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Dense Visual Review Evidence",
+      "phase": "dense_visual_extraction",
+      "primaryContribution": "Built deterministic deduplicated L2 frame sequences and local storyboards for all 102 accepted Task 202 review-attention windows.",
+      "introducedCapabilities": ["dense_visual_review_evidence"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-dense-visual-review-evidence.mjs",
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json",
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/summary.json",
+        "reports/dense-visual-review-evidence-task203.md"
+      ],
+      "gate": "two_match_dense_visual_evidence_ready",
+      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "dependsOn": ["198", "200", "201", "202"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Task 202 selectivity remains low; dense evidence does not validate a gameplay event.",
+        "Task 200 synchronization uncertainty remains 9 and 2 seconds even though decoder seek error is zero.",
+        "Frames and storyboards remain local-only and no L3, OCR, recognition, tracking, VLM or semantic analysis was executed."
+      ],
+      "evidenceStatus": "two_match_dense_visual_evidence_ready_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/203.json",
+        "tasks/completed/203-dense-visual-review-evidence.md",
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/summary.json"
       ]
     }
   ]

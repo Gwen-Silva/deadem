@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "202",
+  "generatedAtTask": "203",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -873,8 +873,8 @@
       "capabilityId": "review_candidate_window_generator",
       "plainName": "Review candidate window generator",
       "introducedInTask": "202",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_functional_ready_with_low_selectivity",
+      "stabilizedInTask": "202",
+      "currentStatus": "accepted_with_review_candidate_selectivity_low",
       "currentBaseline": "task202_bounded_two_high_recall_review_attention_windows",
       "whyItMatters": "Reduces synchronized whole-match timelines to reproducible bounded regions that can receive dense visual evidence later.",
       "mainFiles": [
@@ -892,7 +892,34 @@
         "Windows are review-attention regions rather than fights, deaths, objectives, decisions or other gameplay events.",
         "Task 197 has no direct review-target bridge and Task 200 timing errors remain 9 and 2 seconds."
       ],
-      "nextUsefulStep": "After independent Work validation and separate authorization, use the windows as the bounded input for dense visual evidence extraction."
+      "nextUsefulStep": "Use the accepted windows as immutable navigation inputs; do not retune them during dense visual review."
+    },
+    {
+      "capabilityId": "dense_visual_review_evidence",
+      "plainName": "Dense visual review evidence",
+      "introducedInTask": "203",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_functional_ready_pending_work_validation",
+      "currentBaseline": "task203_bounded_two_deduplicated_l2_visual_evidence",
+      "whyItMatters": "Makes all 102 accepted review-attention windows locally navigable through deterministic ordered frames and paginated storyboards without semantic promotion.",
+      "mainFiles": [
+        "tools/emit-dense-visual-review-evidence.mjs",
+        "tools/build-dense-review-contact-sheets.py",
+        "schemas/dense-visual-review-evidence.schema.json",
+        "docs/codex/DENSE_VISUAL_REVIEW_EVIDENCE_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/extraction-plan.json",
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json",
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/coverage.json",
+        "output/local-replay-processing/dense-review-evidence/task203-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "Task 202 candidate selectivity remains low and visual density is not probability or gameplay relevance.",
+        "Replay-to-VOD synchronization retains declared errors of 9 and 2 seconds, separate from decoder seek error.",
+        "Images and full frame indexes remain local-only; no OCR, recognition, tracking, VLM, semantic review or L3 burst exists."
+      ],
+      "nextUsefulStep": "Await independent Work validation; a Review Bundle Exporter requires separate authorization."
     }
   ]
 }
