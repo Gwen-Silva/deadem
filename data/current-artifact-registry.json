@@ -1093,26 +1093,50 @@
     {
       "id": "dense_visual_review_task203_manifest",
       "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/manifest.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_inherited_blockers",
       "notes": "Records two revalidated VOD identities, immutable source lineage, local artifact hashes and local-only media policy."
     },
     {
       "id": "dense_visual_review_task203_extraction_plan",
       "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/extraction-plan.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_inherited_blockers",
       "notes": "Compact global plan with 6,326 raw requests, 4,947 unique timestamps, 1,379 deduplication savings and no density adjustment."
     },
     {
       "id": "dense_visual_review_task203_window_index",
       "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted_with_inherited_blockers",
       "notes": "102 preserved Task 202 windows with ordered local frame references, boundary evidence and storyboard IDs."
     },
     {
       "id": "dense_visual_review_task203_gate",
       "path": "output/local-replay-processing/dense-review-evidence/task203-bounded2/gate.json",
+      "status": "accepted_with_inherited_blockers",
+      "notes": "Work accepted technical gate two_match_dense_visual_evidence_ready at 36510a099fd93830f80b3a029fad9d05328312bb with inherited selectivity and synchronization blockers."
+    },
+    {
+      "id": "assisted_review_bundles_task204_manifest",
+      "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/manifest.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Technical gate two_match_dense_visual_evidence_ready pending independent Work validation."
+      "notes": "Records validated Task 203 bridges, local-only media policy and complete 102-candidate lineage."
+    },
+    {
+      "id": "assisted_review_bundles_task204_window_index",
+      "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "All 102 candidates with separated factual, derived, video, human and empty analyst-inference provenance."
+    },
+    {
+      "id": "assisted_review_bundles_task204_upload_packets",
+      "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/upload-packet-index.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Six reproducible three-page local upload packets covering 18 chronological screening atlas pages."
+    },
+    {
+      "id": "assisted_review_bundles_task204_gate",
+      "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical gate claim two_match_assisted_review_bundles_ready pending independent Work validation."
     }
   ]
 }

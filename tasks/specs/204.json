@@ -1,0 +1,175 @@
+{
+  "taskId": "204",
+  "title": "Build Two-Match Assisted Review Bundles",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Package all 102 accepted review candidates into two practical screening and deep-review bundles without new extraction or semantic analysis.",
+  "module": "Review Bundle Exporter",
+  "moduleGoal": "Enable ChatGPT, Gwen and other players to screen candidates chronologically, request dense evidence and return structured review records.",
+  "observableOutcome": "Two usable local bundles with 102 three-frame cards, chronological atlas pages, upload packets, factual/human provenance separation, dense storyboard references and empty review templates.",
+  "metricContribution": "102/102 candidates, approximately 18 atlas pages, six packets, validated Task203 local bridges, zero VOD/replay/protected access, zero analyst inference/interpretation/versioned images.",
+  "remainingModuleGap": "No match has been reviewed; Task 202 selectivity and Task 200 synchronization precision remain limited.",
+  "hardeningDeferred": "No OCR, VLM, CV recognition, tracking, new extraction/sync, candidate retuning, strategy analysis, decision classification, L3 extraction, Task 205 or another infrastructure module.",
+  "baseCommitExpected": "36510a099fd93830f80b3a029fad9d05328312bb",
+  "executionReportPath": "reports/two-match-assisted-review-bundles-task204.md",
+  "executionContract": {
+    "reasoningComplexity": "High: bridge 102 accepted candidates to existing local frames and 318 dense storyboards while preserving provenance, empty review state and practical upload-sized atlases.",
+    "objective": "Build the final infrastructure handoff needed to start the real two-match review.",
+    "technicalContext": [
+      "Task 203 is Work-accepted at 36510a099fd93830f80b3a029fad9d05328312bb with inherited review_candidate_selectivity_low and replay_video_sync_precision_limited.",
+      "Task 203 local frames and storyboards are immutable inputs; VODs and replays are unnecessary."
+    ],
+    "confirmedState": [
+      "Exactly 102 Task 202 candidates and two Task 203 dense evidence targets exist.",
+      "Eight Task 203 local artifact bridges validate against committed sizes and hashes."
+    ],
+    "expectedBaseCommit": "36510a099fd93830f80b3a029fad9d05328312bb",
+    "branchEnvironment": ["Windows desktop executor on main.", "Create and publish exactly one Task 204 commit."],
+    "allowedScope": [
+      "Read compact Tasks 199, 202 and 203 artifacts plus only Task 203 local frames/storyboards needed for validation and atlas composition.",
+      "Write local bundles below .local/deadem/review-bundles and ten compact bounded2 artifacts."
+    ],
+    "protectedAreas": [
+      "Never open a VOD, replay or historical replay_005 through replay_008.",
+      "Never version atlas images, frames, storyboards or modify parser packages, samples, Task 202 candidates or Task 200 sync."
+    ],
+    "expectedChanges": [
+      "Bundle emitter, atlas compositor, schema, tests, contract, real compact artifacts, operational handoff guide and necessary state/navigation updates."
+    ],
+    "acceptanceCriteria": [
+      "Both match bundle gates are usable and the aggregate gate is two_match_assisted_review_bundles_ready.",
+      "All 102 candidates have factual context, human-context linkage, empty review template, three-frame screening card and dense storyboard references.",
+      "Atlas pages and packets are deterministic and practical for handoff; all local hashes validate.",
+      "No VOD/replay/protected access, analyst inference, gameplay interpretation or versioned image exists."
+    ],
+    "mandatoryTests": [
+      "node --test tests/emit-two-match-assisted-review-bundles.test.mjs",
+      "node --test tests/two-match-assisted-review-bundles-schema.test.mjs",
+      "node --check tools/emit-two-match-assisted-review-bundles.mjs",
+      ".venv-video\\Scripts\\python.exe -m py_compile tools/build-review-screening-atlas.py",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs"
+    ],
+    "requiredEvidence": [
+      "Task203 artifact/frame/storyboard hash bridges, 102 card memberships, atlas and packet indexes, factual/human provenance separation, empty review records, determinism, gate and post-commit attestation."
+    ],
+    "commitPolicy": [
+      "Create exactly one commit named Build two-match assisted review bundles.",
+      "Stage exact authorized paths, exclude every local image/binary and publish main without force."
+    ],
+    "stopConditions": [
+      "Stop on missing/invalid local evidence, protected/VOD/replay access, candidate mutation, versioned image or semantic promotion.",
+      "Stop in VALIDATING and do not create Task 205 or another infrastructure module."
+    ],
+    "returnReportFormat": [
+      "Resultado, O que passou a funcionar, Valor observável, Impacto no módulo, Limitação relevante, Próximo objetivo and Previsão operacional."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
+    "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/**",
+    ".local/deadem/dense-review/review_match_001/**",
+    ".local/deadem/dense-review/review_match_002/**"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "tools/emit-two-match-assisted-review-bundles.mjs",
+    "tools/build-review-screening-atlas.py",
+    "schemas/two-match-assisted-review-bundles.schema.json",
+    "tests/emit-two-match-assisted-review-bundles.test.mjs",
+    "tests/two-match-assisted-review-bundles-schema.test.mjs",
+    "docs/codex/TWO_MATCH_ASSISTED_REVIEW_BUNDLE_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/204.json",
+    "tasks/completed/204-two-match-assisted-review-bundles.md",
+    "reports/two-match-assisted-review-bundles-task204.md",
+    "reports/two-match-assisted-review-bundle-handoff.md",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/**",
+    ".local/deadem/review-bundles/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "samples/**",
+    "tasks/specs/205.json",
+    "tasks/*/205-*",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**",
+    "**/*.dem",
+    "**/*.mp4",
+    "**/*.mkv",
+    "**/*.mov",
+    "**/*.webm",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.png"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "review-bundle-unit", "type": "node-test", "paths": ["tests/emit-two-match-assisted-review-bundles.test.mjs"] },
+    { "id": "review-bundle-schema", "type": "node-test", "paths": ["tests/two-match-assisted-review-bundles-schema.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "04-controller-pawn-lifecycle[.]json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/manifest.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/match-context.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/review-queue.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/screening-atlas-index.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/upload-packet-index.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/review-protocol-template.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/summary.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/gate.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/provenance-audit.json",
+    "reports/two-match-assisted-review-bundle-handoff.md",
+    "reports/two-match-assisted-review-bundles-task204.md",
+    "tasks/completed/204-two-match-assisted-review-bundles.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access a VOD, replay or historical replay_005 through replay_008.",
+    "Never version media, assign review conclusions or change accepted candidates/synchronization.",
+    "Do not create Task 205; after acceptance start real review, not infrastructure."
+  ],
+  "successGate": "two_match_assisted_review_bundles_ready",
+  "gapsGate": "two_match_assisted_review_bundles_ready_with_gaps",
+  "blockedGate": "BLOCKED_BY_REVIEW_BUNDLE_LOCAL_EVIDENCE_UNAVAILABLE",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

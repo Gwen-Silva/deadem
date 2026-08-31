@@ -1,15 +1,25 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution
+## Coordination Gate Before Further Execution — Task 204
 
-Task 191 is a governance candidate in `VALIDATING`. Task 190 at commit
-`13a3da64bcf0ba839a752038f07f40e3eeeed890` remains the accepted base until
-independent ChatGPT Work validation. Codex must stop after its Task 191 handoff;
-Work may start a separately authorized execution only after an accepted gate.
-No Task 192 has been created. The coordination policy does not unblock
-death-fact promotion or protected replays.
+Task 203 at `36510a099fd93830f80b3a029fad9d05328312bb` is the
+accepted base. Task 204 is a technical candidate in `VALIDATING` with gate
+claim `two_match_assisted_review_bundles_ready`. ChatGPT Work must independently
+validate it. Codex stops after this handoff; no Task 205 exists.
+
+If Task 204 is accepted, start the first real two-match review with the six
+generated upload packets. Do not build another infrastructure module first.
+The Task 202 selectivity and Task 200 synchronization blockers remain active,
+and replay protection is unchanged.
 
 ## Current State
+
+The current review horizon is the Task 204 bundle: 67 candidates for
+`review_match_001` and 35 for `review_match_002`, represented by 12 and six
+screening atlas pages respectively. Every card uses exactly the existing
+Task 203 first/representative/last frames, while deeper inspection references
+318 existing storyboard pages. Human-supplied context remains match-level
+`context_to_validate`, and analyst inference is empty.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

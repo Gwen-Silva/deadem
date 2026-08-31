@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "203",
-  "baseCommit": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
-  "taskRange": "001-203",
+  "generatedAtTask": "204",
+  "baseCommit": "36510a099fd93830f80b3a029fad9d05328312bb",
+  "taskRange": "001-204",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6205,7 +6205,7 @@
     {
       "taskId": "203",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "36510a099fd93830f80b3a029fad9d05328312bb",
       "title": "Build Dense Visual Review Evidence",
       "phase": "dense_visual_extraction",
       "primaryContribution": "Built deterministic deduplicated L2 frame sequences and local storyboards for all 102 accepted Task 202 review-attention windows.",
@@ -6219,7 +6219,7 @@
         "reports/dense-visual-review-evidence-task203.md"
       ],
       "gate": "two_match_dense_visual_evidence_ready",
-      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "currentRelevance": "accepted_with_inherited_review_candidate_selectivity_low_and_replay_video_sync_precision_limited",
       "dependsOn": ["198", "200", "201", "202"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6227,11 +6227,43 @@
         "Task 200 synchronization uncertainty remains 9 and 2 seconds even though decoder seek error is zero.",
         "Frames and storyboards remain local-only and no L3, OCR, recognition, tracking, VLM or semantic analysis was executed."
       ],
-      "evidenceStatus": "two_match_dense_visual_evidence_ready_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_dense_visual_evidence_ready",
       "evidencePaths": [
         "tasks/specs/203.json",
         "tasks/completed/203-dense-visual-review-evidence.md",
         "output/local-replay-processing/dense-review-evidence/task203-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "204",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Two-Match Assisted Review Bundles",
+      "phase": "review_bundle_export",
+      "primaryContribution": "Packaged all 102 accepted review-attention windows into deterministic local screening atlases, upload packets, factual review context and references to existing dense evidence.",
+      "introducedCapabilities": ["two_match_assisted_review_bundles"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-two-match-assisted-review-bundles.mjs",
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json",
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/upload-packet-index.json",
+        "reports/two-match-assisted-review-bundle-handoff.md"
+      ],
+      "gate": "two_match_assisted_review_bundles_ready",
+      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "dependsOn": ["198", "199", "200", "202", "203"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Task 202 candidate selectivity remains low and upload priority is not gameplay probability.",
+        "Task 200 synchronization uncertainty remains 9 and 2 seconds.",
+        "Human context is match-level context to validate and analyst inference remains empty."
+      ],
+      "evidenceStatus": "two_match_assisted_review_bundles_ready_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/204.json",
+        "tasks/completed/204-two-match-assisted-review-bundles.md",
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/summary.json"
       ]
     }
   ]

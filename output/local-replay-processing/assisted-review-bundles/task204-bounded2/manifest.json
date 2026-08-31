@@ -1,0 +1,161 @@
+{
+  "artifactClass": "two_match_assisted_review_bundle_manifest",
+  "generatedAtLogical": "task_204",
+  "generatedBy": "tools/emit-two-match-assisted-review-bundles.mjs",
+  "mediaStoragePolicy": "local_untracked_do_not_commit_images",
+  "schemaVersion": 1,
+  "sourceArtifacts": [
+    "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
+    "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/manifest.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json"
+  ],
+  "targetBundles": [
+    {
+      "localArtifacts": {
+        "bundle": {
+          "path": ".local/deadem/review-bundles/review_match_001/bundle.json",
+          "sha256": "393862d26ce142a789c4927483f8c0bdfd5de0e7708836e048dd5003ba23f155",
+          "sizeBytes": 980725
+        },
+        "reviewGuide": {
+          "path": ".local/deadem/review-bundles/review_match_001/review-guide.md",
+          "sha256": "72cd07cf6a977936d8f7db4beb96cc66480cada272b0f048bf5f8e55dca88b7f",
+          "sizeBytes": 539
+        },
+        "screeningAtlasManifest": {
+          "path": ".local/deadem/review-bundles/review_match_001/screening-atlas-manifest.json",
+          "sha256": "1a5a73ec7279663199d8a0f8f9cdb348b4170bbcbbf818cd17c28d377989f9ba",
+          "sizeBytes": 51755
+        },
+        "uploadPacketIndex": {
+          "path": ".local/deadem/review-bundles/review_match_001/upload-packet-index.json",
+          "sha256": "62d49d7604389191cb3101b5cec2f7c1e9bcf4b63681a74ff59a81b5453b074e",
+          "sizeBytes": 6089
+        },
+        "windowReviewIndex": {
+          "path": ".local/deadem/review-bundles/review_match_001/window-review-index.json",
+          "sha256": "a7efbedf2c3d5fe5a2cd2a24a80c904cd2dcaaa6f18726a119d47b21967f5c02",
+          "sizeBytes": 917727
+        }
+      },
+      "matchGate": "match_001_review_bundle_usable",
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "localArtifacts": {
+        "bundle": {
+          "path": ".local/deadem/review-bundles/review_match_002/bundle.json",
+          "sha256": "f17ff84ea8faa05ebefe95b0025f5b86f7b6183513299a211032c7db79e85346",
+          "sizeBytes": 493134
+        },
+        "reviewGuide": {
+          "path": ".local/deadem/review-bundles/review_match_002/review-guide.md",
+          "sha256": "8b9224e4e0f6a3ef64d3ee5d6224953c0126641ddea36b39bf357f790267febf",
+          "sizeBytes": 539
+        },
+        "screeningAtlasManifest": {
+          "path": ".local/deadem/review-bundles/review_match_002/screening-atlas-manifest.json",
+          "sha256": "9a1c5805ed2ee749b246fc57e7982f1fdd181484c61ad55020da7cfc08090e00",
+          "sizeBytes": 26987
+        },
+        "uploadPacketIndex": {
+          "path": ".local/deadem/review-bundles/review_match_002/upload-packet-index.json",
+          "sha256": "a3df9f9a438b3e6da270def3a7d396b430f05765bd9a7ea25e641c7bbcd676cc",
+          "sizeBytes": 3146
+        },
+        "windowReviewIndex": {
+          "path": ".local/deadem/review-bundles/review_match_002/window-review-index.json",
+          "sha256": "1f6f8d7f59c13c14b22fe9b43c23076a9af63b97f585ce8c4cedceaa734b38a6",
+          "sizeBytes": 459690
+        }
+      },
+      "matchGate": "match_002_review_bundle_usable",
+      "reviewTargetId": "review_match_002"
+    }
+  ],
+  "task203LocalArtifactValidation": [
+    {
+      "artifacts": [
+        {
+          "actualSha256": "21007dbdc68b030cc962939f64c45d33663dbe17bd46031db51414eafd18ceae",
+          "actualSizeBytes": 1360144,
+          "artifact": "extractionPlan",
+          "expectedSha256": "21007dbdc68b030cc962939f64c45d33663dbe17bd46031db51414eafd18ceae",
+          "expectedSizeBytes": 1360144,
+          "path": ".local/deadem/dense-review/review_match_001/extraction-plan.json",
+          "status": "validated"
+        },
+        {
+          "actualSha256": "d10564376d3d8c9982785413a2e20b472cb6c71e22a82c181a1f286b7942d00e",
+          "actualSizeBytes": 2840819,
+          "artifact": "frameEvidenceIndex",
+          "expectedSha256": "d10564376d3d8c9982785413a2e20b472cb6c71e22a82c181a1f286b7942d00e",
+          "expectedSizeBytes": 2840819,
+          "path": ".local/deadem/dense-review/review_match_001/frame-evidence-index.json",
+          "status": "validated"
+        },
+        {
+          "actualSha256": "84b1d83f8d304aee25fa701c2151edb73652130f0a968f5d4b1fff2ee0908201",
+          "actualSizeBytes": 292218,
+          "artifact": "windowEvidenceIndex",
+          "expectedSha256": "84b1d83f8d304aee25fa701c2151edb73652130f0a968f5d4b1fff2ee0908201",
+          "expectedSizeBytes": 292218,
+          "path": ".local/deadem/dense-review/review_match_001/window-evidence-index.json",
+          "status": "validated"
+        },
+        {
+          "actualSha256": "42024af6efc95222e3b190978ec7389ef3742f4ecbcfcf783577549fea766897",
+          "actualSizeBytes": 711791,
+          "artifact": "contactSheetManifest",
+          "expectedSha256": "42024af6efc95222e3b190978ec7389ef3742f4ecbcfcf783577549fea766897",
+          "expectedSizeBytes": 711791,
+          "path": ".local/deadem/dense-review/review_match_001/contact-sheet-manifest.json",
+          "status": "validated"
+        }
+      ],
+      "reviewTargetId": "review_match_001"
+    },
+    {
+      "artifacts": [
+        {
+          "actualSha256": "9efdccf3aa4610297aec8aa898651a608ed985caca96b6800ee76bf3a380759c",
+          "actualSizeBytes": 741658,
+          "artifact": "extractionPlan",
+          "expectedSha256": "9efdccf3aa4610297aec8aa898651a608ed985caca96b6800ee76bf3a380759c",
+          "expectedSizeBytes": 741658,
+          "path": ".local/deadem/dense-review/review_match_002/extraction-plan.json",
+          "status": "validated"
+        },
+        {
+          "actualSha256": "4ae5126e30e95dbf694e6a957a09ddf6f9c63976eb72c2bed74a6f41ec19aa82",
+          "actualSizeBytes": 1565045,
+          "artifact": "frameEvidenceIndex",
+          "expectedSha256": "4ae5126e30e95dbf694e6a957a09ddf6f9c63976eb72c2bed74a6f41ec19aa82",
+          "expectedSizeBytes": 1565045,
+          "path": ".local/deadem/dense-review/review_match_002/frame-evidence-index.json",
+          "status": "validated"
+        },
+        {
+          "actualSha256": "9b27a88b0645b81ed3947ff515201077d52fe3511c75bfeee6207670c4114aca",
+          "actualSizeBytes": 144403,
+          "artifact": "windowEvidenceIndex",
+          "expectedSha256": "9b27a88b0645b81ed3947ff515201077d52fe3511c75bfeee6207670c4114aca",
+          "expectedSizeBytes": 144403,
+          "path": ".local/deadem/dense-review/review_match_002/window-evidence-index.json",
+          "status": "validated"
+        },
+        {
+          "actualSha256": "d59a2f9dfd744596045c0c1c9dcacff4fecacc9d5e4bb63418965bd7bab4cdf7",
+          "actualSizeBytes": 339589,
+          "artifact": "contactSheetManifest",
+          "expectedSha256": "d59a2f9dfd744596045c0c1c9dcacff4fecacc9d5e4bb63418965bd7bab4cdf7",
+          "expectedSizeBytes": 339589,
+          "path": ".local/deadem/dense-review/review_match_002/contact-sheet-manifest.json",
+          "status": "validated"
+        }
+      ],
+      "reviewTargetId": "review_match_002"
+    }
+  ]
+}

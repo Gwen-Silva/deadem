@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Produce local navigable L2 visual evidence for the accepted review-attention windows without semantic classification.",
-  "phase": "dense_visual_extraction",
-  "lastAcceptedTaskId": "202",
-  "lastAcceptedCommit": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
-  "activeBaseCommit": "59ffd6830c3f6edf193b360f36c1dc52943d6893",
+  "objective": "Package the accepted factual and visual evidence into two practical assisted-review bundles for the first real match review.",
+  "phase": "review_bundle_export",
+  "lastAcceptedTaskId": "203",
+  "lastAcceptedCommit": "36510a099fd93830f80b3a029fad9d05328312bb",
+  "activeBaseCommit": "36510a099fd93830f80b3a029fad9d05328312bb",
   "branch": "main",
-  "activeTaskId": "203",
+  "activeTaskId": "204",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/203/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/204/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -56,6 +56,7 @@
     "Task 200 is accepted with blocker replay_video_sync_precision_limited: operational alignment error remains up to 9 and 2 seconds and the final 8 and 3 replay seconds remain uncovered.",
     "Task 201 is accepted with inherited blocker replay_video_sync_precision_limited: visual navigation is coarse and preserves 9 and 2 second alignment uncertainty.",
     "Task 202 is accepted with blocker review_candidate_selectivity_low: candidate coverage is 78.7883 percent overall and 90.9569 percent for review_match_002.",
+    "Task 203 is accepted with inherited blockers review_candidate_selectivity_low and replay_video_sync_precision_limited: dense visual evidence is ready without semantic validation.",
     "The accepted bounded-32 challenger population remains limited at 91 primary 30-second eligible clusters.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
@@ -64,9 +65,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 203. No Review Bundle Exporter or Task 204 starts without separate authorization.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202"],
-  "pendingTasks": ["203"],
+  "nextAction": "ChatGPT Work independently validates Task 204. After acceptance, begin the real two-match review using the generated packets; do not build another infrastructure module first.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203"],
+  "pendingTasks": ["204"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

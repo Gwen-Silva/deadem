@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/two-match-assisted-review-bundles.schema.json",
+  "title": "Two-Match Assisted Window Review Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "candidateSemantics", "candidateCount", "windows"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactClass": { "const": "two_match_assisted_window_review_index" },
+    "candidateSemantics": { "const": "review_attention_region_not_gameplay_event" },
+    "candidateCount": { "const": 102 },
+    "windows": {
+      "type": "array",
+      "minItems": 102,
+      "maxItems": 102,
+      "items": { "$ref": "#/$defs/window" }
+    }
+  },
+  "$defs": {
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analystInference", "candidateSemantics", "candidateWindowId", "derivedMetrics", "humanSuppliedContext", "provenance", "replayObservedFacts", "reviewRecord", "reviewTargetId", "videoEvidence"],
+      "properties": {
+        "analystInference": { "type": "array", "maxItems": 0 },
+        "candidateSemantics": { "const": "review_attention_region_not_gameplay_event" },
+        "candidateWindowId": { "type": "string", "pattern": "^review_match_00[12]_window_[0-9]{4}$" },
+        "derivedMetrics": { "type": "object" },
+        "humanSuppliedContext": {
+          "type": "object",
+          "required": ["matchContextRef", "provenanceClass", "timestampsInferred"],
+          "properties": {
+            "matchContextRef": { "type": "string" },
+            "provenanceClass": { "const": "human_supplied/player_reported" },
+            "timestampsInferred": { "const": false }
+          }
+        },
+        "provenance": { "type": "object" },
+        "replayObservedFacts": { "type": "object" },
+        "reviewRecord": {
+          "type": "object",
+          "required": ["candidateWindowId", "reviewState", "visualRelevance", "facts", "errorClasses", "decisionQuality", "confidence", "evidenceRefs", "reviewNotes"],
+          "properties": {
+            "candidateWindowId": { "type": "string" },
+            "reviewState": { "const": "unreviewed" },
+            "visualRelevance": { "type": "null" },
+            "facts": { "type": "array", "maxItems": 0 },
+            "errorClasses": { "type": "array", "maxItems": 0 },
+            "decisionQuality": { "type": "null" },
+            "confidence": { "type": "null" },
+            "evidenceRefs": { "type": "array", "maxItems": 0 },
+            "reviewNotes": { "type": "array", "maxItems": 0 }
+          }
+        },
+        "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+        "videoEvidence": {
+          "type": "object",
+          "required": ["denseFrameIds", "firstFrameId", "lastFrameId", "representativeFrameId", "screeningCard", "storyboardIds", "storyboardPageCount", "storyboards", "syncEstimatedErrorSeconds", "visualVodRangeSeconds"],
+          "properties": {
+            "denseFrameIds": { "type": "array", "minItems": 1 },
+            "firstFrameId": { "type": "string" },
+            "lastFrameId": { "type": "string" },
+            "representativeFrameId": { "type": "string" },
+            "screeningCard": {
+              "type": "object",
+              "required": ["atlasLocalPath", "atlasPageId", "atlasSha256", "cardIndex", "screeningCardId", "sourceFrameHashes", "sourceFrameIds"],
+              "properties": {
+                "atlasLocalPath": { "type": "string" },
+                "atlasPageId": { "type": "string" },
+                "atlasSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+                "cardIndex": { "type": "integer", "minimum": 0, "maximum": 5 },
+                "screeningCardId": { "type": "string" },
+                "sourceFrameHashes": { "type": "array", "minItems": 3, "maxItems": 3 },
+                "sourceFrameIds": { "type": "array", "minItems": 3, "maxItems": 3 }
+              }
+            },
+            "storyboardIds": { "type": "array", "minItems": 1 },
+            "storyboardPageCount": { "type": "integer", "minimum": 1 },
+            "storyboards": { "type": "array", "minItems": 1 },
+            "syncEstimatedErrorSeconds": { "enum": [2, 9] },
+            "visualVodRangeSeconds": { "type": "object" }
+          }
+        }
+      }
+    }
+  }
+}

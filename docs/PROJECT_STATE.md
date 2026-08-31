@@ -1,21 +1,25 @@
 # Project State
 
-Last updated: 2026-07-11
+Last updated: 2026-08-31
 
-## Coordination Governance Candidate
+## Active Review Bundle Candidate
 
-Task 190 at commit `13a3da64bcf0ba839a752038f07f40e3eeeed890`
-remains the last state independently accepted by ChatGPT Work. Task 191 adds
-the autonomous Work–Codex–Chat coordination policy, persistent state, task
-contract and validators as a technical candidate. Its status is `VALIDATING`;
-its technical gate is not final acceptance and no Task 191 commit is recorded
-as accepted. Work is the acceptance authority and must independently validate
-the candidate. No Task 192 exists.
+Task 203 at commit `36510a099fd93830f80b3a029fad9d05328312bb` is
+the last state independently accepted by ChatGPT Work. Its gate is
+`two_match_dense_visual_evidence_ready`, with inherited blockers
+`review_candidate_selectivity_low` and `replay_video_sync_precision_limited`.
 
-The repository does not provide or simulate a cross-surface launch integration.
-An unavailable surface is represented by `BLOCKED_BY_SURFACE` with preserved
-state and instruction. Death-fact promotion remains blocked by Task 190's
-`partial` operational assessment. Replays 005–008 remain protected.
+Task 204 is the active candidate in `VALIDATING`. It packages all 102 accepted
+review-attention windows into two practical local assisted-review bundles:
+18 chronological screening atlas pages, six three-image upload packets, and
+references to all 318 existing Task 203 storyboard pages. Both per-match gates
+are usable and the aggregate technical gate claim is
+`two_match_assisted_review_bundles_ready`. No semantic review, gameplay label,
+final fact or attribution was produced. Replays 005–008 remain protected.
+
+ChatGPT Work remains the sole acceptance authority. After independent Task 204
+acceptance, the next action is the real two-match review using these packets;
+no Task 205 or additional infrastructure module has been created.
 
 ## Authoritative Current State
 

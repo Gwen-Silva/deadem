@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "203",
+  "generatedAtTask": "204",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -898,8 +898,8 @@
       "capabilityId": "dense_visual_review_evidence",
       "plainName": "Dense visual review evidence",
       "introducedInTask": "203",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_functional_ready_pending_work_validation",
+      "stabilizedInTask": "203",
+      "currentStatus": "accepted_with_inherited_review_candidate_selectivity_low_and_sync_precision_blocker",
       "currentBaseline": "task203_bounded_two_deduplicated_l2_visual_evidence",
       "whyItMatters": "Makes all 102 accepted review-attention windows locally navigable through deterministic ordered frames and paginated storyboards without semantic promotion.",
       "mainFiles": [
@@ -919,7 +919,34 @@
         "Replay-to-VOD synchronization retains declared errors of 9 and 2 seconds, separate from decoder seek error.",
         "Images and full frame indexes remain local-only; no OCR, recognition, tracking, VLM, semantic review or L3 burst exists."
       ],
-      "nextUsefulStep": "Await independent Work validation; a Review Bundle Exporter requires separate authorization."
+      "nextUsefulStep": "Use the accepted immutable visual references through the Task 204 bundle; do not regenerate dense evidence during review."
+    },
+    {
+      "capabilityId": "two_match_assisted_review_bundles",
+      "plainName": "Two-match assisted review bundles",
+      "introducedInTask": "204",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_functional_ready_pending_work_validation",
+      "currentBaseline": "task204_bounded_two_screening_and_dense_reference_bundles",
+      "whyItMatters": "Turns 102 structural review-attention windows into practical chronological screening packets with factual context and an on-demand bridge to existing dense evidence.",
+      "mainFiles": [
+        "tools/emit-two-match-assisted-review-bundles.mjs",
+        "tools/build-review-screening-atlas.py",
+        "schemas/two-match-assisted-review-bundles.schema.json",
+        "docs/codex/TWO_MATCH_ASSISTED_REVIEW_BUNDLE_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json",
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/screening-atlas-index.json",
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/upload-packet-index.json",
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "Screening priority is a Task 202 structural heuristic rather than gameplay-event probability.",
+        "Replay-to-VOD synchronization retains declared errors of 9 and 2 seconds.",
+        "Player-reported context remains match-level context to validate; no visual or analyst inference was performed."
+      ],
+      "nextUsefulStep": "Await independent Work validation, then begin the real two-match review with the six upload packets."
     }
   ]
 }

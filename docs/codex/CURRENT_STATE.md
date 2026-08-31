@@ -2,18 +2,20 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 202 at `59ffd6830c3f6edf193b360f36c1dc52943d6893`. ChatGPT Work accepted `two_match_review_candidate_windows_ready_with_low_selectivity` with blocker `review_candidate_selectivity_low`; inherited synchronization blocker `replay_video_sync_precision_limited` remains active.
+Last accepted task: Task 203 at `36510a099fd93830f80b3a029fad9d05328312bb`. ChatGPT Work accepted `two_match_dense_visual_evidence_ready`; blockers `review_candidate_selectivity_low` and `replay_video_sync_precision_limited` remain active.
 
-Active candidate: Task 203, `Dense Visual Extraction`. Coordination status: `VALIDATING`.
+Active candidate: Task 204, `Two-Match Assisted Review Bundles`. Coordination status: `VALIDATING`.
 
-Task 203 revalidated both Task 198 VOD identities and built a global extraction plan from the 102 accepted Task 202 candidate windows. Task 200 mappings and 9/2-second uncertainty remain unchanged; Task 201 was used as navigation context only.
+Task 204 hash validated all eight required local Task 203 artifact bridges and preserved all 102 Task 202 candidate IDs, priorities and source families. Task 200 mappings and 9/2-second uncertainty remain unchanged.
 
-The fixed priority cadence is high 1 second, medium 2 seconds and low 5 seconds. The plan contains 6,326 raw requests and 4,947 unique timestamps, saving 1,379 duplicate physical extractions. It did not cross the operational 6,000-frame threshold, so `densityAdjustmentCount` is zero.
+Layer A contains 18 chronological atlas pages with up to six factual cards each, grouped into six three-image upload packets: 12 pages/four packets for `review_match_001` and six pages/two packets for `review_match_002`. Every card uses exactly the Task 203 first, representative and last frames.
 
-The real execution decoded 4,947/4,947 local frames with zero failures. All 102 windows have evidence and complete first/representative/last coverage. There are 318 local storyboard pages and 1,896,139,138 operational local bytes. Twenty representative frame reruns matched requested timestamps, decoded timestamps and hashes; storyboards and all eight compact artifacts are deterministic.
+Layer B references rather than copies all 318 existing Task 203 storyboard pages. The emitter validated 306 frame references, 304 unique source frames and 318 storyboard references by hash. The ten compact outputs and the atlas generation were deterministic across two executions. Images remain local-only.
 
-The technical gate is `two_match_dense_visual_evidence_ready`. Candidate semantics remain `review_attention_region_not_gameplay_event`. Replay access, protected access, gameplay interpretation, final facts, attribution and versioned images are all zero. OCR, recognition, tracking, VLM, strategic analysis, death confirmation and L3 bursts were not executed.
+The per-target gates are `match_001_review_bundle_usable` and `match_002_review_bundle_usable`; the aggregate technical gate claim is `two_match_assisted_review_bundles_ready`. Candidate semantics remain `review_attention_region_not_gameplay_event`. Replay, VOD, protected access, gameplay interpretation, analyst inference, final facts, attribution and versioned images are all zero.
 
-ChatGPT Work must independently validate Task 203. No Task 204 exists and Review Bundle Exporter has not started.
+Human context is stored separately at match level as `human_supplied/player_reported` and `context_to_validate`, without inferred timestamps or candidate labels. All 102 review records are empty.
+
+ChatGPT Work must independently validate Task 204. After acceptance, begin the real two-match review using the six packets. No Task 205 exists.
 
 Machine-readable state: `data/project-coordination-state.json`.
