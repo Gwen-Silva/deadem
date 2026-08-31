@@ -2119,5 +2119,24 @@ navigation evidence, not semantic review: synchronization precision is still
 limited to 9 seconds and 2 seconds, uncovered tails remain unavailable, and no
 fight, strategy, objective, position or decision labels are emitted.
 
-ChatGPT Work must independently validate Task 201. A Candidate Window Generator
-may be separately authorized afterward. No Task 202 is created or started here.
+ChatGPT Work accepted Task 201 at
+`3d1162d6e1d1afea4de98fdd022b91fab6388d2c` with inherited blocker
+`replay_video_sync_precision_limited` and separately authorized Task 202.
+
+## Task 202
+
+Module: `Review Window Candidate Generator`.
+
+Hash-validated Task 199 telemetry now yields 102 deterministic high-recall
+review-attention windows across both synchronized matches. The policy uses
+five-second bins, mandatory lifecycle/objective-like seeds, 75th-percentile
+damage/healing/economy seeds, a 15-second merge gap, 12-second padding and
+deterministic 90-second splitting. All 1,300 seeds are preserved.
+
+The gate is
+`two_match_review_candidate_windows_ready_with_low_selectivity`: aggregate
+coverage is 78.7883 percent and the second target covers 90.9569 percent.
+Windows remain navigation candidates, not gameplay events or probabilities.
+
+ChatGPT Work must independently validate Task 202. Dense Visual Extraction may
+be separately authorized afterward. No Task 203 is created or started here.

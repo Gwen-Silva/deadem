@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "198",
-  "baseCommit": "6b13a6199e0dec752cc54d92d98ec3990e76e1cf",
-  "taskRange": "001-198",
+  "generatedAtTask": "202",
+  "baseCommit": "3d1162d6e1d1afea4de98fdd022b91fab6388d2c",
+  "taskRange": "001-202",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6141,7 +6141,7 @@
     {
       "taskId": "201",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "3d1162d6e1d1afea4de98fdd022b91fab6388d2c",
       "title": "Build Whole-Match Visual Index",
       "phase": "whole_match_visual_index",
       "primaryContribution": "Built deterministic 30-second whole-match visual indexes with factual replay context, local chronological contact sheets and explicit sync/seek uncertainty separation for both accepted targets.",
@@ -6155,7 +6155,7 @@
         "reports/whole-match-visual-index-task201.md"
       ],
       "gate": "whole_match_visual_index_ready",
-      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "currentRelevance": "accepted_with_inherited_replay_video_sync_precision_limited",
       "dependsOn": ["198", "199", "200"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6163,11 +6163,43 @@
         "The index is coarse and the final uncovered replay tails remain unavailable.",
         "Frames are visual evidence without gameplay, decision or strategy labels."
       ],
-      "evidenceStatus": "whole_match_visual_index_ready_pending_work_validation",
+      "evidenceStatus": "accepted_whole_match_visual_index_ready",
       "evidencePaths": [
         "tasks/specs/201.json",
         "tasks/completed/201-whole-match-visual-index.md",
         "output/local-replay-processing/whole-match-visual-index/task201-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "202",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Review Candidate Window Generator",
+      "phase": "review_candidate_window_generation",
+      "primaryContribution": "Built deterministic high-recall review-attention windows from hash-validated Task 199 telemetry with Task 200 mapping and Task 201 navigation links.",
+      "introducedCapabilities": ["review_candidate_window_generator"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-review-candidate-windows.mjs",
+        "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json",
+        "output/local-replay-processing/review-candidate-windows/task202-bounded2/coverage.json",
+        "reports/review-candidate-window-generator-task202.md"
+      ],
+      "gate": "two_match_review_candidate_windows_ready_with_low_selectivity",
+      "currentRelevance": "candidate_functional_ready_with_low_selectivity_pending_work_validation",
+      "dependsOn": ["199", "200", "201"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Candidate windows occupy 78.7883 percent aggregate synchronized coverage and 90.9569 percent of review_match_002.",
+        "Review priority is a source-family heuristic and never a gameplay-event probability.",
+        "Task 200 alignment uncertainty remains 9 and 2 seconds; visual ranges expand and clamp accordingly."
+      ],
+      "evidenceStatus": "two_match_review_candidate_windows_ready_with_low_selectivity_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/202.json",
+        "tasks/completed/202-review-candidate-window-generator.md",
+        "output/local-replay-processing/review-candidate-windows/task202-bounded2/summary.json"
       ]
     }
   ]

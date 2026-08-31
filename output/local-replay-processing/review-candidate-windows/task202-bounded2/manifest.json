@@ -1,0 +1,229 @@
+{
+  "artifactClass": "two_match_review_candidate_window_manifest",
+  "generatedAtLogical": "task_202",
+  "generatedBy": "tools/emit-review-candidate-windows.mjs",
+  "inputs": {
+    "contactSheetIndex": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/contact-sheet-index.json",
+    "syncMapping": "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+    "telemetryAvailability": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
+    "telemetryManifest": "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/manifest.json",
+    "visualFrameIndex": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/frame-index.json"
+  },
+  "localArtifacts": [
+    {
+      "bins": {
+        "path": ".local/deadem/review-candidates/review_match_001/bins.json",
+        "sha256": "d5d1b45c331f54c548d11b4d15519f2ba0315522bb2b9b8d4957035e9ff95c76",
+        "sizeBytes": 1517431
+      },
+      "reviewTargetId": "review_match_001",
+      "seeds": {
+        "path": ".local/deadem/review-candidates/review_match_001/seeds.json",
+        "sha256": "2a2aad82730a8eab87c0a30c31270874fc59be556febcaa3ca6ea11cdeb7c166",
+        "sizeBytes": 735200
+      }
+    },
+    {
+      "bins": {
+        "path": ".local/deadem/review-candidates/review_match_002/bins.json",
+        "sha256": "9073a717fa8e6b95fa666368c9de051d55f5408c03ab65489832e77aed12e44e",
+        "sizeBytes": 742595
+      },
+      "reviewTargetId": "review_match_002",
+      "seeds": {
+        "path": ".local/deadem/review-candidates/review_match_002/seeds.json",
+        "sha256": "7bcdf53d2507231c76b693c69a5ea2865ffdf13a857c242f1954c2d86389da75",
+        "sizeBytes": 459722
+      }
+    }
+  ],
+  "policy": {
+    "activityPercentile": 0.75,
+    "binSeconds": 5,
+    "lowSelectivityFraction": 0.8,
+    "maximumWindowSeconds": 90,
+    "mergeGapSeconds": 15,
+    "paddingSeconds": 12,
+    "thresholdRevisionCount": 0
+  },
+  "schemaVersion": 1,
+  "task197SignalStatus": "task197_signal_unavailable_for_review_targets",
+  "task199HashBridge": [
+    {
+      "artifactCount": 9,
+      "artifacts": [
+        {
+          "actualSha256": "2dc287296d898941ee6fa7415d49541b1a1fd78c4a5751d9c2d4bdfe9cd4bcdc",
+          "actualSizeBytes": 1448546,
+          "artifactName": "damage",
+          "expectedSha256": "2dc287296d898941ee6fa7415d49541b1a1fd78c4a5751d9c2d4bdfe9cd4bcdc",
+          "expectedSizeBytes": 1448546,
+          "path": ".local/deadem/review-telemetry/review_match_001/damage-deltas.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "2bedc2d368383bf2d89875008ff34ff01c0b1956ed8e3d47e3cbba365cc4a0dc",
+          "actualSizeBytes": 3064290,
+          "artifactName": "healing",
+          "expectedSha256": "2bedc2d368383bf2d89875008ff34ff01c0b1956ed8e3d47e3cbba365cc4a0dc",
+          "expectedSizeBytes": 3064290,
+          "path": ".local/deadem/review-telemetry/review_match_001/healing-deltas.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "7bd1a156891e1849aac19474b71d2087018fb41dab881bdddd38dcb7f00f0261",
+          "actualSizeBytes": 17946431,
+          "artifactName": "lifeState",
+          "expectedSha256": "7bd1a156891e1849aac19474b71d2087018fb41dab881bdddd38dcb7f00f0261",
+          "expectedSizeBytes": 17946431,
+          "path": ".local/deadem/review-telemetry/review_match_001/life-state-observations.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "0b8915f4ce95c685606ba830aa21b95250bcbbbe87997b794df4395d85296b9c",
+          "actualSizeBytes": 13759756,
+          "artifactName": "netWorth",
+          "expectedSha256": "0b8915f4ce95c685606ba830aa21b95250bcbbbe87997b794df4395d85296b9c",
+          "expectedSizeBytes": 13759756,
+          "path": ".local/deadem/review-telemetry/review_match_001/net-worth-samples.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "dcf8a5c10b07429ed4a23687d0574476e09d7d15ce85a640e9a22192905bb843",
+          "actualSizeBytes": 5080014,
+          "artifactName": "objectives",
+          "expectedSha256": "dcf8a5c10b07429ed4a23687d0574476e09d7d15ce85a640e9a22192905bb843",
+          "expectedSizeBytes": 5080014,
+          "path": ".local/deadem/review-telemetry/review_match_001/objective-observations.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "ff8254aad85f9b0a64c55b98a08e2c1a09d14f788fbfb94a93073a589d404734",
+          "actualSizeBytes": 40617797,
+          "artifactName": "observations",
+          "expectedSha256": "ff8254aad85f9b0a64c55b98a08e2c1a09d14f788fbfb94a93073a589d404734",
+          "expectedSizeBytes": 40617797,
+          "path": ".local/deadem/review-telemetry/review_match_001/participant-observations.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "b1d01992abd29d1c3330298bdda419ce6020a633a59a71b0dc26358d5ce1a9d6",
+          "actualSizeBytes": 4378,
+          "artifactName": "participants",
+          "expectedSha256": "b1d01992abd29d1c3330298bdda419ce6020a633a59a71b0dc26358d5ce1a9d6",
+          "expectedSizeBytes": 4378,
+          "path": ".local/deadem/review-telemetry/review_match_001/participants.json",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "actualSizeBytes": 0,
+          "artifactName": "positions",
+          "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expectedSizeBytes": 0,
+          "path": ".local/deadem/review-telemetry/review_match_001/position-samples.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "f04110562f617c478d076e42d2d0472087d6ae0a384639c7c5b656351a152093",
+          "actualSizeBytes": 701085,
+          "artifactName": "timeline",
+          "expectedSha256": "f04110562f617c478d076e42d2d0472087d6ae0a384639c7c5b656351a152093",
+          "expectedSizeBytes": 701085,
+          "path": ".local/deadem/review-telemetry/review_match_001/timeline.jsonl",
+          "validationStatus": "validated"
+        }
+      ],
+      "reviewTargetId": "review_match_001",
+      "validatedArtifactCount": 9
+    },
+    {
+      "artifactCount": 9,
+      "artifacts": [
+        {
+          "actualSha256": "edd7207450ae2015aacd01db9a7be0e40f8e019455711f4724fa551785469d31",
+          "actualSizeBytes": 930046,
+          "artifactName": "damage",
+          "expectedSha256": "edd7207450ae2015aacd01db9a7be0e40f8e019455711f4724fa551785469d31",
+          "expectedSizeBytes": 930046,
+          "path": ".local/deadem/review-telemetry/review_match_002/damage-deltas.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "7a3fc6b38ad0c3026cfcb34d5e098a3a32bba97499feadc1565a072eafb118a2",
+          "actualSizeBytes": 1312917,
+          "artifactName": "healing",
+          "expectedSha256": "7a3fc6b38ad0c3026cfcb34d5e098a3a32bba97499feadc1565a072eafb118a2",
+          "expectedSizeBytes": 1312917,
+          "path": ".local/deadem/review-telemetry/review_match_002/healing-deltas.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "527cfcae96f8779668f9f63458ca76d207ec803e0a0489ffc3957cd8e66256fe",
+          "actualSizeBytes": 8760134,
+          "artifactName": "lifeState",
+          "expectedSha256": "527cfcae96f8779668f9f63458ca76d207ec803e0a0489ffc3957cd8e66256fe",
+          "expectedSizeBytes": 8760134,
+          "path": ".local/deadem/review-telemetry/review_match_002/life-state-observations.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "cd8abe3b381fb4b37c494b1f461170e39e1ef62f436425f7576c97429e03595e",
+          "actualSizeBytes": 6689929,
+          "artifactName": "netWorth",
+          "expectedSha256": "cd8abe3b381fb4b37c494b1f461170e39e1ef62f436425f7576c97429e03595e",
+          "expectedSizeBytes": 6689929,
+          "path": ".local/deadem/review-telemetry/review_match_002/net-worth-samples.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "c68a20b6c3afd8979dd8637d543addb467ac53509bed669cb50de3b89fc4c90f",
+          "actualSizeBytes": 3297040,
+          "artifactName": "objectives",
+          "expectedSha256": "c68a20b6c3afd8979dd8637d543addb467ac53509bed669cb50de3b89fc4c90f",
+          "expectedSizeBytes": 3297040,
+          "path": ".local/deadem/review-telemetry/review_match_002/objective-observations.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "e871b6077e14f62997e25240fba25d608a7877b4bd863edfc6a9cf79c259f2ad",
+          "actualSizeBytes": 19758447,
+          "artifactName": "observations",
+          "expectedSha256": "e871b6077e14f62997e25240fba25d608a7877b4bd863edfc6a9cf79c259f2ad",
+          "expectedSizeBytes": 19758447,
+          "path": ".local/deadem/review-telemetry/review_match_002/participant-observations.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "2851fe3ea529400422588590c06f4a51a62da1e466eb0364b0f5868b78b465a2",
+          "actualSizeBytes": 4675,
+          "artifactName": "participants",
+          "expectedSha256": "2851fe3ea529400422588590c06f4a51a62da1e466eb0364b0f5868b78b465a2",
+          "expectedSizeBytes": 4675,
+          "path": ".local/deadem/review-telemetry/review_match_002/participants.json",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "actualSizeBytes": 0,
+          "artifactName": "positions",
+          "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expectedSizeBytes": 0,
+          "path": ".local/deadem/review-telemetry/review_match_002/position-samples.jsonl",
+          "validationStatus": "validated"
+        },
+        {
+          "actualSha256": "1073a57c86ba781711a0f73b858305eef3d52e3f87ce2f43a4432fef937293ce",
+          "actualSizeBytes": 319627,
+          "artifactName": "timeline",
+          "expectedSha256": "1073a57c86ba781711a0f73b858305eef3d52e3f87ce2f43a4432fef937293ce",
+          "expectedSizeBytes": 319627,
+          "path": ".local/deadem/review-telemetry/review_match_002/timeline.jsonl",
+          "validationStatus": "validated"
+        }
+      ],
+      "reviewTargetId": "review_match_002",
+      "validatedArtifactCount": 9
+    }
+  ]
+}

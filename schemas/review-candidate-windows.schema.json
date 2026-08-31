@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/review-candidate-windows.schema.json",
+  "title": "Review Candidate Windows",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "candidateSemantics", "notProbability", "windowCount", "windows"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactClass": { "const": "review_attention_region_candidates" },
+    "candidateSemantics": { "const": "review_attention_region_not_gameplay_event" },
+    "notProbability": { "const": true },
+    "windowCount": { "type": "integer", "minimum": 0 },
+    "windows": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/window" }
+    }
+  },
+  "$defs": {
+    "family": {
+      "enum": ["lifecycle", "damage", "healing", "economy", "objective_like", "manual", "task197_structural"]
+    },
+    "familyMetric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceFamily", "seedCount", "rowCount", "summedDelta", "absoluteDeltaSum", "participantRefCount", "entityRefCount"],
+      "properties": {
+        "sourceFamily": { "$ref": "#/$defs/family" },
+        "seedCount": { "type": "integer", "minimum": 1 },
+        "rowCount": { "type": "integer", "minimum": 1 },
+        "summedDelta": { "type": "number" },
+        "absoluteDeltaSum": { "type": "number", "minimum": 0 },
+        "participantRefCount": { "type": "integer", "minimum": 0 },
+        "entityRefCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "frameReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visualIndexFrameId", "replayElapsedSeconds", "mappedVideoTimestampSeconds", "localFramePath", "contactSheetId"],
+      "properties": {
+        "visualIndexFrameId": { "type": "string", "pattern": "^review_match_00[12]_frame_[0-9]{4}$" },
+        "replayElapsedSeconds": { "type": "number", "minimum": 0 },
+        "mappedVideoTimestampSeconds": { "type": "number", "minimum": 0 },
+        "localFramePath": { "type": "string", "pattern": "^[.]local/deadem/visual-index/review_match_00[12]/frames/.+[.]jpg$" },
+        "contactSheetId": { "type": "string", "pattern": "^review_match_00[12]_sheet_[0-9]{3}$" }
+      }
+    },
+    "contactSheet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contactSheetId", "localPath"],
+      "properties": {
+        "contactSheetId": { "type": "string", "pattern": "^review_match_00[12]_sheet_[0-9]{3}$" },
+        "localPath": {
+          "anyOf": [
+            { "type": "string", "pattern": "^[.]local/deadem/visual-index/review_match_00[12]/contact-sheets/.+[.]jpg$" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "videoMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mapped", "syncSegmentId", "syncEstimatedErrorSeconds", "mappedVodStartSeconds", "mappedVodEndSeconds", "visualEvidenceStartSeconds", "visualEvidenceEndSeconds"],
+      "properties": {
+        "mapped": { "const": true },
+        "syncSegmentId": { "type": "string", "pattern": "^review_match_00[12]_linear_[0-9]{3}$" },
+        "syncEstimatedErrorSeconds": { "type": "number", "minimum": 0 },
+        "mappedVodStartSeconds": { "type": "number", "minimum": 0 },
+        "mappedVodEndSeconds": { "type": "number", "minimum": 0 },
+        "visualEvidenceStartSeconds": { "type": "number", "minimum": 0 },
+        "visualEvidenceEndSeconds": { "type": "number", "minimum": 0 }
+      }
+    },
+    "visualNavigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nearestFrameBefore", "coarseFramesInside", "nearestFrameAfter", "contactSheets"],
+      "properties": {
+        "nearestFrameBefore": { "anyOf": [{ "$ref": "#/$defs/frameReference" }, { "type": "null" }] },
+        "coarseFramesInside": { "type": "array", "items": { "$ref": "#/$defs/frameReference" } },
+        "nearestFrameAfter": { "anyOf": [{ "$ref": "#/$defs/frameReference" }, { "type": "null" }] },
+        "contactSheets": { "type": "array", "items": { "$ref": "#/$defs/contactSheet" } }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateWindowId", "reviewTargetId", "replayStartSeconds", "replayEndSeconds", "replayDurationSeconds", "seedIds", "seedCount", "sourceFamilies", "sourceFamilyCount", "priorityTier", "prioritySemantics", "perFamilyMetrics", "provenance", "semanticLimitations", "videoMapping", "visualNavigation", "notProbability"],
+      "properties": {
+        "candidateWindowId": { "type": "string", "pattern": "^review_match_00[12]_window_[0-9]{4}$" },
+        "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+        "replayStartSeconds": { "type": "number", "minimum": 0 },
+        "replayEndSeconds": { "type": "number", "minimum": 0 },
+        "replayDurationSeconds": { "type": "number", "minimum": 0, "maximum": 90 },
+        "seedIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^review_match_00[12]_seed_[0-9]{5}$" } },
+        "seedCount": { "type": "integer", "minimum": 1 },
+        "sourceFamilies": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/family" } },
+        "sourceFamilyCount": { "type": "integer", "minimum": 1 },
+        "priorityTier": { "enum": ["high", "medium", "low"] },
+        "prioritySemantics": { "const": "review_priority_heuristic_not_probability" },
+        "perFamilyMetrics": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/familyMetric" } },
+        "provenance": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
+        "semanticLimitations": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
+        "videoMapping": { "$ref": "#/$defs/videoMapping" },
+        "visualNavigation": { "$ref": "#/$defs/visualNavigation" },
+        "notProbability": { "const": true }
+      }
+    }
+  }
+}

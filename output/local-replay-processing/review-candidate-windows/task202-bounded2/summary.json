@@ -1,0 +1,128 @@
+{
+  "aggregateCandidateCoverageFraction": 0.787883,
+  "counts": {
+    "attributionProduced": 0,
+    "finalFactsProduced": 0,
+    "gameplayInterpretationsProduced": 0,
+    "protectedReplayAccessCount": 0,
+    "replayAccessCount": 0,
+    "targetsAttempted": 2,
+    "targetsUsable": 2,
+    "totalSeeds": 1300,
+    "totalWindows": 102,
+    "vodAccessCount": 0
+  },
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "availableSourceFamilies": [
+        "damage",
+        "economy",
+        "healing",
+        "lifecycle",
+        "objective_like"
+      ],
+      "metrics": {
+        "binsAnalyzed": 913,
+        "candidateCoverageFraction": 0.732135,
+        "candidateCoverageSeconds": 3340,
+        "candidateWindows": 67,
+        "contactSheetsReferenced": 7,
+        "coveredReplaySeconds": 4562,
+        "linkedCoarseFrames": 124,
+        "manualSeeds": 0,
+        "mappedSeeds": 795,
+        "medianWindowDurationSeconds": 59,
+        "p90WindowDurationSeconds": 89,
+        "reviewTargetId": "review_match_001",
+        "seedsByFamily": {
+          "damage": 119,
+          "economy": 178,
+          "healing": 160,
+          "lifecycle": 126,
+          "objective_like": 212
+        },
+        "seedsMerged": 795,
+        "task197Seeds": 0,
+        "totalSeeds": 795,
+        "unmappedSeedIds": [],
+        "unmappedSeeds": 0,
+        "windowsByPriorityTier": {
+          "high": 41,
+          "low": 15,
+          "medium": 11
+        },
+        "windowsBySourceFamilyCount": {
+          "1": 15,
+          "2": 11,
+          "3": 11,
+          "4": 5,
+          "5": 25
+        }
+      },
+      "reviewTargetId": "review_match_001",
+      "thresholds": {
+        "damage": 2367,
+        "economy": 1614,
+        "healing": 998,
+        "percentile": 0.75
+      }
+    },
+    {
+      "availableSourceFamilies": [
+        "damage",
+        "economy",
+        "healing",
+        "lifecycle",
+        "objective_like"
+      ],
+      "metrics": {
+        "binsAnalyzed": 419,
+        "candidateCoverageFraction": 0.909569,
+        "candidateCoverageSeconds": 1901,
+        "candidateWindows": 35,
+        "contactSheetsReferenced": 3,
+        "coveredReplaySeconds": 2090,
+        "linkedCoarseFrames": 68,
+        "manualSeeds": 0,
+        "mappedSeeds": 505,
+        "medianWindowDurationSeconds": 78,
+        "p90WindowDurationSeconds": 89,
+        "reviewTargetId": "review_match_002",
+        "seedsByFamily": {
+          "damage": 80,
+          "economy": 99,
+          "healing": 87,
+          "lifecycle": 84,
+          "objective_like": 155
+        },
+        "seedsMerged": 505,
+        "task197Seeds": 0,
+        "totalSeeds": 505,
+        "unmappedSeedIds": [],
+        "unmappedSeeds": 0,
+        "windowsByPriorityTier": {
+          "high": 23,
+          "low": 8,
+          "medium": 4
+        },
+        "windowsBySourceFamilyCount": {
+          "1": 8,
+          "2": 4,
+          "3": 3,
+          "4": 4,
+          "5": 16
+        }
+      },
+      "reviewTargetId": "review_match_002",
+      "thresholds": {
+        "damage": 1600,
+        "economy": 1313,
+        "healing": 743,
+        "percentile": 0.75
+      }
+    }
+  ],
+  "technicalGateStatus": "two_match_review_candidate_windows_ready_with_low_selectivity",
+  "thresholdRevisionCount": 0
+}

@@ -1045,26 +1045,50 @@
     {
       "id": "whole_match_visual_index_task201_frame_index",
       "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/frame-index.json",
-      "status": "candidate_functional_ready",
+      "status": "accepted_with_inherited_sync_precision_blocker",
       "notes": "223 complete deterministic lookup rows across 2/2 targets; paths reference only local ignored frame and contact-sheet artifacts."
     },
     {
       "id": "whole_match_visual_index_task201_coverage",
       "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/coverage.json",
-      "status": "candidate_functional_ready",
+      "status": "accepted_with_inherited_sync_precision_blocker",
       "notes": "Records 153/153 and 70/70 covered samples, explicit uncovered tails, synchronization error and separate decoder seek error."
     },
     {
       "id": "whole_match_visual_index_task201_gate",
       "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Technical gate whole_match_visual_index_ready pending independent Work validation."
+      "status": "accepted_with_inherited_sync_precision_blocker",
+      "notes": "Work accepted whole_match_visual_index_ready at 3d1162d6e1d1afea4de98fdd022b91fab6388d2c with inherited replay_video_sync_precision_limited."
     },
     {
       "id": "whole_match_visual_index_task201_provenance",
       "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/provenance-audit.json",
-      "status": "candidate_functional_ready",
+      "status": "accepted_with_inherited_sync_precision_blocker",
       "notes": "Records Task 198/199/200 lineage, local-only images, deterministic reruns and zero protected access, final facts, attribution or interpretation."
+    },
+    {
+      "id": "review_candidate_windows_task202_manifest",
+      "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/manifest.json",
+      "status": "candidate_functional_ready_with_low_selectivity",
+      "notes": "Records 18/18 validated Task 199 local artifact bridges, fixed policies and local-only detailed bin/seed hashes."
+    },
+    {
+      "id": "review_candidate_windows_task202_candidates",
+      "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json",
+      "status": "candidate_functional_ready_with_low_selectivity",
+      "notes": "102 deterministic review-attention windows preserving 1,300 mapped seeds, uncertainty-expanded VOD ranges and Task 201 navigation links."
+    },
+    {
+      "id": "review_candidate_windows_task202_coverage",
+      "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/coverage.json",
+      "status": "candidate_functional_ready_with_low_selectivity",
+      "notes": "Records 73.2135 and 90.9569 percent target coverage, 78.7883 percent aggregate coverage and zero unmapped seeds."
+    },
+    {
+      "id": "review_candidate_windows_task202_gate",
+      "path": "output/local-replay-processing/review-candidate-windows/task202-bounded2/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical gate two_match_review_candidate_windows_ready_with_low_selectivity pending independent Work validation."
     }
   ]
 }

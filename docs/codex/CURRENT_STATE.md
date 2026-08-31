@@ -2,16 +2,16 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 200 at `0ed554433cf4c8b0f0ad33b13a05354a7a843add`. ChatGPT Work accepted `two_match_replay_video_sync_partial` with blocker `replay_video_sync_precision_limited`.
+Last accepted task: Task 201 at `3d1162d6e1d1afea4de98fdd022b91fab6388d2c`. ChatGPT Work accepted `whole_match_visual_index_ready` with inherited blocker `replay_video_sync_precision_limited`.
 
-Active candidate: Task 201, `Whole-Match Visual Index`. Coordination status: `VALIDATING`.
+Active candidate: Task 202, `Review Window Candidate Generator`. Coordination status: `VALIDATING`.
 
-Task 201 consumed the accepted Task 200 mapping unchanged and sampled only its covered regions at 30-second intervals. It produced 223/223 local frames and ten chronological local contact sheets across 2/2 targets.
+Task 202 revalidated 18/18 Task 199 local artifacts and consumed only their factual JSONL plus accepted Task 200 mapping and Task 201 navigation metadata. Replay, VOD and frame-byte access counts are zero.
 
-`review_match_001` has 153 samples over replay seconds 0-4560 and seven sheets. `review_match_002` has 70 samples over seconds 0-2070 and three sheets. The final 8 and 3 replay seconds remain uncovered. Alignment error remains 9 seconds and 2 seconds, explicitly separate from zero observed decoder seek error.
+Five-second bins produced 795 seeds and 67 windows for `review_match_001`, occupying 73.2135 percent of synchronized coverage. `review_match_002` produced 505 seeds and 35 windows, occupying 90.9569 percent. All 1,300 seeds are mapped and preserved; 192 coarse frames and ten contact sheets are linked.
 
-The technical gate is `whole_match_visual_index_ready`. Representative frame reruns matched 20/20 timestamps and hashes, all ten contact sheets were byte-identical across rebuilds, and all seven compact artifacts were byte-identical across full reruns. Frames and sheets remain ignored under `.local/deadem/visual-index`. Replays 005-008 were not accessed, heavy binaries remain unversioned, and final-fact/attribution/interpretation counts are zero.
+The technical gate is `two_match_review_candidate_windows_ready_with_low_selectivity`. Aggregate coverage is 78.7883 percent and no threshold revision was used. Every window remains a review-attention region with `notProbability: true`; no fight, death, objective, decision or strategy meaning is assigned. Seven compact artifacts are deterministic; detailed bins/seeds remain ignored under `.local/deadem/review-candidates`.
 
-ChatGPT Work must independently validate Task 201. No Task 202 exists and candidate-window generation has not started.
+ChatGPT Work must independently validate Task 202. No Task 203 exists and dense visual extraction has not started.
 
 Machine-readable state: `data/project-coordination-state.json`.

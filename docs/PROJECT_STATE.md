@@ -1688,6 +1688,28 @@ The technical gate is `whole_match_visual_index_ready`. The index preserves
 the 9-second and 2-second synchronization errors separately from decoder seek
 error and leaves replay ranges 4563-4570 and 2091-2093 uncovered. Frames carry
 only lightweight factual context, never labels for fight, rotation, push,
-objective, position, strategy or other gameplay interpretation. There are zero
-protected accesses, heavy versioned images, final facts, attributions or
-interpretations. Task 201 is `VALIDATING` pending Work; no Task 202 exists.
+objective, position, strategy or other gameplay interpretation. ChatGPT Work
+accepted Task 201 at `3d1162d6e1d1afea4de98fdd022b91fab6388d2c`
+with inherited blocker `replay_video_sync_precision_limited` and separately
+authorized Task 202.
+
+## Task 202 - Review Candidate Window Generator
+
+Task 202 revalidated all 18 Task 199 local artifacts against committed size and
+SHA-256 evidence, then consumed only five factual telemetry families. It did
+not open replay, VOD or frame bytes. Task 200 mapping was consumed unchanged,
+and Task 201 metadata supplied navigation links without image analysis.
+
+Five-second bins and per-target 75th-percentile activity thresholds produced
+795 seeds/67 windows for `review_match_001` and 505 seeds/35 windows for
+`review_match_002`. All 1,300 seeds are mapped and preserved. Candidate
+coverage is 73.2135 and 90.9569 percent respectively, or 78.7883 percent in the
+aggregate. Seven compact artifacts are byte-identical across real reruns.
+
+The technical gate is
+`two_match_review_candidate_windows_ready_with_low_selectivity`. Windows are
+review-attention regions and review priority is a family-count heuristic, never
+a fight/death/error probability. No retuning was performed because recall is
+the declared priority and lifecycle/objective-like seeds are mandatory. There
+are zero protected accesses, gameplay interpretations, final facts or
+attributions. Task 202 is `VALIDATING` pending Work; no Task 203 exists.

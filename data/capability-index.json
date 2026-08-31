@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "201",
+  "generatedAtTask": "202",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -846,8 +846,8 @@
       "capabilityId": "whole_match_visual_index",
       "plainName": "Whole-match visual index",
       "introducedInTask": "201",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_functional_ready",
+      "stabilizedInTask": "201",
+      "currentStatus": "accepted_with_inherited_sync_precision_blocker",
       "currentBaseline": "task201_bounded_two_covered_region_visual_index",
       "whyItMatters": "Provides reproducible coarse visual navigation across both accepted matches without treating sampled frames as semantic conclusions.",
       "mainFiles": [
@@ -867,7 +867,32 @@
         "Replay-to-VOD alignment retains declared errors of 9 seconds and 2 seconds, separate from decoder seek error.",
         "Frames and contact sheets remain local-only and do not establish gameplay semantics, final facts or attribution."
       ],
-      "nextUsefulStep": "After independent Work validation and separate authorization, use the index for bounded candidate-window selection; do not infer semantics from frames."
+      "nextUsefulStep": "Use the accepted coarse navigation metadata for review windows without reading or interpreting frame content."
+    },
+    {
+      "capabilityId": "review_candidate_window_generator",
+      "plainName": "Review candidate window generator",
+      "introducedInTask": "202",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_functional_ready_with_low_selectivity",
+      "currentBaseline": "task202_bounded_two_high_recall_review_attention_windows",
+      "whyItMatters": "Reduces synchronized whole-match timelines to reproducible bounded regions that can receive dense visual evidence later.",
+      "mainFiles": [
+        "tools/emit-review-candidate-windows.mjs",
+        "schemas/review-candidate-windows.schema.json",
+        "docs/codex/REVIEW_CANDIDATE_WINDOW_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/review-candidate-windows/task202-bounded2/candidate-windows.json",
+        "output/local-replay-processing/review-candidate-windows/task202-bounded2/coverage.json",
+        "output/local-replay-processing/review-candidate-windows/task202-bounded2/gate.json"
+      ],
+      "knownLimits": [
+        "Aggregate candidate coverage is 78.7883 percent and review_match_002 coverage is 90.9569 percent.",
+        "Windows are review-attention regions rather than fights, deaths, objectives, decisions or other gameplay events.",
+        "Task 197 has no direct review-target bridge and Task 200 timing errors remain 9 and 2 seconds."
+      ],
+      "nextUsefulStep": "After independent Work validation and separate authorization, use the windows as the bounded input for dense visual evidence extraction."
     }
   ]
 }
