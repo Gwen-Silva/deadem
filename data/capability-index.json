@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "198",
+  "generatedAtTask": "201",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -821,8 +821,8 @@
       "capabilityId": "two_match_replay_video_synchronization",
       "plainName": "Two-match replay to VOD synchronization",
       "introducedInTask": "200",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_functional_partial",
+      "stabilizedInTask": "200",
+      "currentStatus": "accepted_with_precision_blocker",
       "currentBaseline": "task200_bounded_two_linear_sync",
       "whyItMatters": "Turns safe Task 199 replay-elapsed timestamps into reproducible Task 198 VOD lookup locations for later assisted review.",
       "mainFiles": [
@@ -840,7 +840,34 @@
         "Estimated timing error is 9 seconds and 2 seconds respectively; zero arithmetic residual does not remove manual-anchor uncertainty.",
         "Synchronization evidence does not establish death, attribution, fight, objective or strategy semantics."
       ],
-      "nextUsefulStep": "After independent Work validation, separately authorize a bounded semantic review that consumes only covered lookup regions."
+      "nextUsefulStep": "Use only the accepted covered lookup regions and preserve the declared 9-second and 2-second timing errors."
+    },
+    {
+      "capabilityId": "whole_match_visual_index",
+      "plainName": "Whole-match visual index",
+      "introducedInTask": "201",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_functional_ready",
+      "currentBaseline": "task201_bounded_two_covered_region_visual_index",
+      "whyItMatters": "Provides reproducible coarse visual navigation across both accepted matches without treating sampled frames as semantic conclusions.",
+      "mainFiles": [
+        "tools/emit-whole-match-visual-index.mjs",
+        "tools/build-whole-match-contact-sheets.py",
+        "schemas/whole-match-visual-index.schema.json",
+        "docs/codex/WHOLE_MATCH_VISUAL_INDEX_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/frame-index.json",
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/coverage.json",
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/gate.json",
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/provenance-audit.json"
+      ],
+      "knownLimits": [
+        "Sampling is coarse at 30-second intervals and is restricted to Task 200 covered regions.",
+        "Replay-to-VOD alignment retains declared errors of 9 seconds and 2 seconds, separate from decoder seek error.",
+        "Frames and contact sheets remain local-only and do not establish gameplay semantics, final facts or attribution."
+      ],
+      "nextUsefulStep": "After independent Work validation and separate authorization, use the index for bounded candidate-window selection; do not infer semantics from frames."
     }
   ]
 }

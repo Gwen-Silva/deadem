@@ -6109,7 +6109,7 @@
     {
       "taskId": "200",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "0ed554433cf4c8b0f0ad33b13a05354a7a843add",
       "title": "Build Two-Match Replay-VOD Synchronization",
       "phase": "replay_video_synchronization",
       "primaryContribution": "Built deterministic bounded replay-elapsed to VOD mappings for both accepted assisted-review targets with separate fit/validation anchors and explicit rejection outside coverage.",
@@ -6123,7 +6123,7 @@
         "reports/two-match-replay-video-sync-task200.md"
       ],
       "gate": "two_match_replay_video_sync_partial",
-      "currentRelevance": "candidate_functional_partial_pending_work_validation",
+      "currentRelevance": "accepted_with_replay_video_sync_precision_limited",
       "dependsOn": ["198", "199"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6131,11 +6131,43 @@
         "Manual visual states and aggregate-counter freezes are timing cues with declared uncertainty, not gameplay facts.",
         "No final death fact, attribution, fight, objective or strategy interpretation is produced."
       ],
-      "evidenceStatus": "functional_replay_video_sync_partial_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_replay_video_sync_partial",
       "evidencePaths": [
         "tasks/specs/200.json",
         "tasks/completed/200-two-match-replay-video-sync.md",
         "output/local-replay-processing/replay-video-sync/task200-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "201",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Whole-Match Visual Index",
+      "phase": "whole_match_visual_index",
+      "primaryContribution": "Built deterministic 30-second whole-match visual indexes with factual replay context, local chronological contact sheets and explicit sync/seek uncertainty separation for both accepted targets.",
+      "introducedCapabilities": ["whole_match_visual_index"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/emit-whole-match-visual-index.mjs",
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/frame-index.json",
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/coverage.json",
+        "reports/whole-match-visual-index-task201.md"
+      ],
+      "gate": "whole_match_visual_index_ready",
+      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "dependsOn": ["198", "199", "200"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Task 200 alignment error remains 9 and 2 seconds even where decoder seek error is zero.",
+        "The index is coarse and the final uncovered replay tails remain unavailable.",
+        "Frames are visual evidence without gameplay, decision or strategy labels."
+      ],
+      "evidenceStatus": "whole_match_visual_index_ready_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/201.json",
+        "tasks/completed/201-whole-match-visual-index.md",
+        "output/local-replay-processing/whole-match-visual-index/task201-bounded2/summary.json"
       ]
     }
   ]

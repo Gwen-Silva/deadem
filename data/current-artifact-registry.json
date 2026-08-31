@@ -1021,26 +1021,50 @@
     {
       "id": "two_match_replay_video_sync_task200_mapping",
       "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
-      "status": "candidate_functional_partial",
+      "status": "accepted_with_precision_blocker",
       "notes": "Two bounded linear replay-elapsed to VOD mappings with explicit covered regions, error bounds and no silent extrapolation."
     },
     {
       "id": "two_match_replay_video_sync_task200_validation",
       "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/validation.json",
-      "status": "candidate_functional_partial",
+      "status": "accepted_with_precision_blocker",
       "notes": "Separate fit and validation residuals for both targets plus explicit outside-coverage rejection probes."
     },
     {
       "id": "two_match_replay_video_sync_task200_gate",
       "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Technical gate two_match_replay_video_sync_partial pending independent Work validation."
+      "status": "accepted_with_precision_blocker",
+      "notes": "Work accepted two_match_replay_video_sync_partial at 0ed554433cf4c8b0f0ad33b13a05354a7a843add with replay_video_sync_precision_limited."
     },
     {
       "id": "two_match_replay_video_sync_task200_provenance",
       "path": "output/local-replay-processing/replay-video-sync/task200-bounded2/provenance-audit.json",
-      "status": "candidate_functional_partial",
+      "status": "accepted_with_precision_blocker",
       "notes": "Records four revalidated hashes, local-only frame evidence and zero protected access, final facts, attribution or gameplay interpretation."
+    },
+    {
+      "id": "whole_match_visual_index_task201_frame_index",
+      "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/frame-index.json",
+      "status": "candidate_functional_ready",
+      "notes": "223 complete deterministic lookup rows across 2/2 targets; paths reference only local ignored frame and contact-sheet artifacts."
+    },
+    {
+      "id": "whole_match_visual_index_task201_coverage",
+      "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/coverage.json",
+      "status": "candidate_functional_ready",
+      "notes": "Records 153/153 and 70/70 covered samples, explicit uncovered tails, synchronization error and separate decoder seek error."
+    },
+    {
+      "id": "whole_match_visual_index_task201_gate",
+      "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical gate whole_match_visual_index_ready pending independent Work validation."
+    },
+    {
+      "id": "whole_match_visual_index_task201_provenance",
+      "path": "output/local-replay-processing/whole-match-visual-index/task201-bounded2/provenance-audit.json",
+      "status": "candidate_functional_ready",
+      "notes": "Records Task 198/199/200 lineage, local-only images, deterministic reruns and zero protected access, final facts, attribution or interpretation."
     }
   ]
 }

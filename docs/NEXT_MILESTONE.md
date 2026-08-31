@@ -2100,6 +2100,24 @@ second covers 0-2090 with a declared 2-second error. Their final 8-second and
 3-second tails remain uncovered and are rejected, yielding the functional gate
 `two_match_replay_video_sync_partial`.
 
-ChatGPT Work must independently validate Task 200. A later bounded semantic
-review may consume only covered lookup regions after separate authorization.
-No Task 201 is created or started here.
+ChatGPT Work accepted Task 200 at
+`0ed554433cf4c8b0f0ad33b13a05354a7a843add` with blocker
+`replay_video_sync_precision_limited` and separately authorized Task 201.
+
+## Task 201
+
+Module: `Whole-Match Visual Index`.
+
+The accepted synchronization mapping now drives a coarse 30-second visual
+index only within covered regions. The real execution produced 223/223 local
+frames and ten chronological contact sheets across both targets. All seven
+compact artifacts were byte-identical across full reruns; representative frame
+and sheet determinism also passed.
+
+The technical gate is `whole_match_visual_index_ready`. The index remains
+navigation evidence, not semantic review: synchronization precision is still
+limited to 9 seconds and 2 seconds, uncovered tails remain unavailable, and no
+fight, strategy, objective, position or decision labels are emitted.
+
+ChatGPT Work must independently validate Task 201. A Candidate Window Generator
+may be separately authorized afterward. No Task 202 is created or started here.

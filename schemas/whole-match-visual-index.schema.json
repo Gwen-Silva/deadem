@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/whole-match-visual-index.schema.json",
+  "title": "Whole-Match Visual Frame Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "samplingIntervalSeconds", "frameCount", "frames"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactClass": { "const": "whole_match_visual_frame_index" },
+    "samplingIntervalSeconds": { "type": "integer", "minimum": 20, "maximum": 45 },
+    "frameCount": { "type": "integer", "minimum": 1 },
+    "frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/frame" }
+    }
+  },
+  "$defs": {
+    "nullableNonNegativeNumber": { "type": ["number", "null"], "minimum": 0 },
+    "nullableNonNegativeInteger": { "type": ["integer", "null"], "minimum": 0 },
+    "context": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["observedParticipantCount", "netWorthSnapshot", "objectiveObservation", "lifeStateObservation"],
+      "properties": {
+        "observedParticipantCount": { "$ref": "#/$defs/nullableNonNegativeInteger" },
+        "netWorthSnapshot": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["nearestReplayElapsedSeconds", "participantCount", "totalObservedValue", "minObservedValue", "maxObservedValue", "provenanceClass"],
+          "properties": {
+            "nearestReplayElapsedSeconds": { "type": "number", "minimum": 0 },
+            "participantCount": { "type": "integer", "minimum": 0 },
+            "totalObservedValue": { "type": "number" },
+            "minObservedValue": { "type": ["number", "null"] },
+            "maxObservedValue": { "type": ["number", "null"] },
+            "provenanceClass": { "const": "derived/replay_observed_counter_aggregate_without_interpretation" }
+          }
+        },
+        "objectiveObservation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["observationCount", "sampleAvailable", "semanticClass"],
+          "properties": {
+            "observationCount": { "type": "integer", "minimum": 0 },
+            "sampleAvailable": { "type": "boolean" },
+            "semanticClass": { "const": "raw_structure_or_objective_like_observation_count" }
+          }
+        },
+        "lifeStateObservation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["availabilityStatus", "observationCount", "sampleAvailable", "semanticClass"],
+          "properties": {
+            "availabilityStatus": { "enum": ["available", "partial", "unavailable", "unsafe_to_interpret"] },
+            "observationCount": { "type": "integer", "minimum": 0 },
+            "sampleAvailable": { "type": "boolean" },
+            "semanticClass": { "const": "raw_lifecycle_related_observation_availability" }
+          }
+        }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewTargetId",
+        "visualIndexFrameId",
+        "replayElapsedSeconds",
+        "mappedVideoTimestampSeconds",
+        "syncSegmentId",
+        "syncEstimatedErrorSeconds",
+        "requestedVideoTimestampMs",
+        "decodedVideoTimestampMs",
+        "seekErrorMs",
+        "frameSha256",
+        "localFramePath",
+        "extractionStatus",
+        "sourceFrameIndex",
+        "width",
+        "height",
+        "factualContext",
+        "provenance",
+        "contactSheetId",
+        "contactSheetPosition"
+      ],
+      "properties": {
+        "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+        "visualIndexFrameId": { "type": "string", "pattern": "^review_match_00[12]_frame_[0-9]{4}$" },
+        "replayElapsedSeconds": { "type": "number", "minimum": 0 },
+        "mappedVideoTimestampSeconds": { "type": "number", "minimum": 0 },
+        "syncSegmentId": { "type": "string", "minLength": 1 },
+        "syncEstimatedErrorSeconds": { "enum": [2, 9] },
+        "requestedVideoTimestampMs": { "type": "integer", "minimum": 0 },
+        "decodedVideoTimestampMs": { "$ref": "#/$defs/nullableNonNegativeInteger" },
+        "seekErrorMs": { "type": ["integer", "null"] },
+        "frameSha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "localFramePath": { "type": ["string", "null"], "pattern": "^\\.local/deadem/visual-index/" },
+        "extractionStatus": { "enum": ["decoded", "out_of_tolerance", "seek_failed", "video_open_failed", "missing_manifest_row"] },
+        "sourceFrameIndex": { "$ref": "#/$defs/nullableNonNegativeInteger" },
+        "width": { "$ref": "#/$defs/nullableNonNegativeInteger" },
+        "height": { "$ref": "#/$defs/nullableNonNegativeInteger" },
+        "factualContext": { "$ref": "#/$defs/context" },
+        "contactSheetId": { "type": ["string", "null"], "pattern": "^review_match_00[12]_sheet_[0-9]{3}$" },
+        "contactSheetPosition": { "type": ["integer", "null"], "minimum": 0, "maximum": 24 },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["frame", "timestampMapping", "context", "semanticInterpretation"],
+          "properties": {
+            "frame": { "const": "factual/local_video_decoded_frame" },
+            "timestampMapping": { "const": "derived/task200_replay_video_sync" },
+            "context": { "const": "factual_replay_observations_and_declared_aggregates" },
+            "semanticInterpretation": { "const": false }
+          }
+        }
+      }
+    }
+  }
+}

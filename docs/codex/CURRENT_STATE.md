@@ -2,16 +2,16 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 199 at `d5f3973d9ede6bf472f3d4e7e2130476902b0fca`. ChatGPT Work accepted `two_match_review_telemetry_ready_with_declared_gaps`.
+Last accepted task: Task 200 at `0ed554433cf4c8b0f0ad33b13a05354a7a843add`. ChatGPT Work accepted `two_match_replay_video_sync_partial` with blocker `replay_video_sync_precision_limited`.
 
-Active candidate: Task 200, `Replay ↔ VOD Synchronization`. Coordination status: `VALIDATING`.
+Active candidate: Task 201, `Whole-Match Visual Index`. Coordination status: `VALIDATING`.
 
-All four Task 198 replay/VOD identities were revalidated. Task 199 replay-elapsed seconds now map to VOD seconds for both review targets with separate fit and validation anchors.
+Task 201 consumed the accepted Task 200 mapping unchanged and sampled only its covered regions at 30-second intervals. It produced 223/223 local frames and ten chronological local contact sheets across 2/2 targets.
 
-`review_match_001` uses `video = replay + 1938` with replay coverage 0-4562 and declared error 9 seconds. `review_match_002` uses `video = replay` with coverage 0-2090 and declared error 2 seconds. The final 8 and 3 replay seconds are rejected without extrapolation.
+`review_match_001` has 153 samples over replay seconds 0-4560 and seven sheets. `review_match_002` has 70 samples over seconds 0-2070 and three sheets. The final 8 and 3 replay seconds remain uncovered. Alignment error remains 9 seconds and 2 seconds, explicitly separate from zero observed decoder seek error.
 
-The technical gate is `two_match_replay_video_sync_partial`. Twelve frame-backed anchors remain bounded synchronization evidence, not gameplay facts. Seven compact artifacts are deterministic; frames remain ignored under `.local/deadem/review-sync`. Replays 005-008 were not accessed, heavy binaries remain unversioned, and final-fact/attribution/interpretation counts are zero.
+The technical gate is `whole_match_visual_index_ready`. Representative frame reruns matched 20/20 timestamps and hashes, all ten contact sheets were byte-identical across rebuilds, and all seven compact artifacts were byte-identical across full reruns. Frames and sheets remain ignored under `.local/deadem/visual-index`. Replays 005-008 were not accessed, heavy binaries remain unversioned, and final-fact/attribution/interpretation counts are zero.
 
-ChatGPT Work must independently validate Task 200. No Task 201 exists and semantic review has not started.
+ChatGPT Work must independently validate Task 201. No Task 202 exists and candidate-window generation has not started.
 
 Machine-readable state: `data/project-coordination-state.json`.

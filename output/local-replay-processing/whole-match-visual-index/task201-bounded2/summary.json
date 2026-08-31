@@ -1,0 +1,91 @@
+{
+  "counts": {
+    "attributionProduced": 0,
+    "contactSheets": 10,
+    "extractedFrames": 223,
+    "failedFrames": 0,
+    "finalFactsProduced": 0,
+    "gameplayInterpretationsProduced": 0,
+    "heavyImagesVersioned": 0,
+    "plannedFrames": 223,
+    "protectedReplayAccessCount": 0,
+    "targetsAttempted": 2,
+    "targetsIndexed": 2
+  },
+  "determinism": {
+    "status": "representative_frame_and_contact_sheet_determinism_confirmed",
+    "targets": [
+      {
+        "contactSheetsByteDeterministic": true,
+        "decodedTimestampsMatched": 10,
+        "deterministic": true,
+        "frameHashesMatched": 10,
+        "representativeSamples": 10,
+        "requestedTimestampsMatched": 10,
+        "reviewTargetId": "review_match_001"
+      },
+      {
+        "contactSheetsByteDeterministic": true,
+        "decodedTimestampsMatched": 10,
+        "deterministic": true,
+        "frameHashesMatched": 10,
+        "representativeSamples": 10,
+        "requestedTimestampsMatched": 10,
+        "reviewTargetId": "review_match_002"
+      }
+    ]
+  },
+  "samplingIntervalSeconds": 30,
+  "schemaVersion": 1,
+  "targets": [
+    {
+      "averageAbsoluteSeekErrorMs": 0,
+      "contactSheetCount": 7,
+      "expectedSamples": 153,
+      "extractedSamples": 153,
+      "extractionRate": 1,
+      "failedSamples": 0,
+      "firstSuccessfulReplaySeconds": 0,
+      "lastSuccessfulReplaySeconds": 4560,
+      "mappedVodEndSeconds": 6498,
+      "mappedVodStartSeconds": 1938,
+      "maximumAbsoluteSeekErrorMs": 0,
+      "replayCoveredEndSeconds": 4562,
+      "replayCoveredStartSeconds": 0,
+      "reviewTargetId": "review_match_001",
+      "samplingIntervalSeconds": 30,
+      "syncEstimatedErrorSeconds": 9,
+      "uncoveredReplayRanges": [
+        {
+          "endSecondsInclusive": 4570,
+          "startSecondsInclusive": 4563
+        }
+      ]
+    },
+    {
+      "averageAbsoluteSeekErrorMs": 0,
+      "contactSheetCount": 3,
+      "expectedSamples": 70,
+      "extractedSamples": 70,
+      "extractionRate": 1,
+      "failedSamples": 0,
+      "firstSuccessfulReplaySeconds": 0,
+      "lastSuccessfulReplaySeconds": 2070,
+      "mappedVodEndSeconds": 2070,
+      "mappedVodStartSeconds": 0,
+      "maximumAbsoluteSeekErrorMs": 0,
+      "replayCoveredEndSeconds": 2090,
+      "replayCoveredStartSeconds": 0,
+      "reviewTargetId": "review_match_002",
+      "samplingIntervalSeconds": 30,
+      "syncEstimatedErrorSeconds": 2,
+      "uncoveredReplayRanges": [
+        {
+          "endSecondsInclusive": 2093,
+          "startSecondsInclusive": 2091
+        }
+      ]
+    }
+  ],
+  "technicalGateStatus": "whole_match_visual_index_ready"
+}

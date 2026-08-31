@@ -1667,5 +1667,27 @@ The technical gate is `two_match_replay_video_sync_partial`: the last 8 and 3
 replay seconds are outside independently anchored coverage and are rejected
 without extrapolation. Seven compact artifacts were byte-identical across two
 real executions. There are zero protected accesses, final facts, attributions
-or gameplay interpretations. Task 200 is `VALIDATING` pending Work; no Task 201
-exists.
+or gameplay interpretations. ChatGPT Work accepted Task 200 at
+`0ed554433cf4c8b0f0ad33b13a05354a7a843add` with blocker
+`replay_video_sync_precision_limited` and separately authorized Task 201.
+
+## Task 201 - Whole-Match Visual Index
+
+Task 201 consumed the accepted Task 198 VOD identities, Task 199 factual
+telemetry and Task 200 mapping without recalculating synchronization. Sampling
+is fixed at 30-second intervals and is restricted to the accepted covered
+regions.
+
+The bounded real execution produced 153/153 frames for `review_match_001` and
+70/70 for `review_match_002`, for 223/223 total frames with zero extraction
+failures. Ten chronological contact sheets remain local-only. Representative
+reruns matched 20/20 requested timestamps, decoded timestamps and frame hashes;
+all ten sheets and all seven compact artifacts were deterministic.
+
+The technical gate is `whole_match_visual_index_ready`. The index preserves
+the 9-second and 2-second synchronization errors separately from decoder seek
+error and leaves replay ranges 4563-4570 and 2091-2093 uncovered. Frames carry
+only lightweight factual context, never labels for fight, rotation, push,
+objective, position, strategy or other gameplay interpretation. There are zero
+protected accesses, heavy versioned images, final facts, attributions or
+interpretations. Task 201 is `VALIDATING` pending Work; no Task 202 exists.

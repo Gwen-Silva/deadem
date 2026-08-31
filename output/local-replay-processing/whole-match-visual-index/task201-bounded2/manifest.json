@@ -1,0 +1,53 @@
+{
+  "artifactClass": "whole_match_visual_index_manifest",
+  "counts": {
+    "attributionProduced": 0,
+    "contactSheets": 10,
+    "extractedFrames": 223,
+    "failedFrames": 0,
+    "finalFactsProduced": 0,
+    "gameplayInterpretationsProduced": 0,
+    "heavyImagesVersioned": 0,
+    "plannedFrames": 223,
+    "protectedReplayAccessCount": 0,
+    "targetsAttempted": 2,
+    "targetsIndexed": 2
+  },
+  "generatedAt": "task_201",
+  "generatedBy": "tools/emit-whole-match-visual-index.mjs",
+  "schemaVersion": 1,
+  "sourceArtifacts": [
+    "output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json",
+    "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/availability.json",
+    "output/local-replay-processing/minimum-review-telemetry/task199-bounded2/summary.json",
+    "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json"
+  ],
+  "targets": [
+    {
+      "reviewTargetId": "review_match_001",
+      "samplingPolicy": "uniform_replay_elapsed_only_inside_task200_covered_segments",
+      "syncModelSource": "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+      "telemetryStatus": "usable",
+      "video": {
+        "expectedSha256": "b2bc8aa94b94fff12eeb14b3c060578dbdf262ccbf24e76f2de3713c4a8b7f05",
+        "identityStatus": "matched_task198_manifest",
+        "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_001\\video\\Scrim_01_SSR.mp4",
+        "observedSha256": "b2bc8aa94b94fff12eeb14b3c060578dbdf262ccbf24e76f2de3713c4a8b7f05",
+        "sizeBytes": 5177515603
+      }
+    },
+    {
+      "reviewTargetId": "review_match_002",
+      "samplingPolicy": "uniform_replay_elapsed_only_inside_task200_covered_segments",
+      "syncModelSource": "output/local-replay-processing/replay-video-sync/task200-bounded2/mapping.json",
+      "telemetryStatus": "usable",
+      "video": {
+        "expectedSha256": "852d444c1648bdbe7c35cb234127868bc991dec2d323df1496d4aa89fb8bfaa4",
+        "identityStatus": "matched_task198_manifest",
+        "localPath": "C:\\Users\\gwenm\\Documents\\deadem\\.local\\deadem\\review-targets\\review_match_002\\video\\Scrim_02_SSR.mp4",
+        "observedSha256": "852d444c1648bdbe7c35cb234127868bc991dec2d323df1496d4aa89fb8bfaa4",
+        "sizeBytes": 1681066806
+      }
+    }
+  ]
+}
