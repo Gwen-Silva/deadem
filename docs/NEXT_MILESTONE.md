@@ -1,22 +1,23 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 205
+## Coordination Gate Before Further Execution — Task 206
 
-Task 204 at `225f570a68c3d53ecfa17986e674fe21be7d2dc6` is the
-accepted base. Task 205 is a technical candidate in `VALIDATING` with gate
-claim `two_match_audio_call_evidence_ready_with_asr_gaps`. ChatGPT Work must
-independently validate it. Codex stops after this handoff; no Task 206 exists.
+Task 205 at `1a0365a3a59596da267fbf3480adb5488034cb20` is the
+accepted base. Task 206 is a technical candidate in `VALIDATING` with gate
+claim `two_match_local_assisted_review_workspace_ready`. ChatGPT Work must
+independently validate it. Codex stops after this handoff; no Task 207 exists.
 
-If Task 205 is accepted, complete the bounded 16-segment human audio comparison
-and resume review windows 0013, 0015 and 0016. Do not build another module.
-Task 202 selectivity and Task 200 synchronization blockers remain active.
+If Task 206 is accepted, operate a bounded real human review through the local
+workspace before authorizing another technical unit. Task 202 selectivity,
+Task 200 synchronization, and Task 205 mixed-VOD ASR semantic-accuracy blockers
+remain active.
 
 ## Current State
 
-Task 205 adds a local audio overlay to the accepted Task 204 bundles: 1,338 and
-538 segments, 8,158 and 3,585 word timestamps, and at least one intersecting
-speech segment for every one of the 67 and 35 review windows. Transcripts,
-audio and speaker identity remain local; analyst inference is empty.
+Task 206 operates all 67 and 35 review windows in a localhost-only workspace.
+All 102 candidates resolve existing visual and audio evidence on the canonical
+executor. Review state, transcript corrections, human segmentation, and export
+remain local; upstream evidence and analyst inference remain unchanged.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

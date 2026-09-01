@@ -1,25 +1,27 @@
 # Project State
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
-## Active Audio Call Evidence Candidate
+## Active Assisted Review Workspace Candidate
 
-Task 204 at commit `225f570a68c3d53ecfa17986e674fe21be7d2dc6` is
-the last state independently accepted by ChatGPT Work. Its gate is
-`two_match_assisted_review_bundles_ready`; the real review exposed missing
-contemporaneous call evidence as the principal uncertainty for intent and
-coordination questions.
+Task 205 at commit `1a0365a3a59596da267fbf3480adb5488034cb20` is the
+last state independently accepted by ChatGPT Work. Its accepted gate is
+`two_match_audio_call_evidence_ready_with_asr_gaps`. The bounded human sample
+found 4 correct, 3 usable-with-minor-error, and 9 materially wrong transcripts,
+for a 43.75 percent usable rate.
 
-Task 205 is the active candidate in `VALIDATING`. It processed the two mixed
-VOD audio regions locally with faster-whisper and linked 1,876 timestamped ASR
-segments to all 102 accepted review windows. Its technical gate claim is
-`two_match_audio_call_evidence_ready_with_asr_gaps`: 16 human-validation rows
-are prepared, but audio classifications and usable rate remain pending.
-Speaker identity is `unknown/mixed`; speech is not intent or a confirmed call.
+Task 206 is the active candidate in `VALIDATING`. Its local workspace operates
+the accepted 102-candidate evidence through a controlled localhost queue,
+allowlisted visual and Range-audio endpoints, human segmentation, atomic local
+persistence, and local JSON/Markdown export. Its technical gate claim is
+`two_match_local_assisted_review_workspace_ready`.
 
-ChatGPT Work remains the sole acceptance authority. After independent Task 205
-acceptance, resume the real review at `review_match_001_window_0013`, `0015`
-and `0016` with local audio evidence. No Task 206 exists.
+Mixed-VOD ASR remains useful as temporal locator and editable draft, but human
+validation is required for semantic use under blocker
+`mixed_vod_asr_semantic_accuracy_insufficient_for_automatic_call_review`.
+Inherited blockers `review_candidate_selectivity_low` and
+`replay_video_sync_precision_limited` remain. ChatGPT Work remains the sole
+acceptance authority. No Task 207 exists.
 
 ## Authoritative Current State
 

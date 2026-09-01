@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Produce timestamped local speech evidence from the two accepted VODs and link it to the existing review windows without strategic interpretation.",
-  "phase": "audio_call_evidence",
-  "lastAcceptedTaskId": "204",
-  "lastAcceptedCommit": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
-  "activeBaseCommit": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
+  "objective": "Make the accepted two-match visual and audio evidence operational through a local-only assisted review workspace.",
+  "phase": "assisted_review_workspace",
+  "lastAcceptedTaskId": "205",
+  "lastAcceptedCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
+  "activeBaseCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
   "branch": "main",
-  "activeTaskId": "205",
+  "activeTaskId": "206",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/205/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/206/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -30,6 +30,7 @@
     "replay_008",
     "packages/deadem/**",
     "packages/engine/**",
+    "packages/ui/**",
     "samples/**"
   ],
   "architecturalDecisions": [
@@ -57,7 +58,7 @@
     "Task 201 is accepted with inherited blocker replay_video_sync_precision_limited: visual navigation is coarse and preserves 9 and 2 second alignment uncertainty.",
     "Task 202 is accepted with blocker review_candidate_selectivity_low: candidate coverage is 78.7883 percent overall and 90.9569 percent for review_match_002.",
     "Task 203 is accepted with inherited blockers review_candidate_selectivity_low and replay_video_sync_precision_limited: dense visual evidence is ready without semantic validation.",
-    "Task 204 is accepted with blocker contemporaneous_call_evidence_missing_for_intent_and_coordination_review: the real review exposed calls as the principal remaining evidence gap.",
+    "Task 205 is accepted with blocker mixed_vod_asr_semantic_accuracy_insufficient_for_automatic_call_review: mixed-VOD ASR remains usable as a temporal speech locator and draft, while human validation is required for semantic use.",
     "The accepted bounded-32 challenger population remains limited at 91 primary 30-second eligible clusters.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
@@ -66,9 +67,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 205. After acceptance, resume the real review at review_match_001_window_0013, 0015 and 0016 with audioCallEvidence; do not create Task 206.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204"],
-  "pendingTasks": ["205"],
+  "nextAction": "ChatGPT Work independently validates the single Task 206 candidate commit and its local assisted review workspace gate claim.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205"],
+  "pendingTasks": ["206"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "205",
-  "baseCommit": "225f570a68c3d53ecfa17986e674fe21be7d2dc6",
-  "taskRange": "001-205",
+  "generatedAtTask": "206",
+  "baseCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
+  "taskRange": "001-206",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6173,7 +6173,7 @@
     {
       "taskId": "202",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "1a0365a3a59596da267fbf3480adb5488034cb20",
       "title": "Build Review Candidate Window Generator",
       "phase": "review_candidate_window_generation",
       "primaryContribution": "Built deterministic high-recall review-attention windows from hash-validated Task 199 telemetry with Task 200 mapping and Task 201 navigation links.",
@@ -6283,19 +6283,51 @@
         "reports/timestamped-call-evidence-task205.md"
       ],
       "gate": "two_match_audio_call_evidence_ready_with_asr_gaps",
-      "currentRelevance": "candidate_functional_ready_pending_work_validation",
+      "currentRelevance": "accepted_with_mixed_vod_asr_semantic_accuracy_blocker",
       "dependsOn": ["198", "200", "204"],
       "supersededBy": null,
       "reworkRiskNotes": [
-        "Manual audio/transcript classifications and usable rate remain pending.",
-        "Mixed VOD speakers remain unknown and Task 200 retains 9/2-second uncertainty.",
+        "Human validation found 4 correct, 3 usable-with-minor-error and 9 materially wrong samples: 43.75 percent usable.",
+        "Mixed VOD speakers remain unidentified/mixed and Task 200 retains 9/2-second uncertainty.",
         "ASR evidence must not be promoted to intent, call correctness or strategy."
       ],
-      "evidenceStatus": "two_match_audio_call_evidence_ready_with_asr_gaps_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_audio_call_evidence_ready_with_asr_gaps",
       "evidencePaths": [
         "tasks/specs/205.json",
         "tasks/completed/205-timestamped-call-evidence.md",
         "output/local-replay-processing/audio-call-evidence/task205-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "206",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Local Assisted Review Workspace",
+      "phase": "assisted_review_workspace",
+      "primaryContribution": "Built a localhost-only workspace that operates all 102 immutable visual/audio review candidates with navigation, human segmentation, atomic local persistence and bounded export.",
+      "introducedCapabilities": ["local_assisted_review_workspace"],
+      "stabilizedCapabilities": [],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/review-workspace/server.mjs",
+        "tools/review-workspace/data-model.mjs",
+        "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json",
+        "reports/local-assisted-review-workspace-task206.md"
+      ],
+      "gate": "two_match_local_assisted_review_workspace_ready",
+      "currentRelevance": "candidate_ready_pending_work_validation",
+      "dependsOn": ["203", "204", "205"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Candidate windows remain review-attention regions rather than gameplay events.",
+        "Mixed-VOD ASR remains a temporal locator and draft requiring human validation for semantic use.",
+        "Review data, transcript corrections, segments and exports remain local-only."
+      ],
+      "evidenceStatus": "two_match_local_assisted_review_workspace_ready_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/206.json",
+        "tasks/completed/206-local-assisted-review-workspace.md",
+        "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json"
       ]
     }
   ]

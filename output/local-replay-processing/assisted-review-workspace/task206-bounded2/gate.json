@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "local_assisted_review_workspace_gate",
+  "technicalGateStatus": "two_match_local_assisted_review_workspace_ready",
+  "acceptanceAuthority": "ChatGPT Work",
+  "inheritedBlockers": [
+    "review_candidate_selectivity_low",
+    "replay_video_sync_precision_limited",
+    "mixed_vod_asr_semantic_accuracy_insufficient_for_automatic_call_review"
+  ],
+  "gateReason": "The localhost workspace loaded both targets and all 102 candidates with visual/audio media, atomic persistence, export, Range audio and traversal rejection."
+}

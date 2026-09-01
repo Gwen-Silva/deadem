@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "205",
+  "generatedAtTask": "206",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -952,8 +952,8 @@
       "capabilityId": "timestamped_audio_call_evidence",
       "plainName": "Timestamped audio call evidence",
       "introducedInTask": "205",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_with_asr_gaps_pending_work_validation",
+      "stabilizedInTask": "205",
+      "currentStatus": "accepted_with_mixed_vod_asr_semantic_accuracy_blocker",
       "currentBaseline": "task205_bounded_two_mixed_vod_asr_linkage",
       "whyItMatters": "Adds contemporaneous speech evidence to every accepted review window without interpreting intent, coordination or call quality.",
       "mainFiles": [
@@ -968,11 +968,39 @@
         "output/local-replay-processing/audio-call-evidence/task205-bounded2/gate.json"
       ],
       "knownLimits": [
-        "Mixed speakers remain unknown and ASR word/segment errors are possible.",
-        "The 16-sample human audio comparison is prepared but not classified on this surface.",
+        "Mixed speakers remain unidentified and ASR word/segment errors are possible.",
+        "The 16-sample human comparison found 43.75 percent usable mixed-VOD ASR.",
         "Replay mapping retains 9 and 2 second uncertainty; temporal overlap is not semantic relevance."
       ],
-      "nextUsefulStep": "After Work acceptance, complete the bounded human sample and resume review_match_001 windows 0013, 0015 and 0016."
+      "nextUsefulStep": "Use ASR only as a temporal locator and editable draft inside the local assisted review workspace."
+    },
+    {
+      "capabilityId": "local_assisted_review_workspace",
+      "plainName": "Local assisted review workspace",
+      "introducedInTask": "206",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_pending_work_validation",
+      "currentBaseline": "task206_bounded_two_localhost_review_workspace",
+      "whyItMatters": "Makes the accepted visual and audio evidence operational through one local queue, controlled media access, human segmentation, durable review state and bounded export.",
+      "mainFiles": [
+        "tools/review-workspace/server.mjs",
+        "tools/review-workspace/data-model.mjs",
+        "tools/review-workspace/persistence.mjs",
+        "tools/review-workspace/export.mjs",
+        "docs/codex/LOCAL_ASSISTED_REVIEW_WORKSPACE_CONTRACT.md"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/assisted-review-workspace/task206-bounded2/availability.json",
+        "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json",
+        "output/local-replay-processing/assisted-review-workspace/task206-bounded2/gate.json",
+        "output/local-replay-processing/assisted-review-workspace/task206-bounded2/privacy-audit.json"
+      ],
+      "knownLimits": [
+        "Candidate priority is a scheduling heuristic rather than relevance or gameplay probability.",
+        "Mixed-VOD ASR needs human validation for semantic use and speakers are unidentified/mixed.",
+        "Replay-to-VOD synchronization retains declared errors of 9 and 2 seconds."
+      ],
+      "nextUsefulStep": "Await independent Work validation, then operate bounded human review through the local workspace."
     }
   ]
 }

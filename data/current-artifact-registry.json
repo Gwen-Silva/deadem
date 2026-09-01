@@ -1141,26 +1141,56 @@
     {
       "id": "audio_call_evidence_task205_manifest",
       "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/manifest.json",
-      "status": "candidate_ready_with_asr_gaps",
+      "status": "accepted_with_asr_semantic_accuracy_blocker",
       "notes": "Records VOD/local transcript hashes, adapter contracts, immutable candidate fingerprint and synthetic Craig evidence without real speech text."
     },
     {
       "id": "audio_call_evidence_task205_coverage",
       "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/coverage.json",
-      "status": "candidate_ready_with_asr_gaps",
+      "status": "accepted_with_asr_semantic_accuracy_blocker",
       "notes": "2/2 VOD regions, 1,876 segments, 11,743 word timestamps and 102/102 linked candidate windows with 9/2-second sync uncertainty."
     },
     {
       "id": "audio_call_evidence_task205_candidate_summary",
       "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/candidate-call-summary.json",
-      "status": "candidate_ready_with_asr_gaps",
+      "status": "accepted_with_asr_semantic_accuracy_blocker",
       "notes": "Privacy-safe per-candidate call counts for all 102 immutable windows; no transcript text or speaker identity."
     },
     {
       "id": "audio_call_evidence_task205_gate",
       "path": "output/local-replay-processing/audio-call-evidence/task205-bounded2/gate.json",
-      "status": "candidate_ready_with_asr_gaps",
-      "notes": "Technical gate claim two_match_audio_call_evidence_ready_with_asr_gaps; 16-sample manual audio comparison remains pending."
+      "status": "accepted_with_asr_semantic_accuracy_blocker",
+      "notes": "Work accepted two_match_audio_call_evidence_ready_with_asr_gaps at 1a0365a3a59596da267fbf3480adb5488034cb20; human comparison established a 43.75 percent usable rate."
+    },
+    {
+      "id": "assisted_review_workspace_task206_manifest",
+      "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/manifest.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Records immutable Task 203/204/205 inputs, local-only review state/export policy and two-target scope."
+    },
+    {
+      "id": "assisted_review_workspace_task206_availability",
+      "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/availability.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "All 102 candidates resolve visual and audio evidence on the canonical executor."
+    },
+    {
+      "id": "assisted_review_workspace_task206_summary",
+      "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Compact functional smoke metrics for navigation, controlled media, persistence, export and protections."
+    },
+    {
+      "id": "assisted_review_workspace_task206_gate",
+      "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/gate.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Technical gate claim two_match_local_assisted_review_workspace_ready."
+    },
+    {
+      "id": "assisted_review_workspace_task206_privacy",
+      "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/privacy-audit.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Confirms zero versioned human review, audio, images, video, replay access, VOD access, protected access or automatic gameplay interpretation."
     }
   ]
 }

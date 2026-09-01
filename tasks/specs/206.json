@@ -1,0 +1,183 @@
+{
+  "taskId": "206",
+  "title": "Build Local Assisted Review Workspace",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Build a localhost-only assisted review workspace over the immutable Task 203, 204 and 205 evidence for both accepted review targets.",
+  "module": "Assisted Review Workspace",
+  "moduleGoal": "Make the existing 102-candidate visual and audio evidence operational for bounded human review, segmentation, persistence and export.",
+  "observableOutcome": "A dependency-light local web workspace with controlled media serving, range audio, atomic local review persistence and selectable local export.",
+  "metricContribution": "2 targets and 102 candidates loaded; visual/audio availability, call segment counts, API/range/security checks, persistence/export roundtrips and zero upstream/media/replay/VOD/protected mutations or accesses.",
+  "remainingModuleGap": "Mixed-VOD ASR remains only a temporal locator and draft; candidate selectivity and replay-video synchronization precision remain limited.",
+  "hardeningDeferred": "No parser, detector, ranking, ASR, sync, frame extraction, diarization, real Craig, cloud, authentication, licensing, LLM or coaching work.",
+  "baseCommitExpected": "1a0365a3a59596da267fbf3480adb5488034cb20",
+  "executionReportPath": "reports/local-assisted-review-workspace-task206.md",
+  "executionContract": {
+    "reasoningComplexity": "High: expose multiple immutable provenance layers through a secure local HTTP workspace while keeping every human edit local and preventing arbitrary filesystem access.",
+    "objective": "Build the smallest complete local interface that makes the accepted two-match review artifacts practical to operate.",
+    "technicalContext": [
+      "Task 205 is Work-accepted at 1a0365a3a59596da267fbf3480adb5488034cb20 with mixed-VOD ASR useful only as locator and draft.",
+      "Tasks 203, 204 and 205 artifacts are immutable inputs; no replay, VOD, extraction or ASR rerun is required."
+    ],
+    "confirmedState": [
+      "Task 204 contains exactly 102 review-attention candidates across review_match_001 and review_match_002.",
+      "Local frame/storyboard indexes and both Task 205 mixed WAV sources are available on this executor.",
+      "The bounded human ASR validation resolved the manual-validation blocker and established 43.75 percent usable rate."
+    ],
+    "expectedBaseCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
+    "branchEnvironment": [
+      "Windows desktop executor on main.",
+      "Create and publish exactly one Task 206 commit."
+    ],
+    "allowedScope": [
+      "Read compact Task 203/204/205 artifacts and their allowlisted local frame, storyboard, atlas, call-index and WAV evidence.",
+      "Write workspace code/tests/docs, five compact readiness artifacts and local-only review state/exports."
+    ],
+    "protectedAreas": [
+      "Never open any .dem, original .mp4, replay_005 through replay_008 or arbitrary path supplied by an HTTP client.",
+      "Never modify upstream Task 202/203/204/205 evidence, parser packages, packages/ui, local source media or real human-review data."
+    ],
+    "expectedChanges": [
+      "Isolated Node HTTP workspace, data model, atomic persistence, bounded export, static UI, schema, tests, compact readiness outputs, report and necessary coordination/navigation updates."
+    ],
+    "acceptanceCriteria": [
+      "Both targets and all 102 immutable candidates load with chronological/priority navigation and review-state filters.",
+      "Allowlisted visual evidence and HTTP Range audio work with explicit graceful media gaps.",
+      "Synthetic review state, human segmentation and JSON/Markdown export roundtrip locally without gameplay conclusions.",
+      "Traversal/protected aliases are rejected and no upstream artifact or media is versioned or mutated."
+    ],
+    "mandatoryTests": [
+      "node --test tests/review-workspace.test.mjs",
+      "node --test tests/review-workspace-http.test.mjs",
+      "node --test tests/local-assisted-review-workspace-schema.test.mjs",
+      "npm.cmd run validate:coordination",
+      "npm.cmd run validate:tasks",
+      "npm.cmd run lint",
+      "npm.cmd run check:outputs"
+    ],
+    "requiredEvidence": [
+      "Two-target/102-candidate loading, immutable fingerprints, visual/audio/call availability, atomic persistence/export roundtrip, HTTP endpoints, Range 206, traversal rejection, privacy audit and post-commit attestation."
+    ],
+    "commitPolicy": [
+      "Create exactly one commit named Build local assisted review workspace.",
+      "Stage only authorized compact paths and publish main with a normal non-forced push."
+    ],
+    "stopConditions": [
+      "Stop on missing Task 204 core inputs, base divergence, protected/replay/VOD access, upstream mutation, arbitrary path resolution, versioned real review/media or automatic gameplay interpretation.",
+      "Stop in VALIDATING and do not create Task 207 or start another module."
+    ],
+    "returnReportFormat": [
+      "Resultado, O que passou a funcionar, Valor observável, Impacto no módulo, Limitação relevante, Próximo objetivo and Previsão operacional."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/window-evidence-index.json",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/frame-evidence-summary.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/window-review-index.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/review-queue.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/review-protocol-template.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/availability.json",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/summary.json"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "tools/review-workspace/**",
+    "schemas/local-assisted-review-workspace.schema.json",
+    "tests/review-workspace.test.mjs",
+    "tests/review-workspace-http.test.mjs",
+    "tests/local-assisted-review-workspace-schema.test.mjs",
+    "docs/codex/LOCAL_ASSISTED_REVIEW_WORKSPACE_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/206.json",
+    "tasks/completed/206-local-assisted-review-workspace.md",
+    "reports/local-assisted-review-workspace-task206.md",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/**",
+    ".local/deadem/review-workspace/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "packages/ui/**",
+    "samples/**",
+    "tasks/specs/207.json",
+    "tasks/*/207-*",
+    "output/local-replay-processing/review-candidate-windows/task202-bounded2/**",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/**",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/**",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/**",
+    ".local/deadem/dense-review/**",
+    ".local/deadem/review-bundles/**",
+    ".local/deadem/call-evidence/**",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**",
+    "**/*.dem",
+    "**/*.mp4",
+    "**/*.wav",
+    "**/*.flac",
+    "**/*.mp3",
+    "**/*.opus",
+    "**/*.m4a",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.png"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "review-workspace-unit", "type": "node-test", "paths": ["tests/review-workspace.test.mjs"] },
+    { "id": "review-workspace-http", "type": "node-test", "paths": ["tests/review-workspace-http.test.mjs"] },
+    { "id": "review-workspace-schema", "type": "node-test", "paths": ["tests/local-assisted-review-workspace-schema.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "04-controller-pawn-lifecycle[.]json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/manifest.json",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/availability.json",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/gate.json",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/privacy-audit.json",
+    "reports/local-assisted-review-workspace-task206.md",
+    "tasks/completed/206-local-assisted-review-workspace.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay bytes, original VODs or historical replay_005 through replay_008.",
+    "Never mutate accepted candidates/evidence or version real review state, media or gameplay interpretation.",
+    "Do not create Task 207."
+  ],
+  "successGate": "two_match_local_assisted_review_workspace_ready",
+  "gapsGate": "two_match_local_assisted_review_workspace_ready_with_declared_media_gaps",
+  "blockedGate": "BLOCKED_BY_REVIEW_WORKSPACE_CORE_INPUTS_UNAVAILABLE",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

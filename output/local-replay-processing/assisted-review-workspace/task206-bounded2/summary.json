@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "local_assisted_review_workspace_summary",
+  "candidateSemantics": "review_attention_region_not_gameplay_event",
+  "prioritySemantics": "review scheduling heuristic",
+  "workspaceUrl": "http://127.0.0.1:4179",
+  "metrics": {
+    "targetsLoaded": 2,
+    "candidateWindowsLoaded": 102,
+    "candidateCountsByTarget": {
+      "review_match_001": 67,
+      "review_match_002": 35
+    },
+    "visualCandidatesResolvable": 102,
+    "audioCandidatesResolvable": 102,
+    "callSegmentsAvailable": 1876,
+    "reviewStateStorageReady": true,
+    "exportReady": true,
+    "httpEndpointsValidated": 7,
+    "rangeAudioValidated": true,
+    "pathTraversalRejected": true,
+    "protectedAliasRejected": true,
+    "candidateMutationCount": 0,
+    "upstreamArtifactMutationCount": 0,
+    "realHumanReviewVersionedCount": 0,
+    "rawAudioVersionedCount": 0,
+    "imageVersionedCount": 0,
+    "replayAccessCount": 0,
+    "vodAccessCount": 0,
+    "protectedAccessCount": 0,
+    "automaticGameplayInterpretationCount": 0
+  },
+  "smoke": {
+    "candidate0015VisualStatus": "available",
+    "candidate0015AudioCallRefs": 11,
+    "persistenceRoundtrip": true,
+    "humanTranscriptSeparated": true,
+    "segmentRoundtrip": true,
+    "exportRoundtrip": true,
+    "rangeAudioStatus": 206,
+    "rangeAudioBytes": 32,
+    "pathTraversalStatus": 400,
+    "protectedAliasStatus": 400
+  },
+  "technicalGateStatus": "two_match_local_assisted_review_workspace_ready"
+}

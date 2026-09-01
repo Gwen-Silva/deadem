@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deadem Assisted Review Workspace</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">LOCAL ONLY · HUMAN REVIEW</p>
+      <h1>Assisted Review Workspace</h1>
+      <p><code>candidate = review_attention_region_not_gameplay_event</code></p>
+    </div>
+    <div class="toolbar">
+      <label>Target <select id="target"></select></label>
+      <button id="previous">Previous</button>
+      <button id="next">Next</button>
+      <button id="save" class="primary">Save</button>
+      <button id="export">Export current</button>
+    </div>
+  </header>
+  <main>
+    <aside class="queue-panel">
+      <h2>Candidate queue</h2>
+      <p class="hint">Priority is a review scheduling heuristic, never probability.</p>
+      <label>Order
+        <select id="order"><option value="chronological">Chronological</option><option value="priority">Priority</option></select>
+      </label>
+      <label>Status
+        <select id="filter"><option value="">All</option><option>unreviewed</option><option>in_review</option><option>reviewed</option><option>skipped</option></select>
+      </label>
+      <label>Search <input id="search" placeholder="candidateWindowId"></label>
+      <div id="queue" class="queue"></div>
+    </aside>
+
+    <section class="evidence-panel">
+      <div id="candidate-heading"></div>
+      <section>
+        <h2>Visual evidence</h2>
+        <div id="visual-gap" class="gap"></div>
+        <div id="frames" class="media-grid"></div>
+        <div id="storyboards" class="media-grid storyboards"></div>
+      </section>
+      <section>
+        <h2>Audio calls</h2>
+        <p class="warning">ASR DRAFT — HUMAN VALIDATION REQUIRED · speaker: unknown/mixed</p>
+        <div id="audio-gap" class="gap"></div>
+        <audio id="audio-player" controls preload="metadata"></audio>
+        <div id="calls"></div>
+      </section>
+      <section>
+        <h2>Provenance layers</h2>
+        <div id="provenance" class="provenance"></div>
+      </section>
+    </section>
+
+    <aside class="review-panel">
+      <h2>Human review</h2>
+      <label>Review state
+        <select id="review-state"><option>unreviewed</option><option>in_review</option><option>reviewed</option><option>skipped</option></select>
+      </label>
+      <label>Review record JSON
+        <textarea id="review-record" rows="20"></textarea>
+      </label>
+      <div class="segment-title"><h3>Human segments</h3><button id="add-segment">Add review segment</button></div>
+      <p class="hint">Human boundaries stay inside the candidate. Overlaps are reported, not merged.</p>
+      <div id="segments"></div>
+      <div id="status" role="status"></div>
+    </aside>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

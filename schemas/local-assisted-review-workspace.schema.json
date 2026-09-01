@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/local-assisted-review-workspace.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "artifactClass"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactClass": {
+      "enum": [
+        "local_assisted_review_workspace_manifest",
+        "local_assisted_review_workspace_availability",
+        "local_assisted_review_workspace_summary",
+        "local_assisted_review_workspace_gate",
+        "local_assisted_review_workspace_privacy_audit"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "artifactClass": { "const": "local_assisted_review_workspace_manifest" } } },
+      "then": {
+        "required": ["taskId", "baseCommit", "module", "targets", "sourceFingerprint", "compactArtifacts", "mediaEmbedded", "technicalGateStatus"],
+        "properties": {
+          "taskId": { "const": "206" },
+          "baseCommit": { "pattern": "^[0-9a-f]{40}$" },
+          "targets": { "const": ["review_match_001", "review_match_002"] },
+          "mediaEmbedded": { "const": false }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "artifactClass": { "const": "local_assisted_review_workspace_availability" } } },
+      "then": {
+        "required": ["targets"],
+        "properties": {
+          "targets": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["reviewTargetId", "candidateCount", "visual", "audio", "reviewState", "callSegmentCount"],
+              "properties": {
+                "reviewTargetId": { "enum": ["review_match_001", "review_match_002"] },
+                "candidateCount": { "type": "integer", "minimum": 1 },
+                "visual": { "enum": ["available", "available_with_gaps", "unavailable"] },
+                "audio": { "enum": ["available", "available_with_gaps", "unavailable"] },
+                "reviewState": { "enum": ["available", "available_with_gaps", "unavailable"] },
+                "callSegmentCount": { "type": "integer", "minimum": 0 }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "artifactClass": { "const": "local_assisted_review_workspace_summary" } } },
+      "then": {
+        "required": ["candidateSemantics", "prioritySemantics", "workspaceUrl", "metrics", "smoke", "technicalGateStatus"],
+        "properties": {
+          "candidateSemantics": { "const": "review_attention_region_not_gameplay_event" },
+          "metrics": {
+            "type": "object",
+            "required": ["targetsLoaded", "candidateWindowsLoaded", "candidateCountsByTarget", "visualCandidatesResolvable", "audioCandidatesResolvable", "callSegmentsAvailable", "reviewStateStorageReady", "exportReady", "httpEndpointsValidated", "rangeAudioValidated", "pathTraversalRejected", "candidateMutationCount", "upstreamArtifactMutationCount", "realHumanReviewVersionedCount", "rawAudioVersionedCount", "imageVersionedCount", "replayAccessCount", "vodAccessCount", "protectedAccessCount", "automaticGameplayInterpretationCount"]
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "artifactClass": { "const": "local_assisted_review_workspace_gate" } } },
+      "then": {
+        "required": ["technicalGateStatus", "acceptanceAuthority", "inheritedBlockers", "gateReason"],
+        "properties": {
+          "technicalGateStatus": {
+            "enum": [
+              "two_match_local_assisted_review_workspace_ready",
+              "two_match_local_assisted_review_workspace_ready_with_declared_media_gaps",
+              "BLOCKED_BY_REVIEW_WORKSPACE_CORE_INPUTS_UNAVAILABLE"
+            ]
+          },
+          "acceptanceAuthority": { "const": "ChatGPT Work" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "artifactClass": { "const": "local_assisted_review_workspace_privacy_audit" } } },
+      "then": {
+        "required": ["localhostOnly", "externalRequestCount", "analyticsCount", "cloudDependencyCount", "arbitraryFilesystemEndpointCount", "realHumanReviewVersionedCount", "rawAudioVersionedCount", "imageVersionedCount", "replayAccessCount", "vodAccessCount", "protectedAccessCount", "automaticGameplayInterpretationCount"],
+        "properties": {
+          "localhostOnly": { "const": true },
+          "externalRequestCount": { "const": 0 },
+          "analyticsCount": { "const": 0 },
+          "cloudDependencyCount": { "const": 0 },
+          "arbitraryFilesystemEndpointCount": { "const": 0 },
+          "realHumanReviewVersionedCount": { "const": 0 },
+          "rawAudioVersionedCount": { "const": 0 },
+          "imageVersionedCount": { "const": 0 },
+          "replayAccessCount": { "const": 0 },
+          "vodAccessCount": { "const": 0 },
+          "protectedAccessCount": { "const": 0 },
+          "automaticGameplayInterpretationCount": { "const": 0 }
+        }
+      }
+    }
+  ]
+}

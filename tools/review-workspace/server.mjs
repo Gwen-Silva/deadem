@@ -1,0 +1,247 @@
+import { createReadStream, existsSync, statSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
+import http from 'node:http';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import {
+    DEFAULT_REPO_ROOT,
+    TARGET_IDS,
+    assertCandidateId,
+    assertSafeRequestPath,
+    assertTargetId,
+    listCandidates,
+    loadWorkspaceData
+} from './data-model.mjs';
+import { ReviewStateStore } from './persistence.mjs';
+import { writeExportPacket } from './export.mjs';
+
+const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
+const PUBLIC_DIR = path.join(MODULE_DIR, 'public');
+const STATIC_FILES = new Map([
+    ['/', { path: path.join(PUBLIC_DIR, 'index.html'), type: 'text/html; charset=utf-8' }],
+    ['/index.html', { path: path.join(PUBLIC_DIR, 'index.html'), type: 'text/html; charset=utf-8' }],
+    ['/app.js', { path: path.join(PUBLIC_DIR, 'app.js'), type: 'text/javascript; charset=utf-8' }],
+    ['/styles.css', { path: path.join(PUBLIC_DIR, 'styles.css'), type: 'text/css; charset=utf-8' }]
+]);
+
+function jsonResponse(response, status, value) {
+    const body = `${JSON.stringify(value)}\n`;
+    response.writeHead(status, {
+        'content-type': 'application/json; charset=utf-8',
+        'content-length': Buffer.byteLength(body),
+        'cache-control': 'no-store'
+    });
+    response.end(body);
+}
+
+function errorResponse(response, status, code) {
+    jsonResponse(response, status, { error: code });
+}
+
+async function readJsonBody(request) {
+    const chunks = [];
+    let bytes = 0;
+    for await (const chunk of request) {
+        bytes += chunk.length;
+        if (bytes > 1024 * 1024) throw new Error('request_body_too_large');
+        chunks.push(chunk);
+    }
+    try {
+        return JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}');
+    } catch {
+        throw new Error('invalid_json_body');
+    }
+}
+
+export function parseRangeHeader(header, size) {
+    if (!header) return null;
+    const match = /^bytes=(\d*)-(\d*)$/u.exec(header.trim());
+    if (!match) throw new Error('invalid_range');
+    let start;
+    let end;
+    if (!match[1]) {
+        const suffix = Number.parseInt(match[2], 10);
+        if (!(suffix > 0)) throw new Error('invalid_range');
+        start = Math.max(0, size - suffix);
+        end = size - 1;
+    } else {
+        start = Number.parseInt(match[1], 10);
+        end = match[2] ? Number.parseInt(match[2], 10) : size - 1;
+    }
+    if (start < 0 || end < start || start >= size) throw new Error('range_not_satisfiable');
+    return { start, end: Math.min(end, size - 1) };
+}
+
+function serveMedia(request, response, entry) {
+    if (!entry?.available || !existsSync(entry.absolutePath)) return errorResponse(response, 404, 'media_unavailable');
+    const size = statSync(entry.absolutePath).size;
+    let range;
+    try {
+        range = parseRangeHeader(request.headers.range, size);
+    } catch (error) {
+        response.writeHead(error.message === 'range_not_satisfiable' ? 416 : 400, {
+            'content-range': `bytes */${size}`,
+            'accept-ranges': 'bytes'
+        });
+        return response.end();
+    }
+    if (range) {
+        response.writeHead(206, {
+            'content-type': entry.contentType,
+            'content-length': range.end - range.start + 1,
+            'content-range': `bytes ${range.start}-${range.end}/${size}`,
+            'accept-ranges': 'bytes',
+            'cache-control': 'no-store'
+        });
+        return createReadStream(entry.absolutePath, range).pipe(response);
+    }
+    response.writeHead(200, {
+        'content-type': entry.contentType,
+        'content-length': size,
+        'accept-ranges': 'bytes',
+        'cache-control': 'no-store'
+    });
+    return createReadStream(entry.absolutePath).pipe(response);
+}
+
+async function candidateWithState(data, store, candidateId) {
+    assertCandidateId(candidateId);
+    const candidate = data.candidateById.get(candidateId);
+    if (!candidate) return null;
+    const state = await store.load(candidate.reviewTargetId);
+    return {
+        ...candidate,
+        humanReview: state.candidates[candidateId] ?? {
+            reviewRecord: candidate.initialReviewRecord,
+            transcriptCorrections: {},
+            reviewSegments: []
+        },
+        detectedOverlaps: state.overlaps.filter(overlap => overlap.candidateWindowId === candidateId)
+    };
+}
+
+export async function createReviewWorkspaceServer({
+    repoRoot = DEFAULT_REPO_ROOT,
+    stateRoot = path.join(repoRoot, '.local/deadem/review-workspace/state'),
+    exportRoot = path.join(repoRoot, '.local/deadem/review-workspace/exports'),
+    host = '127.0.0.1',
+    port = 4179,
+    workspaceData = null
+} = {}) {
+    if (host !== '127.0.0.1') throw new Error('review_workspace_must_bind_loopback');
+    const data = workspaceData ?? await loadWorkspaceData({ repoRoot });
+    const store = new ReviewStateStore({ root: stateRoot, workspaceData: data });
+    const server = http.createServer(async (request, response) => {
+        try {
+            const safeRawPath = assertSafeRequestPath((request.url ?? '/').split('?')[0]);
+            const url = new URL(request.url ?? '/', 'http://127.0.0.1');
+            if (safeRawPath !== url.pathname) throw new Error('unsafe_request_path');
+
+            if (request.method === 'GET' && url.pathname === '/api/targets') {
+                return jsonResponse(response, 200, {
+                    candidateSemantics: data.candidateSemantics,
+                    prioritySemantics: data.prioritySemantics,
+                    targets: data.targets
+                });
+            }
+            if (request.method === 'GET' && url.pathname === '/api/candidates') {
+                const targetParam = url.searchParams.get('reviewTargetId');
+                const targets = targetParam ? [assertTargetId(targetParam)] : TARGET_IDS;
+                const candidates = [];
+                for (const targetId of targets) {
+                    const state = await store.load(targetId);
+                    candidates.push(...listCandidates(data, {
+                        reviewTargetId: targetId,
+                        order: url.searchParams.get('order') ?? 'chronological',
+                        status: url.searchParams.get('status'),
+                        search: url.searchParams.get('q') ?? '',
+                        reviewState: state
+                    }));
+                }
+                return jsonResponse(response, 200, { count: candidates.length, candidates });
+            }
+            const candidateMatch = /^\/api\/candidates\/(review_match_00[12]_window_\d{4})$/u.exec(url.pathname);
+            if (request.method === 'GET' && candidateMatch) {
+                const candidate = await candidateWithState(data, store, candidateMatch[1]);
+                return candidate ? jsonResponse(response, 200, candidate) : errorResponse(response, 404, 'candidate_not_found');
+            }
+            const stateMatch = /^\/api\/review-state\/(review_match_00[12])$/u.exec(url.pathname);
+            if (stateMatch && request.method === 'GET') {
+                return jsonResponse(response, 200, await store.load(stateMatch[1]));
+            }
+            if (stateMatch && request.method === 'PUT') {
+                const body = await readJsonBody(request);
+                return jsonResponse(response, 200, await store.save(stateMatch[1], body));
+            }
+            if (request.method === 'POST' && url.pathname === '/api/export') {
+                const selection = await readJsonBody(request);
+                const targetId = assertTargetId(selection.reviewTargetId);
+                const reviewState = await store.load(targetId);
+                const result = await writeExportPacket({ workspaceData: data, reviewState, selection, exportRoot });
+                return jsonResponse(response, 200, {
+                    reviewTargetId: targetId,
+                    candidateCount: result.packet.candidateCount,
+                    jsonPath: `.local/deadem/review-workspace/exports/${targetId}/review_packet.json`,
+                    markdownPath: `.local/deadem/review-workspace/exports/${targetId}/review_packet.md`
+                });
+            }
+            const mediaMatch = /^\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
+            if (request.method === 'GET' && mediaMatch) return serveMedia(request, response, data.mediaRegistry.resolve(mediaMatch[1]));
+            if (request.method === 'GET' && STATIC_FILES.has(url.pathname)) {
+                const staticFile = STATIC_FILES.get(url.pathname);
+                const content = await readFile(staticFile.path);
+                response.writeHead(200, {
+                    'content-type': staticFile.type,
+                    'content-length': content.length,
+                    'cache-control': 'no-store'
+                });
+                return response.end(content);
+            }
+            return errorResponse(response, 404, 'not_found');
+        } catch (error) {
+            const clientErrors = new Set([
+                'invalid_request_path', 'unsafe_request_path', 'target_not_allowlisted', 'invalid_candidate_id',
+                'invalid_candidate_order', 'invalid_review_state_filter', 'invalid_json_body', 'request_body_too_large',
+                'review_state_target_mismatch', 'candidate_target_mismatch', 'candidate_not_found', 'invalid_review_state_payload',
+                'invalid_review_state', 'invalid_error_class', 'call_not_in_candidate', 'invalid_transcript_classification',
+                'segment_identity_mismatch', 'invalid_review_segment_id', 'review_segment_outside_candidate',
+                'export_selection_empty', 'export_state_target_mismatch', 'export_candidate_not_found', 'export_segment_not_found'
+            ]);
+            return errorResponse(response, clientErrors.has(error.message) ? 400 : 500, error.message);
+        }
+    });
+    server.requestTimeout = 15_000;
+    server.headersTimeout = 10_000;
+    return {
+        server,
+        data,
+        store,
+        async start() {
+            await new Promise((resolve, reject) => {
+                server.once('error', reject);
+                server.listen(port, host, resolve);
+            });
+            const address = server.address();
+            return `http://${host}:${address.port}`;
+        },
+        async stop() {
+            if (!server.listening) return;
+            await new Promise((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+        }
+    };
+}
+
+async function main() {
+    const port = Number.parseInt(process.env.REVIEW_WORKSPACE_PORT ?? '4179', 10);
+    if (!Number.isInteger(port) || port < 0 || port > 65_535) throw new Error('invalid_review_workspace_port');
+    const workspace = await createReviewWorkspaceServer({ port });
+    const url = await workspace.start();
+    process.stdout.write(`Local assisted review workspace: ${url}\n`);
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+    main().catch(error => {
+        process.stderr.write(`${error.stack ?? error.message}\n`);
+        process.exitCode = 1;
+    });
+}

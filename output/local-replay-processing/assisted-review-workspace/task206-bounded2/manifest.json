@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactClass": "local_assisted_review_workspace_manifest",
+  "taskId": "206",
+  "baseCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
+  "module": "Assisted Review Workspace",
+  "targets": [
+    "review_match_001",
+    "review_match_002"
+  ],
+  "sourceFingerprint": "a8551885f750478614996b48f0352b39f43cc785b629de2aa6f60f477e4057b1",
+  "configurationFingerprint": "38fbed730342ef1b884011dcd387021a7efd2b034f17da1b8706878ada16fb88",
+  "compactArtifacts": [
+    "manifest.json",
+    "availability.json",
+    "summary.json",
+    "gate.json",
+    "privacy-audit.json"
+  ],
+  "localOnlyRoots": [
+    ".local/deadem/review-workspace/state",
+    ".local/deadem/review-workspace/exports"
+  ],
+  "mediaEmbedded": false,
+  "technicalGateStatus": "two_match_local_assisted_review_workspace_ready"
+}
