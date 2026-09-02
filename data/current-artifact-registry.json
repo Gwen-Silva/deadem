@@ -1219,26 +1219,44 @@
     {
       "id": "real_craig_multitrack_task208_manifest",
       "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/manifest.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_semantic_asr_blocker",
       "notes": "Privacy-safe nine-track source fingerprint and bounded raw-header parsing evidence."
     },
     {
       "id": "real_craig_multitrack_task208_probe",
       "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/audio-probe-summary.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_semantic_asr_blocker",
       "notes": "Anonymized AAC decode, format, duration and measured timeline spread summary for nine tracks."
     },
     {
       "id": "real_craig_multitrack_task208_canary",
       "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/canary-summary.json",
-      "status": "candidate_ready_pending_work_validation",
-      "notes": "Eighteen-sample small CPU int8 ASR canary; semantic quality remains pending human classification."
+      "status": "accepted_with_semantic_asr_blocker",
+      "notes": "Original immutable eighteen-sample canary; later human/model comparison failed the semantic gate. ASR remains HUMAN_VALIDATION_REQUIRED."
     },
     {
       "id": "real_craig_multitrack_task208_gate",
       "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/gate.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_semantic_asr_blocker",
       "notes": "Technical gate real_craig_multitrack_call_evidence_canary_ready_for_human_validation."
+    },
+    {
+      "id": "synchronized_craig_task209_summary",
+      "path": "output/local-replay-processing/craig-multitrack/task209-playback/summary.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Nine-track streaming player with explicitly synthetic VOD mapping; real VOD alignment remains pending."
+    },
+    {
+      "id": "synchronized_craig_task209_canary",
+      "path": "output/local-replay-processing/craig-multitrack/task209-playback/playback-canary.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Browser transport, ten seeks, mixer, rates, drift recovery, responsive and Range metrics without private media or identity."
+    },
+    {
+      "id": "synchronized_craig_task209_gate",
+      "path": "output/local-replay-processing/craig-multitrack/task209-playback/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical claim craig_multitrack_synchronized_review_player_ready_for_real_sync_canary."
     }
   ]
 }

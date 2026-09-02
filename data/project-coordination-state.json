@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Validate real Craig multitrack metadata, track timing and a bounded per-track ASR canary without candidate or VOD integration.",
-  "phase": "real_craig_multitrack_call_evidence_canary",
-  "lastAcceptedTaskId": "207",
-  "lastAcceptedCommit": "ea5361c292c0419c50ae9382d390b3970fbbd827",
-  "activeBaseCommit": "ea5361c292c0419c50ae9382d390b3970fbbd827",
+  "objective": "Build local VOD-master Craig multitrack playback, mixer and bounded synthetic-sync canary without ASR or semantic promotion.",
+  "phase": "synchronized_craig_multitrack_review_playback",
+  "lastAcceptedTaskId": "208",
+  "lastAcceptedCommit": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
+  "activeBaseCommit": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
   "branch": "main",
-  "activeTaskId": "208",
+  "activeTaskId": "209",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/208/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/209/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -60,6 +60,7 @@
     "Task 203 is accepted with inherited blockers review_candidate_selectivity_low and replay_video_sync_precision_limited: dense visual evidence is ready without semantic validation.",
     "Task 205 is accepted with blocker mixed_vod_asr_semantic_accuracy_insufficient_for_automatic_call_review: mixed-VOD ASR remains usable as a temporal speech locator and draft, while human validation is required for semantic use.",
     "Task 207 is accepted under assisted_review_workspace_ux_hardening_ready and resolves assisted_review_workspace_ux_gaps.",
+    "Task 208 is ACCEPTED_WITH_BLOCKER: craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence. Craig multitrack/source attribution is accepted; medium is the best measured ASR draft (53.85 percent usable, 46.15 percent materially wrong on intelligible clips), still HUMAN_VALIDATION_REQUIRED. Small usable 23.08 percent; large-v3 usable 38.46 percent. No automatic semantic or strategic interpretation.",
     "The accepted bounded-32 challenger population remains limited at 91 primary 30-second eligible clusters.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
@@ -68,9 +69,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates the Task 208 real Craig multitrack canary; Gwen then classifies the 18 local samples. Do not create Task 209.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207"],
-  "pendingTasks": ["208"],
+  "nextAction": "ChatGPT Work independently validates Task 209; real Craig/VOD sync still requires an explicitly authorized VOD and validated mapping. Stop without Task 210.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208"],
+  "pendingTasks": ["209"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

@@ -2,34 +2,31 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 207 at
-`ea5361c292c0419c50ae9382d390b3970fbbd827`. ChatGPT Work accepted
-`assisted_review_workspace_ux_hardening_ready` and resolved
-`assisted_review_workspace_ux_gaps`.
+Last accepted task: Task 208 at
+`db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe`, ACCEPTED_WITH_BLOCKER.
+Craig multitrack/source attribution is accepted, not automatic ASR semantics.
+Human-intelligible usable rates are small 23.08%, medium 53.85%, large-v3 38.46%;
+medium materially-wrong rate is 46.15%. The 75/25 gate was not reached.
+`medium` is the best measured draft; all ASR is HUMAN_VALIDATION_REQUIRED under
+`craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
 
-The bounded 16-sample human validation recorded 4 correct, 3
-usable-with-minor-error, 9 materially wrong, and 0 unintelligible transcripts:
-43.75 percent usable. Mixed-VOD ASR remains useful as a temporal speech locator
-and editable draft; human validation is required for semantic use.
+Active candidate: Task 209, `Build Synchronized Craig Multitrack Review Playback`.
+Status: `VALIDATING`. Technical claim:
+`craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
 
-Active candidate: Task 208, `Validate Real Craig Multitrack Call Evidence`. Coordination
-status: `VALIDATING`. The technical gate claim is
-`real_craig_multitrack_call_evidence_canary_ready_for_human_validation`.
+Player da scrim uses the VOD as master, streaming nine existing normalized Craig
+WAVs through independent gain nodes. It supports coordinated play/pause/seek,
+rates, drift correction, mute/solo/multi-solo/volume, VOD audio and isolated-call
+mix restoration. The candidate-window API rejects targets without a registered
+session. No candidate semantics change.
 
-The real Craig package maps nine AAC files to nine source metadata tracks by
-ordinal. The bounded parser consumed exactly the 1,888-byte leading JSON object
-without decoding the trailing raw payload. All tracks decoded as AAC 48 kHz
-stereo and normalized locally to PCM 16 kHz mono while retaining timeline
-silence.
-
-The canary selected exactly 18 deterministic temporal regions, two per track,
-and ran Faster Whisper small/CPU/int8 only on those clips. ASR quality remains
-pending human classification. Identities, filenames, media and transcript text
-remain local-only; compact outputs contain only pseudonymous track references
-and aggregate measurements. No replay, VOD, candidate integration, diarization
-or protected input access occurred.
+Only an explicitly synthetic local video has been mapped: slope 1.002,
+intercept 2 seconds, no real sync claim. State is READY_FOR_REAL_VOD_SYNC_CANARY.
+Browser canary covers nine tracks, ten seeks, 0.5/1/1.5 rates and responsive
+wide/half/narrow layouts. Screenshots, real identities and all media stay local.
+No new ASR, .dem, replay, original VOD or protected replay access occurred.
 
 Task 202 selectivity and Task 200 synchronization blockers remain active.
-ChatGPT Work must independently validate Task 208. No Task 209 exists.
+ChatGPT Work must independently validate Task 209. No Task 210 exists.
 
 Machine-readable state: `data/project-coordination-state.json`.

@@ -2,27 +2,26 @@
 
 Last updated: 2026-09-02
 
-## Active Real Craig Multitrack Canary
+## Active Synchronized Craig Review Player
 
-Task 207 at commit `ea5361c292c0419c50ae9382d390b3970fbbd827` is the
-last state independently accepted by ChatGPT Work. Its gate is
-`assisted_review_workspace_ux_hardening_ready`; it resolves
-`assisted_review_workspace_ux_gaps`.
+Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is Work-accepted
+with blocker `craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
+Craig multitrack and source attribution remain accepted; ASR is not automatic
+semantic evidence. Small/medium/large-v3 usable rates on intelligible clips were
+23.08/53.85/38.46 percent. Medium is the best measured draft, still
+HUMAN_VALIDATION_REQUIRED (46.15 percent materially wrong; 75/25 gate missed).
 
-Task 208 is the active candidate in `VALIDATING`. It validates one real Craig
-export with nine ordinal-mapped AAC tracks, bounded JSON-header metadata,
-measured source timelines, local 16 kHz mono normalization and exactly 18
-track-attributed ASR samples. Its technical gate claim is
-`real_craig_multitrack_call_evidence_canary_ready_for_human_validation`.
-Full-recording ASR, candidate integration and VOD/replay synchronization were
-not executed. Real identity, filenames, audio and transcript text remain local.
+Task 209 is the active candidate in `VALIDATING`. Player da scrim streams the
+nine existing normalized WAVs under a VOD master clock, with per-track mixing,
+drift correction, coordinated transport and isolated-call restoration. A local
+synthetic video validates playback without fabricating real VOD alignment.
+Technical claim: `craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
 
-Mixed-VOD ASR remains useful as temporal locator and editable draft, but human
-validation is required for semantic use under blocker
-`mixed_vod_asr_semantic_accuracy_insufficient_for_automatic_call_review`.
-Inherited blockers `review_candidate_selectivity_low` and
-`replay_video_sync_precision_limited` remain. ChatGPT Work remains the sole
-acceptance authority. No Task 209 exists.
+Real VOD sync remains pending. One recording may own multiple VOD sessions;
+no relation to existing review targets is assumed. No ASR, parser, replay or
+candidate semantics were changed. Media and real identities remain local.
+Inherited candidate-selectivity and replay-video-sync blockers remain.
+ChatGPT Work is the sole acceptance authority. No Task 210 exists.
 
 ## Authoritative Current State
 

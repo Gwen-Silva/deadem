@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "taskId": "209",
+  "fixtureClass": "synthetic_video_with_nine_real_authorized_craig_wavs",
+  "browserVersion": "152.0.7977.65",
+  "sourceFingerprints": {
+    "tools/review-workspace/server.mjs": "2eaa3bf4a07c1cc7b3fa92c177583d23de8c67383baba32e36fc13860e76a61c",
+    "tools/review-workspace/scrim-model.mjs": "882af8146193762a0934a58400cd2e19fa0a6b90b36d6f544908458d88cbbfa1",
+    "tools/review-workspace/scrim-media.mjs": "539a8282b7d4aa5b94055fd54cd9158ce40bb33b42bb6c6ebec508b8e39c6c97",
+    "tools/review-workspace/public/scrim-controller.mjs": "4e1a764ddb71b648d587df4c2b5a2c80a4d2cad17d33b46ad1372f4baa813d9b",
+    "tools/review-workspace/public/scrim-app.mjs": "8c6075fcbfcdb76668569d12452050ae298f57d19eb7578dc70b58442a255773",
+    "tools/review-workspace/public/scrim.html": "5f6c3ae24128d944e65b654136987464ce29ad6b6eb1ffc3320d5a747e1bbb0b",
+    "tools/review-workspace/public/scrim.css": "1ccbaba252dbfd4fc8af9133a28ff0e4a79189346c34b3e623c52eaf2b606fe3",
+    "tools/review-workspace/scrim-browser-canary.mjs": "e70e3adcfd0eecd8ceef9e822c9837093728c2be890aa69ee5747e2f30c74a6d"
+  },
+  "initialLoadLatencyMs": 352.146,
+  "realVodMappingValidated": false,
+  "sourceTrackCount": 9,
+  "readyTrackCount": 9,
+  "continuousPlaySeconds": 12,
+  "distributedSeekCount": 10,
+  "testedPlaybackRates": [
+    0.5,
+    1,
+    1.5
+  ],
+  "syncSlope": 1.002,
+  "startupLatencyMs": 21.4,
+  "seekResyncLatencyMs": [
+    63.7,
+    128.5,
+    214.5,
+    64.3,
+    169.9,
+    239.1,
+    107,
+    171.1,
+    43.3,
+    151
+  ],
+  "maxObservedDriftMs": 68.155,
+  "driftCorrectionCount": 0,
+  "hardSeekCorrectionCount": 0,
+  "injectedDriftTest": {
+    "addedDriftMs": 800,
+    "recovery": true,
+    "additionalHardCorrections": 1
+  },
+  "browserErrors": [],
+  "completedSteps": [
+    "continuous_12_seconds_nine_tracks",
+    "pause_resume",
+    "ten_distributed_seeks",
+    "rates_0.5_1_1.5",
+    "mute_unmute_single_solo_multi_solo_mute_precedence",
+    "vod_independent_mix",
+    "isolated_call_restore",
+    "reset_mix",
+    "injected_drift_hard_resync",
+    "responsive_wide_half_narrow"
+  ],
+  "responsive": [
+    {
+      "viewportWidth": 1440,
+      "horizontalOverflow": false,
+      "mixerPresent": true
+    },
+    {
+      "viewportWidth": 800,
+      "horizontalOverflow": false,
+      "mixerPresent": true
+    },
+    {
+      "viewportWidth": 390,
+      "horizontalOverflow": false,
+      "mixerPresent": true
+    }
+  ],
+  "transfers": [
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 123751126,
+      "requestCount": 26,
+      "rangeRequestCount": 26,
+      "bytesSent": 48168960,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 255562454,
+      "requestCount": 19,
+      "rangeRequestCount": 19,
+      "bytesSent": 31457280,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 255660758,
+      "requestCount": 16,
+      "rangeRequestCount": 16,
+      "bytesSent": 32047104,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 149790082,
+      "requestCount": 16,
+      "rangeRequestCount": 16,
+      "bytesSent": 31195136,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 255720834,
+      "requestCount": 19,
+      "rangeRequestCount": 19,
+      "bytesSent": 45219840,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 255892866,
+      "requestCount": 17,
+      "rangeRequestCount": 17,
+      "bytesSent": 48889856,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 122848642,
+      "requestCount": 18,
+      "rangeRequestCount": 18,
+      "bytesSent": 42139648,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 255746774,
+      "requestCount": 15,
+      "rangeRequestCount": 15,
+      "bytesSent": 36438016,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "audio/wav",
+      "sizeBytes": 108861484,
+      "requestCount": 16,
+      "rangeRequestCount": 16,
+      "bytesSent": 35913728,
+      "maxChunkBytes": 65536
+    },
+    {
+      "contentType": "video/mp4",
+      "sizeBytes": 716439,
+      "requestCount": 10,
+      "rangeRequestCount": 10,
+      "bytesSent": 5759823,
+      "maxChunkBytes": 65536
+    }
+  ],
+  "fullFileAudioBufferCount": 0,
+  "asrExecutionCount": 0,
+  "realVodAccessCount": 0,
+  "replayAccessCount": 0,
+  "protectedAccessCount": 0,
+  "passed": true
+}

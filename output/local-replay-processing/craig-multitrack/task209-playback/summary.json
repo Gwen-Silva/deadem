@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "taskId": "209",
+  "module": "Multitrack Call Evidence",
+  "technicalGateClaim": "craig_multitrack_synchronized_review_player_ready_for_real_sync_canary",
+  "readiness": "READY_FOR_REAL_VOD_SYNC_CANARY",
+  "craigRecordingCount": 1,
+  "normalizedTrackCount": 9,
+  "syntheticVodSessionCount": 1,
+  "realVodSessionCount": 0,
+  "mapping": {
+    "slope": 1.002,
+    "interceptSeconds": 2,
+    "provenance": "synthetic_fixture_not_real_alignment"
+  },
+  "engine": "HTMLMediaElement_per_track_MediaElementAudioSourceNode_GainNode_AudioContext",
+  "streaming": "HTTP_Range_64KiB_read_streams_no_full_audio_buffer",
+  "playbackMetrics": {
+    "startupLatencyMs": 21.4,
+    "initialLoadLatencyMs": 352.146,
+    "seekResyncLatencyMs": {
+      "min": 43.3,
+      "max": 239.1,
+      "mean": 135.24
+    },
+    "maxObservedDriftMs": 68.155,
+    "driftCorrectionCount": 0,
+    "hardSeekCorrectionCount": 0,
+    "injectedDriftRecovery": true
+  },
+  "operationalSyncPolicy": {
+    "monitorIntervalMs": 100,
+    "smallDriftMs": 80,
+    "hardDriftMs": 300,
+    "maxRateAdjustment": 0.04,
+    "rateCorrectionGain": 0.25,
+    "readinessTimeoutMs": 8000,
+    "defaultPreRollSeconds": 10
+  },
+  "acceptedTask208": {
+    "status": "ACCEPTED_WITH_BLOCKER",
+    "sourceAttributionAccepted": true,
+    "semanticBlocker": "craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence",
+    "humanIntelligibleUsablePercent": {
+      "small": 23.08,
+      "medium": 53.85,
+      "large-v3": 38.46
+    },
+    "mediumMateriallyWrongPercent": 46.15,
+    "bestMeasuredDraft": "medium",
+    "asrStatus": "HUMAN_VALIDATION_REQUIRED"
+  },
+  "privacy": {
+    "versionedRealIdentityCount": 0,
+    "versionedTranscriptCount": 0,
+    "versionedMediaCount": 0
+  },
+  "replayAccessCount": 0,
+  "protectedAccessCount": 0,
+  "realVodAccessCount": 0,
+  "asrExecutionCount": 0,
+  "limitations": [
+    "No real VOD is authorized/mapped to this recording.",
+    "Synthetic transport metrics do not establish real sync accuracy.",
+    "No candidate semantics or automatic strategic interpretation."
+  ]
+}

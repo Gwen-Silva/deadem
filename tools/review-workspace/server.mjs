@@ -15,10 +15,16 @@ import {
 } from './data-model.mjs';
 import { ReviewStateStore } from './persistence.mjs';
 import { writeExportPacket } from './export.mjs';
+import { loadLocalScrimData } from './scrim-media.mjs';
 
 const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(MODULE_DIR, 'public');
 const STATIC_FILES = new Map([
+    ['/scrim', { path: path.join(PUBLIC_DIR, 'scrim.html'), type: 'text/html; charset=utf-8' }],
+    ['/scrim-app.mjs', { path: path.join(PUBLIC_DIR, 'scrim-app.mjs'), type: 'text/javascript; charset=utf-8' }],
+    ['/scrim-controller.mjs', { path: path.join(PUBLIC_DIR, 'scrim-controller.mjs'), type: 'text/javascript; charset=utf-8' }],
+    ['/scrim-model.mjs', { path: path.join(MODULE_DIR, 'scrim-model.mjs'), type: 'text/javascript; charset=utf-8' }],
+    ['/scrim.css', { path: path.join(PUBLIC_DIR, 'scrim.css'), type: 'text/css; charset=utf-8' }],
     ['/', { path: path.join(PUBLIC_DIR, 'index.html'), type: 'text/html; charset=utf-8' }],
     ['/index.html', { path: path.join(PUBLIC_DIR, 'index.html'), type: 'text/html; charset=utf-8' }],
     ['/app.js', { path: path.join(PUBLIC_DIR, 'app.js'), type: 'text/javascript; charset=utf-8' }],
@@ -92,7 +98,7 @@ export function parseRangeHeader(header, size) {
     return { start, end: Math.min(end, size - 1) };
 }
 
-function serveMedia(request, response, entry) {
+export function serveMedia(request, response, entry) {
     if (!entry?.available || !existsSync(entry.absolutePath)) return errorResponse(response, 404, 'media_unavailable');
     const size = statSync(entry.absolutePath).size;
     let range;
@@ -105,6 +111,17 @@ function serveMedia(request, response, entry) {
         });
         return response.end();
     }
+    const observe = stream => {
+        if (entry.transferMetrics) {
+            entry.transferMetrics.requestCount += 1;
+            if (range) entry.transferMetrics.rangeRequestCount += 1;
+            stream.on('data', chunk => {
+                entry.transferMetrics.bytesSent += chunk.length;
+                entry.transferMetrics.maxChunkBytes = Math.max(entry.transferMetrics.maxChunkBytes, chunk.length);
+            });
+        }
+        return stream;
+    };
     if (range) {
         response.writeHead(206, {
             'content-type': entry.contentType,
@@ -113,7 +130,11 @@ function serveMedia(request, response, entry) {
             'accept-ranges': 'bytes',
             'cache-control': 'no-store'
         });
-        return createReadStream(entry.absolutePath, range).pipe(response);
+        if (request.method === 'HEAD') return response.end();
+        const stream = observe(createReadStream(entry.absolutePath, { ...range, highWaterMark: 64 * 1024 }));
+        response.once('close', () => stream.destroy());
+        stream.once('error', () => response.destroy());
+        return stream.pipe(response);
     }
     response.writeHead(200, {
         'content-type': entry.contentType,
@@ -121,7 +142,11 @@ function serveMedia(request, response, entry) {
         'accept-ranges': 'bytes',
         'cache-control': 'no-store'
     });
-    return createReadStream(entry.absolutePath).pipe(response);
+    if (request.method === 'HEAD') return response.end();
+    const stream = observe(createReadStream(entry.absolutePath, { highWaterMark: 64 * 1024 }));
+    response.once('close', () => stream.destroy());
+    stream.once('error', () => response.destroy());
+    return stream.pipe(response);
 }
 
 async function candidateWithState(data, store, candidateId) {
@@ -147,16 +172,23 @@ export async function createReviewWorkspaceServer({
     host = '127.0.0.1',
     port = 4179,
     workspaceData = null,
+    scrimData = null,
+    scrimOnly = false,
     openFolder = openLocalFolder
 } = {}) {
     if (host !== '127.0.0.1') throw new Error('review_workspace_must_bind_loopback');
-    const data = workspaceData ?? await loadWorkspaceData({ repoRoot });
+    const data = workspaceData ?? (scrimOnly ? { targets: [], candidateById: new Map() } : await loadWorkspaceData({ repoRoot }));
+    const scrim = scrimData ?? loadLocalScrimData(repoRoot);
     const store = new ReviewStateStore({ root: stateRoot, workspaceData: data });
     const server = http.createServer(async (request, response) => {
         try {
             const safeRawPath = assertSafeRequestPath((request.url ?? '/').split('?')[0]);
             const url = new URL(request.url ?? '/', 'http://127.0.0.1');
             if (safeRawPath !== url.pathname) throw new Error('unsafe_request_path');
+            if (url.pathname.startsWith('/scrim/media/') && url.search) return errorResponse(response, 400, 'scrim_media_query_rejected');
+            if (request.method === 'GET' && url.pathname === '/api/scrim') return jsonResponse(response, 200, scrim.view);
+            const scrimMatch = /^\/scrim\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
+            if (['GET', 'HEAD'].includes(request.method) && scrimMatch) return serveMedia(request, response, scrim.registry.resolve(scrimMatch[1]));
 
             if (request.method === 'GET' && url.pathname === '/api/targets') {
                 return jsonResponse(response, 200, {
@@ -270,7 +302,7 @@ export async function createReviewWorkspaceServer({
 async function main() {
     const port = Number.parseInt(process.env.REVIEW_WORKSPACE_PORT ?? '4179', 10);
     if (!Number.isInteger(port) || port < 0 || port > 65_535) throw new Error('invalid_review_workspace_port');
-    const workspace = await createReviewWorkspaceServer({ port });
+    const workspace = await createReviewWorkspaceServer({ port, scrimOnly: process.argv.includes('--scrim-only') });
     const url = await workspace.start();
     process.stdout.write(`Local assisted review workspace: ${url}\n`);
 }

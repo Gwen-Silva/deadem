@@ -1,26 +1,25 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 208
+## Coordination Gate Before Further Execution — Task 209
 
-Task 207 at `ea5361c292c0419c50ae9382d390b3970fbbd827` is the
-accepted base. Task 208 is a technical candidate in `VALIDATING` with gate
-claim `real_craig_multitrack_call_evidence_canary_ready_for_human_validation`.
-ChatGPT Work must independently validate it. Codex stops after this handoff;
-no Task 209 exists.
+Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is accepted with
+semantic-ASR blocker. Craig source attribution is accepted; medium is the best
+measured draft but missed the 75/25 semantic quality gate.
 
-If Task 208 is accepted, Gwen must classify the 18 local clips before any
-semantic ASR decision. The operational threshold is at least 75 percent usable
-and at most 25 percent materially wrong. Task 202 selectivity, Task 200
-synchronization, and Task 205 mixed-VOD ASR semantic-accuracy blockers remain
-active.
+Task 209 is a candidate in VALIDATING with technical claim
+`craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
+Work must independently validate the player. The next real-media prerequisite
+is an explicitly authorized VOD/session mapping for this Craig recording; no
+such pairing is inferred from earlier tasks. No Task 210 exists.
 
 ## Current State
 
-Task 208 maps nine Craig AAC exports to nine metadata tracks by ordinal and
-normalizes them locally without removing timeline silence. All nine decode;
-their starts align at zero while measured end/duration spread is 4594.731
-seconds. The 18-sample canary allocates two samples per track and preserves
-cross-track activity overlap without diarization or merging.
+Task 209 reuses the nine normalized tracks without ASR or normalization. The
+VOD-master mixer has synthetic-clock browser evidence for coordinated transport,
+ten seeks, three rates, drift correction and responsive operation. This is not
+real VOD synchronization or semantic validation. Task 202 selectivity and Task
+200 sync uncertainty remain unchanged; automatic strategic interpretation is
+not available.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

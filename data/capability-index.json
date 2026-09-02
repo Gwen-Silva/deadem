@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "208",
+  "generatedAtTask": "209",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1035,14 +1035,26 @@
       "capabilityId": "real_craig_multitrack_call_evidence",
       "plainName": "Real Craig multitrack call evidence",
       "introducedInTask": "208",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_for_human_validation_pending_work_validation",
+      "stabilizedInTask": "208",
+      "currentStatus": "accepted_with_semantic_asr_blocker",
       "currentBaseline": "task208_real_nine_track_eighteen_sample_canary",
       "whyItMatters": "Measures isolated source-track audio and track-attributed ASR without mixed-VOD speaker ambiguity or premature candidate integration.",
       "mainFiles": ["tools/craig-multitrack/metadata.mjs", "tools/craig-multitrack/intake.mjs", "tools/craig-multitrack/audio_pipeline.py", "tools/craig-multitrack/emit-real-canary.mjs", "docs/codex/CRAIG_MULTITRACK_CALL_EVIDENCE_CONTRACT.md"],
       "mainOutputs": ["output/local-replay-processing/craig-multitrack/task208-real-canary/manifest.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/audio-probe-summary.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/canary-summary.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/gate.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/privacy-audit.json"],
-      "knownLimits": ["Human semantic classification of all 18 clips remains pending.", "Track identity is source metadata rather than biometric or real-world verification.", "No replay candidate or VOD time axis exists in the Task 208 output."],
-      "nextUsefulStep": "Have Gwen classify the 18 local samples before deciding whether real multitrack ASR meets the 75/25 operational quality gate."
+      "knownLimits": ["Human classification and local model comparison missed the 75/25 semantic gate. Medium is the best measured draft, still HUMAN_VALIDATION_REQUIRED.", "Track identity is source metadata rather than biometric or real-world verification.", "No replay candidate or VOD time axis exists in the Task 208 output."],
+      "nextUsefulStep": "Use source-track audio for human listening; do not benchmark more ASR models in Task 209."
+    },
+    {
+      "capabilityId": "synchronized_craig_review_playback",
+      "plainName": "Synchronized Craig multitrack review player",
+      "introducedInTask": "209", "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_for_real_vod_sync_canary_pending_work_validation",
+      "currentBaseline": "task209_nine_track_synthetic_master_clock_canary",
+      "whyItMatters": "Enables human contextual listening with independent track mixing and coordinated seeking, rate changes and drift correction without transcripts.",
+      "mainFiles": ["tools/review-workspace/scrim-model.mjs", "tools/review-workspace/scrim-media.mjs", "tools/review-workspace/public/scrim-controller.mjs", "tools/review-workspace/public/scrim.html", "docs/codex/SYNCHRONIZED_CRAIG_REVIEW_PLAYBACK_CONTRACT.md"],
+      "mainOutputs": ["output/local-replay-processing/craig-multitrack/task209-playback/summary.json", "output/local-replay-processing/craig-multitrack/task209-playback/playback-canary.json", "output/local-replay-processing/craig-multitrack/task209-playback/gate.json"],
+      "knownLimits": ["No real VOD has been authorized and aligned to this Craig recording.", "Transport drift is not empirical sync accuracy or gameplay quality.", "Human semantic validation and independent Work acceptance remain separate."],
+      "nextUsefulStep": "After independent Work validation, obtain explicitly authorized VOD/session anchors for a real sync canary."
     }
   ]
 }

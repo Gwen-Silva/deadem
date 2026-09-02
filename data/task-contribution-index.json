@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "208",
-  "baseCommit": "ea5361c292c0419c50ae9382d390b3970fbbd827",
-  "taskRange": "001-208",
+  "generatedAtTask": "209",
+  "baseCommit": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
+  "taskRange": "001-209",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6365,7 +6365,7 @@
     {
       "taskId": "208",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
       "title": "Validate Real Craig Multitrack Call Evidence",
       "phase": "real_craig_multitrack_call_evidence_canary",
       "primaryContribution": "Validated a real nine-track Craig export, normalized track timelines and produced an 18-sample local-only track-attributed ASR canary with compact privacy-safe measurements.",
@@ -6379,20 +6379,35 @@
         "reports/real-craig-multitrack-call-evidence-task208.md"
       ],
       "gate": "real_craig_multitrack_call_evidence_canary_ready_for_human_validation",
-      "currentRelevance": "candidate_ready_pending_work_validation_and_human_asr_classification",
+      "currentRelevance": "accepted_craig_source_with_semantic_asr_blocker",
       "dependsOn": ["205", "207"],
       "supersededBy": null,
       "reworkRiskNotes": [
         "Track attribution comes from Craig metadata, not biometric or real-world identity verification.",
-        "Energy regions are temporal locators and ASR quality remains pending human classification.",
+        "Human comparison did not meet the 75/25 gate; medium is the best draft (53.85 percent usable) but HUMAN_VALIDATION_REQUIRED.",
         "No candidate, VOD or replay synchronization was performed."
       ],
-      "evidenceStatus": "real_craig_multitrack_call_evidence_canary_ready_for_human_validation_pending_work_validation",
+      "evidenceStatus": "ACCEPTED_WITH_BLOCKER_craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence",
       "evidencePaths": [
         "tasks/specs/208.json",
         "tasks/completed/208-real-craig-multitrack-call-evidence.md",
         "output/local-replay-processing/craig-multitrack/task208-real-canary/gate.json"
       ]
+    },
+    {
+      "taskId": "209", "status": "completed", "commitSha": null,
+      "title": "Build Synchronized Craig Multitrack Review Playback",
+      "phase": "synchronized_craig_multitrack_review_playback",
+      "primaryContribution": "Adds an ASR-independent VOD-master streaming player with a nine-track mixer, drift correction and bounded synthetic-sync browser canary.",
+      "introducedCapabilities": ["synchronized_craig_review_playback"],
+      "stabilizedCapabilities": ["local_assisted_review_workspace"], "supersededCapabilities": [],
+      "importantOutputs": ["tools/review-workspace/public/scrim-controller.mjs", "tools/review-workspace/scrim-media.mjs", "output/local-replay-processing/craig-multitrack/task209-playback/summary.json", "reports/synchronized-craig-review-playback-task209.md"],
+      "gate": "craig_multitrack_synchronized_review_player_ready_for_real_sync_canary",
+      "currentRelevance": "candidate_player_ready_pending_work_validation_and_real_vod_sync",
+      "dependsOn": ["207", "208"], "supersededBy": null,
+      "reworkRiskNotes": ["Synthetic mapping is not real VOD alignment.", "ASR remains HUMAN_VALIDATION_REQUIRED; no semantic promotion.", "One Craig recording may span multiple VOD sessions."],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": ["tasks/specs/209.json", "tasks/completed/209-synchronized-craig-review-playback.md", "output/local-replay-processing/craig-multitrack/task209-playback/gate.json"]
     }
   ]
 }
