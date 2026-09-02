@@ -1,23 +1,26 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 206
+## Coordination Gate Before Further Execution — Task 207
 
-Task 205 at `1a0365a3a59596da267fbf3480adb5488034cb20` is the
-accepted base. Task 206 is a technical candidate in `VALIDATING` with gate
-claim `two_match_local_assisted_review_workspace_ready`. ChatGPT Work must
-independently validate it. Codex stops after this handoff; no Task 207 exists.
+Task 206 at `c6bc769541f9ee932e8b0a9d50f2389316fdb80a` is the
+accepted base. Task 207 is a technical candidate in `VALIDATING` with gate
+claim `assisted_review_workspace_ux_hardening_ready`. ChatGPT Work must
+independently validate it. Codex stops after this handoff; no Task 208 exists.
 
-If Task 206 is accepted, operate a bounded real human review through the local
-workspace before authorizing another technical unit. Task 202 selectivity,
-Task 200 synchronization, and Task 205 mixed-VOD ASR semantic-accuracy blockers
-remain active.
+If Task 207 is accepted, operate a bounded real human review through the
+hardened local workspace before authorizing another technical unit. Task 202
+selectivity, Task 200 synchronization, and Task 205 mixed-VOD ASR
+semantic-accuracy blockers remain active.
 
 ## Current State
 
-Task 206 operates all 67 and 35 review windows in a localhost-only workspace.
-All 102 candidates resolve existing visual and audio evidence on the canonical
-executor. Review state, transcript corrections, human segmentation, and export
-remain local; upstream evidence and analyst inference remain unchanged.
+Task 207 preserves all 67 and 35 review windows in the localhost-only
+workspace. All 102 candidates resolve existing visual and audio evidence on the
+canonical executor. Structured human review, transcript corrections,
+segmentation and export remain local; upstream evidence and analyst inference
+remain unchanged. The user-facing surface is PT-BR and responsive at wide,
+medium and narrow widths, while raw JSON remains available only as an advanced
+view.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

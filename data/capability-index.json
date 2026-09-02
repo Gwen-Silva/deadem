@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "206",
+  "generatedAtTask": "207",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -978,8 +978,8 @@
       "capabilityId": "local_assisted_review_workspace",
       "plainName": "Local assisted review workspace",
       "introducedInTask": "206",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_pending_work_validation",
+      "stabilizedInTask": "207",
+      "currentStatus": "candidate_ux_hardened_pending_work_validation",
       "currentBaseline": "task206_bounded_two_localhost_review_workspace",
       "whyItMatters": "Makes the accepted visual and audio evidence operational through one local queue, controlled media access, human segmentation, durable review state and bounded export.",
       "mainFiles": [
@@ -1000,7 +1000,36 @@
         "Mixed-VOD ASR needs human validation for semantic use and speakers are unidentified/mixed.",
         "Replay-to-VOD synchronization retains declared errors of 9 and 2 seconds."
       ],
-      "nextUsefulStep": "Await independent Work validation, then operate bounded human review through the local workspace."
+      "nextUsefulStep": "Await independent Work validation of the Task 207 UX hardening, then operate bounded human review through the local workspace."
+    },
+    {
+      "capabilityId": "assisted_review_workspace_ux",
+      "plainName": "Assisted review workspace UX",
+      "introducedInTask": "207",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_pending_work_validation",
+      "currentBaseline": "task207_pt_br_responsive_structured_review_workspace",
+      "whyItMatters": "Reduces human review friction through structured PT-BR fields, responsive evidence navigation and explicit safe local export actions.",
+      "mainFiles": [
+        "tools/review-workspace/public/index.html",
+        "tools/review-workspace/public/app.js",
+        "tools/review-workspace/public/styles.css",
+        "tools/review-workspace/ux-model.mjs"
+      ],
+      "mainOutputs": [
+        "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json",
+        "output/local-replay-processing/assisted-review-workspace/task207-bounded2/ux-canary.json",
+        "output/local-replay-processing/assisted-review-workspace/task207-bounded2/gate.json",
+        "reports/assets/task207/after-wide.png",
+        "reports/assets/task207/after-medium.png",
+        "reports/assets/task207/after-narrow.png"
+      ],
+      "knownLimits": [
+        "The interface does not change candidate, ASR, synchronization or gameplay semantics.",
+        "Candidate priority remains a scheduling heuristic and ASR remains a human-validated draft.",
+        "Export actions operate only on server-produced allowlisted local target paths."
+      ],
+      "nextUsefulStep": "Await independent Work validation; no Task 208 is authorized."
     }
   ]
 }

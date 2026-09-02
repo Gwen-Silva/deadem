@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "206",
-  "baseCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
-  "taskRange": "001-206",
+  "generatedAtTask": "207",
+  "baseCommit": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
+  "taskRange": "001-207",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6301,7 +6301,7 @@
     {
       "taskId": "206",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
       "title": "Build Local Assisted Review Workspace",
       "phase": "assisted_review_workspace",
       "primaryContribution": "Built a localhost-only workspace that operates all 102 immutable visual/audio review candidates with navigation, human segmentation, atomic local persistence and bounded export.",
@@ -6315,7 +6315,7 @@
         "reports/local-assisted-review-workspace-task206.md"
       ],
       "gate": "two_match_local_assisted_review_workspace_ready",
-      "currentRelevance": "candidate_ready_pending_work_validation",
+      "currentRelevance": "accepted_with_assisted_review_workspace_ux_gaps",
       "dependsOn": ["203", "204", "205"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6323,11 +6323,43 @@
         "Mixed-VOD ASR remains a temporal locator and draft requiring human validation for semantic use.",
         "Review data, transcript corrections, segments and exports remain local-only."
       ],
-      "evidenceStatus": "two_match_local_assisted_review_workspace_ready_pending_work_validation",
+      "evidenceStatus": "accepted_two_match_local_assisted_review_workspace_ready_with_ux_gaps",
       "evidencePaths": [
         "tasks/specs/206.json",
         "tasks/completed/206-local-assisted-review-workspace.md",
         "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "207",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Assisted Review Workspace UX Hardening",
+      "phase": "assisted_review_workspace_ux_hardening",
+      "primaryContribution": "Hardened the accepted localhost workspace with a PT-BR structured review surface, responsive layouts and safe export-folder affordances while preserving evidence semantics.",
+      "introducedCapabilities": ["assisted_review_workspace_ux"],
+      "stabilizedCapabilities": ["local_assisted_review_workspace"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/review-workspace/ux-model.mjs",
+        "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json",
+        "reports/assets/task207/after-wide.png",
+        "reports/assisted-review-workspace-ux-hardening-task207.md"
+      ],
+      "gate": "assisted_review_workspace_ux_hardening_ready",
+      "currentRelevance": "candidate_ready_pending_work_validation",
+      "dependsOn": ["206"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Candidate priority remains a scheduling heuristic rather than relevance or gameplay probability.",
+        "Mixed-VOD ASR still requires human validation for semantic use.",
+        "Replay-to-VOD synchronization and candidate selectivity blockers remain unchanged."
+      ],
+      "evidenceStatus": "assisted_review_workspace_ux_hardening_ready_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/207.json",
+        "tasks/completed/207-assisted-review-workspace-ux-hardening.md",
+        "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json"
       ]
     }
   ]

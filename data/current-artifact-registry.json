@@ -1165,32 +1165,56 @@
     {
       "id": "assisted_review_workspace_task206_manifest",
       "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/manifest.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_ux_gaps",
       "notes": "Records immutable Task 203/204/205 inputs, local-only review state/export policy and two-target scope."
     },
     {
       "id": "assisted_review_workspace_task206_availability",
       "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/availability.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_ux_gaps",
       "notes": "All 102 candidates resolve visual and audio evidence on the canonical executor."
     },
     {
       "id": "assisted_review_workspace_task206_summary",
       "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/summary.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_ux_gaps",
       "notes": "Compact functional smoke metrics for navigation, controlled media, persistence, export and protections."
     },
     {
       "id": "assisted_review_workspace_task206_gate",
       "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/gate.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_ux_gaps",
       "notes": "Technical gate claim two_match_local_assisted_review_workspace_ready."
     },
     {
       "id": "assisted_review_workspace_task206_privacy",
       "path": "output/local-replay-processing/assisted-review-workspace/task206-bounded2/privacy-audit.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted_with_ux_gaps",
       "notes": "Confirms zero versioned human review, audio, images, video, replay access, VOD access, protected access or automatic gameplay interpretation."
+    },
+    {
+      "id": "assisted_review_workspace_task207_summary",
+      "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Compact metrics for the PT-BR structured review surface, responsive modes and safe local export actions."
+    },
+    {
+      "id": "assisted_review_workspace_task207_canary",
+      "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/ux-canary.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Real localhost canary covering reviewed and unreviewed records, persistence, export, open-folder and copy-path affordances."
+    },
+    {
+      "id": "assisted_review_workspace_task207_gate",
+      "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/gate.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Technical gate claim assisted_review_workspace_ux_hardening_ready with inherited evidence blockers preserved."
+    },
+    {
+      "id": "assisted_review_workspace_task207_screenshots",
+      "path": "reports/assets/task207/after-wide.png",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Wide, medium and narrow screenshots provide visual evidence of responsive workspace behavior."
     }
   ]
 }

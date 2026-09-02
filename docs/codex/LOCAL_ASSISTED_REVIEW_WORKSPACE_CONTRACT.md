@@ -59,3 +59,15 @@ The success gate is `two_match_local_assisted_review_workspace_ready` when all
 localhost smoke validates persistence, export, Range, and request protections.
 The media-gaps gate is reserved for optional local media absence while the core
 workspace remains operational.
+
+## Task 207 UX surface
+
+Task 207 keeps this contract unchanged while making the primary workflow human
+readable in PT-BR. Structured review fields are the default editing surface;
+raw JSON and provenance remain available in collapsed advanced sections. Wide,
+medium, and narrow responsive modes preserve candidate navigation, evidence,
+review, and export.
+
+The export folder is derived exclusively from the allowlisted target ID and the
+server-owned export root. The UI may copy that server-produced path or request
+that the local server open it; no client-supplied filesystem path is accepted.

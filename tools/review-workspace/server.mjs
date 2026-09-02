@@ -1,5 +1,6 @@
 import { createReadStream, existsSync, statSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { mkdir, readFile } from 'node:fs/promises';
+import { spawn } from 'node:child_process';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -21,8 +22,27 @@ const STATIC_FILES = new Map([
     ['/', { path: path.join(PUBLIC_DIR, 'index.html'), type: 'text/html; charset=utf-8' }],
     ['/index.html', { path: path.join(PUBLIC_DIR, 'index.html'), type: 'text/html; charset=utf-8' }],
     ['/app.js', { path: path.join(PUBLIC_DIR, 'app.js'), type: 'text/javascript; charset=utf-8' }],
+    ['/ux-model.mjs', { path: path.join(MODULE_DIR, 'ux-model.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/styles.css', { path: path.join(PUBLIC_DIR, 'styles.css'), type: 'text/css; charset=utf-8' }]
 ]);
+
+export function resolveExportFolder(exportRoot, targetId) {
+    const safeTargetId = assertTargetId(targetId);
+    const root = path.resolve(exportRoot);
+    const folder = path.resolve(root, safeTargetId);
+    if (path.dirname(folder) !== root) throw new Error('unsafe_export_folder');
+    return {
+        reviewTargetId: safeTargetId,
+        folderPath: folder,
+        relativePath: `.local/deadem/review-workspace/exports/${safeTargetId}`
+    };
+}
+
+export async function openLocalFolder(folderPath) {
+    if (process.platform !== 'win32') throw new Error('open_folder_platform_unsupported');
+    const child = spawn('explorer.exe', [folderPath], { detached: true, stdio: 'ignore', windowsHide: false });
+    child.unref();
+}
 
 function jsonResponse(response, status, value) {
     const body = `${JSON.stringify(value)}\n`;
@@ -126,7 +146,8 @@ export async function createReviewWorkspaceServer({
     exportRoot = path.join(repoRoot, '.local/deadem/review-workspace/exports'),
     host = '127.0.0.1',
     port = 4179,
-    workspaceData = null
+    workspaceData = null,
+    openFolder = openLocalFolder
 } = {}) {
     if (host !== '127.0.0.1') throw new Error('review_workspace_must_bind_loopback');
     const data = workspaceData ?? await loadWorkspaceData({ repoRoot });
@@ -178,12 +199,26 @@ export async function createReviewWorkspaceServer({
                 const targetId = assertTargetId(selection.reviewTargetId);
                 const reviewState = await store.load(targetId);
                 const result = await writeExportPacket({ workspaceData: data, reviewState, selection, exportRoot });
+                const location = resolveExportFolder(exportRoot, targetId);
                 return jsonResponse(response, 200, {
                     reviewTargetId: targetId,
                     candidateCount: result.packet.candidateCount,
                     jsonPath: `.local/deadem/review-workspace/exports/${targetId}/review_packet.json`,
-                    markdownPath: `.local/deadem/review-workspace/exports/${targetId}/review_packet.md`
+                    markdownPath: `.local/deadem/review-workspace/exports/${targetId}/review_packet.md`,
+                    folderPath: location.folderPath,
+                    relativeFolderPath: location.relativePath
                 });
+            }
+            const exportLocationMatch = /^\/api\/export-location\/(review_match_00[12])$/u.exec(url.pathname);
+            if (request.method === 'GET' && exportLocationMatch) {
+                return jsonResponse(response, 200, resolveExportFolder(exportRoot, exportLocationMatch[1]));
+            }
+            if (request.method === 'POST' && url.pathname === '/api/export-folder/open') {
+                const body = await readJsonBody(request);
+                const location = resolveExportFolder(exportRoot, body.reviewTargetId);
+                await mkdir(location.folderPath, { recursive: true });
+                await openFolder(location.folderPath);
+                return jsonResponse(response, 200, { ...location, opened: true });
             }
             const mediaMatch = /^\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
             if (request.method === 'GET' && mediaMatch) return serveMedia(request, response, data.mediaRegistry.resolve(mediaMatch[1]));
@@ -205,7 +240,8 @@ export async function createReviewWorkspaceServer({
                 'review_state_target_mismatch', 'candidate_target_mismatch', 'candidate_not_found', 'invalid_review_state_payload',
                 'invalid_review_state', 'invalid_error_class', 'call_not_in_candidate', 'invalid_transcript_classification',
                 'segment_identity_mismatch', 'invalid_review_segment_id', 'review_segment_outside_candidate',
-                'export_selection_empty', 'export_state_target_mismatch', 'export_candidate_not_found', 'export_segment_not_found'
+                'export_selection_empty', 'export_state_target_mismatch', 'export_candidate_not_found', 'export_segment_not_found',
+                'unsafe_export_folder'
             ]);
             return errorResponse(response, clientErrors.has(error.message) ? 400 : 500, error.message);
         }

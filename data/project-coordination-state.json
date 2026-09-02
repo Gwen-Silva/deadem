@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Make the accepted two-match visual and audio evidence operational through a local-only assisted review workspace.",
-  "phase": "assisted_review_workspace",
-  "lastAcceptedTaskId": "205",
-  "lastAcceptedCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
-  "activeBaseCommit": "1a0365a3a59596da267fbf3480adb5488034cb20",
+  "objective": "Reduce human review friction through bounded UX hardening of the accepted local assisted review workspace.",
+  "phase": "assisted_review_workspace_ux_hardening",
+  "lastAcceptedTaskId": "206",
+  "lastAcceptedCommit": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
+  "activeBaseCommit": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
   "branch": "main",
-  "activeTaskId": "206",
+  "activeTaskId": "207",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/206/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/207/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -59,6 +59,7 @@
     "Task 202 is accepted with blocker review_candidate_selectivity_low: candidate coverage is 78.7883 percent overall and 90.9569 percent for review_match_002.",
     "Task 203 is accepted with inherited blockers review_candidate_selectivity_low and replay_video_sync_precision_limited: dense visual evidence is ready without semantic validation.",
     "Task 205 is accepted with blocker mixed_vod_asr_semantic_accuracy_insufficient_for_automatic_call_review: mixed-VOD ASR remains usable as a temporal speech locator and draft, while human validation is required for semantic use.",
+    "Task 206 is accepted with blocker assisted_review_workspace_ux_gaps: its human canary passed while identifying dev-facing copy, raw-JSON emphasis, medium-width friction and export affordance gaps; Task 207 is the candidate hardening response pending Work validation.",
     "The accepted bounded-32 challenger population remains limited at 91 primary 30-second eligible clusters.",
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
@@ -67,9 +68,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates the single Task 206 candidate commit and its local assisted review workspace gate claim.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205"],
-  "pendingTasks": ["206"],
+  "nextAction": "ChatGPT Work independently validates the Task 207 UX hardening candidate. Do not create Task 208.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206"],
+  "pendingTasks": ["207"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

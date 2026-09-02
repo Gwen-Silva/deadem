@@ -1,0 +1,171 @@
+{
+  "taskId": "207",
+  "title": "Build Assisted Review Workspace UX Hardening",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Refine the accepted localhost review workspace for clearer human operation, medium-width use and comfortable local export without changing evidence semantics.",
+  "module": "Local Assisted Review Workspace",
+  "moduleGoal": "Reduce operational review friction while preserving the Task 206 data model, security boundary and epistemic limits.",
+  "observableOutcome": "A PT-BR purple-accented responsive workspace with structured review fields, advanced raw JSON, clearer call/segment review and safe export-folder/copy-path affordances.",
+  "metricContribution": "102 candidates and visual/audio evidence remain accessible; wide/mid/narrow layouts, structured review, save/export/open-folder/copy-path and reviewed/unreviewed canary flows are validated.",
+  "remainingModuleGap": "Mixed-VOD ASR semantic accuracy, candidate selectivity and replay-video synchronization precision remain unchanged blockers.",
+  "hardeningDeferred": "No detector, ranking, synchronization, ASR, parser, diarization, cloud, authentication, licensing, LLM or coaching work.",
+  "baseCommitExpected": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
+  "executionReportPath": "reports/assisted-review-workspace-ux-hardening-task207.md",
+  "executionContract": {
+    "reasoningComplexity": "High: improve real human interaction and responsive layout while preserving immutable evidence, local-only persistence, safe filesystem boundaries and all Task 206 semantics.",
+    "objective": "Deliver the smallest complete UX hardening unit justified by the accepted Task 206 human canary.",
+    "technicalContext": [
+      "Task 206 is Work-accepted at c6bc769541f9ee932e8b0a9d50f2389316fdb80a with canary PASSED_WITH_UX_GAPS.",
+      "The Task 206 workspace is functional; this task changes its operating surface and safe local export affordances only."
+    ],
+    "confirmedState": [
+      "Both targets, 102 immutable candidates, visual evidence, audio evidence, persistence, export and Range serving passed Task 206.",
+      "The human canary identified raw-JSON emphasis, dev-facing labels, medium-width friction and export-completion gaps."
+    ],
+    "expectedBaseCommit": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
+    "branchEnvironment": ["Windows canonical executor on main.", "Create and publish exactly one Task 207 commit."],
+    "allowedScope": [
+      "Modify only the isolated review workspace UI, safe local export affordances, focused tests, screenshots, compact readiness artifacts and necessary coordination/navigation documents.",
+      "Use existing Task 206 inputs and local state without replay, VOD, frame or ASR reprocessing."
+    ],
+    "protectedAreas": [
+      "Never access replay_005 through replay_008, any .dem or original VOD .mp4.",
+      "Never modify accepted candidate/evidence artifacts, packages/deadem, packages/engine or packages/ui."
+    ],
+    "expectedChanges": [
+      "PT-BR structured review form, collapsible advanced details, responsive purple theme, clearer queue/calls/visuals, safe export folder and path actions, tests, canary, screenshots and report."
+    ],
+    "acceptanceCriteria": [
+      "All 102 candidates and their 102 visual/audio evidence sets remain accessible with persistence/export roundtrips.",
+      "Wide, medium and narrow layouts materially improve reading and operation.",
+      "Open-folder and copy-path flows use server-produced allowlisted target export paths only.",
+      "Raw JSON remains consistent in advanced mode and no evidence semantics or protected boundaries regress."
+    ],
+    "mandatoryTests": [
+      "Focused workspace and UX tests.",
+      "Real localhost smoke including save/export/open-folder/copy-path and reviewed/unreviewed canary.",
+      "Wide, medium and narrow screenshot validation, codex:validate and lint."
+    ],
+    "requiredEvidence": [
+      "Compact UX summary, canary checklist, gate, responsive screenshots, test logs, post-commit attestation and remote push evidence."
+    ],
+    "commitPolicy": [
+      "Stage only authorized paths and create exactly one commit named Harden assisted review workspace UX.",
+      "Push normally to origin/main without force."
+    ],
+    "stopConditions": [
+      "Stop on base/branch divergence, protected access, upstream evidence mutation, semantic promotion, network dependency or more than one commit.",
+      "Stop in VALIDATING and do not create Task 208."
+    ],
+    "returnReportFormat": [
+      "Resultado, O que passou a funcionar melhor, Valor observável, Impacto no módulo, Limitação relevante, Próximo objetivo and Previsão operacional."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tools/review-workspace/**",
+    "tests/review-workspace.test.mjs",
+    "tests/review-workspace-http.test.mjs",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/**",
+    ".local/deadem/review-workspace/state/**"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "package.json",
+    "tools/review-workspace/**",
+    "tests/review-workspace.test.mjs",
+    "tests/review-workspace-http.test.mjs",
+    "tests/review-workspace-ux.test.mjs",
+    "docs/codex/LOCAL_ASSISTED_REVIEW_WORKSPACE_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/207.json",
+    "tasks/completed/207-assisted-review-workspace-ux-hardening.md",
+    "reports/assisted-review-workspace-ux-hardening-task207.md",
+    "reports/assets/task207/**",
+    "output/local-replay-processing/assisted-review-workspace/task207-bounded2/**",
+    ".local/deadem/review-workspace/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "packages/ui/**",
+    "samples/**",
+    "tasks/specs/208.json",
+    "tasks/*/208-*",
+    "output/local-replay-processing/review-candidate-windows/task202-bounded2/**",
+    "output/local-replay-processing/dense-review-evidence/task203-bounded2/**",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/**",
+    "output/local-replay-processing/audio-call-evidence/task205-bounded2/**",
+    "output/local-replay-processing/assisted-review-workspace/task206-bounded2/**",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**",
+    "**/*.dem",
+    "**/*.mp4",
+    "**/*.wav",
+    "**/*.flac",
+    "**/*.mp3",
+    "**/*.opus",
+    "**/*.m4a"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    { "id": "review-workspace-unit", "type": "node-test", "paths": ["tests/review-workspace.test.mjs"] },
+    { "id": "review-workspace-http", "type": "node-test", "paths": ["tests/review-workspace-http.test.mjs"] },
+    { "id": "review-workspace-ux", "type": "node-test", "paths": ["tests/review-workspace-ux.test.mjs"] },
+    { "id": "coordination-validator", "type": "npm-script", "script": "validate:coordination" },
+    { "id": "task-queue", "type": "npm-script", "script": "validate:tasks" },
+    { "id": "lint", "type": "npm-script", "script": "lint" },
+    { "id": "output-size", "type": "npm-script", "script": "check:outputs", "allowFailure": true, "allowedFailurePattern": "04-controller-pawn-lifecycle[.]json" }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json",
+    "output/local-replay-processing/assisted-review-workspace/task207-bounded2/ux-canary.json",
+    "output/local-replay-processing/assisted-review-workspace/task207-bounded2/gate.json",
+    "reports/assets/task207/after-wide.png",
+    "reports/assets/task207/after-medium.png",
+    "reports/assets/task207/after-narrow.png",
+    "reports/assisted-review-workspace-ux-hardening-task207.md",
+    "tasks/completed/207-assisted-review-workspace-ux-hardening.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "reports/assets/task207/after-wide.png",
+    "reports/assets/task207/after-medium.png"
+  ],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "stopConditions": [
+    "Never access replay bytes, original VODs or historical replay_005 through replay_008.",
+    "Never mutate Task 202 through Task 206 accepted artifacts or change candidate/ASR semantics.",
+    "Do not create Task 208."
+  ],
+  "successGate": "assisted_review_workspace_ux_hardening_ready",
+  "gapsGate": "assisted_review_workspace_ux_hardening_ready_with_declared_gaps",
+  "blockedGate": "BLOCKED_BY_ASSISTED_REVIEW_WORKSPACE_UX_CORE_REGRESSION",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

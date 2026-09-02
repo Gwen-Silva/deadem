@@ -13,12 +13,18 @@ test('real localhost server validates API, persistence, export, Range and reques
     assert.equal(result.humanTranscriptSeparated, true);
     assert.equal(result.segmentRoundtrip, true);
     assert.equal(result.exportRoundtrip, true);
+    assert.equal(result.exportLocationReady, true);
+    assert.equal(result.copyPathReady, true);
+    assert.equal(result.openFolderReady, true);
+    assert.equal(result.reviewedCanaryCount, 1);
+    assert.ok(result.unreviewedCanaryCount > 0);
     assert.equal(result.rangeAudioStatus, 206);
     assert.equal(result.rangeAudioBytes, 32);
     assert.equal(result.pathTraversalStatus, 400);
     assert.equal(result.protectedAliasStatus, 400);
     assert.equal(result.upstreamArtifactMutationCount, 0);
     assert.equal(result.automaticGameplayInterpretationCount, 0);
+    assert.equal(result.endpointsValidated.length, 9);
 });
 
 test('server refuses non-loopback binding', async () => {
