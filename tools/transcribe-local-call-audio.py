@@ -7,14 +7,12 @@ import argparse
 import hashlib
 import json
 import sys
-import time
 import wave
-from dataclasses import asdict
 from pathlib import Path
 
 import av
 import numpy as np
-from faster_whisper import WhisperModel
+from local_asr_runtime import LocalAsrConfig, load_local_model, transcribe_with_model
 
 
 def sha256_file(path: Path) -> str:
@@ -101,76 +99,12 @@ def extract_audio(video: Path, output: Path, stream_index: int, start: float, en
 
 
 def transcribe(args: argparse.Namespace, audio: Path) -> tuple[list[dict], list[dict], dict]:
-    started = time.perf_counter()
-    model = WhisperModel(
-        args.model,
-        device=args.device,
-        compute_type=args.compute_type,
-        download_root=str(args.download_root),
-        cpu_threads=args.cpu_threads,
+    config = LocalAsrConfig(
+        model=args.model, device=args.device, compute_type=args.compute_type,
+        language=args.language, cpu_threads=args.cpu_threads,
     )
-    iterator, info = model.transcribe(
-        str(audio),
-        language=args.language,
-        beam_size=1,
-        best_of=1,
-        temperature=0,
-        vad_filter=True,
-        vad_parameters={"min_silence_duration_ms": 500},
-        word_timestamps=True,
-        condition_on_previous_text=False,
-        log_progress=True,
-    )
-    segments: list[dict] = []
-    words: list[dict] = []
-    for segment in iterator:
-        segment_words = []
-        for word in segment.words or []:
-            word_row = {
-                "startSeconds": round(float(word.start), 3),
-                "endSeconds": round(float(word.end), 3),
-                "word": word.word,
-                "probability": round(float(word.probability), 6),
-            }
-            segment_words.append(word_row)
-            words.append({"segmentOrdinal": len(segments) + 1, **word_row})
-        segments.append({
-            "ordinal": len(segments) + 1,
-            "startSeconds": round(float(segment.start), 3),
-            "endSeconds": round(float(segment.end), 3),
-            "text": segment.text.strip(),
-            "language": info.language,
-            "engine": "faster-whisper",
-            "model": args.model,
-            "device": args.device,
-            "computeType": args.compute_type,
-            "averageLogProbability": round(float(segment.avg_logprob), 6),
-            "noSpeechProbability": round(float(segment.no_speech_prob), 6),
-            "temperature": round(float(segment.temperature), 3),
-            "vadApplied": True,
-            "words": segment_words,
-        })
-    elapsed = time.perf_counter() - started
-    metadata = {
-        "engine": "faster-whisper",
-        "engineVersion": __import__("faster_whisper").__version__,
-        "model": args.model,
-        "device": args.device,
-        "computeType": args.compute_type,
-        "cpuThreads": args.cpu_threads,
-        "languageHint": args.language,
-        "detectedLanguage": info.language,
-        "detectedLanguageProbability": round(float(info.language_probability), 6),
-        "vad": {"enabled": True, "minSilenceDurationMs": 500},
-        "wordTimestamps": True,
-        "beamSize": 1,
-        "temperature": 0,
-        "conditionOnPreviousText": False,
-        "segmentCount": len(segments),
-        "wordTimestampCount": len(words),
-        "processingTimeSeconds": round(elapsed, 3),
-    }
-    return segments, words, metadata
+    model = load_local_model(config, args.download_root)
+    return transcribe_with_model(model, audio, config)
 
 
 def parse_args() -> argparse.Namespace:

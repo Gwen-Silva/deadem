@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "207",
+  "generatedAtTask": "208",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -979,7 +979,7 @@
       "plainName": "Local assisted review workspace",
       "introducedInTask": "206",
       "stabilizedInTask": "207",
-      "currentStatus": "candidate_ux_hardened_pending_work_validation",
+      "currentStatus": "active_ux_hardened",
       "currentBaseline": "task206_bounded_two_localhost_review_workspace",
       "whyItMatters": "Makes the accepted visual and audio evidence operational through one local queue, controlled media access, human segmentation, durable review state and bounded export.",
       "mainFiles": [
@@ -1006,8 +1006,8 @@
       "capabilityId": "assisted_review_workspace_ux",
       "plainName": "Assisted review workspace UX",
       "introducedInTask": "207",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_pending_work_validation",
+      "stabilizedInTask": "207",
+      "currentStatus": "active",
       "currentBaseline": "task207_pt_br_responsive_structured_review_workspace",
       "whyItMatters": "Reduces human review friction through structured PT-BR fields, responsive evidence navigation and explicit safe local export actions.",
       "mainFiles": [
@@ -1029,7 +1029,20 @@
         "Candidate priority remains a scheduling heuristic and ASR remains a human-validated draft.",
         "Export actions operate only on server-produced allowlisted local target paths."
       ],
-      "nextUsefulStep": "Await independent Work validation; no Task 208 is authorized."
+      "nextUsefulStep": "Operate bounded human review while preserving the accepted evidence semantics."
+    },
+    {
+      "capabilityId": "real_craig_multitrack_call_evidence",
+      "plainName": "Real Craig multitrack call evidence",
+      "introducedInTask": "208",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_ready_for_human_validation_pending_work_validation",
+      "currentBaseline": "task208_real_nine_track_eighteen_sample_canary",
+      "whyItMatters": "Measures isolated source-track audio and track-attributed ASR without mixed-VOD speaker ambiguity or premature candidate integration.",
+      "mainFiles": ["tools/craig-multitrack/metadata.mjs", "tools/craig-multitrack/intake.mjs", "tools/craig-multitrack/audio_pipeline.py", "tools/craig-multitrack/emit-real-canary.mjs", "docs/codex/CRAIG_MULTITRACK_CALL_EVIDENCE_CONTRACT.md"],
+      "mainOutputs": ["output/local-replay-processing/craig-multitrack/task208-real-canary/manifest.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/audio-probe-summary.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/canary-summary.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/gate.json", "output/local-replay-processing/craig-multitrack/task208-real-canary/privacy-audit.json"],
+      "knownLimits": ["Human semantic classification of all 18 clips remains pending.", "Track identity is source metadata rather than biometric or real-world verification.", "No replay candidate or VOD time axis exists in the Task 208 output."],
+      "nextUsefulStep": "Have Gwen classify the 18 local samples before deciding whether real multitrack ASR meets the 75/25 operational quality gate."
     }
   ]
 }

@@ -2,33 +2,34 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 206 at
-`c6bc769541f9ee932e8b0a9d50f2389316fdb80a`. ChatGPT Work accepted
-`two_match_local_assisted_review_workspace_ready` with blocker
-`assisted_review_workspace_ux_gaps` after a human canary passed with UX gaps.
+Last accepted task: Task 207 at
+`ea5361c292c0419c50ae9382d390b3970fbbd827`. ChatGPT Work accepted
+`assisted_review_workspace_ux_hardening_ready` and resolved
+`assisted_review_workspace_ux_gaps`.
 
 The bounded 16-sample human validation recorded 4 correct, 3
 usable-with-minor-error, 9 materially wrong, and 0 unintelligible transcripts:
 43.75 percent usable. Mixed-VOD ASR remains useful as a temporal speech locator
 and editable draft; human validation is required for semantic use.
 
-Active candidate: Task 207, `Assisted Review Workspace UX Hardening`. Coordination
+Active candidate: Task 208, `Validate Real Craig Multitrack Call Evidence`. Coordination
 status: `VALIDATING`. The technical gate claim is
-`assisted_review_workspace_ux_hardening_ready`.
+`real_craig_multitrack_call_evidence_canary_ready_for_human_validation`.
 
-The localhost workspace still loads exactly `review_match_001` and
-`review_match_002`, with 67 and 35 immutable candidate windows. Task 207 adds a
-structured PT-BR review form, collapsible advanced JSON, clearer queue, visual
-and call surfaces, responsive wide/medium/narrow layouts, and server-produced
-allowlisted export-folder open/copy actions.
+The real Craig package maps nine AAC files to nine source metadata tracks by
+ordinal. The bounded parser consumed exactly the 1,888-byte leading JSON object
+without decoding the trailing raw payload. All tracks decoded as AAC 48 kHz
+stereo and normalized locally to PCM 16 kHz mono while retaining timeline
+silence.
 
-The real functional smoke preserved visual and audio evidence for 102/102
-candidates. Persistence/export roundtrips, nine API endpoints, Range 206,
-reviewed/unreviewed flows and traversal/protected-alias rejection passed. No
-replay, VOD, protected input, upstream mutation, versioned human review/media,
-or automatic gameplay interpretation occurred.
+The canary selected exactly 18 deterministic temporal regions, two per track,
+and ran Faster Whisper small/CPU/int8 only on those clips. ASR quality remains
+pending human classification. Identities, filenames, media and transcript text
+remain local-only; compact outputs contain only pseudonymous track references
+and aggregate measurements. No replay, VOD, candidate integration, diarization
+or protected input access occurred.
 
 Task 202 selectivity and Task 200 synchronization blockers remain active.
-ChatGPT Work must independently validate Task 207. No Task 208 exists.
+ChatGPT Work must independently validate Task 208. No Task 209 exists.
 
 Machine-readable state: `data/project-coordination-state.json`.

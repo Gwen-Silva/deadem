@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/craig-multitrack-canary.schema.json",
+  "title": "Real Craig Multitrack Canary Summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "sampleCount", "sampleDistribution", "asrConfiguration", "overlapPairCount", "overlapDurationSeconds", "speakerStatus", "humanClassificationStatus", "criticalSemanticErrorCount", "fullRecordingTranscriptionExecuted", "candidateIntegrationExecuted", "vodSynchronizationExecuted", "diarizationExecuted"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "artifactClass": {"const": "real_craig_multitrack_canary_summary"},
+    "sampleCount": {"const": 18},
+    "activitySemantics": {"const": "energy_locator_not_speech_fact_or_call"},
+    "selection": {"const": "deterministic_temporally_distributed_activity_regions"},
+    "sampleDistribution": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9,
+      "patternProperties": {"^track_0[1-9]$": {"type": "integer", "minimum": 0}},
+      "additionalProperties": false
+    },
+    "asrConfiguration": {
+      "type": "object",
+      "required": ["engine", "model", "device", "computeType", "language", "beamSize", "bestOf", "temperature", "vad", "minSilenceDurationMs", "wordTimestamps", "conditionOnPreviousText", "hotwords"],
+      "properties": {
+        "engine": {"const": "faster-whisper"}, "model": {"const": "small"}, "device": {"const": "cpu"},
+        "computeType": {"const": "int8"}, "language": {"const": "pt"}, "beamSize": {"const": 1},
+        "bestOf": {"const": 1}, "temperature": {"const": 0}, "vad": {"const": true},
+        "minSilenceDurationMs": {"const": 500}, "wordTimestamps": {"const": true},
+        "conditionOnPreviousText": {"const": false}, "hotwords": {"const": false}
+      }
+    },
+    "overlapPairCount": {"type": "integer", "minimum": 0},
+    "overlapDurationSeconds": {"type": "number", "minimum": 0},
+    "normalizationProcessingTimeSeconds": {"type": "number", "minimum": 0},
+    "asrProcessingTimeSeconds": {"type": "number", "minimum": 0},
+    "speakerStatus": {"const": "track_attributed"},
+    "speakerSemanticLimitation": {"type": "string", "minLength": 1},
+    "baselineMixedVod": {"type": "object"},
+    "humanQualityThreshold": {"type": "object"},
+    "humanClassificationStatus": {"const": "pending"},
+    "criticalSemanticErrorCount": {"type": "null"},
+    "fullRecordingTranscriptionExecuted": {"const": false},
+    "candidateIntegrationExecuted": {"const": false},
+    "vodSynchronizationExecuted": {"const": false},
+    "diarizationExecuted": {"const": false}
+  }
+}

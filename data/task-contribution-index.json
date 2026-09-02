@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "207",
-  "baseCommit": "c6bc769541f9ee932e8b0a9d50f2389316fdb80a",
-  "taskRange": "001-207",
+  "generatedAtTask": "208",
+  "baseCommit": "ea5361c292c0419c50ae9382d390b3970fbbd827",
+  "taskRange": "001-208",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6333,7 +6333,7 @@
     {
       "taskId": "207",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "ea5361c292c0419c50ae9382d390b3970fbbd827",
       "title": "Build Assisted Review Workspace UX Hardening",
       "phase": "assisted_review_workspace_ux_hardening",
       "primaryContribution": "Hardened the accepted localhost workspace with a PT-BR structured review surface, responsive layouts and safe export-folder affordances while preserving evidence semantics.",
@@ -6347,7 +6347,7 @@
         "reports/assisted-review-workspace-ux-hardening-task207.md"
       ],
       "gate": "assisted_review_workspace_ux_hardening_ready",
-      "currentRelevance": "candidate_ready_pending_work_validation",
+      "currentRelevance": "accepted_current_ux_baseline",
       "dependsOn": ["206"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6355,11 +6355,43 @@
         "Mixed-VOD ASR still requires human validation for semantic use.",
         "Replay-to-VOD synchronization and candidate selectivity blockers remain unchanged."
       ],
-      "evidenceStatus": "assisted_review_workspace_ux_hardening_ready_pending_work_validation",
+      "evidenceStatus": "accepted_assisted_review_workspace_ux_hardening_ready",
       "evidencePaths": [
         "tasks/specs/207.json",
         "tasks/completed/207-assisted-review-workspace-ux-hardening.md",
         "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json"
+      ]
+    },
+    {
+      "taskId": "208",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Validate Real Craig Multitrack Call Evidence",
+      "phase": "real_craig_multitrack_call_evidence_canary",
+      "primaryContribution": "Validated a real nine-track Craig export, normalized track timelines and produced an 18-sample local-only track-attributed ASR canary with compact privacy-safe measurements.",
+      "introducedCapabilities": ["real_craig_multitrack_call_evidence"],
+      "stabilizedCapabilities": ["timestamped_audio_call_evidence"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/craig-multitrack/emit-real-canary.mjs",
+        "output/local-replay-processing/craig-multitrack/task208-real-canary/audio-probe-summary.json",
+        "output/local-replay-processing/craig-multitrack/task208-real-canary/canary-summary.json",
+        "reports/real-craig-multitrack-call-evidence-task208.md"
+      ],
+      "gate": "real_craig_multitrack_call_evidence_canary_ready_for_human_validation",
+      "currentRelevance": "candidate_ready_pending_work_validation_and_human_asr_classification",
+      "dependsOn": ["205", "207"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Track attribution comes from Craig metadata, not biometric or real-world identity verification.",
+        "Energy regions are temporal locators and ASR quality remains pending human classification.",
+        "No candidate, VOD or replay synchronization was performed."
+      ],
+      "evidenceStatus": "real_craig_multitrack_call_evidence_canary_ready_for_human_validation_pending_work_validation",
+      "evidencePaths": [
+        "tasks/specs/208.json",
+        "tasks/completed/208-real-craig-multitrack-call-evidence.md",
+        "output/local-replay-processing/craig-multitrack/task208-real-canary/gate.json"
       ]
     }
   ]

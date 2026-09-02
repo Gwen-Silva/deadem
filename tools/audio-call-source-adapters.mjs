@@ -103,15 +103,17 @@ export class MixedVodAudioAdapter extends AudioCallSourceAdapter {
 }
 
 export class CraigMultitrackAdapter extends AudioCallSourceAdapter {
-    constructor({ recordingRoot, tracks }) {
+    constructor({ recordingRoot, recordingId = null, tracks }) {
         super('craig_multitrack');
         this.recordingRoot = recordingRoot;
+        this.recordingId = recordingId ?? 'craig_recording_local';
         this.tracks = structuredClone(tracks);
     }
 
     normalize() {
         const global = this.tracks.flatMap(track => track.segments.map((segment, index) => ({
-            callSegmentId: `craig_${track.sourceSpeakerId}_${String(index + 1).padStart(4, '0')}`,
+            callSegmentId: `${this.recordingId}_${track.trackRef ?? `track_${String(track.trackOrdinal).padStart(2, '0')}`}_${String(index + 1).padStart(4, '0')}`,
+            recordingId: this.recordingId,
             speaker: {
                 status: 'track_attributed',
                 sourceSpeakerId: track.sourceSpeakerId,
@@ -121,8 +123,18 @@ export class CraigMultitrackAdapter extends AudioCallSourceAdapter {
             recordingEndSeconds: round(segment.endSeconds),
             text: segment.text,
             language: segment.language ?? 'pt',
+            transcriptionMetadata: structuredClone(segment.transcriptionMetadata ?? {}),
+            words: (segment.words ?? []).map(word => ({
+                word: word.word,
+                probability: word.probability ?? null,
+                recordingStartSeconds: round(word.recordingStartSeconds ?? segment.startSeconds + word.startSeconds),
+                recordingEndSeconds: round(word.recordingEndSeconds ?? segment.startSeconds + word.endSeconds)
+            })),
             provenance: 'audio_observed_speech/craig_multitrack_asr',
-            semanticLimitations: ['Track identity is source metadata; transcript text is not strategic interpretation.']
+            semanticLimitations: [
+                'Track attribution comes from Craig source metadata, not biometric or real-world identity verification.',
+                'Transcript text is ASR evidence pending human semantic validation, not speaker intent or strategic interpretation.'
+            ]
         })));
         return global.sort((left, right) => left.recordingStartSeconds - right.recordingStartSeconds
             || left.recordingEndSeconds - right.recordingEndSeconds

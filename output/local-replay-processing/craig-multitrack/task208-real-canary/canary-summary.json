@@ -1,0 +1,53 @@
+{
+  "activitySemantics": "energy_locator_not_speech_fact_or_call",
+  "artifactClass": "real_craig_multitrack_canary_summary",
+  "asrConfiguration": {
+    "beamSize": 1,
+    "bestOf": 1,
+    "computeType": "int8",
+    "conditionOnPreviousText": false,
+    "device": "cpu",
+    "engine": "faster-whisper",
+    "hotwords": false,
+    "language": "pt",
+    "minSilenceDurationMs": 500,
+    "model": "small",
+    "temperature": 0,
+    "vad": true,
+    "wordTimestamps": true
+  },
+  "asrProcessingTimeSeconds": 30.356,
+  "baselineMixedVod": {
+    "materiallyWrongRatePercent": 56.25,
+    "usableRatePercent": 43.75
+  },
+  "candidateIntegrationExecuted": false,
+  "criticalSemanticErrorCount": null,
+  "diarizationExecuted": false,
+  "fullRecordingTranscriptionExecuted": false,
+  "humanClassificationStatus": "pending",
+  "humanQualityThreshold": {
+    "materiallyWrongRatePercentMaximum": 25,
+    "usableRatePercentMinimum": 75
+  },
+  "normalizationProcessingTimeSeconds": 156.296,
+  "overlapDurationSeconds": 5742.875,
+  "overlapPairCount": 3815,
+  "sampleCount": 18,
+  "sampleDistribution": {
+    "track_01": 2,
+    "track_02": 2,
+    "track_03": 2,
+    "track_04": 2,
+    "track_05": 2,
+    "track_06": 2,
+    "track_07": 2,
+    "track_08": 2,
+    "track_09": 2
+  },
+  "schemaVersion": 1,
+  "selection": "deterministic_temporally_distributed_activity_regions",
+  "speakerSemanticLimitation": "Craig source-track metadata; not biometric or real-world identity verification and not speaker intent.",
+  "speakerStatus": "track_attributed",
+  "vodSynchronizationExecuted": false
+}

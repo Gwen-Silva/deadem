@@ -1195,26 +1195,50 @@
     {
       "id": "assisted_review_workspace_task207_summary",
       "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/summary.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted",
       "notes": "Compact metrics for the PT-BR structured review surface, responsive modes and safe local export actions."
     },
     {
       "id": "assisted_review_workspace_task207_canary",
       "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/ux-canary.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted",
       "notes": "Real localhost canary covering reviewed and unreviewed records, persistence, export, open-folder and copy-path affordances."
     },
     {
       "id": "assisted_review_workspace_task207_gate",
       "path": "output/local-replay-processing/assisted-review-workspace/task207-bounded2/gate.json",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted",
       "notes": "Technical gate claim assisted_review_workspace_ux_hardening_ready with inherited evidence blockers preserved."
     },
     {
       "id": "assisted_review_workspace_task207_screenshots",
       "path": "reports/assets/task207/after-wide.png",
-      "status": "candidate_ready_pending_work_validation",
+      "status": "accepted",
       "notes": "Wide, medium and narrow screenshots provide visual evidence of responsive workspace behavior."
+    },
+    {
+      "id": "real_craig_multitrack_task208_manifest",
+      "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/manifest.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Privacy-safe nine-track source fingerprint and bounded raw-header parsing evidence."
+    },
+    {
+      "id": "real_craig_multitrack_task208_probe",
+      "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/audio-probe-summary.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Anonymized AAC decode, format, duration and measured timeline spread summary for nine tracks."
+    },
+    {
+      "id": "real_craig_multitrack_task208_canary",
+      "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/canary-summary.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Eighteen-sample small CPU int8 ASR canary; semantic quality remains pending human classification."
+    },
+    {
+      "id": "real_craig_multitrack_task208_gate",
+      "path": "output/local-replay-processing/craig-multitrack/task208-real-canary/gate.json",
+      "status": "candidate_ready_pending_work_validation",
+      "notes": "Technical gate real_craig_multitrack_call_evidence_canary_ready_for_human_validation."
     }
   ]
 }
