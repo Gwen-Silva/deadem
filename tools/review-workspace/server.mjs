@@ -17,6 +17,12 @@ import { ReviewStateStore } from './persistence.mjs';
 import { writeExportPacket } from './export.mjs';
 import { loadLocalScrimData } from './scrim-media.mjs';
 import { parseScrimNavigation, resolveScrimNavigation } from './scrim-navigation.mjs';
+import {
+    buildScrimPresentation,
+    parseFriendlyScrimNavigation,
+    resolveFriendlyReplayEntry,
+    targetIdForReplayMatch
+} from './scrim-presentation.mjs';
 import { assertPublicMatchId, buildProductCatalog, buildProductMatch, targetIdFromPublicMatchId } from './product-view-model.mjs';
 
 const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
@@ -31,8 +37,10 @@ const STATIC_FILES = new Map([
     ['/styles/shell.css', { path: path.join(PUBLIC_DIR, 'styles', 'shell.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/product.css', { path: path.join(PUBLIC_DIR, 'styles', 'product.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/review.css', { path: path.join(PUBLIC_DIR, 'styles', 'review.css'), type: 'text/css; charset=utf-8' }],
+    ['/styles/replay.css', { path: path.join(PUBLIC_DIR, 'styles', 'replay.css'), type: 'text/css; charset=utf-8' }],
     ['/review-presentation.mjs', { path: path.join(MODULE_DIR, 'review-presentation.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/scrim-navigation.mjs', { path:path.join(MODULE_DIR, 'scrim-navigation.mjs'), type:'text/javascript; charset=utf-8' }],
+    ['/scrim-presentation.mjs', { path:path.join(MODULE_DIR, 'scrim-presentation.mjs'), type:'text/javascript; charset=utf-8' }],
     ['/scrim', { path: path.join(PUBLIC_DIR, 'scrim.html'), type: 'text/html; charset=utf-8' }],
     ['/scrim-app.mjs', { path: path.join(PUBLIC_DIR, 'scrim-app.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/scrim-controller.mjs', { path: path.join(PUBLIC_DIR, 'scrim-controller.mjs'), type: 'text/javascript; charset=utf-8' }],
@@ -204,20 +212,37 @@ export async function createReviewWorkspaceServer({
     openFolder = openLocalFolder
 } = {}) {
     if (host !== '127.0.0.1') throw new Error('review_workspace_must_bind_loopback');
-    const data = workspaceData ?? (scrimOnly ? { targets: [], candidateById: new Map() } : await loadWorkspaceData({ repoRoot }));
+    const data = workspaceData ?? await loadWorkspaceData({ repoRoot });
     const scrim = scrimData ?? loadLocalScrimData(repoRoot);
     const store = new ReviewStateStore({ root: stateRoot, workspaceData: data });
+    const getScrimPresentation = async matchId => {
+        const targetId = targetIdForReplayMatch(matchId);
+        return buildScrimPresentation({
+            workspaceData: data,
+            reviewState: await store.load(targetId),
+            sessions: scrim.view.vodSessions,
+            matchId
+        });
+    };
     const server = http.createServer(async (request, response) => {
         try {
             const safeRawPath = assertSafeRequestPath((request.url ?? '/').split('?')[0]);
             const url = new URL(request.url ?? '/', 'http://127.0.0.1');
             if (safeRawPath !== url.pathname) throw new Error('unsafe_request_path');
             if (url.pathname === '/scrim' && url.search) {
-                try { resolveScrimNavigation(parseScrimNavigation(url.search), scrim.view.vodSessions); }
+                try {
+                    const friendly = parseFriendlyScrimNavigation(url.search);
+                    if (friendly) resolveFriendlyReplayEntry(friendly, await getScrimPresentation(friendly.matchId));
+                    else resolveScrimNavigation(parseScrimNavigation(url.search), scrim.view.vodSessions);
+                }
                 catch (error) { return errorResponse(response, 400, error.message); }
             }
             if (url.pathname.startsWith('/scrim/media/') && url.search) return errorResponse(response, 400, 'scrim_media_query_rejected');
             if (request.method === 'GET' && url.pathname === '/api/scrim') return jsonResponse(response, 200, scrim.view);
+            const scrimPresentationMatch = /^\/api\/scrim\/presentation\/(00[0-9])$/u.exec(url.pathname);
+            if (request.method === 'GET' && scrimPresentationMatch) {
+                return jsonResponse(response, 200, await getScrimPresentation(scrimPresentationMatch[1]));
+            }
             const scrimMatch = /^\/scrim\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
             if (['GET', 'HEAD'].includes(request.method) && scrimMatch) return serveMedia(request, response, scrim.registry.resolve(scrimMatch[1]));
 
@@ -321,7 +346,10 @@ export async function createReviewWorkspaceServer({
                 'invalid_review_state', 'invalid_error_class', 'call_not_in_candidate', 'invalid_transcript_classification',
                 'segment_identity_mismatch', 'invalid_review_segment_id', 'review_segment_outside_candidate',
                 'export_selection_empty', 'export_state_target_mismatch', 'export_candidate_not_found', 'export_segment_not_found',
-                'unsafe_export_folder', 'public_match_not_allowlisted', 'invalid_public_moment', 'product_match_unavailable'
+                'unsafe_export_folder', 'public_match_not_allowlisted', 'invalid_public_moment', 'product_match_unavailable',
+                'public_replay_match_not_allowlisted', 'invalid_public_replay_query', 'invalid_public_replay_moment',
+                'public_replay_candidates_unavailable', 'public_replay_session_unavailable_or_ambiguous',
+                'public_replay_session_range_invalid', 'public_replay_moment_unavailable', 'friendly_replay_target_mismatch'
             ]);
             return errorResponse(response, clientErrors.has(error.message) ? 400 : 500, error.message);
         }

@@ -1,25 +1,25 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 215
+## Coordination Gate Before Further Execution — Task 216
 
-Task214 is ACCEPTED at `9d5e0140320e335e6d3946376eae4442f60e6e94`.
+Task215 is ACCEPTED at `f3620d4d05f3cce728fce6cc414921275f9f456b`.
 Task212 four-target Review and Task210 real playback remain accepted. Task208
 semantic-ASR and Task202 candidate-selectivity limitations remain unchanged.
 
-Task215 is VALIDATING under the technical claim
-`alphaveil_assisted_review_workspace_ux_v2_ready`. Work must independently
-inspect the friendly Moment queue, representative evidence hierarchy, unchanged
-human review schema, save/reopen/export, 003/004 real Replay transition, 001/002
-legacy transcript warning and wide/medium/mobile behavior. No Task216 is created
-or authorized.
+Task216 is VALIDATING under the technical claim
+`alphaveil_synchronized_replay_ux_v2_ready`. Work must independently inspect the
+two-session public allowlist, friendly Replay routes, complete48/57 factual
+timelines, pre-roll versus direct-anchor behavior, unchanged nine-track mixer,
+hidden diagnostics and wide/medium/mobile behavior. No Task217 is created or
+authorized.
 
 ## Current State
 
 AlphaVeil exposes Scrim01–04 with67/35/48/57 real prepared moments, deterministic
-covers and real review progress. Review now centers one selected moment, its
-representative evidence and five grouped stages of human reasoning. Friendly URL
-history, local save/reopen/export, 003/004 real Replay, 001/002 legacy audio and
-responsive drawers passed Chrome flows. Patterns and Training remain Preview.
+covers and real review progress. Review keeps its accepted selected-moment and
+human-reasoning workflow. Replay now exposes only real003/004, with friendly URL
+history, 48/57 chronological markers, exact-anchor navigation and the unchanged
+nine-track mixer. Patterns and Training remain Preview.
 Media, screenshots, canary state and exports remain local.
 
 No replay parsing, evidence regeneration, ASR, metadata inference, semantic facts

@@ -1,32 +1,32 @@
 # Current Codex State
 
-Policy version: 1. Branch: main. Last accepted Task 214:
-`9d5e0140320e335e6d3946376eae4442f60e6e94`, acceptance supplied externally
-under `alphaveil_home_matches_match_overview_ready`.
+Policy version: 1. Branch: main. Last accepted Task 215:
+`f3620d4d05f3cce728fce6cc414921275f9f456b`, acceptance supplied externally
+under `alphaveil_assisted_review_workspace_ux_v2_ready`.
 
-Active Task 215: Redesign AlphaVeil Assisted Review Workspace UX V2. Status:
-`VALIDATING`. Technical gate claim:
-`alphaveil_assisted_review_workspace_ux_v2_ready`.
+Active Task 216: Redesign AlphaVeil Synchronized Replay UX V2 and Moment
+Timeline. Status: `VALIDATING`. Technical gate claim:
+`alphaveil_synchronized_replay_ux_v2_ready`.
 
-Review is organized around Momentos, Evidência and Revisão. Friendly
-`/review?match=NNN&moment=N` navigation, real progress, representative-frame
-evidence, start/reference/end controls, human save feedback and responsive queue
-drawers replace backend-first presentation. The unchanged eleven review fields
-are grouped into Contexto, Decisão, Consequências, Avaliação and Aprendizado;
-fifteen error classes remain human-only chips.
+The public Replay surface now exposes exactly Scrim03 and Scrim04 through
+`/scrim?match=NNN&moment=N`. Their timelines contain all105 existing prepared
+contexts—48 and57—with chronological, finite anchors inside the validated real
+VOD sessions. URL entry preserves pre-roll; direct markers and Previous/Next seek
+the exact anchor. Review and Overview use friendly links while legacy technical
+URLs remain compatible.
 
-The workspace remains four targets and207 candidates:67/35/48/57. The accepted
-102 historical fingerprints, four states, segments, transcript corrections,
-save/export/reopen, real003/004 pre-roll, nine-track mixer and synchronization
-behavior remain intact. 001/002 retain explicit unvalidated-ASR handling.
+Video is the master and visual protagonist. The accepted nine-track mixer retains
+mute, solo, multi-solo, volume, temporary isolation/restoration and VOD-audio
+controls. Human display names are primary; raw mapping and transport diagnostics
+stay inside closed details. No playback or synchronization motor file changed.
 
-Validation: focused and functional matrix60/60 plus eight isolated Chrome flow
+Validation: focused and functional matrix64/64 plus nine isolated Chrome flow
 groups with zero browser errors. Four local screenshots cover1920×1080,
-1440×900,1024×768 and390×844 under `.local/codex/215/browser-canary/`.
+1440×900,1024×768 and390×844 under `.local/codex/216/browser-canary/`.
 
-No replay, protected fixture, ASR, factual regeneration, metadata inference,
-candidate/synchronization mutation or media versioning occurred. Existing
-selectivity, synchronization and ASR semantic limitations remain explicit.
+No replay, protected fixture, ASR, factual/candidate/sync regeneration, metadata
+inference or media versioning occurred. Existing selectivity, synchronization and
+ASR semantic limitations remain explicit.
 
-Next action: independent ChatGPT Work validation of Task215 only. Task216 was not
+Next action: independent ChatGPT Work validation of Task216 only. Task217 was not
 created or authorized. Machine state: `data/project-coordination-state.json`.

@@ -12,6 +12,7 @@ import {
     candidateIdForMoment,
     deriveReviewProgress,
     displayNameForTarget,
+    replayLink,
     reviewLink,
     selectCandidateCover,
     targetIdFromPublicMatchId
@@ -88,8 +89,11 @@ test('moments map real candidates to friendly safe links and reject invalid valu
     assert.equal(match.moments.length, 48);
     assert.equal(match.moments[24].momentNumber, 25);
     assert.equal(match.moments[24].reviewUrl, '/review?match=003&moment=25');
+    assert.equal(match.moments[24].replayUrl, '/scrim?match=003&moment=25');
+    assert.equal(match.replayUrl, '/scrim?match=003');
     assert.equal(candidateIdForMoment('003', 25), 'review_match_003_window_0025');
     assert.equal(reviewLink('003'), '/review?match=003');
+    assert.equal(replayLink('003'), '/scrim?match=003');
     assert.throws(() => candidateIdForMoment('003', 0), /invalid_public_moment/u);
     assert.throws(() => candidateIdForMoment('005', 1), /not_allowlisted/u);
 });

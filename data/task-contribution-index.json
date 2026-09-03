@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "215",
-  "baseCommit": "9d5e0140320e335e6d3946376eae4442f60e6e94",
-  "taskRange": "001-215",
+  "generatedAtTask": "216",
+  "baseCommit": "f3620d4d05f3cce728fce6cc414921275f9f456b",
+  "taskRange": "001-216",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -294,7 +294,7 @@
     {
       "taskId": "012",
       "status": "evidence_partial",
-      "commitSha": null,
+      "commitSha": "f3620d4d05f3cce728fce6cc414921275f9f456b",
       "title": "Task 012",
       "phase": "foundation_policy_diagnostics_protection",
       "primaryContribution": "Completed or documented: Task 012.",
@@ -6532,7 +6532,7 @@
         "reports/alphaveil-assisted-review-workspace-ux-v2-task215.md"
       ],
       "gate": "alphaveil_assisted_review_workspace_ux_v2_ready",
-      "currentRelevance": "candidate_pending_work_validation",
+      "currentRelevance": "accepted_review_ux_v2_baseline",
       "dependsOn": ["214", "212", "210", "207"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6540,11 +6540,44 @@
         "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged.",
         "Browser screenshots, human canary state, exports and all media remain local-only."
       ],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_by_Work",
       "evidencePaths": [
         "tasks/specs/215.json",
         "tasks/completed/215-alphaveil-assisted-review-workspace-ux-v2.md",
         "output/local-replay-processing/presentation-ux/task215-review-ux-v2/gate.json"
+      ]
+    },
+    {
+      "taskId": "216",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Redesign AlphaVeil Synchronized Replay UX V2 and Moment Timeline",
+      "phase": "presentation_ux_synchronized_replay_v2_moment_timeline",
+      "primaryContribution": "Presents the two accepted real synchronized matches through friendly Replay URLs, complete factual moment timelines and a human-readable nine-track mixer without changing playback or synchronization semantics.",
+      "introducedCapabilities": ["alphaveil_synchronized_replay_ux_v2"],
+      "stabilizedCapabilities": ["alphaveil_assisted_review_workspace_ux_v2", "alphaveil_match_experience", "synchronized_craig_review_playback"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/review-workspace/scrim-presentation.mjs",
+        "tools/review-workspace/public/styles/replay.css",
+        "docs/codex/ALPHAVEIL_SYNCHRONIZED_REPLAY_UX_V2_CONTRACT.md",
+        "output/local-replay-processing/presentation-ux/task216-replay-ux-v2/summary.json",
+        "reports/alphaveil-synchronized-replay-ux-v2-task216.md"
+      ],
+      "gate": "alphaveil_synchronized_replay_ux_v2_ready",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["215", "214", "212", "210"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Prepared moments remain chronological attention regions, not confirmed gameplay events, errors or ranking.",
+        "Synchronization precision and ASR semantic limitations remain unchanged.",
+        "Browser screenshots, local playback state and all media remain local-only."
+      ],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": [
+        "tasks/specs/216.json",
+        "tasks/completed/216-alphaveil-synchronized-replay-ux-v2.md",
+        "output/local-replay-processing/presentation-ux/task216-replay-ux-v2/gate.json"
       ]
     }
   ]

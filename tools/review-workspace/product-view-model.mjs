@@ -43,6 +43,17 @@ export function reviewLink(matchId, moment = null) {
     return `/review?${params}`;
 }
 
+export function replayLink(matchId, moment = null) {
+    const id = assertPublicMatchId(matchId);
+    if (!['003', '004'].includes(id)) throw new Error('public_replay_match_not_allowlisted');
+    const params = new URLSearchParams({ match: id });
+    if (moment !== null) {
+        candidateIdForMoment(id, moment);
+        params.set('moment', String(Number(moment)));
+    }
+    return `/scrim?${params}`;
+}
+
 export function deriveReviewProgress(candidates, state = {}) {
     const counts = { unreviewed: 0, in_review: 0, reviewed: 0, skipped: 0 };
     for (const candidate of candidates) {
@@ -111,7 +122,7 @@ function publicMoment(candidate, state, displayName, matchId) {
         reviewLabel: { unreviewed: 'Não revisado', in_review: 'Em revisão', reviewed: 'Revisado', skipped: 'Ignorado' }[reviewState],
         thumbnail: safeMedia(representative, displayName),
         reviewUrl: reviewLink(matchId, momentNumber),
-        replayUrl: candidate.scrimContextEvidence?.status === 'available' ? candidate.scrimContextEvidence.url : null
+        replayUrl: candidate.scrimContextEvidence?.status === 'available' ? replayLink(matchId, momentNumber) : null
     };
 }
 
@@ -139,7 +150,7 @@ export function buildProductMatch({ workspaceData, reviewState, scrimSessions, m
         },
         cover: selectCandidateCover(candidates, displayName),
         reviewUrl: reviewLink(id),
-        replayUrl: realSession && firstReplayMoment ? firstReplayMoment.replayUrl : null,
+        replayUrl: realSession && firstReplayMoment ? replayLink(id) : null,
         moments
     };
 }

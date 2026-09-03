@@ -253,7 +253,8 @@ function renderCommunication(candidate) {
   elements['scrim-context'].hidden = presentation.mode !== 'multitrack';
   if (presentation.mode === 'multitrack') {
     elements['audio-player'].pause();
-    elements['open-scrim'].href = candidate.scrimContextEvidence.url;
+    const identity = momentIdentity(candidate.candidateWindowId);
+    elements['open-scrim'].href = `/scrim?match=${identity.matchId}&moment=${identity.momentNumber}`;
     const precision = value => Number(value.toFixed(6));
     elements['scrim-context-sync'].hidden = true;
     elements['scrim-context-sync'].textContent = `Replay↔VOD ±${precision(candidate.scrimContextEvidence.replayVodMappingErrorSeconds)} s · Craig↔VOD ±${precision(candidate.scrimContextEvidence.craigVodMappingErrorSeconds)} s · composto ±${precision(candidate.scrimContextEvidence.composedOperationalErrorSeconds)} s.`;

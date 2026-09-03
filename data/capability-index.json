@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "215",
+  "generatedAtTask": "216",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1119,18 +1119,18 @@
           "reports/alphaveil-home-matches-match-overview-task214.md"
         ],
         "knownLimits": [
-          "Synchronized Replay UX V2 is not implemented.",
+          "Synchronized Replay UX V2 is a Task 216 candidate pending independent validation.",
           "Patterns and Training remain explicit Preview modules.",
           "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged."
         ],
-        "nextUsefulStep": "Use the accepted match experience through the Task 215 Review UX candidate without changing factual or playback semantics."
+        "nextUsefulStep": "Use the accepted match experience through accepted Task 215 Review and the Task 216 Replay UX candidate without changing factual or playback semantics."
       },
       {
         "capabilityId": "alphaveil_assisted_review_workspace_ux_v2",
         "plainName": "AlphaVeil Assisted Review Workspace UX V2",
         "introducedInTask": "215",
-        "stabilizedInTask": null,
-        "currentStatus": "candidate_pending_work_validation",
+        "stabilizedInTask": "215",
+        "currentStatus": "accepted",
         "currentBaseline": "task215_friendly_moment_evidence_human_reasoning_workspace",
         "whyItMatters": "Makes the existing 207-candidate local workspace usable as a player-facing review flow without weakening evidence uncertainty or changing accepted records.",
         "mainFiles": [
@@ -1148,9 +1148,36 @@
         "knownLimits": [
           "Prepared moments are structural attention regions, not confirmed gameplay events or errors.",
           "001/002 ASR remains an unvalidated draft and 003/004 communication remains multitrack context without inferred semantics.",
-          "Candidate selectivity and replay-to-video synchronization precision are unchanged; synchronized Replay UX V2 remains future work."
+          "Candidate selectivity and replay-to-video synchronization precision are unchanged; Task 216 changes only Replay presentation."
         ],
-        "nextUsefulStep": "Independent Work validation of Task 215 only; no follow-up task is created."
+        "nextUsefulStep": "Use the accepted Review workflow with the Task 216 Replay UX candidate; preserve all factual and human-review semantics."
+      },
+      {
+        "capabilityId": "alphaveil_synchronized_replay_ux_v2",
+        "plainName": "AlphaVeil Synchronized Replay UX V2 and Moment Timeline",
+        "introducedInTask": "216",
+        "stabilizedInTask": null,
+        "currentStatus": "candidate_pending_work_validation",
+        "currentBaseline": "task216_two_real_replays_complete_factual_moment_timeline",
+        "whyItMatters": "Makes accepted real synchronized playback navigable as two player-facing match experiences with complete prepared-moment context and a human-readable team mixer.",
+        "mainFiles": [
+          "tools/review-workspace/scrim-presentation.mjs",
+          "tools/review-workspace/public/scrim.html",
+          "tools/review-workspace/public/scrim-app.mjs",
+          "tools/review-workspace/public/styles/replay.css",
+          "docs/codex/ALPHAVEIL_SYNCHRONIZED_REPLAY_UX_V2_CONTRACT.md"
+        ],
+        "mainOutputs": [
+          "output/local-replay-processing/presentation-ux/task216-replay-ux-v2/summary.json",
+          "output/local-replay-processing/presentation-ux/task216-replay-ux-v2/gate.json",
+          "reports/alphaveil-synchronized-replay-ux-v2-task216.md"
+        ],
+        "knownLimits": [
+          "Prepared moments are structural attention regions, not confirmed gameplay events, deaths, errors or ranking.",
+          "Accepted synchronization uncertainty is unchanged and visible in closed technical details.",
+          "Track display names come from recording metadata; no biometric identity or speech meaning is inferred."
+        ],
+        "nextUsefulStep": "Independent Work validation of Task 216 only; no Task 217 is created."
       }
   ]
 }

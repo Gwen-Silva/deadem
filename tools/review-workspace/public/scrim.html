@@ -1,35 +1,73 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AlphaVeil · Replay sincronizado</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/scrim.css"></head>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaVeil · Replay sincronizado</title>
+  <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/scrim.css"><link rel="stylesheet" href="/styles/replay.css">
+</head>
 <body>
   <div class="app-frame">
-  <aside id="product-sidebar" class="product-sidebar" aria-label="AlphaVeil"></aside>
-  <button id="shell-overlay" class="shell-overlay" type="button" aria-label="Fechar navegação"></button>
-  <div class="app-viewport">
-  <header id="mobile-bar" class="mobile-bar"></header>
-  <header class="app-header workspace-header">
-    <div class="workspace-identity"><p class="eyebrow">REPLAY SINCRONIZADO · MULTITRACK LOCAL</p><h1>Replay sincronizado</h1></div>
-    <nav class="toolbar" aria-label="Controles do replay"><a href="/review">← Revisão</a><label>Sessão VOD<select id="session-select" aria-label="Sessão VOD"></select></label></nav>
-  </header>
-  <div class="method-banner"><strong id="sync-label">Aguardando modelo de sincronização</strong><span id="limitation"></span></div>
-  <main class="scrim-layout">
-    <section class="scrim-center panel">
-      <div class="section-heading"><div><p class="section-kicker">VOD · RELÓGIO MESTRE</p><h2 id="session-title">Nenhuma sessão disponível</h2></div><span id="transport-state" class="badge">pausado</span></div>
-      <div class="video-shell"><video id="scrim-video" preload="metadata" playsinline></video><span class="video-badge">LOCAL · SYNC EXPLÍCITO</span></div>
-      <section class="master-controls">
-        <label class="timeline-label">Timeline do VOD<input id="master-seek" type="range" min="0" max="1" value="0" step="0.01" disabled></label>
-        <div class="transport-row"><div class="button-group"><button id="back-10" disabled>−10s</button><button id="play-pause" class="primary" disabled>Reproduzir</button><button id="forward-10" disabled>+10s</button></div>
-          <output id="master-time">00:00 / 00:00</output><label>Velocidade<select id="playback-rate" disabled><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label></div>
-      </section>
-      <div id="player-error" class="gap" role="alert"></div>
-      <section class="sync-card"><p class="section-kicker">CONTROLE DE SINCRONIZAÇÃO</p><div class="metric-grid"><div><span>Tracks prontas</span><strong id="ready-count">0 / 9</strong></div><div><span>Maior drift observado</span><strong id="max-drift">—</strong></div><div><span>Correções / hard seek</span><strong id="corrections">0 / 0</strong></div></div><p id="mapping-detail" class="hint"></p><p class="hint">Drift mede o transporte no browser, não a precisão do alinhamento Craig ↔ VOD nem qualidade de gameplay.</p></section>
-      <section class="context-card"><p class="section-kicker">CONTEXTO DE ESCUTA</p><p id="context-mode">Contexto · mix completo</p><button id="restore-context" disabled>Restaurar contexto</button><p class="hint">O modo isolado restaura o mix anterior ao terminar o trecho. Nenhuma transcrição é necessária para reproduzir mídia.</p></section>
-    </section>
-    <aside class="mixer-panel panel"><div class="section-heading"><div><p class="section-kicker">CRAIG · SOURCE TRACKS</p><h2>Mixer de áudio</h2></div><span id="track-count" class="count-badge">0</span></div>
-      <div class="mixer-actions"><button id="mute-all">Mutar todos</button><button id="unmute-all">Desmutar todos</button><button id="clear-solo">Limpar solos</button><button id="reset-mix">Resetar mix</button></div>
-      <div class="vod-audio-row"><strong>VOD / GAME AUDIO</strong><p class="hint" id="vod-audio-description">Pode conter Discord misturado. Não é necessariamente só áudio do jogo.</p><label class="toggle"><input id="vod-mute" type="checkbox" checked> Mute VOD</label><label>Volume VOD<input id="vod-volume" type="range" min="0" max="1" step="0.01" value="1"></label></div>
-      <div id="track-mixer"></div><p class="hint">Atribuição por metadata Craig; não verifica identidade biométrica ou composição de time. ASR: HUMAN_VALIDATION_REQUIRED.</p>
-    </aside>
-  </main></div></div><script type="module" src="/scrim-app.mjs"></script>
+    <aside id="product-sidebar" class="product-sidebar" aria-label="AlphaVeil"></aside>
+    <button id="shell-overlay" class="shell-overlay" type="button" aria-label="Fechar navegação"></button>
+    <div class="app-viewport replay-viewport">
+      <header id="mobile-bar" class="mobile-bar"></header>
+      <header class="replay-header">
+        <div>
+          <nav class="replay-breadcrumb" aria-label="Navegação contextual"><a href="/matches">Partidas</a><span>›</span><a id="overview-link" href="/matches/003">Scrim 03</a><span>›</span><strong>Replay sincronizado</strong></nav>
+          <p class="eyebrow">REPLAY SINCRONIZADO</p><h1 id="match-title">Scrim 03</h1>
+          <p id="sync-label" class="replay-sync-status">Preparando sincronização</p>
+        </div>
+        <div class="replay-header-actions">
+          <a id="return-review" class="av-button av-button--secondary" href="/review?match=003">Voltar para revisão</a>
+          <label class="replay-session-picker">Partida<select id="session-select" aria-label="Partida"></select></label>
+        </div>
+      </header>
+
+      <main class="replay-layout">
+        <section class="replay-stage panel" aria-label="Player do replay">
+          <div class="replay-stage-heading">
+            <div><p class="section-kicker">VÍDEO DA PARTIDA</p><h2 id="session-title">Carregando replay</h2></div>
+            <span id="transport-state" class="badge">pausado</span>
+          </div>
+          <div class="video-shell replay-video-shell"><video id="scrim-video" preload="metadata" playsinline></video><span class="video-badge">MÍDIA LOCAL</span></div>
+          <section class="master-controls replay-transport" aria-label="Controles de reprodução">
+            <div class="replay-timeline-wrap">
+              <input id="master-seek" aria-label="Posição no replay" type="range" min="0" max="1" value="0" step="0.01" disabled>
+              <div id="timeline-markers" class="moment-marker-layer" aria-label="Momentos preparados"></div>
+            </div>
+            <div class="transport-row">
+              <div class="button-group"><button id="back-10" disabled>−10s</button><button id="play-pause" class="primary" disabled>Reproduzir</button><button id="forward-10" disabled>+10s</button></div>
+              <output id="master-time">00:00 / 00:00</output>
+              <label>Velocidade<select id="playback-rate" disabled><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="1.5">1,5×</option></select></label>
+            </div>
+          </section>
+          <div id="player-error" class="gap" role="alert"></div>
+
+          <section id="moment-card" class="current-moment-card" hidden aria-live="polite">
+            <div><p class="section-kicker">MOMENTO SELECIONADO</p><h3 id="current-moment-title">Momento</h3><p id="current-moment-time"></p></div>
+            <span id="current-moment-state" class="av-badge">Não revisado</span>
+            <div class="moment-actions"><button id="previous-moment" type="button">← Anterior</button><button id="next-moment" type="button">Próximo →</button><a id="open-review-moment" class="av-button av-button--primary" href="/review">Abrir na revisão</a></div>
+          </section>
+
+          <details class="technical-sync-details">
+            <summary>Detalhes técnicos da sincronização</summary>
+            <div class="metric-grid"><div><span>Faixas prontas</span><strong id="ready-count">0 / 9</strong></div><div><span>Maior drift do player</span><strong id="max-drift">—</strong></div><div><span>Correções / reposições</span><strong id="corrections">0 / 0</strong></div></div>
+            <p id="mapping-detail" class="hint"></p><p id="limitation" class="hint"></p>
+            <div id="track-technical" class="track-technical-list"></div>
+          </details>
+        </section>
+
+        <aside class="replay-audio panel" aria-label="Áudio da partida">
+          <div class="section-heading"><div><p class="section-kicker">ÁUDIO DA PARTIDA</p><h2>Vozes e mix</h2></div><span id="track-count" class="count-badge">0</span></div>
+          <p class="replay-audio-intro">Escolha quem ouvir, ajuste volumes ou isole uma voz temporariamente.</p>
+          <section class="context-card"><p id="context-mode">Contexto · mix completo</p><button id="restore-context" disabled>Restaurar mix completo</button></section>
+          <div class="mixer-actions"><button id="mute-all">Silenciar todos</button><button id="unmute-all">Ouvir todos</button><button id="clear-solo">Limpar destaques</button><button id="reset-mix">Restaurar mix</button></div>
+          <div class="vod-audio-row"><strong>Áudio do vídeo</strong><p class="hint" id="vod-audio-description"></p><label class="toggle"><input id="vod-mute" type="checkbox" checked> Silenciar áudio do vídeo</label><label>Volume do vídeo<input id="vod-volume" type="range" min="0" max="1" step="0.01" value="1"></label></div>
+          <div id="track-mixer" class="human-track-mixer"></div>
+          <p class="hint audio-limit">Os nomes vêm dos metadados da gravação. Não há reconhecimento biométrico nem atribuição automática.</p>
+        </aside>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="/scrim-app.mjs"></script>
 </body></html>

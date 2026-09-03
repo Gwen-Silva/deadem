@@ -2,41 +2,38 @@
 
 Last updated: 2026-09-03
 
-## Active AlphaVeil Assisted Review Workspace UX V2 — Task 215
+## Active AlphaVeil Synchronized Replay UX V2 — Task 216
 
-Task214 is externally ACCEPTED at
-`9d5e0140320e335e6d3946376eae4442f60e6e94` under
-`alphaveil_home_matches_match_overview_ready`. Its real-data Home, four-match
-library, safe Overview routes, covers, progress and friendly navigation form the
-accepted presentation base.
+Task215 is externally ACCEPTED at
+`f3620d4d05f3cce728fce6cc414921275f9f456b` under
+`alphaveil_assisted_review_workspace_ux_v2_ready`. Its four-target Momentos,
+Evidência and Revisão workflow is the accepted presentation base.
 
-Task215 is the active candidate in VALIDATING. Technical claim:
-`alphaveil_assisted_review_workspace_ux_v2_ready`. Review now presents three
-legible responsibilities—Momentos, Evidência and Revisão—with friendly
-match/moment history URLs, real state and progress, representative visual
-evidence, explicit communication modes and five stages of human reasoning.
+Task216 is the active candidate in VALIDATING. Technical claim:
+`alphaveil_synchronized_replay_ux_v2_ready`. Replay now presents only the two
+validated real sessions, Scrim03 and Scrim04, through friendly match/moment URLs,
+a video-first layout, complete chronological marker timelines and a
+human-readable nine-track mixer.
 
-The underlying contract remains unchanged: four targets, 67/35/48/57 prepared
-attention regions (207 total), 102 historical 001/002 candidates, eleven review
-fields, fifteen human-selected error classes, four states, segments, transcript
-corrections and local JSON/Markdown export. Prepared moments are never presented
-as confirmed errors, events or conclusions.
+The timeline reuses all accepted prepared contexts:48 markers for003 and57 for004,
+with zero missing, invalid or out-of-session markers. Deep-link entry keeps the
+accepted pre-roll; direct marker and Previous/Next navigation seek the exact
+existing anchor. These remain structural attention regions, never confirmed
+events, deaths, errors, ranking or decision conclusions.
 
-Review003/004 continue to open only their real synchronized Replay sessions with
-pre-roll and nine-track mixer. Review001/002 continue to expose only legacy audio
-segments with an explicit unvalidated-ASR warning and separate human correction.
-The modes remain distinct.
+The accepted playback motor, video-master transport, Craig/VOD mapping, drift
+policy, media registry and mixer semantics are unchanged. Technical refs and
+metrics are closed by default. Friendly links coexist with the legacy technical
+URL input for compatibility.
 
-Focused and regression tests passed60/60. An isolated Chrome canary passed eight
-flows at1920×1080,1440×900,1024×768 and390×844: save/reopen/export, human segment,
-Back/Forward, real Replay/mixer return, legacy transcript correction, responsive
-drawers and reduced motion. Four screenshots and all human canary state remain
-local-only.
+Focused and regression tests passed64/64. An isolated Chrome canary passed nine
+flows at1920×1080,1440×900,1024×768 and390×844 with zero browser errors. Four
+screenshots and all canary state remain local-only.
 
-No replay, protected005–008, ASR, factual regeneration, candidate/synchronization
-change or media versioning occurred. Candidate selectivity, synchronization
-precision and ASR semantic limitations remain explicit. Replay UX V2, Patterns
-and Training are outside scope. Work alone accepts; no Task216 exists.
+No replay, protected005–008, ASR, factual/candidate/sync regeneration or media
+versioning occurred. Candidate selectivity, synchronization precision and ASR
+semantic limitations remain explicit. Patterns, Training and showcase polish
+are outside scope. Work alone accepts; no Task217 exists.
 
 ## Authoritative Current State
 
