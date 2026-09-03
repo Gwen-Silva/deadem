@@ -1,6 +1,9 @@
 import { ScrimPlaybackController } from '/scrim-controller.mjs';
 import { DEFAULT_SYNC_POLICY, vodToCraig } from '/scrim-model.mjs';
 import { parseScrimNavigation, resolveScrimNavigation } from '/scrim-navigation.mjs';
+import { initProductShell } from '/shell.mjs';
+
+initProductShell();
 
 const byId = id => document.getElementById(id);
 const video = byId('scrim-video');

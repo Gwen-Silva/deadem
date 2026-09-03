@@ -1758,3 +1758,21 @@ The technical gate is `two_match_dense_visual_evidence_ready`. Frames remain
 evidence for review, never gameplay events or conclusions. Replay/protected
 access, interpretation, final facts, attribution and versioned images are all
 zero. Task 203 is `VALIDATING` pending Work; no Task 204 exists.
+
+## Task 213 - AlphaVeil Brand, Design System and App Shell
+
+Task 212 is externally accepted at
+`e180ac490b8d6d4e33d050fa0264ef4b768b5d56`. Task 213 adds the public AlphaVeil
+identity and one responsive product shell without changing the accepted
+four-target Review workspace or synchronized Replay behavior.
+
+Home and six-route navigation are active. Matches, Patterns and Training are
+explicit Preview surfaces with no fabricated data. Review remains at `/review`;
+Replay remains at `/scrim`, including deep links, pre-roll, nine-track mixer and
+declared synchronization uncertainty.
+
+Gate: `alphaveil_brand_design_system_app_shell_ready`. Browser evidence covers
+1920x1080, 1440x900 and 390x844. The accepted 102 historical candidates and
+48/57 candidates for 003/004 remain unchanged. Replay/protected access, ASR,
+media versioning and semantic mutation are zero. Task 213 is `VALIDATING`; no
+Task 214 exists.

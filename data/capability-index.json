@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "212",
+  "generatedAtTask": "213",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1078,13 +1078,26 @@
     },
     {
       "capabilityId": "new_review_match_assisted_workspace", "plainName": "New review targets in the assisted workspace",
-      "introducedInTask": "212", "stabilizedInTask": null,
-      "currentStatus": "candidate_pending_work_validation", "currentBaseline": "task212_additive_003_004_visual_scrim_context",
+      "introducedInTask": "212", "stabilizedInTask": "212",
+      "currentStatus": "accepted", "currentBaseline": "task212_additive_003_004_visual_scrim_context",
       "whyItMatters": "Completes the vertical path from accepted factual telemetry to local human review and real multitrack context while preserving the legacy 102 candidates.",
       "mainFiles": ["tools/review-integration/candidates.mjs", "tools/review-integration/dense.mjs", "tools/review-workspace/task212-provider.mjs", "tools/review-workspace/scrim-navigation.mjs"],
       "mainOutputs": ["output/local-replay-processing/assisted-review/task212-matches-003-004/candidate-windows.json", "output/local-replay-processing/assisted-review/task212-matches-003-004/dense-evidence-summary.json", "output/local-replay-processing/assisted-review/task212-matches-003-004/workspace-index.json", "output/local-replay-processing/assisted-review/task212-matches-003-004/gate.json"],
       "knownLimits": ["Candidate selectivity remains low and no candidate is a confirmed event.", "003/004 use no ASR: multitrack context does not establish call semantics.", "All images, human state and exports remain local-only."],
-      "nextUsefulStep": "Independent Work validation of Task212; no Task213 or automatic next phase."
+      "nextUsefulStep": "Use the accepted four-target workspace through the AlphaVeil shell while preserving candidate and evidence semantics."
+    },
+    {
+      "capabilityId": "alphaveil_product_shell",
+      "plainName": "AlphaVeil public brand and responsive application shell",
+      "introducedInTask": "213",
+      "stabilizedInTask": null,
+      "currentStatus": "candidate_pending_work_validation",
+      "currentBaseline": "task213_brand_tokens_navigation_and_safe_previews",
+      "whyItMatters": "Presents accepted Review and Replay functionality as one coherent product while keeping preview surfaces honest and internal evidence semantics unchanged.",
+      "mainFiles": ["tools/review-workspace/public/shell.mjs", "tools/review-workspace/public/product.html", "tools/review-workspace/public/product-app.mjs", "tools/review-workspace/public/styles/tokens.css", "docs/codex/ALPHAVEIL_DESIGN_SYSTEM_APP_SHELL_CONTRACT.md"],
+      "mainOutputs": ["output/local-replay-processing/presentation-ux/task213-alphaveil-shell/summary.json", "output/local-replay-processing/presentation-ux/task213-alphaveil-shell/gate.json", "reports/alphaveil-brand-design-system-app-shell-task213.md"],
+      "knownLimits": ["Matches, Patterns and Training are visibly labeled Preview surfaces.", "No gameplay facts, candidate ranking, synchronization, mixer, ASR or review persistence behavior changes.", "Screenshots and interactive canary state stay local-only."],
+      "nextUsefulStep": "After independent Work validation, the declared product objective is Home plus Matches plus Match Overview; it is not started here."
     }
   ]
 }

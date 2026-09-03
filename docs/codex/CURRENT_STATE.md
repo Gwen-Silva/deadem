@@ -1,39 +1,34 @@
 # Current Codex State
 
-Policy version: 1. Branch: main. Last accepted Task211:
-`03de4f108d125237428faab417b8e68530d2824c`, ACCEPTED supplied externally under
-`two_new_review_targets_replay_vod_craig_timeline_ready`.
+Policy version: 1. Branch: main. Last accepted Task 212:
+`e180ac490b8d6d4e33d050fa0264ef4b768b5d56`, acceptance supplied externally
+under `review_matches_003_004_assisted_workspace_ready`.
 
-Active Task212: Bring Review Matches 003 and 004 Into Assisted Review Workspace.
-Status: VALIDATING. Technical claim:
-`review_matches_003_004_assisted_workspace_ready`.
+Active Task 213: Establish AlphaVeil Brand, Design System and App Shell. Status:
+`VALIDATING`. Technical gate:
+`alphaveil_brand_design_system_app_shell_ready`.
 
-003/004 have 48/57 candidates using unchanged Task202 heuristics. Every candidate
-is inside Task211 coverage; 5/11 unmapped seeds are ignored for review generation.
-Priorities high/medium/low are 34/6/8 and 38/7/12. Candidate coverage remains
-95.7975%/88.4622%: inherited review_candidate_selectivity_low is not resolved.
+The public application is AlphaVeil — Competitive Review for Deadlock. Routes
+are `/`, `/matches`, `/review`, `/scrim`, `/patterns` and `/training`. Matches,
+Patterns and Training are explicit previews. Desktop has a persistent sidebar;
+compact widths use a drawer. Focus, active navigation and reduced motion passed
+in a real browser.
 
-Local visual evidence: 2577/3046 deduplicated physical frames, 145/164 storyboards,
-zero failures and complete first/representative/last for every new candidate.
-Fixed-slot VOD SHA/size was checked against accepted Task211 before extraction.
-No replay was reopened. No protected access, ASR, new mapping or interpretation.
+Review still contains four targets and 207 candidates. The 102 historical
+candidates retain accepted fingerprints; 003/004 retain 48/57 candidates,
+2577/3046 frames and 145/164 storyboards. Save/export/reopen passed in isolated
+state. The real 003 Replay deep link, pre-roll contract, nine-track mixer, solo
+and reset passed without playback-model changes.
 
-The additive Task212 provider brings the workspace to four targets and 207
-candidates. The original 102 retain their immutable fingerprints, mixed-VOD calls
-and existing review/export behavior. New targets instead expose scrimContextEvidence
-with an explicit safe URL into accepted Task210 real sessions and 10s pre-roll.
-All nine tracks remain registered; ended tracks are inactive, never fabricated.
+Validation: shell 4/4, Task 212 integration 11/11, accepted regression 74/74,
+combined mandatory matrix 46/46 and nine browser checks with zero browser
+errors. Screenshots cover 1920x1080, 1440x900 and 390x844 under
+`.local/codex/213/`.
 
-Browser technical canaries passed early/mid/late in 003/004, correct Scrim session
-and seek, mixer, local save/segment/export/reopen, and legacy0015. Canary state is
-isolated from existing human review; it is not human semantic validation.
-Replay/VOD errors remain 2.140625/1.187500s, composed Craig errors
-2.341750/1.441000s, separately from browser drift.
+No replay, protected fixture, ASR, factual pipeline or candidate semantics were
+executed or modified. No media is versioned. Existing synchronization,
+candidate-selectivity and ASR semantic limitations remain explicit.
 
-Task210 is accepted and human-validated, operationally completed. Task208 remains
-ACCEPTED_WITH_BLOCKER:
-craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence.
-No ASR is used for 003/004. All media, screenshots, state and exports stay local.
-
-Next objective: independent ChatGPT Work validation of Task212 only.
-No Task213. Machine state: data/project-coordination-state.json.
+Next action: independent ChatGPT Work validation of Task 213 only. Home +
+Matches + Match Overview is merely the declared next product objective; no Task
+214 was created or started. Machine state: `data/project-coordination-state.json`.

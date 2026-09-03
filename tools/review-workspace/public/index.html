@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deadem · Revisão assistida</title>
+  <title>AlphaVeil · Revisão</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="app-header">
-    <div class="brand">
-      <span class="brand-mark">D</span>
-      <div>
-        <p class="eyebrow">DEADEM · WORKSPACE LOCAL</p>
-        <h1>Revisão assistida</h1>
-      </div>
+  <div class="app-frame">
+  <aside id="product-sidebar" class="product-sidebar" aria-label="AlphaVeil"></aside>
+  <button id="shell-overlay" class="shell-overlay" type="button" aria-label="Fechar navegação"></button>
+  <div class="app-viewport">
+  <header id="mobile-bar" class="mobile-bar"></header>
+  <header class="app-header workspace-header">
+    <div class="workspace-identity">
+      <p class="eyebrow">REVISÃO · EVIDÊNCIA LOCAL</p>
+      <h1>Revisão assistida</h1>
     </div>
     <nav class="toolbar" aria-label="Ações principais">
-      <a href="/scrim" class="scrim-link">Player da scrim ↗</a>
+      <a href="/scrim" class="scrim-link">Replay sincronizado ↗</a>
       <label>Partida <select id="target"></select></label>
       <div class="button-group">
         <button id="previous" title="Candidato anterior">← Anterior</button>
@@ -32,7 +34,7 @@
     Os candidatos apenas direcionam atenção humana; prioridade é uma heurística de agenda, nunca probabilidade ou importância.
   </div>
 
-  <main>
+  <main class="review-main">
     <aside class="queue-panel panel">
       <div class="section-heading">
         <div><p class="section-kicker">NAVEGAÇÃO</p><h2>Fila de candidatos</h2></div>
@@ -127,6 +129,8 @@
       <div id="status" role="status" aria-live="polite"></div>
     </aside>
   </main>
+  </div>
+  </div>
   <script type="module" src="/app.js"></script>
 </body>
 </html>

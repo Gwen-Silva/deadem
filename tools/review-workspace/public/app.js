@@ -1,4 +1,7 @@
 import { REVIEW_FIELD_DEFINITIONS, applyFormToRecord, copyExportPath, recordToForm } from '/ux-model.mjs';
+import { initProductShell } from '/shell.mjs';
+
+initProductShell();
 
 const ids = [
   'target', 'order', 'filter', 'search', 'queue', 'queue-count', 'candidate-heading', 'visual-gap', 'visual-status',

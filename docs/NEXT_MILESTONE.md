@@ -2173,3 +2173,16 @@ selectivity remains low.
 
 ChatGPT Work must independently validate Task 203. Review Bundle Exporter may
 only be authorized afterward. No Task 204 is created or started here.
+
+## Task 213
+
+Module: `Presentation UX / Product UI`.
+
+Task 212 is Work-accepted at
+`e180ac490b8d6d4e33d050fa0264ef4b768b5d56`. Candidate Task 213 establishes
+AlphaVeil branding, shared visual tokens and components, responsive navigation,
+a minimal Home and honest Preview surfaces around unchanged Review and Replay.
+
+Gate: `alphaveil_brand_design_system_app_shell_ready`. Task 213 is
+`VALIDATING`. Only after Work validation may the declared next objective, Home
++ Matches + Match Overview, be separately authorized. No Task 214 exists.

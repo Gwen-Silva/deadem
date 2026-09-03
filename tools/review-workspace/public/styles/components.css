@@ -1,0 +1,63 @@
+.av-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid var(--av-border);
+  border-radius: var(--av-radius-sm);
+  background: var(--av-surface-raised);
+  color: var(--av-text);
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform var(--av-motion-fast) var(--av-ease), border-color var(--av-motion-normal) var(--av-ease), background var(--av-motion-normal) var(--av-ease);
+}
+.av-button:hover { border-color: var(--av-accent); background: var(--av-surface-soft); }
+.av-button:active { transform: translateY(1px); }
+.av-button--primary { border-color: #9873eb; background: linear-gradient(135deg, #8d67e8, #6945ba); color: white; box-shadow: 0 10px 28px #6d43bb38; }
+.av-button--primary:hover { background: linear-gradient(135deg, #9b79ee, #7450c6); }
+.av-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 8px;
+  border: 1px solid #5b4a7c;
+  border-radius: 999px;
+  background: #8d67e817;
+  color: var(--av-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.av-card {
+  border: 1px solid var(--av-border);
+  border-radius: var(--av-radius-lg);
+  background: linear-gradient(145deg, #171421de, #100f17e8);
+  box-shadow: var(--av-shadow-soft);
+}
+.av-divider { height: 1px; border: 0; background: var(--av-border); }
+.av-progress { overflow: hidden; height: 7px; border-radius: 99px; background: var(--av-surface-soft); }
+.av-progress > span { display: block; width: 42%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--av-primary), var(--av-accent)); }
+.av-thumbnail { aspect-ratio: 16 / 9; border: 1px solid var(--av-border); border-radius: var(--av-radius-md); background: linear-gradient(145deg, #211a31, #0e0d15); }
+[data-tooltip] { position: relative; }
+[data-tooltip]:hover::after, [data-tooltip]:focus-visible::after {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 50%;
+  width: max-content;
+  max-width: 220px;
+  padding: 7px 9px;
+  border: 1px solid var(--av-border);
+  border-radius: 7px;
+  content: attr(data-tooltip);
+  transform: translateX(-50%);
+  background: #16131f;
+  color: var(--av-text);
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: var(--av-shadow-soft);
+}

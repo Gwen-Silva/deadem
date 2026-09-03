@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "213",
+  "brand": { "publicName": "AlphaVeil", "subtitle": "Competitive Review for Deadlock", "slogan": "Entenda suas decisões. Não apenas o resultado." },
+  "routes": ["/", "/matches", "/review", "/scrim", "/patterns", "/training"],
+  "previewRoutes": ["/matches", "/patterns", "/training"],
+  "responsive": { "desktopSidebar": true, "mobileDrawer": true, "validatedViewports": ["1920x1080", "1440x900", "390x844"] },
+  "motionMilliseconds": { "fast": 120, "normal": 180, "slow": 260 },
+  "accessibility": { "ariaCurrent": true, "mobileAriaExpanded": true, "escapeDismissal": true, "focusVisible": true, "reducedMotion": true },
+  "workspaceRegression": {
+    "targetCount": 4, "candidateCount": 207, "historicalCandidateCount": 102,
+    "reviewMatch003CandidateCount": 48, "reviewMatch004CandidateCount": 57,
+    "reviewMatch003LocalFrames": 2577, "reviewMatch004LocalFrames": 3046,
+    "reviewMatch003LocalStoryboards": 145, "reviewMatch004LocalStoryboards": 164,
+    "scrimTrackCount": 9, "saveExportReopen": true, "scrimDeepLinkAndMixer": true
+  },
+  "validation": {
+    "shellTests": { "passed": 4, "failed": 0 },
+    "task212IntegrationTests": { "passed": 11, "failed": 0 },
+    "acceptedRegressionTests": { "passed": 74, "failed": 0 },
+    "browserChecks": 9, "browserErrors": 0, "localScreenshotCount": 5
+  },
+  "security": {
+    "replayAccessCount": 0, "protectedAccessCount": 0, "asrExecutionCount": 0,
+    "mediaVersionedCount": 0, "candidateSemanticMutationCount": 0,
+    "automaticGameplayInterpretationCount": 0
+  },
+  "technicalGateStatus": "alphaveil_brand_design_system_app_shell_ready",
+  "workAcceptance": "pending_independent_validation"
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "212",
-  "baseCommit": "03de4f108d125237428faab417b8e68530d2824c",
-  "taskRange": "001-212",
+  "generatedAtTask": "213",
+  "baseCommit": "e180ac490b8d6d4e33d050fa0264ef4b768b5d56",
+  "taskRange": "001-213",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6440,7 +6440,7 @@
       "evidencePaths": ["tasks/specs/211.json", "tasks/completed/211-review-matches-factual-timeline.md", "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json"]
     },
     {
-      "taskId": "212", "status": "completed", "commitSha": null,
+      "taskId": "212", "status": "completed", "commitSha": "e180ac490b8d6d4e33d050fa0264ef4b768b5d56",
       "title": "Bring Review Matches 003 and 004 Into Assisted Review Workspace",
       "phase": "new_review_match_assisted_workspace",
       "primaryContribution": "Adds 105 bounded candidates, local dense evidence, an additive workspace provider and safe real multitrack context navigation without replay or ASR execution.",
@@ -6448,11 +6448,28 @@
       "stabilizedCapabilities": ["local_assisted_review_workspace"], "supersededCapabilities": [],
       "importantOutputs": ["tools/review-integration/candidates.mjs", "tools/review-workspace/task212-provider.mjs", "output/local-replay-processing/assisted-review/task212-matches-003-004/workspace-index.json", "reports/review-matches-003-004-assisted-workspace-task212.md"],
       "gate": "review_matches_003_004_assisted_workspace_ready",
-      "currentRelevance": "candidate_pending_work_validation",
+      "currentRelevance": "accepted_workspace_baseline",
       "dependsOn": ["202", "203", "207", "210", "211"], "supersededBy": null,
       "reworkRiskNotes": ["Low candidate selectivity is inherited without retuning.", "Scrim context is neither transcript nor call fact; ended source tracks remain inactive.", "Local review canaries are synthetic technical entries, not human labels."],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_by_Work",
       "evidencePaths": ["tasks/specs/212.json", "tasks/completed/212-review-matches-assisted-workspace.md", "output/local-replay-processing/assisted-review/task212-matches-003-004/gate.json"]
+    },
+    {
+      "taskId": "213", "status": "completed", "commitSha": null,
+      "title": "Establish AlphaVeil Brand, Design System and App Shell",
+      "phase": "presentation_ux_product_shell",
+      "primaryContribution": "Introduces the public AlphaVeil identity, shared visual tokens and components, responsive product navigation and safe Home/Preview routes around the accepted Review and synchronized Replay workspaces.",
+      "introducedCapabilities": ["alphaveil_product_shell"],
+      "stabilizedCapabilities": ["assisted_review_workspace_ux", "synchronized_craig_review_playback"],
+      "supersededCapabilities": [],
+      "importantOutputs": ["tools/review-workspace/public/shell.mjs", "tools/review-workspace/public/product.html", "tools/review-workspace/public/styles/tokens.css", "output/local-replay-processing/presentation-ux/task213-alphaveil-shell/summary.json", "reports/alphaveil-brand-design-system-app-shell-task213.md"],
+      "gate": "alphaveil_brand_design_system_app_shell_ready",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["207", "210", "212"],
+      "supersededBy": null,
+      "reworkRiskNotes": ["Matches, Patterns and Training are explicit previews rather than completed product capabilities.", "Review candidate semantics, synchronization uncertainty and ASR limitations remain unchanged.", "Browser screenshots, media, state and exports remain local-only."],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": ["tasks/specs/213.json", "tasks/completed/213-alphaveil-brand-design-system-app-shell.md", "output/local-replay-processing/presentation-ux/task213-alphaveil-shell/gate.json"]
     }
   ]
 }
