@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "taskId": "211",
+  "source": "independent_bounded_decoded_frame_inspection",
+  "semantics": "visual_timer_and_rounded_counter_observations_only_not_factual_game_clock",
+  "targets": [
+    {
+      "reviewTargetId": "review_match_003",
+      "replacement": {"originalVodSeconds": 2100, "replacementVodSeconds": 2150, "role": "validation", "reason": "timer_obscured_by_overlay_original_frame_retained_no_model_had_been_fit"},
+      "rows": [
+        {"vodTimeSeconds":65,"displayedTimerSeconds":17,"roundedTeamCountersThousands":[3,3]},
+        {"vodTimeSeconds":85,"displayedTimerSeconds":36,"roundedTeamCountersThousands":[3,3]},
+        {"vodTimeSeconds":200,"displayedTimerSeconds":152,"roundedTeamCountersThousands":[10,8]},
+        {"vodTimeSeconds":350,"displayedTimerSeconds":301,"roundedTeamCountersThousands":[19,17]},
+        {"vodTimeSeconds":700,"displayedTimerSeconds":652,"roundedTeamCountersThousands":[51,48]},
+        {"vodTimeSeconds":950,"displayedTimerSeconds":901,"roundedTeamCountersThousands":[76,78]},
+        {"vodTimeSeconds":1250,"displayedTimerSeconds":1202,"roundedTeamCountersThousands":[113,115]},
+        {"vodTimeSeconds":1500,"displayedTimerSeconds":1452,"roundedTeamCountersThousands":[141,151]},
+        {"vodTimeSeconds":1800,"displayedTimerSeconds":1752,"roundedTeamCountersThousands":[196,178]},
+        {"vodTimeSeconds":2150,"displayedTimerSeconds":2102,"roundedTeamCountersThousands":[234,246]},
+        {"vodTimeSeconds":2760,"displayedTimerSeconds":2712,"roundedTeamCountersThousands":[342,338]},
+        {"vodTimeSeconds":2810,"displayedTimerSeconds":2762,"roundedTeamCountersThousands":[350,345]}
+      ]
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "rows": [
+        {"vodTimeSeconds":75,"displayedTimerSeconds":23,"roundedTeamCountersThousands":[3,3]},
+        {"vodTimeSeconds":95,"displayedTimerSeconds":43,"roundedTeamCountersThousands":[4,4]},
+        {"vodTimeSeconds":200,"displayedTimerSeconds":148,"roundedTeamCountersThousands":[8,9]},
+        {"vodTimeSeconds":270,"displayedTimerSeconds":218,"roundedTeamCountersThousands":[12,12]},
+        {"vodTimeSeconds":900,"displayedTimerSeconds":579,"roundedTeamCountersThousands":[34,39]},
+        {"vodTimeSeconds":1200,"displayedTimerSeconds":879,"roundedTeamCountersThousands":[66,75]},
+        {"vodTimeSeconds":1600,"displayedTimerSeconds":1279,"roundedTeamCountersThousands":[112,119]},
+        {"vodTimeSeconds":2000,"displayedTimerSeconds":1679,"roundedTeamCountersThousands":[178,162]},
+        {"vodTimeSeconds":2500,"displayedTimerSeconds":2139,"roundedTeamCountersThousands":[229,232]},
+        {"vodTimeSeconds":3000,"displayedTimerSeconds":2639,"roundedTeamCountersThousands":[309,315]},
+        {"vodTimeSeconds":3650,"displayedTimerSeconds":3289,"roundedTeamCountersThousands":[393,447]},
+        {"vodTimeSeconds":3710,"displayedTimerSeconds":3349,"roundedTeamCountersThousands":[397,460]}
+      ]
+    }
+  ]
+}

@@ -139,7 +139,7 @@ function controllerKey(controller) {
     return `controller:${normalized(controller?.handle) ?? 'unknown'}`;
 }
 
-function snapshot(player, reviewTargetId, elapsedSeconds, sourceTick) {
+export function snapshot(player, reviewTargetId, elapsedSeconds, sourceTick) {
     const demo = player.getDemo();
     const pawns = demo.getEntitiesByClassName(PAWN_CLASS);
     const byHandle = new Map(pawns.map(pawn => [String(normalized(pawn.handle)), pawn]));
@@ -172,7 +172,7 @@ function snapshot(player, reviewTargetId, elapsedSeconds, sourceTick) {
     return rows.sort((a, b) => a.participantKey.localeCompare(b.participantKey));
 }
 
-function objectiveRows(player, reviewTargetId, elapsedSeconds, sourceTick) {
+export function objectiveRows(player, reviewTargetId, elapsedSeconds, sourceTick) {
     return OBJECTIVE_CLASSES.flatMap(className => player.getDemo().getEntitiesByClassName(className).map(entity => ({
         reviewTargetId, elapsedSeconds, sourceTick, entityRef: `${className}:${normalized(entity.handle)}`,
         className, teamRef: field(entity, ['m_iTeamNum']).value,
@@ -182,7 +182,7 @@ function objectiveRows(player, reviewTargetId, elapsedSeconds, sourceTick) {
     }))).sort((a, b) => a.entityRef.localeCompare(b.entityRef));
 }
 
-function derive(records, previousByParticipant) {
+export function derive(records, previousByParticipant) {
     const life = [], netWorth = [], damage = [], healing = [], positions = [];
     for (const row of records) {
         const previous = previousByParticipant.get(row.participantKey);
@@ -207,8 +207,11 @@ function derive(records, previousByParticipant) {
     return { life, netWorth, damage, healing, positions };
 }
 
-async function processTarget(target) {
-    const reviewTargetId = assertReviewTargetId(target.reviewTargetId);
+export async function processFactualTarget(target, { targetValidator = assertReviewTargetId, onSample = null } = {}) {
+    // The default Task 199 allowlist and outputs remain unchanged. New wrappers
+    // supply their own closed target validator; protected aliases always fail.
+    if (/(?:replay|partida|match)[_-]?00?[5-8]/iu.test(String(target.reviewTargetId))) throw new Error('protected replay alias rejected before filesystem access');
+    const reviewTargetId = targetValidator(target.reviewTargetId);
     const replay = target.inputs?.replay;
     const expectedSuffix = `/.local/deadem/review-targets/${reviewTargetId}/replay/${replay?.filenameOriginal}`;
     const normalizedPath = slash(replay?.localPath ?? '');
@@ -252,6 +255,7 @@ async function processTarget(target) {
                 life.push(...derived.life); netWorth.push(...derived.netWorth); damage.push(...derived.damage); healing.push(...derived.healing); positions.push(...derived.positions);
                 if (nextSecond % 5 === 0) objectives.push(...objectiveRows(player, reviewTargetId, nextSecond, currentTick));
                 timeline.push({ reviewTargetId, elapsedSeconds: nextSecond, sourceTick: currentTick, observedParticipants: rows.length, provenanceClass: 'factual/replay_elapsed_time' });
+                if (onSample) await onSample({ player, reviewTargetId, elapsedSeconds: nextSecond, sourceTick: currentTick, rows });
                 nextSecond++;
                 nextTick = Math.round(startTick + nextSecond * tickRate);
             }
@@ -296,7 +300,7 @@ export async function run() {
     for (const id of TARGET_IDS) {
         const target = intake.targets.find(item => item.reviewTargetId === id);
         if (!target) throw new Error(`missing accepted review target: ${id}`);
-        try { targets.push(await processTarget(target)); }
+        try { targets.push(await processFactualTarget(target)); }
         catch (error) { targets.push({ reviewTargetId: id, processingStatus: error.code === 'ENOENT' ? 'input_unavailable' : 'fatal_failure', error: { name: error.name, message: error.message }, availability: Object.fromEntries(FAMILIES.map(name => [name, availability('unavailable', 0, null, { firstTime: null, lastTime: null, gaps: [] }, [error.message])])), counts: Object.fromEntries(FAMILIES.map(name => [name, 0])), warnings: [error.message], unavailableFamilies: [...FAMILIES], localArtifacts: {} }); }
     }
     const gate = chooseGate(targets, 0);
@@ -311,6 +315,6 @@ export async function run() {
     return { gate, targets: summary.targetsUsable, counts: aggregateCounts };
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
     run().then(result => process.stdout.write(deterministicJson(result))).catch(error => { process.stderr.write(`${error.stack ?? error.message}\n`); process.exitCode = 1; });
 }

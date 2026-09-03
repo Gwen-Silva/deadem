@@ -1261,20 +1261,40 @@
     {
       "id": "real_craig_vod_task210_manifest",
       "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted",
       "notes": "Two real VOD mappings with frozen audio-anchor splits and no ASR/replay processing."
     },
     {
       "id": "real_craig_vod_task210_validation",
       "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted",
       "notes": "Held-out mapping errors and separate six-region real browser plus synthetic regression evidence."
     },
     {
       "id": "real_craig_vod_task210_gate",
       "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Technical claim two_real_craig_vod_sessions_synchronized_and_player_ready; acceptance remains with Work."
+      "status": "accepted",
+      "notes": "Externally accepted two_real_craig_vod_sessions_synchronized_and_player_ready; subsequent human playback validation completes the operational milestone. Immutable original artifact retained."
+    },
+    {
+      "id": "review_onboarding_task211_manifest", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/manifest.json",
+      "status": "candidate_pending_work_validation", "notes": "Four exclusive local input identities and validated replay headers; no absolute paths or private identity claims."
+    },
+    {
+      "id": "review_onboarding_task211_telemetry", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/telemetry-summary.json",
+      "status": "candidate_pending_work_validation", "notes": "Two monotonic forward-only replay timelines and safe family counts; heavy samples stay local."
+    },
+    {
+      "id": "review_onboarding_task211_validation", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/replay-vod-validation.json",
+      "status": "candidate_pending_work_validation", "notes": "Six fit and six held-out visual timing anchors per target, raw-origin calibration, model comparison and additional pause sanity."
+    },
+    {
+      "id": "review_onboarding_task211_unified", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/unified-timeline.json",
+      "status": "candidate_pending_work_validation", "notes": "Bounded replay/VOD/Craig composition with accepted Task210 artifact identity and separate uncertainties."
+    },
+    {
+      "id": "review_onboarding_task211_gate", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json",
+      "status": "candidate_pending_work_validation", "notes": "Technical claim two_new_review_targets_replay_vod_craig_timeline_ready; Work acceptance pending."
     }
   ]
 }

@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "taskId": "211",
+  "declaredBeforeFit": true,
+  "splitRule": "even_index_fit_odd_index_validation",
+  "selectionPolicy": "offset preferred; affine requires held-out MAE gain >=0.1s and >=20percent without worse max; no segmentation without independent discontinuity",
+  "evidencePolicy": "Each visual timer observation remains a visual timing cue, not game-clock ground truth. Derive its replay coordinate only from observed raw temporal state, corroborate pauses/counters; retain quantization uncertainty. Replay elapsed remains its own axis.",
+  "targets": [
+    {
+      "reviewTargetId": "review_match_003",
+      "vodTimes": [
+        65,
+        85,
+        200,
+        350,
+        700,
+        950,
+        1250,
+        1500,
+        1800,
+        2100,
+        2760,
+        2810
+      ],
+      "anchors": [
+        {
+          "anchorId": "review_match_003_anchor_00",
+          "vodTimeSeconds": 65,
+          "role": "fit",
+          "region": "start"
+        },
+        {
+          "anchorId": "review_match_003_anchor_01",
+          "vodTimeSeconds": 85,
+          "role": "validation",
+          "region": "start"
+        },
+        {
+          "anchorId": "review_match_003_anchor_02",
+          "vodTimeSeconds": 200,
+          "role": "fit",
+          "region": "early"
+        },
+        {
+          "anchorId": "review_match_003_anchor_03",
+          "vodTimeSeconds": 350,
+          "role": "validation",
+          "region": "early"
+        },
+        {
+          "anchorId": "review_match_003_anchor_04",
+          "vodTimeSeconds": 700,
+          "role": "fit",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_003_anchor_05",
+          "vodTimeSeconds": 950,
+          "role": "validation",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_003_anchor_06",
+          "vodTimeSeconds": 1250,
+          "role": "fit",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_003_anchor_07",
+          "vodTimeSeconds": 1500,
+          "role": "validation",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_003_anchor_08",
+          "vodTimeSeconds": 1800,
+          "role": "fit",
+          "region": "late"
+        },
+        {
+          "anchorId": "review_match_003_anchor_09",
+          "vodTimeSeconds": 2100,
+          "role": "validation",
+          "region": "late"
+        },
+        {
+          "anchorId": "review_match_003_anchor_10",
+          "vodTimeSeconds": 2760,
+          "role": "fit",
+          "region": "end"
+        },
+        {
+          "anchorId": "review_match_003_anchor_11",
+          "vodTimeSeconds": 2810,
+          "role": "validation",
+          "region": "end"
+        }
+      ]
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "vodTimes": [
+        75,
+        95,
+        200,
+        270,
+        900,
+        1200,
+        1600,
+        2000,
+        2500,
+        3000,
+        3650,
+        3710
+      ],
+      "anchors": [
+        {
+          "anchorId": "review_match_004_anchor_00",
+          "vodTimeSeconds": 75,
+          "role": "fit",
+          "region": "start"
+        },
+        {
+          "anchorId": "review_match_004_anchor_01",
+          "vodTimeSeconds": 95,
+          "role": "validation",
+          "region": "start"
+        },
+        {
+          "anchorId": "review_match_004_anchor_02",
+          "vodTimeSeconds": 200,
+          "role": "fit",
+          "region": "early"
+        },
+        {
+          "anchorId": "review_match_004_anchor_03",
+          "vodTimeSeconds": 270,
+          "role": "validation",
+          "region": "early"
+        },
+        {
+          "anchorId": "review_match_004_anchor_04",
+          "vodTimeSeconds": 900,
+          "role": "fit",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_004_anchor_05",
+          "vodTimeSeconds": 1200,
+          "role": "validation",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_004_anchor_06",
+          "vodTimeSeconds": 1600,
+          "role": "fit",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_004_anchor_07",
+          "vodTimeSeconds": 2000,
+          "role": "validation",
+          "region": "mid"
+        },
+        {
+          "anchorId": "review_match_004_anchor_08",
+          "vodTimeSeconds": 2500,
+          "role": "fit",
+          "region": "late"
+        },
+        {
+          "anchorId": "review_match_004_anchor_09",
+          "vodTimeSeconds": 3000,
+          "role": "validation",
+          "region": "late"
+        },
+        {
+          "anchorId": "review_match_004_anchor_10",
+          "vodTimeSeconds": 3650,
+          "role": "fit",
+          "region": "end"
+        },
+        {
+          "anchorId": "review_match_004_anchor_11",
+          "vodTimeSeconds": 3710,
+          "role": "validation",
+          "region": "end"
+        }
+      ]
+    }
+  ]
+}

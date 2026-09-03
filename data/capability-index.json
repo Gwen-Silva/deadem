@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "210",
+  "generatedAtTask": "211",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1047,24 +1047,34 @@
     {
       "capabilityId": "synchronized_craig_review_playback",
       "plainName": "Synchronized Craig multitrack review player",
-      "introducedInTask": "209", "stabilizedInTask": null,
-      "currentStatus": "accepted_synthetic_transport_with_candidate_real_sync",
-      "currentBaseline": "task209_nine_track_synthetic_master_clock_canary",
+      "introducedInTask": "209", "stabilizedInTask": "210",
+      "currentStatus": "accepted_operationally_completed_with_human_validated_real_playback",
+      "currentBaseline": "task210_real_playback_with_subsequent_human_validation",
       "whyItMatters": "Enables human contextual listening with independent track mixing and coordinated seeking, rate changes and drift correction without transcripts.",
       "mainFiles": ["tools/review-workspace/scrim-model.mjs", "tools/review-workspace/scrim-media.mjs", "tools/review-workspace/public/scrim-controller.mjs", "tools/review-workspace/public/scrim.html", "docs/codex/SYNCHRONIZED_CRAIG_REVIEW_PLAYBACK_CONTRACT.md"],
       "mainOutputs": ["output/local-replay-processing/craig-multitrack/task209-playback/summary.json", "output/local-replay-processing/craig-multitrack/task209-playback/playback-canary.json", "output/local-replay-processing/craig-multitrack/task209-playback/gate.json"],
-      "knownLimits": ["Task 210 adds two measured real mappings pending independent Work validation.", "Transport drift is not empirical sync accuracy or gameplay quality.", "Human semantic validation and independent Work acceptance remain separate."],
-      "nextUsefulStep": "Await independent Work validation of Task 210."
+      "knownLimits": ["Task 210 is accepted and subsequent human validation found real playback comfortable and suitable for review.", "Transport drift is not empirical sync accuracy or gameplay quality.", "ASR semantic validation remains separate."],
+      "nextUsefulStep": "Use accepted playback; no further tuning without new real-problem evidence."
     },
     {
       "capabilityId": "real_craig_vod_synchronization", "plainName": "Measured real Craig to VOD synchronization",
-      "introducedInTask": "210", "stabilizedInTask": null,
-      "currentStatus": "candidate_pending_work_validation", "currentBaseline": "task210_two_real_vod_audio_correlation_canary",
+      "introducedInTask": "210", "stabilizedInTask": "210",
+      "currentStatus": "accepted", "currentBaseline": "task210_two_real_vod_audio_correlation_canary",
       "whyItMatters": "Makes local real-video review possible with quantified mapping uncertainty independent of ASR and player drift.",
       "mainFiles": ["tools/review-workspace/measure-real-craig-sync.py", "tools/review-workspace/real-sync-model.mjs", "tools/review-workspace/prepare-real-sync.mjs", "docs/codex/REAL_CRAIG_VOD_SYNC_CONTRACT.md"],
       "mainOutputs": ["output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json", "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json", "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json"],
-      "knownLimits": ["Operational mapping error estimates are 0.201 and 0.254 seconds, not bounds on unseen speech.", "Not all source tracks appear in each VOD; ended tracks are inactive rather than fabricated.", "No independent human listening verdict or automatic ASR semantic evidence."],
-      "nextUsefulStep": "Independent Work validation only; no Task 211 authorized."
+      "knownLimits": ["Operational mapping error estimates are 0.201 and 0.254 seconds, not bounds on unseen speech.", "Not all source tracks appear in each VOD; ended tracks are inactive rather than fabricated.", "Human playback validation is supplied externally; automatic ASR semantic evidence remains blocked."],
+      "nextUsefulStep": "Reuse immutable compact bridges for Task211 composition; no Craig refit."
+    },
+    {
+      "capabilityId": "new_review_match_unified_timeline", "plainName": "Bounded replay VOD Craig timeline for new review targets",
+      "introducedInTask": "211", "stabilizedInTask": null,
+      "currentStatus": "candidate_pending_work_validation", "currentBaseline": "task211_matches_003_004_factual_timeline",
+      "whyItMatters": "Provides safe factual samples and an explicit no-extrapolation mapping contract before later candidate or evidence integration.",
+      "mainFiles": ["tools/review-onboarding/intake-telemetry.mjs", "tools/review-onboarding/timeline.mjs", "docs/codex/REVIEW_ONBOARDING_TIMELINE_CONTRACT.md"],
+      "mainOutputs": ["output/local-replay-processing/review-onboarding/task211-matches-003-004/manifest.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/telemetry-summary.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/unified-timeline.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json"],
+      "knownLimits": ["No positions through accepted fields, no confirmed participant identities or gameplay facts.", "Composed operational errors are 2.34175 and 1.441 seconds; uncovered tails and beginnings reject mapping.", "No workspace import, candidate generation, dense visual evidence or ASR."],
+      "nextUsefulStep": "Independent Work validation of Task211 only; no Task212 created."
     }
   ]
 }

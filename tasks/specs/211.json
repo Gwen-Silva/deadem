@@ -1,0 +1,209 @@
+{
+  "taskId": "211",
+  "title": "Onboard Review Matches 003 and 004 Into the Factual Replay Timeline",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Intake and sample only authorized new replays, independently validate replay/VOD alignment and compose accepted Task 210 Craig bridges.",
+  "module": "Factual Replay Timeline",
+  "moduleGoal": "Reusable safe cross-media time context for human review.",
+  "observableOutcome": "Two bounded replay/VOD/Craig mappings or explicit unavailable timeline gates.",
+  "metricContribution": "Monotonic 1Hz coverage, observed family counts, independent fit/validation errors and composed uncertainty.",
+  "remainingModuleGap": "Candidates, visual evidence and integration are deferred; ASR stays draft.",
+  "hardeningDeferred": "No playback, Craig synchronization, ASR, ranking or semantic tuning.",
+  "baseCommitExpected": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+  "executionReportPath": "reports/review-matches-003-004-factual-timeline-task211.md",
+  "executionContract": {
+    "reasoningComplexity": "High: safe replay sampling, independent temporal evidence, model selection and bounded clock-domain composition.",
+    "objective": "Onboard exactly two new review targets without gameplay interpretation.",
+    "technicalContext": [
+      "Task 210 externally ACCEPTED with comfortable human playback; operational milestone complete.",
+      "Task 208 accepted with automatic ASR semantic evidence blocker."
+    ],
+    "confirmedState": [
+      "Clean main and origin/main equal accepted Task 210 base.",
+      "Only .dem/.mp4 in fixed target 003/004 slots newly authorized; association is the explicit folder."
+    ],
+    "expectedBaseCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+    "branchEnvironment": [
+      "Windows PowerShell; npm.cmd.",
+      "Exactly one commit on main and authorized normal push."
+    ],
+    "allowedScope": [
+      "New intake/sync wrappers, additive Task 199 helper extraction preserving legacy defaults, focused tests, compact outputs and coordination.",
+      "Only fixed local telemetry and sync directories for 003/004."
+    ],
+    "protectedAreas": [
+      "No replay 005-008 access, samples or package modifications.",
+      "No Task199/200/210 output mutation, ASR or private media/transcripts versioned."
+    ],
+    "expectedChanges": [
+      "Minimum intake, forward-only 1Hz telemetry, independent replay/VOD anchors and model selection, unified timeline contract."
+    ],
+    "acceptanceCriteria": [
+      "2/2 valid replay/VOD, usable monotonic timelines, two useful families beyond time.",
+      "Six fit and six validation anchors per target separated before fit and distributed in time.",
+      "Preferred MAE/p90/max <=0.5/1/2 seconds; usable limited <=1/2/3; worse not review-ready.",
+      "Compose identity-validated Task210 bridges; reject uncovered times; no final facts or attribution."
+    ],
+    "mandatoryTests": [
+      "Allowlist before filesystem, unique file/header/hash, safe telemetry and Task199/200 regressions.",
+      "Independent anchors, offset/affine/evidence-gated segments, selection/coverage, Task210 bridge identity/composition/error.",
+      "Repository validators and no accepted output mutation."
+    ],
+    "requiredEvidence": [
+      "Eight compact outputs, local heavy telemetry and bounded visual sync evidence, report and post-commit attestation."
+    ],
+    "commitPolicy": [
+      "Explicit staging, exactly one commit: Onboard review matches 003 and 004 into factual timeline.",
+      "Normal push origin main, no force, final clean tree."
+    ],
+    "stopConditions": [
+      "Base divergence, protected access, unavailable safe timeline or unusable alignment are explicit blockers.",
+      "Stop at Task211 VALIDATING; no Task212 or self-acceptance."
+    ],
+    "returnReportFormat": [
+      "Resultado; O que passou a funcionar; Valor observável; Impacto no módulo; Limitação relevante; Próximo objetivo; Previsão operacional."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "package.json",
+    "data/project-coordination-state.json",
+    "tools/emit-minimum-factual-review-telemetry.mjs",
+    "tools/emit-two-match-replay-video-sync.mjs",
+    "tests/*factual-review-telemetry*.mjs",
+    "tests/*replay-video-sync*.mjs",
+    "output/local-replay-processing/craig-multitrack/task210-real-sync/match-003-sync-summary.json",
+    "output/local-replay-processing/craig-multitrack/task210-real-sync/match-004-sync-summary.json",
+    "output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json",
+    "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json",
+    "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json",
+    ".local/deadem/review-targets/review_match_003/replay/*",
+    ".local/deadem/review-targets/review_match_003/video/*",
+    ".local/deadem/review-targets/review_match_004/replay/*",
+    ".local/deadem/review-targets/review_match_004/video/*"
+  ],
+  "optionalReadPaths": [],
+  "writePaths": [
+    "tools/emit-minimum-factual-review-telemetry.mjs",
+    "tools/review-onboarding/**",
+    "tests/review-onboarding*.mjs",
+    "docs/codex/REVIEW_ONBOARDING_TIMELINE_CONTRACT.md",
+    "data/project-coordination-state.json",
+    "data/task-contribution-index.json",
+    "data/capability-index.json",
+    "data/current-artifact-registry.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md",
+    "docs/codex/CURRENT_STATE.md",
+    "tasks/specs/211.json",
+    "tasks/completed/211-review-matches-factual-timeline.md",
+    "reports/review-matches-003-004-factual-timeline-task211.md",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/**",
+    ".local/deadem/review-telemetry/review_match_003/**",
+    ".local/deadem/review-telemetry/review_match_004/**",
+    ".local/deadem/review-sync/review_match_003/task211/**",
+    ".local/deadem/review-sync/review_match_004/task211/**",
+    ".local/codex/211/**"
+  ],
+  "forbiddenPaths": [
+    "packages/deadem/**",
+    "packages/engine/**",
+    "packages/ui/**",
+    "samples/**",
+    "**/replay_005/**",
+    "**/replay_006/**",
+    "**/replay_007/**",
+    "**/replay_008/**",
+    "tasks/specs/212.json",
+    "tasks/*/212-*",
+    "output/local-replay-processing/minimum-review-telemetry/**",
+    "output/local-replay-processing/replay-video-sync/**",
+    "output/local-replay-processing/craig-multitrack/task210-real-sync/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "onboarding",
+      "type": "node-test",
+      "paths": [
+        "tests/review-onboarding.test.mjs"
+      ]
+    },
+    {
+      "id": "accepted-regression",
+      "type": "node-test",
+      "paths": [
+        "tests/emit-minimum-factual-review-telemetry.test.mjs",
+        "tests/minimum-factual-review-telemetry-schema.test.mjs",
+        "tests/emit-two-match-replay-video-sync.test.mjs",
+        "tests/two-match-replay-video-sync-schema.test.mjs"
+      ]
+    },
+    {
+      "id": "coordination-validator",
+      "type": "npm-script",
+      "script": "validate:coordination"
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs",
+      "allowFailure": true,
+      "allowedFailurePattern": "04-controller-pawn-lifecycle[.]json"
+    }
+  ],
+  "expectedOutputs": [
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/manifest.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/telemetry-summary.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/availability.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/replay-vod-mapping.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/replay-vod-validation.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/unified-timeline.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json",
+    "output/local-replay-processing/review-onboarding/task211-matches-003-004/provenance-audit.json",
+    "reports/review-matches-003-004-factual-timeline-task211.md",
+    "tasks/completed/211-review-matches-factual-timeline.md"
+  ],
+  "largeOutputsAllowed": [
+    "data/task-contribution-index.json",
+    "docs/PROJECT_STATE.md",
+    "docs/NEXT_MILESTONE.md"
+  ],
+  "replayProcessingAllowed": true,
+  "followUpTask": "none",
+  "regenerationPolicy": {
+    "canonicalFacts": "reuse",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate"
+  },
+  "stopConditions": [
+    "No Task212, private media versioning or semantic promotion."
+  ],
+  "successGate": "two_new_review_targets_replay_vod_craig_timeline_ready",
+  "gapsGate": "two_new_review_targets_timeline_partial_with_declared_gaps",
+  "blockedGate": "BLOCKED_BY_NEW_REVIEW_REPLAY_VOD_SYNC_UNUSABLE",
+  "gateSource": {
+    "type": "json-file",
+    "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

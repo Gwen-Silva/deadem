@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "taskId": "211",
+  "models": [
+    {
+      "reviewTargetId": "review_match_003",
+      "selectedModel": "offset_only",
+      "slope": 1,
+      "interceptSeconds": 17.359375,
+      "precisionStatus": "preferred_precision",
+      "selectionReason": "prefer_offset_no_material_held_out_affine_gain",
+      "fitAnchorCount": 6,
+      "validationAnchorCount": 6,
+      "estimatedOperationalReplayVodErrorSeconds": 2.140625,
+      "operationalErrorPolicy": "maximum_observed_residual_plus_largest_anchor_uncertainty_not_statistical_bound",
+      "coveredReplayRange": {
+        "start": 47.640625,
+        "end": 2792.640625
+      },
+      "noExtrapolation": true,
+      "equation": "vod_seconds = slope * replay_elapsed_seconds + intercept_seconds",
+      "provenanceClass": "derived_sync_model/replay_to_vod",
+      "uncoveredReplayRanges": [
+        {
+          "startInclusive": 0,
+          "endExclusive": 47.640625
+        },
+        {
+          "startExclusive": 2792.640625,
+          "endInclusive": 2836
+        }
+      ]
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "selectedModel": "offset_only",
+      "slope": 1,
+      "interceptSeconds": 21.328125,
+      "precisionStatus": "preferred_precision",
+      "selectionReason": "prefer_offset_no_material_held_out_affine_gain",
+      "fitAnchorCount": 6,
+      "validationAnchorCount": 6,
+      "estimatedOperationalReplayVodErrorSeconds": 1.1875,
+      "operationalErrorPolicy": "maximum_observed_residual_plus_largest_anchor_uncertainty_not_statistical_bound",
+      "coveredReplayRange": {
+        "start": 53.578125,
+        "end": 3688.78125
+      },
+      "noExtrapolation": true,
+      "equation": "vod_seconds = slope * replay_elapsed_seconds + intercept_seconds",
+      "provenanceClass": "derived_sync_model/replay_to_vod",
+      "uncoveredReplayRanges": [
+        {
+          "startInclusive": 0,
+          "endExclusive": 53.578125
+        },
+        {
+          "startExclusive": 3688.78125,
+          "endInclusive": 3735
+        }
+      ]
+    }
+  ],
+  "noSilentExtrapolation": true
+}

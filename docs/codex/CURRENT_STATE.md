@@ -2,43 +2,49 @@
 
 Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
 
-Last accepted task: Task 209 at
-`6a8fa7433f75f6cd94499e7e32e31f4e81da86d8`, ACCEPTED.
-Task 208 remains ACCEPTED_WITH_BLOCKER at
-`db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe`.
-Craig multitrack/source attribution is accepted, not automatic ASR semantics.
-Human-intelligible usable rates are small 23.08%, medium 53.85%, large-v3 38.46%;
-medium materially-wrong rate is 46.15%. The 75/25 gate was not reached.
-`medium` is the best measured draft; all ASR is HUMAN_VALIDATION_REQUIRED under
+Last accepted task: Task 210 at
+`aeb68e3ea6b9c5cc74b0f78171796728541b0b8b`, ACCEPTED, supplied externally.
+Gate: `two_real_craig_vod_sessions_synchronized_and_player_ready`.
+Subsequent human playback validation found both sessions comfortable, functional
+and suitable for review. Synchronized Craig Multitrack Playback is operationally
+completed. No new Craig/VOD fitting, playback, mixer, drift or ASR tuning.
+
+Task 208 remains ACCEPTED_WITH_BLOCKER:
 `craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
+Craig/source attribution is accepted; ASR is only a HUMAN_VALIDATION_REQUIRED draft.
 
-Active candidate: Task 210, `Validate Real Craig to VOD Synchronization`.
+Active candidate: Task 211,
+`Onboard Review Matches 003 and 004 Into the Factual Replay Timeline`.
 Status: `VALIDATING`. Technical claim:
-`two_real_craig_vod_sessions_synchronized_and_player_ready`.
+`two_new_review_targets_replay_vod_craig_timeline_ready`.
 
-Player da scrim uses the VOD as master, streaming nine existing normalized Craig
-WAVs through independent gain nodes. It supports coordinated play/pause/seek,
-rates, drift correction, mute/solo/multi-solo/volume, VOD audio and isolated-call
-mix restoration. The candidate-window API rejects targets without a registered
-session. No candidate semantics change.
+Four exclusive-folder local inputs have SHA-256 identities; both replays have
+valid PBDEMS2 headers. Forward-only 1Hz safe timelines cover elapsed 0–2836 and
+0–3735 seconds: 2837/3736 samples, zero gaps. Each contains 14 participant local
+refs, 3 team refs and 13 hero refs, not confirmed people. Life-state, net-worth,
+aggregate damage/healing deltas and raw objective-like states are observed.
+Positions are unavailable through the accepted field set. No map semantics.
 
-Two authorized real VODs have distinct measured Craig ranges. Target 003 uses
-slope 1 and intercept 38.654500s; target 004 uses slope 1 and intercept
--4226.330875s. Validation MAE is 148.318/117.750ms with 11/10 held-out anchors
-and 12/11 fit anchors. Affine did not demonstrate a material validation gain.
-Operational mapping error estimates are 0.201125/0.253500s.
+Replay/raw-clock origins were calibrated from observed replay transition
+intervals independently of VOD values. Six fit and six held-out visual timing
+anchors per target select offset-only: VOD = replay + 17.359375 / 21.328125s.
+Validation MAE is 0.500000/0.072917s, p90 1.000000/0.109375s. Small quantized
+timer residuals are NOT proof of sub-second accuracy. Operational replay/VOD
+errors are 2.140625/1.187500s, including visual and origin uncertainty.
 
-Real browser start/middle/end, 1x/1.5x, transport and mixing passed. Maximum
-transport drift was 83.580/64.934ms, not mapping error. The Task 209 synthetic
-canary still passes ten seeks, three rates, responsive layout and injected
-drift recovery. A session-loading seek race was corrected and covered.
-All nine tracks remain selectable; ended sources are explicitly inactive.
-Screenshots, real identities, session configuration and all media stay local.
-No new ASR, .dem, replay or protected replay access occurred.
-Numeric countdowns, leaderboard durations and a human listening verdict are
-not independently established. No gameplay facts or semantic promotion.
+Covered replay ranges: 47.640625–2792.640625 and 53.578125–3688.781250 seconds.
+Outside coverage maps false; no silent extrapolation. Seven additional pause
+brackets corroborate that 004 pauses remain on both axes; no segmented model.
 
-Task 202 selectivity and Task 200 synchronization blockers remain active.
-ChatGPT Work must independently validate Task 210. No Task 211 exists.
+Five Task210 compact artifacts are byte-identical to the accepted commit.
+The loaded Craig bridges compose without refit; operational composed errors
+are 2.341750/1.441000s. Browser drift remains a separate runtime metric.
+The reusable timeline function supports non-unit Craig slopes and dual coverage.
 
+Heavy telemetry, visual timing frames and real media remain local. No ASR,
+candidate windows, dense evidence, bundles, workspace import, final facts or
+automatic attribution. Accepted Task199/200/210 outputs are unchanged.
+Protected replay 005–008 access: zero. No package modifications.
+
+ChatGPT Work must independently validate Task 211. No Task 212 exists.
 Machine-readable state: `data/project-coordination-state.json`.

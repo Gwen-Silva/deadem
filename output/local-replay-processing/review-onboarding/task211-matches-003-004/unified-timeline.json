@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "taskId": "211",
+  "functionContract": "mapReplayToReviewContext(timeline, {reviewTargetId, replayElapsedSeconds})",
+  "noSilentExtrapolation": true,
+  "semantics": {
+    "replay": "replay_elapsed_time",
+    "vod": "vod_media_time",
+    "craig": "craig_recording_time"
+  },
+  "task210ArtifactIdentities": [
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/match-003-sync-summary.json",
+      "sha256": "376c271cb5dbf503231b05d9c5518f9d1a6cfcee0d038f61f2867c5aab634ce8",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/match-004-sync-summary.json",
+      "sha256": "7482030f038ff273c15175be72f6c091c88040d3a94bb12ab907d699ef3b8d71",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json",
+      "sha256": "d925969ca9344a246d5c3fd9a3579432b0639b2b6fe1cfd9738c4e6fe8b3c86b",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json",
+      "sha256": "8a1a9b1ff72277ec52b8e9bf9153ab3f96534bd3f272199a1b7d46d163f672a6",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json",
+      "sha256": "5e6483e2eeb04b42fc61365e68df9739ffac7f9ad9d8c518240f8e3cffc8955b",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    }
+  ],
+  "targets": [
+    {
+      "reviewTargetId": "review_match_003",
+      "replayVodModelRef": "output/local-replay-processing/review-onboarding/task211-matches-003-004/replay-vod-mapping.json#review_match_003",
+      "replayVodModel": {
+        "reviewTargetId": "review_match_003",
+        "selectedModel": "offset_only",
+        "slope": 1,
+        "interceptSeconds": 17.359375,
+        "precisionStatus": "preferred_precision",
+        "selectionReason": "prefer_offset_no_material_held_out_affine_gain",
+        "fitAnchorCount": 6,
+        "validationAnchorCount": 6,
+        "estimatedOperationalReplayVodErrorSeconds": 2.140625,
+        "operationalErrorPolicy": "maximum_observed_residual_plus_largest_anchor_uncertainty_not_statistical_bound",
+        "coveredReplayRange": {
+          "start": 47.640625,
+          "end": 2792.640625
+        },
+        "noExtrapolation": true,
+        "equation": "vod_seconds = slope * replay_elapsed_seconds + intercept_seconds",
+        "provenanceClass": "derived_sync_model/replay_to_vod",
+        "uncoveredReplayRanges": [
+          {
+            "startInclusive": 0,
+            "endExclusive": 47.640625
+          },
+          {
+            "startExclusive": 2792.640625,
+            "endInclusive": 2836
+          }
+        ]
+      },
+      "task210Bridge": {
+        "reviewTargetId": "review_match_003",
+        "slope": 1,
+        "interceptSeconds": 38.654499999999985,
+        "craigRangeSeconds": {
+          "start": 0,
+          "end": 2790.3154999999997
+        },
+        "vodRangeSeconds": {
+          "start": 38.654499999999985,
+          "end": 2828.97
+        },
+        "craigVodMappingErrorSeconds": 0.2011249999999518,
+        "artifactRef": "output/local-replay-processing/craig-multitrack/task210-real-sync/match-003-sync-summary.json",
+        "provenanceClass": "derived_sync_model/vod_to_craig_task210"
+      },
+      "composition": {
+        "equation": "craig_recording_seconds = (replayVodModel(replay_elapsed_seconds) - craigVodIntercept) / craigVodSlope",
+        "provenanceClass": "derived_sync_model/replay_to_craig_composition",
+        "replayVodMappingErrorSeconds": 2.140625,
+        "craigVodMappingErrorSeconds": 0.2011249999999518,
+        "composedOperationalErrorSeconds": 2.341749999999952,
+        "uncertaintyPolicy": "conservative_operational_sum_not_statistical_confidence_bound",
+        "units": "input_errors_in_vod_seconds_composed_error_in_craig_seconds",
+        "browserTransportDriftIncluded": false
+      },
+      "analystInference": []
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "replayVodModelRef": "output/local-replay-processing/review-onboarding/task211-matches-003-004/replay-vod-mapping.json#review_match_004",
+      "replayVodModel": {
+        "reviewTargetId": "review_match_004",
+        "selectedModel": "offset_only",
+        "slope": 1,
+        "interceptSeconds": 21.328125,
+        "precisionStatus": "preferred_precision",
+        "selectionReason": "prefer_offset_no_material_held_out_affine_gain",
+        "fitAnchorCount": 6,
+        "validationAnchorCount": 6,
+        "estimatedOperationalReplayVodErrorSeconds": 1.1875,
+        "operationalErrorPolicy": "maximum_observed_residual_plus_largest_anchor_uncertainty_not_statistical_bound",
+        "coveredReplayRange": {
+          "start": 53.578125,
+          "end": 3688.78125
+        },
+        "noExtrapolation": true,
+        "equation": "vod_seconds = slope * replay_elapsed_seconds + intercept_seconds",
+        "provenanceClass": "derived_sync_model/replay_to_vod",
+        "uncoveredReplayRanges": [
+          {
+            "startInclusive": 0,
+            "endExclusive": 53.578125
+          },
+          {
+            "startExclusive": 3688.78125,
+            "endInclusive": 3735
+          }
+        ]
+      },
+      "task210Bridge": {
+        "reviewTargetId": "review_match_004",
+        "slope": 1,
+        "interceptSeconds": -4226.330875,
+        "craigRangeSeconds": {
+          "start": 4226.330875,
+          "end": 7957.296891
+        },
+        "vodRangeSeconds": {
+          "start": 0,
+          "end": 3730.966016
+        },
+        "craigVodMappingErrorSeconds": 0.25350000000073125,
+        "artifactRef": "output/local-replay-processing/craig-multitrack/task210-real-sync/match-004-sync-summary.json",
+        "provenanceClass": "derived_sync_model/vod_to_craig_task210"
+      },
+      "composition": {
+        "equation": "craig_recording_seconds = (replayVodModel(replay_elapsed_seconds) - craigVodIntercept) / craigVodSlope",
+        "provenanceClass": "derived_sync_model/replay_to_craig_composition",
+        "replayVodMappingErrorSeconds": 1.1875,
+        "craigVodMappingErrorSeconds": 0.25350000000073125,
+        "composedOperationalErrorSeconds": 1.4410000000007313,
+        "uncertaintyPolicy": "conservative_operational_sum_not_statistical_confidence_bound",
+        "units": "input_errors_in_vod_seconds_composed_error_in_craig_seconds",
+        "browserTransportDriftIncluded": false
+      },
+      "analystInference": []
+    }
+  ],
+  "probes": [
+    {
+      "reviewTargetId": "review_match_003",
+      "probes": [
+        {
+          "replayElapsedSeconds": 47.640625,
+          "vod": {
+            "mapped": true,
+            "seconds": 65,
+            "operationalErrorSeconds": 2.140625
+          },
+          "craig": {
+            "mapped": true,
+            "recordingSeconds": 26.345500000000015,
+            "operationalErrorSeconds": 2.341749999999952
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": 1420.140625,
+          "vod": {
+            "mapped": true,
+            "seconds": 1437.5,
+            "operationalErrorSeconds": 2.140625
+          },
+          "craig": {
+            "mapped": true,
+            "recordingSeconds": 1398.8455,
+            "operationalErrorSeconds": 2.341749999999952
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": 2792.640625,
+          "vod": {
+            "mapped": true,
+            "seconds": 2810,
+            "operationalErrorSeconds": 2.140625
+          },
+          "craig": {
+            "mapped": true,
+            "recordingSeconds": 2771.3455,
+            "operationalErrorSeconds": 2.341749999999952
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": -1,
+          "vod": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "craig": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": 2792.641625,
+          "vod": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "craig": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        }
+      ]
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "probes": [
+        {
+          "replayElapsedSeconds": 53.578125,
+          "vod": {
+            "mapped": true,
+            "seconds": 74.90625,
+            "operationalErrorSeconds": 1.1875
+          },
+          "craig": {
+            "mapped": true,
+            "recordingSeconds": 4301.237125,
+            "operationalErrorSeconds": 1.4410000000007313
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": 1871.1796875,
+          "vod": {
+            "mapped": true,
+            "seconds": 1892.5078125,
+            "operationalErrorSeconds": 1.1875
+          },
+          "craig": {
+            "mapped": true,
+            "recordingSeconds": 6118.8386875,
+            "operationalErrorSeconds": 1.4410000000007313
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": 3688.78125,
+          "vod": {
+            "mapped": true,
+            "seconds": 3710.109375,
+            "operationalErrorSeconds": 1.1875
+          },
+          "craig": {
+            "mapped": true,
+            "recordingSeconds": 7936.44025,
+            "operationalErrorSeconds": 1.4410000000007313
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": -1,
+          "vod": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "craig": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        },
+        {
+          "replayElapsedSeconds": 3688.78225,
+          "vod": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "craig": {
+            "mapped": false,
+            "reason": "outside_covered_region"
+          },
+          "semantics": {
+            "replay": "replay_elapsed_time",
+            "vod": "vod_media_time",
+            "craig": "craig_recording_time"
+          }
+        }
+      ]
+    }
+  ]
+}

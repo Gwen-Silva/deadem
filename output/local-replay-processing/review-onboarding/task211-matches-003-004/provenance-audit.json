@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "taskId": "211",
+  "inputSha256Count": 4,
+  "inputAssociation": "explicit_exclusive_target_folders",
+  "factualProvenance": [
+    "factual/local_file_identity",
+    "factual/replay_elapsed_time",
+    "factual/replay_observed_state",
+    "factual/replay_observed_counter"
+  ],
+  "derivedProvenance": [
+    "derived_metric/replay_counter_delta",
+    "derived_sync_model/replay_to_vod",
+    "derived_sync_model/vod_to_craig_task210",
+    "derived_sync_model/replay_to_craig_composition"
+  ],
+  "participantCountsAreLocalReferencesNotPlayers": true,
+  "rawTimerAndParserOriginCalibratedSeparately": true,
+  "visualTimerIsSyncCueNotFactualGameClock": true,
+  "rawTemporalSupplementReason": "Legacy 1Hz sampling omitted completed-paused-tick and raw transition timing fields needed to validate the new replay/VOD bridge; supplemental forward-only pass did not rewrite factual telemetry.",
+  "task210ArtifactsByteIdenticalToAcceptedCommit": true,
+  "task210ArtifactIdentities": [
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/match-003-sync-summary.json",
+      "sha256": "376c271cb5dbf503231b05d9c5518f9d1a6cfcee0d038f61f2867c5aab634ce8",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/match-004-sync-summary.json",
+      "sha256": "7482030f038ff273c15175be72f6c091c88040d3a94bb12ab907d699ef3b8d71",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json",
+      "sha256": "d925969ca9344a246d5c3fd9a3579432b0639b2b6fe1cfd9738c4e6fe8b3c86b",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json",
+      "sha256": "8a1a9b1ff72277ec52b8e9bf9153ab3f96534bd3f272199a1b7d46d163f672a6",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    },
+    {
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json",
+      "sha256": "5e6483e2eeb04b42fc61365e68df9739ffac7f9ad9d8c518240f8e3cffc8955b",
+      "acceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+      "identityStatus": "byte_identical_to_accepted_commit"
+    }
+  ],
+  "originalInputMutationCount": 0,
+  "heavyBinariesVersioned": 0,
+  "privateTranscriptsVersioned": 0,
+  "protectedReplayAccessCount": 0,
+  "asrExecutionCount": 0,
+  "craigRefitCount": 0,
+  "candidateGenerationCount": 0,
+  "workspaceMutationCount": 0,
+  "finalFactCount": 0,
+  "automaticAttributionCount": 0,
+  "gameplayInterpretationCount": 0,
+  "humanContextUsedAsFactualReplayInput": false,
+  "analystInference": [],
+  "optionalReadJustifications": [
+    {
+      "path": "tools/review-workspace/measure-real-craig-sync.py",
+      "reason": "Read only to reuse the installed PyAV frame-extraction API; script was never executed and its inputs/outputs were not accessed."
+    }
+  ],
+  "acceptedLegacyBehavior": "Task199 default allowlist and outputs unchanged; optional exported sampler hook only. Task200 and all accepted Task199/200/210 artifacts unchanged."
+}

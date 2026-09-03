@@ -2,7 +2,7 @@
 
 Last updated: 2026-09-03
 
-## Active Real Craig to VOD Synchronization
+## Active New Review Match Factual Timeline — Task 211
 
 Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is Work-accepted
 with blocker `craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
@@ -15,7 +15,11 @@ Task 209 is Work-accepted at `6a8fa7433f75f6cd94499e7e32e31f4e81da86d8`:
 `craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
 Its synthetic transport baseline remains preserved.
 
-Task 210 is the active candidate in `VALIDATING`. Two explicitly authorized
+Task 210 is Work-accepted at `aeb68e3ea6b9c5cc74b0f78171796728541b0b8b`.
+Subsequent external human validation found real playback comfortable, functional
+and suitable for review. Synchronized Craig Multitrack Playback is operationally
+completed; no further playback, mixer, drift, ASR or Craig-sync tuning is authorized.
+Two explicitly authorized
 real VODs map to distinct chronological ranges of the same Craig recording.
 Offset-only models were selected against held-out audio anchors: validation
 MAE 0.148318/0.117750 seconds; maximum 0.168250/0.221750 seconds for targets
@@ -27,10 +31,29 @@ Technical claim: `two_real_craig_vod_sessions_synchronized_and_player_ready`.
 The player offers both real sessions and preserves nine mixer rows; tracks
 already ended in the recording remain inactive. All media, human hypotheses,
 session configuration and screenshots stay local. No ASR or replay was run.
-Numeric countdowns, leaderboard durations and an independent human listening
-verdict remain gaps. No perfect-sync or new gameplay-fact claim is made.
-Inherited candidate-selectivity and replay-video-sync blockers remain.
-ChatGPT Work is the sole acceptance authority. No Task 211 exists.
+Numeric countdowns and leaderboard durations were not established by Task 210.
+Its immutable artifacts preserve their original execution-time limitations; the
+later human playback verdict is recorded here, not retroactively fabricated.
+
+Task 211 is the active candidate in `VALIDATING`, with technical claim
+`two_new_review_targets_replay_vod_craig_timeline_ready`. New targets 003/004
+have four validated input hashes and PBDEMS2 headers. Forward-only 1Hz telemetry
+covers replay elapsed 0–2836 and 0–3735 seconds with 2837/3736 samples and no gaps.
+Each has 14 participant local references, 3 team refs and 13 hero refs, not confirmed
+player counts. Life-state, net-worth, damage/healing aggregate deltas and raw
+objective-like observations are available; positions are absent through the
+accepted field set. No identity or final gameplay facts are promoted.
+
+Six fit and six held-out anchors per target select offset-only. Replay/VOD MAE
+is 0.500/0.072917s; p90 1.000/0.109375s. Integer visual timer residuals are not
+sub-second accuracy proof: operational errors are 2.140625/1.187500s. Coverage
+is 47.640625–2792.640625 and 53.578125–3688.781250 replay seconds; early/tail
+regions reject mapping. The immutable Task210 bridges compose to Craig with
+conservative operational errors 2.341750/1.441000s, without browser drift.
+No accepted Task199/200/210 output, workspace, candidate, ASR or package mutation.
+All media and heavy telemetry stay local; protected replay access remains zero.
+Inherited blockers for old 001/002 and semantic ASR remain. Work alone accepts;
+no Task 212 is created or started.
 
 ## Authoritative Current State
 

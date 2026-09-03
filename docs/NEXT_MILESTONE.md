@@ -1,6 +1,6 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 210
+## Coordination Gate Before Further Execution — Task 211
 
 Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is accepted with
 semantic-ASR blocker. Craig source attribution is accepted; medium is the best
@@ -8,10 +8,14 @@ measured draft but missed the 75/25 semantic quality gate.
 
 Task 209 is accepted at `6a8fa7433f75f6cd94499e7e32e31f4e81da86d8` under
 `craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
-Task 210 is the candidate in VALIDATING with technical claim
-`two_real_craig_vod_sessions_synchronized_and_player_ready`.
-Work must independently validate the measured real mappings and browser
-evidence. No Task 211 exists and no follow-up implementation is authorized.
+Task 210 is accepted at `aeb68e3ea6b9c5cc74b0f78171796728541b0b8b` under
+`two_real_craig_vod_sessions_synchronized_and_player_ready`. Subsequent human
+playback validation completes the operational Synchronized Craig Multitrack
+Playback milestone. No further sync/player/ASR tuning without a new real problem.
+Task 211 is the candidate in VALIDATING with technical claim
+`two_new_review_targets_replay_vod_craig_timeline_ready`. Work independently
+validates its factual intake, replay temporal evidence and bounded composition.
+No Task 212 exists and no follow-up implementation is authorized.
 
 ## Current State
 
@@ -19,9 +23,18 @@ Task 210 reuses nine normalized tracks without ASR or renormalization. Targets
 003/004 have independently validated audio mapping MAE 148/118ms and real
 start/middle/end browser evidence. Offset-only was preferred over affine by
 held-out performance. Synthetic transport and nine-track mixer regressions pass.
-Mapping uncertainty is distinct from browser drift. A human listening verdict
-is not supplied, and no semantic evidence is promoted. Task 202 selectivity and
-Task 200 replay-to-video uncertainty remain unchanged.
+Mapping uncertainty is distinct from browser drift. The later human playback
+verdict is externally supplied; no semantic evidence is promoted. Task 202
+selectivity and Task 200 uncertainty for 001/002 remain unchanged.
+
+Task 211 consumes only newly authorized 003/004 replays and videos. Both safe
+timelines are monotonic with useful observed families and no available positions
+through accepted fields. Independently split timer anchors select offset-only;
+replay/VOD operational error is 2.140625/1.187500s, composed Craig error
+2.341750/1.441000s. Uncovered beginnings/tails fail closed. The reusable contract
+is ready for independent review, not yet candidate generation or workspace import.
+The next objective is Work validation of Task211, not automatic execution of a
+new phase. Candidate/evidence integration needs a separately authorized task.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

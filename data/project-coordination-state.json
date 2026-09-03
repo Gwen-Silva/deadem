@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Validate real Craig to VOD synchronization for two authorized local videos with independent audio anchors and bounded player evidence.",
-  "phase": "real_craig_vod_synchronization",
-  "lastAcceptedTaskId": "209",
-  "lastAcceptedCommit": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
-  "activeBaseCommit": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
+  "objective": "Onboard authorized review matches 003 and 004 into a safe factual replay timeline and compose independently validated replay/VOD mappings with accepted Task 210 Craig bridges.",
+  "phase": "new_review_match_factual_timeline",
+  "lastAcceptedTaskId": "210",
+  "lastAcceptedCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
+  "activeBaseCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
   "branch": "main",
-  "activeTaskId": "210",
+  "activeTaskId": "211",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/210/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/211/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -35,6 +35,7 @@
   ],
   "architecturalDecisions": [
     "ChatGPT Work is the sole acceptance authority and autonomous coordinator.",
+    "Task 210 acceptance was externally supplied with subsequent human playback validation; Synchronized Craig Multitrack Playback is operationally completed. No further playback, mixer, drift, Craig sync or ASR tuning is authorized in Task 211.",
     "Codex reports technical execution claims and stops after the current handoff.",
     "HEAD, push, and passing tests do not imply acceptance; HEAD resolves only the candidate recorded by the post-commit attestation.",
     "Unavailable launch integration is represented as BLOCKED_BY_SURFACE without simulated execution.",
@@ -69,9 +70,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 210 real Craig/VOD mappings and player canary. Preserve the ASR blocker; stop without Task 211.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209"],
-  "pendingTasks": ["210"],
+  "nextAction": "ChatGPT Work independently validates Task 211 factual intake, temporal evidence and bounded unified mappings. Preserve Task 208 ASR blocker and completed Task 210 playback; no Task 212.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210"],
+  "pendingTasks": ["211"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }
