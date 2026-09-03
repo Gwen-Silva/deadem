@@ -1,28 +1,29 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 212
+## Coordination Gate Before Further Execution — Task 214
 
-Task211 is ACCEPTED at `03de4f108d125237428faab417b8e68530d2824c`.
-Task210 real playback remains accepted, human-validated and operationally completed.
-Task208 semantic-ASR blocker remains; Task202 candidate selectivity stays low.
+Task213 is ACCEPTED at `9fb3cb8ebb63f1f2655439297e59f3b4dd03a9f1`.
+Task212 four-target Review and Task210 real playback remain accepted. Task208
+semantic-ASR and Task202 candidate-selectivity limitations remain unchanged.
 
-Task212 is VALIDATING under the technical claim
-`review_matches_003_004_assisted_workspace_ready`. Work must independently
-inspect additive four-target integration, local dense evidence, safe Scrim URLs
-and preserved legacy behavior. No Task213 is created or authorized.
+Task214 is VALIDATING under the technical claim
+`alphaveil_home_matches_match_overview_ready`. Work must independently inspect
+the real-data Home, four-match library, safe Overview routes, local-state
+progress, capability differences and preserved Review/Replay behavior. No
+Task215 is created or authorized.
 
 ## Current State
 
-003/004 contribute48/57 bounded candidate regions without new replay parsing.
-2577/3046 local frames and145/164 storyboards provide complete visual coverage.
-The workspace has207 candidates across four targets; historical102 are preserved.
-New targets use multitrack context, no ASR. Human state/segments/exports and
-early/mid/late browser navigation passed technical canaries. Media remain local.
+AlphaVeil exposes Scrim01–04 with67/35/48/57 real prepared moments, deterministic
+covers and real review progress. Home, `/matches`, four Overview pages, friendly
+Moment links, Continue Review and real 003/004 Replay CTAs passed desktop/mobile
+browser flows. 001/002 correctly make no synchronized Replay claim. Patterns and
+Training remain Preview. Media and canary state remain local.
 
-Replay/VOD errors2.140625/1.187500s and composed Craig errors2.341750/1.441000s
-remain visible. No extrapolation, retuning, semantic facts or protected access.
-Next objective is independent Work validation, not another automatic phase.
-Operational forecast: one functional unit delivered and one Work gate pending.
+No replay parsing, evidence regeneration, ASR, metadata inference, semantic facts
+or protected access occurred. Next objective is independent Work validation, not
+another automatic phase. Operational forecast: one functional unit delivered and
+one Work gate pending.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

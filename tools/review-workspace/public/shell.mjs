@@ -4,8 +4,8 @@ const destinations = [
   { path: '/review', label: 'Revisão', icon: '◇' },
   { path: '/scrim', label: 'Replay sincronizado', icon: '▷' },
   { divider: true },
-  { path: '/patterns', label: 'Padrões', icon: '⌁' },
-  { path: '/training', label: 'Plano de treino', icon: '◎' }
+  { path: '/patterns', label: 'Padrões', icon: '⌁', preview: true },
+  { path: '/training', label: 'Plano de treino', icon: '◎', preview: true }
 ];
 
 function brand(compact = false) {
@@ -34,6 +34,7 @@ function brand(compact = false) {
 
 function activePath(pathname, destination) {
   if (destination === '/') return pathname === '/';
+  if (destination === '/matches') return pathname === '/matches' || pathname.startsWith('/matches/');
   return pathname === destination;
 }
 
@@ -65,6 +66,12 @@ export function initProductShell() {
     const label = document.createElement('span');
     label.textContent = destination.label;
     link.append(icon, label);
+    if (destination.preview) {
+      const badge = document.createElement('span');
+      badge.className = 'nav-preview';
+      badge.textContent = 'Preview';
+      link.append(badge);
+    }
     link.addEventListener('click', closeMenu);
     nav.append(link);
   }

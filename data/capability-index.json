@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "213",
+  "generatedAtTask": "214",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1090,14 +1090,40 @@
       "capabilityId": "alphaveil_product_shell",
       "plainName": "AlphaVeil public brand and responsive application shell",
       "introducedInTask": "213",
-      "stabilizedInTask": null,
-      "currentStatus": "candidate_pending_work_validation",
+        "stabilizedInTask": "214",
+        "currentStatus": "accepted",
       "currentBaseline": "task213_brand_tokens_navigation_and_safe_previews",
       "whyItMatters": "Presents accepted Review and Replay functionality as one coherent product while keeping preview surfaces honest and internal evidence semantics unchanged.",
       "mainFiles": ["tools/review-workspace/public/shell.mjs", "tools/review-workspace/public/product.html", "tools/review-workspace/public/product-app.mjs", "tools/review-workspace/public/styles/tokens.css", "docs/codex/ALPHAVEIL_DESIGN_SYSTEM_APP_SHELL_CONTRACT.md"],
       "mainOutputs": ["output/local-replay-processing/presentation-ux/task213-alphaveil-shell/summary.json", "output/local-replay-processing/presentation-ux/task213-alphaveil-shell/gate.json", "reports/alphaveil-brand-design-system-app-shell-task213.md"],
       "knownLimits": ["Matches, Patterns and Training are visibly labeled Preview surfaces.", "No gameplay facts, candidate ranking, synchronization, mixer, ASR or review persistence behavior changes.", "Screenshots and interactive canary state stay local-only."],
-      "nextUsefulStep": "After independent Work validation, the declared product objective is Home plus Matches plus Match Overview; it is not started here."
-    }
+        "nextUsefulStep": "Use the accepted shell through the Task 214 match experience without changing Review or Replay semantics."
+      },
+      {
+        "capabilityId": "alphaveil_match_experience",
+        "plainName": "AlphaVeil real-data Home, match library and Match Overview",
+        "introducedInTask": "214",
+        "stabilizedInTask": null,
+        "currentStatus": "candidate_pending_work_validation",
+        "currentBaseline": "task214_real_data_home_matches_and_overview",
+        "whyItMatters": "Lets a player navigate accepted gameplay, match data, communication, Review and real synchronized Replay without backend vocabulary or fabricated match metadata.",
+        "mainFiles": [
+          "tools/review-workspace/product-view-model.mjs",
+          "tools/review-workspace/public/product-app.mjs",
+          "tools/review-workspace/public/product-navigation.mjs",
+          "docs/codex/ALPHAVEIL_MATCH_EXPERIENCE_CONTRACT.md"
+        ],
+        "mainOutputs": [
+          "output/local-replay-processing/presentation-ux/task214-match-experience/summary.json",
+          "output/local-replay-processing/presentation-ux/task214-match-experience/gate.json",
+          "reports/alphaveil-home-matches-match-overview-task214.md"
+        ],
+        "knownLimits": [
+          "Assisted Review Workspace UX V2 and synchronized Replay UX V2 are not implemented.",
+          "Patterns and Training remain explicit Preview modules.",
+          "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged."
+        ],
+        "nextUsefulStep": "After independent Work validation, Task 215 may redesign the Assisted Review Workspace; it is not created or authorized here."
+      }
   ]
 }

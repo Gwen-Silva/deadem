@@ -1,7 +1,9 @@
 import { REVIEW_FIELD_DEFINITIONS, applyFormToRecord, copyExportPath, recordToForm } from '/ux-model.mjs';
 import { initProductShell } from '/shell.mjs';
+import { parseFriendlyReviewNavigation } from '/product-navigation.mjs';
 
 initProductShell();
+const friendlyNavigation = parseFriendlyReviewNavigation(location.search);
 
 const ids = [
   'target', 'order', 'filter', 'search', 'queue', 'queue-count', 'candidate-heading', 'visual-gap', 'visual-status',
@@ -71,15 +73,18 @@ function availabilityLabel(value) {
 async function loadTargets() {
   const result = await api('/api/targets');
   app.targets = result.targets;
-  elements.target.innerHTML = result.targets.map(target => `<option value="${target.reviewTargetId}">${target.reviewTargetId} · ${target.candidateCount}</option>`).join('');
-  await loadTarget();
+  elements.target.innerHTML = result.targets.map(target => `<option value="${target.reviewTargetId}">Scrim ${target.reviewTargetId.slice(-2)} · ${target.candidateCount} momentos</option>`).join('');
+  if (friendlyNavigation && result.targets.some(target => target.reviewTargetId === friendlyNavigation.targetId)) {
+    elements.target.value = friendlyNavigation.targetId;
+  }
+  await loadTarget(friendlyNavigation?.candidateId ?? null);
 }
 
-async function loadTarget() {
+async function loadTarget(preferredId = null) {
   app.state = await api(`/api/review-state/${elements.target.value}`);
   app.exportLocation = await api(`/api/export-location/${elements.target.value}`);
   renderExportLocation(false);
-  await loadQueue();
+  await loadQueue(preferredId);
 }
 
 async function loadQueue(preferredId = null) {

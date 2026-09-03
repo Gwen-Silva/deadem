@@ -17,16 +17,19 @@ import { ReviewStateStore } from './persistence.mjs';
 import { writeExportPacket } from './export.mjs';
 import { loadLocalScrimData } from './scrim-media.mjs';
 import { parseScrimNavigation, resolveScrimNavigation } from './scrim-navigation.mjs';
+import { assertPublicMatchId, buildProductCatalog, buildProductMatch, targetIdFromPublicMatchId } from './product-view-model.mjs';
 
 const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(MODULE_DIR, 'public');
 const STATIC_FILES = new Map([
     ['/shell.mjs', { path: path.join(PUBLIC_DIR, 'shell.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/product-app.mjs', { path: path.join(PUBLIC_DIR, 'product-app.mjs'), type: 'text/javascript; charset=utf-8' }],
+    ['/product-navigation.mjs', { path: path.join(PUBLIC_DIR, 'product-navigation.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/styles/tokens.css', { path: path.join(PUBLIC_DIR, 'styles', 'tokens.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/base.css', { path: path.join(PUBLIC_DIR, 'styles', 'base.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/components.css', { path: path.join(PUBLIC_DIR, 'styles', 'components.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/shell.css', { path: path.join(PUBLIC_DIR, 'styles', 'shell.css'), type: 'text/css; charset=utf-8' }],
+    ['/styles/product.css', { path: path.join(PUBLIC_DIR, 'styles', 'product.css'), type: 'text/css; charset=utf-8' }],
     ['/scrim-navigation.mjs', { path:path.join(MODULE_DIR, 'scrim-navigation.mjs'), type:'text/javascript; charset=utf-8' }],
     ['/scrim', { path: path.join(PUBLIC_DIR, 'scrim.html'), type: 'text/html; charset=utf-8' }],
     ['/scrim-app.mjs', { path: path.join(PUBLIC_DIR, 'scrim-app.mjs'), type: 'text/javascript; charset=utf-8' }],
@@ -54,6 +57,16 @@ export function resolveExportFolder(exportRoot, targetId) {
         folderPath: folder,
         relativePath: `.local/deadem/review-workspace/exports/${safeTargetId}`
     };
+}
+
+async function serveStaticFile(response, staticFile) {
+    const content = await readFile(staticFile.path);
+    response.writeHead(200, {
+        'content-type': staticFile.type,
+        'content-length': content.length,
+        'cache-control': 'no-store'
+    });
+    response.end(content);
 }
 
 export async function openLocalFolder(folderPath) {
@@ -206,6 +219,26 @@ export async function createReviewWorkspaceServer({
             const scrimMatch = /^\/scrim\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
             if (['GET', 'HEAD'].includes(request.method) && scrimMatch) return serveMedia(request, response, scrim.registry.resolve(scrimMatch[1]));
 
+            if (request.method === 'GET' && url.pathname === '/api/product/matches') {
+                const reviewStates = Object.fromEntries(await Promise.all(TARGET_IDS.map(async targetId => [targetId, await store.load(targetId)])));
+                return jsonResponse(response, 200, buildProductCatalog({
+                    workspaceData: data,
+                    reviewStates,
+                    scrimSessions: scrim.view.vodSessions
+                }));
+            }
+            const productMatchApi = /^\/api\/product\/matches\/([^/]+)$/u.exec(url.pathname);
+            if (request.method === 'GET' && productMatchApi) {
+                const matchId = assertPublicMatchId(productMatchApi[1]);
+                const targetId = targetIdFromPublicMatchId(matchId);
+                return jsonResponse(response, 200, buildProductMatch({
+                    workspaceData: data,
+                    reviewState: await store.load(targetId),
+                    scrimSessions: scrim.view.vodSessions,
+                    matchId
+                }));
+            }
+
             if (request.method === 'GET' && url.pathname === '/api/targets') {
                 return jsonResponse(response, 200, {
                     candidateSemantics: data.candidateSemantics,
@@ -270,15 +303,12 @@ export async function createReviewWorkspaceServer({
             }
             const mediaMatch = /^\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
             if (request.method === 'GET' && mediaMatch) return serveMedia(request, response, data.mediaRegistry.resolve(mediaMatch[1]));
+            const productMatchPage = /^\/matches\/(00[1-4])$/u.exec(url.pathname);
+            if (request.method === 'GET' && productMatchPage) {
+                return serveStaticFile(response, { path: path.join(PUBLIC_DIR, 'product.html'), type: 'text/html; charset=utf-8' });
+            }
             if (request.method === 'GET' && STATIC_FILES.has(url.pathname)) {
-                const staticFile = STATIC_FILES.get(url.pathname);
-                const content = await readFile(staticFile.path);
-                response.writeHead(200, {
-                    'content-type': staticFile.type,
-                    'content-length': content.length,
-                    'cache-control': 'no-store'
-                });
-                return response.end(content);
+                return serveStaticFile(response, STATIC_FILES.get(url.pathname));
             }
             return errorResponse(response, 404, 'not_found');
         } catch (error) {
@@ -289,7 +319,7 @@ export async function createReviewWorkspaceServer({
                 'invalid_review_state', 'invalid_error_class', 'call_not_in_candidate', 'invalid_transcript_classification',
                 'segment_identity_mismatch', 'invalid_review_segment_id', 'review_segment_outside_candidate',
                 'export_selection_empty', 'export_state_target_mismatch', 'export_candidate_not_found', 'export_segment_not_found',
-                'unsafe_export_folder'
+                'unsafe_export_folder', 'public_match_not_allowlisted', 'invalid_public_moment', 'product_match_unavailable'
             ]);
             return errorResponse(response, clientErrors.has(error.message) ? 400 : 500, error.message);
         }

@@ -29,15 +29,17 @@ test('AlphaVeil public shell exposes the canonical brand and bounded route vocab
     assert.match(shell, /Escape/u);
 });
 
-test('Home and explicit previews make no factual or product-completion claims', async () => {
+test('Home, match experience and explicit future previews make no fabricated claims', async () => {
     const app = await source('product-app.mjs');
     assert.match(app, /Entenda suas decisões/u);
-    assert.match(app, /Suas scrims processadas aparecerão aqui para revisão\./u);
+    assert.match(app, /PARTIDAS DISPONÍVEIS/u);
+    assert.match(app, /MOMENTOS PREPARADOS/u);
     assert.match(app, /Conecte decisões semelhantes entre diferentes partidas para identificar problemas recorrentes\./u);
     assert.match(app, /Transforme padrões encontrados nas suas reviews em focos e exercícios para as próximas partidas\./u);
     assert.match(app, /Preview/u);
     assert.match(app, /Nenhum padrão é inferido/u);
     assert.match(app, /Nenhuma recomendação automática está ativa/u);
+    assert.doesNotMatch(app, /42%|width: 42%/u);
 });
 
 test('shared design tokens define restrained motion, focus and reduced-motion behavior', async () => {
@@ -78,6 +80,8 @@ test('HTTP surface serves exactly the product routes while Review and Scrim APIs
         const candidates = await (await fetch(url + '/api/candidates')).json();
         assert.equal(candidates.count, 207);
         assert.equal((await fetch(url + '/matches/not-a-real-id')).status, 404);
+        assert.equal((await fetch(url + '/matches/003')).status, 200);
+        assert.equal((await fetch(url + '/matches/005')).status, 404);
         assert.equal((await fetch(url + '/styles/tokens.css')).status, 200);
         assert.equal((await fetch(url + '/shell.mjs')).status, 200);
     } finally {

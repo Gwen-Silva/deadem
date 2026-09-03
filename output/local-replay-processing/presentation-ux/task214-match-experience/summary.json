@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "214",
+  "publicExperience": {
+    "homeUsesRealProductData": true,
+    "matchesRouteFunctional": true,
+    "matchOverviewRoutes": ["/matches/001", "/matches/002", "/matches/003", "/matches/004"],
+    "friendlyReviewLinks": true,
+    "previewRoutes": ["/patterns", "/training"],
+    "fabricatedProgressRemoved": true
+  },
+  "workspace": {
+    "matchCount": 4,
+    "candidateCount": 207,
+    "candidateCounts": {"001": 67, "002": 35, "003": 48, "004": 57},
+    "historicalCandidateCount": 102,
+    "realCoverCount": 4,
+    "realSynchronizedReplayMatchIds": ["003", "004"]
+  },
+  "derivation": {
+    "displayIdentity": "allowlisted_target_suffix",
+    "reviewProgress": "local_human_review_state",
+    "cover": "deterministic_existing_representative_frame_with_safe_fallback",
+    "moment": "existing_candidate_window",
+    "fabricatedMetadataCount": 0
+  },
+  "validation": {
+    "productAndIntegratedTests": {"passed": 53, "failed": 0},
+    "acceptedRegressionTests": {"passed": 74, "failed": 0},
+    "browserChecks": 6,
+    "browserErrors": 0,
+    "localScreenshotCount": 6,
+    "validatedViewports": ["1920x1080", "1440x900", "390x844"]
+  },
+  "security": {
+    "replayAccessCount": 0,
+    "protectedAccessCount": 0,
+    "asrExecutionCount": 0,
+    "mediaVersionedCount": 0,
+    "candidateSemanticMutationCount": 0,
+    "synchronizationMutationCount": 0,
+    "automaticGameplayInterpretationCount": 0
+  },
+  "technicalGateStatus": "alphaveil_home_matches_match_overview_ready",
+  "workAcceptance": "pending_independent_validation"
+}

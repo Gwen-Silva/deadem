@@ -2,40 +2,36 @@
 
 Last updated: 2026-09-03
 
-## Active Assisted Workspace Integration — Task 212
+## Active AlphaVeil Match Experience — Task 214
 
-Task211 is externally ACCEPTED at
-`03de4f108d125237428faab417b8e68530d2824c` under
-`two_new_review_targets_replay_vod_craig_timeline_ready`.
-Its factual telemetry and bounded mapping artifacts remain immutable.
+Task213 is externally ACCEPTED at
+`9fb3cb8ebb63f1f2655439297e59f3b4dd03a9f1` under
+`alphaveil_brand_design_system_app_shell_ready`. Its identity, shared visual
+system and application shell remain the accepted baseline.
 
-Task212 is the active candidate in VALIDATING. Technical claim:
-`review_matches_003_004_assisted_workspace_ready`. Targets003/004 now have
-48/57 candidate regions generated with unchanged Task202 semantics, plus
-2577/3046 deduplicated local frames and 145/164 local storyboards. No extraction
-failures; each candidate has first, representative and last evidence.
+Task214 is the active candidate in VALIDATING. Technical claim:
+`alphaveil_home_matches_match_overview_ready`. Home now uses the accepted
+four-target catalog, real representative-frame covers and local review state.
+`/matches` is functional and `/matches/001` through `/matches/004` provide safe
+Overview pages. Scrim 01–04 contain 67/35/48/57 prepared moments, totaling 207;
+the accepted 102 historical candidate fingerprints remain unchanged.
 
-Coverage is bounded to Task211 ranges. 5/11 unmapped seeds are recorded and
-ignored; no early/tail extrapolation. Review coverage95.7975%/88.4622% preserves
-the inherited low-selectivity limitation. Priority is a scheduling heuristic.
-Replay/VOD operational errors2.140625/1.187500s expand visual bounds; composed
-Craig errors2.341750/1.441000s exclude browser transport drift.
+Review progress is derived only from saved human state. Covers use existing
+opaque media references with a design-system fallback. Communication is exposed
+from legacy evidence for 001/002 and multitrack context for 003/004, while those
+mechanisms remain distinct internally. Synchronized Replay appears only for the
+real resolvable sessions 003/004. Public match/moment links resolve only existing
+allowlisted Review candidates; protected and unknown values fail closed.
 
-An additive provider brings the workspace to four targets/207 candidates.
-The 102 historical candidates and their mixed-VOD calls remain unchanged.
-New targets use scrimContextEvidence, not ASR or confirmed call facts.
-The safe URL opens the corresponding accepted real session with10s pre-roll.
-State, structured human fields, segments and JSON/Markdown exports work locally.
-Early/mid/late technical browser canaries, both Scrim links, mixer and legacy0015
-passed. Synthetic technical canary state is isolated from existing human review.
+Chromium canaries passed Home, library, 003/001 Overview capability differences,
+Moment25 selection, save/reload/Continue, real Replay/mixer, mobile drawer and
+reduced motion. Six screenshots stay local. Product/integrated tests passed
+53/53 and accepted regression passed74/74. No metadata, percentage, highlight,
+event or strategy was fabricated.
 
-Task210 remains externally ACCEPTED and subsequently human-validated as
-comfortable, functional and operationally completed. No mixer/drift/sync tuning.
-Nine tracks stay registered; ended tracks remain inactive. Task208 remains
-ACCEPTED_WITH_BLOCKER:
-`craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
-No Task212 replay, protected005–008 access, ASR or gameplay interpretation.
-No media or human state is versioned. Work alone accepts; no Task213 exists.
+No replay, protected005–008, ASR, regeneration, candidate/synchronization change
+or media versioning occurred. Patterns and Training remain Preview. Workspace UX
+V2 and Replay UX V2 are not implemented. Work alone accepts; no Task215 exists.
 
 ## Authoritative Current State
 
