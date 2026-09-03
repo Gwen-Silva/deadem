@@ -1,50 +1,39 @@
 # Current Codex State
 
-Policy version: 1 (`AUTONOMOUS_COORDINATION_POLICY.md`). Branch: `main`.
-
-Last accepted task: Task 210 at
-`aeb68e3ea6b9c5cc74b0f78171796728541b0b8b`, ACCEPTED, supplied externally.
-Gate: `two_real_craig_vod_sessions_synchronized_and_player_ready`.
-Subsequent human playback validation found both sessions comfortable, functional
-and suitable for review. Synchronized Craig Multitrack Playback is operationally
-completed. No new Craig/VOD fitting, playback, mixer, drift or ASR tuning.
-
-Task 208 remains ACCEPTED_WITH_BLOCKER:
-`craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
-Craig/source attribution is accepted; ASR is only a HUMAN_VALIDATION_REQUIRED draft.
-
-Active candidate: Task 211,
-`Onboard Review Matches 003 and 004 Into the Factual Replay Timeline`.
-Status: `VALIDATING`. Technical claim:
+Policy version: 1. Branch: main. Last accepted Task211:
+`03de4f108d125237428faab417b8e68530d2824c`, ACCEPTED supplied externally under
 `two_new_review_targets_replay_vod_craig_timeline_ready`.
 
-Four exclusive-folder local inputs have SHA-256 identities; both replays have
-valid PBDEMS2 headers. Forward-only 1Hz safe timelines cover elapsed 0–2836 and
-0–3735 seconds: 2837/3736 samples, zero gaps. Each contains 14 participant local
-refs, 3 team refs and 13 hero refs, not confirmed people. Life-state, net-worth,
-aggregate damage/healing deltas and raw objective-like states are observed.
-Positions are unavailable through the accepted field set. No map semantics.
+Active Task212: Bring Review Matches 003 and 004 Into Assisted Review Workspace.
+Status: VALIDATING. Technical claim:
+`review_matches_003_004_assisted_workspace_ready`.
 
-Replay/raw-clock origins were calibrated from observed replay transition
-intervals independently of VOD values. Six fit and six held-out visual timing
-anchors per target select offset-only: VOD = replay + 17.359375 / 21.328125s.
-Validation MAE is 0.500000/0.072917s, p90 1.000000/0.109375s. Small quantized
-timer residuals are NOT proof of sub-second accuracy. Operational replay/VOD
-errors are 2.140625/1.187500s, including visual and origin uncertainty.
+003/004 have 48/57 candidates using unchanged Task202 heuristics. Every candidate
+is inside Task211 coverage; 5/11 unmapped seeds are ignored for review generation.
+Priorities high/medium/low are 34/6/8 and 38/7/12. Candidate coverage remains
+95.7975%/88.4622%: inherited review_candidate_selectivity_low is not resolved.
 
-Covered replay ranges: 47.640625–2792.640625 and 53.578125–3688.781250 seconds.
-Outside coverage maps false; no silent extrapolation. Seven additional pause
-brackets corroborate that 004 pauses remain on both axes; no segmented model.
+Local visual evidence: 2577/3046 deduplicated physical frames, 145/164 storyboards,
+zero failures and complete first/representative/last for every new candidate.
+Fixed-slot VOD SHA/size was checked against accepted Task211 before extraction.
+No replay was reopened. No protected access, ASR, new mapping or interpretation.
 
-Five Task210 compact artifacts are byte-identical to the accepted commit.
-The loaded Craig bridges compose without refit; operational composed errors
-are 2.341750/1.441000s. Browser drift remains a separate runtime metric.
-The reusable timeline function supports non-unit Craig slopes and dual coverage.
+The additive Task212 provider brings the workspace to four targets and 207
+candidates. The original 102 retain their immutable fingerprints, mixed-VOD calls
+and existing review/export behavior. New targets instead expose scrimContextEvidence
+with an explicit safe URL into accepted Task210 real sessions and 10s pre-roll.
+All nine tracks remain registered; ended tracks are inactive, never fabricated.
 
-Heavy telemetry, visual timing frames and real media remain local. No ASR,
-candidate windows, dense evidence, bundles, workspace import, final facts or
-automatic attribution. Accepted Task199/200/210 outputs are unchanged.
-Protected replay 005–008 access: zero. No package modifications.
+Browser technical canaries passed early/mid/late in 003/004, correct Scrim session
+and seek, mixer, local save/segment/export/reopen, and legacy0015. Canary state is
+isolated from existing human review; it is not human semantic validation.
+Replay/VOD errors remain 2.140625/1.187500s, composed Craig errors
+2.341750/1.441000s, separately from browser drift.
 
-ChatGPT Work must independently validate Task 211. No Task 212 exists.
-Machine-readable state: `data/project-coordination-state.json`.
+Task210 is accepted and human-validated, operationally completed. Task208 remains
+ACCEPTED_WITH_BLOCKER:
+craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence.
+No ASR is used for 003/004. All media, screenshots, state and exports stay local.
+
+Next objective: independent ChatGPT Work validation of Task212 only.
+No Task213. Machine state: data/project-coordination-state.json.

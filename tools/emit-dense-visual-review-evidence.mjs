@@ -91,8 +91,8 @@ function highestPriority(windows) {
     return [...windows].sort((left, right) => PRIORITY_ORDER[left.priorityTier] - PRIORITY_ORDER[right.priorityTier])[0].priorityTier;
 }
 
-export function buildTargetExtractionPlan(reviewTargetId, windows, densityAdjustmentCount = 0) {
-    assertReviewTargetId(reviewTargetId);
+export function buildTargetExtractionPlan(reviewTargetId, windows, densityAdjustmentCount = 0, validateTarget = assertReviewTargetId) {
+    validateTarget(reviewTargetId);
     const targetWindows = windows
         .filter(window => window.reviewTargetId === reviewTargetId)
         .sort((left, right) => left.candidateWindowId.localeCompare(right.candidateWindowId));

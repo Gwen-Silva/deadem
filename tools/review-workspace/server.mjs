@@ -16,10 +16,12 @@ import {
 import { ReviewStateStore } from './persistence.mjs';
 import { writeExportPacket } from './export.mjs';
 import { loadLocalScrimData } from './scrim-media.mjs';
+import { parseScrimNavigation, resolveScrimNavigation } from './scrim-navigation.mjs';
 
 const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(MODULE_DIR, 'public');
 const STATIC_FILES = new Map([
+    ['/scrim-navigation.mjs', { path:path.join(MODULE_DIR, 'scrim-navigation.mjs'), type:'text/javascript; charset=utf-8' }],
     ['/scrim', { path: path.join(PUBLIC_DIR, 'scrim.html'), type: 'text/html; charset=utf-8' }],
     ['/scrim-app.mjs', { path: path.join(PUBLIC_DIR, 'scrim-app.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/scrim-controller.mjs', { path: path.join(PUBLIC_DIR, 'scrim-controller.mjs'), type: 'text/javascript; charset=utf-8' }],
@@ -185,6 +187,10 @@ export async function createReviewWorkspaceServer({
             const safeRawPath = assertSafeRequestPath((request.url ?? '/').split('?')[0]);
             const url = new URL(request.url ?? '/', 'http://127.0.0.1');
             if (safeRawPath !== url.pathname) throw new Error('unsafe_request_path');
+            if (url.pathname === '/scrim' && url.search) {
+                try { resolveScrimNavigation(parseScrimNavigation(url.search), scrim.view.vodSessions); }
+                catch (error) { return errorResponse(response, 400, error.message); }
+            }
             if (url.pathname.startsWith('/scrim/media/') && url.search) return errorResponse(response, 400, 'scrim_media_query_rejected');
             if (request.method === 'GET' && url.pathname === '/api/scrim') return jsonResponse(response, 200, scrim.view);
             const scrimMatch = /^\/scrim\/media\/([0-9a-f]{32})$/u.exec(url.pathname);
@@ -213,12 +219,12 @@ export async function createReviewWorkspaceServer({
                 }
                 return jsonResponse(response, 200, { count: candidates.length, candidates });
             }
-            const candidateMatch = /^\/api\/candidates\/(review_match_00[12]_window_\d{4})$/u.exec(url.pathname);
+            const candidateMatch = /^\/api\/candidates\/(review_match_00[1-4]_window_\d{4})$/u.exec(url.pathname);
             if (request.method === 'GET' && candidateMatch) {
                 const candidate = await candidateWithState(data, store, candidateMatch[1]);
                 return candidate ? jsonResponse(response, 200, candidate) : errorResponse(response, 404, 'candidate_not_found');
             }
-            const stateMatch = /^\/api\/review-state\/(review_match_00[12])$/u.exec(url.pathname);
+            const stateMatch = /^\/api\/review-state\/(review_match_00[1-4])$/u.exec(url.pathname);
             if (stateMatch && request.method === 'GET') {
                 return jsonResponse(response, 200, await store.load(stateMatch[1]));
             }
@@ -241,7 +247,7 @@ export async function createReviewWorkspaceServer({
                     relativeFolderPath: location.relativePath
                 });
             }
-            const exportLocationMatch = /^\/api\/export-location\/(review_match_00[12])$/u.exec(url.pathname);
+            const exportLocationMatch = /^\/api\/export-location\/(review_match_00[1-4])$/u.exec(url.pathname);
             if (request.method === 'GET' && exportLocationMatch) {
                 return jsonResponse(response, 200, resolveExportFolder(exportRoot, exportLocationMatch[1]));
             }

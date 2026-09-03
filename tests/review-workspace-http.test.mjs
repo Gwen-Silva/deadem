@@ -5,8 +5,8 @@ import { runFunctionalSmoke } from '../tools/review-workspace/smoke.mjs';
 
 test('real localhost server validates API, persistence, export, Range and request security', async () => {
     const result = await runFunctionalSmoke({ repoRoot: DEFAULT_REPO_ROOT });
-    assert.equal(result.targetsResult, 2);
-    assert.equal(result.candidateListResult, 102);
+    assert.equal(result.targetsResult, 4);
+    assert.equal(result.candidateListResult, 207);
     assert.equal(result.candidate0015VisualStatus, 'available');
     assert.ok(result.candidate0015AudioCallRefs > 0);
     assert.equal(result.persistenceRoundtrip, true);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "211",
+  "generatedAtTask": "212",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1068,13 +1068,23 @@
     },
     {
       "capabilityId": "new_review_match_unified_timeline", "plainName": "Bounded replay VOD Craig timeline for new review targets",
-      "introducedInTask": "211", "stabilizedInTask": null,
-      "currentStatus": "candidate_pending_work_validation", "currentBaseline": "task211_matches_003_004_factual_timeline",
+      "introducedInTask": "211", "stabilizedInTask": "211",
+      "currentStatus": "accepted", "currentBaseline": "task211_matches_003_004_factual_timeline",
       "whyItMatters": "Provides safe factual samples and an explicit no-extrapolation mapping contract before later candidate or evidence integration.",
       "mainFiles": ["tools/review-onboarding/intake-telemetry.mjs", "tools/review-onboarding/timeline.mjs", "docs/codex/REVIEW_ONBOARDING_TIMELINE_CONTRACT.md"],
       "mainOutputs": ["output/local-replay-processing/review-onboarding/task211-matches-003-004/manifest.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/telemetry-summary.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/unified-timeline.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json"],
       "knownLimits": ["No positions through accepted fields, no confirmed participant identities or gameplay facts.", "Composed operational errors are 2.34175 and 1.441 seconds; uncovered tails and beginnings reject mapping.", "No workspace import, candidate generation, dense visual evidence or ASR."],
-      "nextUsefulStep": "Independent Work validation of Task211 only; no Task212 created."
+      "nextUsefulStep": "Reuse the externally accepted timeline without replay rereads or mapping refits."
+    },
+    {
+      "capabilityId": "new_review_match_assisted_workspace", "plainName": "New review targets in the assisted workspace",
+      "introducedInTask": "212", "stabilizedInTask": null,
+      "currentStatus": "candidate_pending_work_validation", "currentBaseline": "task212_additive_003_004_visual_scrim_context",
+      "whyItMatters": "Completes the vertical path from accepted factual telemetry to local human review and real multitrack context while preserving the legacy 102 candidates.",
+      "mainFiles": ["tools/review-integration/candidates.mjs", "tools/review-integration/dense.mjs", "tools/review-workspace/task212-provider.mjs", "tools/review-workspace/scrim-navigation.mjs"],
+      "mainOutputs": ["output/local-replay-processing/assisted-review/task212-matches-003-004/candidate-windows.json", "output/local-replay-processing/assisted-review/task212-matches-003-004/dense-evidence-summary.json", "output/local-replay-processing/assisted-review/task212-matches-003-004/workspace-index.json", "output/local-replay-processing/assisted-review/task212-matches-003-004/gate.json"],
+      "knownLimits": ["Candidate selectivity remains low and no candidate is a confirmed event.", "003/004 use no ASR: multitrack context does not establish call semantics.", "All images, human state and exports remain local-only."],
+      "nextUsefulStep": "Independent Work validation of Task212; no Task213 or automatic next phase."
     }
   ]
 }

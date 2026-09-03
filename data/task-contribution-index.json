@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "211",
-  "baseCommit": "aeb68e3ea6b9c5cc74b0f78171796728541b0b8b",
-  "taskRange": "001-211",
+  "generatedAtTask": "212",
+  "baseCommit": "03de4f108d125237428faab417b8e68530d2824c",
+  "taskRange": "001-212",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6425,7 +6425,7 @@
       "evidencePaths": ["tasks/specs/210.json", "tasks/completed/210-real-craig-vod-sync.md", "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json"]
     },
     {
-      "taskId": "211", "status": "completed", "commitSha": null,
+      "taskId": "211", "status": "completed", "commitSha": "03de4f108d125237428faab417b8e68530d2824c",
       "title": "Onboard Review Matches 003 and 004 Into the Factual Replay Timeline",
       "phase": "new_review_match_factual_timeline",
       "primaryContribution": "Adds minimum factual intake and forward-only telemetry for two new targets, independent replay/VOD models and bounded composition with immutable accepted Craig bridges.",
@@ -6433,11 +6433,26 @@
       "stabilizedCapabilities": ["minimum_factual_review_telemetry"], "supersededCapabilities": [],
       "importantOutputs": ["tools/review-onboarding/timeline.mjs", "output/local-replay-processing/review-onboarding/task211-matches-003-004/telemetry-summary.json", "output/local-replay-processing/review-onboarding/task211-matches-003-004/unified-timeline.json", "reports/review-matches-003-004-factual-timeline-task211.md"],
       "gate": "two_new_review_targets_replay_vod_craig_timeline_ready",
-      "currentRelevance": "candidate_new_target_onboarding_pending_work_validation",
+      "currentRelevance": "accepted_new_target_factual_timeline",
       "dependsOn": ["199", "200", "210"], "supersededBy": null,
       "reworkRiskNotes": ["Integer visual timer residuals do not prove sub-second accuracy; operational replay/VOD errors are 2.140625 and 1.1875 seconds.", "Early and late replay ranges remain uncovered; positions are unavailable through the accepted field set.", "No candidate generation, workspace import, ASR, semantic attribution or Task212."],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_by_Work",
       "evidencePaths": ["tasks/specs/211.json", "tasks/completed/211-review-matches-factual-timeline.md", "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json"]
+    },
+    {
+      "taskId": "212", "status": "completed", "commitSha": null,
+      "title": "Bring Review Matches 003 and 004 Into Assisted Review Workspace",
+      "phase": "new_review_match_assisted_workspace",
+      "primaryContribution": "Adds 105 bounded candidates, local dense evidence, an additive workspace provider and safe real multitrack context navigation without replay or ASR execution.",
+      "introducedCapabilities": ["new_review_match_assisted_workspace"],
+      "stabilizedCapabilities": ["local_assisted_review_workspace"], "supersededCapabilities": [],
+      "importantOutputs": ["tools/review-integration/candidates.mjs", "tools/review-workspace/task212-provider.mjs", "output/local-replay-processing/assisted-review/task212-matches-003-004/workspace-index.json", "reports/review-matches-003-004-assisted-workspace-task212.md"],
+      "gate": "review_matches_003_004_assisted_workspace_ready",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["202", "203", "207", "210", "211"], "supersededBy": null,
+      "reworkRiskNotes": ["Low candidate selectivity is inherited without retuning.", "Scrim context is neither transcript nor call fact; ended source tracks remain inactive.", "Local review canaries are synthetic technical entries, not human labels."],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": ["tasks/specs/212.json", "tasks/completed/212-review-matches-assisted-workspace.md", "output/local-replay-processing/assisted-review/task212-matches-003-004/gate.json"]
     }
   ]
 }

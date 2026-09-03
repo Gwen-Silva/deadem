@@ -93,7 +93,7 @@ async function loadQueue(preferredId = null) {
     button.innerHTML = `<strong class="candidate-title">${escapeHtml(candidate.candidateWindowId)}</strong>
       <span class="candidate-badges"><span class="badge priority">${escapeHtml(candidate.priority.tier)}</span>
       <span class="badge" data-state="${candidate.reviewState}">${STATE_LABELS[candidate.reviewState]}</span>
-      <span class="badge">${candidate.callSegmentCount} calls</span></span>`;
+      <span class="badge">${candidate.scrimContextAvailability ? 'Contexto Craig' : `${candidate.callSegmentCount} calls`}</span></span>`;
     button.addEventListener('click', () => selectCandidate(candidate.candidateWindowId));
     elements.queue.append(button);
   }
@@ -124,8 +124,18 @@ async function selectCandidate(candidateId) {
     first: 'Início', representative: 'Representativo', last: 'Fim'
   }[frame.role] ?? frame.role)).join('');
   elements.storyboards.innerHTML = candidate.videoEvidence.storyboards.map(board => mediaFigure(board, board.storyboardId)).join('');
-  elements['audio-gap'].textContent = candidate.audioCallEvidence.status === 'available' ? '' : `Lacuna de áudio: ${candidate.audioCallEvidence.status}`;
-  elements['call-count'].textContent = `${candidate.audioCallEvidence.callSegmentCount} calls`;
+  const scrim = candidate.scrimContextEvidence;
+  document.getElementById('legacy-audio').hidden = Boolean(scrim);
+  document.getElementById('scrim-context').hidden = !scrim;
+  document.querySelector('.visual-section h2').textContent = scrim ? 'Evidência visual' : 'Visão do momento';
+  if (scrim) {
+    elements['audio-player'].pause();
+    document.getElementById('open-scrim').href = scrim.url;
+    const precision = value => Number(value.toFixed(6));
+    document.getElementById('scrim-context-sync').textContent = `Replay↔VOD ±${precision(scrim.replayVodMappingErrorSeconds)} s · Craig↔VOD ±${precision(scrim.craigVodMappingErrorSeconds)} s · Composto até Craig ±${precision(scrim.composedOperationalErrorSeconds)} s. Não inclui drift do transporte.`;
+  }
+  elements['audio-gap'].textContent = !candidate.audioCallEvidence || candidate.audioCallEvidence.status === 'available' ? '' : `Lacuna de áudio: ${candidate.audioCallEvidence.status}`;
+  elements['call-count'].textContent = `${candidate.audioCallEvidence?.callSegmentCount ?? 0} calls`;
   const range = candidate.videoEvidence.visualVodRangeSeconds;
   elements['segment-start'].value = range.start;
   elements['segment-end'].value = Math.min(range.end, range.start + 10);
@@ -138,7 +148,7 @@ async function selectCandidate(candidateId) {
 function renderCalls() {
   const state = candidateState();
   elements.calls.innerHTML = '';
-  for (const call of app.selected.audioCallEvidence.calls) {
+  for (const call of app.selected.audioCallEvidence?.calls ?? []) {
     const correction = state.transcriptCorrections[call.callSegmentId] ?? { humanTranscript: null, classification: 'not_validated' };
     const card = document.createElement('article');
     card.className = 'call-card';
@@ -180,7 +190,7 @@ function renderProvenance() {
     replayObservedFacts: app.selected.replayObservedFacts,
     derivedMetrics: app.selected.derivedMetrics,
     videoEvidence: { status: app.selected.videoEvidence.status, range: app.selected.videoEvidence.visualVodRangeSeconds },
-    audioCallEvidence: { status: app.selected.audioCallEvidence.status, calls: app.selected.audioCallEvidence.callSegmentCount },
+    ...(app.selected.scrimContextEvidence ? { scrimContextEvidence:app.selected.scrimContextEvidence } : { audioCallEvidence:{ status:app.selected.audioCallEvidence.status, calls:app.selected.audioCallEvidence.callSegmentCount } }),
     humanSuppliedContext: app.selected.humanSuppliedContext,
     analystInference: app.selected.analystInference
   };

@@ -20,6 +20,7 @@ const ACTIVITY_PERCENTILE = 0.75;
 const MERGE_GAP_SECONDS = 15;
 const WINDOW_PADDING_SECONDS = 12;
 const MAX_WINDOW_SECONDS = 90;
+export const CANDIDATE_HEURISTIC = Object.freeze({ binSeconds: BIN_SECONDS, activityPercentile: ACTIVITY_PERCENTILE, mergeGapSeconds: MERGE_GAP_SECONDS, paddingSeconds: WINDOW_PADDING_SECONDS, maximumWindowSeconds: MAX_WINDOW_SECONDS });
 const LOW_SELECTIVITY_FRACTION = 0.8;
 const POSITIVE_GATE = 'two_match_review_candidate_windows_ready';
 const LOW_SELECTIVITY_GATE = 'two_match_review_candidate_windows_ready_with_low_selectivity';
@@ -224,8 +225,8 @@ const FAMILY_CONFIG = {
     }
 };
 
-export function selectSeeds(reviewTargetId, bins, percentile = ACTIVITY_PERCENTILE) {
-    assertReviewTargetId(reviewTargetId);
+export function selectSeeds(reviewTargetId, bins, percentile = ACTIVITY_PERCENTILE, validateTarget = assertReviewTargetId) {
+    validateTarget(reviewTargetId);
     const mappedBins = [...bins.values()].filter(bin => bin.mappingStatus === 'mapped');
     const thresholds = {
         damage: percentileThreshold(mappedBins.map(bin => bin.families.damage.summedDelta), percentile),
@@ -319,7 +320,7 @@ function splitCluster(cluster, model, paddingSeconds, maxWindowSeconds) {
 }
 
 export function mergeSeedsToWindows(reviewTargetId, seeds, model, options = {}) {
-    assertReviewTargetId(reviewTargetId);
+    (options.validateTarget ?? assertReviewTargetId)(reviewTargetId);
     const mergeGapSeconds = options.mergeGapSeconds ?? MERGE_GAP_SECONDS;
     const paddingSeconds = options.paddingSeconds ?? WINDOW_PADDING_SECONDS;
     const maxWindowSeconds = options.maxWindowSeconds ?? MAX_WINDOW_SECONDS;

@@ -56,7 +56,7 @@ export function buildExportPacket(workspaceData, reviewState, selection) {
             replayObservedFacts: deepClone(candidate.replayObservedFacts),
             derivedMetrics: deepClone(candidate.derivedMetrics),
             videoEvidence: safeMediaRefs(candidate),
-            audioCallEvidence: {
+            ...(candidate.audioCallEvidence ? { audioCallEvidence: {
                 status: candidate.audioCallEvidence.status,
                 speakerStatus: 'unknown/mixed',
                 label: candidate.audioCallEvidence.label,
@@ -75,15 +75,15 @@ export function buildExportPacket(workspaceData, reviewState, selection) {
                         humanTranscript: 'human_supplied/transcript_correction'
                     }
                 }))
-            },
+            } } : { scrimContextEvidence:deepClone(candidate.scrimContextEvidence) }),
             humanSuppliedContext: deepClone(candidate.humanSuppliedContext),
             reviewRecord: deepClone(humanState.reviewRecord),
             reviewSegments: deepClone(selectedSegments(humanState, selection.reviewSegmentIds)),
             provenance: {
-                replayObservedFacts: 'Task199/factual_observation',
+                replayObservedFacts: candidate.scrimContextEvidence ? 'Task211/factual_observation' : 'Task199/factual_observation',
                 derivedMetrics: 'Task202/structural_review_scheduling_metrics_not_probability',
-                videoEvidence: 'Task203/local_visual_refs',
-                audioCallEvidence: 'Task205/mixed_vod_asr_draft',
+                videoEvidence: candidate.scrimContextEvidence ? 'Task212/local_visual_refs' : 'Task203/local_visual_refs',
+                ...(candidate.scrimContextEvidence ? { scrimContextEvidence:'Task210_Task211/multitrack_context_not_call_fact' } : { audioCallEvidence:'Task205/mixed_vod_asr_draft' }),
                 humanSuppliedContext: 'human_supplied',
                 reviewSegments: 'human_supplied/review_segmentation',
                 analystInference: []
@@ -121,9 +121,9 @@ export function exportPacketMarkdown(packet) {
             `Sync uncertainty: ±${candidate.syncEstimatedErrorSeconds}s`,
             `Review state: ${candidate.reviewRecord.reviewState}`,
             `Review segments: ${candidate.reviewSegments.length}`,
-            `Audio calls: ${candidate.audioCallEvidence.calls.length}`,
+            candidate.scrimContextEvidence ? `Scrim context: ${candidate.scrimContextEvidence.url}` : `Audio calls: ${candidate.audioCallEvidence.calls.length}`,
             '',
-            'ASR drafts require human validation; speaker remains unknown/mixed.',
+            candidate.scrimContextEvidence ? `Automatic transcription not used. Multitrack context only; composed uncertainty ±${candidate.scrimContextEvidence.composedOperationalErrorSeconds}s.` : 'ASR drafts require human validation; speaker remains unknown/mixed.',
             ''
         );
     }

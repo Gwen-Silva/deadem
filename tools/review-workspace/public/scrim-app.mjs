@@ -1,5 +1,6 @@
 import { ScrimPlaybackController } from '/scrim-controller.mjs';
-import { DEFAULT_SYNC_POLICY, vodToCraig, clamp } from '/scrim-model.mjs';
+import { DEFAULT_SYNC_POLICY, vodToCraig } from '/scrim-model.mjs';
+import { parseScrimNavigation, resolveScrimNavigation } from '/scrim-navigation.mjs';
 
 const byId = id => document.getElementById(id);
 const video = byId('scrim-video');
@@ -106,12 +107,11 @@ async function loadSession(session) {
 }
 
 window.openScrimPlayer = async ({ reviewTargetId, vodTimeSeconds, preRollSeconds = DEFAULT_SYNC_POLICY.defaultPreRollSeconds }) => {
-    const session = workspace.vodSessions.find(item => item.reviewTargetId && item.reviewTargetId === reviewTargetId);
-    if (!session) throw new Error('review_target_has_no_authorized_craig_vod_session');
-    if (!Number.isFinite(vodTimeSeconds) || !Number.isFinite(preRollSeconds) || preRollSeconds < 0) throw new Error('invalid_candidate_window_request');
+    const { session, seekVodSeconds } = resolveScrimNavigation({ reviewTargetId, vodTimeSeconds, preRollSeconds }, workspace.vodSessions);
     if (controller?.session.vodSessionId !== session.vodSessionId) await loadSession(session);
     byId('session-select').value = session.vodSessionId;
-    await controller.seek(clamp(vodTimeSeconds - preRollSeconds, session.vodRange.start, session.vodRange.end));
+    await controller.seek(seekVodSeconds);
+    window.scrimNavigationReady = { reviewTargetId, vodTimeSeconds, preRollSeconds, seekVodSeconds };
 };
 
 byId('play-pause').onclick = () => run(() => controller.intentPlaying ? controller.pause() : controller.play());
@@ -141,6 +141,8 @@ run(async () => {
         option.textContent = session.title ?? session.vodSessionId;
         byId('session-select').append(option);
     }
-    if (workspace.vodSessions.length) await loadSession(workspace.vodSessions[0]);
+    const navigation = parseScrimNavigation(location.search);
+    if (navigation) await window.openScrimPlayer(navigation);
+    else if (workspace.vodSessions.length) await loadSession(workspace.vodSessions[0]);
     else byId('sync-label').textContent = 'READY_FOR_REAL_VOD_SYNC_CANARY · nenhuma mídia VOD registrada';
 });

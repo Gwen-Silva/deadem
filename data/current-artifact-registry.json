@@ -1278,23 +1278,47 @@
     },
     {
       "id": "review_onboarding_task211_manifest", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/manifest.json",
-      "status": "candidate_pending_work_validation", "notes": "Four exclusive local input identities and validated replay headers; no absolute paths or private identity claims."
+      "status": "accepted", "notes": "Four exclusive local input identities and validated replay headers; no absolute paths or private identity claims."
     },
     {
       "id": "review_onboarding_task211_telemetry", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/telemetry-summary.json",
-      "status": "candidate_pending_work_validation", "notes": "Two monotonic forward-only replay timelines and safe family counts; heavy samples stay local."
+      "status": "accepted", "notes": "Two monotonic forward-only replay timelines and safe family counts; heavy samples stay local."
     },
     {
       "id": "review_onboarding_task211_validation", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/replay-vod-validation.json",
-      "status": "candidate_pending_work_validation", "notes": "Six fit and six held-out visual timing anchors per target, raw-origin calibration, model comparison and additional pause sanity."
+      "status": "accepted", "notes": "Six fit and six held-out visual timing anchors per target, raw-origin calibration, model comparison and additional pause sanity."
     },
     {
       "id": "review_onboarding_task211_unified", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/unified-timeline.json",
-      "status": "candidate_pending_work_validation", "notes": "Bounded replay/VOD/Craig composition with accepted Task210 artifact identity and separate uncertainties."
+      "status": "accepted", "notes": "Bounded replay/VOD/Craig composition with accepted Task210 artifact identity and separate uncertainties."
     },
     {
       "id": "review_onboarding_task211_gate", "path": "output/local-replay-processing/review-onboarding/task211-matches-003-004/gate.json",
-      "status": "candidate_pending_work_validation", "notes": "Technical claim two_new_review_targets_replay_vod_craig_timeline_ready; Work acceptance pending."
+      "status": "accepted", "notes": "Externally accepted two_new_review_targets_replay_vod_craig_timeline_ready; original artifact unchanged."
+    },
+    {
+      "id": "review_workspace_task212_candidates", "path": "output/local-replay-processing/assisted-review/task212-matches-003-004/candidate-windows.json",
+      "status": "candidate_pending_work_validation", "notes": "105 new bounded attention regions, unchanged Task202 heuristics; not confirmed gameplay events."
+    },
+    {
+      "id": "review_workspace_task212_dense", "path": "output/local-replay-processing/assisted-review/task212-matches-003-004/dense-evidence-summary.json",
+      "status": "candidate_pending_work_validation", "notes": "5623 local frames and 309 local storyboards; all candidates have complete boundary roles."
+    },
+    {
+      "id": "review_workspace_task212_index", "path": "output/local-replay-processing/assisted-review/task212-matches-003-004/workspace-index.json",
+      "status": "candidate_pending_work_validation", "notes": "Additive provider with local state/export and explicit real multitrack context, no ASR."
+    },
+    {
+      "id": "review_workspace_task212_coverage", "path": "output/local-replay-processing/assisted-review/task212-matches-003-004/coverage.json",
+      "status": "candidate_pending_work_validation", "notes": "All candidates in Task211 coverage; unmapped seeds ignored without extrapolation."
+    },
+    {
+      "id": "review_workspace_task212_gate", "path": "output/local-replay-processing/assisted-review/task212-matches-003-004/gate.json",
+      "status": "candidate_pending_work_validation", "notes": "Technical claim review_matches_003_004_assisted_workspace_ready; independent Work validation pending."
+    },
+    {
+      "id": "review_workspace_task212_audit", "path": "output/local-replay-processing/assisted-review/task212-matches-003-004/provenance-audit.json",
+      "status": "candidate_pending_work_validation", "notes": "Accepted telemetry identities, zero replay/protected/ASR/interpretation execution; no media versioned."
     }
   ]
 }

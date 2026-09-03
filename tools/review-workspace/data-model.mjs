@@ -2,8 +2,10 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadTask212Provider } from './task212-provider.mjs';
 
-export const TARGET_IDS = Object.freeze(['review_match_001', 'review_match_002']);
+export const LEGACY_TARGET_IDS = Object.freeze(['review_match_001', 'review_match_002']);
+export const TARGET_IDS = Object.freeze([...LEGACY_TARGET_IDS, 'review_match_003', 'review_match_004']);
 export const REVIEW_STATES = Object.freeze(['unreviewed', 'in_review', 'reviewed', 'skipped']);
 export const TRANSCRIPT_CLASSIFICATIONS = Object.freeze([
     'correct',
@@ -78,7 +80,7 @@ export function assertTargetId(targetId) {
 }
 
 export function assertCandidateId(candidateId, targetId = null) {
-    if (!/^review_match_00[12]_window_\d{4}$/u.test(candidateId ?? '')) throw new Error('invalid_candidate_id');
+    if (!/^review_match_00[1-4]_window_\d{4}$/u.test(candidateId ?? '')) throw new Error('invalid_candidate_id');
     const candidateTarget = candidateId.slice(0, 'review_match_001'.length);
     assertTargetId(candidateTarget);
     if (targetId && candidateTarget !== targetId) throw new Error('candidate_target_mismatch');
@@ -175,7 +177,7 @@ function availabilityStatus(availableCount, requiredCount) {
     return 'available';
 }
 
-function resolveFrameMedia(window, frameMap, registry) {
+export function resolveFrameMedia(window, frameMap, registry) {
     const refs = [
         ['first', window.videoEvidence.firstFrameId],
         ['representative', window.videoEvidence.representativeFrameId],
@@ -283,7 +285,7 @@ export function validateReviewState(targetId, input, workspaceData) {
         const reviewRecord = normalizeReviewRecord(candidateState.reviewRecord);
         const transcriptCorrections = {};
         for (const [callId, correction] of Object.entries(candidateState.transcriptCorrections ?? {})) {
-            if (!candidate.audioCallEvidence.calls.some(call => call.callSegmentId === callId)) throw new Error('call_not_in_candidate');
+            if (!candidate.audioCallEvidence?.calls.some(call => call.callSegmentId === callId)) throw new Error('call_not_in_candidate');
             if (!TRANSCRIPT_CLASSIFICATIONS.includes(correction.classification ?? 'not_validated')) {
                 throw new Error('invalid_transcript_classification');
             }
@@ -295,7 +297,7 @@ export function validateReviewState(targetId, input, workspaceData) {
         }
         const reviewSegments = (candidateState.reviewSegments ?? []).map((segment, index) => {
             if (segment.reviewTargetId !== targetId || segment.candidateWindowId !== candidateId) throw new Error('segment_identity_mismatch');
-            if (!/^review_match_00[12]_window_\d{4}_segment_\d{2,}$/u.test(segment.reviewSegmentId ?? '')) {
+            if (!/^review_match_00[1-4]_window_\d{4}_segment_\d{2,}$/u.test(segment.reviewSegmentId ?? '')) {
                 throw new Error('invalid_review_segment_id');
             }
             const range = candidate.videoEvidence.visualVodRangeSeconds;
@@ -351,7 +353,7 @@ export async function loadWorkspaceData({ repoRoot = DEFAULT_REPO_ROOT } = {}) {
     const candidatesByTarget = new Map();
     const targetSummaries = [];
 
-    for (const targetId of TARGET_IDS) {
+    for (const targetId of LEGACY_TARGET_IDS) {
         const frameIndexPath = `.local/deadem/dense-review/${targetId}/frame-evidence-index.json`;
         const callIndexPath = `.local/deadem/call-evidence/${targetId}/candidate-call-index.json`;
         const callSegmentsPath = `.local/deadem/call-evidence/${targetId}/call-segments.jsonl`;
@@ -422,6 +424,14 @@ export async function loadWorkspaceData({ repoRoot = DEFAULT_REPO_ROOT } = {}) {
         }));
     }
     if (candidateById.size !== 102) throw new Error('candidate_count_mismatch');
+    for (const provider of loadTask212Provider({ root, registry, accessLog })) {
+        candidatesByTarget.set(provider.summary.reviewTargetId, deepFreeze(provider.candidates));
+        targetSummaries.push(provider.summary);
+        for (const candidate of provider.candidates) {
+            if (candidateById.has(candidate.candidateWindowId)) throw new Error('duplicate_provider_candidate');
+            candidateById.set(candidate.candidateWindowId, candidate);
+        }
+    }
     if (accessLog.some(item => PROTECTED_PATTERN.test(item))) throw new Error('protected_access_detected');
     const data = {
         repoRoot: root,
@@ -458,7 +468,7 @@ export function listCandidates(workspaceData, {
     if (status && !REVIEW_STATES.includes(status)) throw new Error('invalid_review_state_filter');
     const stateCandidates = reviewState?.candidates ?? {};
     const normalizedSearch = search.trim().toLowerCase();
-    return workspaceData.candidatesByTarget.get(reviewTargetId)
+    return (workspaceData.candidatesByTarget.get(reviewTargetId) ?? [])
         .filter(candidate => !normalizedSearch || candidate.candidateWindowId.toLowerCase().includes(normalizedSearch))
         .filter(candidate => !status || (stateCandidates[candidate.candidateWindowId]?.reviewRecord?.reviewState ?? 'unreviewed') === status)
         .toSorted((left, right) => order === 'priority'
@@ -472,7 +482,8 @@ export function listCandidates(workspaceData, {
             chronologicalRank: candidate.chronologicalRank,
             reviewState: stateCandidates[candidate.candidateWindowId]?.reviewRecord?.reviewState ?? 'unreviewed',
             visualAvailability: candidate.videoEvidence.status,
-            audioAvailability: candidate.audioCallEvidence.status,
-            callSegmentCount: candidate.audioCallEvidence.callSegmentCount
+            audioAvailability: candidate.audioCallEvidence?.status ?? 'not_applicable',
+            callSegmentCount: candidate.audioCallEvidence?.callSegmentCount ?? 0,
+            ...(candidate.scrimContextEvidence ? { scrimContextAvailability:candidate.scrimContextEvidence.status } : {})
         }));
 }

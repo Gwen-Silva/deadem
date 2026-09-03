@@ -29,9 +29,10 @@ test('target and candidate allowlists reject protected aliases', () => {
 });
 
 test('loads exactly 67 plus 35 immutable candidates without replay or VOD access', () => {
-    assert.equal(data.targets.length, 2);
-    assert.deepEqual(data.targets.map(target => target.candidateCount), [67, 35]);
-    assert.equal(data.candidateById.size, 102);
+    const legacy = data.targets.filter(target => ['review_match_001', 'review_match_002'].includes(target.reviewTargetId));
+    assert.equal(legacy.length, 2);
+    assert.deepEqual(legacy.map(target => target.candidateCount), [67, 35]);
+    assert.equal([...data.candidateById.values()].filter(candidate => ['review_match_001', 'review_match_002'].includes(candidate.reviewTargetId)).length, 102);
     assert.equal(data.accessAudit.replayAccessCount, 0);
     assert.equal(data.accessAudit.vodAccessCount, 0);
     assert.equal(data.accessAudit.protectedAccessCount, 0);

@@ -2,58 +2,40 @@
 
 Last updated: 2026-09-03
 
-## Active New Review Match Factual Timeline — Task 211
+## Active Assisted Workspace Integration — Task 212
 
-Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is Work-accepted
-with blocker `craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
-Craig multitrack and source attribution remain accepted; ASR is not automatic
-semantic evidence. Small/medium/large-v3 usable rates on intelligible clips were
-23.08/53.85/38.46 percent. Medium is the best measured draft, still
-HUMAN_VALIDATION_REQUIRED (46.15 percent materially wrong; 75/25 gate missed).
+Task211 is externally ACCEPTED at
+`03de4f108d125237428faab417b8e68530d2824c` under
+`two_new_review_targets_replay_vod_craig_timeline_ready`.
+Its factual telemetry and bounded mapping artifacts remain immutable.
 
-Task 209 is Work-accepted at `6a8fa7433f75f6cd94499e7e32e31f4e81da86d8`:
-`craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
-Its synthetic transport baseline remains preserved.
+Task212 is the active candidate in VALIDATING. Technical claim:
+`review_matches_003_004_assisted_workspace_ready`. Targets003/004 now have
+48/57 candidate regions generated with unchanged Task202 semantics, plus
+2577/3046 deduplicated local frames and 145/164 local storyboards. No extraction
+failures; each candidate has first, representative and last evidence.
 
-Task 210 is Work-accepted at `aeb68e3ea6b9c5cc74b0f78171796728541b0b8b`.
-Subsequent external human validation found real playback comfortable, functional
-and suitable for review. Synchronized Craig Multitrack Playback is operationally
-completed; no further playback, mixer, drift, ASR or Craig-sync tuning is authorized.
-Two explicitly authorized
-real VODs map to distinct chronological ranges of the same Craig recording.
-Offset-only models were selected against held-out audio anchors: validation
-MAE 0.148318/0.117750 seconds; maximum 0.168250/0.221750 seconds for targets
-003/004. Operational estimates including all measured residuals plus margin
-are 0.201125/0.253500 seconds. The six-region real browser canary passed with
-maximum transport drift 83.580/64.934ms, separately measured from mapping.
-Technical claim: `two_real_craig_vod_sessions_synchronized_and_player_ready`.
+Coverage is bounded to Task211 ranges. 5/11 unmapped seeds are recorded and
+ignored; no early/tail extrapolation. Review coverage95.7975%/88.4622% preserves
+the inherited low-selectivity limitation. Priority is a scheduling heuristic.
+Replay/VOD operational errors2.140625/1.187500s expand visual bounds; composed
+Craig errors2.341750/1.441000s exclude browser transport drift.
 
-The player offers both real sessions and preserves nine mixer rows; tracks
-already ended in the recording remain inactive. All media, human hypotheses,
-session configuration and screenshots stay local. No ASR or replay was run.
-Numeric countdowns and leaderboard durations were not established by Task 210.
-Its immutable artifacts preserve their original execution-time limitations; the
-later human playback verdict is recorded here, not retroactively fabricated.
+An additive provider brings the workspace to four targets/207 candidates.
+The 102 historical candidates and their mixed-VOD calls remain unchanged.
+New targets use scrimContextEvidence, not ASR or confirmed call facts.
+The safe URL opens the corresponding accepted real session with10s pre-roll.
+State, structured human fields, segments and JSON/Markdown exports work locally.
+Early/mid/late technical browser canaries, both Scrim links, mixer and legacy0015
+passed. Synthetic technical canary state is isolated from existing human review.
 
-Task 211 is the active candidate in `VALIDATING`, with technical claim
-`two_new_review_targets_replay_vod_craig_timeline_ready`. New targets 003/004
-have four validated input hashes and PBDEMS2 headers. Forward-only 1Hz telemetry
-covers replay elapsed 0–2836 and 0–3735 seconds with 2837/3736 samples and no gaps.
-Each has 14 participant local references, 3 team refs and 13 hero refs, not confirmed
-player counts. Life-state, net-worth, damage/healing aggregate deltas and raw
-objective-like observations are available; positions are absent through the
-accepted field set. No identity or final gameplay facts are promoted.
-
-Six fit and six held-out anchors per target select offset-only. Replay/VOD MAE
-is 0.500/0.072917s; p90 1.000/0.109375s. Integer visual timer residuals are not
-sub-second accuracy proof: operational errors are 2.140625/1.187500s. Coverage
-is 47.640625–2792.640625 and 53.578125–3688.781250 replay seconds; early/tail
-regions reject mapping. The immutable Task210 bridges compose to Craig with
-conservative operational errors 2.341750/1.441000s, without browser drift.
-No accepted Task199/200/210 output, workspace, candidate, ASR or package mutation.
-All media and heavy telemetry stay local; protected replay access remains zero.
-Inherited blockers for old 001/002 and semantic ASR remain. Work alone accepts;
-no Task 212 is created or started.
+Task210 remains externally ACCEPTED and subsequently human-validated as
+comfortable, functional and operationally completed. No mixer/drift/sync tuning.
+Nine tracks stay registered; ended tracks remain inactive. Task208 remains
+ACCEPTED_WITH_BLOCKER:
+`craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
+No Task212 replay, protected005–008 access, ASR or gameplay interpretation.
+No media or human state is versioned. Work alone accepts; no Task213 exists.
 
 ## Authoritative Current State
 
