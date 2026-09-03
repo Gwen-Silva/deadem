@@ -8,128 +8,159 @@
 </head>
 <body>
   <div class="app-frame">
-  <aside id="product-sidebar" class="product-sidebar" aria-label="AlphaVeil"></aside>
-  <button id="shell-overlay" class="shell-overlay" type="button" aria-label="Fechar navegação"></button>
-  <div class="app-viewport">
-  <header id="mobile-bar" class="mobile-bar"></header>
-  <header class="app-header workspace-header">
-    <div class="workspace-identity">
-      <p class="eyebrow">REVISÃO · EVIDÊNCIA LOCAL</p>
-      <h1>Revisão assistida</h1>
+    <aside id="product-sidebar" class="product-sidebar" aria-label="AlphaVeil"></aside>
+    <button id="shell-overlay" class="shell-overlay" type="button" aria-label="Fechar navegação"></button>
+    <div class="app-viewport">
+      <header id="mobile-bar" class="mobile-bar"></header>
+
+      <header class="review-workspace-header">
+        <div class="review-header-copy">
+          <nav class="review-breadcrumb" aria-label="Breadcrumb">
+            <a href="/matches">Partidas</a><span>/</span><a id="overview-link" href="/matches/001">Scrim 01</a><span>/</span><span>Revisão</span>
+          </nav>
+          <div class="review-title-row">
+            <div><p class="section-kicker">Revisão assistida</p><h1 id="match-title">Scrim 01</h1></div>
+            <label class="match-picker">Alterar partida <select id="target" aria-label="Alterar partida"></select></label>
+          </div>
+          <div class="review-progress-copy"><span id="review-progress-text">0 de 0 momentos processados</span><div class="av-progress" aria-label="Progresso da revisão"><span id="review-progress-bar"></span></div></div>
+        </div>
+        <nav class="review-toolbar" aria-label="Ações da revisão">
+          <div class="moment-navigation">
+            <button id="previous" type="button">← Momento anterior</button>
+            <button id="next" type="button">Próximo momento →</button>
+          </div>
+          <button id="save" class="primary" type="button">Salvar revisão</button>
+          <button id="export" type="button">Exportar análise</button>
+          <span id="save-feedback" class="save-feedback" role="status" aria-live="polite"></span>
+        </nav>
+      </header>
+
+      <div class="method-banner" role="note">
+        <strong>Os momentos servem para direcionar sua atenção.</strong>
+        Eles não são erros, eventos ou conclusões confirmadas automaticamente.
+      </div>
+
+      <button id="mobile-queue-toggle" class="mobile-queue-toggle" type="button" aria-expanded="false" aria-controls="queue-panel">
+        <span id="mobile-current-moment">Momento</span><span>Ver momentos ▾</span>
+      </button>
+      <button id="queue-overlay" class="queue-overlay" type="button" aria-label="Fechar lista de momentos"></button>
+
+      <main class="review-main">
+        <aside id="queue-panel" class="queue-panel panel" aria-label="Momentos para revisar">
+          <div class="section-heading">
+            <div><p class="section-kicker">NAVEGAÇÃO</p><h2>Momentos para revisar</h2></div>
+            <span id="queue-count" class="count-badge">0</span>
+          </div>
+          <div class="queue-controls">
+            <label>Ordenar por
+              <select id="order"><option value="chronological">Ordem cronológica</option><option value="priority">Ordem sugerida</option></select>
+            </label>
+            <p id="order-help" class="hint">A sugestão organiza a fila por atividade observada. Não representa importância, erro ou probabilidade.</p>
+            <label>Estado
+              <select id="filter"><option value="">Todos</option><option value="unreviewed">Não revisados</option><option value="in_review">Em revisão</option><option value="reviewed">Revisados</option><option value="skipped">Ignorados</option></select>
+            </label>
+            <label>Ir para momento <input id="search" inputmode="numeric" placeholder="Ex.: 25"></label>
+          </div>
+          <div id="queue" class="queue" role="listbox" aria-label="Momentos"></div>
+        </aside>
+
+        <section class="evidence-panel panel">
+          <div id="candidate-heading" class="moment-heading"></div>
+
+          <section class="content-section visual-section">
+            <div class="section-heading">
+              <div><p class="section-kicker">EVIDÊNCIA VISUAL</p><h2>Contexto do momento</h2></div>
+              <span id="visual-status" class="availability-badge"></span>
+            </div>
+            <div id="visual-gap" class="gap"></div>
+            <div id="evidence-stage" class="evidence-stage"></div>
+            <div id="frames" class="frame-selector" aria-label="Selecionar frame"></div>
+            <details class="secondary-details">
+              <summary>Ver sequência visual</summary>
+              <div id="storyboards" class="media-grid storyboards"></div>
+            </details>
+          </section>
+
+          <section id="scrim-context" class="content-section communication-card" hidden>
+            <p class="section-kicker">COMUNICAÇÃO DA EQUIPE</p>
+            <h2>Ouça o contexto sincronizado</h2>
+            <p>Ouça o que estava sendo comunicado neste momento com as faixas individuais da equipe sincronizadas ao gameplay.</p>
+            <a id="open-scrim" class="av-button av-button--primary">▶ Ouvir este momento com a equipe</a>
+            <p class="hint">Abre o Replay sincronizado alguns segundos antes deste momento.</p>
+            <span class="sync-ready">✓ Replay sincronizado</span>
+            <p id="scrim-context-sync" class="advanced-sync"></p>
+          </section>
+
+          <section id="legacy-audio" class="content-section audio-section">
+            <div class="section-heading"><div><p class="section-kicker">COMUNICAÇÃO DO MOMENTO</p><h2>Trechos disponíveis</h2></div><span id="call-count" class="count-badge">0</span></div>
+            <div class="asr-warning"><strong>Transcrição automática não validada.</strong> Confirme ouvindo o áudio; nenhum speaker é inferido.</div>
+            <div id="audio-gap" class="gap"></div>
+            <audio id="audio-player" controls preload="metadata"></audio>
+            <div id="calls"></div>
+          </section>
+
+          <details class="technical-details">
+            <summary>Detalhes da evidência</summary>
+            <p class="hint">Origem, dados observados, métricas derivadas e incerteza permanecem separados.</p>
+            <div id="provenance" class="provenance"></div>
+          </details>
+        </section>
+
+        <aside class="review-panel panel">
+          <div class="section-heading">
+            <div><p class="section-kicker">RACIOCÍNIO HUMANO</p><h2>Revisão do momento</h2></div>
+            <span id="review-unsaved" class="unsaved-badge" hidden>● Alterações não salvas</span>
+          </div>
+          <label class="status-field">Status do momento
+            <select id="review-state"><option value="unreviewed">Não revisado</option><option value="in_review">Em revisão</option><option value="reviewed">Revisado</option><option value="skipped">Ignorado</option></select>
+          </label>
+          <div id="structured-review" class="review-form"></div>
+
+          <fieldset class="error-fieldset">
+            <legend>Avaliação do momento</legend>
+            <p class="hint">Seleção humana. Nenhuma classe é atribuída automaticamente.</p>
+            <div id="error-classes" class="error-groups"></div>
+          </fieldset>
+
+          <section class="segment-section">
+            <div class="section-heading"><div><p class="section-kicker">DIVIDIR ESTE MOMENTO</p><h3>Analisar trechos separadamente</h3></div></div>
+            <p class="hint">Um momento preparado pelo sistema pode conter mais de uma decisão. Crie segmentos quando quiser analisar trechos separadamente.</p>
+            <div class="segment-editor">
+              <label>Início <input id="segment-start" inputmode="decimal" placeholder="MM:SS.s"></label>
+              <label>Fim <input id="segment-end" inputmode="decimal" placeholder="MM:SS.s"></label>
+              <label class="span-2">Rótulo humano <input id="segment-label" placeholder="Descrição curta"></label>
+              <label class="span-2">Notas <textarea id="segment-notes" rows="2"></textarea></label>
+              <button id="add-segment" class="span-2" type="button">Adicionar segmento</button>
+            </div>
+            <div id="segments"></div>
+          </section>
+
+          <section class="export-card">
+            <p class="section-kicker">ANÁLISE LOCAL</p>
+            <h3>Exportar sua revisão</h3>
+            <p>A análise continua local e não incorpora mídia ao packet.</p>
+            <details class="export-options">
+              <summary>Opções de exportação</summary>
+              <p id="export-path" class="export-path">Exporte a análise para gerar o packet local.</p>
+              <div class="button-group">
+                <button id="copy-export-path" type="button" disabled>Copiar caminho</button>
+                <button id="open-export-folder" type="button">Abrir pasta</button>
+              </div>
+            </details>
+          </section>
+
+          <details class="advanced-mode">
+            <summary>Ferramentas avançadas</summary>
+            <div class="advanced-record">
+              <h3>Registro bruto da revisão</h3>
+              <p class="hint">Permanece sincronizado com o formulário para inspeção avançada.</p>
+              <label>Review record JSON<textarea id="review-record" rows="16" spellcheck="false"></textarea></label>
+            </div>
+          </details>
+          <div id="status" role="status" aria-live="polite"></div>
+        </aside>
+      </main>
     </div>
-    <nav class="toolbar" aria-label="Ações principais">
-      <a href="/scrim" class="scrim-link">Replay sincronizado ↗</a>
-      <label>Partida <select id="target"></select></label>
-      <div class="button-group">
-        <button id="previous" title="Candidato anterior">← Anterior</button>
-        <button id="next" title="Próximo candidato">Próximo →</button>
-      </div>
-      <button id="save" class="primary">Salvar revisão</button>
-      <button id="export">Exportar atual</button>
-    </nav>
-  </header>
-
-  <div class="method-banner" role="note">
-    <strong>Região para revisão, não evento confirmado.</strong>
-    Os candidatos apenas direcionam atenção humana; prioridade é uma heurística de agenda, nunca probabilidade ou importância.
-  </div>
-
-  <main class="review-main">
-    <aside class="queue-panel panel">
-      <div class="section-heading">
-        <div><p class="section-kicker">NAVEGAÇÃO</p><h2>Fila de candidatos</h2></div>
-        <span id="queue-count" class="count-badge">0</span>
-      </div>
-      <div class="queue-controls">
-        <label>Ordenar por
-          <select id="order"><option value="chronological">Ordem cronológica</option><option value="priority">Prioridade existente</option></select>
-        </label>
-        <label>Estado
-          <select id="filter"><option value="">Todos</option><option value="unreviewed">Não revisado</option><option value="in_review">Em revisão</option><option value="reviewed">Revisado</option><option value="skipped">Ignorado</option></select>
-        </label>
-        <label>Buscar candidato <input id="search" placeholder="Ex.: 0015"></label>
-      </div>
-      <div id="queue" class="queue"></div>
-    </aside>
-
-    <section class="evidence-panel panel">
-      <div id="candidate-heading" class="candidate-heading"></div>
-
-      <section class="content-section visual-section">
-        <div class="section-heading"><div><p class="section-kicker">EVIDÊNCIA LOCAL</p><h2>Visão do momento</h2></div><span id="visual-status" class="availability-badge"></span></div>
-        <div id="visual-gap" class="gap"></div>
-        <div id="frames" class="media-grid"></div>
-        <details class="secondary-details">
-          <summary>Ver storyboards e contexto visual adicional</summary>
-          <div id="storyboards" class="media-grid storyboards"></div>
-        </details>
-      </section>
-
-      <section id="scrim-context" class="content-section" hidden>
-        <h2>Contexto da scrim</h2>
-        <p><a id="open-scrim" target="_blank" rel="noopener">Abrir no Player da Scrim</a></p>
-        <p id="scrim-context-sync"></p>
-        <p>Transcrição automática não utilizada neste target.<br>Áudio multitrack disponível no Player da Scrim.</p>
-      </section>
-      <section id="legacy-audio" class="content-section audio-section">
-        <div class="section-heading"><div><p class="section-kicker">ÁUDIO CONTEMPORÂNEO</p><h2>Calls próximas</h2></div><span id="call-count" class="count-badge">0</span></div>
-        <div class="asr-warning"><strong>ASR é rascunho.</strong> Valide ouvindo; speaker não identificado/misto.</div>
-        <div id="audio-gap" class="gap"></div>
-        <audio id="audio-player" controls preload="metadata"></audio>
-        <div id="calls"></div>
-      </section>
-
-      <details class="technical-details">
-        <summary>Detalhes técnicos e provenance</summary>
-        <p class="hint">Camadas mantidas separadas para preservar origem e incerteza.</p>
-        <div id="provenance" class="provenance"></div>
-      </details>
-    </section>
-
-    <aside class="review-panel panel">
-      <div class="section-heading"><div><p class="section-kicker">REGISTRO HUMANO</p><h2>Revisão do candidato</h2></div><span id="review-unsaved" class="unsaved-badge" hidden>Alterações</span></div>
-      <label class="status-field">Status da revisão
-        <select id="review-state"><option value="unreviewed">Não revisado</option><option value="in_review">Em revisão</option><option value="reviewed">Revisado</option><option value="skipped">Ignorado</option></select>
-      </label>
-      <div id="structured-review" class="review-form"></div>
-
-      <fieldset class="error-fieldset">
-        <legend>Erros identificados</legend>
-        <p class="hint">Nenhuma classe é atribuída automaticamente.</p>
-        <div id="error-classes" class="error-grid"></div>
-      </fieldset>
-
-      <section class="segment-section">
-        <div class="section-heading"><div><p class="section-kicker">UNIDADES HUMANAS</p><h3>Segmentos da revisão</h3></div></div>
-        <p class="hint">Os limites ficam dentro do candidato; sobreposições são sinalizadas e nunca mescladas.</p>
-        <div class="segment-editor">
-          <label>Início VOD <input id="segment-start" inputmode="decimal"></label>
-          <label>Fim VOD <input id="segment-end" inputmode="decimal"></label>
-          <label class="span-2">Rótulo humano <input id="segment-label" placeholder="Descrição curta"></label>
-          <label class="span-2">Notas <textarea id="segment-notes" rows="2"></textarea></label>
-          <button id="add-segment" class="span-2">Adicionar segmento</button>
-        </div>
-        <div id="segments"></div>
-      </section>
-
-      <section class="export-card">
-        <p class="section-kicker">EXPORTAÇÃO LOCAL</p>
-        <p id="export-path" class="export-path">Exporte o candidato para gerar o packet local.</p>
-        <div class="button-group">
-          <button id="copy-export-path" disabled>Copiar caminho</button>
-          <button id="open-export-folder">Abrir pasta</button>
-        </div>
-      </section>
-
-      <details class="advanced-mode">
-        <summary>Modo avançado · JSON bruto</summary>
-        <p class="hint">O formulário acima é a edição principal. Este JSON permanece sincronizado para inspeção avançada.</p>
-        <label>Review record JSON<textarea id="review-record" rows="16" spellcheck="false"></textarea></label>
-      </details>
-      <div id="status" role="status" aria-live="polite"></div>
-    </aside>
-  </main>
-  </div>
   </div>
   <script type="module" src="/app.js"></script>
 </body>

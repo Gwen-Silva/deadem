@@ -22,10 +22,11 @@ test('structured PT-BR review is primary and raw JSON remains advanced', async (
     for (const label of [
         'Informações confirmadas', 'Pontos incertos', 'Call do time', 'Intenção', 'Ação observada',
         'Alternativas', 'Resultado imediato', 'Resultado de longo prazo', 'Qualidade da decisão',
-        'Qualidade da execução', 'Erros identificados', 'Notas da revisão'
+        'Qualidade da execução', 'Avaliação do momento', 'Notas da revisão'
     ]) assert.match(interfaceSource, new RegExp(label, 'u'));
-    assert.match(html, /<details class="advanced-mode">[\s\S]*JSON bruto/u);
-    assert.match(html, /Região para revisão, não evento confirmado/u);
+    assert.match(html, /<details class="advanced-mode">[\s\S]*Registro bruto da revisão/u);
+    assert.match(html, /Os momentos servem para direcionar sua atenção/u);
+    assert.match(html, /não são erros, eventos ou conclusões confirmadas automaticamente/u);
     assert.equal(REVIEW_FIELD_DEFINITIONS.length, 11);
 });
 
@@ -47,11 +48,12 @@ test('structured form roundtrip preserves advanced fields and error vocabulary v
 
 test('responsive contract distinguishes wide, medium and narrow widths', async () => {
     const css = await readFile(path.join(publicRoot, 'styles.css'), 'utf8');
+    const reviewCss = await readFile(path.join(publicRoot, 'styles/review.css'), 'utf8');
     assert.equal(responsiveMode(1440), 'wide');
     assert.equal(responsiveMode(960), 'medium');
     assert.equal(responsiveMode(600), 'narrow');
-    assert.match(css, /@media \(max-width: 1279px\)/u);
-    assert.match(css, /@media \(max-width: 759px\)/u);
+    assert.match(reviewCss, /@media \(max-width: 1279px\)/u);
+    assert.match(reviewCss, /@media \(max-width: 759px\)/u);
     assert.match(css, /--primary: #8b5cf6/u);
     assert.match(css, /--focus: #c4b5fd/u);
 });

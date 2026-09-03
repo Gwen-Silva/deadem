@@ -1,24 +1,26 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 214
+## Coordination Gate Before Further Execution — Task 215
 
-Task213 is ACCEPTED at `9fb3cb8ebb63f1f2655439297e59f3b4dd03a9f1`.
+Task214 is ACCEPTED at `9d5e0140320e335e6d3946376eae4442f60e6e94`.
 Task212 four-target Review and Task210 real playback remain accepted. Task208
 semantic-ASR and Task202 candidate-selectivity limitations remain unchanged.
 
-Task214 is VALIDATING under the technical claim
-`alphaveil_home_matches_match_overview_ready`. Work must independently inspect
-the real-data Home, four-match library, safe Overview routes, local-state
-progress, capability differences and preserved Review/Replay behavior. No
-Task215 is created or authorized.
+Task215 is VALIDATING under the technical claim
+`alphaveil_assisted_review_workspace_ux_v2_ready`. Work must independently
+inspect the friendly Moment queue, representative evidence hierarchy, unchanged
+human review schema, save/reopen/export, 003/004 real Replay transition, 001/002
+legacy transcript warning and wide/medium/mobile behavior. No Task216 is created
+or authorized.
 
 ## Current State
 
 AlphaVeil exposes Scrim01–04 with67/35/48/57 real prepared moments, deterministic
-covers and real review progress. Home, `/matches`, four Overview pages, friendly
-Moment links, Continue Review and real 003/004 Replay CTAs passed desktop/mobile
-browser flows. 001/002 correctly make no synchronized Replay claim. Patterns and
-Training remain Preview. Media and canary state remain local.
+covers and real review progress. Review now centers one selected moment, its
+representative evidence and five grouped stages of human reasoning. Friendly URL
+history, local save/reopen/export, 003/004 real Replay, 001/002 legacy audio and
+responsive drawers passed Chrome flows. Patterns and Training remain Preview.
+Media, screenshots, canary state and exports remain local.
 
 No replay parsing, evidence regeneration, ASR, metadata inference, semantic facts
 or protected access occurred. Next objective is independent Work validation, not

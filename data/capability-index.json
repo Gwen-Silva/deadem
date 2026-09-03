@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "214",
+  "generatedAtTask": "215",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1103,8 +1103,8 @@
         "capabilityId": "alphaveil_match_experience",
         "plainName": "AlphaVeil real-data Home, match library and Match Overview",
         "introducedInTask": "214",
-        "stabilizedInTask": null,
-        "currentStatus": "candidate_pending_work_validation",
+        "stabilizedInTask": "215",
+        "currentStatus": "accepted",
         "currentBaseline": "task214_real_data_home_matches_and_overview",
         "whyItMatters": "Lets a player navigate accepted gameplay, match data, communication, Review and real synchronized Replay without backend vocabulary or fabricated match metadata.",
         "mainFiles": [
@@ -1119,11 +1119,38 @@
           "reports/alphaveil-home-matches-match-overview-task214.md"
         ],
         "knownLimits": [
-          "Assisted Review Workspace UX V2 and synchronized Replay UX V2 are not implemented.",
+          "Synchronized Replay UX V2 is not implemented.",
           "Patterns and Training remain explicit Preview modules.",
           "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged."
         ],
-        "nextUsefulStep": "After independent Work validation, Task 215 may redesign the Assisted Review Workspace; it is not created or authorized here."
+        "nextUsefulStep": "Use the accepted match experience through the Task 215 Review UX candidate without changing factual or playback semantics."
+      },
+      {
+        "capabilityId": "alphaveil_assisted_review_workspace_ux_v2",
+        "plainName": "AlphaVeil Assisted Review Workspace UX V2",
+        "introducedInTask": "215",
+        "stabilizedInTask": null,
+        "currentStatus": "candidate_pending_work_validation",
+        "currentBaseline": "task215_friendly_moment_evidence_human_reasoning_workspace",
+        "whyItMatters": "Makes the existing 207-candidate local workspace usable as a player-facing review flow without weakening evidence uncertainty or changing accepted records.",
+        "mainFiles": [
+          "tools/review-workspace/review-presentation.mjs",
+          "tools/review-workspace/public/index.html",
+          "tools/review-workspace/public/app.js",
+          "tools/review-workspace/public/styles/review.css",
+          "docs/codex/ALPHAVEIL_ASSISTED_REVIEW_UX_V2_CONTRACT.md"
+        ],
+        "mainOutputs": [
+          "output/local-replay-processing/presentation-ux/task215-review-ux-v2/summary.json",
+          "output/local-replay-processing/presentation-ux/task215-review-ux-v2/gate.json",
+          "reports/alphaveil-assisted-review-workspace-ux-v2-task215.md"
+        ],
+        "knownLimits": [
+          "Prepared moments are structural attention regions, not confirmed gameplay events or errors.",
+          "001/002 ASR remains an unvalidated draft and 003/004 communication remains multitrack context without inferred semantics.",
+          "Candidate selectivity and replay-to-video synchronization precision are unchanged; synchronized Replay UX V2 remains future work."
+        ],
+        "nextUsefulStep": "Independent Work validation of Task 215 only; no follow-up task is created."
       }
   ]
 }

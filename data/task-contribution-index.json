@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "214",
-  "baseCommit": "9fb3cb8ebb63f1f2655439297e59f3b4dd03a9f1",
-  "taskRange": "001-214",
+  "generatedAtTask": "215",
+  "baseCommit": "9d5e0140320e335e6d3946376eae4442f60e6e94",
+  "taskRange": "001-215",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6474,7 +6474,7 @@
     {
         "taskId": "214",
         "status": "completed",
-        "commitSha": null,
+        "commitSha": "9d5e0140320e335e6d3946376eae4442f60e6e94",
         "title": "Build AlphaVeil Home, Matches and Match Overview",
         "phase": "presentation_ux_match_experience",
         "primaryContribution": "Turns the accepted AlphaVeil shell into a real-data Home, functional four-match library and allowlisted Overview experience with safe covers, real review progress and friendly navigation.",
@@ -6495,7 +6495,7 @@
           "reports/alphaveil-home-matches-match-overview-task214.md"
         ],
         "gate": "alphaveil_home_matches_match_overview_ready",
-        "currentRelevance": "candidate_pending_work_validation",
+        "currentRelevance": "accepted_current_match_experience",
         "dependsOn": [
           "213",
           "212",
@@ -6507,12 +6507,45 @@
           "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged.",
           "Covers, screenshots, review state and browser evidence remain local-only."
         ],
-        "evidenceStatus": "pending_independent_work_validation",
+        "evidenceStatus": "ACCEPTED_by_Work",
         "evidencePaths": [
           "tasks/specs/214.json",
           "tasks/completed/214-alphaveil-home-matches-match-overview.md",
           "output/local-replay-processing/presentation-ux/task214-match-experience/gate.json"
         ]
+    },
+    {
+      "taskId": "215",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Redesign AlphaVeil Assisted Review Workspace UX V2",
+      "phase": "presentation_ux_assisted_review_workspace_v2",
+      "primaryContribution": "Reorganizes the accepted four-target Review workspace around friendly moments, representative evidence and five stages of human reasoning while preserving persistence, export, segment, transcript and Replay semantics.",
+      "introducedCapabilities": ["alphaveil_assisted_review_workspace_ux_v2"],
+      "stabilizedCapabilities": ["alphaveil_match_experience", "local_assisted_review_workspace", "assisted_review_workspace_ux"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/review-workspace/review-presentation.mjs",
+        "tools/review-workspace/public/styles/review.css",
+        "docs/codex/ALPHAVEIL_ASSISTED_REVIEW_UX_V2_CONTRACT.md",
+        "output/local-replay-processing/presentation-ux/task215-review-ux-v2/summary.json",
+        "reports/alphaveil-assisted-review-workspace-ux-v2-task215.md"
+      ],
+      "gate": "alphaveil_assisted_review_workspace_ux_v2_ready",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["214", "212", "210", "207"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Prepared moments remain attention regions, not confirmed events, errors or conclusions.",
+        "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged.",
+        "Browser screenshots, human canary state, exports and all media remain local-only."
+      ],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": [
+        "tasks/specs/215.json",
+        "tasks/completed/215-alphaveil-assisted-review-workspace-ux-v2.md",
+        "output/local-replay-processing/presentation-ux/task215-review-ux-v2/gate.json"
+      ]
     }
   ]
 }

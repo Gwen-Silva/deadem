@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "taskId": "215",
+  "module": "Presentation UX / Assisted Review Workspace UX V2",
+  "baseCommit": "9d5e0140320e335e6d3946376eae4442f60e6e94",
+  "reviewTargets": 4,
+  "candidateCounts": {
+    "review_match_001": 67,
+    "review_match_002": 35,
+    "review_match_003": 48,
+    "review_match_004": 57,
+    "total": 207,
+    "historical001002": 102
+  },
+  "preservedContract": {
+    "reviewFieldCount": 11,
+    "errorClassCount": 15,
+    "reviewStates": 4,
+    "segmentSchemaChanged": false,
+    "transcriptCorrectionSchemaChanged": false,
+    "exportSchemaChanged": false,
+    "candidateSemanticsChanged": false,
+    "productViewModelChanged": false
+  },
+  "productExperience": {
+    "friendlyMomentUrls": true,
+    "historyBackForward": true,
+    "representativeEvidencePrimary": true,
+    "fiveHumanReasoningSections": true,
+    "realReviewProgress": true,
+    "mobileMomentDrawer": true,
+    "advancedEvidenceClosedByDefault": true,
+    "rawJsonClosedByDefault": true
+  },
+  "communication": {
+    "legacyTargets": ["review_match_001", "review_match_002"],
+    "realMultitrackTargets": ["review_match_003", "review_match_004"],
+    "asrWarningVisibleForLegacy": true,
+    "automaticSemanticClaims": 0
+  },
+  "validation": {
+    "focusedAndRegressionTestsPassed": 60,
+    "focusedAndRegressionTestsFailed": 0,
+    "browserCheckGroupsPassed": 8,
+    "browserErrors": 0,
+    "viewports": ["1920x1080", "1440x900", "1024x768", "390x844"],
+    "localScreenshots": 4
+  },
+  "safety": {
+    "replayAccessCount": 0,
+    "protectedAccessCount": 0,
+    "asrExecutionCount": 0,
+    "factualRegenerationCount": 0,
+    "versionedMediaCount": 0,
+    "task216Created": false
+  }
+}
