@@ -1,25 +1,27 @@
 # Next Milestone: Five-Human-Replay Factual Pilot
 
-## Coordination Gate Before Further Execution — Task 209
+## Coordination Gate Before Further Execution — Task 210
 
 Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is accepted with
 semantic-ASR blocker. Craig source attribution is accepted; medium is the best
 measured draft but missed the 75/25 semantic quality gate.
 
-Task 209 is a candidate in VALIDATING with technical claim
+Task 209 is accepted at `6a8fa7433f75f6cd94499e7e32e31f4e81da86d8` under
 `craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
-Work must independently validate the player. The next real-media prerequisite
-is an explicitly authorized VOD/session mapping for this Craig recording; no
-such pairing is inferred from earlier tasks. No Task 210 exists.
+Task 210 is the candidate in VALIDATING with technical claim
+`two_real_craig_vod_sessions_synchronized_and_player_ready`.
+Work must independently validate the measured real mappings and browser
+evidence. No Task 211 exists and no follow-up implementation is authorized.
 
 ## Current State
 
-Task 209 reuses the nine normalized tracks without ASR or normalization. The
-VOD-master mixer has synthetic-clock browser evidence for coordinated transport,
-ten seeks, three rates, drift correction and responsive operation. This is not
-real VOD synchronization or semantic validation. Task 202 selectivity and Task
-200 sync uncertainty remain unchanged; automatic strategic interpretation is
-not available.
+Task 210 reuses nine normalized tracks without ASR or renormalization. Targets
+003/004 have independently validated audio mapping MAE 148/118ms and real
+start/middle/end browser evidence. Offset-only was preferred over affine by
+held-out performance. Synthetic transport and nine-track mixer regressions pass.
+Mapping uncertainty is distinct from browser drift. A human listening verdict
+is not supplied, and no semantic evidence is promoted. Task 202 selectivity and
+Task 200 replay-to-video uncertainty remain unchanged.
 
 The accepted Codex workflow gate is
 `codex_task_workflow_optimization_ready_v3`. Its documented limitations in

@@ -12,6 +12,8 @@ const { chromium } = await import(playwrightModule ? pathToFileURL(path.resolve(
 const localRoot = path.join(DEFAULT_REPO_ROOT, '.local/deadem/review-workspace/scrim/canary');
 await mkdir(localRoot, { recursive: true });
 const scrimData = loadLocalScrimData(DEFAULT_REPO_ROOT);
+// Preserve the Task 209 synthetic regression even when real sessions are registered.
+scrimData.view.vodSessions = scrimData.view.vodSessions.filter(session => session.sourceVodRef === 'task209_synthetic_video');
 assert.equal(scrimData.view.tracks.length, 9);
 assert.equal(scrimData.view.vodSessions.length, 1);
 const workspace = await createReviewWorkspaceServer({ port: 0, scrimOnly: true, scrimData });

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "209",
-  "baseCommit": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
-  "taskRange": "001-209",
+  "generatedAtTask": "210",
+  "baseCommit": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
+  "taskRange": "001-210",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6395,7 +6395,7 @@
       ]
     },
     {
-      "taskId": "209", "status": "completed", "commitSha": null,
+      "taskId": "209", "status": "completed", "commitSha": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
       "title": "Build Synchronized Craig Multitrack Review Playback",
       "phase": "synchronized_craig_multitrack_review_playback",
       "primaryContribution": "Adds an ASR-independent VOD-master streaming player with a nine-track mixer, drift correction and bounded synthetic-sync browser canary.",
@@ -6403,11 +6403,26 @@
       "stabilizedCapabilities": ["local_assisted_review_workspace"], "supersededCapabilities": [],
       "importantOutputs": ["tools/review-workspace/public/scrim-controller.mjs", "tools/review-workspace/scrim-media.mjs", "output/local-replay-processing/craig-multitrack/task209-playback/summary.json", "reports/synchronized-craig-review-playback-task209.md"],
       "gate": "craig_multitrack_synchronized_review_player_ready_for_real_sync_canary",
-      "currentRelevance": "candidate_player_ready_pending_work_validation_and_real_vod_sync",
+      "currentRelevance": "accepted_synthetic_transport_baseline",
       "dependsOn": ["207", "208"], "supersededBy": null,
       "reworkRiskNotes": ["Synthetic mapping is not real VOD alignment.", "ASR remains HUMAN_VALIDATION_REQUIRED; no semantic promotion.", "One Craig recording may span multiple VOD sessions."],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_by_Work",
       "evidencePaths": ["tasks/specs/209.json", "tasks/completed/209-synchronized-craig-review-playback.md", "output/local-replay-processing/craig-multitrack/task209-playback/gate.json"]
+    },
+    {
+      "taskId": "210", "status": "completed", "commitSha": null,
+      "title": "Validate Real Craig to VOD Synchronization",
+      "phase": "real_craig_vod_synchronization",
+      "primaryContribution": "Measured two real video mappings from held-out audio anchors and registered private real playback sessions with separate browser transport evidence.",
+      "introducedCapabilities": ["real_craig_vod_synchronization"],
+      "stabilizedCapabilities": ["synchronized_craig_review_playback"], "supersededCapabilities": [],
+      "importantOutputs": ["tools/review-workspace/measure-real-craig-sync.py", "tools/review-workspace/real-sync-model.mjs", "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json", "reports/real-craig-vod-sync-task210.md"],
+      "gate": "two_real_craig_vod_sessions_synchronized_and_player_ready",
+      "currentRelevance": "candidate_real_mapping_pending_work_validation",
+      "dependsOn": ["208", "209"], "supersededBy": null,
+      "reworkRiskNotes": ["Validation MAE is 148ms and 118ms; offset-only outperforms the complexity tradeoff of affine.", "Source path latency is included in uncertainty; unseen source-track accuracy is not independently proven.", "Human listening, exact countdowns and leaderboard durations remain unverified; ASR requires human validation."],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": ["tasks/specs/210.json", "tasks/completed/210-real-craig-vod-sync.md", "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json"]
     }
   ]
 }

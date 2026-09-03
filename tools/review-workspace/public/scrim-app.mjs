@@ -41,6 +41,8 @@ function run(action) { Promise.resolve().then(action).catch(error => { byId('pla
 function changeMix(action) { if (controller) { action(controller.mixer); controller.applyMix(); } }
 
 async function loadSession(session) {
+    window.scrimSessionReady = false;
+    for (const id of ['play-pause', 'master-seek', 'back-10', 'forward-10', 'playback-rate']) byId(id).disabled = true;
     controller?.destroy();
     controller = null;
     sources.forEach(source => source.disconnect());
@@ -88,17 +90,18 @@ async function loadSession(session) {
     window.scrimPlayer = controller;
     byId('track-count').textContent = tracks.length;
     byId('session-title').textContent = session.title ?? session.vodSessionId;
-    byId('sync-label').textContent = session.syncStatus === 'synthetic_only' ? 'CANÁRIO SINTÉTICO · aguardando sync com VOD real' : 'Modelo de sync validado';
+    byId('sync-label').textContent = session.syncStatus === 'synthetic_only' ? 'CANÁRIO SINTÉTICO · não é mapping real' : session.precisionStatus === 'usable_with_limited_sync_precision' ? 'Sync real · precisão limitada para revisão humana' : 'Sync real medido · validação técnica';
     byId('vod-audio-description').textContent = session.vodAudioDescription;
-    byId('mapping-detail').textContent = `VOD = ${session.syncModel.slope} × Craig + ${session.syncModel.interceptSeconds}s · ${session.syncModel.method} · erro declarado ${session.syncEstimatedErrorSeconds}s (fixture, não medição real).`;
+    byId('mapping-detail').textContent = `VOD = ${session.syncModel.slope.toFixed(9)} × Craig + ${session.syncModel.interceptSeconds.toFixed(6)}s · ${session.syncModel.method} · erro estimado ${session.syncEstimatedErrorSeconds.toFixed(3)}s ${session.syncStatus === 'synthetic_only' ? '(fixture, não medição real)' : '(mapping medido; não é drift do transporte)'}.`;
     byId('master-seek').min = session.vodRange.start;
     byId('master-seek').max = session.vodRange.end;
-    for (const id of ['play-pause', 'master-seek', 'back-10', 'forward-10', 'playback-rate']) byId(id).disabled = false;
     if (video.readyState < 1) await new Promise((resolve, reject) => {
         video.addEventListener('loadedmetadata', resolve, { once: true });
         video.addEventListener('error', () => reject(new Error('vod_metadata_unavailable')), { once: true });
     });
     await controller.seek(session.vodRange.start);
+    window.scrimSessionReady = true;
+    for (const id of ['play-pause', 'master-seek', 'back-10', 'forward-10', 'playback-rate']) byId(id).disabled = false;
     render();
 }
 
@@ -107,6 +110,7 @@ window.openScrimPlayer = async ({ reviewTargetId, vodTimeSeconds, preRollSeconds
     if (!session) throw new Error('review_target_has_no_authorized_craig_vod_session');
     if (!Number.isFinite(vodTimeSeconds) || !Number.isFinite(preRollSeconds) || preRollSeconds < 0) throw new Error('invalid_candidate_window_request');
     if (controller?.session.vodSessionId !== session.vodSessionId) await loadSession(session);
+    byId('session-select').value = session.vodSessionId;
     await controller.seek(clamp(vodTimeSeconds - preRollSeconds, session.vodRange.start, session.vodRange.end));
 };
 

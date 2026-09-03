@@ -14,7 +14,26 @@ test('media allowlist and protected aliases reject before file access', () => {
     for (const id of ['005', '006', '007', '008']) assert.throws(() => assertScrimMediaPath(`replay_${id}/audio.wav`), /protected/u);
     assert.throws(() => assertScrimMediaPath('input.dem'), /protected/u);
     assert.throws(() => assertScrimMediaPath('../private.wav'), /unsafe/u);
+    assert.throws(() => assertScrimMediaPath('review_match_003/replay/private.mp4'), /protected/u);
     assert.equal(registry.resolve('../../secret'), null);
+});
+
+test('two authorized real VODs from one Craig recording use opaque IDs and HTTP Range', async () => {
+    const data = loadLocalScrimData(DEFAULT_REPO_ROOT);
+    const real = data.view.vodSessions.filter(session => session.reviewTargetId);
+    assert.deepEqual(real.map(row => row.reviewTargetId), ['review_match_003', 'review_match_004']);
+    assert.equal(data.view.tracks.length, 9);
+    const workspace = await createReviewWorkspaceServer({ port: 0, scrimOnly: true, scrimData: data });
+    try {
+        const url = await workspace.start();
+        for (const session of real) {
+            assert.match(session.media.url, /^\/scrim\/media\/[0-9a-f]{32}$/u);
+            const response = await fetch(url + session.media.url, { headers: { range: 'bytes=0-63' } });
+            assert.equal(response.status, 206);
+            assert.equal(response.headers.get('content-type'), 'video/mp4');
+            assert.equal((await response.arrayBuffer()).byteLength, 64);
+        }
+    } finally { await workspace.stop(); }
 });
 
 test('opaque media serves bounded Range and HEAD, rejects query paths and traversal', async () => {
@@ -58,6 +77,8 @@ test('real nine-track registry publishes opaque refs only and labels synthetic s
     assert.equal(data.view.tracks.length, 9);
     assert.ok(data.view.tracks.every(track => track.duration > 3000 && /^[0-9a-f]{32}$/u.test(track.media.mediaId)));
     assert.doesNotMatch(JSON.stringify(data.view), /[A-Z]:[\\/]|sourceSpeakerId|sourceAudioPath/u);
-    assert.equal(data.view.readiness, 'READY_FOR_REAL_VOD_SYNC_CANARY');
-    for (const session of data.view.vodSessions) assert.equal(session.syncStatus, 'synthetic_only');
+    const synthetic = data.view.vodSessions.filter(session => session.sourceVodRef === 'task209_synthetic_video');
+    assert.equal(synthetic.length, 1);
+    for (const session of synthetic) assert.equal(session.syncStatus, 'synthetic_only');
+    for (const session of data.view.vodSessions.filter(session => session.reviewTargetId)) assert.equal(session.syncStatus, 'validated');
 });

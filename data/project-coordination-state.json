@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Build local VOD-master Craig multitrack playback, mixer and bounded synthetic-sync canary without ASR or semantic promotion.",
-  "phase": "synchronized_craig_multitrack_review_playback",
-  "lastAcceptedTaskId": "208",
-  "lastAcceptedCommit": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
-  "activeBaseCommit": "db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe",
+  "objective": "Validate real Craig to VOD synchronization for two authorized local videos with independent audio anchors and bounded player evidence.",
+  "phase": "real_craig_vod_synchronization",
+  "lastAcceptedTaskId": "209",
+  "lastAcceptedCommit": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
+  "activeBaseCommit": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
   "branch": "main",
-  "activeTaskId": "209",
+  "activeTaskId": "210",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/209/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/210/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -69,9 +69,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "ChatGPT Work independently validates Task 209; real Craig/VOD sync still requires an explicitly authorized VOD and validated mapping. Stop without Task 210.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208"],
-  "pendingTasks": ["209"],
+  "nextAction": "ChatGPT Work independently validates Task 210 real Craig/VOD mappings and player canary. Preserve the ASR blocker; stop without Task 211.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209"],
+  "pendingTasks": ["210"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "209",
+  "generatedAtTask": "210",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1048,13 +1048,23 @@
       "capabilityId": "synchronized_craig_review_playback",
       "plainName": "Synchronized Craig multitrack review player",
       "introducedInTask": "209", "stabilizedInTask": null,
-      "currentStatus": "candidate_ready_for_real_vod_sync_canary_pending_work_validation",
+      "currentStatus": "accepted_synthetic_transport_with_candidate_real_sync",
       "currentBaseline": "task209_nine_track_synthetic_master_clock_canary",
       "whyItMatters": "Enables human contextual listening with independent track mixing and coordinated seeking, rate changes and drift correction without transcripts.",
       "mainFiles": ["tools/review-workspace/scrim-model.mjs", "tools/review-workspace/scrim-media.mjs", "tools/review-workspace/public/scrim-controller.mjs", "tools/review-workspace/public/scrim.html", "docs/codex/SYNCHRONIZED_CRAIG_REVIEW_PLAYBACK_CONTRACT.md"],
       "mainOutputs": ["output/local-replay-processing/craig-multitrack/task209-playback/summary.json", "output/local-replay-processing/craig-multitrack/task209-playback/playback-canary.json", "output/local-replay-processing/craig-multitrack/task209-playback/gate.json"],
-      "knownLimits": ["No real VOD has been authorized and aligned to this Craig recording.", "Transport drift is not empirical sync accuracy or gameplay quality.", "Human semantic validation and independent Work acceptance remain separate."],
-      "nextUsefulStep": "After independent Work validation, obtain explicitly authorized VOD/session anchors for a real sync canary."
+      "knownLimits": ["Task 210 adds two measured real mappings pending independent Work validation.", "Transport drift is not empirical sync accuracy or gameplay quality.", "Human semantic validation and independent Work acceptance remain separate."],
+      "nextUsefulStep": "Await independent Work validation of Task 210."
+    },
+    {
+      "capabilityId": "real_craig_vod_synchronization", "plainName": "Measured real Craig to VOD synchronization",
+      "introducedInTask": "210", "stabilizedInTask": null,
+      "currentStatus": "candidate_pending_work_validation", "currentBaseline": "task210_two_real_vod_audio_correlation_canary",
+      "whyItMatters": "Makes local real-video review possible with quantified mapping uncertainty independent of ASR and player drift.",
+      "mainFiles": ["tools/review-workspace/measure-real-craig-sync.py", "tools/review-workspace/real-sync-model.mjs", "tools/review-workspace/prepare-real-sync.mjs", "docs/codex/REAL_CRAIG_VOD_SYNC_CONTRACT.md"],
+      "mainOutputs": ["output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json", "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json", "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json"],
+      "knownLimits": ["Operational mapping error estimates are 0.201 and 0.254 seconds, not bounds on unseen speech.", "Not all source tracks appear in each VOD; ended tracks are inactive rather than fabricated.", "No independent human listening verdict or automatic ASR semantic evidence."],
+      "nextUsefulStep": "Independent Work validation only; no Task 211 authorized."
     }
   ]
 }

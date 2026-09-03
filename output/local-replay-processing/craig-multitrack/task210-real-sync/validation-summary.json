@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "taskId": "210",
+  "validatedSessionCount": 2,
+  "realBrowserCanary": {
+    "passed": true,
+    "browserVersion": "152.0.7977.65",
+    "results": [
+      {
+        "reviewTargetId": "review_match_003",
+        "passed": true,
+        "regions": [
+          {
+            "region": "start",
+            "requestedVodTimeSeconds": 53.654499999999985,
+            "seekLatencyMs": 106.59999999403954,
+            "vodStart": 53.655171,
+            "vodEnd": 59.594725,
+            "status": "playing",
+            "error": null,
+            "activeTrackCount": 9,
+            "playingTrackCount": 9,
+            "outsideTrackCount": 0,
+            "readyTrackCount": 9,
+            "currentTransportDriftMs": 4.482000000013642,
+            "videoDecodedFrames": 220,
+            "vodAudioDecodedBytes": 159714
+          },
+          {
+            "region": "middle",
+            "requestedVodTimeSeconds": 1433.81225,
+            "seekLatencyMs": 86.59999999403954,
+            "vodStart": 1433.812274,
+            "vodEnd": 1439.737923,
+            "status": "playing",
+            "error": null,
+            "activeTrackCount": 9,
+            "playingTrackCount": 9,
+            "outsideTrackCount": 0,
+            "readyTrackCount": 9,
+            "currentTransportDriftMs": 0.279999999975189,
+            "videoDecodedFrames": 433,
+            "vodAudioDecodedBytes": 312643
+          },
+          {
+            "region": "end",
+            "requestedVodTimeSeconds": 2810.97,
+            "seekLatencyMs": 67.59999999403954,
+            "vodStart": 2810.970548,
+            "vodEnd": 2816.936523,
+            "status": "playing",
+            "error": null,
+            "activeTrackCount": 9,
+            "playingTrackCount": 9,
+            "outsideTrackCount": 0,
+            "readyTrackCount": 9,
+            "currentTransportDriftMs": 23.22299999968891,
+            "videoDecodedFrames": 652,
+            "vodAudioDecodedBytes": 467508
+          }
+        ],
+        "sourceTrackCount": 9,
+        "mappingResidualMs": {
+          "mae": 148.31818181816655,
+          "median": 150.87500000004184,
+          "p90": 157.99999999944703,
+          "max": 168.25000000017099
+        },
+        "transportDriftMs": {
+          "maxObserved": 83.57999999998356,
+          "driftCorrectionCount": 16,
+          "hardSeekCorrectionCount": 0
+        },
+        "startupLatencyMs": 24.600000023841858,
+        "seekResyncLatencyMs": [
+          104.5,
+          106.09999999403954,
+          86.40000000596046,
+          66.2999999821186,
+          97.40000000596046
+        ],
+        "testedRates": [
+          1,
+          1.5
+        ],
+        "controlsPassed": [
+          "real_session_selection",
+          "play_pause",
+          "seek",
+          "mute",
+          "solo",
+          "multi_solo",
+          "vod_audio",
+          "reset_mix"
+        ],
+        "perceptualEvidence": "decoded_real_video_frames_inspected_and_audio_transport_measured",
+        "humanListeningJudgment": "not_performed_no_perceptual_perfection_claim"
+      },
+      {
+        "reviewTargetId": "review_match_004",
+        "passed": true,
+        "regions": [
+          {
+            "region": "start",
+            "requestedVodTimeSeconds": 15,
+            "seekLatencyMs": 66.10000002384186,
+            "vodStart": 15.000759,
+            "vodEnd": 20.935072,
+            "status": "playing",
+            "error": null,
+            "activeTrackCount": 6,
+            "playingTrackCount": 6,
+            "outsideTrackCount": 3,
+            "readyTrackCount": 6,
+            "currentTransportDriftMs": 19.095999999990454,
+            "videoDecodedFrames": 185,
+            "vodAudioDecodedBytes": 137552
+          },
+          {
+            "region": "middle",
+            "requestedVodTimeSeconds": 1865.483008,
+            "seekLatencyMs": 104,
+            "vodStart": 1865.48366,
+            "vodEnd": 1871.448641,
+            "status": "playing",
+            "error": null,
+            "activeTrackCount": 5,
+            "playingTrackCount": 5,
+            "outsideTrackCount": 4,
+            "readyTrackCount": 5,
+            "currentTransportDriftMs": 47.817000000577536,
+            "videoDecodedFrames": 387,
+            "vodAudioDecodedBytes": 281943
+          },
+          {
+            "region": "end",
+            "requestedVodTimeSeconds": 3712.966016,
+            "seekLatencyMs": 65.80000001192093,
+            "vodStart": 3712.966353,
+            "vodEnd": 3718.940349,
+            "status": "playing",
+            "error": null,
+            "activeTrackCount": 5,
+            "playingTrackCount": 5,
+            "outsideTrackCount": 4,
+            "readyTrackCount": 5,
+            "currentTransportDriftMs": 32.304000000294764,
+            "videoDecodedFrames": 604,
+            "vodAudioDecodedBytes": 433523
+          }
+        ],
+        "sourceTrackCount": 9,
+        "mappingResidualMs": {
+          "mae": 117.74999999995401,
+          "median": 101.12499999939217,
+          "p90": 216.23750000030668,
+          "max": 221.75000000061118
+        },
+        "transportDriftMs": {
+          "maxObserved": 64.93399999999383,
+          "driftCorrectionCount": 0,
+          "hardSeekCorrectionCount": 0
+        },
+        "startupLatencyMs": 23.599999994039536,
+        "seekResyncLatencyMs": [
+          104.10000002384186,
+          64.59999999403954,
+          103.7000000178814,
+          65.39999997615814,
+          43.900000005960464
+        ],
+        "testedRates": [
+          1,
+          1.5
+        ],
+        "controlsPassed": [
+          "real_session_selection",
+          "play_pause",
+          "seek",
+          "mute",
+          "solo",
+          "multi_solo",
+          "vod_audio",
+          "reset_mix"
+        ],
+        "perceptualEvidence": "decoded_real_video_frames_inspected_and_audio_transport_measured",
+        "humanListeningJudgment": "not_performed_no_perceptual_perfection_claim"
+      }
+    ],
+    "sourceFingerprints": {
+      "tools/review-workspace/server.mjs": "2eaa3bf4a07c1cc7b3fa92c177583d23de8c67383baba32e36fc13860e76a61c",
+      "tools/review-workspace/scrim-model.mjs": "f7d4cb144d2326e90b5f57c55dd863f9cb9927cfa6f7f58eee611bb57869ab20",
+      "tools/review-workspace/scrim-media.mjs": "66e811028c669de1f530564d563ff7ca7eecc40633cddf2f149b1b1a26abc8c6",
+      "tools/review-workspace/public/scrim-controller.mjs": "4e1a764ddb71b648d587df4c2b5a2c80a4d2cad17d33b46ad1372f4baa813d9b",
+      "tools/review-workspace/public/scrim-app.mjs": "360f6ff9b14273af010a01c41a754b2ccb34e6e4415e3570bfa940f980dd3903",
+      "tools/review-workspace/real-sync-browser-canary.mjs": "90792ee7856d38ec841c17cfde68837bb47fda1e99a009a78564f18b56d05975"
+    },
+    "sessionFingerprint": "a49991145b6f4ed6d941f7a93451a138fc6a05bf7f84ebaae5d7aa9d1da4fb55",
+    "browserErrors": []
+  },
+  "syntheticRegression": {
+    "passed": true,
+    "readyTrackCount": 9,
+    "distributedSeekCount": 10,
+    "testedPlaybackRates": [
+      0.5,
+      1,
+      1.5
+    ],
+    "maxObservedDriftMs": 106.61783832335914,
+    "injectedDriftRecovery": true,
+    "responsive": [
+      {
+        "viewportWidth": 1440,
+        "horizontalOverflow": false,
+        "mixerPresent": true
+      },
+      {
+        "viewportWidth": 800,
+        "horizontalOverflow": false,
+        "mixerPresent": true
+      },
+      {
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "mixerPresent": true
+      }
+    ]
+  },
+  "boundedVisualReview": {
+    "inspectedRegions": 6,
+    "realVideoRendered": true,
+    "mappingAndTransportSeparated": true
+  },
+  "humanListeningJudgment": "not_performed",
+  "perceptualPerfectionClaim": false,
+  "asrExecutionCount": 0,
+  "originalMediaMutationCount": 0,
+  "replayAccessCount": 0,
+  "protectedReplayAccessCount": 0,
+  "finalFactCount": 0,
+  "automaticAttributionCount": 0,
+  "allMetricsAreTechnicalClaimsPendingWork": true
+}

@@ -1,0 +1,914 @@
+{
+  "schemaVersion": 1,
+  "taskId": "210",
+  "reviewTargetId": "review_match_004",
+  "provenance": "derived_sync_model",
+  "associationSupported": true,
+  "vodDurationSeconds": 3730.966016,
+  "craigRangeSeconds": {
+    "start": 4226.330875,
+    "end": 7957.296891
+  },
+  "vodRangeSeconds": {
+    "start": 0,
+    "end": 3730.966016
+  },
+  "selectedModel": "offset_only",
+  "selectionReason": "prefer_offset_no_material_held_out_affine_gain",
+  "slope": 1,
+  "interceptSeconds": -4226.330875,
+  "fitAnchorCount": 11,
+  "validationAnchorCount": 10,
+  "fitResidual": {
+    "mae": 0.12762499999991112,
+    "median": 0.15162499999934198,
+    "p90": 0.2041250000004311,
+    "max": 0.23350000000073123,
+    "rows": [
+      {
+        "anchorId": "review_match_004_region_00_stream_2",
+        "craigTimeSeconds": 4251.3,
+        "residualSeconds": -0.12762499999946897
+      },
+      {
+        "anchorId": "review_match_004_region_00_stream_3",
+        "craigTimeSeconds": 4251.3,
+        "residualSeconds": 0.1965000000005297
+      },
+      {
+        "anchorId": "review_match_004_region_02_stream_2",
+        "craigTimeSeconds": 4618.896625,
+        "residualSeconds": -0.15162499999934198
+      },
+      {
+        "anchorId": "review_match_004_region_02_stream_3",
+        "craigTimeSeconds": 4610.896625,
+        "residualSeconds": 0.19187500000066393
+      },
+      {
+        "anchorId": "review_match_004_region_04_stream_2",
+        "craigTimeSeconds": 5362.08975,
+        "residualSeconds": -0.08087499999942338
+      },
+      {
+        "anchorId": "review_match_004_region_04_stream_3",
+        "craigTimeSeconds": 5370.08975,
+        "residualSeconds": 0.2041250000004311
+      },
+      {
+        "anchorId": "review_match_004_region_06_stream_2",
+        "craigTimeSeconds": 6073.283,
+        "residualSeconds": -0.011624999999185093
+      },
+      {
+        "anchorId": "review_match_004_region_08_stream_2",
+        "craigTimeSeconds": 6808.47625,
+        "residualSeconds": 0
+      },
+      {
+        "anchorId": "review_match_004_region_08_stream_3",
+        "craigTimeSeconds": 6840.47625,
+        "residualSeconds": 0.20087499999999636
+      },
+      {
+        "anchorId": "review_match_004_region_10_stream_2",
+        "craigTimeSeconds": 7543.669375,
+        "residualSeconds": -0.005249999999250576
+      },
+      {
+        "anchorId": "review_match_004_region_10_stream_3",
+        "craigTimeSeconds": 7543.669375,
+        "residualSeconds": 0.23350000000073123
+      }
+    ]
+  },
+  "validationResidual": {
+    "mae": 0.11774999999995402,
+    "median": 0.10112499999939217,
+    "p90": 0.21623750000030667,
+    "max": 0.22175000000061118,
+    "rows": [
+      {
+        "anchorId": "review_match_004_region_01_stream_2",
+        "craigTimeSeconds": 4351.199125,
+        "residualSeconds": -0.13849999999955287
+      },
+      {
+        "anchorId": "review_match_004_region_03_stream_2",
+        "craigTimeSeconds": 5002.49325,
+        "residualSeconds": -0.06374999999923148
+      },
+      {
+        "anchorId": "review_match_004_region_03_stream_3",
+        "craigTimeSeconds": 4994.49325,
+        "residualSeconds": 0.2072500000007267
+      },
+      {
+        "anchorId": "review_match_004_region_05_stream_2",
+        "craigTimeSeconds": 5705.686375,
+        "residualSeconds": -0.05049999999937427
+      },
+      {
+        "anchorId": "review_match_004_region_05_stream_3",
+        "craigTimeSeconds": 5729.686375,
+        "residualSeconds": 0.22175000000061118
+      },
+      {
+        "anchorId": "review_match_004_region_07_stream_2",
+        "craigTimeSeconds": 6456.879625,
+        "residualSeconds": -0.02412499999991269
+      },
+      {
+        "anchorId": "review_match_004_region_07_stream_3",
+        "craigTimeSeconds": 6472.879625,
+        "residualSeconds": 0.2035000000000764
+      },
+      {
+        "anchorId": "review_match_004_region_09_stream_2",
+        "craigTimeSeconds": 7176.072875,
+        "residualSeconds": -0.046875
+      },
+      {
+        "anchorId": "review_match_004_region_09_stream_3",
+        "craigTimeSeconds": 7200.072875,
+        "residualSeconds": 0.21562500000027285
+      },
+      {
+        "anchorId": "review_match_004_region_11_stream_2",
+        "craigTimeSeconds": 7919.266,
+        "residualSeconds": -0.005624999999781721
+      }
+    ]
+  },
+  "startRegionResidual": 0.0016666666673141133,
+  "endRegionResidual": 0.05437500000016371,
+  "regionResidualChangeSeconds": 0.0527083333328496,
+  "estimatedOperationalSyncErrorSeconds": 0.25350000000073125,
+  "outlierCount": 0,
+  "rejectedFitAnchorIds": [],
+  "fitOutlierThresholdSeconds": 0.7774710364484996,
+  "comparison": {
+    "offset_only": {
+      "slope": 1,
+      "interceptSeconds": -4226.330875,
+      "fitResidual": {
+        "mae": 0.12762499999991112,
+        "median": 0.15162499999934198,
+        "p90": 0.2041250000004311,
+        "max": 0.23350000000073123,
+        "rows": [
+          {
+            "anchorId": "review_match_004_region_00_stream_2",
+            "craigTimeSeconds": 4251.3,
+            "residualSeconds": -0.12762499999946897
+          },
+          {
+            "anchorId": "review_match_004_region_00_stream_3",
+            "craigTimeSeconds": 4251.3,
+            "residualSeconds": 0.1965000000005297
+          },
+          {
+            "anchorId": "review_match_004_region_02_stream_2",
+            "craigTimeSeconds": 4618.896625,
+            "residualSeconds": -0.15162499999934198
+          },
+          {
+            "anchorId": "review_match_004_region_02_stream_3",
+            "craigTimeSeconds": 4610.896625,
+            "residualSeconds": 0.19187500000066393
+          },
+          {
+            "anchorId": "review_match_004_region_04_stream_2",
+            "craigTimeSeconds": 5362.08975,
+            "residualSeconds": -0.08087499999942338
+          },
+          {
+            "anchorId": "review_match_004_region_04_stream_3",
+            "craigTimeSeconds": 5370.08975,
+            "residualSeconds": 0.2041250000004311
+          },
+          {
+            "anchorId": "review_match_004_region_06_stream_2",
+            "craigTimeSeconds": 6073.283,
+            "residualSeconds": -0.011624999999185093
+          },
+          {
+            "anchorId": "review_match_004_region_08_stream_2",
+            "craigTimeSeconds": 6808.47625,
+            "residualSeconds": 0
+          },
+          {
+            "anchorId": "review_match_004_region_08_stream_3",
+            "craigTimeSeconds": 6840.47625,
+            "residualSeconds": 0.20087499999999636
+          },
+          {
+            "anchorId": "review_match_004_region_10_stream_2",
+            "craigTimeSeconds": 7543.669375,
+            "residualSeconds": -0.005249999999250576
+          },
+          {
+            "anchorId": "review_match_004_region_10_stream_3",
+            "craigTimeSeconds": 7543.669375,
+            "residualSeconds": 0.23350000000073123
+          }
+        ]
+      },
+      "validationResidual": {
+        "mae": 0.11774999999995402,
+        "median": 0.10112499999939217,
+        "p90": 0.21623750000030667,
+        "max": 0.22175000000061118,
+        "rows": [
+          {
+            "anchorId": "review_match_004_region_01_stream_2",
+            "craigTimeSeconds": 4351.199125,
+            "residualSeconds": -0.13849999999955287
+          },
+          {
+            "anchorId": "review_match_004_region_03_stream_2",
+            "craigTimeSeconds": 5002.49325,
+            "residualSeconds": -0.06374999999923148
+          },
+          {
+            "anchorId": "review_match_004_region_03_stream_3",
+            "craigTimeSeconds": 4994.49325,
+            "residualSeconds": 0.2072500000007267
+          },
+          {
+            "anchorId": "review_match_004_region_05_stream_2",
+            "craigTimeSeconds": 5705.686375,
+            "residualSeconds": -0.05049999999937427
+          },
+          {
+            "anchorId": "review_match_004_region_05_stream_3",
+            "craigTimeSeconds": 5729.686375,
+            "residualSeconds": 0.22175000000061118
+          },
+          {
+            "anchorId": "review_match_004_region_07_stream_2",
+            "craigTimeSeconds": 6456.879625,
+            "residualSeconds": -0.02412499999991269
+          },
+          {
+            "anchorId": "review_match_004_region_07_stream_3",
+            "craigTimeSeconds": 6472.879625,
+            "residualSeconds": 0.2035000000000764
+          },
+          {
+            "anchorId": "review_match_004_region_09_stream_2",
+            "craigTimeSeconds": 7176.072875,
+            "residualSeconds": -0.046875
+          },
+          {
+            "anchorId": "review_match_004_region_09_stream_3",
+            "craigTimeSeconds": 7200.072875,
+            "residualSeconds": 0.21562500000027285
+          },
+          {
+            "anchorId": "review_match_004_region_11_stream_2",
+            "craigTimeSeconds": 7919.266,
+            "residualSeconds": -0.005624999999781721
+          }
+        ]
+      }
+    },
+    "affine": {
+      "slope": 0.9999736740337423,
+      "interceptSeconds": -4226.23852244919,
+      "fitResidual": {
+        "mae": 0.13368773287286181,
+        "median": 0.12968464301934546,
+        "p90": 0.17693297045895306,
+        "max": 0.18086936588753133,
+        "rows": [
+          {
+            "anchorId": "review_match_004_region_00_stream_2",
+            "craigTimeSeconds": 4251.3,
+            "residualSeconds": -0.1471920295410456
+          },
+          {
+            "anchorId": "review_match_004_region_00_stream_3",
+            "craigTimeSeconds": 4251.3,
+            "residualSeconds": 0.17693297045895306
+          },
+          {
+            "anchorId": "review_match_004_region_02_stream_2",
+            "craigTimeSeconds": 4618.896625,
+            "residualSeconds": -0.18086936588753133
+          },
+          {
+            "anchorId": "review_match_004_region_02_stream_3",
+            "craigTimeSeconds": 4610.896625,
+            "residualSeconds": 0.1628412418424432
+          },
+          {
+            "anchorId": "review_match_004_region_04_stream_2",
+            "craigTimeSeconds": 5362.08975,
+            "residualSeconds": -0.12968464301934546
+          },
+          {
+            "anchorId": "review_match_004_region_04_stream_3",
+            "craigTimeSeconds": 5370.08975,
+            "residualSeconds": 0.1551047492505404
+          },
+          {
+            "anchorId": "review_match_004_region_06_stream_2",
+            "craigTimeSeconds": 6073.283,
+            "residualSeconds": -0.07915749252151727
+          },
+          {
+            "anchorId": "review_match_004_region_08_stream_2",
+            "craigTimeSeconds": 6808.47625,
+            "residualSeconds": -0.08688716521464812
+          },
+          {
+            "anchorId": "review_match_004_region_08_stream_3",
+            "craigTimeSeconds": 6840.47625,
+            "residualSeconds": 0.11314540386547378
+          },
+          {
+            "anchorId": "review_match_004_region_10_stream_2",
+            "craigTimeSeconds": 7543.669375,
+            "residualSeconds": -0.11149183461566281
+          },
+          {
+            "anchorId": "review_match_004_region_10_stream_3",
+            "craigTimeSeconds": 7543.669375,
+            "residualSeconds": 0.127258165384319
+          }
+        ]
+      },
+      "validationResidual": {
+        "mae": 0.1314352495115358,
+        "median": 0.12360125945156142,
+        "p90": 0.1637484875750829,
+        "max": 0.168117690035956,
+        "rows": [
+          {
+            "anchorId": "review_match_004_region_01_stream_2",
+            "craigTimeSeconds": 4351.199125,
+            "residualSeconds": -0.16069697053488596
+          },
+          {
+            "anchorId": "review_match_004_region_03_stream_2",
+            "craigTimeSeconds": 5002.49325,
+            "residualSeconds": -0.10309291769397078
+          },
+          {
+            "anchorId": "review_match_004_region_03_stream_3",
+            "craigTimeSeconds": 4994.49325,
+            "residualSeconds": 0.168117690035956
+          },
+          {
+            "anchorId": "review_match_004_region_05_stream_2",
+            "craigTimeSeconds": 5705.686375,
+            "residualSeconds": -0.10835515617509373
+          },
+          {
+            "anchorId": "review_match_004_region_05_stream_3",
+            "craigTimeSeconds": 5729.686375,
+            "residualSeconds": 0.16326302063498588
+          },
+          {
+            "anchorId": "review_match_004_region_07_stream_2",
+            "craigTimeSeconds": 6456.879625,
+            "residualSeconds": -0.10175604432788532
+          },
+          {
+            "anchorId": "review_match_004_region_07_stream_3",
+            "craigTimeSeconds": 6472.879625,
+            "residualSeconds": 0.12544774021125704
+          },
+          {
+            "anchorId": "review_match_004_region_09_stream_2",
+            "craigTimeSeconds": 7176.072875,
+            "residualSeconds": -0.14343950156035135
+          },
+          {
+            "anchorId": "review_match_004_region_09_stream_3",
+            "craigTimeSeconds": 7200.072875,
+            "residualSeconds": 0.11842867524910616
+          },
+          {
+            "anchorId": "review_match_004_region_11_stream_2",
+            "craigTimeSeconds": 7919.266,
+            "residualSeconds": -0.1217547786918658
+          }
+        ]
+      }
+    }
+  },
+  "precisionStatus": "preferred_precision",
+  "validationUsedInFit": false,
+  "rejectedAnchorCount": 3,
+  "rejectedRegions": [
+    {
+      "region": 1,
+      "vodAudioStream": 3,
+      "reason": "correlation_quality_below_frozen_policy",
+      "bestNcc": 0.2429674334984722
+    },
+    {
+      "region": 6,
+      "vodAudioStream": 3,
+      "reason": "correlation_quality_below_frozen_policy",
+      "bestNcc": 0.1634888465067718
+    },
+    {
+      "region": 11,
+      "vodAudioStream": 3,
+      "reason": "correlation_quality_below_frozen_policy",
+      "bestNcc": 0
+    }
+  ],
+  "anchors": [
+    {
+      "trackRef": "track_03",
+      "craigTimeSeconds": 4251.3,
+      "vodTimeSeconds": 25.09675,
+      "correlationConfidence": 0.9143428444680174,
+      "alternativePeak": 0.07915757175171695,
+      "windowCraigStartSeconds": 4247.3,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_00_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 0,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 4251.3,
+      "vodTimeSeconds": 24.772625,
+      "correlationConfidence": 0.5714864622131622,
+      "alternativePeak": 0.1031378957763374,
+      "windowCraigStartSeconds": 4247.3,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_00_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 0,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 4351.199125,
+      "vodTimeSeconds": 125.00675,
+      "correlationConfidence": 0.7951966272645314,
+      "alternativePeak": 0.1411656992871747,
+      "windowCraigStartSeconds": 4347.199125,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_01_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 1,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_03",
+      "craigTimeSeconds": 4618.896625,
+      "vodTimeSeconds": 392.717375,
+      "correlationConfidence": 0.898599017185614,
+      "alternativePeak": 0.20996147324842682,
+      "windowCraigStartSeconds": 4614.896625,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_02_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 2,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 4610.896625,
+      "vodTimeSeconds": 384.373875,
+      "correlationConfidence": 0.5628693515628435,
+      "alternativePeak": 0.0973032059123884,
+      "windowCraigStartSeconds": 4606.896625,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_02_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 2,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_08",
+      "craigTimeSeconds": 5002.49325,
+      "vodTimeSeconds": 776.226125,
+      "correlationConfidence": 0.9185848033399706,
+      "alternativePeak": 0.08887649483630884,
+      "windowCraigStartSeconds": 4998.49325,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_03_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 3,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 4994.49325,
+      "vodTimeSeconds": 767.9551250000001,
+      "correlationConfidence": 0.5370538902923424,
+      "alternativePeak": 0.04350870023050488,
+      "windowCraigStartSeconds": 4990.49325,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_03_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 3,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_08",
+      "craigTimeSeconds": 5362.08975,
+      "vodTimeSeconds": 1135.8397499999999,
+      "correlationConfidence": 0.7331937738048716,
+      "alternativePeak": 0.08150528138430846,
+      "windowCraigStartSeconds": 5358.08975,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_04_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 4,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 5370.08975,
+      "vodTimeSeconds": 1143.55475,
+      "correlationConfidence": 0.44982031514363674,
+      "alternativePeak": 0.19304941365511344,
+      "windowCraigStartSeconds": 5366.08975,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_04_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 4,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 5705.686375,
+      "vodTimeSeconds": 1479.406,
+      "correlationConfidence": 0.5945250438988648,
+      "alternativePeak": 0.07401565099850643,
+      "windowCraigStartSeconds": 5701.686375,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_05_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 5,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 5729.686375,
+      "vodTimeSeconds": 1503.13375,
+      "correlationConfidence": 0.41279250604216156,
+      "alternativePeak": 0.09685057410134607,
+      "windowCraigStartSeconds": 5725.686375,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_05_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 5,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_03",
+      "craigTimeSeconds": 6073.283,
+      "vodTimeSeconds": 1846.96375,
+      "correlationConfidence": 0.45711941772720005,
+      "alternativePeak": 0.06559224027312087,
+      "windowCraigStartSeconds": 6069.283,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_06_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 6,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 6456.879625,
+      "vodTimeSeconds": 2230.572875,
+      "correlationConfidence": 0.6839580438804385,
+      "alternativePeak": 0.06751385147102751,
+      "windowCraigStartSeconds": 6452.879625,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_07_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 7,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 6472.879625,
+      "vodTimeSeconds": 2246.34525,
+      "correlationConfidence": 0.634303256643652,
+      "alternativePeak": 0.07378179016887805,
+      "windowCraigStartSeconds": 6468.879625,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_07_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 7,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 6808.47625,
+      "vodTimeSeconds": 2582.145375,
+      "correlationConfidence": 0.6308496442161974,
+      "alternativePeak": 0.05125443210519752,
+      "windowCraigStartSeconds": 6804.47625,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_08_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 8,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 6840.47625,
+      "vodTimeSeconds": 2613.9445,
+      "correlationConfidence": 0.5765801419182413,
+      "alternativePeak": 0.08652592472262095,
+      "windowCraigStartSeconds": 6836.47625,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_08_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 8,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 7176.072875,
+      "vodTimeSeconds": 2949.788875,
+      "correlationConfidence": 0.7725220576425392,
+      "alternativePeak": 0.09329774960541759,
+      "windowCraigStartSeconds": 7172.072875,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_09_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 9,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 7200.072875,
+      "vodTimeSeconds": 2973.526375,
+      "correlationConfidence": 0.5326571436335635,
+      "alternativePeak": 0.11949057083842587,
+      "windowCraigStartSeconds": 7196.072875,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_09_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 9,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 7543.669375,
+      "vodTimeSeconds": 3317.34375,
+      "correlationConfidence": 0.4667127298421565,
+      "alternativePeak": 0.05960496092623795,
+      "windowCraigStartSeconds": 7539.669375,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_10_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 10,
+      "vodAudioStream": 2
+    },
+    {
+      "trackRef": "track_06",
+      "craigTimeSeconds": 7543.669375,
+      "vodTimeSeconds": 3317.105,
+      "correlationConfidence": 0.6137943213785259,
+      "alternativePeak": 0.13820492545233795,
+      "windowCraigStartSeconds": 7539.669375,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_10_stream_3",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "fit",
+      "region": 10,
+      "vodAudioStream": 3
+    },
+    {
+      "trackRef": "track_02",
+      "craigTimeSeconds": 7919.266,
+      "vodTimeSeconds": 3692.9407499999998,
+      "correlationConfidence": 0.5452904952901344,
+      "alternativePeak": 0.08036884556590812,
+      "windowCraigStartSeconds": 7915.266,
+      "windowDurationSeconds": 8,
+      "anchorId": "review_match_004_region_11_stream_2",
+      "provenance": "audio_measured_anchor",
+      "clockDomain": "craig_to_vod",
+      "role": "validation",
+      "region": 11,
+      "vodAudioStream": 2
+    }
+  ],
+  "sourceTrackCount": 9,
+  "measuredTrackRefs": [
+    "track_02",
+    "track_03",
+    "track_06",
+    "track_08"
+  ],
+  "visualChecks": [
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "countdown",
+      "vodTimeSeconds": 25,
+      "displayedSeconds": null,
+      "state": "pregame_menu",
+      "limitation": "Numeric countdown obscured; no countdown value inferred."
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "in_game_clock",
+      "vodTimeSeconds": 75,
+      "displayedSeconds": 23
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "in_game_clock",
+      "vodTimeSeconds": 330,
+      "displayedSeconds": 242,
+      "state": "paused"
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "in_game_clock",
+      "vodTimeSeconds": 355,
+      "displayedSeconds": 242,
+      "state": "paused"
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "in_game_clock",
+      "vodTimeSeconds": 365,
+      "displayedSeconds": 242,
+      "state": "paused"
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "in_game_clock",
+      "vodTimeSeconds": 3710,
+      "displayedSeconds": 3349
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "in_game_clock",
+      "vodTimeSeconds": 3725,
+      "displayedSeconds": 3364
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "visual_result_state",
+      "vodTimeSeconds": 3725,
+      "state": "defeat_overlay"
+    },
+    {
+      "reviewTargetId": "review_match_004",
+      "provenance": "visual_clock_observation",
+      "clockDomain": "visual_result_state",
+      "vodTimeSeconds": 3728,
+      "state": "loading_screen"
+    }
+  ],
+  "humanHypothesesUsedInFit": false,
+  "leaderboardDurationIndependentlyObserved": false,
+  "clockDomainsConflated": false,
+  "asrStatus": "HUMAN_VALIDATION_REQUIRED",
+  "limitation": "One recording clock mapping balances source-path latency. Not all nine tracks occur in VOD audio; unmeasured source tracks inherit the normalized recording clock, not per-track accuracy proof. No human phrase transcription verification.",
+  "browserCanary": {
+    "reviewTargetId": "review_match_004",
+    "passed": true,
+    "regions": [
+      {
+        "region": "start",
+        "requestedVodTimeSeconds": 15,
+        "seekLatencyMs": 66.10000002384186,
+        "vodStart": 15.000759,
+        "vodEnd": 20.935072,
+        "status": "playing",
+        "error": null,
+        "activeTrackCount": 6,
+        "playingTrackCount": 6,
+        "outsideTrackCount": 3,
+        "readyTrackCount": 6,
+        "currentTransportDriftMs": 19.095999999990454,
+        "videoDecodedFrames": 185,
+        "vodAudioDecodedBytes": 137552
+      },
+      {
+        "region": "middle",
+        "requestedVodTimeSeconds": 1865.483008,
+        "seekLatencyMs": 104,
+        "vodStart": 1865.48366,
+        "vodEnd": 1871.448641,
+        "status": "playing",
+        "error": null,
+        "activeTrackCount": 5,
+        "playingTrackCount": 5,
+        "outsideTrackCount": 4,
+        "readyTrackCount": 5,
+        "currentTransportDriftMs": 47.817000000577536,
+        "videoDecodedFrames": 387,
+        "vodAudioDecodedBytes": 281943
+      },
+      {
+        "region": "end",
+        "requestedVodTimeSeconds": 3712.966016,
+        "seekLatencyMs": 65.80000001192093,
+        "vodStart": 3712.966353,
+        "vodEnd": 3718.940349,
+        "status": "playing",
+        "error": null,
+        "activeTrackCount": 5,
+        "playingTrackCount": 5,
+        "outsideTrackCount": 4,
+        "readyTrackCount": 5,
+        "currentTransportDriftMs": 32.304000000294764,
+        "videoDecodedFrames": 604,
+        "vodAudioDecodedBytes": 433523
+      }
+    ],
+    "sourceTrackCount": 9,
+    "mappingResidualMs": {
+      "mae": 117.74999999995401,
+      "median": 101.12499999939217,
+      "p90": 216.23750000030668,
+      "max": 221.75000000061118
+    },
+    "transportDriftMs": {
+      "maxObserved": 64.93399999999383,
+      "driftCorrectionCount": 0,
+      "hardSeekCorrectionCount": 0
+    },
+    "startupLatencyMs": 23.599999994039536,
+    "seekResyncLatencyMs": [
+      104.10000002384186,
+      64.59999999403954,
+      103.7000000178814,
+      65.39999997615814,
+      43.900000005960464
+    ],
+    "testedRates": [
+      1,
+      1.5
+    ],
+    "controlsPassed": [
+      "real_session_selection",
+      "play_pause",
+      "seek",
+      "mute",
+      "solo",
+      "multi_solo",
+      "vod_audio",
+      "reset_mix"
+    ],
+    "perceptualEvidence": "decoded_real_video_frames_inspected_and_audio_transport_measured",
+    "humanListeningJudgment": "not_performed_no_perceptual_perfection_claim"
+  }
+}

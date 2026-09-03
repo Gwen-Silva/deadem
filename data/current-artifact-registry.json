@@ -1243,20 +1243,38 @@
     {
       "id": "synchronized_craig_task209_summary",
       "path": "output/local-replay-processing/craig-multitrack/task209-playback/summary.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted",
       "notes": "Nine-track streaming player with explicitly synthetic VOD mapping; real VOD alignment remains pending."
     },
     {
       "id": "synchronized_craig_task209_canary",
       "path": "output/local-replay-processing/craig-multitrack/task209-playback/playback-canary.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted",
       "notes": "Browser transport, ten seeks, mixer, rates, drift recovery, responsive and Range metrics without private media or identity."
     },
     {
       "id": "synchronized_craig_task209_gate",
       "path": "output/local-replay-processing/craig-multitrack/task209-playback/gate.json",
-      "status": "candidate_pending_work_validation",
+      "status": "accepted",
       "notes": "Technical claim craig_multitrack_synchronized_review_player_ready_for_real_sync_canary."
+    },
+    {
+      "id": "real_craig_vod_task210_manifest",
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/manifest.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Two real VOD mappings with frozen audio-anchor splits and no ASR/replay processing."
+    },
+    {
+      "id": "real_craig_vod_task210_validation",
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/validation-summary.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Held-out mapping errors and separate six-region real browser plus synthetic regression evidence."
+    },
+    {
+      "id": "real_craig_vod_task210_gate",
+      "path": "output/local-replay-processing/craig-multitrack/task210-real-sync/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical claim two_real_craig_vod_sessions_synchronized_and_player_ready; acceptance remains with Work."
     }
   ]
 }

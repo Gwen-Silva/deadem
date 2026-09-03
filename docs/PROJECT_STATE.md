@@ -1,8 +1,8 @@
 # Project State
 
-Last updated: 2026-09-02
+Last updated: 2026-09-03
 
-## Active Synchronized Craig Review Player
+## Active Real Craig to VOD Synchronization
 
 Task 208 at `db7cdded9b0e7539f8ac6d1ce09802fafa3b6efe` is Work-accepted
 with blocker `craig_multitrack_asr_semantic_accuracy_insufficient_for_automatic_call_evidence`.
@@ -11,17 +11,26 @@ semantic evidence. Small/medium/large-v3 usable rates on intelligible clips were
 23.08/53.85/38.46 percent. Medium is the best measured draft, still
 HUMAN_VALIDATION_REQUIRED (46.15 percent materially wrong; 75/25 gate missed).
 
-Task 209 is the active candidate in `VALIDATING`. Player da scrim streams the
-nine existing normalized WAVs under a VOD master clock, with per-track mixing,
-drift correction, coordinated transport and isolated-call restoration. A local
-synthetic video validates playback without fabricating real VOD alignment.
-Technical claim: `craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
+Task 209 is Work-accepted at `6a8fa7433f75f6cd94499e7e32e31f4e81da86d8`:
+`craig_multitrack_synchronized_review_player_ready_for_real_sync_canary`.
+Its synthetic transport baseline remains preserved.
 
-Real VOD sync remains pending. One recording may own multiple VOD sessions;
-no relation to existing review targets is assumed. No ASR, parser, replay or
-candidate semantics were changed. Media and real identities remain local.
+Task 210 is the active candidate in `VALIDATING`. Two explicitly authorized
+real VODs map to distinct chronological ranges of the same Craig recording.
+Offset-only models were selected against held-out audio anchors: validation
+MAE 0.148318/0.117750 seconds; maximum 0.168250/0.221750 seconds for targets
+003/004. Operational estimates including all measured residuals plus margin
+are 0.201125/0.253500 seconds. The six-region real browser canary passed with
+maximum transport drift 83.580/64.934ms, separately measured from mapping.
+Technical claim: `two_real_craig_vod_sessions_synchronized_and_player_ready`.
+
+The player offers both real sessions and preserves nine mixer rows; tracks
+already ended in the recording remain inactive. All media, human hypotheses,
+session configuration and screenshots stay local. No ASR or replay was run.
+Numeric countdowns, leaderboard durations and an independent human listening
+verdict remain gaps. No perfect-sync or new gameplay-fact claim is made.
 Inherited candidate-selectivity and replay-video-sync blockers remain.
-ChatGPT Work is the sole acceptance authority. No Task 210 exists.
+ChatGPT Work is the sole acceptance authority. No Task 211 exists.
 
 ## Authoritative Current State
 

@@ -42,6 +42,27 @@ export function validateSession(session) {
     return session;
 }
 
+export function validateRealSession(session) {
+    validateSession(session);
+    if (!['review_match_003', 'review_match_004'].includes(session.reviewTargetId)
+        || session.sourceVodRef !== `task210_${session.reviewTargetId}_video`
+        || !['audio_cross_correlation', 'hybrid_fit'].includes(session.syncModel.method)) throw new Error('real_session_not_authorized');
+    const evidence = session.syncValidation;
+    if (!evidence || evidence.provenance !== 'derived_sync_model' || evidence.validationUsedInFit !== false
+        || !Number.isInteger(evidence.fitAnchorCount) || evidence.fitAnchorCount < 6
+        || !Number.isInteger(evidence.validationAnchorCount) || evidence.validationAnchorCount < 6) throw new Error('real_session_independent_validation_required');
+    for (const key of ['mae', 'p90', 'max']) {
+        if (!Number.isFinite(evidence.validationResidual?.[key]) || evidence.validationResidual[key] < 0) throw new Error('invalid_real_session_metrics');
+    }
+    const residual = evidence.validationResidual;
+    if (residual.mae > 0.25 || residual.p90 > 0.4 || residual.max > 0.75
+        || !Number.isFinite(evidence.regionResidualChangeSeconds) || evidence.regionResidualChangeSeconds > 0.4
+        || session.syncEstimatedErrorSeconds < residual.max) throw new Error('real_session_precision_insufficient');
+    const preferred = residual.mae <= 0.15 && residual.p90 <= 0.25 && residual.max <= 0.5 && evidence.regionResidualChangeSeconds <= 0.25;
+    if (session.precisionStatus !== (preferred ? 'preferred_precision' : 'usable_with_limited_sync_precision')) throw new Error('real_session_precision_label_mismatch');
+    return session;
+}
+
 export function driftDecision(driftMs, baseRate, policy = DEFAULT_SYNC_POLICY) {
     if (Math.abs(driftMs) >= policy.hardDriftMs) return { action: 'seek', rate: baseRate };
     if (Math.abs(driftMs) <= policy.smallDriftMs) return { action: 'none', rate: baseRate };

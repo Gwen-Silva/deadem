@@ -1,15 +1,25 @@
 import { randomBytes } from 'node:crypto';
-import { existsSync, realpathSync, statSync, readFileSync } from 'node:fs';
+import { existsSync, realpathSync, statSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
-import { validateSession } from './scrim-model.mjs';
+import { validateSession, validateRealSession } from './scrim-model.mjs';
 
 export function assertScrimMediaPath(value) {
     const text = String(value).replaceAll('\\', '/');
-    if (/(?:replay|partida)[_-]?00[5-8](?:[/_.-]|$)|[.]dem(?:$|[/?#])/iu.test(text) || text.split('/').includes('..')) {
+    if (/(?:replay|partida)[_-]?00[5-8](?:[/_.-]|$)|[.]dem(?:$|[/?#])|(?:^|\/)replay(?:\/|$)/iu.test(text) || text.split('/').includes('..')) {
         throw new Error('protected_or_unsafe_scrim_media');
     }
     if (!['.wav', '.mp4', '.webm'].includes(path.extname(text).toLowerCase())) throw new Error('scrim_media_type_rejected');
     return path.resolve(value);
+}
+
+export function resolveAuthorizedRealVod(repoRoot, session) {
+    // Validate target/ref/measurement BEFORE touching any input directory.
+    validateRealSession(session);
+    const directory = path.join(repoRoot, '.local/deadem/review-targets', session.reviewTargetId, 'video');
+    if (!existsSync(directory) || path.resolve(realpathSync(directory)) !== path.resolve(directory)) throw new Error('real_vod_directory_unavailable_or_symlink');
+    const files = readdirSync(directory, { withFileTypes: true }).filter(entry => entry.isFile() && path.extname(entry.name).toLowerCase() === '.mp4');
+    if (files.length !== 1) throw new Error('real_vod_ambiguous_or_unavailable');
+    return assertScrimMediaPath(path.join(directory, files[0].name));
 }
 
 export class ScrimMediaRegistry {
@@ -39,10 +49,15 @@ export function loadLocalScrimData(repoRoot) {
     const sessionRoot = path.join(repoRoot, '.local/deadem/review-workspace/scrim');
     const fixturePath = path.join(sessionRoot, 'synthetic-clock.mp4');
     const authorizedPaths = Array.from({ length: 9 }, (_, i) => path.join(recordingRoot, `normalized/track_${String(i + 1).padStart(2, '0')}.wav`));
-    const registry = new ScrimMediaRegistry([...authorizedPaths, fixturePath]);
+    const realConfig = path.join(sessionRoot, 'real-sync-task210/sessions.json');
+    const realSessions = existsSync(realConfig) ? JSON.parse(readFileSync(realConfig, 'utf8')) : { craigRecordingId: 'craig_recording_task208_real_01', vodSessions: [] };
+    if (realSessions.craigRecordingId !== 'craig_recording_task208_real_01') throw new Error('scrim_recording_mismatch');
+    if (new Set(realSessions.vodSessions.map(session => session.reviewTargetId)).size !== realSessions.vodSessions.length) throw new Error('duplicate_real_session');
+    const realPaths = realSessions.vodSessions.map(session => resolveAuthorizedRealVod(repoRoot, session));
+    const registry = new ScrimMediaRegistry([...authorizedPaths, fixturePath, ...realPaths]);
     const view = { craigRecordingId: 'craig_recording_task208_real_01', tracks: [], vodSessions: [],
         readiness: 'READY_FOR_REAL_VOD_SYNC_CANARY', asrStatus: 'HUMAN_VALIDATION_REQUIRED',
-        limitation: 'Nenhum VOD real foi autorizado e alinhado a esta gravação. Não há relação presumida de uma gravação para uma partida.' };
+        limitation: 'Nenhuma sessão real validada está registrada. ASR exige validação humana.' };
     if (!existsSync(metadataPath)) return { view, registry };
     const metadata = JSON.parse(readFileSync(metadataPath, 'utf8'));
     if (metadata.tracks.length !== 9) throw new Error('scrim_requires_nine_authorized_tracks');
@@ -62,6 +77,15 @@ export function loadLocalScrimData(repoRoot) {
             validateSession(session);
             return { ...session, title: 'Canário sintético · sem VOD real', vodAudioDescription: 'Áudio original pode conter Discord misturado; neste fixture há somente tom sintético.', media: registry.register(fixturePath) };
         });
+    }
+    const registeredReal = realSessions.vodSessions.map((session, index) => ({ ...session,
+        title: `${session.reviewTargetId} · VOD real · sync medido`,
+        vodAudioDescription: 'Áudio original do VOD pode conter Discord misturado. Ativá-lo junto de Craig pode duplicar vozes; atrasos entre caminhos de áudio permanecem na incerteza medida.',
+        media: registry.register(realPaths[index]) }));
+    view.vodSessions = [...registeredReal, ...view.vodSessions];
+    if (registeredReal.length) {
+        view.readiness = registeredReal.length === 2 ? 'TWO_REAL_SESSIONS_READY' : 'ONE_REAL_SESSION_READY';
+        view.limitation = 'Sync medido em anchors de áudio reservados, não perfeito. Drift do transporte é separado do residual do mapping. Tracks que terminam antes desta região ficam fora da track. ASR exige validação humana.';
     }
     return { view, registry };
 }

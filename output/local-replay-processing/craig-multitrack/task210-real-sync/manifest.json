@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "taskId": "210",
+  "baseCommit": "6a8fa7433f75f6cd94499e7e32e31f4e81da86d8",
+  "craigRecordingId": "craig_recording_task208_real_01",
+  "reviewTargetIds": [
+    "review_match_003",
+    "review_match_004"
+  ],
+  "sourceTrackCount": 9,
+  "inputVideoCount": 2,
+  "analyzedAudioStreamCount": 6,
+  "analysisSampleRate": 8000,
+  "extraction": "mono_PTS_preserving_local_analysis_copies",
+  "coarse": "50Hz_RMS_envelope_normalized_cross_correlation",
+  "fine": "8second_individual_track_waveform_normalized_cross_correlation_8kHz",
+  "measurementPolicy": {
+    "fractions": [
+      0,
+      0.025,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1
+    ],
+    "splitRule": "even_region_fit_odd_region_validation",
+    "templateSeconds": 8,
+    "searchRadiusSeconds": 3,
+    "minNcc": 0.25,
+    "minPeakMargin": 0.08,
+    "regionOffsetsSeconds": [
+      -16,
+      -8,
+      0,
+      8,
+      16
+    ],
+    "sourceGroups": [
+      {
+        "stream": 2,
+        "tracks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "stream": 3,
+        "tracks": [
+          6
+        ]
+      }
+    ]
+  },
+  "modelSelectionPolicy": "Fit only fit anchors; require held-out MAE gain at least 20ms and 20 percent without worse max to select affine.",
+  "operationalErrorPolicy": "Maximum observed fit or validation absolute residual plus 20ms analysis margin; not a confidence bound on unseen audio.",
+  "localEvidenceRef": ".local/deadem/review-workspace/scrim/real-sync-task210/",
+  "registeredSessionCount": 2,
+  "asrExecutionCount": 0,
+  "replayProcessingCount": 0,
+  "finalFactCount": 0,
+  "automaticAttributionCount": 0
+}
