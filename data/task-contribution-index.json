@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "219",
-  "baseCommit": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
-  "taskRange": "001-219",
+  "generatedAtTask": "220",
+  "baseCommit": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
+  "taskRange": "001-220",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6269,7 +6269,7 @@
     {
       "taskId": "205",
       "status": "accepted_with_blocker",
-      "commitSha": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
+      "commitSha": "1a0365a3a59596da267fbf3480adb5488034cb20",
       "title": "Build Timestamped Call Evidence Pipeline",
       "phase": "audio_call_evidence",
       "primaryContribution": "Built local faster-whisper mixed-VOD transcription, Task 200 replay-time mapping, 102-window linkage and a Craig multitrack adapter contract without versioning real speech text.",
@@ -6614,8 +6614,8 @@
     },
     {
       "taskId": "218",
-      "status": "completed",
-      "commitSha": null,
+      "status": "accepted_with_blocker",
+      "commitSha": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
       "title": "Build Generic Scrim Intake V1",
       "phase": "continuous_review_generic_scrim_intake_v1",
       "primaryContribution": "Introduces a generic local intake for new targets 009-999 with protected-alias rejection, bounded replay/MP4 validation, optional unprocessed Craig inventory, deterministic fingerprints and atomic idempotent registration.",
@@ -6647,8 +6647,8 @@
     },
     {
       "taskId": "219",
-      "status": "completed",
-      "commitSha": null,
+      "status": "accepted_with_blocker",
+      "commitSha": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
       "title": "Close Generic Intake Protected-Alias Boundary",
       "phase": "continuous_review_protected_alias_boundary_remediation",
       "primaryContribution": "Moves Craig and registry alias validation ahead of every protected-path filesystem operation and proves the ordering with injected counters while preserving Generic Scrim Intake V1 behavior.",
@@ -6662,19 +6662,52 @@
         "reports/generic-scrim-intake-protected-alias-boundary-task219.md"
       ],
       "gate": "generic_scrim_intake_protected_alias_boundary_closed",
-      "currentRelevance": "candidate_pending_work_validation",
+      "currentRelevance": "accepted_functional_boundary_with_audit_consistency_blocker",
       "dependsOn": ["218"],
       "supersededBy": null,
       "reworkRiskNotes": [
+        "Work accepted the functional gate and recorded historical_task_contribution_index_commit_misattributed as a separate audit-only blocker for Task 220.",
         "No real scrim was registered and Generic Factual Processing remains unconnected.",
-        "The Task 218 ACCEPTED_WITH_BLOCKER decision remains in the audit trail until Work independently evaluates Task 219.",
+        "Task 219 closes Task 218 blocker protected_alias_pre_filesystem_guard_incomplete without changing Task 218's original ACCEPTED_WITH_BLOCKER disposition.",
         "No media, replay, ASR, synchronization, candidate or frontend operation was performed."
       ],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_WITH_BLOCKER_by_Work",
       "evidencePaths": [
         "tasks/specs/219.json",
         "tasks/completed/219-generic-scrim-intake-protected-alias-boundary.md",
         "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/gate.json"
+      ]
+    },
+    {
+      "taskId": "220",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Restore Continuous Review Audit Index Consistency",
+      "phase": "continuous_review_audit_index_integrity",
+      "primaryContribution": "Restores exact accepted task-to-commit, status, gate and evidence mappings for Tasks 205, 218 and 219 and adds a permanent critical-mapping integrity test without touching runtime.",
+      "introducedCapabilities": [],
+      "stabilizedCapabilities": ["continuous_review_generic_scrim_intake_v1"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "data/task-contribution-index.json",
+        "tests/task-contribution-index-integrity.test.mjs",
+        "output/local-replay-processing/continuous-review/task220-audit-index/summary.json",
+        "reports/continuous-review-audit-index-consistency-task220.md"
+      ],
+      "gate": "continuous_review_audit_index_consistency_restored",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["205", "218", "219"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "No runtime, product data or historical report is rewritten by this audit-only correction.",
+        "Generic Factual Processing remains unimplemented and no real new scrim was registered.",
+        "Acceptance remains pending independent Work validation."
+      ],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": [
+        "tasks/specs/220.json",
+        "tasks/completed/220-continuous-review-audit-index-consistency.md",
+        "output/local-replay-processing/continuous-review/task220-audit-index/gate.json"
       ]
     }
   ]

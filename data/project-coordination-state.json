@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Close the accepted Generic Scrim Intake protected-alias pre-filesystem boundary gaps without changing functional intake behavior.",
-  "phase": "continuous_review_protected_alias_boundary_remediation",
-  "lastAcceptedTaskId": "218",
-  "lastAcceptedCommit": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
-  "activeBaseCommit": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
+  "objective": "Restore factual Continuous Review audit-index consistency without changing accepted runtime or product behavior.",
+  "phase": "continuous_review_audit_index_integrity",
+  "lastAcceptedTaskId": "219",
+  "lastAcceptedCommit": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
+  "activeBaseCommit": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
   "branch": "main",
-  "activeTaskId": "219",
+  "activeTaskId": "220",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/219/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/220/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -35,7 +35,7 @@
   ],
   "architecturalDecisions": [
     "ChatGPT Work is the sole acceptance authority and autonomous coordinator.",
-    "Task 218 was externally ACCEPTED_WITH_BLOCKER at 3d1daa401a1e2ceef79cac1b58026ab53721a107 under generic_scrim_intake_v1_partial_with_declared_gaps. The accepted blocker protected_alias_pre_filesystem_guard_incomplete is remediated only by separately authorized Task 219.",
+    "Task 218 was externally ACCEPTED_WITH_BLOCKER at 3d1daa401a1e2ceef79cac1b58026ab53721a107 under generic_scrim_intake_v1_partial_with_declared_gaps. Task 219 closed protected_alias_pre_filesystem_guard_incomplete and was externally ACCEPTED_WITH_BLOCKER at 4d0858d51f7ab4aad86246595bd07b473a1675d1 under the new audit blocker historical_task_contribution_index_commit_misattributed.",
     "Task 210 acceptance was externally supplied with subsequent human playback validation; Synchronized Craig Multitrack Playback is operationally completed. Task 212 adds bounded candidate navigation without playback, mixer, drift, Craig sync or ASR tuning.",
     "Codex reports technical execution claims and stops after the current handoff.",
     "HEAD, push, and passing tests do not imply acceptance; HEAD resolves only the candidate recorded by the post-commit attestation.",
@@ -52,7 +52,7 @@
     "npm.cmd run check:outputs"
   ],
   "activeBlockers": [
-    "Task 218 is ACCEPTED_WITH_BLOCKER: protected_alias_pre_filesystem_guard_incomplete. Craig entries and registry directory names require earlier semantic guards before protected-path filesystem operations.",
+    "Task 219 is ACCEPTED_WITH_BLOCKER: historical_task_contribution_index_commit_misattributed. Functional protected-alias remediation is accepted; Task 220 restores the historical task-to-commit audit mapping.",
     "Task 196 is accepted with blocker detector_selectivity_not_demonstrated: V1 selects about 95 percent of anchors and 93 percent of hard challengers with scores saturated near 1.0.",
     "Task 197 is accepted with the conclusive negative gate structural_features_insufficient_for_candidate_selectivity: reserved-validation separation was only 4.647 percentage points.",
     "Task 198 secondary factual metadata remains unavailable: match IDs, builds, dates, players, teams, heroes and results are declared gaps rather than fabricated values.",
@@ -72,9 +72,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "Await independent ChatGPT Work validation of Task 219 only. Do not create Task 220 or connect Generic Factual Processing.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218"],
-  "pendingTasks": ["219"],
+  "nextAction": "Await independent ChatGPT Work validation of Task 220 only. Do not create Task 221 or start Generic Factual Processing.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219"],
+  "pendingTasks": ["220"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

@@ -1384,7 +1384,7 @@
       "id": "continuous_review_intake_task218_summary",
       "path": "output/local-replay-processing/continuous-review/task218-generic-intake/summary.json",
       "status": "accepted_with_blocker",
-      "notes": "Work-accepted functional baseline at 3d1daa401a1e2ceef79cac1b58026ab53721a107 under generic_scrim_intake_v1_partial_with_declared_gaps and protected_alias_pre_filesystem_guard_incomplete."
+      "notes": "Work-accepted functional baseline at 3d1daa401a1e2ceef79cac1b58026ab53721a107 under generic_scrim_intake_v1_partial_with_declared_gaps and protected_alias_pre_filesystem_guard_incomplete; Task 219 later closed the functional blocker."
     },
     {
       "id": "continuous_review_intake_task218_gate",
@@ -1395,14 +1395,26 @@
     {
       "id": "continuous_review_intake_task219_summary",
       "path": "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/summary.json",
-      "status": "candidate_pending_work_validation",
-      "notes": "Compact evidence for early Craig and registry alias rejection with zero protected-path operation counts and unchanged Generic Intake regressions."
+      "status": "accepted_with_blocker",
+      "notes": "Work-accepted functional boundary evidence at 4d0858d51f7ab4aad86246595bd07b473a1675d1; historical_task_contribution_index_commit_misattributed remains an audit-only blocker for Task 220."
     },
     {
       "id": "continuous_review_intake_task219_gate",
       "path": "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/gate.json",
+      "status": "accepted_with_blocker",
+      "notes": "Work-confirmed functional gate generic_scrim_intake_protected_alias_boundary_closed; Task 219 remains ACCEPTED_WITH_BLOCKER only because of the separate audit-index misattribution."
+    },
+    {
+      "id": "continuous_review_audit_index_task220_summary",
+      "path": "output/local-replay-processing/continuous-review/task220-audit-index/summary.json",
       "status": "candidate_pending_work_validation",
-      "notes": "Technical claim generic_scrim_intake_protected_alias_boundary_closed; independent Work validation remains pending."
+      "notes": "Compact exact mappings for Tasks 205, 218 and 219 plus zero runtime, product and security mutation counters."
+    },
+    {
+      "id": "continuous_review_audit_index_task220_gate",
+      "path": "output/local-replay-processing/continuous-review/task220-audit-index/gate.json",
+      "status": "candidate_pending_work_validation",
+      "notes": "Technical claim continuous_review_audit_index_consistency_restored; independent Work validation remains pending."
     }
   ]
 }

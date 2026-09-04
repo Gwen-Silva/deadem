@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "219",
+  "generatedAtTask": "220",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1211,8 +1211,8 @@
         "plainName": "Generic Scrim Intake V1",
         "introducedInTask": "218",
         "stabilizedInTask": "219",
-        "currentStatus": "candidate_protected_alias_boundary_closed_pending_work_validation",
-        "currentBaseline": "task219_early_protected_alias_guards_over_task218_accepted_with_blocker",
+        "currentStatus": "functional_ready_with_audit_consistency_blocker",
+        "currentBaseline": "task219_accepted_protected_alias_boundary_with_task220_audit_repair_candidate",
         "whyItMatters": "Allows a future real scrim bundle to be validated and registered locally without engineering a match-specific intake or prematurely running gameplay processing.",
         "mainFiles": [
           "tools/continuous-review/intake.mjs",
@@ -1229,12 +1229,12 @@
           "reports/generic-scrim-intake-protected-alias-boundary-task219.md"
         ],
         "knownLimits": [
-          "Task 218 was externally ACCEPTED_WITH_BLOCKER under protected_alias_pre_filesystem_guard_incomplete; Task 219 claims the bounded remediation pending Work validation.",
+          "Task 218 was externally ACCEPTED_WITH_BLOCKER under protected_alias_pre_filesystem_guard_incomplete; Task 219 closed that functional blocker and was accepted with the separate audit blocker historical_task_contribution_index_commit_misattributed.",
           "No new real match was registered by Task 218.",
           "The intake stops before telemetry, synchronization, candidate generation, visual extraction and workspace/library registration.",
           "Metadata and cover selection remain separate future concerns."
         ],
-        "nextUsefulStep": "After independent Task 219 acceptance only, consider Generic Factual Processing for Continuous Review as a separately authorized unit."
+        "nextUsefulStep": "After independent Task 220 audit-integrity acceptance only, consider Generic Factual Processing for Continuous Review as a separately authorized unit."
       }
   ]
 }

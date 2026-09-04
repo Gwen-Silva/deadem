@@ -2237,7 +2237,24 @@ Operation spies prove zero protected-path lstat, realpath, open/read/hash and
 manifest reads. Twenty-six intake tests and 44 focused MVP regressions pass;
 all accepted 4/207/102/48/57/11/15/9 invariants remain unchanged.
 
-AlphaVeil Continuous Review Pipeline is claimed `GENERIC_INTAKE_READY`, not
-`CONTINUOUS_PIPELINE_READY`. After independent Task 219 acceptance only, the
+ChatGPT Work accepted Task 219's functional gate and closed the Task 218
+protected-alias blocker. The separate audit blocker
+`historical_task_contribution_index_commit_misattributed` is remediated by the
+authorized Task 220 candidate.
+
+## Task 220
+
+Module: `Continuous Review / Audit Index Integrity`.
+
+The candidate restores exact accepted task mappings for 205, 218 and 219 and
+adds a permanent integrity test over commit, title, status, gate and blocker
+chronology. Runtime, Review Workspace, product data and all
+4/207/102/48/57/11/15/9 invariants remain unchanged.
+
+Gate claim: `continuous_review_audit_index_consistency_restored`.
+
+AlphaVeil Continuous Review Pipeline remains `GENERIC_INTAKE_READY`, now in
+functional, security-boundary and audit-integrity scope. It is not
+`CONTINUOUS_PIPELINE_READY`. After independent Task 220 acceptance only, the
 next objective may be Generic Factual Processing for Continuous Review as a
-separately authorized unit. Task 220 is not created.
+separately authorized unit. Task 221 is not created.

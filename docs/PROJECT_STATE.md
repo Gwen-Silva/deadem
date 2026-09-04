@@ -1847,5 +1847,25 @@ media and frontend mutation remain zero.
 
 Technical gate claim:
 `generic_scrim_intake_protected_alias_boundary_closed`. Milestone claim:
-`AlphaVeil Continuous Review Pipeline = GENERIC_INTAKE_READY`. Task 219 is
-`VALIDATING`; Task 220 does not exist.
+`AlphaVeil Continuous Review Pipeline = GENERIC_INTAKE_READY`. ChatGPT Work
+accepted Task 219 with the separate audit-only blocker
+`historical_task_contribution_index_commit_misattributed`; the functional
+protected-alias blocker is closed.
+
+## Task 220 — Continuous Review Audit Index Consistency
+
+Task 220 corrects the critical accepted mappings without changing runtime:
+Task 205 → `1a0365a3a59596da267fbf3480adb5488034cb20`, Task 218 →
+`3d1daa401a1e2ceef79cac1b58026ab53721a107`, and Task 219 →
+`4d0858d51f7ab4aad86246595bd07b473a1675d1`. Their distinct titles, external
+statuses, gates and blocker chronology are asserted by a permanent local test.
+
+Continuous Review runtime/schema, Review Workspace and product data remain
+unchanged. Counts remain 4 targets, 207 moments, 102 historical candidates,
+48/57 Replay markers, 11 review fields, 15 error classes and 9 tracks. Media,
+protected access, replay processing, ASR and real registration remain zero.
+
+Technical gate claim: `continuous_review_audit_index_consistency_restored`.
+The milestone remains `GENERIC_INTAKE_READY`, now across functional,
+security-boundary and audit-integrity scope. Generic Factual Processing has not
+started. Task 220 is `VALIDATING`; Task 221 does not exist.
