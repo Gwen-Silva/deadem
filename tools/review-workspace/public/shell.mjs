@@ -77,7 +77,7 @@ export function initProductShell() {
   }
   const foot = document.createElement('p');
   foot.className = 'sidebar-foot';
-  foot.textContent = 'Revisão competitiva com evidência e incerteza preservadas.';
+  foot.textContent = 'Competitive Review for Deadlock';
   sidebar.append(nav, foot);
 
   const button = document.createElement('button');

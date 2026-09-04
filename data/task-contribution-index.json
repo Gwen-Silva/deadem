@@ -6565,7 +6565,7 @@
         "reports/alphaveil-synchronized-replay-ux-v2-task216.md"
       ],
       "gate": "alphaveil_synchronized_replay_ux_v2_ready",
-      "currentRelevance": "candidate_pending_work_validation",
+      "currentRelevance": "accepted_replay_ux_v2_baseline",
       "dependsOn": ["215", "214", "212", "210"],
       "supersededBy": null,
       "reworkRiskNotes": [
@@ -6573,11 +6573,43 @@
         "Synchronization precision and ASR semantic limitations remain unchanged.",
         "Browser screenshots, local playback state and all media remain local-only."
       ],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_by_Work",
       "evidencePaths": [
         "tasks/specs/216.json",
         "tasks/completed/216-alphaveil-synchronized-replay-ux-v2.md",
         "output/local-replay-processing/presentation-ux/task216-replay-ux-v2/gate.json"
+      ]
+    },
+    {
+      "taskId": "217",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Polish AlphaVeil MVP Showcase Experience",
+      "phase": "presentation_ux_mvp_showcase_polish",
+      "primaryContribution": "Unifies the seven public AlphaVeil surfaces with restrained motion, intentional loading/error/empty states, honest future previews and contextual Replay-to-Review navigation without changing data or playback semantics.",
+      "introducedCapabilities": ["alphaveil_mvp_showcase_polish"],
+      "stabilizedCapabilities": ["alphaveil_synchronized_replay_ux_v2", "alphaveil_assisted_review_workspace_ux_v2", "alphaveil_match_experience", "alphaveil_product_shell"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/review-workspace/public/styles/showcase.css",
+        "tools/review-workspace/alphaveil-mvp-showcase-browser-canary.mjs",
+        "output/local-replay-processing/presentation-ux/task217-mvp-showcase/summary.json",
+        "reports/alphaveil-mvp-showcase-polish-task217.md"
+      ],
+      "gate": "alphaveil_mvp_showcase_polish_ready",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["216", "215", "214", "213"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "Human showcase validation remains pending.",
+        "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged.",
+        "Browser screenshots, canary state and all media remain local-only."
+      ],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": [
+        "tasks/specs/217.json",
+        "tasks/completed/217-alphaveil-mvp-showcase-polish.md",
+        "output/local-replay-processing/presentation-ux/task217-mvp-showcase/gate.json"
       ]
     }
   ]

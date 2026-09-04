@@ -4,12 +4,24 @@ const previewRoutes = {
   '/patterns': {
     title: 'Padrões',
     description: 'Conecte decisões semelhantes entre diferentes partidas para identificar problemas recorrentes.',
-    detail: 'Esta área é uma prévia. Nenhum padrão é inferido ou apresentado sem evidência revisada.'
+    detail: 'Esta área é uma prévia. Nenhum padrão é inferido ou apresentado sem evidência revisada.',
+    flow: ['Reviews concluídas', 'Momentos relacionados', 'Padrões recorrentes'],
+    concepts: [
+      ['Decisões semelhantes', 'Reunir momentos que uma pessoa já revisou como relacionados.'],
+      ['Evidência entre partidas', 'Manter o caminho até o gameplay e a comunicação que sustentam cada revisão.'],
+      ['Problemas recorrentes', 'Ajudar a pessoa a reconhecer repetições sem inventar conclusões automáticas.']
+    ]
   },
   '/training': {
     title: 'Plano de treino',
     description: 'Transforme padrões encontrados nas suas reviews em focos e exercícios para as próximas partidas.',
-    detail: 'Esta área é uma prévia. Nenhuma recomendação automática está ativa.'
+    detail: 'Esta área é uma prévia. Nenhuma recomendação automática está ativa.',
+    flow: ['Padrões', 'Foco atual', 'Exercício', 'Próxima partida', 'Nova revisão'],
+    concepts: [
+      ['Foco claro', 'Escolher conscientemente o que levar para a próxima partida.'],
+      ['Aplicação deliberada', 'Conectar um exercício ao foco definido pela própria pessoa.'],
+      ['Ciclo de revisão', 'Voltar à evidência da próxima partida e revisar o que realmente aconteceu.']
+    ]
   }
 };
 
@@ -33,6 +45,22 @@ async function api(route) {
   return body;
 }
 
+function imageFallback(root, alt) {
+  root.classList.remove('is-loading');
+  root.classList.add('match-cover--fallback', 'is-loaded');
+  root.replaceChildren(el('span', 'cover-fallback-mark', 'AV'));
+  root.firstChild.setAttribute('aria-label', alt);
+}
+
+function prepareImage(image, root, alt) {
+  root.classList.add('is-loading');
+  image.classList.add('av-media-image');
+  const ready = () => { root.classList.remove('is-loading'); root.classList.add('is-loaded'); };
+  image.addEventListener('load', ready, { once: true });
+  image.addEventListener('error', () => imageFallback(root, alt), { once: true });
+  if (image.complete && image.naturalWidth > 0) ready();
+}
+
 function statusClass(state) {
   return `match-state match-state--${state}`;
 }
@@ -41,9 +69,10 @@ function cover(match, className = 'match-cover') {
   const root = el('div', `${className} ${match.cover.status !== 'available' ? 'match-cover--fallback' : ''}`);
   if (match.cover.status === 'available') {
     const image = document.createElement('img');
-    image.src = match.cover.url;
     image.alt = match.cover.alt;
     image.loading = 'lazy';
+    prepareImage(image, root, match.cover.alt);
+    image.src = match.cover.url;
     root.append(image);
   } else {
     const fallback = el('span', 'cover-fallback-mark', 'AV');
@@ -51,6 +80,32 @@ function cover(match, className = 'match-cover') {
     root.append(fallback);
   }
   return root;
+}
+
+function stateSurface({ kind = 'empty', title, description, actionLabel, onAction, href }) {
+  const surface = el('section', `av-state av-state--${kind}`);
+  surface.append(el('span', 'av-state-mark', kind === 'error' ? '!' : '◇'), el('h2', '', title), el('p', '', description));
+  if (actionLabel) {
+    if (href) surface.append(action(href, actionLabel, kind === 'error'));
+    else {
+      const button = el('button', 'av-button', actionLabel);
+      button.type = 'button';
+      button.addEventListener('click', onAction);
+      surface.append(button);
+    }
+  }
+  return surface;
+}
+
+function renderLoading(main, pathname) {
+  main.setAttribute('aria-busy', 'true');
+  const content = el('section', `product-content product-loading product-loading--${pathname === '/' ? 'home' : 'page'}`);
+  content.setAttribute('aria-label', 'Carregando conteúdo');
+  content.append(el('div', 'av-skeleton av-skeleton--hero'));
+  const grid = el('div', 'av-skeleton-grid');
+  for (let index = 0; index < 3; index += 1) grid.append(el('div', 'av-skeleton av-skeleton--card'));
+  content.append(grid);
+  main.replaceChildren(content);
 }
 
 function progress(progressData, compact = false) {
@@ -169,6 +224,19 @@ function renderMatches(main, catalog) {
   head.append(el('span', 'av-badge', 'Biblioteca'), el('h1', '', 'Partidas'), el('p', '', 'Revise suas scrims e acompanhe o progresso de cada análise.'));
   const filters = el('div', 'match-filters');
   const grid = el('div', 'match-grid');
+  const renderFilter = value => {
+    const matches = catalog.matches.filter(match => value === 'all' || match.review.state === value);
+    if (matches.length) grid.replaceChildren(...matches.map(matchCard));
+    else grid.replaceChildren(stateSurface({
+      title: value === 'completed' ? 'Nenhuma partida concluída ainda.' : 'Nenhuma partida corresponde a este filtro.',
+      description: 'Escolha outra visualização para continuar navegando pelas scrims disponíveis.',
+      actionLabel: 'Ver todas',
+      onAction: () => {
+        filters.querySelectorAll('button').forEach(item => item.classList.toggle('active', item.dataset.filter === 'all'));
+        renderFilter('all');
+      }
+    }));
+  };
   const options = [['all', 'Todos'], ['not_started', 'Não iniciadas'], ['in_progress', 'Em revisão'], ['completed', 'Concluídas']];
   for (const [value, label] of options) {
     const button = el('button', `filter-button${value === 'all' ? ' active' : ''}`, label);
@@ -176,7 +244,7 @@ function renderMatches(main, catalog) {
     button.dataset.filter = value;
     button.addEventListener('click', () => {
       filters.querySelectorAll('button').forEach(item => item.classList.toggle('active', item === button));
-      grid.replaceChildren(...catalog.matches.filter(match => value === 'all' || match.review.state === value).map(matchCard));
+      renderFilter(value);
     });
     filters.append(button);
   }
@@ -245,34 +313,64 @@ function renderPreview(main, route) {
   document.title = `AlphaVeil · ${route.title}`;
   const content = el('section', 'product-content preview-page');
   content.append(el('span', 'av-badge', 'Preview'), el('h1', '', route.title), el('p', '', route.description));
-  const card = el('article', 'preview-card av-card');
-  card.append(el('span', 'preview-symbol', '◇'), el('h2', '', 'Uma próxima etapa do produto'), el('p', '', route.detail), action('/review', 'Ir para Revisão'));
-  content.append(card);
+  const flowSection = el('section', 'preview-section av-card');
+  flowSection.append(el('p', 'section-kicker', 'COMO VAI FUNCIONAR'), el('h2', '', route.title === 'Padrões' ? 'Da revisão aos padrões recorrentes' : 'Do padrão à próxima revisão'));
+  const flow = el('div', 'preview-flow');
+  route.flow.forEach((step, index) => {
+    const item = el('div', 'preview-flow-step');
+    item.append(el('span', 'preview-flow-index', String(index + 1).padStart(2, '0')), el('strong', '', step));
+    flow.append(item);
+  });
+  flowSection.append(flow);
+  const concepts = el('section', 'preview-section');
+  concepts.append(el('p', 'section-kicker', 'VISÃO DO PRODUTO'), el('h2', '', 'O próximo valor, sem simular dados'));
+  const conceptGrid = el('div', 'preview-concepts');
+  route.concepts.forEach(([title, description]) => {
+    const card = el('article', 'preview-concept av-card');
+    card.append(el('span', 'preview-symbol', '◇'), el('h3', '', title), el('p', '', description));
+    conceptGrid.append(card);
+  });
+  concepts.append(conceptGrid);
+  const honesty = el('aside', 'preview-honesty', route.detail);
+  honesty.setAttribute('role', 'note');
+  const actions = el('div', 'hero-actions');
+  actions.append(action('/review', 'Ir para Revisão', true), action('/', 'Voltar ao Início'));
+  content.append(flowSection, concepts, honesty, actions);
   main.append(content);
 }
 
-function renderError(main) {
+function renderError(main, message = 'Não foi possível carregar esta experiência agora.') {
   document.title = 'AlphaVeil · Indisponível';
   const content = el('section', 'product-content preview-page');
-  content.append(el('span', 'av-badge', 'Indisponível'), el('h1', '', 'Não foi possível abrir esta partida'), el('p', '', 'Volte à biblioteca e escolha uma das scrims disponíveis.'), action('/matches', 'Ver partidas', true));
+  content.append(el('span', 'av-badge', 'Indisponível'), el('h1', '', 'Não foi possível abrir esta experiência.'), el('p', '', message), stateSurface({ kind: 'error', title: 'O restante do AlphaVeil continua disponível.', description: 'Volte à biblioteca para escolher uma das scrims preparadas.', actionLabel: 'Voltar para Partidas', href: '/matches' }));
   main.append(content);
 }
 
 initProductShell();
 const main = document.getElementById('product-main');
+renderLoading(main, location.pathname);
 
 try {
   if (location.pathname === '/' || location.pathname === '/matches') {
     const catalog = await api('/api/product/matches');
+    main.replaceChildren();
     if (location.pathname === '/') renderHome(main, catalog);
     else renderMatches(main, catalog);
   } else if (/^\/matches\/00[1-4]$/u.test(location.pathname)) {
-    renderOverview(main, await api(`/api/product/matches/${location.pathname.slice(-3)}`));
+    const match = await api(`/api/product/matches/${location.pathname.slice(-3)}`);
+    main.replaceChildren();
+    renderOverview(main, match);
   } else if (previewRoutes[location.pathname]) {
+    main.replaceChildren();
     renderPreview(main, previewRoutes[location.pathname]);
   } else {
+    main.replaceChildren();
     renderError(main);
   }
-} catch {
+} catch (error) {
+  console.error(error);
+  main.replaceChildren();
   renderError(main);
+} finally {
+  main.setAttribute('aria-busy', 'false');
 }

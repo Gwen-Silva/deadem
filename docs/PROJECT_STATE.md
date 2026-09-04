@@ -1774,3 +1774,26 @@ Gate: `alphaveil_brand_design_system_app_shell_ready`. Browser evidence covers
 48/57 candidates for 003/004 remain unchanged. Replay/protected access, ASR,
 media versioning and semantic mutation are zero. Task 213 is `VALIDATING`; no
 Task 214 exists.
+
+## Tasks 214–217 — AlphaVeil MVP Presentation UX
+
+ChatGPT Work subsequently accepted Task 213, Task 214, Task 215 and Task 216.
+The accepted presentation baseline at
+`a23a579ed3fb9a1c82f4f270afe6b088c6bc22c5` includes the AlphaVeil shell,
+real-data Home/Matches/Overview, Assisted Review UX V2 and Synchronized Replay
+UX V2 with complete 48/57 factual moment timelines.
+
+Task 217 adds only showcase polish: shared restrained motion, loading and human
+error/empty states, image fallback, honest Patterns/Training previews and a
+global Replay return that follows the currently selected Moment. The isolated
+Chrome flow passed across seven surfaces and four required viewports, including
+keyboard and reduced motion, with zero page errors. Ten screenshots remain
+local-only.
+
+All 4 targets, 207 moments, 102 legacy fingerprints, 105 Replay markers, 11
+review fields, 15 error classes and 9 tracks remain unchanged. Replay access,
+protected access, ASR, factual regeneration and media versioning are zero.
+
+Technical gate claim: `alphaveil_mvp_showcase_polish_ready`. Milestone claim:
+AlphaVeil MVP Presentation UX is `READY_FOR_HUMAN_SHOWCASE_VALIDATION`. Task 217
+is `VALIDATING`; no Task 218 exists.

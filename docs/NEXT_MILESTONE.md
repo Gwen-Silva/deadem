@@ -2189,3 +2189,22 @@ a minimal Home and honest Preview surfaces around unchanged Review and Replay.
 Gate: `alphaveil_brand_design_system_app_shell_ready`. Task 213 is
 `VALIDATING`. Only after Work validation may the declared next objective, Home
 + Matches + Match Overview, be separately authorized. No Task 214 exists.
+
+## Task 217
+
+Module: `Presentation UX / AlphaVeil MVP Showcase Polish`.
+
+Tasks 213–216 are externally accepted. Task 217 closes the planned visual round
+with one coherent seven-surface flow, contextual Replay-to-Review navigation,
+restrained token-based motion, reduced-motion parity, resilient image/loading/
+empty/error states and honest Padrões/Plano de treino Preview surfaces.
+
+The gate claim is `alphaveil_mvp_showcase_polish_ready`. Seventy focused and
+regression tests and nine Chrome flow groups passed; four viewports and ten
+local-only screenshots were validated with zero browser errors. All accepted
+data, Review, Replay, mixer and synchronization contracts remain unchanged.
+
+AlphaVeil MVP Presentation UX is claimed
+`READY_FOR_HUMAN_SHOWCASE_VALIDATION`, not production-ready. The next objective
+is to use the MVP in a real presentation/review and record observed friction
+before any separately authorized development. Task 218 is not created.

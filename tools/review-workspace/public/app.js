@@ -25,6 +25,7 @@ const ids = [
   'queue-panel', 'queue-overlay', 'scrim-context', 'open-scrim', 'scrim-context-sync', 'legacy-audio'
 ];
 const elements = Object.fromEntries(ids.map(id => [id, document.getElementById(id)]));
+const reviewMain = document.querySelector('.review-main');
 const FIELD_KIND = new Map(REVIEW_FIELD_DEFINITIONS.map(field => [field.key, field.kind]));
 const CLASSIFICATION_LABELS = {
   not_validated: 'Ainda não validado', correct: 'Correto', usable_with_minor_error: 'Usável com erro pequeno',
@@ -50,7 +51,25 @@ function escapeHtml(value) {
 
 function setStatus(message, error = false) {
   elements.status.textContent = message;
-  elements.status.style.color = error ? 'var(--danger)' : 'var(--success)';
+  elements.status.classList.toggle('is-error', error);
+  elements.status.classList.toggle('is-success', !error && Boolean(message));
+}
+
+function enhanceImage(image, { fallbackClass = 'media-inline-fallback', fallbackLabel = 'Evidência visual indisponível' } = {}) {
+  image.classList.add('av-media-image');
+  const host = image.parentElement;
+  host?.classList.add('is-loading');
+  const ready = () => { host?.classList.remove('is-loading'); host?.classList.add('is-loaded'); };
+  image.addEventListener('load', ready, { once: true });
+  image.addEventListener('error', () => {
+    const fallback = document.createElement('span');
+    fallback.className = fallbackClass;
+    fallback.textContent = 'AV';
+    fallback.setAttribute('aria-label', fallbackLabel);
+    image.replaceWith(fallback);
+    ready();
+  }, { once: true });
+  if (image.complete && image.naturalWidth > 0) ready();
 }
 
 function setSaveFeedback(message) {
@@ -157,6 +176,8 @@ async function loadQueue(preferredId = null, historyMode = 'replace') {
     button.innerHTML = item.thumbnail.status === 'available'
       ? `<img src="${escapeHtml(item.thumbnail.url)}" alt="${escapeHtml(item.thumbnail.alt)}" loading="lazy"><span class="moment-list-copy"><span><time>${escapeHtml(item.time)}</time><span class="badge" data-state="${item.reviewState}">${escapeHtml(item.reviewLabel)}</span></span><strong>${escapeHtml(item.label)}</strong></span>`
       : `<span class="moment-thumb-fallback" aria-hidden="true">AV</span><span class="moment-list-copy"><span><time>${escapeHtml(item.time ?? '—')}</time><span class="badge" data-state="${item.reviewState}">${escapeHtml(item.reviewLabel)}</span></span><strong>${escapeHtml(item.label)}</strong></span>`;
+    const thumbnail = button.querySelector('img');
+    if (thumbnail) enhanceImage(thumbnail, { fallbackClass: 'moment-thumb-fallback', fallbackLabel: `Preview indisponível do ${item.label}` });
     button.addEventListener('click', () => selectCandidate(item.candidateId, { historyMode: 'push' }));
     elements.queue.append(button);
   }
@@ -164,7 +185,21 @@ async function loadQueue(preferredId = null, historyMode = 'replace') {
     ? preferredId : app.queue[0]?.candidateWindowId;
   if (candidateId === app.selected?.candidateWindowId) markSelected(candidateId);
   else if (candidateId) await selectCandidate(candidateId, { historyMode });
-  else elements['candidate-heading'].innerHTML = '<h2>Nenhum momento neste filtro</h2>';
+  else {
+    const empty = document.createElement('section');
+    empty.className = 'queue-empty av-state';
+    empty.innerHTML = '<span class="av-state-mark">◇</span><strong>Nenhum momento corresponde a este filtro.</strong><p>Limpe os filtros para voltar à fila completa.</p><button type="button">Limpar filtros</button>';
+    empty.querySelector('button').addEventListener('click', () => {
+      elements.filter.value = '';
+      elements.search.value = '';
+      loadQueue(null, 'replace').catch(error => {
+        console.error(error);
+        setStatus('Não foi possível restaurar a fila de momentos.', true);
+      });
+    });
+    elements.queue.append(empty);
+    elements['candidate-heading'].innerHTML = '<p class="section-kicker">FILTRO SEM RESULTADOS</p><h2>Nenhum momento corresponde a este filtro.</h2><p>Use “Limpar filtros” para continuar a revisão.</p>';
+  }
 }
 
 function markSelected(candidateId) {
@@ -192,7 +227,11 @@ function renderMainFrame(frame, label) {
     return;
   }
   elements['evidence-stage'].classList.add('switching');
-  elements['evidence-stage'].innerHTML = `<img src="${escapeHtml(frame.url)}" alt="Preview visual neutro do ${escapeHtml(label)}">`;
+  const image = document.createElement('img');
+  image.alt = `Preview visual neutro do ${label}`;
+  elements['evidence-stage'].replaceChildren(image);
+  enhanceImage(image, { fallbackClass: 'evidence-fallback', fallbackLabel: `Preview visual indisponível do ${label}` });
+  image.src = frame.url;
   requestAnimationFrame(() => elements['evidence-stage'].classList.remove('switching'));
 }
 
@@ -210,6 +249,8 @@ function renderEvidence(candidate, identity) {
     button.innerHTML = frame.status === 'available'
       ? `<img src="${escapeHtml(frame.url)}" alt="Preview ${escapeHtml(roleLabels[frame.role] ?? frame.role)}"><span>${escapeHtml(roleLabels[frame.role] ?? frame.role)}</span>`
       : `<span class="frame-option-fallback">Indisponível</span><span>${escapeHtml(roleLabels[frame.role] ?? frame.role)}</span>`;
+    const thumbnail = button.querySelector('img');
+    if (thumbnail) enhanceImage(thumbnail, { fallbackClass: 'frame-option-fallback', fallbackLabel: `Preview ${roleLabels[frame.role] ?? frame.role} indisponível` });
     button.addEventListener('click', () => {
       renderMainFrame(frame, identity.label);
       elements.frames.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
@@ -219,6 +260,7 @@ function renderEvidence(candidate, identity) {
   elements.storyboards.innerHTML = candidate.videoEvidence.storyboards.map((board, index) => board.status === 'available'
     ? `<figure><img src="${escapeHtml(board.url)}" alt="Sequência visual ${index + 1} do ${escapeHtml(identity.label)}" loading="lazy"><figcaption>Sequência visual ${index + 1}</figcaption></figure>`
     : `<figure><figcaption>Sequência visual ${index + 1}: indisponível</figcaption></figure>`).join('');
+  elements.storyboards.querySelectorAll('img').forEach((image, index) => enhanceImage(image, { fallbackClass: 'storyboard-fallback', fallbackLabel: `Sequência visual ${index + 1} indisponível` }));
 }
 
 async function selectCandidate(candidateId, { historyMode = 'push' } = {}) {
@@ -518,4 +560,9 @@ window.addEventListener('popstate', async () => {
   }
 });
 
-loadTargets().catch(error => setStatus(error.message, true));
+reviewMain?.setAttribute('aria-busy', 'true');
+loadTargets().catch(error => {
+  console.error(error);
+  elements['candidate-heading'].innerHTML = '<p class="section-kicker">REVISÃO INDISPONÍVEL</p><h2>Não foi possível carregar este momento.</h2><p>Volte à visão geral da Scrim e tente novamente.</p>';
+  setStatus('Não foi possível carregar a revisão.', true);
+}).finally(() => reviewMain?.setAttribute('aria-busy', 'false'));

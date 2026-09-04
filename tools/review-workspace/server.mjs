@@ -38,6 +38,7 @@ const STATIC_FILES = new Map([
     ['/styles/product.css', { path: path.join(PUBLIC_DIR, 'styles', 'product.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/review.css', { path: path.join(PUBLIC_DIR, 'styles', 'review.css'), type: 'text/css; charset=utf-8' }],
     ['/styles/replay.css', { path: path.join(PUBLIC_DIR, 'styles', 'replay.css'), type: 'text/css; charset=utf-8' }],
+    ['/styles/showcase.css', { path: path.join(PUBLIC_DIR, 'styles', 'showcase.css'), type: 'text/css; charset=utf-8' }],
     ['/review-presentation.mjs', { path: path.join(MODULE_DIR, 'review-presentation.mjs'), type: 'text/javascript; charset=utf-8' }],
     ['/scrim-navigation.mjs', { path:path.join(MODULE_DIR, 'scrim-navigation.mjs'), type:'text/javascript; charset=utf-8' }],
     ['/scrim-presentation.mjs', { path:path.join(MODULE_DIR, 'scrim-presentation.mjs'), type:'text/javascript; charset=utf-8' }],

@@ -49,7 +49,18 @@ function render() {
     }
 }
 
-function run(action) { Promise.resolve().then(action).catch(error => { byId('player-error').textContent = error.message; }); }
+function setReplayError(message) {
+    byId('player-error').textContent = message;
+    byId('player-error').classList.toggle('is-visible', Boolean(message));
+}
+
+function run(action, userMessage = 'Não foi possível atualizar o Replay sincronizado.') {
+    Promise.resolve().then(action).catch(error => {
+        console.error(error);
+        setReplayError(userMessage);
+        document.querySelector('.replay-layout')?.setAttribute('aria-busy', 'false');
+    });
+}
 function changeMix(action) { if (controller) { action(controller.mixer); controller.applyMix(); } }
 
 function renderMarkers() {
@@ -76,12 +87,16 @@ function renderSelectedMarker() {
         button.classList.toggle('is-selected', selected);
         button.setAttribute('aria-pressed', String(selected));
     });
-    if (!selectedMarker) return;
+    if (!selectedMarker) {
+        if (presentation) byId('return-review').href = presentation.match.reviewUrl;
+        return;
+    }
     byId('current-moment-title').textContent = selectedMarker.label;
     byId('current-moment-time').textContent = `${formatTime(selectedMarker.vodAnchorSeconds)} · ${selectedMarker.reviewLabel}`;
     byId('current-moment-state').textContent = selectedMarker.reviewLabel;
     byId('current-moment-state').dataset.state = selectedMarker.reviewState;
     byId('open-review-moment').href = selectedMarker.reviewUrl;
+    byId('return-review').href = selectedMarker.reviewUrl;
     const index = presentation.markers.indexOf(selectedMarker);
     byId('previous-moment').disabled = index <= 0;
     byId('next-moment').disabled = index < 0 || index >= presentation.markers.length - 1;
@@ -121,6 +136,7 @@ async function loadPresentation(matchId) {
 
 async function loadSession(session) {
     window.scrimSessionReady = false;
+    setReplayError('');
     for (const id of ['play-pause', 'master-seek', 'back-10', 'forward-10', 'playback-rate']) byId(id).disabled = true;
     controller?.destroy();
     controller = null;
@@ -132,6 +148,7 @@ async function loadSession(session) {
     if (context) await context.close();
     context = new AudioContext();
     video.src = session.media.url;
+    byId('video-fallback').hidden = true;
     video.playbackRate = 1;
     byId('playback-rate').value = '1';
     video.load();
@@ -183,6 +200,7 @@ async function loadSession(session) {
     });
     await controller.seek(session.vodRange.start);
     window.scrimSessionReady = true;
+    document.querySelector('.replay-layout')?.setAttribute('aria-busy', 'false');
     for (const id of ['play-pause', 'master-seek', 'back-10', 'forward-10', 'playback-rate']) byId(id).disabled = false;
     render();
 }
@@ -232,12 +250,18 @@ byId('previous-moment').onclick = () => run(() => selectMarker(presentation.mark
 byId('next-moment').onclick = () => run(() => selectMarker(presentation.markers[presentation.markers.indexOf(selectedMarker) + 1], { seek: true, historyMode: 'push' }));
 byId('session-select').onchange = () => run(() => openFriendlyNavigation({ kind: 'friendly', matchId: byId('session-select').value, momentNumber: null }, { historyMode: 'push' }));
 video.addEventListener('timeupdate', render);
+video.addEventListener('loadeddata', () => { byId('video-fallback').hidden = true; setReplayError(''); });
+video.addEventListener('error', () => {
+    byId('video-fallback').hidden = false;
+    setReplayError('Replay sincronizado indisponível. Os detalhes da partida continuam acessíveis.');
+});
 window.addEventListener('popstate', () => run(async () => {
     const friendly = parseFriendlyScrimNavigation(location.search);
     if (friendly) await openFriendlyNavigation(friendly);
 }));
 window.addEventListener('pagehide', () => { controller?.destroy(); context?.close(); });
 
+document.querySelector('.replay-layout')?.setAttribute('aria-busy', 'true');
 run(async () => {
     const response = await fetch('/api/scrim');
     if (!response.ok) throw new Error('scrim_workspace_unavailable');
@@ -258,4 +282,4 @@ run(async () => {
         if (technical) await window.openScrimPlayer(technical);
         else await openFriendlyNavigation({ kind: 'friendly', matchId: '003', momentNumber: null }, { historyMode: 'replace' });
     }
-});
+}, 'Não foi possível carregar o Replay sincronizado.');

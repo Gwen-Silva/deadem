@@ -29,7 +29,7 @@
             <div><p class="section-kicker">VÍDEO DA PARTIDA</p><h2 id="session-title">Carregando replay</h2></div>
             <span id="transport-state" class="badge">pausado</span>
           </div>
-          <div class="video-shell replay-video-shell"><video id="scrim-video" preload="metadata" playsinline></video><span class="video-badge">MÍDIA LOCAL</span></div>
+          <div class="video-shell replay-video-shell"><video id="scrim-video" preload="metadata" playsinline></video><div id="video-fallback" class="video-fallback" hidden><strong>Replay sincronizado indisponível.</strong><span>Você ainda pode voltar à revisão deste momento.</span></div><span class="video-badge">MÍDIA LOCAL</span></div>
           <section class="master-controls replay-transport" aria-label="Controles de reprodução">
             <div class="replay-timeline-wrap">
               <input id="master-seek" aria-label="Posição no replay" type="range" min="0" max="1" value="0" step="0.01" disabled>

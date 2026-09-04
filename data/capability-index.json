@@ -1156,8 +1156,8 @@
         "capabilityId": "alphaveil_synchronized_replay_ux_v2",
         "plainName": "AlphaVeil Synchronized Replay UX V2 and Moment Timeline",
         "introducedInTask": "216",
-        "stabilizedInTask": null,
-        "currentStatus": "candidate_pending_work_validation",
+        "stabilizedInTask": "216",
+        "currentStatus": "accepted",
         "currentBaseline": "task216_two_real_replays_complete_factual_moment_timeline",
         "whyItMatters": "Makes accepted real synchronized playback navigable as two player-facing match experiences with complete prepared-moment context and a human-readable team mixer.",
         "mainFiles": [
@@ -1177,7 +1177,34 @@
           "Accepted synchronization uncertainty is unchanged and visible in closed technical details.",
           "Track display names come from recording metadata; no biometric identity or speech meaning is inferred."
         ],
-        "nextUsefulStep": "Independent Work validation of Task 216 only; no Task 217 is created."
+        "nextUsefulStep": "Use the accepted Replay UX through the Task 217 showcase candidate without changing factual timeline or playback semantics."
+      },
+      {
+        "capabilityId": "alphaveil_mvp_showcase_polish",
+        "plainName": "AlphaVeil MVP Showcase Polish",
+        "introducedInTask": "217",
+        "stabilizedInTask": null,
+        "currentStatus": "candidate_pending_work_validation",
+        "currentBaseline": "task217_seven_surface_human_showcase_flow",
+        "whyItMatters": "Makes the real AlphaVeil MVP coherent and resilient across a five-minute presentation flow while keeping every factual, Review, Replay and privacy contract unchanged.",
+        "mainFiles": [
+          "tools/review-workspace/public/product-app.mjs",
+          "tools/review-workspace/public/app.js",
+          "tools/review-workspace/public/scrim-app.mjs",
+          "tools/review-workspace/public/styles/showcase.css",
+          "tools/review-workspace/alphaveil-mvp-showcase-browser-canary.mjs"
+        ],
+        "mainOutputs": [
+          "output/local-replay-processing/presentation-ux/task217-mvp-showcase/summary.json",
+          "output/local-replay-processing/presentation-ux/task217-mvp-showcase/gate.json",
+          "reports/alphaveil-mvp-showcase-polish-task217.md"
+        ],
+        "knownLimits": [
+          "Human showcase validation remains pending.",
+          "Patterns and Training are explicit Preview surfaces, not implemented analytical modules.",
+          "Candidate selectivity, synchronization precision and ASR semantic quality remain unchanged."
+        ],
+        "nextUsefulStep": "Use the MVP in one real presentation/review and record observed friction before authorizing any new development."
       }
   ]
 }
