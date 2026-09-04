@@ -19,9 +19,16 @@ import {
   hashFileStreaming,
   inspectSourceBundle,
   probeMp4,
+  resolveCraig,
   validateReplayHeader,
 } from "../tools/continuous-review/intake-paths.mjs";
-import { executeIntake, parseArguments, validateManifest } from "../tools/continuous-review/intake.mjs";
+import {
+  assertRegistryEntryName,
+  executeIntake,
+  parseArguments,
+  registrationDecision,
+  validateManifest,
+} from "../tools/continuous-review/intake.mjs";
 import { createSyntheticBundle, syntheticMp4, syntheticReplay } from "../tools/continuous-review/canary.mjs";
 
 async function temporary(t, label = "task218-") {
@@ -45,6 +52,71 @@ test("protected aliases reject before any filesystem access", async () => {
   for (const id of ["005", "006", "007", "008"]) {
     await assert.rejects(executeIntake({ source: "Z:/definitely-missing", target: `review_match_${id}`, mode: "dry-run" }), { code: "protected_target_id" });
     await assert.rejects(inspectSourceBundle(`Z:/definitely-missing/replay_${id}`), { code: "protected_target_id" });
+  }
+});
+
+test("Craig protected entry aliases reject immediately after readdir with zero protected-path operations", async () => {
+  const cases = [
+    "replay_005.aac",
+    "replay_006.aac",
+    "replay_007.aac",
+    "replay_008.aac",
+    "review_match_005.aac",
+    "match_006.aac",
+  ];
+  for (const name of cases) {
+    const counts = { protectedLstat: 0, protectedRealpath: 0, protectedHashOpenRead: 0 };
+    const isProtected = (value) => String(value).includes(name);
+    const io = {
+      async lstat(value) {
+        if (isProtected(value)) counts.protectedLstat += 1;
+        return { isDirectory: () => true, isSymbolicLink: () => false };
+      },
+      async realpath(value) {
+        if (isProtected(value)) counts.protectedRealpath += 1;
+        return path.resolve(value);
+      },
+      async readdir() {
+        return [{ name, isFile: () => true, isSymbolicLink: () => false }];
+      },
+    };
+    const hashFile = async (value) => {
+      if (isProtected(value)) counts.protectedHashOpenRead += 1;
+      return "0".repeat(64);
+    };
+    await assert.rejects(resolveCraig(path.resolve("synthetic-source"), io, { hashFile }), { code: "protected_target_id" });
+    assert.deepEqual(counts, { protectedLstat: 0, protectedRealpath: 0, protectedHashOpenRead: 0 });
+  }
+});
+
+test("registry protected aliases reject before any protected manifest read", async () => {
+  const manifest = { reviewTargetId: "review_match_009", intakeFingerprint: "a", coreInputFingerprint: "b" };
+  for (const id of ["005", "006", "007", "008"]) {
+    let manifestReads = 0;
+    const entryName = `review_match_${id}`;
+    await assert.rejects(registrationDecision(manifest, path.resolve("synthetic-registry"), {
+      readRegistryEntries: async () => [{ name: entryName, isDirectory: () => true }],
+      readRegistryManifest: async () => { manifestReads += 1; return null; },
+    }), { code: "protected_target_id" });
+    assert.equal(manifestReads, 0);
+  }
+});
+
+test("registry legacy and malformed entries fail closed before any manifest read", async () => {
+  const manifest = { reviewTargetId: "review_match_009", intakeFingerprint: "a", coreInputFingerprint: "b" };
+  for (const entryName of ["foo", "review_match_001", "review_match_1000"]) {
+    let manifestReads = 0;
+    await assert.rejects(registrationDecision(manifest, path.resolve("synthetic-registry"), {
+      readRegistryEntries: async () => [{ name: entryName, isDirectory: () => true }],
+      readRegistryManifest: async () => { manifestReads += 1; return null; },
+    }), { code: "invalid_registry_entry" });
+    assert.equal(manifestReads, 0);
+  }
+});
+
+test("registry namespace guard preserves valid review_match_009 through review_match_999", () => {
+  for (const name of ["review_match_009", "review_match_010", "review_match_999"]) {
+    assert.equal(assertRegistryEntryName(name), name);
   }
 });
 

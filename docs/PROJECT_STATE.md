@@ -1822,6 +1822,30 @@ match was registered. Existing counts remain 4 targets, 207 moments, 102
 legacy candidates, 48/57 Replay markers, 11 review fields, 15 error classes
 and 9 accepted tracks.
 
+ChatGPT Work accepted Task 218 with blocker at
+`3d1daa401a1e2ceef79cac1b58026ab53721a107`. Its external gate is
+`generic_scrim_intake_v1_partial_with_declared_gaps`; the accepted blocker is
+`protected_alias_pre_filesystem_guard_incomplete`.
+
+## Task 219 — Generic Intake Protected-Alias Boundary
+
+Task 219 preserves the Task 218 functional intake and moves the two semantic
+guards to the pre-filesystem boundary. Every Craig entry name is checked
+immediately after directory enumeration, before entry-specific lstat,
+realpath, open, read or hash. The registry validates its complete entry-name
+set before any manifest is opened; only continuous targets 009–999 proceed.
+
+Injected counters cover six Craig protected-alias cases, four protected
+registry aliases and three malformed/legacy registry names. Protected-path
+lstat, realpath, open/read/hash and invalid/protected manifest reads are all
+zero. Intake regressions pass 26/26; focused MVP regressions pass 44/44.
+
+No real scrim was registered and counts remain 4 targets, 207 moments, 102
+historical candidates, 48/57 Replay markers, 11 review fields, 15 error
+classes and 9 tracks. Replay/protected access, ASR, sync, candidates, frames,
+media and frontend mutation remain zero.
+
 Technical gate claim:
-`generic_scrim_intake_v1_ready_for_first_new_match`. Task 218 is `VALIDATING`
-pending independent Work validation; Task 219 does not exist.
+`generic_scrim_intake_protected_alias_boundary_closed`. Milestone claim:
+`AlphaVeil Continuous Review Pipeline = GENERIC_INTAKE_READY`. Task 219 is
+`VALIDATING`; Task 220 does not exist.

@@ -54,24 +54,41 @@ async function readManifest(file) {
   }
 }
 
-async function registrationDecision(manifest, registryRoot) {
+export function assertRegistryEntryName(name) {
+  try {
+    return assertContinuousReviewTargetId(name);
+  } catch (error) {
+    if (error?.code === "protected_target_id") throw error;
+    throw new IntakeError("invalid_registry_entry", "O registry contém uma entrada fora do namespace contínuo review_match_009–review_match_999.");
+  }
+}
+
+export async function registrationDecision(
+  manifest,
+  registryRoot,
+  { readRegistryEntries = readdir, readRegistryManifest = readManifest } = {},
+) {
   const targetManifestPath = path.join(registryRoot, manifest.reviewTargetId, "manifest.json");
-  const existingTarget = await readManifest(targetManifestPath);
+  let entries = [];
+  try {
+    entries = await readRegistryEntries(registryRoot, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+  for (const entry of entries) {
+    if (!entry.isDirectory()) throw new IntakeError("invalid_registry_entry", "O registry contém uma entrada que não é um diretório de target válido.");
+    assertRegistryEntryName(entry.name);
+  }
+  const existingTarget = await readRegistryManifest(targetManifestPath);
   if (existingTarget) {
     if (existingTarget.intakeFingerprint === manifest.intakeFingerprint) {
       return { outcome: "already_registered_same_inputs", manifestPath: targetManifestPath, existingManifest: existingTarget };
     }
     throw new IntakeError("target_input_identity_conflict", "Este target já está registrado com arquivos diferentes.");
   }
-  let entries = [];
-  try {
-    entries = await readdir(registryRoot, { withFileTypes: true });
-  } catch (error) {
-    if (error?.code !== "ENOENT") throw error;
-  }
   for (const entry of entries) {
-    if (!entry.isDirectory() || entry.name === manifest.reviewTargetId) continue;
-    const other = await readManifest(path.join(registryRoot, entry.name, "manifest.json"));
+    if (entry.name === manifest.reviewTargetId) continue;
+    const other = await readRegistryManifest(path.join(registryRoot, entry.name, "manifest.json"));
     if (other?.coreInputFingerprint === manifest.coreInputFingerprint) {
       throw new IntakeError("input_bundle_already_registered", "Este conjunto replay+video já está registrado sob outro target.");
     }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "218",
-  "baseCommit": "16b0d69499e92ba676495de961d575db8cfdd068",
-  "taskRange": "001-218",
+  "generatedAtTask": "219",
+  "baseCommit": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
+  "taskRange": "001-219",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6268,8 +6268,8 @@
     },
     {
       "taskId": "205",
-      "status": "completed",
-      "commitSha": null,
+      "status": "accepted_with_blocker",
+      "commitSha": "3d1daa401a1e2ceef79cac1b58026ab53721a107",
       "title": "Build Timestamped Call Evidence Pipeline",
       "phase": "audio_call_evidence",
       "primaryContribution": "Built local faster-whisper mixed-VOD transcription, Task 200 replay-time mapping, 102-window linkage and a Craig multitrack adapter contract without versioning real speech text.",
@@ -6628,20 +6628,53 @@
         "output/local-replay-processing/continuous-review/task218-generic-intake/summary.json",
         "reports/generic-scrim-intake-v1-task218.md"
       ],
-      "gate": "generic_scrim_intake_v1_ready_for_first_new_match",
-      "currentRelevance": "candidate_pending_work_validation",
+      "gate": "generic_scrim_intake_v1_partial_with_declared_gaps",
+      "currentRelevance": "accepted_functional_baseline_with_protected_alias_blocker",
       "dependsOn": ["217", "198", "211"],
       "supersededBy": null,
       "reworkRiskNotes": [
+        "Work accepted the functional intake with blocker protected_alias_pre_filesystem_guard_incomplete; Task 219 is the separately authorized remediation.",
         "No new real match was registered and no downstream factual processing is connected.",
         "Private paths, filenames and future real media identities stay exclusively in local manifests.",
         "Product routes and the four accepted targets remain unchanged."
       ],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_WITH_BLOCKER_by_Work",
       "evidencePaths": [
         "tasks/specs/218.json",
         "tasks/completed/218-generic-scrim-intake-v1.md",
         "output/local-replay-processing/continuous-review/task218-generic-intake/gate.json"
+      ]
+    },
+    {
+      "taskId": "219",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Close Generic Intake Protected-Alias Boundary",
+      "phase": "continuous_review_protected_alias_boundary_remediation",
+      "primaryContribution": "Moves Craig and registry alias validation ahead of every protected-path filesystem operation and proves the ordering with injected counters while preserving Generic Scrim Intake V1 behavior.",
+      "introducedCapabilities": [],
+      "stabilizedCapabilities": ["continuous_review_generic_scrim_intake_v1"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/continuous-review/intake-paths.mjs",
+        "tools/continuous-review/intake.mjs",
+        "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/summary.json",
+        "reports/generic-scrim-intake-protected-alias-boundary-task219.md"
+      ],
+      "gate": "generic_scrim_intake_protected_alias_boundary_closed",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["218"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "No real scrim was registered and Generic Factual Processing remains unconnected.",
+        "The Task 218 ACCEPTED_WITH_BLOCKER decision remains in the audit trail until Work independently evaluates Task 219.",
+        "No media, replay, ASR, synchronization, candidate or frontend operation was performed."
+      ],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": [
+        "tasks/specs/219.json",
+        "tasks/completed/219-generic-scrim-intake-protected-alias-boundary.md",
+        "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/gate.json"
       ]
     }
   ]

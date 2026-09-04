@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "218",
+  "generatedAtTask": "219",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1210,9 +1210,9 @@
         "capabilityId": "continuous_review_generic_scrim_intake_v1",
         "plainName": "Generic Scrim Intake V1",
         "introducedInTask": "218",
-        "stabilizedInTask": null,
-        "currentStatus": "candidate_pending_work_validation",
-        "currentBaseline": "task218_local_deterministic_intake_009_999",
+        "stabilizedInTask": "219",
+        "currentStatus": "candidate_protected_alias_boundary_closed_pending_work_validation",
+        "currentBaseline": "task219_early_protected_alias_guards_over_task218_accepted_with_blocker",
         "whyItMatters": "Allows a future real scrim bundle to be validated and registered locally without engineering a match-specific intake or prematurely running gameplay processing.",
         "mainFiles": [
           "tools/continuous-review/intake.mjs",
@@ -1223,14 +1223,18 @@
         "mainOutputs": [
           "output/local-replay-processing/continuous-review/task218-generic-intake/summary.json",
           "output/local-replay-processing/continuous-review/task218-generic-intake/gate.json",
-          "reports/generic-scrim-intake-v1-task218.md"
+          "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/summary.json",
+          "output/local-replay-processing/continuous-review/task219-protected-alias-boundary/gate.json",
+          "reports/generic-scrim-intake-v1-task218.md",
+          "reports/generic-scrim-intake-protected-alias-boundary-task219.md"
         ],
         "knownLimits": [
+          "Task 218 was externally ACCEPTED_WITH_BLOCKER under protected_alias_pre_filesystem_guard_incomplete; Task 219 claims the bounded remediation pending Work validation.",
           "No new real match was registered by Task 218.",
           "The intake stops before telemetry, synchronization, candidate generation, visual extraction and workspace/library registration.",
           "Metadata and cover selection remain separate future concerns."
         ],
-        "nextUsefulStep": "After independent acceptance only, consider Generic Factual Processing for Continuous Review as a separately authorized unit."
+        "nextUsefulStep": "After independent Task 219 acceptance only, consider Generic Factual Processing for Continuous Review as a separately authorized unit."
       }
   ]
 }

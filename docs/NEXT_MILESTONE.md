@@ -2219,9 +2219,25 @@ dry-run and atomic idempotent registration. It does not register a real match
 or connect telemetry, synchronization, candidates, visual evidence or product
 routes.
 
-Gate claim: `generic_scrim_intake_v1_ready_for_first_new_match`.
+External Work disposition: `ACCEPTED_WITH_BLOCKER` under
+`generic_scrim_intake_v1_partial_with_declared_gaps`, with blocker
+`protected_alias_pre_filesystem_guard_incomplete`.
+
+## Task 219
+
+Module: `Continuous Review / Protected-Alias Boundary Remediation`.
+
+The candidate preserves Generic Scrim Intake V1 and rejects Craig aliases
+immediately after `readdir`, before entry-specific filesystem calls. Registry
+entries are completely namespace-validated before any manifest read; only
+`review_match_009`–`review_match_999` can proceed.
+
+The gate claim is `generic_scrim_intake_protected_alias_boundary_closed`.
+Operation spies prove zero protected-path lstat, realpath, open/read/hash and
+manifest reads. Twenty-six intake tests and 44 focused MVP regressions pass;
+all accepted 4/207/102/48/57/11/15/9 invariants remain unchanged.
 
 AlphaVeil Continuous Review Pipeline is claimed `GENERIC_INTAKE_READY`, not
-`CONTINUOUS_PIPELINE_READY`. After independent acceptance only, the next
-objective may be Generic Factual Processing for Continuous Review as a
-separately authorized unit. Task 219 is not created.
+`CONTINUOUS_PIPELINE_READY`. After independent Task 219 acceptance only, the
+next objective may be Generic Factual Processing for Continuous Review as a
+separately authorized unit. Task 220 is not created.

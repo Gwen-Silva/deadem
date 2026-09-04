@@ -175,7 +175,7 @@ export async function probeMp4(file, sizeBytes) {
   }
 }
 
-async function resolveCraig(sourceRoot, io = defaultIo) {
+export async function resolveCraig(sourceRoot, io = defaultIo, { hashFile = hashFileStreaming } = {}) {
   const craigDirectory = path.join(sourceRoot, "craig");
   let craigStat;
   try {
@@ -197,6 +197,7 @@ async function resolveCraig(sourceRoot, io = defaultIo) {
   const resolved = await io.realpath(craigDirectory);
   if (!samePath(resolved, craigDirectory)) throw new IntakeError("unsafe_input_path", "A pasta craig/ foi redirecionada e não será seguida.");
   const entries = await io.readdir(craigDirectory, { withFileTypes: true });
+  for (const entry of entries) assertNoProtectedAlias(entry.name);
   for (const entry of entries) {
     if (!entry.isFile() || entry.isSymbolicLink()) throw new IntakeError("unsafe_input_path", "craig/ não pode conter symlinks ou diretórios aninhados.");
   }
@@ -216,7 +217,7 @@ async function resolveCraig(sourceRoot, io = defaultIo) {
       sourcePath: path.resolve(fileResolved),
       extension: ".aac",
       sizeBytes: stat.size,
-      sha256: await hashFileStreaming(fileResolved),
+      sha256: await hashFile(fileResolved),
       provenance: "unprocessed/local_audio_bundle",
     });
   }
