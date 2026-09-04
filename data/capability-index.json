@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "216",
+  "generatedAtTask": "218",
   "activeBaseline": "death_event_surface_resolved_lifecycle_evidence_bounded32_task190",
   "capabilities": [
     {
@@ -1183,8 +1183,8 @@
         "capabilityId": "alphaveil_mvp_showcase_polish",
         "plainName": "AlphaVeil MVP Showcase Polish",
         "introducedInTask": "217",
-        "stabilizedInTask": null,
-        "currentStatus": "candidate_pending_work_validation",
+        "stabilizedInTask": "217",
+        "currentStatus": "accepted",
         "currentBaseline": "task217_seven_surface_human_showcase_flow",
         "whyItMatters": "Makes the real AlphaVeil MVP coherent and resilient across a five-minute presentation flow while keeping every factual, Review, Replay and privacy contract unchanged.",
         "mainFiles": [
@@ -1200,11 +1200,37 @@
           "reports/alphaveil-mvp-showcase-polish-task217.md"
         ],
         "knownLimits": [
-          "Human showcase validation remains pending.",
+          "Initial human showcase validation was positive; further presentation polish remains optional rather than blocking.",
           "Patterns and Training are explicit Preview surfaces, not implemented analytical modules.",
           "Candidate selectivity, synchronization precision and ASR semantic quality remain unchanged."
         ],
-        "nextUsefulStep": "Use the MVP in one real presentation/review and record observed friction before authorizing any new development."
+        "nextUsefulStep": "Preserve the accepted showcase while building the separately authorized continuous-review intake foundation."
+      },
+      {
+        "capabilityId": "continuous_review_generic_scrim_intake_v1",
+        "plainName": "Generic Scrim Intake V1",
+        "introducedInTask": "218",
+        "stabilizedInTask": null,
+        "currentStatus": "candidate_pending_work_validation",
+        "currentBaseline": "task218_local_deterministic_intake_009_999",
+        "whyItMatters": "Allows a future real scrim bundle to be validated and registered locally without engineering a match-specific intake or prematurely running gameplay processing.",
+        "mainFiles": [
+          "tools/continuous-review/intake.mjs",
+          "tools/continuous-review/intake-model.mjs",
+          "tools/continuous-review/intake-paths.mjs",
+          "schemas/continuous-review-intake.schema.json"
+        ],
+        "mainOutputs": [
+          "output/local-replay-processing/continuous-review/task218-generic-intake/summary.json",
+          "output/local-replay-processing/continuous-review/task218-generic-intake/gate.json",
+          "reports/generic-scrim-intake-v1-task218.md"
+        ],
+        "knownLimits": [
+          "No new real match was registered by Task 218.",
+          "The intake stops before telemetry, synchronization, candidate generation, visual extraction and workspace/library registration.",
+          "Metadata and cover selection remain separate future concerns."
+        ],
+        "nextUsefulStep": "After independent acceptance only, consider Generic Factual Processing for Continuous Review as a separately authorized unit."
       }
   ]
 }

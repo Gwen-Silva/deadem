@@ -2204,7 +2204,24 @@ regression tests and nine Chrome flow groups passed; four viewports and ten
 local-only screenshots were validated with zero browser errors. All accepted
 data, Review, Replay, mixer and synchronization contracts remain unchanged.
 
-AlphaVeil MVP Presentation UX is claimed
-`READY_FOR_HUMAN_SHOWCASE_VALIDATION`, not production-ready. The next objective
-is to use the MVP in a real presentation/review and record observed friction
-before any separately authorized development. Task 218 is not created.
+ChatGPT Work accepted Task 217 at
+`16b0d69499e92ba676495de961d575db8cfdd068` under
+`alphaveil_mvp_showcase_polish_ready`; initial human validation was positive.
+
+## Task 218
+
+Module: `Continuous Review / Generic Scrim Intake V1`.
+
+The candidate introduces a local-only source bundle contract, new target
+namespace 009–999, pre-filesystem protection for 005–008, bounded replay/MP4
+identity probes, optional unprocessed Craig inventory, deterministic manifests,
+dry-run and atomic idempotent registration. It does not register a real match
+or connect telemetry, synchronization, candidates, visual evidence or product
+routes.
+
+Gate claim: `generic_scrim_intake_v1_ready_for_first_new_match`.
+
+AlphaVeil Continuous Review Pipeline is claimed `GENERIC_INTAKE_READY`, not
+`CONTINUOUS_PIPELINE_READY`. After independent acceptance only, the next
+objective may be Generic Factual Processing for Continuous Review as a
+separately authorized unit. Task 219 is not created.

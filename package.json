@@ -55,6 +55,7 @@
     "emit:exact-15-death-validation-compact": "node tools/emit-exact-15-death-validation-compact-artifacts.mjs --selection output/local-replay-processing/exact-15-death-validation-selection/selected-replay-set.json --summary-output output/local-replay-processing/exact-15-death-validation-compact-emission/",
     "lint": "npm run lint --workspaces --if-present --",
     "preview": "npm run preview --workspace=@deademx/ui",
+    "review:intake": "node tools/continuous-review/intake.mjs",
     "review:workspace": "node tools/review-workspace/server.mjs",
     "review:scrim": "node tools/review-workspace/server.mjs --scrim-only",
     "proto:json": "npm run proto:json --workspaces --if-present",

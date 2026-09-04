@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Polish the accepted AlphaVeil MVP into a coherent, resilient and honest human-showcase experience without adding new analytical capability.",
-  "phase": "presentation_ux_mvp_showcase_polish",
-  "lastAcceptedTaskId": "216",
-  "lastAcceptedCommit": "a23a579ed3fb9a1c82f4f270afe6b088c6bc22c5",
-  "activeBaseCommit": "a23a579ed3fb9a1c82f4f270afe6b088c6bc22c5",
+  "objective": "Build a generic, safe and deterministic local intake foundation for future AlphaVeil scrims without connecting downstream factual processing.",
+  "phase": "continuous_review_generic_scrim_intake_v1",
+  "lastAcceptedTaskId": "217",
+  "lastAcceptedCommit": "16b0d69499e92ba676495de961d575db8cfdd068",
+  "activeBaseCommit": "16b0d69499e92ba676495de961d575db8cfdd068",
   "branch": "main",
-  "activeTaskId": "217",
+  "activeTaskId": "218",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/217/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/218/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -35,7 +35,7 @@
   ],
   "architecturalDecisions": [
     "ChatGPT Work is the sole acceptance authority and autonomous coordinator.",
-    "Task 216 acceptance at a23a579ed3fb9a1c82f4f270afe6b088c6bc22c5 was supplied externally under alphaveil_synchronized_replay_ux_v2_ready. Task 217 is separately authorized, not self-accepted.",
+    "Task 217 acceptance at 16b0d69499e92ba676495de961d575db8cfdd068 was supplied externally under alphaveil_mvp_showcase_polish_ready after positive initial human validation. Task 218 is separately authorized, not self-accepted.",
     "Task 210 acceptance was externally supplied with subsequent human playback validation; Synchronized Craig Multitrack Playback is operationally completed. Task 212 adds bounded candidate navigation without playback, mixer, drift, Craig sync or ASR tuning.",
     "Codex reports technical execution claims and stops after the current handoff.",
     "HEAD, push, and passing tests do not imply acceptance; HEAD resolves only the candidate recorded by the post-commit attestation.",
@@ -71,9 +71,9 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "Await independent human showcase and ChatGPT Work validation of Task 217 only. Do not create Task 218.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216"],
-  "pendingTasks": ["217"],
+  "nextAction": "Await independent ChatGPT Work validation of Task 218 only. Do not create Task 219 or connect Generic Factual Processing.",
+  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217"],
+  "pendingTasks": ["218"],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

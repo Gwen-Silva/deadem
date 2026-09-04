@@ -1794,6 +1794,34 @@ All 4 targets, 207 moments, 102 legacy fingerprints, 105 Replay markers, 11
 review fields, 15 error classes and 9 tracks remain unchanged. Replay access,
 protected access, ASR, factual regeneration and media versioning are zero.
 
-Technical gate claim: `alphaveil_mvp_showcase_polish_ready`. Milestone claim:
-AlphaVeil MVP Presentation UX is `READY_FOR_HUMAN_SHOWCASE_VALIDATION`. Task 217
-is `VALIDATING`; no Task 218 exists.
+ChatGPT Work accepted `alphaveil_mvp_showcase_polish_ready` at
+`16b0d69499e92ba676495de961d575db8cfdd068`; initial human validation was
+positive. AlphaVeil MVP Presentation UX is the accepted showcase baseline.
+
+## Task 218 — Generic Scrim Intake V1
+
+Task 218 starts the AlphaVeil Continuous Review Pipeline without changing the
+four-target product. A new local CLI accepts only `review_match_009` through
+`review_match_999`; 001–004 remain historical and 005–008 reject before any
+filesystem access.
+
+The source contract requires exactly one regular non-symlink Source 2 `.dem`
+and one regular non-symlink `.mp4`. Validation is limited to the PBDEMS2 header
+and summary offset, ISO Base Media `ftyp`/`moov`/`mvhd`, positive duration,
+sizes and streaming SHA-256. Optional Craig tracks are ordered, identified and
+hashed without decoding, ASR, synchronization or speaker inference.
+
+Dry-run writes nothing. Register uses schema validation, deterministic
+fingerprints, same-target idempotency, cross-target replay+video duplicate
+protection and temporary-file atomic rename. Inputs remain referenced in place;
+no media is copied.
+
+The synthetic isolated canary passed dry-run, register, repeated register,
+changed-input conflict and bundles with and without communication. No real
+match was registered. Existing counts remain 4 targets, 207 moments, 102
+legacy candidates, 48/57 Replay markers, 11 review fields, 15 error classes
+and 9 accepted tracks.
+
+Technical gate claim:
+`generic_scrim_intake_v1_ready_for_first_new_match`. Task 218 is `VALIDATING`
+pending independent Work validation; Task 219 does not exist.

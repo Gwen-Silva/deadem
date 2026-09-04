@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deadem.local/schemas/continuous-review-intake.schema.json",
+  "title": "Private local continuous-review intake manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactClass", "reviewTargetId", "status", "association", "source", "inputs", "metadata", "provenance", "coreInputFingerprint", "intakeFingerprint"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "artifactClass": {"const": "continuous_review_intake"},
+    "reviewTargetId": {"type": "string", "pattern": "^review_match_(?:00[9]|0[1-9][0-9]|[1-9][0-9]{2})$"},
+    "status": {"enum": ["ready_for_factual_processing", "communication_supplied_with_gap"]},
+    "association": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "ambiguityCount"],
+      "properties": {"method": {"const": "human_supplied_local_scrim_bundle"}, "ambiguityCount": {"const": 0}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rootPath", "copyPolicy"],
+      "properties": {"rootPath": {"type": "string", "minLength": 1}, "copyPolicy": {"const": "reference_in_place_no_copy"}}
+    },
+    "inputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["replay", "video", "communication"],
+      "properties": {
+        "replay": {"$ref": "#/$defs/replay"},
+        "video": {"$ref": "#/$defs/video"},
+        "communication": {"$ref": "#/$defs/communication"}
+      }
+    },
+    "metadata": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factual", "humanSupplied", "inferred"],
+      "properties": {
+        "factual": {
+          "type": "object", "additionalProperties": false,
+          "required": ["replayFormat", "replaySizeBytes", "videoFormat", "videoSizeBytes", "videoDurationSeconds", "provenance"],
+          "properties": {
+            "replayFormat": {"const": "source2_demo_pbde_ms2"}, "replaySizeBytes": {"type": "integer", "minimum": 17},
+            "videoFormat": {"const": "iso_base_media_mp4"}, "videoSizeBytes": {"type": "integer", "minimum": 1},
+            "videoDurationSeconds": {"type": "number", "exclusiveMinimum": 0}, "provenance": {"const": "factual/local_file_identity"}
+          }
+        },
+        "humanSupplied": {
+          "type": "object", "additionalProperties": false,
+          "required": ["reviewTargetId", "provenance"],
+          "properties": {"reviewTargetId": {"type": "string"}, "provenance": {"const": "human_supplied/intake_target_assignment"}}
+        },
+        "inferred": {
+          "type": "object", "additionalProperties": false,
+          "required": ["values", "provenance"],
+          "properties": {"values": {"type": "array", "maxItems": 0}, "provenance": {"const": "inferred/none"}}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["association", "replay", "video", "communication", "gameplayAnalysisPerformed", "automaticAttributionPerformed"],
+      "properties": {
+        "association": {"const": "human_supplied/intake_target_assignment"}, "replay": {"const": "factual/local_file_identity"},
+        "video": {"const": "factual/local_file_identity"}, "communication": {"type": "string", "minLength": 1},
+        "gameplayAnalysisPerformed": {"const": false}, "automaticAttributionPerformed": {"const": false}
+      }
+    },
+    "coreInputFingerprint": {"$ref": "#/$defs/hash"},
+    "intakeFingerprint": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "baseInput": {
+      "type": "object",
+      "required": ["status", "sourcePath", "localIdentifier", "extension", "sizeBytes", "sha256", "format", "probeMethod", "provenance"],
+      "properties": {
+        "status": {"const": "available"}, "sourcePath": {"type": "string", "minLength": 1}, "localIdentifier": {"type": "string", "minLength": 1},
+        "extension": {"type": "string"}, "sizeBytes": {"type": "integer", "minimum": 1}, "sha256": {"$ref": "#/$defs/hash"},
+        "format": {"type": "string"}, "probeMethod": {"type": "string"}, "provenance": {"const": "factual/local_file_identity"}
+      }
+    },
+    "replay": {
+      "allOf": [
+        {"$ref": "#/$defs/baseInput"},
+        {"type": "object", "additionalProperties": false, "required": ["signature", "summaryOffset"], "properties": {
+          "status": {}, "sourcePath": {}, "localIdentifier": {"const": "replay_input"}, "extension": {"const": ".dem"}, "sizeBytes": {}, "sha256": {},
+          "format": {"const": "source2_demo_pbde_ms2"}, "signature": {"const": "PBDEMS2"}, "summaryOffset": {"type": "integer", "minimum": 16},
+          "probeMethod": {"const": "pbde_ms2_header_only"}, "provenance": {}
+        }}
+      ]
+    },
+    "video": {
+      "allOf": [
+        {"$ref": "#/$defs/baseInput"},
+        {"type": "object", "additionalProperties": false, "required": ["majorBrand", "durationSeconds"], "properties": {
+          "status": {}, "sourcePath": {}, "localIdentifier": {"const": "video_input"}, "extension": {"const": ".mp4"}, "sizeBytes": {}, "sha256": {},
+          "format": {"const": "iso_base_media_mp4"}, "majorBrand": {"type": "string", "minLength": 4, "maxLength": 4},
+          "durationSeconds": {"type": "number", "exclusiveMinimum": 0}, "probeMethod": {"const": "mp4_mvhd_random_access"}, "provenance": {}
+        }}
+      ]
+    },
+    "track": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "localIdentifier", "sourcePath", "extension", "sizeBytes", "sha256", "provenance"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 1}, "localIdentifier": {"type": "string", "pattern": "^track_[0-9]{3}$"},
+        "sourcePath": {"type": "string", "minLength": 1}, "extension": {"const": ".aac"}, "sizeBytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/hash"}, "provenance": {"const": "unprocessed/local_audio_bundle"}
+      }
+    },
+    "communication": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "trackCount", "ordering", "tracks", "supportFiles", "provenance"],
+      "properties": {
+        "status": {"enum": ["not_supplied", "supplied_unprocessed", "supplied_with_gap"]},
+        "trackCount": {"type": "integer", "minimum": 0}, "ordering": {"const": "natural_filename_order_en_numeric"},
+        "tracks": {"type": "array", "items": {"$ref": "#/$defs/track"}},
+        "supportFiles": {
+          "type": "object", "additionalProperties": false, "required": ["infoTxt", "rawDat"],
+          "properties": {"infoTxt": {"type": "boolean"}, "rawDat": {"type": "boolean"}}
+        },
+        "provenance": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

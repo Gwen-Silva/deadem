@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAtTask": "216",
-  "baseCommit": "f3620d4d05f3cce728fce6cc414921275f9f456b",
-  "taskRange": "001-216",
+  "generatedAtTask": "218",
+  "baseCommit": "16b0d69499e92ba676495de961d575db8cfdd068",
+  "taskRange": "001-218",
   "evidenceRules": [
     "Details are taken from versioned specs, completed/blocked task files, reports, docs, registry entries, and git history.",
     "Partial evidence entries are explicitly marked and should not be treated as complete reconstruction.",
@@ -6583,7 +6583,7 @@
     {
       "taskId": "217",
       "status": "completed",
-      "commitSha": null,
+      "commitSha": "16b0d69499e92ba676495de961d575db8cfdd068",
       "title": "Polish AlphaVeil MVP Showcase Experience",
       "phase": "presentation_ux_mvp_showcase_polish",
       "primaryContribution": "Unifies the seven public AlphaVeil surfaces with restrained motion, intentional loading/error/empty states, honest future previews and contextual Replay-to-Review navigation without changing data or playback semantics.",
@@ -6597,19 +6597,51 @@
         "reports/alphaveil-mvp-showcase-polish-task217.md"
       ],
       "gate": "alphaveil_mvp_showcase_polish_ready",
-      "currentRelevance": "candidate_pending_work_validation",
+      "currentRelevance": "accepted_showcase_baseline",
       "dependsOn": ["216", "215", "214", "213"],
       "supersededBy": null,
       "reworkRiskNotes": [
-        "Human showcase validation remains pending.",
+        "Initial human showcase validation was positive; future cover polish remains optional.",
         "Candidate selectivity, synchronization uncertainty and ASR semantic limitations remain unchanged.",
         "Browser screenshots, canary state and all media remain local-only."
       ],
-      "evidenceStatus": "pending_independent_work_validation",
+      "evidenceStatus": "ACCEPTED_by_Work",
       "evidencePaths": [
         "tasks/specs/217.json",
         "tasks/completed/217-alphaveil-mvp-showcase-polish.md",
         "output/local-replay-processing/presentation-ux/task217-mvp-showcase/gate.json"
+      ]
+    },
+    {
+      "taskId": "218",
+      "status": "completed",
+      "commitSha": null,
+      "title": "Build Generic Scrim Intake V1",
+      "phase": "continuous_review_generic_scrim_intake_v1",
+      "primaryContribution": "Introduces a generic local intake for new targets 009-999 with protected-alias rejection, bounded replay/MP4 validation, optional unprocessed Craig inventory, deterministic fingerprints and atomic idempotent registration.",
+      "introducedCapabilities": ["continuous_review_generic_scrim_intake_v1"],
+      "stabilizedCapabilities": ["alphaveil_mvp_showcase_polish"],
+      "supersededCapabilities": [],
+      "importantOutputs": [
+        "tools/continuous-review/intake.mjs",
+        "schemas/continuous-review-intake.schema.json",
+        "output/local-replay-processing/continuous-review/task218-generic-intake/summary.json",
+        "reports/generic-scrim-intake-v1-task218.md"
+      ],
+      "gate": "generic_scrim_intake_v1_ready_for_first_new_match",
+      "currentRelevance": "candidate_pending_work_validation",
+      "dependsOn": ["217", "198", "211"],
+      "supersededBy": null,
+      "reworkRiskNotes": [
+        "No new real match was registered and no downstream factual processing is connected.",
+        "Private paths, filenames and future real media identities stay exclusively in local manifests.",
+        "Product routes and the four accepted targets remain unchanged."
+      ],
+      "evidenceStatus": "pending_independent_work_validation",
+      "evidencePaths": [
+        "tasks/specs/218.json",
+        "tasks/completed/218-generic-scrim-intake-v1.md",
+        "output/local-replay-processing/continuous-review/task218-generic-intake/gate.json"
       ]
     }
   ]
