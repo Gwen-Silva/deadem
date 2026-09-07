@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Restore factual Continuous Review audit-index consistency without changing accepted runtime or product behavior.",
-  "phase": "continuous_review_audit_index_integrity",
-  "lastAcceptedTaskId": "219",
-  "lastAcceptedCommit": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
-  "activeBaseCommit": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
+  "objective": "Repository + Local Workspace Hygiene Audit: measure and classify existing evidence without cleanup or processing.",
+  "phase": "repository_local_workspace_hygiene_audit",
+  "lastAcceptedTaskId": "220",
+  "lastAcceptedCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+  "activeBaseCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
   "branch": "main",
-  "activeTaskId": "220",
+  "activeTaskId": "221",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/220/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/221/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -40,7 +40,8 @@
     "Codex reports technical execution claims and stops after the current handoff.",
     "HEAD, push, and passing tests do not imply acceptance; HEAD resolves only the candidate recorded by the post-commit attestation.",
     "Unavailable launch integration is represented as BLOCKED_BY_SURFACE without simulated execution.",
-    "Delivery prioritizes the smallest complete, testable and measurable functional unit; hardening is deferred unless required for minimum confidence or the next module."
+    "Delivery prioritizes the smallest complete, testable and measurable functional unit; hardening is deferred unless required for minimum confidence or the next module.",
+    "Work independently ACCEPTED Task 220 at 61355485cd4cc95719b91db9f296760ba5a7ea84 under continuous_review_audit_index_consistency_restored and explicitly authorized this coordination synchronization and Task 221 resumption. AlphaVeil Continuous Review Pipeline remains GENERIC_INTAKE_READY."
   ],
   "requiredTests": [
     "node --test tests/project-coordination-policy.test.mjs",
@@ -52,7 +53,6 @@
     "npm.cmd run check:outputs"
   ],
   "activeBlockers": [
-    "Task 219 is ACCEPTED_WITH_BLOCKER: historical_task_contribution_index_commit_misattributed. Functional protected-alias remediation is accepted; Task 220 restores the historical task-to-commit audit mapping.",
     "Task 196 is accepted with blocker detector_selectivity_not_demonstrated: V1 selects about 95 percent of anchors and 93 percent of hard challengers with scores saturated near 1.0.",
     "Task 197 is accepted with the conclusive negative gate structural_features_insufficient_for_candidate_selectivity: reserved-validation separation was only 4.647 percentage points.",
     "Task 198 secondary factual metadata remains unavailable: match IDs, builds, dates, players, teams, heroes and results are declared gaps rather than fabricated values.",
@@ -72,9 +72,43 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "Await independent ChatGPT Work validation of Task 220 only. Do not create Task 221 or start Generic Factual Processing.",
-  "completedTasks": ["190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219"],
-  "pendingTasks": ["220"],
+  "nextAction": "Await independent ChatGPT Work validation of Task 221 Repository + Local Workspace Hygiene Audit only. Do not clean up, start Generic Factual Processing or create Task 222.",
+  "completedTasks": [
+    "190",
+    "191",
+    "192",
+    "193",
+    "194",
+    "195",
+    "196",
+    "197",
+    "198",
+    "199",
+    "200",
+    "201",
+    "202",
+    "203",
+    "204",
+    "205",
+    "206",
+    "207",
+    "208",
+    "209",
+    "210",
+    "211",
+    "212",
+    "213",
+    "214",
+    "215",
+    "216",
+    "217",
+    "218",
+    "219",
+    "220"
+  ],
+  "pendingTasks": [
+    "221"
+  ],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"
 }

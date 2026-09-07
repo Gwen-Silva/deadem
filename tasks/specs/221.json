@@ -1,0 +1,134 @@
+{
+  "taskId": "221",
+  "title": "Audit Repository and Local Workspace Hygiene",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Measure and classify the repository and local workspace using path metadata and bounded reference evidence; propose cleanup, archival and structural improvements without executing them.",
+  "baseCommitExpected": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+  "executionReportPath": "reports/repository-and-local-workspace-hygiene-task221.md",
+  "executionContract": {
+    "reasoningComplexity": "High: distinguish active runtime dependencies, historical evidence and reconstructible local material without reading media or protected paths.",
+    "objective": "Audit five separate inventory views and deliver three evidence-backed plans with conservative reclaimability.",
+    "technicalContext": [
+      "Work independently ACCEPTED Task 220 and authorized resuming the existing audit, synchronizing coordination, one commit and normal push. The original five outputs plus data/project-coordination-state.json are authorized."
+    ],
+    "confirmedState": [
+      "main and origin/main matched the accepted Task220 base at resumption; five untracked Task221 outputs are preserved.",
+      "Prior stale coordination blocker is closed by the explicit Work decision; no broad inventory rerun."
+    ],
+    "expectedBaseCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+    "branchEnvironment": [
+      "Windows PowerShell; use npm.cmd. One commit with exact requested message and normal origin/main push."
+    ],
+    "allowedScope": [
+      "Reuse existing metadata inventory and local evidence; update audit handoff metadata and authorized coordination state only."
+    ],
+    "protectedAreas": [
+      "Reject 005-008 names before stat/open/hash/read; no media content, cleanup, move, regeneration, replay processing or Task 222."
+    ],
+    "expectedChanges": [
+      "Five existing Task221 candidate outputs and data/project-coordination-state.json; local Task221 validation/review/attestation."
+    ],
+    "acceptanceCriteria": [
+      "Inventory five views, classify all measured files, identify current consumers before classifying local runtime data, report uncertainties and three plans with no deletions."
+    ],
+    "mandatoryTests": [
+      "Local audit self-checks, inventory reconciliation, output-scope checks and protected-path guard tests using synthetic names."
+    ],
+    "requiredEvidence": [
+      "Per-file metadata/classification/consumer/reproduction/risk/reclaimability records; existing-hash duplicates; group totals; immutable source-tree verification."
+    ],
+    "commitPolicy": [
+      "Exactly one commit: Audit repository and local workspace hygiene. Stage only six explicitly authorized files; normal origin/main push. No cleanup/history rewrite."
+    ],
+    "stopConditions": [
+      "Protected/media access, cleanup, base divergence or changes outside six authorized files and local Task221 evidence."
+    ],
+    "returnReportFormat": [
+      "Measured repository/local totals, three plans, active dependencies, gaps, Git result, gate and Task 221 VALIDATING."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "data/project-coordination-state.json",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "scripts/check-output-sizes.js",
+    "package.json",
+    ".gitignore",
+    "tools/review-workspace/**"
+  ],
+  "optionalReadPaths": [
+    "Bounded non-media source/configuration/reference files selected by the metadata inventory; reason: identify consumers, reproduction sources and historical status."
+  ],
+  "writePaths": [
+    "reports/repository-and-local-workspace-hygiene-task221.md",
+    "tasks/specs/221.json",
+    "tasks/completed/221-repository-local-workspace-hygiene-audit.md",
+    "artifacts/repository-hygiene/task221/summary.json",
+    "artifacts/repository-hygiene/task221/gate.json",
+    "data/project-coordination-state.json",
+    ".local/codex/221/**"
+  ],
+  "forbiddenPaths": [
+    "packages/**",
+    "tools/**",
+    "scripts/**",
+    "experiments/**",
+    "docs/**",
+    "samples/**",
+    "tasks/specs/222.json"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "coordination-validator",
+      "type": "npm-script",
+      "script": "validate:coordination"
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    }
+  ],
+  "expectedOutputs": [
+    "reports/repository-and-local-workspace-hygiene-task221.md",
+    "tasks/specs/221.json",
+    "tasks/completed/221-repository-local-workspace-hygiene-audit.md",
+    "artifacts/repository-hygiene/task221/summary.json",
+    "artifacts/repository-hygiene/task221/gate.json",
+    "data/project-coordination-state.json"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "regenerationPolicy": {
+    "canonicalFacts": "reuse",
+    "validationArtifacts": "forbidden",
+    "reports": "regenerate"
+  },
+  "stopConditions": [
+    "Audit-only; no alteration of pre-existing artifacts except the explicitly Work-authorized coordination synchronization."
+  ],
+  "successGate": "repository_local_workspace_hygiene_audit_ready",
+  "gapsGate": "repository_local_workspace_hygiene_audit_partial",
+  "blockedGate": "BLOCKED_BY_HYGIENE_AUDIT_BOUNDARY",
+  "gateSource": {
+    "type": "json-file",
+    "path": "artifacts/repository-hygiene/task221/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

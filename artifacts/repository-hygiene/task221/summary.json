@@ -1,0 +1,2119 @@
+{
+  "schemaVersion": 1,
+  "taskId": 221,
+  "status": "VALIDATING",
+  "baseCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+  "auditedAt": "2026-09-07T21:32:10.893Z",
+  "trackedFileCount": 4773,
+  "trackedBytes": 935705917,
+  "trackedOutputFileCount": 3200,
+  "trackedOutputBytes": 920649891,
+  "localVisibleFileCount": 167029,
+  "localVisibleBytes": 47959953183,
+  "safeCleanupFileCount": 2696,
+  "safeCleanupBytes": 42993154,
+  "archiveCandidateFileCount": 3184,
+  "archiveCandidateBytes": 918796674,
+  "activeRuntimeBytes": 10812179431,
+  "unknownBytes": 2624476149,
+  "protectedExcludedCount": 99,
+  "protectedAccessCount": 0,
+  "replayProcessingCount": 0,
+  "mediaContentReadCount": 0,
+  "proposedHistoryRewrite": false,
+  "task222Created": false,
+  "measurement": {
+    "tracked": "Git index blob logical bytes at supplied base; protected names excluded before blob metadata",
+    "localVisible": "Nontracked regular files physically visible inside repository, including ignored files; no .git, junction traversal, protected paths or Task221 self-outputs",
+    "units": "bytes; logical sizes, not filesystem allocation or Git pack size",
+    "activeRuntime": "tracked and local statically traced artifact envelopes; conservative upper bound, not code/dependency installation size",
+    "reclaim": "potential logical bytes; no deletion; archive depends on reference migration; duplicate rows not added to reclaim"
+  },
+  "coverage": {
+    "metadataErrors": 0,
+    "symlinkOrJunctionExclusions": 18,
+    "sourceTextFilesRead": 848,
+    "sourceTextBytesRead": 10347351,
+    "trackedNamesBeforeProtectedFilter": 4833,
+    "physicalRegularFileCount": 171802,
+    "physicalRegularBytes": 48895916383
+  },
+  "classificationTotals": [
+    {
+      "category": "KEEP_SOURCE",
+      "fileCount": 1005,
+      "bytes": 28445099942
+    },
+    {
+      "category": "KEEP_ACTIVE",
+      "fileCount": 11492,
+      "bytes": 10812179431
+    },
+    {
+      "category": "KEEP_AUDIT",
+      "fileCount": 5872,
+      "bytes": 6072692169
+    },
+    {
+      "category": "UNKNOWN",
+      "fileCount": 19085,
+      "bytes": 2624476149
+    },
+    {
+      "category": "REGENERABLE_CACHE",
+      "fileCount": 134267,
+      "bytes": 940896893
+    },
+    {
+      "category": "EPHEMERAL",
+      "fileCount": 80,
+      "bytes": 314182
+    },
+    {
+      "category": "SUPERSEDED",
+      "fileCount": 1,
+      "bytes": 334
+    }
+  ],
+  "views": {
+    "tracked": [
+      {
+        "category": "output/replays",
+        "fileCount": 422,
+        "bytes": 699379112
+      },
+      {
+        "category": "output",
+        "fileCount": 801,
+        "bytes": 101301892
+      },
+      {
+        "category": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence",
+        "fileCount": 91,
+        "bytes": 37236474
+      },
+      {
+        "category": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence",
+        "fileCount": 93,
+        "bytes": 18554224
+      },
+      {
+        "category": "output/local-replay-processing/death-event-segmented-lifecycle-evidence",
+        "fileCount": 100,
+        "bytes": 17987673
+      },
+      {
+        "category": "output/local-replay-processing/death-event-directional-discrimination-evidence",
+        "fileCount": 92,
+        "bytes": 11505962
+      },
+      {
+        "category": "output/local-replay-processing/death-event-semantic-sequence-evidence",
+        "fileCount": 103,
+        "bytes": 7968160
+      },
+      {
+        "category": "output/local-replay-processing/functional-death-candidate-detector",
+        "fileCount": 17,
+        "bytes": 6437966
+      },
+      {
+        "category": "output/local-replay-processing/death-event-directional-cycle-evidence",
+        "fileCount": 87,
+        "bytes": 5605919
+      },
+      {
+        "category": "tools",
+        "fileCount": 184,
+        "bytes": 3480039
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-hard-challenger-census",
+        "fileCount": 30,
+        "bytes": 3360977
+      },
+      {
+        "category": "output/local-replay-processing/death-event-corroboration-evidence",
+        "fileCount": 73,
+        "bytes": 2367574
+      },
+      {
+        "category": "packages",
+        "fileCount": 361,
+        "bytes": 2132292
+      },
+      {
+        "category": "output/local-replay-processing/death-event-candidates",
+        "fileCount": 65,
+        "bytes": 1805029
+      },
+      {
+        "category": "tasks",
+        "fileCount": 349,
+        "bytes": 1612835
+      },
+      {
+        "category": "scripts",
+        "fileCount": 50,
+        "bytes": 1487961
+      },
+      {
+        "category": "output/local-replay-processing/assisted-review-bundles",
+        "fileCount": 10,
+        "bytes": 1486760
+      },
+      {
+        "category": "reports",
+        "fileCount": 229,
+        "bytes": 1414397
+      },
+      {
+        "category": "data",
+        "fileCount": 13,
+        "bytes": 1315792
+      },
+      {
+        "category": "output/local-replay-processing/life-state-transition-candidates",
+        "fileCount": 57,
+        "bytes": 1312183
+      },
+      {
+        "category": "experiments",
+        "fileCount": 30,
+        "bytes": 958550
+      },
+      {
+        "category": "tests",
+        "fileCount": 147,
+        "bytes": 934787
+      },
+      {
+        "category": "docs",
+        "fileCount": 60,
+        "bytes": 474316
+      },
+      {
+        "category": "output/local-replay-processing/review-candidate-windows",
+        "fileCount": 7,
+        "bytes": 472424
+      },
+      {
+        "category": "output/local-replay-processing/dense-review-evidence",
+        "fileCount": 8,
+        "bytes": 450827
+      },
+      {
+        "category": "output/local-replay-processing/whole-match-visual-index",
+        "fileCount": 7,
+        "bytes": 445131
+      },
+      {
+        "category": "data/indexes",
+        "fileCount": 2,
+        "bytes": 419790
+      },
+      {
+        "category": "output/local-replay-processing/assisted-review",
+        "fileCount": 6,
+        "bytes": 366457
+      },
+      {
+        "category": "output/local-replay-processing/participant-identity-compact",
+        "fileCount": 56,
+        "bytes": 340745
+      },
+      {
+        "category": "schemas",
+        "fileCount": 36,
+        "bytes": 297459
+      },
+      {
+        "category": "output/local-replay-processing/allowlisted-death-validation-batches",
+        "fileCount": 115,
+        "bytes": 259036
+      },
+      {
+        "category": "package-lock.json",
+        "fileCount": 1,
+        "bytes": 193755
+      },
+      {
+        "category": "output/local-replay-processing/alive-dead-respawn-compact",
+        "fileCount": 58,
+        "bytes": 158515
+      },
+      {
+        "category": "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity",
+        "fileCount": 20,
+        "bytes": 143975
+      },
+      {
+        "category": "lib",
+        "fileCount": 9,
+        "bytes": 141380
+      },
+      {
+        "category": "output/local-replay-processing/semantic-foundation-compact",
+        "fileCount": 55,
+        "bytes": 136986
+      },
+      {
+        "category": "output/local-replay-processing/allowlisted-death-validation-batch-runner",
+        "fileCount": 42,
+        "bytes": 132249
+      },
+      {
+        "category": "output/local-replay-processing/review-onboarding",
+        "fileCount": 8,
+        "bytes": 92739
+      },
+      {
+        "category": "output/local-replay-processing/craig-multitrack",
+        "fileCount": 14,
+        "bytes": 85457
+      },
+      {
+        "category": "knowledge",
+        "fileCount": 53,
+        "bytes": 72051
+      },
+      {
+        "category": "python",
+        "fileCount": 18,
+        "bytes": 61132
+      },
+      {
+        "category": "output/local-replay-processing/allowlisted-death-validation-batch-parity",
+        "fileCount": 24,
+        "bytes": 56968
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation",
+        "fileCount": 10,
+        "bytes": 48410
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-compact-emission",
+        "fileCount": 23,
+        "bytes": 47605
+      },
+      {
+        "category": "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review",
+        "fileCount": 9,
+        "bytes": 41363
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-fieldpath-59-runtime-field-definition",
+        "fileCount": 11,
+        "bytes": 40924
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption",
+        "fileCount": 11,
+        "bytes": 37092
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-953-payload-iterator-alignment",
+        "fileCount": 11,
+        "bytes": 34998
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-index-allocation-gap",
+        "fileCount": 14,
+        "bytes": 34021
+      },
+      {
+        "category": "output/local-replay-processing/audio-call-evidence",
+        "fileCount": 8,
+        "bytes": 33249
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-953-buffer-boundary",
+        "fileCount": 11,
+        "bytes": 31014
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline",
+        "fileCount": 11,
+        "bytes": 28764
+      },
+      {
+        "category": "output/local-replay-processing/replay-video-sync",
+        "fileCount": 7,
+        "bytes": 26547
+      },
+      {
+        "category": "output/local-replay-processing/controlled-source-canonical-artifacts",
+        "fileCount": 27,
+        "bytes": 26012
+      },
+      {
+        "category": "output/local-replay-processing/payloadbits-action-delta-contract-review",
+        "fileCount": 11,
+        "bytes": 25723
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-packet-cursor-alignment",
+        "fileCount": 8,
+        "bytes": 25471
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract",
+        "fileCount": 11,
+        "bytes": 20508
+      },
+      {
+        "category": "output/local-replay-processing/high-index-missing-update-cursor-contract-review",
+        "fileCount": 12,
+        "bytes": 19236
+      },
+      {
+        "category": "output/local-replay-processing/expanded-death-validation-dry-run",
+        "fileCount": 9,
+        "bytes": 19141
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-spec",
+        "fileCount": 14,
+        "bytes": 18835
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-field-reader-segments",
+        "fileCount": 11,
+        "bytes": 18094
+      },
+      {
+        "category": "README.md",
+        "fileCount": 1,
+        "bytes": 17952
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-2905-registry-and-packet-context",
+        "fileCount": 14,
+        "bytes": 17872
+      },
+      {
+        "category": "output/local-replay-processing/controlled-source-class-policy-review",
+        "fileCount": 12,
+        "bytes": 17641
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-source-artifacts",
+        "fileCount": 10,
+        "bytes": 17402
+      },
+      {
+        "category": "output/local-replay-processing/cursor-index-contract-probe-replay-011",
+        "fileCount": 13,
+        "bytes": 17352
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-parser-intervention-design",
+        "fileCount": 8,
+        "bytes": 17191
+      },
+      {
+        "category": "output/local-replay-processing/external-parser-oracle-canaries",
+        "fileCount": 11,
+        "bytes": 17132
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-missing-entity-recovery",
+        "fileCount": 8,
+        "bytes": 17007
+      },
+      {
+        "category": "output/local-replay-processing/cursor-index-contract-probe-spec",
+        "fileCount": 14,
+        "bytes": 16740
+      },
+      {
+        "category": ".releases",
+        "fileCount": 19,
+        "bytes": 16438
+      },
+      {
+        "category": "output/local-replay-processing/minimum-review-telemetry",
+        "fileCount": 5,
+        "bytes": 16399
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-consumption-contract",
+        "fileCount": 8,
+        "bytes": 16181
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-bounded-parser-intervention-spec",
+        "fileCount": 9,
+        "bytes": 15969
+      },
+      {
+        "category": "output/local-replay-processing/index-lifecycle-probe-canary-consolidation",
+        "fileCount": 7,
+        "bytes": 15328
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-serialized-entity-payload-semantics",
+        "fileCount": 9,
+        "bytes": 15144
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-forward-source-artifacts",
+        "fileCount": 11,
+        "bytes": 14642
+      },
+      {
+        "category": "output/local-replay-processing/dual-missing-entity-diagnostic-canaries",
+        "fileCount": 6,
+        "bytes": 14536
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis",
+        "fileCount": 8,
+        "bytes": 14435
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review",
+        "fileCount": 7,
+        "bytes": 13732
+      },
+      {
+        "category": "output/local-replay-processing/replay-parser-prior-art-and-second-canary",
+        "fileCount": 10,
+        "bytes": 13527
+      },
+      {
+        "category": "output/local-replay-processing/batch-processing-readiness",
+        "fileCount": 13,
+        "bytes": 13489
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary",
+        "fileCount": 10,
+        "bytes": 13388
+      },
+      {
+        "category": "output/local-replay-processing/controlled-canonical-source-readiness",
+        "fileCount": 13,
+        "bytes": 12580
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-string-reader-accounting",
+        "fileCount": 11,
+        "bytes": 11975
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-compact-summary",
+        "fileCount": 6,
+        "bytes": 11762
+      },
+      {
+        "category": "output/local-replay-processing/presentation-ux",
+        "fileCount": 10,
+        "bytes": 11673
+      },
+      {
+        "category": "output/local-replay-processing/independent-missing-entity-strategy",
+        "fileCount": 6,
+        "bytes": 11467
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-010-canary",
+        "fileCount": 9,
+        "bytes": 10869
+      },
+      {
+        "category": "output/local-replay-processing/materialized-expanded-death-validation-dry-run-authorization",
+        "fileCount": 9,
+        "bytes": 10450
+      },
+      {
+        "category": "output/local-replay-processing/post-batch-death-validation-expansion-decision",
+        "fileCount": 9,
+        "bytes": 10341
+      },
+      {
+        "category": ".github",
+        "fileCount": 4,
+        "bytes": 10283
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-selection",
+        "fileCount": 8,
+        "bytes": 10238
+      },
+      {
+        "category": "output/local-replay-processing/batch-death-validation-compact-mini-pilot",
+        "fileCount": 11,
+        "bytes": 10163
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-entities-boundary-truncation",
+        "fileCount": 11,
+        "bytes": 9962
+      },
+      {
+        "category": "output/local-replay-processing/upstream-char-decoder-fix-resolution",
+        "fileCount": 8,
+        "bytes": 9832
+      },
+      {
+        "category": "output/local-replay-processing/two-match-assisted-review-intake",
+        "fileCount": 4,
+        "bytes": 9535
+      },
+      {
+        "category": "output/local-replay-processing/death-validation-compact-schema",
+        "fileCount": 11,
+        "bytes": 9024
+      },
+      {
+        "category": "output/local-replay-processing/death-validation-compact-emission",
+        "fileCount": 14,
+        "bytes": 8831
+      },
+      {
+        "category": "output/local-replay-processing/expanded-death-validation-authorization-manifest",
+        "fileCount": 8,
+        "bytes": 8468
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-lookup-diagnosis",
+        "fileCount": 7,
+        "bytes": 8250
+      },
+      {
+        "category": "output/local-replay-processing/post-parser-fix-pipeline-validation",
+        "fileCount": 11,
+        "bytes": 8087
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-index-lifecycle-probe-replay-011-canary",
+        "fileCount": 7,
+        "bytes": 8009
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-index-lifecycle-probe-replay-010-canary",
+        "fileCount": 7,
+        "bytes": 7996
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-implementation",
+        "fileCount": 7,
+        "bytes": 7866
+      },
+      {
+        "category": "output/local-replay-processing/clarity-oracle-viability",
+        "fileCount": 12,
+        "bytes": 7708
+      },
+      {
+        "category": "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint",
+        "fileCount": 11,
+        "bytes": 7612
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-entities-boundary-guard",
+        "fileCount": 10,
+        "bytes": 7280
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation",
+        "fileCount": 7,
+        "bytes": 7083
+      },
+      {
+        "category": "output/local-replay-processing/upstream-char-decoder-fix",
+        "fileCount": 12,
+        "bytes": 6856
+      },
+      {
+        "category": "output/local-replay-processing/continuous-review",
+        "fileCount": 6,
+        "bytes": 6271
+      },
+      {
+        "category": "package.json",
+        "fileCount": 1,
+        "bytes": 6093
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-replay-010-canary",
+        "fileCount": 6,
+        "bytes": 6066
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-replay-011-canary",
+        "fileCount": 6,
+        "bytes": 6041
+      },
+      {
+        "category": "output/local-replay-processing/assisted-review-workspace",
+        "fileCount": 8,
+        "bytes": 6007
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation",
+        "fileCount": 6,
+        "bytes": 5971
+      },
+      {
+        "category": "output/local-replay-processing/batch-dry-run-readiness",
+        "fileCount": 9,
+        "bytes": 5380
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-canary",
+        "fileCount": 10,
+        "bytes": 5353
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-config-isolation",
+        "fileCount": 5,
+        "bytes": 5266
+      },
+      {
+        "category": "output/local-replay-processing/batch-dry-run-mini-pilot",
+        "fileCount": 9,
+        "bytes": 5177
+      },
+      {
+        "category": "output/local-replay-processing/direct-codex-workflow-restoration",
+        "fileCount": 5,
+        "bytes": 5089
+      },
+      {
+        "category": "output/local-replay-processing/upstream-update-check",
+        "fileCount": 6,
+        "bytes": 3895
+      },
+      {
+        "category": "AGENTS.md",
+        "fileCount": 1,
+        "bytes": 3553
+      },
+      {
+        "category": "output/local-replay-processing/project-history",
+        "fileCount": 2,
+        "bytes": 1930
+      },
+      {
+        "category": "release.sh",
+        "fileCount": 1,
+        "bytes": 1649
+      },
+      {
+        "category": "eslint.common.config.js",
+        "fileCount": 1,
+        "bytes": 1525
+      },
+      {
+        "category": "LICENSE",
+        "fileCount": 1,
+        "bytes": 1060
+      },
+      {
+        "category": ".changeset",
+        "fileCount": 1,
+        "bytes": 584
+      },
+      {
+        "category": ".gitignore",
+        "fileCount": 1,
+        "bytes": 353
+      }
+    ],
+    "local": [
+      {
+        "category": ".local/deadem/review-targets",
+        "fileCount": 8,
+        "bytes": 15238566777
+      },
+      {
+        "category": ".local/deadem/replays",
+        "fileCount": 38,
+        "bytes": 14053841845
+      },
+      {
+        "category": ".local/deadem/call-evidence",
+        "fileCount": 98,
+        "bytes": 5340960820
+      },
+      {
+        "category": "samples",
+        "fileCount": 6,
+        "bytes": 4266169726
+      },
+      {
+        "category": ".local/deadem/dense-review",
+        "fileCount": 11361,
+        "bytes": 2816724238
+      },
+      {
+        "category": ".local/deadem/craig",
+        "fileCount": 48,
+        "bytes": 1985990019
+      },
+      {
+        "category": "output-local",
+        "fileCount": 3326,
+        "bytes": 1778129174
+      },
+      {
+        "category": "dependency/cache",
+        "fileCount": 132931,
+        "bytes": 735358022
+      },
+      {
+        "category": ".local/deadem/review-workspace",
+        "fileCount": 74,
+        "bytes": 653231885
+      },
+      {
+        "category": ".local/deadem/review-telemetry",
+        "fileCount": 36,
+        "bytes": 244663926
+      },
+      {
+        "category": "output",
+        "fileCount": 391,
+        "bytes": 231827060
+      },
+      {
+        "category": ".local/deadem/cache",
+        "fileCount": 1350,
+        "bytes": 205841465
+      },
+      {
+        "category": "external",
+        "fileCount": 13710,
+        "bytes": 171494955
+      },
+      {
+        "category": ".local/deadem/visual-index",
+        "fileCount": 290,
+        "bytes": 90534277
+      },
+      {
+        "category": ".local",
+        "fileCount": 998,
+        "bytes": 53777971
+      },
+      {
+        "category": ".local/deadem/review-sync",
+        "fileCount": 311,
+        "bytes": 41867850
+      },
+      {
+        "category": ".local/deadem/review-bundles",
+        "fileCount": 24,
+        "bytes": 8195664
+      },
+      {
+        "category": ".local/codex/217",
+        "fileCount": 27,
+        "bytes": 7829143
+      },
+      {
+        "category": ".local/codex/214",
+        "fileCount": 22,
+        "bytes": 5882194
+      },
+      {
+        "category": ".local/codex/212",
+        "fileCount": 82,
+        "bytes": 5078898
+      },
+      {
+        "category": ".iaflow-real-chrome",
+        "fileCount": 60,
+        "bytes": 4545299
+      },
+      {
+        "category": ".local/deadem/review-candidates",
+        "fileCount": 4,
+        "bytes": 3454948
+      },
+      {
+        "category": ".local/codex/215",
+        "fileCount": 24,
+        "bytes": 2491800
+      },
+      {
+        "category": ".local/codex/216",
+        "fileCount": 19,
+        "bytes": 2078071
+      },
+      {
+        "category": ".local/codex/213",
+        "fileCount": 21,
+        "bytes": 1463836
+      },
+      {
+        "category": ".local/codex/178",
+        "fileCount": 9,
+        "bytes": 735319
+      },
+      {
+        "category": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence",
+        "fileCount": 1,
+        "bytes": 544501
+      },
+      {
+        "category": ".local/codex/188",
+        "fileCount": 27,
+        "bytes": 223288
+      },
+      {
+        "category": ".local/codex/187",
+        "fileCount": 25,
+        "bytes": 218662
+      },
+      {
+        "category": ".local/codex/184",
+        "fileCount": 16,
+        "bytes": 178488
+      },
+      {
+        "category": ".local/codex/183",
+        "fileCount": 21,
+        "bytes": 156547
+      },
+      {
+        "category": ".local/codex/182",
+        "fileCount": 17,
+        "bytes": 146082
+      },
+      {
+        "category": ".local/codex/179",
+        "fileCount": 11,
+        "bytes": 133208
+      },
+      {
+        "category": ".local/codex/181",
+        "fileCount": 15,
+        "bytes": 132387
+      },
+      {
+        "category": ".local/codex/122",
+        "fileCount": 24,
+        "bytes": 132005
+      },
+      {
+        "category": ".local/codex/121",
+        "fileCount": 23,
+        "bytes": 128930
+      },
+      {
+        "category": ".local/codex/180",
+        "fileCount": 13,
+        "bytes": 126349
+      },
+      {
+        "category": ".local/codex/120",
+        "fileCount": 22,
+        "bytes": 118898
+      },
+      {
+        "category": ".local/codex/119",
+        "fileCount": 21,
+        "bytes": 112728
+      },
+      {
+        "category": ".local/codex/118",
+        "fileCount": 20,
+        "bytes": 107655
+      },
+      {
+        "category": ".local/codex/177",
+        "fileCount": 9,
+        "bytes": 106797
+      },
+      {
+        "category": ".local/codex/117",
+        "fileCount": 19,
+        "bytes": 104578
+      },
+      {
+        "category": ".local/codex/115",
+        "fileCount": 17,
+        "bytes": 101599
+      },
+      {
+        "category": ".local/codex/176",
+        "fileCount": 23,
+        "bytes": 98525
+      },
+      {
+        "category": ".local/codex/189",
+        "fileCount": 29,
+        "bytes": 95170
+      },
+      {
+        "category": ".local/codex/155",
+        "fileCount": 15,
+        "bytes": 93902
+      },
+      {
+        "category": ".local/codex/172",
+        "fileCount": 23,
+        "bytes": 88059
+      },
+      {
+        "category": ".local/codex/174",
+        "fileCount": 23,
+        "bytes": 87447
+      },
+      {
+        "category": ".local/codex/113",
+        "fileCount": 15,
+        "bytes": 87341
+      },
+      {
+        "category": ".local/codex/116",
+        "fileCount": 18,
+        "bytes": 85917
+      },
+      {
+        "category": ".local/codex/166",
+        "fileCount": 20,
+        "bytes": 85773
+      },
+      {
+        "category": ".local/codex/112",
+        "fileCount": 14,
+        "bytes": 85605
+      },
+      {
+        "category": ".local/codex/175",
+        "fileCount": 23,
+        "bytes": 85318
+      },
+      {
+        "category": ".local/codex/162",
+        "fileCount": 19,
+        "bytes": 85086
+      },
+      {
+        "category": ".local/codex/171",
+        "fileCount": 23,
+        "bytes": 85005
+      },
+      {
+        "category": ".local/codex/190",
+        "fileCount": 23,
+        "bytes": 84660
+      },
+      {
+        "category": ".local/codex/173",
+        "fileCount": 23,
+        "bytes": 82692
+      },
+      {
+        "category": ".local/codex/163",
+        "fileCount": 19,
+        "bytes": 81600
+      },
+      {
+        "category": ".local/codex/165",
+        "fileCount": 19,
+        "bytes": 81273
+      },
+      {
+        "category": ".local/codex/111",
+        "fileCount": 13,
+        "bytes": 81193
+      },
+      {
+        "category": ".local/codex/167",
+        "fileCount": 20,
+        "bytes": 81157
+      },
+      {
+        "category": ".local/codex/169",
+        "fileCount": 22,
+        "bytes": 81119
+      },
+      {
+        "category": ".local/codex/149",
+        "fileCount": 12,
+        "bytes": 80906
+      },
+      {
+        "category": ".local/codex/158",
+        "fileCount": 17,
+        "bytes": 80852
+      },
+      {
+        "category": ".local/codex/186",
+        "fileCount": 22,
+        "bytes": 80089
+      },
+      {
+        "category": ".local/codex/211",
+        "fileCount": 12,
+        "bytes": 79331
+      },
+      {
+        "category": ".local/codex/218",
+        "fileCount": 25,
+        "bytes": 78893
+      },
+      {
+        "category": ".local/codex/164",
+        "fileCount": 19,
+        "bytes": 78885
+      },
+      {
+        "category": ".local/codex/160",
+        "fileCount": 18,
+        "bytes": 77275
+      },
+      {
+        "category": ".local/codex/210",
+        "fileCount": 15,
+        "bytes": 77121
+      },
+      {
+        "category": ".local/codex/159",
+        "fileCount": 17,
+        "bytes": 76782
+      },
+      {
+        "category": ".local/codex/168",
+        "fileCount": 21,
+        "bytes": 76723
+      },
+      {
+        "category": ".local/codex/114",
+        "fileCount": 16,
+        "bytes": 76424
+      },
+      {
+        "category": ".local/codex/161",
+        "fileCount": 18,
+        "bytes": 75303
+      },
+      {
+        "category": ".local/codex/185",
+        "fileCount": 20,
+        "bytes": 75206
+      },
+      {
+        "category": ".local/codex/170",
+        "fileCount": 22,
+        "bytes": 74929
+      },
+      {
+        "category": ".local/codex/110",
+        "fileCount": 12,
+        "bytes": 73040
+      },
+      {
+        "category": ".local/codex/194",
+        "fileCount": 13,
+        "bytes": 72496
+      },
+      {
+        "category": ".local/codex/157",
+        "fileCount": 16,
+        "bytes": 71398
+      },
+      {
+        "category": ".local/codex/209",
+        "fileCount": 14,
+        "bytes": 71371
+      },
+      {
+        "category": ".local/codex/123",
+        "fileCount": 13,
+        "bytes": 71301
+      },
+      {
+        "category": ".local/codex/196",
+        "fileCount": 14,
+        "bytes": 70760
+      },
+      {
+        "category": ".local/codex/197",
+        "fileCount": 13,
+        "bytes": 70737
+      },
+      {
+        "category": ".local/codex/206",
+        "fileCount": 13,
+        "bytes": 70717
+      },
+      {
+        "category": ".local/codex/208",
+        "fileCount": 13,
+        "bytes": 68745
+      },
+      {
+        "category": ".local/codex/156",
+        "fileCount": 15,
+        "bytes": 68553
+      },
+      {
+        "category": ".local/codex/219",
+        "fileCount": 14,
+        "bytes": 68020
+      },
+      {
+        "category": ".local/codex/204",
+        "fileCount": 12,
+        "bytes": 67485
+      },
+      {
+        "category": ".local/codex/207",
+        "fileCount": 12,
+        "bytes": 66473
+      },
+      {
+        "category": ".local/codex/147",
+        "fileCount": 11,
+        "bytes": 65810
+      },
+      {
+        "category": ".local/codex/202",
+        "fileCount": 12,
+        "bytes": 65070
+      },
+      {
+        "category": ".local/codex/109",
+        "fileCount": 11,
+        "bytes": 65002
+      },
+      {
+        "category": ".local/codex/191",
+        "fileCount": 12,
+        "bytes": 64405
+      },
+      {
+        "category": ".local/codex/201",
+        "fileCount": 12,
+        "bytes": 64237
+      },
+      {
+        "category": ".local/codex/203",
+        "fileCount": 12,
+        "bytes": 63479
+      },
+      {
+        "category": ".local/codex/140",
+        "fileCount": 11,
+        "bytes": 61860
+      },
+      {
+        "category": ".local/codex/200",
+        "fileCount": 12,
+        "bytes": 61720
+      },
+      {
+        "category": ".local/codex/146",
+        "fileCount": 11,
+        "bytes": 60879
+      },
+      {
+        "category": ".local/codex/124",
+        "fileCount": 11,
+        "bytes": 59990
+      },
+      {
+        "category": ".local/codex/198",
+        "fileCount": 12,
+        "bytes": 59644
+      },
+      {
+        "category": ".local/codex/145",
+        "fileCount": 11,
+        "bytes": 59258
+      },
+      {
+        "category": ".local/codex/108",
+        "fileCount": 12,
+        "bytes": 59254
+      },
+      {
+        "category": ".local/codex/148",
+        "fileCount": 11,
+        "bytes": 58996
+      },
+      {
+        "category": ".local/codex/220",
+        "fileCount": 14,
+        "bytes": 57891
+      },
+      {
+        "category": ".local/codex/199",
+        "fileCount": 12,
+        "bytes": 57372
+      },
+      {
+        "category": ".local/codex/195",
+        "fileCount": 10,
+        "bytes": 57271
+      },
+      {
+        "category": ".local/codex/142",
+        "fileCount": 11,
+        "bytes": 56683
+      },
+      {
+        "category": ".local/codex/144",
+        "fileCount": 11,
+        "bytes": 56511
+      },
+      {
+        "category": ".local/codex/205",
+        "fileCount": 10,
+        "bytes": 55925
+      },
+      {
+        "category": ".local/codex/143",
+        "fileCount": 11,
+        "bytes": 55155
+      },
+      {
+        "category": ".local/codex/129",
+        "fileCount": 11,
+        "bytes": 54952
+      },
+      {
+        "category": ".local/codex/154",
+        "fileCount": 14,
+        "bytes": 54771
+      },
+      {
+        "category": ".local/codex/136",
+        "fileCount": 11,
+        "bytes": 54491
+      },
+      {
+        "category": ".local/codex/126",
+        "fileCount": 6,
+        "bytes": 54068
+      },
+      {
+        "category": ".local/codex/141",
+        "fileCount": 11,
+        "bytes": 53675
+      },
+      {
+        "category": ".local/codex/125",
+        "fileCount": 10,
+        "bytes": 52318
+      },
+      {
+        "category": ".local/codex/095",
+        "fileCount": 19,
+        "bytes": 51794
+      },
+      {
+        "category": ".local/codex/139",
+        "fileCount": 11,
+        "bytes": 51591
+      },
+      {
+        "category": ".local/codex/138",
+        "fileCount": 11,
+        "bytes": 51378
+      },
+      {
+        "category": ".local/codex/137",
+        "fileCount": 11,
+        "bytes": 50793
+      },
+      {
+        "category": ".local/codex/153",
+        "fileCount": 13,
+        "bytes": 49831
+      },
+      {
+        "category": ".local/codex/132",
+        "fileCount": 11,
+        "bytes": 49691
+      },
+      {
+        "category": ".local/codex/131",
+        "fileCount": 11,
+        "bytes": 48642
+      },
+      {
+        "category": ".local/codex/128",
+        "fileCount": 10,
+        "bytes": 48373
+      },
+      {
+        "category": ".local/codex/130",
+        "fileCount": 11,
+        "bytes": 48086
+      },
+      {
+        "category": ".local/codex/096",
+        "fileCount": 11,
+        "bytes": 47606
+      },
+      {
+        "category": ".local/codex/152",
+        "fileCount": 12,
+        "bytes": 46481
+      },
+      {
+        "category": ".local/codex/151",
+        "fileCount": 12,
+        "bytes": 45717
+      },
+      {
+        "category": ".local/codex/135",
+        "fileCount": 11,
+        "bytes": 44594
+      },
+      {
+        "category": ".local/codex/150",
+        "fileCount": 12,
+        "bytes": 44100
+      },
+      {
+        "category": ".local/codex/092",
+        "fileCount": 7,
+        "bytes": 43859
+      },
+      {
+        "category": ".local/codex/134",
+        "fileCount": 11,
+        "bytes": 43652
+      },
+      {
+        "category": ".local/codex/107",
+        "fileCount": 14,
+        "bytes": 42293
+      },
+      {
+        "category": ".local/codex/133",
+        "fileCount": 11,
+        "bytes": 41830
+      },
+      {
+        "category": ".local/codex/127",
+        "fileCount": 9,
+        "bytes": 37593
+      },
+      {
+        "category": ".local/codex/104",
+        "fileCount": 7,
+        "bytes": 35223
+      },
+      {
+        "category": ".local/codex/094",
+        "fileCount": 8,
+        "bytes": 34401
+      },
+      {
+        "category": ".local/codex/091",
+        "fileCount": 9,
+        "bytes": 33937
+      },
+      {
+        "category": ".local/codex/102",
+        "fileCount": 7,
+        "bytes": 33713
+      },
+      {
+        "category": ".local/codex/103",
+        "fileCount": 7,
+        "bytes": 33696
+      },
+      {
+        "category": ".local/codex/098",
+        "fileCount": 20,
+        "bytes": 31997
+      },
+      {
+        "category": ".local/codex/105",
+        "fileCount": 7,
+        "bytes": 29672
+      },
+      {
+        "category": ".local/codex/106",
+        "fileCount": 19,
+        "bytes": 27056
+      },
+      {
+        "category": ".local/codex/100",
+        "fileCount": 25,
+        "bytes": 20634
+      },
+      {
+        "category": ".local/codex/900",
+        "fileCount": 2,
+        "bytes": 18468
+      },
+      {
+        "category": ".iaflow-browser",
+        "fileCount": 10,
+        "bytes": 17515
+      },
+      {
+        "category": ".local/codex/099",
+        "fileCount": 1,
+        "bytes": 4442
+      },
+      {
+        "category": ".local/codex/101",
+        "fileCount": 1,
+        "bytes": 4428
+      },
+      {
+        "category": "output/local-replay-processing/replay-parser-prior-art-and-second-canary",
+        "fileCount": 1,
+        "bytes": 1987
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-953-payload-iterator-alignment",
+        "fileCount": 1,
+        "bytes": 1440
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-953-buffer-boundary",
+        "fileCount": 1,
+        "bytes": 1397
+      },
+      {
+        "category": "ai-flow",
+        "fileCount": 1,
+        "bytes": 45
+      }
+    ],
+    "dependencies": [
+      {
+        "category": ".venv-video",
+        "fileCount": 6613,
+        "bytes": 425556753
+      },
+      {
+        "category": "node_modules (all nested)",
+        "fileCount": 126271,
+        "bytes": 309238720
+      },
+      {
+        "category": "other caches",
+        "fileCount": 47,
+        "bytes": 562549
+      }
+    ],
+    "historicalOutputs": [
+      {
+        "category": "output/replays",
+        "fileCount": 422,
+        "bytes": 699379112
+      },
+      {
+        "category": "output",
+        "fileCount": 801,
+        "bytes": 101301892
+      },
+      {
+        "category": "output/local-replay-processing/death-event-surface-resolved-lifecycle-evidence",
+        "fileCount": 91,
+        "bytes": 37236474
+      },
+      {
+        "category": "output/local-replay-processing/death-event-exposure-matched-lifecycle-evidence",
+        "fileCount": 93,
+        "bytes": 18554224
+      },
+      {
+        "category": "output/local-replay-processing/death-event-segmented-lifecycle-evidence",
+        "fileCount": 100,
+        "bytes": 17987673
+      },
+      {
+        "category": "output/local-replay-processing/death-event-directional-discrimination-evidence",
+        "fileCount": 92,
+        "bytes": 11505962
+      },
+      {
+        "category": "output/local-replay-processing/death-event-semantic-sequence-evidence",
+        "fileCount": 103,
+        "bytes": 7968160
+      },
+      {
+        "category": "output/local-replay-processing/functional-death-candidate-detector",
+        "fileCount": 17,
+        "bytes": 6437966
+      },
+      {
+        "category": "output/local-replay-processing/death-event-directional-cycle-evidence",
+        "fileCount": 87,
+        "bytes": 5605919
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-hard-challenger-census",
+        "fileCount": 30,
+        "bytes": 3360977
+      },
+      {
+        "category": "output/local-replay-processing/death-event-corroboration-evidence",
+        "fileCount": 73,
+        "bytes": 2367574
+      },
+      {
+        "category": "output/local-replay-processing/death-event-candidates",
+        "fileCount": 65,
+        "bytes": 1805029
+      },
+      {
+        "category": "output/local-replay-processing/life-state-transition-candidates",
+        "fileCount": 57,
+        "bytes": 1312183
+      },
+      {
+        "category": "output/local-replay-processing/review-candidate-windows",
+        "fileCount": 7,
+        "bytes": 472424
+      },
+      {
+        "category": "output/local-replay-processing/dense-review-evidence",
+        "fileCount": 8,
+        "bytes": 450827
+      },
+      {
+        "category": "output/local-replay-processing/whole-match-visual-index",
+        "fileCount": 7,
+        "bytes": 445131
+      },
+      {
+        "category": "output/local-replay-processing/participant-identity-compact",
+        "fileCount": 56,
+        "bytes": 340745
+      },
+      {
+        "category": "output/local-replay-processing/allowlisted-death-validation-batches",
+        "fileCount": 115,
+        "bytes": 259036
+      },
+      {
+        "category": "output/local-replay-processing/alive-dead-respawn-compact",
+        "fileCount": 58,
+        "bytes": 158515
+      },
+      {
+        "category": "output/local-replay-processing/death-event-hard-challenger-lifecycle-specificity",
+        "fileCount": 20,
+        "bytes": 143975
+      },
+      {
+        "category": "output/local-replay-processing/semantic-foundation-compact",
+        "fileCount": 55,
+        "bytes": 136986
+      },
+      {
+        "category": "output/local-replay-processing/allowlisted-death-validation-batch-runner",
+        "fileCount": 42,
+        "bytes": 132249
+      },
+      {
+        "category": "output/local-replay-processing/review-onboarding",
+        "fileCount": 8,
+        "bytes": 92739
+      },
+      {
+        "category": "output/local-replay-processing/craig-multitrack",
+        "fileCount": 14,
+        "bytes": 85457
+      },
+      {
+        "category": "output/local-replay-processing/allowlisted-death-validation-batch-parity",
+        "fileCount": 24,
+        "bytes": 56968
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-serialized-entities-semantics-investigation",
+        "fileCount": 10,
+        "bytes": 48410
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-compact-emission",
+        "fileCount": 23,
+        "bytes": 47605
+      },
+      {
+        "category": "output/local-replay-processing/packetentities-missing-entity-parser-mechanism-review",
+        "fileCount": 9,
+        "bytes": 41363
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-fieldpath-59-runtime-field-definition",
+        "fileCount": 11,
+        "bytes": 40924
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-pre-recovery-mismatch-field-consumption",
+        "fileCount": 11,
+        "bytes": 37092
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-953-payload-iterator-alignment",
+        "fileCount": 11,
+        "bytes": 34998
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-index-allocation-gap",
+        "fileCount": 14,
+        "bytes": 34021
+      },
+      {
+        "category": "output/local-replay-processing/audio-call-evidence",
+        "fileCount": 8,
+        "bytes": 33249
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-953-buffer-boundary",
+        "fileCount": 11,
+        "bytes": 31014
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-pre-recovery-payload-consumption-baseline",
+        "fileCount": 11,
+        "bytes": 28764
+      },
+      {
+        "category": "output/local-replay-processing/replay-video-sync",
+        "fileCount": 7,
+        "bytes": 26547
+      },
+      {
+        "category": "output/local-replay-processing/controlled-source-canonical-artifacts",
+        "fileCount": 27,
+        "bytes": 26012
+      },
+      {
+        "category": "output/local-replay-processing/payloadbits-action-delta-contract-review",
+        "fileCount": 11,
+        "bytes": 25723
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-packet-cursor-alignment",
+        "fileCount": 8,
+        "bytes": 25471
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-fieldpath-59-decoder-contract",
+        "fileCount": 11,
+        "bytes": 20508
+      },
+      {
+        "category": "output/local-replay-processing/high-index-missing-update-cursor-contract-review",
+        "fileCount": 12,
+        "bytes": 19236
+      },
+      {
+        "category": "output/local-replay-processing/expanded-death-validation-dry-run",
+        "fileCount": 9,
+        "bytes": 19141
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-spec",
+        "fileCount": 14,
+        "bytes": 18835
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-field-reader-segments",
+        "fileCount": 11,
+        "bytes": 18094
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-2905-registry-and-packet-context",
+        "fileCount": 14,
+        "bytes": 17872
+      },
+      {
+        "category": "output/local-replay-processing/controlled-source-class-policy-review",
+        "fileCount": 12,
+        "bytes": 17641
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-source-artifacts",
+        "fileCount": 10,
+        "bytes": 17402
+      },
+      {
+        "category": "output/local-replay-processing/cursor-index-contract-probe-replay-011",
+        "fileCount": 13,
+        "bytes": 17352
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-parser-intervention-design",
+        "fileCount": 8,
+        "bytes": 17191
+      },
+      {
+        "category": "output/local-replay-processing/external-parser-oracle-canaries",
+        "fileCount": 11,
+        "bytes": 17132
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-missing-entity-recovery",
+        "fileCount": 8,
+        "bytes": 17007
+      },
+      {
+        "category": "output/local-replay-processing/cursor-index-contract-probe-spec",
+        "fileCount": 14,
+        "bytes": 16740
+      },
+      {
+        "category": "output/local-replay-processing/minimum-review-telemetry",
+        "fileCount": 5,
+        "bytes": 16399
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-consumption-contract",
+        "fileCount": 8,
+        "bytes": 16181
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-bounded-parser-intervention-spec",
+        "fileCount": 9,
+        "bytes": 15969
+      },
+      {
+        "category": "output/local-replay-processing/index-lifecycle-probe-canary-consolidation",
+        "fileCount": 7,
+        "bytes": 15328
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-serialized-entity-payload-semantics",
+        "fileCount": 9,
+        "bytes": 15144
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-forward-source-artifacts",
+        "fileCount": 11,
+        "bytes": 14642
+      },
+      {
+        "category": "output/local-replay-processing/dual-missing-entity-diagnostic-canaries",
+        "fileCount": 6,
+        "bytes": 14536
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-out-of-range-entity-create-diagnosis",
+        "fileCount": 8,
+        "bytes": 14435
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-review",
+        "fileCount": 7,
+        "bytes": 13732
+      },
+      {
+        "category": "output/local-replay-processing/replay-parser-prior-art-and-second-canary",
+        "fileCount": 10,
+        "bytes": 13527
+      },
+      {
+        "category": "output/local-replay-processing/batch-processing-readiness",
+        "fileCount": 13,
+        "bytes": 13489
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-011-canary",
+        "fileCount": 10,
+        "bytes": 13388
+      },
+      {
+        "category": "output/local-replay-processing/controlled-canonical-source-readiness",
+        "fileCount": 13,
+        "bytes": 12580
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-loop-26-string-reader-accounting",
+        "fileCount": 11,
+        "bytes": 11975
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-compact-summary",
+        "fileCount": 6,
+        "bytes": 11762
+      },
+      {
+        "category": "output/local-replay-processing/presentation-ux",
+        "fileCount": 10,
+        "bytes": 11673
+      },
+      {
+        "category": "output/local-replay-processing/independent-missing-entity-strategy",
+        "fileCount": 6,
+        "bytes": 11467
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-replay-010-canary",
+        "fileCount": 9,
+        "bytes": 10869
+      },
+      {
+        "category": "output/local-replay-processing/materialized-expanded-death-validation-dry-run-authorization",
+        "fileCount": 9,
+        "bytes": 10450
+      },
+      {
+        "category": "output/local-replay-processing/post-batch-death-validation-expansion-decision",
+        "fileCount": 9,
+        "bytes": 10341
+      },
+      {
+        "category": "output/local-replay-processing/exact-15-death-validation-selection",
+        "fileCount": 8,
+        "bytes": 10238
+      },
+      {
+        "category": "output/local-replay-processing/batch-death-validation-compact-mini-pilot",
+        "fileCount": 11,
+        "bytes": 10163
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-entities-boundary-truncation",
+        "fileCount": 11,
+        "bytes": 9962
+      },
+      {
+        "category": "output/local-replay-processing/upstream-char-decoder-fix-resolution",
+        "fileCount": 8,
+        "bytes": 9832
+      },
+      {
+        "category": "output/local-replay-processing/two-match-assisted-review-intake",
+        "fileCount": 4,
+        "bytes": 9535
+      },
+      {
+        "category": "output/local-replay-processing/death-validation-compact-schema",
+        "fileCount": 11,
+        "bytes": 9024
+      },
+      {
+        "category": "output/local-replay-processing/death-validation-compact-emission",
+        "fileCount": 14,
+        "bytes": 8831
+      },
+      {
+        "category": "output/local-replay-processing/expanded-death-validation-authorization-manifest",
+        "fileCount": 8,
+        "bytes": 8468
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-entity-lookup-diagnosis",
+        "fileCount": 7,
+        "bytes": 8250
+      },
+      {
+        "category": "output/local-replay-processing/post-parser-fix-pipeline-validation",
+        "fileCount": 11,
+        "bytes": 8087
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-index-lifecycle-probe-replay-011-canary",
+        "fileCount": 7,
+        "bytes": 8009
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-index-lifecycle-probe-replay-010-canary",
+        "fileCount": 7,
+        "bytes": 7996
+      },
+      {
+        "category": "output/local-replay-processing/replay-wide-lifecycle-diagnostic-implementation",
+        "fileCount": 7,
+        "bytes": 7866
+      },
+      {
+        "category": "output/local-replay-processing/clarity-oracle-viability",
+        "fileCount": 12,
+        "bytes": 7708
+      },
+      {
+        "category": "output/local-replay-processing/generic-source-canonical-dry-run-entrypoint",
+        "fileCount": 11,
+        "bytes": 7612
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-packet-entities-boundary-guard",
+        "fileCount": 10,
+        "bytes": 7280
+      },
+      {
+        "category": "output/local-replay-processing/missing-entity-index-lifecycle-probe-implementation",
+        "fileCount": 7,
+        "bytes": 7083
+      },
+      {
+        "category": "output/local-replay-processing/upstream-char-decoder-fix",
+        "fileCount": 12,
+        "bytes": 6856
+      },
+      {
+        "category": "output/local-replay-processing/continuous-review",
+        "fileCount": 6,
+        "bytes": 6271
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-replay-010-canary",
+        "fileCount": 6,
+        "bytes": 6066
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-replay-011-canary",
+        "fileCount": 6,
+        "bytes": 6041
+      },
+      {
+        "category": "output/local-replay-processing/assisted-review-workspace",
+        "fileCount": 8,
+        "bytes": 6007
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-missing-entity-implementation",
+        "fileCount": 6,
+        "bytes": 5971
+      },
+      {
+        "category": "output/local-replay-processing/batch-dry-run-readiness",
+        "fileCount": 9,
+        "bytes": 5380
+      },
+      {
+        "category": "output/local-replay-processing/replay_010-canary",
+        "fileCount": 10,
+        "bytes": 5353
+      },
+      {
+        "category": "output/local-replay-processing/diagnostic-fail-closed-config-isolation",
+        "fileCount": 5,
+        "bytes": 5266
+      },
+      {
+        "category": "output/local-replay-processing/batch-dry-run-mini-pilot",
+        "fileCount": 9,
+        "bytes": 5177
+      },
+      {
+        "category": "output/local-replay-processing/direct-codex-workflow-restoration",
+        "fileCount": 5,
+        "bytes": 5089
+      },
+      {
+        "category": "output/local-replay-processing/upstream-update-check",
+        "fileCount": 6,
+        "bytes": 3895
+      },
+      {
+        "category": "output/local-replay-processing/project-history",
+        "fileCount": 2,
+        "bytes": 1930
+      }
+    ],
+    "activeRuntime": [
+      {
+        "category": ".local/deadem/review-targets",
+        "fileCount": 2,
+        "bytes": 5337102240
+      },
+      {
+        "category": ".local/deadem/dense-review",
+        "fileCount": 11361,
+        "bytes": 2816724238
+      },
+      {
+        "category": ".local/deadem/craig",
+        "fileCount": 31,
+        "bytes": 1786249820
+      },
+      {
+        "category": ".local/deadem/review-workspace",
+        "fileCount": 74,
+        "bytes": 653231885
+      },
+      {
+        "category": ".local/deadem/call-evidence",
+        "fileCount": 8,
+        "bytes": 217018031
+      },
+      {
+        "category": "output/local-replay-processing/assisted-review-bundles",
+        "fileCount": 10,
+        "bytes": 1486760
+      },
+      {
+        "category": "output/local-replay-processing/assisted-review",
+        "fileCount": 6,
+        "bytes": 366457
+      }
+    ]
+  },
+  "existingHashDuplicates": {
+    "groupCount": 169,
+    "logicalDuplicateBytes": 11757150,
+    "basis": "existing Git blob object IDs only; no new hashing; not physically reclaimable Git storage estimate"
+  },
+  "coordination": {
+    "milestone": "AlphaVeil Continuous Review Pipeline",
+    "milestoneStatus": "GENERIC_INTAKE_READY",
+    "machineStateUnmodified": false,
+    "activeTaskId": 221,
+    "lastAcceptedTaskId": 220,
+    "lastAcceptedCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+    "activeBaseCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+    "status": "VALIDATING",
+    "acceptanceAuthority": "ChatGPT Work",
+    "synchronization": "Explicit Work decision accepts Task220 only; prior stale coordination blocker resolved; unrelated blockers preserved."
+  },
+  "evidenceRoot": ".local/codex/221/hygiene-audit",
+  "workflowStatus": "VALIDATING",
+  "commitStatus": "resolved_by_post_commit_attestation",
+  "plans": [
+    {
+      "id": "A",
+      "name": "SAFE CLEANUP",
+      "fileCount": 2696,
+      "estimatedReclaimableBytes": 42993154,
+      "executed": false,
+      "scope": "Ignored Python bytecode with visible corresponding source, and pytest cache; close relevant processes first."
+    },
+    {
+      "id": "B",
+      "name": "ARCHIVE / CURRENT-TREE RETIREMENT",
+      "fileCount": 3184,
+      "estimatedReclaimableBytes": 918796674,
+      "executed": false,
+      "scope": "Non-runtime tracked output review pool, not established disposable files; migrate all consumers/indices before any retirement. Keep Git history."
+    },
+    {
+      "id": "C",
+      "name": "STRUCTURAL IMPROVEMENT",
+      "executed": false,
+      "scope": "Future compact artifacts/, recursive changed-output guard, current/history index split, retention ownership and protected-name-first traversal."
+    }
+  ],
+  "initialCoordinationSnapshot": {
+    "milestone": "AlphaVeil Continuous Review Pipeline",
+    "milestoneStatus": "GENERIC_INTAKE_READY",
+    "machineStateUnmodified": true,
+    "machineActiveTask": 220,
+    "machineLastAcceptedTask": 219,
+    "baseMismatchDeclared": true,
+    "userSuppliedTaskBase": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+    "acceptanceAuthority": "ChatGPT Work",
+    "machineLastAcceptedCommit": "4d0858d51f7ab4aad86246595bd07b473a1675d1",
+    "requiredAction": "Work must reconcile Task220 acceptance / Task221 authorization before staging or commit; no coordination file changed by audit."
+  },
+  "publicationEvidencePath": ".local/codex/221/post-commit-attestation.json",
+  "resumption": {
+    "broadScanningRerun": false,
+    "measurementsPreserved": true,
+    "cleanupExecuted": false,
+    "mediaContentReadCount": 0,
+    "protectedAccessCount": 0
+  }
+}
