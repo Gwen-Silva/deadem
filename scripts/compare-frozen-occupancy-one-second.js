@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';
+import { historicalFs as fs } from './historical-artifact-reader.mjs';
 import path from 'node:path';
 
 const LANES = [ 'lane_axis_1', 'lane_axis_2', 'lane_axis_3' ];

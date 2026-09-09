@@ -1,0 +1,184 @@
+{
+  "taskId": "222",
+  "title": "Consolidate Repository Hygiene and Retire Historical Output",
+  "status": "authorized",
+  "coordinationPolicyVersion": 1,
+  "artifactPolicyVersion": 2,
+  "executionMode": "codex",
+  "workType": "technical_execution",
+  "objective": "Consolidate repository hygiene, safely retire historical payloads and preserve active AlphaVeil behavior and audit history.",
+  "baseCommitExpected": "cc54371d58febb40ac56480a732bfa6f1db5389d",
+  "executionReportPath": "reports/repository-hygiene-consolidation-task222.md",
+  "executionContract": {
+    "reasoningComplexity": "High: phased, fail-closed retirement with exact Git provenance, protected boundaries and unchanged runtime semantics.",
+    "objective": "Consolidate repository hygiene, safely retire historical payloads and preserve active AlphaVeil behavior and audit history.",
+    "technicalContext": [
+      "Work accepted Task221 and authorized Task222 as one execution with internal gates.",
+      "Work subsequently authorized complete role-aware protected filesystem target classification and readTaskFiles remediation. Safe repository metadata mentions are not protected input identities; no per-filename exceptions or new task."
+    ],
+    "confirmedState": [
+      "HEAD and origin/main match accepted Task221 base; clean tree before authorized coordination sync."
+    ],
+    "expectedBaseCommit": "cc54371d58febb40ac56480a732bfa6f1db5389d",
+    "branchEnvironment": [
+      "main, Windows PowerShell, npm.cmd; one commit and normal push."
+    ],
+    "allowedScope": [
+      "Plan-A cache files after revalidation; audited historical output groups after reference closure; scripts/helpers/tests/policies/current navigation and compact task evidence."
+    ],
+    "protectedAreas": [
+      "No protected 005-008 aliases before filesystem operations; no media/replay/ASR access or product semantic changes; active runtime envelopes retained."
+    ],
+    "expectedChanges": [
+      "Current-tree retirement manifests, safe cleanup evidence, modern changed-artifact guard, policies, compact current index and experimental classification."
+    ],
+    "acceptanceCriteria": [
+      "Material safe retirement preferably >=500MiB or >=60 percent of pool; otherwise honest partial with group blockers.",
+      "All current product invariants and reference closure; history intact."
+    ],
+    "mandatoryTests": [
+      "Current Product, Review Presentation/Workspace, Scrim Presentation/Player, Continuous Intake suites; guard/history helper tests; coordination, tasks, lint, check:outputs.",
+      "Focused cleanup validation and retirement/reference checks; no broad local rescan."
+    ],
+    "requiredEvidence": [
+      "Per-group decisions/provenance/references locally; compact manifests/summary/gate; cleanup outcomes; post-commit attestation.",
+      "Original incident protected access remains UNKNOWN; epoch1 and epoch2 immutable and failed. Comprehensive Git-path preflight unresolved=0; final post-remediation counters scoped separately."
+    ],
+    "commitPolicy": [
+      "Exactly one commit: Consolidate repository hygiene and retire historical output. Explicit authorized paths only; normal origin/main push; no amend or history rewrite."
+    ],
+    "stopConditions": [
+      "Keep individual uncertain groups; stop on protected/media access, source risk, base divergence, unexpected regression or authority failure."
+    ],
+    "returnReportFormat": [
+      "Outcome, before/after, kept groups, architecture, current navigation, tests/security, Git, gate; VALIDATING and no Task223."
+    ]
+  },
+  "readPaths": [
+    "AGENTS.md",
+    "data/project-coordination-state.json",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "data/artifact-storage-policy.json",
+    "scripts/check-output-sizes.js"
+  ],
+  "optionalReadPaths": [
+    ".local/codex/221/hygiene-audit/active-runtime-consumers.json",
+    ".local/codex/222/remediation-index-verification.json"
+  ],
+  "writePaths": [
+    "AGENTS.md",
+    "data/project-coordination-state.json",
+    "data/artifact-storage-policy.json",
+    "data/current-project-index.json",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md",
+    "docs/codex/WORKFLOW.md",
+    "docs/codex/CURRENT_STATE.md",
+    "docs/codex/HISTORICAL_ARTIFACT_RECOVERY.md",
+    "scripts/**",
+    "tests/**",
+    "tools/**",
+    "reports/repository-hygiene-consolidation-task222.md",
+    "tasks/specs/222.json",
+    "tasks/completed/222-repository-hygiene-consolidation.md",
+    "artifacts/repository-hygiene/task222/**",
+    "output/**",
+    ".local/codex/222/**"
+  ],
+  "forbiddenPaths": [
+    "packages/**",
+    "samples/**",
+    "tasks/specs/223.json",
+    "output/local-replay-processing/assisted-review-bundles/task204-bounded2/**",
+    "output/local-replay-processing/assisted-review/task212-matches-003-004/**"
+  ],
+  "requiredPolicies": [
+    "docs/codex/AUTONOMOUS_COORDINATION_POLICY.md",
+    "docs/codex/TASK_EXECUTION.md",
+    "docs/codex/REPLAY_PROTECTION.md",
+    "docs/codex/EPISTEMIC_SAFETY.md",
+    "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md"
+  ],
+  "requiredCommands": [
+    {
+      "id": "hygiene-contracts",
+      "type": "node-test",
+      "paths": [
+        "tests/changed-artifact-guard.test.mjs",
+        "tests/hygiene-protected-boundary.test.mjs",
+        "tests/hygiene-metadata-context.test.mjs",
+        "tests/repository-hygiene-consolidation.test.mjs",
+        "tests/historical-artifact-reader.test.mjs",
+        "tests/remaining-human-controls-canonicalization.test.mjs"
+      ]
+    },
+    {
+      "id": "coordination-contracts",
+      "type": "node-test",
+      "paths": [
+        "tests/project-coordination-policy.test.mjs",
+        "tests/codex-workflow-coordination.test.mjs",
+        "tests/task-execution-contract.test.mjs"
+      ]
+    },
+    {
+      "id": "product-regressions",
+      "type": "node-test",
+      "paths": [
+        "tests/product-view-model.test.mjs",
+        "tests/review-presentation.test.mjs",
+        "tests/review-workspace.test.mjs",
+        "tests/scrim-presentation.test.mjs",
+        "tests/scrim-player.test.mjs",
+        "tests/continuous-review-intake.test.mjs"
+      ]
+    },
+    {
+      "id": "coordination-validator",
+      "type": "npm-script",
+      "script": "validate:coordination"
+    },
+    {
+      "id": "task-queue",
+      "type": "npm-script",
+      "script": "validate:tasks"
+    },
+    {
+      "id": "lint",
+      "type": "npm-script",
+      "script": "lint"
+    },
+    {
+      "id": "output-size",
+      "type": "npm-script",
+      "script": "check:outputs"
+    }
+  ],
+  "expectedOutputs": [
+    "reports/repository-hygiene-consolidation-task222.md",
+    "tasks/specs/222.json",
+    "tasks/completed/222-repository-hygiene-consolidation.md",
+    "artifacts/repository-hygiene/task222/summary.json",
+    "artifacts/repository-hygiene/task222/gate.json",
+    "artifacts/repository-hygiene/task222/retirement-manifest.json",
+    "data/current-project-index.json"
+  ],
+  "largeOutputsAllowed": [],
+  "replayProcessingAllowed": false,
+  "followUpTask": "none",
+  "regenerationPolicy": {
+    "canonicalFacts": "reuse",
+    "validationArtifacts": "regenerate",
+    "reports": "regenerate"
+  },
+  "stopConditions": [
+    "Per-group fail closed; no Task223 or protected/media processing."
+  ],
+  "successGate": "repository_hygiene_consolidated_and_historical_output_retired",
+  "gapsGate": "repository_hygiene_consolidated_with_retirement_gaps",
+  "blockedGate": "BLOCKED_BY_REPOSITORY_HYGIENE_CONSOLIDATION",
+  "gateSource": {
+    "type": "json-file",
+    "path": "artifacts/repository-hygiene/task222/gate.json",
+    "jsonField": "technicalGateStatus"
+  }
+}

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
+import { task191State } from './helpers/coordination-state-fixture.mjs';
 import {
     COORDINATION_STATUSES,
     validateCoordinationInvariants,
@@ -12,7 +13,7 @@ import {
 
 const ROOT = process.cwd();
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
-const json = file => JSON.parse(read(file));
+const json = file => file === 'data/project-coordination-state.json' ? task191State(JSON.parse(read(file))) : JSON.parse(read(file));
 
 test('normative policy separates Work, Codex and Chat without self-approval', () => {
     const policy = read('docs/codex/AUTONOMOUS_COORDINATION_POLICY.md');
@@ -20,13 +21,13 @@ test('normative policy separates Work, Codex and Chat without self-approval', ()
     assert.match(policy, /Codex executa/u);
     assert.match(policy, /Chat somente apresenta resultados/u);
     assert.match(policy, /Codex não pode\s+aprovar o próprio trabalho/u);
-    assert.match(policy, /HEAD[^\n]*não implica aceitação/u);
+    assert.match(policy, /HEAD[\s\S]{0,120}não implica aceitação/u);
     assert.match(policy, /BLOCKED_BY_SURFACE/u);
     assert.doesNotMatch(policy, /Gwen\s+(?:deve|deverá)[^\n]{0,80}(escolh|selecion).{0,40}(Work|Codex)/iu);
     for (const status of COORDINATION_STATUSES) assert.ok(policy.includes(`\`${status}\``), status);
 });
 
-test('coordination state is schema-valid and remains a Task 191 candidate', () => {
+test('historical coordination fixture is schema-valid and remains a Task 191 candidate', () => {
     const state = json('data/project-coordination-state.json');
     const spec = json('tasks/specs/191.json');
     assert.equal(validateStateData(state).valid, true);

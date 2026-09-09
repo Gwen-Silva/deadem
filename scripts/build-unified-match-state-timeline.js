@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';
+import { historicalFs as fs } from './historical-artifact-reader.mjs';
 import path from 'node:path';
 
 const REPLAYS = [ 'replay_001', 'replay_002', 'replay_003', 'replay_004' ];

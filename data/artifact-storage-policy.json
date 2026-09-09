@@ -1,7 +1,24 @@
 {
   "schemaVersion": 1,
-  "policyId": "deadem_artifact_storage_policy_v1",
-  "largeOutputThresholdBytes": 10485760,
+  "policyId": "deadem_artifact_storage_policy_v2",
+  "largeOutputThresholdBytes": 102400,
+  "compactEvidenceRoot": "artifacts/",
+  "localOnlyRoot": ".local/",
+  "historicalCompatibilityRoot": "output/",
+  "changedArtifactGuard": {
+    "command": "npm run check:outputs",
+    "discovery": "Git changes from accepted base plus non-ignored new files; any depth and extension",
+    "deletions": "name check only; never stat",
+    "renames": "check destination and reject protected old names",
+    "exception": "largeOutputsAllowed objects with exact path and nonempty reason; no wildcard",
+    "protectedBoundary": "reject names and aliases before filesystem or blob access"
+  },
+  "retention": {
+    "automaticDeletion": false,
+    "cacheCleanup": "separate authority, current-consumer and reproducible-source checks per target",
+    "activeEvidenceAndHumanAnnotations": "preserve; local-only is not disposable",
+    "historicalRetirement": "separate authority, Git provenance and operational reference closure; no history rewrite"
+  },
   "artifactClasses": [
     {
       "artifactClass": "raw_replay",

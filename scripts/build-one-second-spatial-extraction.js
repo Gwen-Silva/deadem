@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { createReadStream } from 'node:fs';
-import fs from 'node:fs/promises';
+import { historicalFs as fs } from './historical-artifact-reader.mjs';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 

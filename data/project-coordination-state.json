@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Repository + Local Workspace Hygiene Audit: measure and classify existing evidence without cleanup or processing.",
-  "phase": "repository_local_workspace_hygiene_audit",
-  "lastAcceptedTaskId": "220",
-  "lastAcceptedCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
-  "activeBaseCommit": "61355485cd4cc95719b91db9f296760ba5a7ea84",
+  "objective": "Consolidate repository hygiene, safely retire historical payloads and preserve active AlphaVeil behavior and audit history.",
+  "phase": "repository_hygiene_consolidation",
+  "lastAcceptedTaskId": "221",
+  "lastAcceptedCommit": "cc54371d58febb40ac56480a732bfa6f1db5389d",
+  "activeBaseCommit": "cc54371d58febb40ac56480a732bfa6f1db5389d",
   "branch": "main",
-  "activeTaskId": "221",
+  "activeTaskId": "222",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/221/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/222/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -41,7 +41,8 @@
     "HEAD, push, and passing tests do not imply acceptance; HEAD resolves only the candidate recorded by the post-commit attestation.",
     "Unavailable launch integration is represented as BLOCKED_BY_SURFACE without simulated execution.",
     "Delivery prioritizes the smallest complete, testable and measurable functional unit; hardening is deferred unless required for minimum confidence or the next module.",
-    "Work independently ACCEPTED Task 220 at 61355485cd4cc95719b91db9f296760ba5a7ea84 under continuous_review_audit_index_consistency_restored and explicitly authorized this coordination synchronization and Task 221 resumption. AlphaVeil Continuous Review Pipeline remains GENERIC_INTAKE_READY."
+    "Work independently ACCEPTED Task 220 at 61355485cd4cc95719b91db9f296760ba5a7ea84 under continuous_review_audit_index_consistency_restored and explicitly authorized this coordination synchronization and Task 221 resumption. AlphaVeil Continuous Review Pipeline remains GENERIC_INTAKE_READY.",
+    "Work independently ACCEPTED Task221 at cc54371d58febb40ac56480a732bfa6f1db5389d under repository_local_workspace_hygiene_audit_ready; explicitly authorized Task222 cleanup, current-tree retirement, artifact guard, policy and navigation. History rewrite remains forbidden."
   ],
   "requiredTests": [
     "node --test tests/project-coordination-policy.test.mjs",
@@ -68,11 +69,12 @@
     "Death-fact promotion remains blocked; final death facts, confirmed who-died claims and attribution remain unavailable."
   ],
   "knownRisks": [
+    "Task222 original legacy_workflow_test_unfiltered_local_metadata_scan remains immutable evidence with pre-remediation protected access UNKNOWN. Epoch1 and epoch2 remain failed, fail-closed historical executions; neither is reinterpreted as clean. Work authorized role-aware target classification and one post-remediation-final execution; only that execution has fresh zero-access evidence. See artifacts/repository-hygiene/task222/validation-evidence.json.",
     "Repository validators cannot create or prove a real cross-surface ChatGPT Work or Codex integration.",
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "Await independent ChatGPT Work validation of Task 221 Repository + Local Workspace Hygiene Audit only. Do not clean up, start Generic Factual Processing or create Task 222.",
+  "nextAction": "Complete the one authorized Task222 candidate publication and synchronized post-commit attestation, then stop for independent Work validation. Continuous Review stays GENERIC_INTAKE_READY; no Task223 or factual processing.",
   "completedTasks": [
     "190",
     "191",
@@ -104,10 +106,11 @@
     "217",
     "218",
     "219",
-    "220"
+    "220",
+    "221"
   ],
   "pendingTasks": [
-    "221"
+    "222"
   ],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"

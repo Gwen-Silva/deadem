@@ -5,6 +5,8 @@ import { existsSync, lstatSync, readFileSync, statSync } from 'node:fs';
 import { mkdir, readFile, realpath, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { validateLargeExceptions } from './check-output-sizes.js';
+import { assertUnprotectedName, assertNoLinkedAncestor } from './hygiene-paths.mjs';
 import {
     CONTRACT_KEYS,
     REPORT_CHECKS,
@@ -76,14 +78,18 @@ function isInside(parent, child) {
 async function resolveRepoPath(file, options = {}) {
     const { forWrite = false, root = ROOT } = options;
     if (typeof file !== 'string' || file.length === 0) throw new Error('empty path is not allowed');
+    assertUnprotectedName(file);
     if (path.isAbsolute(file)) throw new Error(`absolute path is not allowed: ${file}`);
     const normalized = file.replaceAll('\\', '/');
     if (normalized.split('/').includes('..')) throw new Error(`path traversal is not allowed: ${file}`);
     if (/\.dem$/iu.test(normalized)) throw new Error(`replay binary path is forbidden: ${file}`);
+    try { assertNoLinkedAncestor(normalized, root); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
     const rootReal = await realpath(root);
     const resolved = path.resolve(ROOT, normalized);
     if (!isInside(rootReal, resolved)) throw new Error(`path escapes repository: ${file}`);
     if (existsSync(resolved)) {
+        if (lstatSync(resolved).isSymbolicLink()) throw new Error(`linked path is forbidden: ${file}`);
         const actual = await realpath(resolved);
         if (!isInside(rootReal, actual)) throw new Error(`realpath escapes repository: ${file}`);
         return actual;
@@ -219,6 +225,10 @@ function validateSpecObject(spec, specPath = '') {
     if (spec.replayProcessingAllowed === true) warnings.push('replay processing explicitly allowed');
     const numericTaskId = Number.parseInt(spec.taskId, 10);
     const executable = ['authorized', 'active'].includes(spec.status);
+    if (spec.artifactPolicyVersion === 2 || (numericTaskId >= 222 && executable)) {
+        try { validateLargeExceptions(spec.largeOutputsAllowed); }
+        catch (error) { errors.push(error.message); }
+    }
     if (numericTaskId >= 191 && executable && spec.coordinationPolicyVersion !== 1) {
         errors.push('executable Task 191+ requires coordinationPolicyVersion: 1');
     }
@@ -351,6 +361,12 @@ function statusName(status) {
 
 async function fileFingerprintEntry(entry) {
     const file = entry.path;
+    assertUnprotectedName(file);
+    if (entry.oldPath) assertUnprotectedName(entry.oldPath);
+    if (entry.status.startsWith('D')) return {
+        path: file, oldPath: entry.oldPath ?? null, status: 'deleted', rawStatus: entry.status,
+        source: entry.source, exists: false, sha256: null, sizeBytes: null, mode: null
+    };
     const resolved = await resolveRepoPath(file, { forWrite: true });
     const exists = existsSync(resolved);
     const stats = exists ? statSync(resolved) : null;
@@ -469,6 +485,18 @@ function contractLines(value) {
     return [String(value)];
 }
 
+function boundedGitStatus(text, limit = 2048) {
+    if (!text) return 'clean';
+    if (Buffer.byteLength(text, 'utf8') <= limit) return text;
+    const rows = text.split(/\r?\n/u).filter(Boolean);
+    const counts = {};
+    for (const row of rows) {
+        const code = row.slice(0, 2).trim() || 'other';
+        counts[code] = (counts[code] ?? 0) + 1;
+    }
+    return `${rows.length} status entries; ${JSON.stringify(counts)}\nFull paths: git status --short; validation fingerprint retains the complete changed-file list.`;
+}
+
 function orderedContractSections(spec, state) {
     const contract = spec.executionContract;
     const values = {
@@ -529,7 +557,7 @@ async function buildContextText(spec, specPath, options = {}) {
         `Branch: ${git(['branch', '--show-current'])}`,
         'Git status:',
         '```text',
-        gitStatusShort() || 'clean',
+        boundedGitStatus(gitStatusShort()),
         '```',
         '',
         '## Required Read Paths',
@@ -690,10 +718,17 @@ function isForbidden(spec, file) {
 }
 
 function largeAllowed(spec, file) {
+    if (spec.artifactPolicyVersion === 2 || Number(spec.taskId) >= 222) return validateLargeExceptions(spec.largeOutputsAllowed).includes(file);
     return (spec.largeOutputsAllowed ?? []).some(item => pathMatches(typeof item === 'string' ? item : item.path, file));
 }
 
-async function classifyChangedFile(spec, file) {
+async function classifyChangedFile(spec, file, change = {}) {
+    assertUnprotectedName(file);
+    if (change.status === 'deleted') return {
+        file, status: 'D', kind: 'removed', allowed: isAllowedWrite(spec, file),
+        forbidden: isForbidden(spec, file), largeUnauthorized: false,
+        regenerationViolation: regenerationViolation(spec, file), exists: false
+    };
     const resolved = await resolveRepoPath(file, { forWrite: true });
     const exists = existsSync(resolved);
     const tracked = git(['ls-files', '--', file]) !== '';
@@ -832,7 +867,7 @@ async function validateTask(taskId, options = {}) {
     const fingerprintByPath = new Map((fingerprint?.changedFiles ?? []).map(item => [item.path, item]));
     for (const file of changed) {
         if (file.startsWith('.local/')) continue;
-        const item = await classifyChangedFile(spec, file);
+        const item = await classifyChangedFile(spec, file, fingerprintByPath.get(file));
         const enriched = { ...item, ...(fingerprintByPath.get(file) ?? {}) };
         classifications.push(enriched);
         if (!item.allowed) failures.push(`changed file outside writePaths: ${file}`);
@@ -912,6 +947,20 @@ async function gateForSpec(spec, validationPassed) {
     return spec.successGate ?? 'ready';
 }
 
+function boundedReviewChanges(taskId, changed) {
+    if (changed.length <= 100) return { changedFiles: changed };
+    const content = `${JSON.stringify(changed, null, 2)}\n`;
+    return {
+        changedFiles: [],
+        changedFileCount: changed.length,
+        changedFilesManifest: {
+            path: `${LOCAL_ROOT}/${taskId}/review-changed-files.json`,
+            sha256: createHash('sha256').update(content).digest('hex'),
+            representation: 'complete_list_externalized_to_keep_review_packet_bounded'
+        }
+    };
+}
+
 async function review(taskId, options = {}) {
     const { spec, specPath } = await ensureSpec(taskId, options);
     enforceLifecycle(spec, 'review', options);
@@ -989,7 +1038,7 @@ async function review(taskId, options = {}) {
         coordinationStatus: spec.coordinationPolicyVersion === 1 ? 'VALIDATING' : null,
         finalAcceptanceStatus: spec.coordinationPolicyVersion === 1 ? 'pending_work_validation' : null,
         reportChecklist,
-        changedFiles: changed,
+        ...boundedReviewChanges(taskId, changed),
         testsExecuted: validation?.checks?.map(({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs }) => ({ id, type, display, passed, exitCode, logPath, logSha256, summary, startedAt, endedAt, durationMs })) ?? [],
         unexpectedFiles: validation?.changedFiles?.filter(item => !item.allowed).map(item => item.file) ?? [],
         largeOutputs: validation?.changedFiles?.filter(item => item.largeUnauthorized).map(item => item.file) ?? [],
@@ -1033,6 +1082,9 @@ async function review(taskId, options = {}) {
     if (Buffer.byteLength(jsonText, 'utf8') > REVIEW_JSON_LIMIT) throw new Error('review JSON packet exceeds limit');
     if (!reviewReady) throw new Error(`review is not ready: ${failures.join('; ')}`);
     const dir = await localTaskDir(taskId);
+    if (reviewJson.changedFilesManifest) {
+        await writeFile(path.join(dir, 'review-changed-files.json'), `${JSON.stringify(changed, null, 2)}\n`);
+    }
     if (spec.coordinationPolicyVersion === 1) {
         const pushEvidence = verifyRemotePush(candidateResolution.branch, candidateResolution.candidateCommit, options.pushStatus);
         const attestation = {
@@ -1145,6 +1197,8 @@ export {
     REVIEW_MD_LIMIT,
     buildContextPacket,
     buildContextText,
+    boundedGitStatus,
+    boundedReviewChanges,
     changedFilesSince,
     checkAllowed,
     checkInvocation,

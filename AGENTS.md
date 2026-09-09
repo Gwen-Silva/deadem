@@ -9,6 +9,9 @@ interpretation.
 - The normative policy is `docs/codex/AUTONOMOUS_COORDINATION_POLICY.md`.
 - Read `data/project-coordination-state.json` before execution. The task base
   must equal `lastAcceptedCommit`; `HEAD` does not imply acceptance.
+- Then read `data/current-project-index.json` for current capabilities, runtime
+  entry points and blockers. Open historical indexes only when the task needs
+  their evidence; the current view never overrides coordination authority.
 - ChatGPT Work is the coordinator and sole acceptance authority. Codex executes
   only a separately authorized technical task and reports claims for Work to
   verify.
@@ -42,7 +45,7 @@ interpretation.
 
 ## Required Workflow
 
-1. Identify the authorized task and read the coordination state.
+1. Identify the authorized task; read coordination state, then current-project index.
 2. Verify branch and base equal the accepted state; run
    `npm run codex:prepare -- --task <id>` when a spec exists.
 3. Read the context packet and required paths only. Record why optional paths

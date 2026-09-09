@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { historicalReader } from '../scripts/historical-artifact-reader.mjs';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { fileURLToPath } from 'node:url';
@@ -39,7 +40,7 @@ function hashId(...parts) {
 }
 
 async function readText(file) {
-    return readFile(file, 'utf8');
+    return historicalReader.readFile(file, 'utf8');
 }
 
 async function readJson(file) {
@@ -510,9 +511,9 @@ function buildValidationAndGate(replayId, packageData, schemaValid, gate) {
     };
 }
 
-async function buildReplayPackage(replayId) {
+async function buildReplayPackage(replayId, { inputProvider = loadReplayInputs, sourceDescriber = fileInfo } = {}) {
     const start = performance.now();
-    const inputs = await loadReplayInputs(replayId);
+    const inputs = await inputProvider(replayId);
     const parserMode = parserModeFor(inputs.parserMatrix, replayId);
     const playerRegistry = buildPlayerRegistry(replayId, inputs.oneSecondQuality, parserMode);
     const { registry: entityRegistry, legacyToEntity } = buildEntityRegistry(replayId, inputs.objectiveInventory);
@@ -560,7 +561,7 @@ async function buildReplayPackage(replayId) {
         sourcePath(replayId, 'match-state-timeline.jsonl')
     ];
     const sourceArtifacts = [];
-    for (const file of sourceFiles) sourceArtifacts.push(await fileInfo(file));
+    for (const file of sourceFiles) sourceArtifacts.push(await sourceDescriber(file));
     return {
         replayId,
         packageData,
@@ -738,7 +739,7 @@ export async function canonicalizeRemainingHumanControls(options = {}) {
     await mkdir(root, { recursive: true });
     const results = [];
     for (const replayId of replays) {
-        const result = await buildReplayPackage(replayId);
+        const result = await buildReplayPackage(replayId, options);
         await writeReplayOutputs(root, result);
         results.push(result);
     }

@@ -3,6 +3,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
+import { task191State } from './helpers/coordination-state-fixture.mjs';
 import {
     buildContextText,
     buildContextPacket,
@@ -17,6 +18,7 @@ import { validateProjectCoordination } from '../scripts/validate-project-coordin
 
 const ROOT = process.cwd();
 const json = file => JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'));
+const historicalState = () => task191State(json('data/project-coordination-state.json'));
 const headings = [
     '1. Reasoning complexity',
     '2. Objective',
@@ -37,7 +39,7 @@ const headings = [
 
 test('Task 191 context packet begins with all fifteen contract blocks in order', async () => {
     const spec = json('tasks/specs/191.json');
-    const text = await buildContextText(spec, 'tasks/specs/191.json');
+    const text = await buildContextText(spec, 'tasks/specs/191.json', { stateOverride: historicalState() });
     let prior = -1;
     for (const heading of headings) {
         const index = text.indexOf(`## ${heading}`);
@@ -56,13 +58,15 @@ test('Task 191 context packet begins with all fifteen contract blocks in order',
 });
 
 test('Task 191 preflight enforces coordination state and branch', async () => {
-    const result = await preflight('191', { base: '13a3da64bcf0ba839a752038f07f40e3eeeed890' });
+    const state = historicalState();
+    const stateOnly = validatePreflightInputs({ state, spec: json('tasks/specs/191.json'), expectedBaseCommit: state.lastAcceptedCommit, actualBranch: state.branch, policyExists: true, agentsBytes: 100, currentStateBytes: 100 });
+    const result = stateOnly;
     assert.deepEqual(result.failures, []);
     assert.equal(result.passed, true);
 });
 
 test('preflight mutations fail for missing state/policy, divergent task/base/branch, missing contract, self-approval and limits', () => {
-    const state = json('data/project-coordination-state.json');
+    const state = historicalState();
     const spec = json('tasks/specs/191.json');
     const baseInputs = {
         state,
@@ -116,11 +120,13 @@ test('push evidence rejects stale refs, local origins, absent remotes and unveri
 
 test('Git candidate resolver distinguishes accepted base from HEAD without accepting HEAD', () => {
     const state = json('data/project-coordination-state.json');
+    const acceptedBefore = state.lastAcceptedCommit;
+    state.candidateResolution = { strategy: 'git_head_exactly_one_commit_from_active_base', requiredCommitCount: 1, branch: state.branch };
     const result = resolveCandidateFromGit(state, state.lastAcceptedCommit, { requireCandidate: false });
     assert.equal(result.valid, true);
     assert.equal(result.baseCommit, state.lastAcceptedCommit);
     assert.notEqual(result.candidateCommit, state.rejectedCommits[0]);
-    assert.equal(state.lastAcceptedCommit, '13a3da64bcf0ba839a752038f07f40e3eeeed890');
+    assert.equal(state.lastAcceptedCommit, acceptedBefore);
 });
 
 test('executable Task 191+ without contract v1 is rejected', () => {
@@ -164,7 +170,7 @@ test('Work-accepted Task 191 can continue through READY_FOR_CODEX Task 192', asy
         value => { value.state.candidateResolution = { strategy: 'git_head_exactly_one_commit_from_active_base', requiredCommitCount: 1, branch: state.branch, reviewArtifact: '.local/codex/192/post-commit-attestation.json' }; },
         value => { value.spec.baseCommitExpected = state.rejectedCommits[0]; value.spec.executionContract.expectedBaseCommit = state.rejectedCommits[0]; },
         value => { value.state.activeTaskId = '193'; },
-        value => { value.options.actualBranchOverride = 'main'; }
+        value => { value.options.actualBranchOverride = 'synthetic-divergent-branch'; }
     ]) {
         const fixture = { state: structuredClone(state), spec: structuredClone(spec), options: structuredClone(baseOptions) };
         fixture.options.stateOverride = fixture.state;

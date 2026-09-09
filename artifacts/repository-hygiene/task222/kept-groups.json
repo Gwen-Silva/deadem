@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "taskId": 222,
+  "keptGroupCount": 238,
+  "blockedGroupCount": 235,
+  "grouping": "Task221-derived group plan; top-level historical output files form individual audit groups, subtree groups remain grouped.",
+  "counts": {
+    "BLOCKED_BY_UNCERTAINTY": 235,
+    "KEPT_ACTIVE": 2,
+    "PROTECTED_EXCLUDED": 1
+  },
+  "representativeReasons": [
+    {
+      "status": "KEPT_ACTIVE",
+      "paths": [
+        "output/local-replay-processing/assisted-review-bundles/task204-bounded2/",
+        "output/local-replay-processing/assisted-review/task212-matches-003-004/"
+      ],
+      "reason": "Current Product/Review runtime envelopes."
+    },
+    {
+      "status": "KEPT_AUDIT",
+      "paths": [
+        "output/replays/replay_002/match-state-timeline-shards/",
+        "output/replays/replay_001..004 compact indexes, manifests, quality and factual event summaries"
+      ],
+      "reason": "Existing canonical reader, navigation and audit provenance; no payload needs restoration."
+    },
+    {
+      "status": "BLOCKED_BY_UNCERTAINTY",
+      "reason": "Remaining historical summaries and local-processing families are not proven redundant with every operational/audit consumer; no extra retirement."
+    },
+    {
+      "status": "PROTECTED_EXCLUDED",
+      "reason": "Actual protected target packages excluded before target metadata. Conservative original numeric chunk exclusions also remain untouched; not reclassified to expand retirement."
+    }
+  ],
+  "fullPlanLocal": ".local/codex/222/retirement-plan.json",
+  "initialArchivePoolFiles": 3184,
+  "initialArchivePoolBytes": 918796674,
+  "unretiredPoolFiles": 2930,
+  "unretiredPoolBytes": 373211499
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "taskId": 222,
+  "executionId": "post-remediation-final",
+  "preRemediationProtectedAccessCount": "UNKNOWN",
+  "originalIncident": {
+    "path": ".local/codex/222/execution-blocker.json",
+    "sha256": "2a999e9f233e0c6b3ac1ac224b68ac2dab52fe092dae46e0d5c38445bce06447"
+  },
+  "epoch1": {
+    "path": ".local/codex/222/post-remediation-epoch-1/outcome.json",
+    "sha256": "31722f1a66a0dbc5552fcc35edb13852488c5c2a3fc3694eba3cb37f2805180b",
+    "status": "BLOCKED"
+  },
+  "epoch2": {
+    "path": ".local/codex/222/post-remediation-epoch-2/outcome.json",
+    "sha256": "67dc4c9220c228b20415f9d0bb9b9caf85d7cba5e8873284fffc2500e9ff6612",
+    "status": "BLOCKED_BEFORE_HISTORICAL_DOCUMENT_READ"
+  },
+  "previousExecutionsReinterpretedAsClean": false,
+  "finalRegressionTests": {
+    "total": 127,
+    "passed": 127,
+    "failed": 0,
+    "productSubsetPassed": 64
+  },
+  "successfulChecks": [
+    {
+      "label": "full-regressions",
+      "exitCode": 0,
+      "log": ".local/codex/222/post-remediation-final/check-full-regressions-1788913662232.log",
+      "durationMs": 2715
+    },
+    {
+      "label": "coordination",
+      "exitCode": 0,
+      "log": ".local/codex/222/post-remediation-final/check-coordination-1788913312098.log",
+      "durationMs": 1878
+    },
+    {
+      "label": "tasks",
+      "exitCode": 0,
+      "log": ".local/codex/222/post-remediation-final/check-tasks-1788913314028.log",
+      "durationMs": 1172
+    },
+    {
+      "label": "lint",
+      "exitCode": 0,
+      "log": ".local/codex/222/post-remediation-final/check-lint-1788892085929.log",
+      "durationMs": 29196
+    },
+    {
+      "label": "output-guard",
+      "exitCode": 0,
+      "log": ".local/codex/222/post-remediation-final/check-output-guard-1788913315248.log",
+      "durationMs": 530
+    },
+    {
+      "label": "reference-closure",
+      "exitCode": 0,
+      "log": ".local/codex/222/post-remediation-final/check-reference-closure-1788913281343.log",
+      "durationMs": 550
+    }
+  ],
+  "preliminaryFinalCheckFailures": [
+    {
+      "label": "hygiene",
+      "log": ".local/codex/222/post-remediation-final/check-hygiene-1788892208731.log",
+      "exitCode": 1,
+      "disposition": "ordinary root-metadata classification assertion corrected; later full 127-test run clean; record retained"
+    }
+  ],
+  "publicNodeIoAuditProcessCount": 157,
+  "postRemediationProtectedAccessCount": 0,
+  "mediaContentReadCount": 0,
+  "replayProcessingCount": 0,
+  "historyRewritePerformed": false,
+  "task223Created": false,
+  "instrumentationLimit": "Public Node filesystem wrappers plus reviewed call sites and Git-only metadata. Not an OS sandbox, not proof for historical uninstrumented activity. Synthetic test media is not real media.",
+  "sourceAndRuntimeUnchanged": true
+}

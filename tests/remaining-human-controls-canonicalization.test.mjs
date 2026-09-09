@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { access, readFile } from 'node:fs/promises';
+import { mkdtemp, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
@@ -12,6 +12,35 @@ import {
 } from '../tools/canonicalize-remaining-human-pilot-replays.mjs';
 
 const FINAL_REPORT_PATH = 'reports/remaining-human-controls-canonicalization.md';
+
+// Synthetic contract inputs, not facts extracted from any replay. The complete
+// canonicalization/output/validation path still runs, with no dense payload IO.
+async function syntheticRun() {
+    const root = await mkdtemp('.local/codex/222/canonical-contract-');
+    const players = [{ playerId: 'synthetic-a', team: 2, controllerHandle: 1, heroId: 1 }, { playerId: 'synthetic-b', team: 3, controllerHandle: 2, heroId: 2 }];
+    const mode = {
+        modeName: 'synthetic_contract', parserConfiguration: { allowUnresolvedEntityReference: false, allowMissingClassBaseline: false, addedRecoveryBehavior: false },
+        completed: true, firstError: { category: 'none', rawError: null, tick: null, gameTimeSeconds: null, finalParsedTick: null },
+        firstErrorCategory: 'none', firstErrorTick: null, firstErrorGameTimeSeconds: null,
+        finalParsedTick: 10, finalParsedGameTimeSeconds: 1, lastTick: 10, durationSeconds: 1, percentParsed: 100,
+        packetsProcessed: 0, messagePacketsProcessed: 0, entityPacketsProcessed: 0, telemetryRows: 1,
+        warnings: ['synthetic_contract_only'], warningCount: 1, missingEntityReferences: [], missingBaselineReferences: [], missingClassReferences: [],
+        outputRemainsSynchronized: true, identitiesRemainStable: true,
+        metadata: { demoProtocol: null, networkProtocol: null, gameBuild: null, mapName: null, matchId: null, lastTick: 10, durationSeconds: 1, classCount: 0, entityCount: 0, stringTableCount: null, metadataAvailability: 'synthetic_contract_only' },
+        stats: { classBaselines: 0, classes: 0, entities: 0, serializers: 0 }
+    };
+    return canonicalizeRemainingHumanControls({
+        replays: ['replay_001'], outputRoot: root, reportPath: `${root}/report.md`, clean: false,
+        inputProvider: async replayId => ({
+            parserMatrix: { rows: [{ replayId, modes: { default_parser: mode } }] },
+            oneSecondQuality: { sourceReplay: 'synthetic_contract_only', playerReconciliation: { players } },
+            objectiveInventory: { entities: [] }, deathEvents: { events: [] }, respawnEvents: { events: [] },
+            objectiveLifecycle: { events: [] }, deathValidation: { synthetic: true },
+            matchRows: [{ gameTimeSeconds: 1, players: players.map(p => ({ ...p, alive: true, netWorth: 10 })) }]
+        }),
+        sourceDescriber: async file => ({ path: `synthetic_contract:${file}`, sizeBytes: 0, sha256: sha256Text('synthetic_contract_only') })
+    });
+}
 
 function sha256Text(text) {
     return createHash('sha256').update(text).digest('hex');
@@ -59,9 +88,9 @@ test('event count difference is not a schema break', () => {
 });
 
 test('provenance is required for every emitted summary record', async () => {
-    const result = await canonicalizeRemainingHumanControls({ replays: ['replay_001'], outputRoot: '.local/codex/095/test-output', reportPath: '.local/codex/095/test-report.md', clean: true });
+    const result = await syntheticRun();
     const replay = result.results[0];
-    assert.equal(replay.validation.valid, true);
+    assert.equal(replay.validation.valid, true, JSON.stringify(replay.validation.errors));
     for (const artifact of Object.values(replay.validation.byArtifact)) {
         assert.deepEqual(artifact.errors, []);
     }
@@ -69,13 +98,13 @@ test('provenance is required for every emitted summary record', async () => {
 
 test('local test output does not overwrite the final committed report', async () => {
     const before = sha256Text(await readFile(FINAL_REPORT_PATH, 'utf8'));
-    await canonicalizeRemainingHumanControls({ replays: ['replay_001'], outputRoot: '.local/codex/095/test-output', reportPath: '.local/codex/095/test-report.md', clean: true });
+    await syntheticRun();
     const after = sha256Text(await readFile(FINAL_REPORT_PATH, 'utf8'));
     assert.equal(after, before);
 });
 
 test('forbidden semantic fields are not emitted in committed package manifests', async () => {
-    const result = await canonicalizeRemainingHumanControls({ replays: ['replay_001'], outputRoot: '.local/codex/095/test-output', reportPath: '.local/codex/095/test-report.md', clean: true });
+    const result = await syntheticRun();
     const serialized = JSON.stringify(result.results[0].packageData);
     for (const forbidden of ['"lane"', '"region"', '"proximity"', '"transform"', '"residual"']) {
         assert.equal(serialized.includes(forbidden), false);
@@ -91,13 +120,14 @@ test('output paths stay under the remaining-human-controls root', () => {
     assert.equal(OUTPUT_ROOT, 'output/five-replay-pilot/remaining-human-controls');
 });
 
-test('Task 096 remains blocked', async () => {
-    const spec = JSON.parse(await readFile('tasks/specs/096.json', 'utf8'));
-    assert.equal(spec.status, 'blocked');
+test('historical Task 095 snapshot preserves its then-blocked Task 096 decision', async () => {
+    const summary = JSON.parse(await readFile(`${OUTPUT_ROOT}/processing-summary.json`, 'utf8'));
+    assert.equal(summary.task096Status, 'blocked');
 });
 
-test('no Task 097 is created', async () => {
-    await assert.rejects(access('tasks/specs/097.json'));
+test('historical Task 095 snapshot records that it did not create Task 097', async () => {
+    const summary = JSON.parse(await readFile(`${OUTPUT_ROOT}/processing-summary.json`, 'utf8'));
+    assert.equal(summary.task097Created, false);
 });
 
 test('final report matches committed remaining-human-controls outputs', async () => {

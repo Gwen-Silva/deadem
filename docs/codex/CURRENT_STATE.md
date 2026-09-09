@@ -1,36 +1,30 @@
 # Current Codex State
 
-Policy version: 1. Branch: main. Last accepted Task 219:
-`4d0858d51f7ab4aad86246595bd07b473a1675d1`, externally
-`ACCEPTED_WITH_BLOCKER` under functional gate
-`generic_scrim_intake_protected_alias_boundary_closed`.
+Read `data/project-coordination-state.json`, then
+`data/current-project-index.json`. Policy version: 1. Branch: main.
 
-Task 219 closed Task 218 blocker
-`protected_alias_pre_filesystem_guard_incomplete`. Its only current blocker is
-the audit inconsistency
-`historical_task_contribution_index_commit_misattributed`.
+Work independently accepted Task221 at
+`cc54371d58febb40ac56480a732bfa6f1db5389d` under
+`repository_local_workspace_hygiene_audit_ready`. Task220's accepted audit-index
+repair remains preserved; its historical blocker is closed.
 
-Active Task 220: Restore Continuous Review Audit Index Consistency. Status:
-`VALIDATING`. Technical gate claim:
-`continuous_review_audit_index_consistency_restored`.
+Active Task222: Consolidate Repository Hygiene and Retire Historical Output.
+Candidate status: `VALIDATING`; technical claim: repository hygiene consolidated,
+254 historical files / 545,585,175 Git bytes retired from the current tree.
+The original unfiltered local metadata scan retains an UNKNOWN protected-access
+count; epoch1 and epoch2 remain failed historical evidence. Work-authorized
+path-role remediation passed the final 127-test regression run. Only the final
+post-remediation execution has a zero-access claim. See
+`artifacts/repository-hygiene/task222/validation-evidence.json` and the synchronized
+`.local/codex/222/post-commit-attestation.json` for actual candidate/publication.
+No Task223 is authorized or created.
 
-The contribution index now maps Task 205 to
-`1a0365a3a59596da267fbf3480adb5488034cb20`, Task 218 to
-`3d1daa401a1e2ceef79cac1b58026ab53721a107` and Task 219 to
-`4d0858d51f7ab4aad86246595bd07b473a1675d1`, with their distinct accepted
-titles, statuses and gates. A permanent repository-local integrity test guards
-these critical milestone mappings and their blocker chronology.
+AlphaVeil Continuous Review Pipeline remains `GENERIC_INTAKE_READY`, not
+`CONTINUOUS_PIPELINE_READY`. Runtime invariants remain 4 targets, 207 moments,
+102 legacy candidates, 48/57 markers, 11 review fields, 15 error classes and
+9 Craig tracks. Hygiene changes do not improve factual, semantic, ASR or sync
+accuracy. Existing uncertainty and human-validation requirements remain.
 
-Continuous Review runtime/schema, Review Workspace and product data remain
-byte-identical to the accepted base. Product cardinalities remain
-4/207/102/48/57/11/15/9. Protected access, replay processing, ASR,
-synchronization, candidates, frames, media copy/versioning and real
-registration are zero.
-
-Milestone claim: `AlphaVeil Continuous Review Pipeline = GENERIC_INTAKE_READY`
-in functional, security-boundary and audit-integrity scope. It is not
-`CONTINUOUS_PIPELINE_READY`.
-
-Next action: independent ChatGPT Work validation of Task 220 only. Do not
-create Task 221 or start Generic Factual Processing. Machine state:
-`data/project-coordination-state.json`.
+Next action: independent Work validation of the Task222 candidate. Continuous Review
+Processing V1 is the prospective macro-objective only after separate Work
+authorization; no processing phase is started here.

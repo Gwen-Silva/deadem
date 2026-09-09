@@ -3,6 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { validateTaskContractData } from './validate-project-coordination.js';
+import { assertUnprotectedName } from './hygiene-paths.mjs';
 
 const ROOT = process.cwd();
 const TASK_ROOT = path.join(ROOT, 'tasks');
@@ -20,34 +21,42 @@ const LEGACY_SPEC_FIELDS = [
     'followUpTask', 'stopConditions', 'successGate', 'blockedGate', 'gateSource'
 ];
 
-function readTaskFiles(dirName) {
-    const dir = path.join(TASK_ROOT, dirName);
-    if (!fs.existsSync(dir)) {
+function readTaskFiles(dirName, { io = fs, taskRoot = TASK_ROOT, taskList = tasks, errorList = errors, assertTarget = assertUnprotectedName } = {}) {
+    if (!TASK_DIRS.includes(dirName)) throw new Error('invalid_task_bucket');
+    const dir = path.join(taskRoot, dirName);
+    assertUnprotectedName(dir); assertTarget(dir);
+    if (!io.existsSync(dir)) {
         // Git does not materialize empty directories. An absent queue bucket is empty.
         return;
     }
 
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        if (!entry.isFile() || entry.name === '.gitkeep' || entry.name === 'INDEX.md') {
+    for (const name of io.readdirSync(dir)) {
+        if (typeof name !== 'string' || /[\\/]/u.test(name) || name === '.' || name === '..') throw new Error('invalid_task_entry_name');
+        const filePath = path.join(dir, name);
+        // A task document may mention replay-006; input-like aliases remain
+        // forbidden. Classify the complete candidate before lstat/read.
+        assertUnprotectedName(filePath); assertTarget(filePath);
+        const info = io.lstatSync(filePath);
+        if (info.isSymbolicLink()) throw new Error('linked_task_entry_rejected');
+        if (!info.isFile() || name === '.gitkeep' || name === 'INDEX.md') {
             continue;
         }
 
-        if (!entry.name.endsWith('.md')) {
-            errors.push(`unexpected file in tasks/${dirName}: ${entry.name}`);
+        if (!name.endsWith('.md')) {
+            errorList.push(`unexpected file in tasks/${dirName}: ${name}`);
             continue;
         }
 
-        const idMatch = entry.name.match(/^(\d{3})-.+\.md$/);
+        const idMatch = name.match(/^(\d{3})-.+\.md$/);
         if (!idMatch) {
-            errors.push(`task filename does not start with a three-digit ID: tasks/${dirName}/${entry.name}`);
+            errorList.push(`task filename does not start with a three-digit ID: tasks/${dirName}/${name}`);
             continue;
         }
 
-        const filePath = path.join(dir, entry.name);
-        const text = fs.readFileSync(filePath, 'utf8');
-        tasks.push({
+        const text = io.readFileSync(filePath, 'utf8');
+        taskList.push({
             dirName,
-            fileName: entry.name,
+            fileName: name,
             id: idMatch[1],
             path: filePath,
             text,
@@ -276,4 +285,4 @@ function main() {
 
 if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) main();
 
-export { sectionHasContent, taskIsAccepted, validateActiveTaskCount, validateFutureSpec, validateHistoricalSpec, validateHistoricalSpecRange };
+export { readTaskFiles, sectionHasContent, taskIsAccepted, validateActiveTaskCount, validateFutureSpec, validateHistoricalSpec, validateHistoricalSpecRange };

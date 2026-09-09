@@ -5,7 +5,9 @@ export const PROTECTED_TARGET_IDS = Object.freeze(["review_match_005", "review_m
 export const TRACK_ORDERING = "natural_filename_order_en_numeric";
 export const READY_STATUS = "ready_for_factual_processing";
 
-const protectedAlias = /(?:^|[\\/._-])(?:replay|review[_-]?match|match|partida)[_-]?00[5-8](?=$|[\\/._-])/iu;
+// Shared lexical boundary for intake and repository hygiene. No filesystem
+// resolution is permitted to decide whether a candidate is protected.
+const protectedAlias = /(?:^|[\\/._\s-])(?:replay|review[_-]?match|match|partida)[_-]?0*[5-8](?=$|[\\/._\s-])|(?:^|[\\/])(?:replays?|review[_-]?matches|matches|partidas?)[\\/]0*[5-8](?=$|[\\/._-])/iu;
 const natural = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
 
 export class IntakeError extends Error {
@@ -17,10 +19,18 @@ export class IntakeError extends Error {
 }
 
 export function assertNoProtectedAlias(value) {
-  const text = String(value ?? "");
-  if (protectedAlias.test(text)) {
-    throw new IntakeError("protected_target_id", "O identificador ou path referencia um target 005–008 reservado e foi rejeitado antes de qualquer acesso ao filesystem.");
+  let text = String(value ?? "");
+  for (let i = 0; i < 3; i++) {
+    if (protectedAlias.test(text)) {
+      throw new IntakeError("protected_target_id", "O identificador ou path referencia um target 005–008 reservado e foi rejeitado antes de qualquer acesso ao filesystem.");
+    }
+    let decoded;
+    try { decoded = decodeURIComponent(text); } catch { throw new IntakeError("invalid_source_path", "Invalid path encoding."); }
+    if (decoded === text) return text;
+    text = decoded;
   }
+  if (/%[0-9a-f]{2}/iu.test(text)) throw new IntakeError("invalid_source_path", "Unresolved path encoding.");
+  if (protectedAlias.test(text)) throw new IntakeError("protected_target_id", "Protected encoded alias rejected before filesystem access.");
   return text;
 }
 

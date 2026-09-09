@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "taskId": 222,
+  "scope": "classification only; no experimental source moved, deleted or executed",
+  "method": "Task221 accepted reference graph reused; ACTIVE_REFERENCE means a retained tool refers to it, not current AlphaVeil runtime or execution evidence; absence alone does not justify OBSOLETE",
+  "counts": {
+    "ACTIVE_REFERENCE": 18,
+    "HISTORICAL": 12,
+    "OBSOLETE": 0
+  },
+  "entries": [
+    {
+      "path": "experiments/01-validate-replay.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/02-inspect-player-fields.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/03-normalize-player-snapshots.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/04-analyze-controller-pawn-lifecycle.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/05-discover-game-clock.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/06-reconcile-tick-domains.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/07-player-timeline.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/08-analyze-data-quality.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/09-build-canonical-player-timeline.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/10-map-hero-identities.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/11-reconcile-hero-identities.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/12-identify-replay-build.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/13-enrich-heroes-and-map-lanes.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/14-discover-items-and-upgrades.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/15-decode-upgrade-tokens.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/16-reconcile-lane-topology.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/17-build-spatial-presence-model.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/18-build-movement-segments.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/replay-intake.js"
+      ]
+    },
+    {
+      "path": "experiments/19-audit-rotation-candidates.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/20-resolve-journey-destinations.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/21-validate-and-consolidate-rotation-candidates.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/22-build-lane-occupancy-model.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/23-calibrate-lane-occupancy.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/apply-frozen-occupancy-generalization.js"
+      ]
+    },
+    {
+      "path": "experiments/24-autonomous-independent-lane-occupancy-audit.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/24-build-stratified-lane-occupancy-validation.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/24-diagnose-lane-occupancy-episode-regression.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/24-prototype-uncertainty-aware-lane-episode-segmentation.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/apply-frozen-occupancy-generalization.js"
+      ]
+    },
+    {
+      "path": "experiments/24-revise-lane-occupancy-model.js",
+      "classification": "ACTIVE_REFERENCE",
+      "consumers": [
+        "scripts/apply-frozen-occupancy-generalization.js"
+      ]
+    },
+    {
+      "path": "experiments/24-score-lane-occupancy-validation.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    },
+    {
+      "path": "experiments/24-validate-occupancy-holdout.js",
+      "classification": "HISTORICAL",
+      "consumers": []
+    }
+  ]
+}

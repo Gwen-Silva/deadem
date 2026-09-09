@@ -26,7 +26,10 @@ unavailable integration as invoked.
 ## Steps
 
 1. Read coordination state; verify branch and expected base equal the last
-   accepted commit.
+   accepted commit. Then read `data/current-project-index.json`. Follow its
+   bounded current-runtime and policy references before opening historical
+   contribution, capability or artifact indexes. Those indexes remain audit
+   evidence, not the default context packet.
 2. Run `npm run codex:prepare -- --task <id>`.
 3. Read `.local/codex/<id>/context-packet.md` and required paths only.
 4. Implement within `writePaths`; forbidden paths always override scope.
@@ -65,6 +68,13 @@ paths and checks but cannot intercept arbitrary commands or create cross-surface
 integration.
 
 ## Stop Conditions
+
+New compact evidence belongs under `artifacts/`; local payloads, media, logs and
+review packets stay under `.local/`. `npm run check:outputs` checks changed
+destinations recursively by Git change discovery, not historical directory
+scanning. Historical output retirement requires separate authorization and a
+manifest preserving Git provenance and operational readers. See
+`docs/codex/HISTORICAL_ARTIFACT_RECOVERY.md`.
 
 Stop on base or branch divergence, invalid state, rejected/blocked gate,
 protected scope, unexpected historical regression, missing authority, or

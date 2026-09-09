@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
-import { existsSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { mkdir, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import { snapshotAllowedMetadata } from '../../scripts/hygiene-paths.mjs';
 import {
     CONTEXT_LIMIT,
     EXCLUDED_DIRS,
@@ -73,17 +74,9 @@ async function writeSpec(id, spec) {
 }
 
 function snapshotLocal() {
-    if (!existsSync('.local')) return [];
-    const files = [];
-    const walk = dir => {
-        for (const item of readdirSync(dir, { withFileTypes: true })) {
-            const file = path.join(dir, item.name);
-            if (item.isDirectory()) walk(file);
-            else files.push(`${file}:${statSync(file).size}`);
-        }
-    };
-    walk('.local');
-    return files.sort();
+    // Both dry-run callers compare only the workflow's own synthetic outputs.
+    // Real local evidence is outside this test contract and is never traversed.
+    return snapshotAllowedMetadata(['.local/codex/900', '.local/codex/093']).files;
 }
 
 test('spec validation covers identity, follow-up, gates, and protected paths', () => {
