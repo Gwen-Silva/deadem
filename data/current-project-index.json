@@ -2,13 +2,14 @@
   "schemaVersion": 1,
   "viewRole": "compact_navigation_only_not_acceptance_authority",
   "coordinationSource": "data/project-coordination-state.json",
-  "acceptedBase": { "taskId": "221", "commit": "cc54371d58febb40ac56480a732bfa6f1db5389d" },
-  "currentMilestone": { "name": "AlphaVeil Continuous Review Pipeline", "status": "GENERIC_INTAKE_READY" },
-  "candidate": { "taskId": "222", "module": "Repository Hygiene", "status": "VALIDATING", "evidence": "artifacts/repository-hygiene/task222/gate.json" },
+  "acceptedBase": { "taskId": "222", "commit": "61d1ac0586e45009b7672bf33643a3924ed260a0" },
+  "currentMilestone": { "name": "AlphaVeil Continuous Review Pipeline", "status": "PROCESSING_V1_READY", "authority": "Task223 technical candidate pending independent Work validation" },
+  "candidate": { "taskId": "223", "module": "Continuous Review Processing V1", "status": "VALIDATING", "evidence": "artifacts/continuous-review/task223/gate.json" },
   "activeCapabilities": [
     { "name": "AlphaVeil Product and Assisted Review", "entry": "tools/review-workspace/server.mjs", "command": "npm run review:workspace", "targets": 4, "moments": 207 },
     { "name": "Synchronized Replay and Craig Playback", "entry": "tools/review-workspace/scrim-media.mjs", "command": "npm run review:scrim", "acceptedTrackCount": 9 },
-    { "name": "Generic Scrim Intake V1", "entry": "tools/continuous-review/intake.mjs", "command": "npm run review:intake", "boundary": "registration only; no automatic factual processing or dynamic UI catalog" }
+    { "name": "Generic Scrim Intake V1", "entry": "tools/continuous-review/intake.mjs", "command": "npm run review:intake", "boundary": "registration only; no automatic factual processing or dynamic UI catalog" },
+    { "name": "Continuous Review Processing V1", "entry": "tools/continuous-review/process.mjs", "command": "npm run review:process", "boundary": "explicit registered target and identity-bound sync evidence; isolated review bundle, no Product registration", "status": "candidate_VALIDATING" }
   ],
   "runtimeArtifacts": [
     { "path": "output/local-replay-processing/assisted-review-bundles/task204-bounded2/", "role": "legacy 001/002 bundles; 102 candidates" },
@@ -18,14 +19,15 @@
     { "path": ".local/deadem/call-evidence/", "scope": "review_match_001 and review_match_002 active call indexes and linked audio only", "role": "private local call evidence" },
     { "path": ".local/deadem/craig/recordings/craig_recording_task208_real_01/", "scope": "normalized and validation subtrees", "role": "private local accepted multitrack evidence" },
     { "path": ".local/deadem/review-targets/", "scope": "review_match_003 and review_match_004 video subtrees only", "role": "private local VODs" },
-    { "path": ".local/deadem/continuous-review/intakes/", "role": "active local intake registry, not a UI catalog" }
+    { "path": ".local/deadem/continuous-review/intakes/", "role": "active local intake registry, not a UI catalog" },
+    { "path": ".local/deadem/continuous-review/processing/", "role": "isolated successful processing runs, dense telemetry and private visual evidence; not scanned by Product" }
   ],
   "currentDocs": ["AGENTS.md", "docs/codex/CURRENT_STATE.md", "docs/codex/WORKFLOW.md", "docs/codex/OUTPUT_AND_ARTIFACT_POLICY.md", "docs/codex/HISTORICAL_ARTIFACT_RECOVERY.md"],
   "blockers": {
     "authoritativeSource": "data/project-coordination-state.json#activeBlockers",
     "currentThemes": ["candidate selectivity is not semantic evidence", "mixed-VOD and Craig ASR require human semantic validation", "legacy replay/video synchronization uncertainty", "missing factual metadata and position telemetry", "final death facts and attribution remain unavailable"]
   },
-  "nextModule": { "name": "Continuous Review Processing V1", "status": "not_started_requires_separate_Work_authorization_after_Task222_acceptance" },
+  "nextModule": { "name": "Automatic Match Onboarding", "status": "not_started_requires_separate_Work_authorization_after_Task223_acceptance" },
   "historyOnDemand": ["data/task-contribution-index.json", "data/capability-index.json", "data/current-artifact-registry.json", "artifacts/repository-hygiene/task222/retirement-manifest.json"],
   "experimentsClassification": "artifacts/repository-hygiene/task222/experiment-index.json"
 }

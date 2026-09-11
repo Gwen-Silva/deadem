@@ -56,6 +56,7 @@
     "lint": "npm run lint --workspaces --if-present --",
     "preview": "npm run preview --workspace=@deademx/ui",
     "review:intake": "node tools/continuous-review/intake.mjs",
+    "review:process": "node tools/continuous-review/process.mjs",
     "review:workspace": "node tools/review-workspace/server.mjs",
     "review:scrim": "node tools/review-workspace/server.mjs --scrim-only",
     "proto:json": "npm run proto:json --workspaces --if-present",

@@ -1,0 +1,120 @@
+{
+  "aggregateAtSnapshot": {
+    "failures": [],
+    "passed": true
+  },
+  "canaryEvidence": [
+    "canary-003.json",
+    "canary-004.json"
+  ],
+  "checks": [
+    {
+      "command": "node-test:tests/continuous-review-processing.test.mjs",
+      "exitCode": 0,
+      "id": "processing-contracts",
+      "log": {
+        "path": ".local/codex/223/logs/processing-contracts.log",
+        "sha256": "4d6de4dc32205c77a1259e72164b04e9f03dc0dd3f5747187ee18747b6178316",
+        "sizeBytes": 4273
+      },
+      "passed": true,
+      "tests": 16
+    },
+    {
+      "command": "node-test:tests/product-view-model.test.mjs,tests/review-presentation.test.mjs,tests/review-workspace.test.mjs,tests/scrim-presentation.test.mjs,tests/scrim-player.test.mjs,tests/continuous-review-intake.test.mjs,tests/emit-review-candidate-windows.test.mjs,tests/emit-minimum-factual-review-telemetry.test.mjs",
+      "exitCode": 0,
+      "id": "accepted-regressions",
+      "log": {
+        "path": ".local/codex/223/logs/accepted-regressions.log",
+        "sha256": "d53e0021541bb411c1f2ea35759f0489427068355e440720670cbc1b9da4ac7d",
+        "sizeBytes": 19600
+      },
+      "passed": true,
+      "tests": 94
+    },
+    {
+      "command": "node-test:tests/project-coordination-policy.test.mjs,tests/codex-workflow-coordination.test.mjs,tests/task-execution-contract.test.mjs,tests/changed-artifact-guard.test.mjs,tests/hygiene-metadata-context.test.mjs,tests/repository-hygiene-consolidation.test.mjs",
+      "exitCode": 0,
+      "id": "coordination-contracts",
+      "log": {
+        "path": ".local/codex/223/logs/coordination-contracts.log",
+        "sha256": "27833cd6cd61e818dec8558e3565378218a334bded58a3d4ef3d97b530a5a1d8",
+        "sizeBytes": 8215
+      },
+      "passed": true,
+      "tests": 37
+    },
+    {
+      "command": "npm-script:validate:coordination",
+      "exitCode": 0,
+      "id": "coordination-validator",
+      "log": {
+        "path": ".local/codex/223/logs/coordination-validator.log",
+        "sha256": "94177ca389ecf83e2dc34d3a0b6e2524bff30bfeed0c858636cfb2a14de23f2d",
+        "sizeBytes": 271
+      },
+      "passed": true,
+      "tests": 0
+    },
+    {
+      "command": "npm-script:validate:tasks",
+      "exitCode": 0,
+      "id": "task-queue",
+      "log": {
+        "path": ".local/codex/223/logs/task-queue.log",
+        "sha256": "6432c7111bae8b0390af2865987bb9b152bd7b595d7f83c792749a697674466f",
+        "sizeBytes": 244
+      },
+      "passed": true,
+      "tests": 0
+    },
+    {
+      "command": "npm-script:lint",
+      "exitCode": 0,
+      "id": "lint",
+      "log": {
+        "path": ".local/codex/223/logs/lint.log",
+        "sha256": "f9d2cb79db7cc4c80cf4d3f48ccf0c59486039944fe3089639d373953d912812",
+        "sizeBytes": 443
+      },
+      "passed": true,
+      "tests": 0
+    },
+    {
+      "command": "npm-script:check:outputs",
+      "exitCode": 0,
+      "id": "output-size",
+      "log": {
+        "path": ".local/codex/223/logs/output-size.log",
+        "sha256": "e926ea869e198c64e4d1a007edb2e0b42adb61e76d57d550ba3f8d8406ee88b9",
+        "sizeBytes": 4646
+      },
+      "passed": true,
+      "tests": 0
+    }
+  ],
+  "epistemicType": "technical_validation_evidence",
+  "finalFreshnessAuthority": ".local/codex/223/post-commit-attestation.json",
+  "historyRewritePerformed": false,
+  "mandatoryCommandsPassed": true,
+  "preparationDiagnostics": [
+    "Synthetic MP4 fixture metadata corrected before successful contract tests.",
+    "Stale candidate resolution cleared before successful READY_FOR_CODEX preflight.",
+    "Initial aggregate validation omitted --base and preceded three delivery files; all command groups passed, aggregate failed."
+  ],
+  "protectedAccessCount": 0,
+  "provenance": {
+    "base": "61d1ac0586e45009b7672bf33643a3924ed260a0",
+    "sourceSnapshot": ".local/codex/223/precommit-validation-passed.json",
+    "sourceSnapshotSha256": {
+      "path": ".local/codex/223/precommit-validation-passed.json",
+      "sha256": "d9d5dd804620f8f4ac31a100572d59d3e1bc22fc9b242a06de76267a2b0e7cd6",
+      "sizeBytes": 27698
+    }
+  },
+  "schemaVersion": 1,
+  "securityEvidence": ".local/codex/223/activity-ledger.json",
+  "task224Created": false,
+  "taskId": "223",
+  "totalTests": 147
+}

@@ -28,7 +28,8 @@ test('all retired selectors resolve exact accepted Git identities and logical by
 test('current navigation, exact-path guard and forward storage policy agree',()=>{
     const view=json('data/current-project-index.json');const state=json('data/project-coordination-state.json');const storage=json('data/artifact-storage-policy.json');const spec=json('tasks/specs/222.json');
     assert.equal(view.acceptedBase.commit,state.lastAcceptedCommit);
-    assert.equal(view.currentMilestone.status,'GENERIC_INTAKE_READY');
+    // Task222's milestone is historical evidence, not a freeze on later Work-authorized progress.
+    assert.equal(json('artifacts/repository-hygiene/task222/gate.json').continuousReviewStatus,'GENERIC_INTAKE_READY');
     assert.equal(storage.largeOutputThresholdBytes,102400);assert.equal(storage.compactEvidenceRoot,'artifacts/');
     assert(Buffer.byteLength(JSON.stringify(view))<8192);
     for(const p of [...view.currentDocs,...view.activeCapabilities.map(c=>c.entry)]){assert.equal(classifyFilesystemTarget(p),'SAFE_REPOSITORY_METADATA');assert(fs.existsSync(p));}

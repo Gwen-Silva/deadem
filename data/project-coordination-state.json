@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "coordinationPolicyVersion": 1,
-  "objective": "Consolidate repository hygiene, safely retire historical payloads and preserve active AlphaVeil behavior and audit history.",
-  "phase": "repository_hygiene_consolidation",
-  "lastAcceptedTaskId": "221",
-  "lastAcceptedCommit": "cc54371d58febb40ac56480a732bfa6f1db5389d",
-  "activeBaseCommit": "cc54371d58febb40ac56480a732bfa6f1db5389d",
+  "objective": "Build generic registered-intake Continuous Review Processing V1 with isolated 003/004 canaries and no Product onboarding.",
+  "phase": "continuous_review_processing_v1",
+  "lastAcceptedTaskId": "222",
+  "lastAcceptedCommit": "61d1ac0586e45009b7672bf33643a3924ed260a0",
+  "activeBaseCommit": "61d1ac0586e45009b7672bf33643a3924ed260a0",
   "branch": "main",
-  "activeTaskId": "222",
+  "activeTaskId": "223",
   "status": "VALIDATING",
   "candidateCommit": null,
   "candidateResolution": {
     "strategy": "git_head_exactly_one_commit_from_active_base",
     "requiredCommitCount": 1,
     "branch": "main",
-    "reviewArtifact": ".local/codex/222/post-commit-attestation.json"
+    "reviewArtifact": ".local/codex/223/post-commit-attestation.json"
   },
   "rejectedCommits": [
     "bf5cdaaa20c41b73523b53ea2855ca41c6223653",
@@ -34,6 +34,7 @@
     "samples/**"
   ],
   "architecturalDecisions": [
+    "Work independently ACCEPTED Task222 at 61d1ac0586e45009b7672bf33643a3924ed260a0 under repository_hygiene_consolidated_and_historical_output_retired. Repository Hygiene is CONSOLIDATED. Work explicitly authorizes Task223 registered-intake processing and isolated historical 003/004 canaries, not Product onboarding or Task224.",
     "ChatGPT Work is the sole acceptance authority and autonomous coordinator.",
     "Task 218 was externally ACCEPTED_WITH_BLOCKER at 3d1daa401a1e2ceef79cac1b58026ab53721a107 under generic_scrim_intake_v1_partial_with_declared_gaps. Task 219 closed protected_alias_pre_filesystem_guard_incomplete and was externally ACCEPTED_WITH_BLOCKER at 4d0858d51f7ab4aad86246595bd07b473a1675d1 under the new audit blocker historical_task_contribution_index_commit_misattributed.",
     "Task 210 acceptance was externally supplied with subsequent human playback validation; Synchronized Craig Multitrack Playback is operationally completed. Task 212 adds bounded candidate navigation without playback, mixer, drift, Craig sync or ASR tuning.",
@@ -74,7 +75,7 @@
     "The V2 ranking remains uncalibrated against death ground truth; selectivity against structural labels does not establish semantic accuracy.",
     "Direct commands outside the repository workflow remain outside script interception."
   ],
-  "nextAction": "Complete the one authorized Task222 candidate publication and synchronized post-commit attestation, then stop for independent Work validation. Continuous Review stays GENERIC_INTAKE_READY; no Task223 or factual processing.",
+  "nextAction": "Independent Work validation of the Task223 candidate and isolated 003/004 evidence. Technical milestone claim PROCESSING_V1_READY; no Product onboarding, self-acceptance or Task224.",
   "completedTasks": [
     "190",
     "191",
@@ -107,10 +108,11 @@
     "218",
     "219",
     "220",
-    "221"
+    "221",
+    "222"
   ],
   "pendingTasks": [
-    "222"
+    "223"
   ],
   "acceptanceAuthority": "ChatGPT Work",
   "updatedBy": "Codex"

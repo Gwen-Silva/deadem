@@ -1,0 +1,355 @@
+{
+  "authorizedInitialRun": {
+    "asrExecutions": 0,
+    "craigTracksRead": 0,
+    "events": [
+      {
+        "kind": "replay",
+        "operation": "hash_open"
+      },
+      {
+        "kind": "video",
+        "operation": "hash_open"
+      },
+      {
+        "kind": "replay",
+        "operation": "header_open"
+      },
+      {
+        "kind": "video",
+        "operation": "container_metadata_open"
+      },
+      {
+        "kind": "replay",
+        "operation": "parser_load_open"
+      },
+      {
+        "kind": "replay",
+        "operation": "sampler_hash_open"
+      },
+      {
+        "kind": "video",
+        "operation": "decoder_open"
+      },
+      {
+        "kind": "video",
+        "operation": "decoder_identity_hash_open"
+      }
+    ],
+    "framesExtracted": 144,
+    "historyRewritePerformed": false,
+    "productRegistrations": 0,
+    "protectedAccessCount": 0,
+    "replayTargetsProcessed": [
+      "review_match_003"
+    ],
+    "vodTargetsRead": [
+      "review_match_003"
+    ]
+  },
+  "bundle": {
+    "errorClassCount": 15,
+    "fields": [
+      "facts",
+      "unknownInformation",
+      "teamCall",
+      "playerIntent",
+      "observedAction",
+      "alternatives",
+      "immediateResult",
+      "longTermResult",
+      "decisionQuality",
+      "executionQuality",
+      "reviewNotes"
+    ],
+    "humanFieldsBlank": true,
+    "moments": 48,
+    "productRegistration": false,
+    "status": "REVIEW_BUNDLE_READY"
+  },
+  "candidates": {
+    "comparison": {
+      "expected": 48,
+      "observed": 48,
+      "passed": true,
+      "retuning": false
+    },
+    "count": 48,
+    "policy": {
+      "activityPercentile": 0.75,
+      "binSeconds": 5,
+      "maximumWindowSeconds": 90,
+      "mergeGapSeconds": 15,
+      "paddingSeconds": 12
+    },
+    "prioritySemantics": "review_priority_heuristic_not_probability",
+    "semanticClass": "review_attention_region_not_gameplay_event"
+  },
+  "communication": {
+    "reason": "optional_historical_bridge_not_exercised_no_ASR",
+    "stage": "Craig_VOD",
+    "status": "NOT_APPLICABLE"
+  },
+  "epistemicType": "technical_validation_not_gameplay_truth",
+  "factual": {
+    "comparison": {
+      "artifactComparisons": [
+        {
+          "family": "damage",
+          "sha256Identical": true
+        },
+        {
+          "family": "healing",
+          "sha256Identical": true
+        },
+        {
+          "family": "lifeState",
+          "sha256Identical": true
+        },
+        {
+          "family": "netWorth",
+          "sha256Identical": true
+        },
+        {
+          "family": "objectives",
+          "sha256Identical": true
+        },
+        {
+          "family": "observations",
+          "sha256Identical": true
+        },
+        {
+          "family": "participants",
+          "sha256Identical": true
+        },
+        {
+          "family": "positions",
+          "sha256Identical": true
+        },
+        {
+          "family": "timeline",
+          "sha256Identical": true
+        }
+      ],
+      "comparisons": [
+        {
+          "expected": 2837,
+          "field": "time",
+          "observed": 2837,
+          "passed": true
+        },
+        {
+          "expected": 14,
+          "field": "participants",
+          "observed": 14,
+          "passed": true
+        },
+        {
+          "expected": 3,
+          "field": "teams",
+          "observed": 3,
+          "passed": true
+        },
+        {
+          "expected": 13,
+          "field": "heroes",
+          "observed": 13,
+          "passed": true
+        },
+        {
+          "expected": 39688,
+          "field": "lifeState",
+          "observed": 39688,
+          "passed": true
+        },
+        {
+          "expected": 39688,
+          "field": "netWorth",
+          "observed": 39688,
+          "passed": true
+        },
+        {
+          "expected": 4200,
+          "field": "damage",
+          "observed": 4200,
+          "passed": true
+        },
+        {
+          "expected": 5137,
+          "field": "healing",
+          "observed": 5137,
+          "passed": true
+        },
+        {
+          "expected": 11275,
+          "field": "objectives",
+          "observed": 11275,
+          "passed": true
+        },
+        {
+          "expected": 0,
+          "field": "positions",
+          "observed": 0,
+          "passed": true
+        },
+        {
+          "expected": 0,
+          "field": "firstTime",
+          "observed": 0,
+          "passed": true
+        },
+        {
+          "expected": 2836,
+          "field": "lastTime",
+          "observed": 2836,
+          "passed": true
+        },
+        {
+          "expected": true,
+          "field": "monotonic",
+          "observed": true,
+          "passed": true
+        },
+        {
+          "expected": 64,
+          "field": "tickRate",
+          "observed": 64,
+          "passed": true
+        },
+        {
+          "expected": 0,
+          "field": "gapCount",
+          "observed": 0,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "usage": "regression_only_no_extraction_tuning"
+    },
+    "counts": {
+      "damage": 4200,
+      "healing": 5137,
+      "heroes": 13,
+      "lifeState": 39688,
+      "netWorth": 39688,
+      "objectives": 11275,
+      "participants": 14,
+      "positions": 0,
+      "teams": 3,
+      "time": 2837
+    },
+    "coverage": {
+      "firstTime": 0,
+      "gaps": [],
+      "lastTime": 2836,
+      "monotonic": true
+    },
+    "positionsSynthesized": false,
+    "tickRate": 64
+  },
+  "idempotency": {
+    "allArtifactHashesVerified": true,
+    "factualProcessingRepeated": false,
+    "frameIndexVerified": true,
+    "framesRepeated": false,
+    "reused": true,
+    "runId": "c085a8b12913841c8ecd9bf8f19078a8178a837ab8d83583b5f95d9eca9e347b",
+    "stageIdentitiesUnchanged": true
+  },
+  "localRun": ".local/deadem/continuous-review/processing/task223-canaries/review_match_003/c085a8b12913841c8ecd9bf8f19078a8178a837ab8d83583b5f95d9eca9e347b",
+  "mode": "historical-canary",
+  "provenance": {
+    "acceptedBase": "61d1ac0586e45009b7672bf33643a3924ed260a0",
+    "result": {
+      "path": ".local/deadem/continuous-review/processing/task223-canaries/review_match_003/c085a8b12913841c8ecd9bf8f19078a8178a837ab8d83583b5f95d9eca9e347b/result.json",
+      "sha256": "c45d2f3ff3fe1645304c3ce42587df017e6851ba998c7a5d781e65b9f4efe581",
+      "sizeBytes": 56688
+    },
+    "stageHashChain": [
+      "f66487a8ec71dcded9e5579bff3ad1f2a10c95dde8cb1543292911dfda6204c8",
+      "8a1ef473c35df898de76f96bfa58d4a35a1c355965c323297f63f5bef9065f98",
+      "f83a0578e1f887746cdecebe3dabb4518be88b9e1bddff51a5c03525957a827e",
+      "f3b1df45f914b3c254e2f88cb7286c97673972ed0d1457320d150e360dccfe84",
+      "f36689abd23ca47ad2df15ca275e6bc8c15c9b4c514efad9000444bb9ab55fe1",
+      "10ff5005b1118f88c492845e84a44c40f69444cb261def54042a7bf8b67dcd2d"
+    ]
+  },
+  "reviewTargetId": "review_match_003",
+  "schemaVersion": 1,
+  "stages": [
+    {
+      "reason": "required_contract_verified_in_isolated_real_run",
+      "stage": "INTAKE_RESOLVED",
+      "status": "PASS"
+    },
+    {
+      "reason": "required_contract_verified_in_isolated_real_run",
+      "stage": "FACTUAL_PROCESSING_READY",
+      "status": "PASS"
+    },
+    {
+      "reason": "required_contract_verified_in_isolated_real_run",
+      "stage": "REPLAY_VOD_SYNC_READY",
+      "status": "PASS"
+    },
+    {
+      "reason": "required_contract_verified_in_isolated_real_run",
+      "stage": "CANDIDATES_READY",
+      "status": "PASS"
+    },
+    {
+      "reason": "required_contract_verified_in_isolated_real_run",
+      "stage": "VISUAL_EVIDENCE_READY",
+      "status": "PASS"
+    },
+    {
+      "reason": "required_contract_verified_in_isolated_real_run",
+      "stage": "REVIEW_BUNDLE_READY",
+      "status": "PASS"
+    }
+  ],
+  "synchronization": {
+    "anchorCount": 12,
+    "baselineDelta": {
+      "errorDeltaSeconds": 0,
+      "interceptDeltaSeconds": 0,
+      "passed": true,
+      "usage": "after_fit_regression_comparator_only"
+    },
+    "baselineValuesUsedInFit": false,
+    "coveredReplayRange": {
+      "end": 2792.640625,
+      "start": 47.640625
+    },
+    "interceptSeconds": 17.359375,
+    "model": "offset_only",
+    "operationalErrorSeconds": 2.140625,
+    "slope": 1,
+    "uncoveredReplayRanges": [
+      {
+        "end": 47.640625,
+        "start": 0
+      },
+      {
+        "end": 2836,
+        "start": 2792.640625
+      }
+    ],
+    "usableVodRange": {
+      "end": 2810,
+      "start": 65
+    }
+  },
+  "taskId": "223",
+  "visual": {
+    "coverage": 1,
+    "coveredCandidates": 48,
+    "decodedFrames": 144,
+    "failures": 0,
+    "frameBytes": 12019955,
+    "maxAbsoluteSeekErrorSeconds": 0.01283333333367409,
+    "mediaLocalOnly": true,
+    "representation": "first_representative_last_v1",
+    "requiredFrames": 144
+  }
+}

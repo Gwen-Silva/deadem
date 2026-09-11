@@ -1,0 +1,74 @@
+{
+  "baseCommit": "61d1ac0586e45009b7672bf33643a3924ed260a0",
+  "canaries": [
+    {
+      "candidates": 48,
+      "frames": 144,
+      "reviewTargetId": "review_match_003",
+      "runId": "c085a8b12913841c8ecd9bf8f19078a8178a837ab8d83583b5f95d9eca9e347b",
+      "status": "REVIEW_BUNDLE_READY",
+      "visualCoverage": 1
+    },
+    {
+      "candidates": 57,
+      "frames": 171,
+      "reviewTargetId": "review_match_004",
+      "runId": "a6e201541d464c725a637933f2ea8a887c36a7856fad4d75ee7fe90e45fddcd0",
+      "status": "REVIEW_BUNDLE_READY",
+      "visualCoverage": 1
+    }
+  ],
+  "epistemicType": "execution_summary_not_Work_acceptance",
+  "milestone": "PROCESSING_V1_READY",
+  "onboardingStarted": false,
+  "provenance": {
+    "canaries": [
+      "canary-003.json",
+      "canary-004.json"
+    ],
+    "localLedger": ".local/codex/223/activity-ledger.json"
+  },
+  "runtime": {
+    "craigTracks": 9,
+    "errorClasses": 15,
+    "legacy": 102,
+    "markers003": 48,
+    "markers004": 57,
+    "moments": 207,
+    "reviewFields": 11,
+    "targets": 4
+  },
+  "schemaVersion": 1,
+  "security": {
+    "asrExecutions": 0,
+    "craigTracksRead": 0,
+    "framesExtracted": 315,
+    "historyRewritePerformed": false,
+    "initialSuccessfulRuns": 2,
+    "productRegistrations": 0,
+    "protectedAccessCount": 0,
+    "protectedTargetsTouched": 0,
+    "replayFileOpenOperations": 14,
+    "replayProcessingCount": 2,
+    "replayTargetsProcessed": [
+      "review_match_003",
+      "review_match_004"
+    ],
+    "scope": "instrumented_real_pipeline_invocations_only; synthetic tests and generated-output verification are separate",
+    "sourceIdentityOnlyReuses": 3,
+    "task224Created": false,
+    "vodFileOpenOperations": 14,
+    "vodTargetsRead": [
+      "review_match_003",
+      "review_match_004"
+    ]
+  },
+  "storage": {
+    "changedFileLimitBytes": 102400,
+    "compactRoot": "artifacts/continuous-review/task223/",
+    "localRoot": ".local/deadem/continuous-review/processing/",
+    "newOutputRootUsed": false
+  },
+  "taskId": "223",
+  "taskStatus": "VALIDATING"
+}

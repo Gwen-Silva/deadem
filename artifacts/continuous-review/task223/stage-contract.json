@@ -1,0 +1,73 @@
+{
+  "canary": {
+    "explicitAdapter": true,
+    "intakeRegistryWrites": false,
+    "namespace": [
+      "review_match_003",
+      "review_match_004"
+    ],
+    "sharedDownstreamStages": true
+  },
+  "communication": {
+    "ASR": false,
+    "absentDoesNotBlock": true,
+    "optional": true
+  },
+  "epistemicType": "interface_contract",
+  "futureOnboarding": {
+    "automaticRegistration": false,
+    "entry": "result.json",
+    "requiredStatus": "REVIEW_BUNDLE_READY"
+  },
+  "production": {
+    "arbitraryReplayVideoArguments": false,
+    "exactInputIdentitiesRequired": true,
+    "namespace": "review_match_009..999",
+    "noCopy": true,
+    "registeredManifestRequired": true
+  },
+  "provenance": {
+    "base": "61d1ac0586e45009b7672bf33643a3924ed260a0",
+    "source": "tools/continuous-review/process.mjs"
+  },
+  "publication": {
+    "changedIdentityRequiresExplicitConflictHandling": true,
+    "failedRunCannotBecomeCurrent": true,
+    "immutableIdentity": true,
+    "targetLock": true
+  },
+  "schemaVersion": 1,
+  "stages": [
+    {
+      "epistemicType": "factual_identity_and_human_association",
+      "required": true,
+      "stage": "INTAKE_RESOLVED"
+    },
+    {
+      "epistemicType": "factual_observations_and_derived_counter_deltas",
+      "required": true,
+      "stage": "FACTUAL_PROCESSING_READY"
+    },
+    {
+      "epistemicType": "derived_timing_model",
+      "required": true,
+      "stage": "REPLAY_VOD_SYNC_READY"
+    },
+    {
+      "epistemicType": "derived_attention_regions",
+      "required": true,
+      "stage": "CANDIDATES_READY"
+    },
+    {
+      "epistemicType": "decoded_visual_evidence",
+      "required": true,
+      "stage": "VISUAL_EVIDENCE_READY"
+    },
+    {
+      "epistemicType": "unreviewed_human_template",
+      "required": true,
+      "stage": "REVIEW_BUNDLE_READY"
+    }
+  ],
+  "taskId": "223"
+}

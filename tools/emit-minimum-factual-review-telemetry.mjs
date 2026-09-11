@@ -5,6 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { Logger, Player } from 'deadem';
+import { assertNoProtectedAlias } from './continuous-review/intake-model.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const INTAKE_MANIFEST = 'output/local-replay-processing/two-match-assisted-review-intake/task198-bounded2/manifest.json';
@@ -207,19 +208,21 @@ export function derive(records, previousByParticipant) {
     return { life, netWorth, damage, healing, positions };
 }
 
-export async function processFactualTarget(target, { targetValidator = assertReviewTargetId, onSample = null } = {}) {
+export async function processFactualTarget(target, { targetValidator = assertReviewTargetId, onSample = null, inputResolver = null, outputDirectory = null } = {}) {
     // The default Task 199 allowlist and outputs remain unchanged. New wrappers
     // supply their own closed target validator; protected aliases always fail.
-    if (/(?:replay|partida|match)[_-]?00?[5-8]/iu.test(String(target.reviewTargetId))) throw new Error('protected replay alias rejected before filesystem access');
+    assertNoProtectedAlias(target.reviewTargetId);
     const reviewTargetId = targetValidator(target.reviewTargetId);
     const replay = target.inputs?.replay;
     const expectedSuffix = `/.local/deadem/review-targets/${reviewTargetId}/replay/${replay?.filenameOriginal}`;
     const normalizedPath = slash(replay?.localPath ?? '');
-    if (!normalizedPath.toLowerCase().endsWith(expectedSuffix.toLowerCase())) throw new Error(`manifest replay path is outside the exclusive target slot: ${reviewTargetId}`);
-    const inputPath = path.resolve(replay.localPath);
+    if (!inputResolver && !normalizedPath.toLowerCase().endsWith(expectedSuffix.toLowerCase())) throw new Error(`manifest replay path is outside the exclusive target slot: ${reviewTargetId}`);
+    const inputPath = inputResolver ? await inputResolver(target) : path.resolve(replay.localPath);
+    assertNoProtectedAlias(inputPath);
     const observedSha256 = await sha256File(inputPath);
     if (observedSha256 !== replay.sha256) throw new Error(`Task 198 replay hash mismatch: ${reviewTargetId}`);
-    const localDir = path.join(ROOT, LOCAL_ROOT, reviewTargetId);
+    const localDir = outputDirectory ?? path.join(ROOT, LOCAL_ROOT, reviewTargetId);
+    assertNoProtectedAlias(localDir);
     await mkdir(localDir, { recursive: true });
     const player = new Player(undefined, Logger.NOOP);
     const timeline = [], observations = [], life = [], netWorth = [], damage = [], healing = [], objectives = [], positions = [];

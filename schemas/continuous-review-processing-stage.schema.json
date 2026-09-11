@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Continuous Review Processing V1 stage envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion","processorVersion","reviewTargetId","runId","stage","status","epistemicType","provenance","data"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "processorVersion": {"const":"continuous-review-processing-v1.0.0"},
+    "reviewTargetId": {"type":"string","pattern":"^review_match_(?:003|004|009|0[1-9][0-9]|[1-9][0-9]{2})$"},
+    "runId": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "stage": {"enum":["INTAKE_RESOLVED","FACTUAL_PROCESSING_READY","REPLAY_VOD_SYNC_READY","CANDIDATES_READY","VISUAL_EVIDENCE_READY","REVIEW_BUNDLE_READY"]},
+    "status": {"const":"PASS"},
+    "epistemicType": {"enum":["factual_identity_and_human_association","factual_observations_and_derived_counter_deltas","derived_timing_model","derived_attention_regions","decoded_visual_evidence","unreviewed_human_template"]},
+    "provenance": {
+      "type":"object","additionalProperties":false,
+      "required":["intakeFingerprint","sourceReplaySha256","sourceVideoSha256","parentStageIdentities","humanAssociation","automaticSemanticPromotion"],
+      "properties":{
+        "intakeFingerprint":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "sourceReplaySha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "sourceVideoSha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "parentStageIdentities":{"type":"array","items":{"type":"string","pattern":"^[a-f0-9]{64}$"}},
+        "humanAssociation":{"type":"string","minLength":1},
+        "automaticSemanticPromotion":{"const":false}
+      }
+    },
+    "data":{"type":"object"}
+  }
+}
